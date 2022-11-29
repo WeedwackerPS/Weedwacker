@@ -1,4 +1,5 @@
 ﻿using Weedwacker.GameServer.Systems.Avatar;
+using Weedwacker.GameServer.Systems.Player;
 
 namespace Weedwacker.GameServer.Commands
 {
@@ -6,6 +7,8 @@ namespace Weedwacker.GameServer.Commands
     {
         public static async Task<string> OnAddAvatar(params string[] args) // AvatarId, GameUid
         {
+            string usage = "Usage: /addavatar (AvatarId) (uid)"; //TODO: Send usage instead of "Invalid Arguments" everytime
+
             if (!int.TryParse(args[0], out int avatarId) ||
                 !GameServer.AvatarInfo.ContainsKey(avatarId))
             {
@@ -16,8 +19,15 @@ namespace Weedwacker.GameServer.Commands
             {
                 return "Player isn't online or doesn't exist";
             }
+            Player player = GameServer.OnlinePlayers[guid].Player;
+            if (player.Avatars.HasAvatar(int.Parse(args[0])))
+
+            {
+                return "You already have that avatar!";
+            }
+
             var newAvatar = await Avatar.CreateAsync(avatarId, GameServer.OnlinePlayers[guid].Player);
-            await GameServer.OnlinePlayers[guid].Player.Avatars.AddAvatar(newAvatar);
+            await player.Avatars.AddAvatar(newAvatar);
             return $"Added avatar {avatarId} to player {guid}";
         }
     }
