@@ -29,17 +29,5 @@ namespace Weedwacker.GameServer.Packet.Send
 
             Data = proto.ToByteArray();
         }
-
-        public PacketSceneEntityAppearNotify(SceneEntity entity , Vector3 pos,VisionType visionType = VisionType.Born, uint param = 0) : base(Enums.OpCode.SceneEntityAppearNotify, true)
-        {
-            SceneEntityAppearNotify proto = new SceneEntityAppearNotify()
-            {
-                AppearType = visionType,
-                Param = param
-            };
-            entity.SetPos(pos);
-            proto.EntityList.Add(entity.ToProto());
-            Data = proto.ToByteArray();
-        }
     }
 }
