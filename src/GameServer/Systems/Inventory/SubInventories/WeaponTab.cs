@@ -36,7 +36,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             }
         }
 
-        public override async Task<GameItem> AddItemAsync(int itemId, int count = 1)
+        public override async Task<GameItem> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
         {
 
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_MATERIAL)
@@ -77,7 +77,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 return null;
             }
 
-            var weapon = new WeaponItem(Owner.GetNextGameGuid(), itemId, NextWeaponId++);
+            var weapon = new WeaponItem(Owner.GetNextGameGuid(), itemId, NextWeaponId++, level, refinement);
             Items.Add(weapon.Id, weapon);
 
             // Update Database

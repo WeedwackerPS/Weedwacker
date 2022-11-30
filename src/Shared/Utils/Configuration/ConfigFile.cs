@@ -6,7 +6,7 @@ namespace Weedwacker.Shared.Utils.Configuration
     {
         public StructureJson structure = new();
         public Language language = new();
-        public int version = 1;
+        public string version = "1.1";
 
         public abstract class DatabaseJson
         {

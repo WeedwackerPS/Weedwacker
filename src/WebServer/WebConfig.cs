@@ -55,8 +55,10 @@ namespace Weedwacker.WebServer
             public Shared.Enums.ServerDebugMode LogPackets = Shared.Enums.ServerDebugMode.NONE;
             public DispatchJson Dispatch = new();
 
+
             public class AccountJson
             {
+                public bool UsePassword = false;
                 public bool AutoCreate = false;
                 public string[] DefaultPermissions = Array.Empty<string>();
                 public int MaxAccount = -1;

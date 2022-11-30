@@ -20,6 +20,15 @@ namespace Weedwacker.Shared.Utils
             Console.WriteLine(ParseMessage(message));
 #endif
         }
+
+        public static void DebugWriteWarningLine(string message)
+        {
+#if DEBUG
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(ParseMessage(message));
+            Console.ResetColor();
+#endif
+        }
         public static void WriteErrorLine(string message, [CallerMemberName] string memberName = "", [CallerFilePath] string fileName = "",
             [CallerLineNumber] int lineNumber = 0)
         {

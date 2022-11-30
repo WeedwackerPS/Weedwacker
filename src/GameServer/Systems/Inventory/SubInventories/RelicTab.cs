@@ -33,7 +33,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             }
         }
 
-        public override async Task<GameItem> AddItemAsync(int itemId, int count = 1)
+        public override async Task<GameItem> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
         {
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_MATERIAL)
             {
@@ -42,6 +42,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     if (material.ItemData.stackLimit >= material.Count + count)
                     {
                         material.Count += count;
+
 
                         // Update Database
                         var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
@@ -73,7 +74,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 return null;
             }
 
-            var relic = new ReliquaryItem(Owner.GetNextGameGuid(), itemId, NextRelicId++);
+            var relic = new ReliquaryItem(Owner.GetNextGameGuid(), itemId, NextRelicId++, level);
             Items.Add(relic.Id, relic);
 
             // Update Database

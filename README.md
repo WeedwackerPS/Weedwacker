@@ -25,6 +25,7 @@ Code written in c++, lua, and any .NET languages may be accepted, as long as the
 
 * Proxy Daemon: [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe) (recommended), [mitmproxy](https://mitmproxy.org/) (mitmdump, recommended),  etc.
 
+* [mhypbase patch](https://github.com/Jx2f/mhypbase) _(Optional)_: if you want to enable **Server.Account.UsePassword**, you need to patch yor cilent according to mhypbase project.
 ### Building:
 any .NET 6 compatible compiler
 

@@ -226,7 +226,7 @@ namespace Weedwacker.GameServer.Systems.Player
             }
         }
 
-        public async Task SetupAvatarTeamAsync(int teamId, List<long> list)
+        public async Task SetupAvatarTeamAsync(int teamId, IList<ulong> list)
         {
             // Sanity checks
             if (list.Count == 0 || list.Count > GetMaxTeamSize() || Owner.IsInMultiplayer())

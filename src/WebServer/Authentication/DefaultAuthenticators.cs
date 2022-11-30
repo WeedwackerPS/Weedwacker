@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography;
+using System.Text;
 using Weedwacker.Shared.Authentication;
 using Weedwacker.Shared.Utils;
 using Weedwacker.WebServer.Authentication.Objects;
@@ -22,6 +25,12 @@ namespace Weedwacker.WebServer.Authentication
             string address = request.Context.Connection.RemoteIpAddress.ToString();
             string responseMessage = "Username not found.";
             string loggerMessage = "";
+            string decryptedPasswordMd5 = "";
+
+            if (WebServer.Configuration.Server.Account.UsePassword)
+            {
+                decryptedPasswordMd5 = Crypto.GetPasswordHash(requestData.password);
+            }
 
             // Get account from database.
             Account? account = await DatabaseManager.GetAccountByNameAsync(requestData.account);
@@ -31,7 +40,14 @@ namespace Weedwacker.WebServer.Authentication
                 if (account == null && WebServer.Configuration.Server.Account.AutoCreate)
                 {
                     // This account has been created AUTOMATICALLY. There will be no permissions added.
-                    account = DatabaseManager.CreateAccountWithUid(requestData.account, "0");
+                    if (WebServer.Configuration.Server.Account.UsePassword)
+                    {
+                        account = DatabaseManager.CreateAccountWithUid(requestData.account, decryptedPasswordMd5, "0");
+                    }
+                    else
+                    {
+                        account = DatabaseManager.CreateAccountWithUid(requestData.account, "", "0");
+                    }
 
                     // Check if the account was created successfully.
                     if (account == null)
@@ -49,7 +65,31 @@ namespace Weedwacker.WebServer.Authentication
                     }
                 }
                 else if (account != null)
-                    successfulLogin = true;
+                {
+                    if (!WebServer.Configuration.Server.Account.UsePassword)
+                    {
+                        successfulLogin = true;
+                    }
+                    else if (string.IsNullOrEmpty(account.Password))
+                    {
+                        account.Password = decryptedPasswordMd5;
+                        DatabaseManager.SaveAccount(account);
+                        successfulLogin = true;
+
+                    }
+                    else
+                    {
+                        if (decryptedPasswordMd5 == account.Password)
+                        {
+                            successfulLogin = true;
+                        }
+                        else
+                        {
+                            successfulLogin = false;
+                            responseMessage = "Incorrect password!";
+                        }
+                    }
+                }
                 else
                     loggerMessage = $"Client {address} failed to log in: Account not found.";
             }

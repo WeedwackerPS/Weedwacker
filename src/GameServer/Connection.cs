@@ -236,7 +236,7 @@ namespace Weedwacker.GameServer
                     // Log unhandled packets
                     if (!handled && debugMode == ServerDebugMode.MISSING)
                     {
-                        Logger.DebugWriteLine($"Unhandled packet ({opcode}): {Enum.GetName(typeof(OpCode), opcode)}");
+                        Logger.DebugWriteWarningLine($"Unhandled packet ({opcode}): {Enum.GetName(typeof(OpCode), opcode)}");
                     }
 #endif
                 }
@@ -300,7 +300,7 @@ namespace Weedwacker.GameServer
             }
             else
             {
-                Logger.DebugWriteLine($"Unhandled packet: {Enum.GetName(typeof(OpCode), opcode)}");
+                Logger.DebugWriteWarningLine($"Unhandled packet: {Enum.GetName(typeof(OpCode), opcode)}");
                 return false;
             }
         }

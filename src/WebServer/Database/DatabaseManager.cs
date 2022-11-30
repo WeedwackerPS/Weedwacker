@@ -28,7 +28,8 @@ namespace Weedwacker.WebServer.Database
             Logger.WriteLine("Connected to WebServer database");
         }
 
-        public static Account? CreateAccountWithUid(string username, string uid = "0")
+
+        public static Account? CreateAccountWithUid(string username,string password=null, string uid = "0")
         {
             //Make sure there are no name or id collisions
             var queryResult = Accounts.Find(w => w.Username == username || w.Id == uid);
@@ -50,6 +51,10 @@ namespace Weedwacker.WebServer.Database
                 Properties.NextUid = (int.Parse(Properties.NextUid) + 1).ToString();
             }
             Account account = new(username, newUid);
+            if (!string.IsNullOrEmpty(password))
+            {
+                account.Password = password;
+            }
             Accounts.InsertOne(account);
             return account;
         }

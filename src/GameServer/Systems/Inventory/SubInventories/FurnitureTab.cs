@@ -33,7 +33,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
         }
 
         //TODO FurnitureItem
-        public override async Task<GameItem?> AddItemAsync(int itemId, int count = 1)
+        public override async Task<GameItem?> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
         {
 
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_MATERIAL)

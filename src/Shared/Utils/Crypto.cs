@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 
 namespace Weedwacker.Shared.Utils
 {
@@ -8,6 +9,8 @@ namespace Weedwacker.Shared.Utils
         public static byte[] DISPATCH_KEY;
         public static byte[] DISPATCH_SEED;
 
+
+        public static byte[] AUTH_KEY;
         public static byte[] ENCRYPT_KEY;
         public static ulong ENCRYPT_SEED = 0x0;
         public static byte[] ENCRYPT_SEED_BUFFER = new byte[0];
@@ -29,6 +32,7 @@ namespace Weedwacker.Shared.Utils
             var seedpath = Path.Combine(path, "dispatchSeed.bin");
             var encryptkeypath = Path.Combine(path, "secretKey.bin");
             var encryptseedbufferpath = Path.Combine(path, "secretKeyBuffer.bin");
+            var authkeypath = Path.Combine(path, "auth_private-key.pem");
             if (File.Exists(keypath))
                 DISPATCH_KEY = File.ReadAllBytes(keypath);
             if (File.Exists(seedpath))
@@ -37,7 +41,8 @@ namespace Weedwacker.Shared.Utils
                 ENCRYPT_KEY = File.ReadAllBytes(encryptkeypath);
             if (File.Exists(encryptseedbufferpath))
                 ENCRYPT_SEED_BUFFER = File.ReadAllBytes(encryptseedbufferpath);
-
+            if (File.Exists(authkeypath))
+                AUTH_KEY = File.ReadAllBytes(authkeypath);
             try
             {
                 Cur3Encryptor.ImportFromPem(File.ReadAllText(path + "3.pem").ToCharArray());
@@ -86,6 +91,38 @@ namespace Weedwacker.Shared.Utils
             return System.Security.Cryptography.RandomNumberGenerator.GetBytes(length);
         }
 
+        public static string GetPasswordHash(string encryptedpwd)
+        {
+
+            string decryptedPasswordHash = "";
+            RSACryptoServiceProvider RSA = new RSACryptoServiceProvider();
+
+            UTF8Encoding ByteConverter = new UTF8Encoding();
+
+            RSA.ImportFromPem(ByteConverter.GetString(Crypto.AUTH_KEY));
+            try
+            {
+                var decryptedpwd = RSA.Decrypt(Convert.FromBase64String(encryptedpwd), false);
+                var ret = new MD5CryptoServiceProvider().ComputeHash(
+                    decryptedpwd
+                    );
+
+                Logger.DebugWriteWarningLine($"decrypted password:{ByteConverter.GetString(decryptedpwd)}");
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < ret.Length; i++)
+                {
+                    sb.Append(ret[i].ToString("x2"));
+                }
+                decryptedPasswordHash = sb.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteErrorLine(ex.Message);
+            }
+            
+            return decryptedPasswordHash;
+        }
 
 
         // Mersenne Twister 19937 using uint64 instead of uint32. Used to generate the encryption key for the game session

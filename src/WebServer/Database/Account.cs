@@ -10,7 +10,7 @@ namespace Weedwacker.WebServer.Database
         @Collation(locale = "simple", caseLevel = true)
         */
         public string Username { get; private set; }
-        private string Password; // Unused for now
+        public string Password; // Unused for now
         public string Email { get; private set; }
 
         public string Token { get; private set; }

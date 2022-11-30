@@ -5,19 +5,20 @@ namespace Weedwacker.Shared.Commands
 {
     public static partial class ConsoleHandler
     {
-        static readonly Dictionary<string, (byte, UserRank, Func<string[], Task<string>>)> RegisteredCommands = new()
+        static readonly Dictionary<string, (byte, UserRank, Func<string[], Task<string>>, byte)> RegisteredCommands = new()
         {
-            { "help", (0, UserRank.Mod, ConsoleCommands.OnHelp) },
-            { "hashability", (1, UserRank.Console, ConsoleCommands.OnHashAbility) },
-            { "hashpath", (1, UserRank.Console, ConsoleCommands.OnHashPath) }
+            { "help", (0, UserRank.Mod, ConsoleCommands.OnHelp, 0) },
+            { "hashability", (1, UserRank.Console, ConsoleCommands.OnHashAbility, 1) },
+            { "hashpath", (1, UserRank.Console, ConsoleCommands.OnHashPath, 1) }
         };
-        public static void AddCommand(string cmd, byte argCount, UserRank rank, Func<string[], Task<string>> action)
+        public static void AddCommand(string cmd, byte argCount, UserRank rank, Func<string[], Task<string>> action, byte minArgCount = default)
         {
-            RegisteredCommands[cmd] = (argCount, rank, action);
+            if (minArgCount == default) minArgCount = argCount;
+            RegisteredCommands[cmd] = (argCount, rank, action, minArgCount);
         }
         public static async Task Start()
         {
-        Start:
+            Start:
             try
             {
             CommandHandler:
@@ -37,8 +38,10 @@ namespace Weedwacker.Shared.Commands
             if (!RegisteredCommands.TryGetValue(cmd, out var com))
                 return "Invalid command";
             byte argCount = com.Item1;
+            byte minArgCount = com.Item4;
             UserRank requiredRank = com.Item2;
-            if (argCount > 0 && (args == null || args.Length < argCount || !CheckCommandArguments(args)))
+            if (argCount > 0 && (args == null || args.Length > argCount || !CheckCommandArguments(args)) // check if user passed more arguments than the command allows
+                || args.Length < minArgCount) // check if user passed less arguments than the minimum needed
                 return "Invalid arguments";
             if (requiredRank > reqRank)
                 return "Not enough privileges";

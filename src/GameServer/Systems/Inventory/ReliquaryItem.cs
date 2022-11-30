@@ -11,10 +11,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
         [BsonElement] public int MainPropId { get; protected set; }
         [BsonElement] public HashSet<int>? AppendPropIdList { get; private set; } = new();
         [BsonIgnore] public new ReliquaryData ItemData => (ReliquaryData)GameData.ItemDataMap[ItemId];
-        public ReliquaryItem(ulong guid, int itemId, int uniqueId) : base(guid, itemId)
+        public ReliquaryItem(ulong guid, int itemId, int uniqueId, int level = 1) : base(guid, itemId)
         {
             Id = uniqueId;
-            Level = 1;
+            Level = level;
 
             // Create main property
             Random rand = new();

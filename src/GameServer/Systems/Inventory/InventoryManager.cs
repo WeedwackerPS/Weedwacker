@@ -97,7 +97,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
             return updatedItems;
         }
-        public async Task<GameItem?> AddItemByIdAsync(int itemId, int count = 1, ActionReason reason = ActionReason.None, bool notifyClient = true)
+        public async Task<GameItem?> AddItemByIdAsync(int itemId, int count = 1, ActionReason reason = ActionReason.None, bool notifyClient = true, int level = 1, int refinement = 0)
         {
             ItemData itemData = GameData.ItemDataMap[itemId];
 
@@ -123,11 +123,11 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     break;
                 case ItemType.ITEM_RELIQUARY:
                     // Add to inventory and update database
-                    updatedItem = await SubInventories[ItemType.ITEM_RELIQUARY].AddItemAsync(itemId, count);
+                    updatedItem = await SubInventories[ItemType.ITEM_RELIQUARY].AddItemAsync(itemId, count, level);
                     break;
                 case ItemType.ITEM_WEAPON:
                     // Add to inventory and update database
-                    updatedItem = await SubInventories[ItemType.ITEM_WEAPON].AddItemAsync(itemId, count);
+                    updatedItem = await SubInventories[ItemType.ITEM_WEAPON].AddItemAsync(itemId, count, level, refinement);
                     break;
                 case ItemType.ITEM_DISPLAY:
                     Logger.WriteErrorLine($"Unhandled item: {itemId}");
@@ -142,7 +142,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             if (updatedItem != null)
             {
                 // Add a reference by Guid
-                GuidMap.Add(updatedItem.Guid, updatedItem);
+                GuidMap[updatedItem.Guid] = updatedItem;
 
                 if (notifyClient)
                 {
