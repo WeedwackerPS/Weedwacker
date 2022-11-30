@@ -1,7 +1,6 @@
 ﻿using Vim.Math3d;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
-using static Weedwacker.GameServer.Systems.Script.Scene.DummyPoints;
 using static Weedwacker.Shared.Network.Proto.MarkMapReq.Types;
 
 namespace Weedwacker.GameServer.Systems.Player
@@ -47,8 +46,8 @@ namespace Weedwacker.GameServer.Systems.Player
                 y = 350;
             }
             Vector3 pos = new Vector3(markMap.Mark.Pos.X,y, markMap.Mark.Pos.Z);
-            await player.World.TransferPlayerToSceneAsync(player, Enums.EnterReason.TransPoint, markMap.Mark.SceneId == (uint)player.SceneId ? EnterType.Goto : EnterType.Jump, (int)markMap.Mark.SceneId, pos, true);
-            await player.SendPacketAsync(new PacketSceneEntityAppearNotify(player.TeamManager.GetCurrentAvatarEntity(), pos, VisionType.Born,0));
+            await player.World.TransferPlayerToSceneAsync(player, Enums.EnterReason.TransPoint, markMap.Mark.SceneId == (uint)player.SceneId ? EnterType.Goto : EnterType.Jump, (int)markMap.Mark.SceneId, pos, false);
+            await player.World.BroadcastPacketAsync(new PacketSceneEntityAppearNotify(player.TeamManager.GetCurrentAvatarEntity(), pos, VisionType.Born,0));
         }
     }
 }
