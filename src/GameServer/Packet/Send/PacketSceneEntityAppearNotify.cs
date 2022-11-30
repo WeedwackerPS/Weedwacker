@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf;
+using Vim.Math3d;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
 
@@ -14,7 +15,6 @@ namespace Weedwacker.GameServer.Packet.Send
                 Param = param
             };
             proto.EntityList.Add(entity.ToProto());
-
             Data = proto.ToByteArray();
         }
 
@@ -27,6 +27,18 @@ namespace Weedwacker.GameServer.Packet.Send
             };
             entities.AsParallel().ForAll(w => proto.EntityList.Add(w.ToProto()));
 
+            Data = proto.ToByteArray();
+        }
+
+        public PacketSceneEntityAppearNotify(SceneEntity entity , Vector3 pos,VisionType visionType = VisionType.Born, uint param = 0) : base(Enums.OpCode.SceneEntityAppearNotify, true)
+        {
+            SceneEntityAppearNotify proto = new SceneEntityAppearNotify()
+            {
+                AppearType = visionType,
+                Param = param
+            };
+            entity.SetPos(pos);
+            proto.EntityList.Add(entity.ToProto());
             Data = proto.ToByteArray();
         }
     }
