@@ -77,6 +77,7 @@ namespace Weedwacker.GameServer.Systems.Player
             GadgetManager = new(this);
             GameUid = gameUid;
             ProgressManager = new(this);
+            MapMarksManager = new(this);
             PropManager = new(this);
             ResinManager = new(this);
             ShopManager = new(this);

@@ -7,12 +7,9 @@ namespace Weedwacker.GameServer.Systems.Player
 {
     internal class MapMarksManager
     {
-        private Player player;
+        private readonly Player Owner;
 
-        public MapMarksManager(Player player)
-        {
-            this.player = player;
-        }
+        public MapMarksManager(Player owner){Owner = owner; }
 
         public async Task HandleMapMarkReq(MarkMapReq markMap)
         {
@@ -21,7 +18,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 case Operation.Add:
                     if (markMap.Mark.PointType == MapMarkPointType.FishPool)
                     {
-                        await Teleport(player,markMap);
+                        await Teleport(markMap);
                     }
                     break;
                 case Operation.Mod:
@@ -31,10 +28,10 @@ namespace Weedwacker.GameServer.Systems.Player
                     //TODO:
                     break;
             }
-
+            await Owner.World.BroadcastPacketAsync(new PacketMarkMapRsp(markMap.Mark));
         }
 
-        public async Task Teleport(Player player,MarkMapReq markMap)
+        public async Task Teleport(MarkMapReq markMap)
         {
             float y;
             try
@@ -46,8 +43,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 y = 350;
             }
             Vector3 pos = new Vector3(markMap.Mark.Pos.X,y, markMap.Mark.Pos.Z);
-            await player.World.TransferPlayerToSceneAsync(player, Enums.EnterReason.TransPoint, markMap.Mark.SceneId == (uint)player.SceneId ? EnterType.Goto : EnterType.Jump, (int)markMap.Mark.SceneId, pos, false);
-            await player.World.BroadcastPacketAsync(new PacketSceneEntityAppearNotify(player.TeamManager.GetCurrentAvatarEntity(), pos, VisionType.Born,0));
+            await Owner.World.TransferPlayerToSceneAsync(Owner, Enums.EnterReason.TransPoint, markMap.Mark.SceneId == (uint)Owner.SceneId ? EnterType.Goto : EnterType.Jump, (int)markMap.Mark.SceneId, pos, false);
         }
     }
 }

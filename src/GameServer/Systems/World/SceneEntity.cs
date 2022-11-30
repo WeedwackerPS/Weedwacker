@@ -30,11 +30,6 @@ namespace Weedwacker.GameServer.Systems.World
             Scene = scene;
             MotionState = MotionState.None;
         }
-
-        public void SetPos(Vector3 pos)
-        {
-            Position = pos;
-        }
         public World? GetWorld()
         {
             if (Scene == null) return null;
