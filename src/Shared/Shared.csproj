@@ -10,8 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="System.CommandLine\**" />
+    <EmbeddedResource Remove="System.CommandLine\**" />
+    <None Remove="System.CommandLine\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.21.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="System.CommandLine\System.CommandLine.csproj" />
   </ItemGroup>
 
 </Project>

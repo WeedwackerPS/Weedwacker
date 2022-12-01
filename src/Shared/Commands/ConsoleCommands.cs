@@ -1,23 +1,21 @@
-﻿namespace Weedwacker.Shared.Commands
+﻿using System.CommandLine;
+
+namespace Weedwacker.Shared.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task<string> OnHelp(params string[] args)
+        [RequiredRank(UserRank.Console)]
+        public static async Task OnHashAbility(IConsole console,string arg)
         {
             await Task.Yield();
-            return "Help command used";
+            console.WriteLine( Utils.Utils.AbilityHash(arg).ToString());
         }
 
-        public static async Task<string> OnHashAbility(params string[] args)
+        [RequiredRank(UserRank.Console)]
+        public static async Task OnHashPath(IConsole console,string args)
         {
             await Task.Yield();
-            return Utils.Utils.AbilityHash(args[0]).ToString();
-        }
-
-        public static async Task<string> OnHashPath(params string[] args)
-        {
-            await Task.Yield();
-            return Utils.Utils.GetPathHash(args[0].ToString()).ToString();
+            console.WriteLine(Utils.Utils.GetPathHash(args[0].ToString()).ToString());
         }
     }
 }

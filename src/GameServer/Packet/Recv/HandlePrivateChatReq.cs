@@ -1,4 +1,5 @@
-﻿using Weedwacker.GameServer.Enums;
+﻿using System.CommandLine;
+using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Commands;
 using Weedwacker.Shared.Enums;
@@ -26,9 +27,13 @@ namespace Weedwacker.GameServer.Packet.Recv
                 {
                     try
                     {
-                        string cmd = ConsoleHandler.ParseCommandString(req.Text.Substring(1), out string[] args);
-                        var output = await ConsoleHandler.ExecuteCommand(cmd, UserRank.Player, args);
-                        await session.SendPacketAsync(new PacketPrivateChatNotify(req.TargetUid, (uint)session.Player.GameUid, output));
+                        var console = new SimConsole();
+                        var args = ConsoleHandler.ParseCommandString(req.Text.Substring(1));
+
+                        var r = await ConsoleHandler.rootCommand.InvokeAsync(args, UserRank.Player, console);
+                        var ret = console.Out.ToString();
+
+                        await session.SendPacketAsync(new PacketPrivateChatNotify(req.TargetUid, (uint)session.Player.GameUid, ret));
                     }
                     catch (Exception e)
                     {

@@ -19,6 +19,7 @@
   <ItemGroup>
 	<FrameworkReference Include="Microsoft.AspNetCore.App" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\Shared\System.CommandLine\System.CommandLine.csproj" />
   </ItemGroup>
 
 </Project>

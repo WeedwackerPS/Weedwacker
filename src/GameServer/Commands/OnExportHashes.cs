@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.CommandLine;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
 using Weedwacker.Shared.Utils;
@@ -7,7 +8,8 @@ namespace Weedwacker.GameServer.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task<string> OnExportHashes(params string[] args)
+        [RequiredRank(UserRank.Console)]
+        public static async Task OnExportHashes(IConsole console)
         {
             Dictionary<uint, string> hashMap = new();
             foreach (var container in GameData.ConfigAbilityAvatarMap.Values)
@@ -35,7 +37,7 @@ namespace Weedwacker.GameServer.Commands
             string jsonString = JsonConvert.SerializeObject(hashMap, Formatting.Indented);
             await File.WriteAllTextAsync("ability_hashMap.json", jsonString);
 
-            return $"exported ability hashes";
+            console.WriteLine($"exported ability hashes") ;
         }
     }
 }

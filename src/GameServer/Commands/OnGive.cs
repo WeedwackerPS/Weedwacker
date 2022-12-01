@@ -1,4 +1,5 @@
 ﻿
+using System.CommandLine;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Enums;
 
@@ -6,31 +7,35 @@ namespace Weedwacker.GameServer.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task<string> OnGive(params string[] args) // GameUid, itemID, count, level, refinement
+        [RequiredRank(UserRank.Player)]
+        public static async Task OnGive(IConsole console,
+            int guid,int itemId,int count,int lvl, int refinement) // GameUid, itemID, count, level, refinement
         {
-            if (!int.TryParse(args[0], out int guid) ||
-                !GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey(guid))
             {
-                return "Player isn't online or doesn't exist";
+                console.WriteLine("Player isn't online or doesn't exist");
+                return;
             }
-            if (!int.TryParse(args[1], out int itemId) || !GameData.ItemDataMap.ContainsKey(itemId))
+            if (!GameData.ItemDataMap.ContainsKey(itemId))
             {
-                return "invalid item id";
+                console.WriteLine("invalid item id");
+                return;
             }
-            int count = 1;
-            int lvl = 1;
-            int refinement = 1;
-            if (args.Length >= 3 && !int.TryParse(args[2], out count))
+
+            if (count<1)
             {
-                return "invalid amount";
+                count = 1;
             }
-            if (args.Length >= 4 && (!int.TryParse(args[3], out lvl) || lvl < 1 || lvl > 90))
+
+            if (lvl < 1 || lvl > 90)
             {
-                return "invalid level";
+                console.WriteLine("invalid level");
+                return;
             }
-            if (args.Length >= 5 && (!int.TryParse(args[4], out refinement) || refinement < 1 || refinement > 5))
+            if ( refinement < 1 || refinement > 5)
             {
-                return "invalid refinement";
+                console.WriteLine("invalid refinement");
+                return;
             }
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_RELIQUARY || GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_WEAPON)
             {
@@ -43,8 +48,8 @@ namespace Weedwacker.GameServer.Commands
             {
                 await GameServer.OnlinePlayers[guid].Player.Inventory.AddItemByIdAsync(itemId, count, ActionReason.None, true);
             }
-            
-            return $"Added {count} item {itemId} to player {guid} at level {lvl} and refinement {refinement}";
+            console.WriteLine($"Added {count} item {itemId} to player {guid} at level {lvl} and refinement {refinement}");
+            return;
         }
     }
 }

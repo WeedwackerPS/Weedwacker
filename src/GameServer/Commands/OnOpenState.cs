@@ -1,23 +1,25 @@
-﻿using Weedwacker.GameServer.Enums;
+﻿using System.CommandLine;
+using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task<string> OnOpenState(params string[] args) // AvatarId, GameUid
+        [RequiredRank(UserRank.Player)]
+        public static async Task OnOpenState(IConsole console, int openState,int guid) // OpenState, GameUid
         {
-            if (!int.TryParse(args[0], out int openState) ||
-                !Enum.IsDefined(typeof(OpenStateType), openState))
+            if (!Enum.IsDefined(typeof(OpenStateType), openState))
             {
-                return "invalid openstate id";
+                console.WriteLine("invalid openstate id");
+                return ;
             }
-            if (!int.TryParse(args[1], out int guid) ||
-                !GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey(guid))
             {
-                return "Player isn't online or doesn't exist";
+                console.WriteLine("Player isn't online or doesn't exist");
+                return ;
             }
             await GameServer.OnlinePlayers[guid].Player.OpenStateManager.SetOpenStateAsync(openState, 1);
-            return $"Set openstate {openState} for player {guid}";
+            console.WriteLine($"Set openstate {openState} for player {guid}");
         }
     }
 }

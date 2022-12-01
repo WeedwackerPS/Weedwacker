@@ -1,22 +1,21 @@
-﻿using Weedwacker.GameServer.Data;
+﻿using System.CommandLine;
+using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Systems.World;
 
 namespace Weedwacker.GameServer.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task<string> OnSpawn(params string[] args) // GameUid, id
+        [RequiredRank(UserRank.Player)]
+        public static async Task OnSpawn(IConsole console,int guid, int id) // GameUid, id
         {
-            if (!int.TryParse(args[0], out int guid) ||
-                !GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey(guid))
             {
-                return "Player isn't online or doesn't exist";
+                Console.WriteLine("Player isn't online or doesn't exist");
+                return ;
             }
             var scene = GameServer.OnlinePlayers[guid].Player.Scene;
-            if (!int.TryParse(args[1], out int id))
-            {
-                return "entity id NAN";
-            }
+
 #if false
             if (args.Length >= 3 && !int.TryParse(args[2], out int posOffset))
             {
@@ -41,10 +40,11 @@ namespace Weedwacker.GameServer.Commands
             }
             else
                 goto ERROR;
-
-            return $"spawn entity {id} for player {guid}";
+            Console.WriteLine($"spawn entity {id} for player {guid}");
+            return ;
         ERROR:
-            return $"could not find entity {id}";
+            Console.WriteLine($"could not find entity {id}");
+            return ;
         }
     }
 }

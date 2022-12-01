@@ -1,72 +1,78 @@
-﻿using Weedwacker.Shared.Enums;
+﻿using System.CommandLine;
+using Weedwacker.Shared.Enums;
 using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.Shared.Commands
 {
-    public static partial class ConsoleHandler
+    public static class ConsoleHandler
     {
-        static readonly Dictionary<string, (byte, UserRank, Func<string[], Task<string>>, byte)> RegisteredCommands = new()
+        public static void Init()
         {
-            { "help", (0, UserRank.Mod, ConsoleCommands.OnHelp, 0) },
-            { "hashability", (1, UserRank.Console, ConsoleCommands.OnHashAbility, 1) },
-            { "hashpath", (1, UserRank.Console, ConsoleCommands.OnHashPath, 1) }
-        };
-        public static void AddCommand(string cmd, byte argCount, UserRank rank, Func<string[], Task<string>> action, byte minArgCount = default)
-        {
-            if (minArgCount == default) minArgCount = argCount;
-            RegisteredCommands[cmd] = (argCount, rank, action, minArgCount);
+            Command hashabilityCommand = new Command("hashability", "hashability command");
+            Command hashpathCommand = new Command("hashpath", "hashpath command");
+
+            var valueArgument = new Argument<string>(
+                name: "value");
+            hashabilityCommand.AddArgument(valueArgument);
+            hashpathCommand.AddArgument(valueArgument);
+            hashabilityCommand.SetHandler(ConsoleCommands.OnHashAbility, valueArgument);
+            hashpathCommand.SetHandler(ConsoleCommands.OnHashPath, valueArgument);
+
+
+            AddCommand(hashpathCommand);
+            AddCommand(hashabilityCommand);
         }
+
+        public static RootCommand rootCommand { get; private set; } = new RootCommand("Weedwacker Console");
+
+        public static void AddCommand(Command command)
+        {
+            rootCommand.AddCommand(command);
+        }
+
         public static async Task Start()
         {
-            Start:
+        Start:
             try
             {
             CommandHandler:
-                string cmd = ParseCommandString(Console.ReadLine(), out string[] args);
-                Logger.WriteLine(await ExecuteCommand(cmd, UserRank.Console, args));
+                Console.Write(">");
+                var args = ParseCommandString(Console.ReadLine().Trim());
+                if (args.Length > 0)
+                {
+                    try
+                    {
+                        var console = new SimConsole();
+                        var r = await rootCommand.InvokeAsync(args, UserRank.Console, console);
+                        var ret = console.Out.ToString();
+                        //var err = console.Error.ToString(); //err is null
+                        Logger.WriteLine(Environment.NewLine+ ret);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.WriteErrorLine(ex.Message);
+                    }
+                }
                 goto CommandHandler;
-            }
-            catch (Exception e)
+            }catch(Exception ex)
             {
-                Logger.WriteErrorLine(e.ToString());
+                goto Start;
             }
-            goto Start;
         }
-        static bool CheckCommandArguments(params string[] args) => !args.Any(arg => string.IsNullOrEmpty(arg) || string.IsNullOrWhiteSpace(arg));
-        public static async Task<string> ExecuteCommand(string cmd, UserRank reqRank, params string[] args)
+
+
+        #region Parse cmd_str to arg list
+        public static string[] ParseCommandString(string? input)
         {
-            if (!RegisteredCommands.TryGetValue(cmd, out var com))
-                return "Invalid command";
-            byte argCount = com.Item1;
-            byte minArgCount = com.Item4;
-            UserRank requiredRank = com.Item2;
-            if (argCount > 0 && (args == null || args.Length > argCount || !CheckCommandArguments(args)) // check if user passed more arguments than the command allows
-                || args.Length < minArgCount) // check if user passed less arguments than the minimum needed
-                return "Invalid arguments";
-            if (requiredRank > reqRank)
-                return "Not enough privileges";
-            if (com.Item3 == null)
-                return "Command does not exists";
-            return await com.Item3(args);
-        }
-        public static string ParseCommandString(string? input, out string[] args)
-        {
-            args = Array.Empty<string>();
-            if (string.IsNullOrEmpty(input))
-                return string.Empty;
-            if (!input.Contains(' '))
-                return input;
+            IList<string> args = new List<string>();
             args = input.Split(' ');
-            if (args.Length <= 0)
-                return string.Empty;
-            string cmd = args[0].ToLower();
-            args = args.Skip(1).ToArray();
             if (input.Contains('\"'))
             {
                 List<string> finalArgs = new();
                 string tmp = string.Empty;
                 short idx = -1;
-                for (short i = 0; i < args.Length; i++)
+                for (short i = 0; i < args.Count; i++)
                 {
                     if (idx < 0)
                     {
@@ -95,7 +101,8 @@ namespace Weedwacker.Shared.Commands
                 if (idx < 0)
                     args = finalArgs.ToArray();
             }
-            return cmd;
+            return args.ToArray();
         }
+        #endregion
     }
 }
