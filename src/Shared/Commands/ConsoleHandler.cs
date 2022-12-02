@@ -44,7 +44,7 @@ namespace Weedwacker.Shared.Commands
                     {
                         var console = new SimConsole();
                         var r = await rootCommand.InvokeAsync(args, UserRank.Console, console);
-                        var ret = console.Out.ToString();
+                        var ret = console.Out.ToString().TrimEnd('\n'); ;
                         //var err = console.Error.ToString(); //err is null
                         Logger.WriteLine(Environment.NewLine+ ret);
 

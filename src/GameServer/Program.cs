@@ -5,7 +5,6 @@ using Weedwacker.Shared.Commands;
 
 await GameServer.Start();
 
-
 GameServerCommands.InitAll();
 
 await ConsoleHandler.Start();
