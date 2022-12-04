@@ -71,9 +71,9 @@ jobs:
     
     #Install and test with database
     - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.8.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
+      uses: ankane/setup-mongodb@v1
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
     # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
