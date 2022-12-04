@@ -1,3 +1,4 @@
+[![.NET Core Desktop Windows Runner](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-windows.yml/badge.svg)](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-windows.yml)
 # Weedwacker
 Private Server reimplementation of a certain anime game.
 Join us on our [discord](https://discord.gg/XJgJcf6nPf)!
