@@ -106,6 +106,9 @@ jobs:
     - name: Zip GameServer
       run: tar -cvzf archive.tar "D:\a\Weedwacker\Weedwacker\bin\Release\GameServer"
       
+    - name: List File
+      run: ls
+      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
