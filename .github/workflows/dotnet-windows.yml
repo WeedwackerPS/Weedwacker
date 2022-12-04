@@ -51,7 +51,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
-        mongodb-version: ['6.0']
+        mongodb-version: ['5.0']
 
     
     runs-on: [windows-latest]  # For a list of available runner types, refer to                           
@@ -72,8 +72,9 @@ jobs:
     #Install and test with database
     - name: Start MongoDB
       uses: ankane/setup-mongodb@v1
-        with:
-          mongodb-version: ${{ matrix.mongodb-version }}
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+        
     # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
