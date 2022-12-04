@@ -18,8 +18,6 @@ namespace Weedwacker.GameServer.Packet.Recv
             ScenePointData spd;
             BasePoint bp;
 
-            Console.WriteLine(session.Player.SceneId);
-
             GameData.ScenePointDataMap.TryGetValue("scene" + session.Player.SceneId + "_point", out spd);
 
             spd.points.TryGetValue(req.PointId.ToString(), out bp);
@@ -33,7 +31,6 @@ namespace Weedwacker.GameServer.Packet.Recv
             int transToSceneId = (bp as PersonalSceneJumpPoint).tranSceneId;
             float x, y, z;
 
-            Console.WriteLine(transToSceneId);
 
             // TODO: SerializedName because there are some variants like: x, _x, X,...
             bp.tranPos.TryGetValue("x", out x);
