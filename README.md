@@ -38,7 +38,7 @@ Weedwacker has 2 different executables. one for the HTTP web server, one for the
 
 ### Connecting:
 ½. Make sure you've set up/modified your client correctly to connect to private servers.
-1. Create an account on the web server (NOT the game server) using the "createaccount <username>" command from the console, or set AutoCreate to true in WebConfig.json.
+1. Create an account on the web server (NOT the game server) using the `account create <username>` command from the console, or set AutoCreate to true in WebConfig.json.
 2. Use your preferred method to proxy web traffic from official servers to the webserver.
 3. Launch the game and play!
 
