@@ -87,5 +87,5 @@ jobs:
       with:
          vs-prerelease: true
     # Execute all unit tests in the solution
-    - name: Execute unit tests
+    - name: Execute unit build
       run: dotnet bulid
