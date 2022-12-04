@@ -51,7 +51,6 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
-        mongodb-version: ['5.0']
 
     
     runs-on: [windows-latest]  # For a list of available runner types, refer to                           
@@ -68,14 +67,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    
-
-    
-    #Install and test with database
-    - name: Start MongoDB
-      uses: ankane/setup-mongodb@v1
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
+  
         
     # Install the .NET Core workload
     - name: Install .NET Core
@@ -104,13 +96,21 @@ jobs:
       run: pwd
       
     - name: Zip GameServer
-      run: tar -cvzf archive.tar "D:\a\Weedwacker\Weedwacker\bin\Release\GameServer"
+      run: tar -cvzf GameServer.tar "D:\a\Weedwacker\Weedwacker\bin\Release\GameServer"
       
     - name: List File
       run: ls
-      
+     
+     
+    - name: Publish release APK
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: GameServer.tar
+     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
           path: bin/Release
-          name: Gameserver.tar
+          name: GameServer.tar
