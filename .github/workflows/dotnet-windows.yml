@@ -36,7 +36,7 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: .NET Core Desktop Windows Runner
+name: .NET Core Desktop Windows 
 
 on:
   push:
@@ -91,7 +91,16 @@ jobs:
     # Execute all unit tests in the solution
     - name: Build
       run: dotnet build  src/GameServer/GameServer.csproj  --configuration Release --no-restore
-    
+   
+    - name: Tar GameServer
+      run: tar -cvzf GameServer.tar "D:\a\Weedwacker\Weedwacker\bin\Release\GameServer"
+      
+    - name: Automatic Releases
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: GameServtar
      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
