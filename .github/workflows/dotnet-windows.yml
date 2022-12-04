@@ -100,10 +100,10 @@ jobs:
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          files: GameServtar
+          files: GameServer.tar
      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
           path: D:\a\Weedwacker\Weedwacker\bin\Release\GameServer
-          name: GameServer.zip
+          name: GameServer
