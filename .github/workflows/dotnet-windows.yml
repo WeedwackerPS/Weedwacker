@@ -104,9 +104,21 @@ jobs:
     # Execute all unit tests in the solution
     - name: Build
       run: dotnet build src/GameServer/GameServer.csproj  --configuration Release --no-restore
-     
+   
+    - name: Make Dir
+      run: mkdir Weedwacker
+      
+    - name: Copy Gameserver to work
+      run: cp D:\a\Weedwacker\Weedwacker\bin\Release\GameServer D:\a\Weedwacker\Weedwacker\Weedwacker
+  
+    - name: Copy key to game sr
+      run: cp D:\a\Weedwacker\Weedwacker\keys D:\a\Weedwacker\Weedwacker\Weedwacker
+  
+    - name: Copy https cer
+      run: cp D:\a\Weedwacker\Weedwacker\keystore.p12 D:\a\Weedwacker\Weedwacker\Weedwacker
+  
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
-          path: D:\a\Weedwacker\Weedwacker\bin\Release\GameServer
-          name: GameServer
+          path: D:\a\Weedwacker\Weedwacker\Weedwacker
+          name: Weedwacker
