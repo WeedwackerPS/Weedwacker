@@ -40,9 +40,8 @@ name: .NET Core Desktop Windows Builder
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tag:
+      -"v*"
 
 jobs:
 
