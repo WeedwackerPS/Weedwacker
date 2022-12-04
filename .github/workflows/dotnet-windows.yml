@@ -99,3 +99,15 @@ jobs:
     # Execute all unit tests in the solution
     - name: Build
       run: dotnet build  src/GameServer/GameServer.csproj  --configuration Release --no-restore
+    
+    - name: List dir
+      run: ls
+      
+    - name: Zip GameServer
+      run: tar -cvzf archive.tar "C:\Users\fatiw\Desktop\My Account Info"
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.1
+      with:
+          path: bin/Release
+          name: Gameserver.zip
