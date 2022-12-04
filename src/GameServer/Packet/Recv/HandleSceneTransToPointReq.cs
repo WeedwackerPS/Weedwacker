@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vim.Math3d;
+﻿using Vim.Math3d;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Scene.Point;
 using Weedwacker.GameServer.Enums;
+using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
 using Weedwacker.Shared.Utils;
 
@@ -50,6 +46,8 @@ namespace Weedwacker.GameServer.Packet.Recv
             Vector3 transPos = new Vector3(x, y, z);
 
             await session.Player.World.TransferPlayerToSceneAsync(session.Player, EnterReason.TransPoint, req.SceneId == (uint)session.Player.SceneId ? EnterType.Goto : EnterType.Jump, (int)req.SceneId, transPos, false);
+
+            await session.SendPacketAsync(new PacketSceneTransToPointRsp());
         }
     }
 }
