@@ -69,7 +69,7 @@ jobs:
   
      
     - name: Generate release tag
-      uses: amitsingh-007/next-release-tag@latests
+      uses: "amitsingh-007/next-release-tag@latest"
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
