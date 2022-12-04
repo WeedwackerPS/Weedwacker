@@ -82,7 +82,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Set HTTPS
-      run: dotnet dev-certs https --trust
+      run: dotnet dev-certs https --trust -y
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
