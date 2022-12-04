@@ -90,7 +90,7 @@ jobs:
    
     # Execute all unit tests in the solution
     - name: Build
-      run: dotnet build  src/GameServer/GameServer.csproj  --configuration Release --no-restore
+      run: dotnet build src/GameServer/GameServer.csproj  --configuration Release --no-restore
    
     - name: Tar GameServer
       run: tar -cvzf GameServer.tar "D:\a\Weedwacker\Weedwacker\bin\Release\GameServer"
