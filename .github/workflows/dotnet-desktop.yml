@@ -51,7 +51,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Release]
-        mongodb-version: ['5.0', '6.0']
+        mongodb-version: ['6.0']
 
     
     runs-on: [macos-latest, ubuntu-latest, windows-latest]  # For a list of available runner types, refer to                           
