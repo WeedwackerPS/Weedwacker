@@ -24,10 +24,8 @@ namespace Weedwacker.WebServer.Commands
 
             var nameArgument = new Argument<string>(name: "username");
 
-            ShellCommand accountCommand = new ("account", "Account related operations") { };
-            ShellCommand createCommand = new ("create", "Create an account") { };
-
-            createCommand.SetRequiredRank(UserRank.Console);
+            Command accountCommand = new ("account", "Account related operations") { };
+            Command createCommand = new ("create", "Create an account") { };
 
             createCommand.AddAlias("add");
             createCommand.AddArgument(nameArgument);

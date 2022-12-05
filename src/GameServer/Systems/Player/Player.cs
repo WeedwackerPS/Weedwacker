@@ -38,6 +38,7 @@ namespace Weedwacker.GameServer.Systems.Player
         public int LastDailyReset;
         public Dictionary<PlayerProperty, int> PlayerProperties { get; set; } = new(); // SET ONLY THROUGH THE PROPMANAGER
         [BsonIgnore] public PlayerPropertyManager PropManager;
+        [BsonIgnore] public MapMarksManager MapMarksManager;
         [BsonIgnore] public OpenStateManager OpenStateManager;
         [BsonIgnore] public ResinManager ResinManager;
         [BsonIgnore] public StaminaManager StaminaManager;
@@ -76,6 +77,7 @@ namespace Weedwacker.GameServer.Systems.Player
             GadgetManager = new(this);
             GameUid = gameUid;
             ProgressManager = new(this);
+            MapMarksManager = new(this);
             PropManager = new(this);
             ResinManager = new(this);
             ShopManager = new(this);
@@ -270,6 +272,7 @@ namespace Weedwacker.GameServer.Systems.Player
             ResinManager = new(this);
             ExpManager = new(this);
             BattlePassManager = new(this);
+            MapMarksManager = new(this);
             GadgetManager = new(this);
             EnergyManager = new(this);
             OpenStateManager = new(this);

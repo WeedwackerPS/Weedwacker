@@ -30,7 +30,6 @@ namespace Weedwacker.GameServer.Systems.World
             Scene = scene;
             MotionState = MotionState.None;
         }
-
         public World? GetWorld()
         {
             if (Scene == null) return null;
