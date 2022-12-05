@@ -1,6 +1,4 @@
-﻿using Vim.Math3d;
-using Weedwacker.GameServer.Data;
-using Weedwacker.GameServer.Data.BinOut.Scene.Point;
+﻿using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
@@ -15,39 +13,35 @@ namespace Weedwacker.GameServer.Packet.Recv
         {
             SceneTransToPointReq req = SceneTransToPointReq.Parser.ParseFrom(payload);
 
-            ScenePointData spd;
-
-            GameData.ScenePointDataMap.TryGetValue("scene" + req.SceneId + "_point", out spd);
-
-
-            if (spd == null)
+            var ret = Retcode.RetFail;
+            if (GameData.ScenePointDataMap.TryGetValue($"scene{req.SceneId}_point", out var spd))
             {
-                Logger.WriteErrorLine("Scene " + req.SceneId + " not found!");
-                return;
+                if (spd.points!.TryGetValue(req.PointId.ToString(), out var bp))
+                {
+                    ret = Retcode.RetSucc;
+                    Vim.Math3d.Vector3 pos = new(
+                        bp.tranPos.FirstOrDefault(x => x.Key.Contains('x')).Value,
+                        bp.tranPos.FirstOrDefault(x => x.Key.Contains('y')).Value,
+                        bp.tranPos.FirstOrDefault(x => x.Key.Contains('z')).Value);
+                    Vim.Math3d.Vector3 rot = new();
+                    if (bp.tranRot is not null)
+                    {
+                        rot = new(
+                            bp.tranRot.FirstOrDefault(x => x.Key.Contains('x')).Value,
+                            bp.tranRot.FirstOrDefault(x => x.Key.Contains('y')).Value,
+                            bp.tranRot.FirstOrDefault(x => x.Key.Contains('z')).Value);
+                    }
+                    await session.Player.World.TransferPlayerToSceneAsync(session.Player, EnterReason.TransPoint,
+                        req.SceneId == (uint)session.Player.SceneId ? EnterType.Goto : EnterType.Jump, (int)req.SceneId,
+                        pos, rot, false);
+                }
+                else
+                    Logger.WriteErrorLine($"Scene {req.SceneId} | Point  {req.PointId} not found!");
             }
+            else
+                Logger.WriteErrorLine($"Scene {req.SceneId} not found!");
 
-            BasePoint bp;
-
-            spd.points.TryGetValue(req.PointId.ToString(), out bp);
-
-            if (bp == null)
-            {
-                Logger.WriteErrorLine("Scene " + req.SceneId + " | Point " + req.PointId + " not found!");
-                return;
-            }
-
-            float x, y, z;
-
-            // TODO: SerializedName because there are some variants like: x, _x, X,...
-            bp.tranPos.TryGetValue("x", out x);
-            bp.tranPos.TryGetValue("y", out y);
-            bp.tranPos.TryGetValue("z", out z);
-
-            Vector3 transPos = new Vector3(x, y, z);
-
-            await session.Player.World.TransferPlayerToSceneAsync(session.Player, EnterReason.TransPoint, req.SceneId == (uint)session.Player.SceneId ? EnterType.Goto : EnterType.Jump, (int)req.SceneId, transPos, false);
-
-            await session.SendPacketAsync(new PacketSceneTransToPointRsp());
+            await session.SendPacketAsync(new PacketSceneTransToPointRsp(ret, req.SceneId, req.PointId));
         }
     }
 }

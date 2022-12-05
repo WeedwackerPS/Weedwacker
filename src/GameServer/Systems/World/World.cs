@@ -97,7 +97,7 @@ namespace Weedwacker.GameServer.Systems.World
 
             // Add to scene
             Scene scene = GetSceneById(player.SceneId);
-            await TransferPlayerToSceneAsync(player, reason, type, scene.GetId(), player.Position, useDefaultBornPosition);
+            await TransferPlayerToSceneAsync(player, reason, type, scene.GetId(), player.Position, useDefaultBornPosition: useDefaultBornPosition);
 
             // Info packet for other players
             if (Players.Count > 1)
@@ -146,7 +146,7 @@ namespace Weedwacker.GameServer.Systems.World
             Scenes.Remove(scene.SceneData.id);
         }
 
-        public async Task<bool> TransferPlayerToSceneAsync(Player.Player player, EnterReason enterReason, EnterType enterType, int sceneId, Vector3 teleportTo, bool useDefaultBornPosition = true)
+        public async Task<bool> TransferPlayerToSceneAsync(Player.Player player, EnterReason enterReason, EnterType enterType, int sceneId, Vector3 teleportTo, Vector3 teleportToRot = default, bool useDefaultBornPosition = true)
         {
             if (!GameData.SceneDataMap.TryGetValue(sceneId, out SceneData sceneData))
             {
@@ -171,7 +171,7 @@ namespace Weedwacker.GameServer.Systems.World
                 player.Rotation = sceneInfo.scene_config.born_rot;
             }
 
-            await newScene.AddPlayerAsync(player, enterReason, teleportTo, enterType, oldSceneId, player.Position);
+            await newScene.AddPlayerAsync(player, enterReason, teleportTo, enterType, oldSceneId, player.Position, teleportToRot);
 
             return true;
         }

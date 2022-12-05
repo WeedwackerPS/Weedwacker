@@ -17,19 +17,13 @@ namespace Weedwacker.GameServer.Packet.Send
             Data = proto.ToByteArray();
         }
 
-        public PacketPersonalSceneJumpRsp(uint sceneId, Vector3 pos) : base(Enums.OpCode.PersonalSceneJumpRsp)
+        public PacketPersonalSceneJumpRsp(Retcode ret,uint sceneId, Vector3 pos) : base(Enums.OpCode.PersonalSceneJumpRsp)
         {
-            Vector protoVector = new Vector()
-            {
-                X = pos.X,
-                Y = pos.Y,
-                Z = pos.Z
-            };
-
             PersonalSceneJumpRsp proto = new PersonalSceneJumpRsp()
             {
-                DestPos = protoVector,
-                DestSceneId = sceneId
+                DestPos = new Vector { X = pos.X, Y = pos.Y, Z = pos.Z },
+                DestSceneId = sceneId,
+                Retcode = (int)ret
             };
 
             Data = proto.ToByteArray();

@@ -5,11 +5,15 @@ namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketSceneTransToPointRsp : BasePacket
     {
-        public PacketSceneTransToPointRsp() : base(Enums.OpCode.SceneTransToPointRsp)
+        public PacketSceneTransToPointRsp(Retcode ret, uint sceneId, uint pointId) : base(Enums.OpCode.SceneTransToPointRsp)
         {
-            SceneTransToPointRsp proto = new SceneTransToPointRsp();
-
-            Data = proto.ToByteArray();
+            SceneTransToPointRsp p = new SceneTransToPointRsp()
+            {
+                SceneId = sceneId,
+                PointId = pointId,
+                Retcode = (int)ret,
+            };
+            Data = p.ToByteArray();
         }
     }
 }
