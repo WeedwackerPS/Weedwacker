@@ -83,7 +83,7 @@ namespace Weedwacker.GameServer.Systems.World
             await BroadcastPacketAsync(new PacketSceneAreaWeatherNotify(ClimateType.CLIMATE_SUNNY, 1));
         }
 
-        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, int oldSceneId = default, Vector3 oldPos = default)
+        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, int oldSceneId = default, Vector3 oldPos = default, Vector3 newRot = default)
         {
             // Check if player already in
             if (Players.Contains(player))
@@ -96,6 +96,7 @@ namespace Weedwacker.GameServer.Systems.World
             Entities.Add(player.TeamManager.EntityId, player.TeamManager);
             await player.SetSceneAsync(this);
             player.Position = newPosition;
+            player.Rotation = newRot;
 
             // Update Database
             var filter = Builders<Player.Player>.Filter.Where(w => w.AccountUid == player.AccountUid);

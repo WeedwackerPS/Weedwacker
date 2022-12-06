@@ -1,0 +1,7 @@
+Any contributions, small and large are welcome.
+The code has to be understandable, and not hardcode any values whenever possible (ie. when it can be found in the resources).
+Code written in c++, lua, and any .NET languages may be accepted, as long as they don't make the repo less cross-platform
+
+Target exactly one thing with each PR.
+Avoid overlap/conflicts with other open pull requests.
+Duplicate pull requests will not be considered. Consider making an enhancement after the original PR is merged
