@@ -125,12 +125,13 @@ jobs:
     - name: List File
       run: ls
 
-    - name: Upload release asset
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
+    - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Release Build"
           files: |
-                *.tar
-                LICENSE.txt
+            LICENSE.txt
+            *.tar
 
