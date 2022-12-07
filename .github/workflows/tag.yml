@@ -1,0 +1,18 @@
+name: 'tag'
+on:
+  push:
+    branches:
+      - main
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: christophebedard/tag-version-commit@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        version_regex: 'Version: 0.0.1'
+        version_tag_prefix: 'v'
+
+
+
