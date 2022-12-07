@@ -68,19 +68,7 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: Generate release tag
-      uses: amitsingh-007/next-release-tag@v2.2.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ env.release_tag }}
-        release_name: Release ${{ env.release_tag }}
-
+    
     
     # Install the .NET Core workload
     - name: Install .NET Core
@@ -132,12 +120,13 @@ jobs:
     - name: List File
       run: ls
 
-    - name: Upload release asset
-      uses: "marvinpinto/action-automatic-releases@latest"
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          title: "Release Build"
-          files: |
-                *.tar
-                LICENSE.txt
+        node-version: "lts/*"
+    - name: Setup semantic-release
+      run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog gradle-semantic-release-plugin -D
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release
