@@ -45,7 +45,9 @@ on:
     branches: [ "main" ]
 
 jobs:
+
   build:
+
     strategy:
       matrix:
         configuration: [Release]
@@ -66,7 +68,6 @@ jobs:
       with:
         fetch-depth: 0
     
-
     - name: Generate release tag
       uses: amitsingh-007/next-release-tag@v2.2.0
       with:
@@ -80,8 +81,7 @@ jobs:
         tag_name: ${{ env.release_tag }}
         release_name: Release ${{ env.release_tag }}
 
-
-  
+    
     # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v3
@@ -132,13 +132,12 @@ jobs:
     - name: List File
       run: ls
 
-    - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
+    - name: Upload release asset
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
           title: "Release Build"
           files: |
-             LICENSE.txt
-              *.tar
-
+                *.tar
+                LICENSE.txt
