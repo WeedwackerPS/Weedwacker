@@ -139,6 +139,6 @@ jobs:
           prerelease: true
           title: "Release Build"
           files: |
-            LICENSE.txt
-            *.tar
+             LICENSE.txt
+              *.tar
 
