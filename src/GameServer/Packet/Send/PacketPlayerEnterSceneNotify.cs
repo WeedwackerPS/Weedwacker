@@ -1,10 +1,9 @@
-﻿using Google.Protobuf;
-using Vim.Math3d;
+﻿using System.Numerics;
+using Google.Protobuf;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Systems.Player;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
-using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Packet.Send
 {

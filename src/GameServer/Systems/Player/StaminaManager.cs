@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
@@ -134,7 +134,7 @@ namespace Weedwacker.GameServer.Systems.Player
         }
         private bool IsPlayerMoving()
         {
-            return !CurrentPos.AlmostEquals(PreviousPos, 0.3f); // why 0.3f?
+            return false;//!CurrentPos.AlmostEquals(PreviousPos, 0.3f); // why 0.3f?
         }
         public async Task<int> UpdateStaminaRelative(StaminaDelta consumption, bool isCharacterStamina)
         {
@@ -201,7 +201,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 return;
             }
             CurrentState = motionState;
-            Vector? posVector = motionInfo.Pos;
+            Shared.Network.Proto.Vector? posVector = motionInfo.Pos;
             if (posVector != null)
                 CurrentPos = new(posVector.X, posVector.Y, posVector.Z);
             await HandleImmediateStamina(motionState);

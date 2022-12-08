@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Numerics;
+using System.Text.RegularExpressions;
 using NLua;
-using Vim.Math3d;
 using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.Script.Scene
@@ -14,13 +14,15 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
         public SortedList<uint, SceneGroupInfo> groups; // index
         public SortedList<uint, SceneGroup?> GroupsInfo = new(); // SceneGroupInfo::id
 
+        public HashSet<SceneGroup?> StaticGroups => groups.Where(x => !x.Value.dynamic_load).Select(g => GroupsInfo[g.Value.id]).ToHashSet();
+
         public class SceneGroupInfo
         {
             private LuaTable Table;
 
             public uint id => (uint)(long)Table[$"{nameof(id)}"];
             public uint area => (uint?)(long?)Table[$"{nameof(area)}"] ?? 0;
-            public Vector3 pos => new Vector3((float?)(double?)Table[$"{nameof(pos)}.x"] ?? 0, (float?)(double?)Table[$"{nameof(pos)}.y"] ?? 0, (float?)(double?)Table[$"{nameof(pos)}.z"] ?? 0);
+            public Vector3 pos => new System.Numerics.Vector3((float?)(double?)Table[$"{nameof(pos)}.x"] ?? 0, (float?)(double?)Table[$"{nameof(pos)}.y"] ?? 0, (float?)(double?)Table[$"{nameof(pos)}.z"] ?? 0);
             public List<uint>? related_level_tag_series_list;
             public List<Dictionary<string, uint>>? life_cycle; // list of pairs "from": number, and "to": number
             public bool dynamic_load => (bool?)Table[$"{nameof(dynamic_load)}"] ?? false;
@@ -36,24 +38,23 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
 
             public class IsReplacable
             {
-                private LuaTable Table;
-                public bool value => (bool?)Table[$"{nameof(value)}"] ?? false;
-                public uint version => (uint?)(long?)Table[$"{nameof(version)}"] ?? 0;
-                public bool new_bin_only => (bool?)Table[$"{nameof(new_bin_only)}"] ?? false;
-
+                public bool value;
+                public uint version;
+                public bool new_bin_only;
                 public IsReplacable(LuaTable table)
                 {
-                    Table = table[$"{nameof(is_replaceable)}"] as LuaTable;
+                    value = (bool?)table[$"{nameof(value)}"] ?? false;
+                    version = (uint?)(long?)table[$"{nameof(version)}"] ?? 0;
+                    new_bin_only = (bool?)table[$"{nameof(new_bin_only)}"] ?? false;
                 }
             }
             public class Business
             {
-                private LuaTable Table;
-                public uint type => (uint?)(long?)Table[$"{nameof(type)}"] ?? 0;
+                public readonly uint type;
 
                 public Business(LuaTable table)
                 {
-                    Table = table[$"{nameof(business)}"] as LuaTable;
+                    type = (uint?)(long?)table[$"{nameof(type)}"] ?? 0;
                 }
             }
 

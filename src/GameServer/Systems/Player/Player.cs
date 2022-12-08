@@ -1,7 +1,7 @@
-﻿using MongoDB.Bson;
+﻿using System.Numerics;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
-using Vim.Math3d;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Database;
 using Weedwacker.GameServer.Enums;
@@ -164,8 +164,12 @@ namespace Weedwacker.GameServer.Systems.Player
             await DatabaseManager.UpdatePlayerAsync(filter, update);
         }
 
-        public async Task OnTickAsync()
+        public async void OnTickAsync()
         {
+            if(Session == null)
+            {
+                return;
+            }
             // Check ping
             if (Session.LastPingTime > DateTimeOffset.Now.ToUnixTimeMilliseconds() + 60000)
             {
@@ -268,6 +272,7 @@ namespace Weedwacker.GameServer.Systems.Player
         // Called by DatabaseManager
         public async Task OnLoadAsync()
         {
+            Task.Yield();
             PropManager = new(this);
             ResinManager = new(this);
             ExpManager = new(this);

@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Enums;
@@ -49,7 +49,7 @@ namespace Weedwacker.GameServer.Systems.World
 
                 EntityId = EntityId,
                 EntityType = ProtEntityType.Gadget,
-                MotionInfo = new MotionInfo() { Pos = new Vector() { X = Position.X, Y = Position.Y, Z = Position.Z }, Rot = new Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z }, Speed = new() },
+                MotionInfo = new MotionInfo() { Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z }, Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z }, Speed = new() },
                 EntityClientData = new(),
                 EntityAuthorityInfo = authority,
                 LifeState = (uint)LifeState.LIFE_ALIVE

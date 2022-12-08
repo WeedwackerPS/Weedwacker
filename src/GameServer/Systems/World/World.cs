@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Enums;
@@ -40,7 +40,7 @@ namespace Weedwacker.GameServer.Systems.World
             return ++NextPeerId;
         }
 
-        public Scene? GetSceneById(int sceneId)
+        public async Task<Scene?> GetSceneById(int sceneId)
         {
             // Get scene normally
             Scene? scene = Scenes.GetValueOrDefault(sceneId);
@@ -53,7 +53,7 @@ namespace Weedwacker.GameServer.Systems.World
             SceneData? sceneData = GameData.SceneDataMap.GetValueOrDefault(sceneId);
             if (sceneData != null)
             {
-                scene = new Scene(this, sceneData);
+                scene = await Scene.CreateAsync(this, sceneData);
                 Scenes.Add(scene.SceneData.id, scene);
                 return scene;
             }
@@ -96,7 +96,7 @@ namespace Weedwacker.GameServer.Systems.World
             }
 
             // Add to scene
-            Scene scene = GetSceneById(player.SceneId);
+            Scene scene = await GetSceneById(player.SceneId);
             await TransferPlayerToSceneAsync(player, reason, type, scene.GetId(), player.Position, useDefaultBornPosition: useDefaultBornPosition);
 
             // Info packet for other players
@@ -115,7 +115,7 @@ namespace Weedwacker.GameServer.Systems.World
             await player.SendPacketAsync(new PacketDelTeamEntityNotify(player.SceneId, player.TeamManager.EntityId));
 
             // Remove from scene
-            Scene scene = GetSceneById(player.SceneId);
+            Scene scene = await GetSceneById(player.SceneId);
             await scene.RemovePlayerAsync(player);
 
             // Deregister
@@ -155,7 +155,7 @@ namespace Weedwacker.GameServer.Systems.World
 
             Scene? oldScene = player.Scene;
             int oldSceneId = oldScene == null ? 0 : oldScene.GetId();
-            Scene newScene = GetSceneById(sceneId);
+            Scene newScene = await GetSceneById(sceneId);
 
             if (oldScene != null)
             {
@@ -227,7 +227,7 @@ namespace Weedwacker.GameServer.Systems.World
         public async Task<bool> OnTickAsync()
         {
             if (!Players.Any()) return false;
-            Scenes.AsParallel().ForAll(x => x.Value.OnTickAsync());
+            Scenes.AsParallel().ForAll(async x => await x.Value.OnTickAsync());
             return true;
         }
     }

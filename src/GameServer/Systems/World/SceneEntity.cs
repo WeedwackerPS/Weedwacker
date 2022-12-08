@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
@@ -45,8 +45,8 @@ namespace Weedwacker.GameServer.Systems.World
         {
             MotionInfo proto = new()
             {
-                Pos = new Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
-                Rot = new Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
+                Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
+                Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
                 Speed = new(), //TODO
                 State = MotionState
             };

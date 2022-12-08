@@ -1,4 +1,5 @@
-﻿using Weedwacker.GameServer.Data;
+﻿using System.Numerics;
+using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Scene.Point;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
@@ -15,8 +16,8 @@ namespace Weedwacker.GameServer.Packet.Recv
             PersonalSceneJumpReq req = PersonalSceneJumpReq.Parser.ParseFrom(payload);
 
             var ret = Retcode.RetFail;
-            Vim.Math3d.Vector3 rot = new();
-            Vim.Math3d.Vector3 pos = new();
+            Vector3 rot = new();
+            Vector3 pos = new();
             int transToSceneId = 0;
             if (GameData.ScenePointDataMap.TryGetValue($"scene{session.Player.SceneId}_point", out var spd))
             {

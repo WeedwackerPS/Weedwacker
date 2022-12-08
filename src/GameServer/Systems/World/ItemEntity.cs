@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Systems.Inventory;
@@ -19,7 +19,7 @@ namespace Weedwacker.GameServer.Systems.World
         // In official game, some drop items are shared to all players, and some other items are independent to all players
         // For example, if you killed a monster in MP mode, all players could get drops but rarity and number of them are different
         // but if you broke regional mine, when someone picked up the drop then it disappeared
-        public ItemEntity(Scene scene, Player.Player player, ItemData itemData, Vector3 pos, int count, bool share = true) : base(scene)
+        public ItemEntity(Scene scene, Player.Player? player, ItemData itemData, Vector3 pos, int count, bool share = true) : base(scene)
         {
             EntityId = Scene.World.GetNextEntityId(EntityIdType.GADGET);
             Position = pos;

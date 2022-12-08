@@ -129,12 +129,12 @@ namespace Weedwacker.GameServer
                 // Tick players.
                 foreach (var player in OnlinePlayers.Values)
                 {
-                    await player.Player.OnTickAsync();
+                    player.Player.OnTickAsync();
                 }
             }
-            catch
+            catch (Exception exc)
             {
-                Logger.WriteErrorLine("Tick event error");
+                Logger.WriteErrorLine("Tick event error", exc);
             }
         }
 

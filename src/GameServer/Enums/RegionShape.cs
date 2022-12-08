@@ -2,6 +2,7 @@
 {
     public enum RegionShape
     {
+        NONE = 0,
         SPHERE,
         CUBIC
     }

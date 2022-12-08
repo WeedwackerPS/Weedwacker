@@ -8,12 +8,13 @@
 	<RootNamespace>Weedwacker.GameServer</RootNamespace>
 	<OutputPath>..\..\bin\$(Configuration)\GameServer\</OutputPath>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+    <PackageReference Include="NetOctree" Version="2.1.0" />
     <PackageReference Include="NLua" Version="1.4.32" />
-    <PackageReference Include="Vim.Math3D" Version="1.6.0" />
 	<ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 

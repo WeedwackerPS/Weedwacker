@@ -1,4 +1,5 @@
-﻿using Weedwacker.GameServer.Data;
+﻿using System.Numerics;
+using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
@@ -19,11 +20,11 @@ namespace Weedwacker.GameServer.Packet.Recv
                 if (spd.points!.TryGetValue(req.PointId.ToString(), out var bp))
                 {
                     ret = Retcode.RetSucc;
-                    Vim.Math3d.Vector3 pos = new(
+                    Vector3 pos = new(
                         bp.tranPos.FirstOrDefault(x => x.Key.Contains('x')).Value,
                         bp.tranPos.FirstOrDefault(x => x.Key.Contains('y')).Value,
                         bp.tranPos.FirstOrDefault(x => x.Key.Contains('z')).Value);
-                    Vim.Math3d.Vector3 rot = new();
+                    Vector3 rot = new();
                     if (bp.tranRot is not null)
                     {
                         rot = new(

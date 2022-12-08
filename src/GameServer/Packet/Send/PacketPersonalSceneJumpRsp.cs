@@ -1,12 +1,12 @@
-﻿using Google.Protobuf;
-using Vim.Math3d;
+﻿using System.Numerics;
+using Google.Protobuf;
 using Weedwacker.Shared.Network.Proto;
 
 namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketPersonalSceneJumpRsp : BasePacket
     {
-        public PacketPersonalSceneJumpRsp(uint sceneId, Vector pos) : base(Enums.OpCode.PersonalSceneJumpRsp)
+        public PacketPersonalSceneJumpRsp(uint sceneId, Shared.Network.Proto.Vector pos) : base(Enums.OpCode.PersonalSceneJumpRsp)
         {
             PersonalSceneJumpRsp proto = new PersonalSceneJumpRsp()
             {
@@ -21,7 +21,7 @@ namespace Weedwacker.GameServer.Packet.Send
         {
             PersonalSceneJumpRsp proto = new PersonalSceneJumpRsp()
             {
-                DestPos = new Vector { X = pos.X, Y = pos.Y, Z = pos.Z },
+                DestPos = new Shared.Network.Proto.Vector { X = pos.X, Y = pos.Y, Z = pos.Z },
                 DestSceneId = sceneId,
                 Retcode = (int)ret
             };

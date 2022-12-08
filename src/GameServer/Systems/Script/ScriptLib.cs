@@ -296,7 +296,7 @@ namespace Weedwacker.GameServer.Systems.Script
                 return 1;
             }
 
-            var gadget = group.gadgets.Where(w => w.config_id == configId).First();
+            var gadget = group.gadgets.Where(w => w.Value.config_id == configId).First();
             /*
             var entity = context.SceneScriptManager.CreateGadget(group.group_id, group.BlockId, gadget);
             context.SceneScriptManager.AddEntity(entity);

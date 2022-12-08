@@ -1,4 +1,5 @@
-﻿using Weedwacker.GameServer.Enums;
+﻿using System.Numerics;
+using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.GameServer.Systems.Ability;
 using Weedwacker.GameServer.Systems.Avatar;
@@ -13,8 +14,8 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly Avatar.Avatar Avatar;
         public TeamInfo TeamInfo { get; private set; }
         public uint KilledBy { get; protected set; }
-        public override Vim.Math3d.Vector3 Position { get => Avatar.Owner.Position; protected set => Avatar.Owner.Position = value; }
-        public override Vim.Math3d.Vector3 Rotation { get => Avatar.Owner.Rotation; protected set => Avatar.Owner.Rotation = value; }
+        public override Vector3 Position { get => Avatar.Owner.Position; protected set => Avatar.Owner.Position = value; }
+        public override Vector3 Rotation { get => Avatar.Owner.Rotation; protected set => Avatar.Owner.Rotation = value; }
         private float CachedLandingSpeed = 0;
         private long CachedLandingTimeMillisecond = 0;
         private bool monitorLandingEvent = false;

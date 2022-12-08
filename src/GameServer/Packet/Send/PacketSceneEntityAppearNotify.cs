@@ -1,5 +1,4 @@
 ﻿using Google.Protobuf;
-using Vim.Math3d;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
 
@@ -25,7 +24,7 @@ namespace Weedwacker.GameServer.Packet.Send
                 AppearType = visionType,
                 Param = param
             };
-            entities.AsParallel().ForAll(w => proto.EntityList.Add(w.ToProto()));
+            proto.EntityList.AddRange(entities.Select(w => w.ToProto()));
 
             Data = proto.ToByteArray();
         }

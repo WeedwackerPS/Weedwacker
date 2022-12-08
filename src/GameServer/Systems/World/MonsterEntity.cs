@@ -1,4 +1,4 @@
-﻿using Vim.Math3d;
+﻿using System.Numerics;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Data.Excel;
@@ -88,7 +88,7 @@ namespace Weedwacker.GameServer.Systems.World
             if (SpawnInfo != null)
             {
                 // Lua event
-                await Scene.ScriptManager.CallEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs((int)ConfigId));
+                //await Scene.ScriptManager.CallEvent(EventType.EVENT_ANY_MONSTER_LIVE, new ScriptArgs((int)ConfigId));
             }
         }
 
@@ -181,8 +181,8 @@ namespace Weedwacker.GameServer.Systems.World
             {
                 AbilityInfo = new(),
                 RendererChangedInfo = new(),
-                AiInfo = new() { IsAiOpen = true, BornPos = new Vector() { X = Position.X, Y = Position.Y, Z = Position.Z } },
-                BornPos = SpawnInfo != null ? new Vector() { X = SpawnInfo.pos.X, Y = SpawnInfo.pos.Y, Z = SpawnInfo.pos.Z } : new Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
+                AiInfo = new() { IsAiOpen = true, BornPos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z } },
+                BornPos = SpawnInfo != null ? new Shared.Network.Proto.Vector() { X = SpawnInfo.pos.X, Y = SpawnInfo.pos.Y, Z = SpawnInfo.pos.Z } : new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
             };
 
             SceneEntityInfo entityInfo = new()
@@ -192,7 +192,7 @@ namespace Weedwacker.GameServer.Systems.World
                 MotionInfo = GetMotionInfo(),
                 EntityClientData = new(),
                 EntityAuthorityInfo = authority,
-                LifeState = (uint)LiveState
+                LifeState = (uint)LiveState,
             };
             entityInfo.AnimatorParaList.Add(new AnimatorParameterValueInfoPair());
 
@@ -205,7 +205,7 @@ namespace Weedwacker.GameServer.Systems.World
             PropPair pair = new()
             {
                 Type = (uint)PlayerProperty.PROP_LEVEL,
-                PropValue = new() { Type = (uint)PlayerProperty.PROP_LEVEL, Val = (uint)Level }
+                PropValue = new() { Type = (uint)PlayerProperty.PROP_LEVEL, Val = (uint)Level, Ival = (uint)Level }
             };
             entityInfo.PropList.Add(pair);
 
@@ -219,7 +219,7 @@ namespace Weedwacker.GameServer.Systems.World
                 PoseId = (uint)PoseId,
                 InitPoseId = (uint)PoseId,
                 BornType = MonsterBornType.Default,
-                SpecialNameId = 40 // ??????????
+                SpecialNameId = 40, // ??????????
             };
             MonsterData.affix.AsParallel().ForAll(w => monsterInfo.AffixList.Add((uint)w));
 

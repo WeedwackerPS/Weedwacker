@@ -59,6 +59,10 @@ namespace Weedwacker.GameServer.Systems.Player
 
         public async Task NotifyAsync()
         {
+            while(Owner.World == null)
+            {
+                await Task.Yield();
+            }
             if (ToScene.Any())
             {
                 var packet = Activator.CreateInstance(PacketType, ToScene);
