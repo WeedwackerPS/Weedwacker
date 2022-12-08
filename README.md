@@ -15,9 +15,7 @@ Join us on our [discord](https://discord.gg/XJgJcf6nPf)!
 - Microsoft's System.CommandLine library to handle both shell and ingame commands (via the chat)
 
 ### Contributing:
-Any contributions, small and large are welcome. The code has to be understandable,
-and not hardcode any values whenever possible (ie. when it can be found in the resources).
-Code written in c++, lua, and any .NET languages may be accepted, as long as they don't make the repo less cross-platform
+View our [contributing guidelines](https://github.com/WeedwackerPS/Weedwacker/blob/main/README.md).
 
 ### Requirements:
 * .NET 6
