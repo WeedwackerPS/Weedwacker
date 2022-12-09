@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static InterOpTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFJbnRlck9wVHlwZS5wcm90bypACgtJbnRlck9wVHlwZRIYChRJTlRFUl9P",
-            "UF9UWVBFX0ZJTklTSBAAEhcKE0lOVEVSX09QX1RZUEVfU1RBUlQQAUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChFJbnRlck9wVHlwZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90bypACgtJbnRlck9wVHlwZRIYChRJTlRFUl9PUF9UWVBFX0ZJTklT",
+            "SBAAEhcKE0lOVEVSX09QX1RZUEVfU1RBUlQQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.InterOpType), }, null, null));

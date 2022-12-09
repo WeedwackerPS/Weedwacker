@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvagePreventGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVTYWx2YWdlUHJldmVudEdhbGxlcnlTZXR0bGVJbmZvLnByb3RvGh5TYWx2",
-            "YWdlUHJldmVudFN0b3BSZWFzb24ucHJvdG8ijQEKH1NhbHZhZ2VQcmV2ZW50",
-            "R2FsbGVyeVNldHRsZUluZm8SEwoLdGltZV9yZW1haW4YCCABKA0SKQoGcmVh",
-            "c29uGAcgASgOMhkuU2FsdmFnZVByZXZlbnRTdG9wUmVhc29uEhMKC2ZpbmFs",
-            "X3Njb3JlGA0gASgNEhUKDW1vbnN0ZXJfY291bnQYDyABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVTYWx2YWdlUHJldmVudEdhbGxlcnlTZXR0bGVJbmZvLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh5TYWx2YWdlUHJldmVudFN0",
+            "b3BSZWFzb24ucHJvdG8irQEKH1NhbHZhZ2VQcmV2ZW50R2FsbGVyeVNldHRs",
+            "ZUluZm8SFQoNbW9uc3Rlcl9jb3VudBgCIAEoDRJJCgZyZWFzb24YCyABKA4y",
+            "OS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNhbHZhZ2VQcmV2",
+            "ZW50U3RvcFJlYXNvbhITCgtmaW5hbF9zY29yZRgEIAEoDRITCgt0aW1lX3Jl",
+            "bWFpbhgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalvagePreventGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.SalvagePreventGallerySettleInfo.Parser, new[]{ "TimeRemain", "Reason", "FinalScore", "MonsterCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalvagePreventGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.SalvagePreventGallerySettleInfo.Parser, new[]{ "MonsterCount", "Reason", "FinalScore", "TimeRemain" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SalvagePreventGallerySettleInfo(SalvagePreventGallerySettleInfo other) : this() {
-      timeRemain_ = other.timeRemain_;
+      monsterCount_ = other.monsterCount_;
       reason_ = other.reason_;
       finalScore_ = other.finalScore_;
-      monsterCount_ = other.monsterCount_;
+      timeRemain_ = other.timeRemain_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +88,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SalvagePreventGallerySettleInfo(this);
     }
 
-    /// <summary>Field number for the "time_remain" field.</summary>
-    public const int TimeRemainFieldNumber = 8;
-    private uint timeRemain_;
+    /// <summary>Field number for the "monster_count" field.</summary>
+    public const int MonsterCountFieldNumber = 2;
+    private uint monsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeRemain {
-      get { return timeRemain_; }
+    public uint MonsterCount {
+      get { return monsterCount_; }
       set {
-        timeRemain_ = value;
+        monsterCount_ = value;
       }
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 7;
+    public const int ReasonFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason reason_ = global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 13;
+    public const int FinalScoreFieldNumber = 4;
     private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,15 +124,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "monster_count" field.</summary>
-    public const int MonsterCountFieldNumber = 15;
-    private uint monsterCount_;
+    /// <summary>Field number for the "time_remain" field.</summary>
+    public const int TimeRemainFieldNumber = 8;
+    private uint timeRemain_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MonsterCount {
-      get { return monsterCount_; }
+    public uint TimeRemain {
+      get { return timeRemain_; }
       set {
-        monsterCount_ = value;
+        timeRemain_ = value;
       }
     }
 
@@ -150,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TimeRemain != other.TimeRemain) return false;
+      if (MonsterCount != other.MonsterCount) return false;
       if (Reason != other.Reason) return false;
       if (FinalScore != other.FinalScore) return false;
-      if (MonsterCount != other.MonsterCount) return false;
+      if (TimeRemain != other.TimeRemain) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TimeRemain != 0) hash ^= TimeRemain.GetHashCode();
+      if (MonsterCount != 0) hash ^= MonsterCount.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) hash ^= Reason.GetHashCode();
       if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
-      if (MonsterCount != 0) hash ^= MonsterCount.GetHashCode();
+      if (TimeRemain != 0) hash ^= TimeRemain.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,21 +184,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) Reason);
+      if (MonsterCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(MonsterCount);
+      }
+      if (FinalScore != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(FinalScore);
       }
       if (TimeRemain != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(TimeRemain);
       }
-      if (FinalScore != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(FinalScore);
-      }
-      if (MonsterCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(MonsterCount);
+      if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -209,21 +210,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) Reason);
+      if (MonsterCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(MonsterCount);
+      }
+      if (FinalScore != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(FinalScore);
       }
       if (TimeRemain != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(TimeRemain);
       }
-      if (FinalScore != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(FinalScore);
-      }
-      if (MonsterCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(MonsterCount);
+      if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,8 +236,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TimeRemain != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeRemain);
+      if (MonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterCount);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
@@ -244,8 +245,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (FinalScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
-      if (MonsterCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterCount);
+      if (TimeRemain != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeRemain);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -259,8 +260,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TimeRemain != 0) {
-        TimeRemain = other.TimeRemain;
+      if (other.MonsterCount != 0) {
+        MonsterCount = other.MonsterCount;
       }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason.None) {
         Reason = other.Reason;
@@ -268,8 +269,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.FinalScore != 0) {
         FinalScore = other.FinalScore;
       }
-      if (other.MonsterCount != 0) {
-        MonsterCount = other.MonsterCount;
+      if (other.TimeRemain != 0) {
+        TimeRemain = other.TimeRemain;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -286,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason) input.ReadEnum();
+          case 16: {
+            MonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            FinalScore = input.ReadUInt32();
             break;
           }
           case 64: {
             TimeRemain = input.ReadUInt32();
             break;
           }
-          case 104: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            MonsterCount = input.ReadUInt32();
+          case 88: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason) input.ReadEnum();
             break;
           }
         }
@@ -317,20 +318,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason) input.ReadEnum();
+          case 16: {
+            MonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            FinalScore = input.ReadUInt32();
             break;
           }
           case 64: {
             TimeRemain = input.ReadUInt32();
             break;
           }
-          case 104: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            MonsterCount = input.ReadUInt32();
+          case 88: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.SalvagePreventStopReason) input.ReadEnum();
             break;
           }
         }

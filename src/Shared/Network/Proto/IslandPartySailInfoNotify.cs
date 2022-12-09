@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static IslandPartySailInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Jc2xhbmRQYXJ0eVNhaWxJbmZvTm90aWZ5LnByb3RvGhpJc2xhbmRQYXJ0",
-            "eVNhaWxTdGFnZS5wcm90byJ9ChlJc2xhbmRQYXJ0eVNhaWxJbmZvTm90aWZ5",
-            "EgwKBGNvaW4YCiABKA0SJAoFc3RhZ2UYCCABKA4yFS5Jc2xhbmRQYXJ0eVNh",
-            "aWxTdGFnZRIaChJraWxsX21vbnN0ZXJfY291bnQYBCABKA0SEAoIcHJvZ3Jl",
-            "c3MYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch9Jc2xhbmRQYXJ0eVNhaWxJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhpJc2xhbmRQYXJ0eVNhaWxTdGFnZS5w",
+            "cm90byKdAQoZSXNsYW5kUGFydHlTYWlsSW5mb05vdGlmeRJECgVzdGFnZRgC",
+            "IAEoDjI1LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXNsYW5k",
+            "UGFydHlTYWlsU3RhZ2USGgoSa2lsbF9tb25zdGVyX2NvdW50GAYgASgNEgwK",
+            "BGNvaW4YDiABKA0SEAoIcHJvZ3Jlc3MYCSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IslandPartySailStageReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartySailInfoNotify), global::Weedwacker.Shared.Network.Proto.IslandPartySailInfoNotify.Parser, new[]{ "Coin", "Stage", "KillMonsterCount", "Progress" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartySailInfoNotify), global::Weedwacker.Shared.Network.Proto.IslandPartySailInfoNotify.Parser, new[]{ "Stage", "KillMonsterCount", "Coin", "Progress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5504
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5544;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IslandPartySailInfoNotify : pb::IMessage<IslandPartySailInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IslandPartySailInfoNotify(IslandPartySailInfoNotify other) : this() {
-      coin_ = other.coin_;
       stage_ = other.stage_;
       killMonsterCount_ = other.killMonsterCount_;
+      coin_ = other.coin_;
       progress_ = other.progress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -92,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IslandPartySailInfoNotify(this);
     }
 
-    /// <summary>Field number for the "coin" field.</summary>
-    public const int CoinFieldNumber = 10;
-    private uint coin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Coin {
-      get { return coin_; }
-      set {
-        coin_ = value;
-      }
-    }
-
     /// <summary>Field number for the "stage" field.</summary>
-    public const int StageFieldNumber = 8;
+    public const int StageFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.IslandPartySailStage stage_ = global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "kill_monster_count" field.</summary>
-    public const int KillMonsterCountFieldNumber = 4;
+    public const int KillMonsterCountFieldNumber = 6;
     private uint killMonsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,8 +120,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "coin" field.</summary>
+    public const int CoinFieldNumber = 14;
+    private uint coin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Coin {
+      get { return coin_; }
+      set {
+        coin_ = value;
+      }
+    }
+
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 15;
+    public const int ProgressFieldNumber = 9;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Coin != other.Coin) return false;
       if (Stage != other.Stage) return false;
       if (KillMonsterCount != other.KillMonsterCount) return false;
+      if (Coin != other.Coin) return false;
       if (Progress != other.Progress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -166,9 +170,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Coin != 0) hash ^= Coin.GetHashCode();
       if (Stage != global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None) hash ^= Stage.GetHashCode();
       if (KillMonsterCount != 0) hash ^= KillMonsterCount.GetHashCode();
+      if (Coin != 0) hash ^= Coin.GetHashCode();
       if (Progress != 0) hash ^= Progress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -188,21 +192,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(KillMonsterCount);
-      }
       if (Stage != global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Stage);
       }
-      if (Coin != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Coin);
+      if (KillMonsterCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (Progress != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(Progress);
+      }
+      if (Coin != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,21 +218,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(KillMonsterCount);
-      }
       if (Stage != global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Stage);
       }
-      if (Coin != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Coin);
+      if (KillMonsterCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (Progress != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(Progress);
+      }
+      if (Coin != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -240,14 +244,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Coin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
-      }
       if (Stage != global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stage);
       }
       if (KillMonsterCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterCount);
+      }
+      if (Coin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
       }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
@@ -264,14 +268,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Coin != 0) {
-        Coin = other.Coin;
-      }
       if (other.Stage != global::Weedwacker.Shared.Network.Proto.IslandPartySailStage.None) {
         Stage = other.Stage;
       }
       if (other.KillMonsterCount != 0) {
         KillMonsterCount = other.KillMonsterCount;
+      }
+      if (other.Coin != 0) {
+        Coin = other.Coin;
       }
       if (other.Progress != 0) {
         Progress = other.Progress;
@@ -291,20 +295,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            KillMonsterCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 16: {
             Stage = (global::Weedwacker.Shared.Network.Proto.IslandPartySailStage) input.ReadEnum();
             break;
           }
-          case 80: {
-            Coin = input.ReadUInt32();
+          case 48: {
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 72: {
             Progress = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Coin = input.ReadUInt32();
             break;
           }
         }
@@ -322,20 +326,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            KillMonsterCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 16: {
             Stage = (global::Weedwacker.Shared.Network.Proto.IslandPartySailStage) input.ReadEnum();
             break;
           }
-          case 80: {
-            Coin = input.ReadUInt32();
+          case 48: {
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 72: {
             Progress = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Coin = input.ReadUInt32();
             break;
           }
         }

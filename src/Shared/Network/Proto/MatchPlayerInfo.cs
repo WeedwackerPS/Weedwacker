@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static MatchPlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVNYXRjaFBsYXllckluZm8ucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJv",
-            "dG8iTAoPTWF0Y2hQbGF5ZXJJbmZvEhEKCWlzX2FncmVlZBgJIAEoCBImCgtw",
-            "bGF5ZXJfaW5mbxgCIAEoCzIRLk9ubGluZVBsYXllckluZm9CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVNYXRjaFBsYXllckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8ibAoPTWF0Y2hQ",
+            "bGF5ZXJJbmZvEhEKCWlzX2FncmVlZBgEIAEoCBJGCgtwbGF5ZXJfaW5mbxgP",
+            "IAEoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uT25saW5l",
+            "UGxheWVySW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_agreed" field.</summary>
-    public const int IsAgreedFieldNumber = 9;
+    public const int IsAgreedFieldNumber = 4;
     private bool isAgreed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 2;
+    public const int PlayerInfoFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (playerInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(PlayerInfo);
-      }
       if (IsAgreed != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteBool(IsAgreed);
+      }
+      if (playerInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(PlayerInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (playerInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(PlayerInfo);
-      }
       if (IsAgreed != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteBool(IsAgreed);
+      }
+      if (playerInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(PlayerInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -229,15 +230,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 32: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 122: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
-            break;
-          }
-          case 72: {
-            IsAgreed = input.ReadBool();
             break;
           }
         }
@@ -255,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 32: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 122: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
-            break;
-          }
-          case 72: {
-            IsAgreed = input.ReadBool();
             break;
           }
         }

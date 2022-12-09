@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static BounceConjuringSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFCb3VuY2VDb25qdXJpbmdTZXR0bGVOb3RpZnkucHJvdG8aJkJvdW5jZUNv",
-            "bmp1cmluZ0dhbGxlcnlTZXR0bGVJbmZvLnByb3RvIoACChtCb3VuY2VDb25q",
-            "dXJpbmdTZXR0bGVOb3RpZnkSFQoNaXNfbmV3X3JlY29yZBgOIAEoCBJICg9z",
-            "ZXR0bGVfaW5mb19tYXAYBCADKAsyLy5Cb3VuY2VDb25qdXJpbmdTZXR0bGVO",
-            "b3RpZnkuU2V0dGxlSW5mb01hcEVudHJ5EhMKC3RvdGFsX3Njb3JlGAIgASgN",
-            "EhIKCmNoYXB0ZXJfaWQYDSABKA0aVwoSU2V0dGxlSW5mb01hcEVudHJ5EgsK",
-            "A2tleRgBIAEoDRIwCgV2YWx1ZRgCIAEoCzIhLkJvdW5jZUNvbmp1cmluZ0dh",
-            "bGxlcnlTZXR0bGVJbmZvOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFCb3VuY2VDb25qdXJpbmdTZXR0bGVOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aJkJvdW5jZUNvbmp1cmluZ0dhbGxl",
+            "cnlTZXR0bGVJbmZvLnByb3RvIsACChtCb3VuY2VDb25qdXJpbmdTZXR0bGVO",
+            "b3RpZnkSFQoNaXNfbmV3X3JlY29yZBgEIAEoCBITCgt0b3RhbF9zY29yZRgL",
+            "IAEoDRJoCg9zZXR0bGVfaW5mb19tYXAYCiADKAsyTy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkJvdW5jZUNvbmp1cmluZ1NldHRsZU5vdGlm",
+            "eS5TZXR0bGVJbmZvTWFwRW50cnkSEgoKY2hhcHRlcl9pZBgHIAEoDRp3ChJT",
+            "ZXR0bGVJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNElAKBXZhbHVlGAIgASgL",
+            "MkEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Cb3VuY2VDb25q",
+            "dXJpbmdHYWxsZXJ5U2V0dGxlSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringSettleNotify), global::Weedwacker.Shared.Network.Proto.BounceConjuringSettleNotify.Parser, new[]{ "IsNewRecord", "SettleInfoMap", "TotalScore", "ChapterId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringSettleNotify), global::Weedwacker.Shared.Network.Proto.BounceConjuringSettleNotify.Parser, new[]{ "IsNewRecord", "TotalScore", "SettleInfoMap", "ChapterId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -44,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8084
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8653;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BounceConjuringSettleNotify : pb::IMessage<BounceConjuringSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,8 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BounceConjuringSettleNotify(BounceConjuringSettleNotify other) : this() {
       isNewRecord_ = other.isNewRecord_;
-      settleInfoMap_ = other.settleInfoMap_.Clone();
       totalScore_ = other.totalScore_;
+      settleInfoMap_ = other.settleInfoMap_.Clone();
       chapterId_ = other.chapterId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -96,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 14;
+    public const int IsNewRecordFieldNumber = 4;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,19 +112,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "settle_info_map" field.</summary>
-    public const int SettleInfoMapFieldNumber = 4;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>.Codec _map_settleInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo.Parser), 34);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo> settleInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo> SettleInfoMap {
-      get { return settleInfoMap_; }
-    }
-
     /// <summary>Field number for the "total_score" field.</summary>
-    public const int TotalScoreFieldNumber = 2;
+    public const int TotalScoreFieldNumber = 11;
     private uint totalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,8 +124,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "settle_info_map" field.</summary>
+    public const int SettleInfoMapFieldNumber = 10;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>.Codec _map_settleInfoMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo.Parser), 82);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo> settleInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo> SettleInfoMap {
+      get { return settleInfoMap_; }
+    }
+
     /// <summary>Field number for the "chapter_id" field.</summary>
-    public const int ChapterIdFieldNumber = 13;
+    public const int ChapterIdFieldNumber = 7;
     private uint chapterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,8 +163,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsNewRecord != other.IsNewRecord) return false;
-      if (!SettleInfoMap.Equals(other.SettleInfoMap)) return false;
       if (TotalScore != other.TotalScore) return false;
+      if (!SettleInfoMap.Equals(other.SettleInfoMap)) return false;
       if (ChapterId != other.ChapterId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -169,8 +174,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-      hash ^= SettleInfoMap.GetHashCode();
       if (TotalScore != 0) hash ^= TotalScore.GetHashCode();
+      hash ^= SettleInfoMap.GetHashCode();
       if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -190,18 +195,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TotalScore != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TotalScore);
+      if (IsNewRecord != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewRecord);
       }
-      settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
       if (ChapterId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(ChapterId);
       }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsNewRecord);
+      settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
+      if (TotalScore != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TotalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,18 +218,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TotalScore != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TotalScore);
+      if (IsNewRecord != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewRecord);
       }
-      settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
       if (ChapterId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(ChapterId);
       }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsNewRecord);
+      settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
+      if (TotalScore != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TotalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,10 +244,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsNewRecord != false) {
         size += 1 + 1;
       }
-      size += settleInfoMap_.CalculateSize(_map_settleInfoMap_codec);
       if (TotalScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalScore);
       }
+      size += settleInfoMap_.CalculateSize(_map_settleInfoMap_codec);
       if (ChapterId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
       }
@@ -261,10 +266,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
       }
-      settleInfoMap_.Add(other.settleInfoMap_);
       if (other.TotalScore != 0) {
         TotalScore = other.TotalScore;
       }
+      settleInfoMap_.Add(other.settleInfoMap_);
       if (other.ChapterId != 0) {
         ChapterId = other.ChapterId;
       }
@@ -283,20 +288,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            TotalScore = input.ReadUInt32();
+          case 32: {
+            IsNewRecord = input.ReadBool();
             break;
           }
-          case 34: {
-            settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
-            break;
-          }
-          case 104: {
+          case 56: {
             ChapterId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            IsNewRecord = input.ReadBool();
+          case 82: {
+            settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
+            break;
+          }
+          case 88: {
+            TotalScore = input.ReadUInt32();
             break;
           }
         }
@@ -314,20 +319,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            TotalScore = input.ReadUInt32();
+          case 32: {
+            IsNewRecord = input.ReadBool();
             break;
           }
-          case 34: {
-            settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
-            break;
-          }
-          case 104: {
+          case 56: {
             ChapterId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            IsNewRecord = input.ReadBool();
+          case 82: {
+            settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
+            break;
+          }
+          case 88: {
+            TotalScore = input.ReadUInt32();
             break;
           }
         }

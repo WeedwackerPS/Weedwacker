@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTdW1tZXJUaW1lRGV0YWlsSW5mby5wcm90bxoeU3VtbWVyVGltZVNwcmlu",
-            "dEJvYXRJbmZvLnByb3RvGhlTdW1tZXJUaW1lU3RhZ2VJbmZvLnByb3RvIoEC",
-            "ChRTdW1tZXJUaW1lRGV0YWlsSW5mbxI2CglzdGFnZV9tYXAYAyADKAsyIy5T",
-            "dW1tZXJUaW1lRGV0YWlsSW5mby5TdGFnZU1hcEVudHJ5EhoKEmNvbnRlbnRf",
-            "Y2xvc2VfdGltZRgLIAEoDRIZChFpc19jb250ZW50X2Nsb3NlZBgNIAEoCBIz",
-            "ChBzcHJpbnRfYm9hdF9pbmZvGAQgASgLMhkuU3VtbWVyVGltZVNwcmludEJv",
-            "YXRJbmZvGkUKDVN0YWdlTWFwRW50cnkSCwoDa2V5GAEgASgNEiMKBXZhbHVl",
-            "GAIgASgLMhQuU3VtbWVyVGltZVN0YWdlSW5mbzoCOAFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpTdW1tZXJUaW1lRGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoeU3VtbWVyVGltZVNwcmludEJvYXRJbmZvLnBy",
+            "b3RvGhlTdW1tZXJUaW1lU3RhZ2VJbmZvLnByb3RvIuECChRTdW1tZXJUaW1l",
+            "RGV0YWlsSW5mbxJWCglzdGFnZV9tYXAYCSADKAsyQy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlN1bW1lclRpbWVEZXRhaWxJbmZvLlN0YWdl",
+            "TWFwRW50cnkSUwoQc3ByaW50X2JvYXRfaW5mbxgBIAEoCzI5LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU3VtbWVyVGltZVNwcmludEJvYXRJ",
+            "bmZvEhkKEWlzX2NvbnRlbnRfY2xvc2VkGA0gASgIEhoKEmNvbnRlbnRfY2xv",
+            "c2VfdGltZRgMIAEoDRplCg1TdGFnZU1hcEVudHJ5EgsKA2tleRgBIAEoDRJD",
+            "CgV2YWx1ZRgCIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uU3VtbWVyVGltZVN0YWdlSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo.Parser, new[]{ "StageMap", "ContentCloseTime", "IsContentClosed", "SprintBoatInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo.Parser, new[]{ "StageMap", "SprintBoatInfo", "IsContentClosed", "ContentCloseTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,9 +80,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeDetailInfo(SummerTimeDetailInfo other) : this() {
       stageMap_ = other.stageMap_.Clone();
-      contentCloseTime_ = other.contentCloseTime_;
-      isContentClosed_ = other.isContentClosed_;
       sprintBoatInfo_ = other.sprintBoatInfo_ != null ? other.sprintBoatInfo_.Clone() : null;
+      isContentClosed_ = other.isContentClosed_;
+      contentCloseTime_ = other.contentCloseTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_map" field.</summary>
-    public const int StageMapFieldNumber = 3;
+    public const int StageMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo>.Codec _map_stageMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo.Parser), 26);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo.Parser), 74);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo> stageMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.SummerTimeStageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,15 +103,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return stageMap_; }
     }
 
-    /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 11;
-    private uint contentCloseTime_;
+    /// <summary>Field number for the "sprint_boat_info" field.</summary>
+    public const int SprintBoatInfoFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo sprintBoatInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentCloseTime {
-      get { return contentCloseTime_; }
+    public global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo SprintBoatInfo {
+      get { return sprintBoatInfo_; }
       set {
-        contentCloseTime_ = value;
+        sprintBoatInfo_ = value;
       }
     }
 
@@ -125,15 +127,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "sprint_boat_info" field.</summary>
-    public const int SprintBoatInfoFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo sprintBoatInfo_;
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 12;
+    private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo SprintBoatInfo {
-      get { return sprintBoatInfo_; }
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
       set {
-        sprintBoatInfo_ = value;
+        contentCloseTime_ = value;
       }
     }
 
@@ -153,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!StageMap.Equals(other.StageMap)) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
       if (!object.Equals(SprintBoatInfo, other.SprintBoatInfo)) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,9 +166,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= StageMap.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       if (sprintBoatInfo_ != null) hash ^= SprintBoatInfo.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,13 +187,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      stageMap_.WriteTo(output, _map_stageMap_codec);
       if (sprintBoatInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(10);
         output.WriteMessage(SprintBoatInfo);
       }
+      stageMap_.WriteTo(output, _map_stageMap_codec);
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(ContentCloseTime);
       }
       if (IsContentClosed != false) {
@@ -208,13 +210,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      stageMap_.WriteTo(ref output, _map_stageMap_codec);
       if (sprintBoatInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(10);
         output.WriteMessage(SprintBoatInfo);
       }
+      stageMap_.WriteTo(ref output, _map_stageMap_codec);
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(ContentCloseTime);
       }
       if (IsContentClosed != false) {
@@ -232,14 +234,14 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += stageMap_.CalculateSize(_map_stageMap_codec);
-      if (ContentCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      if (sprintBoatInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SprintBoatInfo);
       }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
-      if (sprintBoatInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SprintBoatInfo);
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -254,17 +256,17 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       stageMap_.Add(other.stageMap_);
-      if (other.ContentCloseTime != 0) {
-        ContentCloseTime = other.ContentCloseTime;
-      }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
-      }
       if (other.sprintBoatInfo_ != null) {
         if (sprintBoatInfo_ == null) {
           SprintBoatInfo = new global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo();
         }
         SprintBoatInfo.MergeFrom(other.SprintBoatInfo);
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -281,18 +283,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            stageMap_.AddEntriesFrom(input, _map_stageMap_codec);
-            break;
-          }
-          case 34: {
+          case 10: {
             if (sprintBoatInfo_ == null) {
               SprintBoatInfo = new global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo();
             }
             input.ReadMessage(SprintBoatInfo);
             break;
           }
-          case 88: {
+          case 74: {
+            stageMap_.AddEntriesFrom(input, _map_stageMap_codec);
+            break;
+          }
+          case 96: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }
@@ -315,18 +317,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            stageMap_.AddEntriesFrom(ref input, _map_stageMap_codec);
-            break;
-          }
-          case 34: {
+          case 10: {
             if (sprintBoatInfo_ == null) {
               SprintBoatInfo = new global::Weedwacker.Shared.Network.Proto.SummerTimeSprintBoatInfo();
             }
             input.ReadMessage(SprintBoatInfo);
             break;
           }
-          case 88: {
+          case 74: {
+            stageMap_.AddEntriesFrom(ref input, _map_stageMap_codec);
+            break;
+          }
+          case 96: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }

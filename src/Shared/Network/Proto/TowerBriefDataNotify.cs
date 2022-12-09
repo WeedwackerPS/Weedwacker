@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerBriefDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpUb3dlckJyaWVmRGF0YU5vdGlmeS5wcm90byLhAQoUVG93ZXJCcmllZkRh",
-            "dGFOb3RpZnkSFgoOdG90YWxfc3Rhcl9udW0YCyABKA0SGAoQbGFzdF9mbG9v",
-            "cl9pbmRleBgIIAEoDRIbChNzY2hlZHVsZV9zdGFydF90aW1lGA8gASgNEiEK",
-            "GW5leHRfc2NoZWR1bGVfY2hhbmdlX3RpbWUYBiABKA0SIgoaaXNfZmluaXNo",
-            "ZWRfZW50cmFuY2VfZmxvb3IYDiABKAgSGAoQbGFzdF9sZXZlbF9pbmRleBgE",
-            "IAEoDRIZChF0b3dlcl9zY2hlZHVsZV9pZBgFIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpUb3dlckJyaWVmRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byLhAQoUVG93ZXJCcmllZkRhdGFOb3RpZnkSGAoQ",
+            "bGFzdF9sZXZlbF9pbmRleBgGIAEoDRIhChluZXh0X3NjaGVkdWxlX2NoYW5n",
+            "ZV90aW1lGAkgASgNEiIKGmlzX2ZpbmlzaGVkX2VudHJhbmNlX2Zsb29yGA4g",
+            "ASgIEhgKEGxhc3RfZmxvb3JfaW5kZXgYASABKA0SGQoRdG93ZXJfc2NoZWR1",
+            "bGVfaWQYCyABKA0SGwoTc2NoZWR1bGVfc3RhcnRfdGltZRgIIAEoDRIWCg50",
+            "b3RhbF9zdGFyX251bRgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerBriefDataNotify), global::Weedwacker.Shared.Network.Proto.TowerBriefDataNotify.Parser, new[]{ "TotalStarNum", "LastFloorIndex", "ScheduleStartTime", "NextScheduleChangeTime", "IsFinishedEntranceFloor", "LastLevelIndex", "TowerScheduleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerBriefDataNotify), global::Weedwacker.Shared.Network.Proto.TowerBriefDataNotify.Parser, new[]{ "LastLevelIndex", "NextScheduleChangeTime", "IsFinishedEntranceFloor", "LastFloorIndex", "TowerScheduleId", "ScheduleStartTime", "TotalStarNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2472
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2479;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TowerBriefDataNotify : pb::IMessage<TowerBriefDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,13 +84,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerBriefDataNotify(TowerBriefDataNotify other) : this() {
-      totalStarNum_ = other.totalStarNum_;
-      lastFloorIndex_ = other.lastFloorIndex_;
-      scheduleStartTime_ = other.scheduleStartTime_;
+      lastLevelIndex_ = other.lastLevelIndex_;
       nextScheduleChangeTime_ = other.nextScheduleChangeTime_;
       isFinishedEntranceFloor_ = other.isFinishedEntranceFloor_;
-      lastLevelIndex_ = other.lastLevelIndex_;
+      lastFloorIndex_ = other.lastFloorIndex_;
       towerScheduleId_ = other.towerScheduleId_;
+      scheduleStartTime_ = other.scheduleStartTime_;
+      totalStarNum_ = other.totalStarNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,44 +100,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerBriefDataNotify(this);
     }
 
-    /// <summary>Field number for the "total_star_num" field.</summary>
-    public const int TotalStarNumFieldNumber = 11;
-    private uint totalStarNum_;
+    /// <summary>Field number for the "last_level_index" field.</summary>
+    public const int LastLevelIndexFieldNumber = 6;
+    private uint lastLevelIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalStarNum {
-      get { return totalStarNum_; }
+    public uint LastLevelIndex {
+      get { return lastLevelIndex_; }
       set {
-        totalStarNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "last_floor_index" field.</summary>
-    public const int LastFloorIndexFieldNumber = 8;
-    private uint lastFloorIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastFloorIndex {
-      get { return lastFloorIndex_; }
-      set {
-        lastFloorIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "schedule_start_time" field.</summary>
-    public const int ScheduleStartTimeFieldNumber = 15;
-    private uint scheduleStartTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleStartTime {
-      get { return scheduleStartTime_; }
-      set {
-        scheduleStartTime_ = value;
+        lastLevelIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "next_schedule_change_time" field.</summary>
-    public const int NextScheduleChangeTimeFieldNumber = 6;
+    public const int NextScheduleChangeTimeFieldNumber = 9;
     private uint nextScheduleChangeTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,20 +136,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "last_level_index" field.</summary>
-    public const int LastLevelIndexFieldNumber = 4;
-    private uint lastLevelIndex_;
+    /// <summary>Field number for the "last_floor_index" field.</summary>
+    public const int LastFloorIndexFieldNumber = 1;
+    private uint lastFloorIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastLevelIndex {
-      get { return lastLevelIndex_; }
+    public uint LastFloorIndex {
+      get { return lastFloorIndex_; }
       set {
-        lastLevelIndex_ = value;
+        lastFloorIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "tower_schedule_id" field.</summary>
-    public const int TowerScheduleIdFieldNumber = 5;
+    public const int TowerScheduleIdFieldNumber = 11;
     private uint towerScheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -177,6 +157,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return towerScheduleId_; }
       set {
         towerScheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_start_time" field.</summary>
+    public const int ScheduleStartTimeFieldNumber = 8;
+    private uint scheduleStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleStartTime {
+      get { return scheduleStartTime_; }
+      set {
+        scheduleStartTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_star_num" field.</summary>
+    public const int TotalStarNumFieldNumber = 7;
+    private uint totalStarNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalStarNum {
+      get { return totalStarNum_; }
+      set {
+        totalStarNum_ = value;
       }
     }
 
@@ -195,13 +199,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TotalStarNum != other.TotalStarNum) return false;
-      if (LastFloorIndex != other.LastFloorIndex) return false;
-      if (ScheduleStartTime != other.ScheduleStartTime) return false;
+      if (LastLevelIndex != other.LastLevelIndex) return false;
       if (NextScheduleChangeTime != other.NextScheduleChangeTime) return false;
       if (IsFinishedEntranceFloor != other.IsFinishedEntranceFloor) return false;
-      if (LastLevelIndex != other.LastLevelIndex) return false;
+      if (LastFloorIndex != other.LastFloorIndex) return false;
       if (TowerScheduleId != other.TowerScheduleId) return false;
+      if (ScheduleStartTime != other.ScheduleStartTime) return false;
+      if (TotalStarNum != other.TotalStarNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -209,13 +213,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TotalStarNum != 0) hash ^= TotalStarNum.GetHashCode();
-      if (LastFloorIndex != 0) hash ^= LastFloorIndex.GetHashCode();
-      if (ScheduleStartTime != 0) hash ^= ScheduleStartTime.GetHashCode();
+      if (LastLevelIndex != 0) hash ^= LastLevelIndex.GetHashCode();
       if (NextScheduleChangeTime != 0) hash ^= NextScheduleChangeTime.GetHashCode();
       if (IsFinishedEntranceFloor != false) hash ^= IsFinishedEntranceFloor.GetHashCode();
-      if (LastLevelIndex != 0) hash ^= LastLevelIndex.GetHashCode();
+      if (LastFloorIndex != 0) hash ^= LastFloorIndex.GetHashCode();
       if (TowerScheduleId != 0) hash ^= TowerScheduleId.GetHashCode();
+      if (ScheduleStartTime != 0) hash ^= ScheduleStartTime.GetHashCode();
+      if (TotalStarNum != 0) hash ^= TotalStarNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -234,33 +238,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LastLevelIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(LastLevelIndex);
-      }
-      if (TowerScheduleId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TowerScheduleId);
-      }
-      if (NextScheduleChangeTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(NextScheduleChangeTime);
-      }
       if (LastFloorIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(LastFloorIndex);
       }
+      if (LastLevelIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LastLevelIndex);
+      }
       if (TotalStarNum != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(TotalStarNum);
+      }
+      if (ScheduleStartTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ScheduleStartTime);
+      }
+      if (NextScheduleChangeTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(NextScheduleChangeTime);
+      }
+      if (TowerScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TowerScheduleId);
       }
       if (IsFinishedEntranceFloor != false) {
         output.WriteRawTag(112);
         output.WriteBool(IsFinishedEntranceFloor);
-      }
-      if (ScheduleStartTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ScheduleStartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -272,33 +276,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LastLevelIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(LastLevelIndex);
-      }
-      if (TowerScheduleId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TowerScheduleId);
-      }
-      if (NextScheduleChangeTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(NextScheduleChangeTime);
-      }
       if (LastFloorIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(LastFloorIndex);
       }
+      if (LastLevelIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LastLevelIndex);
+      }
       if (TotalStarNum != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(TotalStarNum);
+      }
+      if (ScheduleStartTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ScheduleStartTime);
+      }
+      if (NextScheduleChangeTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(NextScheduleChangeTime);
+      }
+      if (TowerScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TowerScheduleId);
       }
       if (IsFinishedEntranceFloor != false) {
         output.WriteRawTag(112);
         output.WriteBool(IsFinishedEntranceFloor);
-      }
-      if (ScheduleStartTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ScheduleStartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -310,14 +314,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TotalStarNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalStarNum);
-      }
-      if (LastFloorIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastFloorIndex);
-      }
-      if (ScheduleStartTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleStartTime);
+      if (LastLevelIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastLevelIndex);
       }
       if (NextScheduleChangeTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextScheduleChangeTime);
@@ -325,11 +323,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsFinishedEntranceFloor != false) {
         size += 1 + 1;
       }
-      if (LastLevelIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastLevelIndex);
+      if (LastFloorIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastFloorIndex);
       }
       if (TowerScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TowerScheduleId);
+      }
+      if (ScheduleStartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleStartTime);
+      }
+      if (TotalStarNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalStarNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -343,14 +347,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TotalStarNum != 0) {
-        TotalStarNum = other.TotalStarNum;
-      }
-      if (other.LastFloorIndex != 0) {
-        LastFloorIndex = other.LastFloorIndex;
-      }
-      if (other.ScheduleStartTime != 0) {
-        ScheduleStartTime = other.ScheduleStartTime;
+      if (other.LastLevelIndex != 0) {
+        LastLevelIndex = other.LastLevelIndex;
       }
       if (other.NextScheduleChangeTime != 0) {
         NextScheduleChangeTime = other.NextScheduleChangeTime;
@@ -358,11 +356,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsFinishedEntranceFloor != false) {
         IsFinishedEntranceFloor = other.IsFinishedEntranceFloor;
       }
-      if (other.LastLevelIndex != 0) {
-        LastLevelIndex = other.LastLevelIndex;
+      if (other.LastFloorIndex != 0) {
+        LastFloorIndex = other.LastFloorIndex;
       }
       if (other.TowerScheduleId != 0) {
         TowerScheduleId = other.TowerScheduleId;
+      }
+      if (other.ScheduleStartTime != 0) {
+        ScheduleStartTime = other.ScheduleStartTime;
+      }
+      if (other.TotalStarNum != 0) {
+        TotalStarNum = other.TotalStarNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -379,32 +383,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            LastLevelIndex = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            TowerScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            NextScheduleChangeTime = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 8: {
             LastFloorIndex = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 48: {
+            LastLevelIndex = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             TotalStarNum = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ScheduleStartTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            NextScheduleChangeTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            TowerScheduleId = input.ReadUInt32();
             break;
           }
           case 112: {
             IsFinishedEntranceFloor = input.ReadBool();
-            break;
-          }
-          case 120: {
-            ScheduleStartTime = input.ReadUInt32();
             break;
           }
         }
@@ -422,32 +426,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            LastLevelIndex = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            TowerScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            NextScheduleChangeTime = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 8: {
             LastFloorIndex = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 48: {
+            LastLevelIndex = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             TotalStarNum = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ScheduleStartTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            NextScheduleChangeTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            TowerScheduleId = input.ReadUInt32();
             break;
           }
           case 112: {
             IsFinishedEntranceFloor = input.ReadBool();
-            break;
-          }
-          case 120: {
-            ScheduleStartTime = input.ReadUInt32();
             break;
           }
         }

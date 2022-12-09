@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static StoreWeightLimitNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTdG9yZVdlaWdodExpbWl0Tm90aWZ5LnByb3RvGg9TdG9yZVR5cGUucHJv",
-            "dG8ixgEKFlN0b3JlV2VpZ2h0TGltaXROb3RpZnkSGgoSd2VhcG9uX2NvdW50",
-            "X2xpbWl0GAIgASgNEh4KCnN0b3JlX3R5cGUYByABKA4yCi5TdG9yZVR5cGUS",
-            "HAoUbWF0ZXJpYWxfY291bnRfbGltaXQYBCABKA0SHQoVcmVsaXF1YXJ5X2Nv",
-            "dW50X2xpbWl0GAYgASgNEh0KFWZ1cm5pdHVyZV9jb3VudF9saW1pdBgJIAEo",
-            "DRIUCgx3ZWlnaHRfbGltaXQYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxTdG9yZVdlaWdodExpbWl0Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGg9TdG9yZVR5cGUucHJvdG8i5gEKFlN0b3Jl",
+            "V2VpZ2h0TGltaXROb3RpZnkSHQoVcmVsaXF1YXJ5X2NvdW50X2xpbWl0GA4g",
+            "ASgNEhoKEndlYXBvbl9jb3VudF9saW1pdBgKIAEoDRIcChRtYXRlcmlhbF9j",
+            "b3VudF9saW1pdBgFIAEoDRIdChVmdXJuaXR1cmVfY291bnRfbGltaXQYASAB",
+            "KA0SFAoMd2VpZ2h0X2xpbWl0GAggASgNEj4KCnN0b3JlX3R5cGUYCSABKA4y",
+            "Ki5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlN0b3JlVHlwZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.StoreTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreWeightLimitNotify), global::Weedwacker.Shared.Network.Proto.StoreWeightLimitNotify.Parser, new[]{ "WeaponCountLimit", "StoreType", "MaterialCountLimit", "ReliquaryCountLimit", "FurnitureCountLimit", "WeightLimit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreWeightLimitNotify), global::Weedwacker.Shared.Network.Proto.StoreWeightLimitNotify.Parser, new[]{ "ReliquaryCountLimit", "WeaponCountLimit", "MaterialCountLimit", "FurnitureCountLimit", "WeightLimit", "StoreType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 698
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 630;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class StoreWeightLimitNotify : pb::IMessage<StoreWeightLimitNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,12 +85,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StoreWeightLimitNotify(StoreWeightLimitNotify other) : this() {
-      weaponCountLimit_ = other.weaponCountLimit_;
-      storeType_ = other.storeType_;
-      materialCountLimit_ = other.materialCountLimit_;
       reliquaryCountLimit_ = other.reliquaryCountLimit_;
+      weaponCountLimit_ = other.weaponCountLimit_;
+      materialCountLimit_ = other.materialCountLimit_;
       furnitureCountLimit_ = other.furnitureCountLimit_;
       weightLimit_ = other.weightLimit_;
+      storeType_ = other.storeType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,44 +100,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StoreWeightLimitNotify(this);
     }
 
-    /// <summary>Field number for the "weapon_count_limit" field.</summary>
-    public const int WeaponCountLimitFieldNumber = 2;
-    private uint weaponCountLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WeaponCountLimit {
-      get { return weaponCountLimit_; }
-      set {
-        weaponCountLimit_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "store_type" field.</summary>
-    public const int StoreTypeFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.StoreType storeType_ = global::Weedwacker.Shared.Network.Proto.StoreType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.StoreType StoreType {
-      get { return storeType_; }
-      set {
-        storeType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "material_count_limit" field.</summary>
-    public const int MaterialCountLimitFieldNumber = 4;
-    private uint materialCountLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaterialCountLimit {
-      get { return materialCountLimit_; }
-      set {
-        materialCountLimit_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reliquary_count_limit" field.</summary>
-    public const int ReliquaryCountLimitFieldNumber = 6;
+    public const int ReliquaryCountLimitFieldNumber = 14;
     private uint reliquaryCountLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,9 +112,42 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "weapon_count_limit" field.</summary>
+    public const int WeaponCountLimitFieldNumber = 10;
+    private uint weaponCountLimit_;
+    /// <summary>
+    /// Unk3300_NIKMCBLHFNJ
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeaponCountLimit {
+      get { return weaponCountLimit_; }
+      set {
+        weaponCountLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "material_count_limit" field.</summary>
+    public const int MaterialCountLimitFieldNumber = 5;
+    private uint materialCountLimit_;
+    /// <summary>
+    /// Unk3300_OONMFCGDMMF
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaterialCountLimit {
+      get { return materialCountLimit_; }
+      set {
+        materialCountLimit_ = value;
+      }
+    }
+
     /// <summary>Field number for the "furniture_count_limit" field.</summary>
-    public const int FurnitureCountLimitFieldNumber = 9;
+    public const int FurnitureCountLimitFieldNumber = 1;
     private uint furnitureCountLimit_;
+    /// <summary>
+    /// Unk3300_JGPODDEKAPB
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint FurnitureCountLimit {
@@ -156,7 +158,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "weight_limit" field.</summary>
-    public const int WeightLimitFieldNumber = 15;
+    public const int WeightLimitFieldNumber = 8;
     private uint weightLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,6 +166,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return weightLimit_; }
       set {
         weightLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "store_type" field.</summary>
+    public const int StoreTypeFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.StoreType storeType_ = global::Weedwacker.Shared.Network.Proto.StoreType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.StoreType StoreType {
+      get { return storeType_; }
+      set {
+        storeType_ = value;
       }
     }
 
@@ -182,12 +196,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (WeaponCountLimit != other.WeaponCountLimit) return false;
-      if (StoreType != other.StoreType) return false;
-      if (MaterialCountLimit != other.MaterialCountLimit) return false;
       if (ReliquaryCountLimit != other.ReliquaryCountLimit) return false;
+      if (WeaponCountLimit != other.WeaponCountLimit) return false;
+      if (MaterialCountLimit != other.MaterialCountLimit) return false;
       if (FurnitureCountLimit != other.FurnitureCountLimit) return false;
       if (WeightLimit != other.WeightLimit) return false;
+      if (StoreType != other.StoreType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -195,12 +209,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (WeaponCountLimit != 0) hash ^= WeaponCountLimit.GetHashCode();
-      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) hash ^= StoreType.GetHashCode();
-      if (MaterialCountLimit != 0) hash ^= MaterialCountLimit.GetHashCode();
       if (ReliquaryCountLimit != 0) hash ^= ReliquaryCountLimit.GetHashCode();
+      if (WeaponCountLimit != 0) hash ^= WeaponCountLimit.GetHashCode();
+      if (MaterialCountLimit != 0) hash ^= MaterialCountLimit.GetHashCode();
       if (FurnitureCountLimit != 0) hash ^= FurnitureCountLimit.GetHashCode();
       if (WeightLimit != 0) hash ^= WeightLimit.GetHashCode();
+      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) hash ^= StoreType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -219,29 +233,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WeaponCountLimit != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WeaponCountLimit);
-      }
-      if (MaterialCountLimit != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaterialCountLimit);
-      }
-      if (ReliquaryCountLimit != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReliquaryCountLimit);
-      }
-      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) StoreType);
-      }
       if (FurnitureCountLimit != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(FurnitureCountLimit);
       }
+      if (MaterialCountLimit != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaterialCountLimit);
+      }
       if (WeightLimit != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(WeightLimit);
+      }
+      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) StoreType);
+      }
+      if (WeaponCountLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WeaponCountLimit);
+      }
+      if (ReliquaryCountLimit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ReliquaryCountLimit);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -253,29 +267,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WeaponCountLimit != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WeaponCountLimit);
-      }
-      if (MaterialCountLimit != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaterialCountLimit);
-      }
-      if (ReliquaryCountLimit != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReliquaryCountLimit);
-      }
-      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) StoreType);
-      }
       if (FurnitureCountLimit != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(FurnitureCountLimit);
       }
+      if (MaterialCountLimit != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaterialCountLimit);
+      }
       if (WeightLimit != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(WeightLimit);
+      }
+      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) StoreType);
+      }
+      if (WeaponCountLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WeaponCountLimit);
+      }
+      if (ReliquaryCountLimit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ReliquaryCountLimit);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -287,23 +301,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ReliquaryCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliquaryCountLimit);
+      }
       if (WeaponCountLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponCountLimit);
       }
-      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
-      }
       if (MaterialCountLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialCountLimit);
-      }
-      if (ReliquaryCountLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliquaryCountLimit);
       }
       if (FurnitureCountLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureCountLimit);
       }
       if (WeightLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeightLimit);
+      }
+      if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -317,23 +331,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ReliquaryCountLimit != 0) {
+        ReliquaryCountLimit = other.ReliquaryCountLimit;
+      }
       if (other.WeaponCountLimit != 0) {
         WeaponCountLimit = other.WeaponCountLimit;
       }
-      if (other.StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        StoreType = other.StoreType;
-      }
       if (other.MaterialCountLimit != 0) {
         MaterialCountLimit = other.MaterialCountLimit;
-      }
-      if (other.ReliquaryCountLimit != 0) {
-        ReliquaryCountLimit = other.ReliquaryCountLimit;
       }
       if (other.FurnitureCountLimit != 0) {
         FurnitureCountLimit = other.FurnitureCountLimit;
       }
       if (other.WeightLimit != 0) {
         WeightLimit = other.WeightLimit;
+      }
+      if (other.StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
+        StoreType = other.StoreType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -350,28 +364,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            WeaponCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            MaterialCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ReliquaryCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
-            break;
-          }
-          case 72: {
+          case 8: {
             FurnitureCountLimit = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 40: {
+            MaterialCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             WeightLimit = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            WeaponCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ReliquaryCountLimit = input.ReadUInt32();
             break;
           }
         }
@@ -389,28 +403,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            WeaponCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            MaterialCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ReliquaryCountLimit = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
-            break;
-          }
-          case 72: {
+          case 8: {
             FurnitureCountLimit = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 40: {
+            MaterialCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             WeightLimit = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            WeaponCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ReliquaryCountLimit = input.ReadUInt32();
             break;
           }
         }

@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SeaLampActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TZWFMYW1wQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvIrwBChlTZWFMYW1w",
-            "QWN0aXZpdHlEZXRhaWxJbmZvEhAKCHBoYXNlX2lkGA4gASgNEh8KF3Rha2Vu",
-            "X3BoYXNlX3Jld2FyZF9saXN0GAEgAygNEiYKHnRha2VuX2NvbnRyaWJ1dGlv",
-            "bl9yZXdhcmRfbGlzdBgHIAMoDRIQCghwcm9ncmVzcxgIIAEoDRIUCgxjb250",
-            "cmlidXRpb24YDyABKA0SDgoGZmFjdG9yGA0gASgNEgwKBGRheXMYBCABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch9TZWFMYW1wQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIsEBChlTZWFMYW1wQWN0aXZpdHlEZXRh",
+            "aWxJbmZvEhsKE1VuazMzMDBfT0RCRkZBSUlQTUIYAiADKA0SDAoEZGF5cxgG",
+            "IAEoDRIbChNVbmszMzAwX0RHTUdOSkxIRk1CGAggASgNEhAKCHByb2dyZXNz",
+            "GAUgASgNEhsKE1VuazMzMDBfRkdIREpKQ0xORk4YDiADKA0SGwoTVW5rMzMw",
+            "MF9HQkNDSk1CUEJCSRgLIAEoDRIQCghwaGFzZV9pZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo.Parser, new[]{ "PhaseId", "TakenPhaseRewardList", "TakenContributionRewardList", "Progress", "Contribution", "Factor", "Days" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo.Parser, new[]{ "Unk3300ODBFFAIIPMB", "Days", "Unk3300DGMGNJLHFMB", "Progress", "Unk3300FGHDJJCLNFN", "Unk3300GBCCJMBPBBI", "PhaseId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,13 +74,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SeaLampActivityDetailInfo(SeaLampActivityDetailInfo other) : this() {
-      phaseId_ = other.phaseId_;
-      takenPhaseRewardList_ = other.takenPhaseRewardList_.Clone();
-      takenContributionRewardList_ = other.takenContributionRewardList_.Clone();
-      progress_ = other.progress_;
-      contribution_ = other.contribution_;
-      factor_ = other.factor_;
+      unk3300ODBFFAIIPMB_ = other.unk3300ODBFFAIIPMB_.Clone();
       days_ = other.days_;
+      unk3300DGMGNJLHFMB_ = other.unk3300DGMGNJLHFMB_;
+      progress_ = other.progress_;
+      unk3300FGHDJJCLNFN_ = other.unk3300FGHDJJCLNFN_.Clone();
+      unk3300GBCCJMBPBBI_ = other.unk3300GBCCJMBPBBI_;
+      phaseId_ = other.phaseId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,42 +90,43 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SeaLampActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "phase_id" field.</summary>
-    public const int PhaseIdFieldNumber = 14;
-    private uint phaseId_;
+    /// <summary>Field number for the "Unk3300_ODBFFAIIPMB" field.</summary>
+    public const int Unk3300ODBFFAIIPMBFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300ODBFFAIIPMB_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> unk3300ODBFFAIIPMB_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PhaseId {
-      get { return phaseId_; }
+    public pbc::RepeatedField<uint> Unk3300ODBFFAIIPMB {
+      get { return unk3300ODBFFAIIPMB_; }
+    }
+
+    /// <summary>Field number for the "days" field.</summary>
+    public const int DaysFieldNumber = 6;
+    private uint days_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Days {
+      get { return days_; }
       set {
-        phaseId_ = value;
+        days_ = value;
       }
     }
 
-    /// <summary>Field number for the "taken_phase_reward_list" field.</summary>
-    public const int TakenPhaseRewardListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_takenPhaseRewardList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> takenPhaseRewardList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_DGMGNJLHFMB" field.</summary>
+    public const int Unk3300DGMGNJLHFMBFieldNumber = 8;
+    private uint unk3300DGMGNJLHFMB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenPhaseRewardList {
-      get { return takenPhaseRewardList_; }
-    }
-
-    /// <summary>Field number for the "taken_contribution_reward_list" field.</summary>
-    public const int TakenContributionRewardListFieldNumber = 7;
-    private static readonly pb::FieldCodec<uint> _repeated_takenContributionRewardList_codec
-        = pb::FieldCodec.ForUInt32(58);
-    private readonly pbc::RepeatedField<uint> takenContributionRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenContributionRewardList {
-      get { return takenContributionRewardList_; }
+    public uint Unk3300DGMGNJLHFMB {
+      get { return unk3300DGMGNJLHFMB_; }
+      set {
+        unk3300DGMGNJLHFMB_ = value;
+      }
     }
 
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 8;
+    public const int ProgressFieldNumber = 5;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,39 +137,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "contribution" field.</summary>
-    public const int ContributionFieldNumber = 15;
-    private uint contribution_;
+    /// <summary>Field number for the "Unk3300_FGHDJJCLNFN" field.</summary>
+    public const int Unk3300FGHDJJCLNFNFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300FGHDJJCLNFN_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> unk3300FGHDJJCLNFN_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Contribution {
-      get { return contribution_; }
+    public pbc::RepeatedField<uint> Unk3300FGHDJJCLNFN {
+      get { return unk3300FGHDJJCLNFN_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GBCCJMBPBBI" field.</summary>
+    public const int Unk3300GBCCJMBPBBIFieldNumber = 11;
+    private uint unk3300GBCCJMBPBBI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GBCCJMBPBBI {
+      get { return unk3300GBCCJMBPBBI_; }
       set {
-        contribution_ = value;
+        unk3300GBCCJMBPBBI_ = value;
       }
     }
 
-    /// <summary>Field number for the "factor" field.</summary>
-    public const int FactorFieldNumber = 13;
-    private uint factor_;
+    /// <summary>Field number for the "phase_id" field.</summary>
+    public const int PhaseIdFieldNumber = 3;
+    private uint phaseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Factor {
-      get { return factor_; }
+    public uint PhaseId {
+      get { return phaseId_; }
       set {
-        factor_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "days" field.</summary>
-    public const int DaysFieldNumber = 4;
-    private uint days_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Days {
-      get { return days_; }
-      set {
-        days_ = value;
+        phaseId_ = value;
       }
     }
 
@@ -187,13 +187,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PhaseId != other.PhaseId) return false;
-      if(!takenPhaseRewardList_.Equals(other.takenPhaseRewardList_)) return false;
-      if(!takenContributionRewardList_.Equals(other.takenContributionRewardList_)) return false;
-      if (Progress != other.Progress) return false;
-      if (Contribution != other.Contribution) return false;
-      if (Factor != other.Factor) return false;
+      if(!unk3300ODBFFAIIPMB_.Equals(other.unk3300ODBFFAIIPMB_)) return false;
       if (Days != other.Days) return false;
+      if (Unk3300DGMGNJLHFMB != other.Unk3300DGMGNJLHFMB) return false;
+      if (Progress != other.Progress) return false;
+      if(!unk3300FGHDJJCLNFN_.Equals(other.unk3300FGHDJJCLNFN_)) return false;
+      if (Unk3300GBCCJMBPBBI != other.Unk3300GBCCJMBPBBI) return false;
+      if (PhaseId != other.PhaseId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -201,13 +201,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PhaseId != 0) hash ^= PhaseId.GetHashCode();
-      hash ^= takenPhaseRewardList_.GetHashCode();
-      hash ^= takenContributionRewardList_.GetHashCode();
-      if (Progress != 0) hash ^= Progress.GetHashCode();
-      if (Contribution != 0) hash ^= Contribution.GetHashCode();
-      if (Factor != 0) hash ^= Factor.GetHashCode();
+      hash ^= unk3300ODBFFAIIPMB_.GetHashCode();
       if (Days != 0) hash ^= Days.GetHashCode();
+      if (Unk3300DGMGNJLHFMB != 0) hash ^= Unk3300DGMGNJLHFMB.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
+      hash ^= unk3300FGHDJJCLNFN_.GetHashCode();
+      if (Unk3300GBCCJMBPBBI != 0) hash ^= Unk3300GBCCJMBPBBI.GetHashCode();
+      if (PhaseId != 0) hash ^= PhaseId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -226,28 +226,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      takenPhaseRewardList_.WriteTo(output, _repeated_takenPhaseRewardList_codec);
-      if (Days != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Days);
-      }
-      takenContributionRewardList_.WriteTo(output, _repeated_takenContributionRewardList_codec);
-      if (Progress != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Progress);
-      }
-      if (Factor != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Factor);
-      }
+      unk3300ODBFFAIIPMB_.WriteTo(output, _repeated_unk3300ODBFFAIIPMB_codec);
       if (PhaseId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteUInt32(PhaseId);
       }
-      if (Contribution != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Contribution);
+      if (Progress != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Progress);
       }
+      if (Days != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Days);
+      }
+      if (Unk3300DGMGNJLHFMB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300DGMGNJLHFMB);
+      }
+      if (Unk3300GBCCJMBPBBI != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300GBCCJMBPBBI);
+      }
+      unk3300FGHDJJCLNFN_.WriteTo(output, _repeated_unk3300FGHDJJCLNFN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -258,28 +258,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      takenPhaseRewardList_.WriteTo(ref output, _repeated_takenPhaseRewardList_codec);
-      if (Days != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Days);
-      }
-      takenContributionRewardList_.WriteTo(ref output, _repeated_takenContributionRewardList_codec);
-      if (Progress != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Progress);
-      }
-      if (Factor != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Factor);
-      }
+      unk3300ODBFFAIIPMB_.WriteTo(ref output, _repeated_unk3300ODBFFAIIPMB_codec);
       if (PhaseId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteUInt32(PhaseId);
       }
-      if (Contribution != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Contribution);
+      if (Progress != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Progress);
       }
+      if (Days != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Days);
+      }
+      if (Unk3300DGMGNJLHFMB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300DGMGNJLHFMB);
+      }
+      if (Unk3300GBCCJMBPBBI != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300GBCCJMBPBBI);
+      }
+      unk3300FGHDJJCLNFN_.WriteTo(ref output, _repeated_unk3300FGHDJJCLNFN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -290,22 +290,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PhaseId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PhaseId);
+      size += unk3300ODBFFAIIPMB_.CalculateSize(_repeated_unk3300ODBFFAIIPMB_codec);
+      if (Days != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Days);
       }
-      size += takenPhaseRewardList_.CalculateSize(_repeated_takenPhaseRewardList_codec);
-      size += takenContributionRewardList_.CalculateSize(_repeated_takenContributionRewardList_codec);
+      if (Unk3300DGMGNJLHFMB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DGMGNJLHFMB);
+      }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
-      if (Contribution != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Contribution);
+      size += unk3300FGHDJJCLNFN_.CalculateSize(_repeated_unk3300FGHDJJCLNFN_codec);
+      if (Unk3300GBCCJMBPBBI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GBCCJMBPBBI);
       }
-      if (Factor != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Factor);
-      }
-      if (Days != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Days);
+      if (PhaseId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PhaseId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -319,22 +319,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.PhaseId != 0) {
-        PhaseId = other.PhaseId;
+      unk3300ODBFFAIIPMB_.Add(other.unk3300ODBFFAIIPMB_);
+      if (other.Days != 0) {
+        Days = other.Days;
       }
-      takenPhaseRewardList_.Add(other.takenPhaseRewardList_);
-      takenContributionRewardList_.Add(other.takenContributionRewardList_);
+      if (other.Unk3300DGMGNJLHFMB != 0) {
+        Unk3300DGMGNJLHFMB = other.Unk3300DGMGNJLHFMB;
+      }
       if (other.Progress != 0) {
         Progress = other.Progress;
       }
-      if (other.Contribution != 0) {
-        Contribution = other.Contribution;
+      unk3300FGHDJJCLNFN_.Add(other.unk3300FGHDJJCLNFN_);
+      if (other.Unk3300GBCCJMBPBBI != 0) {
+        Unk3300GBCCJMBPBBI = other.Unk3300GBCCJMBPBBI;
       }
-      if (other.Factor != 0) {
-        Factor = other.Factor;
-      }
-      if (other.Days != 0) {
-        Days = other.Days;
+      if (other.PhaseId != 0) {
+        PhaseId = other.PhaseId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -351,34 +351,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            takenPhaseRewardList_.AddEntriesFrom(input, _repeated_takenPhaseRewardList_codec);
+          case 18:
+          case 16: {
+            unk3300ODBFFAIIPMB_.AddEntriesFrom(input, _repeated_unk3300ODBFFAIIPMB_codec);
             break;
           }
-          case 32: {
-            Days = input.ReadUInt32();
-            break;
-          }
-          case 58:
-          case 56: {
-            takenContributionRewardList_.AddEntriesFrom(input, _repeated_takenContributionRewardList_codec);
-            break;
-          }
-          case 64: {
-            Progress = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Factor = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 24: {
             PhaseId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Contribution = input.ReadUInt32();
+          case 40: {
+            Progress = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Days = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300DGMGNJLHFMB = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300GBCCJMBPBBI = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            unk3300FGHDJJCLNFN_.AddEntriesFrom(input, _repeated_unk3300FGHDJJCLNFN_codec);
             break;
           }
         }
@@ -396,34 +396,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            takenPhaseRewardList_.AddEntriesFrom(ref input, _repeated_takenPhaseRewardList_codec);
+          case 18:
+          case 16: {
+            unk3300ODBFFAIIPMB_.AddEntriesFrom(ref input, _repeated_unk3300ODBFFAIIPMB_codec);
             break;
           }
-          case 32: {
-            Days = input.ReadUInt32();
-            break;
-          }
-          case 58:
-          case 56: {
-            takenContributionRewardList_.AddEntriesFrom(ref input, _repeated_takenContributionRewardList_codec);
-            break;
-          }
-          case 64: {
-            Progress = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Factor = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 24: {
             PhaseId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Contribution = input.ReadUInt32();
+          case 40: {
+            Progress = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Days = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300DGMGNJLHFMB = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300GBCCJMBPBBI = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            unk3300FGHDJJCLNFN_.AddEntriesFrom(ref input, _repeated_unk3300FGHDJJCLNFN_codec);
             break;
           }
         }

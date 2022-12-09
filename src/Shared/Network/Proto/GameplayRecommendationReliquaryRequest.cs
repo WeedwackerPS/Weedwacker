@@ -25,9 +25,9 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5UmVxdWVzdC5wcm90",
-            "byI8CiZHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5UmVxdWVzdBIS",
-            "CgplcXVpcF90eXBlGAYgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byI8CiZHYW1lcGxh",
+            "eVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5UmVxdWVzdBISCgplcXVpcF90eXBl",
+            "GAkgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "equip_type" field.</summary>
-    public const int EquipTypeFieldNumber = 6;
+    public const int EquipTypeFieldNumber = 9;
     private uint equipType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (EquipType != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
@@ -151,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EquipType != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
@@ -197,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 72: {
             EquipType = input.ReadUInt32();
             break;
           }
@@ -216,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 72: {
             EquipType = input.ReadUInt32();
             break;
           }

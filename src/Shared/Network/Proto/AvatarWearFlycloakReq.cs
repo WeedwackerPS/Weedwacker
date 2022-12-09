@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarWearFlycloakReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBdmF0YXJXZWFyRmx5Y2xvYWtSZXEucHJvdG8iQQoVQXZhdGFyV2VhckZs",
-            "eWNsb2FrUmVxEhMKC2F2YXRhcl9ndWlkGAsgASgEEhMKC2ZseWNsb2FrX2lk",
-            "GA0gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChtBdmF0YXJXZWFyRmx5Y2xvYWtSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iQQoVQXZhdGFyV2VhckZseWNsb2FrUmVxEhMK",
+            "C2F2YXRhcl9ndWlkGAsgASgEEhMKC2ZseWNsb2FrX2lkGA8gASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1737
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1636;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarWearFlycloakReq : pb::IMessage<AvatarWearFlycloakReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "flycloak_id" field.</summary>
-    public const int FlycloakIdFieldNumber = 13;
+    public const int FlycloakIdFieldNumber = 15;
     private uint flycloakId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,7 +166,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(AvatarGuid);
       }
       if (FlycloakId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(FlycloakId);
       }
       if (_unknownFields != null) {
@@ -180,7 +184,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(AvatarGuid);
       }
       if (FlycloakId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(FlycloakId);
       }
       if (_unknownFields != null) {
@@ -236,7 +240,7 @@ namespace Weedwacker.Shared.Network.Proto {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 104: {
+          case 120: {
             FlycloakId = input.ReadUInt32();
             break;
           }
@@ -259,7 +263,7 @@ namespace Weedwacker.Shared.Network.Proto {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 104: {
+          case 120: {
             FlycloakId = input.ReadUInt32();
             break;
           }

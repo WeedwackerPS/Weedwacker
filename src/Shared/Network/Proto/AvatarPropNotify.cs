@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarPropNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZBdmF0YXJQcm9wTm90aWZ5LnByb3RvIokBChBBdmF0YXJQcm9wTm90aWZ5",
-            "EjAKCHByb3BfbWFwGA4gAygLMh4uQXZhdGFyUHJvcE5vdGlmeS5Qcm9wTWFw",
-            "RW50cnkSEwoLYXZhdGFyX2d1aWQYDyABKAQaLgoMUHJvcE1hcEVudHJ5EgsK",
-            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoAzoCOAFCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZBdmF0YXJQcm9wTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIqkBChBBdmF0YXJQcm9wTm90aWZ5EhMKC2F2YXRhcl9n",
+            "dWlkGAEgASgEElAKCHByb3BfbWFwGAggAygLMj4uV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5BdmF0YXJQcm9wTm90aWZ5LlByb3BNYXBFbnRy",
+            "eRouCgxQcm9wTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgD",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarPropNotify), global::Weedwacker.Shared.Network.Proto.AvatarPropNotify.Parser, new[]{ "PropMap", "AvatarGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarPropNotify), global::Weedwacker.Shared.Network.Proto.AvatarPropNotify.Parser, new[]{ "AvatarGuid", "PropMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1231
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1227;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarPropNotify : pb::IMessage<AvatarPropNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarPropNotify(AvatarPropNotify other) : this() {
-      propMap_ = other.propMap_.Clone();
       avatarGuid_ = other.avatarGuid_;
+      propMap_ = other.propMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarPropNotify(this);
     }
 
-    /// <summary>Field number for the "prop_map" field.</summary>
-    public const int PropMapFieldNumber = 14;
-    private static readonly pbc::MapField<uint, long>.Codec _map_propMap_codec
-        = new pbc::MapField<uint, long>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 114);
-    private readonly pbc::MapField<uint, long> propMap_ = new pbc::MapField<uint, long>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, long> PropMap {
-      get { return propMap_; }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 15;
+    public const int AvatarGuidFieldNumber = 1;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +104,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         avatarGuid_ = value;
       }
+    }
+
+    /// <summary>Field number for the "prop_map" field.</summary>
+    public const int PropMapFieldNumber = 8;
+    private static readonly pbc::MapField<uint, long>.Codec _map_propMap_codec
+        = new pbc::MapField<uint, long>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt64(16, 0L), 66);
+    private readonly pbc::MapField<uint, long> propMap_ = new pbc::MapField<uint, long>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, long> PropMap {
+      get { return propMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!PropMap.Equals(other.PropMap)) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
+      if (!PropMap.Equals(other.PropMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= PropMap.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      hash ^= PropMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      propMap_.WriteTo(output, _map_propMap_codec);
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt64(AvatarGuid);
       }
+      propMap_.WriteTo(output, _map_propMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      propMap_.WriteTo(ref output, _map_propMap_codec);
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt64(AvatarGuid);
       }
+      propMap_.WriteTo(ref output, _map_propMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +191,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += propMap_.CalculateSize(_map_propMap_codec);
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
+      size += propMap_.CalculateSize(_map_propMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +207,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      propMap_.Add(other.propMap_);
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
+      propMap_.Add(other.propMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
-            propMap_.AddEntriesFrom(input, _map_propMap_codec);
+          case 8: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 120: {
-            AvatarGuid = input.ReadUInt64();
+          case 66: {
+            propMap_.AddEntriesFrom(input, _map_propMap_codec);
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
-            propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
+          case 8: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 120: {
-            AvatarGuid = input.ReadUInt64();
+          case 66: {
+            propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
             break;
           }
         }

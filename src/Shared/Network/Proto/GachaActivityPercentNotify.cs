@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaActivityPercentNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHYWNoYUFjdGl2aXR5UGVyY2VudE5vdGlmeS5wcm90byLVAQoaR2FjaGFB",
-            "Y3Rpdml0eVBlcmNlbnROb3RpZnkSEgoKaXRlbV9zdGFnZRgOIAEoDRJFCg50",
-            "YXJnZXRfbnVtX21hcBgGIAMoCzItLkdhY2hhQWN0aXZpdHlQZXJjZW50Tm90",
-            "aWZ5LlRhcmdldE51bU1hcEVudHJ5EhYKDnN1Yl9pdGVtX3N0YWdlGAIgASgN",
-            "Eg8KB3BlcmNlbnQYDSABKA0aMwoRVGFyZ2V0TnVtTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBHYWNoYUFjdGl2aXR5UGVyY2VudE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKPAgoaR2FjaGFBY3Rpdml0eVBlcmNl",
+            "bnROb3RpZnkSGwoTVW5rMzMwMF9HSEhJR0tGRE9ORRgNIAEoDRIbChNVbmsz",
+            "MzAwX0VPUEpCUEhGREVFGAYgASgNEhsKE1VuazMzMDBfSU9MUEFKS0RFRUEY",
+            "BSABKA0SZQoOdGFyZ2V0X251bV9tYXAYDCADKAsyTS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkdhY2hhQWN0aXZpdHlQZXJjZW50Tm90aWZ5",
+            "LlRhcmdldE51bU1hcEVudHJ5GjMKEVRhcmdldE51bU1hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaActivityPercentNotify), global::Weedwacker.Shared.Network.Proto.GachaActivityPercentNotify.Parser, new[]{ "ItemStage", "TargetNumMap", "SubItemStage", "Percent" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaActivityPercentNotify), global::Weedwacker.Shared.Network.Proto.GachaActivityPercentNotify.Parser, new[]{ "Unk3300GHHIGKFDONE", "Unk3300EOPJBPHFDEE", "Unk3300IOLPAJKDEEA", "TargetNumMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8450
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8706;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GachaActivityPercentNotify : pb::IMessage<GachaActivityPercentNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GachaActivityPercentNotify(GachaActivityPercentNotify other) : this() {
-      itemStage_ = other.itemStage_;
+      unk3300GHHIGKFDONE_ = other.unk3300GHHIGKFDONE_;
+      unk3300EOPJBPHFDEE_ = other.unk3300EOPJBPHFDEE_;
+      unk3300IOLPAJKDEEA_ = other.unk3300IOLPAJKDEEA_;
       targetNumMap_ = other.targetNumMap_.Clone();
-      subItemStage_ = other.subItemStage_;
-      percent_ = other.percent_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,51 +98,51 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GachaActivityPercentNotify(this);
     }
 
-    /// <summary>Field number for the "item_stage" field.</summary>
-    public const int ItemStageFieldNumber = 14;
-    private uint itemStage_;
+    /// <summary>Field number for the "Unk3300_GHHIGKFDONE" field.</summary>
+    public const int Unk3300GHHIGKFDONEFieldNumber = 13;
+    private uint unk3300GHHIGKFDONE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ItemStage {
-      get { return itemStage_; }
+    public uint Unk3300GHHIGKFDONE {
+      get { return unk3300GHHIGKFDONE_; }
       set {
-        itemStage_ = value;
+        unk3300GHHIGKFDONE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EOPJBPHFDEE" field.</summary>
+    public const int Unk3300EOPJBPHFDEEFieldNumber = 6;
+    private uint unk3300EOPJBPHFDEE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EOPJBPHFDEE {
+      get { return unk3300EOPJBPHFDEE_; }
+      set {
+        unk3300EOPJBPHFDEE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IOLPAJKDEEA" field.</summary>
+    public const int Unk3300IOLPAJKDEEAFieldNumber = 5;
+    private uint unk3300IOLPAJKDEEA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IOLPAJKDEEA {
+      get { return unk3300IOLPAJKDEEA_; }
+      set {
+        unk3300IOLPAJKDEEA_ = value;
       }
     }
 
     /// <summary>Field number for the "target_num_map" field.</summary>
-    public const int TargetNumMapFieldNumber = 6;
+    public const int TargetNumMapFieldNumber = 12;
     private static readonly pbc::MapField<uint, uint>.Codec _map_targetNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
     private readonly pbc::MapField<uint, uint> targetNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> TargetNumMap {
       get { return targetNumMap_; }
-    }
-
-    /// <summary>Field number for the "sub_item_stage" field.</summary>
-    public const int SubItemStageFieldNumber = 2;
-    private uint subItemStage_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SubItemStage {
-      get { return subItemStage_; }
-      set {
-        subItemStage_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "percent" field.</summary>
-    public const int PercentFieldNumber = 13;
-    private uint percent_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Percent {
-      get { return percent_; }
-      set {
-        percent_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ItemStage != other.ItemStage) return false;
+      if (Unk3300GHHIGKFDONE != other.Unk3300GHHIGKFDONE) return false;
+      if (Unk3300EOPJBPHFDEE != other.Unk3300EOPJBPHFDEE) return false;
+      if (Unk3300IOLPAJKDEEA != other.Unk3300IOLPAJKDEEA) return false;
       if (!TargetNumMap.Equals(other.TargetNumMap)) return false;
-      if (SubItemStage != other.SubItemStage) return false;
-      if (Percent != other.Percent) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +171,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ItemStage != 0) hash ^= ItemStage.GetHashCode();
+      if (Unk3300GHHIGKFDONE != 0) hash ^= Unk3300GHHIGKFDONE.GetHashCode();
+      if (Unk3300EOPJBPHFDEE != 0) hash ^= Unk3300EOPJBPHFDEE.GetHashCode();
+      if (Unk3300IOLPAJKDEEA != 0) hash ^= Unk3300IOLPAJKDEEA.GetHashCode();
       hash ^= TargetNumMap.GetHashCode();
-      if (SubItemStage != 0) hash ^= SubItemStage.GetHashCode();
-      if (Percent != 0) hash ^= Percent.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,18 +193,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SubItemStage != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SubItemStage);
+      if (Unk3300IOLPAJKDEEA != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IOLPAJKDEEA);
+      }
+      if (Unk3300EOPJBPHFDEE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300EOPJBPHFDEE);
       }
       targetNumMap_.WriteTo(output, _map_targetNumMap_codec);
-      if (Percent != 0) {
+      if (Unk3300GHHIGKFDONE != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(Percent);
-      }
-      if (ItemStage != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ItemStage);
+        output.WriteUInt32(Unk3300GHHIGKFDONE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -211,18 +216,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SubItemStage != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SubItemStage);
+      if (Unk3300IOLPAJKDEEA != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IOLPAJKDEEA);
+      }
+      if (Unk3300EOPJBPHFDEE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300EOPJBPHFDEE);
       }
       targetNumMap_.WriteTo(ref output, _map_targetNumMap_codec);
-      if (Percent != 0) {
+      if (Unk3300GHHIGKFDONE != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(Percent);
-      }
-      if (ItemStage != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ItemStage);
+        output.WriteUInt32(Unk3300GHHIGKFDONE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,16 +239,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ItemStage != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemStage);
+      if (Unk3300GHHIGKFDONE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GHHIGKFDONE);
+      }
+      if (Unk3300EOPJBPHFDEE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EOPJBPHFDEE);
+      }
+      if (Unk3300IOLPAJKDEEA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IOLPAJKDEEA);
       }
       size += targetNumMap_.CalculateSize(_map_targetNumMap_codec);
-      if (SubItemStage != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SubItemStage);
-      }
-      if (Percent != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Percent);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,16 +261,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ItemStage != 0) {
-        ItemStage = other.ItemStage;
+      if (other.Unk3300GHHIGKFDONE != 0) {
+        Unk3300GHHIGKFDONE = other.Unk3300GHHIGKFDONE;
+      }
+      if (other.Unk3300EOPJBPHFDEE != 0) {
+        Unk3300EOPJBPHFDEE = other.Unk3300EOPJBPHFDEE;
+      }
+      if (other.Unk3300IOLPAJKDEEA != 0) {
+        Unk3300IOLPAJKDEEA = other.Unk3300IOLPAJKDEEA;
       }
       targetNumMap_.Add(other.targetNumMap_);
-      if (other.SubItemStage != 0) {
-        SubItemStage = other.SubItemStage;
-      }
-      if (other.Percent != 0) {
-        Percent = other.Percent;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -281,20 +286,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            SubItemStage = input.ReadUInt32();
+          case 40: {
+            Unk3300IOLPAJKDEEA = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 48: {
+            Unk3300EOPJBPHFDEE = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             targetNumMap_.AddEntriesFrom(input, _map_targetNumMap_codec);
             break;
           }
           case 104: {
-            Percent = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ItemStage = input.ReadUInt32();
+            Unk3300GHHIGKFDONE = input.ReadUInt32();
             break;
           }
         }
@@ -312,20 +317,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            SubItemStage = input.ReadUInt32();
+          case 40: {
+            Unk3300IOLPAJKDEEA = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 48: {
+            Unk3300EOPJBPHFDEE = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             targetNumMap_.AddEntriesFrom(ref input, _map_targetNumMap_codec);
             break;
           }
           case 104: {
-            Percent = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ItemStage = input.ReadUInt32();
+            Unk3300GHHIGKFDONE = input.ReadUInt32();
             break;
           }
         }

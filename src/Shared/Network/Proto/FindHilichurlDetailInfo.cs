@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static FindHilichurlDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1GaW5kSGlsaWNodXJsRGV0YWlsSW5mby5wcm90bxohRmluZEhpbGljaHVy",
-            "bERheUNvbnRlbnRJbmZvLnByb3RvIvYBChdGaW5kSGlsaWNodXJsRGV0YWls",
-            "SW5mbxI7ChVkYXlfY29udGVudF9pbmZvX2xpc3QYASADKAsyHC5GaW5kSGls",
-            "aWNodXJsRGF5Q29udGVudEluZm8SHQoVbWluX29wZW5fcGxheWVyX2xldmVs",
-            "GAwgASgNEhsKE2lzX2VuZF9xdWVzdF9hY2NlcHQYByABKAgSGgoSY29udGVu",
-            "dF9jbG9zZV90aW1lGAYgASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAkgASgI",
-            "EhgKEHBsYXllcl9kYXlfaW5kZXgYBCABKA0SEQoJZGF5X2luZGV4GA8gASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1GaW5kSGlsaWNodXJsRGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxohRmluZEhpbGljaHVybERheUNvbnRlbnRJ",
+            "bmZvLnByb3RvIpYCChdGaW5kSGlsaWNodXJsRGV0YWlsSW5mbxIRCglkYXlf",
+            "aW5kZXgYCCABKA0SGQoRaXNfY29udGVudF9jbG9zZWQYDCABKAgSHQoVbWlu",
+            "X29wZW5fcGxheWVyX2xldmVsGAIgASgNElsKFWRheV9jb250ZW50X2luZm9f",
+            "bGlzdBgEIAMoCzI8LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "RmluZEhpbGljaHVybERheUNvbnRlbnRJbmZvEhoKEmNvbnRlbnRfY2xvc2Vf",
+            "dGltZRgHIAEoDRIbChNpc19lbmRfcXVlc3RfYWNjZXB0GAUgASgIEhgKEHBs",
+            "YXllcl9kYXlfaW5kZXgYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo), global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo.Parser, new[]{ "DayContentInfoList", "MinOpenPlayerLevel", "IsEndQuestAccept", "ContentCloseTime", "IsContentClosed", "PlayerDayIndex", "DayIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo), global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo.Parser, new[]{ "DayIndex", "IsContentClosed", "MinOpenPlayerLevel", "DayContentInfoList", "ContentCloseTime", "IsEndQuestAccept", "PlayerDayIndex" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,13 +77,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FindHilichurlDetailInfo(FindHilichurlDetailInfo other) : this() {
-      dayContentInfoList_ = other.dayContentInfoList_.Clone();
-      minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
-      isEndQuestAccept_ = other.isEndQuestAccept_;
-      contentCloseTime_ = other.contentCloseTime_;
-      isContentClosed_ = other.isContentClosed_;
-      playerDayIndex_ = other.playerDayIndex_;
       dayIndex_ = other.dayIndex_;
+      isContentClosed_ = other.isContentClosed_;
+      minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
+      dayContentInfoList_ = other.dayContentInfoList_.Clone();
+      contentCloseTime_ = other.contentCloseTime_;
+      isEndQuestAccept_ = other.isEndQuestAccept_;
+      playerDayIndex_ = other.playerDayIndex_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,55 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FindHilichurlDetailInfo(this);
     }
 
-    /// <summary>Field number for the "day_content_info_list" field.</summary>
-    public const int DayContentInfoListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> _repeated_dayContentInfoList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> dayContentInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo>();
+    /// <summary>Field number for the "day_index" field.</summary>
+    public const int DayIndexFieldNumber = 8;
+    private uint dayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> DayContentInfoList {
-      get { return dayContentInfoList_; }
-    }
-
-    /// <summary>Field number for the "min_open_player_level" field.</summary>
-    public const int MinOpenPlayerLevelFieldNumber = 12;
-    private uint minOpenPlayerLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinOpenPlayerLevel {
-      get { return minOpenPlayerLevel_; }
+    public uint DayIndex {
+      get { return dayIndex_; }
       set {
-        minOpenPlayerLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_end_quest_accept" field.</summary>
-    public const int IsEndQuestAcceptFieldNumber = 7;
-    private bool isEndQuestAccept_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsEndQuestAccept {
-      get { return isEndQuestAccept_; }
-      set {
-        isEndQuestAccept_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 6;
-    private uint contentCloseTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentCloseTime {
-      get { return contentCloseTime_; }
-      set {
-        contentCloseTime_ = value;
+        dayIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 9;
+    public const int IsContentClosedFieldNumber = 12;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,8 +117,55 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "min_open_player_level" field.</summary>
+    public const int MinOpenPlayerLevelFieldNumber = 2;
+    private uint minOpenPlayerLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinOpenPlayerLevel {
+      get { return minOpenPlayerLevel_; }
+      set {
+        minOpenPlayerLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "day_content_info_list" field.</summary>
+    public const int DayContentInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> _repeated_dayContentInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> dayContentInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FindHilichurlDayContentInfo> DayContentInfoList {
+      get { return dayContentInfoList_; }
+    }
+
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 7;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_end_quest_accept" field.</summary>
+    public const int IsEndQuestAcceptFieldNumber = 5;
+    private bool isEndQuestAccept_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEndQuestAccept {
+      get { return isEndQuestAccept_; }
+      set {
+        isEndQuestAccept_ = value;
+      }
+    }
+
     /// <summary>Field number for the "player_day_index" field.</summary>
-    public const int PlayerDayIndexFieldNumber = 4;
+    public const int PlayerDayIndexFieldNumber = 14;
     private uint playerDayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,18 +173,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playerDayIndex_; }
       set {
         playerDayIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "day_index" field.</summary>
-    public const int DayIndexFieldNumber = 15;
-    private uint dayIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DayIndex {
-      get { return dayIndex_; }
-      set {
-        dayIndex_ = value;
       }
     }
 
@@ -190,13 +191,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!dayContentInfoList_.Equals(other.dayContentInfoList_)) return false;
-      if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
-      if (IsEndQuestAccept != other.IsEndQuestAccept) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
-      if (PlayerDayIndex != other.PlayerDayIndex) return false;
       if (DayIndex != other.DayIndex) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
+      if(!dayContentInfoList_.Equals(other.dayContentInfoList_)) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (IsEndQuestAccept != other.IsEndQuestAccept) return false;
+      if (PlayerDayIndex != other.PlayerDayIndex) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -204,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= dayContentInfoList_.GetHashCode();
-      if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
-      if (IsEndQuestAccept != false) hash ^= IsEndQuestAccept.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-      if (PlayerDayIndex != 0) hash ^= PlayerDayIndex.GetHashCode();
       if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
+      hash ^= dayContentInfoList_.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (IsEndQuestAccept != false) hash ^= IsEndQuestAccept.GetHashCode();
+      if (PlayerDayIndex != 0) hash ^= PlayerDayIndex.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,30 +230,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      dayContentInfoList_.WriteTo(output, _repeated_dayContentInfoList_codec);
-      if (PlayerDayIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(PlayerDayIndex);
-      }
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (IsEndQuestAccept != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsEndQuestAccept);
-      }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsContentClosed);
-      }
       if (MinOpenPlayerLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(MinOpenPlayerLevel);
       }
+      dayContentInfoList_.WriteTo(output, _repeated_dayContentInfoList_codec);
+      if (IsEndQuestAccept != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsEndQuestAccept);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ContentCloseTime);
+      }
       if (DayIndex != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(DayIndex);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsContentClosed);
+      }
+      if (PlayerDayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayerDayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -264,30 +265,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      dayContentInfoList_.WriteTo(ref output, _repeated_dayContentInfoList_codec);
-      if (PlayerDayIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(PlayerDayIndex);
-      }
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (IsEndQuestAccept != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsEndQuestAccept);
-      }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsContentClosed);
-      }
       if (MinOpenPlayerLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(MinOpenPlayerLevel);
       }
+      dayContentInfoList_.WriteTo(ref output, _repeated_dayContentInfoList_codec);
+      if (IsEndQuestAccept != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsEndQuestAccept);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ContentCloseTime);
+      }
       if (DayIndex != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(DayIndex);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsContentClosed);
+      }
+      if (PlayerDayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayerDayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -299,24 +300,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += dayContentInfoList_.CalculateSize(_repeated_dayContentInfoList_codec);
-      if (MinOpenPlayerLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
-      }
-      if (IsEndQuestAccept != false) {
-        size += 1 + 1;
-      }
-      if (ContentCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      if (DayIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
       }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
+      if (MinOpenPlayerLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
+      }
+      size += dayContentInfoList_.CalculateSize(_repeated_dayContentInfoList_codec);
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (IsEndQuestAccept != false) {
+        size += 1 + 1;
+      }
       if (PlayerDayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerDayIndex);
-      }
-      if (DayIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -330,24 +331,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      dayContentInfoList_.Add(other.dayContentInfoList_);
-      if (other.MinOpenPlayerLevel != 0) {
-        MinOpenPlayerLevel = other.MinOpenPlayerLevel;
-      }
-      if (other.IsEndQuestAccept != false) {
-        IsEndQuestAccept = other.IsEndQuestAccept;
-      }
-      if (other.ContentCloseTime != 0) {
-        ContentCloseTime = other.ContentCloseTime;
+      if (other.DayIndex != 0) {
+        DayIndex = other.DayIndex;
       }
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
+      if (other.MinOpenPlayerLevel != 0) {
+        MinOpenPlayerLevel = other.MinOpenPlayerLevel;
+      }
+      dayContentInfoList_.Add(other.dayContentInfoList_);
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.IsEndQuestAccept != false) {
+        IsEndQuestAccept = other.IsEndQuestAccept;
+      }
       if (other.PlayerDayIndex != 0) {
         PlayerDayIndex = other.PlayerDayIndex;
-      }
-      if (other.DayIndex != 0) {
-        DayIndex = other.DayIndex;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -364,32 +365,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            dayContentInfoList_.AddEntriesFrom(input, _repeated_dayContentInfoList_codec);
-            break;
-          }
-          case 32: {
-            PlayerDayIndex = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsEndQuestAccept = input.ReadBool();
-            break;
-          }
-          case 72: {
-            IsContentClosed = input.ReadBool();
-            break;
-          }
-          case 96: {
+          case 16: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 34: {
+            dayContentInfoList_.AddEntriesFrom(input, _repeated_dayContentInfoList_codec);
+            break;
+          }
+          case 40: {
+            IsEndQuestAccept = input.ReadBool();
+            break;
+          }
+          case 56: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 112: {
+            PlayerDayIndex = input.ReadUInt32();
             break;
           }
         }
@@ -407,32 +408,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            dayContentInfoList_.AddEntriesFrom(ref input, _repeated_dayContentInfoList_codec);
-            break;
-          }
-          case 32: {
-            PlayerDayIndex = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsEndQuestAccept = input.ReadBool();
-            break;
-          }
-          case 72: {
-            IsContentClosed = input.ReadBool();
-            break;
-          }
-          case 96: {
+          case 16: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 34: {
+            dayContentInfoList_.AddEntriesFrom(ref input, _repeated_dayContentInfoList_codec);
+            break;
+          }
+          case 40: {
+            IsEndQuestAccept = input.ReadBool();
+            break;
+          }
+          case 56: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 112: {
+            PlayerDayIndex = input.ReadUInt32();
             break;
           }
         }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ModifierPropertyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZNb2RpZmllclByb3BlcnR5LnByb3RvGhNBYmlsaXR5U3RyaW5nLnByb3Rv",
-            "Ij4KEE1vZGlmaWVyUHJvcGVydHkSGwoDa2V5GA8gASgLMg4uQWJpbGl0eVN0",
-            "cmluZxINCgV2YWx1ZRgFIAEoAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZNb2RpZmllclByb3BlcnR5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhNBYmlsaXR5U3RyaW5nLnByb3RvIl4KEE1vZGlmaWVy",
+            "UHJvcGVydHkSOwoDa2V5GAcgASgLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5BYmlsaXR5U3RyaW5nEg0KBXZhbHVlGAUgASgCYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityStringReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "key" field.</summary>
-    public const int KeyFieldNumber = 15;
+    public const int KeyFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.AbilityString key_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +157,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteFloat(Value);
       }
       if (key_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(58);
         output.WriteMessage(Key);
       }
       if (_unknownFields != null) {
@@ -174,7 +175,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteFloat(Value);
       }
       if (key_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(58);
         output.WriteMessage(Key);
       }
       if (_unknownFields != null) {
@@ -233,7 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Value = input.ReadFloat();
             break;
           }
-          case 122: {
+          case 58: {
             if (key_ == null) {
               Key = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
@@ -259,7 +260,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Value = input.ReadFloat();
             break;
           }
-          case 122: {
+          case 58: {
             if (key_ == null) {
               Key = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }

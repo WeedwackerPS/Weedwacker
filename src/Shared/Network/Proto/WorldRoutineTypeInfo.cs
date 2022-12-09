@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldRoutineTypeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpXb3JsZFJvdXRpbmVUeXBlSW5mby5wcm90bxoWV29ybGRSb3V0aW5lSW5m",
-            "by5wcm90byJ7ChRXb3JsZFJvdXRpbmVUeXBlSW5mbxIUCgxyb3V0aW5lX3R5",
-            "cGUYDSABKA0SGQoRbmV4dF9yZWZyZXNoX3RpbWUYDCABKA0SMgoXd29ybGRf",
-            "cm91dGluZV9pbmZvX2xpc3QYAyADKAsyES5Xb3JsZFJvdXRpbmVJbmZvQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpXb3JsZFJvdXRpbmVUeXBlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoWV29ybGRSb3V0aW5lSW5mby5wcm90byKbAQoU",
+            "V29ybGRSb3V0aW5lVHlwZUluZm8SGQoRbmV4dF9yZWZyZXNoX3RpbWUYDSAB",
+            "KA0SUgoXd29ybGRfcm91dGluZV9pbmZvX2xpc3QYCiADKAsyMS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldvcmxkUm91dGluZUluZm8SFAoM",
+            "cm91dGluZV90eXBlGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WorldRoutineInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo), global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo.Parser, new[]{ "RoutineType", "NextRefreshTime", "WorldRoutineInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo), global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo.Parser, new[]{ "NextRefreshTime", "WorldRoutineInfoList", "RoutineType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorldRoutineTypeInfo(WorldRoutineTypeInfo other) : this() {
-      routineType_ = other.routineType_;
       nextRefreshTime_ = other.nextRefreshTime_;
       worldRoutineInfoList_ = other.worldRoutineInfoList_.Clone();
+      routineType_ = other.routineType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WorldRoutineTypeInfo(this);
     }
 
-    /// <summary>Field number for the "routine_type" field.</summary>
-    public const int RoutineTypeFieldNumber = 13;
-    private uint routineType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RoutineType {
-      get { return routineType_; }
-      set {
-        routineType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 12;
+    public const int NextRefreshTimeFieldNumber = 13;
     private uint nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,14 +99,26 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "world_routine_info_list" field.</summary>
-    public const int WorldRoutineInfoListFieldNumber = 3;
+    public const int WorldRoutineInfoListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo> _repeated_worldRoutineInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo> worldRoutineInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo> WorldRoutineInfoList {
       get { return worldRoutineInfoList_; }
+    }
+
+    /// <summary>Field number for the "routine_type" field.</summary>
+    public const int RoutineTypeFieldNumber = 2;
+    private uint routineType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RoutineType {
+      get { return routineType_; }
+      set {
+        routineType_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RoutineType != other.RoutineType) return false;
       if (NextRefreshTime != other.NextRefreshTime) return false;
       if(!worldRoutineInfoList_.Equals(other.worldRoutineInfoList_)) return false;
+      if (RoutineType != other.RoutineType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RoutineType != 0) hash ^= RoutineType.GetHashCode();
       if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       hash ^= worldRoutineInfoList_.GetHashCode();
+      if (RoutineType != 0) hash ^= RoutineType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,14 +167,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (RoutineType != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(RoutineType);
+      }
       worldRoutineInfoList_.WriteTo(output, _repeated_worldRoutineInfoList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (RoutineType != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(RoutineType);
+        output.WriteUInt32(NextRefreshTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -185,14 +186,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RoutineType != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(RoutineType);
+      }
       worldRoutineInfoList_.WriteTo(ref output, _repeated_worldRoutineInfoList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (RoutineType != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(RoutineType);
+        output.WriteUInt32(NextRefreshTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -204,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RoutineType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoutineType);
-      }
       if (NextRefreshTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
       }
       size += worldRoutineInfoList_.CalculateSize(_repeated_worldRoutineInfoList_codec);
+      if (RoutineType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoutineType);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -223,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RoutineType != 0) {
-        RoutineType = other.RoutineType;
-      }
       if (other.NextRefreshTime != 0) {
         NextRefreshTime = other.NextRefreshTime;
       }
       worldRoutineInfoList_.Add(other.worldRoutineInfoList_);
+      if (other.RoutineType != 0) {
+        RoutineType = other.RoutineType;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -245,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 16: {
+            RoutineType = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             worldRoutineInfoList_.AddEntriesFrom(input, _repeated_worldRoutineInfoList_codec);
             break;
           }
-          case 96: {
-            NextRefreshTime = input.ReadUInt32();
-            break;
-          }
           case 104: {
-            RoutineType = input.ReadUInt32();
+            NextRefreshTime = input.ReadUInt32();
             break;
           }
         }
@@ -272,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 16: {
+            RoutineType = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             worldRoutineInfoList_.AddEntriesFrom(ref input, _repeated_worldRoutineInfoList_codec);
             break;
           }
-          case 96: {
-            NextRefreshTime = input.ReadUInt32();
-            break;
-          }
           case 104: {
-            RoutineType = input.ReadUInt32();
+            NextRefreshTime = input.ReadUInt32();
             break;
           }
         }

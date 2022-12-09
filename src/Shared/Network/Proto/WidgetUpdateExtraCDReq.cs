@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetUpdateExtraCDReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXaWRnZXRVcGRhdGVFeHRyYUNEUmVxLnByb3RvGhdXaWRnZXRFeHRyYUNk",
-            "VHlwZS5wcm90byJqChZXaWRnZXRVcGRhdGVFeHRyYUNEUmVxEhMKC21hdGVy",
-            "aWFsX2lkGA4gASgNEikKDWV4dHJhX2NkX3R5cGUYCiABKA4yEi5XaWRnZXRF",
-            "eHRyYUNkVHlwZRIQCghjZF9ncm91cBgHIAEoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxXaWRnZXRVcGRhdGVFeHRyYUNEUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhdXaWRnZXRFeHRyYUNkVHlwZS5wcm90byKK",
+            "AQoWV2lkZ2V0VXBkYXRlRXh0cmFDRFJlcRITCgttYXRlcmlhbF9pZBgGIAEo",
+            "DRJJCg1leHRyYV9jZF90eXBlGAcgASgOMjIuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5XaWRnZXRFeHRyYUNkVHlwZRIQCghjZF9ncm91cBgO",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetExtraCdTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5960
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5907;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetUpdateExtraCDReq : pb::IMessage<WidgetUpdateExtraCDReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 14;
+    public const int MaterialIdFieldNumber = 6;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "extra_cd_type" field.</summary>
-    public const int ExtraCdTypeFieldNumber = 10;
+    public const int ExtraCdTypeFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType extraCdType_ = global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cd_group" field.</summary>
-    public const int CdGroupFieldNumber = 7;
+    public const int CdGroupFieldNumber = 14;
     private uint cdGroup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -173,17 +178,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CdGroup != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CdGroup);
+      if (MaterialId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MaterialId);
       }
       if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteEnum((int) ExtraCdType);
       }
-      if (MaterialId != 0) {
+      if (CdGroup != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(MaterialId);
+        output.WriteUInt32(CdGroup);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,17 +200,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CdGroup != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CdGroup);
+      if (MaterialId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MaterialId);
       }
       if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteEnum((int) ExtraCdType);
       }
-      if (MaterialId != 0) {
+      if (CdGroup != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(MaterialId);
+        output.WriteUInt32(CdGroup);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -262,16 +267,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            CdGroup = input.ReadUInt32();
+          case 48: {
+            MaterialId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 56: {
             ExtraCdType = (global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType) input.ReadEnum();
             break;
           }
           case 112: {
-            MaterialId = input.ReadUInt32();
+            CdGroup = input.ReadUInt32();
             break;
           }
         }
@@ -289,16 +294,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            CdGroup = input.ReadUInt32();
+          case 48: {
+            MaterialId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 56: {
             ExtraCdType = (global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType) input.ReadEnum();
             break;
           }
           case 112: {
-            MaterialId = input.ReadUInt32();
+            CdGroup = input.ReadUInt32();
             break;
           }
         }

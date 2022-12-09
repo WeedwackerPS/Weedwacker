@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketFinishStorePlayReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UmVxLnByb3RvGh5WaW50",
-            "YWdlTWFya2V0U3RvcmVPcEluZm8ucHJvdG8iaAofVmludGFnZU1hcmtldEZp",
-            "bmlzaFN0b3JlUGxheVJlcRITCgtzdG9yZV9yb3VuZBgJIAEoDRIwCg1zdG9y",
-            "ZV9vcF9saXN0GAMgAygLMhkuVmludGFnZU1hcmtldFN0b3JlT3BJbmZvQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh5WaW50YWdlTWFya2V0U3Rv",
+            "cmVPcEluZm8ucHJvdG8iiAEKH1ZpbnRhZ2VNYXJrZXRGaW5pc2hTdG9yZVBs",
+            "YXlSZXESEwoLc3RvcmVfcm91bmQYDCABKA0SUAoNc3RvcmVfb3BfbGlzdBgL",
+            "IAMoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmludGFn",
+            "ZU1hcmtldFN0b3JlT3BJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20676
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 21911;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketFinishStorePlayReq : pb::IMessage<VintageMarketFinishStorePlayReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "store_round" field.</summary>
-    public const int StoreRoundFieldNumber = 9;
+    public const int StoreRoundFieldNumber = 12;
     private uint storeRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "store_op_list" field.</summary>
-    public const int StoreOpListFieldNumber = 3;
+    public const int StoreOpListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfo> _repeated_storeOpList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfo> storeOpList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreOpInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,7 +164,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       storeOpList_.WriteTo(output, _repeated_storeOpList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteUInt32(StoreRound);
       }
       if (_unknownFields != null) {
@@ -174,7 +179,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       storeOpList_.WriteTo(ref output, _repeated_storeOpList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteUInt32(StoreRound);
       }
       if (_unknownFields != null) {
@@ -222,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 90: {
             storeOpList_.AddEntriesFrom(input, _repeated_storeOpList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             StoreRound = input.ReadUInt32();
             break;
           }
@@ -245,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 90: {
             storeOpList_.AddEntriesFrom(ref input, _repeated_storeOpList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             StoreRound = input.ReadUInt32();
             break;
           }

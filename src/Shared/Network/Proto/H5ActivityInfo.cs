@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static H5ActivityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRINUFjdGl2aXR5SW5mby5wcm90byK+AQoOSDVBY3Rpdml0eUluZm8SFgoO",
-            "aDVfYWN0aXZpdHlfaWQYAyABKA0SCwoDdXJsGAQgASgJEhgKEGlzX2VudHJh",
-            "bmNlX29wZW4YByABKAgSFgoOaDVfc2NoZWR1bGVfaWQYCCABKA0SEAoIZW5k",
-            "X3RpbWUYCiABKA0SEwoLcHJlZmFiX3BhdGgYCyABKAkSGgoSY29udGVudF9j",
-            "bG9zZV90aW1lGAIgASgNEhIKCmJlZ2luX3RpbWUYDSABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRINUFjdGl2aXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byLIAQoOSDVBY3Rpdml0eUluZm8SGAoQaXNfZW50cmFuY2Vf",
+            "b3BlbhgCIAEoCBIbChNVbmszMzAwX09CS0VCRENLSEpGGAEgASgNEhsKE1Vu",
+            "azMzMDBfRE1CTkZFQ0FLQkgYDiABKA0SGgoSY29udGVudF9jbG9zZV90aW1l",
+            "GAQgASgNEgsKA3VybBgDIAEoCRITCgtwcmVmYWJfcGF0aBgPIAEoCRISCgpi",
+            "ZWdpbl90aW1lGAUgASgNEhAKCGVuZF90aW1lGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.H5ActivityInfo), global::Weedwacker.Shared.Network.Proto.H5ActivityInfo.Parser, new[]{ "H5ActivityId", "Url", "IsEntranceOpen", "H5ScheduleId", "EndTime", "PrefabPath", "ContentCloseTime", "BeginTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.H5ActivityInfo), global::Weedwacker.Shared.Network.Proto.H5ActivityInfo.Parser, new[]{ "IsEntranceOpen", "Unk3300OBKEBDCKHJF", "Unk3300DMBNFECAKBH", "ContentCloseTime", "Url", "PrefabPath", "BeginTime", "EndTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,14 +74,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public H5ActivityInfo(H5ActivityInfo other) : this() {
-      h5ActivityId_ = other.h5ActivityId_;
-      url_ = other.url_;
       isEntranceOpen_ = other.isEntranceOpen_;
-      h5ScheduleId_ = other.h5ScheduleId_;
-      endTime_ = other.endTime_;
-      prefabPath_ = other.prefabPath_;
+      unk3300OBKEBDCKHJF_ = other.unk3300OBKEBDCKHJF_;
+      unk3300DMBNFECAKBH_ = other.unk3300DMBNFECAKBH_;
       contentCloseTime_ = other.contentCloseTime_;
+      url_ = other.url_;
+      prefabPath_ = other.prefabPath_;
       beginTime_ = other.beginTime_;
+      endTime_ = other.endTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,32 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new H5ActivityInfo(this);
     }
 
-    /// <summary>Field number for the "h5_activity_id" field.</summary>
-    public const int H5ActivityIdFieldNumber = 3;
-    private uint h5ActivityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint H5ActivityId {
-      get { return h5ActivityId_; }
-      set {
-        h5ActivityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "url" field.</summary>
-    public const int UrlFieldNumber = 4;
-    private string url_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Url {
-      get { return url_; }
-      set {
-        url_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "is_entrance_open" field.</summary>
-    public const int IsEntranceOpenFieldNumber = 7;
+    public const int IsEntranceOpenFieldNumber = 2;
     private bool isEntranceOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,44 +103,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "h5_schedule_id" field.</summary>
-    public const int H5ScheduleIdFieldNumber = 8;
-    private uint h5ScheduleId_;
+    /// <summary>Field number for the "Unk3300_OBKEBDCKHJF" field.</summary>
+    public const int Unk3300OBKEBDCKHJFFieldNumber = 1;
+    private uint unk3300OBKEBDCKHJF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint H5ScheduleId {
-      get { return h5ScheduleId_; }
+    public uint Unk3300OBKEBDCKHJF {
+      get { return unk3300OBKEBDCKHJF_; }
       set {
-        h5ScheduleId_ = value;
+        unk3300OBKEBDCKHJF_ = value;
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 10;
-    private uint endTime_;
+    /// <summary>Field number for the "Unk3300_DMBNFECAKBH" field.</summary>
+    public const int Unk3300DMBNFECAKBHFieldNumber = 14;
+    private uint unk3300DMBNFECAKBH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
+    public uint Unk3300DMBNFECAKBH {
+      get { return unk3300DMBNFECAKBH_; }
       set {
-        endTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "prefab_path" field.</summary>
-    public const int PrefabPathFieldNumber = 11;
-    private string prefabPath_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PrefabPath {
-      get { return prefabPath_; }
-      set {
-        prefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300DMBNFECAKBH_ = value;
       }
     }
 
     /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 2;
+    public const int ContentCloseTimeFieldNumber = 4;
     private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,8 +139,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "url" field.</summary>
+    public const int UrlFieldNumber = 3;
+    private string url_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Url {
+      get { return url_; }
+      set {
+        url_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "prefab_path" field.</summary>
+    public const int PrefabPathFieldNumber = 15;
+    private string prefabPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PrefabPath {
+      get { return prefabPath_; }
+      set {
+        prefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 13;
+    public const int BeginTimeFieldNumber = 5;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -184,6 +172,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return beginTime_; }
       set {
         beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 7;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
       }
     }
 
@@ -202,14 +202,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (H5ActivityId != other.H5ActivityId) return false;
-      if (Url != other.Url) return false;
       if (IsEntranceOpen != other.IsEntranceOpen) return false;
-      if (H5ScheduleId != other.H5ScheduleId) return false;
-      if (EndTime != other.EndTime) return false;
-      if (PrefabPath != other.PrefabPath) return false;
+      if (Unk3300OBKEBDCKHJF != other.Unk3300OBKEBDCKHJF) return false;
+      if (Unk3300DMBNFECAKBH != other.Unk3300DMBNFECAKBH) return false;
       if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (Url != other.Url) return false;
+      if (PrefabPath != other.PrefabPath) return false;
       if (BeginTime != other.BeginTime) return false;
+      if (EndTime != other.EndTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -217,14 +217,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (H5ActivityId != 0) hash ^= H5ActivityId.GetHashCode();
-      if (Url.Length != 0) hash ^= Url.GetHashCode();
       if (IsEntranceOpen != false) hash ^= IsEntranceOpen.GetHashCode();
-      if (H5ScheduleId != 0) hash ^= H5ScheduleId.GetHashCode();
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
-      if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
+      if (Unk3300OBKEBDCKHJF != 0) hash ^= Unk3300OBKEBDCKHJF.GetHashCode();
+      if (Unk3300DMBNFECAKBH != 0) hash ^= Unk3300DMBNFECAKBH.GetHashCode();
       if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (Url.Length != 0) hash ^= Url.GetHashCode();
+      if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -243,37 +243,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (H5ActivityId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(H5ActivityId);
-      }
-      if (Url.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Url);
+      if (Unk3300OBKEBDCKHJF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300OBKEBDCKHJF);
       }
       if (IsEntranceOpen != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteBool(IsEntranceOpen);
       }
-      if (H5ScheduleId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(H5ScheduleId);
+      if (Url.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Url);
       }
-      if (EndTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(EndTime);
-      }
-      if (PrefabPath.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(PrefabPath);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
       }
       if (BeginTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(EndTime);
+      }
+      if (Unk3300DMBNFECAKBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DMBNFECAKBH);
+      }
+      if (PrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(PrefabPath);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -285,37 +285,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (H5ActivityId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(H5ActivityId);
-      }
-      if (Url.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Url);
+      if (Unk3300OBKEBDCKHJF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300OBKEBDCKHJF);
       }
       if (IsEntranceOpen != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteBool(IsEntranceOpen);
       }
-      if (H5ScheduleId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(H5ScheduleId);
+      if (Url.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Url);
       }
-      if (EndTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(EndTime);
-      }
-      if (PrefabPath.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(PrefabPath);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
       }
       if (BeginTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(EndTime);
+      }
+      if (Unk3300DMBNFECAKBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DMBNFECAKBH);
+      }
+      if (PrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(PrefabPath);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -327,29 +327,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (H5ActivityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(H5ActivityId);
-      }
-      if (Url.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
-      }
       if (IsEntranceOpen != false) {
         size += 1 + 1;
       }
-      if (H5ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(H5ScheduleId);
+      if (Unk3300OBKEBDCKHJF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OBKEBDCKHJF);
       }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-      }
-      if (PrefabPath.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
+      if (Unk3300DMBNFECAKBH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DMBNFECAKBH);
       }
       if (ContentCloseTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
       }
+      if (Url.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
+      }
+      if (PrefabPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
+      }
       if (BeginTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -363,29 +363,29 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.H5ActivityId != 0) {
-        H5ActivityId = other.H5ActivityId;
-      }
-      if (other.Url.Length != 0) {
-        Url = other.Url;
-      }
       if (other.IsEntranceOpen != false) {
         IsEntranceOpen = other.IsEntranceOpen;
       }
-      if (other.H5ScheduleId != 0) {
-        H5ScheduleId = other.H5ScheduleId;
+      if (other.Unk3300OBKEBDCKHJF != 0) {
+        Unk3300OBKEBDCKHJF = other.Unk3300OBKEBDCKHJF;
       }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
-      }
-      if (other.PrefabPath.Length != 0) {
-        PrefabPath = other.PrefabPath;
+      if (other.Unk3300DMBNFECAKBH != 0) {
+        Unk3300DMBNFECAKBH = other.Unk3300DMBNFECAKBH;
       }
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }
+      if (other.Url.Length != 0) {
+        Url = other.Url;
+      }
+      if (other.PrefabPath.Length != 0) {
+        PrefabPath = other.PrefabPath;
+      }
       if (other.BeginTime != 0) {
         BeginTime = other.BeginTime;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -402,36 +402,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Unk3300OBKEBDCKHJF = input.ReadUInt32();
+            break;
+          }
           case 16: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            H5ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            Url = input.ReadString();
-            break;
-          }
-          case 56: {
             IsEntranceOpen = input.ReadBool();
             break;
           }
-          case 64: {
-            H5ScheduleId = input.ReadUInt32();
+          case 26: {
+            Url = input.ReadString();
             break;
           }
-          case 80: {
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 90: {
-            PrefabPath = input.ReadString();
+          case 112: {
+            Unk3300DMBNFECAKBH = input.ReadUInt32();
             break;
           }
-          case 104: {
-            BeginTime = input.ReadUInt32();
+          case 122: {
+            PrefabPath = input.ReadString();
             break;
           }
         }
@@ -449,36 +449,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Unk3300OBKEBDCKHJF = input.ReadUInt32();
+            break;
+          }
           case 16: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            H5ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            Url = input.ReadString();
-            break;
-          }
-          case 56: {
             IsEntranceOpen = input.ReadBool();
             break;
           }
-          case 64: {
-            H5ScheduleId = input.ReadUInt32();
+          case 26: {
+            Url = input.ReadString();
             break;
           }
-          case 80: {
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 90: {
-            PrefabPath = input.ReadString();
+          case 112: {
+            Unk3300DMBNFECAKBH = input.ReadUInt32();
             break;
           }
-          case 104: {
-            BeginTime = input.ReadUInt32();
+          case 122: {
+            PrefabPath = input.ReadString();
             break;
           }
         }

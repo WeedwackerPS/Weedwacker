@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static IslandPartySettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Jc2xhbmRQYXJ0eVNldHRsZU5vdGlmeS5wcm90bxobRXhoaWJpdGlvbkRp",
-            "c3BsYXlJbmZvLnByb3RvGhdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90bxoiSXNs",
-            "YW5kUGFydHlHYWxsZXJ5U2V0dGxlSW5mby5wcm90byLOAQoXSXNsYW5kUGFy",
-            "dHlTZXR0bGVOb3RpZnkSFQoNaXNfbmV3X3JlY29yZBgNIAEoCBIiCgZyZWFz",
-            "b24YASABKA4yEi5HYWxsZXJ5U3RvcFJlYXNvbhI3ChBzZXR0bGVfaW5mb19s",
-            "aXN0GAggAygLMh0uSXNsYW5kUGFydHlHYWxsZXJ5U2V0dGxlSW5mbxIqCgpz",
-            "Y29yZV9saXN0GAYgAygLMhYuRXhoaWJpdGlvbkRpc3BsYXlJbmZvEhMKC3Rp",
-            "bWVfcmVtYWluGA8gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch1Jc2xhbmRQYXJ0eVNldHRsZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxobRXhoaWJpdGlvbkRpc3BsYXlJbmZvLnBy",
+            "b3RvGhdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90bxoiSXNsYW5kUGFydHlHYWxs",
+            "ZXJ5U2V0dGxlSW5mby5wcm90byKuAgoXSXNsYW5kUGFydHlTZXR0bGVOb3Rp",
+            "ZnkSEwoLdGltZV9yZW1haW4YCSABKA0SFQoNaXNfbmV3X3JlY29yZBgDIAEo",
+            "CBJKCgpzY29yZV9saXN0GAUgAygLMjYuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5FeGhpYml0aW9uRGlzcGxheUluZm8SQgoGcmVhc29uGAwg",
+            "ASgOMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWxsZXJ5",
+            "U3RvcFJlYXNvbhJXChBzZXR0bGVfaW5mb19saXN0GA0gAygLMj0uV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Jc2xhbmRQYXJ0eUdhbGxlcnlT",
+            "ZXR0bGVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartySettleNotify), global::Weedwacker.Shared.Network.Proto.IslandPartySettleNotify.Parser, new[]{ "IsNewRecord", "Reason", "SettleInfoList", "ScoreList", "TimeRemain" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartySettleNotify), global::Weedwacker.Shared.Network.Proto.IslandPartySettleNotify.Parser, new[]{ "TimeRemain", "IsNewRecord", "ScoreList", "Reason", "SettleInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 24601
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 24127;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IslandPartySettleNotify : pb::IMessage<IslandPartySettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,11 +88,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IslandPartySettleNotify(IslandPartySettleNotify other) : this() {
+      timeRemain_ = other.timeRemain_;
       isNewRecord_ = other.isNewRecord_;
+      scoreList_ = other.scoreList_.Clone();
       reason_ = other.reason_;
       settleInfoList_ = other.settleInfoList_.Clone();
-      scoreList_ = other.scoreList_.Clone();
-      timeRemain_ = other.timeRemain_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,8 +102,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IslandPartySettleNotify(this);
     }
 
+    /// <summary>Field number for the "time_remain" field.</summary>
+    public const int TimeRemainFieldNumber = 9;
+    private uint timeRemain_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TimeRemain {
+      get { return timeRemain_; }
+      set {
+        timeRemain_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 13;
+    public const int IsNewRecordFieldNumber = 3;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +126,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "score_list" field.</summary>
+    public const int ScoreListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
+      get { return scoreList_; }
+    }
+
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 1;
+    public const int ReasonFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,37 +150,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info_list" field.</summary>
-    public const int SettleInfoListFieldNumber = 8;
+    public const int SettleInfoListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo> _repeated_settleInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo> settleInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IslandPartyGallerySettleInfo> SettleInfoList {
       get { return settleInfoList_; }
-    }
-
-    /// <summary>Field number for the "score_list" field.</summary>
-    public const int ScoreListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
-      get { return scoreList_; }
-    }
-
-    /// <summary>Field number for the "time_remain" field.</summary>
-    public const int TimeRemainFieldNumber = 15;
-    private uint timeRemain_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeRemain {
-      get { return timeRemain_; }
-      set {
-        timeRemain_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (TimeRemain != other.TimeRemain) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
+      if(!scoreList_.Equals(other.scoreList_)) return false;
       if (Reason != other.Reason) return false;
       if(!settleInfoList_.Equals(other.settleInfoList_)) return false;
-      if(!scoreList_.Equals(other.scoreList_)) return false;
-      if (TimeRemain != other.TimeRemain) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (TimeRemain != 0) hash ^= TimeRemain.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      hash ^= scoreList_.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
       hash ^= settleInfoList_.GetHashCode();
-      hash ^= scoreList_.GetHashCode();
-      if (TimeRemain != 0) hash ^= TimeRemain.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,20 +210,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Reason);
-      }
-      scoreList_.WriteTo(output, _repeated_scoreList_codec);
-      settleInfoList_.WriteTo(output, _repeated_settleInfoList_codec);
       if (IsNewRecord != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteBool(IsNewRecord);
       }
+      scoreList_.WriteTo(output, _repeated_scoreList_codec);
       if (TimeRemain != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(TimeRemain);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Reason);
+      }
+      settleInfoList_.WriteTo(output, _repeated_settleInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -228,20 +234,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Reason);
-      }
-      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
-      settleInfoList_.WriteTo(ref output, _repeated_settleInfoList_codec);
       if (IsNewRecord != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteBool(IsNewRecord);
       }
+      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
       if (TimeRemain != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(TimeRemain);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Reason);
+      }
+      settleInfoList_.WriteTo(ref output, _repeated_settleInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -252,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (TimeRemain != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeRemain);
+      }
       if (IsNewRecord != false) {
         size += 1 + 1;
       }
+      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       size += settleInfoList_.CalculateSize(_repeated_settleInfoList_codec);
-      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
-      if (TimeRemain != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeRemain);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -275,17 +281,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TimeRemain != 0) {
+        TimeRemain = other.TimeRemain;
+      }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
       }
+      scoreList_.Add(other.scoreList_);
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         Reason = other.Reason;
       }
       settleInfoList_.Add(other.settleInfoList_);
-      scoreList_.Add(other.scoreList_);
-      if (other.TimeRemain != 0) {
-        TimeRemain = other.TimeRemain;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -301,24 +307,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
-            break;
-          }
-          case 50: {
-            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
-            break;
-          }
-          case 66: {
-            settleInfoList_.AddEntriesFrom(input, _repeated_settleInfoList_codec);
-            break;
-          }
-          case 104: {
+          case 24: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 120: {
+          case 42: {
+            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+            break;
+          }
+          case 72: {
             TimeRemain = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 106: {
+            settleInfoList_.AddEntriesFrom(input, _repeated_settleInfoList_codec);
             break;
           }
         }
@@ -336,24 +342,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
-            break;
-          }
-          case 50: {
-            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
-            break;
-          }
-          case 66: {
-            settleInfoList_.AddEntriesFrom(ref input, _repeated_settleInfoList_codec);
-            break;
-          }
-          case 104: {
+          case 24: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 120: {
+          case 42: {
+            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+            break;
+          }
+          case 72: {
             TimeRemain = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 106: {
+            settleInfoList_.AddEntriesFrom(ref input, _repeated_settleInfoList_codec);
             break;
           }
         }

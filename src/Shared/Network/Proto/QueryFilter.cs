@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static QueryFilterReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFRdWVyeUZpbHRlci5wcm90byIxCgtRdWVyeUZpbHRlchIPCgd0eXBlX2lk",
-            "GAkgASgFEhEKCWFyZWFfbWFzaxgNIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChFRdWVyeUZpbHRlci5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byIxCgtRdWVyeUZpbHRlchIRCglhcmVhX21hc2sYBCABKAUSDwoH",
+            "dHlwZV9pZBgDIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryFilter), global::Weedwacker.Shared.Network.Proto.QueryFilter.Parser, new[]{ "TypeId", "AreaMask" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryFilter), global::Weedwacker.Shared.Network.Proto.QueryFilter.Parser, new[]{ "AreaMask", "TypeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QueryFilter(QueryFilter other) : this() {
-      typeId_ = other.typeId_;
       areaMask_ = other.areaMask_;
+      typeId_ = other.typeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,20 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new QueryFilter(this);
     }
 
-    /// <summary>Field number for the "type_id" field.</summary>
-    public const int TypeIdFieldNumber = 9;
-    private int typeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int TypeId {
-      get { return typeId_; }
-      set {
-        typeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "area_mask" field.</summary>
-    public const int AreaMaskFieldNumber = 13;
+    public const int AreaMaskFieldNumber = 4;
     private int areaMask_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return areaMask_; }
       set {
         areaMask_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type_id" field.</summary>
+    public const int TypeIdFieldNumber = 3;
+    private int typeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int TypeId {
+      get { return typeId_; }
+      set {
+        typeId_ = value;
       }
     }
 
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TypeId != other.TypeId) return false;
       if (AreaMask != other.AreaMask) return false;
+      if (TypeId != other.TypeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TypeId != 0) hash ^= TypeId.GetHashCode();
       if (AreaMask != 0) hash ^= AreaMask.GetHashCode();
+      if (TypeId != 0) hash ^= TypeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TypeId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteInt32(TypeId);
       }
       if (AreaMask != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteInt32(AreaMask);
       }
       if (_unknownFields != null) {
@@ -169,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TypeId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteInt32(TypeId);
       }
       if (AreaMask != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteInt32(AreaMask);
       }
       if (_unknownFields != null) {
@@ -186,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TypeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TypeId);
-      }
       if (AreaMask != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AreaMask);
+      }
+      if (TypeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TypeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -204,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TypeId != 0) {
-        TypeId = other.TypeId;
-      }
       if (other.AreaMask != 0) {
         AreaMask = other.AreaMask;
+      }
+      if (other.TypeId != 0) {
+        TypeId = other.TypeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 24: {
             TypeId = input.ReadInt32();
             break;
           }
-          case 104: {
+          case 32: {
             AreaMask = input.ReadInt32();
             break;
           }
@@ -248,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 24: {
             TypeId = input.ReadInt32();
             break;
           }
-          case 104: {
+          case 32: {
             AreaMask = input.ReadInt32();
             break;
           }

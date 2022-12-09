@@ -24,23 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static DataResVersionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpEYXRhUmVzVmVyc2lvbk5vdGlmeS5wcm90bxoWUmVzVmVyc2lvbkNvbmZp",
-            "Zy5wcm90byLjAwoURGF0YVJlc1ZlcnNpb25Ob3RpZnkSGgoSY2xpZW50X3Np",
-            "bGVuY2VfbWQ1GAogASgJEiUKHWNsaWVudF9zaWxlbmNlX3ZlcnNpb25fc3Vm",
-            "Zml4GA8gASgJEi0KEnJlc192ZXJzaW9uX2NvbmZpZxgJIAEoCzIRLlJlc1Zl",
-            "cnNpb25Db25maWcSHAoUaXNfZGF0YV9uZWVkX3JlbG9naW4YByABKAgSOwoH",
-            "b3BfdHlwZRgMIAEoDjIqLkRhdGFSZXNWZXJzaW9uTm90aWZ5LkRhdGFSZXNW",
-            "ZXJzaW9uT3BUeXBlEhsKE2NsaWVudF9kYXRhX3ZlcnNpb24YAiABKA0SHQoV",
-            "Y2xpZW50X3ZlcnNpb25fc3VmZml4GAUgASgJEiMKG2NsaWVudF9zaWxlbmNl",
-            "X2RhdGFfdmVyc2lvbhgBIAEoDRISCgpjbGllbnRfbWQ1GA4gASgJIogBChRE",
-            "YXRhUmVzVmVyc2lvbk9wVHlwZRIhCh1EQVRBX1JFU19WRVJTSU9OX09QX1RZ",
-            "UEVfTk9ORRAAEiQKIERBVEFfUkVTX1ZFUlNJT05fT1BfVFlQRV9SRUxPR0lO",
-            "EAESJwojREFUQV9SRVNfVkVSU0lPTl9PUF9UWVBFX01QX1JFTE9HSU4QAkIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpEYXRhUmVzVmVyc2lvbk5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoWUmVzVmVyc2lvbkNvbmZpZy5wcm90byKjBAoU",
+            "RGF0YVJlc1ZlcnNpb25Ob3RpZnkSIwobY2xpZW50X3NpbGVuY2VfZGF0YV92",
+            "ZXJzaW9uGA0gASgNElsKB29wX3R5cGUYBiABKA4ySi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkRhdGFSZXNWZXJzaW9uTm90aWZ5LkRhdGFS",
+            "ZXNWZXJzaW9uT3BUeXBlEiUKHWNsaWVudF9zaWxlbmNlX3ZlcnNpb25fc3Vm",
+            "Zml4GAMgASgJEh0KFWNsaWVudF92ZXJzaW9uX3N1ZmZpeBgJIAEoCRIcChRp",
+            "c19kYXRhX25lZWRfcmVsb2dpbhgPIAEoCBIaChJjbGllbnRfc2lsZW5jZV9t",
+            "ZDUYDCABKAkSGwoTY2xpZW50X2RhdGFfdmVyc2lvbhgFIAEoDRISCgpjbGll",
+            "bnRfbWQ1GAIgASgJEk0KEnJlc192ZXJzaW9uX2NvbmZpZxgHIAEoCzIxLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUmVzVmVyc2lvbkNvbmZp",
+            "ZyKIAQoURGF0YVJlc1ZlcnNpb25PcFR5cGUSIQodREFUQV9SRVNfVkVSU0lP",
+            "Tl9PUF9UWVBFX05PTkUQABIkCiBEQVRBX1JFU19WRVJTSU9OX09QX1RZUEVf",
+            "UkVMT0dJThABEicKI0RBVEFfUkVTX1ZFUlNJT05fT1BfVFlQRV9NUF9SRUxP",
+            "R0lOEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ResVersionConfigReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DataResVersionNotify), global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Parser, new[]{ "ClientSilenceMd5", "ClientSilenceVersionSuffix", "ResVersionConfig", "IsDataNeedRelogin", "OpType", "ClientDataVersion", "ClientVersionSuffix", "ClientSilenceDataVersion", "ClientMd5" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DataResVersionNotify), global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Parser, new[]{ "ClientSilenceDataVersion", "OpType", "ClientSilenceVersionSuffix", "ClientVersionSuffix", "IsDataNeedRelogin", "ClientSilenceMd5", "ClientDataVersion", "ClientMd5", "ResVersionConfig" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) }, null, null)
           }));
     }
     #endregion
@@ -48,9 +50,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 167
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 153;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DataResVersionNotify : pb::IMessage<DataResVersionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -86,15 +92,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataResVersionNotify(DataResVersionNotify other) : this() {
-      clientSilenceMd5_ = other.clientSilenceMd5_;
-      clientSilenceVersionSuffix_ = other.clientSilenceVersionSuffix_;
-      resVersionConfig_ = other.resVersionConfig_ != null ? other.resVersionConfig_.Clone() : null;
-      isDataNeedRelogin_ = other.isDataNeedRelogin_;
-      opType_ = other.opType_;
-      clientDataVersion_ = other.clientDataVersion_;
-      clientVersionSuffix_ = other.clientVersionSuffix_;
       clientSilenceDataVersion_ = other.clientSilenceDataVersion_;
+      opType_ = other.opType_;
+      clientSilenceVersionSuffix_ = other.clientSilenceVersionSuffix_;
+      clientVersionSuffix_ = other.clientVersionSuffix_;
+      isDataNeedRelogin_ = other.isDataNeedRelogin_;
+      clientSilenceMd5_ = other.clientSilenceMd5_;
+      clientDataVersion_ = other.clientDataVersion_;
       clientMd5_ = other.clientMd5_;
+      resVersionConfig_ = other.resVersionConfig_ != null ? other.resVersionConfig_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,92 +110,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DataResVersionNotify(this);
     }
 
-    /// <summary>Field number for the "client_silence_md5" field.</summary>
-    public const int ClientSilenceMd5FieldNumber = 10;
-    private string clientSilenceMd5_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientSilenceMd5 {
-      get { return clientSilenceMd5_; }
-      set {
-        clientSilenceMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "client_silence_version_suffix" field.</summary>
-    public const int ClientSilenceVersionSuffixFieldNumber = 15;
-    private string clientSilenceVersionSuffix_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientSilenceVersionSuffix {
-      get { return clientSilenceVersionSuffix_; }
-      set {
-        clientSilenceVersionSuffix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "res_version_config" field.</summary>
-    public const int ResVersionConfigFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.ResVersionConfig resVersionConfig_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ResVersionConfig ResVersionConfig {
-      get { return resVersionConfig_; }
-      set {
-        resVersionConfig_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_data_need_relogin" field.</summary>
-    public const int IsDataNeedReloginFieldNumber = 7;
-    private bool isDataNeedRelogin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsDataNeedRelogin {
-      get { return isDataNeedRelogin_; }
-      set {
-        isDataNeedRelogin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "op_type" field.</summary>
-    public const int OpTypeFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType opType_ = global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType OpType {
-      get { return opType_; }
-      set {
-        opType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "client_data_version" field.</summary>
-    public const int ClientDataVersionFieldNumber = 2;
-    private uint clientDataVersion_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ClientDataVersion {
-      get { return clientDataVersion_; }
-      set {
-        clientDataVersion_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "client_version_suffix" field.</summary>
-    public const int ClientVersionSuffixFieldNumber = 5;
-    private string clientVersionSuffix_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientVersionSuffix {
-      get { return clientVersionSuffix_; }
-      set {
-        clientVersionSuffix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "client_silence_data_version" field.</summary>
-    public const int ClientSilenceDataVersionFieldNumber = 1;
+    public const int ClientSilenceDataVersionFieldNumber = 13;
     private uint clientSilenceDataVersion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -200,8 +122,80 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "op_type" field.</summary>
+    public const int OpTypeFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType opType_ = global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType OpType {
+      get { return opType_; }
+      set {
+        opType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_silence_version_suffix" field.</summary>
+    public const int ClientSilenceVersionSuffixFieldNumber = 3;
+    private string clientSilenceVersionSuffix_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientSilenceVersionSuffix {
+      get { return clientSilenceVersionSuffix_; }
+      set {
+        clientSilenceVersionSuffix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_version_suffix" field.</summary>
+    public const int ClientVersionSuffixFieldNumber = 9;
+    private string clientVersionSuffix_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientVersionSuffix {
+      get { return clientVersionSuffix_; }
+      set {
+        clientVersionSuffix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "is_data_need_relogin" field.</summary>
+    public const int IsDataNeedReloginFieldNumber = 15;
+    private bool isDataNeedRelogin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsDataNeedRelogin {
+      get { return isDataNeedRelogin_; }
+      set {
+        isDataNeedRelogin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_silence_md5" field.</summary>
+    public const int ClientSilenceMd5FieldNumber = 12;
+    private string clientSilenceMd5_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientSilenceMd5 {
+      get { return clientSilenceMd5_; }
+      set {
+        clientSilenceMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_data_version" field.</summary>
+    public const int ClientDataVersionFieldNumber = 5;
+    private uint clientDataVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ClientDataVersion {
+      get { return clientDataVersion_; }
+      set {
+        clientDataVersion_ = value;
+      }
+    }
+
     /// <summary>Field number for the "client_md5" field.</summary>
-    public const int ClientMd5FieldNumber = 14;
+    public const int ClientMd5FieldNumber = 2;
     private string clientMd5_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -209,6 +203,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return clientMd5_; }
       set {
         clientMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "res_version_config" field.</summary>
+    public const int ResVersionConfigFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.ResVersionConfig resVersionConfig_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ResVersionConfig ResVersionConfig {
+      get { return resVersionConfig_; }
+      set {
+        resVersionConfig_ = value;
       }
     }
 
@@ -227,15 +233,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ClientSilenceMd5 != other.ClientSilenceMd5) return false;
-      if (ClientSilenceVersionSuffix != other.ClientSilenceVersionSuffix) return false;
-      if (!object.Equals(ResVersionConfig, other.ResVersionConfig)) return false;
-      if (IsDataNeedRelogin != other.IsDataNeedRelogin) return false;
-      if (OpType != other.OpType) return false;
-      if (ClientDataVersion != other.ClientDataVersion) return false;
-      if (ClientVersionSuffix != other.ClientVersionSuffix) return false;
       if (ClientSilenceDataVersion != other.ClientSilenceDataVersion) return false;
+      if (OpType != other.OpType) return false;
+      if (ClientSilenceVersionSuffix != other.ClientSilenceVersionSuffix) return false;
+      if (ClientVersionSuffix != other.ClientVersionSuffix) return false;
+      if (IsDataNeedRelogin != other.IsDataNeedRelogin) return false;
+      if (ClientSilenceMd5 != other.ClientSilenceMd5) return false;
+      if (ClientDataVersion != other.ClientDataVersion) return false;
       if (ClientMd5 != other.ClientMd5) return false;
+      if (!object.Equals(ResVersionConfig, other.ResVersionConfig)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -243,15 +249,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ClientSilenceMd5.Length != 0) hash ^= ClientSilenceMd5.GetHashCode();
-      if (ClientSilenceVersionSuffix.Length != 0) hash ^= ClientSilenceVersionSuffix.GetHashCode();
-      if (resVersionConfig_ != null) hash ^= ResVersionConfig.GetHashCode();
-      if (IsDataNeedRelogin != false) hash ^= IsDataNeedRelogin.GetHashCode();
-      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) hash ^= OpType.GetHashCode();
-      if (ClientDataVersion != 0) hash ^= ClientDataVersion.GetHashCode();
-      if (ClientVersionSuffix.Length != 0) hash ^= ClientVersionSuffix.GetHashCode();
       if (ClientSilenceDataVersion != 0) hash ^= ClientSilenceDataVersion.GetHashCode();
+      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) hash ^= OpType.GetHashCode();
+      if (ClientSilenceVersionSuffix.Length != 0) hash ^= ClientSilenceVersionSuffix.GetHashCode();
+      if (ClientVersionSuffix.Length != 0) hash ^= ClientVersionSuffix.GetHashCode();
+      if (IsDataNeedRelogin != false) hash ^= IsDataNeedRelogin.GetHashCode();
+      if (ClientSilenceMd5.Length != 0) hash ^= ClientSilenceMd5.GetHashCode();
+      if (ClientDataVersion != 0) hash ^= ClientDataVersion.GetHashCode();
       if (ClientMd5.Length != 0) hash ^= ClientMd5.GetHashCode();
+      if (resVersionConfig_ != null) hash ^= ResVersionConfig.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -270,41 +276,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ClientSilenceDataVersion != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ClientSilenceDataVersion);
-      }
-      if (ClientDataVersion != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ClientDataVersion);
-      }
-      if (ClientVersionSuffix.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(ClientVersionSuffix);
-      }
-      if (IsDataNeedRelogin != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsDataNeedRelogin);
-      }
-      if (resVersionConfig_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(ResVersionConfig);
-      }
-      if (ClientSilenceMd5.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(ClientSilenceMd5);
-      }
-      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
-        output.WriteRawTag(96);
-        output.WriteEnum((int) OpType);
-      }
       if (ClientMd5.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(18);
         output.WriteString(ClientMd5);
       }
       if (ClientSilenceVersionSuffix.Length != 0) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(26);
         output.WriteString(ClientSilenceVersionSuffix);
+      }
+      if (ClientDataVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ClientDataVersion);
+      }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) OpType);
+      }
+      if (resVersionConfig_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ResVersionConfig);
+      }
+      if (ClientVersionSuffix.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(ClientVersionSuffix);
+      }
+      if (ClientSilenceMd5.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(ClientSilenceMd5);
+      }
+      if (ClientSilenceDataVersion != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ClientSilenceDataVersion);
+      }
+      if (IsDataNeedRelogin != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsDataNeedRelogin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -316,41 +322,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ClientSilenceDataVersion != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ClientSilenceDataVersion);
-      }
-      if (ClientDataVersion != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ClientDataVersion);
-      }
-      if (ClientVersionSuffix.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(ClientVersionSuffix);
-      }
-      if (IsDataNeedRelogin != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsDataNeedRelogin);
-      }
-      if (resVersionConfig_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(ResVersionConfig);
-      }
-      if (ClientSilenceMd5.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(ClientSilenceMd5);
-      }
-      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
-        output.WriteRawTag(96);
-        output.WriteEnum((int) OpType);
-      }
       if (ClientMd5.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(18);
         output.WriteString(ClientMd5);
       }
       if (ClientSilenceVersionSuffix.Length != 0) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(26);
         output.WriteString(ClientSilenceVersionSuffix);
+      }
+      if (ClientDataVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ClientDataVersion);
+      }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) OpType);
+      }
+      if (resVersionConfig_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ResVersionConfig);
+      }
+      if (ClientVersionSuffix.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(ClientVersionSuffix);
+      }
+      if (ClientSilenceMd5.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(ClientSilenceMd5);
+      }
+      if (ClientSilenceDataVersion != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ClientSilenceDataVersion);
+      }
+      if (IsDataNeedRelogin != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsDataNeedRelogin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -362,32 +368,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ClientSilenceMd5.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientSilenceMd5);
-      }
-      if (ClientSilenceVersionSuffix.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientSilenceVersionSuffix);
-      }
-      if (resVersionConfig_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ResVersionConfig);
-      }
-      if (IsDataNeedRelogin != false) {
-        size += 1 + 1;
+      if (ClientSilenceDataVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientSilenceDataVersion);
       }
       if (OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
       }
-      if (ClientDataVersion != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientDataVersion);
+      if (ClientSilenceVersionSuffix.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientSilenceVersionSuffix);
       }
       if (ClientVersionSuffix.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersionSuffix);
       }
-      if (ClientSilenceDataVersion != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientSilenceDataVersion);
+      if (IsDataNeedRelogin != false) {
+        size += 1 + 1;
+      }
+      if (ClientSilenceMd5.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientSilenceMd5);
+      }
+      if (ClientDataVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientDataVersion);
       }
       if (ClientMd5.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientMd5);
+      }
+      if (resVersionConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ResVersionConfig);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -401,35 +407,35 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ClientSilenceMd5.Length != 0) {
-        ClientSilenceMd5 = other.ClientSilenceMd5;
+      if (other.ClientSilenceDataVersion != 0) {
+        ClientSilenceDataVersion = other.ClientSilenceDataVersion;
+      }
+      if (other.OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
+        OpType = other.OpType;
       }
       if (other.ClientSilenceVersionSuffix.Length != 0) {
         ClientSilenceVersionSuffix = other.ClientSilenceVersionSuffix;
+      }
+      if (other.ClientVersionSuffix.Length != 0) {
+        ClientVersionSuffix = other.ClientVersionSuffix;
+      }
+      if (other.IsDataNeedRelogin != false) {
+        IsDataNeedRelogin = other.IsDataNeedRelogin;
+      }
+      if (other.ClientSilenceMd5.Length != 0) {
+        ClientSilenceMd5 = other.ClientSilenceMd5;
+      }
+      if (other.ClientDataVersion != 0) {
+        ClientDataVersion = other.ClientDataVersion;
+      }
+      if (other.ClientMd5.Length != 0) {
+        ClientMd5 = other.ClientMd5;
       }
       if (other.resVersionConfig_ != null) {
         if (resVersionConfig_ == null) {
           ResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
         }
         ResVersionConfig.MergeFrom(other.ResVersionConfig);
-      }
-      if (other.IsDataNeedRelogin != false) {
-        IsDataNeedRelogin = other.IsDataNeedRelogin;
-      }
-      if (other.OpType != global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType.None) {
-        OpType = other.OpType;
-      }
-      if (other.ClientDataVersion != 0) {
-        ClientDataVersion = other.ClientDataVersion;
-      }
-      if (other.ClientVersionSuffix.Length != 0) {
-        ClientVersionSuffix = other.ClientVersionSuffix;
-      }
-      if (other.ClientSilenceDataVersion != 0) {
-        ClientSilenceDataVersion = other.ClientSilenceDataVersion;
-      }
-      if (other.ClientMd5.Length != 0) {
-        ClientMd5 = other.ClientMd5;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -446,43 +452,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ClientSilenceDataVersion = input.ReadUInt32();
+          case 18: {
+            ClientMd5 = input.ReadString();
             break;
           }
-          case 16: {
+          case 26: {
+            ClientSilenceVersionSuffix = input.ReadString();
+            break;
+          }
+          case 40: {
             ClientDataVersion = input.ReadUInt32();
             break;
           }
-          case 42: {
-            ClientVersionSuffix = input.ReadString();
+          case 48: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) input.ReadEnum();
             break;
           }
-          case 56: {
-            IsDataNeedRelogin = input.ReadBool();
-            break;
-          }
-          case 74: {
+          case 58: {
             if (resVersionConfig_ == null) {
               ResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
             }
             input.ReadMessage(ResVersionConfig);
             break;
           }
-          case 82: {
+          case 74: {
+            ClientVersionSuffix = input.ReadString();
+            break;
+          }
+          case 98: {
             ClientSilenceMd5 = input.ReadString();
             break;
           }
-          case 96: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) input.ReadEnum();
+          case 104: {
+            ClientSilenceDataVersion = input.ReadUInt32();
             break;
           }
-          case 114: {
-            ClientMd5 = input.ReadString();
-            break;
-          }
-          case 122: {
-            ClientSilenceVersionSuffix = input.ReadString();
+          case 120: {
+            IsDataNeedRelogin = input.ReadBool();
             break;
           }
         }
@@ -500,43 +506,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ClientSilenceDataVersion = input.ReadUInt32();
+          case 18: {
+            ClientMd5 = input.ReadString();
             break;
           }
-          case 16: {
+          case 26: {
+            ClientSilenceVersionSuffix = input.ReadString();
+            break;
+          }
+          case 40: {
             ClientDataVersion = input.ReadUInt32();
             break;
           }
-          case 42: {
-            ClientVersionSuffix = input.ReadString();
+          case 48: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) input.ReadEnum();
             break;
           }
-          case 56: {
-            IsDataNeedRelogin = input.ReadBool();
-            break;
-          }
-          case 74: {
+          case 58: {
             if (resVersionConfig_ == null) {
               ResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
             }
             input.ReadMessage(ResVersionConfig);
             break;
           }
-          case 82: {
+          case 74: {
+            ClientVersionSuffix = input.ReadString();
+            break;
+          }
+          case 98: {
             ClientSilenceMd5 = input.ReadString();
             break;
           }
-          case 96: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.DataResVersionNotify.Types.DataResVersionOpType) input.ReadEnum();
+          case 104: {
+            ClientSilenceDataVersion = input.ReadUInt32();
             break;
           }
-          case 114: {
-            ClientMd5 = input.ReadString();
-            break;
-          }
-          case 122: {
-            ClientSilenceVersionSuffix = input.ReadString();
+          case 120: {
+            IsDataNeedRelogin = input.ReadBool();
             break;
           }
         }

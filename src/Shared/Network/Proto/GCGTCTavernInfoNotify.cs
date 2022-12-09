@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTCTavernInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtHQ0dUQ1RhdmVybkluZm9Ob3RpZnkucHJvdG8irgEKFUdDR1RDVGF2ZXJu",
-            "SW5mb05vdGlmeRIYChBpc19sYXN0X2R1ZWxfd2luGA4gASgIEhAKCGxldmVs",
-            "X2lkGAsgASgNEhgKEGlzX293bmVyX2luX2R1ZWwYBSABKAgSEAoIcG9pbnRf",
-            "aWQYAyABKA0SEQoJYXZhdGFyX2lkGAwgASgNEhQKDGNoYXJhY3Rlcl9pZBgH",
-            "IAEoDRIUCgxlbGVtZW50X3R5cGUYCiABKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtHQ0dUQ1RhdmVybkluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8itAEKFUdDR1RDVGF2ZXJuSW5mb05vdGlmeRIQ",
+            "CghsZXZlbF9pZBgFIAEoDRIbChNVbmszMzAwX0lNRkpCTkZNQ0hNGAsgASgI",
+            "EhsKE1VuazMzMDBfTUJHTUhCTkJLQksYCCABKAgSEAoIcG9pbnRfaWQYBCAB",
+            "KA0SFAoMZWxlbWVudF90eXBlGAYgASgNEhEKCWF2YXRhcl9pZBgJIAEoDRIU",
+            "CgxjaGFyYWN0ZXJfaWQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTCTavernInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGTCTavernInfoNotify.Parser, new[]{ "IsLastDuelWin", "LevelId", "IsOwnerInDuel", "PointId", "AvatarId", "CharacterId", "ElementType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTCTavernInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGTCTavernInfoNotify.Parser, new[]{ "LevelId", "Unk3300IMFJBNFMCHM", "Unk3300MBGMHBNBKBK", "PointId", "ElementType", "AvatarId", "CharacterId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7011
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7268;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGTCTavernInfoNotify : pb::IMessage<GCGTCTavernInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,13 +83,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGTCTavernInfoNotify(GCGTCTavernInfoNotify other) : this() {
-      isLastDuelWin_ = other.isLastDuelWin_;
       levelId_ = other.levelId_;
-      isOwnerInDuel_ = other.isOwnerInDuel_;
+      unk3300IMFJBNFMCHM_ = other.unk3300IMFJBNFMCHM_;
+      unk3300MBGMHBNBKBK_ = other.unk3300MBGMHBNBKBK_;
       pointId_ = other.pointId_;
+      elementType_ = other.elementType_;
       avatarId_ = other.avatarId_;
       characterId_ = other.characterId_;
-      elementType_ = other.elementType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,20 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGTCTavernInfoNotify(this);
     }
 
-    /// <summary>Field number for the "is_last_duel_win" field.</summary>
-    public const int IsLastDuelWinFieldNumber = 14;
-    private bool isLastDuelWin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsLastDuelWin {
-      get { return isLastDuelWin_; }
-      set {
-        isLastDuelWin_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 11;
+    public const int LevelIdFieldNumber = 5;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,20 +111,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_owner_in_duel" field.</summary>
-    public const int IsOwnerInDuelFieldNumber = 5;
-    private bool isOwnerInDuel_;
+    /// <summary>Field number for the "Unk3300_IMFJBNFMCHM" field.</summary>
+    public const int Unk3300IMFJBNFMCHMFieldNumber = 11;
+    private bool unk3300IMFJBNFMCHM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOwnerInDuel {
-      get { return isOwnerInDuel_; }
+    public bool Unk3300IMFJBNFMCHM {
+      get { return unk3300IMFJBNFMCHM_; }
       set {
-        isOwnerInDuel_ = value;
+        unk3300IMFJBNFMCHM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MBGMHBNBKBK" field.</summary>
+    public const int Unk3300MBGMHBNBKBKFieldNumber = 8;
+    private bool unk3300MBGMHBNBKBK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MBGMHBNBKBK {
+      get { return unk3300MBGMHBNBKBK_; }
+      set {
+        unk3300MBGMHBNBKBK_ = value;
       }
     }
 
     /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 3;
+    public const int PointIdFieldNumber = 4;
     private uint pointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,8 +147,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "element_type" field.</summary>
+    public const int ElementTypeFieldNumber = 6;
+    private uint elementType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ElementType {
+      get { return elementType_; }
+      set {
+        elementType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 12;
+    public const int AvatarIdFieldNumber = 9;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +172,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "character_id" field.</summary>
-    public const int CharacterIdFieldNumber = 7;
+    public const int CharacterIdFieldNumber = 12;
     private uint characterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,18 +180,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return characterId_; }
       set {
         characterId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "element_type" field.</summary>
-    public const int ElementTypeFieldNumber = 10;
-    private uint elementType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ElementType {
-      get { return elementType_; }
-      set {
-        elementType_ = value;
       }
     }
 
@@ -194,13 +198,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsLastDuelWin != other.IsLastDuelWin) return false;
       if (LevelId != other.LevelId) return false;
-      if (IsOwnerInDuel != other.IsOwnerInDuel) return false;
+      if (Unk3300IMFJBNFMCHM != other.Unk3300IMFJBNFMCHM) return false;
+      if (Unk3300MBGMHBNBKBK != other.Unk3300MBGMHBNBKBK) return false;
       if (PointId != other.PointId) return false;
+      if (ElementType != other.ElementType) return false;
       if (AvatarId != other.AvatarId) return false;
       if (CharacterId != other.CharacterId) return false;
-      if (ElementType != other.ElementType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -208,13 +212,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsLastDuelWin != false) hash ^= IsLastDuelWin.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
-      if (IsOwnerInDuel != false) hash ^= IsOwnerInDuel.GetHashCode();
+      if (Unk3300IMFJBNFMCHM != false) hash ^= Unk3300IMFJBNFMCHM.GetHashCode();
+      if (Unk3300MBGMHBNBKBK != false) hash ^= Unk3300MBGMHBNBKBK.GetHashCode();
       if (PointId != 0) hash ^= PointId.GetHashCode();
+      if (ElementType != 0) hash ^= ElementType.GetHashCode();
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (CharacterId != 0) hash ^= CharacterId.GetHashCode();
-      if (ElementType != 0) hash ^= ElementType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -234,32 +238,32 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (PointId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointId);
       }
-      if (IsOwnerInDuel != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOwnerInDuel);
-      }
-      if (CharacterId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CharacterId);
-      }
-      if (ElementType != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ElementType);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(LevelId);
       }
+      if (ElementType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ElementType);
+      }
+      if (Unk3300MBGMHBNBKBK != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300MBGMHBNBKBK);
+      }
       if (AvatarId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(AvatarId);
       }
-      if (IsLastDuelWin != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsLastDuelWin);
+      if (Unk3300IMFJBNFMCHM != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300IMFJBNFMCHM);
+      }
+      if (CharacterId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CharacterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -272,32 +276,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PointId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointId);
       }
-      if (IsOwnerInDuel != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOwnerInDuel);
-      }
-      if (CharacterId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CharacterId);
-      }
-      if (ElementType != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ElementType);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(LevelId);
       }
+      if (ElementType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ElementType);
+      }
+      if (Unk3300MBGMHBNBKBK != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300MBGMHBNBKBK);
+      }
       if (AvatarId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(AvatarId);
       }
-      if (IsLastDuelWin != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsLastDuelWin);
+      if (Unk3300IMFJBNFMCHM != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300IMFJBNFMCHM);
+      }
+      if (CharacterId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CharacterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -309,26 +313,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsLastDuelWin != false) {
-        size += 1 + 1;
-      }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
-      if (IsOwnerInDuel != false) {
+      if (Unk3300IMFJBNFMCHM != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300MBGMHBNBKBK != false) {
         size += 1 + 1;
       }
       if (PointId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
+      }
+      if (ElementType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
       }
       if (CharacterId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CharacterId);
-      }
-      if (ElementType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -342,26 +346,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsLastDuelWin != false) {
-        IsLastDuelWin = other.IsLastDuelWin;
-      }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
-      if (other.IsOwnerInDuel != false) {
-        IsOwnerInDuel = other.IsOwnerInDuel;
+      if (other.Unk3300IMFJBNFMCHM != false) {
+        Unk3300IMFJBNFMCHM = other.Unk3300IMFJBNFMCHM;
+      }
+      if (other.Unk3300MBGMHBNBKBK != false) {
+        Unk3300MBGMHBNBKBK = other.Unk3300MBGMHBNBKBK;
       }
       if (other.PointId != 0) {
         PointId = other.PointId;
+      }
+      if (other.ElementType != 0) {
+        ElementType = other.ElementType;
       }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
       }
       if (other.CharacterId != 0) {
         CharacterId = other.CharacterId;
-      }
-      if (other.ElementType != 0) {
-        ElementType = other.ElementType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -378,32 +382,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 32: {
             PointId = input.ReadUInt32();
             break;
           }
           case 40: {
-            IsOwnerInDuel = input.ReadBool();
-            break;
-          }
-          case 56: {
-            CharacterId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            ElementType = input.ReadUInt32();
-            break;
-          }
-          case 88: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 48: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300MBGMHBNBKBK = input.ReadBool();
+            break;
+          }
+          case 72: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            IsLastDuelWin = input.ReadBool();
+          case 88: {
+            Unk3300IMFJBNFMCHM = input.ReadBool();
+            break;
+          }
+          case 96: {
+            CharacterId = input.ReadUInt32();
             break;
           }
         }
@@ -421,32 +425,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 32: {
             PointId = input.ReadUInt32();
             break;
           }
           case 40: {
-            IsOwnerInDuel = input.ReadBool();
-            break;
-          }
-          case 56: {
-            CharacterId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            ElementType = input.ReadUInt32();
-            break;
-          }
-          case 88: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 48: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300MBGMHBNBKBK = input.ReadBool();
+            break;
+          }
+          case 72: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            IsLastDuelWin = input.ReadBool();
+          case 88: {
+            Unk3300IMFJBNFMCHM = input.ReadBool();
+            break;
+          }
+          case 96: {
+            CharacterId = input.ReadUInt32();
             break;
           }
         }

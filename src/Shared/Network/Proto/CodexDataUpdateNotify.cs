@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static CodexDataUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtDb2RleERhdGFVcGRhdGVOb3RpZnkucHJvdG8aD0NvZGV4VHlwZS5wcm90",
-            "byJfChVDb2RleERhdGFVcGRhdGVOb3RpZnkSCgoCaWQYCCABKA0SIAoYd2Vh",
-            "cG9uX21heF9wcm9tb3RlX2xldmVsGA8gASgNEhgKBHR5cGUYCyABKA4yCi5D",
-            "b2RleFR5cGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChtDb2RleERhdGFVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aD0NvZGV4VHlwZS5wcm90byJ/ChVDb2RleERh",
+            "dGFVcGRhdGVOb3RpZnkSIAoYd2VhcG9uX21heF9wcm9tb3RlX2xldmVsGAog",
+            "ASgNEjgKBHR5cGUYBSABKA4yKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkNvZGV4VHlwZRIKCgJpZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CodexTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CodexDataUpdateNotify), global::Weedwacker.Shared.Network.Proto.CodexDataUpdateNotify.Parser, new[]{ "Id", "WeaponMaxPromoteLevel", "Type" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CodexDataUpdateNotify), global::Weedwacker.Shared.Network.Proto.CodexDataUpdateNotify.Parser, new[]{ "WeaponMaxPromoteLevel", "Type", "Id" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4207
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4203;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CodexDataUpdateNotify : pb::IMessage<CodexDataUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CodexDataUpdateNotify(CodexDataUpdateNotify other) : this() {
-      id_ = other.id_;
       weaponMaxPromoteLevel_ = other.weaponMaxPromoteLevel_;
       type_ = other.type_;
+      id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CodexDataUpdateNotify(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 8;
-    private uint id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
     /// <summary>Field number for the "weapon_max_promote_level" field.</summary>
-    public const int WeaponMaxPromoteLevelFieldNumber = 15;
+    public const int WeaponMaxPromoteLevelFieldNumber = 10;
     private uint weaponMaxPromoteLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 11;
+    public const int TypeFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.CodexType type_ = global::Weedwacker.Shared.Network.Proto.CodexType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return type_; }
       set {
         type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 3;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Id != other.Id) return false;
       if (WeaponMaxPromoteLevel != other.WeaponMaxPromoteLevel) return false;
       if (Type != other.Type) return false;
+      if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Id != 0) hash ^= Id.GetHashCode();
       if (WeaponMaxPromoteLevel != 0) hash ^= WeaponMaxPromoteLevel.GetHashCode();
       if (Type != global::Weedwacker.Shared.Network.Proto.CodexType.None) hash ^= Type.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,15 +177,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Id != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(Id);
       }
       if (Type != global::Weedwacker.Shared.Network.Proto.CodexType.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
       if (WeaponMaxPromoteLevel != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(WeaponMaxPromoteLevel);
       }
       if (_unknownFields != null) {
@@ -195,15 +199,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Id != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(Id);
       }
       if (Type != global::Weedwacker.Shared.Network.Proto.CodexType.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
       if (WeaponMaxPromoteLevel != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(WeaponMaxPromoteLevel);
       }
       if (_unknownFields != null) {
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-      }
       if (WeaponMaxPromoteLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponMaxPromoteLevel);
       }
       if (Type != global::Weedwacker.Shared.Network.Proto.CodexType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
       if (other.WeaponMaxPromoteLevel != 0) {
         WeaponMaxPromoteLevel = other.WeaponMaxPromoteLevel;
       }
       if (other.Type != global::Weedwacker.Shared.Network.Proto.CodexType.None) {
         Type = other.Type;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 24: {
             Id = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 40: {
             Type = (global::Weedwacker.Shared.Network.Proto.CodexType) input.ReadEnum();
             break;
           }
-          case 120: {
+          case 80: {
             WeaponMaxPromoteLevel = input.ReadUInt32();
             break;
           }
@@ -288,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 24: {
             Id = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 40: {
             Type = (global::Weedwacker.Shared.Network.Proto.CodexType) input.ReadEnum();
             break;
           }
-          case 120: {
+          case 80: {
             WeaponMaxPromoteLevel = input.ReadUInt32();
             break;
           }

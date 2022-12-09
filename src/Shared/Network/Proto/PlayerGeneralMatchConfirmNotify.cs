@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerGeneralMatchConfirmNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVQbGF5ZXJHZW5lcmFsTWF0Y2hDb25maXJtTm90aWZ5LnByb3RvIlIKH1Bs",
-            "YXllckdlbmVyYWxNYXRjaENvbmZpcm1Ob3RpZnkSEAoIbWF0Y2hfaWQYCCAB",
-            "KA0SEAoIaXNfYWdyZWUYDSABKAgSCwoDdWlkGA4gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVQbGF5ZXJHZW5lcmFsTWF0Y2hDb25maXJtTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlIKH1BsYXllckdlbmVyYWxN",
+            "YXRjaENvbmZpcm1Ob3RpZnkSEAoIbWF0Y2hfaWQYAiABKA0SCwoDdWlkGAYg",
+            "ASgNEhAKCGlzX2FncmVlGA0gASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerGeneralMatchConfirmNotify), global::Weedwacker.Shared.Network.Proto.PlayerGeneralMatchConfirmNotify.Parser, new[]{ "MatchId", "IsAgree", "Uid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerGeneralMatchConfirmNotify), global::Weedwacker.Shared.Network.Proto.PlayerGeneralMatchConfirmNotify.Parser, new[]{ "MatchId", "Uid", "IsAgree" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4192
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4195;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerGeneralMatchConfirmNotify : pb::IMessage<PlayerGeneralMatchConfirmNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerGeneralMatchConfirmNotify(PlayerGeneralMatchConfirmNotify other) : this() {
       matchId_ = other.matchId_;
-      isAgree_ = other.isAgree_;
       uid_ = other.uid_;
+      isAgree_ = other.isAgree_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "match_id" field.</summary>
-    public const int MatchIdFieldNumber = 8;
+    public const int MatchIdFieldNumber = 2;
     private uint matchId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return matchId_; }
       set {
         matchId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 6;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
       }
     }
 
@@ -110,18 +126,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isAgree_; }
       set {
         isAgree_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 14;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (MatchId != other.MatchId) return false;
-      if (IsAgree != other.IsAgree) return false;
       if (Uid != other.Uid) return false;
+      if (IsAgree != other.IsAgree) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (MatchId != 0) hash ^= MatchId.GetHashCode();
-      if (IsAgree != false) hash ^= IsAgree.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (IsAgree != false) hash ^= IsAgree.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MatchId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(MatchId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Uid);
       }
       if (IsAgree != false) {
         output.WriteRawTag(104);
         output.WriteBool(IsAgree);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MatchId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(MatchId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Uid);
       }
       if (IsAgree != false) {
         output.WriteRawTag(104);
         output.WriteBool(IsAgree);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (MatchId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchId);
       }
-      if (IsAgree != false) {
-        size += 1 + 1;
-      }
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (IsAgree != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.MatchId != 0) {
         MatchId = other.MatchId;
       }
-      if (other.IsAgree != false) {
-        IsAgree = other.IsAgree;
-      }
       if (other.Uid != 0) {
         Uid = other.Uid;
+      }
+      if (other.IsAgree != false) {
+        IsAgree = other.IsAgree;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 16: {
             MatchId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Uid = input.ReadUInt32();
             break;
           }
           case 104: {
             IsAgree = input.ReadBool();
-            break;
-          }
-          case 112: {
-            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 16: {
             MatchId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Uid = input.ReadUInt32();
             break;
           }
           case 104: {
             IsAgree = input.ReadBool();
-            break;
-          }
-          case 112: {
-            Uid = input.ReadUInt32();
             break;
           }
         }

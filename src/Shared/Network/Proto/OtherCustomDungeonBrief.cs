@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static OtherCustomDungeonBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1PdGhlckN1c3RvbUR1bmdlb25CcmllZi5wcm90bxobQ3VzdG9tRHVuZ2Vv",
-            "bkFic3RyYWN0LnByb3RvGhpDdXN0b21EdW5nZW9uU2V0dGluZy5wcm90bxoZ",
-            "Q3VzdG9tRHVuZ2VvblNvY2lhbC5wcm90bxoSU29jaWFsRGV0YWlsLnByb3Rv",
-            "ItwCChdPdGhlckN1c3RvbUR1bmdlb25CcmllZhIlCg5jcmVhdG9yX2RldGFp",
-            "bBgEIAEoCzINLlNvY2lhbERldGFpbBIcChRiYXR0bGVfbWluX2Nvc3RfdGlt",
-            "ZRgPIAEoDRIoCghhYnN0cmFjdBgCIAEoCzIWLkN1c3RvbUR1bmdlb25BYnN0",
-            "cmFjdBIUCgxkdW5nZW9uX2d1aWQYDiABKAQSJgoHc2V0dGluZxgKIAEoCzIV",
-            "LkN1c3RvbUR1bmdlb25TZXR0aW5nEhIKCmR1bmdlb25faWQYBiABKA0SEAoI",
-            "dGFnX2xpc3QYASADKA0SHAoUaXNfYWR2ZW50dXJlX2R1bmdlb24YCyABKAgS",
-            "FwoPaXNfcHNuX3BsYXRmb3JtGAkgASgIEhEKCWlzX3N0b3JlZBgDIAEoCBIk",
-            "CgZzb2NpYWwYDCABKAsyFC5DdXN0b21EdW5nZW9uU29jaWFsQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1PdGhlckN1c3RvbUR1bmdlb25CcmllZi5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxobQ3VzdG9tRHVuZ2VvbkFic3RyYWN0LnBy",
+            "b3RvGhpDdXN0b21EdW5nZW9uU2V0dGluZy5wcm90bxoZQ3VzdG9tRHVuZ2Vv",
+            "blNvY2lhbC5wcm90bxoSU29jaWFsRGV0YWlsLnByb3RvItwDChdPdGhlckN1",
+            "c3RvbUR1bmdlb25CcmllZhIcChRpc19hZHZlbnR1cmVfZHVuZ2VvbhgMIAEo",
+            "CBIcChRiYXR0bGVfbWluX2Nvc3RfdGltZRgKIAEoDRIQCgh0YWdfbGlzdBgN",
+            "IAMoDRIRCglpc19zdG9yZWQYCCABKAgSEgoKZHVuZ2Vvbl9pZBgPIAEoDRIX",
+            "Cg9pc19wc25fcGxhdGZvcm0YASABKAgSFAoMZHVuZ2Vvbl9ndWlkGAcgASgE",
+            "EkYKB3NldHRpbmcYAiABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkN1c3RvbUR1bmdlb25TZXR0aW5nEkQKBnNvY2lhbBgOIAEoCzI0",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ3VzdG9tRHVuZ2Vv",
+            "blNvY2lhbBJICghhYnN0cmFjdBgEIAEoCzI2LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQ3VzdG9tRHVuZ2VvbkFic3RyYWN0EkUKDmNyZWF0",
+            "b3JfZGV0YWlsGAsgASgLMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5Tb2NpYWxEZXRhaWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstractReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSettingReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSocialReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SocialDetailReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief), global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief.Parser, new[]{ "CreatorDetail", "BattleMinCostTime", "Abstract", "DungeonGuid", "Setting", "DungeonId", "TagList", "IsAdventureDungeon", "IsPsnPlatform", "IsStored", "Social" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief), global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief.Parser, new[]{ "IsAdventureDungeon", "BattleMinCostTime", "TagList", "IsStored", "DungeonId", "IsPsnPlatform", "DungeonGuid", "Setting", "Social", "Abstract", "CreatorDetail" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,17 +83,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OtherCustomDungeonBrief(OtherCustomDungeonBrief other) : this() {
-      creatorDetail_ = other.creatorDetail_ != null ? other.creatorDetail_.Clone() : null;
+      isAdventureDungeon_ = other.isAdventureDungeon_;
       battleMinCostTime_ = other.battleMinCostTime_;
-      abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
+      tagList_ = other.tagList_.Clone();
+      isStored_ = other.isStored_;
+      dungeonId_ = other.dungeonId_;
+      isPsnPlatform_ = other.isPsnPlatform_;
       dungeonGuid_ = other.dungeonGuid_;
       setting_ = other.setting_ != null ? other.setting_.Clone() : null;
-      dungeonId_ = other.dungeonId_;
-      tagList_ = other.tagList_.Clone();
-      isAdventureDungeon_ = other.isAdventureDungeon_;
-      isPsnPlatform_ = other.isPsnPlatform_;
-      isStored_ = other.isStored_;
       social_ = other.social_ != null ? other.social_.Clone() : null;
+      abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
+      creatorDetail_ = other.creatorDetail_ != null ? other.creatorDetail_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -100,20 +103,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new OtherCustomDungeonBrief(this);
     }
 
-    /// <summary>Field number for the "creator_detail" field.</summary>
-    public const int CreatorDetailFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.SocialDetail creatorDetail_;
+    /// <summary>Field number for the "is_adventure_dungeon" field.</summary>
+    public const int IsAdventureDungeonFieldNumber = 12;
+    private bool isAdventureDungeon_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.SocialDetail CreatorDetail {
-      get { return creatorDetail_; }
+    public bool IsAdventureDungeon {
+      get { return isAdventureDungeon_; }
       set {
-        creatorDetail_ = value;
+        isAdventureDungeon_ = value;
       }
     }
 
     /// <summary>Field number for the "battle_min_cost_time" field.</summary>
-    public const int BattleMinCostTimeFieldNumber = 15;
+    public const int BattleMinCostTimeFieldNumber = 10;
     private uint battleMinCostTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,20 +127,55 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "abstract" field.</summary>
-    public const int AbstractFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract abstract_;
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract Abstract {
-      get { return abstract_; }
+    public pbc::RepeatedField<uint> TagList {
+      get { return tagList_; }
+    }
+
+    /// <summary>Field number for the "is_stored" field.</summary>
+    public const int IsStoredFieldNumber = 8;
+    private bool isStored_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsStored {
+      get { return isStored_; }
       set {
-        abstract_ = value;
+        isStored_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 15;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_psn_platform" field.</summary>
+    public const int IsPsnPlatformFieldNumber = 1;
+    private bool isPsnPlatform_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPsnPlatform {
+      get { return isPsnPlatform_; }
+      set {
+        isPsnPlatform_ = value;
       }
     }
 
     /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 14;
+    public const int DungeonGuidFieldNumber = 7;
     private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "setting" field.</summary>
-    public const int SettingFieldNumber = 10;
+    public const int SettingFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,67 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 6;
-    private uint dungeonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonId {
-      get { return dungeonId_; }
-      set {
-        dungeonId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "tag_list" field.</summary>
-    public const int TagListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TagList {
-      get { return tagList_; }
-    }
-
-    /// <summary>Field number for the "is_adventure_dungeon" field.</summary>
-    public const int IsAdventureDungeonFieldNumber = 11;
-    private bool isAdventureDungeon_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAdventureDungeon {
-      get { return isAdventureDungeon_; }
-      set {
-        isAdventureDungeon_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_psn_platform" field.</summary>
-    public const int IsPsnPlatformFieldNumber = 9;
-    private bool isPsnPlatform_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPsnPlatform {
-      get { return isPsnPlatform_; }
-      set {
-        isPsnPlatform_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_stored" field.</summary>
-    public const int IsStoredFieldNumber = 3;
-    private bool isStored_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStored {
-      get { return isStored_; }
-      set {
-        isStored_ = value;
-      }
-    }
-
     /// <summary>Field number for the "social" field.</summary>
-    public const int SocialFieldNumber = 12;
+    public const int SocialFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial social_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -228,6 +207,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return social_; }
       set {
         social_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "abstract" field.</summary>
+    public const int AbstractFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract abstract_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract Abstract {
+      get { return abstract_; }
+      set {
+        abstract_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "creator_detail" field.</summary>
+    public const int CreatorDetailFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.SocialDetail creatorDetail_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.SocialDetail CreatorDetail {
+      get { return creatorDetail_; }
+      set {
+        creatorDetail_ = value;
       }
     }
 
@@ -246,17 +249,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(CreatorDetail, other.CreatorDetail)) return false;
+      if (IsAdventureDungeon != other.IsAdventureDungeon) return false;
       if (BattleMinCostTime != other.BattleMinCostTime) return false;
-      if (!object.Equals(Abstract, other.Abstract)) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
+      if (IsStored != other.IsStored) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (IsPsnPlatform != other.IsPsnPlatform) return false;
       if (DungeonGuid != other.DungeonGuid) return false;
       if (!object.Equals(Setting, other.Setting)) return false;
-      if (DungeonId != other.DungeonId) return false;
-      if(!tagList_.Equals(other.tagList_)) return false;
-      if (IsAdventureDungeon != other.IsAdventureDungeon) return false;
-      if (IsPsnPlatform != other.IsPsnPlatform) return false;
-      if (IsStored != other.IsStored) return false;
       if (!object.Equals(Social, other.Social)) return false;
+      if (!object.Equals(Abstract, other.Abstract)) return false;
+      if (!object.Equals(CreatorDetail, other.CreatorDetail)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -264,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (creatorDetail_ != null) hash ^= CreatorDetail.GetHashCode();
+      if (IsAdventureDungeon != false) hash ^= IsAdventureDungeon.GetHashCode();
       if (BattleMinCostTime != 0) hash ^= BattleMinCostTime.GetHashCode();
-      if (abstract_ != null) hash ^= Abstract.GetHashCode();
+      hash ^= tagList_.GetHashCode();
+      if (IsStored != false) hash ^= IsStored.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
       if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
       if (setting_ != null) hash ^= Setting.GetHashCode();
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-      hash ^= tagList_.GetHashCode();
-      if (IsAdventureDungeon != false) hash ^= IsAdventureDungeon.GetHashCode();
-      if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
-      if (IsStored != false) hash ^= IsStored.GetHashCode();
       if (social_ != null) hash ^= Social.GetHashCode();
+      if (abstract_ != null) hash ^= Abstract.GetHashCode();
+      if (creatorDetail_ != null) hash ^= CreatorDetail.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -293,46 +296,46 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      tagList_.WriteTo(output, _repeated_tagList_codec);
-      if (abstract_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Abstract);
-      }
-      if (IsStored != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsStored);
-      }
-      if (creatorDetail_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(CreatorDetail);
-      }
-      if (DungeonId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DungeonId);
-      }
       if (IsPsnPlatform != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteBool(IsPsnPlatform);
       }
       if (setting_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(Setting);
       }
-      if (IsAdventureDungeon != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsAdventureDungeon);
-      }
-      if (social_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Social);
+      if (abstract_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Abstract);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt64(DungeonGuid);
       }
+      if (IsStored != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsStored);
+      }
       if (BattleMinCostTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(BattleMinCostTime);
+      }
+      if (creatorDetail_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(CreatorDetail);
+      }
+      if (IsAdventureDungeon != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsAdventureDungeon);
+      }
+      tagList_.WriteTo(output, _repeated_tagList_codec);
+      if (social_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Social);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -344,46 +347,46 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      tagList_.WriteTo(ref output, _repeated_tagList_codec);
-      if (abstract_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Abstract);
-      }
-      if (IsStored != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsStored);
-      }
-      if (creatorDetail_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(CreatorDetail);
-      }
-      if (DungeonId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DungeonId);
-      }
       if (IsPsnPlatform != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteBool(IsPsnPlatform);
       }
       if (setting_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(Setting);
       }
-      if (IsAdventureDungeon != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsAdventureDungeon);
-      }
-      if (social_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Social);
+      if (abstract_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Abstract);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt64(DungeonGuid);
       }
+      if (IsStored != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsStored);
+      }
       if (BattleMinCostTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(BattleMinCostTime);
+      }
+      if (creatorDetail_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(CreatorDetail);
+      }
+      if (IsAdventureDungeon != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsAdventureDungeon);
+      }
+      tagList_.WriteTo(ref output, _repeated_tagList_codec);
+      if (social_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Social);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -395,14 +398,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (creatorDetail_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreatorDetail);
+      if (IsAdventureDungeon != false) {
+        size += 1 + 1;
       }
       if (BattleMinCostTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BattleMinCostTime);
       }
-      if (abstract_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
+      if (IsStored != false) {
+        size += 1 + 1;
+      }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (IsPsnPlatform != false) {
+        size += 1 + 1;
       }
       if (DungeonGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
@@ -410,21 +420,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (setting_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
       }
-      if (DungeonId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-      }
-      size += tagList_.CalculateSize(_repeated_tagList_codec);
-      if (IsAdventureDungeon != false) {
-        size += 1 + 1;
-      }
-      if (IsPsnPlatform != false) {
-        size += 1 + 1;
-      }
-      if (IsStored != false) {
-        size += 1 + 1;
-      }
       if (social_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Social);
+      }
+      if (abstract_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
+      }
+      if (creatorDetail_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreatorDetail);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -438,20 +441,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.creatorDetail_ != null) {
-        if (creatorDetail_ == null) {
-          CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
-        }
-        CreatorDetail.MergeFrom(other.CreatorDetail);
+      if (other.IsAdventureDungeon != false) {
+        IsAdventureDungeon = other.IsAdventureDungeon;
       }
       if (other.BattleMinCostTime != 0) {
         BattleMinCostTime = other.BattleMinCostTime;
       }
-      if (other.abstract_ != null) {
-        if (abstract_ == null) {
-          Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
-        }
-        Abstract.MergeFrom(other.Abstract);
+      tagList_.Add(other.tagList_);
+      if (other.IsStored != false) {
+        IsStored = other.IsStored;
+      }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      if (other.IsPsnPlatform != false) {
+        IsPsnPlatform = other.IsPsnPlatform;
       }
       if (other.DungeonGuid != 0UL) {
         DungeonGuid = other.DungeonGuid;
@@ -462,24 +466,23 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Setting.MergeFrom(other.Setting);
       }
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
-      }
-      tagList_.Add(other.tagList_);
-      if (other.IsAdventureDungeon != false) {
-        IsAdventureDungeon = other.IsAdventureDungeon;
-      }
-      if (other.IsPsnPlatform != false) {
-        IsPsnPlatform = other.IsPsnPlatform;
-      }
-      if (other.IsStored != false) {
-        IsStored = other.IsStored;
-      }
       if (other.social_ != null) {
         if (social_ == null) {
           Social = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial();
         }
         Social.MergeFrom(other.Social);
+      }
+      if (other.abstract_ != null) {
+        if (abstract_ == null) {
+          Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
+        }
+        Abstract.MergeFrom(other.Abstract);
+      }
+      if (other.creatorDetail_ != null) {
+        if (creatorDetail_ == null) {
+          CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
+        }
+        CreatorDetail.MergeFrom(other.CreatorDetail);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -496,61 +499,61 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
           case 8: {
-            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
-            break;
-          }
-          case 18: {
-            if (abstract_ == null) {
-              Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
-            }
-            input.ReadMessage(Abstract);
-            break;
-          }
-          case 24: {
-            IsStored = input.ReadBool();
-            break;
-          }
-          case 34: {
-            if (creatorDetail_ == null) {
-              CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
-            }
-            input.ReadMessage(CreatorDetail);
-            break;
-          }
-          case 48: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             IsPsnPlatform = input.ReadBool();
             break;
           }
-          case 82: {
+          case 18: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
             break;
           }
-          case 88: {
+          case 34: {
+            if (abstract_ == null) {
+              Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
+            }
+            input.ReadMessage(Abstract);
+            break;
+          }
+          case 56: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 64: {
+            IsStored = input.ReadBool();
+            break;
+          }
+          case 80: {
+            BattleMinCostTime = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (creatorDetail_ == null) {
+              CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
+            }
+            input.ReadMessage(CreatorDetail);
+            break;
+          }
+          case 96: {
             IsAdventureDungeon = input.ReadBool();
             break;
           }
-          case 98: {
+          case 106:
+          case 104: {
+            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            break;
+          }
+          case 114: {
             if (social_ == null) {
               Social = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial();
             }
             input.ReadMessage(Social);
             break;
           }
-          case 112: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
           case 120: {
-            BattleMinCostTime = input.ReadUInt32();
+            DungeonId = input.ReadUInt32();
             break;
           }
         }
@@ -568,61 +571,61 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
           case 8: {
-            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
-            break;
-          }
-          case 18: {
-            if (abstract_ == null) {
-              Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
-            }
-            input.ReadMessage(Abstract);
-            break;
-          }
-          case 24: {
-            IsStored = input.ReadBool();
-            break;
-          }
-          case 34: {
-            if (creatorDetail_ == null) {
-              CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
-            }
-            input.ReadMessage(CreatorDetail);
-            break;
-          }
-          case 48: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             IsPsnPlatform = input.ReadBool();
             break;
           }
-          case 82: {
+          case 18: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
             break;
           }
-          case 88: {
+          case 34: {
+            if (abstract_ == null) {
+              Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
+            }
+            input.ReadMessage(Abstract);
+            break;
+          }
+          case 56: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 64: {
+            IsStored = input.ReadBool();
+            break;
+          }
+          case 80: {
+            BattleMinCostTime = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (creatorDetail_ == null) {
+              CreatorDetail = new global::Weedwacker.Shared.Network.Proto.SocialDetail();
+            }
+            input.ReadMessage(CreatorDetail);
+            break;
+          }
+          case 96: {
             IsAdventureDungeon = input.ReadBool();
             break;
           }
-          case 98: {
+          case 106:
+          case 104: {
+            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            break;
+          }
+          case 114: {
             if (social_ == null) {
               Social = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial();
             }
             input.ReadMessage(Social);
             break;
           }
-          case 112: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
           case 120: {
-            BattleMinCostTime = input.ReadUInt32();
+            DungeonId = input.ReadUInt32();
             break;
           }
         }

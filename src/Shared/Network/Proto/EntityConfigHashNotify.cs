@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityConfigHashNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxFbnRpdHlDb25maWdIYXNoTm90aWZ5LnByb3RvGhtFbnRpdHlDb25maWdI",
-            "YXNoRW50cnkucHJvdG8isgEKFkVudGl0eUNvbmZpZ0hhc2hOb3RpZnkSMgoS",
-            "YWJpbGl0eV9lbnRyeV9saXN0GAMgAygLMhYuRW50aXR5Q29uZmlnSGFzaEVu",
-            "dHJ5EjEKEWF2YXRhcl9lbnRyeV9saXN0GA8gAygLMhYuRW50aXR5Q29uZmln",
-            "SGFzaEVudHJ5EjEKEWNvbWJhdF9lbnRyeV9saXN0GAggAygLMhYuRW50aXR5",
-            "Q29uZmlnSGFzaEVudHJ5QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChxFbnRpdHlDb25maWdIYXNoTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhtFbnRpdHlDb25maWdIYXNoRW50cnkucHJv",
+            "dG8ilwIKFkVudGl0eUNvbmZpZ0hhc2hOb3RpZnkSUwoTVW5rMzMwMF9OQU1E",
+            "SUtKSUxBSRgBIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uRW50aXR5Q29uZmlnSGFzaEVudHJ5ElMKE1VuazMzMDBfQkxCRUtNREdD",
+            "TUIYAiADKAsyNi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkVu",
+            "dGl0eUNvbmZpZ0hhc2hFbnRyeRJTChNVbmszMzAwX05MTVBIQkdNT0VOGAkg",
+            "AygLMjYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FbnRpdHlD",
+            "b25maWdIYXNoRW50cnliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityConfigHashNotify), global::Weedwacker.Shared.Network.Proto.EntityConfigHashNotify.Parser, new[]{ "AbilityEntryList", "AvatarEntryList", "CombatEntryList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityConfigHashNotify), global::Weedwacker.Shared.Network.Proto.EntityConfigHashNotify.Parser, new[]{ "Unk3300NAMDIKJILAI", "Unk3300BLBEKMDGCMB", "Unk3300NLMPHBGMOEN" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3189
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3332;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityConfigHashNotify : pb::IMessage<EntityConfigHashNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityConfigHashNotify(EntityConfigHashNotify other) : this() {
-      abilityEntryList_ = other.abilityEntryList_.Clone();
-      avatarEntryList_ = other.avatarEntryList_.Clone();
-      combatEntryList_ = other.combatEntryList_.Clone();
+      unk3300NAMDIKJILAI_ = other.unk3300NAMDIKJILAI_.Clone();
+      unk3300BLBEKMDGCMB_ = other.unk3300BLBEKMDGCMB_.Clone();
+      unk3300NLMPHBGMOEN_ = other.unk3300NLMPHBGMOEN_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,37 +99,37 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityConfigHashNotify(this);
     }
 
-    /// <summary>Field number for the "ability_entry_list" field.</summary>
-    public const int AbilityEntryListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_abilityEntryList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> abilityEntryList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
+    /// <summary>Field number for the "Unk3300_NAMDIKJILAI" field.</summary>
+    public const int Unk3300NAMDIKJILAIFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_unk3300NAMDIKJILAI_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> unk3300NAMDIKJILAI_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> AbilityEntryList {
-      get { return abilityEntryList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> Unk3300NAMDIKJILAI {
+      get { return unk3300NAMDIKJILAI_; }
     }
 
-    /// <summary>Field number for the "avatar_entry_list" field.</summary>
-    public const int AvatarEntryListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_avatarEntryList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> avatarEntryList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
+    /// <summary>Field number for the "Unk3300_BLBEKMDGCMB" field.</summary>
+    public const int Unk3300BLBEKMDGCMBFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_unk3300BLBEKMDGCMB_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> unk3300BLBEKMDGCMB_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> AvatarEntryList {
-      get { return avatarEntryList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> Unk3300BLBEKMDGCMB {
+      get { return unk3300BLBEKMDGCMB_; }
     }
 
-    /// <summary>Field number for the "combat_entry_list" field.</summary>
-    public const int CombatEntryListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_combatEntryList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> combatEntryList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
+    /// <summary>Field number for the "Unk3300_NLMPHBGMOEN" field.</summary>
+    public const int Unk3300NLMPHBGMOENFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> _repeated_unk3300NLMPHBGMOEN_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> unk3300NLMPHBGMOEN_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> CombatEntryList {
-      get { return combatEntryList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityConfigHashEntry> Unk3300NLMPHBGMOEN {
+      get { return unk3300NLMPHBGMOEN_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!abilityEntryList_.Equals(other.abilityEntryList_)) return false;
-      if(!avatarEntryList_.Equals(other.avatarEntryList_)) return false;
-      if(!combatEntryList_.Equals(other.combatEntryList_)) return false;
+      if(!unk3300NAMDIKJILAI_.Equals(other.unk3300NAMDIKJILAI_)) return false;
+      if(!unk3300BLBEKMDGCMB_.Equals(other.unk3300BLBEKMDGCMB_)) return false;
+      if(!unk3300NLMPHBGMOEN_.Equals(other.unk3300NLMPHBGMOEN_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= abilityEntryList_.GetHashCode();
-      hash ^= avatarEntryList_.GetHashCode();
-      hash ^= combatEntryList_.GetHashCode();
+      hash ^= unk3300NAMDIKJILAI_.GetHashCode();
+      hash ^= unk3300BLBEKMDGCMB_.GetHashCode();
+      hash ^= unk3300NLMPHBGMOEN_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,9 +178,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      abilityEntryList_.WriteTo(output, _repeated_abilityEntryList_codec);
-      combatEntryList_.WriteTo(output, _repeated_combatEntryList_codec);
-      avatarEntryList_.WriteTo(output, _repeated_avatarEntryList_codec);
+      unk3300NAMDIKJILAI_.WriteTo(output, _repeated_unk3300NAMDIKJILAI_codec);
+      unk3300BLBEKMDGCMB_.WriteTo(output, _repeated_unk3300BLBEKMDGCMB_codec);
+      unk3300NLMPHBGMOEN_.WriteTo(output, _repeated_unk3300NLMPHBGMOEN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -185,9 +191,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      abilityEntryList_.WriteTo(ref output, _repeated_abilityEntryList_codec);
-      combatEntryList_.WriteTo(ref output, _repeated_combatEntryList_codec);
-      avatarEntryList_.WriteTo(ref output, _repeated_avatarEntryList_codec);
+      unk3300NAMDIKJILAI_.WriteTo(ref output, _repeated_unk3300NAMDIKJILAI_codec);
+      unk3300BLBEKMDGCMB_.WriteTo(ref output, _repeated_unk3300BLBEKMDGCMB_codec);
+      unk3300NLMPHBGMOEN_.WriteTo(ref output, _repeated_unk3300NLMPHBGMOEN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -198,9 +204,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += abilityEntryList_.CalculateSize(_repeated_abilityEntryList_codec);
-      size += avatarEntryList_.CalculateSize(_repeated_avatarEntryList_codec);
-      size += combatEntryList_.CalculateSize(_repeated_combatEntryList_codec);
+      size += unk3300NAMDIKJILAI_.CalculateSize(_repeated_unk3300NAMDIKJILAI_codec);
+      size += unk3300BLBEKMDGCMB_.CalculateSize(_repeated_unk3300BLBEKMDGCMB_codec);
+      size += unk3300NLMPHBGMOEN_.CalculateSize(_repeated_unk3300NLMPHBGMOEN_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -213,9 +219,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      abilityEntryList_.Add(other.abilityEntryList_);
-      avatarEntryList_.Add(other.avatarEntryList_);
-      combatEntryList_.Add(other.combatEntryList_);
+      unk3300NAMDIKJILAI_.Add(other.unk3300NAMDIKJILAI_);
+      unk3300BLBEKMDGCMB_.Add(other.unk3300BLBEKMDGCMB_);
+      unk3300NLMPHBGMOEN_.Add(other.unk3300NLMPHBGMOEN_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -231,16 +237,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            abilityEntryList_.AddEntriesFrom(input, _repeated_abilityEntryList_codec);
+          case 10: {
+            unk3300NAMDIKJILAI_.AddEntriesFrom(input, _repeated_unk3300NAMDIKJILAI_codec);
             break;
           }
-          case 66: {
-            combatEntryList_.AddEntriesFrom(input, _repeated_combatEntryList_codec);
+          case 18: {
+            unk3300BLBEKMDGCMB_.AddEntriesFrom(input, _repeated_unk3300BLBEKMDGCMB_codec);
             break;
           }
-          case 122: {
-            avatarEntryList_.AddEntriesFrom(input, _repeated_avatarEntryList_codec);
+          case 74: {
+            unk3300NLMPHBGMOEN_.AddEntriesFrom(input, _repeated_unk3300NLMPHBGMOEN_codec);
             break;
           }
         }
@@ -258,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            abilityEntryList_.AddEntriesFrom(ref input, _repeated_abilityEntryList_codec);
+          case 10: {
+            unk3300NAMDIKJILAI_.AddEntriesFrom(ref input, _repeated_unk3300NAMDIKJILAI_codec);
             break;
           }
-          case 66: {
-            combatEntryList_.AddEntriesFrom(ref input, _repeated_combatEntryList_codec);
+          case 18: {
+            unk3300BLBEKMDGCMB_.AddEntriesFrom(ref input, _repeated_unk3300BLBEKMDGCMB_codec);
             break;
           }
-          case 122: {
-            avatarEntryList_.AddEntriesFrom(ref input, _repeated_avatarEntryList_codec);
+          case 74: {
+            unk3300NLMPHBGMOEN_.AddEntriesFrom(ref input, _repeated_unk3300NLMPHBGMOEN_codec);
             break;
           }
         }

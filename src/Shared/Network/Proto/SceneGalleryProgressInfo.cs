@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryProgressInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5TY2VuZUdhbGxlcnlQcm9ncmVzc0luZm8ucHJvdG8iZwoYU2NlbmVHYWxs",
-            "ZXJ5UHJvZ3Jlc3NJbmZvEhsKE3Byb2dyZXNzX3N0YWdlX2xpc3QYCCADKA0S",
-            "CwoDa2V5GAsgASgJEhAKCHByb2dyZXNzGAUgASgNEg8KB3VpX2Zvcm0YDCAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "Ch5TY2VuZUdhbGxlcnlQcm9ncmVzc0luZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iZwoYU2NlbmVHYWxsZXJ5UHJvZ3Jlc3NJ",
+            "bmZvEgsKA2tleRgDIAEoCRIPCgd1aV9mb3JtGAwgASgNEhsKE3Byb2dyZXNz",
+            "X3N0YWdlX2xpc3QYByADKA0SEAoIcHJvZ3Jlc3MYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryProgressInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryProgressInfo.Parser, new[]{ "ProgressStageList", "Key", "Progress", "UiForm" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryProgressInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryProgressInfo.Parser, new[]{ "Key", "UiForm", "ProgressStageList", "Progress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryProgressInfo(SceneGalleryProgressInfo other) : this() {
-      progressStageList_ = other.progressStageList_.Clone();
       key_ = other.key_;
-      progress_ = other.progress_;
       uiForm_ = other.uiForm_;
+      progressStageList_ = other.progressStageList_.Clone();
+      progress_ = other.progress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,19 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryProgressInfo(this);
     }
 
-    /// <summary>Field number for the "progress_stage_list" field.</summary>
-    public const int ProgressStageListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_progressStageList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> progressStageList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ProgressStageList {
-      get { return progressStageList_; }
-    }
-
     /// <summary>Field number for the "key" field.</summary>
-    public const int KeyFieldNumber = 11;
+    public const int KeyFieldNumber = 3;
     private string key_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,18 +94,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return key_; }
       set {
         key_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 5;
-    private uint progress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Progress {
-      get { return progress_; }
-      set {
-        progress_ = value;
       }
     }
 
@@ -130,6 +106,29 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return uiForm_; }
       set {
         uiForm_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "progress_stage_list" field.</summary>
+    public const int ProgressStageListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_progressStageList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> progressStageList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ProgressStageList {
+      get { return progressStageList_; }
+    }
+
+    /// <summary>Field number for the "progress" field.</summary>
+    public const int ProgressFieldNumber = 13;
+    private uint progress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Progress {
+      get { return progress_; }
+      set {
+        progress_ = value;
       }
     }
 
@@ -148,10 +147,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!progressStageList_.Equals(other.progressStageList_)) return false;
       if (Key != other.Key) return false;
-      if (Progress != other.Progress) return false;
       if (UiForm != other.UiForm) return false;
+      if(!progressStageList_.Equals(other.progressStageList_)) return false;
+      if (Progress != other.Progress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= progressStageList_.GetHashCode();
       if (Key.Length != 0) hash ^= Key.GetHashCode();
-      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (UiForm != 0) hash ^= UiForm.GetHashCode();
+      hash ^= progressStageList_.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,18 +180,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Progress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Progress);
-      }
-      progressStageList_.WriteTo(output, _repeated_progressStageList_codec);
       if (Key.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(26);
         output.WriteString(Key);
       }
+      progressStageList_.WriteTo(output, _repeated_progressStageList_codec);
       if (UiForm != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(UiForm);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -204,18 +203,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Progress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Progress);
-      }
-      progressStageList_.WriteTo(ref output, _repeated_progressStageList_codec);
       if (Key.Length != 0) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(26);
         output.WriteString(Key);
       }
+      progressStageList_.WriteTo(ref output, _repeated_progressStageList_codec);
       if (UiForm != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(UiForm);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -227,15 +226,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += progressStageList_.CalculateSize(_repeated_progressStageList_codec);
       if (Key.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Key);
       }
-      if (Progress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-      }
       if (UiForm != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UiForm);
+      }
+      size += progressStageList_.CalculateSize(_repeated_progressStageList_codec);
+      if (Progress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -249,15 +248,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      progressStageList_.Add(other.progressStageList_);
       if (other.Key.Length != 0) {
         Key = other.Key;
       }
-      if (other.Progress != 0) {
-        Progress = other.Progress;
-      }
       if (other.UiForm != 0) {
         UiForm = other.UiForm;
+      }
+      progressStageList_.Add(other.progressStageList_);
+      if (other.Progress != 0) {
+        Progress = other.Progress;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -274,21 +273,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            Progress = input.ReadUInt32();
-            break;
-          }
-          case 66:
-          case 64: {
-            progressStageList_.AddEntriesFrom(input, _repeated_progressStageList_codec);
-            break;
-          }
-          case 90: {
+          case 26: {
             Key = input.ReadString();
+            break;
+          }
+          case 58:
+          case 56: {
+            progressStageList_.AddEntriesFrom(input, _repeated_progressStageList_codec);
             break;
           }
           case 96: {
             UiForm = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Progress = input.ReadUInt32();
             break;
           }
         }
@@ -306,21 +305,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            Progress = input.ReadUInt32();
-            break;
-          }
-          case 66:
-          case 64: {
-            progressStageList_.AddEntriesFrom(ref input, _repeated_progressStageList_codec);
-            break;
-          }
-          case 90: {
+          case 26: {
             Key = input.ReadString();
+            break;
+          }
+          case 58:
+          case 56: {
+            progressStageList_.AddEntriesFrom(ref input, _repeated_progressStageList_codec);
             break;
           }
           case 96: {
             UiForm = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Progress = input.ReadUInt32();
             break;
           }
         }

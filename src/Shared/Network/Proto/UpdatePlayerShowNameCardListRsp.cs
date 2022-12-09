@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static UpdatePlayerShowNameCardListRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVVcGRhdGVQbGF5ZXJTaG93TmFtZUNhcmRMaXN0UnNwLnByb3RvIlIKH1Vw",
-            "ZGF0ZVBsYXllclNob3dOYW1lQ2FyZExpc3RSc3ASDwoHcmV0Y29kZRgNIAEo",
-            "BRIeChZzaG93X25hbWVfY2FyZF9pZF9saXN0GAwgAygNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVVcGRhdGVQbGF5ZXJTaG93TmFtZUNhcmRMaXN0UnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlIKH1VwZGF0ZVBsYXllclNo",
+            "b3dOYW1lQ2FyZExpc3RSc3ASDwoHcmV0Y29kZRgBIAEoBRIeChZzaG93X25h",
+            "bWVfY2FyZF9pZF9saXN0GAIgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4019
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4054;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UpdatePlayerShowNameCardListRsp : pb::IMessage<UpdatePlayerShowNameCardListRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,9 +105,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "show_name_card_id_list" field.</summary>
-    public const int ShowNameCardIdListFieldNumber = 12;
+    public const int ShowNameCardIdListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_showNameCardIdList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> showNameCardIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      showNameCardIdList_.WriteTo(output, _repeated_showNameCardIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
+      showNameCardIdList_.WriteTo(output, _repeated_showNameCardIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      showNameCardIdList_.WriteTo(ref output, _repeated_showNameCardIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
+      showNameCardIdList_.WriteTo(ref output, _repeated_showNameCardIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98:
-          case 96: {
-            showNameCardIdList_.AddEntriesFrom(input, _repeated_showNameCardIdList_codec);
+          case 8: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 18:
+          case 16: {
+            showNameCardIdList_.AddEntriesFrom(input, _repeated_showNameCardIdList_codec);
             break;
           }
         }
@@ -244,13 +248,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98:
-          case 96: {
-            showNameCardIdList_.AddEntriesFrom(ref input, _repeated_showNameCardIdList_codec);
+          case 8: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 18:
+          case 16: {
+            showNameCardIdList_.AddEntriesFrom(ref input, _repeated_showNameCardIdList_codec);
             break;
           }
         }

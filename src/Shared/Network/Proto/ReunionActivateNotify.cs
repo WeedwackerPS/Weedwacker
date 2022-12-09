@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionActivateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtSZXVuaW9uQWN0aXZhdGVOb3RpZnkucHJvdG8aFlJldW5pb25CcmllZklu",
-            "Zm8ucHJvdG8iWwoVUmV1bmlvbkFjdGl2YXRlTm90aWZ5EhMKC2lzX2FjdGl2",
-            "YXRlGAkgASgIEi0KEnJldW5pb25fYnJpZWZfaW5mbxgNIAEoCzIRLlJldW5p",
-            "b25CcmllZkluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChtSZXVuaW9uQWN0aXZhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFlJldW5pb25CcmllZkluZm8ucHJvdG8iewoV",
+            "UmV1bmlvbkFjdGl2YXRlTm90aWZ5EhMKC2lzX2FjdGl2YXRlGAcgASgIEk0K",
+            "EnJldW5pb25fYnJpZWZfaW5mbxgJIAEoCzIxLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uUmV1bmlvbkJyaWVmSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5085
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5071;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ReunionActivateNotify : pb::IMessage<ReunionActivateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_activate" field.</summary>
-    public const int IsActivateFieldNumber = 9;
+    public const int IsActivateFieldNumber = 7;
     private bool isActivate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reunion_brief_info" field.</summary>
-    public const int ReunionBriefInfoFieldNumber = 13;
+    public const int ReunionBriefInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo reunionBriefInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsActivate != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteBool(IsActivate);
       }
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsActivate != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteBool(IsActivate);
       }
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (_unknownFields != null) {
@@ -235,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 56: {
             IsActivate = input.ReadBool();
             break;
           }
-          case 106: {
+          case 74: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }
@@ -261,11 +265,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 56: {
             IsActivate = input.ReadBool();
             break;
           }
-          case 106: {
+          case 74: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }

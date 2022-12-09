@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketDeliverItemReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFWaW50YWdlTWFya2V0RGVsaXZlckl0ZW1SZXEucHJvdG8aD0l0ZW1QYXJh",
-            "bS5wcm90byJXChtWaW50YWdlTWFya2V0RGVsaXZlckl0ZW1SZXESJQoRZGVs",
-            "aXZlcl9pdGVtX2xpc3QYAyADKAsyCi5JdGVtUGFyYW0SEQoJdHJhZGVyX2lk",
-            "GAUgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "CiFWaW50YWdlTWFya2V0RGVsaXZlckl0ZW1SZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aD0l0ZW1QYXJhbS5wcm90byJ3ChtW",
+            "aW50YWdlTWFya2V0RGVsaXZlckl0ZW1SZXESRQoRZGVsaXZlcl9pdGVtX2xp",
+            "c3QYDCADKAsyKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0",
+            "ZW1QYXJhbRIRCgl0cmFkZXJfaWQYAyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23141
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 21131;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketDeliverItemReq : pb::IMessage<VintageMarketDeliverItemReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "deliver_item_list" field.</summary>
-    public const int DeliverItemListFieldNumber = 3;
+    public const int DeliverItemListFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_deliverItemList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> deliverItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trader_id" field.</summary>
-    public const int TraderIdFieldNumber = 5;
+    public const int TraderIdFieldNumber = 3;
     private uint traderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      deliverItemList_.WriteTo(output, _repeated_deliverItemList_codec);
       if (TraderId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(TraderId);
       }
+      deliverItemList_.WriteTo(output, _repeated_deliverItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      deliverItemList_.WriteTo(ref output, _repeated_deliverItemList_codec);
       if (TraderId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(TraderId);
       }
+      deliverItemList_.WriteTo(ref output, _repeated_deliverItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -222,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            deliverItemList_.AddEntriesFrom(input, _repeated_deliverItemList_codec);
+          case 24: {
+            TraderId = input.ReadUInt32();
             break;
           }
-          case 40: {
-            TraderId = input.ReadUInt32();
+          case 98: {
+            deliverItemList_.AddEntriesFrom(input, _repeated_deliverItemList_codec);
             break;
           }
         }
@@ -245,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            deliverItemList_.AddEntriesFrom(ref input, _repeated_deliverItemList_codec);
+          case 24: {
+            TraderId = input.ReadUInt32();
             break;
           }
-          case 40: {
-            TraderId = input.ReadUInt32();
+          case 98: {
+            deliverItemList_.AddEntriesFrom(ref input, _repeated_deliverItemList_codec);
             break;
           }
         }

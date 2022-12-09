@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static PBNavMeshPolyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNQQk5hdk1lc2hQb2x5LnByb3RvItoBCg1QQk5hdk1lc2hQb2x5EisKCmVk",
-            "Z2VfdHlwZXMYCiADKA4yFy5QQk5hdk1lc2hQb2x5LkVkZ2VUeXBlEgwKBGFy",
-            "ZWEYBiABKAUSDQoFdmVjdHMYByADKAUifwoIRWRnZVR5cGUSEwoPRURHRV9U",
-            "WVBFX0lOTkVSEAASGAoURURHRV9UWVBFX1RJTEVfQk9VTkQQARIiCh5FREdF",
-            "X1RZUEVfVElMRV9CT1VORF9VTkNPTk5FQ1QQAhIgChxFREdFX1RZUEVfVElM",
-            "RV9CT1VORF9PVkVSSURFEANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChNQQk5hdk1lc2hQb2x5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvIvoBCg1QQk5hdk1lc2hQb2x5EgwKBGFyZWEYDiABKAUSDQoF",
+            "dmVjdHMYDSADKAUSSwoKZWRnZV90eXBlcxgFIAMoDjI3LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uUEJOYXZNZXNoUG9seS5FZGdlVHlwZSJ/",
+            "CghFZGdlVHlwZRITCg9FREdFX1RZUEVfSU5ORVIQABIYChRFREdFX1RZUEVf",
+            "VElMRV9CT1VORBABEiIKHkVER0VfVFlQRV9USUxFX0JPVU5EX1VOQ09OTkVD",
+            "VBACEiAKHEVER0VfVFlQRV9USUxFX0JPVU5EX09WRVJJREUQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly), global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Parser, new[]{ "EdgeTypes", "Area", "Vects" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly), global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Parser, new[]{ "Area", "Vects", "EdgeTypes" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType) }, null, null)
           }));
     }
     #endregion
@@ -75,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PBNavMeshPoly(PBNavMeshPoly other) : this() {
-      edgeTypes_ = other.edgeTypes_.Clone();
       area_ = other.area_;
       vects_ = other.vects_.Clone();
+      edgeTypes_ = other.edgeTypes_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,19 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PBNavMeshPoly(this);
     }
 
-    /// <summary>Field number for the "edge_types" field.</summary>
-    public const int EdgeTypesFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> _repeated_edgeTypes_codec
-        = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> edgeTypes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> EdgeTypes {
-      get { return edgeTypes_; }
-    }
-
     /// <summary>Field number for the "area" field.</summary>
-    public const int AreaFieldNumber = 6;
+    public const int AreaFieldNumber = 14;
     private int area_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,14 +100,25 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "vects" field.</summary>
-    public const int VectsFieldNumber = 7;
+    public const int VectsFieldNumber = 13;
     private static readonly pb::FieldCodec<int> _repeated_vects_codec
-        = pb::FieldCodec.ForInt32(58);
+        = pb::FieldCodec.ForInt32(106);
     private readonly pbc::RepeatedField<int> vects_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<int> Vects {
       get { return vects_; }
+    }
+
+    /// <summary>Field number for the "edge_types" field.</summary>
+    public const int EdgeTypesFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> _repeated_edgeTypes_codec
+        = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> edgeTypes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Types.EdgeType> EdgeTypes {
+      get { return edgeTypes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!edgeTypes_.Equals(other.edgeTypes_)) return false;
       if (Area != other.Area) return false;
       if(!vects_.Equals(other.vects_)) return false;
+      if(!edgeTypes_.Equals(other.edgeTypes_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= edgeTypes_.GetHashCode();
       if (Area != 0) hash ^= Area.GetHashCode();
       hash ^= vects_.GetHashCode();
+      hash ^= edgeTypes_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,12 +167,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      edgeTypes_.WriteTo(output, _repeated_edgeTypes_codec);
+      vects_.WriteTo(output, _repeated_vects_codec);
       if (Area != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteInt32(Area);
       }
-      vects_.WriteTo(output, _repeated_vects_codec);
-      edgeTypes_.WriteTo(output, _repeated_edgeTypes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -183,12 +183,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      edgeTypes_.WriteTo(ref output, _repeated_edgeTypes_codec);
+      vects_.WriteTo(ref output, _repeated_vects_codec);
       if (Area != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteInt32(Area);
       }
-      vects_.WriteTo(ref output, _repeated_vects_codec);
-      edgeTypes_.WriteTo(ref output, _repeated_edgeTypes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -199,11 +199,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += edgeTypes_.CalculateSize(_repeated_edgeTypes_codec);
       if (Area != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Area);
       }
       size += vects_.CalculateSize(_repeated_vects_codec);
+      size += edgeTypes_.CalculateSize(_repeated_edgeTypes_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -216,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      edgeTypes_.Add(other.edgeTypes_);
       if (other.Area != 0) {
         Area = other.Area;
       }
       vects_.Add(other.vects_);
+      edgeTypes_.Add(other.edgeTypes_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -236,18 +236,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            Area = input.ReadInt32();
+          case 42:
+          case 40: {
+            edgeTypes_.AddEntriesFrom(input, _repeated_edgeTypes_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 106:
+          case 104: {
             vects_.AddEntriesFrom(input, _repeated_vects_codec);
             break;
           }
-          case 82:
-          case 80: {
-            edgeTypes_.AddEntriesFrom(input, _repeated_edgeTypes_codec);
+          case 112: {
+            Area = input.ReadInt32();
             break;
           }
         }
@@ -265,18 +265,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            Area = input.ReadInt32();
+          case 42:
+          case 40: {
+            edgeTypes_.AddEntriesFrom(ref input, _repeated_edgeTypes_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 106:
+          case 104: {
             vects_.AddEntriesFrom(ref input, _repeated_vects_codec);
             break;
           }
-          case 82:
-          case 80: {
-            edgeTypes_.AddEntriesFrom(ref input, _repeated_edgeTypes_codec);
+          case 112: {
+            Area = input.ReadInt32();
             break;
           }
         }

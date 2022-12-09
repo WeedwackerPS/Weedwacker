@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static WeaponAwakenRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVXZWFwb25Bd2FrZW5Sc3AucHJvdG8i8wIKD1dlYXBvbkF3YWtlblJzcBIP",
-            "CgdyZXRjb2RlGAkgASgFEhMKC2F2YXRhcl9ndWlkGAogASgEEkMKE29sZF9h",
-            "ZmZpeF9sZXZlbF9tYXAYBCADKAsyJi5XZWFwb25Bd2FrZW5Sc3AuT2xkQWZm",
-            "aXhMZXZlbE1hcEVudHJ5EiIKGnRhcmdldF93ZWFwb25fYXdha2VuX2xldmVs",
-            "GAIgASgNEhoKEnRhcmdldF93ZWFwb25fZ3VpZBgPIAEoBBJDChNjdXJfYWZm",
-            "aXhfbGV2ZWxfbWFwGAsgAygLMiYuV2VhcG9uQXdha2VuUnNwLkN1ckFmZml4",
-            "TGV2ZWxNYXBFbnRyeRo3ChVPbGRBZmZpeExldmVsTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARo3ChVDdXJBZmZpeExldmVsTWFw",
-            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVXZWFwb25Bd2FrZW5Sc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iswMKD1dlYXBvbkF3YWtlblJzcBJjChNvbGRfYWZmaXhf",
+            "bGV2ZWxfbWFwGAMgAygLMkYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5XZWFwb25Bd2FrZW5Sc3AuT2xkQWZmaXhMZXZlbE1hcEVudHJ5EhMK",
+            "C2F2YXRhcl9ndWlkGAggASgEEg8KB3JldGNvZGUYCSABKAUSGgoSdGFyZ2V0",
+            "X3dlYXBvbl9ndWlkGA4gASgEEmMKE2N1cl9hZmZpeF9sZXZlbF9tYXAYDyAD",
+            "KAsyRi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldlYXBvbkF3",
+            "YWtlblJzcC5DdXJBZmZpeExldmVsTWFwRW50cnkSIgoadGFyZ2V0X3dlYXBv",
+            "bl9hd2FrZW5fbGV2ZWwYAiABKA0aNwoVT2xkQWZmaXhMZXZlbE1hcEVudHJ5",
+            "EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaNwoVQ3VyQWZmaXhM",
+            "ZXZlbE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponAwakenRsp), global::Weedwacker.Shared.Network.Proto.WeaponAwakenRsp.Parser, new[]{ "Retcode", "AvatarGuid", "OldAffixLevelMap", "TargetWeaponAwakenLevel", "TargetWeaponGuid", "CurAffixLevelMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponAwakenRsp), global::Weedwacker.Shared.Network.Proto.WeaponAwakenRsp.Parser, new[]{ "OldAffixLevelMap", "AvatarGuid", "Retcode", "TargetWeaponGuid", "CurAffixLevelMap", "TargetWeaponAwakenLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -45,9 +47,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 606
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 610;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WeaponAwakenRsp : pb::IMessage<WeaponAwakenRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,12 +89,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WeaponAwakenRsp(WeaponAwakenRsp other) : this() {
-      retcode_ = other.retcode_;
-      avatarGuid_ = other.avatarGuid_;
       oldAffixLevelMap_ = other.oldAffixLevelMap_.Clone();
-      targetWeaponAwakenLevel_ = other.targetWeaponAwakenLevel_;
+      avatarGuid_ = other.avatarGuid_;
+      retcode_ = other.retcode_;
       targetWeaponGuid_ = other.targetWeaponGuid_;
       curAffixLevelMap_ = other.curAffixLevelMap_.Clone();
+      targetWeaponAwakenLevel_ = other.targetWeaponAwakenLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,6 +102,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WeaponAwakenRsp Clone() {
       return new WeaponAwakenRsp(this);
+    }
+
+    /// <summary>Field number for the "old_affix_level_map" field.</summary>
+    public const int OldAffixLevelMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_oldAffixLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> oldAffixLevelMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>
+    /// Unk3300_IKJALGGLHOM
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> OldAffixLevelMap {
+      get { return oldAffixLevelMap_; }
+    }
+
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 8;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -110,27 +142,30 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 10;
-    private ulong avatarGuid_;
+    /// <summary>Field number for the "target_weapon_guid" field.</summary>
+    public const int TargetWeaponGuidFieldNumber = 14;
+    private ulong targetWeaponGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong AvatarGuid {
-      get { return avatarGuid_; }
+    public ulong TargetWeaponGuid {
+      get { return targetWeaponGuid_; }
       set {
-        avatarGuid_ = value;
+        targetWeaponGuid_ = value;
       }
     }
 
-    /// <summary>Field number for the "old_affix_level_map" field.</summary>
-    public const int OldAffixLevelMapFieldNumber = 4;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_oldAffixLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
-    private readonly pbc::MapField<uint, uint> oldAffixLevelMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "cur_affix_level_map" field.</summary>
+    public const int CurAffixLevelMapFieldNumber = 15;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_curAffixLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
+    private readonly pbc::MapField<uint, uint> curAffixLevelMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>
+    /// Unk3300_AMMAMKJDEMG
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> OldAffixLevelMap {
-      get { return oldAffixLevelMap_; }
+    public pbc::MapField<uint, uint> CurAffixLevelMap {
+      get { return curAffixLevelMap_; }
     }
 
     /// <summary>Field number for the "target_weapon_awaken_level" field.</summary>
@@ -143,29 +178,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         targetWeaponAwakenLevel_ = value;
       }
-    }
-
-    /// <summary>Field number for the "target_weapon_guid" field.</summary>
-    public const int TargetWeaponGuidFieldNumber = 15;
-    private ulong targetWeaponGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong TargetWeaponGuid {
-      get { return targetWeaponGuid_; }
-      set {
-        targetWeaponGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_affix_level_map" field.</summary>
-    public const int CurAffixLevelMapFieldNumber = 11;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_curAffixLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 90);
-    private readonly pbc::MapField<uint, uint> curAffixLevelMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> CurAffixLevelMap {
-      get { return curAffixLevelMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,12 +195,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if (AvatarGuid != other.AvatarGuid) return false;
       if (!OldAffixLevelMap.Equals(other.OldAffixLevelMap)) return false;
-      if (TargetWeaponAwakenLevel != other.TargetWeaponAwakenLevel) return false;
+      if (AvatarGuid != other.AvatarGuid) return false;
+      if (Retcode != other.Retcode) return false;
       if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
       if (!CurAffixLevelMap.Equals(other.CurAffixLevelMap)) return false;
+      if (TargetWeaponAwakenLevel != other.TargetWeaponAwakenLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -196,12 +208,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       hash ^= OldAffixLevelMap.GetHashCode();
-      if (TargetWeaponAwakenLevel != 0) hash ^= TargetWeaponAwakenLevel.GetHashCode();
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
       hash ^= CurAffixLevelMap.GetHashCode();
+      if (TargetWeaponAwakenLevel != 0) hash ^= TargetWeaponAwakenLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -225,19 +237,19 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(TargetWeaponAwakenLevel);
       }
       oldAffixLevelMap_.WriteTo(output, _map_oldAffixLevelMap_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (Retcode != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(80);
-        output.WriteUInt64(AvatarGuid);
-      }
-      curAffixLevelMap_.WriteTo(output, _map_curAffixLevelMap_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt64(TargetWeaponGuid);
       }
+      curAffixLevelMap_.WriteTo(output, _map_curAffixLevelMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -253,19 +265,19 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(TargetWeaponAwakenLevel);
       }
       oldAffixLevelMap_.WriteTo(ref output, _map_oldAffixLevelMap_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (Retcode != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(80);
-        output.WriteUInt64(AvatarGuid);
-      }
-      curAffixLevelMap_.WriteTo(ref output, _map_curAffixLevelMap_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt64(TargetWeaponGuid);
       }
+      curAffixLevelMap_.WriteTo(ref output, _map_curAffixLevelMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -276,20 +288,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
+      size += oldAffixLevelMap_.CalculateSize(_map_oldAffixLevelMap_codec);
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
-      size += oldAffixLevelMap_.CalculateSize(_map_oldAffixLevelMap_codec);
-      if (TargetWeaponAwakenLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetWeaponAwakenLevel);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (TargetWeaponGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
       }
       size += curAffixLevelMap_.CalculateSize(_map_curAffixLevelMap_codec);
+      if (TargetWeaponAwakenLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetWeaponAwakenLevel);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -302,20 +314,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
+      oldAffixLevelMap_.Add(other.oldAffixLevelMap_);
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      oldAffixLevelMap_.Add(other.oldAffixLevelMap_);
-      if (other.TargetWeaponAwakenLevel != 0) {
-        TargetWeaponAwakenLevel = other.TargetWeaponAwakenLevel;
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
       curAffixLevelMap_.Add(other.curAffixLevelMap_);
+      if (other.TargetWeaponAwakenLevel != 0) {
+        TargetWeaponAwakenLevel = other.TargetWeaponAwakenLevel;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -335,24 +347,24 @@ namespace Weedwacker.Shared.Network.Proto {
             TargetWeaponAwakenLevel = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 26: {
             oldAffixLevelMap_.AddEntriesFrom(input, _map_oldAffixLevelMap_codec);
+            break;
+          }
+          case 64: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
           case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 90: {
-            curAffixLevelMap_.AddEntriesFrom(input, _map_curAffixLevelMap_codec);
-            break;
-          }
-          case 120: {
+          case 112: {
             TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 122: {
+            curAffixLevelMap_.AddEntriesFrom(input, _map_curAffixLevelMap_codec);
             break;
           }
         }
@@ -374,24 +386,24 @@ namespace Weedwacker.Shared.Network.Proto {
             TargetWeaponAwakenLevel = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 26: {
             oldAffixLevelMap_.AddEntriesFrom(ref input, _map_oldAffixLevelMap_codec);
+            break;
+          }
+          case 64: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
           case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 90: {
-            curAffixLevelMap_.AddEntriesFrom(ref input, _map_curAffixLevelMap_codec);
-            break;
-          }
-          case 120: {
+          case 112: {
             TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 122: {
+            curAffixLevelMap_.AddEntriesFrom(ref input, _map_curAffixLevelMap_codec);
             break;
           }
         }

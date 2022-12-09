@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static RegionalPlayInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxSZWdpb25hbFBsYXlJbmZvTm90aWZ5LnByb3RvGhVSZWdpb25hbFBsYXlW",
-            "YXIucHJvdG8ijAEKFlJlZ2lvbmFsUGxheUluZm9Ob3RpZnkSIgoIdmFyX2xp",
-            "c3QYBSADKAsyEC5SZWdpb25hbFBsYXlWYXISEQoJcGxheV9uYW1lGAkgASgJ",
-            "EhIKCmlzX2VuYWJsZWQYDyABKAgSEQoJcGxheV90eXBlGAcgASgNEhQKDGlz",
-            "X2luX3JlZ2lvbhgEIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChxSZWdpb25hbFBsYXlJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhVSZWdpb25hbFBsYXlWYXIucHJvdG8ivAEK",
+            "FlJlZ2lvbmFsUGxheUluZm9Ob3RpZnkSEQoJcGxheV90eXBlGAMgASgNEkIK",
+            "CHZhcl9saXN0GA0gAygLMjAuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5SZWdpb25hbFBsYXlWYXISEQoJcGxheV9uYW1lGAUgASgJEhsKE1Vu",
+            "azMzMDBfRk1FUEVCSUhOT0wYASABKAgSGwoTVW5rMzMwMF9NQkdPSk9CTlBO",
+            "RxgOIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RegionalPlayVarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionalPlayInfoNotify), global::Weedwacker.Shared.Network.Proto.RegionalPlayInfoNotify.Parser, new[]{ "VarList", "PlayName", "IsEnabled", "PlayType", "IsInRegion" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionalPlayInfoNotify), global::Weedwacker.Shared.Network.Proto.RegionalPlayInfoNotify.Parser, new[]{ "PlayType", "VarList", "PlayName", "Unk3300FMEPEBIHNOL", "Unk3300MBGOJOBNPNG" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6276
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6292;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RegionalPlayInfoNotify : pb::IMessage<RegionalPlayInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +84,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionalPlayInfoNotify(RegionalPlayInfoNotify other) : this() {
+      playType_ = other.playType_;
       varList_ = other.varList_.Clone();
       playName_ = other.playName_;
-      isEnabled_ = other.isEnabled_;
-      playType_ = other.playType_;
-      isInRegion_ = other.isInRegion_;
+      unk3300FMEPEBIHNOL_ = other.unk3300FMEPEBIHNOL_;
+      unk3300MBGOJOBNPNG_ = other.unk3300MBGOJOBNPNG_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,43 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RegionalPlayInfoNotify(this);
     }
 
-    /// <summary>Field number for the "var_list" field.</summary>
-    public const int VarListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> _repeated_varList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.RegionalPlayVar.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> varList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> VarList {
-      get { return varList_; }
-    }
-
-    /// <summary>Field number for the "play_name" field.</summary>
-    public const int PlayNameFieldNumber = 9;
-    private string playName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PlayName {
-      get { return playName_; }
-      set {
-        playName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "is_enabled" field.</summary>
-    public const int IsEnabledFieldNumber = 15;
-    private bool isEnabled_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsEnabled {
-      get { return isEnabled_; }
-      set {
-        isEnabled_ = value;
-      }
-    }
-
     /// <summary>Field number for the "play_type" field.</summary>
-    public const int PlayTypeFieldNumber = 7;
+    public const int PlayTypeFieldNumber = 3;
     private uint playType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,15 +110,50 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_in_region" field.</summary>
-    public const int IsInRegionFieldNumber = 4;
-    private bool isInRegion_;
+    /// <summary>Field number for the "var_list" field.</summary>
+    public const int VarListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> _repeated_varList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.RegionalPlayVar.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> varList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsInRegion {
-      get { return isInRegion_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionalPlayVar> VarList {
+      get { return varList_; }
+    }
+
+    /// <summary>Field number for the "play_name" field.</summary>
+    public const int PlayNameFieldNumber = 5;
+    private string playName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PlayName {
+      get { return playName_; }
       set {
-        isInRegion_ = value;
+        playName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FMEPEBIHNOL" field.</summary>
+    public const int Unk3300FMEPEBIHNOLFieldNumber = 1;
+    private bool unk3300FMEPEBIHNOL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300FMEPEBIHNOL {
+      get { return unk3300FMEPEBIHNOL_; }
+      set {
+        unk3300FMEPEBIHNOL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MBGOJOBNPNG" field.</summary>
+    public const int Unk3300MBGOJOBNPNGFieldNumber = 14;
+    private bool unk3300MBGOJOBNPNG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MBGOJOBNPNG {
+      get { return unk3300MBGOJOBNPNG_; }
+      set {
+        unk3300MBGOJOBNPNG_ = value;
       }
     }
 
@@ -167,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (PlayType != other.PlayType) return false;
       if(!varList_.Equals(other.varList_)) return false;
       if (PlayName != other.PlayName) return false;
-      if (IsEnabled != other.IsEnabled) return false;
-      if (PlayType != other.PlayType) return false;
-      if (IsInRegion != other.IsInRegion) return false;
+      if (Unk3300FMEPEBIHNOL != other.Unk3300FMEPEBIHNOL) return false;
+      if (Unk3300MBGOJOBNPNG != other.Unk3300MBGOJOBNPNG) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +184,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (PlayType != 0) hash ^= PlayType.GetHashCode();
       hash ^= varList_.GetHashCode();
       if (PlayName.Length != 0) hash ^= PlayName.GetHashCode();
-      if (IsEnabled != false) hash ^= IsEnabled.GetHashCode();
-      if (PlayType != 0) hash ^= PlayType.GetHashCode();
-      if (IsInRegion != false) hash ^= IsInRegion.GetHashCode();
+      if (Unk3300FMEPEBIHNOL != false) hash ^= Unk3300FMEPEBIHNOL.GetHashCode();
+      if (Unk3300MBGOJOBNPNG != false) hash ^= Unk3300MBGOJOBNPNG.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,22 +207,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsInRegion != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsInRegion);
+      if (Unk3300FMEPEBIHNOL != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Unk3300FMEPEBIHNOL);
       }
-      varList_.WriteTo(output, _repeated_varList_codec);
       if (PlayType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(PlayType);
       }
       if (PlayName.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteString(PlayName);
       }
-      if (IsEnabled != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsEnabled);
+      varList_.WriteTo(output, _repeated_varList_codec);
+      if (Unk3300MBGOJOBNPNG != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300MBGOJOBNPNG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -229,22 +234,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsInRegion != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsInRegion);
+      if (Unk3300FMEPEBIHNOL != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Unk3300FMEPEBIHNOL);
       }
-      varList_.WriteTo(ref output, _repeated_varList_codec);
       if (PlayType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(PlayType);
       }
       if (PlayName.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteString(PlayName);
       }
-      if (IsEnabled != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsEnabled);
+      varList_.WriteTo(ref output, _repeated_varList_codec);
+      if (Unk3300MBGOJOBNPNG != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300MBGOJOBNPNG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -256,17 +261,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (PlayType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
+      }
       size += varList_.CalculateSize(_repeated_varList_codec);
       if (PlayName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayName);
       }
-      if (IsEnabled != false) {
+      if (Unk3300FMEPEBIHNOL != false) {
         size += 1 + 1;
       }
-      if (PlayType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
-      }
-      if (IsInRegion != false) {
+      if (Unk3300MBGOJOBNPNG != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -281,18 +286,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.PlayType != 0) {
+        PlayType = other.PlayType;
+      }
       varList_.Add(other.varList_);
       if (other.PlayName.Length != 0) {
         PlayName = other.PlayName;
       }
-      if (other.IsEnabled != false) {
-        IsEnabled = other.IsEnabled;
+      if (other.Unk3300FMEPEBIHNOL != false) {
+        Unk3300FMEPEBIHNOL = other.Unk3300FMEPEBIHNOL;
       }
-      if (other.PlayType != 0) {
-        PlayType = other.PlayType;
-      }
-      if (other.IsInRegion != false) {
-        IsInRegion = other.IsInRegion;
+      if (other.Unk3300MBGOJOBNPNG != false) {
+        Unk3300MBGOJOBNPNG = other.Unk3300MBGOJOBNPNG;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -309,24 +314,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            IsInRegion = input.ReadBool();
+          case 8: {
+            Unk3300FMEPEBIHNOL = input.ReadBool();
             break;
           }
-          case 42: {
-            varList_.AddEntriesFrom(input, _repeated_varList_codec);
-            break;
-          }
-          case 56: {
+          case 24: {
             PlayType = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 42: {
             PlayName = input.ReadString();
             break;
           }
-          case 120: {
-            IsEnabled = input.ReadBool();
+          case 106: {
+            varList_.AddEntriesFrom(input, _repeated_varList_codec);
+            break;
+          }
+          case 112: {
+            Unk3300MBGOJOBNPNG = input.ReadBool();
             break;
           }
         }
@@ -344,24 +349,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            IsInRegion = input.ReadBool();
+          case 8: {
+            Unk3300FMEPEBIHNOL = input.ReadBool();
             break;
           }
-          case 42: {
-            varList_.AddEntriesFrom(ref input, _repeated_varList_codec);
-            break;
-          }
-          case 56: {
+          case 24: {
             PlayType = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 42: {
             PlayName = input.ReadString();
             break;
           }
-          case 120: {
-            IsEnabled = input.ReadBool();
+          case 106: {
+            varList_.AddEntriesFrom(ref input, _repeated_varList_codec);
+            break;
+          }
+          case 112: {
+            Unk3300MBGOJOBNPNG = input.ReadBool();
             break;
           }
         }

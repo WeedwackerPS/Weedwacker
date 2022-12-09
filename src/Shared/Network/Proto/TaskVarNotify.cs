@@ -24,9 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static TaskVarNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNUYXNrVmFyTm90aWZ5LnByb3RvGg1UYXNrVmFyLnByb3RvIjAKDVRhc2tW",
-            "YXJOb3RpZnkSHwoNdGFza192YXJfbGlzdBgHIAMoCzIILlRhc2tWYXJCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChNUYXNrVmFyTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGg1UYXNrVmFyLnByb3RvIlAKDVRhc2tWYXJOb3RpZnkSPwoN",
+            "dGFza192YXJfbGlzdBgNIAMoCzIoLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVGFza1ZhcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TaskVarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 160
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 136;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TaskVarNotify : pb::IMessage<TaskVarNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "task_var_list" field.</summary>
-    public const int TaskVarListFieldNumber = 7;
+    public const int TaskVarListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TaskVar> _repeated_taskVarList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.TaskVar.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.TaskVar.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TaskVar> taskVarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TaskVar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -190,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 106: {
             taskVarList_.AddEntriesFrom(input, _repeated_taskVarList_codec);
             break;
           }
@@ -209,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 106: {
             taskVarList_.AddEntriesFrom(ref input, _repeated_taskVarList_codec);
             break;
           }

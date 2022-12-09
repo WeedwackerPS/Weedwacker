@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityCondStateChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNBY3Rpdml0eUNvbmRTdGF0ZUNoYW5nZU5vdGlmeS5wcm90bxoQVWludDMy",
-            "UGFpci5wcm90byLZAQodQWN0aXZpdHlDb25kU3RhdGVDaGFuZ2VOb3RpZnkS",
-            "HgoWYWN0aXZhdGVkX3NhbGVfaWRfbGlzdBgJIAMoDRITCgthY3Rpdml0eV9p",
-            "ZBgEIAEoDRITCgtzY2hlZHVsZV9pZBgFIAEoDRIYChBleHBpcmVfY29uZF9s",
-            "aXN0GAsgAygNEjwKJ2Rpc2FibGVfdHJhbnNmZXJfcG9pbnRfaW50ZXJhY3Rp",
-            "b25fbGlzdBgMIAMoCzILLlVpbnQzMlBhaXISFgoObWVldF9jb25kX2xpc3QY",
-            "ASADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiNBY3Rpdml0eUNvbmRTdGF0ZUNoYW5nZU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoQVWludDMyUGFpci5wcm90byKB",
+            "AgodQWN0aXZpdHlDb25kU3RhdGVDaGFuZ2VOb3RpZnkSEwoLYWN0aXZpdHlf",
+            "aWQYBSABKA0SEwoLc2NoZWR1bGVfaWQYDiABKA0SGwoTVW5rMzMwMF9IS0tO",
+            "SUhOQkhBRRgBIAMoDRIbChNVbmszMzAwX0JHTklCTEtDUENBGAQgAygNEh4K",
+            "FmFjdGl2YXRlZF9zYWxlX2lkX2xpc3QYCCADKA0SXAonZGlzYWJsZV90cmFu",
+            "c2Zlcl9wb2ludF9pbnRlcmFjdGlvbl9saXN0GAsgAygLMisuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5VaW50MzJQYWlyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityCondStateChangeNotify), global::Weedwacker.Shared.Network.Proto.ActivityCondStateChangeNotify.Parser, new[]{ "ActivatedSaleIdList", "ActivityId", "ScheduleId", "ExpireCondList", "DisableTransferPointInteractionList", "MeetCondList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityCondStateChangeNotify), global::Weedwacker.Shared.Network.Proto.ActivityCondStateChangeNotify.Parser, new[]{ "ActivityId", "ScheduleId", "Unk3300HKKNIHNBHAE", "Unk3300BGNIBLKCPCA", "ActivatedSaleIdList", "DisableTransferPointInteractionList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2140
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2194;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityCondStateChangeNotify : pb::IMessage<ActivityCondStateChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,12 +85,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityCondStateChangeNotify(ActivityCondStateChangeNotify other) : this() {
-      activatedSaleIdList_ = other.activatedSaleIdList_.Clone();
       activityId_ = other.activityId_;
       scheduleId_ = other.scheduleId_;
-      expireCondList_ = other.expireCondList_.Clone();
+      unk3300HKKNIHNBHAE_ = other.unk3300HKKNIHNBHAE_.Clone();
+      unk3300BGNIBLKCPCA_ = other.unk3300BGNIBLKCPCA_.Clone();
+      activatedSaleIdList_ = other.activatedSaleIdList_.Clone();
       disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_.Clone();
-      meetCondList_ = other.meetCondList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,19 +100,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivityCondStateChangeNotify(this);
     }
 
-    /// <summary>Field number for the "activated_sale_id_list" field.</summary>
-    public const int ActivatedSaleIdListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_activatedSaleIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> activatedSaleIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ActivatedSaleIdList {
-      get { return activatedSaleIdList_; }
-    }
-
     /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 4;
+    public const int ActivityIdFieldNumber = 5;
     private uint activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 5;
+    public const int ScheduleIdFieldNumber = 14;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,37 +124,48 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "expire_cond_list" field.</summary>
-    public const int ExpireCondListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_expireCondList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> expireCondList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_HKKNIHNBHAE" field.</summary>
+    public const int Unk3300HKKNIHNBHAEFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HKKNIHNBHAE_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> unk3300HKKNIHNBHAE_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExpireCondList {
-      get { return expireCondList_; }
+    public pbc::RepeatedField<uint> Unk3300HKKNIHNBHAE {
+      get { return unk3300HKKNIHNBHAE_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_BGNIBLKCPCA" field.</summary>
+    public const int Unk3300BGNIBLKCPCAFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BGNIBLKCPCA_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> unk3300BGNIBLKCPCA_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300BGNIBLKCPCA {
+      get { return unk3300BGNIBLKCPCA_; }
+    }
+
+    /// <summary>Field number for the "activated_sale_id_list" field.</summary>
+    public const int ActivatedSaleIdListFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_activatedSaleIdList_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> activatedSaleIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ActivatedSaleIdList {
+      get { return activatedSaleIdList_; }
     }
 
     /// <summary>Field number for the "disable_transfer_point_interaction_list" field.</summary>
-    public const int DisableTransferPointInteractionListFieldNumber = 12;
+    public const int DisableTransferPointInteractionListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_disableTransferPointInteractionList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> disableTransferPointInteractionList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> DisableTransferPointInteractionList {
       get { return disableTransferPointInteractionList_; }
-    }
-
-    /// <summary>Field number for the "meet_cond_list" field.</summary>
-    public const int MeetCondListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_meetCondList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> meetCondList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> MeetCondList {
-      get { return meetCondList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,12 +183,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!activatedSaleIdList_.Equals(other.activatedSaleIdList_)) return false;
       if (ActivityId != other.ActivityId) return false;
       if (ScheduleId != other.ScheduleId) return false;
-      if(!expireCondList_.Equals(other.expireCondList_)) return false;
+      if(!unk3300HKKNIHNBHAE_.Equals(other.unk3300HKKNIHNBHAE_)) return false;
+      if(!unk3300BGNIBLKCPCA_.Equals(other.unk3300BGNIBLKCPCA_)) return false;
+      if(!activatedSaleIdList_.Equals(other.activatedSaleIdList_)) return false;
       if(!disableTransferPointInteractionList_.Equals(other.disableTransferPointInteractionList_)) return false;
-      if(!meetCondList_.Equals(other.meetCondList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,12 +196,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= activatedSaleIdList_.GetHashCode();
       if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      hash ^= expireCondList_.GetHashCode();
+      hash ^= unk3300HKKNIHNBHAE_.GetHashCode();
+      hash ^= unk3300BGNIBLKCPCA_.GetHashCode();
+      hash ^= activatedSaleIdList_.GetHashCode();
       hash ^= disableTransferPointInteractionList_.GetHashCode();
-      hash ^= meetCondList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,18 +220,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      meetCondList_.WriteTo(output, _repeated_meetCondList_codec);
+      unk3300HKKNIHNBHAE_.WriteTo(output, _repeated_unk3300HKKNIHNBHAE_codec);
+      unk3300BGNIBLKCPCA_.WriteTo(output, _repeated_unk3300BGNIBLKCPCA_codec);
       if (ActivityId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(ActivityId);
       }
+      activatedSaleIdList_.WriteTo(output, _repeated_activatedSaleIdList_codec);
+      disableTransferPointInteractionList_.WriteTo(output, _repeated_disableTransferPointInteractionList_codec);
       if (ScheduleId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(112);
         output.WriteUInt32(ScheduleId);
       }
-      activatedSaleIdList_.WriteTo(output, _repeated_activatedSaleIdList_codec);
-      expireCondList_.WriteTo(output, _repeated_expireCondList_codec);
-      disableTransferPointInteractionList_.WriteTo(output, _repeated_disableTransferPointInteractionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -238,18 +242,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      meetCondList_.WriteTo(ref output, _repeated_meetCondList_codec);
+      unk3300HKKNIHNBHAE_.WriteTo(ref output, _repeated_unk3300HKKNIHNBHAE_codec);
+      unk3300BGNIBLKCPCA_.WriteTo(ref output, _repeated_unk3300BGNIBLKCPCA_codec);
       if (ActivityId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(ActivityId);
       }
+      activatedSaleIdList_.WriteTo(ref output, _repeated_activatedSaleIdList_codec);
+      disableTransferPointInteractionList_.WriteTo(ref output, _repeated_disableTransferPointInteractionList_codec);
       if (ScheduleId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(112);
         output.WriteUInt32(ScheduleId);
       }
-      activatedSaleIdList_.WriteTo(ref output, _repeated_activatedSaleIdList_codec);
-      expireCondList_.WriteTo(ref output, _repeated_expireCondList_codec);
-      disableTransferPointInteractionList_.WriteTo(ref output, _repeated_disableTransferPointInteractionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += activatedSaleIdList_.CalculateSize(_repeated_activatedSaleIdList_codec);
       if (ActivityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
       }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
-      size += expireCondList_.CalculateSize(_repeated_expireCondList_codec);
+      size += unk3300HKKNIHNBHAE_.CalculateSize(_repeated_unk3300HKKNIHNBHAE_codec);
+      size += unk3300BGNIBLKCPCA_.CalculateSize(_repeated_unk3300BGNIBLKCPCA_codec);
+      size += activatedSaleIdList_.CalculateSize(_repeated_activatedSaleIdList_codec);
       size += disableTransferPointInteractionList_.CalculateSize(_repeated_disableTransferPointInteractionList_codec);
-      size += meetCondList_.CalculateSize(_repeated_meetCondList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -282,16 +286,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      activatedSaleIdList_.Add(other.activatedSaleIdList_);
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
       }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      expireCondList_.Add(other.expireCondList_);
+      unk3300HKKNIHNBHAE_.Add(other.unk3300HKKNIHNBHAE_);
+      unk3300BGNIBLKCPCA_.Add(other.unk3300BGNIBLKCPCA_);
+      activatedSaleIdList_.Add(other.activatedSaleIdList_);
       disableTransferPointInteractionList_.Add(other.disableTransferPointInteractionList_);
-      meetCondList_.Add(other.meetCondList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -309,29 +313,29 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 10:
           case 8: {
-            meetCondList_.AddEntriesFrom(input, _repeated_meetCondList_codec);
+            unk3300HKKNIHNBHAE_.AddEntriesFrom(input, _repeated_unk3300HKKNIHNBHAE_codec);
             break;
           }
+          case 34:
           case 32: {
-            ActivityId = input.ReadUInt32();
+            unk3300BGNIBLKCPCA_.AddEntriesFrom(input, _repeated_unk3300BGNIBLKCPCA_codec);
             break;
           }
           case 40: {
-            ScheduleId = input.ReadUInt32();
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
+          case 66:
+          case 64: {
             activatedSaleIdList_.AddEntriesFrom(input, _repeated_activatedSaleIdList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            expireCondList_.AddEntriesFrom(input, _repeated_expireCondList_codec);
+          case 90: {
+            disableTransferPointInteractionList_.AddEntriesFrom(input, _repeated_disableTransferPointInteractionList_codec);
             break;
           }
-          case 98: {
-            disableTransferPointInteractionList_.AddEntriesFrom(input, _repeated_disableTransferPointInteractionList_codec);
+          case 112: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -351,29 +355,29 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 10:
           case 8: {
-            meetCondList_.AddEntriesFrom(ref input, _repeated_meetCondList_codec);
+            unk3300HKKNIHNBHAE_.AddEntriesFrom(ref input, _repeated_unk3300HKKNIHNBHAE_codec);
             break;
           }
+          case 34:
           case 32: {
-            ActivityId = input.ReadUInt32();
+            unk3300BGNIBLKCPCA_.AddEntriesFrom(ref input, _repeated_unk3300BGNIBLKCPCA_codec);
             break;
           }
           case 40: {
-            ScheduleId = input.ReadUInt32();
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
+          case 66:
+          case 64: {
             activatedSaleIdList_.AddEntriesFrom(ref input, _repeated_activatedSaleIdList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            expireCondList_.AddEntriesFrom(ref input, _repeated_expireCondList_codec);
+          case 90: {
+            disableTransferPointInteractionList_.AddEntriesFrom(ref input, _repeated_disableTransferPointInteractionList_codec);
             break;
           }
-          case 98: {
-            disableTransferPointInteractionList_.AddEntriesFrom(ref input, _repeated_disableTransferPointInteractionList_codec);
+          case 112: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }

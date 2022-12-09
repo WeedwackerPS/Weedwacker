@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessMapDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlJcm9kb3JpQ2hlc3NNYXBEYXRhLnByb3RvGiRJcm9kb3JpQ2hlc3NFbnRy",
-            "YW5jZURldGFpbEluZm8ucHJvdG8ikwEKE0lyb2RvcmlDaGVzc01hcERhdGES",
-            "DgoGbWFwX2lkGAYgASgNEj0KFGVudHJhbmNlX2RldGFpbF9pbmZvGAcgASgL",
-            "Mh8uSXJvZG9yaUNoZXNzRW50cmFuY2VEZXRhaWxJbmZvEhkKEWVxdWlwZWRf",
-            "Y2FyZF9saXN0GAMgAygNEhIKCmJlc3Rfc2NvcmUYCCABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlJcm9kb3JpQ2hlc3NNYXBEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGiRJcm9kb3JpQ2hlc3NFbnRyYW5jZURldGFpbElu",
+            "Zm8ucHJvdG8iswEKE0lyb2RvcmlDaGVzc01hcERhdGESDgoGbWFwX2lkGAcg",
+            "ASgNEhIKCmJlc3Rfc2NvcmUYBCABKA0SGQoRZXF1aXBlZF9jYXJkX2xpc3QY",
+            "DyADKA0SXQoUZW50cmFuY2VfZGV0YWlsX2luZm8YAiABKAsyPy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLklyb2RvcmlDaGVzc0VudHJhbmNl",
+            "RGV0YWlsSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData), global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData.Parser, new[]{ "MapId", "EntranceDetailInfo", "EquipedCardList", "BestScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData), global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData.Parser, new[]{ "MapId", "BestScore", "EquipedCardList", "EntranceDetailInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +76,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessMapData(IrodoriChessMapData other) : this() {
       mapId_ = other.mapId_;
-      entranceDetailInfo_ = other.entranceDetailInfo_ != null ? other.entranceDetailInfo_.Clone() : null;
-      equipedCardList_ = other.equipedCardList_.Clone();
       bestScore_ = other.bestScore_;
+      equipedCardList_ = other.equipedCardList_.Clone();
+      entranceDetailInfo_ = other.entranceDetailInfo_ != null ? other.entranceDetailInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "map_id" field.</summary>
-    public const int MapIdFieldNumber = 6;
+    public const int MapIdFieldNumber = 7;
     private uint mapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,31 +100,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entrance_detail_info" field.</summary>
-    public const int EntranceDetailInfoFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo entranceDetailInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo EntranceDetailInfo {
-      get { return entranceDetailInfo_; }
-      set {
-        entranceDetailInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "equiped_card_list" field.</summary>
-    public const int EquipedCardListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_equipedCardList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> equipedCardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> EquipedCardList {
-      get { return equipedCardList_; }
-    }
-
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 8;
+    public const int BestScoreFieldNumber = 4;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +109,29 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return bestScore_; }
       set {
         bestScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "equiped_card_list" field.</summary>
+    public const int EquipedCardListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_equipedCardList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> equipedCardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> EquipedCardList {
+      get { return equipedCardList_; }
+    }
+
+    /// <summary>Field number for the "entrance_detail_info" field.</summary>
+    public const int EntranceDetailInfoFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo entranceDetailInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo EntranceDetailInfo {
+      get { return entranceDetailInfo_; }
+      set {
+        entranceDetailInfo_ = value;
       }
     }
 
@@ -150,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (MapId != other.MapId) return false;
-      if (!object.Equals(EntranceDetailInfo, other.EntranceDetailInfo)) return false;
-      if(!equipedCardList_.Equals(other.equipedCardList_)) return false;
       if (BestScore != other.BestScore) return false;
+      if(!equipedCardList_.Equals(other.equipedCardList_)) return false;
+      if (!object.Equals(EntranceDetailInfo, other.EntranceDetailInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (MapId != 0) hash ^= MapId.GetHashCode();
-      if (entranceDetailInfo_ != null) hash ^= EntranceDetailInfo.GetHashCode();
-      hash ^= equipedCardList_.GetHashCode();
       if (BestScore != 0) hash ^= BestScore.GetHashCode();
+      hash ^= equipedCardList_.GetHashCode();
+      if (entranceDetailInfo_ != null) hash ^= EntranceDetailInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,19 +183,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      equipedCardList_.WriteTo(output, _repeated_equipedCardList_codec);
-      if (MapId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MapId);
-      }
       if (entranceDetailInfo_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(18);
         output.WriteMessage(EntranceDetailInfo);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(BestScore);
       }
+      if (MapId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MapId);
+      }
+      equipedCardList_.WriteTo(output, _repeated_equipedCardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -205,19 +206,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      equipedCardList_.WriteTo(ref output, _repeated_equipedCardList_codec);
-      if (MapId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MapId);
-      }
       if (entranceDetailInfo_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(18);
         output.WriteMessage(EntranceDetailInfo);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(BestScore);
       }
+      if (MapId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MapId);
+      }
+      equipedCardList_.WriteTo(ref output, _repeated_equipedCardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -231,12 +232,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (MapId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MapId);
       }
-      if (entranceDetailInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntranceDetailInfo);
-      }
-      size += equipedCardList_.CalculateSize(_repeated_equipedCardList_codec);
       if (BestScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestScore);
+      }
+      size += equipedCardList_.CalculateSize(_repeated_equipedCardList_codec);
+      if (entranceDetailInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntranceDetailInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -253,15 +254,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.MapId != 0) {
         MapId = other.MapId;
       }
+      if (other.BestScore != 0) {
+        BestScore = other.BestScore;
+      }
+      equipedCardList_.Add(other.equipedCardList_);
       if (other.entranceDetailInfo_ != null) {
         if (entranceDetailInfo_ == null) {
           EntranceDetailInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo();
         }
         EntranceDetailInfo.MergeFrom(other.EntranceDetailInfo);
-      }
-      equipedCardList_.Add(other.equipedCardList_);
-      if (other.BestScore != 0) {
-        BestScore = other.BestScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -278,24 +279,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
-            equipedCardList_.AddEntriesFrom(input, _repeated_equipedCardList_codec);
-            break;
-          }
-          case 48: {
-            MapId = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 18: {
             if (entranceDetailInfo_ == null) {
               EntranceDetailInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo();
             }
             input.ReadMessage(EntranceDetailInfo);
             break;
           }
-          case 64: {
+          case 32: {
             BestScore = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MapId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            equipedCardList_.AddEntriesFrom(input, _repeated_equipedCardList_codec);
             break;
           }
         }
@@ -313,24 +314,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
-            equipedCardList_.AddEntriesFrom(ref input, _repeated_equipedCardList_codec);
-            break;
-          }
-          case 48: {
-            MapId = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 18: {
             if (entranceDetailInfo_ == null) {
               EntranceDetailInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessEntranceDetailInfo();
             }
             input.ReadMessage(EntranceDetailInfo);
             break;
           }
-          case 64: {
+          case 32: {
             BestScore = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MapId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            equipedCardList_.AddEntriesFrom(ref input, _repeated_equipedCardList_codec);
             break;
           }
         }

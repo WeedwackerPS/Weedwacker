@@ -24,20 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteDoFireworksReformRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvGipMYW50",
-            "ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8imwIKH0xh",
-            "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1Sc3ASEAoIc3RhZ2VfaWQYByAB",
-            "KA0SEAoIaXNfbHVja3kYDSABKAgSFAoMY2hhbGxlbmdlX2lkGAggASgNEj8K",
-            "EGZhY3Rvcl9pbmZvX2xpc3QYAiADKAsyJS5MYW50ZXJuUml0ZUZpcmV3b3Jr",
-            "c1JlZm9ybUZhY3RvckluZm8SFQoNc3RhbWluYV92YWx1ZRgKIAEoDRIUCgxy",
-            "ZWZvcm1fc2NvcmUYDyABKA0SGgoSZmlyZV9lbGVtZW50X3ZhbHVlGAsgASgN",
-            "Eg8KB3JldGNvZGUYAyABKAUSIwobZmlyZV9lbGVtZW50X2FkZGl0aW9uX3Jh",
-            "dGlvGAwgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGipMYW50ZXJuUml0ZUZpcmV3",
+            "b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8iwQIKH0xhbnRlcm5SaXRlRG9G",
+            "aXJld29ya3NSZWZvcm1Sc3ASXwoQZmFjdG9yX2luZm9fbGlzdBgGIAMoCzJF",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTGFudGVyblJpdGVG",
+            "aXJld29ya3NSZWZvcm1GYWN0b3JJbmZvEg8KB3JldGNvZGUYBCABKAUSGwoT",
+            "VW5rMzMwMF9CSkhHQ0ZBTk1CSRgMIAEoDRIbChNVbmszMzAwX09NSFBJR0dE",
+            "Q0JPGAogASgNEhQKDGNoYWxsZW5nZV9pZBgJIAEoDRIbChNVbmszMzAwX0xL",
+            "T0ZCUERLRUdHGAggASgNEhAKCGlzX2x1Y2t5GAEgASgIEhsKE1VuazMzMDBf",
+            "TEtLQlBBSk9DTUwYDiABKA0SEAoIc3RhZ2VfaWQYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformRsp), global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformRsp.Parser, new[]{ "StageId", "IsLucky", "ChallengeId", "FactorInfoList", "StaminaValue", "ReformScore", "FireElementValue", "Retcode", "FireElementAdditionRatio" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformRsp), global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformRsp.Parser, new[]{ "FactorInfoList", "Retcode", "Unk3300BJHGCFANMBI", "Unk3300OMHPIGGDCBO", "ChallengeId", "Unk3300LKOFBPDKEGG", "IsLucky", "Unk3300LKKBPAJOCML", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -45,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8657
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8171;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class LanternRiteDoFireworksReformRsp : pb::IMessage<LanternRiteDoFireworksReformRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,15 +87,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternRiteDoFireworksReformRsp(LanternRiteDoFireworksReformRsp other) : this() {
-      stageId_ = other.stageId_;
-      isLucky_ = other.isLucky_;
-      challengeId_ = other.challengeId_;
       factorInfoList_ = other.factorInfoList_.Clone();
-      staminaValue_ = other.staminaValue_;
-      reformScore_ = other.reformScore_;
-      fireElementValue_ = other.fireElementValue_;
       retcode_ = other.retcode_;
-      fireElementAdditionRatio_ = other.fireElementAdditionRatio_;
+      unk3300BJHGCFANMBI_ = other.unk3300BJHGCFANMBI_;
+      unk3300OMHPIGGDCBO_ = other.unk3300OMHPIGGDCBO_;
+      challengeId_ = other.challengeId_;
+      unk3300LKOFBPDKEGG_ = other.unk3300LKOFBPDKEGG_;
+      isLucky_ = other.isLucky_;
+      unk3300LKKBPAJOCML_ = other.unk3300LKKBPAJOCML_;
+      stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,46 +105,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LanternRiteDoFireworksReformRsp(this);
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 7;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
-      set {
-        stageId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_lucky" field.</summary>
-    public const int IsLuckyFieldNumber = 13;
-    private bool isLucky_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsLucky {
-      get { return isLucky_; }
-      set {
-        isLucky_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 8;
-    private uint challengeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeId {
-      get { return challengeId_; }
-      set {
-        challengeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "factor_info_list" field.</summary>
-    public const int FactorInfoListFieldNumber = 2;
+    public const int FactorInfoListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfo> _repeated_factorInfoList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfo> factorInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksReformFactorInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,44 +116,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return factorInfoList_; }
     }
 
-    /// <summary>Field number for the "stamina_value" field.</summary>
-    public const int StaminaValueFieldNumber = 10;
-    private uint staminaValue_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StaminaValue {
-      get { return staminaValue_; }
-      set {
-        staminaValue_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reform_score" field.</summary>
-    public const int ReformScoreFieldNumber = 15;
-    private uint reformScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ReformScore {
-      get { return reformScore_; }
-      set {
-        reformScore_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fire_element_value" field.</summary>
-    public const int FireElementValueFieldNumber = 11;
-    private uint fireElementValue_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FireElementValue {
-      get { return fireElementValue_; }
-      set {
-        fireElementValue_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -196,15 +128,87 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "fire_element_addition_ratio" field.</summary>
-    public const int FireElementAdditionRatioFieldNumber = 12;
-    private uint fireElementAdditionRatio_;
+    /// <summary>Field number for the "Unk3300_BJHGCFANMBI" field.</summary>
+    public const int Unk3300BJHGCFANMBIFieldNumber = 12;
+    private uint unk3300BJHGCFANMBI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FireElementAdditionRatio {
-      get { return fireElementAdditionRatio_; }
+    public uint Unk3300BJHGCFANMBI {
+      get { return unk3300BJHGCFANMBI_; }
       set {
-        fireElementAdditionRatio_ = value;
+        unk3300BJHGCFANMBI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OMHPIGGDCBO" field.</summary>
+    public const int Unk3300OMHPIGGDCBOFieldNumber = 10;
+    private uint unk3300OMHPIGGDCBO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OMHPIGGDCBO {
+      get { return unk3300OMHPIGGDCBO_; }
+      set {
+        unk3300OMHPIGGDCBO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_id" field.</summary>
+    public const int ChallengeIdFieldNumber = 9;
+    private uint challengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeId {
+      get { return challengeId_; }
+      set {
+        challengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LKOFBPDKEGG" field.</summary>
+    public const int Unk3300LKOFBPDKEGGFieldNumber = 8;
+    private uint unk3300LKOFBPDKEGG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LKOFBPDKEGG {
+      get { return unk3300LKOFBPDKEGG_; }
+      set {
+        unk3300LKOFBPDKEGG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_lucky" field.</summary>
+    public const int IsLuckyFieldNumber = 1;
+    private bool isLucky_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLucky {
+      get { return isLucky_; }
+      set {
+        isLucky_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LKKBPAJOCML" field.</summary>
+    public const int Unk3300LKKBPAJOCMLFieldNumber = 14;
+    private uint unk3300LKKBPAJOCML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LKKBPAJOCML {
+      get { return unk3300LKKBPAJOCML_; }
+      set {
+        unk3300LKKBPAJOCML_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 15;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
       }
     }
 
@@ -223,15 +227,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (StageId != other.StageId) return false;
-      if (IsLucky != other.IsLucky) return false;
-      if (ChallengeId != other.ChallengeId) return false;
       if(!factorInfoList_.Equals(other.factorInfoList_)) return false;
-      if (StaminaValue != other.StaminaValue) return false;
-      if (ReformScore != other.ReformScore) return false;
-      if (FireElementValue != other.FireElementValue) return false;
       if (Retcode != other.Retcode) return false;
-      if (FireElementAdditionRatio != other.FireElementAdditionRatio) return false;
+      if (Unk3300BJHGCFANMBI != other.Unk3300BJHGCFANMBI) return false;
+      if (Unk3300OMHPIGGDCBO != other.Unk3300OMHPIGGDCBO) return false;
+      if (ChallengeId != other.ChallengeId) return false;
+      if (Unk3300LKOFBPDKEGG != other.Unk3300LKOFBPDKEGG) return false;
+      if (IsLucky != other.IsLucky) return false;
+      if (Unk3300LKKBPAJOCML != other.Unk3300LKKBPAJOCML) return false;
+      if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -239,15 +243,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (IsLucky != false) hash ^= IsLucky.GetHashCode();
-      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
       hash ^= factorInfoList_.GetHashCode();
-      if (StaminaValue != 0) hash ^= StaminaValue.GetHashCode();
-      if (ReformScore != 0) hash ^= ReformScore.GetHashCode();
-      if (FireElementValue != 0) hash ^= FireElementValue.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (FireElementAdditionRatio != 0) hash ^= FireElementAdditionRatio.GetHashCode();
+      if (Unk3300BJHGCFANMBI != 0) hash ^= Unk3300BJHGCFANMBI.GetHashCode();
+      if (Unk3300OMHPIGGDCBO != 0) hash ^= Unk3300OMHPIGGDCBO.GetHashCode();
+      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      if (Unk3300LKOFBPDKEGG != 0) hash ^= Unk3300LKOFBPDKEGG.GetHashCode();
+      if (IsLucky != false) hash ^= IsLucky.GetHashCode();
+      if (Unk3300LKKBPAJOCML != 0) hash ^= Unk3300LKKBPAJOCML.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -266,38 +270,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
-      }
-      if (StageId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(StageId);
-      }
-      if (ChallengeId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (StaminaValue != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(StaminaValue);
-      }
-      if (FireElementValue != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(FireElementValue);
-      }
-      if (FireElementAdditionRatio != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(FireElementAdditionRatio);
-      }
       if (IsLucky != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteBool(IsLucky);
       }
-      if (ReformScore != 0) {
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
+      if (Unk3300LKOFBPDKEGG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LKOFBPDKEGG);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OMHPIGGDCBO);
+      }
+      if (Unk3300BJHGCFANMBI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300LKKBPAJOCML != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LKKBPAJOCML);
+      }
+      if (StageId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ReformScore);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -309,38 +313,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
-      }
-      if (StageId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(StageId);
-      }
-      if (ChallengeId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (StaminaValue != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(StaminaValue);
-      }
-      if (FireElementValue != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(FireElementValue);
-      }
-      if (FireElementAdditionRatio != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(FireElementAdditionRatio);
-      }
       if (IsLucky != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteBool(IsLucky);
       }
-      if (ReformScore != 0) {
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
+      if (Unk3300LKOFBPDKEGG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LKOFBPDKEGG);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OMHPIGGDCBO);
+      }
+      if (Unk3300BJHGCFANMBI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300LKKBPAJOCML != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LKKBPAJOCML);
+      }
+      if (StageId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ReformScore);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -352,30 +356,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (IsLucky != false) {
-        size += 1 + 1;
+      if (Unk3300BJHGCFANMBI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OMHPIGGDCBO);
       }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
       }
-      size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
-      if (StaminaValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StaminaValue);
+      if (Unk3300LKOFBPDKEGG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKOFBPDKEGG);
       }
-      if (ReformScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReformScore);
+      if (IsLucky != false) {
+        size += 1 + 1;
       }
-      if (FireElementValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementValue);
+      if (Unk3300LKKBPAJOCML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKKBPAJOCML);
       }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (FireElementAdditionRatio != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementAdditionRatio);
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -389,30 +393,30 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
+      factorInfoList_.Add(other.factorInfoList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
-      if (other.IsLucky != false) {
-        IsLucky = other.IsLucky;
+      if (other.Unk3300BJHGCFANMBI != 0) {
+        Unk3300BJHGCFANMBI = other.Unk3300BJHGCFANMBI;
+      }
+      if (other.Unk3300OMHPIGGDCBO != 0) {
+        Unk3300OMHPIGGDCBO = other.Unk3300OMHPIGGDCBO;
       }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
       }
-      factorInfoList_.Add(other.factorInfoList_);
-      if (other.StaminaValue != 0) {
-        StaminaValue = other.StaminaValue;
+      if (other.Unk3300LKOFBPDKEGG != 0) {
+        Unk3300LKOFBPDKEGG = other.Unk3300LKOFBPDKEGG;
       }
-      if (other.ReformScore != 0) {
-        ReformScore = other.ReformScore;
+      if (other.IsLucky != false) {
+        IsLucky = other.IsLucky;
       }
-      if (other.FireElementValue != 0) {
-        FireElementValue = other.FireElementValue;
+      if (other.Unk3300LKKBPAJOCML != 0) {
+        Unk3300LKKBPAJOCML = other.Unk3300LKKBPAJOCML;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      if (other.FireElementAdditionRatio != 0) {
-        FireElementAdditionRatio = other.FireElementAdditionRatio;
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -429,40 +433,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
+          case 8: {
+            IsLucky = input.ReadBool();
             break;
           }
-          case 24: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            StageId = input.ReadUInt32();
+          case 50: {
+            factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
             break;
           }
           case 64: {
+            Unk3300LKOFBPDKEGG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ChallengeId = input.ReadUInt32();
             break;
           }
           case 80: {
-            StaminaValue = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            FireElementValue = input.ReadUInt32();
+            Unk3300OMHPIGGDCBO = input.ReadUInt32();
             break;
           }
           case 96: {
-            FireElementAdditionRatio = input.ReadUInt32();
+            Unk3300BJHGCFANMBI = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsLucky = input.ReadBool();
+          case 112: {
+            Unk3300LKKBPAJOCML = input.ReadUInt32();
             break;
           }
           case 120: {
-            ReformScore = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -480,40 +484,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
+          case 8: {
+            IsLucky = input.ReadBool();
             break;
           }
-          case 24: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            StageId = input.ReadUInt32();
+          case 50: {
+            factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
             break;
           }
           case 64: {
+            Unk3300LKOFBPDKEGG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ChallengeId = input.ReadUInt32();
             break;
           }
           case 80: {
-            StaminaValue = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            FireElementValue = input.ReadUInt32();
+            Unk3300OMHPIGGDCBO = input.ReadUInt32();
             break;
           }
           case 96: {
-            FireElementAdditionRatio = input.ReadUInt32();
+            Unk3300BJHGCFANMBI = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsLucky = input.ReadBool();
+          case 112: {
+            Unk3300LKKBPAJOCML = input.ReadUInt32();
             break;
           }
           case 120: {
-            ReformScore = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
         }

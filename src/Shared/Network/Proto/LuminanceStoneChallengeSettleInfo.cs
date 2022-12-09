@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static LuminanceStoneChallengeSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZVNldHRsZUluZm8ucHJvdG8aLkx1",
-            "bWluYW5jZVN0b25lQ2hhbGxlbmdlR2FsbGVyeVNldHRsZUluZm8ucHJvdG8i",
-            "egohTHVtaW5hbmNlU3RvbmVDaGFsbGVuZ2VTZXR0bGVJbmZvEj4KC3NldHRs",
-            "ZV9pbmZvGA0gASgLMikuTHVtaW5hbmNlU3RvbmVDaGFsbGVuZ2VHYWxsZXJ5",
-            "U2V0dGxlSW5mbxIVCg1pc19uZXdfcmVjb3JkGAwgASgIQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CidMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZVNldHRsZUluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aLkx1bWluYW5jZVN0b25l",
+            "Q2hhbGxlbmdlR2FsbGVyeVNldHRsZUluZm8ucHJvdG8imgEKIUx1bWluYW5j",
+            "ZVN0b25lQ2hhbGxlbmdlU2V0dGxlSW5mbxIVCg1pc19uZXdfcmVjb3JkGAYg",
+            "ASgIEl4KC3NldHRsZV9pbmZvGAogASgLMkkuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5MdW1pbmFuY2VTdG9uZUNoYWxsZW5nZUdhbGxlcnlT",
+            "ZXR0bGVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo), global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo.Parser, new[]{ "SettleInfo", "IsNewRecord" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo), global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo.Parser, new[]{ "IsNewRecord", "SettleInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LuminanceStoneChallengeSettleInfo(LuminanceStoneChallengeSettleInfo other) : this() {
-      settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
       isNewRecord_ = other.isNewRecord_;
+      settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LuminanceStoneChallengeSettleInfo(this);
     }
 
-    /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo settleInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo SettleInfo {
-      get { return settleInfo_; }
-      set {
-        settleInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 12;
+    public const int IsNewRecordFieldNumber = 6;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,6 +95,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isNewRecord_; }
       set {
         isNewRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "settle_info" field.</summary>
+    public const int SettleInfoFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo settleInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo SettleInfo {
+      get { return settleInfo_; }
+      set {
+        settleInfo_ = value;
       }
     }
 
@@ -124,8 +125,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
+      if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -133,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -154,11 +155,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsNewRecord != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(82);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -172,11 +173,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsNewRecord != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(82);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -189,11 +190,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (settleInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
-      }
       if (IsNewRecord != false) {
         size += 1 + 1;
+      }
+      if (settleInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -207,14 +208,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
+      }
       if (other.settleInfo_ != null) {
         if (settleInfo_ == null) {
           SettleInfo = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo();
         }
         SettleInfo.MergeFrom(other.SettleInfo);
-      }
-      if (other.IsNewRecord != false) {
-        IsNewRecord = other.IsNewRecord;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,11 +232,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
+          case 48: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 106: {
+          case 82: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo();
             }
@@ -257,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
+          case 48: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 106: {
+          case 82: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo();
             }

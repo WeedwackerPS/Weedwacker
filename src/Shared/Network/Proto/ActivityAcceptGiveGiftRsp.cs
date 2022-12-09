@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityAcceptGiveGiftRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9BY3Rpdml0eUFjY2VwdEdpdmVHaWZ0UnNwLnByb3RvGiJBY3Rpdml0eUFj",
-            "Y2VwdEdpZnRSZXN1bHRJbmZvLnByb3RvIoEBChlBY3Rpdml0eUFjY2VwdEdp",
-            "dmVHaWZ0UnNwEj4KF2FjY2VwdF9naWZ0X3Jlc3VsdF9pbmZvGAQgASgLMh0u",
-            "QWN0aXZpdHlBY2NlcHRHaWZ0UmVzdWx0SW5mbxIPCgdyZXRjb2RlGAsgASgF",
-            "EhMKC3NjaGVkdWxlX2lkGAogASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9BY3Rpdml0eUFjY2VwdEdpdmVHaWZ0UnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGiJBY3Rpdml0eUFjY2VwdEdpZnRSZXN1",
+            "bHRJbmZvLnByb3RvIqEBChlBY3Rpdml0eUFjY2VwdEdpdmVHaWZ0UnNwEg8K",
+            "B3JldGNvZGUYBCABKAUSXgoXYWNjZXB0X2dpZnRfcmVzdWx0X2luZm8YAiAB",
+            "KAsyPS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFjdGl2aXR5",
+            "QWNjZXB0R2lmdFJlc3VsdEluZm8SEwoLc2NoZWR1bGVfaWQYASABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiveGiftRsp), global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiveGiftRsp.Parser, new[]{ "AcceptGiftResultInfo", "Retcode", "ScheduleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiveGiftRsp), global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiveGiftRsp.Parser, new[]{ "Retcode", "AcceptGiftResultInfo", "ScheduleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8502
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8047;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityAcceptGiveGiftRsp : pb::IMessage<ActivityAcceptGiveGiftRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityAcceptGiveGiftRsp(ActivityAcceptGiveGiftRsp other) : this() {
-      acceptGiftResultInfo_ = other.acceptGiftResultInfo_ != null ? other.acceptGiftResultInfo_.Clone() : null;
       retcode_ = other.retcode_;
+      acceptGiftResultInfo_ = other.acceptGiftResultInfo_ != null ? other.acceptGiftResultInfo_.Clone() : null;
       scheduleId_ = other.scheduleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivityAcceptGiveGiftRsp(this);
     }
 
-    /// <summary>Field number for the "accept_gift_result_info" field.</summary>
-    public const int AcceptGiftResultInfoFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo acceptGiftResultInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo AcceptGiftResultInfo {
-      get { return acceptGiftResultInfo_; }
-      set {
-        acceptGiftResultInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,8 +108,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "accept_gift_result_info" field.</summary>
+    public const int AcceptGiftResultInfoFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo acceptGiftResultInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo AcceptGiftResultInfo {
+      get { return acceptGiftResultInfo_; }
+      set {
+        acceptGiftResultInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 10;
+    public const int ScheduleIdFieldNumber = 1;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AcceptGiftResultInfo, other.AcceptGiftResultInfo)) return false;
       if (Retcode != other.Retcode) return false;
+      if (!object.Equals(AcceptGiftResultInfo, other.AcceptGiftResultInfo)) return false;
       if (ScheduleId != other.ScheduleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -152,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (acceptGiftResultInfo_ != null) hash ^= AcceptGiftResultInfo.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (acceptGiftResultInfo_ != null) hash ^= AcceptGiftResultInfo.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -173,16 +178,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (acceptGiftResultInfo_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(AcceptGiftResultInfo);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteUInt32(ScheduleId);
       }
+      if (acceptGiftResultInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(AcceptGiftResultInfo);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -195,16 +200,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (acceptGiftResultInfo_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(AcceptGiftResultInfo);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteUInt32(ScheduleId);
       }
+      if (acceptGiftResultInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(AcceptGiftResultInfo);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -217,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (acceptGiftResultInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AcceptGiftResultInfo);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (acceptGiftResultInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AcceptGiftResultInfo);
       }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
@@ -238,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.acceptGiftResultInfo_ != null) {
         if (acceptGiftResultInfo_ == null) {
           AcceptGiftResultInfo = new global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo();
         }
         AcceptGiftResultInfo.MergeFrom(other.AcceptGiftResultInfo);
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
@@ -265,18 +270,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 8: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 18: {
             if (acceptGiftResultInfo_ == null) {
               AcceptGiftResultInfo = new global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo();
             }
             input.ReadMessage(AcceptGiftResultInfo);
             break;
           }
-          case 80: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -295,18 +300,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 8: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 18: {
             if (acceptGiftResultInfo_ == null) {
               AcceptGiftResultInfo = new global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo();
             }
             input.ReadMessage(AcceptGiftResultInfo);
             break;
           }
-          case 80: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }

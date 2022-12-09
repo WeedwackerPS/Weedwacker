@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CompoundQueueDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDb21wb3VuZFF1ZXVlRGF0YS5wcm90byJnChFDb21wb3VuZFF1ZXVlRGF0",
-            "YRIUCgxvdXRwdXRfY291bnQYASABKA0SEwoLY29tcG91bmRfaWQYBCABKA0S",
-            "EwoLb3V0cHV0X3RpbWUYDiABKA0SEgoKd2FpdF9jb3VudBgIIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdDb21wb3VuZFF1ZXVlRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJnChFDb21wb3VuZFF1ZXVlRGF0YRIUCgxvdXRwdXRf",
+            "Y291bnQYBSABKA0SEwoLb3V0cHV0X3RpbWUYDiABKA0SEgoKd2FpdF9jb3Vu",
+            "dBgKIAEoDRITCgtjb21wb3VuZF9pZBgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CompoundQueueData), global::Weedwacker.Shared.Network.Proto.CompoundQueueData.Parser, new[]{ "OutputCount", "CompoundId", "OutputTime", "WaitCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CompoundQueueData), global::Weedwacker.Shared.Network.Proto.CompoundQueueData.Parser, new[]{ "OutputCount", "OutputTime", "WaitCount", "CompoundId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CompoundQueueData(CompoundQueueData other) : this() {
       outputCount_ = other.outputCount_;
-      compoundId_ = other.compoundId_;
       outputTime_ = other.outputTime_;
       waitCount_ = other.waitCount_;
+      compoundId_ = other.compoundId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +86,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "output_count" field.</summary>
-    public const int OutputCountFieldNumber = 1;
+    public const int OutputCountFieldNumber = 5;
     private uint outputCount_;
+    /// <summary>
+    /// Unk3300_NCEHJAAHOKM
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint OutputCount {
@@ -97,21 +100,12 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "compound_id" field.</summary>
-    public const int CompoundIdFieldNumber = 4;
-    private uint compoundId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CompoundId {
-      get { return compoundId_; }
-      set {
-        compoundId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "output_time" field.</summary>
     public const int OutputTimeFieldNumber = 14;
     private uint outputTime_;
+    /// <summary>
+    /// Unk3300_COMIGCMIPLE
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint OutputTime {
@@ -122,14 +116,29 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "wait_count" field.</summary>
-    public const int WaitCountFieldNumber = 8;
+    public const int WaitCountFieldNumber = 10;
     private uint waitCount_;
+    /// <summary>
+    /// Unk3300_JHJNOPCPPAD
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint WaitCount {
       get { return waitCount_; }
       set {
         waitCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "compound_id" field.</summary>
+    public const int CompoundIdFieldNumber = 12;
+    private uint compoundId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CompoundId {
+      get { return compoundId_; }
+      set {
+        compoundId_ = value;
       }
     }
 
@@ -149,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (OutputCount != other.OutputCount) return false;
-      if (CompoundId != other.CompoundId) return false;
       if (OutputTime != other.OutputTime) return false;
       if (WaitCount != other.WaitCount) return false;
+      if (CompoundId != other.CompoundId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,9 +169,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (OutputCount != 0) hash ^= OutputCount.GetHashCode();
-      if (CompoundId != 0) hash ^= CompoundId.GetHashCode();
       if (OutputTime != 0) hash ^= OutputTime.GetHashCode();
       if (WaitCount != 0) hash ^= WaitCount.GetHashCode();
+      if (CompoundId != 0) hash ^= CompoundId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,16 +191,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (OutputCount != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(OutputCount);
       }
-      if (CompoundId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CompoundId);
-      }
       if (WaitCount != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteUInt32(WaitCount);
+      }
+      if (CompoundId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CompoundId);
       }
       if (OutputTime != 0) {
         output.WriteRawTag(112);
@@ -208,16 +217,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OutputCount != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(OutputCount);
       }
-      if (CompoundId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CompoundId);
-      }
       if (WaitCount != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteUInt32(WaitCount);
+      }
+      if (CompoundId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CompoundId);
       }
       if (OutputTime != 0) {
         output.WriteRawTag(112);
@@ -236,14 +245,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (OutputCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OutputCount);
       }
-      if (CompoundId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CompoundId);
-      }
       if (OutputTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OutputTime);
       }
       if (WaitCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WaitCount);
+      }
+      if (CompoundId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CompoundId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -260,14 +269,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.OutputCount != 0) {
         OutputCount = other.OutputCount;
       }
-      if (other.CompoundId != 0) {
-        CompoundId = other.CompoundId;
-      }
       if (other.OutputTime != 0) {
         OutputTime = other.OutputTime;
       }
       if (other.WaitCount != 0) {
         WaitCount = other.WaitCount;
+      }
+      if (other.CompoundId != 0) {
+        CompoundId = other.CompoundId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,16 +293,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             OutputCount = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CompoundId = input.ReadUInt32();
+          case 80: {
+            WaitCount = input.ReadUInt32();
             break;
           }
-          case 64: {
-            WaitCount = input.ReadUInt32();
+          case 96: {
+            CompoundId = input.ReadUInt32();
             break;
           }
           case 112: {
@@ -315,16 +324,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             OutputCount = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CompoundId = input.ReadUInt32();
+          case 80: {
+            WaitCount = input.ReadUInt32();
             break;
           }
-          case 64: {
-            WaitCount = input.ReadUInt32();
+          case 96: {
+            CompoundId = input.ReadUInt32();
             break;
           }
           case 112: {

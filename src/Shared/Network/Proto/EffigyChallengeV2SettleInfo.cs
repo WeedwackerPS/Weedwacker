@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeV2SettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8i4wEKG0VmZmln",
-            "eUNoYWxsZW5nZVYyU2V0dGxlSW5mbxInCh9pc19jaGFsbGVuZ2VfaGlnaGVz",
-            "dF9kaWZmaWN1bHR5GAcgASgIEiEKGWNyZWF0ZV9kdW5nZW9uX3BsYXllcl91",
-            "aWQYBCABKA0SIQoZY2hhbGxlbmdlX21vZGVfZGlmZmljdWx0eRgGIAEoDRIa",
-            "ChJpc19uZXdfcmVjb3JkX3RpbWUYASABKAgSEwoLcmVjb3JkX3RpbWUYDCAB",
-            "KA0SJAocZmlyc3RfdGltZV9maW5pc2hfZGlmZmljdWx0eRgFIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8i0QEKG0VmZmlneUNoYWxsZW5nZVYy",
+            "U2V0dGxlSW5mbxIhChljaGFsbGVuZ2VfbW9kZV9kaWZmaWN1bHR5GA0gASgN",
+            "EhsKE1VuazMzMDBfTUhPSUlQSktBTU4YDiABKA0SGwoTVW5rMzMwMF9QSEVJ",
+            "TUxPS0lKRxgLIAEoDRIbChNVbmszMzAwX09OS1BHRk9MREZMGAwgASgNEhsK",
+            "E1VuazMzMDBfTkdCS05ESEpQQ1AYBSABKAgSGwoTVW5rMzMwMF9BS01QQ0RJ",
+            "S0JKRBgJIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2SettleInfo), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2SettleInfo.Parser, new[]{ "IsChallengeHighestDifficulty", "CreateDungeonPlayerUid", "ChallengeModeDifficulty", "IsNewRecordTime", "RecordTime", "FirstTimeFinishDifficulty" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2SettleInfo), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2SettleInfo.Parser, new[]{ "ChallengeModeDifficulty", "Unk3300MHOIIPJKAMN", "Unk3300PHEIMLOKIJG", "Unk3300ONKPGFOLDFL", "Unk3300NGBKNDHJPCP", "Unk3300AKMPCDIKBJD" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,12 +75,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyChallengeV2SettleInfo(EffigyChallengeV2SettleInfo other) : this() {
-      isChallengeHighestDifficulty_ = other.isChallengeHighestDifficulty_;
-      createDungeonPlayerUid_ = other.createDungeonPlayerUid_;
       challengeModeDifficulty_ = other.challengeModeDifficulty_;
-      isNewRecordTime_ = other.isNewRecordTime_;
-      recordTime_ = other.recordTime_;
-      firstTimeFinishDifficulty_ = other.firstTimeFinishDifficulty_;
+      unk3300MHOIIPJKAMN_ = other.unk3300MHOIIPJKAMN_;
+      unk3300PHEIMLOKIJG_ = other.unk3300PHEIMLOKIJG_;
+      unk3300ONKPGFOLDFL_ = other.unk3300ONKPGFOLDFL_;
+      unk3300NGBKNDHJPCP_ = other.unk3300NGBKNDHJPCP_;
+      unk3300AKMPCDIKBJD_ = other.unk3300AKMPCDIKBJD_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,32 +90,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EffigyChallengeV2SettleInfo(this);
     }
 
-    /// <summary>Field number for the "is_challenge_highest_difficulty" field.</summary>
-    public const int IsChallengeHighestDifficultyFieldNumber = 7;
-    private bool isChallengeHighestDifficulty_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsChallengeHighestDifficulty {
-      get { return isChallengeHighestDifficulty_; }
-      set {
-        isChallengeHighestDifficulty_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "create_dungeon_player_uid" field.</summary>
-    public const int CreateDungeonPlayerUidFieldNumber = 4;
-    private uint createDungeonPlayerUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CreateDungeonPlayerUid {
-      get { return createDungeonPlayerUid_; }
-      set {
-        createDungeonPlayerUid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
-    public const int ChallengeModeDifficultyFieldNumber = 6;
+    public const int ChallengeModeDifficultyFieldNumber = 13;
     private uint challengeModeDifficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,39 +102,63 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_new_record_time" field.</summary>
-    public const int IsNewRecordTimeFieldNumber = 1;
-    private bool isNewRecordTime_;
+    /// <summary>Field number for the "Unk3300_MHOIIPJKAMN" field.</summary>
+    public const int Unk3300MHOIIPJKAMNFieldNumber = 14;
+    private uint unk3300MHOIIPJKAMN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecordTime {
-      get { return isNewRecordTime_; }
+    public uint Unk3300MHOIIPJKAMN {
+      get { return unk3300MHOIIPJKAMN_; }
       set {
-        isNewRecordTime_ = value;
+        unk3300MHOIIPJKAMN_ = value;
       }
     }
 
-    /// <summary>Field number for the "record_time" field.</summary>
-    public const int RecordTimeFieldNumber = 12;
-    private uint recordTime_;
+    /// <summary>Field number for the "Unk3300_PHEIMLOKIJG" field.</summary>
+    public const int Unk3300PHEIMLOKIJGFieldNumber = 11;
+    private uint unk3300PHEIMLOKIJG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RecordTime {
-      get { return recordTime_; }
+    public uint Unk3300PHEIMLOKIJG {
+      get { return unk3300PHEIMLOKIJG_; }
       set {
-        recordTime_ = value;
+        unk3300PHEIMLOKIJG_ = value;
       }
     }
 
-    /// <summary>Field number for the "first_time_finish_difficulty" field.</summary>
-    public const int FirstTimeFinishDifficultyFieldNumber = 5;
-    private uint firstTimeFinishDifficulty_;
+    /// <summary>Field number for the "Unk3300_ONKPGFOLDFL" field.</summary>
+    public const int Unk3300ONKPGFOLDFLFieldNumber = 12;
+    private uint unk3300ONKPGFOLDFL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FirstTimeFinishDifficulty {
-      get { return firstTimeFinishDifficulty_; }
+    public uint Unk3300ONKPGFOLDFL {
+      get { return unk3300ONKPGFOLDFL_; }
       set {
-        firstTimeFinishDifficulty_ = value;
+        unk3300ONKPGFOLDFL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NGBKNDHJPCP" field.</summary>
+    public const int Unk3300NGBKNDHJPCPFieldNumber = 5;
+    private bool unk3300NGBKNDHJPCP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NGBKNDHJPCP {
+      get { return unk3300NGBKNDHJPCP_; }
+      set {
+        unk3300NGBKNDHJPCP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AKMPCDIKBJD" field.</summary>
+    public const int Unk3300AKMPCDIKBJDFieldNumber = 9;
+    private bool unk3300AKMPCDIKBJD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300AKMPCDIKBJD {
+      get { return unk3300AKMPCDIKBJD_; }
+      set {
+        unk3300AKMPCDIKBJD_ = value;
       }
     }
 
@@ -177,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsChallengeHighestDifficulty != other.IsChallengeHighestDifficulty) return false;
-      if (CreateDungeonPlayerUid != other.CreateDungeonPlayerUid) return false;
       if (ChallengeModeDifficulty != other.ChallengeModeDifficulty) return false;
-      if (IsNewRecordTime != other.IsNewRecordTime) return false;
-      if (RecordTime != other.RecordTime) return false;
-      if (FirstTimeFinishDifficulty != other.FirstTimeFinishDifficulty) return false;
+      if (Unk3300MHOIIPJKAMN != other.Unk3300MHOIIPJKAMN) return false;
+      if (Unk3300PHEIMLOKIJG != other.Unk3300PHEIMLOKIJG) return false;
+      if (Unk3300ONKPGFOLDFL != other.Unk3300ONKPGFOLDFL) return false;
+      if (Unk3300NGBKNDHJPCP != other.Unk3300NGBKNDHJPCP) return false;
+      if (Unk3300AKMPCDIKBJD != other.Unk3300AKMPCDIKBJD) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,12 +190,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsChallengeHighestDifficulty != false) hash ^= IsChallengeHighestDifficulty.GetHashCode();
-      if (CreateDungeonPlayerUid != 0) hash ^= CreateDungeonPlayerUid.GetHashCode();
       if (ChallengeModeDifficulty != 0) hash ^= ChallengeModeDifficulty.GetHashCode();
-      if (IsNewRecordTime != false) hash ^= IsNewRecordTime.GetHashCode();
-      if (RecordTime != 0) hash ^= RecordTime.GetHashCode();
-      if (FirstTimeFinishDifficulty != 0) hash ^= FirstTimeFinishDifficulty.GetHashCode();
+      if (Unk3300MHOIIPJKAMN != 0) hash ^= Unk3300MHOIIPJKAMN.GetHashCode();
+      if (Unk3300PHEIMLOKIJG != 0) hash ^= Unk3300PHEIMLOKIJG.GetHashCode();
+      if (Unk3300ONKPGFOLDFL != 0) hash ^= Unk3300ONKPGFOLDFL.GetHashCode();
+      if (Unk3300NGBKNDHJPCP != false) hash ^= Unk3300NGBKNDHJPCP.GetHashCode();
+      if (Unk3300AKMPCDIKBJD != false) hash ^= Unk3300AKMPCDIKBJD.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -214,29 +214,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsNewRecordTime != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsNewRecordTime);
-      }
-      if (CreateDungeonPlayerUid != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CreateDungeonPlayerUid);
-      }
-      if (FirstTimeFinishDifficulty != 0) {
+      if (Unk3300NGBKNDHJPCP != false) {
         output.WriteRawTag(40);
-        output.WriteUInt32(FirstTimeFinishDifficulty);
+        output.WriteBool(Unk3300NGBKNDHJPCP);
+      }
+      if (Unk3300AKMPCDIKBJD != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300AKMPCDIKBJD);
+      }
+      if (Unk3300PHEIMLOKIJG != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300PHEIMLOKIJG);
+      }
+      if (Unk3300ONKPGFOLDFL != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300ONKPGFOLDFL);
       }
       if (ChallengeModeDifficulty != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(ChallengeModeDifficulty);
       }
-      if (IsChallengeHighestDifficulty != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsChallengeHighestDifficulty);
-      }
-      if (RecordTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RecordTime);
+      if (Unk3300MHOIIPJKAMN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MHOIIPJKAMN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -248,29 +248,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsNewRecordTime != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsNewRecordTime);
-      }
-      if (CreateDungeonPlayerUid != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CreateDungeonPlayerUid);
-      }
-      if (FirstTimeFinishDifficulty != 0) {
+      if (Unk3300NGBKNDHJPCP != false) {
         output.WriteRawTag(40);
-        output.WriteUInt32(FirstTimeFinishDifficulty);
+        output.WriteBool(Unk3300NGBKNDHJPCP);
+      }
+      if (Unk3300AKMPCDIKBJD != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300AKMPCDIKBJD);
+      }
+      if (Unk3300PHEIMLOKIJG != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300PHEIMLOKIJG);
+      }
+      if (Unk3300ONKPGFOLDFL != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300ONKPGFOLDFL);
       }
       if (ChallengeModeDifficulty != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(ChallengeModeDifficulty);
       }
-      if (IsChallengeHighestDifficulty != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsChallengeHighestDifficulty);
-      }
-      if (RecordTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RecordTime);
+      if (Unk3300MHOIIPJKAMN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MHOIIPJKAMN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -282,23 +282,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsChallengeHighestDifficulty != false) {
-        size += 1 + 1;
-      }
-      if (CreateDungeonPlayerUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateDungeonPlayerUid);
-      }
       if (ChallengeModeDifficulty != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficulty);
       }
-      if (IsNewRecordTime != false) {
+      if (Unk3300MHOIIPJKAMN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MHOIIPJKAMN);
+      }
+      if (Unk3300PHEIMLOKIJG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PHEIMLOKIJG);
+      }
+      if (Unk3300ONKPGFOLDFL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ONKPGFOLDFL);
+      }
+      if (Unk3300NGBKNDHJPCP != false) {
         size += 1 + 1;
       }
-      if (RecordTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecordTime);
-      }
-      if (FirstTimeFinishDifficulty != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstTimeFinishDifficulty);
+      if (Unk3300AKMPCDIKBJD != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -312,23 +312,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsChallengeHighestDifficulty != false) {
-        IsChallengeHighestDifficulty = other.IsChallengeHighestDifficulty;
-      }
-      if (other.CreateDungeonPlayerUid != 0) {
-        CreateDungeonPlayerUid = other.CreateDungeonPlayerUid;
-      }
       if (other.ChallengeModeDifficulty != 0) {
         ChallengeModeDifficulty = other.ChallengeModeDifficulty;
       }
-      if (other.IsNewRecordTime != false) {
-        IsNewRecordTime = other.IsNewRecordTime;
+      if (other.Unk3300MHOIIPJKAMN != 0) {
+        Unk3300MHOIIPJKAMN = other.Unk3300MHOIIPJKAMN;
       }
-      if (other.RecordTime != 0) {
-        RecordTime = other.RecordTime;
+      if (other.Unk3300PHEIMLOKIJG != 0) {
+        Unk3300PHEIMLOKIJG = other.Unk3300PHEIMLOKIJG;
       }
-      if (other.FirstTimeFinishDifficulty != 0) {
-        FirstTimeFinishDifficulty = other.FirstTimeFinishDifficulty;
+      if (other.Unk3300ONKPGFOLDFL != 0) {
+        Unk3300ONKPGFOLDFL = other.Unk3300ONKPGFOLDFL;
+      }
+      if (other.Unk3300NGBKNDHJPCP != false) {
+        Unk3300NGBKNDHJPCP = other.Unk3300NGBKNDHJPCP;
+      }
+      if (other.Unk3300AKMPCDIKBJD != false) {
+        Unk3300AKMPCDIKBJD = other.Unk3300AKMPCDIKBJD;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -345,28 +345,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsNewRecordTime = input.ReadBool();
-            break;
-          }
-          case 32: {
-            CreateDungeonPlayerUid = input.ReadUInt32();
-            break;
-          }
           case 40: {
-            FirstTimeFinishDifficulty = input.ReadUInt32();
+            Unk3300NGBKNDHJPCP = input.ReadBool();
             break;
           }
-          case 48: {
-            ChallengeModeDifficulty = input.ReadUInt32();
+          case 72: {
+            Unk3300AKMPCDIKBJD = input.ReadBool();
             break;
           }
-          case 56: {
-            IsChallengeHighestDifficulty = input.ReadBool();
+          case 88: {
+            Unk3300PHEIMLOKIJG = input.ReadUInt32();
             break;
           }
           case 96: {
-            RecordTime = input.ReadUInt32();
+            Unk3300ONKPGFOLDFL = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MHOIIPJKAMN = input.ReadUInt32();
             break;
           }
         }
@@ -384,28 +384,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsNewRecordTime = input.ReadBool();
-            break;
-          }
-          case 32: {
-            CreateDungeonPlayerUid = input.ReadUInt32();
-            break;
-          }
           case 40: {
-            FirstTimeFinishDifficulty = input.ReadUInt32();
+            Unk3300NGBKNDHJPCP = input.ReadBool();
             break;
           }
-          case 48: {
-            ChallengeModeDifficulty = input.ReadUInt32();
+          case 72: {
+            Unk3300AKMPCDIKBJD = input.ReadBool();
             break;
           }
-          case 56: {
-            IsChallengeHighestDifficulty = input.ReadBool();
+          case 88: {
+            Unk3300PHEIMLOKIJG = input.ReadUInt32();
             break;
           }
           case 96: {
-            RecordTime = input.ReadUInt32();
+            Unk3300ONKPGFOLDFL = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MHOIIPJKAMN = input.ReadUInt32();
             break;
           }
         }

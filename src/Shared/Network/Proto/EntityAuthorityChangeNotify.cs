@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityAuthorityChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFFbnRpdHlBdXRob3JpdHlDaGFuZ2VOb3RpZnkucHJvdG8aFUF1dGhvcml0",
-            "eUNoYW5nZS5wcm90byJOChtFbnRpdHlBdXRob3JpdHlDaGFuZ2VOb3RpZnkS",
-            "LwoVYXV0aG9yaXR5X2NoYW5nZV9saXN0GA8gAygLMhAuQXV0aG9yaXR5Q2hh",
-            "bmdlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiFFbnRpdHlBdXRob3JpdHlDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aFUF1dGhvcml0eUNoYW5nZS5wcm90",
+            "byJuChtFbnRpdHlBdXRob3JpdHlDaGFuZ2VOb3RpZnkSTwoVYXV0aG9yaXR5",
+            "X2NoYW5nZV9saXN0GAggAygLMjAuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5BdXRob3JpdHlDaGFuZ2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AuthorityChangeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 394
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 305;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityAuthorityChangeNotify : pb::IMessage<EntityAuthorityChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "authority_change_list" field.</summary>
-    public const int AuthorityChangeListFieldNumber = 15;
+    public const int AuthorityChangeListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AuthorityChange> _repeated_authorityChangeList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.AuthorityChange.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.AuthorityChange.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AuthorityChange> authorityChangeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AuthorityChange>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 122: {
+          case 66: {
             authorityChangeList_.AddEntriesFrom(input, _repeated_authorityChangeList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 122: {
+          case 66: {
             authorityChangeList_.AddEntriesFrom(ref input, _repeated_authorityChangeList_codec);
             break;
           }

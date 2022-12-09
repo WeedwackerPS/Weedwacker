@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryIrodoriMasterInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTY2VuZUdhbGxlcnlJcm9kb3JpTWFzdGVySW5mby5wcm90byJbCh1TY2Vu",
-            "ZUdhbGxlcnlJcm9kb3JpTWFzdGVySW5mbxIQCghsZXZlbF9pZBgIIAEoDRIS",
-            "CgpkaWZmaWN1bHR5GAEgASgNEhQKDGlzX2NnX3ZpZXdlZBgFIAEoCEIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNTY2VuZUdhbGxlcnlJcm9kb3JpTWFzdGVySW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJbCh1TY2VuZUdhbGxlcnlJcm9k",
+            "b3JpTWFzdGVySW5mbxIUCgxpc19jZ192aWV3ZWQYDCABKAgSEgoKZGlmZmlj",
+            "dWx0eRgKIAEoDRIQCghsZXZlbF9pZBgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryIrodoriMasterInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryIrodoriMasterInfo.Parser, new[]{ "LevelId", "Difficulty", "IsCgViewed" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryIrodoriMasterInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryIrodoriMasterInfo.Parser, new[]{ "IsCgViewed", "Difficulty", "LevelId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryIrodoriMasterInfo(SceneGalleryIrodoriMasterInfo other) : this() {
-      levelId_ = other.levelId_;
-      difficulty_ = other.difficulty_;
       isCgViewed_ = other.isCgViewed_;
+      difficulty_ = other.difficulty_;
+      levelId_ = other.levelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryIrodoriMasterInfo(this);
     }
 
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 8;
-    private uint levelId_;
+    /// <summary>Field number for the "is_cg_viewed" field.</summary>
+    public const int IsCgViewedFieldNumber = 12;
+    private bool isCgViewed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
+    public bool IsCgViewed {
+      get { return isCgViewed_; }
       set {
-        levelId_ = value;
+        isCgViewed_ = value;
       }
     }
 
     /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 1;
+    public const int DifficultyFieldNumber = 10;
     private uint difficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,15 +108,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_cg_viewed" field.</summary>
-    public const int IsCgViewedFieldNumber = 5;
-    private bool isCgViewed_;
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 7;
+    private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCgViewed {
-      get { return isCgViewed_; }
+    public uint LevelId {
+      get { return levelId_; }
       set {
-        isCgViewed_ = value;
+        levelId_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LevelId != other.LevelId) return false;
-      if (Difficulty != other.Difficulty) return false;
       if (IsCgViewed != other.IsCgViewed) return false;
+      if (Difficulty != other.Difficulty) return false;
+      if (LevelId != other.LevelId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
-      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
       if (IsCgViewed != false) hash ^= IsCgViewed.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
       if (Difficulty != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(80);
         output.WriteUInt32(Difficulty);
       }
       if (IsCgViewed != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteBool(IsCgViewed);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
       if (Difficulty != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(80);
         output.WriteUInt32(Difficulty);
       }
       if (IsCgViewed != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteBool(IsCgViewed);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LevelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      if (IsCgViewed != false) {
+        size += 1 + 1;
       }
       if (Difficulty != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
       }
-      if (IsCgViewed != false) {
-        size += 1 + 1;
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LevelId != 0) {
-        LevelId = other.LevelId;
+      if (other.IsCgViewed != false) {
+        IsCgViewed = other.IsCgViewed;
       }
       if (other.Difficulty != 0) {
         Difficulty = other.Difficulty;
       }
-      if (other.IsCgViewed != false) {
-        IsCgViewed = other.IsCgViewed;
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 56: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             Difficulty = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 96: {
             IsCgViewed = input.ReadBool();
-            break;
-          }
-          case 64: {
-            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 56: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             Difficulty = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 96: {
             IsCgViewed = input.ReadBool();
-            break;
-          }
-          case 64: {
-            LevelId = input.ReadUInt32();
             break;
           }
         }

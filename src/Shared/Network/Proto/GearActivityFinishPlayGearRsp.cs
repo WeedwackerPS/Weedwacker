@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GearActivityFinishPlayGearRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNHZWFyQWN0aXZpdHlGaW5pc2hQbGF5R2VhclJzcC5wcm90byJWCh1HZWFy",
-            "QWN0aXZpdHlGaW5pc2hQbGF5R2VhclJzcBIPCgdyZXRjb2RlGAIgASgFEhIK",
-            "CmlzX3N1Y2Nlc3MYDyABKAgSEAoIbGV2ZWxfaWQYAyABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNHZWFyQWN0aXZpdHlGaW5pc2hQbGF5R2VhclJzcC5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJWCh1HZWFyQWN0aXZpdHlGaW5p",
+            "c2hQbGF5R2VhclJzcBIQCghsZXZlbF9pZBgKIAEoDRIPCgdyZXRjb2RlGAIg",
+            "ASgFEhIKCmlzX3N1Y2Nlc3MYCCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearRsp), global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearRsp.Parser, new[]{ "Retcode", "IsSuccess", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearRsp), global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearRsp.Parser, new[]{ "LevelId", "Retcode", "IsSuccess" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21800
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20776;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GearActivityFinishPlayGearRsp : pb::IMessage<GearActivityFinishPlayGearRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GearActivityFinishPlayGearRsp(GearActivityFinishPlayGearRsp other) : this() {
+      levelId_ = other.levelId_;
       retcode_ = other.retcode_;
       isSuccess_ = other.isSuccess_;
-      levelId_ = other.levelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GearActivityFinishPlayGearRsp Clone() {
       return new GearActivityFinishPlayGearRsp(this);
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 10;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -102,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 15;
+    public const int IsSuccessFieldNumber = 8;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,18 +126,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isSuccess_; }
       set {
         isSuccess_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 3;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (LevelId != other.LevelId) return false;
       if (Retcode != other.Retcode) return false;
       if (IsSuccess != other.IsSuccess) return false;
-      if (LevelId != other.LevelId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(LevelId);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsSuccess);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,13 +201,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(LevelId);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsSuccess);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (IsSuccess != false) {
         size += 1 + 1;
-      }
-      if (LevelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
+      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
-      }
-      if (other.LevelId != 0) {
-        LevelId = other.LevelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,12 +268,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 24: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            IsSuccess = input.ReadBool();
             break;
           }
-          case 120: {
-            IsSuccess = input.ReadBool();
+          case 80: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -291,12 +295,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 24: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            IsSuccess = input.ReadBool();
             break;
           }
-          case 120: {
-            IsSuccess = input.ReadBool();
+          case 80: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }

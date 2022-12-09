@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static MapAreaChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlNYXBBcmVhQ2hhbmdlTm90aWZ5LnByb3RvGhFNYXBBcmVhSW5mby5wcm90",
-            "byI/ChNNYXBBcmVhQ2hhbmdlTm90aWZ5EigKEm1hcF9hcmVhX2luZm9fbGlz",
-            "dBgDIAMoCzIMLk1hcEFyZWFJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlNYXBBcmVhQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhFNYXBBcmVhSW5mby5wcm90byJfChNNYXBBcmVh",
+            "Q2hhbmdlTm90aWZ5EkgKEm1hcF9hcmVhX2luZm9fbGlzdBgGIAMoCzIsLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWFwQXJlYUluZm9iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MapAreaInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3378
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3485;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MapAreaChangeNotify : pb::IMessage<MapAreaChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "map_area_info_list" field.</summary>
-    public const int MapAreaInfoListFieldNumber = 3;
+    public const int MapAreaInfoListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MapAreaInfo> _repeated_mapAreaInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.MapAreaInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.MapAreaInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapAreaInfo> mapAreaInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapAreaInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 50: {
             mapAreaInfoList_.AddEntriesFrom(input, _repeated_mapAreaInfoList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 50: {
             mapAreaInfoList_.AddEntriesFrom(ref input, _repeated_mapAreaInfoList_codec);
             break;
           }

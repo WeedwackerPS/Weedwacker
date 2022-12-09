@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtFaceToEntityNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtFdnRGYWNlVG9FbnRpdHlOb3RpZnkucHJvdG8aEUZvcndhcmRUeXBlLnBy",
-            "b3RvImYKFUV2dEZhY2VUb0VudGl0eU5vdGlmeRIWCg5mYWNlX2VudGl0eV9p",
-            "ZBgFIAEoDRIiCgxmb3J3YXJkX3R5cGUYCSABKA4yDC5Gb3J3YXJkVHlwZRIR",
-            "CgllbnRpdHlfaWQYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtFdnRGYWNlVG9FbnRpdHlOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEUZvcndhcmRUeXBlLnByb3RvIoYBChVFdnRG",
+            "YWNlVG9FbnRpdHlOb3RpZnkSEQoJZW50aXR5X2lkGAogASgNEkIKDGZvcndh",
+            "cmRfdHlwZRgIIAEoDjIsLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uRm9yd2FyZFR5cGUSFgoOZmFjZV9lbnRpdHlfaWQYBCABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtFaceToEntityNotify), global::Weedwacker.Shared.Network.Proto.EvtFaceToEntityNotify.Parser, new[]{ "FaceEntityId", "ForwardType", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtFaceToEntityNotify), global::Weedwacker.Shared.Network.Proto.EvtFaceToEntityNotify.Parser, new[]{ "EntityId", "ForwardType", "FaceEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 303
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 361;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtFaceToEntityNotify : pb::IMessage<EvtFaceToEntityNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtFaceToEntityNotify(EvtFaceToEntityNotify other) : this() {
-      faceEntityId_ = other.faceEntityId_;
-      forwardType_ = other.forwardType_;
       entityId_ = other.entityId_;
+      forwardType_ = other.forwardType_;
+      faceEntityId_ = other.faceEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtFaceToEntityNotify(this);
     }
 
-    /// <summary>Field number for the "face_entity_id" field.</summary>
-    public const int FaceEntityIdFieldNumber = 5;
-    private uint faceEntityId_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 10;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FaceEntityId {
-      get { return faceEntityId_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        faceEntityId_ = value;
+        entityId_ = value;
       }
     }
 
     /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 9;
+    public const int ForwardTypeFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,15 +120,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 1;
-    private uint entityId_;
+    /// <summary>Field number for the "face_entity_id" field.</summary>
+    public const int FaceEntityIdFieldNumber = 4;
+    private uint faceEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
+    public uint FaceEntityId {
+      get { return faceEntityId_; }
       set {
-        entityId_ = value;
+        faceEntityId_ = value;
       }
     }
 
@@ -142,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FaceEntityId != other.FaceEntityId) return false;
-      if (ForwardType != other.ForwardType) return false;
       if (EntityId != other.EntityId) return false;
+      if (ForwardType != other.ForwardType) return false;
+      if (FaceEntityId != other.FaceEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FaceEntityId != 0) hash ^= FaceEntityId.GetHashCode();
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (FaceEntityId != 0) hash ^= FaceEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,17 +178,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EntityId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(EntityId);
-      }
       if (FaceEntityId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(FaceEntityId);
       }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteEnum((int) ForwardType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,17 +200,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EntityId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(EntityId);
-      }
       if (FaceEntityId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(FaceEntityId);
       }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteEnum((int) ForwardType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FaceEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FaceEntityId);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (FaceEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FaceEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FaceEntityId != 0) {
-        FaceEntityId = other.FaceEntityId;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         ForwardType = other.ForwardType;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.FaceEntityId != 0) {
+        FaceEntityId = other.FaceEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,16 +267,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 32: {
             FaceEntityId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 64: {
             ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -289,16 +294,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 32: {
             FaceEntityId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 64: {
             ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

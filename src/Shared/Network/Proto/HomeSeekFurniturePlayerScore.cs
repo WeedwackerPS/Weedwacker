@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeSeekFurniturePlayerScoreReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJIb21lU2Vla0Z1cm5pdHVyZVBsYXllclNjb3JlLnByb3RvGhlIb21lR3Jv",
-            "dXBQbGF5ZXJJbmZvLnByb3RvIlgKHEhvbWVTZWVrRnVybml0dXJlUGxheWVy",
-            "U2NvcmUSDQoFc2NvcmUYDCABKA0SKQoLcGxheWVyX2luZm8YCiABKAsyFC5I",
-            "b21lR3JvdXBQbGF5ZXJJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJIb21lU2Vla0Z1cm5pdHVyZVBsYXllclNjb3JlLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhlIb21lR3JvdXBQbGF5ZXJJbmZv",
+            "LnByb3RvIngKHEhvbWVTZWVrRnVybml0dXJlUGxheWVyU2NvcmUSDQoFc2Nv",
+            "cmUYCCABKA0SSQoLcGxheWVyX2luZm8YBiABKAsyNC5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkhvbWVHcm91cFBsYXllckluZm9iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 12;
+    public const int ScoreFieldNumber = 8;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 10;
+    public const int PlayerInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo playerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,11 +154,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (playerInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(PlayerInfo);
       }
       if (Score != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(Score);
       }
       if (_unknownFields != null) {
@@ -171,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (playerInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(PlayerInfo);
       }
       if (Score != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(Score);
       }
       if (_unknownFields != null) {
@@ -230,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 50: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 96: {
+          case 64: {
             Score = input.ReadUInt32();
             break;
           }
@@ -256,14 +257,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 50: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 96: {
+          case 64: {
             Score = input.ReadUInt32();
             break;
           }

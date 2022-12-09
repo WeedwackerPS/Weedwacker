@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketDealInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtWaW50YWdlTWFya2V0RGVhbEluZm8ucHJvdG8aHVZpbnRhZ2VNYXJrZXRU",
-            "cmFkZXJJbmZvLnByb3RvIrgBChVWaW50YWdlTWFya2V0RGVhbEluZm8SSwoU",
-            "dHJhZGVyX2l0ZW1faW5mb19tYXAYDSADKAsyLS5WaW50YWdlTWFya2V0RGVh",
-            "bEluZm8uVHJhZGVySXRlbUluZm9NYXBFbnRyeRpSChZUcmFkZXJJdGVtSW5m",
-            "b01hcEVudHJ5EgsKA2tleRgBIAEoDRInCgV2YWx1ZRgCIAEoCzIYLlZpbnRh",
-            "Z2VNYXJrZXRUcmFkZXJJbmZvOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtWaW50YWdlTWFya2V0RGVhbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aHVZpbnRhZ2VNYXJrZXRUcmFkZXJJbmZvLnBy",
+            "b3RvIvgBChVWaW50YWdlTWFya2V0RGVhbEluZm8SawoUdHJhZGVyX2l0ZW1f",
+            "aW5mb19tYXAYBSADKAsyTS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZpbnRhZ2VNYXJrZXREZWFsSW5mby5UcmFkZXJJdGVtSW5mb01hcEVu",
+            "dHJ5GnIKFlRyYWRlckl0ZW1JbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEkcK",
+            "BXZhbHVlGAIgASgLMjguV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5WaW50YWdlTWFya2V0VHJhZGVySW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trader_item_info_map" field.</summary>
-    public const int TraderItemInfoMapFieldNumber = 13;
+    public const int TraderItemInfoMapFieldNumber = 5;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo>.Codec _map_traderItemInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo.Parser), 106);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo.Parser), 42);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo> traderItemInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageMarketTraderInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -189,7 +190,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 42: {
             traderItemInfoMap_.AddEntriesFrom(input, _map_traderItemInfoMap_codec);
             break;
           }
@@ -208,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 42: {
             traderItemInfoMap_.AddEntriesFrom(ref input, _map_traderItemInfoMap_codec);
             break;
           }

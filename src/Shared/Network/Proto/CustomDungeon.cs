@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNDdXN0b21EdW5nZW9uLnByb3RvGhdDdXN0b21EdW5nZW9uUm9vbS5wcm90",
-            "bxoaQ3VzdG9tRHVuZ2VvblNldHRpbmcucHJvdG8iiAEKDUN1c3RvbUR1bmdl",
-            "b24SJgoHc2V0dGluZxgBIAEoCzIVLkN1c3RvbUR1bmdlb25TZXR0aW5nEiUK",
-            "CXJvb21fbGlzdBgPIAMoCzISLkN1c3RvbUR1bmdlb25Sb29tEhIKCmR1bmdl",
-            "b25faWQYAyABKA0SFAoMZHVuZ2Vvbl9ndWlkGAogASgEQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChNDdXN0b21EdW5nZW9uLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhdDdXN0b21EdW5nZW9uUm9vbS5wcm90bxoaQ3VzdG9tRHVu",
+            "Z2VvblNldHRpbmcucHJvdG8iyAEKDUN1c3RvbUR1bmdlb24SEgoKZHVuZ2Vv",
+            "bl9pZBgCIAEoDRJFCglyb29tX2xpc3QYByADKAsyMi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25Sb29tEkYKB3NldHRp",
+            "bmcYCCABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkN1",
+            "c3RvbUR1bmdlb25TZXR0aW5nEhQKDGR1bmdlb25fZ3VpZBgDIAEoBGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonRoomReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSettingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeon), global::Weedwacker.Shared.Network.Proto.CustomDungeon.Parser, new[]{ "Setting", "RoomList", "DungeonId", "DungeonGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeon), global::Weedwacker.Shared.Network.Proto.CustomDungeon.Parser, new[]{ "DungeonId", "RoomList", "Setting", "DungeonGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +76,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeon(CustomDungeon other) : this() {
-      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
-      roomList_ = other.roomList_.Clone();
       dungeonId_ = other.dungeonId_;
+      roomList_ = other.roomList_.Clone();
+      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
       dungeonGuid_ = other.dungeonGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,31 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CustomDungeon(this);
     }
 
-    /// <summary>Field number for the "setting" field.</summary>
-    public const int SettingFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
-      get { return setting_; }
-      set {
-        setting_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "room_list" field.</summary>
-    public const int RoomListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> _repeated_roomList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> roomList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> RoomList {
-      get { return roomList_; }
-    }
-
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 3;
+    public const int DungeonIdFieldNumber = 2;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,8 +101,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "room_list" field.</summary>
+    public const int RoomListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> _repeated_roomList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> roomList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom> RoomList {
+      get { return roomList_; }
+    }
+
+    /// <summary>Field number for the "setting" field.</summary>
+    public const int SettingFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
+      get { return setting_; }
+      set {
+        setting_ = value;
+      }
+    }
+
     /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 10;
+    public const int DungeonGuidFieldNumber = 3;
     private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Setting, other.Setting)) return false;
-      if(!roomList_.Equals(other.roomList_)) return false;
       if (DungeonId != other.DungeonId) return false;
+      if(!roomList_.Equals(other.roomList_)) return false;
+      if (!object.Equals(Setting, other.Setting)) return false;
       if (DungeonGuid != other.DungeonGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -160,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (setting_ != null) hash ^= Setting.GetHashCode();
-      hash ^= roomList_.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      hash ^= roomList_.GetHashCode();
+      if (setting_ != null) hash ^= Setting.GetHashCode();
       if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -182,19 +184,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (setting_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Setting);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(DungeonId);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt64(DungeonGuid);
       }
       roomList_.WriteTo(output, _repeated_roomList_codec);
+      if (setting_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Setting);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -205,19 +207,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (setting_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Setting);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(DungeonId);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt64(DungeonGuid);
       }
       roomList_.WriteTo(ref output, _repeated_roomList_codec);
+      if (setting_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Setting);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -228,12 +230,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (setting_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
-      }
-      size += roomList_.CalculateSize(_repeated_roomList_codec);
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      size += roomList_.CalculateSize(_repeated_roomList_codec);
+      if (setting_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
       }
       if (DungeonGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
@@ -250,15 +252,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      roomList_.Add(other.roomList_);
       if (other.setting_ != null) {
         if (setting_ == null) {
           Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
         }
         Setting.MergeFrom(other.Setting);
-      }
-      roomList_.Add(other.roomList_);
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
       }
       if (other.DungeonGuid != 0UL) {
         DungeonGuid = other.DungeonGuid;
@@ -278,23 +280,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 16: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 58: {
+            roomList_.AddEntriesFrom(input, _repeated_roomList_codec);
+            break;
+          }
+          case 66: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
-            break;
-          }
-          case 24: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
-          case 122: {
-            roomList_.AddEntriesFrom(input, _repeated_roomList_codec);
             break;
           }
         }
@@ -312,23 +314,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 16: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 58: {
+            roomList_.AddEntriesFrom(ref input, _repeated_roomList_codec);
+            break;
+          }
+          case 66: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
-            break;
-          }
-          case 24: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
-          case 122: {
-            roomList_.AddEntriesFrom(ref input, _repeated_roomList_codec);
             break;
           }
         }

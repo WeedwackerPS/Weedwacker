@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVHQ0dPcGVyYXRpb25SZXEucHJvdG8aEkdDR09wZXJhdGlvbi5wcm90byJS",
-            "Cg9HQ0dPcGVyYXRpb25SZXESDgoGb3Bfc2VxGAIgASgNEhQKDHJlZGlyZWN0",
-            "X3VpZBgHIAEoDRIZCgJvcBgPIAEoCzINLkdDR09wZXJhdGlvbkIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVHQ0dPcGVyYXRpb25SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aEkdDR09wZXJhdGlvbi5wcm90byJyCg9HQ0dPcGVyYXRp",
+            "b25SZXESFAoMcmVkaXJlY3RfdWlkGAwgASgNEg4KBm9wX3NlcRgKIAEoDRI5",
+            "CgJvcBgIIAEoCzItLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "R0NHT3BlcmF0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGOperationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationReq), global::Weedwacker.Shared.Network.Proto.GCGOperationReq.Parser, new[]{ "OpSeq", "RedirectUid", "Op" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationReq), global::Weedwacker.Shared.Network.Proto.GCGOperationReq.Parser, new[]{ "RedirectUid", "OpSeq", "Op" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7107
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7664;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGOperationReq : pb::IMessage<GCGOperationReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGOperationReq(GCGOperationReq other) : this() {
-      opSeq_ = other.opSeq_;
       redirectUid_ = other.redirectUid_;
+      opSeq_ = other.opSeq_;
       op_ = other.op_ != null ? other.op_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGOperationReq(this);
     }
 
-    /// <summary>Field number for the "op_seq" field.</summary>
-    public const int OpSeqFieldNumber = 2;
-    private uint opSeq_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpSeq {
-      get { return opSeq_; }
-      set {
-        opSeq_ = value;
-      }
-    }
-
     /// <summary>Field number for the "redirect_uid" field.</summary>
-    public const int RedirectUidFieldNumber = 7;
+    public const int RedirectUidFieldNumber = 12;
     private uint redirectUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,8 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "op_seq" field.</summary>
+    public const int OpSeqFieldNumber = 10;
+    private uint opSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpSeq {
+      get { return opSeq_; }
+      set {
+        opSeq_ = value;
+      }
+    }
+
     /// <summary>Field number for the "op" field.</summary>
-    public const int OpFieldNumber = 15;
+    public const int OpFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.GCGOperation op_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OpSeq != other.OpSeq) return false;
       if (RedirectUid != other.RedirectUid) return false;
+      if (OpSeq != other.OpSeq) return false;
       if (!object.Equals(Op, other.Op)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OpSeq != 0) hash ^= OpSeq.GetHashCode();
       if (RedirectUid != 0) hash ^= RedirectUid.GetHashCode();
+      if (OpSeq != 0) hash ^= OpSeq.GetHashCode();
       if (op_ != null) hash ^= Op.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (op_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Op);
+      }
       if (OpSeq != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(OpSeq);
       }
       if (RedirectUid != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(RedirectUid);
-      }
-      if (op_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Op);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (op_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Op);
+      }
       if (OpSeq != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(OpSeq);
       }
       if (RedirectUid != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(RedirectUid);
-      }
-      if (op_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Op);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,11 +221,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OpSeq != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpSeq);
-      }
       if (RedirectUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RedirectUid);
+      }
+      if (OpSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpSeq);
       }
       if (op_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Op);
@@ -237,11 +242,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OpSeq != 0) {
-        OpSeq = other.OpSeq;
-      }
       if (other.RedirectUid != 0) {
         RedirectUid = other.RedirectUid;
+      }
+      if (other.OpSeq != 0) {
+        OpSeq = other.OpSeq;
       }
       if (other.op_ != null) {
         if (op_ == null) {
@@ -264,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            OpSeq = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            RedirectUid = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 66: {
             if (op_ == null) {
               Op = new global::Weedwacker.Shared.Network.Proto.GCGOperation();
             }
             input.ReadMessage(Op);
+            break;
+          }
+          case 80: {
+            OpSeq = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            RedirectUid = input.ReadUInt32();
             break;
           }
         }
@@ -294,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            OpSeq = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            RedirectUid = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 66: {
             if (op_ == null) {
               Op = new global::Weedwacker.Shared.Network.Proto.GCGOperation();
             }
             input.ReadMessage(Op);
+            break;
+          }
+          case 80: {
+            OpSeq = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            RedirectUid = input.ReadUInt32();
             break;
           }
         }

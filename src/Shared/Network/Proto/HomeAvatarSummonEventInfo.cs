@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarSummonEventInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Ib21lQXZhdGFyU3VtbW9uRXZlbnRJbmZvLnByb3RvIpEBChlIb21lQXZh",
-            "dGFyU3VtbW9uRXZlbnRJbmZvEhEKCWF2YXRhcl9pZBgDIAEoDRIMCgRndWlk",
-            "GAggASgNEhAKCGV2ZW50X2lkGAkgASgNEg8KB3N1aXRfaWQYDCABKA0SFwoP",
-            "ZXZlbnRfb3Zlcl90aW1lGAIgASgNEhcKD3JhbmRvbV9wb3NpdGlvbhgKIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Ib21lQXZhdGFyU3VtbW9uRXZlbnRJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIpEBChlIb21lQXZhdGFyU3VtbW9uRXZl",
+            "bnRJbmZvEhcKD3JhbmRvbV9wb3NpdGlvbhgLIAEoDRIMCgRndWlkGAUgASgN",
+            "EhcKD2V2ZW50X292ZXJfdGltZRgGIAEoDRIPCgdzdWl0X2lkGAwgASgNEhEK",
+            "CWF2YXRhcl9pZBgIIAEoDRIQCghldmVudF9pZBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo), global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo.Parser, new[]{ "AvatarId", "Guid", "EventId", "SuitId", "EventOverTime", "RandomPosition" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo), global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo.Parser, new[]{ "RandomPosition", "Guid", "EventOverTime", "SuitId", "AvatarId", "EventId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,12 +73,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarSummonEventInfo(HomeAvatarSummonEventInfo other) : this() {
-      avatarId_ = other.avatarId_;
-      guid_ = other.guid_;
-      eventId_ = other.eventId_;
-      suitId_ = other.suitId_;
-      eventOverTime_ = other.eventOverTime_;
       randomPosition_ = other.randomPosition_;
+      guid_ = other.guid_;
+      eventOverTime_ = other.eventOverTime_;
+      suitId_ = other.suitId_;
+      avatarId_ = other.avatarId_;
+      eventId_ = other.eventId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +88,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeAvatarSummonEventInfo(this);
     }
 
-    /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 3;
-    private uint avatarId_;
+    /// <summary>Field number for the "random_position" field.</summary>
+    public const int RandomPositionFieldNumber = 11;
+    private uint randomPosition_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AvatarId {
-      get { return avatarId_; }
+    public uint RandomPosition {
+      get { return randomPosition_; }
       set {
-        avatarId_ = value;
+        randomPosition_ = value;
       }
     }
 
     /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 8;
+    public const int GuidFieldNumber = 5;
     private uint guid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,15 +112,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "event_id" field.</summary>
-    public const int EventIdFieldNumber = 9;
-    private uint eventId_;
+    /// <summary>Field number for the "event_over_time" field.</summary>
+    public const int EventOverTimeFieldNumber = 6;
+    private uint eventOverTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EventId {
-      get { return eventId_; }
+    public uint EventOverTime {
+      get { return eventOverTime_; }
       set {
-        eventId_ = value;
+        eventOverTime_ = value;
       }
     }
 
@@ -136,27 +136,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "event_over_time" field.</summary>
-    public const int EventOverTimeFieldNumber = 2;
-    private uint eventOverTime_;
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 8;
+    private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EventOverTime {
-      get { return eventOverTime_; }
+    public uint AvatarId {
+      get { return avatarId_; }
       set {
-        eventOverTime_ = value;
+        avatarId_ = value;
       }
     }
 
-    /// <summary>Field number for the "random_position" field.</summary>
-    public const int RandomPositionFieldNumber = 10;
-    private uint randomPosition_;
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 10;
+    private uint eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RandomPosition {
-      get { return randomPosition_; }
+    public uint EventId {
+      get { return eventId_; }
       set {
-        randomPosition_ = value;
+        eventId_ = value;
       }
     }
 
@@ -175,12 +175,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AvatarId != other.AvatarId) return false;
-      if (Guid != other.Guid) return false;
-      if (EventId != other.EventId) return false;
-      if (SuitId != other.SuitId) return false;
-      if (EventOverTime != other.EventOverTime) return false;
       if (RandomPosition != other.RandomPosition) return false;
+      if (Guid != other.Guid) return false;
+      if (EventOverTime != other.EventOverTime) return false;
+      if (SuitId != other.SuitId) return false;
+      if (AvatarId != other.AvatarId) return false;
+      if (EventId != other.EventId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -188,12 +188,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
-      if (Guid != 0) hash ^= Guid.GetHashCode();
-      if (EventId != 0) hash ^= EventId.GetHashCode();
-      if (SuitId != 0) hash ^= SuitId.GetHashCode();
-      if (EventOverTime != 0) hash ^= EventOverTime.GetHashCode();
       if (RandomPosition != 0) hash ^= RandomPosition.GetHashCode();
+      if (Guid != 0) hash ^= Guid.GetHashCode();
+      if (EventOverTime != 0) hash ^= EventOverTime.GetHashCode();
+      if (SuitId != 0) hash ^= SuitId.GetHashCode();
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -212,24 +212,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Guid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Guid);
+      }
       if (EventOverTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(48);
         output.WriteUInt32(EventOverTime);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(AvatarId);
       }
-      if (Guid != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Guid);
-      }
       if (EventId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EventId);
       }
       if (RandomPosition != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(RandomPosition);
       }
       if (SuitId != 0) {
@@ -246,24 +246,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Guid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Guid);
+      }
       if (EventOverTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(48);
         output.WriteUInt32(EventOverTime);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(AvatarId);
       }
-      if (Guid != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Guid);
-      }
       if (EventId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EventId);
       }
       if (RandomPosition != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(RandomPosition);
       }
       if (SuitId != 0) {
@@ -280,23 +280,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AvatarId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      if (RandomPosition != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandomPosition);
       }
       if (Guid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guid);
       }
-      if (EventId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
+      if (EventOverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventOverTime);
       }
       if (SuitId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SuitId);
       }
-      if (EventOverTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventOverTime);
+      if (AvatarId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
       }
-      if (RandomPosition != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandomPosition);
+      if (EventId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -310,23 +310,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AvatarId != 0) {
-        AvatarId = other.AvatarId;
+      if (other.RandomPosition != 0) {
+        RandomPosition = other.RandomPosition;
       }
       if (other.Guid != 0) {
         Guid = other.Guid;
       }
-      if (other.EventId != 0) {
-        EventId = other.EventId;
+      if (other.EventOverTime != 0) {
+        EventOverTime = other.EventOverTime;
       }
       if (other.SuitId != 0) {
         SuitId = other.SuitId;
       }
-      if (other.EventOverTime != 0) {
-        EventOverTime = other.EventOverTime;
+      if (other.AvatarId != 0) {
+        AvatarId = other.AvatarId;
       }
-      if (other.RandomPosition != 0) {
-        RandomPosition = other.RandomPosition;
+      if (other.EventId != 0) {
+        EventId = other.EventId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -343,23 +343,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            EventOverTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            AvatarId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 40: {
             Guid = input.ReadUInt32();
             break;
           }
-          case 72: {
-            EventId = input.ReadUInt32();
+          case 48: {
+            EventOverTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 80: {
+            EventId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             RandomPosition = input.ReadUInt32();
             break;
           }
@@ -382,23 +382,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            EventOverTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            AvatarId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 40: {
             Guid = input.ReadUInt32();
             break;
           }
-          case 72: {
-            EventId = input.ReadUInt32();
+          case 48: {
+            EventOverTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 80: {
+            EventId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             RandomPosition = input.ReadUInt32();
             break;
           }

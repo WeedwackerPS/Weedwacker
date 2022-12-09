@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static WeaponPromoteRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZXZWFwb25Qcm9tb3RlUnNwLnByb3RvInUKEFdlYXBvblByb21vdGVSc3AS",
-            "GgoSdGFyZ2V0X3dlYXBvbl9ndWlkGAMgASgEEhkKEW9sZF9wcm9tb3RlX2xl",
-            "dmVsGAcgASgNEhkKEWN1cl9wcm9tb3RlX2xldmVsGAwgASgNEg8KB3JldGNv",
-            "ZGUYBCABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChZXZWFwb25Qcm9tb3RlUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvInUKEFdlYXBvblByb21vdGVSc3ASGQoRY3VyX3Byb21v",
+            "dGVfbGV2ZWwYBCABKA0SGgoSdGFyZ2V0X3dlYXBvbl9ndWlkGAsgASgEEhkK",
+            "EW9sZF9wcm9tb3RlX2xldmVsGAUgASgNEg8KB3JldGNvZGUYCCABKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp), global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp.Parser, new[]{ "TargetWeaponGuid", "OldPromoteLevel", "CurPromoteLevel", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp), global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp.Parser, new[]{ "CurPromoteLevel", "TargetWeaponGuid", "OldPromoteLevel", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 665
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 689;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WeaponPromoteRsp : pb::IMessage<WeaponPromoteRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WeaponPromoteRsp(WeaponPromoteRsp other) : this() {
+      curPromoteLevel_ = other.curPromoteLevel_;
       targetWeaponGuid_ = other.targetWeaponGuid_;
       oldPromoteLevel_ = other.oldPromoteLevel_;
-      curPromoteLevel_ = other.curPromoteLevel_;
       retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,8 +95,23 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WeaponPromoteRsp(this);
     }
 
+    /// <summary>Field number for the "cur_promote_level" field.</summary>
+    public const int CurPromoteLevelFieldNumber = 4;
+    private uint curPromoteLevel_;
+    /// <summary>
+    /// Unk3300_GGFCIPAKKDP
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurPromoteLevel {
+      get { return curPromoteLevel_; }
+      set {
+        curPromoteLevel_ = value;
+      }
+    }
+
     /// <summary>Field number for the "target_weapon_guid" field.</summary>
-    public const int TargetWeaponGuidFieldNumber = 3;
+    public const int TargetWeaponGuidFieldNumber = 11;
     private ulong targetWeaponGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,8 +123,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "old_promote_level" field.</summary>
-    public const int OldPromoteLevelFieldNumber = 7;
+    public const int OldPromoteLevelFieldNumber = 5;
     private uint oldPromoteLevel_;
+    /// <summary>
+    /// Unk3300_MBEBIACJNBB
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint OldPromoteLevel {
@@ -115,20 +137,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cur_promote_level" field.</summary>
-    public const int CurPromoteLevelFieldNumber = 12;
-    private uint curPromoteLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurPromoteLevel {
-      get { return curPromoteLevel_; }
-      set {
-        curPromoteLevel_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,9 +164,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (CurPromoteLevel != other.CurPromoteLevel) return false;
       if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
       if (OldPromoteLevel != other.OldPromoteLevel) return false;
-      if (CurPromoteLevel != other.CurPromoteLevel) return false;
       if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -165,9 +175,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (CurPromoteLevel != 0) hash ^= CurPromoteLevel.GetHashCode();
       if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
       if (OldPromoteLevel != 0) hash ^= OldPromoteLevel.GetHashCode();
-      if (CurPromoteLevel != 0) hash ^= CurPromoteLevel.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -187,21 +197,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(TargetWeaponGuid);
-      }
-      if (Retcode != 0) {
+      if (CurPromoteLevel != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
+        output.WriteUInt32(CurPromoteLevel);
       }
       if (OldPromoteLevel != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(OldPromoteLevel);
       }
-      if (CurPromoteLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CurPromoteLevel);
+      if (Retcode != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Retcode);
+      }
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(TargetWeaponGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +223,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(TargetWeaponGuid);
-      }
-      if (Retcode != 0) {
+      if (CurPromoteLevel != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
+        output.WriteUInt32(CurPromoteLevel);
       }
       if (OldPromoteLevel != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(OldPromoteLevel);
       }
-      if (CurPromoteLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CurPromoteLevel);
+      if (Retcode != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Retcode);
+      }
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(TargetWeaponGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,14 +249,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (CurPromoteLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurPromoteLevel);
+      }
       if (TargetWeaponGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
       }
       if (OldPromoteLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldPromoteLevel);
-      }
-      if (CurPromoteLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurPromoteLevel);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
@@ -263,14 +273,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.CurPromoteLevel != 0) {
+        CurPromoteLevel = other.CurPromoteLevel;
+      }
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
       if (other.OldPromoteLevel != 0) {
         OldPromoteLevel = other.OldPromoteLevel;
-      }
-      if (other.CurPromoteLevel != 0) {
-        CurPromoteLevel = other.CurPromoteLevel;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
@@ -290,20 +300,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            TargetWeaponGuid = input.ReadUInt64();
-            break;
-          }
           case 32: {
-            Retcode = input.ReadInt32();
+            CurPromoteLevel = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 40: {
             OldPromoteLevel = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CurPromoteLevel = input.ReadUInt32();
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            TargetWeaponGuid = input.ReadUInt64();
             break;
           }
         }
@@ -321,20 +331,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            TargetWeaponGuid = input.ReadUInt64();
-            break;
-          }
           case 32: {
-            Retcode = input.ReadInt32();
+            CurPromoteLevel = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 40: {
             OldPromoteLevel = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CurPromoteLevel = input.ReadUInt32();
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            TargetWeaponGuid = input.ReadUInt64();
             break;
           }
         }

@@ -24,18 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGDuelExtraReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHQ0dEdWVsRXh0cmEucHJvdG8aFkdDR0NoYWxsZW5nZURhdGEucHJvdG8i",
-            "8QEKDEdDR0R1ZWxFeHRyYRIUCgxjYXJkX2lkX2xpc3QYASADKA0SEAoIZmll",
-            "bGRfaWQYAiABKA0SFAoMY2FyZF9iYWNrX2lkGAMgASgNEjUKDWNhcmRfZmFj",
-            "ZV9tYXAYBCADKAsyHi5HQ0dEdWVsRXh0cmEuQ2FyZEZhY2VNYXBFbnRyeRIp",
-            "Cg5jaGFsbGVuZ2VfbGlzdBgFIAMoCzIRLkdDR0NoYWxsZW5nZURhdGESDQoF",
-            "c2NvcmUYBiABKA0aMgoQQ2FyZEZhY2VNYXBFbnRyeRILCgNrZXkYASABKA0S",
-            "DQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChJHQ0dEdWVsRXh0cmEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aFkdDR0NoYWxsZW5nZURhdGEucHJvdG8aElBsYXRmb3JtVHlw",
+            "ZS5wcm90byKCBAoMR0NHRHVlbEV4dHJhEhQKDGNhcmRfaWRfbGlzdBgBIAMo",
+            "DRIQCghmaWVsZF9pZBgCIAEoDRIUCgxjYXJkX2JhY2tfaWQYAyABKA0SVQoN",
+            "Y2FyZF9mYWNlX21hcBgEIAMoCzI+LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uR0NHRHVlbEV4dHJhLkNhcmRGYWNlTWFwRW50cnkSSQoOY2hh",
+            "bGxlbmdlX2xpc3QYBSADKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR0NoYWxsZW5nZURhdGESDQoFc2NvcmUYBiABKA0SEwoLaXNf",
+            "bWF0Y2hfYWkYByABKAgSEgoKYWlfZGVja19pZBgIIAEoDRITCgtpc19pbnRl",
+            "cm5hbBgJIAEoCBIkChxmb3JiaWRfZmluaXNoX2NoYWxsZW5nZV9saXN0GAog",
+            "AygNEg0KBWxldmVsGAsgASgNEhYKDmNsaWVudF92ZXJzaW9uGAwgASgNEkQK",
+            "DXBsYXRmb3JtX3R5cGUYDSABKA4yLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlBsYXRmb3JtVHlwZRoyChBDYXJkRmFjZU1hcEVudHJ5EgsK",
+            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGChallengeDataReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGChallengeDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlatformTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDuelExtra), global::Weedwacker.Shared.Network.Proto.GCGDuelExtra.Parser, new[]{ "CardIdList", "FieldId", "CardBackId", "CardFaceMap", "ChallengeList", "Score" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDuelExtra), global::Weedwacker.Shared.Network.Proto.GCGDuelExtra.Parser, new[]{ "CardIdList", "FieldId", "CardBackId", "CardFaceMap", "ChallengeList", "Score", "IsMatchAi", "AiDeckId", "IsInternal", "ForbidFinishChallengeList", "Level", "ClientVersion", "PlatformType" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -82,6 +88,13 @@ namespace Weedwacker.Shared.Network.Proto {
       cardFaceMap_ = other.cardFaceMap_.Clone();
       challengeList_ = other.challengeList_.Clone();
       score_ = other.score_;
+      isMatchAi_ = other.isMatchAi_;
+      aiDeckId_ = other.aiDeckId_;
+      isInternal_ = other.isInternal_;
+      forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
+      level_ = other.level_;
+      clientVersion_ = other.clientVersion_;
+      platformType_ = other.platformType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -160,6 +173,89 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_match_ai" field.</summary>
+    public const int IsMatchAiFieldNumber = 7;
+    private bool isMatchAi_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsMatchAi {
+      get { return isMatchAi_; }
+      set {
+        isMatchAi_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ai_deck_id" field.</summary>
+    public const int AiDeckIdFieldNumber = 8;
+    private uint aiDeckId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AiDeckId {
+      get { return aiDeckId_; }
+      set {
+        aiDeckId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_internal" field.</summary>
+    public const int IsInternalFieldNumber = 9;
+    private bool isInternal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsInternal {
+      get { return isInternal_; }
+      set {
+        isInternal_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
+    public const int ForbidFinishChallengeListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ForbidFinishChallengeList {
+      get { return forbidFinishChallengeList_; }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 11;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_version" field.</summary>
+    public const int ClientVersionFieldNumber = 12;
+    private uint clientVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ClientVersion {
+      get { return clientVersion_; }
+      set {
+        clientVersion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "platform_type" field.</summary>
+    public const int PlatformTypeFieldNumber = 13;
+    private global::Weedwacker.Shared.Network.Proto.PlatformType platformType_ = global::Weedwacker.Shared.Network.Proto.PlatformType.Editor;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.PlatformType PlatformType {
+      get { return platformType_; }
+      set {
+        platformType_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -181,6 +277,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (!CardFaceMap.Equals(other.CardFaceMap)) return false;
       if(!challengeList_.Equals(other.challengeList_)) return false;
       if (Score != other.Score) return false;
+      if (IsMatchAi != other.IsMatchAi) return false;
+      if (AiDeckId != other.AiDeckId) return false;
+      if (IsInternal != other.IsInternal) return false;
+      if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
+      if (Level != other.Level) return false;
+      if (ClientVersion != other.ClientVersion) return false;
+      if (PlatformType != other.PlatformType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,6 +297,13 @@ namespace Weedwacker.Shared.Network.Proto {
       hash ^= CardFaceMap.GetHashCode();
       hash ^= challengeList_.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
+      if (IsMatchAi != false) hash ^= IsMatchAi.GetHashCode();
+      if (AiDeckId != 0) hash ^= AiDeckId.GetHashCode();
+      if (IsInternal != false) hash ^= IsInternal.GetHashCode();
+      hash ^= forbidFinishChallengeList_.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (ClientVersion != 0) hash ^= ClientVersion.GetHashCode();
+      if (PlatformType != global::Weedwacker.Shared.Network.Proto.PlatformType.Editor) hash ^= PlatformType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -227,6 +337,31 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(48);
         output.WriteUInt32(Score);
       }
+      if (IsMatchAi != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsMatchAi);
+      }
+      if (AiDeckId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AiDeckId);
+      }
+      if (IsInternal != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsInternal);
+      }
+      forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
+      if (Level != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Level);
+      }
+      if (ClientVersion != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ClientVersion);
+      }
+      if (PlatformType != global::Weedwacker.Shared.Network.Proto.PlatformType.Editor) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) PlatformType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -252,6 +387,31 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(48);
         output.WriteUInt32(Score);
       }
+      if (IsMatchAi != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsMatchAi);
+      }
+      if (AiDeckId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AiDeckId);
+      }
+      if (IsInternal != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsInternal);
+      }
+      forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
+      if (Level != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Level);
+      }
+      if (ClientVersion != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ClientVersion);
+      }
+      if (PlatformType != global::Weedwacker.Shared.Network.Proto.PlatformType.Editor) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) PlatformType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -273,6 +433,25 @@ namespace Weedwacker.Shared.Network.Proto {
       size += challengeList_.CalculateSize(_repeated_challengeList_codec);
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (IsMatchAi != false) {
+        size += 1 + 1;
+      }
+      if (AiDeckId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AiDeckId);
+      }
+      if (IsInternal != false) {
+        size += 1 + 1;
+      }
+      size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (ClientVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientVersion);
+      }
+      if (PlatformType != global::Weedwacker.Shared.Network.Proto.PlatformType.Editor) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PlatformType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -297,6 +476,25 @@ namespace Weedwacker.Shared.Network.Proto {
       challengeList_.Add(other.challengeList_);
       if (other.Score != 0) {
         Score = other.Score;
+      }
+      if (other.IsMatchAi != false) {
+        IsMatchAi = other.IsMatchAi;
+      }
+      if (other.AiDeckId != 0) {
+        AiDeckId = other.AiDeckId;
+      }
+      if (other.IsInternal != false) {
+        IsInternal = other.IsInternal;
+      }
+      forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.ClientVersion != 0) {
+        ClientVersion = other.ClientVersion;
+      }
+      if (other.PlatformType != global::Weedwacker.Shared.Network.Proto.PlatformType.Editor) {
+        PlatformType = other.PlatformType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -338,6 +536,35 @@ namespace Weedwacker.Shared.Network.Proto {
             Score = input.ReadUInt32();
             break;
           }
+          case 56: {
+            IsMatchAi = input.ReadBool();
+            break;
+          }
+          case 64: {
+            AiDeckId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsInternal = input.ReadBool();
+            break;
+          }
+          case 82:
+          case 80: {
+            forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 88: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ClientVersion = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            PlatformType = (global::Weedwacker.Shared.Network.Proto.PlatformType) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -376,6 +603,35 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 48: {
             Score = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsMatchAi = input.ReadBool();
+            break;
+          }
+          case 64: {
+            AiDeckId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsInternal = input.ReadBool();
+            break;
+          }
+          case 82:
+          case 80: {
+            forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 88: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ClientVersion = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            PlatformType = (global::Weedwacker.Shared.Network.Proto.PlatformType) input.ReadEnum();
             break;
           }
         }

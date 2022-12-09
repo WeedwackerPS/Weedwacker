@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestCreateEntityReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpRdWVzdENyZWF0ZUVudGl0eVJlcS5wcm90bxoWQ3JlYXRlRW50aXR5SW5m",
-            "by5wcm90byJ3ChRRdWVzdENyZWF0ZUVudGl0eVJlcRIXCg9wYXJlbnRfcXVl",
-            "c3RfaWQYCSABKA0SEQoJaXNfcmV3aW5kGAMgASgIEhAKCHF1ZXN0X2lkGAIg",
-            "ASgNEiEKBmVudGl0eRgNIAEoCzIRLkNyZWF0ZUVudGl0eUluZm9CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpRdWVzdENyZWF0ZUVudGl0eVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoWQ3JlYXRlRW50aXR5SW5mby5wcm90byKXAQoU",
+            "UXVlc3RDcmVhdGVFbnRpdHlSZXESFwoPcGFyZW50X3F1ZXN0X2lkGA4gASgN",
+            "EkEKBmVudGl0eRgDIAEoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQ3JlYXRlRW50aXR5SW5mbxIQCghxdWVzdF9pZBgFIAEoDRIRCglp",
+            "c19yZXdpbmQYCyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CreateEntityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestCreateEntityReq), global::Weedwacker.Shared.Network.Proto.QuestCreateEntityReq.Parser, new[]{ "ParentQuestId", "IsRewind", "QuestId", "Entity" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestCreateEntityReq), global::Weedwacker.Shared.Network.Proto.QuestCreateEntityReq.Parser, new[]{ "ParentQuestId", "Entity", "QuestId", "IsRewind" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 499
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 457;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestCreateEntityReq : pb::IMessage<QuestCreateEntityReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuestCreateEntityReq(QuestCreateEntityReq other) : this() {
       parentQuestId_ = other.parentQuestId_;
-      isRewind_ = other.isRewind_;
-      questId_ = other.questId_;
       entity_ = other.entity_ != null ? other.entity_.Clone() : null;
+      questId_ = other.questId_;
+      isRewind_ = other.isRewind_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_id" field.</summary>
-    public const int ParentQuestIdFieldNumber = 9;
+    public const int ParentQuestIdFieldNumber = 14;
     private uint parentQuestId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,20 +109,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_rewind" field.</summary>
-    public const int IsRewindFieldNumber = 3;
-    private bool isRewind_;
+    /// <summary>Field number for the "entity" field.</summary>
+    public const int EntityFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.CreateEntityInfo entity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsRewind {
-      get { return isRewind_; }
+    public global::Weedwacker.Shared.Network.Proto.CreateEntityInfo Entity {
+      get { return entity_; }
       set {
-        isRewind_ = value;
+        entity_ = value;
       }
     }
 
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 2;
+    public const int QuestIdFieldNumber = 5;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,15 +133,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity" field.</summary>
-    public const int EntityFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.CreateEntityInfo entity_;
+    /// <summary>Field number for the "is_rewind" field.</summary>
+    public const int IsRewindFieldNumber = 11;
+    private bool isRewind_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CreateEntityInfo Entity {
-      get { return entity_; }
+    public bool IsRewind {
+      get { return isRewind_; }
       set {
-        entity_ = value;
+        isRewind_ = value;
       }
     }
 
@@ -156,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ParentQuestId != other.ParentQuestId) return false;
-      if (IsRewind != other.IsRewind) return false;
-      if (QuestId != other.QuestId) return false;
       if (!object.Equals(Entity, other.Entity)) return false;
+      if (QuestId != other.QuestId) return false;
+      if (IsRewind != other.IsRewind) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -167,9 +172,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
-      if (IsRewind != false) hash ^= IsRewind.GetHashCode();
-      if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (entity_ != null) hash ^= Entity.GetHashCode();
+      if (QuestId != 0) hash ^= QuestId.GetHashCode();
+      if (IsRewind != false) hash ^= IsRewind.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,21 +193,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (entity_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Entity);
+      }
       if (QuestId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteUInt32(QuestId);
       }
       if (IsRewind != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteBool(IsRewind);
       }
       if (ParentQuestId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(ParentQuestId);
-      }
-      if (entity_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Entity);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,21 +219,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (entity_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Entity);
+      }
       if (QuestId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteUInt32(QuestId);
       }
       if (IsRewind != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteBool(IsRewind);
       }
       if (ParentQuestId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(ParentQuestId);
-      }
-      if (entity_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Entity);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -243,14 +248,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ParentQuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestId);
       }
-      if (IsRewind != false) {
-        size += 1 + 1;
+      if (entity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
       }
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
-      if (entity_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
+      if (IsRewind != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -267,17 +272,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ParentQuestId != 0) {
         ParentQuestId = other.ParentQuestId;
       }
-      if (other.IsRewind != false) {
-        IsRewind = other.IsRewind;
-      }
-      if (other.QuestId != 0) {
-        QuestId = other.QuestId;
-      }
       if (other.entity_ != null) {
         if (entity_ == null) {
           Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
         }
         Entity.MergeFrom(other.Entity);
+      }
+      if (other.QuestId != 0) {
+        QuestId = other.QuestId;
+      }
+      if (other.IsRewind != false) {
+        IsRewind = other.IsRewind;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -294,23 +299,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            QuestId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            IsRewind = input.ReadBool();
-            break;
-          }
-          case 72: {
-            ParentQuestId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 26: {
             if (entity_ == null) {
               Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
             }
             input.ReadMessage(Entity);
+            break;
+          }
+          case 40: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsRewind = input.ReadBool();
+            break;
+          }
+          case 112: {
+            ParentQuestId = input.ReadUInt32();
             break;
           }
         }
@@ -328,23 +333,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            QuestId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            IsRewind = input.ReadBool();
-            break;
-          }
-          case 72: {
-            ParentQuestId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 26: {
             if (entity_ == null) {
               Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
             }
             input.ReadMessage(Entity);
+            break;
+          }
+          case 40: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsRewind = input.ReadBool();
+            break;
+          }
+          case 112: {
+            ParentQuestId = input.ReadUInt32();
             break;
           }
         }

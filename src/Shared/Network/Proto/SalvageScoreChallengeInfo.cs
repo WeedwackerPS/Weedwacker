@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvageScoreChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TYWx2YWdlU2NvcmVDaGFsbGVuZ2VJbmZvLnByb3RvIkwKGVNhbHZhZ2VT",
-            "Y29yZUNoYWxsZW5nZUluZm8SHAoUc2FsdmFnZV9jaGFsbGVuZ2VfaWQYDSAB",
-            "KA0SEQoJbWF4X3Njb3JlGAcgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9TYWx2YWdlU2NvcmVDaGFsbGVuZ2VJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkwKGVNhbHZhZ2VTY29yZUNoYWxsZW5n",
+            "ZUluZm8SEQoJbWF4X3Njb3JlGAggASgNEhwKFHNhbHZhZ2VfY2hhbGxlbmdl",
+            "X2lkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo), global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo.Parser, new[]{ "SalvageChallengeId", "MaxScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo), global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo.Parser, new[]{ "MaxScore", "SalvageChallengeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SalvageScoreChallengeInfo(SalvageScoreChallengeInfo other) : this() {
-      salvageChallengeId_ = other.salvageChallengeId_;
       maxScore_ = other.maxScore_;
+      salvageChallengeId_ = other.salvageChallengeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SalvageScoreChallengeInfo(this);
     }
 
-    /// <summary>Field number for the "salvage_challenge_id" field.</summary>
-    public const int SalvageChallengeIdFieldNumber = 13;
-    private uint salvageChallengeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SalvageChallengeId {
-      get { return salvageChallengeId_; }
-      set {
-        salvageChallengeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 7;
+    public const int MaxScoreFieldNumber = 8;
     private uint maxScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return maxScore_; }
       set {
         maxScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "salvage_challenge_id" field.</summary>
+    public const int SalvageChallengeIdFieldNumber = 10;
+    private uint salvageChallengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SalvageChallengeId {
+      get { return salvageChallengeId_; }
+      set {
+        salvageChallengeId_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SalvageChallengeId != other.SalvageChallengeId) return false;
       if (MaxScore != other.MaxScore) return false;
+      if (SalvageChallengeId != other.SalvageChallengeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SalvageChallengeId != 0) hash ^= SalvageChallengeId.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
+      if (SalvageChallengeId != 0) hash ^= SalvageChallengeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +152,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MaxScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(MaxScore);
       }
       if (SalvageChallengeId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(SalvageChallengeId);
       }
       if (_unknownFields != null) {
@@ -170,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MaxScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(MaxScore);
       }
       if (SalvageChallengeId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(SalvageChallengeId);
       }
       if (_unknownFields != null) {
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SalvageChallengeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SalvageChallengeId);
-      }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
+      }
+      if (SalvageChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SalvageChallengeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SalvageChallengeId != 0) {
-        SalvageChallengeId = other.SalvageChallengeId;
-      }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
+      }
+      if (other.SalvageChallengeId != 0) {
+        SalvageChallengeId = other.SalvageChallengeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 64: {
             MaxScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             SalvageChallengeId = input.ReadUInt32();
             break;
           }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 64: {
             MaxScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             SalvageChallengeId = input.ReadUInt32();
             break;
           }

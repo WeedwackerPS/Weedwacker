@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static StartCoopPointRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdTdGFydENvb3BQb2ludFJzcC5wcm90bxoOTWFpbkNvb3AucHJvdG8ibgoR",
-            "U3RhcnRDb29wUG9pbnRSc3ASEAoIaXNfc3RhcnQYCSABKAgSIgoPc3RhcnRf",
-            "bWFpbl9jb29wGA8gASgLMgkuTWFpbkNvb3ASEgoKY29vcF9wb2ludBgNIAEo",
-            "DRIPCgdyZXRjb2RlGAggASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdTdGFydENvb3BQb2ludFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoOTWFpbkNvb3AucHJvdG8ijgEKEVN0YXJ0Q29vcFBv",
+            "aW50UnNwEkIKD3N0YXJ0X21haW5fY29vcBgEIAEoCzIpLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uTWFpbkNvb3ASDwoHcmV0Y29kZRgCIAEo",
+            "BRIQCghpc19zdGFydBgFIAEoCBISCgpjb29wX3BvaW50GAkgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MainCoopReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartCoopPointRsp), global::Weedwacker.Shared.Network.Proto.StartCoopPointRsp.Parser, new[]{ "IsStart", "StartMainCoop", "CoopPoint", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartCoopPointRsp), global::Weedwacker.Shared.Network.Proto.StartCoopPointRsp.Parser, new[]{ "StartMainCoop", "Retcode", "IsStart", "CoopPoint" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1964
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1952;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class StartCoopPointRsp : pb::IMessage<StartCoopPointRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartCoopPointRsp(StartCoopPointRsp other) : this() {
-      isStart_ = other.isStart_;
       startMainCoop_ = other.startMainCoop_ != null ? other.startMainCoop_.Clone() : null;
-      coopPoint_ = other.coopPoint_;
       retcode_ = other.retcode_;
+      isStart_ = other.isStart_;
+      coopPoint_ = other.coopPoint_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StartCoopPointRsp(this);
     }
 
-    /// <summary>Field number for the "is_start" field.</summary>
-    public const int IsStartFieldNumber = 9;
-    private bool isStart_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStart {
-      get { return isStart_; }
-      set {
-        isStart_ = value;
-      }
-    }
-
     /// <summary>Field number for the "start_main_coop" field.</summary>
-    public const int StartMainCoopFieldNumber = 15;
+    public const int StartMainCoopFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.MainCoop startMainCoop_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "coop_point" field.</summary>
-    public const int CoopPointFieldNumber = 13;
-    private uint coopPoint_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoopPoint {
-      get { return coopPoint_; }
-      set {
-        coopPoint_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +117,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_start" field.</summary>
+    public const int IsStartFieldNumber = 5;
+    private bool isStart_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsStart {
+      get { return isStart_; }
+      set {
+        isStart_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "coop_point" field.</summary>
+    public const int CoopPointFieldNumber = 9;
+    private uint coopPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CoopPoint {
+      get { return coopPoint_; }
+      set {
+        coopPoint_ = value;
       }
     }
 
@@ -154,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsStart != other.IsStart) return false;
       if (!object.Equals(StartMainCoop, other.StartMainCoop)) return false;
-      if (CoopPoint != other.CoopPoint) return false;
       if (Retcode != other.Retcode) return false;
+      if (IsStart != other.IsStart) return false;
+      if (CoopPoint != other.CoopPoint) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsStart != false) hash ^= IsStart.GetHashCode();
       if (startMainCoop_ != null) hash ^= StartMainCoop.GetHashCode();
-      if (CoopPoint != 0) hash ^= CoopPoint.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsStart != false) hash ^= IsStart.GetHashCode();
+      if (CoopPoint != 0) hash ^= CoopPoint.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,20 +193,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      if (startMainCoop_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartMainCoop);
+      }
       if (IsStart != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsStart);
       }
       if (CoopPoint != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(CoopPoint);
-      }
-      if (startMainCoop_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(StartMainCoop);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,20 +219,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      if (startMainCoop_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartMainCoop);
+      }
       if (IsStart != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsStart);
       }
       if (CoopPoint != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(CoopPoint);
-      }
-      if (startMainCoop_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(StartMainCoop);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsStart != false) {
-        size += 1 + 1;
-      }
       if (startMainCoop_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartMainCoop);
       }
-      if (CoopPoint != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoopPoint);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (IsStart != false) {
+        size += 1 + 1;
+      }
+      if (CoopPoint != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoopPoint);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,20 +268,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsStart != false) {
-        IsStart = other.IsStart;
-      }
       if (other.startMainCoop_ != null) {
         if (startMainCoop_ == null) {
           StartMainCoop = new global::Weedwacker.Shared.Network.Proto.MainCoop();
         }
         StartMainCoop.MergeFrom(other.StartMainCoop);
       }
-      if (other.CoopPoint != 0) {
-        CoopPoint = other.CoopPoint;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.IsStart != false) {
+        IsStart = other.IsStart;
+      }
+      if (other.CoopPoint != 0) {
+        CoopPoint = other.CoopPoint;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -293,23 +298,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            IsStart = input.ReadBool();
-            break;
-          }
-          case 104: {
-            CoopPoint = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 34: {
             if (startMainCoop_ == null) {
               StartMainCoop = new global::Weedwacker.Shared.Network.Proto.MainCoop();
             }
             input.ReadMessage(StartMainCoop);
+            break;
+          }
+          case 40: {
+            IsStart = input.ReadBool();
+            break;
+          }
+          case 72: {
+            CoopPoint = input.ReadUInt32();
             break;
           }
         }
@@ -327,23 +332,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            IsStart = input.ReadBool();
-            break;
-          }
-          case 104: {
-            CoopPoint = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 34: {
             if (startMainCoop_ == null) {
               StartMainCoop = new global::Weedwacker.Shared.Network.Proto.MainCoop();
             }
             input.ReadMessage(StartMainCoop);
+            break;
+          }
+          case 40: {
+            IsStart = input.ReadBool();
+            break;
+          }
+          case 72: {
+            CoopPoint = input.ReadUInt32();
             break;
           }
         }

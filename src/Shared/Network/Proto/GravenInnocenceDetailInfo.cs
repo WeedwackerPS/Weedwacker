@@ -24,20 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static GravenInnocenceDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9HcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvLnByb3RvGh1HcmF2ZW5Jbm5v",
-            "Y2VuY2VDYW1wSW5mby5wcm90bxoeR3JhdmVuSW5ub2NlbmNlQ2FydmVJbmZv",
-            "LnByb3RvGh5HcmF2ZW5Jbm5vY2VuY2VQaG90b0luZm8ucHJvdG8aHUdyYXZl",
-            "bklubm9jZW5jZVJhY2VJbmZvLnByb3RvIu4BChlHcmF2ZW5Jbm5vY2VuY2VE",
-            "ZXRhaWxJbmZvEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAggASgIEisKCXJhY2Vf",
-            "aW5mbxgKIAEoCzIYLkdyYXZlbklubm9jZW5jZVJhY2VJbmZvEi0KCnBob3Rv",
-            "X2luZm8YByABKAsyGS5HcmF2ZW5Jbm5vY2VuY2VQaG90b0luZm8SLQoKY2Fy",
-            "dmVfaW5mbxgNIAEoCzIZLkdyYXZlbklubm9jZW5jZUNhcnZlSW5mbxIrCglj",
-            "YW1wX2luZm8YDCABKAsyGC5HcmF2ZW5Jbm5vY2VuY2VDYW1wSW5mb0IiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9HcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGh1HcmF2ZW5Jbm5vY2VuY2VDYW1wSW5m",
+            "by5wcm90bxoeR3JhdmVuSW5ub2NlbmNlQ2FydmVJbmZvLnByb3RvGh5HcmF2",
+            "ZW5Jbm5vY2VuY2VQaG90b0luZm8ucHJvdG8aHUdyYXZlbklubm9jZW5jZVJh",
+            "Y2VJbmZvLnByb3RvIu4CChlHcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvEhkK",
+            "EWlzX2NvbnRlbnRfY2xvc2VkGAggASgIEksKCXJhY2VfaW5mbxgCIAEoCzI4",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR3JhdmVuSW5ub2Nl",
+            "bmNlUmFjZUluZm8SSwoJY2FtcF9pbmZvGAMgASgLMjguV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5HcmF2ZW5Jbm5vY2VuY2VDYW1wSW5mbxJN",
+            "CgpjYXJ2ZV9pbmZvGA0gASgLMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8STQoKcGhvdG9faW5m",
+            "bxgKIAEoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR3Jh",
+            "dmVuSW5ub2NlbmNlUGhvdG9JbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo), global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo.Parser, new[]{ "IsContentClosed", "RaceInfo", "PhotoInfo", "CarveInfo", "CampInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo), global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo.Parser, new[]{ "IsContentClosed", "RaceInfo", "CampInfo", "CarveInfo", "PhotoInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public GravenInnocenceDetailInfo(GravenInnocenceDetailInfo other) : this() {
       isContentClosed_ = other.isContentClosed_;
       raceInfo_ = other.raceInfo_ != null ? other.raceInfo_.Clone() : null;
-      photoInfo_ = other.photoInfo_ != null ? other.photoInfo_.Clone() : null;
-      carveInfo_ = other.carveInfo_ != null ? other.carveInfo_.Clone() : null;
       campInfo_ = other.campInfo_ != null ? other.campInfo_.Clone() : null;
+      carveInfo_ = other.carveInfo_ != null ? other.carveInfo_.Clone() : null;
+      photoInfo_ = other.photoInfo_ != null ? other.photoInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -105,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "race_info" field.</summary>
-    public const int RaceInfoFieldNumber = 10;
+    public const int RaceInfoFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfo raceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,15 +119,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "photo_info" field.</summary>
-    public const int PhotoInfoFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo photoInfo_;
+    /// <summary>Field number for the "camp_info" field.</summary>
+    public const int CampInfoFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo campInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo PhotoInfo {
-      get { return photoInfo_; }
+    public global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo CampInfo {
+      get { return campInfo_; }
       set {
-        photoInfo_ = value;
+        campInfo_ = value;
       }
     }
 
@@ -140,15 +143,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "camp_info" field.</summary>
-    public const int CampInfoFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo campInfo_;
+    /// <summary>Field number for the "photo_info" field.</summary>
+    public const int PhotoInfoFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo photoInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo CampInfo {
-      get { return campInfo_; }
+    public global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo PhotoInfo {
+      get { return photoInfo_; }
       set {
-        campInfo_ = value;
+        photoInfo_ = value;
       }
     }
 
@@ -169,9 +172,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (IsContentClosed != other.IsContentClosed) return false;
       if (!object.Equals(RaceInfo, other.RaceInfo)) return false;
-      if (!object.Equals(PhotoInfo, other.PhotoInfo)) return false;
-      if (!object.Equals(CarveInfo, other.CarveInfo)) return false;
       if (!object.Equals(CampInfo, other.CampInfo)) return false;
+      if (!object.Equals(CarveInfo, other.CarveInfo)) return false;
+      if (!object.Equals(PhotoInfo, other.PhotoInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,9 +184,9 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       if (raceInfo_ != null) hash ^= RaceInfo.GetHashCode();
-      if (photoInfo_ != null) hash ^= PhotoInfo.GetHashCode();
-      if (carveInfo_ != null) hash ^= CarveInfo.GetHashCode();
       if (campInfo_ != null) hash ^= CampInfo.GetHashCode();
+      if (carveInfo_ != null) hash ^= CarveInfo.GetHashCode();
+      if (photoInfo_ != null) hash ^= PhotoInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,21 +205,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (photoInfo_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(PhotoInfo);
+      if (raceInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(RaceInfo);
+      }
+      if (campInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(CampInfo);
       }
       if (IsContentClosed != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsContentClosed);
       }
-      if (raceInfo_ != null) {
+      if (photoInfo_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(RaceInfo);
-      }
-      if (campInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(CampInfo);
+        output.WriteMessage(PhotoInfo);
       }
       if (carveInfo_ != null) {
         output.WriteRawTag(106);
@@ -232,21 +235,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (photoInfo_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(PhotoInfo);
+      if (raceInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(RaceInfo);
+      }
+      if (campInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(CampInfo);
       }
       if (IsContentClosed != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsContentClosed);
       }
-      if (raceInfo_ != null) {
+      if (photoInfo_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(RaceInfo);
-      }
-      if (campInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(CampInfo);
+        output.WriteMessage(PhotoInfo);
       }
       if (carveInfo_ != null) {
         output.WriteRawTag(106);
@@ -268,14 +271,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (raceInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RaceInfo);
       }
-      if (photoInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PhotoInfo);
+      if (campInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CampInfo);
       }
       if (carveInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CarveInfo);
       }
-      if (campInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CampInfo);
+      if (photoInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PhotoInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -298,11 +301,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         RaceInfo.MergeFrom(other.RaceInfo);
       }
-      if (other.photoInfo_ != null) {
-        if (photoInfo_ == null) {
-          PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
+      if (other.campInfo_ != null) {
+        if (campInfo_ == null) {
+          CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
         }
-        PhotoInfo.MergeFrom(other.PhotoInfo);
+        CampInfo.MergeFrom(other.CampInfo);
       }
       if (other.carveInfo_ != null) {
         if (carveInfo_ == null) {
@@ -310,11 +313,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         CarveInfo.MergeFrom(other.CarveInfo);
       }
-      if (other.campInfo_ != null) {
-        if (campInfo_ == null) {
-          CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
+      if (other.photoInfo_ != null) {
+        if (photoInfo_ == null) {
+          PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
         }
-        CampInfo.MergeFrom(other.CampInfo);
+        PhotoInfo.MergeFrom(other.PhotoInfo);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -331,11 +334,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            if (photoInfo_ == null) {
-              PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
+          case 18: {
+            if (raceInfo_ == null) {
+              RaceInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfo();
             }
-            input.ReadMessage(PhotoInfo);
+            input.ReadMessage(RaceInfo);
+            break;
+          }
+          case 26: {
+            if (campInfo_ == null) {
+              CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
+            }
+            input.ReadMessage(CampInfo);
             break;
           }
           case 64: {
@@ -343,17 +353,10 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 82: {
-            if (raceInfo_ == null) {
-              RaceInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfo();
+            if (photoInfo_ == null) {
+              PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
             }
-            input.ReadMessage(RaceInfo);
-            break;
-          }
-          case 98: {
-            if (campInfo_ == null) {
-              CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
-            }
-            input.ReadMessage(CampInfo);
+            input.ReadMessage(PhotoInfo);
             break;
           }
           case 106: {
@@ -378,11 +381,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            if (photoInfo_ == null) {
-              PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
+          case 18: {
+            if (raceInfo_ == null) {
+              RaceInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfo();
             }
-            input.ReadMessage(PhotoInfo);
+            input.ReadMessage(RaceInfo);
+            break;
+          }
+          case 26: {
+            if (campInfo_ == null) {
+              CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
+            }
+            input.ReadMessage(CampInfo);
             break;
           }
           case 64: {
@@ -390,17 +400,10 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 82: {
-            if (raceInfo_ == null) {
-              RaceInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceInfo();
+            if (photoInfo_ == null) {
+              PhotoInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoInfo();
             }
-            input.ReadMessage(RaceInfo);
-            break;
-          }
-          case 98: {
-            if (campInfo_ == null) {
-              CampInfo = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceCampInfo();
-            }
-            input.ReadMessage(CampInfo);
+            input.ReadMessage(PhotoInfo);
             break;
           }
           case 106: {

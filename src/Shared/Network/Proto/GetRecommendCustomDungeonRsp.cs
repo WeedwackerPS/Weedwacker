@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetRecommendCustomDungeonRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHZXRSZWNvbW1lbmRDdXN0b21EdW5nZW9uUnNwLnByb3RvGh1PdGhlckN1",
-            "c3RvbUR1bmdlb25CcmllZi5wcm90byJmChxHZXRSZWNvbW1lbmRDdXN0b21E",
-            "dW5nZW9uUnNwEjUKE2N1c3RvbV9kdW5nZW9uX2xpc3QYCCADKAsyGC5PdGhl",
-            "ckN1c3RvbUR1bmdlb25CcmllZhIPCgdyZXRjb2RlGA4gASgFQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJHZXRSZWNvbW1lbmRDdXN0b21EdW5nZW9uUnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh1PdGhlckN1c3RvbUR1bmdlb25C",
+            "cmllZi5wcm90byKGAQocR2V0UmVjb21tZW5kQ3VzdG9tRHVuZ2VvblJzcBJV",
+            "ChNjdXN0b21fZHVuZ2Vvbl9saXN0GAcgAygLMjguV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5PdGhlckN1c3RvbUR1bmdlb25CcmllZhIPCgdy",
+            "ZXRjb2RlGA4gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6248
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6237;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetRecommendCustomDungeonRsp : pb::IMessage<GetRecommendCustomDungeonRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "custom_dungeon_list" field.</summary>
-    public const int CustomDungeonListFieldNumber = 8;
+    public const int CustomDungeonListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief> _repeated_customDungeonList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief> customDungeonList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -221,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 58: {
             customDungeonList_.AddEntriesFrom(input, _repeated_customDungeonList_codec);
             break;
           }
@@ -244,7 +249,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 58: {
             customDungeonList_.AddEntriesFrom(ref input, _repeated_customDungeonList_codec);
             break;
           }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgGameOverReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHQ0dNc2dHYW1lT3Zlci5wcm90bxoSR0NHRW5kUmVhc29uLnByb3RvIk4K",
-            "DkdDR01zZ0dhbWVPdmVyEiEKCmVuZF9yZWFzb24YDSABKA4yDS5HQ0dFbmRS",
-            "ZWFzb24SGQoRd2luX2NvbnRyb2xsZXJfaWQYBiABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRHQ0dNc2dHYW1lT3Zlci5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoSR0NHRW5kUmVhc29uLnByb3RvIm4KDkdDR01zZ0dhbWVP",
+            "dmVyEkEKCmVuZF9yZWFzb24YBiABKA4yLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkdDR0VuZFJlYXNvbhIZChF3aW5fY29udHJvbGxlcl9p",
+            "ZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGEndReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "end_reason" field.</summary>
-    public const int EndReasonFieldNumber = 13;
+    public const int EndReasonFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.GCGEndReason endReason_ = global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "win_controller_id" field.</summary>
-    public const int WinControllerIdFieldNumber = 6;
+    public const int WinControllerIdFieldNumber = 3;
     private uint winControllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (WinControllerId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(WinControllerId);
       }
       if (EndReason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteEnum((int) EndReason);
       }
       if (_unknownFields != null) {
@@ -170,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (WinControllerId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(WinControllerId);
       }
       if (EndReason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteEnum((int) EndReason);
       }
       if (_unknownFields != null) {
@@ -226,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 24: {
             WinControllerId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 48: {
             EndReason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
             break;
           }
@@ -249,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 24: {
             WinControllerId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 48: {
             EndReason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
             break;
           }

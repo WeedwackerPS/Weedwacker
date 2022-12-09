@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeSeekFurnitureOneRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBIb21lU2Vla0Z1cm5pdHVyZU9uZVJlY29yZC5wcm90bxoiSG9tZVNlZWtG",
-            "dXJuaXR1cmVQbGF5ZXJTY29yZS5wcm90byJxChpIb21lU2Vla0Z1cm5pdHVy",
-            "ZU9uZVJlY29yZBJAChllbmdhZ2VkX3BsYXllcl9zY29yZV9saXN0GAggAygL",
-            "Mh0uSG9tZVNlZWtGdXJuaXR1cmVQbGF5ZXJTY29yZRIRCgl0aW1lc3RhbXAY",
-            "AyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiBIb21lU2Vla0Z1cm5pdHVyZU9uZVJlY29yZC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoiSG9tZVNlZWtGdXJuaXR1cmVQbGF5",
+            "ZXJTY29yZS5wcm90byKRAQoaSG9tZVNlZWtGdXJuaXR1cmVPbmVSZWNvcmQS",
+            "EQoJdGltZXN0YW1wGAwgASgNEmAKGWVuZ2FnZWRfcGxheWVyX3Njb3JlX2xp",
+            "c3QYBSADKAsyPS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhv",
+            "bWVTZWVrRnVybml0dXJlUGxheWVyU2NvcmViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScoreReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureOneRecord), global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureOneRecord.Parser, new[]{ "EngagedPlayerScoreList", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureOneRecord), global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureOneRecord.Parser, new[]{ "Timestamp", "EngagedPlayerScoreList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +74,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeSeekFurnitureOneRecord(HomeSeekFurnitureOneRecord other) : this() {
-      engagedPlayerScoreList_ = other.engagedPlayerScoreList_.Clone();
       timestamp_ = other.timestamp_;
+      engagedPlayerScoreList_ = other.engagedPlayerScoreList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,19 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeSeekFurnitureOneRecord(this);
     }
 
-    /// <summary>Field number for the "engaged_player_score_list" field.</summary>
-    public const int EngagedPlayerScoreListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> _repeated_engagedPlayerScoreList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> engagedPlayerScoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> EngagedPlayerScoreList {
-      get { return engagedPlayerScoreList_; }
-    }
-
     /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 3;
+    public const int TimestampFieldNumber = 12;
     private uint timestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,6 +95,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         timestamp_ = value;
       }
+    }
+
+    /// <summary>Field number for the "engaged_player_score_list" field.</summary>
+    public const int EngagedPlayerScoreListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> _repeated_engagedPlayerScoreList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> engagedPlayerScoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSeekFurniturePlayerScore> EngagedPlayerScoreList {
+      get { return engagedPlayerScoreList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!engagedPlayerScoreList_.Equals(other.engagedPlayerScoreList_)) return false;
       if (Timestamp != other.Timestamp) return false;
+      if(!engagedPlayerScoreList_.Equals(other.engagedPlayerScoreList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= engagedPlayerScoreList_.GetHashCode();
       if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
+      hash ^= engagedPlayerScoreList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +152,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      engagedPlayerScoreList_.WriteTo(output, _repeated_engagedPlayerScoreList_codec);
       if (Timestamp != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(96);
         output.WriteUInt32(Timestamp);
       }
-      engagedPlayerScoreList_.WriteTo(output, _repeated_engagedPlayerScoreList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,11 +167,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      engagedPlayerScoreList_.WriteTo(ref output, _repeated_engagedPlayerScoreList_codec);
       if (Timestamp != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(96);
         output.WriteUInt32(Timestamp);
       }
-      engagedPlayerScoreList_.WriteTo(ref output, _repeated_engagedPlayerScoreList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -182,10 +182,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += engagedPlayerScoreList_.CalculateSize(_repeated_engagedPlayerScoreList_codec);
       if (Timestamp != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Timestamp);
       }
+      size += engagedPlayerScoreList_.CalculateSize(_repeated_engagedPlayerScoreList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -198,10 +198,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      engagedPlayerScoreList_.Add(other.engagedPlayerScoreList_);
       if (other.Timestamp != 0) {
         Timestamp = other.Timestamp;
       }
+      engagedPlayerScoreList_.Add(other.engagedPlayerScoreList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -217,12 +217,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Timestamp = input.ReadUInt32();
+          case 42: {
+            engagedPlayerScoreList_.AddEntriesFrom(input, _repeated_engagedPlayerScoreList_codec);
             break;
           }
-          case 66: {
-            engagedPlayerScoreList_.AddEntriesFrom(input, _repeated_engagedPlayerScoreList_codec);
+          case 96: {
+            Timestamp = input.ReadUInt32();
             break;
           }
         }
@@ -240,12 +240,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Timestamp = input.ReadUInt32();
+          case 42: {
+            engagedPlayerScoreList_.AddEntriesFrom(ref input, _repeated_engagedPlayerScoreList_codec);
             break;
           }
-          case 66: {
-            engagedPlayerScoreList_.AddEntriesFrom(ref input, _repeated_engagedPlayerScoreList_codec);
+          case 96: {
+            Timestamp = input.ReadUInt32();
             break;
           }
         }

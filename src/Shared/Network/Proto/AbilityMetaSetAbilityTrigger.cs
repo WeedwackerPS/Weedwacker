@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaSetAbilityTriggerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBYmlsaXR5TWV0YVNldEFiaWxpdHlUcmlnZ2VyLnByb3RvIkEKHEFiaWxp",
-            "dHlNZXRhU2V0QWJpbGl0eVRyaWdnZXISIQoZdHJpZ2dlcl9hYmlsaXR5X2Vu",
-            "dGl0eV9pZBgLIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiJBYmlsaXR5TWV0YVNldEFiaWxpdHlUcmlnZ2VyLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkEKHEFiaWxpdHlNZXRhU2V0QWJp",
+            "bGl0eVRyaWdnZXISIQoZdHJpZ2dlcl9hYmlsaXR5X2VudGl0eV9pZBgBIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trigger_ability_entity_id" field.</summary>
-    public const int TriggerAbilityEntityIdFieldNumber = 11;
+    public const int TriggerAbilityEntityIdFieldNumber = 1;
     private uint triggerAbilityEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TriggerAbilityEntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(TriggerAbilityEntityId);
       }
       if (_unknownFields != null) {
@@ -151,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TriggerAbilityEntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(TriggerAbilityEntityId);
       }
       if (_unknownFields != null) {
@@ -197,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 8: {
             TriggerAbilityEntityId = input.ReadUInt32();
             break;
           }
@@ -216,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 8: {
             TriggerAbilityEntityId = input.ReadUInt32();
             break;
           }

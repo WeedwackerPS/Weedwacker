@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static H5ActivityIdsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlINUFjdGl2aXR5SWRzTm90aWZ5LnByb3RvIq8BChNINUFjdGl2aXR5SWRz",
-            "Tm90aWZ5EiAKGGNsaWVudF9yZWRfZG90X3RpbWVzdGFtcBgBIAEoDRJACg9o",
-            "NV9hY3Rpdml0eV9tYXAYDCADKAsyJy5INUFjdGl2aXR5SWRzTm90aWZ5Lkg1",
-            "QWN0aXZpdHlNYXBFbnRyeRo0ChJINUFjdGl2aXR5TWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlINUFjdGl2aXR5SWRzTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIs8BChNINUFjdGl2aXR5SWRzTm90aWZ5EiAKGGNs",
+            "aWVudF9yZWRfZG90X3RpbWVzdGFtcBgFIAEoDRJgCg9oNV9hY3Rpdml0eV9t",
+            "YXAYDCADKAsyRy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkg1",
+            "QWN0aXZpdHlJZHNOb3RpZnkuSDVBY3Rpdml0eU1hcEVudHJ5GjQKEkg1QWN0",
+            "aXZpdHlNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5675
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5672;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class H5ActivityIdsNotify : pb::IMessage<H5ActivityIdsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "client_red_dot_timestamp" field.</summary>
-    public const int ClientRedDotTimestampFieldNumber = 1;
+    public const int ClientRedDotTimestampFieldNumber = 5;
     private uint clientRedDotTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ClientRedDotTimestamp != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(ClientRedDotTimestamp);
       }
       h5ActivityMap_.WriteTo(output, _map_h5ActivityMap_codec);
@@ -173,7 +178,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ClientRedDotTimestamp != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(ClientRedDotTimestamp);
       }
       h5ActivityMap_.WriteTo(ref output, _map_h5ActivityMap_codec);
@@ -222,7 +227,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             ClientRedDotTimestamp = input.ReadUInt32();
             break;
           }
@@ -245,7 +250,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             ClientRedDotTimestamp = input.ReadUInt32();
             break;
           }

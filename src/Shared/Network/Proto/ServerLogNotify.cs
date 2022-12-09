@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ServerLogNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTZXJ2ZXJMb2dOb3RpZnkucHJvdG8aFFNlcnZlckxvZ0xldmVsLnByb3Rv",
-            "GhNTZXJ2ZXJMb2dUeXBlLnByb3RvImsKD1NlcnZlckxvZ05vdGlmeRISCgpz",
-            "ZXJ2ZXJfbG9nGAcgASgJEiAKCGxvZ190eXBlGAkgASgOMg4uU2VydmVyTG9n",
-            "VHlwZRIiCglsb2dfbGV2ZWwYDyABKA4yDy5TZXJ2ZXJMb2dMZXZlbEIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVTZXJ2ZXJMb2dOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFFNlcnZlckxvZ0xldmVsLnByb3RvGhNTZXJ2ZXJMb2dU",
+            "eXBlLnByb3RvIqsBCg9TZXJ2ZXJMb2dOb3RpZnkSEgoKc2VydmVyX2xvZxgL",
+            "IAEoCRJCCglsb2dfbGV2ZWwYBSABKA4yLy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlNlcnZlckxvZ0xldmVsEkAKCGxvZ190eXBlGAkgASgO",
+            "Mi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TZXJ2ZXJMb2dU",
+            "eXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ServerLogLevelReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ServerLogTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerLogNotify), global::Weedwacker.Shared.Network.Proto.ServerLogNotify.Parser, new[]{ "ServerLog", "LogType", "LogLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerLogNotify), global::Weedwacker.Shared.Network.Proto.ServerLogNotify.Parser, new[]{ "ServerLog", "LogLevel", "LogType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 31
-  /// EnetChannelId: 1
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 27;
+  ///   ENET_CHANNEL_ID = 1;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ServerLogNotify : pb::IMessage<ServerLogNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ServerLogNotify(ServerLogNotify other) : this() {
       serverLog_ = other.serverLog_;
-      logType_ = other.logType_;
       logLevel_ = other.logLevel_;
+      logType_ = other.logType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "server_log" field.</summary>
-    public const int ServerLogFieldNumber = 7;
+    public const int ServerLogFieldNumber = 11;
     private string serverLog_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return serverLog_; }
       set {
         serverLog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "log_level" field.</summary>
+    public const int LogLevelFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.ServerLogLevel logLevel_ = global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ServerLogLevel LogLevel {
+      get { return logLevel_; }
+      set {
+        logLevel_ = value;
       }
     }
 
@@ -111,18 +129,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return logType_; }
       set {
         logType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "log_level" field.</summary>
-    public const int LogLevelFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.ServerLogLevel logLevel_ = global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ServerLogLevel LogLevel {
-      get { return logLevel_; }
-      set {
-        logLevel_ = value;
       }
     }
 
@@ -142,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ServerLog != other.ServerLog) return false;
-      if (LogType != other.LogType) return false;
       if (LogLevel != other.LogLevel) return false;
+      if (LogType != other.LogType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +158,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ServerLog.Length != 0) hash ^= ServerLog.GetHashCode();
-      if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) hash ^= LogType.GetHashCode();
       if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) hash ^= LogLevel.GetHashCode();
+      if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) hash ^= LogType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +178,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ServerLog.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(ServerLog);
+      if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) LogLevel);
       }
       if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
         output.WriteRawTag(72);
         output.WriteEnum((int) LogType);
       }
-      if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) LogLevel);
+      if (ServerLog.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(ServerLog);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +200,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ServerLog.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(ServerLog);
+      if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) LogLevel);
       }
       if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
         output.WriteRawTag(72);
         output.WriteEnum((int) LogType);
       }
-      if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) LogLevel);
+      if (ServerLog.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(ServerLog);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ServerLog.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerLog);
       }
-      if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LogType);
-      }
       if (LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LogLevel);
+      }
+      if (LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LogType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,11 +246,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ServerLog.Length != 0) {
         ServerLog = other.ServerLog;
       }
-      if (other.LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
-        LogType = other.LogType;
-      }
       if (other.LogLevel != global::Weedwacker.Shared.Network.Proto.ServerLogLevel.None) {
         LogLevel = other.LogLevel;
+      }
+      if (other.LogType != global::Weedwacker.Shared.Network.Proto.ServerLogType.None) {
+        LogType = other.LogType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +267,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            ServerLog = input.ReadString();
+          case 40: {
+            LogLevel = (global::Weedwacker.Shared.Network.Proto.ServerLogLevel) input.ReadEnum();
             break;
           }
           case 72: {
             LogType = (global::Weedwacker.Shared.Network.Proto.ServerLogType) input.ReadEnum();
             break;
           }
-          case 120: {
-            LogLevel = (global::Weedwacker.Shared.Network.Proto.ServerLogLevel) input.ReadEnum();
+          case 90: {
+            ServerLog = input.ReadString();
             break;
           }
         }
@@ -288,16 +294,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            ServerLog = input.ReadString();
+          case 40: {
+            LogLevel = (global::Weedwacker.Shared.Network.Proto.ServerLogLevel) input.ReadEnum();
             break;
           }
           case 72: {
             LogType = (global::Weedwacker.Shared.Network.Proto.ServerLogType) input.ReadEnum();
             break;
           }
-          case 120: {
-            LogLevel = (global::Weedwacker.Shared.Network.Proto.ServerLogLevel) input.ReadEnum();
+          case 90: {
+            ServerLog = input.ReadString();
             break;
           }
         }

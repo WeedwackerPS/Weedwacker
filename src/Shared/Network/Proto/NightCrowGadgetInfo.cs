@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static NightCrowGadgetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlOaWdodENyb3dHYWRnZXRJbmZvLnByb3RvIiwKE05pZ2h0Q3Jvd0dhZGdl",
-            "dEluZm8SFQoNYXJndW1lbnRfbGlzdBgBIAMoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlOaWdodENyb3dHYWRnZXRJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIiwKE05pZ2h0Q3Jvd0dhZGdldEluZm8SFQoNYXJn",
+            "dW1lbnRfbGlzdBgBIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

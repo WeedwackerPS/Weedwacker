@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HuntingOngoingNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpIdW50aW5nT25nb2luZ05vdGlmeS5wcm90bxoRSHVudGluZ1BhaXIucHJv",
-            "dG8aDFZlY3Rvci5wcm90byKuAQoUSHVudGluZ09uZ29pbmdOb3RpZnkSIgoM",
-            "aHVudGluZ19wYWlyGA8gASgLMgwuSHVudGluZ1BhaXISEgoKaXNfc3RhcnRl",
-            "ZBgIIAEoCBIeCg1uZXh0X3Bvc2l0aW9uGAMgASgLMgcuVmVjdG9yEhkKEWZp",
-            "bmlzaF9jbHVlX2NvdW50GAogASgNEhAKCGlzX2ZpbmFsGA4gASgIEhEKCWZh",
-            "aWxfdGltZRgHIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChpIdW50aW5nT25nb2luZ05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoRSHVudGluZ1BhaXIucHJvdG8aDFZlY3Rvci5w",
+            "cm90byLuAQoUSHVudGluZ09uZ29pbmdOb3RpZnkSQgoMaHVudGluZ19wYWly",
+            "GAsgASgLMiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5IdW50",
+            "aW5nUGFpchIZChFmaW5pc2hfY2x1ZV9jb3VudBgHIAEoDRI+Cg1uZXh0X3Bv",
+            "c2l0aW9uGAIgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5WZWN0b3ISEAoIaXNfZmluYWwYBSABKAgSEgoKaXNfc3RhcnRlZBgNIAEo",
+            "CBIRCglmYWlsX3RpbWUYBCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HuntingPairReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HuntingOngoingNotify), global::Weedwacker.Shared.Network.Proto.HuntingOngoingNotify.Parser, new[]{ "HuntingPair", "IsStarted", "NextPosition", "FinishClueCount", "IsFinal", "FailTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HuntingOngoingNotify), global::Weedwacker.Shared.Network.Proto.HuntingOngoingNotify.Parser, new[]{ "HuntingPair", "FinishClueCount", "NextPosition", "IsFinal", "IsStarted", "FailTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4345
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4318;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HuntingOngoingNotify : pb::IMessage<HuntingOngoingNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,10 +86,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HuntingOngoingNotify(HuntingOngoingNotify other) : this() {
       huntingPair_ = other.huntingPair_ != null ? other.huntingPair_.Clone() : null;
-      isStarted_ = other.isStarted_;
-      nextPosition_ = other.nextPosition_ != null ? other.nextPosition_.Clone() : null;
       finishClueCount_ = other.finishClueCount_;
+      nextPosition_ = other.nextPosition_ != null ? other.nextPosition_.Clone() : null;
       isFinal_ = other.isFinal_;
+      isStarted_ = other.isStarted_;
       failTime_ = other.failTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -96,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hunting_pair" field.</summary>
-    public const int HuntingPairFieldNumber = 15;
+    public const int HuntingPairFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.HuntingPair huntingPair_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,32 +112,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_started" field.</summary>
-    public const int IsStartedFieldNumber = 8;
-    private bool isStarted_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStarted {
-      get { return isStarted_; }
-      set {
-        isStarted_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "next_position" field.</summary>
-    public const int NextPositionFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.Vector nextPosition_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector NextPosition {
-      get { return nextPosition_; }
-      set {
-        nextPosition_ = value;
-      }
-    }
-
     /// <summary>Field number for the "finish_clue_count" field.</summary>
-    public const int FinishClueCountFieldNumber = 10;
+    public const int FinishClueCountFieldNumber = 7;
     private uint finishClueCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,8 +124,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "next_position" field.</summary>
+    public const int NextPositionFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.Vector nextPosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector NextPosition {
+      get { return nextPosition_; }
+      set {
+        nextPosition_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_final" field.</summary>
-    public const int IsFinalFieldNumber = 14;
+    public const int IsFinalFieldNumber = 5;
     private bool isFinal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,8 +148,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_started" field.</summary>
+    public const int IsStartedFieldNumber = 13;
+    private bool isStarted_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsStarted {
+      get { return isStarted_; }
+      set {
+        isStarted_ = value;
+      }
+    }
+
     /// <summary>Field number for the "fail_time" field.</summary>
-    public const int FailTimeFieldNumber = 7;
+    public const int FailTimeFieldNumber = 4;
     private uint failTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -183,10 +188,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(HuntingPair, other.HuntingPair)) return false;
-      if (IsStarted != other.IsStarted) return false;
-      if (!object.Equals(NextPosition, other.NextPosition)) return false;
       if (FinishClueCount != other.FinishClueCount) return false;
+      if (!object.Equals(NextPosition, other.NextPosition)) return false;
       if (IsFinal != other.IsFinal) return false;
+      if (IsStarted != other.IsStarted) return false;
       if (FailTime != other.FailTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -196,10 +201,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (huntingPair_ != null) hash ^= HuntingPair.GetHashCode();
-      if (IsStarted != false) hash ^= IsStarted.GetHashCode();
-      if (nextPosition_ != null) hash ^= NextPosition.GetHashCode();
       if (FinishClueCount != 0) hash ^= FinishClueCount.GetHashCode();
+      if (nextPosition_ != null) hash ^= NextPosition.GetHashCode();
       if (IsFinal != false) hash ^= IsFinal.GetHashCode();
+      if (IsStarted != false) hash ^= IsStarted.GetHashCode();
       if (FailTime != 0) hash ^= FailTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -220,28 +225,28 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (nextPosition_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(NextPosition);
       }
       if (FailTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(FailTime);
       }
-      if (IsStarted != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsStarted);
-      }
-      if (FinishClueCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FinishClueCount);
-      }
       if (IsFinal != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteBool(IsFinal);
       }
+      if (FinishClueCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(FinishClueCount);
+      }
       if (huntingPair_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(90);
         output.WriteMessage(HuntingPair);
+      }
+      if (IsStarted != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsStarted);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -254,28 +259,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (nextPosition_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(NextPosition);
       }
       if (FailTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(FailTime);
       }
-      if (IsStarted != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsStarted);
-      }
-      if (FinishClueCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FinishClueCount);
-      }
       if (IsFinal != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteBool(IsFinal);
       }
+      if (FinishClueCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(FinishClueCount);
+      }
       if (huntingPair_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(90);
         output.WriteMessage(HuntingPair);
+      }
+      if (IsStarted != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsStarted);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -290,16 +295,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (huntingPair_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntingPair);
       }
-      if (IsStarted != false) {
-        size += 1 + 1;
+      if (FinishClueCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishClueCount);
       }
       if (nextPosition_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextPosition);
       }
-      if (FinishClueCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishClueCount);
-      }
       if (IsFinal != false) {
+        size += 1 + 1;
+      }
+      if (IsStarted != false) {
         size += 1 + 1;
       }
       if (FailTime != 0) {
@@ -323,8 +328,8 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         HuntingPair.MergeFrom(other.HuntingPair);
       }
-      if (other.IsStarted != false) {
-        IsStarted = other.IsStarted;
+      if (other.FinishClueCount != 0) {
+        FinishClueCount = other.FinishClueCount;
       }
       if (other.nextPosition_ != null) {
         if (nextPosition_ == null) {
@@ -332,11 +337,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         NextPosition.MergeFrom(other.NextPosition);
       }
-      if (other.FinishClueCount != 0) {
-        FinishClueCount = other.FinishClueCount;
-      }
       if (other.IsFinal != false) {
         IsFinal = other.IsFinal;
+      }
+      if (other.IsStarted != false) {
+        IsStarted = other.IsStarted;
       }
       if (other.FailTime != 0) {
         FailTime = other.FailTime;
@@ -356,34 +361,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 18: {
             if (nextPosition_ == null) {
               NextPosition = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(NextPosition);
             break;
           }
-          case 56: {
+          case 32: {
             FailTime = input.ReadUInt32();
             break;
           }
-          case 64: {
-            IsStarted = input.ReadBool();
-            break;
-          }
-          case 80: {
-            FinishClueCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 40: {
             IsFinal = input.ReadBool();
             break;
           }
-          case 122: {
+          case 56: {
+            FinishClueCount = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (huntingPair_ == null) {
               HuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
             }
             input.ReadMessage(HuntingPair);
+            break;
+          }
+          case 104: {
+            IsStarted = input.ReadBool();
             break;
           }
         }
@@ -401,34 +406,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 18: {
             if (nextPosition_ == null) {
               NextPosition = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(NextPosition);
             break;
           }
-          case 56: {
+          case 32: {
             FailTime = input.ReadUInt32();
             break;
           }
-          case 64: {
-            IsStarted = input.ReadBool();
-            break;
-          }
-          case 80: {
-            FinishClueCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 40: {
             IsFinal = input.ReadBool();
             break;
           }
-          case 122: {
+          case 56: {
+            FinishClueCount = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (huntingPair_ == null) {
               HuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
             }
             input.ReadMessage(HuntingPair);
+            break;
+          }
+          case 104: {
+            IsStarted = input.ReadBool();
             break;
           }
         }

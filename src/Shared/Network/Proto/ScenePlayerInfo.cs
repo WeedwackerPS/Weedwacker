@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTY2VuZVBsYXllckluZm8ucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJv",
-            "dG8ilAEKD1NjZW5lUGxheWVySW5mbxIQCghzY2VuZV9pZBgKIAEoDRIPCgdw",
-            "ZWVyX2lkGAYgASgNEi0KEm9ubGluZV9wbGF5ZXJfaW5mbxgNIAEoCzIRLk9u",
-            "bGluZVBsYXllckluZm8SFAoMaXNfY29ubmVjdGVkGAIgASgIEgwKBG5hbWUY",
-            "DyABKAkSCwoDdWlkGAggASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVTY2VuZVBsYXllckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8itAEKD1NjZW5l",
+            "UGxheWVySW5mbxILCgN1aWQYAiABKA0SEAoIc2NlbmVfaWQYByABKA0SDwoH",
+            "cGVlcl9pZBgPIAEoDRJNChJvbmxpbmVfcGxheWVyX2luZm8YCSABKAsyMS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk9ubGluZVBsYXllcklu",
+            "Zm8SFAoMaXNfY29ubmVjdGVkGAMgASgIEgwKBG5hbWUYASABKAliBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerInfo), global::Weedwacker.Shared.Network.Proto.ScenePlayerInfo.Parser, new[]{ "SceneId", "PeerId", "OnlinePlayerInfo", "IsConnected", "Name", "Uid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerInfo), global::Weedwacker.Shared.Network.Proto.ScenePlayerInfo.Parser, new[]{ "Uid", "SceneId", "PeerId", "OnlinePlayerInfo", "IsConnected", "Name" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +75,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayerInfo(ScenePlayerInfo other) : this() {
+      uid_ = other.uid_;
       sceneId_ = other.sceneId_;
       peerId_ = other.peerId_;
       onlinePlayerInfo_ = other.onlinePlayerInfo_ != null ? other.onlinePlayerInfo_.Clone() : null;
       isConnected_ = other.isConnected_;
       name_ = other.name_;
-      uid_ = other.uid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +90,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ScenePlayerInfo(this);
     }
 
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 2;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 10;
+    public const int SceneIdFieldNumber = 7;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +115,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "peer_id" field.</summary>
-    public const int PeerIdFieldNumber = 6;
+    public const int PeerIdFieldNumber = 15;
     private uint peerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +127,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "online_player_info" field.</summary>
-    public const int OnlinePlayerInfoFieldNumber = 13;
+    public const int OnlinePlayerInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo onlinePlayerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_connected" field.</summary>
-    public const int IsConnectedFieldNumber = 2;
+    public const int IsConnectedFieldNumber = 3;
     private bool isConnected_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 15;
+    public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -146,18 +159,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return name_; }
       set {
         name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 8;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
       }
     }
 
@@ -176,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Uid != other.Uid) return false;
       if (SceneId != other.SceneId) return false;
       if (PeerId != other.PeerId) return false;
       if (!object.Equals(OnlinePlayerInfo, other.OnlinePlayerInfo)) return false;
       if (IsConnected != other.IsConnected) return false;
       if (Name != other.Name) return false;
-      if (Uid != other.Uid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +190,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (PeerId != 0) hash ^= PeerId.GetHashCode();
       if (onlinePlayerInfo_ != null) hash ^= OnlinePlayerInfo.GetHashCode();
       if (IsConnected != false) hash ^= IsConnected.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,29 +214,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsConnected != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsConnected);
-      }
-      if (PeerId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(PeerId);
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
       }
       if (Uid != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Uid);
       }
+      if (IsConnected != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsConnected);
+      }
       if (SceneId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
       if (onlinePlayerInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(OnlinePlayerInfo);
       }
-      if (Name.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(Name);
+      if (PeerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PeerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,29 +248,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsConnected != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsConnected);
-      }
-      if (PeerId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(PeerId);
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
       }
       if (Uid != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Uid);
       }
+      if (IsConnected != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsConnected);
+      }
       if (SceneId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
       if (onlinePlayerInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(OnlinePlayerInfo);
       }
-      if (Name.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(Name);
+      if (PeerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PeerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -281,6 +282,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
@@ -296,9 +300,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -310,6 +311,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public void MergeFrom(ScenePlayerInfo other) {
       if (other == null) {
         return;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
       }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
@@ -329,9 +333,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -347,31 +348,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
           case 16: {
-            IsConnected = input.ReadBool();
-            break;
-          }
-          case 48: {
-            PeerId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 24: {
+            IsConnected = input.ReadBool();
+            break;
+          }
+          case 56: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             if (onlinePlayerInfo_ == null) {
               OnlinePlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(OnlinePlayerInfo);
             break;
           }
-          case 122: {
-            Name = input.ReadString();
+          case 120: {
+            PeerId = input.ReadUInt32();
             break;
           }
         }
@@ -389,31 +390,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
           case 16: {
-            IsConnected = input.ReadBool();
-            break;
-          }
-          case 48: {
-            PeerId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 24: {
+            IsConnected = input.ReadBool();
+            break;
+          }
+          case 56: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             if (onlinePlayerInfo_ == null) {
               OnlinePlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(OnlinePlayerInfo);
             break;
           }
-          case 122: {
-            Name = input.ReadString();
+          case 120: {
+            PeerId = input.ReadUInt32();
             break;
           }
         }

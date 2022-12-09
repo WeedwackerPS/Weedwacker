@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerMatchInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQbGF5ZXJNYXRjaEluZm9Ob3RpZnkucHJvdG8aD01hdGNoVHlwZS5wcm90",
-            "byL9AQoVUGxheWVyTWF0Y2hJbmZvTm90aWZ5EhAKCG1hdGNoX2lkGAggASgN",
-            "EhgKEG1hdGNoX2JlZ2luX3RpbWUYBCABKA0SEgoKZHVuZ2Vvbl9pZBgKIAEo",
-            "DRIeCgptYXRjaF90eXBlGAsgASgOMgouTWF0Y2hUeXBlEiIKGm1lY2hhbmlj",
-            "dXNfZGlmZmljdWx0X2xldmVsGAwgASgNEhgKEG1hdGNoX3BhcmFtX2xpc3QY",
-            "BiADKA0SIAoYZXN0aW1hdGVfbWF0Y2hfY29zdF90aW1lGAMgASgNEhIKCm1w",
-            "X3BsYXlfaWQYBSABKA0SEAoIaG9zdF91aWQYDSABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtQbGF5ZXJNYXRjaEluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aD01hdGNoVHlwZS5wcm90byKbAgoVUGxheWVy",
+            "TWF0Y2hJbmZvTm90aWZ5EhIKCmR1bmdlb25faWQYBCABKA0SGwoTVW5rMzMw",
+            "MF9CTkVJQU5KQkxCTBgFIAEoDRIbChNVbmszMzAwX09DSUxLSEpQSkVEGAog",
+            "ASgNEhAKCGhvc3RfdWlkGAwgASgNEj4KCm1hdGNoX3R5cGUYDSABKA4yKi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1hdGNoVHlwZRIiChpt",
+            "ZWNoYW5pY3VzX2RpZmZpY3VsdF9sZXZlbBgPIAEoDRISCgptcF9wbGF5X2lk",
+            "GAIgASgNEhAKCG1hdGNoX2lkGAcgASgNEhgKEG1hdGNoX3BhcmFtX2xpc3QY",
+            "CyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MatchTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerMatchInfoNotify), global::Weedwacker.Shared.Network.Proto.PlayerMatchInfoNotify.Parser, new[]{ "MatchId", "MatchBeginTime", "DungeonId", "MatchType", "MechanicusDifficultLevel", "MatchParamList", "EstimateMatchCostTime", "MpPlayId", "HostUid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerMatchInfoNotify), global::Weedwacker.Shared.Network.Proto.PlayerMatchInfoNotify.Parser, new[]{ "DungeonId", "Unk3300BNEIANJBLBL", "Unk3300OCILKHJPJED", "HostUid", "MatchType", "MechanicusDifficultLevel", "MpPlayId", "MatchId", "MatchParamList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4175
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4172;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerMatchInfoNotify : pb::IMessage<PlayerMatchInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,15 +86,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerMatchInfoNotify(PlayerMatchInfoNotify other) : this() {
-      matchId_ = other.matchId_;
-      matchBeginTime_ = other.matchBeginTime_;
       dungeonId_ = other.dungeonId_;
+      unk3300BNEIANJBLBL_ = other.unk3300BNEIANJBLBL_;
+      unk3300OCILKHJPJED_ = other.unk3300OCILKHJPJED_;
+      hostUid_ = other.hostUid_;
       matchType_ = other.matchType_;
       mechanicusDifficultLevel_ = other.mechanicusDifficultLevel_;
-      matchParamList_ = other.matchParamList_.Clone();
-      estimateMatchCostTime_ = other.estimateMatchCostTime_;
       mpPlayId_ = other.mpPlayId_;
-      hostUid_ = other.hostUid_;
+      matchId_ = other.matchId_;
+      matchParamList_ = other.matchParamList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,32 +104,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerMatchInfoNotify(this);
     }
 
-    /// <summary>Field number for the "match_id" field.</summary>
-    public const int MatchIdFieldNumber = 8;
-    private uint matchId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MatchId {
-      get { return matchId_; }
-      set {
-        matchId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "match_begin_time" field.</summary>
-    public const int MatchBeginTimeFieldNumber = 4;
-    private uint matchBeginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MatchBeginTime {
-      get { return matchBeginTime_; }
-      set {
-        matchBeginTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 10;
+    public const int DungeonIdFieldNumber = 4;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +116,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_BNEIANJBLBL" field.</summary>
+    public const int Unk3300BNEIANJBLBLFieldNumber = 5;
+    private uint unk3300BNEIANJBLBL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BNEIANJBLBL {
+      get { return unk3300BNEIANJBLBL_; }
+      set {
+        unk3300BNEIANJBLBL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OCILKHJPJED" field.</summary>
+    public const int Unk3300OCILKHJPJEDFieldNumber = 10;
+    private uint unk3300OCILKHJPJED_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OCILKHJPJED {
+      get { return unk3300OCILKHJPJED_; }
+      set {
+        unk3300OCILKHJPJED_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "host_uid" field.</summary>
+    public const int HostUidFieldNumber = 12;
+    private uint hostUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HostUid {
+      get { return hostUid_; }
+      set {
+        hostUid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "match_type" field.</summary>
-    public const int MatchTypeFieldNumber = 11;
+    public const int MatchTypeFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.MatchType matchType_ = global::Weedwacker.Shared.Network.Proto.MatchType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mechanicus_difficult_level" field.</summary>
-    public const int MechanicusDifficultLevelFieldNumber = 12;
+    public const int MechanicusDifficultLevelFieldNumber = 15;
     private uint mechanicusDifficultLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,31 +176,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "match_param_list" field.</summary>
-    public const int MatchParamListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_matchParamList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> matchParamList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> MatchParamList {
-      get { return matchParamList_; }
-    }
-
-    /// <summary>Field number for the "estimate_match_cost_time" field.</summary>
-    public const int EstimateMatchCostTimeFieldNumber = 3;
-    private uint estimateMatchCostTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EstimateMatchCostTime {
-      get { return estimateMatchCostTime_; }
-      set {
-        estimateMatchCostTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 5;
+    public const int MpPlayIdFieldNumber = 2;
     private uint mpPlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,16 +188,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "host_uid" field.</summary>
-    public const int HostUidFieldNumber = 13;
-    private uint hostUid_;
+    /// <summary>Field number for the "match_id" field.</summary>
+    public const int MatchIdFieldNumber = 7;
+    private uint matchId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HostUid {
-      get { return hostUid_; }
+    public uint MatchId {
+      get { return matchId_; }
       set {
-        hostUid_ = value;
+        matchId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "match_param_list" field.</summary>
+    public const int MatchParamListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_matchParamList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> matchParamList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> MatchParamList {
+      get { return matchParamList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -221,15 +226,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MatchId != other.MatchId) return false;
-      if (MatchBeginTime != other.MatchBeginTime) return false;
       if (DungeonId != other.DungeonId) return false;
+      if (Unk3300BNEIANJBLBL != other.Unk3300BNEIANJBLBL) return false;
+      if (Unk3300OCILKHJPJED != other.Unk3300OCILKHJPJED) return false;
+      if (HostUid != other.HostUid) return false;
       if (MatchType != other.MatchType) return false;
       if (MechanicusDifficultLevel != other.MechanicusDifficultLevel) return false;
-      if(!matchParamList_.Equals(other.matchParamList_)) return false;
-      if (EstimateMatchCostTime != other.EstimateMatchCostTime) return false;
       if (MpPlayId != other.MpPlayId) return false;
-      if (HostUid != other.HostUid) return false;
+      if (MatchId != other.MatchId) return false;
+      if(!matchParamList_.Equals(other.matchParamList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -237,15 +242,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MatchId != 0) hash ^= MatchId.GetHashCode();
-      if (MatchBeginTime != 0) hash ^= MatchBeginTime.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (Unk3300BNEIANJBLBL != 0) hash ^= Unk3300BNEIANJBLBL.GetHashCode();
+      if (Unk3300OCILKHJPJED != 0) hash ^= Unk3300OCILKHJPJED.GetHashCode();
+      if (HostUid != 0) hash ^= HostUid.GetHashCode();
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) hash ^= MatchType.GetHashCode();
       if (MechanicusDifficultLevel != 0) hash ^= MechanicusDifficultLevel.GetHashCode();
-      hash ^= matchParamList_.GetHashCode();
-      if (EstimateMatchCostTime != 0) hash ^= EstimateMatchCostTime.GetHashCode();
       if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
-      if (HostUid != 0) hash ^= HostUid.GetHashCode();
+      if (MatchId != 0) hash ^= MatchId.GetHashCode();
+      hash ^= matchParamList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -264,38 +269,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EstimateMatchCostTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(EstimateMatchCostTime);
-      }
-      if (MatchBeginTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MatchBeginTime);
-      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(MpPlayId);
       }
-      matchParamList_.WriteTo(output, _repeated_matchParamList_codec);
-      if (MatchId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MatchId);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(DungeonId);
       }
+      if (Unk3300BNEIANJBLBL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BNEIANJBLBL);
+      }
+      if (MatchId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MatchId);
+      }
+      if (Unk3300OCILKHJPJED != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OCILKHJPJED);
+      }
+      matchParamList_.WriteTo(output, _repeated_matchParamList_codec);
+      if (HostUid != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(HostUid);
+      }
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteEnum((int) MatchType);
       }
       if (MechanicusDifficultLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(MechanicusDifficultLevel);
-      }
-      if (HostUid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(HostUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -307,38 +312,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EstimateMatchCostTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(EstimateMatchCostTime);
-      }
-      if (MatchBeginTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MatchBeginTime);
-      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(MpPlayId);
       }
-      matchParamList_.WriteTo(ref output, _repeated_matchParamList_codec);
-      if (MatchId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MatchId);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(DungeonId);
       }
+      if (Unk3300BNEIANJBLBL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BNEIANJBLBL);
+      }
+      if (MatchId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MatchId);
+      }
+      if (Unk3300OCILKHJPJED != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OCILKHJPJED);
+      }
+      matchParamList_.WriteTo(ref output, _repeated_matchParamList_codec);
+      if (HostUid != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(HostUid);
+      }
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteEnum((int) MatchType);
       }
       if (MechanicusDifficultLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(MechanicusDifficultLevel);
-      }
-      if (HostUid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(HostUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -350,14 +355,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MatchId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchId);
-      }
-      if (MatchBeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchBeginTime);
-      }
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (Unk3300BNEIANJBLBL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNEIANJBLBL);
+      }
+      if (Unk3300OCILKHJPJED != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OCILKHJPJED);
+      }
+      if (HostUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostUid);
       }
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
@@ -365,16 +373,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (MechanicusDifficultLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusDifficultLevel);
       }
-      size += matchParamList_.CalculateSize(_repeated_matchParamList_codec);
-      if (EstimateMatchCostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EstimateMatchCostTime);
-      }
       if (MpPlayId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
       }
-      if (HostUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostUid);
+      if (MatchId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchId);
       }
+      size += matchParamList_.CalculateSize(_repeated_matchParamList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -387,14 +392,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MatchId != 0) {
-        MatchId = other.MatchId;
-      }
-      if (other.MatchBeginTime != 0) {
-        MatchBeginTime = other.MatchBeginTime;
-      }
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
+      }
+      if (other.Unk3300BNEIANJBLBL != 0) {
+        Unk3300BNEIANJBLBL = other.Unk3300BNEIANJBLBL;
+      }
+      if (other.Unk3300OCILKHJPJED != 0) {
+        Unk3300OCILKHJPJED = other.Unk3300OCILKHJPJED;
+      }
+      if (other.HostUid != 0) {
+        HostUid = other.HostUid;
       }
       if (other.MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
         MatchType = other.MatchType;
@@ -402,16 +410,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.MechanicusDifficultLevel != 0) {
         MechanicusDifficultLevel = other.MechanicusDifficultLevel;
       }
-      matchParamList_.Add(other.matchParamList_);
-      if (other.EstimateMatchCostTime != 0) {
-        EstimateMatchCostTime = other.EstimateMatchCostTime;
-      }
       if (other.MpPlayId != 0) {
         MpPlayId = other.MpPlayId;
       }
-      if (other.HostUid != 0) {
-        HostUid = other.HostUid;
+      if (other.MatchId != 0) {
+        MatchId = other.MatchId;
       }
+      matchParamList_.Add(other.matchParamList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -427,41 +432,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            EstimateMatchCostTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            MatchBeginTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 16: {
             MpPlayId = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
-            matchParamList_.AddEntriesFrom(input, _repeated_matchParamList_codec);
+          case 32: {
+            DungeonId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 40: {
+            Unk3300BNEIANJBLBL = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             MatchId = input.ReadUInt32();
             break;
           }
           case 80: {
-            DungeonId = input.ReadUInt32();
+            Unk3300OCILKHJPJED = input.ReadUInt32();
             break;
           }
+          case 90:
           case 88: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            matchParamList_.AddEntriesFrom(input, _repeated_matchParamList_codec);
             break;
           }
           case 96: {
-            MechanicusDifficultLevel = input.ReadUInt32();
+            HostUid = input.ReadUInt32();
             break;
           }
           case 104: {
-            HostUid = input.ReadUInt32();
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            MechanicusDifficultLevel = input.ReadUInt32();
             break;
           }
         }
@@ -479,41 +484,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            EstimateMatchCostTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            MatchBeginTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 16: {
             MpPlayId = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
-            matchParamList_.AddEntriesFrom(ref input, _repeated_matchParamList_codec);
+          case 32: {
+            DungeonId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 40: {
+            Unk3300BNEIANJBLBL = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             MatchId = input.ReadUInt32();
             break;
           }
           case 80: {
-            DungeonId = input.ReadUInt32();
+            Unk3300OCILKHJPJED = input.ReadUInt32();
             break;
           }
+          case 90:
           case 88: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            matchParamList_.AddEntriesFrom(ref input, _repeated_matchParamList_codec);
             break;
           }
           case 96: {
-            MechanicusDifficultLevel = input.ReadUInt32();
+            HostUid = input.ReadUInt32();
             break;
           }
           case 104: {
-            HostUid = input.ReadUInt32();
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            MechanicusDifficultLevel = input.ReadUInt32();
             break;
           }
         }

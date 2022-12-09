@@ -24,19 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static SeaLampActivityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlTZWFMYW1wQWN0aXZpdHlJbmZvLnByb3RvGhhTZWFMYW1wU2VjdGlvbklu",
-            "Zm8ucHJvdG8ilAIKE1NlYUxhbXBBY3Rpdml0eUluZm8SGgoSaXNfbWVjaGFu",
-            "aWN1c19vcGVuGA4gASgIEhEKCWRheV9pbmRleBgBIAEoDRIuChFzZWN0aW9u",
-            "X2luZm9fbGlzdBgGIAMoCzITLlNlYUxhbXBTZWN0aW9uSW5mbxISCgpwb3B1",
-            "bGFyaXR5GAogASgNEhUKDXNlYV9sYW1wX2NvaW4YDyABKA0SHAoUZmlyc3Rf",
-            "ZGF5X3N0YXJ0X3RpbWUYCyABKA0SFQoNbWVjaGFuaWN1c19pZBgJIAEoDRIj",
-            "Chtpc19tZWNoYW5pY3VzX2ZlYXR1cmVfY2xvc2UYDCABKAgSGQoRaXNfY29u",
-            "dGVudF9jbG9zZWQYBSABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlTZWFMYW1wQWN0aXZpdHlJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhhTZWFMYW1wU2VjdGlvbkluZm8ucHJvdG8irQIK",
+            "E1NlYUxhbXBBY3Rpdml0eUluZm8SEQoJZGF5X2luZGV4GA4gASgNEhkKEWlz",
+            "X2NvbnRlbnRfY2xvc2VkGA8gASgIEk4KEXNlY3Rpb25faW5mb19saXN0GAEg",
+            "AygLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TZWFMYW1w",
+            "U2VjdGlvbkluZm8SFQoNbWVjaGFuaWN1c19pZBgHIAEoDRIcChRmaXJzdF9k",
+            "YXlfc3RhcnRfdGltZRgGIAEoDRIVCg1zZWFfbGFtcF9jb2luGAsgASgNEhIK",
+            "CnBvcHVsYXJpdHkYAiABKA0SGwoTVW5rMzMwMF9KTVBDSkdKSFBJSBgNIAEo",
+            "CBIbChNVbmszMzAwX0JBSklHTkdKQUxHGAkgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo), global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo.Parser, new[]{ "IsMechanicusOpen", "DayIndex", "SectionInfoList", "Popularity", "SeaLampCoin", "FirstDayStartTime", "MechanicusId", "IsMechanicusFeatureClose", "IsContentClosed" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo), global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo.Parser, new[]{ "DayIndex", "IsContentClosed", "SectionInfoList", "MechanicusId", "FirstDayStartTime", "SeaLampCoin", "Popularity", "Unk3300JMPCJGJHPIH", "Unk3300BAJIGNGJALG" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,15 +77,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SeaLampActivityInfo(SeaLampActivityInfo other) : this() {
-      isMechanicusOpen_ = other.isMechanicusOpen_;
       dayIndex_ = other.dayIndex_;
-      sectionInfoList_ = other.sectionInfoList_.Clone();
-      popularity_ = other.popularity_;
-      seaLampCoin_ = other.seaLampCoin_;
-      firstDayStartTime_ = other.firstDayStartTime_;
-      mechanicusId_ = other.mechanicusId_;
-      isMechanicusFeatureClose_ = other.isMechanicusFeatureClose_;
       isContentClosed_ = other.isContentClosed_;
+      sectionInfoList_ = other.sectionInfoList_.Clone();
+      mechanicusId_ = other.mechanicusId_;
+      firstDayStartTime_ = other.firstDayStartTime_;
+      seaLampCoin_ = other.seaLampCoin_;
+      popularity_ = other.popularity_;
+      unk3300JMPCJGJHPIH_ = other.unk3300JMPCJGJHPIH_;
+      unk3300BAJIGNGJALG_ = other.unk3300BAJIGNGJALG_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SeaLampActivityInfo(this);
     }
 
-    /// <summary>Field number for the "is_mechanicus_open" field.</summary>
-    public const int IsMechanicusOpenFieldNumber = 14;
-    private bool isMechanicusOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsMechanicusOpen {
-      get { return isMechanicusOpen_; }
-      set {
-        isMechanicusOpen_ = value;
-      }
-    }
-
     /// <summary>Field number for the "day_index" field.</summary>
-    public const int DayIndexFieldNumber = 1;
+    public const int DayIndexFieldNumber = 14;
     private uint dayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,10 +107,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 15;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
     /// <summary>Field number for the "section_info_list" field.</summary>
-    public const int SectionInfoListFieldNumber = 6;
+    public const int SectionInfoListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfo> _repeated_sectionInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfo.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfo> sectionInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SeaLampSectionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,44 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sectionInfoList_; }
     }
 
-    /// <summary>Field number for the "popularity" field.</summary>
-    public const int PopularityFieldNumber = 10;
-    private uint popularity_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Popularity {
-      get { return popularity_; }
-      set {
-        popularity_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sea_lamp_coin" field.</summary>
-    public const int SeaLampCoinFieldNumber = 15;
-    private uint seaLampCoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SeaLampCoin {
-      get { return seaLampCoin_; }
-      set {
-        seaLampCoin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "first_day_start_time" field.</summary>
-    public const int FirstDayStartTimeFieldNumber = 11;
-    private uint firstDayStartTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FirstDayStartTime {
-      get { return firstDayStartTime_; }
-      set {
-        firstDayStartTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mechanicus_id" field.</summary>
-    public const int MechanicusIdFieldNumber = 9;
+    public const int MechanicusIdFieldNumber = 7;
     private uint mechanicusId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -178,27 +142,63 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_mechanicus_feature_close" field.</summary>
-    public const int IsMechanicusFeatureCloseFieldNumber = 12;
-    private bool isMechanicusFeatureClose_;
+    /// <summary>Field number for the "first_day_start_time" field.</summary>
+    public const int FirstDayStartTimeFieldNumber = 6;
+    private uint firstDayStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsMechanicusFeatureClose {
-      get { return isMechanicusFeatureClose_; }
+    public uint FirstDayStartTime {
+      get { return firstDayStartTime_; }
       set {
-        isMechanicusFeatureClose_ = value;
+        firstDayStartTime_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 5;
-    private bool isContentClosed_;
+    /// <summary>Field number for the "sea_lamp_coin" field.</summary>
+    public const int SeaLampCoinFieldNumber = 11;
+    private uint seaLampCoin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsContentClosed {
-      get { return isContentClosed_; }
+    public uint SeaLampCoin {
+      get { return seaLampCoin_; }
       set {
-        isContentClosed_ = value;
+        seaLampCoin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "popularity" field.</summary>
+    public const int PopularityFieldNumber = 2;
+    private uint popularity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Popularity {
+      get { return popularity_; }
+      set {
+        popularity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JMPCJGJHPIH" field.</summary>
+    public const int Unk3300JMPCJGJHPIHFieldNumber = 13;
+    private bool unk3300JMPCJGJHPIH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300JMPCJGJHPIH {
+      get { return unk3300JMPCJGJHPIH_; }
+      set {
+        unk3300JMPCJGJHPIH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BAJIGNGJALG" field.</summary>
+    public const int Unk3300BAJIGNGJALGFieldNumber = 9;
+    private bool unk3300BAJIGNGJALG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300BAJIGNGJALG {
+      get { return unk3300BAJIGNGJALG_; }
+      set {
+        unk3300BAJIGNGJALG_ = value;
       }
     }
 
@@ -217,15 +217,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsMechanicusOpen != other.IsMechanicusOpen) return false;
       if (DayIndex != other.DayIndex) return false;
-      if(!sectionInfoList_.Equals(other.sectionInfoList_)) return false;
-      if (Popularity != other.Popularity) return false;
-      if (SeaLampCoin != other.SeaLampCoin) return false;
-      if (FirstDayStartTime != other.FirstDayStartTime) return false;
-      if (MechanicusId != other.MechanicusId) return false;
-      if (IsMechanicusFeatureClose != other.IsMechanicusFeatureClose) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
+      if(!sectionInfoList_.Equals(other.sectionInfoList_)) return false;
+      if (MechanicusId != other.MechanicusId) return false;
+      if (FirstDayStartTime != other.FirstDayStartTime) return false;
+      if (SeaLampCoin != other.SeaLampCoin) return false;
+      if (Popularity != other.Popularity) return false;
+      if (Unk3300JMPCJGJHPIH != other.Unk3300JMPCJGJHPIH) return false;
+      if (Unk3300BAJIGNGJALG != other.Unk3300BAJIGNGJALG) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -233,15 +233,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsMechanicusOpen != false) hash ^= IsMechanicusOpen.GetHashCode();
       if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
-      hash ^= sectionInfoList_.GetHashCode();
-      if (Popularity != 0) hash ^= Popularity.GetHashCode();
-      if (SeaLampCoin != 0) hash ^= SeaLampCoin.GetHashCode();
-      if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
-      if (MechanicusId != 0) hash ^= MechanicusId.GetHashCode();
-      if (IsMechanicusFeatureClose != false) hash ^= IsMechanicusFeatureClose.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= sectionInfoList_.GetHashCode();
+      if (MechanicusId != 0) hash ^= MechanicusId.GetHashCode();
+      if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
+      if (SeaLampCoin != 0) hash ^= SeaLampCoin.GetHashCode();
+      if (Popularity != 0) hash ^= Popularity.GetHashCode();
+      if (Unk3300JMPCJGJHPIH != false) hash ^= Unk3300JMPCJGJHPIH.GetHashCode();
+      if (Unk3300BAJIGNGJALG != false) hash ^= Unk3300BAJIGNGJALG.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -260,38 +260,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DayIndex != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(DayIndex);
-      }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsContentClosed);
-      }
       sectionInfoList_.WriteTo(output, _repeated_sectionInfoList_codec);
-      if (MechanicusId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MechanicusId);
-      }
       if (Popularity != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(Popularity);
       }
       if (FirstDayStartTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteUInt32(FirstDayStartTime);
       }
-      if (IsMechanicusFeatureClose != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsMechanicusFeatureClose);
+      if (MechanicusId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MechanicusId);
       }
-      if (IsMechanicusOpen != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsMechanicusOpen);
+      if (Unk3300BAJIGNGJALG != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300BAJIGNGJALG);
       }
       if (SeaLampCoin != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(SeaLampCoin);
+      }
+      if (Unk3300JMPCJGJHPIH != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Unk3300JMPCJGJHPIH);
+      }
+      if (DayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DayIndex);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -303,38 +303,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DayIndex != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(DayIndex);
-      }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsContentClosed);
-      }
       sectionInfoList_.WriteTo(ref output, _repeated_sectionInfoList_codec);
-      if (MechanicusId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MechanicusId);
-      }
       if (Popularity != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(Popularity);
       }
       if (FirstDayStartTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteUInt32(FirstDayStartTime);
       }
-      if (IsMechanicusFeatureClose != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsMechanicusFeatureClose);
+      if (MechanicusId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MechanicusId);
       }
-      if (IsMechanicusOpen != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(IsMechanicusOpen);
+      if (Unk3300BAJIGNGJALG != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300BAJIGNGJALG);
       }
       if (SeaLampCoin != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(SeaLampCoin);
+      }
+      if (Unk3300JMPCJGJHPIH != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Unk3300JMPCJGJHPIH);
+      }
+      if (DayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DayIndex);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -346,29 +346,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsMechanicusOpen != false) {
-        size += 1 + 1;
-      }
       if (DayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
       }
-      size += sectionInfoList_.CalculateSize(_repeated_sectionInfoList_codec);
-      if (Popularity != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Popularity);
+      if (IsContentClosed != false) {
+        size += 1 + 1;
       }
-      if (SeaLampCoin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SeaLampCoin);
+      size += sectionInfoList_.CalculateSize(_repeated_sectionInfoList_codec);
+      if (MechanicusId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusId);
       }
       if (FirstDayStartTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstDayStartTime);
       }
-      if (MechanicusId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusId);
+      if (SeaLampCoin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SeaLampCoin);
       }
-      if (IsMechanicusFeatureClose != false) {
+      if (Popularity != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Popularity);
+      }
+      if (Unk3300JMPCJGJHPIH != false) {
         size += 1 + 1;
       }
-      if (IsContentClosed != false) {
+      if (Unk3300BAJIGNGJALG != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -383,30 +383,30 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsMechanicusOpen != false) {
-        IsMechanicusOpen = other.IsMechanicusOpen;
-      }
       if (other.DayIndex != 0) {
         DayIndex = other.DayIndex;
       }
-      sectionInfoList_.Add(other.sectionInfoList_);
-      if (other.Popularity != 0) {
-        Popularity = other.Popularity;
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
       }
-      if (other.SeaLampCoin != 0) {
-        SeaLampCoin = other.SeaLampCoin;
+      sectionInfoList_.Add(other.sectionInfoList_);
+      if (other.MechanicusId != 0) {
+        MechanicusId = other.MechanicusId;
       }
       if (other.FirstDayStartTime != 0) {
         FirstDayStartTime = other.FirstDayStartTime;
       }
-      if (other.MechanicusId != 0) {
-        MechanicusId = other.MechanicusId;
+      if (other.SeaLampCoin != 0) {
+        SeaLampCoin = other.SeaLampCoin;
       }
-      if (other.IsMechanicusFeatureClose != false) {
-        IsMechanicusFeatureClose = other.IsMechanicusFeatureClose;
+      if (other.Popularity != 0) {
+        Popularity = other.Popularity;
       }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
+      if (other.Unk3300JMPCJGJHPIH != false) {
+        Unk3300JMPCJGJHPIH = other.Unk3300JMPCJGJHPIH;
+      }
+      if (other.Unk3300BAJIGNGJALG != false) {
+        Unk3300BAJIGNGJALG = other.Unk3300BAJIGNGJALG;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -423,40 +423,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            DayIndex = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsContentClosed = input.ReadBool();
-            break;
-          }
-          case 50: {
+          case 10: {
             sectionInfoList_.AddEntriesFrom(input, _repeated_sectionInfoList_codec);
             break;
           }
-          case 72: {
-            MechanicusId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 16: {
             Popularity = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 48: {
             FirstDayStartTime = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IsMechanicusFeatureClose = input.ReadBool();
+          case 56: {
+            MechanicusId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300BAJIGNGJALG = input.ReadBool();
+            break;
+          }
+          case 88: {
+            SeaLampCoin = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300JMPCJGJHPIH = input.ReadBool();
             break;
           }
           case 112: {
-            IsMechanicusOpen = input.ReadBool();
+            DayIndex = input.ReadUInt32();
             break;
           }
           case 120: {
-            SeaLampCoin = input.ReadUInt32();
+            IsContentClosed = input.ReadBool();
             break;
           }
         }
@@ -474,40 +474,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            DayIndex = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsContentClosed = input.ReadBool();
-            break;
-          }
-          case 50: {
+          case 10: {
             sectionInfoList_.AddEntriesFrom(ref input, _repeated_sectionInfoList_codec);
             break;
           }
-          case 72: {
-            MechanicusId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 16: {
             Popularity = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 48: {
             FirstDayStartTime = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IsMechanicusFeatureClose = input.ReadBool();
+          case 56: {
+            MechanicusId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300BAJIGNGJALG = input.ReadBool();
+            break;
+          }
+          case 88: {
+            SeaLampCoin = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300JMPCJGJHPIH = input.ReadBool();
             break;
           }
           case 112: {
-            IsMechanicusOpen = input.ReadBool();
+            DayIndex = input.ReadUInt32();
             break;
           }
           case 120: {
-            SeaLampCoin = input.ReadUInt32();
+            IsContentClosed = input.ReadBool();
             break;
           }
         }

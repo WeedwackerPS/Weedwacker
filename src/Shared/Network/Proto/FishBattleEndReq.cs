@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishBattleEndReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZGaXNoQmF0dGxlRW5kUmVxLnByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnBy",
-            "b3RvIm0KEEZpc2hCYXR0bGVFbmRSZXESFgoObWF4X2JvbnVzX3RpbWUYAyAB",
-            "KA0SKAoNYmF0dGxlX3Jlc3VsdBgKIAEoDjIRLkZpc2hCYXR0bGVSZXN1bHQS",
-            "FwoPaXNfYWx3YXlzX2JvbnVzGAsgASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZGaXNoQmF0dGxlRW5kUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnByb3RvIo0BChBGaXNo",
+            "QmF0dGxlRW5kUmVxEkgKDWJhdHRsZV9yZXN1bHQYCyABKA4yMS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZpc2hCYXR0bGVSZXN1bHQSFwoP",
+            "aXNfYWx3YXlzX2JvbnVzGAMgASgIEhYKDm1heF9ib251c190aW1lGAIgASgN",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FishBattleResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndReq), global::Weedwacker.Shared.Network.Proto.FishBattleEndReq.Parser, new[]{ "MaxBonusTime", "BattleResult", "IsAlwaysBonus" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndReq), global::Weedwacker.Shared.Network.Proto.FishBattleEndReq.Parser, new[]{ "BattleResult", "IsAlwaysBonus", "MaxBonusTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5841
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5808;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FishBattleEndReq : pb::IMessage<FishBattleEndReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishBattleEndReq(FishBattleEndReq other) : this() {
-      maxBonusTime_ = other.maxBonusTime_;
       battleResult_ = other.battleResult_;
       isAlwaysBonus_ = other.isAlwaysBonus_;
+      maxBonusTime_ = other.maxBonusTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FishBattleEndReq(this);
     }
 
-    /// <summary>Field number for the "max_bonus_time" field.</summary>
-    public const int MaxBonusTimeFieldNumber = 3;
-    private uint maxBonusTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxBonusTime {
-      get { return maxBonusTime_; }
-      set {
-        maxBonusTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "battle_result" field.</summary>
-    public const int BattleResultFieldNumber = 10;
+    public const int BattleResultFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.FishBattleResult battleResult_ = global::Weedwacker.Shared.Network.Proto.FishBattleResult.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_always_bonus" field.</summary>
-    public const int IsAlwaysBonusFieldNumber = 11;
+    public const int IsAlwaysBonusFieldNumber = 3;
     private bool isAlwaysBonus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isAlwaysBonus_; }
       set {
         isAlwaysBonus_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_bonus_time" field.</summary>
+    public const int MaxBonusTimeFieldNumber = 2;
+    private uint maxBonusTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxBonusTime {
+      get { return maxBonusTime_; }
+      set {
+        maxBonusTime_ = value;
       }
     }
 
@@ -142,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MaxBonusTime != other.MaxBonusTime) return false;
       if (BattleResult != other.BattleResult) return false;
       if (IsAlwaysBonus != other.IsAlwaysBonus) return false;
+      if (MaxBonusTime != other.MaxBonusTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MaxBonusTime != 0) hash ^= MaxBonusTime.GetHashCode();
       if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) hash ^= BattleResult.GetHashCode();
       if (IsAlwaysBonus != false) hash ^= IsAlwaysBonus.GetHashCode();
+      if (MaxBonusTime != 0) hash ^= MaxBonusTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,16 +179,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MaxBonusTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(MaxBonusTime);
       }
-      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) BattleResult);
-      }
       if (IsAlwaysBonus != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteBool(IsAlwaysBonus);
+      }
+      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) BattleResult);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -196,16 +201,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MaxBonusTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(MaxBonusTime);
       }
-      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) BattleResult);
-      }
       if (IsAlwaysBonus != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteBool(IsAlwaysBonus);
+      }
+      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) BattleResult);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MaxBonusTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBonusTime);
-      }
       if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BattleResult);
       }
       if (IsAlwaysBonus != false) {
         size += 1 + 1;
+      }
+      if (MaxBonusTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBonusTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MaxBonusTime != 0) {
-        MaxBonusTime = other.MaxBonusTime;
-      }
       if (other.BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
         BattleResult = other.BattleResult;
       }
       if (other.IsAlwaysBonus != false) {
         IsAlwaysBonus = other.IsAlwaysBonus;
+      }
+      if (other.MaxBonusTime != 0) {
+        MaxBonusTime = other.MaxBonusTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,16 +267,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 16: {
             MaxBonusTime = input.ReadUInt32();
             break;
           }
-          case 80: {
-            BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
+          case 24: {
+            IsAlwaysBonus = input.ReadBool();
             break;
           }
           case 88: {
-            IsAlwaysBonus = input.ReadBool();
+            BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
             break;
           }
         }
@@ -289,16 +294,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 16: {
             MaxBonusTime = input.ReadUInt32();
             break;
           }
-          case 80: {
-            BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
+          case 24: {
+            IsAlwaysBonus = input.ReadBool();
             break;
           }
           case 88: {
-            IsAlwaysBonus = input.ReadBool();
+            BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
             break;
           }
         }

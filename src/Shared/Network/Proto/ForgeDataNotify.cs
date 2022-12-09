@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVGb3JnZURhdGFOb3RpZnkucHJvdG8aFEZvcmdlUXVldWVEYXRhLnByb3Rv",
-            "IsQBCg9Gb3JnZURhdGFOb3RpZnkSFQoNZm9yZ2VfaWRfbGlzdBgFIAMoDRI8",
-            "Cg9mb3JnZV9xdWV1ZV9tYXAYCCADKAsyIy5Gb3JnZURhdGFOb3RpZnkuRm9y",
-            "Z2VRdWV1ZU1hcEVudHJ5EhUKDW1heF9xdWV1ZV9udW0YDiABKA0aRQoSRm9y",
-            "Z2VRdWV1ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIeCgV2YWx1ZRgCIAEoCzIP",
-            "LkZvcmdlUXVldWVEYXRhOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVGb3JnZURhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFEZvcmdlUXVldWVEYXRhLnByb3RvIoQCCg9Gb3JnZURh",
+            "dGFOb3RpZnkSFQoNZm9yZ2VfaWRfbGlzdBgNIAMoDRJcCg9mb3JnZV9xdWV1",
+            "ZV9tYXAYCCADKAsyQy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkZvcmdlRGF0YU5vdGlmeS5Gb3JnZVF1ZXVlTWFwRW50cnkSFQoNbWF4X3F1",
+            "ZXVlX251bRgLIAEoDRplChJGb3JnZVF1ZXVlTWFwRW50cnkSCwoDa2V5GAEg",
+            "ASgNEj4KBXZhbHVlGAIgASgLMi8uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5Gb3JnZVF1ZXVlRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForgeQueueDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 680
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 674;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ForgeDataNotify : pb::IMessage<ForgeDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "forge_id_list" field.</summary>
-    public const int ForgeIdListFieldNumber = 5;
+    public const int ForgeIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_forgeIdList_codec
-        = pb::FieldCodec.ForUInt32(42);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> forgeIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "max_queue_num" field.</summary>
-    public const int MaxQueueNumFieldNumber = 14;
+    public const int MaxQueueNumFieldNumber = 11;
     private uint maxQueueNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      forgeIdList_.WriteTo(output, _repeated_forgeIdList_codec);
       forgeQueueMap_.WriteTo(output, _map_forgeQueueMap_codec);
       if (MaxQueueNum != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaxQueueNum);
       }
+      forgeIdList_.WriteTo(output, _repeated_forgeIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -188,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      forgeIdList_.WriteTo(ref output, _repeated_forgeIdList_codec);
       forgeQueueMap_.WriteTo(ref output, _map_forgeQueueMap_codec);
       if (MaxQueueNum != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaxQueueNum);
       }
+      forgeIdList_.WriteTo(ref output, _repeated_forgeIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -241,17 +246,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42:
-          case 40: {
-            forgeIdList_.AddEntriesFrom(input, _repeated_forgeIdList_codec);
-            break;
-          }
           case 66: {
             forgeQueueMap_.AddEntriesFrom(input, _map_forgeQueueMap_codec);
             break;
           }
-          case 112: {
+          case 88: {
             MaxQueueNum = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            forgeIdList_.AddEntriesFrom(input, _repeated_forgeIdList_codec);
             break;
           }
         }
@@ -269,17 +274,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42:
-          case 40: {
-            forgeIdList_.AddEntriesFrom(ref input, _repeated_forgeIdList_codec);
-            break;
-          }
           case 66: {
             forgeQueueMap_.AddEntriesFrom(ref input, _map_forgeQueueMap_codec);
             break;
           }
-          case 112: {
+          case 88: {
             MaxQueueNum = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            forgeIdList_.AddEntriesFrom(ref input, _repeated_forgeIdList_codec);
             break;
           }
         }

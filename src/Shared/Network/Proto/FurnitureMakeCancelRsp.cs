@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static FurnitureMakeCancelRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxGdXJuaXR1cmVNYWtlQ2FuY2VsUnNwLnByb3RvGhdGdXJuaXR1cmVNYWtl",
-            "U2xvdC5wcm90byJrChZGdXJuaXR1cmVNYWtlQ2FuY2VsUnNwEg8KB3JldGNv",
-            "ZGUYAyABKAUSDwoHbWFrZV9pZBgCIAEoDRIvChNmdXJuaXR1cmVfbWFrZV9z",
-            "bG90GA8gASgLMhIuRnVybml0dXJlTWFrZVNsb3RCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxGdXJuaXR1cmVNYWtlQ2FuY2VsUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhdGdXJuaXR1cmVNYWtlU2xvdC5wcm90byKL",
+            "AQoWRnVybml0dXJlTWFrZUNhbmNlbFJzcBIPCgdyZXRjb2RlGAggASgFEg8K",
+            "B21ha2VfaWQYBiABKA0STwoTZnVybml0dXJlX21ha2Vfc2xvdBgEIAEoCzIy",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRnVybml0dXJlTWFr",
+            "ZVNsb3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FurnitureMakeSlotReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4683
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4676;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FurnitureMakeCancelRsp : pb::IMessage<FurnitureMakeCancelRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "make_id" field.</summary>
-    public const int MakeIdFieldNumber = 2;
+    public const int MakeIdFieldNumber = 6;
     private uint makeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "furniture_make_slot" field.</summary>
-    public const int FurnitureMakeSlotFieldNumber = 15;
+    public const int FurnitureMakeSlotFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.FurnitureMakeSlot furnitureMakeSlot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (furnitureMakeSlot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(FurnitureMakeSlot);
+      }
       if (MakeId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(48);
         output.WriteUInt32(MakeId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
-      }
-      if (furnitureMakeSlot_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(FurnitureMakeSlot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (furnitureMakeSlot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(FurnitureMakeSlot);
+      }
       if (MakeId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(48);
         output.WriteUInt32(MakeId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
-      }
-      if (furnitureMakeSlot_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(FurnitureMakeSlot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            MakeId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 122: {
+          case 34: {
             if (furnitureMakeSlot_ == null) {
               FurnitureMakeSlot = new global::Weedwacker.Shared.Network.Proto.FurnitureMakeSlot();
             }
             input.ReadMessage(FurnitureMakeSlot);
+            break;
+          }
+          case 48: {
+            MakeId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -294,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            MakeId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 122: {
+          case 34: {
             if (furnitureMakeSlot_ == null) {
               FurnitureMakeSlot = new global::Weedwacker.Shared.Network.Proto.FurnitureMakeSlot();
             }
             input.ReadMessage(FurnitureMakeSlot);
+            break;
+          }
+          case 48: {
+            MakeId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

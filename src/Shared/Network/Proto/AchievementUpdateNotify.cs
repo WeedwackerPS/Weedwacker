@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AchievementUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BY2hpZXZlbWVudFVwZGF0ZU5vdGlmeS5wcm90bxoRQWNoaWV2ZW1lbnQu",
-            "cHJvdG8iQQoXQWNoaWV2ZW1lbnRVcGRhdGVOb3RpZnkSJgoQYWNoaWV2ZW1l",
-            "bnRfbGlzdBgOIAMoCzIMLkFjaGlldmVtZW50QiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1BY2hpZXZlbWVudFVwZGF0ZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoRQWNoaWV2ZW1lbnQucHJvdG8iYQoXQWNo",
+            "aWV2ZW1lbnRVcGRhdGVOb3RpZnkSRgoQYWNoaWV2ZW1lbnRfbGlzdBgLIAMo",
+            "CzIsLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWNoaWV2ZW1l",
+            "bnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AchievementReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2668
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2691;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AchievementUpdateNotify : pb::IMessage<AchievementUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "achievement_list" field.</summary>
-    public const int AchievementListFieldNumber = 14;
+    public const int AchievementListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Achievement> _repeated_achievementList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.Achievement.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.Achievement.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement> achievementList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 90: {
             achievementList_.AddEntriesFrom(input, _repeated_achievementList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 90: {
             achievementList_.AddEntriesFrom(ref input, _repeated_achievementList_codec);
             break;
           }

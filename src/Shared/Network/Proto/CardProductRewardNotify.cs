@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CardProductRewardNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1DYXJkUHJvZHVjdFJld2FyZE5vdGlmeS5wcm90byJRChdDYXJkUHJvZHVj",
-            "dFJld2FyZE5vdGlmeRINCgVoY29pbhgGIAEoDRISCgpwcm9kdWN0X2lkGA4g",
-            "ASgJEhMKC3JlbWFpbl9kYXlzGAEgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1DYXJkUHJvZHVjdFJld2FyZE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJRChdDYXJkUHJvZHVjdFJld2FyZE5vdGlm",
+            "eRINCgVoY29pbhgGIAEoDRISCgpwcm9kdWN0X2lkGAMgASgJEhMKC3JlbWFp",
+            "bl9kYXlzGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4107
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4135;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CardProductRewardNotify : pb::IMessage<CardProductRewardNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "product_id" field.</summary>
-    public const int ProductIdFieldNumber = 14;
+    public const int ProductIdFieldNumber = 3;
     private string productId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "remain_days" field.</summary>
-    public const int RemainDaysFieldNumber = 1;
+    public const int RemainDaysFieldNumber = 4;
     private uint remainDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ProductId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ProductId);
+      }
       if (RemainDays != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteUInt32(RemainDays);
       }
       if (Hcoin != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(Hcoin);
-      }
-      if (ProductId.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(ProductId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ProductId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ProductId);
+      }
       if (RemainDays != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteUInt32(RemainDays);
       }
       if (Hcoin != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(Hcoin);
-      }
-      if (ProductId.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(ProductId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 26: {
+            ProductId = input.ReadString();
+            break;
+          }
+          case 32: {
             RemainDays = input.ReadUInt32();
             break;
           }
           case 48: {
             Hcoin = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            ProductId = input.ReadString();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 26: {
+            ProductId = input.ReadString();
+            break;
+          }
+          case 32: {
             RemainDays = input.ReadUInt32();
             break;
           }
           case 48: {
             Hcoin = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            ProductId = input.ReadString();
             break;
           }
         }

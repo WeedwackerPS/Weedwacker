@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaUpInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFHYWNoYVVwSW5mby5wcm90byI9CgtHYWNoYVVwSW5mbxIYChBpdGVtX3Bh",
-            "cmVudF90eXBlGAcgASgNEhQKDGl0ZW1faWRfbGlzdBgPIAMoDUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChFHYWNoYVVwSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byI9CgtHYWNoYVVwSW5mbxIYChBpdGVtX3BhcmVudF90eXBlGA8g",
+            "ASgNEhQKDGl0ZW1faWRfbGlzdBgGIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "item_parent_type" field.</summary>
-    public const int ItemParentTypeFieldNumber = 7;
+    public const int ItemParentTypeFieldNumber = 15;
     private uint itemParentType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "item_id_list" field.</summary>
-    public const int ItemIdListFieldNumber = 15;
+    public const int ItemIdListFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_itemIdList_codec
-        = pb::FieldCodec.ForUInt32(122);
+        = pb::FieldCodec.ForUInt32(50);
     private readonly pbc::RepeatedField<uint> itemIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      itemIdList_.WriteTo(output, _repeated_itemIdList_codec);
       if (ItemParentType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(ItemParentType);
       }
-      itemIdList_.WriteTo(output, _repeated_itemIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      itemIdList_.WriteTo(ref output, _repeated_itemIdList_codec);
       if (ItemParentType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(ItemParentType);
       }
-      itemIdList_.WriteTo(ref output, _repeated_itemIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            ItemParentType = input.ReadUInt32();
+          case 50:
+          case 48: {
+            itemIdList_.AddEntriesFrom(input, _repeated_itemIdList_codec);
             break;
           }
-          case 122:
           case 120: {
-            itemIdList_.AddEntriesFrom(input, _repeated_itemIdList_codec);
+            ItemParentType = input.ReadUInt32();
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            ItemParentType = input.ReadUInt32();
+          case 50:
+          case 48: {
+            itemIdList_.AddEntriesFrom(ref input, _repeated_itemIdList_codec);
             break;
           }
-          case 122:
           case 120: {
-            itemIdList_.AddEntriesFrom(ref input, _repeated_itemIdList_codec);
+            ItemParentType = input.ReadUInt32();
             break;
           }
         }

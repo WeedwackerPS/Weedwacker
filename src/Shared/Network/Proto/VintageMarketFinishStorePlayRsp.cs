@@ -24,22 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketFinishStorePlayRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLnByb3RvIp8DCh9W",
-            "aW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwEh4KFnRyaWdnZXJfZW52",
-            "X2V2ZW50X2xpc3QYCCADKA0SEwoLc3RvcmVfcm91bmQYDCABKA0SHgoWdHJp",
-            "Z2dlcl9ucGNfZXZlbnRfbGlzdBgKIAMoDRIbChNsb3dfYXR0cl9zdG9yZV9s",
-            "aXN0GAsgAygNEhsKE3JvdW5kX2NvaW5fYl9pbmNvbWUYCSABKA0SGgoScm91",
-            "bmRfZGVsdGFfY29pbl9jGAEgASgNEk4KEHN0b3JlX2luY29tZV9tYXAYAyAD",
-            "KAsyNC5WaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLlN0b3JlSW5j",
-            "b21lTWFwRW50cnkSDwoHcmV0Y29kZRgHIAEoBRIaChJyb3VuZF90b3RhbF9p",
-            "bmNvbWUYDiABKA0SHQoVZGlzcGxheV9yZXR1cm5fY29pbl9iGA8gASgNGjUK",
-            "E1N0b3JlSW5jb21lTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIg",
-            "ASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIrkDCh9WaW50YWdlTWFya2V0",
+            "RmluaXNoU3RvcmVQbGF5UnNwEhMKC3N0b3JlX3JvdW5kGAogASgNEhsKE1Vu",
+            "azMzMDBfSEpJSElPSUdBUFAYDyADKA0SDwoHcmV0Y29kZRgJIAEoBRJuChBz",
+            "dG9yZV9pbmNvbWVfbWFwGAIgAygLMlQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5WaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLlN0",
+            "b3JlSW5jb21lTWFwRW50cnkSGwoTVW5rMzMwMF9ESklMRUxGSEZIShgGIAEo",
+            "DRIbChNVbmszMzAwX09DSU1LRVBKT09MGAMgAygNEhsKE1VuazMzMDBfR0NE",
+            "Tk9QSkVJQkcYBCABKA0SGwoTVW5rMzMwMF9CREFJT05FUEtJSxgBIAMoDRIb",
+            "ChNVbmszMzAwX0RHRUNKT0tNREdOGAsgASgNEhsKE1VuazMzMDBfRExORkNC",
+            "UERCQkgYDiABKA0aNQoTU3RvcmVJbmNvbWVNYXBFbnRyeRILCgNrZXkYASAB",
+            "KA0SDQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketFinishStorePlayRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketFinishStorePlayRsp.Parser, new[]{ "TriggerEnvEventList", "StoreRound", "TriggerNpcEventList", "LowAttrStoreList", "RoundCoinBIncome", "RoundDeltaCoinC", "StoreIncomeMap", "Retcode", "RoundTotalIncome", "DisplayReturnCoinB" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketFinishStorePlayRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketFinishStorePlayRsp.Parser, new[]{ "StoreRound", "Unk3300HJIHIOIGAPP", "Retcode", "StoreIncomeMap", "Unk3300DJILELFHFHJ", "Unk3300OCIMKEPJOOL", "Unk3300GCDNOPJEIBG", "Unk3300BDAIONEPKIK", "Unk3300DGECJOKMDGN", "Unk3300DLNFCBPDBBH" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -47,9 +47,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23462
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20941;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketFinishStorePlayRsp : pb::IMessage<VintageMarketFinishStorePlayRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,16 +89,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketFinishStorePlayRsp(VintageMarketFinishStorePlayRsp other) : this() {
-      triggerEnvEventList_ = other.triggerEnvEventList_.Clone();
       storeRound_ = other.storeRound_;
-      triggerNpcEventList_ = other.triggerNpcEventList_.Clone();
-      lowAttrStoreList_ = other.lowAttrStoreList_.Clone();
-      roundCoinBIncome_ = other.roundCoinBIncome_;
-      roundDeltaCoinC_ = other.roundDeltaCoinC_;
-      storeIncomeMap_ = other.storeIncomeMap_.Clone();
+      unk3300HJIHIOIGAPP_ = other.unk3300HJIHIOIGAPP_.Clone();
       retcode_ = other.retcode_;
-      roundTotalIncome_ = other.roundTotalIncome_;
-      displayReturnCoinB_ = other.displayReturnCoinB_;
+      storeIncomeMap_ = other.storeIncomeMap_.Clone();
+      unk3300DJILELFHFHJ_ = other.unk3300DJILELFHFHJ_;
+      unk3300OCIMKEPJOOL_ = other.unk3300OCIMKEPJOOL_.Clone();
+      unk3300GCDNOPJEIBG_ = other.unk3300GCDNOPJEIBG_;
+      unk3300BDAIONEPKIK_ = other.unk3300BDAIONEPKIK_.Clone();
+      unk3300DGECJOKMDGN_ = other.unk3300DGECJOKMDGN_;
+      unk3300DLNFCBPDBBH_ = other.unk3300DLNFCBPDBBH_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,19 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketFinishStorePlayRsp(this);
     }
 
-    /// <summary>Field number for the "trigger_env_event_list" field.</summary>
-    public const int TriggerEnvEventListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_triggerEnvEventList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> triggerEnvEventList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TriggerEnvEventList {
-      get { return triggerEnvEventList_; }
-    }
-
     /// <summary>Field number for the "store_round" field.</summary>
-    public const int StoreRoundFieldNumber = 12;
+    public const int StoreRoundFieldNumber = 10;
     private uint storeRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,65 +120,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "trigger_npc_event_list" field.</summary>
-    public const int TriggerNpcEventListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_triggerNpcEventList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> triggerNpcEventList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_HJIHIOIGAPP" field.</summary>
+    public const int Unk3300HJIHIOIGAPPFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HJIHIOIGAPP_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300HJIHIOIGAPP_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TriggerNpcEventList {
-      get { return triggerNpcEventList_; }
-    }
-
-    /// <summary>Field number for the "low_attr_store_list" field.</summary>
-    public const int LowAttrStoreListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_lowAttrStoreList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> lowAttrStoreList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LowAttrStoreList {
-      get { return lowAttrStoreList_; }
-    }
-
-    /// <summary>Field number for the "round_coin_b_income" field.</summary>
-    public const int RoundCoinBIncomeFieldNumber = 9;
-    private uint roundCoinBIncome_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RoundCoinBIncome {
-      get { return roundCoinBIncome_; }
-      set {
-        roundCoinBIncome_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "round_delta_coin_c" field.</summary>
-    public const int RoundDeltaCoinCFieldNumber = 1;
-    private uint roundDeltaCoinC_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RoundDeltaCoinC {
-      get { return roundDeltaCoinC_; }
-      set {
-        roundDeltaCoinC_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "store_income_map" field.</summary>
-    public const int StoreIncomeMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_storeIncomeMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> storeIncomeMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> StoreIncomeMap {
-      get { return storeIncomeMap_; }
+    public pbc::RepeatedField<uint> Unk3300HJIHIOIGAPP {
+      get { return unk3300HJIHIOIGAPP_; }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 9;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -196,27 +143,84 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "round_total_income" field.</summary>
-    public const int RoundTotalIncomeFieldNumber = 14;
-    private uint roundTotalIncome_;
+    /// <summary>Field number for the "store_income_map" field.</summary>
+    public const int StoreIncomeMapFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_storeIncomeMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> storeIncomeMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RoundTotalIncome {
-      get { return roundTotalIncome_; }
+    public pbc::MapField<uint, uint> StoreIncomeMap {
+      get { return storeIncomeMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DJILELFHFHJ" field.</summary>
+    public const int Unk3300DJILELFHFHJFieldNumber = 6;
+    private uint unk3300DJILELFHFHJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DJILELFHFHJ {
+      get { return unk3300DJILELFHFHJ_; }
       set {
-        roundTotalIncome_ = value;
+        unk3300DJILELFHFHJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "display_return_coin_b" field.</summary>
-    public const int DisplayReturnCoinBFieldNumber = 15;
-    private uint displayReturnCoinB_;
+    /// <summary>Field number for the "Unk3300_OCIMKEPJOOL" field.</summary>
+    public const int Unk3300OCIMKEPJOOLFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300OCIMKEPJOOL_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unk3300OCIMKEPJOOL_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DisplayReturnCoinB {
-      get { return displayReturnCoinB_; }
+    public pbc::RepeatedField<uint> Unk3300OCIMKEPJOOL {
+      get { return unk3300OCIMKEPJOOL_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCDNOPJEIBG" field.</summary>
+    public const int Unk3300GCDNOPJEIBGFieldNumber = 4;
+    private uint unk3300GCDNOPJEIBG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GCDNOPJEIBG {
+      get { return unk3300GCDNOPJEIBG_; }
       set {
-        displayReturnCoinB_ = value;
+        unk3300GCDNOPJEIBG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BDAIONEPKIK" field.</summary>
+    public const int Unk3300BDAIONEPKIKFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BDAIONEPKIK_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> unk3300BDAIONEPKIK_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300BDAIONEPKIK {
+      get { return unk3300BDAIONEPKIK_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DGECJOKMDGN" field.</summary>
+    public const int Unk3300DGECJOKMDGNFieldNumber = 11;
+    private uint unk3300DGECJOKMDGN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DGECJOKMDGN {
+      get { return unk3300DGECJOKMDGN_; }
+      set {
+        unk3300DGECJOKMDGN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DLNFCBPDBBH" field.</summary>
+    public const int Unk3300DLNFCBPDBBHFieldNumber = 14;
+    private uint unk3300DLNFCBPDBBH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DLNFCBPDBBH {
+      get { return unk3300DLNFCBPDBBH_; }
+      set {
+        unk3300DLNFCBPDBBH_ = value;
       }
     }
 
@@ -235,16 +239,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!triggerEnvEventList_.Equals(other.triggerEnvEventList_)) return false;
       if (StoreRound != other.StoreRound) return false;
-      if(!triggerNpcEventList_.Equals(other.triggerNpcEventList_)) return false;
-      if(!lowAttrStoreList_.Equals(other.lowAttrStoreList_)) return false;
-      if (RoundCoinBIncome != other.RoundCoinBIncome) return false;
-      if (RoundDeltaCoinC != other.RoundDeltaCoinC) return false;
-      if (!StoreIncomeMap.Equals(other.StoreIncomeMap)) return false;
+      if(!unk3300HJIHIOIGAPP_.Equals(other.unk3300HJIHIOIGAPP_)) return false;
       if (Retcode != other.Retcode) return false;
-      if (RoundTotalIncome != other.RoundTotalIncome) return false;
-      if (DisplayReturnCoinB != other.DisplayReturnCoinB) return false;
+      if (!StoreIncomeMap.Equals(other.StoreIncomeMap)) return false;
+      if (Unk3300DJILELFHFHJ != other.Unk3300DJILELFHFHJ) return false;
+      if(!unk3300OCIMKEPJOOL_.Equals(other.unk3300OCIMKEPJOOL_)) return false;
+      if (Unk3300GCDNOPJEIBG != other.Unk3300GCDNOPJEIBG) return false;
+      if(!unk3300BDAIONEPKIK_.Equals(other.unk3300BDAIONEPKIK_)) return false;
+      if (Unk3300DGECJOKMDGN != other.Unk3300DGECJOKMDGN) return false;
+      if (Unk3300DLNFCBPDBBH != other.Unk3300DLNFCBPDBBH) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -252,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= triggerEnvEventList_.GetHashCode();
       if (StoreRound != 0) hash ^= StoreRound.GetHashCode();
-      hash ^= triggerNpcEventList_.GetHashCode();
-      hash ^= lowAttrStoreList_.GetHashCode();
-      if (RoundCoinBIncome != 0) hash ^= RoundCoinBIncome.GetHashCode();
-      if (RoundDeltaCoinC != 0) hash ^= RoundDeltaCoinC.GetHashCode();
-      hash ^= StoreIncomeMap.GetHashCode();
+      hash ^= unk3300HJIHIOIGAPP_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (RoundTotalIncome != 0) hash ^= RoundTotalIncome.GetHashCode();
-      if (DisplayReturnCoinB != 0) hash ^= DisplayReturnCoinB.GetHashCode();
+      hash ^= StoreIncomeMap.GetHashCode();
+      if (Unk3300DJILELFHFHJ != 0) hash ^= Unk3300DJILELFHFHJ.GetHashCode();
+      hash ^= unk3300OCIMKEPJOOL_.GetHashCode();
+      if (Unk3300GCDNOPJEIBG != 0) hash ^= Unk3300GCDNOPJEIBG.GetHashCode();
+      hash ^= unk3300BDAIONEPKIK_.GetHashCode();
+      if (Unk3300DGECJOKMDGN != 0) hash ^= Unk3300DGECJOKMDGN.GetHashCode();
+      if (Unk3300DLNFCBPDBBH != 0) hash ^= Unk3300DLNFCBPDBBH.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -280,34 +284,34 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RoundDeltaCoinC != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RoundDeltaCoinC);
-      }
+      unk3300BDAIONEPKIK_.WriteTo(output, _repeated_unk3300BDAIONEPKIK_codec);
       storeIncomeMap_.WriteTo(output, _map_storeIncomeMap_codec);
+      unk3300OCIMKEPJOOL_.WriteTo(output, _repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GCDNOPJEIBG);
+      }
+      if (Unk3300DJILELFHFHJ != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300DJILELFHFHJ);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      triggerEnvEventList_.WriteTo(output, _repeated_triggerEnvEventList_codec);
-      if (RoundCoinBIncome != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(RoundCoinBIncome);
-      }
-      triggerNpcEventList_.WriteTo(output, _repeated_triggerNpcEventList_codec);
-      lowAttrStoreList_.WriteTo(output, _repeated_lowAttrStoreList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(StoreRound);
       }
-      if (RoundTotalIncome != 0) {
+      if (Unk3300DGECJOKMDGN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(RoundTotalIncome);
+        output.WriteUInt32(Unk3300DLNFCBPDBBH);
       }
-      if (DisplayReturnCoinB != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(DisplayReturnCoinB);
-      }
+      unk3300HJIHIOIGAPP_.WriteTo(output, _repeated_unk3300HJIHIOIGAPP_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -318,34 +322,34 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RoundDeltaCoinC != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RoundDeltaCoinC);
-      }
+      unk3300BDAIONEPKIK_.WriteTo(ref output, _repeated_unk3300BDAIONEPKIK_codec);
       storeIncomeMap_.WriteTo(ref output, _map_storeIncomeMap_codec);
+      unk3300OCIMKEPJOOL_.WriteTo(ref output, _repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GCDNOPJEIBG);
+      }
+      if (Unk3300DJILELFHFHJ != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300DJILELFHFHJ);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      triggerEnvEventList_.WriteTo(ref output, _repeated_triggerEnvEventList_codec);
-      if (RoundCoinBIncome != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(RoundCoinBIncome);
-      }
-      triggerNpcEventList_.WriteTo(ref output, _repeated_triggerNpcEventList_codec);
-      lowAttrStoreList_.WriteTo(ref output, _repeated_lowAttrStoreList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(StoreRound);
       }
-      if (RoundTotalIncome != 0) {
+      if (Unk3300DGECJOKMDGN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(RoundTotalIncome);
+        output.WriteUInt32(Unk3300DLNFCBPDBBH);
       }
-      if (DisplayReturnCoinB != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(DisplayReturnCoinB);
-      }
+      unk3300HJIHIOIGAPP_.WriteTo(ref output, _repeated_unk3300HJIHIOIGAPP_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -356,27 +360,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += triggerEnvEventList_.CalculateSize(_repeated_triggerEnvEventList_codec);
       if (StoreRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreRound);
       }
-      size += triggerNpcEventList_.CalculateSize(_repeated_triggerNpcEventList_codec);
-      size += lowAttrStoreList_.CalculateSize(_repeated_lowAttrStoreList_codec);
-      if (RoundCoinBIncome != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoundCoinBIncome);
-      }
-      if (RoundDeltaCoinC != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoundDeltaCoinC);
-      }
-      size += storeIncomeMap_.CalculateSize(_map_storeIncomeMap_codec);
+      size += unk3300HJIHIOIGAPP_.CalculateSize(_repeated_unk3300HJIHIOIGAPP_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (RoundTotalIncome != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoundTotalIncome);
+      size += storeIncomeMap_.CalculateSize(_map_storeIncomeMap_codec);
+      if (Unk3300DJILELFHFHJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJILELFHFHJ);
       }
-      if (DisplayReturnCoinB != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DisplayReturnCoinB);
+      size += unk3300OCIMKEPJOOL_.CalculateSize(_repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCDNOPJEIBG);
+      }
+      size += unk3300BDAIONEPKIK_.CalculateSize(_repeated_unk3300BDAIONEPKIK_codec);
+      if (Unk3300DGECJOKMDGN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DLNFCBPDBBH);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -390,27 +394,27 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      triggerEnvEventList_.Add(other.triggerEnvEventList_);
       if (other.StoreRound != 0) {
         StoreRound = other.StoreRound;
       }
-      triggerNpcEventList_.Add(other.triggerNpcEventList_);
-      lowAttrStoreList_.Add(other.lowAttrStoreList_);
-      if (other.RoundCoinBIncome != 0) {
-        RoundCoinBIncome = other.RoundCoinBIncome;
-      }
-      if (other.RoundDeltaCoinC != 0) {
-        RoundDeltaCoinC = other.RoundDeltaCoinC;
-      }
-      storeIncomeMap_.Add(other.storeIncomeMap_);
+      unk3300HJIHIOIGAPP_.Add(other.unk3300HJIHIOIGAPP_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.RoundTotalIncome != 0) {
-        RoundTotalIncome = other.RoundTotalIncome;
+      storeIncomeMap_.Add(other.storeIncomeMap_);
+      if (other.Unk3300DJILELFHFHJ != 0) {
+        Unk3300DJILELFHFHJ = other.Unk3300DJILELFHFHJ;
       }
-      if (other.DisplayReturnCoinB != 0) {
-        DisplayReturnCoinB = other.DisplayReturnCoinB;
+      unk3300OCIMKEPJOOL_.Add(other.unk3300OCIMKEPJOOL_);
+      if (other.Unk3300GCDNOPJEIBG != 0) {
+        Unk3300GCDNOPJEIBG = other.Unk3300GCDNOPJEIBG;
+      }
+      unk3300BDAIONEPKIK_.Add(other.unk3300BDAIONEPKIK_);
+      if (other.Unk3300DGECJOKMDGN != 0) {
+        Unk3300DGECJOKMDGN = other.Unk3300DGECJOKMDGN;
+      }
+      if (other.Unk3300DLNFCBPDBBH != 0) {
+        Unk3300DLNFCBPDBBH = other.Unk3300DLNFCBPDBBH;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -427,47 +431,47 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10:
           case 8: {
-            RoundDeltaCoinC = input.ReadUInt32();
+            unk3300BDAIONEPKIK_.AddEntriesFrom(input, _repeated_unk3300BDAIONEPKIK_codec);
             break;
           }
-          case 26: {
+          case 18: {
             storeIncomeMap_.AddEntriesFrom(input, _map_storeIncomeMap_codec);
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 26:
+          case 24: {
+            unk3300OCIMKEPJOOL_.AddEntriesFrom(input, _repeated_unk3300OCIMKEPJOOL_codec);
             break;
           }
-          case 66:
-          case 64: {
-            triggerEnvEventList_.AddEntriesFrom(input, _repeated_triggerEnvEventList_codec);
+          case 32: {
+            Unk3300GCDNOPJEIBG = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300DJILELFHFHJ = input.ReadUInt32();
             break;
           }
           case 72: {
-            RoundCoinBIncome = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
-          case 82:
           case 80: {
-            triggerNpcEventList_.AddEntriesFrom(input, _repeated_triggerNpcEventList_codec);
-            break;
-          }
-          case 90:
-          case 88: {
-            lowAttrStoreList_.AddEntriesFrom(input, _repeated_lowAttrStoreList_codec);
-            break;
-          }
-          case 96: {
             StoreRound = input.ReadUInt32();
             break;
           }
-          case 112: {
-            RoundTotalIncome = input.ReadUInt32();
+          case 88: {
+            Unk3300DGECJOKMDGN = input.ReadUInt32();
             break;
           }
+          case 112: {
+            Unk3300DLNFCBPDBBH = input.ReadUInt32();
+            break;
+          }
+          case 122:
           case 120: {
-            DisplayReturnCoinB = input.ReadUInt32();
+            unk3300HJIHIOIGAPP_.AddEntriesFrom(input, _repeated_unk3300HJIHIOIGAPP_codec);
             break;
           }
         }
@@ -485,47 +489,47 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10:
           case 8: {
-            RoundDeltaCoinC = input.ReadUInt32();
+            unk3300BDAIONEPKIK_.AddEntriesFrom(ref input, _repeated_unk3300BDAIONEPKIK_codec);
             break;
           }
-          case 26: {
+          case 18: {
             storeIncomeMap_.AddEntriesFrom(ref input, _map_storeIncomeMap_codec);
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 26:
+          case 24: {
+            unk3300OCIMKEPJOOL_.AddEntriesFrom(ref input, _repeated_unk3300OCIMKEPJOOL_codec);
             break;
           }
-          case 66:
-          case 64: {
-            triggerEnvEventList_.AddEntriesFrom(ref input, _repeated_triggerEnvEventList_codec);
+          case 32: {
+            Unk3300GCDNOPJEIBG = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300DJILELFHFHJ = input.ReadUInt32();
             break;
           }
           case 72: {
-            RoundCoinBIncome = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
-          case 82:
           case 80: {
-            triggerNpcEventList_.AddEntriesFrom(ref input, _repeated_triggerNpcEventList_codec);
-            break;
-          }
-          case 90:
-          case 88: {
-            lowAttrStoreList_.AddEntriesFrom(ref input, _repeated_lowAttrStoreList_codec);
-            break;
-          }
-          case 96: {
             StoreRound = input.ReadUInt32();
             break;
           }
-          case 112: {
-            RoundTotalIncome = input.ReadUInt32();
+          case 88: {
+            Unk3300DGECJOKMDGN = input.ReadUInt32();
             break;
           }
+          case 112: {
+            Unk3300DLNFCBPDBBH = input.ReadUInt32();
+            break;
+          }
+          case 122:
           case 120: {
-            DisplayReturnCoinB = input.ReadUInt32();
+            unk3300HJIHIOIGAPP_.AddEntriesFrom(ref input, _repeated_unk3300HJIHIOIGAPP_codec);
             break;
           }
         }

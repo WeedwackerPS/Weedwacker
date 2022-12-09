@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureSeelieRegionDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5UcmVhc3VyZVNlZWxpZVJlZ2lvbkRhdGEucHJvdG8aDFZlY3Rvci5wcm90",
-            "byL0AQoYVHJlYXN1cmVTZWVsaWVSZWdpb25EYXRhEg8KB2lzX2RvbmUYDCAB",
-            "KAgSEAoIb3Blbl9kYXkYBiABKA0SGAoQb3BlbmVkX2NoZXN0X251bRgKIAEo",
-            "DRIVCg1yZWdpb25fcmFkaXVzGAcgASgCEg8KB2lzX29wZW4YCSABKAgSEQoJ",
-            "b3Blbl90aW1lGAggASgNEiIKEXJlZ2lvbl9jZW50ZXJfcG9zGAsgASgLMgcu",
-            "VmVjdG9yEhAKCHNjZW5lX2lkGA0gASgNEhcKD3RvdGFsX2NoZXN0X251bRgP",
-            "IAEoDRIRCglyZWdpb25faWQYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5UcmVhc3VyZVNlZWxpZVJlZ2lvbkRhdGEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byKmAgoYVHJlYXN1",
+            "cmVTZWVsaWVSZWdpb25EYXRhEhEKCXJlZ2lvbl9pZBgPIAEoDRIPCgdpc19v",
+            "cGVuGAEgASgIEhEKCW9wZW5fdGltZRgLIAEoDRJCChFyZWdpb25fY2VudGVy",
+            "X3BvcxgJIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "VmVjdG9yEhsKE1VuazMzMDBfQ1BIT0pOTUVEQkMYCCABKA0SFQoNcmVnaW9u",
+            "X3JhZGl1cxgGIAEoAhIbChNVbmszMzAwX0tHRUNPSUlLSkxKGAUgASgNEhsK",
+            "E1VuazMzMDBfQUZBTUhQQ0VJS1AYDiABKA0SDwoHaXNfZG9uZRgKIAEoCBIQ",
+            "CghzY2VuZV9pZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData), global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData.Parser, new[]{ "IsDone", "OpenDay", "OpenedChestNum", "RegionRadius", "IsOpen", "OpenTime", "RegionCenterPos", "SceneId", "TotalChestNum", "RegionId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData), global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData.Parser, new[]{ "RegionId", "IsOpen", "OpenTime", "RegionCenterPos", "Unk3300CPHOJNMEDBC", "RegionRadius", "Unk3300KGECOIIKJLJ", "Unk3300AFAMHPCEIKP", "IsDone", "SceneId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,16 +77,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreasureSeelieRegionData(TreasureSeelieRegionData other) : this() {
-      isDone_ = other.isDone_;
-      openDay_ = other.openDay_;
-      openedChestNum_ = other.openedChestNum_;
-      regionRadius_ = other.regionRadius_;
+      regionId_ = other.regionId_;
       isOpen_ = other.isOpen_;
       openTime_ = other.openTime_;
       regionCenterPos_ = other.regionCenterPos_ != null ? other.regionCenterPos_.Clone() : null;
+      unk3300CPHOJNMEDBC_ = other.unk3300CPHOJNMEDBC_;
+      regionRadius_ = other.regionRadius_;
+      unk3300KGECOIIKJLJ_ = other.unk3300KGECOIIKJLJ_;
+      unk3300AFAMHPCEIKP_ = other.unk3300AFAMHPCEIKP_;
+      isDone_ = other.isDone_;
       sceneId_ = other.sceneId_;
-      totalChestNum_ = other.totalChestNum_;
-      regionId_ = other.regionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,56 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TreasureSeelieRegionData(this);
     }
 
-    /// <summary>Field number for the "is_done" field.</summary>
-    public const int IsDoneFieldNumber = 12;
-    private bool isDone_;
+    /// <summary>Field number for the "region_id" field.</summary>
+    public const int RegionIdFieldNumber = 15;
+    private uint regionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsDone {
-      get { return isDone_; }
+    public uint RegionId {
+      get { return regionId_; }
       set {
-        isDone_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "open_day" field.</summary>
-    public const int OpenDayFieldNumber = 6;
-    private uint openDay_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenDay {
-      get { return openDay_; }
-      set {
-        openDay_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "opened_chest_num" field.</summary>
-    public const int OpenedChestNumFieldNumber = 10;
-    private uint openedChestNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenedChestNum {
-      get { return openedChestNum_; }
-      set {
-        openedChestNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "region_radius" field.</summary>
-    public const int RegionRadiusFieldNumber = 7;
-    private float regionRadius_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float RegionRadius {
-      get { return regionRadius_; }
-      set {
-        regionRadius_ = value;
+        regionId_ = value;
       }
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 9;
+    public const int IsOpenFieldNumber = 1;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 8;
+    public const int OpenTimeFieldNumber = 11;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,7 +133,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_center_pos" field.</summary>
-    public const int RegionCenterPosFieldNumber = 11;
+    public const int RegionCenterPosFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.Vector regionCenterPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,8 +144,68 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_CPHOJNMEDBC" field.</summary>
+    public const int Unk3300CPHOJNMEDBCFieldNumber = 8;
+    private uint unk3300CPHOJNMEDBC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CPHOJNMEDBC {
+      get { return unk3300CPHOJNMEDBC_; }
+      set {
+        unk3300CPHOJNMEDBC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region_radius" field.</summary>
+    public const int RegionRadiusFieldNumber = 6;
+    private float regionRadius_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float RegionRadius {
+      get { return regionRadius_; }
+      set {
+        regionRadius_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KGECOIIKJLJ" field.</summary>
+    public const int Unk3300KGECOIIKJLJFieldNumber = 5;
+    private uint unk3300KGECOIIKJLJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KGECOIIKJLJ {
+      get { return unk3300KGECOIIKJLJ_; }
+      set {
+        unk3300KGECOIIKJLJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AFAMHPCEIKP" field.</summary>
+    public const int Unk3300AFAMHPCEIKPFieldNumber = 14;
+    private uint unk3300AFAMHPCEIKP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AFAMHPCEIKP {
+      get { return unk3300AFAMHPCEIKP_; }
+      set {
+        unk3300AFAMHPCEIKP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_done" field.</summary>
+    public const int IsDoneFieldNumber = 10;
+    private bool isDone_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsDone {
+      get { return isDone_; }
+      set {
+        isDone_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 13;
+    public const int SceneIdFieldNumber = 3;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -188,30 +213,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sceneId_; }
       set {
         sceneId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_chest_num" field.</summary>
-    public const int TotalChestNumFieldNumber = 15;
-    private uint totalChestNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalChestNum {
-      get { return totalChestNum_; }
-      set {
-        totalChestNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "region_id" field.</summary>
-    public const int RegionIdFieldNumber = 1;
-    private uint regionId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegionId {
-      get { return regionId_; }
-      set {
-        regionId_ = value;
       }
     }
 
@@ -230,16 +231,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsDone != other.IsDone) return false;
-      if (OpenDay != other.OpenDay) return false;
-      if (OpenedChestNum != other.OpenedChestNum) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RegionRadius, other.RegionRadius)) return false;
+      if (RegionId != other.RegionId) return false;
       if (IsOpen != other.IsOpen) return false;
       if (OpenTime != other.OpenTime) return false;
       if (!object.Equals(RegionCenterPos, other.RegionCenterPos)) return false;
+      if (Unk3300CPHOJNMEDBC != other.Unk3300CPHOJNMEDBC) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RegionRadius, other.RegionRadius)) return false;
+      if (Unk3300KGECOIIKJLJ != other.Unk3300KGECOIIKJLJ) return false;
+      if (Unk3300AFAMHPCEIKP != other.Unk3300AFAMHPCEIKP) return false;
+      if (IsDone != other.IsDone) return false;
       if (SceneId != other.SceneId) return false;
-      if (TotalChestNum != other.TotalChestNum) return false;
-      if (RegionId != other.RegionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -247,16 +248,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsDone != false) hash ^= IsDone.GetHashCode();
-      if (OpenDay != 0) hash ^= OpenDay.GetHashCode();
-      if (OpenedChestNum != 0) hash ^= OpenedChestNum.GetHashCode();
-      if (RegionRadius != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RegionRadius);
+      if (RegionId != 0) hash ^= RegionId.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (regionCenterPos_ != null) hash ^= RegionCenterPos.GetHashCode();
+      if (Unk3300CPHOJNMEDBC != 0) hash ^= Unk3300CPHOJNMEDBC.GetHashCode();
+      if (RegionRadius != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RegionRadius);
+      if (Unk3300KGECOIIKJLJ != 0) hash ^= Unk3300KGECOIIKJLJ.GetHashCode();
+      if (Unk3300AFAMHPCEIKP != 0) hash ^= Unk3300AFAMHPCEIKP.GetHashCode();
+      if (IsDone != false) hash ^= IsDone.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      if (TotalChestNum != 0) hash ^= TotalChestNum.GetHashCode();
-      if (RegionId != 0) hash ^= RegionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -275,45 +276,45 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RegionId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RegionId);
-      }
-      if (OpenDay != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(OpenDay);
-      }
-      if (RegionRadius != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(RegionRadius);
-      }
-      if (OpenTime != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(OpenTime);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteBool(IsOpen);
       }
-      if (OpenedChestNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(OpenedChestNum);
+      if (SceneId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SceneId);
+      }
+      if (Unk3300KGECOIIKJLJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300KGECOIIKJLJ);
+      }
+      if (RegionRadius != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(RegionRadius);
+      }
+      if (Unk3300CPHOJNMEDBC != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300CPHOJNMEDBC);
       }
       if (regionCenterPos_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteMessage(RegionCenterPos);
       }
       if (IsDone != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(IsDone);
       }
-      if (SceneId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(SceneId);
+      if (OpenTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpenTime);
       }
-      if (TotalChestNum != 0) {
+      if (Unk3300AFAMHPCEIKP != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AFAMHPCEIKP);
+      }
+      if (RegionId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(TotalChestNum);
+        output.WriteUInt32(RegionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -325,45 +326,45 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RegionId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RegionId);
-      }
-      if (OpenDay != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(OpenDay);
-      }
-      if (RegionRadius != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(RegionRadius);
-      }
-      if (OpenTime != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(OpenTime);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteBool(IsOpen);
       }
-      if (OpenedChestNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(OpenedChestNum);
+      if (SceneId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SceneId);
+      }
+      if (Unk3300KGECOIIKJLJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300KGECOIIKJLJ);
+      }
+      if (RegionRadius != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(RegionRadius);
+      }
+      if (Unk3300CPHOJNMEDBC != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300CPHOJNMEDBC);
       }
       if (regionCenterPos_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteMessage(RegionCenterPos);
       }
       if (IsDone != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(IsDone);
       }
-      if (SceneId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(SceneId);
+      if (OpenTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpenTime);
       }
-      if (TotalChestNum != 0) {
+      if (Unk3300AFAMHPCEIKP != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AFAMHPCEIKP);
+      }
+      if (RegionId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(TotalChestNum);
+        output.WriteUInt32(RegionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -375,17 +376,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsDone != false) {
-        size += 1 + 1;
-      }
-      if (OpenDay != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenDay);
-      }
-      if (OpenedChestNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenedChestNum);
-      }
-      if (RegionRadius != 0F) {
-        size += 1 + 4;
+      if (RegionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionId);
       }
       if (IsOpen != false) {
         size += 1 + 1;
@@ -396,14 +388,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (regionCenterPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RegionCenterPos);
       }
+      if (Unk3300CPHOJNMEDBC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CPHOJNMEDBC);
+      }
+      if (RegionRadius != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300KGECOIIKJLJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KGECOIIKJLJ);
+      }
+      if (Unk3300AFAMHPCEIKP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AFAMHPCEIKP);
+      }
+      if (IsDone != false) {
+        size += 1 + 1;
+      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
-      if (TotalChestNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalChestNum);
-      }
-      if (RegionId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -417,17 +418,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsDone != false) {
-        IsDone = other.IsDone;
-      }
-      if (other.OpenDay != 0) {
-        OpenDay = other.OpenDay;
-      }
-      if (other.OpenedChestNum != 0) {
-        OpenedChestNum = other.OpenedChestNum;
-      }
-      if (other.RegionRadius != 0F) {
-        RegionRadius = other.RegionRadius;
+      if (other.RegionId != 0) {
+        RegionId = other.RegionId;
       }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
@@ -441,14 +433,23 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         RegionCenterPos.MergeFrom(other.RegionCenterPos);
       }
+      if (other.Unk3300CPHOJNMEDBC != 0) {
+        Unk3300CPHOJNMEDBC = other.Unk3300CPHOJNMEDBC;
+      }
+      if (other.RegionRadius != 0F) {
+        RegionRadius = other.RegionRadius;
+      }
+      if (other.Unk3300KGECOIIKJLJ != 0) {
+        Unk3300KGECOIIKJLJ = other.Unk3300KGECOIIKJLJ;
+      }
+      if (other.Unk3300AFAMHPCEIKP != 0) {
+        Unk3300AFAMHPCEIKP = other.Unk3300AFAMHPCEIKP;
+      }
+      if (other.IsDone != false) {
+        IsDone = other.IsDone;
+      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
-      }
-      if (other.TotalChestNum != 0) {
-        TotalChestNum = other.TotalChestNum;
-      }
-      if (other.RegionId != 0) {
-        RegionId = other.RegionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -466,46 +467,46 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            RegionId = input.ReadUInt32();
+            IsOpen = input.ReadBool();
             break;
           }
-          case 48: {
-            OpenDay = input.ReadUInt32();
+          case 24: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 61: {
+          case 40: {
+            Unk3300KGECOIIKJLJ = input.ReadUInt32();
+            break;
+          }
+          case 53: {
             RegionRadius = input.ReadFloat();
             break;
           }
           case 64: {
-            OpenTime = input.ReadUInt32();
+            Unk3300CPHOJNMEDBC = input.ReadUInt32();
             break;
           }
-          case 72: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 80: {
-            OpenedChestNum = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 74: {
             if (regionCenterPos_ == null) {
               RegionCenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(RegionCenterPos);
             break;
           }
-          case 96: {
+          case 80: {
             IsDone = input.ReadBool();
             break;
           }
-          case 104: {
-            SceneId = input.ReadUInt32();
+          case 88: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300AFAMHPCEIKP = input.ReadUInt32();
             break;
           }
           case 120: {
-            TotalChestNum = input.ReadUInt32();
+            RegionId = input.ReadUInt32();
             break;
           }
         }
@@ -524,46 +525,46 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            RegionId = input.ReadUInt32();
+            IsOpen = input.ReadBool();
             break;
           }
-          case 48: {
-            OpenDay = input.ReadUInt32();
+          case 24: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 61: {
+          case 40: {
+            Unk3300KGECOIIKJLJ = input.ReadUInt32();
+            break;
+          }
+          case 53: {
             RegionRadius = input.ReadFloat();
             break;
           }
           case 64: {
-            OpenTime = input.ReadUInt32();
+            Unk3300CPHOJNMEDBC = input.ReadUInt32();
             break;
           }
-          case 72: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 80: {
-            OpenedChestNum = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 74: {
             if (regionCenterPos_ == null) {
               RegionCenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(RegionCenterPos);
             break;
           }
-          case 96: {
+          case 80: {
             IsDone = input.ReadBool();
             break;
           }
-          case 104: {
-            SceneId = input.ReadUInt32();
+          case 88: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300AFAMHPCEIKP = input.ReadUInt32();
             break;
           }
           case 120: {
-            TotalChestNum = input.ReadUInt32();
+            RegionId = input.ReadUInt32();
             break;
           }
         }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ObstacleModifyNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpPYnN0YWNsZU1vZGlmeU5vdGlmeS5wcm90bxoST2JzdGFjbGVJbmZvLnBy",
-            "b3RvImsKFE9ic3RhY2xlTW9kaWZ5Tm90aWZ5EhsKE3JlbW92ZV9vYnN0YWNs",
-            "ZV9pZHMYCSADKAUSJAoNYWRkX29ic3RhY2xlcxgGIAMoCzINLk9ic3RhY2xl",
-            "SW5mbxIQCghzY2VuZV9pZBgFIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpPYnN0YWNsZU1vZGlmeU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoST2JzdGFjbGVJbmZvLnByb3RvIosBChRPYnN0",
+            "YWNsZU1vZGlmeU5vdGlmeRIbChNyZW1vdmVfb2JzdGFjbGVfaWRzGAcgAygF",
+            "EkQKDWFkZF9vYnN0YWNsZXMYDyADKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLk9ic3RhY2xlSW5mbxIQCghzY2VuZV9pZBgMIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ObstacleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2312
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2356;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ObstacleModifyNotify : pb::IMessage<ObstacleModifyNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "remove_obstacle_ids" field.</summary>
-    public const int RemoveObstacleIdsFieldNumber = 9;
+    public const int RemoveObstacleIdsFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_removeObstacleIds_codec
-        = pb::FieldCodec.ForInt32(74);
+        = pb::FieldCodec.ForInt32(58);
     private readonly pbc::RepeatedField<int> removeObstacleIds_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_obstacles" field.</summary>
-    public const int AddObstaclesFieldNumber = 6;
+    public const int AddObstaclesFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ObstacleInfo> _repeated_addObstacles_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ObstacleInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ObstacleInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ObstacleInfo> addObstacles_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ObstacleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 5;
+    public const int SceneIdFieldNumber = 12;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      removeObstacleIds_.WriteTo(output, _repeated_removeObstacleIds_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(SceneId);
       }
       addObstacles_.WriteTo(output, _repeated_addObstacles_codec);
-      removeObstacleIds_.WriteTo(output, _repeated_removeObstacleIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,12 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      removeObstacleIds_.WriteTo(ref output, _repeated_removeObstacleIds_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(SceneId);
       }
       addObstacles_.WriteTo(ref output, _repeated_addObstacles_codec);
-      removeObstacleIds_.WriteTo(ref output, _repeated_removeObstacleIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -240,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 58:
+          case 56: {
+            removeObstacleIds_.AddEntriesFrom(input, _repeated_removeObstacleIds_codec);
+            break;
+          }
+          case 96: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 122: {
             addObstacles_.AddEntriesFrom(input, _repeated_addObstacles_codec);
-            break;
-          }
-          case 74:
-          case 72: {
-            removeObstacleIds_.AddEntriesFrom(input, _repeated_removeObstacleIds_codec);
             break;
           }
         }
@@ -268,17 +273,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 58:
+          case 56: {
+            removeObstacleIds_.AddEntriesFrom(ref input, _repeated_removeObstacleIds_codec);
+            break;
+          }
+          case 96: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 122: {
             addObstacles_.AddEntriesFrom(ref input, _repeated_addObstacles_codec);
-            break;
-          }
-          case 74:
-          case 72: {
-            removeObstacleIds_.AddEntriesFrom(ref input, _repeated_removeObstacleIds_codec);
             break;
           }
         }

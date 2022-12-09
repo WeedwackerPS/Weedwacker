@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabChallengeStageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFDaGFubmVsZXJTbGFiQ2hhbGxlbmdlU3RhZ2UucHJvdG8aHENoYW5uZWxl",
-            "clNsYWJDaGFsbGVuZ2UucHJvdG8aH0NoYW5uZWxlclNsYWJPbmVvZkR1bmdl",
-            "b24ucHJvdG8itgEKG0NoYW5uZWxlclNsYWJDaGFsbGVuZ2VTdGFnZRIRCglv",
-            "cGVuX3RpbWUYAyABKA0SLwoOY2hhbGxlbmdlX2xpc3QYDiADKAsyFy5DaGFu",
-            "bmVsZXJTbGFiQ2hhbGxlbmdlEg8KB2lzX29wZW4YByABKAgSEAoIc3RhZ2Vf",
-            "aWQYCSABKA0SMAoMZHVuZ2Vvbl9pbmZvGA0gASgLMhouQ2hhbm5lbGVyU2xh",
-            "Yk9uZW9mRHVuZ2VvbkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiFDaGFubmVsZXJTbGFiQ2hhbGxlbmdlU3RhZ2UucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHENoYW5uZWxlclNsYWJDaGFsbGVu",
+            "Z2UucHJvdG8aIENoYW5uZWxlclNsYWJPbmVvZmZEdW5nZW9uLnByb3RvIvcB",
+            "ChtDaGFubmVsZXJTbGFiQ2hhbGxlbmdlU3RhZ2USDwoHaXNfb3BlbhgEIAEo",
+            "CBJRCgxkdW5nZW9uX2luZm8YDCABKAsyOy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkNoYW5uZWxlclNsYWJPbmVvZmZEdW5nZW9uEhEKCW9w",
+            "ZW5fdGltZRgNIAEoDRIQCghzdGFnZV9pZBgBIAEoDRJPCg5jaGFsbGVuZ2Vf",
+            "bGlzdBgCIAMoCzI3LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "Q2hhbm5lbGVyU2xhYkNoYWxsZW5nZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage), global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage.Parser, new[]{ "OpenTime", "ChallengeList", "IsOpen", "StageId", "DungeonInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage), global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage.Parser, new[]{ "IsOpen", "DungeonInfo", "OpenTime", "StageId", "ChallengeList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,11 +77,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabChallengeStage(ChannelerSlabChallengeStage other) : this() {
-      openTime_ = other.openTime_;
-      challengeList_ = other.challengeList_.Clone();
       isOpen_ = other.isOpen_;
-      stageId_ = other.stageId_;
       dungeonInfo_ = other.dungeonInfo_ != null ? other.dungeonInfo_.Clone() : null;
+      openTime_ = other.openTime_;
+      stageId_ = other.stageId_;
+      challengeList_ = other.challengeList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,31 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabChallengeStage(this);
     }
 
-    /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 3;
-    private uint openTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenTime {
-      get { return openTime_; }
-      set {
-        openTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_list" field.</summary>
-    public const int ChallengeListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> _repeated_challengeList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> challengeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> ChallengeList {
-      get { return challengeList_; }
-    }
-
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 7;
+    public const int IsOpenFieldNumber = 4;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,8 +103,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "dungeon_info" field.</summary>
+    public const int DungeonInfoFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeon dungeonInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeon DungeonInfo {
+      get { return dungeonInfo_; }
+      set {
+        dungeonInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 13;
+    private uint openTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 9;
+    public const int StageIdFieldNumber = 1;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,16 +139,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_info" field.</summary>
-    public const int DungeonInfoFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeon dungeonInfo_;
+    /// <summary>Field number for the "challenge_list" field.</summary>
+    public const int ChallengeListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> _repeated_challengeList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> challengeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeon DungeonInfo {
-      get { return dungeonInfo_; }
-      set {
-        dungeonInfo_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallenge> ChallengeList {
+      get { return challengeList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OpenTime != other.OpenTime) return false;
-      if(!challengeList_.Equals(other.challengeList_)) return false;
       if (IsOpen != other.IsOpen) return false;
-      if (StageId != other.StageId) return false;
       if (!object.Equals(DungeonInfo, other.DungeonInfo)) return false;
+      if (OpenTime != other.OpenTime) return false;
+      if (StageId != other.StageId) return false;
+      if(!challengeList_.Equals(other.challengeList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
-      hash ^= challengeList_.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (dungeonInfo_ != null) hash ^= DungeonInfo.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= challengeList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -199,23 +200,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OpenTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(OpenTime);
-      }
-      if (IsOpen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsOpen);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
+      challengeList_.WriteTo(output, _repeated_challengeList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
+      }
       if (dungeonInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(98);
         output.WriteMessage(DungeonInfo);
       }
-      challengeList_.WriteTo(output, _repeated_challengeList_codec);
+      if (OpenTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(OpenTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -226,23 +227,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OpenTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(OpenTime);
-      }
-      if (IsOpen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsOpen);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
+      challengeList_.WriteTo(ref output, _repeated_challengeList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
+      }
       if (dungeonInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(98);
         output.WriteMessage(DungeonInfo);
       }
-      challengeList_.WriteTo(ref output, _repeated_challengeList_codec);
+      if (OpenTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(OpenTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -253,19 +254,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-      }
-      size += challengeList_.CalculateSize(_repeated_challengeList_codec);
       if (IsOpen != false) {
         size += 1 + 1;
-      }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (dungeonInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DungeonInfo);
       }
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      size += challengeList_.CalculateSize(_repeated_challengeList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -278,22 +279,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
-      }
-      challengeList_.Add(other.challengeList_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      if (other.dungeonInfo_ != null) {
+        if (dungeonInfo_ == null) {
+          DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeon();
+        }
+        DungeonInfo.MergeFrom(other.DungeonInfo);
+      }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      if (other.dungeonInfo_ != null) {
-        if (dungeonInfo_ == null) {
-          DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeon();
-        }
-        DungeonInfo.MergeFrom(other.DungeonInfo);
-      }
+      challengeList_.Add(other.challengeList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -309,27 +310,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 72: {
+          case 8: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 18: {
+            challengeList_.AddEntriesFrom(input, _repeated_challengeList_codec);
+            break;
+          }
+          case 32: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (dungeonInfo_ == null) {
-              DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeon();
+              DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeon();
             }
             input.ReadMessage(DungeonInfo);
             break;
           }
-          case 114: {
-            challengeList_.AddEntriesFrom(input, _repeated_challengeList_codec);
+          case 104: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }
@@ -347,27 +348,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 72: {
+          case 8: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 18: {
+            challengeList_.AddEntriesFrom(ref input, _repeated_challengeList_codec);
+            break;
+          }
+          case 32: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (dungeonInfo_ == null) {
-              DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneofDungeon();
+              DungeonInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabOneoffDungeon();
             }
             input.ReadMessage(DungeonInfo);
             break;
           }
-          case 114: {
-            challengeList_.AddEntriesFrom(ref input, _repeated_challengeList_codec);
+          case 104: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }

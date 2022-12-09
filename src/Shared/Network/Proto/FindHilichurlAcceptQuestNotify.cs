@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FindHilichurlAcceptQuestNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRGaW5kSGlsaWNodXJsQWNjZXB0UXVlc3ROb3RpZnkucHJvdG8iIAoeRmlu",
-            "ZEhpbGljaHVybEFjY2VwdFF1ZXN0Tm90aWZ5QiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRGaW5kSGlsaWNodXJsQWNjZXB0UXVlc3ROb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iIAoeRmluZEhpbGljaHVybEFj",
+            "Y2VwdFF1ZXN0Tm90aWZ5YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8659
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8893;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FindHilichurlAcceptQuestNotify : pb::IMessage<FindHilichurlAcceptQuestNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

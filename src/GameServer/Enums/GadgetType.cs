@@ -56,5 +56,6 @@ namespace Weedwacker.GameServer.Enums
         UIInteractGadget,
         Vehicle,
         FishRod,
+        CoinCollectLevelGadget,
     }
 }

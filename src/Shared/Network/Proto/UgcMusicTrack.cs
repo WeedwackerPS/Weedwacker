@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static UgcMusicTrackReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNVZ2NNdXNpY1RyYWNrLnByb3RvGhJVZ2NNdXNpY05vdGUucHJvdG8iNwoN",
-            "VWdjTXVzaWNUcmFjaxImCg9tdXNpY19ub3RlX2xpc3QYBiADKAsyDS5VZ2NN",
-            "dXNpY05vdGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChNVZ2NNdXNpY1RyYWNrLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhJVZ2NNdXNpY05vdGUucHJvdG8iVwoNVWdjTXVzaWNUcmFj",
+            "axJGCg9tdXNpY19ub3RlX2xpc3QYBiADKAsyLS5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLlVnY011c2ljTm90ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.UgcMusicNoteReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

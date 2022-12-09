@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SkyCrystalDetectorDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTa3lDcnlzdGFsRGV0ZWN0b3JEYXRhLnByb3RvGgxWZWN0b3IucHJvdG8i",
-            "dgoWU2t5Q3J5c3RhbERldGVjdG9yRGF0YRIVCg1pc19oaW50X3ZhbGlkGAMg",
-            "ASgIEiAKD2hpbnRfY2VudGVyX3BvcxgIIAEoCzIHLlZlY3RvchIQCghncm91",
-            "cF9pZBgGIAEoDRIRCgljb25maWdfaWQYCSABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxTa3lDcnlzdGFsRGV0ZWN0b3JEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8ilgEKFlNreUNyeXN0",
+            "YWxEZXRlY3RvckRhdGESFQoNaXNfaGludF92YWxpZBgBIAEoCBIQCghncm91",
+            "cF9pZBgFIAEoDRJACg9oaW50X2NlbnRlcl9wb3MYDCABKAsyJy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchIRCgljb25maWdfaWQY",
+            "ByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData), global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData.Parser, new[]{ "IsHintValid", "HintCenterPos", "GroupId", "ConfigId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData), global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData.Parser, new[]{ "IsHintValid", "GroupId", "HintCenterPos", "ConfigId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SkyCrystalDetectorData(SkyCrystalDetectorData other) : this() {
       isHintValid_ = other.isHintValid_;
-      hintCenterPos_ = other.hintCenterPos_ != null ? other.hintCenterPos_.Clone() : null;
       groupId_ = other.groupId_;
+      hintCenterPos_ = other.hintCenterPos_ != null ? other.hintCenterPos_.Clone() : null;
       configId_ = other.configId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_hint_valid" field.</summary>
-    public const int IsHintValidFieldNumber = 3;
+    public const int IsHintValidFieldNumber = 1;
     private bool isHintValid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,20 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "hint_center_pos" field.</summary>
-    public const int HintCenterPosFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector hintCenterPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector HintCenterPos {
-      get { return hintCenterPos_; }
-      set {
-        hintCenterPos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 6;
+    public const int GroupIdFieldNumber = 5;
     private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,8 +111,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "hint_center_pos" field.</summary>
+    public const int HintCenterPosFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.Vector hintCenterPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector HintCenterPos {
+      get { return hintCenterPos_; }
+      set {
+        hintCenterPos_ = value;
+      }
+    }
+
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 9;
+    public const int ConfigIdFieldNumber = 7;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,8 +151,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsHintValid != other.IsHintValid) return false;
-      if (!object.Equals(HintCenterPos, other.HintCenterPos)) return false;
       if (GroupId != other.GroupId) return false;
+      if (!object.Equals(HintCenterPos, other.HintCenterPos)) return false;
       if (ConfigId != other.ConfigId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -161,8 +162,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsHintValid != false) hash ^= IsHintValid.GetHashCode();
-      if (hintCenterPos_ != null) hash ^= HintCenterPos.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (hintCenterPos_ != null) hash ^= HintCenterPos.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -183,20 +184,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsHintValid != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteBool(IsHintValid);
       }
       if (GroupId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(GroupId);
       }
-      if (hintCenterPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(HintCenterPos);
-      }
       if (ConfigId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(ConfigId);
+      }
+      if (hintCenterPos_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(HintCenterPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -209,20 +210,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsHintValid != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteBool(IsHintValid);
       }
       if (GroupId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(GroupId);
       }
-      if (hintCenterPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(HintCenterPos);
-      }
       if (ConfigId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(ConfigId);
+      }
+      if (hintCenterPos_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(HintCenterPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsHintValid != false) {
         size += 1 + 1;
       }
-      if (hintCenterPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HintCenterPos);
-      }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (hintCenterPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HintCenterPos);
       }
       if (ConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
@@ -261,14 +262,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsHintValid != false) {
         IsHintValid = other.IsHintValid;
       }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
       if (other.hintCenterPos_ != null) {
         if (hintCenterPos_ == null) {
           HintCenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         HintCenterPos.MergeFrom(other.HintCenterPos);
-      }
-      if (other.GroupId != 0) {
-        GroupId = other.GroupId;
       }
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
@@ -288,23 +289,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             IsHintValid = input.ReadBool();
             break;
           }
-          case 48: {
+          case 40: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 56: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             if (hintCenterPos_ == null) {
               HintCenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(HintCenterPos);
-            break;
-          }
-          case 72: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }
@@ -322,23 +323,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             IsHintValid = input.ReadBool();
             break;
           }
-          case 48: {
+          case 40: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 56: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             if (hintCenterPos_ == null) {
               HintCenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(HintCenterPos);
-            break;
-          }
-          case 72: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }

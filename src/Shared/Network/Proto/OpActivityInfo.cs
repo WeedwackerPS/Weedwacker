@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static OpActivityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRPcEFjdGl2aXR5SW5mby5wcm90bxoZQm9udXNPcEFjdGl2aXR5SW5mby5w",
-            "cm90byKtAQoOT3BBY3Rpdml0eUluZm8SEwoLYWN0aXZpdHlfaWQYAiABKA0S",
-            "EAoIZW5kX3RpbWUYBiABKA0SEgoKYmVnaW5fdGltZRgFIAEoDRIVCg1pc19o",
-            "YXNfY2hhbmdlGAEgASgIEhMKC3NjaGVkdWxlX2lkGA0gASgNEioKCmJvbnVz",
-            "X2luZm8YDCABKAsyFC5Cb251c09wQWN0aXZpdHlJbmZvSABCCAoGZGV0YWls",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRPcEFjdGl2aXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoZQm9udXNPcEFjdGl2aXR5SW5mby5wcm90byLNAQoOT3BB",
+            "Y3Rpdml0eUluZm8SEwoLYWN0aXZpdHlfaWQYDyABKA0SEwoLc2NoZWR1bGVf",
+            "aWQYDiABKA0SEAoIZW5kX3RpbWUYBCABKA0SEgoKYmVnaW5fdGltZRgNIAEo",
+            "DRIVCg1pc19oYXNfY2hhbmdlGAcgASgIEkoKCmJvbnVzX2luZm8YBiABKAsy",
+            "NC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJvbnVzT3BBY3Rp",
+            "dml0eUluZm9IAEIICgZkZXRhaWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OpActivityInfo), global::Weedwacker.Shared.Network.Proto.OpActivityInfo.Parser, new[]{ "ActivityId", "EndTime", "BeginTime", "IsHasChange", "ScheduleId", "BonusInfo" }, new[]{ "Detail" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OpActivityInfo), global::Weedwacker.Shared.Network.Proto.OpActivityInfo.Parser, new[]{ "ActivityId", "ScheduleId", "EndTime", "BeginTime", "IsHasChange", "BonusInfo" }, new[]{ "Detail" }, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpActivityInfo(OpActivityInfo other) : this() {
       activityId_ = other.activityId_;
+      scheduleId_ = other.scheduleId_;
       endTime_ = other.endTime_;
       beginTime_ = other.beginTime_;
       isHasChange_ = other.isHasChange_;
-      scheduleId_ = other.scheduleId_;
       switch (other.DetailCase) {
         case DetailOneofCase.BonusInfo:
           BonusInfo = other.BonusInfo.Clone();
@@ -95,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 2;
+    public const int ActivityIdFieldNumber = 15;
     private uint activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,8 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 14;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 6;
+    public const int EndTimeFieldNumber = 4;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,7 +132,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 5;
+    public const int BeginTimeFieldNumber = 13;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,7 +144,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_has_change" field.</summary>
-    public const int IsHasChangeFieldNumber = 1;
+    public const int IsHasChangeFieldNumber = 7;
     private bool isHasChange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,20 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 13;
-    private uint scheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleId {
-      get { return scheduleId_; }
-      set {
-        scheduleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "bonus_info" field.</summary>
-    public const int BonusInfoFieldNumber = 12;
+    public const int BonusInfoFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfo BonusInfo {
@@ -170,7 +171,7 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      BonusInfo = 12,
+      BonusInfo = 6,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,10 +203,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ActivityId != other.ActivityId) return false;
+      if (ScheduleId != other.ScheduleId) return false;
       if (EndTime != other.EndTime) return false;
       if (BeginTime != other.BeginTime) return false;
       if (IsHasChange != other.IsHasChange) return false;
-      if (ScheduleId != other.ScheduleId) return false;
       if (!object.Equals(BonusInfo, other.BonusInfo)) return false;
       if (DetailCase != other.DetailCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -216,10 +217,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
       if (IsHasChange != false) hash ^= IsHasChange.GetHashCode();
-      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (detailCase_ == DetailOneofCase.BonusInfo) hash ^= BonusInfo.GetHashCode();
       hash ^= (int) detailCase_;
       if (_unknownFields != null) {
@@ -240,29 +241,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsHasChange != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsHasChange);
-      }
-      if (ActivityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ActivityId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(EndTime);
       }
       if (detailCase_ == DetailOneofCase.BonusInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(50);
         output.WriteMessage(BonusInfo);
       }
-      if (ScheduleId != 0) {
+      if (IsHasChange != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsHasChange);
+      }
+      if (BeginTime != 0) {
         output.WriteRawTag(104);
+        output.WriteUInt32(BeginTime);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(112);
         output.WriteUInt32(ScheduleId);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -274,29 +275,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsHasChange != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsHasChange);
-      }
-      if (ActivityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ActivityId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(EndTime);
       }
       if (detailCase_ == DetailOneofCase.BonusInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(50);
         output.WriteMessage(BonusInfo);
       }
-      if (ScheduleId != 0) {
+      if (IsHasChange != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsHasChange);
+      }
+      if (BeginTime != 0) {
         output.WriteRawTag(104);
+        output.WriteUInt32(BeginTime);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(112);
         output.WriteUInt32(ScheduleId);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -311,6 +312,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ActivityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
       }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
       if (EndTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
@@ -319,9 +323,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (IsHasChange != false) {
         size += 1 + 1;
-      }
-      if (ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
       if (detailCase_ == DetailOneofCase.BonusInfo) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BonusInfo);
@@ -341,6 +342,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
       }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
@@ -349,9 +353,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.IsHasChange != false) {
         IsHasChange = other.IsHasChange;
-      }
-      if (other.ScheduleId != 0) {
-        ScheduleId = other.ScheduleId;
       }
       switch (other.DetailCase) {
         case DetailOneofCase.BonusInfo:
@@ -377,23 +378,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsHasChange = input.ReadBool();
-            break;
-          }
-          case 16: {
-            ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 32: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 50: {
             global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfo();
             if (detailCase_ == DetailOneofCase.BonusInfo) {
               subBuilder.MergeFrom(BonusInfo);
@@ -402,8 +391,20 @@ namespace Weedwacker.Shared.Network.Proto {
             BonusInfo = subBuilder;
             break;
           }
+          case 56: {
+            IsHasChange = input.ReadBool();
+            break;
+          }
           case 104: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ActivityId = input.ReadUInt32();
             break;
           }
         }
@@ -421,23 +422,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsHasChange = input.ReadBool();
-            break;
-          }
-          case 16: {
-            ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 32: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 50: {
             global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BonusOpActivityInfo();
             if (detailCase_ == DetailOneofCase.BonusInfo) {
               subBuilder.MergeFrom(BonusInfo);
@@ -446,8 +435,20 @@ namespace Weedwacker.Shared.Network.Proto {
             BonusInfo = subBuilder;
             break;
           }
+          case 56: {
+            IsHasChange = input.ReadBool();
+            break;
+          }
           case 104: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ActivityId = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetDungeonEntryExploreConditionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihHZXREdW5nZW9uRW50cnlFeHBsb3JlQ29uZGl0aW9uUmVxLnByb3RvIn0K",
-            "IkdldER1bmdlb25FbnRyeUV4cGxvcmVDb25kaXRpb25SZXESEAoIc2NlbmVf",
-            "aWQYBiABKA0SHwoXZHVuZ2Vvbl9lbnRyeV9jb25maWdfaWQYAiABKA0SJAoc",
-            "ZHVuZ2Vvbl9lbnRyeV9zY2VuZV9wb2ludF9pZBgEIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CihHZXREdW5nZW9uRW50cnlFeHBsb3JlQ29uZGl0aW9uUmVxLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIn0KIkdldER1bmdlb25F",
+            "bnRyeUV4cGxvcmVDb25kaXRpb25SZXESHwoXZHVuZ2Vvbl9lbnRyeV9jb25m",
+            "aWdfaWQYAiABKA0SEAoIc2NlbmVfaWQYCSABKA0SJAocZHVuZ2Vvbl9lbnRy",
+            "eV9zY2VuZV9wb2ludF9pZBgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetDungeonEntryExploreConditionReq), global::Weedwacker.Shared.Network.Proto.GetDungeonEntryExploreConditionReq.Parser, new[]{ "SceneId", "DungeonEntryConfigId", "DungeonEntryScenePointId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetDungeonEntryExploreConditionReq), global::Weedwacker.Shared.Network.Proto.GetDungeonEntryExploreConditionReq.Parser, new[]{ "DungeonEntryConfigId", "SceneId", "DungeonEntryScenePointId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3165
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3364;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetDungeonEntryExploreConditionReq : pb::IMessage<GetDungeonEntryExploreConditionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetDungeonEntryExploreConditionReq(GetDungeonEntryExploreConditionReq other) : this() {
-      sceneId_ = other.sceneId_;
       dungeonEntryConfigId_ = other.dungeonEntryConfigId_;
+      sceneId_ = other.sceneId_;
       dungeonEntryScenePointId_ = other.dungeonEntryScenePointId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,18 +93,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetDungeonEntryExploreConditionReq Clone() {
       return new GetDungeonEntryExploreConditionReq(this);
-    }
-
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 6;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
     }
 
     /// <summary>Field number for the "dungeon_entry_config_id" field.</summary>
@@ -115,8 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 9;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "dungeon_entry_scene_point_id" field.</summary>
-    public const int DungeonEntryScenePointIdFieldNumber = 4;
+    public const int DungeonEntryScenePointIdFieldNumber = 14;
     private uint dungeonEntryScenePointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SceneId != other.SceneId) return false;
       if (DungeonEntryConfigId != other.DungeonEntryConfigId) return false;
+      if (SceneId != other.SceneId) return false;
       if (DungeonEntryScenePointId != other.DungeonEntryScenePointId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -152,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (DungeonEntryConfigId != 0) hash ^= DungeonEntryConfigId.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (DungeonEntryScenePointId != 0) hash ^= DungeonEntryScenePointId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -177,13 +181,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteUInt32(DungeonEntryConfigId);
       }
-      if (DungeonEntryScenePointId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(DungeonEntryScenePointId);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
+      }
+      if (DungeonEntryScenePointId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DungeonEntryScenePointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -199,13 +203,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteUInt32(DungeonEntryConfigId);
       }
-      if (DungeonEntryScenePointId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(DungeonEntryScenePointId);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
+      }
+      if (DungeonEntryScenePointId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DungeonEntryScenePointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,11 +221,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
       if (DungeonEntryConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonEntryConfigId);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
       if (DungeonEntryScenePointId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonEntryScenePointId);
@@ -238,11 +242,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
       if (other.DungeonEntryConfigId != 0) {
         DungeonEntryConfigId = other.DungeonEntryConfigId;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
       }
       if (other.DungeonEntryScenePointId != 0) {
         DungeonEntryScenePointId = other.DungeonEntryScenePointId;
@@ -266,12 +270,12 @@ namespace Weedwacker.Shared.Network.Proto {
             DungeonEntryConfigId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            DungeonEntryScenePointId = input.ReadUInt32();
+          case 72: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            SceneId = input.ReadUInt32();
+          case 112: {
+            DungeonEntryScenePointId = input.ReadUInt32();
             break;
           }
         }
@@ -293,12 +297,12 @@ namespace Weedwacker.Shared.Network.Proto {
             DungeonEntryConfigId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            DungeonEntryScenePointId = input.ReadUInt32();
+          case 72: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            SceneId = input.ReadUInt32();
+          case 112: {
+            DungeonEntryScenePointId = input.ReadUInt32();
             break;
           }
         }

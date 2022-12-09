@@ -24,12 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetCreatorInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdXaWRnZXRDcmVhdG9ySW5mby5wcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRp",
-            "b25JbmZvLnByb3RvGhlXaWRnZXRDcmVhdG9yT3BUeXBlLnByb3RvIn8KEVdp",
-            "ZGdldENyZWF0b3JJbmZvEiUKB29wX3R5cGUYCiABKA4yFC5XaWRnZXRDcmVh",
-            "dG9yT3BUeXBlEhEKCWVudGl0eV9pZBgBIAEoDRIwCg1sb2NhdGlvbl9pbmZv",
-            "GAwgASgLMhkuV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdXaWRnZXRDcmVhdG9ySW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvLnByb3Rv",
+            "GhlXaWRnZXRDcmVhdG9yT3BUeXBlLnByb3RvIr8BChFXaWRnZXRDcmVhdG9y",
+            "SW5mbxJFCgdvcF90eXBlGA4gASgOMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5XaWRnZXRDcmVhdG9yT3BUeXBlEhEKCWVudGl0eV9pZBgM",
+            "IAEoDRJQCg1sb2NhdGlvbl9pbmZvGAkgASgLMjkuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5XaWRnZXRDcmVhdGVMb2NhdGlvbkluZm9iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_type" field.</summary>
-    public const int OpTypeFieldNumber = 10;
+    public const int OpTypeFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType opType_ = global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 1;
+    public const int EntityIdFieldNumber = 12;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "location_info" field.</summary>
-    public const int LocationInfoFieldNumber = 12;
+    public const int LocationInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo locationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,17 +170,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (locationInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(LocationInfo);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntityId);
       }
       if (OpType != global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteEnum((int) OpType);
-      }
-      if (locationInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(LocationInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -190,17 +192,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (locationInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(LocationInfo);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntityId);
       }
       if (OpType != global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteEnum((int) OpType);
-      }
-      if (locationInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(LocationInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,19 +262,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType) input.ReadEnum();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (locationInfo_ == null) {
               LocationInfo = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
             }
             input.ReadMessage(LocationInfo);
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType) input.ReadEnum();
             break;
           }
         }
@@ -290,19 +292,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType) input.ReadEnum();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (locationInfo_ == null) {
               LocationInfo = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
             }
             input.ReadMessage(LocationInfo);
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.WidgetCreatorOpType) input.ReadEnum();
             break;
           }
         }

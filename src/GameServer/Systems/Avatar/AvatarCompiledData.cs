@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
 using Weedwacker.GameServer.Data.BinOut.AbilityGroup;
@@ -54,6 +55,10 @@ namespace Weedwacker.GameServer.Systems.Avatar
         public AvatarCompiledData(int avatarId)
         {
             AvatarId = avatarId;
+            if (avatarId== 10000075)
+            {
+                Debugger.Break();
+            }
             if (GeneralData.candSkillDepotIds.Count() != 0)
             {
                 SkillDepotData = new();

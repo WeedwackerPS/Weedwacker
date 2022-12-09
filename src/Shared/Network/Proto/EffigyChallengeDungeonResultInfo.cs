@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeDungeonResultInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZFZmZpZ3lDaGFsbGVuZ2VEdW5nZW9uUmVzdWx0SW5mby5wcm90byKcAQog",
-            "RWZmaWd5Q2hhbGxlbmdlRHVuZ2VvblJlc3VsdEluZm8SFwoPY2hhbGxlbmdl",
-            "X3Njb3JlGAcgASgNEhgKEGlzX2luX3RpbWVfbGltaXQYCCABKAgSFAoMY2hh",
-            "bGxlbmdlX2lkGAYgASgNEhIKCmlzX3N1Y2Nlc3MYDyABKAgSGwoTY2hhbGxl",
-            "bmdlX21heF9zY29yZRgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZFZmZpZ3lDaGFsbGVuZ2VEdW5nZW9uUmVzdWx0SW5mby5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byKcAQogRWZmaWd5Q2hhbGxl",
+            "bmdlRHVuZ2VvblJlc3VsdEluZm8SFwoPY2hhbGxlbmdlX3Njb3JlGAwgASgN",
+            "EhsKE2NoYWxsZW5nZV9tYXhfc2NvcmUYCCABKA0SEgoKaXNfc3VjY2VzcxgC",
+            "IAEoCBIYChBpc19pbl90aW1lX2xpbWl0GAEgASgIEhQKDGNoYWxsZW5nZV9p",
+            "ZBgPIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo), global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo.Parser, new[]{ "ChallengeScore", "IsInTimeLimit", "ChallengeId", "IsSuccess", "ChallengeMaxScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo), global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo.Parser, new[]{ "ChallengeScore", "ChallengeMaxScore", "IsSuccess", "IsInTimeLimit", "ChallengeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyChallengeDungeonResultInfo(EffigyChallengeDungeonResultInfo other) : this() {
       challengeScore_ = other.challengeScore_;
+      challengeMaxScore_ = other.challengeMaxScore_;
+      isSuccess_ = other.isSuccess_;
       isInTimeLimit_ = other.isInTimeLimit_;
       challengeId_ = other.challengeId_;
-      isSuccess_ = other.isSuccess_;
-      challengeMaxScore_ = other.challengeMaxScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_score" field.</summary>
-    public const int ChallengeScoreFieldNumber = 7;
+    public const int ChallengeScoreFieldNumber = 12;
     private uint challengeScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,8 +100,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "challenge_max_score" field.</summary>
+    public const int ChallengeMaxScoreFieldNumber = 8;
+    private uint challengeMaxScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeMaxScore {
+      get { return challengeMaxScore_; }
+      set {
+        challengeMaxScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 2;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_in_time_limit" field.</summary>
-    public const int IsInTimeLimitFieldNumber = 8;
+    public const int IsInTimeLimitFieldNumber = 1;
     private bool isInTimeLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 6;
+    public const int ChallengeIdFieldNumber = 15;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,30 +145,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return challengeId_; }
       set {
         challengeId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 15;
-    private bool isSuccess_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
-      set {
-        isSuccess_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_max_score" field.</summary>
-    public const int ChallengeMaxScoreFieldNumber = 13;
-    private uint challengeMaxScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeMaxScore {
-      get { return challengeMaxScore_; }
-      set {
-        challengeMaxScore_ = value;
       }
     }
 
@@ -164,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ChallengeScore != other.ChallengeScore) return false;
+      if (ChallengeMaxScore != other.ChallengeMaxScore) return false;
+      if (IsSuccess != other.IsSuccess) return false;
       if (IsInTimeLimit != other.IsInTimeLimit) return false;
       if (ChallengeId != other.ChallengeId) return false;
-      if (IsSuccess != other.IsSuccess) return false;
-      if (ChallengeMaxScore != other.ChallengeMaxScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,10 +176,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ChallengeScore != 0) hash ^= ChallengeScore.GetHashCode();
+      if (ChallengeMaxScore != 0) hash ^= ChallengeMaxScore.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (IsInTimeLimit != false) hash ^= IsInTimeLimit.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (ChallengeMaxScore != 0) hash ^= ChallengeMaxScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,25 +198,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (ChallengeScore != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ChallengeScore);
-      }
       if (IsInTimeLimit != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteBool(IsInTimeLimit);
       }
+      if (IsSuccess != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsSuccess);
+      }
       if (ChallengeMaxScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteUInt32(ChallengeMaxScore);
       }
-      if (IsSuccess != false) {
+      if (ChallengeScore != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeScore);
+      }
+      if (ChallengeId != 0) {
         output.WriteRawTag(120);
-        output.WriteBool(IsSuccess);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,25 +228,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (ChallengeScore != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ChallengeScore);
-      }
       if (IsInTimeLimit != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteBool(IsInTimeLimit);
       }
+      if (IsSuccess != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsSuccess);
+      }
       if (ChallengeMaxScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteUInt32(ChallengeMaxScore);
       }
-      if (IsSuccess != false) {
+      if (ChallengeScore != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeScore);
+      }
+      if (ChallengeId != 0) {
         output.WriteRawTag(120);
-        output.WriteBool(IsSuccess);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -261,17 +261,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ChallengeScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeScore);
       }
+      if (ChallengeMaxScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeMaxScore);
+      }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
       if (IsInTimeLimit != false) {
         size += 1 + 1;
       }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
-      }
-      if (IsSuccess != false) {
-        size += 1 + 1;
-      }
-      if (ChallengeMaxScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeMaxScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -288,17 +288,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ChallengeScore != 0) {
         ChallengeScore = other.ChallengeScore;
       }
+      if (other.ChallengeMaxScore != 0) {
+        ChallengeMaxScore = other.ChallengeMaxScore;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
       if (other.IsInTimeLimit != false) {
         IsInTimeLimit = other.IsInTimeLimit;
       }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
-      }
-      if (other.IsSuccess != false) {
-        IsSuccess = other.IsSuccess;
-      }
-      if (other.ChallengeMaxScore != 0) {
-        ChallengeMaxScore = other.ChallengeMaxScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -315,24 +315,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            ChallengeScore = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 8: {
             IsInTimeLimit = input.ReadBool();
             break;
           }
-          case 104: {
+          case 16: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 64: {
             ChallengeMaxScore = input.ReadUInt32();
             break;
           }
+          case 96: {
+            ChallengeScore = input.ReadUInt32();
+            break;
+          }
           case 120: {
-            IsSuccess = input.ReadBool();
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }
@@ -350,24 +350,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            ChallengeScore = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 8: {
             IsInTimeLimit = input.ReadBool();
             break;
           }
-          case 104: {
+          case 16: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 64: {
             ChallengeMaxScore = input.ReadUInt32();
             break;
           }
+          case 96: {
+            ChallengeScore = input.ReadUInt32();
+            break;
+          }
           case 120: {
-            IsSuccess = input.ReadBool();
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }

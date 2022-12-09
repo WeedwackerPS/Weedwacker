@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarExpeditionGetRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBdmF0YXJFeHBlZGl0aW9uR2V0UmV3YXJkUnNwLnByb3RvGhpBdmF0YXJF",
-            "eHBlZGl0aW9uSW5mby5wcm90bxoPSXRlbVBhcmFtLnByb3RvIpcCChxBdmF0",
-            "YXJFeHBlZGl0aW9uR2V0UmV3YXJkUnNwEiMKD2V4dHJhX2l0ZW1fbGlzdBgJ",
-            "IAMoCzIKLkl0ZW1QYXJhbRIdCglpdGVtX2xpc3QYCCADKAsyCi5JdGVtUGFy",
-            "YW0SUQoTZXhwZWRpdGlvbl9pbmZvX21hcBgMIAMoCzI0LkF2YXRhckV4cGVk",
-            "aXRpb25HZXRSZXdhcmRSc3AuRXhwZWRpdGlvbkluZm9NYXBFbnRyeRIPCgdy",
-            "ZXRjb2RlGAIgASgFGk8KFkV4cGVkaXRpb25JbmZvTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgEEiQKBXZhbHVlGAIgASgLMhUuQXZhdGFyRXhwZWRpdGlvbkluZm86",
-            "AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiJBdmF0YXJFeHBlZGl0aW9uR2V0UmV3YXJkUnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhpBdmF0YXJFeHBlZGl0aW9uSW5m",
+            "by5wcm90bxoPSXRlbVBhcmFtLnByb3RvIpcDChxBdmF0YXJFeHBlZGl0aW9u",
+            "R2V0UmV3YXJkUnNwEj0KCWl0ZW1fbGlzdBgHIAMoCzIqLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtEkMKD2V4dHJhX2l0ZW1f",
+            "bGlzdBgLIAMoCzIqLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "SXRlbVBhcmFtEnEKE2V4cGVkaXRpb25faW5mb19tYXAYDSADKAsyVC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkF2YXRhckV4cGVkaXRpb25H",
+            "ZXRSZXdhcmRSc3AuRXhwZWRpdGlvbkluZm9NYXBFbnRyeRIPCgdyZXRjb2Rl",
+            "GAggASgFGm8KFkV4cGVkaXRpb25JbmZvTWFwRW50cnkSCwoDa2V5GAEgASgE",
+            "EkQKBXZhbHVlGAIgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5BdmF0YXJFeHBlZGl0aW9uSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarExpeditionGetRewardRsp), global::Weedwacker.Shared.Network.Proto.AvatarExpeditionGetRewardRsp.Parser, new[]{ "ExtraItemList", "ItemList", "ExpeditionInfoMap", "Retcode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarExpeditionGetRewardRsp), global::Weedwacker.Shared.Network.Proto.AvatarExpeditionGetRewardRsp.Parser, new[]{ "ItemList", "ExtraItemList", "ExpeditionInfoMap", "Retcode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -45,9 +47,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1784
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1715;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarExpeditionGetRewardRsp : pb::IMessage<AvatarExpeditionGetRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,8 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarExpeditionGetRewardRsp(AvatarExpeditionGetRewardRsp other) : this() {
-      extraItemList_ = other.extraItemList_.Clone();
       itemList_ = other.itemList_.Clone();
+      extraItemList_ = other.extraItemList_.Clone();
       expeditionInfoMap_ = other.expeditionInfoMap_.Clone();
       retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -96,21 +102,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarExpeditionGetRewardRsp(this);
     }
 
-    /// <summary>Field number for the "extra_item_list" field.</summary>
-    public const int ExtraItemListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_extraItemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> extraItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ExtraItemList {
-      get { return extraItemList_; }
-    }
-
     /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 8;
+    public const int ItemListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,10 +113,21 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return itemList_; }
     }
 
+    /// <summary>Field number for the "extra_item_list" field.</summary>
+    public const int ExtraItemListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_extraItemList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> extraItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ExtraItemList {
+      get { return extraItemList_; }
+    }
+
     /// <summary>Field number for the "expedition_info_map" field.</summary>
-    public const int ExpeditionInfoMapFieldNumber = 12;
+    public const int ExpeditionInfoMapFieldNumber = 13;
     private static readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
-        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 98);
+        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 106);
     private readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,8 +162,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!extraItemList_.Equals(other.extraItemList_)) return false;
       if(!itemList_.Equals(other.itemList_)) return false;
+      if(!extraItemList_.Equals(other.extraItemList_)) return false;
       if (!ExpeditionInfoMap.Equals(other.ExpeditionInfoMap)) return false;
       if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -167,8 +173,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= extraItemList_.GetHashCode();
       hash ^= itemList_.GetHashCode();
+      hash ^= extraItemList_.GetHashCode();
       hash ^= ExpeditionInfoMap.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
@@ -189,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      itemList_.WriteTo(output, _repeated_itemList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      itemList_.WriteTo(output, _repeated_itemList_codec);
       extraItemList_.WriteTo(output, _repeated_extraItemList_codec);
       expeditionInfoMap_.WriteTo(output, _map_expeditionInfoMap_codec);
       if (_unknownFields != null) {
@@ -206,11 +212,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       extraItemList_.WriteTo(ref output, _repeated_extraItemList_codec);
       expeditionInfoMap_.WriteTo(ref output, _map_expeditionInfoMap_codec);
       if (_unknownFields != null) {
@@ -223,8 +229,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += extraItemList_.CalculateSize(_repeated_extraItemList_codec);
       size += itemList_.CalculateSize(_repeated_itemList_codec);
+      size += extraItemList_.CalculateSize(_repeated_extraItemList_codec);
       size += expeditionInfoMap_.CalculateSize(_map_expeditionInfoMap_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
@@ -241,8 +247,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      extraItemList_.Add(other.extraItemList_);
       itemList_.Add(other.itemList_);
+      extraItemList_.Add(other.extraItemList_);
       expeditionInfoMap_.Add(other.expeditionInfoMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
@@ -262,19 +268,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 66: {
+          case 58: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 90: {
             extraItemList_.AddEntriesFrom(input, _repeated_extraItemList_codec);
             break;
           }
-          case 98: {
+          case 106: {
             expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
             break;
           }
@@ -293,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 66: {
+          case 58: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 90: {
             extraItemList_.AddEntriesFrom(ref input, _repeated_extraItemList_codec);
             break;
           }
-          case 98: {
+          case 106: {
             expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
             break;
           }

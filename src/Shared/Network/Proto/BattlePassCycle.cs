@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassCycleReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVCYXR0bGVQYXNzQ3ljbGUucHJvdG8iSgoPQmF0dGxlUGFzc0N5Y2xlEhEK",
-            "CWN5Y2xlX2lkeBgDIAEoDRIQCghlbmRfdGltZRgKIAEoDRISCgpiZWdpbl90",
-            "aW1lGA0gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChVCYXR0bGVQYXNzQ3ljbGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iSgoPQmF0dGxlUGFzc0N5Y2xlEhAKCGVuZF90aW1lGAUg",
+            "ASgNEhIKCmJlZ2luX3RpbWUYDSABKA0SEQoJY3ljbGVfaWR4GA8gASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassCycle), global::Weedwacker.Shared.Network.Proto.BattlePassCycle.Parser, new[]{ "CycleIdx", "EndTime", "BeginTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassCycle), global::Weedwacker.Shared.Network.Proto.BattlePassCycle.Parser, new[]{ "EndTime", "BeginTime", "CycleIdx" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassCycle(BattlePassCycle other) : this() {
-      cycleIdx_ = other.cycleIdx_;
       endTime_ = other.endTime_;
       beginTime_ = other.beginTime_;
+      cycleIdx_ = other.cycleIdx_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassCycle(this);
     }
 
-    /// <summary>Field number for the "cycle_idx" field.</summary>
-    public const int CycleIdxFieldNumber = 3;
-    private uint cycleIdx_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CycleIdx {
-      get { return cycleIdx_; }
-      set {
-        cycleIdx_ = value;
-      }
-    }
-
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 10;
+    public const int EndTimeFieldNumber = 5;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,6 +108,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cycle_idx" field.</summary>
+    public const int CycleIdxFieldNumber = 15;
+    private uint cycleIdx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CycleIdx {
+      get { return cycleIdx_; }
+      set {
+        cycleIdx_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CycleIdx != other.CycleIdx) return false;
       if (EndTime != other.EndTime) return false;
       if (BeginTime != other.BeginTime) return false;
+      if (CycleIdx != other.CycleIdx) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CycleIdx != 0) hash ^= CycleIdx.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (CycleIdx != 0) hash ^= CycleIdx.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CycleIdx != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CycleIdx);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(EndTime);
       }
       if (BeginTime != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(BeginTime);
+      }
+      if (CycleIdx != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CycleIdx);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CycleIdx != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CycleIdx);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(EndTime);
       }
       if (BeginTime != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(BeginTime);
+      }
+      if (CycleIdx != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CycleIdx);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CycleIdx != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CycleIdx);
-      }
       if (EndTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (BeginTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (CycleIdx != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CycleIdx);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CycleIdx != 0) {
-        CycleIdx = other.CycleIdx;
-      }
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
       if (other.BeginTime != 0) {
         BeginTime = other.BeginTime;
+      }
+      if (other.CycleIdx != 0) {
+        CycleIdx = other.CycleIdx;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            CycleIdx = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 40: {
             EndTime = input.ReadUInt32();
             break;
           }
           case 104: {
             BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CycleIdx = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            CycleIdx = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 40: {
             EndTime = input.ReadUInt32();
             break;
           }
           case 104: {
             BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CycleIdx = input.ReadUInt32();
             break;
           }
         }

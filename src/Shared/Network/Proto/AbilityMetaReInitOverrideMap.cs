@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaReInitOverrideMapReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBYmlsaXR5TWV0YVJlSW5pdE92ZXJyaWRlTWFwLnByb3RvGh1BYmlsaXR5",
-            "U2NhbGFyVmFsdWVFbnRyeS5wcm90byJOChxBYmlsaXR5TWV0YVJlSW5pdE92",
-            "ZXJyaWRlTWFwEi4KDG92ZXJyaWRlX21hcBgHIAMoCzIYLkFiaWxpdHlTY2Fs",
-            "YXJWYWx1ZUVudHJ5QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "CiJBYmlsaXR5TWV0YVJlSW5pdE92ZXJyaWRlTWFwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh1BYmlsaXR5U2NhbGFyVmFsdWVF",
+            "bnRyeS5wcm90byJuChxBYmlsaXR5TWV0YVJlSW5pdE92ZXJyaWRlTWFwEk4K",
+            "DG92ZXJyaWRlX21hcBgKIAMoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQWJpbGl0eVNjYWxhclZhbHVlRW50cnliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "override_map" field.</summary>
-    public const int OverrideMapFieldNumber = 7;
+    public const int OverrideMapFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntry> _repeated_overrideMap_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntry.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntry.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntry> overrideMap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityScalarValueEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 82: {
             overrideMap_.AddEntriesFrom(input, _repeated_overrideMap_codec);
             break;
           }
@@ -206,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 82: {
             overrideMap_.AddEntriesFrom(ref input, _repeated_overrideMap_codec);
             break;
           }

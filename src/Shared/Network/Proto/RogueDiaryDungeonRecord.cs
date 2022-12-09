@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryDungeonRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Sb2d1ZURpYXJ5RHVuZ2VvblJlY29yZC5wcm90byJoChdSb2d1ZURpYXJ5",
-            "RHVuZ2VvblJlY29yZBIRCglpc19maW5pc2gYCiABKAgSEQoJbWF4X3JvdW5k",
-            "GAUgASgNEhMKC2ZpbmlzaF90aW1lGA8gASgNEhIKCmRpZmZpY3VsdHkYDSAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "Ch1Sb2d1ZURpYXJ5RHVuZ2VvblJlY29yZC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJoChdSb2d1ZURpYXJ5RHVuZ2VvblJlY29y",
+            "ZBITCgtmaW5pc2hfdGltZRgOIAEoDRIRCglpc19maW5pc2gYCiABKAgSEgoK",
+            "ZGlmZmljdWx0eRgFIAEoDRIRCgltYXhfcm91bmQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord), global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord.Parser, new[]{ "IsFinish", "MaxRound", "FinishTime", "Difficulty" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord), global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord.Parser, new[]{ "FinishTime", "IsFinish", "Difficulty", "MaxRound" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryDungeonRecord(RogueDiaryDungeonRecord other) : this() {
-      isFinish_ = other.isFinish_;
-      maxRound_ = other.maxRound_;
       finishTime_ = other.finishTime_;
+      isFinish_ = other.isFinish_;
       difficulty_ = other.difficulty_;
+      maxRound_ = other.maxRound_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,6 +83,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryDungeonRecord Clone() {
       return new RogueDiaryDungeonRecord(this);
+    }
+
+    /// <summary>Field number for the "finish_time" field.</summary>
+    public const int FinishTimeFieldNumber = 14;
+    private uint finishTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinishTime {
+      get { return finishTime_; }
+      set {
+        finishTime_ = value;
+      }
     }
 
     /// <summary>Field number for the "is_finish" field.</summary>
@@ -98,32 +109,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_round" field.</summary>
-    public const int MaxRoundFieldNumber = 5;
-    private uint maxRound_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxRound {
-      get { return maxRound_; }
-      set {
-        maxRound_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "finish_time" field.</summary>
-    public const int FinishTimeFieldNumber = 15;
-    private uint finishTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishTime {
-      get { return finishTime_; }
-      set {
-        finishTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 13;
+    public const int DifficultyFieldNumber = 5;
     private uint difficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +118,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return difficulty_; }
       set {
         difficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_round" field.</summary>
+    public const int MaxRoundFieldNumber = 7;
+    private uint maxRound_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxRound {
+      get { return maxRound_; }
+      set {
+        maxRound_ = value;
       }
     }
 
@@ -149,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFinish != other.IsFinish) return false;
-      if (MaxRound != other.MaxRound) return false;
       if (FinishTime != other.FinishTime) return false;
+      if (IsFinish != other.IsFinish) return false;
       if (Difficulty != other.Difficulty) return false;
+      if (MaxRound != other.MaxRound) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-      if (MaxRound != 0) hash ^= MaxRound.GetHashCode();
       if (FinishTime != 0) hash ^= FinishTime.GetHashCode();
+      if (IsFinish != false) hash ^= IsFinish.GetHashCode();
       if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      if (MaxRound != 0) hash ^= MaxRound.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,20 +181,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxRound != 0) {
+      if (Difficulty != 0) {
         output.WriteRawTag(40);
+        output.WriteUInt32(Difficulty);
+      }
+      if (MaxRound != 0) {
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxRound);
       }
       if (IsFinish != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsFinish);
       }
-      if (Difficulty != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Difficulty);
-      }
       if (FinishTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(FinishTime);
       }
       if (_unknownFields != null) {
@@ -208,20 +207,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxRound != 0) {
+      if (Difficulty != 0) {
         output.WriteRawTag(40);
+        output.WriteUInt32(Difficulty);
+      }
+      if (MaxRound != 0) {
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxRound);
       }
       if (IsFinish != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsFinish);
       }
-      if (Difficulty != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Difficulty);
-      }
       if (FinishTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(FinishTime);
       }
       if (_unknownFields != null) {
@@ -234,17 +233,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsFinish != false) {
-        size += 1 + 1;
-      }
-      if (MaxRound != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxRound);
-      }
       if (FinishTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishTime);
       }
+      if (IsFinish != false) {
+        size += 1 + 1;
+      }
       if (Difficulty != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
+      }
+      if (MaxRound != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxRound);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsFinish != false) {
-        IsFinish = other.IsFinish;
-      }
-      if (other.MaxRound != 0) {
-        MaxRound = other.MaxRound;
-      }
       if (other.FinishTime != 0) {
         FinishTime = other.FinishTime;
       }
+      if (other.IsFinish != false) {
+        IsFinish = other.IsFinish;
+      }
       if (other.Difficulty != 0) {
         Difficulty = other.Difficulty;
+      }
+      if (other.MaxRound != 0) {
+        MaxRound = other.MaxRound;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -286,6 +285,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 40: {
+            Difficulty = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             MaxRound = input.ReadUInt32();
             break;
           }
@@ -293,11 +296,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsFinish = input.ReadBool();
             break;
           }
-          case 104: {
-            Difficulty = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 112: {
             FinishTime = input.ReadUInt32();
             break;
           }
@@ -317,6 +316,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 40: {
+            Difficulty = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             MaxRound = input.ReadUInt32();
             break;
           }
@@ -324,11 +327,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsFinish = input.ReadBool();
             break;
           }
-          case 104: {
-            Difficulty = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 112: {
             FinishTime = input.ReadUInt32();
             break;
           }

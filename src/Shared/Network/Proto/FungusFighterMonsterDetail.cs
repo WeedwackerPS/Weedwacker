@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusFighterMonsterDetailReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBGdW5ndXNGaWdodGVyTW9uc3RlckRldGFpbC5wcm90byJcChpGdW5ndXNG",
-            "aWdodGVyTW9uc3RlckRldGFpbBIRCglmdW5ndXNfaWQYAiABKA0SGQoRY3Vy",
-            "X2hwX3BlcmNlbnRhZ2UYByABKAISEAoIaXNfYWxpdmUYCSABKAhCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBGdW5ndXNGaWdodGVyTW9uc3RlckRldGFpbC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJcChpGdW5ndXNGaWdodGVyTW9uc3Rl",
+            "ckRldGFpbBIZChFjdXJfaHBfcGVyY2VudGFnZRgJIAEoAhIQCghpc19hbGl2",
+            "ZRgKIAEoCBIRCglmdW5ndXNfaWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusFighterMonsterDetail), global::Weedwacker.Shared.Network.Proto.FungusFighterMonsterDetail.Parser, new[]{ "FungusId", "CurHpPercentage", "IsAlive" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusFighterMonsterDetail), global::Weedwacker.Shared.Network.Proto.FungusFighterMonsterDetail.Parser, new[]{ "CurHpPercentage", "IsAlive", "FungusId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusFighterMonsterDetail(FungusFighterMonsterDetail other) : this() {
-      fungusId_ = other.fungusId_;
       curHpPercentage_ = other.curHpPercentage_;
       isAlive_ = other.isAlive_;
+      fungusId_ = other.fungusId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusFighterMonsterDetail(this);
     }
 
-    /// <summary>Field number for the "fungus_id" field.</summary>
-    public const int FungusIdFieldNumber = 2;
-    private uint fungusId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FungusId {
-      get { return fungusId_; }
-      set {
-        fungusId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_hp_percentage" field.</summary>
-    public const int CurHpPercentageFieldNumber = 7;
+    public const int CurHpPercentageFieldNumber = 9;
     private float curHpPercentage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_alive" field.</summary>
-    public const int IsAliveFieldNumber = 9;
+    public const int IsAliveFieldNumber = 10;
     private bool isAlive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isAlive_; }
       set {
         isAlive_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fungus_id" field.</summary>
+    public const int FungusIdFieldNumber = 13;
+    private uint fungusId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FungusId {
+      get { return fungusId_; }
+      set {
+        fungusId_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FungusId != other.FungusId) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CurHpPercentage, other.CurHpPercentage)) return false;
       if (IsAlive != other.IsAlive) return false;
+      if (FungusId != other.FungusId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FungusId != 0) hash ^= FungusId.GetHashCode();
       if (CurHpPercentage != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CurHpPercentage);
       if (IsAlive != false) hash ^= IsAlive.GetHashCode();
+      if (FungusId != 0) hash ^= FungusId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FungusId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(FungusId);
-      }
       if (CurHpPercentage != 0F) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(77);
         output.WriteFloat(CurHpPercentage);
       }
       if (IsAlive != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(IsAlive);
+      }
+      if (FungusId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FungusId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FungusId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(FungusId);
-      }
       if (CurHpPercentage != 0F) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(77);
         output.WriteFloat(CurHpPercentage);
       }
       if (IsAlive != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(IsAlive);
+      }
+      if (FungusId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FungusId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FungusId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
-      }
       if (CurHpPercentage != 0F) {
         size += 1 + 4;
       }
       if (IsAlive != false) {
         size += 1 + 1;
+      }
+      if (FungusId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FungusId != 0) {
-        FungusId = other.FungusId;
-      }
       if (other.CurHpPercentage != 0F) {
         CurHpPercentage = other.CurHpPercentage;
       }
       if (other.IsAlive != false) {
         IsAlive = other.IsAlive;
+      }
+      if (other.FungusId != 0) {
+        FungusId = other.FungusId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            FungusId = input.ReadUInt32();
-            break;
-          }
-          case 61: {
+          case 77: {
             CurHpPercentage = input.ReadFloat();
             break;
           }
-          case 72: {
+          case 80: {
             IsAlive = input.ReadBool();
+            break;
+          }
+          case 104: {
+            FungusId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            FungusId = input.ReadUInt32();
-            break;
-          }
-          case 61: {
+          case 77: {
             CurHpPercentage = input.ReadFloat();
             break;
           }
-          case 72: {
+          case 80: {
             IsAlive = input.ReadBool();
+            break;
+          }
+          case 104: {
+            FungusId = input.ReadUInt32();
             break;
           }
         }

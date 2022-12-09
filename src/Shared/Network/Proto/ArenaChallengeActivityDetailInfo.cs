@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static ArenaChallengeActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZBcmVuYUNoYWxsZW5nZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxogQXJl",
-            "bmFDaGFsbGVuZ2VNb25zdGVyTGV2ZWwucHJvdG8ilAIKIEFyZW5hQ2hhbGxl",
-            "bmdlQWN0aXZpdHlEZXRhaWxJbmZvEhsKE2lzX2ZpbmlzaF9hbnlfbGV2ZWwY",
-            "DiABKAgSVAoTbGV2ZWxfb3Blbl90aW1lX21hcBgDIAMoCzI3LkFyZW5hQ2hh",
-            "bGxlbmdlQWN0aXZpdHlEZXRhaWxJbmZvLkxldmVsT3BlblRpbWVNYXBFbnRy",
-            "eRITCgt3b3JsZF9sZXZlbBgPIAEoDRIvCgpsZXZlbF9saXN0GAkgAygLMhsu",
-            "QXJlbmFDaGFsbGVuZ2VNb25zdGVyTGV2ZWwaNwoVTGV2ZWxPcGVuVGltZU1h",
-            "cEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiZBcmVuYUNoYWxsZW5nZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxogQXJlbmFDaGFsbGVuZ2VN",
+            "b25zdGVyTGV2ZWwucHJvdG8i1AIKIEFyZW5hQ2hhbGxlbmdlQWN0aXZpdHlE",
+            "ZXRhaWxJbmZvEk8KCmxldmVsX2xpc3QYDyADKAsyOy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkFyZW5hQ2hhbGxlbmdlTW9uc3RlckxldmVs",
+            "EnQKE2xldmVsX29wZW5fdGltZV9tYXAYASADKAsyVy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkFyZW5hQ2hhbGxlbmdlQWN0aXZpdHlEZXRh",
+            "aWxJbmZvLkxldmVsT3BlblRpbWVNYXBFbnRyeRIbChNpc19maW5pc2hfYW55",
+            "X2xldmVsGAQgASgIEhMKC3dvcmxkX2xldmVsGAcgASgNGjcKFUxldmVsT3Bl",
+            "blRpbWVNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevelReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo.Parser, new[]{ "IsFinishAnyLevel", "LevelOpenTimeMap", "WorldLevel", "LevelList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo.Parser, new[]{ "LevelList", "LevelOpenTimeMap", "IsFinishAnyLevel", "WorldLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -77,10 +79,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ArenaChallengeActivityDetailInfo(ArenaChallengeActivityDetailInfo other) : this() {
-      isFinishAnyLevel_ = other.isFinishAnyLevel_;
-      levelOpenTimeMap_ = other.levelOpenTimeMap_.Clone();
-      worldLevel_ = other.worldLevel_;
       levelList_ = other.levelList_.Clone();
+      levelOpenTimeMap_ = other.levelOpenTimeMap_.Clone();
+      isFinishAnyLevel_ = other.isFinishAnyLevel_;
+      worldLevel_ = other.worldLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +92,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ArenaChallengeActivityDetailInfo(this);
     }
 
+    /// <summary>Field number for the "level_list" field.</summary>
+    public const int LevelListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> _repeated_levelList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> LevelList {
+      get { return levelList_; }
+    }
+
+    /// <summary>Field number for the "level_open_time_map" field.</summary>
+    public const int LevelOpenTimeMapFieldNumber = 1;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_levelOpenTimeMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
+    private readonly pbc::MapField<uint, uint> levelOpenTimeMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> LevelOpenTimeMap {
+      get { return levelOpenTimeMap_; }
+    }
+
     /// <summary>Field number for the "is_finish_any_level" field.</summary>
-    public const int IsFinishAnyLevelFieldNumber = 14;
+    public const int IsFinishAnyLevelFieldNumber = 4;
     private bool isFinishAnyLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,19 +126,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "level_open_time_map" field.</summary>
-    public const int LevelOpenTimeMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_levelOpenTimeMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> levelOpenTimeMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> LevelOpenTimeMap {
-      get { return levelOpenTimeMap_; }
-    }
-
     /// <summary>Field number for the "world_level" field.</summary>
-    public const int WorldLevelFieldNumber = 15;
+    public const int WorldLevelFieldNumber = 7;
     private uint worldLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,17 +136,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         worldLevel_ = value;
       }
-    }
-
-    /// <summary>Field number for the "level_list" field.</summary>
-    public const int LevelListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> _repeated_levelList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel> LevelList {
-      get { return levelList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,10 +153,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFinishAnyLevel != other.IsFinishAnyLevel) return false;
-      if (!LevelOpenTimeMap.Equals(other.LevelOpenTimeMap)) return false;
-      if (WorldLevel != other.WorldLevel) return false;
       if(!levelList_.Equals(other.levelList_)) return false;
+      if (!LevelOpenTimeMap.Equals(other.LevelOpenTimeMap)) return false;
+      if (IsFinishAnyLevel != other.IsFinishAnyLevel) return false;
+      if (WorldLevel != other.WorldLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFinishAnyLevel != false) hash ^= IsFinishAnyLevel.GetHashCode();
-      hash ^= LevelOpenTimeMap.GetHashCode();
-      if (WorldLevel != 0) hash ^= WorldLevel.GetHashCode();
       hash ^= levelList_.GetHashCode();
+      hash ^= LevelOpenTimeMap.GetHashCode();
+      if (IsFinishAnyLevel != false) hash ^= IsFinishAnyLevel.GetHashCode();
+      if (WorldLevel != 0) hash ^= WorldLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,15 +187,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       levelOpenTimeMap_.WriteTo(output, _map_levelOpenTimeMap_codec);
-      levelList_.WriteTo(output, _repeated_levelList_codec);
       if (IsFinishAnyLevel != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteBool(IsFinishAnyLevel);
       }
       if (WorldLevel != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteUInt32(WorldLevel);
       }
+      levelList_.WriteTo(output, _repeated_levelList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -205,15 +207,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       levelOpenTimeMap_.WriteTo(ref output, _map_levelOpenTimeMap_codec);
-      levelList_.WriteTo(ref output, _repeated_levelList_codec);
       if (IsFinishAnyLevel != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteBool(IsFinishAnyLevel);
       }
       if (WorldLevel != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteUInt32(WorldLevel);
       }
+      levelList_.WriteTo(ref output, _repeated_levelList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -224,14 +226,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += levelList_.CalculateSize(_repeated_levelList_codec);
+      size += levelOpenTimeMap_.CalculateSize(_map_levelOpenTimeMap_codec);
       if (IsFinishAnyLevel != false) {
         size += 1 + 1;
       }
-      size += levelOpenTimeMap_.CalculateSize(_map_levelOpenTimeMap_codec);
       if (WorldLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WorldLevel);
       }
-      size += levelList_.CalculateSize(_repeated_levelList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -244,14 +246,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      levelList_.Add(other.levelList_);
+      levelOpenTimeMap_.Add(other.levelOpenTimeMap_);
       if (other.IsFinishAnyLevel != false) {
         IsFinishAnyLevel = other.IsFinishAnyLevel;
       }
-      levelOpenTimeMap_.Add(other.levelOpenTimeMap_);
       if (other.WorldLevel != 0) {
         WorldLevel = other.WorldLevel;
       }
-      levelList_.Add(other.levelList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -267,20 +269,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 10: {
             levelOpenTimeMap_.AddEntriesFrom(input, _map_levelOpenTimeMap_codec);
             break;
           }
-          case 74: {
-            levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
-            break;
-          }
-          case 112: {
+          case 32: {
             IsFinishAnyLevel = input.ReadBool();
             break;
           }
-          case 120: {
+          case 56: {
             WorldLevel = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
             break;
           }
         }
@@ -298,20 +300,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 10: {
             levelOpenTimeMap_.AddEntriesFrom(ref input, _map_levelOpenTimeMap_codec);
             break;
           }
-          case 74: {
-            levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
-            break;
-          }
-          case 112: {
+          case 32: {
             IsFinishAnyLevel = input.ReadBool();
             break;
           }
-          case 120: {
+          case 56: {
             WorldLevel = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
             break;
           }
         }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairBossSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1GbGV1ckZhaXJCb3NzU2V0dGxlSW5mby5wcm90bxodRmxldXJGYWlyUGxh",
-            "eWVyU3RhdEluZm8ucHJvdG8inAEKF0ZsZXVyRmFpckJvc3NTZXR0bGVJbmZv",
-            "EhgKEHJld2FyZF90b2tlbl9udW0YDyABKA0SMAoOc3RhdF9pbmZvX2xpc3QY",
-            "ASADKAsyGC5GbGV1ckZhaXJQbGF5ZXJTdGF0SW5mbxISCgppc19zdWNjZXNz",
-            "GAogASgIEg4KBmVuZXJneRgMIAEoDRIRCgljb3N0X3RpbWUYCCABKA1CIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1GbGV1ckZhaXJCb3NzU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxodRmxldXJGYWlyUGxheWVyU3RhdEluZm8u",
+            "cHJvdG8ivAEKF0ZsZXVyRmFpckJvc3NTZXR0bGVJbmZvEhEKCWNvc3RfdGlt",
+            "ZRgOIAEoDRJQCg5zdGF0X2luZm9fbGlzdBgLIAMoCzI4LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uRmxldXJGYWlyUGxheWVyU3RhdEluZm8S",
+            "DgoGZW5lcmd5GAQgASgNEhIKCmlzX3N1Y2Nlc3MYAiABKAgSGAoQcmV3YXJk",
+            "X3Rva2VuX251bRgPIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo), global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo.Parser, new[]{ "RewardTokenNum", "StatInfoList", "IsSuccess", "Energy", "CostTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo), global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo.Parser, new[]{ "CostTime", "StatInfoList", "Energy", "IsSuccess", "RewardTokenNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +75,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairBossSettleInfo(FleurFairBossSettleInfo other) : this() {
-      rewardTokenNum_ = other.rewardTokenNum_;
-      statInfoList_ = other.statInfoList_.Clone();
-      isSuccess_ = other.isSuccess_;
-      energy_ = other.energy_;
       costTime_ = other.costTime_;
+      statInfoList_ = other.statInfoList_.Clone();
+      energy_ = other.energy_;
+      isSuccess_ = other.isSuccess_;
+      rewardTokenNum_ = other.rewardTokenNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,6 +87,53 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairBossSettleInfo Clone() {
       return new FleurFairBossSettleInfo(this);
+    }
+
+    /// <summary>Field number for the "cost_time" field.</summary>
+    public const int CostTimeFieldNumber = 14;
+    private uint costTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostTime {
+      get { return costTime_; }
+      set {
+        costTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stat_info_list" field.</summary>
+    public const int StatInfoListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> _repeated_statInfoList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> statInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> StatInfoList {
+      get { return statInfoList_; }
+    }
+
+    /// <summary>Field number for the "energy" field.</summary>
+    public const int EnergyFieldNumber = 4;
+    private uint energy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Energy {
+      get { return energy_; }
+      set {
+        energy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 2;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
     }
 
     /// <summary>Field number for the "reward_token_num" field.</summary>
@@ -97,53 +145,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return rewardTokenNum_; }
       set {
         rewardTokenNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "stat_info_list" field.</summary>
-    public const int StatInfoListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> _repeated_statInfoList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> statInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo> StatInfoList {
-      get { return statInfoList_; }
-    }
-
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 10;
-    private bool isSuccess_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
-      set {
-        isSuccess_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "energy" field.</summary>
-    public const int EnergyFieldNumber = 12;
-    private uint energy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Energy {
-      get { return energy_; }
-      set {
-        energy_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cost_time" field.</summary>
-    public const int CostTimeFieldNumber = 8;
-    private uint costTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostTime {
-      get { return costTime_; }
-      set {
-        costTime_ = value;
       }
     }
 
@@ -162,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RewardTokenNum != other.RewardTokenNum) return false;
-      if(!statInfoList_.Equals(other.statInfoList_)) return false;
-      if (IsSuccess != other.IsSuccess) return false;
-      if (Energy != other.Energy) return false;
       if (CostTime != other.CostTime) return false;
+      if(!statInfoList_.Equals(other.statInfoList_)) return false;
+      if (Energy != other.Energy) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (RewardTokenNum != other.RewardTokenNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RewardTokenNum != 0) hash ^= RewardTokenNum.GetHashCode();
-      hash ^= statInfoList_.GetHashCode();
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (Energy != 0) hash ^= Energy.GetHashCode();
       if (CostTime != 0) hash ^= CostTime.GetHashCode();
+      hash ^= statInfoList_.GetHashCode();
+      if (Energy != 0) hash ^= Energy.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (RewardTokenNum != 0) hash ^= RewardTokenNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,18 +198,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      statInfoList_.WriteTo(output, _repeated_statInfoList_codec);
-      if (CostTime != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CostTime);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteBool(IsSuccess);
       }
       if (Energy != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(Energy);
+      }
+      statInfoList_.WriteTo(output, _repeated_statInfoList_codec);
+      if (CostTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CostTime);
       }
       if (RewardTokenNum != 0) {
         output.WriteRawTag(120);
@@ -224,18 +225,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      statInfoList_.WriteTo(ref output, _repeated_statInfoList_codec);
-      if (CostTime != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CostTime);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteBool(IsSuccess);
       }
       if (Energy != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(Energy);
+      }
+      statInfoList_.WriteTo(ref output, _repeated_statInfoList_codec);
+      if (CostTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CostTime);
       }
       if (RewardTokenNum != 0) {
         output.WriteRawTag(120);
@@ -251,18 +252,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RewardTokenNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardTokenNum);
+      if (CostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
       }
       size += statInfoList_.CalculateSize(_repeated_statInfoList_codec);
-      if (IsSuccess != false) {
-        size += 1 + 1;
-      }
       if (Energy != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Energy);
       }
-      if (CostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (RewardTokenNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardTokenNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -276,18 +277,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RewardTokenNum != 0) {
-        RewardTokenNum = other.RewardTokenNum;
+      if (other.CostTime != 0) {
+        CostTime = other.CostTime;
       }
       statInfoList_.Add(other.statInfoList_);
-      if (other.IsSuccess != false) {
-        IsSuccess = other.IsSuccess;
-      }
       if (other.Energy != 0) {
         Energy = other.Energy;
       }
-      if (other.CostTime != 0) {
-        CostTime = other.CostTime;
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.RewardTokenNum != 0) {
+        RewardTokenNum = other.RewardTokenNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -304,20 +305,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            statInfoList_.AddEntriesFrom(input, _repeated_statInfoList_codec);
-            break;
-          }
-          case 64: {
-            CostTime = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 16: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 96: {
+          case 32: {
             Energy = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            statInfoList_.AddEntriesFrom(input, _repeated_statInfoList_codec);
+            break;
+          }
+          case 112: {
+            CostTime = input.ReadUInt32();
             break;
           }
           case 120: {
@@ -339,20 +340,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            statInfoList_.AddEntriesFrom(ref input, _repeated_statInfoList_codec);
-            break;
-          }
-          case 64: {
-            CostTime = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 16: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 96: {
+          case 32: {
             Energy = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            statInfoList_.AddEntriesFrom(ref input, _repeated_statInfoList_codec);
+            break;
+          }
+          case 112: {
+            CostTime = input.ReadUInt32();
             break;
           }
           case 120: {

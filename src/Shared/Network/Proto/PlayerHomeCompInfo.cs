@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerHomeCompInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQbGF5ZXJIb21lQ29tcEluZm8ucHJvdG8aG0ZyaWVuZEVudGVySG9tZU9w",
-            "dGlvbi5wcm90byKzAQoSUGxheWVySG9tZUNvbXBJbmZvEh8KF3VubG9ja2Vk",
-            "X21vZHVsZV9pZF9saXN0GAQgAygNEhsKE3NlZW5fbW9kdWxlX2lkX2xpc3QY",
-            "AiADKA0SJQodbGV2ZWx1cF9yZXdhcmRfZ290X2xldmVsX2xpc3QYByADKA0S",
-            "OAoYZnJpZW5kX2VudGVyX2hvbWVfb3B0aW9uGAggASgOMhYuRnJpZW5kRW50",
-            "ZXJIb21lT3B0aW9uQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChhQbGF5ZXJIb21lQ29tcEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0ZyaWVuZEVudGVySG9tZU9wdGlvbi5wcm90byLT",
+            "AQoSUGxheWVySG9tZUNvbXBJbmZvElgKGGZyaWVuZF9lbnRlcl9ob21lX29w",
+            "dGlvbhgNIAEoDjI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "RnJpZW5kRW50ZXJIb21lT3B0aW9uEhsKE3NlZW5fbW9kdWxlX2lkX2xpc3QY",
+            "BSADKA0SHwoXdW5sb2NrZWRfbW9kdWxlX2lkX2xpc3QYAiADKA0SJQodbGV2",
+            "ZWx1cF9yZXdhcmRfZ290X2xldmVsX2xpc3QYCyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerHomeCompInfo), global::Weedwacker.Shared.Network.Proto.PlayerHomeCompInfo.Parser, new[]{ "UnlockedModuleIdList", "SeenModuleIdList", "LevelupRewardGotLevelList", "FriendEnterHomeOption" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerHomeCompInfo), global::Weedwacker.Shared.Network.Proto.PlayerHomeCompInfo.Parser, new[]{ "FriendEnterHomeOption", "SeenModuleIdList", "UnlockedModuleIdList", "LevelupRewardGotLevelList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerHomeCompInfo(PlayerHomeCompInfo other) : this() {
-      unlockedModuleIdList_ = other.unlockedModuleIdList_.Clone();
-      seenModuleIdList_ = other.seenModuleIdList_.Clone();
-      levelupRewardGotLevelList_ = other.levelupRewardGotLevelList_.Clone();
       friendEnterHomeOption_ = other.friendEnterHomeOption_;
+      seenModuleIdList_ = other.seenModuleIdList_.Clone();
+      unlockedModuleIdList_ = other.unlockedModuleIdList_.Clone();
+      levelupRewardGotLevelList_ = other.levelupRewardGotLevelList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,41 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerHomeCompInfo(this);
     }
 
-    /// <summary>Field number for the "unlocked_module_id_list" field.</summary>
-    public const int UnlockedModuleIdListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockedModuleIdList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> unlockedModuleIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockedModuleIdList {
-      get { return unlockedModuleIdList_; }
-    }
-
-    /// <summary>Field number for the "seen_module_id_list" field.</summary>
-    public const int SeenModuleIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_seenModuleIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> seenModuleIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SeenModuleIdList {
-      get { return seenModuleIdList_; }
-    }
-
-    /// <summary>Field number for the "levelup_reward_got_level_list" field.</summary>
-    public const int LevelupRewardGotLevelListFieldNumber = 7;
-    private static readonly pb::FieldCodec<uint> _repeated_levelupRewardGotLevelList_codec
-        = pb::FieldCodec.ForUInt32(58);
-    private readonly pbc::RepeatedField<uint> levelupRewardGotLevelList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LevelupRewardGotLevelList {
-      get { return levelupRewardGotLevelList_; }
-    }
-
     /// <summary>Field number for the "friend_enter_home_option" field.</summary>
-    public const int FriendEnterHomeOptionFieldNumber = 8;
+    public const int FriendEnterHomeOptionFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption friendEnterHomeOption_ = global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +98,45 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         friendEnterHomeOption_ = value;
       }
+    }
+
+    /// <summary>Field number for the "seen_module_id_list" field.</summary>
+    public const int SeenModuleIdListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_seenModuleIdList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> seenModuleIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> SeenModuleIdList {
+      get { return seenModuleIdList_; }
+    }
+
+    /// <summary>Field number for the "unlocked_module_id_list" field.</summary>
+    public const int UnlockedModuleIdListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockedModuleIdList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> unlockedModuleIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// Unk3300_PBEFIJCEKMH
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnlockedModuleIdList {
+      get { return unlockedModuleIdList_; }
+    }
+
+    /// <summary>Field number for the "levelup_reward_got_level_list" field.</summary>
+    public const int LevelupRewardGotLevelListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_levelupRewardGotLevelList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> levelupRewardGotLevelList_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// Unk3300_JJPCFPAKFLM
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> LevelupRewardGotLevelList {
+      get { return levelupRewardGotLevelList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,10 +154,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!unlockedModuleIdList_.Equals(other.unlockedModuleIdList_)) return false;
-      if(!seenModuleIdList_.Equals(other.seenModuleIdList_)) return false;
-      if(!levelupRewardGotLevelList_.Equals(other.levelupRewardGotLevelList_)) return false;
       if (FriendEnterHomeOption != other.FriendEnterHomeOption) return false;
+      if(!seenModuleIdList_.Equals(other.seenModuleIdList_)) return false;
+      if(!unlockedModuleIdList_.Equals(other.unlockedModuleIdList_)) return false;
+      if(!levelupRewardGotLevelList_.Equals(other.levelupRewardGotLevelList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +165,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= unlockedModuleIdList_.GetHashCode();
-      hash ^= seenModuleIdList_.GetHashCode();
-      hash ^= levelupRewardGotLevelList_.GetHashCode();
       if (FriendEnterHomeOption != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) hash ^= FriendEnterHomeOption.GetHashCode();
+      hash ^= seenModuleIdList_.GetHashCode();
+      hash ^= unlockedModuleIdList_.GetHashCode();
+      hash ^= levelupRewardGotLevelList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      seenModuleIdList_.WriteTo(output, _repeated_seenModuleIdList_codec);
       unlockedModuleIdList_.WriteTo(output, _repeated_unlockedModuleIdList_codec);
+      seenModuleIdList_.WriteTo(output, _repeated_seenModuleIdList_codec);
       levelupRewardGotLevelList_.WriteTo(output, _repeated_levelupRewardGotLevelList_codec);
       if (FriendEnterHomeOption != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(104);
         output.WriteEnum((int) FriendEnterHomeOption);
       }
       if (_unknownFields != null) {
@@ -198,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      seenModuleIdList_.WriteTo(ref output, _repeated_seenModuleIdList_codec);
       unlockedModuleIdList_.WriteTo(ref output, _repeated_unlockedModuleIdList_codec);
+      seenModuleIdList_.WriteTo(ref output, _repeated_seenModuleIdList_codec);
       levelupRewardGotLevelList_.WriteTo(ref output, _repeated_levelupRewardGotLevelList_codec);
       if (FriendEnterHomeOption != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(104);
         output.WriteEnum((int) FriendEnterHomeOption);
       }
       if (_unknownFields != null) {
@@ -215,12 +221,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += unlockedModuleIdList_.CalculateSize(_repeated_unlockedModuleIdList_codec);
-      size += seenModuleIdList_.CalculateSize(_repeated_seenModuleIdList_codec);
-      size += levelupRewardGotLevelList_.CalculateSize(_repeated_levelupRewardGotLevelList_codec);
       if (FriendEnterHomeOption != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FriendEnterHomeOption);
       }
+      size += seenModuleIdList_.CalculateSize(_repeated_seenModuleIdList_codec);
+      size += unlockedModuleIdList_.CalculateSize(_repeated_unlockedModuleIdList_codec);
+      size += levelupRewardGotLevelList_.CalculateSize(_repeated_levelupRewardGotLevelList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -233,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      unlockedModuleIdList_.Add(other.unlockedModuleIdList_);
-      seenModuleIdList_.Add(other.seenModuleIdList_);
-      levelupRewardGotLevelList_.Add(other.levelupRewardGotLevelList_);
       if (other.FriendEnterHomeOption != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
         FriendEnterHomeOption = other.FriendEnterHomeOption;
       }
+      seenModuleIdList_.Add(other.seenModuleIdList_);
+      unlockedModuleIdList_.Add(other.unlockedModuleIdList_);
+      levelupRewardGotLevelList_.Add(other.levelupRewardGotLevelList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -256,20 +262,20 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 18:
           case 16: {
-            seenModuleIdList_.AddEntriesFrom(input, _repeated_seenModuleIdList_codec);
-            break;
-          }
-          case 34:
-          case 32: {
             unlockedModuleIdList_.AddEntriesFrom(input, _repeated_unlockedModuleIdList_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 42:
+          case 40: {
+            seenModuleIdList_.AddEntriesFrom(input, _repeated_seenModuleIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
             levelupRewardGotLevelList_.AddEntriesFrom(input, _repeated_levelupRewardGotLevelList_codec);
             break;
           }
-          case 64: {
+          case 104: {
             FriendEnterHomeOption = (global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption) input.ReadEnum();
             break;
           }
@@ -290,20 +296,20 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 18:
           case 16: {
-            seenModuleIdList_.AddEntriesFrom(ref input, _repeated_seenModuleIdList_codec);
-            break;
-          }
-          case 34:
-          case 32: {
             unlockedModuleIdList_.AddEntriesFrom(ref input, _repeated_unlockedModuleIdList_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 42:
+          case 40: {
+            seenModuleIdList_.AddEntriesFrom(ref input, _repeated_seenModuleIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
             levelupRewardGotLevelList_.AddEntriesFrom(ref input, _repeated_levelupRewardGotLevelList_codec);
             break;
           }
-          case 64: {
+          case 104: {
             FriendEnterHomeOption = (global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption) input.ReadEnum();
             break;
           }

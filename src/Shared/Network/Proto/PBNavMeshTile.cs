@@ -24,10 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static PBNavMeshTileReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNQQk5hdk1lc2hUaWxlLnByb3RvGhNQQk5hdk1lc2hQb2x5LnByb3RvGgxW",
-            "ZWN0b3IucHJvdG8iRQoNUEJOYXZNZXNoVGlsZRIVCgR2ZWNzGAQgAygLMgcu",
-            "VmVjdG9yEh0KBXBvbHlzGAggAygLMg4uUEJOYXZNZXNoUG9seUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChNQQk5hdk1lc2hUaWxlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhNQQk5hdk1lc2hQb2x5LnByb3RvGgxWZWN0b3IucHJvdG8i",
+            "hQEKDVBCTmF2TWVzaFRpbGUSNQoEdmVjcxgMIAMoCzInLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yEj0KBXBvbHlzGA0gAygLMi4u",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QQk5hdk1lc2hQb2x5",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PBNavMeshPolyReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "vecs" field.</summary>
-    public const int VecsFieldNumber = 4;
+    public const int VecsFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_vecs_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> vecs_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "polys" field.</summary>
-    public const int PolysFieldNumber = 8;
+    public const int PolysFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly> _repeated_polys_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly> polys_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshPoly>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -204,11 +206,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 98: {
             vecs_.AddEntriesFrom(input, _repeated_vecs_codec);
             break;
           }
-          case 66: {
+          case 106: {
             polys_.AddEntriesFrom(input, _repeated_polys_codec);
             break;
           }
@@ -227,11 +229,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 98: {
             vecs_.AddEntriesFrom(ref input, _repeated_vecs_codec);
             break;
           }
-          case 66: {
+          case 106: {
             polys_.AddEntriesFrom(ref input, _repeated_polys_codec);
             break;
           }

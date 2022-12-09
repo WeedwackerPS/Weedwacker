@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ArenaChallengeMonsterLevelReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBcmVuYUNoYWxsZW5nZU1vbnN0ZXJMZXZlbC5wcm90byJXChpBcmVuYUNo",
-            "YWxsZW5nZU1vbnN0ZXJMZXZlbBIdChVhcmVuYV9jaGFsbGVuZ2VfbGV2ZWwY",
-            "ByABKA0SGgoSYXJlbmFfY2hhbGxlbmdlX2lkGA8gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBcmVuYUNoYWxsZW5nZU1vbnN0ZXJMZXZlbC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJWChpBcmVuYUNoYWxsZW5nZU1vbnN0",
+            "ZXJMZXZlbBIbChNVbmszMzAwX0RCSEFHSE1NTEFJGAggASgNEhsKE1VuazMz",
+            "MDBfRkRGTkZMQUtPTkcYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel), global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel.Parser, new[]{ "ArenaChallengeLevel", "ArenaChallengeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel), global::Weedwacker.Shared.Network.Proto.ArenaChallengeMonsterLevel.Parser, new[]{ "Unk3300DBHAGHMMLAI", "Unk3300FDFNFLAKONG" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ArenaChallengeMonsterLevel(ArenaChallengeMonsterLevel other) : this() {
-      arenaChallengeLevel_ = other.arenaChallengeLevel_;
-      arenaChallengeId_ = other.arenaChallengeId_;
+      unk3300DBHAGHMMLAI_ = other.unk3300DBHAGHMMLAI_;
+      unk3300FDFNFLAKONG_ = other.unk3300FDFNFLAKONG_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,27 +83,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ArenaChallengeMonsterLevel(this);
     }
 
-    /// <summary>Field number for the "arena_challenge_level" field.</summary>
-    public const int ArenaChallengeLevelFieldNumber = 7;
-    private uint arenaChallengeLevel_;
+    /// <summary>Field number for the "Unk3300_DBHAGHMMLAI" field.</summary>
+    public const int Unk3300DBHAGHMMLAIFieldNumber = 8;
+    private uint unk3300DBHAGHMMLAI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ArenaChallengeLevel {
-      get { return arenaChallengeLevel_; }
+    public uint Unk3300DBHAGHMMLAI {
+      get { return unk3300DBHAGHMMLAI_; }
       set {
-        arenaChallengeLevel_ = value;
+        unk3300DBHAGHMMLAI_ = value;
       }
     }
 
-    /// <summary>Field number for the "arena_challenge_id" field.</summary>
-    public const int ArenaChallengeIdFieldNumber = 15;
-    private uint arenaChallengeId_;
+    /// <summary>Field number for the "Unk3300_FDFNFLAKONG" field.</summary>
+    public const int Unk3300FDFNFLAKONGFieldNumber = 15;
+    private uint unk3300FDFNFLAKONG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ArenaChallengeId {
-      get { return arenaChallengeId_; }
+    public uint Unk3300FDFNFLAKONG {
+      get { return unk3300FDFNFLAKONG_; }
       set {
-        arenaChallengeId_ = value;
+        unk3300FDFNFLAKONG_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ArenaChallengeLevel != other.ArenaChallengeLevel) return false;
-      if (ArenaChallengeId != other.ArenaChallengeId) return false;
+      if (Unk3300DBHAGHMMLAI != other.Unk3300DBHAGHMMLAI) return false;
+      if (Unk3300FDFNFLAKONG != other.Unk3300FDFNFLAKONG) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArenaChallengeLevel != 0) hash ^= ArenaChallengeLevel.GetHashCode();
-      if (ArenaChallengeId != 0) hash ^= ArenaChallengeId.GetHashCode();
+      if (Unk3300DBHAGHMMLAI != 0) hash ^= Unk3300DBHAGHMMLAI.GetHashCode();
+      if (Unk3300FDFNFLAKONG != 0) hash ^= Unk3300FDFNFLAKONG.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ArenaChallengeLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ArenaChallengeLevel);
+      if (Unk3300DBHAGHMMLAI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300DBHAGHMMLAI);
       }
-      if (ArenaChallengeId != 0) {
+      if (Unk3300FDFNFLAKONG != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ArenaChallengeId);
+        output.WriteUInt32(Unk3300FDFNFLAKONG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ArenaChallengeLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ArenaChallengeLevel);
+      if (Unk3300DBHAGHMMLAI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300DBHAGHMMLAI);
       }
-      if (ArenaChallengeId != 0) {
+      if (Unk3300FDFNFLAKONG != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ArenaChallengeId);
+        output.WriteUInt32(Unk3300FDFNFLAKONG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ArenaChallengeLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ArenaChallengeLevel);
+      if (Unk3300DBHAGHMMLAI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DBHAGHMMLAI);
       }
-      if (ArenaChallengeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ArenaChallengeId);
+      if (Unk3300FDFNFLAKONG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFNFLAKONG);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ArenaChallengeLevel != 0) {
-        ArenaChallengeLevel = other.ArenaChallengeLevel;
+      if (other.Unk3300DBHAGHMMLAI != 0) {
+        Unk3300DBHAGHMMLAI = other.Unk3300DBHAGHMMLAI;
       }
-      if (other.ArenaChallengeId != 0) {
-        ArenaChallengeId = other.ArenaChallengeId;
+      if (other.Unk3300FDFNFLAKONG != 0) {
+        Unk3300FDFNFLAKONG = other.Unk3300FDFNFLAKONG;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            ArenaChallengeLevel = input.ReadUInt32();
+          case 64: {
+            Unk3300DBHAGHMMLAI = input.ReadUInt32();
             break;
           }
           case 120: {
-            ArenaChallengeId = input.ReadUInt32();
+            Unk3300FDFNFLAKONG = input.ReadUInt32();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            ArenaChallengeLevel = input.ReadUInt32();
+          case 64: {
+            Unk3300DBHAGHMMLAI = input.ReadUInt32();
             break;
           }
           case 120: {
-            ArenaChallengeId = input.ReadUInt32();
+            Unk3300FDFNFLAKONG = input.ReadUInt32();
             break;
           }
         }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryTiredAvatarNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFSb2d1ZURpYXJ5VGlyZWRBdmF0YXJOb3RpZnkucHJvdG8aFlJvZ3VlRGlh",
-            "cnlBdmF0YXIucHJvdG8imgEKG1JvZ3VlRGlhcnlUaXJlZEF2YXRhck5vdGlm",
-            "eRI1ChpvcHRpYW5hbF90aXJlZF9hdmF0YXJfbGlzdBgKIAMoCzIRLlJvZ3Vl",
-            "RGlhcnlBdmF0YXISGgoScmVzZXJ2ZV9hdmF0YXJfbnVtGAYgASgNEhIKCnRp",
-            "cmVkX3R5cGUYCCABKA0SFAoMaXNfbmVlZF9zaG93GAcgASgIQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFSb2d1ZURpYXJ5VGlyZWRBdmF0YXJOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aFlJvZ3VlRGlhcnlBdmF0YXIucHJv",
+            "dG8ixAEKG1JvZ3VlRGlhcnlUaXJlZEF2YXRhck5vdGlmeRIbChNVbmszMzAw",
+            "X0RNRU1CQlBFSUdLGAEgASgNEhsKE1VuazMzMDBfQkdFSkdMQk1GSUkYDiAB",
+            "KA0SFAoMaXNfbmVlZF9zaG93GAsgASgIElUKGm9wdGlvbmFsX3RpcmVkX2F2",
+            "YXRhcl9saXN0GAUgAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5Sb2d1ZURpYXJ5QXZhdGFyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryTiredAvatarNotify), global::Weedwacker.Shared.Network.Proto.RogueDiaryTiredAvatarNotify.Parser, new[]{ "OptianalTiredAvatarList", "ReserveAvatarNum", "TiredType", "IsNeedShow" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryTiredAvatarNotify), global::Weedwacker.Shared.Network.Proto.RogueDiaryTiredAvatarNotify.Parser, new[]{ "Unk3300DMEMBBPEIGK", "Unk3300BGEJGLBMFII", "IsNeedShow", "OptionalTiredAvatarList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8514
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8660;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class RogueDiaryTiredAvatarNotify : pb::IMessage<RogueDiaryTiredAvatarNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryTiredAvatarNotify(RogueDiaryTiredAvatarNotify other) : this() {
-      optianalTiredAvatarList_ = other.optianalTiredAvatarList_.Clone();
-      reserveAvatarNum_ = other.reserveAvatarNum_;
-      tiredType_ = other.tiredType_;
+      unk3300DMEMBBPEIGK_ = other.unk3300DMEMBBPEIGK_;
+      unk3300BGEJGLBMFII_ = other.unk3300BGEJGLBMFII_;
       isNeedShow_ = other.isNeedShow_;
+      optionalTiredAvatarList_ = other.optionalTiredAvatarList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,43 +98,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueDiaryTiredAvatarNotify(this);
     }
 
-    /// <summary>Field number for the "optianal_tired_avatar_list" field.</summary>
-    public const int OptianalTiredAvatarListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> _repeated_optianalTiredAvatarList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> optianalTiredAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar>();
+    /// <summary>Field number for the "Unk3300_DMEMBBPEIGK" field.</summary>
+    public const int Unk3300DMEMBBPEIGKFieldNumber = 1;
+    private uint unk3300DMEMBBPEIGK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> OptianalTiredAvatarList {
-      get { return optianalTiredAvatarList_; }
-    }
-
-    /// <summary>Field number for the "reserve_avatar_num" field.</summary>
-    public const int ReserveAvatarNumFieldNumber = 6;
-    private uint reserveAvatarNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ReserveAvatarNum {
-      get { return reserveAvatarNum_; }
+    public uint Unk3300DMEMBBPEIGK {
+      get { return unk3300DMEMBBPEIGK_; }
       set {
-        reserveAvatarNum_ = value;
+        unk3300DMEMBBPEIGK_ = value;
       }
     }
 
-    /// <summary>Field number for the "tired_type" field.</summary>
-    public const int TiredTypeFieldNumber = 8;
-    private uint tiredType_;
+    /// <summary>Field number for the "Unk3300_BGEJGLBMFII" field.</summary>
+    public const int Unk3300BGEJGLBMFIIFieldNumber = 14;
+    private uint unk3300BGEJGLBMFII_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TiredType {
-      get { return tiredType_; }
+    public uint Unk3300BGEJGLBMFII {
+      get { return unk3300BGEJGLBMFII_; }
       set {
-        tiredType_ = value;
+        unk3300BGEJGLBMFII_ = value;
       }
     }
 
     /// <summary>Field number for the "is_need_show" field.</summary>
-    public const int IsNeedShowFieldNumber = 7;
+    public const int IsNeedShowFieldNumber = 11;
     private bool isNeedShow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +132,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isNeedShow_ = value;
       }
+    }
+
+    /// <summary>Field number for the "optional_tired_avatar_list" field.</summary>
+    public const int OptionalTiredAvatarListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> _repeated_optionalTiredAvatarList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> optionalTiredAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> OptionalTiredAvatarList {
+      get { return optionalTiredAvatarList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!optianalTiredAvatarList_.Equals(other.optianalTiredAvatarList_)) return false;
-      if (ReserveAvatarNum != other.ReserveAvatarNum) return false;
-      if (TiredType != other.TiredType) return false;
+      if (Unk3300DMEMBBPEIGK != other.Unk3300DMEMBBPEIGK) return false;
+      if (Unk3300BGEJGLBMFII != other.Unk3300BGEJGLBMFII) return false;
       if (IsNeedShow != other.IsNeedShow) return false;
+      if(!optionalTiredAvatarList_.Equals(other.optionalTiredAvatarList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +171,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= optianalTiredAvatarList_.GetHashCode();
-      if (ReserveAvatarNum != 0) hash ^= ReserveAvatarNum.GetHashCode();
-      if (TiredType != 0) hash ^= TiredType.GetHashCode();
+      if (Unk3300DMEMBBPEIGK != 0) hash ^= Unk3300DMEMBBPEIGK.GetHashCode();
+      if (Unk3300BGEJGLBMFII != 0) hash ^= Unk3300BGEJGLBMFII.GetHashCode();
       if (IsNeedShow != false) hash ^= IsNeedShow.GetHashCode();
+      hash ^= optionalTiredAvatarList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,19 +193,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ReserveAvatarNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReserveAvatarNum);
+      if (Unk3300DMEMBBPEIGK != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300DMEMBBPEIGK);
       }
+      optionalTiredAvatarList_.WriteTo(output, _repeated_optionalTiredAvatarList_codec);
       if (IsNeedShow != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteBool(IsNeedShow);
       }
-      if (TiredType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(TiredType);
+      if (Unk3300BGEJGLBMFII != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BGEJGLBMFII);
       }
-      optianalTiredAvatarList_.WriteTo(output, _repeated_optianalTiredAvatarList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -211,19 +216,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ReserveAvatarNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReserveAvatarNum);
+      if (Unk3300DMEMBBPEIGK != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300DMEMBBPEIGK);
       }
+      optionalTiredAvatarList_.WriteTo(ref output, _repeated_optionalTiredAvatarList_codec);
       if (IsNeedShow != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteBool(IsNeedShow);
       }
-      if (TiredType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(TiredType);
+      if (Unk3300BGEJGLBMFII != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BGEJGLBMFII);
       }
-      optianalTiredAvatarList_.WriteTo(ref output, _repeated_optianalTiredAvatarList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -234,16 +239,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += optianalTiredAvatarList_.CalculateSize(_repeated_optianalTiredAvatarList_codec);
-      if (ReserveAvatarNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReserveAvatarNum);
+      if (Unk3300DMEMBBPEIGK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DMEMBBPEIGK);
       }
-      if (TiredType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TiredType);
+      if (Unk3300BGEJGLBMFII != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BGEJGLBMFII);
       }
       if (IsNeedShow != false) {
         size += 1 + 1;
       }
+      size += optionalTiredAvatarList_.CalculateSize(_repeated_optionalTiredAvatarList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,16 +261,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      optianalTiredAvatarList_.Add(other.optianalTiredAvatarList_);
-      if (other.ReserveAvatarNum != 0) {
-        ReserveAvatarNum = other.ReserveAvatarNum;
+      if (other.Unk3300DMEMBBPEIGK != 0) {
+        Unk3300DMEMBBPEIGK = other.Unk3300DMEMBBPEIGK;
       }
-      if (other.TiredType != 0) {
-        TiredType = other.TiredType;
+      if (other.Unk3300BGEJGLBMFII != 0) {
+        Unk3300BGEJGLBMFII = other.Unk3300BGEJGLBMFII;
       }
       if (other.IsNeedShow != false) {
         IsNeedShow = other.IsNeedShow;
       }
+      optionalTiredAvatarList_.Add(other.optionalTiredAvatarList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -281,20 +286,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            ReserveAvatarNum = input.ReadUInt32();
+          case 8: {
+            Unk3300DMEMBBPEIGK = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 42: {
+            optionalTiredAvatarList_.AddEntriesFrom(input, _repeated_optionalTiredAvatarList_codec);
+            break;
+          }
+          case 88: {
             IsNeedShow = input.ReadBool();
             break;
           }
-          case 64: {
-            TiredType = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            optianalTiredAvatarList_.AddEntriesFrom(input, _repeated_optianalTiredAvatarList_codec);
+          case 112: {
+            Unk3300BGEJGLBMFII = input.ReadUInt32();
             break;
           }
         }
@@ -312,20 +317,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            ReserveAvatarNum = input.ReadUInt32();
+          case 8: {
+            Unk3300DMEMBBPEIGK = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 42: {
+            optionalTiredAvatarList_.AddEntriesFrom(ref input, _repeated_optionalTiredAvatarList_codec);
+            break;
+          }
+          case 88: {
             IsNeedShow = input.ReadBool();
             break;
           }
-          case 64: {
-            TiredType = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            optianalTiredAvatarList_.AddEntriesFrom(ref input, _repeated_optianalTiredAvatarList_codec);
+          case 112: {
+            Unk3300BGEJGLBMFII = input.ReadUInt32();
             break;
           }
         }

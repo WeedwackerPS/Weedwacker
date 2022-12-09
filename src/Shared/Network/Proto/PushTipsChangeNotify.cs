@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PushTipsChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpQdXNoVGlwc0NoYW5nZU5vdGlmeS5wcm90bxoSUHVzaFRpcHNEYXRhLnBy",
-            "b3RvIj0KFFB1c2hUaXBzQ2hhbmdlTm90aWZ5EiUKDnB1c2hfdGlwc19saXN0",
-            "GAkgAygLMg0uUHVzaFRpcHNEYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpQdXNoVGlwc0NoYW5nZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoSUHVzaFRpcHNEYXRhLnByb3RvIl0KFFB1c2hU",
+            "aXBzQ2hhbmdlTm90aWZ5EkUKDnB1c2hfdGlwc19saXN0GAUgAygLMi0uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QdXNoVGlwc0RhdGFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PushTipsDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2265
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2289;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PushTipsChangeNotify : pb::IMessage<PushTipsChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "push_tips_list" field.</summary>
-    public const int PushTipsListFieldNumber = 9;
+    public const int PushTipsListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PushTipsData> _repeated_pushTipsList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.PushTipsData.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.PushTipsData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PushTipsData> pushTipsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PushTipsData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 42: {
             pushTipsList_.AddEntriesFrom(input, _repeated_pushTipsList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 42: {
             pushTipsList_.AddEntriesFrom(ref input, _repeated_pushTipsList_codec);
             break;
           }

@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarRewardEventNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFIb21lQXZhdGFyUmV3YXJkRXZlbnROb3RpZnkucHJvdG8aH0hvbWVBdmF0",
-            "YXJSZXdhcmRFdmVudEluZm8ucHJvdG8imwEKG0hvbWVBdmF0YXJSZXdhcmRF",
-            "dmVudE5vdGlmeRIYChBpc19ldmVudF90cmlnZ2VyGAQgASgIEjAKDHJld2Fy",
-            "ZF9ldmVudBgCIAEoCzIaLkhvbWVBdmF0YXJSZXdhcmRFdmVudEluZm8SMAoM",
-            "cGVuZGluZ19saXN0GAggAygLMhouSG9tZUF2YXRhclJld2FyZEV2ZW50SW5m",
-            "b0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFIb21lQXZhdGFyUmV3YXJkRXZlbnROb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aH0hvbWVBdmF0YXJSZXdhcmRFdmVu",
+            "dEluZm8ucHJvdG8i2wEKG0hvbWVBdmF0YXJSZXdhcmRFdmVudE5vdGlmeRJQ",
+            "CgxwZW5kaW5nX2xpc3QYCCADKAsyOi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkhvbWVBdmF0YXJSZXdhcmRFdmVudEluZm8SUAoMcmV3YXJk",
+            "X2V2ZW50GA4gASgLMjouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5Ib21lQXZhdGFyUmV3YXJkRXZlbnRJbmZvEhgKEGlzX2V2ZW50X3RyaWdn",
+            "ZXIYAyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventNotify), global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventNotify.Parser, new[]{ "IsEventTrigger", "RewardEvent", "PendingList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventNotify), global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventNotify.Parser, new[]{ "PendingList", "RewardEvent", "IsEventTrigger" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4852
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4849;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeAvatarRewardEventNotify : pb::IMessage<HomeAvatarRewardEventNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarRewardEventNotify(HomeAvatarRewardEventNotify other) : this() {
-      isEventTrigger_ = other.isEventTrigger_;
-      rewardEvent_ = other.rewardEvent_ != null ? other.rewardEvent_.Clone() : null;
       pendingList_ = other.pendingList_.Clone();
+      rewardEvent_ = other.rewardEvent_ != null ? other.rewardEvent_.Clone() : null;
+      isEventTrigger_ = other.isEventTrigger_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,30 +95,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarRewardEventNotify Clone() {
       return new HomeAvatarRewardEventNotify(this);
-    }
-
-    /// <summary>Field number for the "is_event_trigger" field.</summary>
-    public const int IsEventTriggerFieldNumber = 4;
-    private bool isEventTrigger_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsEventTrigger {
-      get { return isEventTrigger_; }
-      set {
-        isEventTrigger_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reward_event" field.</summary>
-    public const int RewardEventFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo rewardEvent_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo RewardEvent {
-      get { return rewardEvent_; }
-      set {
-        rewardEvent_ = value;
-      }
     }
 
     /// <summary>Field number for the "pending_list" field.</summary>
@@ -124,6 +106,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo> PendingList {
       get { return pendingList_; }
+    }
+
+    /// <summary>Field number for the "reward_event" field.</summary>
+    public const int RewardEventFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo rewardEvent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo RewardEvent {
+      get { return rewardEvent_; }
+      set {
+        rewardEvent_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_event_trigger" field.</summary>
+    public const int IsEventTriggerFieldNumber = 3;
+    private bool isEventTrigger_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEventTrigger {
+      get { return isEventTrigger_; }
+      set {
+        isEventTrigger_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsEventTrigger != other.IsEventTrigger) return false;
-      if (!object.Equals(RewardEvent, other.RewardEvent)) return false;
       if(!pendingList_.Equals(other.pendingList_)) return false;
+      if (!object.Equals(RewardEvent, other.RewardEvent)) return false;
+      if (IsEventTrigger != other.IsEventTrigger) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsEventTrigger != false) hash ^= IsEventTrigger.GetHashCode();
-      if (rewardEvent_ != null) hash ^= RewardEvent.GetHashCode();
       hash ^= pendingList_.GetHashCode();
+      if (rewardEvent_ != null) hash ^= RewardEvent.GetHashCode();
+      if (IsEventTrigger != false) hash ^= IsEventTrigger.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rewardEvent_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(RewardEvent);
-      }
       if (IsEventTrigger != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteBool(IsEventTrigger);
       }
       pendingList_.WriteTo(output, _repeated_pendingList_codec);
+      if (rewardEvent_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RewardEvent);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +197,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rewardEvent_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(RewardEvent);
-      }
       if (IsEventTrigger != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteBool(IsEventTrigger);
       }
       pendingList_.WriteTo(ref output, _repeated_pendingList_codec);
+      if (rewardEvent_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RewardEvent);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -210,13 +216,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsEventTrigger != false) {
-        size += 1 + 1;
-      }
+      size += pendingList_.CalculateSize(_repeated_pendingList_codec);
       if (rewardEvent_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RewardEvent);
       }
-      size += pendingList_.CalculateSize(_repeated_pendingList_codec);
+      if (IsEventTrigger != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -229,16 +235,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsEventTrigger != false) {
-        IsEventTrigger = other.IsEventTrigger;
-      }
+      pendingList_.Add(other.pendingList_);
       if (other.rewardEvent_ != null) {
         if (rewardEvent_ == null) {
           RewardEvent = new global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo();
         }
         RewardEvent.MergeFrom(other.RewardEvent);
       }
-      pendingList_.Add(other.pendingList_);
+      if (other.IsEventTrigger != false) {
+        IsEventTrigger = other.IsEventTrigger;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -254,19 +260,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (rewardEvent_ == null) {
-              RewardEvent = new global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo();
-            }
-            input.ReadMessage(RewardEvent);
-            break;
-          }
-          case 32: {
+          case 24: {
             IsEventTrigger = input.ReadBool();
             break;
           }
           case 66: {
             pendingList_.AddEntriesFrom(input, _repeated_pendingList_codec);
+            break;
+          }
+          case 114: {
+            if (rewardEvent_ == null) {
+              RewardEvent = new global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo();
+            }
+            input.ReadMessage(RewardEvent);
             break;
           }
         }
@@ -284,19 +290,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (rewardEvent_ == null) {
-              RewardEvent = new global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo();
-            }
-            input.ReadMessage(RewardEvent);
-            break;
-          }
-          case 32: {
+          case 24: {
             IsEventTrigger = input.ReadBool();
             break;
           }
           case 66: {
             pendingList_.AddEntriesFrom(ref input, _repeated_pendingList_codec);
+            break;
+          }
+          case 114: {
+            if (rewardEvent_ == null) {
+              RewardEvent = new global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo();
+            }
+            input.ReadMessage(RewardEvent);
             break;
           }
         }

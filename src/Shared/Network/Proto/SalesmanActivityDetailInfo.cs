@@ -24,22 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalesmanActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoYU2FsZXNtYW5T",
-            "dGF0dXNUeXBlLnByb3RvIq8DChpTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5m",
-            "bxIhChlzcGVjaWFsX3Jld2FyZF9wcmV2aWV3X2lkGAMgASgNEiMKBnN0YXR1",
-            "cxgEIAEoDjITLlNhbGVzbWFuU3RhdHVzVHlwZRIZChFsYXN0X2RlbGl2ZXJf",
-            "dGltZRgCIAEoDRJUChZzZWxlY3RlZF9yZXdhcmRfaWRfbWFwGAUgAygLMjQu",
-            "U2FsZXNtYW5BY3Rpdml0eURldGFpbEluZm8uU2VsZWN0ZWRSZXdhcmRJZE1h",
-            "cEVudHJ5EhUKDWRlbGl2ZXJfY291bnQYCyABKA0SIwobaXNfaGFzX3Rha2Vu",
-            "X3NwZWNpYWxfcmV3YXJkGAcgASgIEhEKCWRheV9pbmRleBgMIAEoDRIWCg5j",
-            "b25kX2RheV9jb3VudBgGIAEoDRIVCg1kYXlfcmV3YXJkX2lkGAkgASgNEh4K",
-            "FmlzX3RvZGF5X2hhc19kZWxpdmVyZWQYDSABKAgaOgoYU2VsZWN0ZWRSZXdh",
-            "cmRJZE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoYU2FsZXNtYW5TdGF0dXNUeXBlLnBy",
+            "b3RvIusDChpTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5mbxJDCgZzdGF0dXMY",
+            "BSABKA4yMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNhbGVz",
+            "bWFuU3RhdHVzVHlwZRJ0ChZzZWxlY3RlZF9yZXdhcmRfaWRfbWFwGAwgAygL",
+            "MlQuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TYWxlc21hbkFj",
+            "dGl2aXR5RGV0YWlsSW5mby5TZWxlY3RlZFJld2FyZElkTWFwRW50cnkSGwoT",
+            "VW5rMzMwMF9ESUpGT0NCR0lBTRgHIAEoDRIbChNVbmszMzAwX0RKRkNFRktH",
+            "S1BJGAIgASgIEhEKCWRheV9pbmRleBgJIAEoDRIbChNVbmszMzAwX0xQQUJI",
+            "TU9QRkNFGAYgASgNEhsKE1VuazMzMDBfS05KQ0JHRktMRkQYCiABKA0SGwoT",
+            "VW5rMzMwMF9GT0ZGQUVFQkJOUBgDIAEoDRIbChNVbmszMzAwX0pOQUxCQUNG",
+            "TkZOGA4gASgIEhUKDWRheV9yZXdhcmRfaWQYCyABKA0aOgoYU2VsZWN0ZWRS",
+            "ZXdhcmRJZE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SalesmanStatusTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo.Parser, new[]{ "SpecialRewardPreviewId", "Status", "LastDeliverTime", "SelectedRewardIdMap", "DeliverCount", "IsHasTakenSpecialReward", "DayIndex", "CondDayCount", "DayRewardId", "IsTodayHasDelivered" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo.Parser, new[]{ "Status", "SelectedRewardIdMap", "Unk3300DIJFOCBGIAM", "Unk3300DJFCEFKGKPI", "DayIndex", "Unk3300LPABHMOPFCE", "Unk3300KNJCBGFKLFD", "Unk3300FOFFAEEBBNP", "Unk3300JNALBACFNFN", "DayRewardId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -80,16 +82,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SalesmanActivityDetailInfo(SalesmanActivityDetailInfo other) : this() {
-      specialRewardPreviewId_ = other.specialRewardPreviewId_;
       status_ = other.status_;
-      lastDeliverTime_ = other.lastDeliverTime_;
       selectedRewardIdMap_ = other.selectedRewardIdMap_.Clone();
-      deliverCount_ = other.deliverCount_;
-      isHasTakenSpecialReward_ = other.isHasTakenSpecialReward_;
+      unk3300DIJFOCBGIAM_ = other.unk3300DIJFOCBGIAM_;
+      unk3300DJFCEFKGKPI_ = other.unk3300DJFCEFKGKPI_;
       dayIndex_ = other.dayIndex_;
-      condDayCount_ = other.condDayCount_;
+      unk3300LPABHMOPFCE_ = other.unk3300LPABHMOPFCE_;
+      unk3300KNJCBGFKLFD_ = other.unk3300KNJCBGFKLFD_;
+      unk3300FOFFAEEBBNP_ = other.unk3300FOFFAEEBBNP_;
+      unk3300JNALBACFNFN_ = other.unk3300JNALBACFNFN_;
       dayRewardId_ = other.dayRewardId_;
-      isTodayHasDelivered_ = other.isTodayHasDelivered_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,20 +101,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SalesmanActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "special_reward_preview_id" field.</summary>
-    public const int SpecialRewardPreviewIdFieldNumber = 3;
-    private uint specialRewardPreviewId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SpecialRewardPreviewId {
-      get { return specialRewardPreviewId_; }
-      set {
-        specialRewardPreviewId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 4;
+    public const int StatusFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.SalesmanStatusType status_ = global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,22 +113,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "last_deliver_time" field.</summary>
-    public const int LastDeliverTimeFieldNumber = 2;
-    private uint lastDeliverTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastDeliverTime {
-      get { return lastDeliverTime_; }
-      set {
-        lastDeliverTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "selected_reward_id_map" field.</summary>
-    public const int SelectedRewardIdMapFieldNumber = 5;
+    public const int SelectedRewardIdMapFieldNumber = 12;
     private static readonly pbc::MapField<uint, uint>.Codec _map_selectedRewardIdMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
     private readonly pbc::MapField<uint, uint> selectedRewardIdMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -146,32 +124,32 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return selectedRewardIdMap_; }
     }
 
-    /// <summary>Field number for the "deliver_count" field.</summary>
-    public const int DeliverCountFieldNumber = 11;
-    private uint deliverCount_;
+    /// <summary>Field number for the "Unk3300_DIJFOCBGIAM" field.</summary>
+    public const int Unk3300DIJFOCBGIAMFieldNumber = 7;
+    private uint unk3300DIJFOCBGIAM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DeliverCount {
-      get { return deliverCount_; }
+    public uint Unk3300DIJFOCBGIAM {
+      get { return unk3300DIJFOCBGIAM_; }
       set {
-        deliverCount_ = value;
+        unk3300DIJFOCBGIAM_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_has_taken_special_reward" field.</summary>
-    public const int IsHasTakenSpecialRewardFieldNumber = 7;
-    private bool isHasTakenSpecialReward_;
+    /// <summary>Field number for the "Unk3300_DJFCEFKGKPI" field.</summary>
+    public const int Unk3300DJFCEFKGKPIFieldNumber = 2;
+    private bool unk3300DJFCEFKGKPI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsHasTakenSpecialReward {
-      get { return isHasTakenSpecialReward_; }
+    public bool Unk3300DJFCEFKGKPI {
+      get { return unk3300DJFCEFKGKPI_; }
       set {
-        isHasTakenSpecialReward_ = value;
+        unk3300DJFCEFKGKPI_ = value;
       }
     }
 
     /// <summary>Field number for the "day_index" field.</summary>
-    public const int DayIndexFieldNumber = 12;
+    public const int DayIndexFieldNumber = 9;
     private uint dayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -182,20 +160,56 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cond_day_count" field.</summary>
-    public const int CondDayCountFieldNumber = 6;
-    private uint condDayCount_;
+    /// <summary>Field number for the "Unk3300_LPABHMOPFCE" field.</summary>
+    public const int Unk3300LPABHMOPFCEFieldNumber = 6;
+    private uint unk3300LPABHMOPFCE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CondDayCount {
-      get { return condDayCount_; }
+    public uint Unk3300LPABHMOPFCE {
+      get { return unk3300LPABHMOPFCE_; }
       set {
-        condDayCount_ = value;
+        unk3300LPABHMOPFCE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KNJCBGFKLFD" field.</summary>
+    public const int Unk3300KNJCBGFKLFDFieldNumber = 10;
+    private uint unk3300KNJCBGFKLFD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KNJCBGFKLFD {
+      get { return unk3300KNJCBGFKLFD_; }
+      set {
+        unk3300KNJCBGFKLFD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FOFFAEEBBNP" field.</summary>
+    public const int Unk3300FOFFAEEBBNPFieldNumber = 3;
+    private uint unk3300FOFFAEEBBNP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FOFFAEEBBNP {
+      get { return unk3300FOFFAEEBBNP_; }
+      set {
+        unk3300FOFFAEEBBNP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JNALBACFNFN" field.</summary>
+    public const int Unk3300JNALBACFNFNFieldNumber = 14;
+    private bool unk3300JNALBACFNFN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300JNALBACFNFN {
+      get { return unk3300JNALBACFNFN_; }
+      set {
+        unk3300JNALBACFNFN_ = value;
       }
     }
 
     /// <summary>Field number for the "day_reward_id" field.</summary>
-    public const int DayRewardIdFieldNumber = 9;
+    public const int DayRewardIdFieldNumber = 11;
     private uint dayRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -203,18 +217,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dayRewardId_; }
       set {
         dayRewardId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_today_has_delivered" field.</summary>
-    public const int IsTodayHasDeliveredFieldNumber = 13;
-    private bool isTodayHasDelivered_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTodayHasDelivered {
-      get { return isTodayHasDelivered_; }
-      set {
-        isTodayHasDelivered_ = value;
       }
     }
 
@@ -233,16 +235,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SpecialRewardPreviewId != other.SpecialRewardPreviewId) return false;
       if (Status != other.Status) return false;
-      if (LastDeliverTime != other.LastDeliverTime) return false;
       if (!SelectedRewardIdMap.Equals(other.SelectedRewardIdMap)) return false;
-      if (DeliverCount != other.DeliverCount) return false;
-      if (IsHasTakenSpecialReward != other.IsHasTakenSpecialReward) return false;
+      if (Unk3300DIJFOCBGIAM != other.Unk3300DIJFOCBGIAM) return false;
+      if (Unk3300DJFCEFKGKPI != other.Unk3300DJFCEFKGKPI) return false;
       if (DayIndex != other.DayIndex) return false;
-      if (CondDayCount != other.CondDayCount) return false;
+      if (Unk3300LPABHMOPFCE != other.Unk3300LPABHMOPFCE) return false;
+      if (Unk3300KNJCBGFKLFD != other.Unk3300KNJCBGFKLFD) return false;
+      if (Unk3300FOFFAEEBBNP != other.Unk3300FOFFAEEBBNP) return false;
+      if (Unk3300JNALBACFNFN != other.Unk3300JNALBACFNFN) return false;
       if (DayRewardId != other.DayRewardId) return false;
-      if (IsTodayHasDelivered != other.IsTodayHasDelivered) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +252,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SpecialRewardPreviewId != 0) hash ^= SpecialRewardPreviewId.GetHashCode();
       if (Status != global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None) hash ^= Status.GetHashCode();
-      if (LastDeliverTime != 0) hash ^= LastDeliverTime.GetHashCode();
       hash ^= SelectedRewardIdMap.GetHashCode();
-      if (DeliverCount != 0) hash ^= DeliverCount.GetHashCode();
-      if (IsHasTakenSpecialReward != false) hash ^= IsHasTakenSpecialReward.GetHashCode();
+      if (Unk3300DIJFOCBGIAM != 0) hash ^= Unk3300DIJFOCBGIAM.GetHashCode();
+      if (Unk3300DJFCEFKGKPI != false) hash ^= Unk3300DJFCEFKGKPI.GetHashCode();
       if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
-      if (CondDayCount != 0) hash ^= CondDayCount.GetHashCode();
+      if (Unk3300LPABHMOPFCE != 0) hash ^= Unk3300LPABHMOPFCE.GetHashCode();
+      if (Unk3300KNJCBGFKLFD != 0) hash ^= Unk3300KNJCBGFKLFD.GetHashCode();
+      if (Unk3300FOFFAEEBBNP != 0) hash ^= Unk3300FOFFAEEBBNP.GetHashCode();
+      if (Unk3300JNALBACFNFN != false) hash ^= Unk3300JNALBACFNFN.GetHashCode();
       if (DayRewardId != 0) hash ^= DayRewardId.GetHashCode();
-      if (IsTodayHasDelivered != false) hash ^= IsTodayHasDelivered.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -278,42 +280,42 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LastDeliverTime != 0) {
+      if (Unk3300DJFCEFKGKPI != false) {
         output.WriteRawTag(16);
-        output.WriteUInt32(LastDeliverTime);
+        output.WriteBool(Unk3300DJFCEFKGKPI);
       }
-      if (SpecialRewardPreviewId != 0) {
+      if (Unk3300FOFFAEEBBNP != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(SpecialRewardPreviewId);
+        output.WriteUInt32(Unk3300FOFFAEEBBNP);
       }
       if (Status != global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
-      selectedRewardIdMap_.WriteTo(output, _map_selectedRewardIdMap_codec);
-      if (CondDayCount != 0) {
+      if (Unk3300LPABHMOPFCE != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(CondDayCount);
+        output.WriteUInt32(Unk3300LPABHMOPFCE);
       }
-      if (IsHasTakenSpecialReward != false) {
+      if (Unk3300DIJFOCBGIAM != 0) {
         output.WriteRawTag(56);
-        output.WriteBool(IsHasTakenSpecialReward);
-      }
-      if (DayRewardId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(DayRewardId);
-      }
-      if (DeliverCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(DeliverCount);
+        output.WriteUInt32(Unk3300DIJFOCBGIAM);
       }
       if (DayIndex != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(DayIndex);
       }
-      if (IsTodayHasDelivered != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsTodayHasDelivered);
+      if (Unk3300KNJCBGFKLFD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KNJCBGFKLFD);
+      }
+      if (DayRewardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DayRewardId);
+      }
+      selectedRewardIdMap_.WriteTo(output, _map_selectedRewardIdMap_codec);
+      if (Unk3300JNALBACFNFN != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300JNALBACFNFN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -325,42 +327,42 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LastDeliverTime != 0) {
+      if (Unk3300DJFCEFKGKPI != false) {
         output.WriteRawTag(16);
-        output.WriteUInt32(LastDeliverTime);
+        output.WriteBool(Unk3300DJFCEFKGKPI);
       }
-      if (SpecialRewardPreviewId != 0) {
+      if (Unk3300FOFFAEEBBNP != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(SpecialRewardPreviewId);
+        output.WriteUInt32(Unk3300FOFFAEEBBNP);
       }
       if (Status != global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
-      selectedRewardIdMap_.WriteTo(ref output, _map_selectedRewardIdMap_codec);
-      if (CondDayCount != 0) {
+      if (Unk3300LPABHMOPFCE != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(CondDayCount);
+        output.WriteUInt32(Unk3300LPABHMOPFCE);
       }
-      if (IsHasTakenSpecialReward != false) {
+      if (Unk3300DIJFOCBGIAM != 0) {
         output.WriteRawTag(56);
-        output.WriteBool(IsHasTakenSpecialReward);
-      }
-      if (DayRewardId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(DayRewardId);
-      }
-      if (DeliverCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(DeliverCount);
+        output.WriteUInt32(Unk3300DIJFOCBGIAM);
       }
       if (DayIndex != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(DayIndex);
       }
-      if (IsTodayHasDelivered != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsTodayHasDelivered);
+      if (Unk3300KNJCBGFKLFD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KNJCBGFKLFD);
+      }
+      if (DayRewardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DayRewardId);
+      }
+      selectedRewardIdMap_.WriteTo(ref output, _map_selectedRewardIdMap_codec);
+      if (Unk3300JNALBACFNFN != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300JNALBACFNFN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -372,33 +374,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SpecialRewardPreviewId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SpecialRewardPreviewId);
-      }
       if (Status != global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
-      if (LastDeliverTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastDeliverTime);
-      }
       size += selectedRewardIdMap_.CalculateSize(_map_selectedRewardIdMap_codec);
-      if (DeliverCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeliverCount);
+      if (Unk3300DIJFOCBGIAM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DIJFOCBGIAM);
       }
-      if (IsHasTakenSpecialReward != false) {
+      if (Unk3300DJFCEFKGKPI != false) {
         size += 1 + 1;
       }
       if (DayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
       }
-      if (CondDayCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CondDayCount);
+      if (Unk3300LPABHMOPFCE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPABHMOPFCE);
+      }
+      if (Unk3300KNJCBGFKLFD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KNJCBGFKLFD);
+      }
+      if (Unk3300FOFFAEEBBNP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOFFAEEBBNP);
+      }
+      if (Unk3300JNALBACFNFN != false) {
+        size += 1 + 1;
       }
       if (DayRewardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayRewardId);
-      }
-      if (IsTodayHasDelivered != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -412,33 +414,33 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SpecialRewardPreviewId != 0) {
-        SpecialRewardPreviewId = other.SpecialRewardPreviewId;
-      }
       if (other.Status != global::Weedwacker.Shared.Network.Proto.SalesmanStatusType.None) {
         Status = other.Status;
       }
-      if (other.LastDeliverTime != 0) {
-        LastDeliverTime = other.LastDeliverTime;
-      }
       selectedRewardIdMap_.Add(other.selectedRewardIdMap_);
-      if (other.DeliverCount != 0) {
-        DeliverCount = other.DeliverCount;
+      if (other.Unk3300DIJFOCBGIAM != 0) {
+        Unk3300DIJFOCBGIAM = other.Unk3300DIJFOCBGIAM;
       }
-      if (other.IsHasTakenSpecialReward != false) {
-        IsHasTakenSpecialReward = other.IsHasTakenSpecialReward;
+      if (other.Unk3300DJFCEFKGKPI != false) {
+        Unk3300DJFCEFKGKPI = other.Unk3300DJFCEFKGKPI;
       }
       if (other.DayIndex != 0) {
         DayIndex = other.DayIndex;
       }
-      if (other.CondDayCount != 0) {
-        CondDayCount = other.CondDayCount;
+      if (other.Unk3300LPABHMOPFCE != 0) {
+        Unk3300LPABHMOPFCE = other.Unk3300LPABHMOPFCE;
+      }
+      if (other.Unk3300KNJCBGFKLFD != 0) {
+        Unk3300KNJCBGFKLFD = other.Unk3300KNJCBGFKLFD;
+      }
+      if (other.Unk3300FOFFAEEBBNP != 0) {
+        Unk3300FOFFAEEBBNP = other.Unk3300FOFFAEEBBNP;
+      }
+      if (other.Unk3300JNALBACFNFN != false) {
+        Unk3300JNALBACFNFN = other.Unk3300JNALBACFNFN;
       }
       if (other.DayRewardId != 0) {
         DayRewardId = other.DayRewardId;
-      }
-      if (other.IsTodayHasDelivered != false) {
-        IsTodayHasDelivered = other.IsTodayHasDelivered;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -456,43 +458,43 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            LastDeliverTime = input.ReadUInt32();
+            Unk3300DJFCEFKGKPI = input.ReadBool();
             break;
           }
           case 24: {
-            SpecialRewardPreviewId = input.ReadUInt32();
+            Unk3300FOFFAEEBBNP = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
             Status = (global::Weedwacker.Shared.Network.Proto.SalesmanStatusType) input.ReadEnum();
             break;
           }
-          case 42: {
-            selectedRewardIdMap_.AddEntriesFrom(input, _map_selectedRewardIdMap_codec);
-            break;
-          }
           case 48: {
-            CondDayCount = input.ReadUInt32();
+            Unk3300LPABHMOPFCE = input.ReadUInt32();
             break;
           }
           case 56: {
-            IsHasTakenSpecialReward = input.ReadBool();
+            Unk3300DIJFOCBGIAM = input.ReadUInt32();
             break;
           }
           case 72: {
-            DayRewardId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            DeliverCount = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             DayIndex = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsTodayHasDelivered = input.ReadBool();
+          case 80: {
+            Unk3300KNJCBGFKLFD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            DayRewardId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            selectedRewardIdMap_.AddEntriesFrom(input, _map_selectedRewardIdMap_codec);
+            break;
+          }
+          case 112: {
+            Unk3300JNALBACFNFN = input.ReadBool();
             break;
           }
         }
@@ -511,43 +513,43 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            LastDeliverTime = input.ReadUInt32();
+            Unk3300DJFCEFKGKPI = input.ReadBool();
             break;
           }
           case 24: {
-            SpecialRewardPreviewId = input.ReadUInt32();
+            Unk3300FOFFAEEBBNP = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
             Status = (global::Weedwacker.Shared.Network.Proto.SalesmanStatusType) input.ReadEnum();
             break;
           }
-          case 42: {
-            selectedRewardIdMap_.AddEntriesFrom(ref input, _map_selectedRewardIdMap_codec);
-            break;
-          }
           case 48: {
-            CondDayCount = input.ReadUInt32();
+            Unk3300LPABHMOPFCE = input.ReadUInt32();
             break;
           }
           case 56: {
-            IsHasTakenSpecialReward = input.ReadBool();
+            Unk3300DIJFOCBGIAM = input.ReadUInt32();
             break;
           }
           case 72: {
-            DayRewardId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            DeliverCount = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             DayIndex = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsTodayHasDelivered = input.ReadBool();
+          case 80: {
+            Unk3300KNJCBGFKLFD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            DayRewardId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            selectedRewardIdMap_.AddEntriesFrom(ref input, _map_selectedRewardIdMap_codec);
+            break;
+          }
+          case 112: {
+            Unk3300JNALBACFNFN = input.ReadBool();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityAbilityInvokeEntryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5FbnRpdHlBYmlsaXR5SW52b2tlRW50cnkucHJvdG8aGEFiaWxpdHlJbnZv",
-            "a2VFbnRyeS5wcm90byJTChhFbnRpdHlBYmlsaXR5SW52b2tlRW50cnkSEQoJ",
-            "ZW50aXR5X2lkGAggASgNEiQKB2ludm9rZXMYASADKAsyEy5BYmlsaXR5SW52",
-            "b2tlRW50cnlCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch5FbnRpdHlBYmlsaXR5SW52b2tlRW50cnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGEFiaWxpdHlJbnZva2VFbnRyeS5wcm90",
+            "byJzChhFbnRpdHlBYmlsaXR5SW52b2tlRW50cnkSRAoHaW52b2tlcxgOIAMo",
+            "CzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eUlu",
+            "dm9rZUVudHJ5EhEKCWVudGl0eV9pZBgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityAbilityInvokeEntry), global::Weedwacker.Shared.Network.Proto.EntityAbilityInvokeEntry.Parser, new[]{ "EntityId", "Invokes" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityAbilityInvokeEntry), global::Weedwacker.Shared.Network.Proto.EntityAbilityInvokeEntry.Parser, new[]{ "Invokes", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityAbilityInvokeEntry(EntityAbilityInvokeEntry other) : this() {
-      entityId_ = other.entityId_;
       invokes_ = other.invokes_.Clone();
+      entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityAbilityInvokeEntry(this);
     }
 
+    /// <summary>Field number for the "invokes" field.</summary>
+    public const int InvokesFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> _repeated_invokes_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> invokes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> Invokes {
+      get { return invokes_; }
+    }
+
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 8;
+    public const int EntityIdFieldNumber = 7;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,17 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         entityId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "invokes" field.</summary>
-    public const int InvokesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> _repeated_invokes_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> invokes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> Invokes {
-      get { return invokes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
       if(!invokes_.Equals(other.invokes_)) return false;
+      if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       hash ^= invokes_.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      invokes_.WriteTo(output, _repeated_invokes_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
+      invokes_.WriteTo(output, _repeated_invokes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -166,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      invokes_.WriteTo(ref output, _repeated_invokes_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
+      invokes_.WriteTo(ref output, _repeated_invokes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -181,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += invokes_.CalculateSize(_repeated_invokes_codec);
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      size += invokes_.CalculateSize(_repeated_invokes_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -197,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      invokes_.Add(other.invokes_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      invokes_.Add(other.invokes_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -216,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            invokes_.AddEntriesFrom(input, _repeated_invokes_codec);
+          case 56: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            EntityId = input.ReadUInt32();
+          case 114: {
+            invokes_.AddEntriesFrom(input, _repeated_invokes_codec);
             break;
           }
         }
@@ -239,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            invokes_.AddEntriesFrom(ref input, _repeated_invokes_codec);
+          case 56: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            EntityId = input.ReadUInt32();
+          case 114: {
+            invokes_.AddEntriesFrom(ref input, _repeated_invokes_codec);
             break;
           }
         }

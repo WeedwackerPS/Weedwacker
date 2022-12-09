@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChangeWidgetBackgroundActiveStateReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipDaGFuZ2VXaWRnZXRCYWNrZ3JvdW5kQWN0aXZlU3RhdGVSZXEucHJvdG8i",
-            "TgokQ2hhbmdlV2lkZ2V0QmFja2dyb3VuZEFjdGl2ZVN0YXRlUmVxEhEKCWlz",
-            "X2FjdGl2ZRgPIAEoCBITCgttYXRlcmlhbF9pZBgDIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CipDaGFuZ2VXaWRnZXRCYWNrZ3JvdW5kQWN0aXZlU3RhdGVSZXEucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iTgokQ2hhbmdlV2lk",
+            "Z2V0QmFja2dyb3VuZEFjdGl2ZVN0YXRlUmVxEhEKCWlzX2FjdGl2ZRgGIAEo",
+            "CBITCgttYXRlcmlhbF9pZBgNIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5907
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5959;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChangeWidgetBackgroundActiveStateReq : pb::IMessage<ChangeWidgetBackgroundActiveStateReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_active" field.</summary>
-    public const int IsActiveFieldNumber = 15;
+    public const int IsActiveFieldNumber = 6;
     private bool isActive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 3;
+    public const int MaterialIdFieldNumber = 13;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaterialId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MaterialId);
-      }
       if (IsActive != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsActive);
+      }
+      if (MaterialId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MaterialId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaterialId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MaterialId);
-      }
       if (IsActive != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsActive);
+      }
+      if (MaterialId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MaterialId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            MaterialId = input.ReadUInt32();
+          case 48: {
+            IsActive = input.ReadBool();
             break;
           }
-          case 120: {
-            IsActive = input.ReadBool();
+          case 104: {
+            MaterialId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            MaterialId = input.ReadUInt32();
+          case 48: {
+            IsActive = input.ReadBool();
             break;
           }
-          case 120: {
-            IsActive = input.ReadBool();
+          case 104: {
+            MaterialId = input.ReadUInt32();
             break;
           }
         }

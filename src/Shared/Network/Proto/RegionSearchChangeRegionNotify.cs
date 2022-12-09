@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static RegionSearchChangeRegionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRSZWdpb25TZWFyY2hDaGFuZ2VSZWdpb25Ob3RpZnkucHJvdG8ixQEKHlJl",
-            "Z2lvblNlYXJjaENoYW5nZVJlZ2lvbk5vdGlmeRI6CgVldmVudBgBIAEoDjIr",
-            "LlJlZ2lvblNlYXJjaENoYW5nZVJlZ2lvbk5vdGlmeS5SZWdpb25FdmVudBIR",
-            "CglyZWdpb25faWQYCiABKA0iVAoLUmVnaW9uRXZlbnQSFQoRUkVHSU9OX0VW",
-            "RU5UX05PTkUQABIWChJSRUdJT05fRVZFTlRfRU5URVIQARIWChJSRUdJT05f",
-            "RVZFTlRfTEVBVkUQAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiRSZWdpb25TZWFyY2hDaGFuZ2VSZWdpb25Ob3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8i5QEKHlJlZ2lvblNlYXJjaENo",
+            "YW5nZVJlZ2lvbk5vdGlmeRIRCglyZWdpb25faWQYBiABKA0SWgoFZXZlbnQY",
+            "CyABKA4ySy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJlZ2lv",
+            "blNlYXJjaENoYW5nZVJlZ2lvbk5vdGlmeS5SZWdpb25FdmVudCJUCgtSZWdp",
+            "b25FdmVudBIVChFSRUdJT05fRVZFTlRfTk9ORRAAEhYKElJFR0lPTl9FVkVO",
+            "VF9FTlRFUhABEhYKElJFR0lPTl9FVkVOVF9MRUFWRRACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify), global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Parser, new[]{ "Event", "RegionId" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify), global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Parser, new[]{ "RegionId", "Event" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) }, null, null)
           }));
     }
     #endregion
@@ -42,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5618
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5641;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class RegionSearchChangeRegionNotify : pb::IMessage<RegionSearchChangeRegionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionSearchChangeRegionNotify(RegionSearchChangeRegionNotify other) : this() {
-      event_ = other.event_;
       regionId_ = other.regionId_;
+      event_ = other.event_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RegionSearchChangeRegionNotify(this);
     }
 
-    /// <summary>Field number for the "event" field.</summary>
-    public const int EventFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent event_ = global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent Event {
-      get { return event_; }
-      set {
-        event_ = value;
-      }
-    }
-
     /// <summary>Field number for the "region_id" field.</summary>
-    public const int RegionIdFieldNumber = 10;
+    public const int RegionIdFieldNumber = 6;
     private uint regionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return regionId_; }
       set {
         regionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event" field.</summary>
+    public const int EventFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent event_ = global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent Event {
+      get { return event_; }
+      set {
+        event_ = value;
       }
     }
 
@@ -131,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Event != other.Event) return false;
       if (RegionId != other.RegionId) return false;
+      if (Event != other.Event) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -140,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) hash ^= Event.GetHashCode();
       if (RegionId != 0) hash ^= RegionId.GetHashCode();
+      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) hash ^= Event.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,13 +164,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Event);
-      }
       if (RegionId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(RegionId);
+      }
+      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Event);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -178,13 +182,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Event);
-      }
       if (RegionId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(RegionId);
+      }
+      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Event);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -196,11 +200,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Event);
-      }
       if (RegionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionId);
+      }
+      if (Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Event);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -214,11 +218,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
-        Event = other.Event;
-      }
       if (other.RegionId != 0) {
         RegionId = other.RegionId;
+      }
+      if (other.Event != global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent.None) {
+        Event = other.Event;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Event = (global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) input.ReadEnum();
+          case 48: {
+            RegionId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            RegionId = input.ReadUInt32();
+          case 88: {
+            Event = (global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) input.ReadEnum();
             break;
           }
         }
@@ -258,12 +262,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Event = (global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) input.ReadEnum();
+          case 48: {
+            RegionId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            RegionId = input.ReadUInt32();
+          case 88: {
+            Event = (global::Weedwacker.Shared.Network.Proto.RegionSearchChangeRegionNotify.Types.RegionEvent) input.ReadEnum();
             break;
           }
         }

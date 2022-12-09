@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarExpeditionDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBdmF0YXJFeHBlZGl0aW9uRGF0YU5vdGlmeS5wcm90bxoaQXZhdGFyRXhw",
-            "ZWRpdGlvbkluZm8ucHJvdG8ivgEKGkF2YXRhckV4cGVkaXRpb25EYXRhTm90",
-            "aWZ5Ek8KE2V4cGVkaXRpb25faW5mb19tYXAYBiADKAsyMi5BdmF0YXJFeHBl",
-            "ZGl0aW9uRGF0YU5vdGlmeS5FeHBlZGl0aW9uSW5mb01hcEVudHJ5Gk8KFkV4",
-            "cGVkaXRpb25JbmZvTWFwRW50cnkSCwoDa2V5GAEgASgEEiQKBXZhbHVlGAIg",
-            "ASgLMhUuQXZhdGFyRXhwZWRpdGlvbkluZm86AjgBQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBdmF0YXJFeHBlZGl0aW9uRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoaQXZhdGFyRXhwZWRpdGlvbkluZm8u",
+            "cHJvdG8i/gEKGkF2YXRhckV4cGVkaXRpb25EYXRhTm90aWZ5Em8KE2V4cGVk",
+            "aXRpb25faW5mb19tYXAYDyADKAsyUi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkF2YXRhckV4cGVkaXRpb25EYXRhTm90aWZ5LkV4cGVkaXRp",
+            "b25JbmZvTWFwRW50cnkabwoWRXhwZWRpdGlvbkluZm9NYXBFbnRyeRILCgNr",
+            "ZXkYASABKAQSRAoFdmFsdWUYAiABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkF2YXRhckV4cGVkaXRpb25JbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1771
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1632;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarExpeditionDataNotify : pb::IMessage<AvatarExpeditionDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "expedition_info_map" field.</summary>
-    public const int ExpeditionInfoMapFieldNumber = 6;
+    public const int ExpeditionInfoMapFieldNumber = 15;
     private static readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
-        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 50);
+        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 122);
     private readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,7 +199,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 122: {
             expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
             break;
           }
@@ -213,7 +218,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 122: {
             expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
             break;
           }

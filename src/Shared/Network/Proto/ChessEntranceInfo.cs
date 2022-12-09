@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessEntranceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDaGVzc0VudHJhbmNlSW5mby5wcm90bxoWQ2hlc3NNb25zdGVySW5mby5w",
-            "cm90byJ0ChFDaGVzc0VudHJhbmNlSW5mbxIsChFtb25zdGVyX2luZm9fbGlz",
-            "dBgOIAMoCzIRLkNoZXNzTW9uc3RlckluZm8SFgoOZW50cmFuY2VfaW5kZXgY",
-            "DyABKA0SGQoRZW50cmFuY2VfcG9pbnRfaWQYCCABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdDaGVzc0VudHJhbmNlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoWQ2hlc3NNb25zdGVySW5mby5wcm90byKUAQoRQ2hl",
+            "c3NFbnRyYW5jZUluZm8STAoRbW9uc3Rlcl9pbmZvX2xpc3QYDyADKAsyMS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoZXNzTW9uc3Rlcklu",
+            "Zm8SFgoOZW50cmFuY2VfaW5kZXgYCSABKA0SGQoRZW50cmFuY2VfcG9pbnRf",
+            "aWQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessMonsterInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "monster_info_list" field.</summary>
-    public const int MonsterInfoListFieldNumber = 14;
+    public const int MonsterInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessMonsterInfo> _repeated_monsterInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ChessMonsterInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ChessMonsterInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessMonsterInfo> monsterInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessMonsterInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entrance_index" field.</summary>
-    public const int EntranceIndexFieldNumber = 15;
+    public const int EntranceIndexFieldNumber = 9;
     private uint entranceIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entrance_point_id" field.</summary>
-    public const int EntrancePointIdFieldNumber = 8;
+    public const int EntrancePointIdFieldNumber = 12;
     private uint entrancePointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -166,15 +167,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (EntranceIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(EntranceIndex);
+      }
       if (EntrancePointId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntrancePointId);
       }
       monsterInfoList_.WriteTo(output, _repeated_monsterInfoList_codec);
-      if (EntranceIndex != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(EntranceIndex);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -185,15 +186,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntranceIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(EntranceIndex);
+      }
       if (EntrancePointId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntrancePointId);
       }
       monsterInfoList_.WriteTo(ref output, _repeated_monsterInfoList_codec);
-      if (EntranceIndex != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(EntranceIndex);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -245,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 72: {
+            EntranceIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             EntrancePointId = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 122: {
             monsterInfoList_.AddEntriesFrom(input, _repeated_monsterInfoList_codec);
-            break;
-          }
-          case 120: {
-            EntranceIndex = input.ReadUInt32();
             break;
           }
         }
@@ -272,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 72: {
+            EntranceIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             EntrancePointId = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 122: {
             monsterInfoList_.AddEntriesFrom(ref input, _repeated_monsterInfoList_codec);
-            break;
-          }
-          case 120: {
-            EntranceIndex = input.ReadUInt32();
             break;
           }
         }

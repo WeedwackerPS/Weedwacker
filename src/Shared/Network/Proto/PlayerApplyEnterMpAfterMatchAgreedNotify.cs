@@ -25,16 +25,17 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5QbGF5ZXJBcHBseUVudGVyTXBBZnRlck1hdGNoQWdyZWVkTm90aWZ5LnBy",
-            "b3RvGg9NYXRjaFR5cGUucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8i",
-            "jgEKKFBsYXllckFwcGx5RW50ZXJNcEFmdGVyTWF0Y2hBZ3JlZWROb3RpZnkS",
-            "KgoPc3JjX3BsYXllcl9pbmZvGAsgASgLMhEuT25saW5lUGxheWVySW5mbxIW",
-            "Cg5tYXRjaHNlcnZlcl9pZBgKIAEoDRIeCgptYXRjaF90eXBlGAMgASgOMgou",
-            "TWF0Y2hUeXBlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "b3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGg9NYXRjaFR5",
+            "cGUucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8izgEKKFBsYXllckFw",
+            "cGx5RW50ZXJNcEFmdGVyTWF0Y2hBZ3JlZWROb3RpZnkSFgoObWF0Y2hzZXJ2",
+            "ZXJfaWQYAyABKA0SSgoPc3JjX3BsYXllcl9pbmZvGAcgASgLMjEuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PbmxpbmVQbGF5ZXJJbmZvEj4K",
+            "Cm1hdGNoX3R5cGUYBSABKA4yKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLk1hdGNoVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MatchTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpAfterMatchAgreedNotify), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpAfterMatchAgreedNotify.Parser, new[]{ "SrcPlayerInfo", "MatchserverId", "MatchType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpAfterMatchAgreedNotify), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpAfterMatchAgreedNotify.Parser, new[]{ "MatchserverId", "SrcPlayerInfo", "MatchType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4195
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4168;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerApplyEnterMpAfterMatchAgreedNotify : pb::IMessage<PlayerApplyEnterMpAfterMatchAgreedNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerApplyEnterMpAfterMatchAgreedNotify(PlayerApplyEnterMpAfterMatchAgreedNotify other) : this() {
-      srcPlayerInfo_ = other.srcPlayerInfo_ != null ? other.srcPlayerInfo_.Clone() : null;
       matchserverId_ = other.matchserverId_;
+      srcPlayerInfo_ = other.srcPlayerInfo_ != null ? other.srcPlayerInfo_.Clone() : null;
       matchType_ = other.matchType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -92,20 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerApplyEnterMpAfterMatchAgreedNotify(this);
     }
 
-    /// <summary>Field number for the "src_player_info" field.</summary>
-    public const int SrcPlayerInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo srcPlayerInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo SrcPlayerInfo {
-      get { return srcPlayerInfo_; }
-      set {
-        srcPlayerInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "matchserver_id" field.</summary>
-    public const int MatchserverIdFieldNumber = 10;
+    public const int MatchserverIdFieldNumber = 3;
     private uint matchserverId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,8 +109,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "src_player_info" field.</summary>
+    public const int SrcPlayerInfoFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo srcPlayerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo SrcPlayerInfo {
+      get { return srcPlayerInfo_; }
+      set {
+        srcPlayerInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "match_type" field.</summary>
-    public const int MatchTypeFieldNumber = 3;
+    public const int MatchTypeFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.MatchType matchType_ = global::Weedwacker.Shared.Network.Proto.MatchType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(SrcPlayerInfo, other.SrcPlayerInfo)) return false;
       if (MatchserverId != other.MatchserverId) return false;
+      if (!object.Equals(SrcPlayerInfo, other.SrcPlayerInfo)) return false;
       if (MatchType != other.MatchType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -153,8 +158,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (srcPlayerInfo_ != null) hash ^= SrcPlayerInfo.GetHashCode();
       if (MatchserverId != 0) hash ^= MatchserverId.GetHashCode();
+      if (srcPlayerInfo_ != null) hash ^= SrcPlayerInfo.GetHashCode();
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) hash ^= MatchType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -174,16 +179,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) MatchType);
-      }
       if (MatchserverId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(MatchserverId);
       }
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
       if (srcPlayerInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(SrcPlayerInfo);
       }
       if (_unknownFields != null) {
@@ -196,16 +201,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) MatchType);
-      }
       if (MatchserverId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(MatchserverId);
       }
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
       if (srcPlayerInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(SrcPlayerInfo);
       }
       if (_unknownFields != null) {
@@ -218,11 +223,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (srcPlayerInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SrcPlayerInfo);
-      }
       if (MatchserverId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchserverId);
+      }
+      if (srcPlayerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SrcPlayerInfo);
       }
       if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
@@ -239,14 +244,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.MatchserverId != 0) {
+        MatchserverId = other.MatchserverId;
+      }
       if (other.srcPlayerInfo_ != null) {
         if (srcPlayerInfo_ == null) {
           SrcPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
         }
         SrcPlayerInfo.MergeFrom(other.SrcPlayerInfo);
-      }
-      if (other.MatchserverId != 0) {
-        MatchserverId = other.MatchserverId;
       }
       if (other.MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
         MatchType = other.MatchType;
@@ -267,14 +272,14 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 24: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
-            break;
-          }
-          case 80: {
             MatchserverId = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 40: {
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            break;
+          }
+          case 58: {
             if (srcPlayerInfo_ == null) {
               SrcPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
@@ -297,14 +302,14 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 24: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
-            break;
-          }
-          case 80: {
             MatchserverId = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 40: {
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
+            break;
+          }
+          case 58: {
             if (srcPlayerInfo_ == null) {
               SrcPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }

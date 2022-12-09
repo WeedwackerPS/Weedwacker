@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CombineFormulaDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Db21iaW5lRm9ybXVsYURhdGFOb3RpZnkucHJvdG8iQQoYQ29tYmluZUZv",
-            "cm11bGFEYXRhTm90aWZ5EhIKCmNvbWJpbmVfaWQYBiABKA0SEQoJaXNfbG9j",
-            "a2VkGAMgASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Ch5Db21iaW5lRm9ybXVsYURhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iQQoYQ29tYmluZUZvcm11bGFEYXRhTm90",
+            "aWZ5EhIKCmNvbWJpbmVfaWQYBiABKA0SEQoJaXNfbG9ja2VkGAggASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 632
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 665;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CombineFormulaDataNotify : pb::IMessage<CombineFormulaDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_locked" field.</summary>
-    public const int IsLockedFieldNumber = 3;
+    public const int IsLockedFieldNumber = 8;
     private bool isLocked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsLocked != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsLocked);
-      }
       if (CombineId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(CombineId);
+      }
+      if (IsLocked != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsLocked);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsLocked != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsLocked);
-      }
       if (CombineId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(CombineId);
+      }
+      if (IsLocked != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsLocked);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            IsLocked = input.ReadBool();
-            break;
-          }
           case 48: {
             CombineId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsLocked = input.ReadBool();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            IsLocked = input.ReadBool();
-            break;
-          }
           case 48: {
             CombineId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsLocked = input.ReadBool();
             break;
           }
         }

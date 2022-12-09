@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryAvatarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZSb2d1ZURpYXJ5QXZhdGFyLnByb3RvGhtBY3Rpdml0eUR1bmdlb25BdmF0",
-            "YXIucHJvdG8aI1JvZ3VlRGlhcnlBdmF0YXJEaXNhYmxlU3RhdHVzLnByb3Rv",
-            "IpsBChBSb2d1ZURpYXJ5QXZhdGFyEiYKBmF2YXRhchgCIAEoCzIWLkFjdGl2",
-            "aXR5RHVuZ2VvbkF2YXRhchINCgVsZXZlbBgOIAEoDRITCgt0aXJlZF9yb3Vu",
-            "ZBgNIAEoDRI7ChNkaXNhYmxlX3N0YXR1c19saXN0GAkgAygOMh4uUm9ndWVE",
-            "aWFyeUF2YXRhckRpc2FibGVTdGF0dXNCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZSb2d1ZURpYXJ5QXZhdGFyLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhtBY3Rpdml0eUR1bmdlb25BdmF0YXIucHJvdG8aI1Jv",
+            "Z3VlRGlhcnlBdmF0YXJEaXNhYmxlU3RhdHVzLnByb3RvItsBChBSb2d1ZURp",
+            "YXJ5QXZhdGFyEg0KBWxldmVsGAogASgNElsKE2Rpc2FibGVfc3RhdHVzX2xp",
+            "c3QYByADKA4yPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJv",
+            "Z3VlRGlhcnlBdmF0YXJEaXNhYmxlU3RhdHVzEhMKC3RpcmVkX3JvdW5kGAIg",
+            "ASgNEkYKBmF2YXRhchgOIAEoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQWN0aXZpdHlEdW5nZW9uQXZhdGFyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatarReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar), global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser, new[]{ "Avatar", "Level", "TiredRound", "DisableStatusList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar), global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser, new[]{ "Level", "DisableStatusList", "TiredRound", "Avatar" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryAvatar(RogueDiaryAvatar other) : this() {
-      avatar_ = other.avatar_ != null ? other.avatar_.Clone() : null;
       level_ = other.level_;
-      tiredRound_ = other.tiredRound_;
       disableStatusList_ = other.disableStatusList_.Clone();
+      tiredRound_ = other.tiredRound_;
+      avatar_ = other.avatar_ != null ? other.avatar_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueDiaryAvatar(this);
     }
 
-    /// <summary>Field number for the "avatar" field.</summary>
-    public const int AvatarFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar avatar_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar Avatar {
-      get { return avatar_; }
-      set {
-        avatar_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 14;
+    public const int LevelFieldNumber = 10;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,8 +101,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "disable_status_list" field.</summary>
+    public const int DisableStatusListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> _repeated_disableStatusList_codec
+        = pb::FieldCodec.ForEnum(58, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> disableStatusList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> DisableStatusList {
+      get { return disableStatusList_; }
+    }
+
     /// <summary>Field number for the "tired_round" field.</summary>
-    public const int TiredRoundFieldNumber = 13;
+    public const int TiredRoundFieldNumber = 2;
     private uint tiredRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,15 +124,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "disable_status_list" field.</summary>
-    public const int DisableStatusListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> _repeated_disableStatusList_codec
-        = pb::FieldCodec.ForEnum(74, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> disableStatusList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus>();
+    /// <summary>Field number for the "avatar" field.</summary>
+    public const int AvatarFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar avatar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarDisableStatus> DisableStatusList {
-      get { return disableStatusList_; }
+    public global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar Avatar {
+      get { return avatar_; }
+      set {
+        avatar_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Avatar, other.Avatar)) return false;
       if (Level != other.Level) return false;
-      if (TiredRound != other.TiredRound) return false;
       if(!disableStatusList_.Equals(other.disableStatusList_)) return false;
+      if (TiredRound != other.TiredRound) return false;
+      if (!object.Equals(Avatar, other.Avatar)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (avatar_ != null) hash ^= Avatar.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
-      if (TiredRound != 0) hash ^= TiredRound.GetHashCode();
       hash ^= disableStatusList_.GetHashCode();
+      if (TiredRound != 0) hash ^= TiredRound.GetHashCode();
+      if (avatar_ != null) hash ^= Avatar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,18 +184,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (avatar_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Avatar);
-      }
-      disableStatusList_.WriteTo(output, _repeated_disableStatusList_codec);
       if (TiredRound != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(TiredRound);
       }
+      disableStatusList_.WriteTo(output, _repeated_disableStatusList_codec);
       if (Level != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
+      }
+      if (avatar_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Avatar);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -206,18 +207,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (avatar_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Avatar);
-      }
-      disableStatusList_.WriteTo(ref output, _repeated_disableStatusList_codec);
       if (TiredRound != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(TiredRound);
       }
+      disableStatusList_.WriteTo(ref output, _repeated_disableStatusList_codec);
       if (Level != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
+      }
+      if (avatar_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Avatar);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -229,16 +230,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (avatar_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Avatar);
-      }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
+      size += disableStatusList_.CalculateSize(_repeated_disableStatusList_codec);
       if (TiredRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TiredRound);
       }
-      size += disableStatusList_.CalculateSize(_repeated_disableStatusList_codec);
+      if (avatar_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Avatar);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -251,19 +252,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      disableStatusList_.Add(other.disableStatusList_);
+      if (other.TiredRound != 0) {
+        TiredRound = other.TiredRound;
+      }
       if (other.avatar_ != null) {
         if (avatar_ == null) {
           Avatar = new global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar();
         }
         Avatar.MergeFrom(other.Avatar);
       }
-      if (other.Level != 0) {
-        Level = other.Level;
-      }
-      if (other.TiredRound != 0) {
-        TiredRound = other.TiredRound;
-      }
-      disableStatusList_.Add(other.disableStatusList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -279,24 +280,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 16: {
+            TiredRound = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            disableStatusList_.AddEntriesFrom(input, _repeated_disableStatusList_codec);
+            break;
+          }
+          case 80: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (avatar_ == null) {
               Avatar = new global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar();
             }
             input.ReadMessage(Avatar);
-            break;
-          }
-          case 74:
-          case 72: {
-            disableStatusList_.AddEntriesFrom(input, _repeated_disableStatusList_codec);
-            break;
-          }
-          case 104: {
-            TiredRound = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Level = input.ReadUInt32();
             break;
           }
         }
@@ -314,24 +315,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 16: {
+            TiredRound = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            disableStatusList_.AddEntriesFrom(ref input, _repeated_disableStatusList_codec);
+            break;
+          }
+          case 80: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (avatar_ == null) {
               Avatar = new global::Weedwacker.Shared.Network.Proto.ActivityDungeonAvatar();
             }
             input.ReadMessage(Avatar);
-            break;
-          }
-          case 74:
-          case 72: {
-            disableStatusList_.AddEntriesFrom(ref input, _repeated_disableStatusList_codec);
-            break;
-          }
-          case 104: {
-            TiredRound = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Level = input.ReadUInt32();
             break;
           }
         }

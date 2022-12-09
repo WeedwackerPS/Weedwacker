@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonSocialReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDdXN0b21EdW5nZW9uU29jaWFsLnByb3RvIl0KE0N1c3RvbUR1bmdlb25T",
-            "b2NpYWwSDwoHd2luX251bRgEIAEoDRIQCghsaWtlX251bRgMIAEoDRIQCghw",
-            "bGF5X251bRgHIAEoDRIRCglzdG9yZV9udW0YAiABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlDdXN0b21EdW5nZW9uU29jaWFsLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIl0KE0N1c3RvbUR1bmdlb25Tb2NpYWwSDwoHd2lu",
+            "X251bRgDIAEoDRIQCghwbGF5X251bRgLIAEoDRIQCghsaWtlX251bRgPIAEo",
+            "DRIRCglzdG9yZV9udW0YDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial), global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial.Parser, new[]{ "WinNum", "LikeNum", "PlayNum", "StoreNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial), global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial.Parser, new[]{ "WinNum", "PlayNum", "LikeNum", "StoreNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeonSocial(CustomDungeonSocial other) : this() {
       winNum_ = other.winNum_;
-      likeNum_ = other.likeNum_;
       playNum_ = other.playNum_;
+      likeNum_ = other.likeNum_;
       storeNum_ = other.storeNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "win_num" field.</summary>
-    public const int WinNumFieldNumber = 4;
+    public const int WinNumFieldNumber = 3;
     private uint winNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,20 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "like_num" field.</summary>
-    public const int LikeNumFieldNumber = 12;
-    private uint likeNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LikeNum {
-      get { return likeNum_; }
-      set {
-        likeNum_ = value;
-      }
-    }
-
     /// <summary>Field number for the "play_num" field.</summary>
-    public const int PlayNumFieldNumber = 7;
+    public const int PlayNumFieldNumber = 11;
     private uint playNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,8 +109,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "like_num" field.</summary>
+    public const int LikeNumFieldNumber = 15;
+    private uint likeNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LikeNum {
+      get { return likeNum_; }
+      set {
+        likeNum_ = value;
+      }
+    }
+
     /// <summary>Field number for the "store_num" field.</summary>
-    public const int StoreNumFieldNumber = 2;
+    public const int StoreNumFieldNumber = 14;
     private uint storeNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (WinNum != other.WinNum) return false;
-      if (LikeNum != other.LikeNum) return false;
       if (PlayNum != other.PlayNum) return false;
+      if (LikeNum != other.LikeNum) return false;
       if (StoreNum != other.StoreNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -160,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (WinNum != 0) hash ^= WinNum.GetHashCode();
-      if (LikeNum != 0) hash ^= LikeNum.GetHashCode();
       if (PlayNum != 0) hash ^= PlayNum.GetHashCode();
+      if (LikeNum != 0) hash ^= LikeNum.GetHashCode();
       if (StoreNum != 0) hash ^= StoreNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -181,20 +181,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StoreNum != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(StoreNum);
-      }
       if (WinNum != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(WinNum);
       }
       if (PlayNum != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteUInt32(PlayNum);
       }
+      if (StoreNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(StoreNum);
+      }
       if (LikeNum != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(LikeNum);
       }
       if (_unknownFields != null) {
@@ -207,20 +207,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StoreNum != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(StoreNum);
-      }
       if (WinNum != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(WinNum);
       }
       if (PlayNum != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteUInt32(PlayNum);
       }
+      if (StoreNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(StoreNum);
+      }
       if (LikeNum != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(LikeNum);
       }
       if (_unknownFields != null) {
@@ -236,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (WinNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WinNum);
       }
-      if (LikeNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LikeNum);
-      }
       if (PlayNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayNum);
+      }
+      if (LikeNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LikeNum);
       }
       if (StoreNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreNum);
@@ -260,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.WinNum != 0) {
         WinNum = other.WinNum;
       }
-      if (other.LikeNum != 0) {
-        LikeNum = other.LikeNum;
-      }
       if (other.PlayNum != 0) {
         PlayNum = other.PlayNum;
+      }
+      if (other.LikeNum != 0) {
+        LikeNum = other.LikeNum;
       }
       if (other.StoreNum != 0) {
         StoreNum = other.StoreNum;
@@ -284,19 +284,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            StoreNum = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 24: {
             WinNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 88: {
             PlayNum = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 112: {
+            StoreNum = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             LikeNum = input.ReadUInt32();
             break;
           }
@@ -315,19 +315,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            StoreNum = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 24: {
             WinNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 88: {
             PlayNum = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 112: {
+            StoreNum = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             LikeNum = input.ReadUInt32();
             break;
           }

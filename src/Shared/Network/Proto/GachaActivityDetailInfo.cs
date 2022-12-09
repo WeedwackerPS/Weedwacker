@@ -24,22 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoUR2FjaGFTdGFnZURh",
-            "dGEucHJvdG8ipQMKF0dhY2hhQWN0aXZpdHlEZXRhaWxJbmZvEhsKE2hhdmVf",
-            "Z2V0X3JvYm90X2xpc3QYBiADKA0SKQoQZ2FjaGFfc3RhZ2VfbGlzdBgEIAMo",
-            "CzIPLkdhY2hhU3RhZ2VEYXRhElYKGWhhdmVfcmV3YXJkX3JvYm90X251bV9t",
-            "YXAYCCADKAsyMy5HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5IYXZlUmV3YXJk",
-            "Um9ib3ROdW1NYXBFbnRyeRIcChR0ZWNoX2NyZWF0ZV9yb2JvdF9pZBgDIAEo",
-            "DRJACg1yb2JvdF9udW1fbWFwGAUgAygLMikuR2FjaGFBY3Rpdml0eURldGFp",
-            "bEluZm8uUm9ib3ROdW1NYXBFbnRyeRIYChByb2JvdF9maW5pc2hfbnVtGAwg",
-            "ASgNGjwKGkhhdmVSZXdhcmRSb2JvdE51bU1hcEVudHJ5EgsKA2tleRgBIAEo",
-            "DRINCgV2YWx1ZRgCIAEoDToCOAEaMgoQUm9ib3ROdW1NYXBFbnRyeRILCgNr",
-            "ZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoUR2FjaGFTdGFnZURhdGEucHJvdG8ijAQK",
+            "F0dhY2hhQWN0aXZpdHlEZXRhaWxJbmZvEhsKE1VuazMzMDBfSkpESEtKR0RF",
+            "S0oYDCABKA0SYAoNcm9ib3RfbnVtX21hcBgKIAMoCzJJLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uR2FjaGFBY3Rpdml0eURldGFpbEluZm8u",
+            "Um9ib3ROdW1NYXBFbnRyeRJ2ChloYXZlX3Jld2FyZF9yb2JvdF9udW1fbWFw",
+            "GAMgAygLMlMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWNo",
+            "YUFjdGl2aXR5RGV0YWlsSW5mby5IYXZlUmV3YXJkUm9ib3ROdW1NYXBFbnRy",
+            "eRIbChNoYXZlX2dldF9yb2JvdF9saXN0GA4gAygNEk4KFWdhY2hhX3N0YWdl",
+            "X2RhdGFfbGlzdBgHIAMoCzIvLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uR2FjaGFTdGFnZURhdGESGwoTVW5rMzMwMF9JR0dQQkVPQ05HSRgP",
+            "IAEoDRoyChBSb2JvdE51bU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1",
+            "ZRgCIAEoDToCOAEaPAoaSGF2ZVJld2FyZFJvYm90TnVtTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GachaStageDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo.Parser, new[]{ "HaveGetRobotList", "GachaStageList", "HaveRewardRobotNumMap", "TechCreateRobotId", "RobotNumMap", "RobotFinishNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo.Parser, new[]{ "Unk3300JJDHKJGDEKJ", "RobotNumMap", "HaveRewardRobotNumMap", "HaveGetRobotList", "GachaStageDataList", "Unk3300IGGPBEOCNGI" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -80,12 +82,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GachaActivityDetailInfo(GachaActivityDetailInfo other) : this() {
-      haveGetRobotList_ = other.haveGetRobotList_.Clone();
-      gachaStageList_ = other.gachaStageList_.Clone();
-      haveRewardRobotNumMap_ = other.haveRewardRobotNumMap_.Clone();
-      techCreateRobotId_ = other.techCreateRobotId_;
+      unk3300JJDHKJGDEKJ_ = other.unk3300JJDHKJGDEKJ_;
       robotNumMap_ = other.robotNumMap_.Clone();
-      robotFinishNum_ = other.robotFinishNum_;
+      haveRewardRobotNumMap_ = other.haveRewardRobotNumMap_.Clone();
+      haveGetRobotList_ = other.haveGetRobotList_.Clone();
+      gachaStageDataList_ = other.gachaStageDataList_.Clone();
+      unk3300IGGPBEOCNGI_ = other.unk3300IGGPBEOCNGI_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,55 +97,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GachaActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "have_get_robot_list" field.</summary>
-    public const int HaveGetRobotListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_haveGetRobotList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> haveGetRobotList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_JJDHKJGDEKJ" field.</summary>
+    public const int Unk3300JJDHKJGDEKJFieldNumber = 12;
+    private uint unk3300JJDHKJGDEKJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> HaveGetRobotList {
-      get { return haveGetRobotList_; }
-    }
-
-    /// <summary>Field number for the "gacha_stage_list" field.</summary>
-    public const int GachaStageListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GachaStageData> _repeated_gachaStageList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.GachaStageData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData> gachaStageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData> GachaStageList {
-      get { return gachaStageList_; }
-    }
-
-    /// <summary>Field number for the "have_reward_robot_num_map" field.</summary>
-    public const int HaveRewardRobotNumMapFieldNumber = 8;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_haveRewardRobotNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
-    private readonly pbc::MapField<uint, uint> haveRewardRobotNumMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> HaveRewardRobotNumMap {
-      get { return haveRewardRobotNumMap_; }
-    }
-
-    /// <summary>Field number for the "tech_create_robot_id" field.</summary>
-    public const int TechCreateRobotIdFieldNumber = 3;
-    private uint techCreateRobotId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TechCreateRobotId {
-      get { return techCreateRobotId_; }
+    public uint Unk3300JJDHKJGDEKJ {
+      get { return unk3300JJDHKJGDEKJ_; }
       set {
-        techCreateRobotId_ = value;
+        unk3300JJDHKJGDEKJ_ = value;
       }
     }
 
     /// <summary>Field number for the "robot_num_map" field.</summary>
-    public const int RobotNumMapFieldNumber = 5;
+    public const int RobotNumMapFieldNumber = 10;
     private static readonly pbc::MapField<uint, uint>.Codec _map_robotNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
     private readonly pbc::MapField<uint, uint> robotNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,15 +120,48 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return robotNumMap_; }
     }
 
-    /// <summary>Field number for the "robot_finish_num" field.</summary>
-    public const int RobotFinishNumFieldNumber = 12;
-    private uint robotFinishNum_;
+    /// <summary>Field number for the "have_reward_robot_num_map" field.</summary>
+    public const int HaveRewardRobotNumMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_haveRewardRobotNumMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> haveRewardRobotNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RobotFinishNum {
-      get { return robotFinishNum_; }
+    public pbc::MapField<uint, uint> HaveRewardRobotNumMap {
+      get { return haveRewardRobotNumMap_; }
+    }
+
+    /// <summary>Field number for the "have_get_robot_list" field.</summary>
+    public const int HaveGetRobotListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_haveGetRobotList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> haveGetRobotList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> HaveGetRobotList {
+      get { return haveGetRobotList_; }
+    }
+
+    /// <summary>Field number for the "gacha_stage_data_list" field.</summary>
+    public const int GachaStageDataListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GachaStageData> _repeated_gachaStageDataList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.GachaStageData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData> gachaStageDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaStageData> GachaStageDataList {
+      get { return gachaStageDataList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_IGGPBEOCNGI" field.</summary>
+    public const int Unk3300IGGPBEOCNGIFieldNumber = 15;
+    private uint unk3300IGGPBEOCNGI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IGGPBEOCNGI {
+      get { return unk3300IGGPBEOCNGI_; }
       set {
-        robotFinishNum_ = value;
+        unk3300IGGPBEOCNGI_ = value;
       }
     }
 
@@ -178,12 +180,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!haveGetRobotList_.Equals(other.haveGetRobotList_)) return false;
-      if(!gachaStageList_.Equals(other.gachaStageList_)) return false;
-      if (!HaveRewardRobotNumMap.Equals(other.HaveRewardRobotNumMap)) return false;
-      if (TechCreateRobotId != other.TechCreateRobotId) return false;
+      if (Unk3300JJDHKJGDEKJ != other.Unk3300JJDHKJGDEKJ) return false;
       if (!RobotNumMap.Equals(other.RobotNumMap)) return false;
-      if (RobotFinishNum != other.RobotFinishNum) return false;
+      if (!HaveRewardRobotNumMap.Equals(other.HaveRewardRobotNumMap)) return false;
+      if(!haveGetRobotList_.Equals(other.haveGetRobotList_)) return false;
+      if(!gachaStageDataList_.Equals(other.gachaStageDataList_)) return false;
+      if (Unk3300IGGPBEOCNGI != other.Unk3300IGGPBEOCNGI) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= haveGetRobotList_.GetHashCode();
-      hash ^= gachaStageList_.GetHashCode();
-      hash ^= HaveRewardRobotNumMap.GetHashCode();
-      if (TechCreateRobotId != 0) hash ^= TechCreateRobotId.GetHashCode();
+      if (Unk3300JJDHKJGDEKJ != 0) hash ^= Unk3300JJDHKJGDEKJ.GetHashCode();
       hash ^= RobotNumMap.GetHashCode();
-      if (RobotFinishNum != 0) hash ^= RobotFinishNum.GetHashCode();
+      hash ^= HaveRewardRobotNumMap.GetHashCode();
+      hash ^= haveGetRobotList_.GetHashCode();
+      hash ^= gachaStageDataList_.GetHashCode();
+      if (Unk3300IGGPBEOCNGI != 0) hash ^= Unk3300IGGPBEOCNGI.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -215,17 +217,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TechCreateRobotId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(TechCreateRobotId);
-      }
-      gachaStageList_.WriteTo(output, _repeated_gachaStageList_codec);
-      robotNumMap_.WriteTo(output, _map_robotNumMap_codec);
-      haveGetRobotList_.WriteTo(output, _repeated_haveGetRobotList_codec);
       haveRewardRobotNumMap_.WriteTo(output, _map_haveRewardRobotNumMap_codec);
-      if (RobotFinishNum != 0) {
+      gachaStageDataList_.WriteTo(output, _repeated_gachaStageDataList_codec);
+      robotNumMap_.WriteTo(output, _map_robotNumMap_codec);
+      if (Unk3300JJDHKJGDEKJ != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(RobotFinishNum);
+        output.WriteUInt32(Unk3300JJDHKJGDEKJ);
+      }
+      haveGetRobotList_.WriteTo(output, _repeated_haveGetRobotList_codec);
+      if (Unk3300IGGPBEOCNGI != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300IGGPBEOCNGI);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -237,17 +239,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TechCreateRobotId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(TechCreateRobotId);
-      }
-      gachaStageList_.WriteTo(ref output, _repeated_gachaStageList_codec);
-      robotNumMap_.WriteTo(ref output, _map_robotNumMap_codec);
-      haveGetRobotList_.WriteTo(ref output, _repeated_haveGetRobotList_codec);
       haveRewardRobotNumMap_.WriteTo(ref output, _map_haveRewardRobotNumMap_codec);
-      if (RobotFinishNum != 0) {
+      gachaStageDataList_.WriteTo(ref output, _repeated_gachaStageDataList_codec);
+      robotNumMap_.WriteTo(ref output, _map_robotNumMap_codec);
+      if (Unk3300JJDHKJGDEKJ != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(RobotFinishNum);
+        output.WriteUInt32(Unk3300JJDHKJGDEKJ);
+      }
+      haveGetRobotList_.WriteTo(ref output, _repeated_haveGetRobotList_codec);
+      if (Unk3300IGGPBEOCNGI != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300IGGPBEOCNGI);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -259,15 +261,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += haveGetRobotList_.CalculateSize(_repeated_haveGetRobotList_codec);
-      size += gachaStageList_.CalculateSize(_repeated_gachaStageList_codec);
-      size += haveRewardRobotNumMap_.CalculateSize(_map_haveRewardRobotNumMap_codec);
-      if (TechCreateRobotId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TechCreateRobotId);
+      if (Unk3300JJDHKJGDEKJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JJDHKJGDEKJ);
       }
       size += robotNumMap_.CalculateSize(_map_robotNumMap_codec);
-      if (RobotFinishNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RobotFinishNum);
+      size += haveRewardRobotNumMap_.CalculateSize(_map_haveRewardRobotNumMap_codec);
+      size += haveGetRobotList_.CalculateSize(_repeated_haveGetRobotList_codec);
+      size += gachaStageDataList_.CalculateSize(_repeated_gachaStageDataList_codec);
+      if (Unk3300IGGPBEOCNGI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IGGPBEOCNGI);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -281,15 +283,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      haveGetRobotList_.Add(other.haveGetRobotList_);
-      gachaStageList_.Add(other.gachaStageList_);
-      haveRewardRobotNumMap_.Add(other.haveRewardRobotNumMap_);
-      if (other.TechCreateRobotId != 0) {
-        TechCreateRobotId = other.TechCreateRobotId;
+      if (other.Unk3300JJDHKJGDEKJ != 0) {
+        Unk3300JJDHKJGDEKJ = other.Unk3300JJDHKJGDEKJ;
       }
       robotNumMap_.Add(other.robotNumMap_);
-      if (other.RobotFinishNum != 0) {
-        RobotFinishNum = other.RobotFinishNum;
+      haveRewardRobotNumMap_.Add(other.haveRewardRobotNumMap_);
+      haveGetRobotList_.Add(other.haveGetRobotList_);
+      gachaStageDataList_.Add(other.gachaStageDataList_);
+      if (other.Unk3300IGGPBEOCNGI != 0) {
+        Unk3300IGGPBEOCNGI = other.Unk3300IGGPBEOCNGI;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -306,29 +308,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            TechCreateRobotId = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            gachaStageList_.AddEntriesFrom(input, _repeated_gachaStageList_codec);
-            break;
-          }
-          case 42: {
-            robotNumMap_.AddEntriesFrom(input, _map_robotNumMap_codec);
-            break;
-          }
-          case 50:
-          case 48: {
-            haveGetRobotList_.AddEntriesFrom(input, _repeated_haveGetRobotList_codec);
-            break;
-          }
-          case 66: {
+          case 26: {
             haveRewardRobotNumMap_.AddEntriesFrom(input, _map_haveRewardRobotNumMap_codec);
             break;
           }
+          case 58: {
+            gachaStageDataList_.AddEntriesFrom(input, _repeated_gachaStageDataList_codec);
+            break;
+          }
+          case 82: {
+            robotNumMap_.AddEntriesFrom(input, _map_robotNumMap_codec);
+            break;
+          }
           case 96: {
-            RobotFinishNum = input.ReadUInt32();
+            Unk3300JJDHKJGDEKJ = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            haveGetRobotList_.AddEntriesFrom(input, _repeated_haveGetRobotList_codec);
+            break;
+          }
+          case 120: {
+            Unk3300IGGPBEOCNGI = input.ReadUInt32();
             break;
           }
         }
@@ -346,29 +348,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            TechCreateRobotId = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            gachaStageList_.AddEntriesFrom(ref input, _repeated_gachaStageList_codec);
-            break;
-          }
-          case 42: {
-            robotNumMap_.AddEntriesFrom(ref input, _map_robotNumMap_codec);
-            break;
-          }
-          case 50:
-          case 48: {
-            haveGetRobotList_.AddEntriesFrom(ref input, _repeated_haveGetRobotList_codec);
-            break;
-          }
-          case 66: {
+          case 26: {
             haveRewardRobotNumMap_.AddEntriesFrom(ref input, _map_haveRewardRobotNumMap_codec);
             break;
           }
+          case 58: {
+            gachaStageDataList_.AddEntriesFrom(ref input, _repeated_gachaStageDataList_codec);
+            break;
+          }
+          case 82: {
+            robotNumMap_.AddEntriesFrom(ref input, _map_robotNumMap_codec);
+            break;
+          }
           case 96: {
-            RobotFinishNum = input.ReadUInt32();
+            Unk3300JJDHKJGDEKJ = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            haveGetRobotList_.AddEntriesFrom(ref input, _repeated_haveGetRobotList_codec);
+            break;
+          }
+          case 120: {
+            Unk3300IGGPBEOCNGI = input.ReadUInt32();
             break;
           }
         }

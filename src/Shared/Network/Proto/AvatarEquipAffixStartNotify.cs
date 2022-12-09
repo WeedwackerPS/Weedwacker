@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarEquipAffixStartNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBdmF0YXJFcXVpcEFmZml4U3RhcnROb3RpZnkucHJvdG8aGkF2YXRhckVx",
-            "dWlwQWZmaXhJbmZvLnByb3RvImMKG0F2YXRhckVxdWlwQWZmaXhTdGFydE5v",
-            "dGlmeRITCgthdmF0YXJfZ3VpZBgEIAEoBBIvChBlcXVpcF9hZmZpeF9pbmZv",
-            "GAwgASgLMhUuQXZhdGFyRXF1aXBBZmZpeEluZm9CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFBdmF0YXJFcXVpcEFmZml4U3RhcnROb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGkF2YXRhckVxdWlwQWZmaXhJbmZv",
+            "LnByb3RvIoMBChtBdmF0YXJFcXVpcEFmZml4U3RhcnROb3RpZnkSEwoLYXZh",
+            "dGFyX2d1aWQYASABKAQSTwoQZXF1aXBfYWZmaXhfaW5mbxgJIAEoCzI1Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZhdGFyRXF1aXBBZmZp",
+            "eEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarEquipAffixInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1662
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1708;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarEquipAffixStartNotify : pb::IMessage<AvatarEquipAffixStartNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 4;
+    public const int AvatarGuidFieldNumber = 1;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "equip_affix_info" field.</summary>
-    public const int EquipAffixInfoFieldNumber = 12;
+    public const int EquipAffixInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.AvatarEquipAffixInfo equipAffixInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt64(AvatarGuid);
       }
       if (equipAffixInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(EquipAffixInfo);
       }
       if (_unknownFields != null) {
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt64(AvatarGuid);
       }
       if (equipAffixInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(EquipAffixInfo);
       }
       if (_unknownFields != null) {
@@ -235,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 8: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 98: {
+          case 74: {
             if (equipAffixInfo_ == null) {
               EquipAffixInfo = new global::Weedwacker.Shared.Network.Proto.AvatarEquipAffixInfo();
             }
@@ -261,11 +266,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 8: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 98: {
+          case 74: {
             if (equipAffixInfo_ == null) {
               EquipAffixInfo = new global::Weedwacker.Shared.Network.Proto.AvatarEquipAffixInfo();
             }

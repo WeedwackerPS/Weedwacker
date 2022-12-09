@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarTeamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBBdmF0YXJUZWFtLnByb3RvIjkKCkF2YXRhclRlYW0SGAoQYXZhdGFyX2d1",
-            "aWRfbGlzdBgHIAMoBBIRCgl0ZWFtX25hbWUYDiABKAlCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChBBdmF0YXJUZWFtLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIjkKCkF2YXRhclRlYW0SGAoQYXZhdGFyX2d1aWRfbGlzdBgNIAMo",
+            "BBIRCgl0ZWFtX25hbWUYBCABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid_list" field.</summary>
-    public const int AvatarGuidListFieldNumber = 7;
+    public const int AvatarGuidListFieldNumber = 13;
     private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(58);
+        = pb::FieldCodec.ForUInt64(106);
     private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_name" field.</summary>
-    public const int TeamNameFieldNumber = 14;
+    public const int TeamNameFieldNumber = 4;
     private string teamName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
       if (TeamName.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(34);
         output.WriteString(TeamName);
       }
+      avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
       if (TeamName.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(34);
         output.WriteString(TeamName);
       }
+      avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58:
-          case 56: {
-            avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
+          case 34: {
+            TeamName = input.ReadString();
             break;
           }
-          case 114: {
-            TeamName = input.ReadString();
+          case 106:
+          case 104: {
+            avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58:
-          case 56: {
-            avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
+          case 34: {
+            TeamName = input.ReadString();
             break;
           }
-          case 114: {
-            TeamName = input.ReadString();
+          case 106:
+          case 104: {
+            avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
             break;
           }
         }

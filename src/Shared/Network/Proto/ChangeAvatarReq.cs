@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChangeAvatarReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVDaGFuZ2VBdmF0YXJSZXEucHJvdG8aDFZlY3Rvci5wcm90byJdCg9DaGFu",
-            "Z2VBdmF0YXJSZXESGQoIbW92ZV9wb3MYDyABKAsyBy5WZWN0b3ISEAoIc2tp",
-            "bGxfaWQYAiABKA0SDAoEZ3VpZBgHIAEoBBIPCgdpc19tb3ZlGAogASgIQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVDaGFuZ2VBdmF0YXJSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byJ9Cg9DaGFuZ2VBdmF0YXJSZXES",
+            "OQoIbW92ZV9wb3MYCSABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlZlY3RvchIMCgRndWlkGA4gASgEEg8KB2lzX21vdmUYCyABKAgS",
+            "EAoIc2tpbGxfaWQYBCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChangeAvatarReq), global::Weedwacker.Shared.Network.Proto.ChangeAvatarReq.Parser, new[]{ "MovePos", "SkillId", "Guid", "IsMove" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChangeAvatarReq), global::Weedwacker.Shared.Network.Proto.ChangeAvatarReq.Parser, new[]{ "MovePos", "Guid", "IsMove", "SkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1640
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1682;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChangeAvatarReq : pb::IMessage<ChangeAvatarReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChangeAvatarReq(ChangeAvatarReq other) : this() {
       movePos_ = other.movePos_ != null ? other.movePos_.Clone() : null;
-      skillId_ = other.skillId_;
       guid_ = other.guid_;
       isMove_ = other.isMove_;
+      skillId_ = other.skillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "move_pos" field.</summary>
-    public const int MovePosFieldNumber = 15;
+    public const int MovePosFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.Vector movePos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 2;
-    private uint skillId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillId {
-      get { return skillId_; }
-      set {
-        skillId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 7;
+    public const int GuidFieldNumber = 14;
     private ulong guid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,7 +121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_move" field.</summary>
-    public const int IsMoveFieldNumber = 10;
+    public const int IsMoveFieldNumber = 11;
     private bool isMove_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +129,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isMove_; }
       set {
         isMove_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 4;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
       }
     }
 
@@ -155,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(MovePos, other.MovePos)) return false;
-      if (SkillId != other.SkillId) return false;
       if (Guid != other.Guid) return false;
       if (IsMove != other.IsMove) return false;
+      if (SkillId != other.SkillId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (movePos_ != null) hash ^= MovePos.GetHashCode();
-      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (Guid != 0UL) hash ^= Guid.GetHashCode();
       if (IsMove != false) hash ^= IsMove.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,20 +193,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(SkillId);
       }
-      if (Guid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(Guid);
+      if (movePos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(MovePos);
       }
       if (IsMove != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsMove);
       }
-      if (movePos_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(MovePos);
+      if (Guid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Guid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,20 +219,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(SkillId);
       }
-      if (Guid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(Guid);
+      if (movePos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(MovePos);
       }
       if (IsMove != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsMove);
       }
-      if (movePos_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(MovePos);
+      if (Guid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Guid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -242,14 +247,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (movePos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MovePos);
       }
-      if (SkillId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-      }
       if (Guid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Guid);
       }
       if (IsMove != false) {
         size += 1 + 1;
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -269,14 +274,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         MovePos.MergeFrom(other.MovePos);
       }
-      if (other.SkillId != 0) {
-        SkillId = other.SkillId;
-      }
       if (other.Guid != 0UL) {
         Guid = other.Guid;
       }
       if (other.IsMove != false) {
         IsMove = other.IsMove;
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -293,23 +298,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 32: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Guid = input.ReadUInt64();
-            break;
-          }
-          case 80: {
-            IsMove = input.ReadBool();
-            break;
-          }
-          case 122: {
+          case 74: {
             if (movePos_ == null) {
               MovePos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(MovePos);
+            break;
+          }
+          case 88: {
+            IsMove = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Guid = input.ReadUInt64();
             break;
           }
         }
@@ -327,23 +332,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 32: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Guid = input.ReadUInt64();
-            break;
-          }
-          case 80: {
-            IsMove = input.ReadBool();
-            break;
-          }
-          case 122: {
+          case 74: {
             if (movePos_ == null) {
               MovePos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(MovePos);
+            break;
+          }
+          case 88: {
+            IsMove = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Guid = input.ReadUInt64();
             break;
           }
         }

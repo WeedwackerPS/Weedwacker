@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetPlayerBlacklistRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtHZXRQbGF5ZXJCbGFja2xpc3RSc3AucHJvdG8aEUZyaWVuZEJyaWVmLnBy",
-            "b3RvIkkKFUdldFBsYXllckJsYWNrbGlzdFJzcBIPCgdyZXRjb2RlGAIgASgF",
-            "Eh8KCWJsYWNrbGlzdBgDIAMoCzIMLkZyaWVuZEJyaWVmQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtHZXRQbGF5ZXJCbGFja2xpc3RSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEUZyaWVuZEJyaWVmLnByb3RvImkKFUdldFBs",
+            "YXllckJsYWNrbGlzdFJzcBI/CglibGFja2xpc3QYBSADKAsyLC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZyaWVuZEJyaWVmEg8KB3JldGNv",
+            "ZGUYCyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPlayerBlacklistRsp), global::Weedwacker.Shared.Network.Proto.GetPlayerBlacklistRsp.Parser, new[]{ "Retcode", "Blacklist" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPlayerBlacklistRsp), global::Weedwacker.Shared.Network.Proto.GetPlayerBlacklistRsp.Parser, new[]{ "Blacklist", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4091
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4021;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetPlayerBlacklistRsp : pb::IMessage<GetPlayerBlacklistRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetPlayerBlacklistRsp(GetPlayerBlacklistRsp other) : this() {
-      retcode_ = other.retcode_;
       blacklist_ = other.blacklist_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetPlayerBlacklistRsp(this);
     }
 
+    /// <summary>Field number for the "blacklist" field.</summary>
+    public const int BlacklistFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_blacklist_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> blacklist_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> Blacklist {
+      get { return blacklist_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,17 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "blacklist" field.</summary>
-    public const int BlacklistFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_blacklist_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> blacklist_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> Blacklist {
-      get { return blacklist_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!blacklist_.Equals(other.blacklist_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= blacklist_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      blacklist_.WriteTo(output, _repeated_blacklist_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      blacklist_.WriteTo(output, _repeated_blacklist_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      blacklist_.WriteTo(ref output, _repeated_blacklist_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      blacklist_.WriteTo(ref output, _repeated_blacklist_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += blacklist_.CalculateSize(_repeated_blacklist_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += blacklist_.CalculateSize(_repeated_blacklist_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      blacklist_.Add(other.blacklist_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      blacklist_.Add(other.blacklist_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
+          case 42: {
+            blacklist_.AddEntriesFrom(input, _repeated_blacklist_codec);
             break;
           }
-          case 26: {
-            blacklist_.AddEntriesFrom(input, _repeated_blacklist_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -243,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
+          case 42: {
+            blacklist_.AddEntriesFrom(ref input, _repeated_blacklist_codec);
             break;
           }
-          case 26: {
-            blacklist_.AddEntriesFrom(ref input, _repeated_blacklist_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

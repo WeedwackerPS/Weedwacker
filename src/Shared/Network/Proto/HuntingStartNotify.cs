@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static HuntingStartNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhIdW50aW5nU3RhcnROb3RpZnkucHJvdG8aEUh1bnRpbmdQYWlyLnByb3Rv",
-            "GgxWZWN0b3IucHJvdG8ifQoSSHVudGluZ1N0YXJ0Tm90aWZ5Eh4KDWNsdWVf",
-            "cG9zaXRpb24YBCABKAsyBy5WZWN0b3ISEQoJZmFpbF90aW1lGA8gASgNEiIK",
-            "DGh1bnRpbmdfcGFpchgDIAEoCzIMLkh1bnRpbmdQYWlyEhAKCGlzX2ZpbmFs",
-            "GAggASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChhIdW50aW5nU3RhcnROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEUh1bnRpbmdQYWlyLnByb3RvGgxWZWN0b3IucHJv",
+            "dG8ivQEKEkh1bnRpbmdTdGFydE5vdGlmeRJCCgxodW50aW5nX3BhaXIYAyAB",
+            "KAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkh1bnRpbmdQ",
+            "YWlyEhEKCWZhaWxfdGltZRgFIAEoDRI+Cg1jbHVlX3Bvc2l0aW9uGAYgASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISEAoI",
+            "aXNfZmluYWwYCCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HuntingPairReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HuntingStartNotify), global::Weedwacker.Shared.Network.Proto.HuntingStartNotify.Parser, new[]{ "CluePosition", "FailTime", "HuntingPair", "IsFinal" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HuntingStartNotify), global::Weedwacker.Shared.Network.Proto.HuntingStartNotify.Parser, new[]{ "HuntingPair", "FailTime", "CluePosition", "IsFinal" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4329
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4344;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HuntingStartNotify : pb::IMessage<HuntingStartNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HuntingStartNotify(HuntingStartNotify other) : this() {
-      cluePosition_ = other.cluePosition_ != null ? other.cluePosition_.Clone() : null;
-      failTime_ = other.failTime_;
       huntingPair_ = other.huntingPair_ != null ? other.huntingPair_.Clone() : null;
+      failTime_ = other.failTime_;
+      cluePosition_ = other.cluePosition_ != null ? other.cluePosition_.Clone() : null;
       isFinal_ = other.isFinal_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,30 +95,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HuntingStartNotify Clone() {
       return new HuntingStartNotify(this);
-    }
-
-    /// <summary>Field number for the "clue_position" field.</summary>
-    public const int CluePositionFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.Vector cluePosition_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector CluePosition {
-      get { return cluePosition_; }
-      set {
-        cluePosition_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fail_time" field.</summary>
-    public const int FailTimeFieldNumber = 15;
-    private uint failTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FailTime {
-      get { return failTime_; }
-      set {
-        failTime_ = value;
-      }
     }
 
     /// <summary>Field number for the "hunting_pair" field.</summary>
@@ -125,6 +106,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return huntingPair_; }
       set {
         huntingPair_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fail_time" field.</summary>
+    public const int FailTimeFieldNumber = 5;
+    private uint failTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FailTime {
+      get { return failTime_; }
+      set {
+        failTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "clue_position" field.</summary>
+    public const int CluePositionFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.Vector cluePosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector CluePosition {
+      get { return cluePosition_; }
+      set {
+        cluePosition_ = value;
       }
     }
 
@@ -155,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(CluePosition, other.CluePosition)) return false;
-      if (FailTime != other.FailTime) return false;
       if (!object.Equals(HuntingPair, other.HuntingPair)) return false;
+      if (FailTime != other.FailTime) return false;
+      if (!object.Equals(CluePosition, other.CluePosition)) return false;
       if (IsFinal != other.IsFinal) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -166,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (cluePosition_ != null) hash ^= CluePosition.GetHashCode();
-      if (FailTime != 0) hash ^= FailTime.GetHashCode();
       if (huntingPair_ != null) hash ^= HuntingPair.GetHashCode();
+      if (FailTime != 0) hash ^= FailTime.GetHashCode();
+      if (cluePosition_ != null) hash ^= CluePosition.GetHashCode();
       if (IsFinal != false) hash ^= IsFinal.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -192,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(26);
         output.WriteMessage(HuntingPair);
       }
+      if (FailTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FailTime);
+      }
       if (cluePosition_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(CluePosition);
       }
       if (IsFinal != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsFinal);
-      }
-      if (FailTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(FailTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -218,17 +223,17 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(26);
         output.WriteMessage(HuntingPair);
       }
+      if (FailTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FailTime);
+      }
       if (cluePosition_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(CluePosition);
       }
       if (IsFinal != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsFinal);
-      }
-      if (FailTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(FailTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -240,14 +245,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (cluePosition_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CluePosition);
+      if (huntingPair_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntingPair);
       }
       if (FailTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FailTime);
       }
-      if (huntingPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntingPair);
+      if (cluePosition_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CluePosition);
       }
       if (IsFinal != false) {
         size += 1 + 1;
@@ -264,20 +269,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.cluePosition_ != null) {
-        if (cluePosition_ == null) {
-          CluePosition = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        CluePosition.MergeFrom(other.CluePosition);
-      }
-      if (other.FailTime != 0) {
-        FailTime = other.FailTime;
-      }
       if (other.huntingPair_ != null) {
         if (huntingPair_ == null) {
           HuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
         }
         HuntingPair.MergeFrom(other.HuntingPair);
+      }
+      if (other.FailTime != 0) {
+        FailTime = other.FailTime;
+      }
+      if (other.cluePosition_ != null) {
+        if (cluePosition_ == null) {
+          CluePosition = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        CluePosition.MergeFrom(other.CluePosition);
       }
       if (other.IsFinal != false) {
         IsFinal = other.IsFinal;
@@ -304,7 +309,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(HuntingPair);
             break;
           }
-          case 34: {
+          case 40: {
+            FailTime = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (cluePosition_ == null) {
               CluePosition = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -313,10 +322,6 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 64: {
             IsFinal = input.ReadBool();
-            break;
-          }
-          case 120: {
-            FailTime = input.ReadUInt32();
             break;
           }
         }
@@ -341,7 +346,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(HuntingPair);
             break;
           }
-          case 34: {
+          case 40: {
+            FailTime = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (cluePosition_ == null) {
               CluePosition = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -350,10 +359,6 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 64: {
             IsFinal = input.ReadBool();
-            break;
-          }
-          case 120: {
-            FailTime = input.ReadUInt32();
             break;
           }
         }

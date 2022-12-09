@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairMusicGameInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxGbGV1ckZhaXJNdXNpY0dhbWVJbmZvLnByb3RvGhpGbGV1ckZhaXJNdXNp",
-            "Y1JlY29yZC5wcm90byKtAQoWRmxldXJGYWlyTXVzaWNHYW1lSW5mbxJFChBt",
-            "dXNpY19yZWNvcmRfbWFwGAogAygLMisuRmxldXJGYWlyTXVzaWNHYW1lSW5m",
-            "by5NdXNpY1JlY29yZE1hcEVudHJ5GkwKE011c2ljUmVjb3JkTWFwRW50cnkS",
-            "CwoDa2V5GAEgASgNEiQKBXZhbHVlGAIgASgLMhUuRmxldXJGYWlyTXVzaWNS",
-            "ZWNvcmQ6AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChxGbGV1ckZhaXJNdXNpY0dhbWVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhpGbGV1ckZhaXJNdXNpY1JlY29yZC5wcm90",
+            "byLtAQoWRmxldXJGYWlyTXVzaWNHYW1lSW5mbxJlChBtdXNpY19yZWNvcmRf",
+            "bWFwGAYgAygLMksuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5G",
+            "bGV1ckZhaXJNdXNpY0dhbWVJbmZvLk11c2ljUmVjb3JkTWFwRW50cnkabAoT",
+            "TXVzaWNSZWNvcmRNYXBFbnRyeRILCgNrZXkYASABKA0SRAoFdmFsdWUYAiAB",
+            "KAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZsZXVyRmFp",
+            "ck11c2ljUmVjb3JkOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_record_map" field.</summary>
-    public const int MusicRecordMapFieldNumber = 10;
+    public const int MusicRecordMapFieldNumber = 6;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord>.Codec _map_musicRecordMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord.Parser), 82);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord.Parser), 50);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord> musicRecordMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -189,7 +190,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 50: {
             musicRecordMap_.AddEntriesFrom(input, _map_musicRecordMap_codec);
             break;
           }
@@ -208,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 50: {
             musicRecordMap_.AddEntriesFrom(ref input, _map_musicRecordMap_codec);
             break;
           }

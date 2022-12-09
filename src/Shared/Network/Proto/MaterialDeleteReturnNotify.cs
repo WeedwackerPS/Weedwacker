@@ -24,20 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static MaterialDeleteReturnNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBNYXRlcmlhbERlbGV0ZVJldHVybk5vdGlmeS5wcm90bxoeTWF0ZXJpYWxE",
-            "ZWxldGVSZXR1cm5UeXBlLnByb3RvIs8CChpNYXRlcmlhbERlbGV0ZVJldHVy",
-            "bk5vdGlmeRJHCg9yZXR1cm5faXRlbV9tYXAYBSADKAsyLi5NYXRlcmlhbERl",
-            "bGV0ZVJldHVybk5vdGlmeS5SZXR1cm5JdGVtTWFwRW50cnkSJwoEdHlwZRgI",
-            "IAEoDjIZLk1hdGVyaWFsRGVsZXRlUmV0dXJuVHlwZRJPChNkZWxldGVfbWF0",
-            "ZXJpYWxfbWFwGAYgAygLMjIuTWF0ZXJpYWxEZWxldGVSZXR1cm5Ob3RpZnku",
-            "RGVsZXRlTWF0ZXJpYWxNYXBFbnRyeRo0ChJSZXR1cm5JdGVtTWFwRW50cnkS",
-            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARo4ChZEZWxldGVNYXRl",
-            "cmlhbE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBNYXRlcmlhbERlbGV0ZVJldHVybk5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoeTWF0ZXJpYWxEZWxldGVSZXR1cm5U",
+            "eXBlLnByb3RvIr8DChpNYXRlcmlhbERlbGV0ZVJldHVybk5vdGlmeRJHCgR0",
+            "eXBlGAcgASgOMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5N",
+            "YXRlcmlhbERlbGV0ZVJldHVyblR5cGUScAoTVW5rMzMwMF9PRk9LRktCQUxK",
+            "RBgMIAMoCzJTLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWF0",
+            "ZXJpYWxEZWxldGVSZXR1cm5Ob3RpZnkuVW5rMzMwME9GT0tGS0JBTEpERW50",
+            "cnkScAoTVW5rMzMwMF9MQUlIREtKQUhBRhgIIAMoCzJTLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uTWF0ZXJpYWxEZWxldGVSZXR1cm5Ob3Rp",
+            "ZnkuVW5rMzMwMExBSUhES0pBSEFGRW50cnkaOQoXVW5rMzMwME9GT0tGS0JB",
+            "TEpERW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARo5ChdV",
+            "bmszMzAwTEFJSERLSkFIQUZFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUY",
+            "AiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnNotify), global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnNotify.Parser, new[]{ "ReturnItemMap", "Type", "DeleteMaterialMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnNotify), global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnNotify.Parser, new[]{ "Type", "Unk3300OFOKFKBALJD", "Unk3300LAIHDKJAHAF" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -45,9 +48,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 661
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 698;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MaterialDeleteReturnNotify : pb::IMessage<MaterialDeleteReturnNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,9 +90,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MaterialDeleteReturnNotify(MaterialDeleteReturnNotify other) : this() {
-      returnItemMap_ = other.returnItemMap_.Clone();
       type_ = other.type_;
-      deleteMaterialMap_ = other.deleteMaterialMap_.Clone();
+      unk3300OFOKFKBALJD_ = other.unk3300OFOKFKBALJD_.Clone();
+      unk3300LAIHDKJAHAF_ = other.unk3300LAIHDKJAHAF_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,19 +102,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MaterialDeleteReturnNotify(this);
     }
 
-    /// <summary>Field number for the "return_item_map" field.</summary>
-    public const int ReturnItemMapFieldNumber = 5;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_returnItemMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
-    private readonly pbc::MapField<uint, uint> returnItemMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> ReturnItemMap {
-      get { return returnItemMap_; }
-    }
-
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 8;
+    public const int TypeFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType type_ = global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,15 +114,26 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "delete_material_map" field.</summary>
-    public const int DeleteMaterialMapFieldNumber = 6;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_deleteMaterialMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
-    private readonly pbc::MapField<uint, uint> deleteMaterialMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "Unk3300_OFOKFKBALJD" field.</summary>
+    public const int Unk3300OFOKFKBALJDFieldNumber = 12;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300OFOKFKBALJD_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, uint> unk3300OFOKFKBALJD_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> DeleteMaterialMap {
-      get { return deleteMaterialMap_; }
+    public pbc::MapField<uint, uint> Unk3300OFOKFKBALJD {
+      get { return unk3300OFOKFKBALJD_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_LAIHDKJAHAF" field.</summary>
+    public const int Unk3300LAIHDKJAHAFFieldNumber = 8;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300LAIHDKJAHAF_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
+    private readonly pbc::MapField<uint, uint> unk3300LAIHDKJAHAF_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300LAIHDKJAHAF {
+      get { return unk3300LAIHDKJAHAF_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ReturnItemMap.Equals(other.ReturnItemMap)) return false;
       if (Type != other.Type) return false;
-      if (!DeleteMaterialMap.Equals(other.DeleteMaterialMap)) return false;
+      if (!Unk3300OFOKFKBALJD.Equals(other.Unk3300OFOKFKBALJD)) return false;
+      if (!Unk3300LAIHDKJAHAF.Equals(other.Unk3300LAIHDKJAHAF)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ReturnItemMap.GetHashCode();
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) hash ^= Type.GetHashCode();
-      hash ^= DeleteMaterialMap.GetHashCode();
+      hash ^= Unk3300OFOKFKBALJD.GetHashCode();
+      hash ^= Unk3300LAIHDKJAHAF.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,12 +182,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      returnItemMap_.WriteTo(output, _map_returnItemMap_codec);
-      deleteMaterialMap_.WriteTo(output, _map_deleteMaterialMap_codec);
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Type);
       }
+      unk3300LAIHDKJAHAF_.WriteTo(output, _map_unk3300LAIHDKJAHAF_codec);
+      unk3300OFOKFKBALJD_.WriteTo(output, _map_unk3300OFOKFKBALJD_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,12 +198,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      returnItemMap_.WriteTo(ref output, _map_returnItemMap_codec);
-      deleteMaterialMap_.WriteTo(ref output, _map_deleteMaterialMap_codec);
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Type);
       }
+      unk3300LAIHDKJAHAF_.WriteTo(ref output, _map_unk3300LAIHDKJAHAF_codec);
+      unk3300OFOKFKBALJD_.WriteTo(ref output, _map_unk3300OFOKFKBALJD_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -207,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += returnItemMap_.CalculateSize(_map_returnItemMap_codec);
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      size += deleteMaterialMap_.CalculateSize(_map_deleteMaterialMap_codec);
+      size += unk3300OFOKFKBALJD_.CalculateSize(_map_unk3300OFOKFKBALJD_codec);
+      size += unk3300LAIHDKJAHAF_.CalculateSize(_map_unk3300LAIHDKJAHAF_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -224,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      returnItemMap_.Add(other.returnItemMap_);
       if (other.Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
         Type = other.Type;
       }
-      deleteMaterialMap_.Add(other.deleteMaterialMap_);
+      unk3300OFOKFKBALJD_.Add(other.unk3300OFOKFKBALJD_);
+      unk3300LAIHDKJAHAF_.Add(other.unk3300LAIHDKJAHAF_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -244,16 +251,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
-            returnItemMap_.AddEntriesFrom(input, _map_returnItemMap_codec);
-            break;
-          }
-          case 50: {
-            deleteMaterialMap_.AddEntriesFrom(input, _map_deleteMaterialMap_codec);
-            break;
-          }
-          case 64: {
+          case 56: {
             Type = (global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            unk3300LAIHDKJAHAF_.AddEntriesFrom(input, _map_unk3300LAIHDKJAHAF_codec);
+            break;
+          }
+          case 98: {
+            unk3300OFOKFKBALJD_.AddEntriesFrom(input, _map_unk3300OFOKFKBALJD_codec);
             break;
           }
         }
@@ -271,16 +278,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
-            returnItemMap_.AddEntriesFrom(ref input, _map_returnItemMap_codec);
-            break;
-          }
-          case 50: {
-            deleteMaterialMap_.AddEntriesFrom(ref input, _map_deleteMaterialMap_codec);
-            break;
-          }
-          case 64: {
+          case 56: {
             Type = (global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            unk3300LAIHDKJAHAF_.AddEntriesFrom(ref input, _map_unk3300LAIHDKJAHAF_codec);
+            break;
+          }
+          case 98: {
+            unk3300OFOKFKBALJD_.AddEntriesFrom(ref input, _map_unk3300OFOKFKBALJD_codec);
             break;
           }
         }

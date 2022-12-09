@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DoGachaReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBEb0dhY2hhUmVxLnByb3RvInkKCkRvR2FjaGFSZXESEwoLZ2FjaGFfdGlt",
-            "ZXMYCiABKA0SGQoRZ2FjaGFfc2NoZWR1bGVfaWQYByABKA0SEgoKZ2FjaGFf",
-            "dHlwZRgOIAEoDRIUCgxnYWNoYV9yYW5kb20YDSABKA0SEQoJZ2FjaGFfdGFn",
-            "GAQgASgJQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChBEb0dhY2hhUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvInkKCkRvR2FjaGFSZXESEQoJZ2FjaGFfdGFnGA4gASgJEhkKEWdh",
+            "Y2hhX3NjaGVkdWxlX2lkGAYgASgNEhIKCmdhY2hhX3R5cGUYASABKA0SFAoM",
+            "Z2FjaGFfcmFuZG9tGAkgASgNEhMKC2dhY2hhX3RpbWVzGAMgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DoGachaReq), global::Weedwacker.Shared.Network.Proto.DoGachaReq.Parser, new[]{ "GachaTimes", "GachaScheduleId", "GachaType", "GachaRandom", "GachaTag" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DoGachaReq), global::Weedwacker.Shared.Network.Proto.DoGachaReq.Parser, new[]{ "GachaTag", "GachaScheduleId", "GachaType", "GachaRandom", "GachaTimes" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1512
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1556;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DoGachaReq : pb::IMessage<DoGachaReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DoGachaReq(DoGachaReq other) : this() {
-      gachaTimes_ = other.gachaTimes_;
+      gachaTag_ = other.gachaTag_;
       gachaScheduleId_ = other.gachaScheduleId_;
       gachaType_ = other.gachaType_;
       gachaRandom_ = other.gachaRandom_;
-      gachaTag_ = other.gachaTag_;
+      gachaTimes_ = other.gachaTimes_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DoGachaReq(this);
     }
 
-    /// <summary>Field number for the "gacha_times" field.</summary>
-    public const int GachaTimesFieldNumber = 10;
-    private uint gachaTimes_;
+    /// <summary>Field number for the "gacha_tag" field.</summary>
+    public const int GachaTagFieldNumber = 14;
+    private string gachaTag_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GachaTimes {
-      get { return gachaTimes_; }
+    public string GachaTag {
+      get { return gachaTag_; }
       set {
-        gachaTimes_ = value;
+        gachaTag_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "gacha_schedule_id" field.</summary>
-    public const int GachaScheduleIdFieldNumber = 7;
+    public const int GachaScheduleIdFieldNumber = 6;
     private uint gachaScheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,7 +122,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gacha_type" field.</summary>
-    public const int GachaTypeFieldNumber = 14;
+    public const int GachaTypeFieldNumber = 1;
     private uint gachaType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,7 +134,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gacha_random" field.</summary>
-    public const int GachaRandomFieldNumber = 13;
+    public const int GachaRandomFieldNumber = 9;
     private uint gachaRandom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,15 +145,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gacha_tag" field.</summary>
-    public const int GachaTagFieldNumber = 4;
-    private string gachaTag_ = "";
+    /// <summary>Field number for the "gacha_times" field.</summary>
+    public const int GachaTimesFieldNumber = 3;
+    private uint gachaTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string GachaTag {
-      get { return gachaTag_; }
+    public uint GachaTimes {
+      get { return gachaTimes_; }
       set {
-        gachaTag_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        gachaTimes_ = value;
       }
     }
 
@@ -168,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GachaTimes != other.GachaTimes) return false;
+      if (GachaTag != other.GachaTag) return false;
       if (GachaScheduleId != other.GachaScheduleId) return false;
       if (GachaType != other.GachaType) return false;
       if (GachaRandom != other.GachaRandom) return false;
-      if (GachaTag != other.GachaTag) return false;
+      if (GachaTimes != other.GachaTimes) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,11 +184,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GachaTimes != 0) hash ^= GachaTimes.GetHashCode();
+      if (GachaTag.Length != 0) hash ^= GachaTag.GetHashCode();
       if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
       if (GachaType != 0) hash ^= GachaType.GetHashCode();
       if (GachaRandom != 0) hash ^= GachaRandom.GetHashCode();
-      if (GachaTag.Length != 0) hash ^= GachaTag.GetHashCode();
+      if (GachaTimes != 0) hash ^= GachaTimes.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,25 +207,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GachaTag.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(GachaTag);
-      }
-      if (GachaScheduleId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GachaScheduleId);
+      if (GachaType != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GachaType);
       }
       if (GachaTimes != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(GachaTimes);
       }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(GachaScheduleId);
+      }
       if (GachaRandom != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(GachaRandom);
       }
-      if (GachaType != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(GachaType);
+      if (GachaTag.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(GachaTag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -233,25 +237,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GachaTag.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(GachaTag);
-      }
-      if (GachaScheduleId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GachaScheduleId);
+      if (GachaType != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GachaType);
       }
       if (GachaTimes != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(GachaTimes);
       }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(GachaScheduleId);
+      }
       if (GachaRandom != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(GachaRandom);
       }
-      if (GachaType != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(GachaType);
+      if (GachaTag.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(GachaTag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -263,8 +267,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GachaTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimes);
+      if (GachaTag.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaTag);
       }
       if (GachaScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
@@ -275,8 +279,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GachaRandom != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaRandom);
       }
-      if (GachaTag.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaTag);
+      if (GachaTimes != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimes);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,8 +294,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GachaTimes != 0) {
-        GachaTimes = other.GachaTimes;
+      if (other.GachaTag.Length != 0) {
+        GachaTag = other.GachaTag;
       }
       if (other.GachaScheduleId != 0) {
         GachaScheduleId = other.GachaScheduleId;
@@ -302,8 +306,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GachaRandom != 0) {
         GachaRandom = other.GachaRandom;
       }
-      if (other.GachaTag.Length != 0) {
-        GachaTag = other.GachaTag;
+      if (other.GachaTimes != 0) {
+        GachaTimes = other.GachaTimes;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -320,24 +324,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            GachaTag = input.ReadString();
+          case 8: {
+            GachaType = input.ReadUInt32();
             break;
           }
-          case 56: {
-            GachaScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 24: {
             GachaTimes = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 48: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             GachaRandom = input.ReadUInt32();
             break;
           }
-          case 112: {
-            GachaType = input.ReadUInt32();
+          case 114: {
+            GachaTag = input.ReadString();
             break;
           }
         }
@@ -355,24 +359,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            GachaTag = input.ReadString();
+          case 8: {
+            GachaType = input.ReadUInt32();
             break;
           }
-          case 56: {
-            GachaScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 24: {
             GachaTimes = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 48: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             GachaRandom = input.ReadUInt32();
             break;
           }
-          case 112: {
-            GachaType = input.ReadUInt32();
+          case 114: {
+            GachaTag = input.ReadString();
             break;
           }
         }

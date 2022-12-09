@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CataLogGlobalWatcherFinishedDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZDYXRhTG9nR2xvYmFsV2F0Y2hlckZpbmlzaGVkRGF0YS5wcm90byJeCiBD",
-            "YXRhTG9nR2xvYmFsV2F0Y2hlckZpbmlzaGVkRGF0YRIkChxmaW5pc2hlZF9n",
-            "bG9iYWxfd2F0Y2hlcl9saXN0GAggAygNEhQKDGNhdGFsb2dfdHlwZRgNIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZDYXRhTG9nR2xvYmFsV2F0Y2hlckZpbmlzaGVkRGF0YS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJeCiBDYXRhTG9nR2xvYmFs",
+            "V2F0Y2hlckZpbmlzaGVkRGF0YRIkChxmaW5pc2hlZF9nbG9iYWxfd2F0Y2hl",
+            "cl9saXN0GA8gAygNEhQKDGNhdGFsb2dfdHlwZRgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_global_watcher_list" field.</summary>
-    public const int FinishedGlobalWatcherListFieldNumber = 8;
+    public const int FinishedGlobalWatcherListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_finishedGlobalWatcherList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> finishedGlobalWatcherList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "catalog_type" field.</summary>
-    public const int CatalogTypeFieldNumber = 13;
+    public const int CatalogTypeFieldNumber = 2;
     private uint catalogType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      finishedGlobalWatcherList_.WriteTo(output, _repeated_finishedGlobalWatcherList_codec);
       if (CatalogType != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(CatalogType);
       }
+      finishedGlobalWatcherList_.WriteTo(output, _repeated_finishedGlobalWatcherList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      finishedGlobalWatcherList_.WriteTo(ref output, _repeated_finishedGlobalWatcherList_codec);
       if (CatalogType != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(CatalogType);
       }
+      finishedGlobalWatcherList_.WriteTo(ref output, _repeated_finishedGlobalWatcherList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -215,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
-            finishedGlobalWatcherList_.AddEntriesFrom(input, _repeated_finishedGlobalWatcherList_codec);
+          case 16: {
+            CatalogType = input.ReadUInt32();
             break;
           }
-          case 104: {
-            CatalogType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            finishedGlobalWatcherList_.AddEntriesFrom(input, _repeated_finishedGlobalWatcherList_codec);
             break;
           }
         }
@@ -239,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
-            finishedGlobalWatcherList_.AddEntriesFrom(ref input, _repeated_finishedGlobalWatcherList_codec);
+          case 16: {
+            CatalogType = input.ReadUInt32();
             break;
           }
-          case 104: {
-            CatalogType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            finishedGlobalWatcherList_.AddEntriesFrom(ref input, _repeated_finishedGlobalWatcherList_codec);
             break;
           }
         }

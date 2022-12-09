@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarTeamResonanceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BdmF0YXJUZWFtUmVzb25hbmNlSW5mby5wcm90byKJAQoXQXZhdGFyVGVh",
-            "bVJlc29uYW5jZUluZm8SIgoaYWRkX3RlYW1fcmVzb25hbmNlX2lkX2xpc3QY",
-            "BSADKA0SEQoJZW50aXR5X2lkGAsgASgNEhMKC2F2YXRhcl9ndWlkGAMgASgE",
-            "EiIKGmRlbF90ZWFtX3Jlc29uYW5jZV9pZF9saXN0GA4gAygNQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1BdmF0YXJUZWFtUmVzb25hbmNlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJ7ChdBdmF0YXJUZWFtUmVzb25hbmNlSW5m",
+            "bxITCgthdmF0YXJfZ3VpZBgJIAEoBBIRCgllbnRpdHlfaWQYCCABKA0SGwoT",
+            "VW5rMzMwMF9NQkpFRUVFRUpDRRgPIAMoDRIbChNVbmszMzAwX0xQQUtHR0JC",
+            "RE5KGA0gAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarTeamResonanceInfo), global::Weedwacker.Shared.Network.Proto.AvatarTeamResonanceInfo.Parser, new[]{ "AddTeamResonanceIdList", "EntityId", "AvatarGuid", "DelTeamResonanceIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarTeamResonanceInfo), global::Weedwacker.Shared.Network.Proto.AvatarTeamResonanceInfo.Parser, new[]{ "AvatarGuid", "EntityId", "Unk3300MBJEEEEEJCE", "Unk3300LPAKGGBBDNJ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarTeamResonanceInfo(AvatarTeamResonanceInfo other) : this() {
-      addTeamResonanceIdList_ = other.addTeamResonanceIdList_.Clone();
-      entityId_ = other.entityId_;
       avatarGuid_ = other.avatarGuid_;
-      delTeamResonanceIdList_ = other.delTeamResonanceIdList_.Clone();
+      entityId_ = other.entityId_;
+      unk3300MBJEEEEEJCE_ = other.unk3300MBJEEEEEJCE_.Clone();
+      unk3300LPAKGGBBDNJ_ = other.unk3300LPAKGGBBDNJ_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,31 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarTeamResonanceInfo(this);
     }
 
-    /// <summary>Field number for the "add_team_resonance_id_list" field.</summary>
-    public const int AddTeamResonanceIdListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_addTeamResonanceIdList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> addTeamResonanceIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AddTeamResonanceIdList {
-      get { return addTeamResonanceIdList_; }
-    }
-
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 11;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 3;
+    public const int AvatarGuidFieldNumber = 9;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,15 +98,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "del_team_resonance_id_list" field.</summary>
-    public const int DelTeamResonanceIdListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_delTeamResonanceIdList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> delTeamResonanceIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 8;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> DelTeamResonanceIdList {
-      get { return delTeamResonanceIdList_; }
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MBJEEEEEJCE" field.</summary>
+    public const int Unk3300MBJEEEEEJCEFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300MBJEEEEEJCE_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300MBJEEEEEJCE_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300MBJEEEEEJCE {
+      get { return unk3300MBJEEEEEJCE_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPAKGGBBDNJ" field.</summary>
+    public const int Unk3300LPAKGGBBDNJFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300LPAKGGBBDNJ_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> unk3300LPAKGGBBDNJ_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300LPAKGGBBDNJ {
+      get { return unk3300LPAKGGBBDNJ_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,10 +147,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!addTeamResonanceIdList_.Equals(other.addTeamResonanceIdList_)) return false;
-      if (EntityId != other.EntityId) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
-      if(!delTeamResonanceIdList_.Equals(other.delTeamResonanceIdList_)) return false;
+      if (EntityId != other.EntityId) return false;
+      if(!unk3300MBJEEEEEJCE_.Equals(other.unk3300MBJEEEEEJCE_)) return false;
+      if(!unk3300LPAKGGBBDNJ_.Equals(other.unk3300LPAKGGBBDNJ_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -158,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= addTeamResonanceIdList_.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-      hash ^= delTeamResonanceIdList_.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      hash ^= unk3300MBJEEEEEJCE_.GetHashCode();
+      hash ^= unk3300LPAKGGBBDNJ_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,16 +180,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(AvatarGuid);
-      }
-      addTeamResonanceIdList_.WriteTo(output, _repeated_addTeamResonanceIdList_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
-      delTeamResonanceIdList_.WriteTo(output, _repeated_delTeamResonanceIdList_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(AvatarGuid);
+      }
+      unk3300LPAKGGBBDNJ_.WriteTo(output, _repeated_unk3300LPAKGGBBDNJ_codec);
+      unk3300MBJEEEEEJCE_.WriteTo(output, _repeated_unk3300MBJEEEEEJCE_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -200,16 +200,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(AvatarGuid);
-      }
-      addTeamResonanceIdList_.WriteTo(ref output, _repeated_addTeamResonanceIdList_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
-      delTeamResonanceIdList_.WriteTo(ref output, _repeated_delTeamResonanceIdList_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(AvatarGuid);
+      }
+      unk3300LPAKGGBBDNJ_.WriteTo(ref output, _repeated_unk3300LPAKGGBBDNJ_codec);
+      unk3300MBJEEEEEJCE_.WriteTo(ref output, _repeated_unk3300MBJEEEEEJCE_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += addTeamResonanceIdList_.CalculateSize(_repeated_addTeamResonanceIdList_codec);
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-      }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
-      size += delTeamResonanceIdList_.CalculateSize(_repeated_delTeamResonanceIdList_codec);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      size += unk3300MBJEEEEEJCE_.CalculateSize(_repeated_unk3300MBJEEEEEJCE_codec);
+      size += unk3300LPAKGGBBDNJ_.CalculateSize(_repeated_unk3300LPAKGGBBDNJ_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -240,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      addTeamResonanceIdList_.Add(other.addTeamResonanceIdList_);
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
-      }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      delTeamResonanceIdList_.Add(other.delTeamResonanceIdList_);
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      unk3300MBJEEEEEJCE_.Add(other.unk3300MBJEEEEEJCE_);
+      unk3300LPAKGGBBDNJ_.Add(other.unk3300LPAKGGBBDNJ_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -263,22 +263,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 42:
-          case 40: {
-            addTeamResonanceIdList_.AddEntriesFrom(input, _repeated_addTeamResonanceIdList_codec);
-            break;
-          }
-          case 88: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 114:
-          case 112: {
-            delTeamResonanceIdList_.AddEntriesFrom(input, _repeated_delTeamResonanceIdList_codec);
+          case 72: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 106:
+          case 104: {
+            unk3300LPAKGGBBDNJ_.AddEntriesFrom(input, _repeated_unk3300LPAKGGBBDNJ_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300MBJEEEEEJCE_.AddEntriesFrom(input, _repeated_unk3300MBJEEEEEJCE_codec);
             break;
           }
         }
@@ -296,22 +296,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 42:
-          case 40: {
-            addTeamResonanceIdList_.AddEntriesFrom(ref input, _repeated_addTeamResonanceIdList_codec);
-            break;
-          }
-          case 88: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 114:
-          case 112: {
-            delTeamResonanceIdList_.AddEntriesFrom(ref input, _repeated_delTeamResonanceIdList_codec);
+          case 72: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 106:
+          case 104: {
+            unk3300LPAKGGBBDNJ_.AddEntriesFrom(ref input, _repeated_unk3300LPAKGGBBDNJ_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300MBJEEEEEJCE_.AddEntriesFrom(ref input, _repeated_unk3300MBJEEEEEJCE_codec);
             break;
           }
         }

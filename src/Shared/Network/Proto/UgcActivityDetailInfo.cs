@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static UgcActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtVZ2NBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aG09mZmljaWFsQ3VzdG9t",
-            "RHVuZ2Vvbi5wcm90byKsAQoVVWdjQWN0aXZpdHlEZXRhaWxJbmZvEh0KFWlz",
-            "X3VnY19mZWF0dXJlX2Nsb3NlZBgKIAEoCBIfChdjdXN0b21fZHVuZ2Vvbl9n",
-            "cm91cF9pZBgMIAEoDRI8ChxvZmZpY2lhbF9jdXN0b21fZHVuZ2Vvbl9saXN0",
-            "GAUgAygLMhYuT2ZmaWNpYWxDdXN0b21EdW5nZW9uEhUKDWlzX2VuYWJsZV91",
-            "Z2MYCyABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChtVZ2NBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aG09mZmljaWFsQ3VzdG9tRHVuZ2Vvbi5wcm90",
+            "byLMAQoVVWdjQWN0aXZpdHlEZXRhaWxJbmZvEhUKDWlzX2VuYWJsZV91Z2MY",
+            "DiABKAgSXAocb2ZmaWNpYWxfY3VzdG9tX2R1bmdlb25fbGlzdBgKIAMoCzI2",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uT2ZmaWNpYWxDdXN0",
+            "b21EdW5nZW9uEh8KF2N1c3RvbV9kdW5nZW9uX2dyb3VwX2lkGAQgASgNEh0K",
+            "FWlzX3VnY19mZWF0dXJlX2Nsb3NlZBgJIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo.Parser, new[]{ "IsUgcFeatureClosed", "CustomDungeonGroupId", "OfficialCustomDungeonList", "IsEnableUgc" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo.Parser, new[]{ "IsEnableUgc", "OfficialCustomDungeonList", "CustomDungeonGroupId", "IsUgcFeatureClosed" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UgcActivityDetailInfo(UgcActivityDetailInfo other) : this() {
-      isUgcFeatureClosed_ = other.isUgcFeatureClosed_;
-      customDungeonGroupId_ = other.customDungeonGroupId_;
-      officialCustomDungeonList_ = other.officialCustomDungeonList_.Clone();
       isEnableUgc_ = other.isEnableUgc_;
+      officialCustomDungeonList_ = other.officialCustomDungeonList_.Clone();
+      customDungeonGroupId_ = other.customDungeonGroupId_;
+      isUgcFeatureClosed_ = other.isUgcFeatureClosed_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +88,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UgcActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "is_ugc_feature_closed" field.</summary>
-    public const int IsUgcFeatureClosedFieldNumber = 10;
-    private bool isUgcFeatureClosed_;
+    /// <summary>Field number for the "is_enable_ugc" field.</summary>
+    public const int IsEnableUgcFieldNumber = 14;
+    private bool isEnableUgc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUgcFeatureClosed {
-      get { return isUgcFeatureClosed_; }
+    public bool IsEnableUgc {
+      get { return isEnableUgc_; }
       set {
-        isUgcFeatureClosed_ = value;
+        isEnableUgc_ = value;
       }
     }
 
+    /// <summary>Field number for the "official_custom_dungeon_list" field.</summary>
+    public const int OfficialCustomDungeonListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> _repeated_officialCustomDungeonList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> officialCustomDungeonList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> OfficialCustomDungeonList {
+      get { return officialCustomDungeonList_; }
+    }
+
     /// <summary>Field number for the "custom_dungeon_group_id" field.</summary>
-    public const int CustomDungeonGroupIdFieldNumber = 12;
+    public const int CustomDungeonGroupIdFieldNumber = 4;
     private uint customDungeonGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,26 +123,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "official_custom_dungeon_list" field.</summary>
-    public const int OfficialCustomDungeonListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> _repeated_officialCustomDungeonList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> officialCustomDungeonList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon>();
+    /// <summary>Field number for the "is_ugc_feature_closed" field.</summary>
+    public const int IsUgcFeatureClosedFieldNumber = 9;
+    private bool isUgcFeatureClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OfficialCustomDungeon> OfficialCustomDungeonList {
-      get { return officialCustomDungeonList_; }
-    }
-
-    /// <summary>Field number for the "is_enable_ugc" field.</summary>
-    public const int IsEnableUgcFieldNumber = 11;
-    private bool isEnableUgc_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsEnableUgc {
-      get { return isEnableUgc_; }
+    public bool IsUgcFeatureClosed {
+      get { return isUgcFeatureClosed_; }
       set {
-        isEnableUgc_ = value;
+        isUgcFeatureClosed_ = value;
       }
     }
 
@@ -150,10 +150,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsUgcFeatureClosed != other.IsUgcFeatureClosed) return false;
-      if (CustomDungeonGroupId != other.CustomDungeonGroupId) return false;
-      if(!officialCustomDungeonList_.Equals(other.officialCustomDungeonList_)) return false;
       if (IsEnableUgc != other.IsEnableUgc) return false;
+      if(!officialCustomDungeonList_.Equals(other.officialCustomDungeonList_)) return false;
+      if (CustomDungeonGroupId != other.CustomDungeonGroupId) return false;
+      if (IsUgcFeatureClosed != other.IsUgcFeatureClosed) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsUgcFeatureClosed != false) hash ^= IsUgcFeatureClosed.GetHashCode();
-      if (CustomDungeonGroupId != 0) hash ^= CustomDungeonGroupId.GetHashCode();
-      hash ^= officialCustomDungeonList_.GetHashCode();
       if (IsEnableUgc != false) hash ^= IsEnableUgc.GetHashCode();
+      hash ^= officialCustomDungeonList_.GetHashCode();
+      if (CustomDungeonGroupId != 0) hash ^= CustomDungeonGroupId.GetHashCode();
+      if (IsUgcFeatureClosed != false) hash ^= IsUgcFeatureClosed.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,18 +183,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      officialCustomDungeonList_.WriteTo(output, _repeated_officialCustomDungeonList_codec);
+      if (CustomDungeonGroupId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CustomDungeonGroupId);
+      }
       if (IsUgcFeatureClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsUgcFeatureClosed);
       }
+      officialCustomDungeonList_.WriteTo(output, _repeated_officialCustomDungeonList_codec);
       if (IsEnableUgc != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteBool(IsEnableUgc);
-      }
-      if (CustomDungeonGroupId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CustomDungeonGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -206,18 +206,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      officialCustomDungeonList_.WriteTo(ref output, _repeated_officialCustomDungeonList_codec);
+      if (CustomDungeonGroupId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CustomDungeonGroupId);
+      }
       if (IsUgcFeatureClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsUgcFeatureClosed);
       }
+      officialCustomDungeonList_.WriteTo(ref output, _repeated_officialCustomDungeonList_codec);
       if (IsEnableUgc != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteBool(IsEnableUgc);
-      }
-      if (CustomDungeonGroupId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CustomDungeonGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -229,14 +229,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsUgcFeatureClosed != false) {
+      if (IsEnableUgc != false) {
         size += 1 + 1;
       }
+      size += officialCustomDungeonList_.CalculateSize(_repeated_officialCustomDungeonList_codec);
       if (CustomDungeonGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CustomDungeonGroupId);
       }
-      size += officialCustomDungeonList_.CalculateSize(_repeated_officialCustomDungeonList_codec);
-      if (IsEnableUgc != false) {
+      if (IsUgcFeatureClosed != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -251,15 +251,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsUgcFeatureClosed != false) {
-        IsUgcFeatureClosed = other.IsUgcFeatureClosed;
+      if (other.IsEnableUgc != false) {
+        IsEnableUgc = other.IsEnableUgc;
       }
+      officialCustomDungeonList_.Add(other.officialCustomDungeonList_);
       if (other.CustomDungeonGroupId != 0) {
         CustomDungeonGroupId = other.CustomDungeonGroupId;
       }
-      officialCustomDungeonList_.Add(other.officialCustomDungeonList_);
-      if (other.IsEnableUgc != false) {
-        IsEnableUgc = other.IsEnableUgc;
+      if (other.IsUgcFeatureClosed != false) {
+        IsUgcFeatureClosed = other.IsUgcFeatureClosed;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -276,20 +276,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
-            officialCustomDungeonList_.AddEntriesFrom(input, _repeated_officialCustomDungeonList_codec);
+          case 32: {
+            CustomDungeonGroupId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             IsUgcFeatureClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            IsEnableUgc = input.ReadBool();
+          case 82: {
+            officialCustomDungeonList_.AddEntriesFrom(input, _repeated_officialCustomDungeonList_codec);
             break;
           }
-          case 96: {
-            CustomDungeonGroupId = input.ReadUInt32();
+          case 112: {
+            IsEnableUgc = input.ReadBool();
             break;
           }
         }
@@ -307,20 +307,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
-            officialCustomDungeonList_.AddEntriesFrom(ref input, _repeated_officialCustomDungeonList_codec);
+          case 32: {
+            CustomDungeonGroupId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             IsUgcFeatureClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            IsEnableUgc = input.ReadBool();
+          case 82: {
+            officialCustomDungeonList_.AddEntriesFrom(ref input, _repeated_officialCustomDungeonList_codec);
             break;
           }
-          case 96: {
-            CustomDungeonGroupId = input.ReadUInt32();
+          case 112: {
+            IsEnableUgc = input.ReadBool();
             break;
           }
         }

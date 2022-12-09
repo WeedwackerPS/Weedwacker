@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryInstableSprayBuffInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidTY2VuZUdhbGxlcnlJbnN0YWJsZVNwcmF5QnVmZkluZm8ucHJvdG8iYgoh",
-            "U2NlbmVHYWxsZXJ5SW5zdGFibGVTcHJheUJ1ZmZJbmZvEg8KB2J1ZmZfaWQY",
-            "BiABKA0SFQoNYnVmZl9lbmRfdGltZRgJIAEoBBIVCg1idWZmX21heF90aW1l",
-            "GAQgASgEQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "CidTY2VuZUdhbGxlcnlJbnN0YWJsZVNwcmF5QnVmZkluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ibgohU2NlbmVHYWxsZXJ5",
+            "SW5zdGFibGVTcHJheUJ1ZmZJbmZvEhsKE1VuazMzMDBfS0tERkxCTUtHRUYY",
+            "AyABKAQSDwoHYnVmZl9pZBgGIAEoDRIbChNVbmszMzAwX0VQSEFBQktOTEhD",
+            "GAIgASgEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryInstableSprayBuffInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryInstableSprayBuffInfo.Parser, new[]{ "BuffId", "BuffEndTime", "BuffMaxTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryInstableSprayBuffInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryInstableSprayBuffInfo.Parser, new[]{ "Unk3300KKDFLBMKGEF", "BuffId", "Unk3300EPHAABKNLHC" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryInstableSprayBuffInfo(SceneGalleryInstableSprayBuffInfo other) : this() {
+      unk3300KKDFLBMKGEF_ = other.unk3300KKDFLBMKGEF_;
       buffId_ = other.buffId_;
-      buffEndTime_ = other.buffEndTime_;
-      buffMaxTime_ = other.buffMaxTime_;
+      unk3300EPHAABKNLHC_ = other.unk3300EPHAABKNLHC_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,6 +83,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryInstableSprayBuffInfo Clone() {
       return new SceneGalleryInstableSprayBuffInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_KKDFLBMKGEF" field.</summary>
+    public const int Unk3300KKDFLBMKGEFFieldNumber = 3;
+    private ulong unk3300KKDFLBMKGEF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Unk3300KKDFLBMKGEF {
+      get { return unk3300KKDFLBMKGEF_; }
+      set {
+        unk3300KKDFLBMKGEF_ = value;
+      }
     }
 
     /// <summary>Field number for the "buff_id" field.</summary>
@@ -97,27 +109,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "buff_end_time" field.</summary>
-    public const int BuffEndTimeFieldNumber = 9;
-    private ulong buffEndTime_;
+    /// <summary>Field number for the "Unk3300_EPHAABKNLHC" field.</summary>
+    public const int Unk3300EPHAABKNLHCFieldNumber = 2;
+    private ulong unk3300EPHAABKNLHC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong BuffEndTime {
-      get { return buffEndTime_; }
+    public ulong Unk3300EPHAABKNLHC {
+      get { return unk3300EPHAABKNLHC_; }
       set {
-        buffEndTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "buff_max_time" field.</summary>
-    public const int BuffMaxTimeFieldNumber = 4;
-    private ulong buffMaxTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong BuffMaxTime {
-      get { return buffMaxTime_; }
-      set {
-        buffMaxTime_ = value;
+        unk3300EPHAABKNLHC_ = value;
       }
     }
 
@@ -136,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300KKDFLBMKGEF != other.Unk3300KKDFLBMKGEF) return false;
       if (BuffId != other.BuffId) return false;
-      if (BuffEndTime != other.BuffEndTime) return false;
-      if (BuffMaxTime != other.BuffMaxTime) return false;
+      if (Unk3300EPHAABKNLHC != other.Unk3300EPHAABKNLHC) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300KKDFLBMKGEF != 0UL) hash ^= Unk3300KKDFLBMKGEF.GetHashCode();
       if (BuffId != 0) hash ^= BuffId.GetHashCode();
-      if (BuffEndTime != 0UL) hash ^= BuffEndTime.GetHashCode();
-      if (BuffMaxTime != 0UL) hash ^= BuffMaxTime.GetHashCode();
+      if (Unk3300EPHAABKNLHC != 0UL) hash ^= Unk3300EPHAABKNLHC.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BuffMaxTime != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(BuffMaxTime);
+      if (Unk3300EPHAABKNLHC != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Unk3300EPHAABKNLHC);
+      }
+      if (Unk3300KKDFLBMKGEF != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Unk3300KKDFLBMKGEF);
       }
       if (BuffId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(BuffId);
-      }
-      if (BuffEndTime != 0UL) {
-        output.WriteRawTag(72);
-        output.WriteUInt64(BuffEndTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BuffMaxTime != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(BuffMaxTime);
+      if (Unk3300EPHAABKNLHC != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Unk3300EPHAABKNLHC);
+      }
+      if (Unk3300KKDFLBMKGEF != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Unk3300KKDFLBMKGEF);
       }
       if (BuffId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(BuffId);
-      }
-      if (BuffEndTime != 0UL) {
-        output.WriteRawTag(72);
-        output.WriteUInt64(BuffEndTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -211,14 +211,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300KKDFLBMKGEF != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300KKDFLBMKGEF);
+      }
       if (BuffId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffId);
       }
-      if (BuffEndTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BuffEndTime);
-      }
-      if (BuffMaxTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BuffMaxTime);
+      if (Unk3300EPHAABKNLHC != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300EPHAABKNLHC);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -232,14 +232,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300KKDFLBMKGEF != 0UL) {
+        Unk3300KKDFLBMKGEF = other.Unk3300KKDFLBMKGEF;
+      }
       if (other.BuffId != 0) {
         BuffId = other.BuffId;
       }
-      if (other.BuffEndTime != 0UL) {
-        BuffEndTime = other.BuffEndTime;
-      }
-      if (other.BuffMaxTime != 0UL) {
-        BuffMaxTime = other.BuffMaxTime;
+      if (other.Unk3300EPHAABKNLHC != 0UL) {
+        Unk3300EPHAABKNLHC = other.Unk3300EPHAABKNLHC;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -256,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            BuffMaxTime = input.ReadUInt64();
+          case 16: {
+            Unk3300EPHAABKNLHC = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Unk3300KKDFLBMKGEF = input.ReadUInt64();
             break;
           }
           case 48: {
             BuffId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            BuffEndTime = input.ReadUInt64();
             break;
           }
         }
@@ -283,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            BuffMaxTime = input.ReadUInt64();
+          case 16: {
+            Unk3300EPHAABKNLHC = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Unk3300KKDFLBMKGEF = input.ReadUInt64();
             break;
           }
           case 48: {
             BuffId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            BuffEndTime = input.ReadUInt64();
             break;
           }
         }

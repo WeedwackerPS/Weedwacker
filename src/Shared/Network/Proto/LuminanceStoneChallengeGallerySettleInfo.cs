@@ -25,17 +25,17 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5MdW1pbmFuY2VTdG9uZUNoYWxsZW5nZUdhbGxlcnlTZXR0bGVJbmZvLnBy",
-            "b3RvGhdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90byLQAQooTHVtaW5hbmNlU3Rv",
-            "bmVDaGFsbGVuZ2VHYWxsZXJ5U2V0dGxlSW5mbxIaChJraWxsX21vbnN0ZXJf",
-            "Y291bnQYDCABKA0SIgoaa2lsbF9zcGVjaWFsX21vbnN0ZXJfY291bnQYCCAB",
-            "KA0SFwoPY2xlYW5fbXVkX2NvdW50GAogASgNEhIKCmdhbGxlcnlfaWQYAiAB",
-            "KA0SIgoGcmVhc29uGAsgASgOMhIuR2FsbGVyeVN0b3BSZWFzb24SEwoLZmlu",
-            "YWxfc2NvcmUYDSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "b3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhdHYWxsZXJ5",
+            "U3RvcFJlYXNvbi5wcm90byLwAQooTHVtaW5hbmNlU3RvbmVDaGFsbGVuZ2VH",
+            "YWxsZXJ5U2V0dGxlSW5mbxITCgtmaW5hbF9zY29yZRgMIAEoDRIXCg9jbGVh",
+            "bl9tdWRfY291bnQYCCABKA0SQgoGcmVhc29uGA8gASgOMjIuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWxsZXJ5U3RvcFJlYXNvbhISCgpn",
+            "YWxsZXJ5X2lkGAsgASgNEiIKGmtpbGxfc3BlY2lhbF9tb25zdGVyX2NvdW50",
+            "GAQgASgNEhoKEmtpbGxfbW9uc3Rlcl9jb3VudBgBIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo.Parser, new[]{ "KillMonsterCount", "KillSpecialMonsterCount", "CleanMudCount", "GalleryId", "Reason", "FinalScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeGallerySettleInfo.Parser, new[]{ "FinalScore", "CleanMudCount", "Reason", "GalleryId", "KillSpecialMonsterCount", "KillMonsterCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +76,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LuminanceStoneChallengeGallerySettleInfo(LuminanceStoneChallengeGallerySettleInfo other) : this() {
-      killMonsterCount_ = other.killMonsterCount_;
-      killSpecialMonsterCount_ = other.killSpecialMonsterCount_;
-      cleanMudCount_ = other.cleanMudCount_;
-      galleryId_ = other.galleryId_;
-      reason_ = other.reason_;
       finalScore_ = other.finalScore_;
+      cleanMudCount_ = other.cleanMudCount_;
+      reason_ = other.reason_;
+      galleryId_ = other.galleryId_;
+      killSpecialMonsterCount_ = other.killSpecialMonsterCount_;
+      killMonsterCount_ = other.killMonsterCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,32 +91,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LuminanceStoneChallengeGallerySettleInfo(this);
     }
 
-    /// <summary>Field number for the "kill_monster_count" field.</summary>
-    public const int KillMonsterCountFieldNumber = 12;
-    private uint killMonsterCount_;
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 12;
+    private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KillMonsterCount {
-      get { return killMonsterCount_; }
+    public uint FinalScore {
+      get { return finalScore_; }
       set {
-        killMonsterCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "kill_special_monster_count" field.</summary>
-    public const int KillSpecialMonsterCountFieldNumber = 8;
-    private uint killSpecialMonsterCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KillSpecialMonsterCount {
-      get { return killSpecialMonsterCount_; }
-      set {
-        killSpecialMonsterCount_ = value;
+        finalScore_ = value;
       }
     }
 
     /// <summary>Field number for the "clean_mud_count" field.</summary>
-    public const int CleanMudCountFieldNumber = 10;
+    public const int CleanMudCountFieldNumber = 8;
     private uint cleanMudCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,20 +115,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 2;
-    private uint galleryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
-      set {
-        galleryId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 11;
+    public const int ReasonFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,15 +127,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 13;
-    private uint finalScore_;
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 11;
+    private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
+    public uint GalleryId {
+      get { return galleryId_; }
       set {
-        finalScore_ = value;
+        galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "kill_special_monster_count" field.</summary>
+    public const int KillSpecialMonsterCountFieldNumber = 4;
+    private uint killSpecialMonsterCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KillSpecialMonsterCount {
+      get { return killSpecialMonsterCount_; }
+      set {
+        killSpecialMonsterCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "kill_monster_count" field.</summary>
+    public const int KillMonsterCountFieldNumber = 1;
+    private uint killMonsterCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KillMonsterCount {
+      get { return killMonsterCount_; }
+      set {
+        killMonsterCount_ = value;
       }
     }
 
@@ -178,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (KillMonsterCount != other.KillMonsterCount) return false;
-      if (KillSpecialMonsterCount != other.KillSpecialMonsterCount) return false;
-      if (CleanMudCount != other.CleanMudCount) return false;
-      if (GalleryId != other.GalleryId) return false;
-      if (Reason != other.Reason) return false;
       if (FinalScore != other.FinalScore) return false;
+      if (CleanMudCount != other.CleanMudCount) return false;
+      if (Reason != other.Reason) return false;
+      if (GalleryId != other.GalleryId) return false;
+      if (KillSpecialMonsterCount != other.KillSpecialMonsterCount) return false;
+      if (KillMonsterCount != other.KillMonsterCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (KillMonsterCount != 0) hash ^= KillMonsterCount.GetHashCode();
-      if (KillSpecialMonsterCount != 0) hash ^= KillSpecialMonsterCount.GetHashCode();
-      if (CleanMudCount != 0) hash ^= CleanMudCount.GetHashCode();
-      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
       if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
+      if (CleanMudCount != 0) hash ^= CleanMudCount.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (KillSpecialMonsterCount != 0) hash ^= KillSpecialMonsterCount.GetHashCode();
+      if (KillMonsterCount != 0) hash ^= KillMonsterCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -215,29 +215,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GalleryId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(GalleryId);
+      if (KillMonsterCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (KillSpecialMonsterCount != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(KillSpecialMonsterCount);
       }
       if (CleanMudCount != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(CleanMudCount);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+      if (GalleryId != 0) {
         output.WriteRawTag(88);
-        output.WriteEnum((int) Reason);
-      }
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(KillMonsterCount);
+        output.WriteUInt32(GalleryId);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(FinalScore);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -249,29 +249,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GalleryId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(GalleryId);
+      if (KillMonsterCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (KillSpecialMonsterCount != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(KillSpecialMonsterCount);
       }
       if (CleanMudCount != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(CleanMudCount);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+      if (GalleryId != 0) {
         output.WriteRawTag(88);
-        output.WriteEnum((int) Reason);
-      }
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(KillMonsterCount);
+        output.WriteUInt32(GalleryId);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(FinalScore);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -283,23 +283,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (KillMonsterCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterCount);
-      }
-      if (KillSpecialMonsterCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillSpecialMonsterCount);
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (CleanMudCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CleanMudCount);
       }
-      if (GalleryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (KillSpecialMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillSpecialMonsterCount);
+      }
+      if (KillMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -313,23 +313,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.KillMonsterCount != 0) {
-        KillMonsterCount = other.KillMonsterCount;
-      }
-      if (other.KillSpecialMonsterCount != 0) {
-        KillSpecialMonsterCount = other.KillSpecialMonsterCount;
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
       }
       if (other.CleanMudCount != 0) {
         CleanMudCount = other.CleanMudCount;
       }
-      if (other.GalleryId != 0) {
-        GalleryId = other.GalleryId;
-      }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         Reason = other.Reason;
       }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
+      if (other.KillSpecialMonsterCount != 0) {
+        KillSpecialMonsterCount = other.KillSpecialMonsterCount;
+      }
+      if (other.KillMonsterCount != 0) {
+        KillMonsterCount = other.KillMonsterCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -346,28 +346,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            GalleryId = input.ReadUInt32();
+          case 8: {
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 32: {
             KillSpecialMonsterCount = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 64: {
             CleanMudCount = input.ReadUInt32();
             break;
           }
           case 88: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            GalleryId = input.ReadUInt32();
             break;
           }
           case 96: {
-            KillMonsterCount = input.ReadUInt32();
+            FinalScore = input.ReadUInt32();
             break;
           }
-          case 104: {
-            FinalScore = input.ReadUInt32();
+          case 120: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
         }
@@ -385,28 +385,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            GalleryId = input.ReadUInt32();
+          case 8: {
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 32: {
             KillSpecialMonsterCount = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 64: {
             CleanMudCount = input.ReadUInt32();
             break;
           }
           case 88: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            GalleryId = input.ReadUInt32();
             break;
           }
           case 96: {
-            KillMonsterCount = input.ReadUInt32();
+            FinalScore = input.ReadUInt32();
             break;
           }
-          case 104: {
-            FinalScore = input.ReadUInt32();
+          case 120: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
         }

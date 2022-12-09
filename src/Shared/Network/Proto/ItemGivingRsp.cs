@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ItemGivingRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNJdGVtR2l2aW5nUnNwLnByb3RvIkwKDUl0ZW1HaXZpbmdSc3ASFwoPZ2l2",
-            "aW5nX2dyb3VwX2lkGAEgASgNEhEKCWdpdmluZ19pZBgNIAEoDRIPCgdyZXRj",
-            "b2RlGAMgASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChNJdGVtR2l2aW5nUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvIkwKDUl0ZW1HaXZpbmdSc3ASFwoPZ2l2aW5nX2dyb3VwX2lk",
+            "GA8gASgNEg8KB3JldGNvZGUYBSABKAUSEQoJZ2l2aW5nX2lkGAwgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingRsp), global::Weedwacker.Shared.Network.Proto.ItemGivingRsp.Parser, new[]{ "GivingGroupId", "GivingId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingRsp), global::Weedwacker.Shared.Network.Proto.ItemGivingRsp.Parser, new[]{ "GivingGroupId", "Retcode", "GivingId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 118
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 108;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ItemGivingRsp : pb::IMessage<ItemGivingRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ItemGivingRsp(ItemGivingRsp other) : this() {
       givingGroupId_ = other.givingGroupId_;
-      givingId_ = other.givingId_;
       retcode_ = other.retcode_;
+      givingId_ = other.givingId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "giving_group_id" field.</summary>
-    public const int GivingGroupIdFieldNumber = 1;
+    public const int GivingGroupIdFieldNumber = 15;
     private uint givingGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "giving_id" field.</summary>
-    public const int GivingIdFieldNumber = 13;
-    private uint givingId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GivingId {
-      get { return givingId_; }
-      set {
-        givingId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 5;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "giving_id" field.</summary>
+    public const int GivingIdFieldNumber = 12;
+    private uint givingId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GivingId {
+      get { return givingId_; }
+      set {
+        givingId_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (GivingGroupId != other.GivingGroupId) return false;
-      if (GivingId != other.GivingId) return false;
       if (Retcode != other.Retcode) return false;
+      if (GivingId != other.GivingId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (GivingGroupId != 0) hash ^= GivingGroupId.GetHashCode();
-      if (GivingId != 0) hash ^= GivingId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (GivingId != 0) hash ^= GivingId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GivingGroupId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GivingGroupId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       if (GivingId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(GivingId);
+      }
+      if (GivingGroupId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GivingGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GivingGroupId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GivingGroupId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       if (GivingId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(GivingId);
+      }
+      if (GivingGroupId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GivingGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GivingGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingGroupId);
       }
-      if (GivingId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (GivingId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GivingGroupId != 0) {
         GivingGroupId = other.GivingGroupId;
       }
-      if (other.GivingId != 0) {
-        GivingId = other.GivingId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.GivingId != 0) {
+        GivingId = other.GivingId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            GivingGroupId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
+          case 96: {
             GivingId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            GivingGroupId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            GivingGroupId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
+          case 96: {
             GivingId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            GivingGroupId = input.ReadUInt32();
             break;
           }
         }

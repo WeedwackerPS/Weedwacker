@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeModuleSeenRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdIb21lTW9kdWxlU2VlblJzcC5wcm90byJBChFIb21lTW9kdWxlU2VlblJz",
-            "cBIbChNzZWVuX21vZHVsZV9pZF9saXN0GA0gAygNEg8KB3JldGNvZGUYCCAB",
-            "KAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChdIb21lTW9kdWxlU2VlblJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJBChFIb21lTW9kdWxlU2VlblJzcBIbChNzZWVuX21v",
+            "ZHVsZV9pZF9saXN0GAkgAygNEg8KB3JldGNvZGUYBiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4821
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4693;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeModuleSeenRsp : pb::IMessage<HomeModuleSeenRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "seen_module_id_list" field.</summary>
-    public const int SeenModuleIdListFieldNumber = 13;
+    public const int SeenModuleIdListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_seenModuleIdList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> seenModuleIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +103,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       seenModuleIdList_.WriteTo(output, _repeated_seenModuleIdList_codec);
@@ -171,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       seenModuleIdList_.WriteTo(ref output, _repeated_seenModuleIdList_codec);
@@ -220,12 +223,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 48: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 74:
+          case 72: {
             seenModuleIdList_.AddEntriesFrom(input, _repeated_seenModuleIdList_codec);
             break;
           }
@@ -244,12 +247,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 48: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 74:
+          case 72: {
             seenModuleIdList_.AddEntriesFrom(ref input, _repeated_seenModuleIdList_codec);
             break;
           }

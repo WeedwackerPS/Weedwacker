@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetActivityShopSheetInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFHZXRBY3Rpdml0eVNob3BTaGVldEluZm9Sc3AucHJvdG8aG0FjdGl2aXR5",
-            "U2hvcFNoZWV0SW5mby5wcm90byJyChtHZXRBY3Rpdml0eVNob3BTaGVldElu",
-            "Zm9Sc3ASLwoPc2hlZXRfaW5mb19saXN0GAYgAygLMhYuQWN0aXZpdHlTaG9w",
-            "U2hlZXRJbmZvEhEKCXNob3BfdHlwZRgIIAEoDRIPCgdyZXRjb2RlGA0gASgF",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFHZXRBY3Rpdml0eVNob3BTaGVldEluZm9Sc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG0FjdGl2aXR5U2hvcFNoZWV0SW5m",
+            "by5wcm90byKSAQobR2V0QWN0aXZpdHlTaG9wU2hlZXRJbmZvUnNwEhEKCXNo",
+            "b3BfdHlwZRgPIAEoDRIPCgdyZXRjb2RlGAcgASgFEk8KD3NoZWV0X2luZm9f",
+            "bGlzdBgEIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "QWN0aXZpdHlTaG9wU2hlZXRJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetActivityShopSheetInfoRsp), global::Weedwacker.Shared.Network.Proto.GetActivityShopSheetInfoRsp.Parser, new[]{ "SheetInfoList", "ShopType", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetActivityShopSheetInfoRsp), global::Weedwacker.Shared.Network.Proto.GetActivityShopSheetInfoRsp.Parser, new[]{ "ShopType", "Retcode", "SheetInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 790
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 747;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetActivityShopSheetInfoRsp : pb::IMessage<GetActivityShopSheetInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetActivityShopSheetInfoRsp(GetActivityShopSheetInfoRsp other) : this() {
-      sheetInfoList_ = other.sheetInfoList_.Clone();
       shopType_ = other.shopType_;
       retcode_ = other.retcode_;
+      sheetInfoList_ = other.sheetInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,19 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetActivityShopSheetInfoRsp(this);
     }
 
-    /// <summary>Field number for the "sheet_info_list" field.</summary>
-    public const int SheetInfoListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> _repeated_sheetInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> sheetInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> SheetInfoList {
-      get { return sheetInfoList_; }
-    }
-
     /// <summary>Field number for the "shop_type" field.</summary>
-    public const int ShopTypeFieldNumber = 8;
+    public const int ShopTypeFieldNumber = 15;
     private uint shopType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 7;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +117,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "sheet_info_list" field.</summary>
+    public const int SheetInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> _repeated_sheetInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> sheetInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo> SheetInfoList {
+      get { return sheetInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!sheetInfoList_.Equals(other.sheetInfoList_)) return false;
       if (ShopType != other.ShopType) return false;
       if (Retcode != other.Retcode) return false;
+      if(!sheetInfoList_.Equals(other.sheetInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= sheetInfoList_.GetHashCode();
       if (ShopType != 0) hash ^= ShopType.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= sheetInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       sheetInfoList_.WriteTo(output, _repeated_sheetInfoList_codec);
-      if (ShopType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ShopType);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
+      }
+      if (ShopType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ShopType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,13 +196,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       sheetInfoList_.WriteTo(ref output, _repeated_sheetInfoList_codec);
-      if (ShopType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ShopType);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
+      }
+      if (ShopType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ShopType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += sheetInfoList_.CalculateSize(_repeated_sheetInfoList_codec);
       if (ShopType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShopType);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += sheetInfoList_.CalculateSize(_repeated_sheetInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +233,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      sheetInfoList_.Add(other.sheetInfoList_);
       if (other.ShopType != 0) {
         ShopType = other.ShopType;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      sheetInfoList_.Add(other.sheetInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 34: {
             sheetInfoList_.AddEntriesFrom(input, _repeated_sheetInfoList_codec);
             break;
           }
-          case 64: {
-            ShopType = input.ReadUInt32();
+          case 56: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            ShopType = input.ReadUInt32();
             break;
           }
         }
@@ -277,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 34: {
             sheetInfoList_.AddEntriesFrom(ref input, _repeated_sheetInfoList_codec);
             break;
           }
-          case 64: {
-            ShopType = input.ReadUInt32();
+          case 56: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            ShopType = input.ReadUInt32();
             break;
           }
         }

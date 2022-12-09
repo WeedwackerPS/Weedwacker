@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePlantInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZIb21lUGxhbnRJbmZvUnNwLnByb3RvGhhIb21lUGxhbnRGaWVsZERhdGEu",
-            "cHJvdG8iTAoQSG9tZVBsYW50SW5mb1JzcBIPCgdyZXRjb2RlGAcgASgFEicK",
-            "CmZpZWxkX2xpc3QYDyADKAsyEy5Ib21lUGxhbnRGaWVsZERhdGFCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZIb21lUGxhbnRJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhhIb21lUGxhbnRGaWVsZERhdGEucHJvdG8ibAoQSG9t",
+            "ZVBsYW50SW5mb1JzcBIPCgdyZXRjb2RlGAggASgFEkcKCmZpZWxkX2xpc3QY",
+            "CiADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVQ",
+            "bGFudEZpZWxkRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomePlantFieldDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4701
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4460;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePlantInfoRsp : pb::IMessage<HomePlantInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "field_list" field.</summary>
-    public const int FieldListFieldNumber = 15;
+    public const int FieldListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomePlantFieldData> _repeated_fieldList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.HomePlantFieldData.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.HomePlantFieldData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantFieldData> fieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantFieldData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       fieldList_.WriteTo(output, _repeated_fieldList_codec);
@@ -172,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       fieldList_.WriteTo(ref output, _repeated_fieldList_codec);
@@ -221,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122: {
+          case 82: {
             fieldList_.AddEntriesFrom(input, _repeated_fieldList_codec);
             break;
           }
@@ -244,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122: {
+          case 82: {
             fieldList_.AddEntriesFrom(ref input, _repeated_fieldList_codec);
             break;
           }

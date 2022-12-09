@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MpPlayOwnerInviteNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1NcFBsYXlPd25lckludml0ZU5vdGlmeS5wcm90byJTChdNcFBsYXlPd25l",
-            "ckludml0ZU5vdGlmeRIKCgJjZBgMIAEoDRISCgptcF9wbGF5X2lkGA0gASgN",
-            "EhgKEGlzX3JlbWFpbl9yZXdhcmQYCiABKAhCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1NcFBsYXlPd25lckludml0ZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJTChdNcFBsYXlPd25lckludml0ZU5vdGlm",
+            "eRISCgptcF9wbGF5X2lkGAsgASgNEhgKEGlzX3JlbWFpbl9yZXdhcmQYBCAB",
+            "KAgSCgoCY2QYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayOwnerInviteNotify), global::Weedwacker.Shared.Network.Proto.MpPlayOwnerInviteNotify.Parser, new[]{ "Cd", "MpPlayId", "IsRemainReward" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayOwnerInviteNotify), global::Weedwacker.Shared.Network.Proto.MpPlayOwnerInviteNotify.Parser, new[]{ "MpPlayId", "IsRemainReward", "Cd" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1835
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1821;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MpPlayOwnerInviteNotify : pb::IMessage<MpPlayOwnerInviteNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MpPlayOwnerInviteNotify(MpPlayOwnerInviteNotify other) : this() {
-      cd_ = other.cd_;
       mpPlayId_ = other.mpPlayId_;
       isRemainReward_ = other.isRemainReward_;
+      cd_ = other.cd_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MpPlayOwnerInviteNotify(this);
     }
 
-    /// <summary>Field number for the "cd" field.</summary>
-    public const int CdFieldNumber = 12;
-    private uint cd_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Cd {
-      get { return cd_; }
-      set {
-        cd_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 13;
+    public const int MpPlayIdFieldNumber = 11;
     private uint mpPlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_remain_reward" field.</summary>
-    public const int IsRemainRewardFieldNumber = 10;
+    public const int IsRemainRewardFieldNumber = 4;
     private bool isRemainReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isRemainReward_; }
       set {
         isRemainReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cd" field.</summary>
+    public const int CdFieldNumber = 7;
+    private uint cd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Cd {
+      get { return cd_; }
+      set {
+        cd_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Cd != other.Cd) return false;
       if (MpPlayId != other.MpPlayId) return false;
       if (IsRemainReward != other.IsRemainReward) return false;
+      if (Cd != other.Cd) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Cd != 0) hash ^= Cd.GetHashCode();
       if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
       if (IsRemainReward != false) hash ^= IsRemainReward.GetHashCode();
+      if (Cd != 0) hash ^= Cd.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsRemainReward != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsRemainReward);
       }
       if (Cd != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(Cd);
       }
       if (MpPlayId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(MpPlayId);
       }
       if (_unknownFields != null) {
@@ -194,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsRemainReward != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsRemainReward);
       }
       if (Cd != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(Cd);
       }
       if (MpPlayId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(MpPlayId);
       }
       if (_unknownFields != null) {
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Cd != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Cd);
-      }
       if (MpPlayId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
       }
       if (IsRemainReward != false) {
         size += 1 + 1;
+      }
+      if (Cd != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Cd);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Cd != 0) {
-        Cd = other.Cd;
-      }
       if (other.MpPlayId != 0) {
         MpPlayId = other.MpPlayId;
       }
       if (other.IsRemainReward != false) {
         IsRemainReward = other.IsRemainReward;
+      }
+      if (other.Cd != 0) {
+        Cd = other.Cd;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
+          case 32: {
             IsRemainReward = input.ReadBool();
             break;
           }
-          case 96: {
+          case 56: {
             Cd = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 88: {
             MpPlayId = input.ReadUInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
+          case 32: {
             IsRemainReward = input.ReadBool();
             break;
           }
-          case 96: {
+          case 56: {
             Cd = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 88: {
             MpPlayId = input.ReadUInt32();
             break;
           }

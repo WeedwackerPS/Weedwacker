@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AddNoGachaAvatarCardTransferItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZBZGROb0dhY2hhQXZhdGFyQ2FyZFRyYW5zZmVySXRlbS5wcm90byJSCiBB",
-            "ZGROb0dhY2hhQXZhdGFyQ2FyZFRyYW5zZmVySXRlbRINCgVjb3VudBgJIAEo",
-            "DRIPCgdpdGVtX2lkGAYgASgNEg4KBmlzX25ldxgPIAEoCEIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZBZGROb0dhY2hhQXZhdGFyQ2FyZFRyYW5zZmVySXRlbS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJSCiBBZGROb0dhY2hhQXZh",
+            "dGFyQ2FyZFRyYW5zZmVySXRlbRINCgVjb3VudBgFIAEoDRIOCgZpc19uZXcY",
+            "CCABKAgSDwoHaXRlbV9pZBgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem), global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem.Parser, new[]{ "Count", "ItemId", "IsNew" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem), global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem.Parser, new[]{ "Count", "IsNew", "ItemId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddNoGachaAvatarCardTransferItem(AddNoGachaAvatarCardTransferItem other) : this() {
       count_ = other.count_;
-      itemId_ = other.itemId_;
       isNew_ = other.isNew_;
+      itemId_ = other.itemId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "count" field.</summary>
-    public const int CountFieldNumber = 9;
+    public const int CountFieldNumber = 5;
     private uint count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
-    public const int ItemIdFieldNumber = 6;
-    private uint itemId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ItemId {
-      get { return itemId_; }
-      set {
-        itemId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_new" field.</summary>
-    public const int IsNewFieldNumber = 15;
+    public const int IsNewFieldNumber = 8;
     private bool isNew_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isNew_; }
       set {
         isNew_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_id" field.</summary>
+    public const int ItemIdFieldNumber = 11;
+    private uint itemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ItemId {
+      get { return itemId_; }
+      set {
+        itemId_ = value;
       }
     }
 
@@ -136,8 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Count != other.Count) return false;
-      if (ItemId != other.ItemId) return false;
       if (IsNew != other.IsNew) return false;
+      if (ItemId != other.ItemId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Count != 0) hash ^= Count.GetHashCode();
-      if (ItemId != 0) hash ^= ItemId.GetHashCode();
       if (IsNew != false) hash ^= IsNew.GetHashCode();
+      if (ItemId != 0) hash ^= ItemId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ItemId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ItemId);
-      }
       if (Count != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(Count);
       }
       if (IsNew != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
+      }
+      if (ItemId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ItemId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ItemId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ItemId);
-      }
       if (Count != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(Count);
       }
       if (IsNew != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
+      }
+      if (ItemId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ItemId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -213,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Count != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Count);
       }
-      if (ItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
-      }
       if (IsNew != false) {
         size += 1 + 1;
+      }
+      if (ItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -234,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Count != 0) {
         Count = other.Count;
       }
-      if (other.ItemId != 0) {
-        ItemId = other.ItemId;
-      }
       if (other.IsNew != false) {
         IsNew = other.IsNew;
+      }
+      if (other.ItemId != 0) {
+        ItemId = other.ItemId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            ItemId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             Count = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 64: {
             IsNew = input.ReadBool();
+            break;
+          }
+          case 88: {
+            ItemId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            ItemId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             Count = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 64: {
             IsNew = input.ReadBool();
+            break;
+          }
+          case 88: {
+            ItemId = input.ReadUInt32();
             break;
           }
         }

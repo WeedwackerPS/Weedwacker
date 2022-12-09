@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static PrivateChatRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRQcml2YXRlQ2hhdFJzcC5wcm90byJBCg5Qcml2YXRlQ2hhdFJzcBIeChZj",
-            "aGF0X2ZvcmJpZGRlbl9lbmR0aW1lGAwgASgNEg8KB3JldGNvZGUYDiABKAVC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRQcml2YXRlQ2hhdFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byJBCg5Qcml2YXRlQ2hhdFJzcBIPCgdyZXRjb2RlGAQgASgF",
+            "Eh4KFmNoYXRfZm9yYmlkZGVuX2VuZHRpbWUYBiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PrivateChatRsp), global::Weedwacker.Shared.Network.Proto.PrivateChatRsp.Parser, new[]{ "ChatForbiddenEndtime", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PrivateChatRsp), global::Weedwacker.Shared.Network.Proto.PrivateChatRsp.Parser, new[]{ "Retcode", "ChatForbiddenEndtime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5048
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4980;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PrivateChatRsp : pb::IMessage<PrivateChatRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PrivateChatRsp(PrivateChatRsp other) : this() {
-      chatForbiddenEndtime_ = other.chatForbiddenEndtime_;
       retcode_ = other.retcode_;
+      chatForbiddenEndtime_ = other.chatForbiddenEndtime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PrivateChatRsp(this);
     }
 
-    /// <summary>Field number for the "chat_forbidden_endtime" field.</summary>
-    public const int ChatForbiddenEndtimeFieldNumber = 12;
-    private uint chatForbiddenEndtime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChatForbiddenEndtime {
-      get { return chatForbiddenEndtime_; }
-      set {
-        chatForbiddenEndtime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,6 +100,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chat_forbidden_endtime" field.</summary>
+    public const int ChatForbiddenEndtimeFieldNumber = 6;
+    private uint chatForbiddenEndtime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChatForbiddenEndtime {
+      get { return chatForbiddenEndtime_; }
+      set {
+        chatForbiddenEndtime_ = value;
       }
     }
 
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ChatForbiddenEndtime != other.ChatForbiddenEndtime) return false;
       if (Retcode != other.Retcode) return false;
+      if (ChatForbiddenEndtime != other.ChatForbiddenEndtime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ChatForbiddenEndtime != 0) hash ^= ChatForbiddenEndtime.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (ChatForbiddenEndtime != 0) hash ^= ChatForbiddenEndtime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChatForbiddenEndtime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ChatForbiddenEndtime);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (ChatForbiddenEndtime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChatForbiddenEndtime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChatForbiddenEndtime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ChatForbiddenEndtime);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (ChatForbiddenEndtime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChatForbiddenEndtime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -191,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ChatForbiddenEndtime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChatForbiddenEndtime);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (ChatForbiddenEndtime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChatForbiddenEndtime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -209,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ChatForbiddenEndtime != 0) {
-        ChatForbiddenEndtime = other.ChatForbiddenEndtime;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.ChatForbiddenEndtime != 0) {
+        ChatForbiddenEndtime = other.ChatForbiddenEndtime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            ChatForbiddenEndtime = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
-            Retcode = input.ReadInt32();
+          case 48: {
+            ChatForbiddenEndtime = input.ReadUInt32();
             break;
           }
         }
@@ -253,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            ChatForbiddenEndtime = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
-            Retcode = input.ReadInt32();
+          case 48: {
+            ChatForbiddenEndtime = input.ReadUInt32();
             break;
           }
         }

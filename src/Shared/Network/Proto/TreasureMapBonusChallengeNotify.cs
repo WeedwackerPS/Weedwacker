@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureMapBonusChallengeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVUcmVhc3VyZU1hcEJvbnVzQ2hhbGxlbmdlTm90aWZ5LnByb3RvGiNUcmVh",
-            "c3VyZU1hcEJvbnVzQ2hhbGxlbmdlSW5mby5wcm90byJPCh9UcmVhc3VyZU1h",
-            "cEJvbnVzQ2hhbGxlbmdlTm90aWZ5EiwKBGluZm8YBSABKAsyHi5UcmVhc3Vy",
-            "ZU1hcEJvbnVzQ2hhbGxlbmdlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVUcmVhc3VyZU1hcEJvbnVzQ2hhbGxlbmdlTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGiNUcmVhc3VyZU1hcEJvbnVz",
+            "Q2hhbGxlbmdlSW5mby5wcm90byJvCh9UcmVhc3VyZU1hcEJvbnVzQ2hhbGxl",
+            "bmdlTm90aWZ5EkwKBGluZm8YDSABKAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlRyZWFzdXJlTWFwQm9udXNDaGFsbGVuZ2VJbmZvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2115
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2097;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TreasureMapBonusChallengeNotify : pb::IMessage<TreasureMapBonusChallengeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "info" field.</summary>
-    public const int InfoFieldNumber = 5;
+    public const int InfoFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo info_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (info_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(106);
         output.WriteMessage(Info);
       }
       if (_unknownFields != null) {
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (info_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(106);
         output.WriteMessage(Info);
       }
       if (_unknownFields != null) {
@@ -206,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 106: {
             if (info_ == null) {
               Info = new global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo();
             }
@@ -228,7 +233,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 106: {
             if (info_ == null) {
               Info = new global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo();
             }

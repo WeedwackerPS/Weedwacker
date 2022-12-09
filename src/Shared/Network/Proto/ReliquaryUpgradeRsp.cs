@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReliquaryUpgradeRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlSZWxpcXVhcnlVcGdyYWRlUnNwLnByb3RvIr4BChNSZWxpcXVhcnlVcGdy",
-            "YWRlUnNwEhEKCW9sZF9sZXZlbBgEIAEoDRIRCgljdXJfbGV2ZWwYDSABKA0S",
-            "HQoVdGFyZ2V0X3JlbGlxdWFyeV9ndWlkGAkgASgEEhwKFGN1cl9hcHBlbmRf",
-            "cHJvcF9saXN0GAIgAygNEhUKDXBvd2VyX3VwX3JhdGUYBiABKA0SHAoUb2xk",
-            "X2FwcGVuZF9wcm9wX2xpc3QYDyADKA0SDwoHcmV0Y29kZRgFIAEoBUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlSZWxpcXVhcnlVcGdyYWRlUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIr4BChNSZWxpcXVhcnlVcGdyYWRlUnNwEhwKFG9s",
+            "ZF9hcHBlbmRfcHJvcF9saXN0GA0gAygNEg8KB3JldGNvZGUYCyABKAUSHQoV",
+            "dGFyZ2V0X3JlbGlxdWFyeV9ndWlkGA4gASgEEhEKCWN1cl9sZXZlbBgCIAEo",
+            "DRIRCglvbGRfbGV2ZWwYBiABKA0SHAoUY3VyX2FwcGVuZF9wcm9wX2xpc3QY",
+            "CiADKA0SFQoNcG93ZXJfdXBfcmF0ZRgBIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReliquaryUpgradeRsp), global::Weedwacker.Shared.Network.Proto.ReliquaryUpgradeRsp.Parser, new[]{ "OldLevel", "CurLevel", "TargetReliquaryGuid", "CurAppendPropList", "PowerUpRate", "OldAppendPropList", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReliquaryUpgradeRsp), global::Weedwacker.Shared.Network.Proto.ReliquaryUpgradeRsp.Parser, new[]{ "OldAppendPropList", "Retcode", "TargetReliquaryGuid", "CurLevel", "OldLevel", "CurAppendPropList", "PowerUpRate" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 693
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 607;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ReliquaryUpgradeRsp : pb::IMessage<ReliquaryUpgradeRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,13 +83,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReliquaryUpgradeRsp(ReliquaryUpgradeRsp other) : this() {
-      oldLevel_ = other.oldLevel_;
-      curLevel_ = other.curLevel_;
-      targetReliquaryGuid_ = other.targetReliquaryGuid_;
-      curAppendPropList_ = other.curAppendPropList_.Clone();
-      powerUpRate_ = other.powerUpRate_;
       oldAppendPropList_ = other.oldAppendPropList_.Clone();
       retcode_ = other.retcode_;
+      targetReliquaryGuid_ = other.targetReliquaryGuid_;
+      curLevel_ = other.curLevel_;
+      oldLevel_ = other.oldLevel_;
+      curAppendPropList_ = other.curAppendPropList_.Clone();
+      powerUpRate_ = other.powerUpRate_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,32 +99,34 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ReliquaryUpgradeRsp(this);
     }
 
-    /// <summary>Field number for the "old_level" field.</summary>
-    public const int OldLevelFieldNumber = 4;
-    private uint oldLevel_;
+    /// <summary>Field number for the "old_append_prop_list" field.</summary>
+    public const int OldAppendPropListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_oldAppendPropList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> oldAppendPropList_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// Unk3300_MGELABLMFOE
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OldLevel {
-      get { return oldLevel_; }
-      set {
-        oldLevel_ = value;
-      }
+    public pbc::RepeatedField<uint> OldAppendPropList {
+      get { return oldAppendPropList_; }
     }
 
-    /// <summary>Field number for the "cur_level" field.</summary>
-    public const int CurLevelFieldNumber = 13;
-    private uint curLevel_;
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 11;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurLevel {
-      get { return curLevel_; }
+    public int Retcode {
+      get { return retcode_; }
       set {
-        curLevel_ = value;
+        retcode_ = value;
       }
     }
 
     /// <summary>Field number for the "target_reliquary_guid" field.</summary>
-    public const int TargetReliquaryGuidFieldNumber = 9;
+    public const int TargetReliquaryGuidFieldNumber = 14;
     private ulong targetReliquaryGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,11 +137,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cur_level" field.</summary>
+    public const int CurLevelFieldNumber = 2;
+    private uint curLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurLevel {
+      get { return curLevel_; }
+      set {
+        curLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "old_level" field.</summary>
+    public const int OldLevelFieldNumber = 6;
+    private uint oldLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OldLevel {
+      get { return oldLevel_; }
+      set {
+        oldLevel_ = value;
+      }
+    }
+
     /// <summary>Field number for the "cur_append_prop_list" field.</summary>
-    public const int CurAppendPropListFieldNumber = 2;
+    public const int CurAppendPropListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_curAppendPropList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> curAppendPropList_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// Unk3300_IALPGNADFKA
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> CurAppendPropList {
@@ -143,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "power_up_rate" field.</summary>
-    public const int PowerUpRateFieldNumber = 6;
+    public const int PowerUpRateFieldNumber = 1;
     private uint powerUpRate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,29 +184,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return powerUpRate_; }
       set {
         powerUpRate_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "old_append_prop_list" field.</summary>
-    public const int OldAppendPropListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_oldAppendPropList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> oldAppendPropList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> OldAppendPropList {
-      get { return oldAppendPropList_; }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
       }
     }
 
@@ -192,13 +202,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OldLevel != other.OldLevel) return false;
-      if (CurLevel != other.CurLevel) return false;
-      if (TargetReliquaryGuid != other.TargetReliquaryGuid) return false;
-      if(!curAppendPropList_.Equals(other.curAppendPropList_)) return false;
-      if (PowerUpRate != other.PowerUpRate) return false;
       if(!oldAppendPropList_.Equals(other.oldAppendPropList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if (TargetReliquaryGuid != other.TargetReliquaryGuid) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if (OldLevel != other.OldLevel) return false;
+      if(!curAppendPropList_.Equals(other.curAppendPropList_)) return false;
+      if (PowerUpRate != other.PowerUpRate) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -206,13 +216,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
-      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-      if (TargetReliquaryGuid != 0UL) hash ^= TargetReliquaryGuid.GetHashCode();
-      hash ^= curAppendPropList_.GetHashCode();
-      if (PowerUpRate != 0) hash ^= PowerUpRate.GetHashCode();
       hash ^= oldAppendPropList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (TargetReliquaryGuid != 0UL) hash ^= TargetReliquaryGuid.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
+      hash ^= curAppendPropList_.GetHashCode();
+      if (PowerUpRate != 0) hash ^= PowerUpRate.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -231,28 +241,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      curAppendPropList_.WriteTo(output, _repeated_curAppendPropList_codec);
-      if (OldLevel != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(OldLevel);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
       if (PowerUpRate != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(PowerUpRate);
       }
-      if (TargetReliquaryGuid != 0UL) {
-        output.WriteRawTag(72);
-        output.WriteUInt64(TargetReliquaryGuid);
-      }
       if (CurLevel != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(CurLevel);
       }
+      if (OldLevel != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(OldLevel);
+      }
+      curAppendPropList_.WriteTo(output, _repeated_curAppendPropList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
+      }
       oldAppendPropList_.WriteTo(output, _repeated_oldAppendPropList_codec);
+      if (TargetReliquaryGuid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(TargetReliquaryGuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -263,28 +273,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      curAppendPropList_.WriteTo(ref output, _repeated_curAppendPropList_codec);
-      if (OldLevel != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(OldLevel);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
       if (PowerUpRate != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(PowerUpRate);
       }
-      if (TargetReliquaryGuid != 0UL) {
-        output.WriteRawTag(72);
-        output.WriteUInt64(TargetReliquaryGuid);
-      }
       if (CurLevel != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(CurLevel);
       }
+      if (OldLevel != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(OldLevel);
+      }
+      curAppendPropList_.WriteTo(ref output, _repeated_curAppendPropList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
+      }
       oldAppendPropList_.WriteTo(ref output, _repeated_oldAppendPropList_codec);
+      if (TargetReliquaryGuid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(TargetReliquaryGuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -295,22 +305,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OldLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
-      }
-      if (CurLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
+      size += oldAppendPropList_.CalculateSize(_repeated_oldAppendPropList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (TargetReliquaryGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetReliquaryGuid);
       }
+      if (CurLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
+      }
+      if (OldLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
+      }
       size += curAppendPropList_.CalculateSize(_repeated_curAppendPropList_codec);
       if (PowerUpRate != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PowerUpRate);
-      }
-      size += oldAppendPropList_.CalculateSize(_repeated_oldAppendPropList_codec);
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -324,22 +334,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OldLevel != 0) {
-        OldLevel = other.OldLevel;
-      }
-      if (other.CurLevel != 0) {
-        CurLevel = other.CurLevel;
+      oldAppendPropList_.Add(other.oldAppendPropList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       if (other.TargetReliquaryGuid != 0UL) {
         TargetReliquaryGuid = other.TargetReliquaryGuid;
       }
+      if (other.CurLevel != 0) {
+        CurLevel = other.CurLevel;
+      }
+      if (other.OldLevel != 0) {
+        OldLevel = other.OldLevel;
+      }
       curAppendPropList_.Add(other.curAppendPropList_);
       if (other.PowerUpRate != 0) {
         PowerUpRate = other.PowerUpRate;
-      }
-      oldAppendPropList_.Add(other.oldAppendPropList_);
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -356,34 +366,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            curAppendPropList_.AddEntriesFrom(input, _repeated_curAppendPropList_codec);
-            break;
-          }
-          case 32: {
-            OldLevel = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 8: {
             PowerUpRate = input.ReadUInt32();
             break;
           }
-          case 72: {
-            TargetReliquaryGuid = input.ReadUInt64();
-            break;
-          }
-          case 104: {
+          case 16: {
             CurLevel = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 48: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            curAppendPropList_.AddEntriesFrom(input, _repeated_curAppendPropList_codec);
+            break;
+          }
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106:
+          case 104: {
             oldAppendPropList_.AddEntriesFrom(input, _repeated_oldAppendPropList_codec);
+            break;
+          }
+          case 112: {
+            TargetReliquaryGuid = input.ReadUInt64();
             break;
           }
         }
@@ -401,34 +411,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            curAppendPropList_.AddEntriesFrom(ref input, _repeated_curAppendPropList_codec);
-            break;
-          }
-          case 32: {
-            OldLevel = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 8: {
             PowerUpRate = input.ReadUInt32();
             break;
           }
-          case 72: {
-            TargetReliquaryGuid = input.ReadUInt64();
-            break;
-          }
-          case 104: {
+          case 16: {
             CurLevel = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 48: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            curAppendPropList_.AddEntriesFrom(ref input, _repeated_curAppendPropList_codec);
+            break;
+          }
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106:
+          case 104: {
             oldAppendPropList_.AddEntriesFrom(ref input, _repeated_oldAppendPropList_codec);
+            break;
+          }
+          case 112: {
+            TargetReliquaryGuid = input.ReadUInt64();
             break;
           }
         }

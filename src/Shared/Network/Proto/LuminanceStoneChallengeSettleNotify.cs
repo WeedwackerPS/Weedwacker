@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static LuminanceStoneChallengeSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZVNldHRsZU5vdGlmeS5wcm90bxon",
-            "THVtaW5hbmNlU3RvbmVDaGFsbGVuZ2VTZXR0bGVJbmZvLnByb3RvInIKI0x1",
-            "bWluYW5jZVN0b25lQ2hhbGxlbmdlU2V0dGxlTm90aWZ5EhIKCmdhbGxlcnlf",
-            "aWQYCiABKA0SNwoLc2V0dGxlX2luZm8YDSABKAsyIi5MdW1pbmFuY2VTdG9u",
-            "ZUNoYWxsZW5nZVNldHRsZUluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CilMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZVNldHRsZU5vdGlmeS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxonTHVtaW5hbmNlU3Rv",
+            "bmVDaGFsbGVuZ2VTZXR0bGVJbmZvLnByb3RvIpIBCiNMdW1pbmFuY2VTdG9u",
+            "ZUNoYWxsZW5nZVNldHRsZU5vdGlmeRISCgpnYWxsZXJ5X2lkGAMgASgNElcK",
+            "C3NldHRsZV9pbmZvGAUgASgLMkIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5MdW1pbmFuY2VTdG9uZUNoYWxsZW5nZVNldHRsZUluZm9iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8186
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8784;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class LuminanceStoneChallengeSettleNotify : pb::IMessage<LuminanceStoneChallengeSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 10;
+    public const int GalleryIdFieldNumber = 3;
     private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 13;
+    public const int SettleInfoFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo settleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GalleryId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(GalleryId);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(42);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GalleryId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteUInt32(GalleryId);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(42);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -236,11 +241,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
+          case 24: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 42: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo();
             }
@@ -262,11 +267,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
+          case 24: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 42: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeSettleInfo();
             }

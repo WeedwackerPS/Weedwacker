@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairMusicGameSettleReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFGbGV1ckZhaXJNdXNpY0dhbWVTZXR0bGVSZXEucHJvdG8iaAobRmxldXJG",
-            "YWlyTXVzaWNHYW1lU2V0dGxlUmVxEg0KBXNjb3JlGAMgASgNEg0KBWNvbWJv",
-            "GAYgASgNEhMKC2NvcnJlY3RfaGl0GAogASgNEhYKDm11c2ljX2Jhc2ljX2lk",
-            "GAsgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "CiFGbGV1ckZhaXJNdXNpY0dhbWVTZXR0bGVSZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iaAobRmxldXJGYWlyTXVzaWNHYW1l",
+            "U2V0dGxlUmVxEg0KBXNjb3JlGAEgASgNEhMKC2NvcnJlY3RfaGl0GAogASgN",
+            "Eg0KBWNvbWJvGAMgASgNEhYKDm11c2ljX2Jhc2ljX2lkGA4gASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleReq), global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleReq.Parser, new[]{ "Score", "Combo", "CorrectHit", "MusicBasicId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleReq), global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleReq.Parser, new[]{ "Score", "CorrectHit", "Combo", "MusicBasicId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2194
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2111;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FleurFairMusicGameSettleReq : pb::IMessage<FleurFairMusicGameSettleReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairMusicGameSettleReq(FleurFairMusicGameSettleReq other) : this() {
       score_ = other.score_;
-      combo_ = other.combo_;
       correctHit_ = other.correctHit_;
+      combo_ = other.combo_;
       musicBasicId_ = other.musicBasicId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -93,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 3;
+    public const int ScoreFieldNumber = 1;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,18 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return score_; }
       set {
         score_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "combo" field.</summary>
-    public const int ComboFieldNumber = 6;
-    private uint combo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Combo {
-      get { return combo_; }
-      set {
-        combo_ = value;
       }
     }
 
@@ -128,8 +120,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "combo" field.</summary>
+    public const int ComboFieldNumber = 3;
+    private uint combo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Combo {
+      get { return combo_; }
+      set {
+        combo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "music_basic_id" field.</summary>
-    public const int MusicBasicIdFieldNumber = 11;
+    public const int MusicBasicIdFieldNumber = 14;
     private uint musicBasicId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Score != other.Score) return false;
-      if (Combo != other.Combo) return false;
       if (CorrectHit != other.CorrectHit) return false;
+      if (Combo != other.Combo) return false;
       if (MusicBasicId != other.MusicBasicId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -167,8 +171,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Score != 0) hash ^= Score.GetHashCode();
-      if (Combo != 0) hash ^= Combo.GetHashCode();
       if (CorrectHit != 0) hash ^= CorrectHit.GetHashCode();
+      if (Combo != 0) hash ^= Combo.GetHashCode();
       if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -189,11 +193,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Score != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
       }
       if (Combo != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(Combo);
       }
       if (CorrectHit != 0) {
@@ -201,7 +205,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(CorrectHit);
       }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(MusicBasicId);
       }
       if (_unknownFields != null) {
@@ -215,11 +219,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Score != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
       }
       if (Combo != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(Combo);
       }
       if (CorrectHit != 0) {
@@ -227,7 +231,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(CorrectHit);
       }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(MusicBasicId);
       }
       if (_unknownFields != null) {
@@ -243,11 +247,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
       }
-      if (Combo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
-      }
       if (CorrectHit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CorrectHit);
+      }
+      if (Combo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
       }
       if (MusicBasicId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
@@ -267,11 +271,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Score != 0) {
         Score = other.Score;
       }
-      if (other.Combo != 0) {
-        Combo = other.Combo;
-      }
       if (other.CorrectHit != 0) {
         CorrectHit = other.CorrectHit;
+      }
+      if (other.Combo != 0) {
+        Combo = other.Combo;
       }
       if (other.MusicBasicId != 0) {
         MusicBasicId = other.MusicBasicId;
@@ -291,11 +295,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             Score = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 24: {
             Combo = input.ReadUInt32();
             break;
           }
@@ -303,7 +307,7 @@ namespace Weedwacker.Shared.Network.Proto {
             CorrectHit = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 112: {
             MusicBasicId = input.ReadUInt32();
             break;
           }
@@ -322,11 +326,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             Score = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 24: {
             Combo = input.ReadUInt32();
             break;
           }
@@ -334,7 +338,7 @@ namespace Weedwacker.Shared.Network.Proto {
             CorrectHit = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 112: {
             MusicBasicId = input.ReadUInt32();
             break;
           }

@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static IslandPartyRaftInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Jc2xhbmRQYXJ0eVJhZnRJbmZvTm90aWZ5LnByb3RvIlwKGUlzbGFuZFBh",
-            "cnR5UmFmdEluZm9Ob3RpZnkSEAoIcG9pbnRfaWQYByABKA0SDAoEY29pbhgP",
-            "IAEoDRIMCgRmdWVsGAMgASgNEhEKCWNvbXBvbmVudBgNIAEoDUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Jc2xhbmRQYXJ0eVJhZnRJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvInUKGUlzbGFuZFBhcnR5UmFmdEluZm9O",
+            "b3RpZnkSGwoTVW5rMzMwMF9ITkVDRUdOTUtOSxgEIAEoDRIbChNVbmszMzAw",
+            "X0ZCQUNNT0ZHUEdKGAEgASgNEhAKCHBvaW50X2lkGAggASgNEgwKBGNvaW4Y",
+            "DiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartyRaftInfoNotify), global::Weedwacker.Shared.Network.Proto.IslandPartyRaftInfoNotify.Parser, new[]{ "PointId", "Coin", "Fuel", "Component" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IslandPartyRaftInfoNotify), global::Weedwacker.Shared.Network.Proto.IslandPartyRaftInfoNotify.Parser, new[]{ "Unk3300HNECEGNMKNK", "Unk3300FBACMOFGPGJ", "PointId", "Coin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5565
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5589;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IslandPartyRaftInfoNotify : pb::IMessage<IslandPartyRaftInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IslandPartyRaftInfoNotify(IslandPartyRaftInfoNotify other) : this() {
+      unk3300HNECEGNMKNK_ = other.unk3300HNECEGNMKNK_;
+      unk3300FBACMOFGPGJ_ = other.unk3300FBACMOFGPGJ_;
       pointId_ = other.pointId_;
       coin_ = other.coin_;
-      fuel_ = other.fuel_;
-      component_ = other.component_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +95,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IslandPartyRaftInfoNotify(this);
     }
 
+    /// <summary>Field number for the "Unk3300_HNECEGNMKNK" field.</summary>
+    public const int Unk3300HNECEGNMKNKFieldNumber = 4;
+    private uint unk3300HNECEGNMKNK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HNECEGNMKNK {
+      get { return unk3300HNECEGNMKNK_; }
+      set {
+        unk3300HNECEGNMKNK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FBACMOFGPGJ" field.</summary>
+    public const int Unk3300FBACMOFGPGJFieldNumber = 1;
+    private uint unk3300FBACMOFGPGJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FBACMOFGPGJ {
+      get { return unk3300FBACMOFGPGJ_; }
+      set {
+        unk3300FBACMOFGPGJ_ = value;
+      }
+    }
+
     /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 7;
+    public const int PointIdFieldNumber = 8;
     private uint pointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +132,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "coin" field.</summary>
-    public const int CoinFieldNumber = 15;
+    public const int CoinFieldNumber = 14;
     private uint coin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,30 +140,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return coin_; }
       set {
         coin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fuel" field.</summary>
-    public const int FuelFieldNumber = 3;
-    private uint fuel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Fuel {
-      get { return fuel_; }
-      set {
-        fuel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "component" field.</summary>
-    public const int ComponentFieldNumber = 13;
-    private uint component_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Component {
-      get { return component_; }
-      set {
-        component_ = value;
       }
     }
 
@@ -153,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300HNECEGNMKNK != other.Unk3300HNECEGNMKNK) return false;
+      if (Unk3300FBACMOFGPGJ != other.Unk3300FBACMOFGPGJ) return false;
       if (PointId != other.PointId) return false;
       if (Coin != other.Coin) return false;
-      if (Fuel != other.Fuel) return false;
-      if (Component != other.Component) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300HNECEGNMKNK != 0) hash ^= Unk3300HNECEGNMKNK.GetHashCode();
+      if (Unk3300FBACMOFGPGJ != 0) hash ^= Unk3300FBACMOFGPGJ.GetHashCode();
       if (PointId != 0) hash ^= PointId.GetHashCode();
       if (Coin != 0) hash ^= Coin.GetHashCode();
-      if (Fuel != 0) hash ^= Fuel.GetHashCode();
-      if (Component != 0) hash ^= Component.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,20 +191,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Fuel != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Fuel);
+      if (Unk3300FBACMOFGPGJ != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300FBACMOFGPGJ);
+      }
+      if (Unk3300HNECEGNMKNK != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300HNECEGNMKNK);
       }
       if (PointId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(PointId);
       }
-      if (Component != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Component);
-      }
       if (Coin != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
@@ -212,20 +217,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Fuel != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Fuel);
+      if (Unk3300FBACMOFGPGJ != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300FBACMOFGPGJ);
+      }
+      if (Unk3300HNECEGNMKNK != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300HNECEGNMKNK);
       }
       if (PointId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(PointId);
       }
-      if (Component != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Component);
-      }
       if (Coin != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
@@ -238,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300HNECEGNMKNK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HNECEGNMKNK);
+      }
+      if (Unk3300FBACMOFGPGJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FBACMOFGPGJ);
+      }
       if (PointId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
       }
       if (Coin != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
-      }
-      if (Fuel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Fuel);
-      }
-      if (Component != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Component);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -262,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300HNECEGNMKNK != 0) {
+        Unk3300HNECEGNMKNK = other.Unk3300HNECEGNMKNK;
+      }
+      if (other.Unk3300FBACMOFGPGJ != 0) {
+        Unk3300FBACMOFGPGJ = other.Unk3300FBACMOFGPGJ;
+      }
       if (other.PointId != 0) {
         PointId = other.PointId;
       }
       if (other.Coin != 0) {
         Coin = other.Coin;
-      }
-      if (other.Fuel != 0) {
-        Fuel = other.Fuel;
-      }
-      if (other.Component != 0) {
-        Component = other.Component;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -289,19 +294,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Fuel = input.ReadUInt32();
+          case 8: {
+            Unk3300FBACMOFGPGJ = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 32: {
+            Unk3300HNECEGNMKNK = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             PointId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Component = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 112: {
             Coin = input.ReadUInt32();
             break;
           }
@@ -320,19 +325,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Fuel = input.ReadUInt32();
+          case 8: {
+            Unk3300FBACMOFGPGJ = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 32: {
+            Unk3300HNECEGNMKNK = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             PointId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Component = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 112: {
             Coin = input.ReadUInt32();
             break;
           }

@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AiSkillCdInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNBaVNraWxsQ2RJbmZvLnByb3RvIvEBCg1BaVNraWxsQ2RJbmZvEjQKDHNr",
-            "aWxsX2NkX21hcBgLIAMoCzIeLkFpU2tpbGxDZEluZm8uU2tpbGxDZE1hcEVu",
-            "dHJ5Ej8KEnNraWxsX2dyb3VwX2NkX21hcBgGIAMoCzIjLkFpU2tpbGxDZElu",
-            "Zm8uU2tpbGxHcm91cENkTWFwRW50cnkaMQoPU2tpbGxDZE1hcEVudHJ5EgsK",
-            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaNgoUU2tpbGxHcm91cENk",
-            "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChNBaVNraWxsQ2RJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvIrECCg1BaVNraWxsQ2RJbmZvEl8KEnNraWxsX2dyb3VwX2Nk",
+            "X21hcBgBIAMoCzJDLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "QWlTa2lsbENkSW5mby5Ta2lsbEdyb3VwQ2RNYXBFbnRyeRJUCgxza2lsbF9j",
+            "ZF9tYXAYDyADKAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkFpU2tpbGxDZEluZm8uU2tpbGxDZE1hcEVudHJ5GjYKFFNraWxsR3JvdXBD",
+            "ZE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaMQoP",
+            "U2tpbGxDZE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AiSkillCdInfo), global::Weedwacker.Shared.Network.Proto.AiSkillCdInfo.Parser, new[]{ "SkillCdMap", "SkillGroupCdMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AiSkillCdInfo), global::Weedwacker.Shared.Network.Proto.AiSkillCdInfo.Parser, new[]{ "SkillGroupCdMap", "SkillCdMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -75,8 +77,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AiSkillCdInfo(AiSkillCdInfo other) : this() {
-      skillCdMap_ = other.skillCdMap_.Clone();
       skillGroupCdMap_ = other.skillGroupCdMap_.Clone();
+      skillCdMap_ = other.skillCdMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,26 +88,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AiSkillCdInfo(this);
     }
 
-    /// <summary>Field number for the "skill_cd_map" field.</summary>
-    public const int SkillCdMapFieldNumber = 11;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_skillCdMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 90);
-    private readonly pbc::MapField<uint, uint> skillCdMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> SkillCdMap {
-      get { return skillCdMap_; }
-    }
-
     /// <summary>Field number for the "skill_group_cd_map" field.</summary>
-    public const int SkillGroupCdMapFieldNumber = 6;
+    public const int SkillGroupCdMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, uint>.Codec _map_skillGroupCdMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
     private readonly pbc::MapField<uint, uint> skillGroupCdMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> SkillGroupCdMap {
       get { return skillGroupCdMap_; }
+    }
+
+    /// <summary>Field number for the "skill_cd_map" field.</summary>
+    public const int SkillCdMapFieldNumber = 15;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_skillCdMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
+    private readonly pbc::MapField<uint, uint> skillCdMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> SkillCdMap {
+      get { return skillCdMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +125,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!SkillCdMap.Equals(other.SkillCdMap)) return false;
       if (!SkillGroupCdMap.Equals(other.SkillGroupCdMap)) return false;
+      if (!SkillCdMap.Equals(other.SkillCdMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= SkillCdMap.GetHashCode();
       hash ^= SkillGroupCdMap.GetHashCode();
+      hash ^= SkillCdMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,8 +178,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += skillCdMap_.CalculateSize(_map_skillCdMap_codec);
       size += skillGroupCdMap_.CalculateSize(_map_skillGroupCdMap_codec);
+      size += skillCdMap_.CalculateSize(_map_skillCdMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -190,8 +192,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      skillCdMap_.Add(other.skillCdMap_);
       skillGroupCdMap_.Add(other.skillGroupCdMap_);
+      skillCdMap_.Add(other.skillCdMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -207,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 10: {
             skillGroupCdMap_.AddEntriesFrom(input, _map_skillGroupCdMap_codec);
             break;
           }
-          case 90: {
+          case 122: {
             skillCdMap_.AddEntriesFrom(input, _map_skillCdMap_codec);
             break;
           }
@@ -230,11 +232,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 10: {
             skillGroupCdMap_.AddEntriesFrom(ref input, _map_skillGroupCdMap_codec);
             break;
           }
-          case 90: {
+          case 122: {
             skillCdMap_.AddEntriesFrom(ref input, _map_skillCdMap_codec);
             break;
           }

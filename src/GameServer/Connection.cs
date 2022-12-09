@@ -38,6 +38,7 @@ namespace Weedwacker.GameServer
             CancelToken = new CancellationTokenSource();
             Start();
         }
+
         async void Start()
         {
             Logger.WriteLine($"New connection to {RemoteEndPoint} created with conversation id {Conversation.ConversationId}");
@@ -67,20 +68,32 @@ namespace Weedwacker.GameServer
             LastPingTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
 
+
+        #region DEBUG LOG
+
 #if DEBUG
         public static void LogPacket(string sendOrRecv, ushort opcode, byte[] payload)
         {
             //Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{Convert.ToHexString(payload)}");
-            var typ = AppDomain.CurrentDomain.GetAssemblies().
-           SingleOrDefault(assembly => assembly.GetName().Name == "Shared").GetTypes().First(t => t.Name == $"{Enum.GetName(typeof(OpCode), opcode)}"); //get the type using the packet name
-            var descriptor = (MessageDescriptor)typ.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
-            var packet = descriptor.Parser.ParseFrom(payload);
-            var formatter = Google.Protobuf.JsonFormatter.Default;
-            var asJson = formatter.Format(packet);
-            Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{asJson}");
-            if (GameServer.Configuration.Server.KeepLog)
+            try
             {
-                File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_Packet_{packet.GetType().Name}.json", JValue.Parse(asJson).ToString(Formatting.Indented));
+
+                var typ = AppDomain.CurrentDomain.GetAssemblies().
+                    SingleOrDefault(assembly => assembly.GetName().Name == "Shared").GetTypes().First(t => t.Name == $"{Enum.GetName(typeof(OpCode), opcode)}"); //get the type using the packet name
+                var descriptor = (MessageDescriptor)typ.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
+                var packet = descriptor.Parser.ParseFrom(payload);
+                var formatter = Google.Protobuf.JsonFormatter.Default;
+                var asJson = formatter.Format(packet);
+                Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{asJson}");
+                if (GameServer.Configuration.Server.KeepLog)
+                {
+                    File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_Packet_{packet.GetType().Name}.json", JValue.Parse(asJson).ToString(Formatting.Indented));
+                }
+            }
+            catch (Exception ex)
+            {
+                //unknown typ
+                Logger.DebugWriteWarningLine($"Unknown opcode: {opcode}");
             }
         }
 
@@ -112,6 +125,10 @@ namespace Weedwacker.GameServer
             }
         }
 #endif
+
+        #endregion
+
+
         async Task ReceiveLoop()
         {
             while (!CancelToken.IsCancellationRequested)

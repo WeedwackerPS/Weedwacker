@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerMonthlyDetailReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhUb3dlck1vbnRobHlEZXRhaWwucHJvdG8aF1Rvd2VyTW9udGhseUJyaWVm",
-            "LnByb3RvGh5Ub3dlck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8ieQoSVG93",
-            "ZXJNb250aGx5RGV0YWlsEjgKFW1vbnRobHlfY29tYmF0X3JlY29yZBgCIAEo",
-            "CzIZLlRvd2VyTW9udGhseUNvbWJhdFJlY29yZBIpCg1tb250aGx5X2JyaWVm",
-            "GAwgASgLMhIuVG93ZXJNb250aGx5QnJpZWZCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhUb3dlck1vbnRobHlEZXRhaWwucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aF1Rvd2VyTW9udGhseUJyaWVmLnByb3RvGh5Ub3dl",
+            "ck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8iuQEKElRvd2VyTW9udGhseURl",
+            "dGFpbBJYChVtb250aGx5X2NvbWJhdF9yZWNvcmQYDyABKAsyOS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRvd2VyTW9udGhseUNvbWJhdFJl",
+            "Y29yZBJJCg1tb250aGx5X2JyaWVmGAQgASgLMjIuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5Ub3dlck1vbnRobHlCcmllZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TowerMonthlyBriefReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "monthly_combat_record" field.</summary>
-    public const int MonthlyCombatRecordFieldNumber = 2;
+    public const int MonthlyCombatRecordFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord monthlyCombatRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "monthly_brief" field.</summary>
-    public const int MonthlyBriefFieldNumber = 12;
+    public const int MonthlyBriefFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief monthlyBrief_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,13 +154,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (monthlyCombatRecord_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(MonthlyCombatRecord);
-      }
       if (monthlyBrief_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteMessage(MonthlyBrief);
+      }
+      if (monthlyCombatRecord_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(MonthlyCombatRecord);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -171,13 +172,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (monthlyCombatRecord_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(MonthlyCombatRecord);
-      }
       if (monthlyBrief_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteMessage(MonthlyBrief);
+      }
+      if (monthlyCombatRecord_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(MonthlyCombatRecord);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,18 +235,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (monthlyCombatRecord_ == null) {
-              MonthlyCombatRecord = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord();
-            }
-            input.ReadMessage(MonthlyCombatRecord);
-            break;
-          }
-          case 98: {
+          case 34: {
             if (monthlyBrief_ == null) {
               MonthlyBrief = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief();
             }
             input.ReadMessage(MonthlyBrief);
+            break;
+          }
+          case 122: {
+            if (monthlyCombatRecord_ == null) {
+              MonthlyCombatRecord = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord();
+            }
+            input.ReadMessage(MonthlyCombatRecord);
             break;
           }
         }
@@ -263,18 +264,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (monthlyCombatRecord_ == null) {
-              MonthlyCombatRecord = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord();
-            }
-            input.ReadMessage(MonthlyCombatRecord);
-            break;
-          }
-          case 98: {
+          case 34: {
             if (monthlyBrief_ == null) {
               MonthlyBrief = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief();
             }
             input.ReadMessage(MonthlyBrief);
+            break;
+          }
+          case 122: {
+            if (monthlyCombatRecord_ == null) {
+              MonthlyCombatRecord = new global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord();
+            }
+            input.ReadMessage(MonthlyCombatRecord);
             break;
           }
         }

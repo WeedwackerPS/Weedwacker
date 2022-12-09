@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BalloonGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5CYWxsb29uR2FsbGVyeVNldHRsZUluZm8ucHJvdG8aF0dhbGxlcnlTdG9w",
-            "UmVhc29uLnByb3RvInMKGEJhbGxvb25HYWxsZXJ5U2V0dGxlSW5mbxINCgVz",
-            "Y29yZRgIIAEoDRIiCgZyZWFzb24YDiABKA4yEi5HYWxsZXJ5U3RvcFJlYXNv",
-            "bhIRCgloaXRfY291bnQYCiABKA0SEQoJb3duZXJfdWlkGAYgASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch5CYWxsb29uR2FsbGVyeVNldHRsZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aF0dhbGxlcnlTdG9wUmVhc29uLnByb3Rv",
+            "IpMBChhCYWxsb29uR2FsbGVyeVNldHRsZUluZm8SDQoFc2NvcmUYDCABKA0S",
+            "EQoJb3duZXJfdWlkGAIgASgNEkIKBnJlYXNvbhgHIAEoDjIyLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR2FsbGVyeVN0b3BSZWFzb24SEQoJ",
+            "aGl0X2NvdW50GA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo.Parser, new[]{ "Score", "Reason", "HitCount", "OwnerUid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo.Parser, new[]{ "Score", "OwnerUid", "Reason", "HitCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BalloonGallerySettleInfo(BalloonGallerySettleInfo other) : this() {
       score_ = other.score_;
+      ownerUid_ = other.ownerUid_;
       reason_ = other.reason_;
       hitCount_ = other.hitCount_;
-      ownerUid_ = other.ownerUid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 8;
+    public const int ScoreFieldNumber = 12;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,8 +99,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "owner_uid" field.</summary>
+    public const int OwnerUidFieldNumber = 2;
+    private uint ownerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OwnerUid {
+      get { return ownerUid_; }
+      set {
+        ownerUid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 14;
+    public const int ReasonFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +124,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hit_count" field.</summary>
-    public const int HitCountFieldNumber = 10;
+    public const int HitCountFieldNumber = 13;
     private uint hitCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,18 +132,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return hitCount_; }
       set {
         hitCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "owner_uid" field.</summary>
-    public const int OwnerUidFieldNumber = 6;
-    private uint ownerUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OwnerUid {
-      get { return ownerUid_; }
-      set {
-        ownerUid_ = value;
       }
     }
 
@@ -150,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Score != other.Score) return false;
+      if (OwnerUid != other.OwnerUid) return false;
       if (Reason != other.Reason) return false;
       if (HitCount != other.HitCount) return false;
-      if (OwnerUid != other.OwnerUid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Score != 0) hash ^= Score.GetHashCode();
+      if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
       if (HitCount != 0) hash ^= HitCount.GetHashCode();
-      if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,20 +184,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (OwnerUid != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(OwnerUid);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Reason);
+      }
       if (Score != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(Score);
       }
       if (HitCount != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(HitCount);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -209,20 +210,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OwnerUid != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(OwnerUid);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Reason);
+      }
       if (Score != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(Score);
       }
       if (HitCount != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(HitCount);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,14 +238,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
       }
+      if (OwnerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
+      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (HitCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitCount);
-      }
-      if (OwnerUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,14 +262,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Score != 0) {
         Score = other.Score;
       }
+      if (other.OwnerUid != 0) {
+        OwnerUid = other.OwnerUid;
+      }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         Reason = other.Reason;
       }
       if (other.HitCount != 0) {
         HitCount = other.HitCount;
-      }
-      if (other.OwnerUid != 0) {
-        OwnerUid = other.OwnerUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +286,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 16: {
             OwnerUid = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 56: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 96: {
             Score = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 104: {
             HitCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
         }
@@ -316,20 +317,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 16: {
             OwnerUid = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 56: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 96: {
             Score = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 104: {
             HitCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
         }

@@ -24,19 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityInvocationFixedNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBYmlsaXR5SW52b2NhdGlvbkZpeGVkTm90aWZ5LnByb3RvGhhBYmlsaXR5",
-            "SW52b2tlRW50cnkucHJvdG8ijgIKHEFiaWxpdHlJbnZvY2F0aW9uRml4ZWRO",
-            "b3RpZnkSJgoJaW52b2tlNnRoGA4gASgLMhMuQWJpbGl0eUludm9rZUVudHJ5",
-            "EiYKCWludm9rZTV0aBgIIAEoCzITLkFiaWxpdHlJbnZva2VFbnRyeRImCglp",
-            "bnZva2U0dGgYASABKAsyEy5BYmlsaXR5SW52b2tlRW50cnkSJgoJaW52b2tl",
-            "Mm5kGAUgASgLMhMuQWJpbGl0eUludm9rZUVudHJ5EiYKCWludm9rZTFzdBgK",
-            "IAEoCzITLkFiaWxpdHlJbnZva2VFbnRyeRImCglpbnZva2UzcmQYDCABKAsy",
-            "Ey5BYmlsaXR5SW52b2tlRW50cnlCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJBYmlsaXR5SW52b2NhdGlvbkZpeGVkTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhhBYmlsaXR5SW52b2tlRW50cnku",
+            "cHJvdG8iigQKHEFiaWxpdHlJbnZvY2F0aW9uRml4ZWROb3RpZnkSUAoTVW5r",
+            "MzMwMF9MRElBT01GSUJQTBgHIAEoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQWJpbGl0eUludm9rZUVudHJ5ElAKE1VuazMzMDBfT05H",
+            "Tk9ITElJQk8YAyABKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkFiaWxpdHlJbnZva2VFbnRyeRJQChNVbmszMzAwX0FIREZISEZIRUZN",
+            "GAogASgLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BYmls",
+            "aXR5SW52b2tlRW50cnkSUAoTVW5rMzMwMF9HQUZGQkZGS0RJQxgBIAEoCzIz",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eUludm9r",
+            "ZUVudHJ5ElAKE1VuazMzMDBfRU1HS0tIS0xJRUcYBCABKAsyMy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlJbnZva2VFbnRyeRJQ",
+            "ChNVbmszMzAwX0tGTUhMTEhFQ0NKGAkgASgLMjMuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5BYmlsaXR5SW52b2tlRW50cnliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvocationFixedNotify), global::Weedwacker.Shared.Network.Proto.AbilityInvocationFixedNotify.Parser, new[]{ "Invoke6Th", "Invoke5Th", "Invoke4Th", "Invoke2Nd", "Invoke1St", "Invoke3Rd" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvocationFixedNotify), global::Weedwacker.Shared.Network.Proto.AbilityInvocationFixedNotify.Parser, new[]{ "Unk3300LDIAOMFIBPL", "Unk3300ONGNOHLIIBO", "Unk3300AHDFHHFHEFM", "Unk3300GAFFBFFKDIC", "Unk3300EMGKKHKLIEG", "Unk3300KFMHLLHECCJ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,10 +49,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1172
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1179;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AbilityInvocationFixedNotify : pb::IMessage<AbilityInvocationFixedNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,12 +92,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityInvocationFixedNotify(AbilityInvocationFixedNotify other) : this() {
-      invoke6Th_ = other.invoke6Th_ != null ? other.invoke6Th_.Clone() : null;
-      invoke5Th_ = other.invoke5Th_ != null ? other.invoke5Th_.Clone() : null;
-      invoke4Th_ = other.invoke4Th_ != null ? other.invoke4Th_.Clone() : null;
-      invoke2Nd_ = other.invoke2Nd_ != null ? other.invoke2Nd_.Clone() : null;
-      invoke1St_ = other.invoke1St_ != null ? other.invoke1St_.Clone() : null;
-      invoke3Rd_ = other.invoke3Rd_ != null ? other.invoke3Rd_.Clone() : null;
+      unk3300LDIAOMFIBPL_ = other.unk3300LDIAOMFIBPL_ != null ? other.unk3300LDIAOMFIBPL_.Clone() : null;
+      unk3300ONGNOHLIIBO_ = other.unk3300ONGNOHLIIBO_ != null ? other.unk3300ONGNOHLIIBO_.Clone() : null;
+      unk3300AHDFHHFHEFM_ = other.unk3300AHDFHHFHEFM_ != null ? other.unk3300AHDFHHFHEFM_.Clone() : null;
+      unk3300GAFFBFFKDIC_ = other.unk3300GAFFBFFKDIC_ != null ? other.unk3300GAFFBFFKDIC_.Clone() : null;
+      unk3300EMGKKHKLIEG_ = other.unk3300EMGKKHKLIEG_ != null ? other.unk3300EMGKKHKLIEG_.Clone() : null;
+      unk3300KFMHLLHECCJ_ = other.unk3300KFMHLLHECCJ_ != null ? other.unk3300KFMHLLHECCJ_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,75 +107,75 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityInvocationFixedNotify(this);
     }
 
-    /// <summary>Field number for the "invoke6th" field.</summary>
-    public const int Invoke6ThFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke6Th_;
+    /// <summary>Field number for the "Unk3300_LDIAOMFIBPL" field.</summary>
+    public const int Unk3300LDIAOMFIBPLFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300LDIAOMFIBPL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke6Th {
-      get { return invoke6Th_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300LDIAOMFIBPL {
+      get { return unk3300LDIAOMFIBPL_; }
       set {
-        invoke6Th_ = value;
+        unk3300LDIAOMFIBPL_ = value;
       }
     }
 
-    /// <summary>Field number for the "invoke5th" field.</summary>
-    public const int Invoke5ThFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke5Th_;
+    /// <summary>Field number for the "Unk3300_ONGNOHLIIBO" field.</summary>
+    public const int Unk3300ONGNOHLIIBOFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300ONGNOHLIIBO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke5Th {
-      get { return invoke5Th_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300ONGNOHLIIBO {
+      get { return unk3300ONGNOHLIIBO_; }
       set {
-        invoke5Th_ = value;
+        unk3300ONGNOHLIIBO_ = value;
       }
     }
 
-    /// <summary>Field number for the "invoke4th" field.</summary>
-    public const int Invoke4ThFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke4Th_;
+    /// <summary>Field number for the "Unk3300_AHDFHHFHEFM" field.</summary>
+    public const int Unk3300AHDFHHFHEFMFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300AHDFHHFHEFM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke4Th {
-      get { return invoke4Th_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300AHDFHHFHEFM {
+      get { return unk3300AHDFHHFHEFM_; }
       set {
-        invoke4Th_ = value;
+        unk3300AHDFHHFHEFM_ = value;
       }
     }
 
-    /// <summary>Field number for the "invoke2nd" field.</summary>
-    public const int Invoke2NdFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke2Nd_;
+    /// <summary>Field number for the "Unk3300_GAFFBFFKDIC" field.</summary>
+    public const int Unk3300GAFFBFFKDICFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300GAFFBFFKDIC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke2Nd {
-      get { return invoke2Nd_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300GAFFBFFKDIC {
+      get { return unk3300GAFFBFFKDIC_; }
       set {
-        invoke2Nd_ = value;
+        unk3300GAFFBFFKDIC_ = value;
       }
     }
 
-    /// <summary>Field number for the "invoke1st" field.</summary>
-    public const int Invoke1StFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke1St_;
+    /// <summary>Field number for the "Unk3300_EMGKKHKLIEG" field.</summary>
+    public const int Unk3300EMGKKHKLIEGFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300EMGKKHKLIEG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke1St {
-      get { return invoke1St_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300EMGKKHKLIEG {
+      get { return unk3300EMGKKHKLIEG_; }
       set {
-        invoke1St_ = value;
+        unk3300EMGKKHKLIEG_ = value;
       }
     }
 
-    /// <summary>Field number for the "invoke3rd" field.</summary>
-    public const int Invoke3RdFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke3Rd_;
+    /// <summary>Field number for the "Unk3300_KFMHLLHECCJ" field.</summary>
+    public const int Unk3300KFMHLLHECCJFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry unk3300KFMHLLHECCJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Invoke3Rd {
-      get { return invoke3Rd_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry Unk3300KFMHLLHECCJ {
+      get { return unk3300KFMHLLHECCJ_; }
       set {
-        invoke3Rd_ = value;
+        unk3300KFMHLLHECCJ_ = value;
       }
     }
 
@@ -185,12 +194,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Invoke6Th, other.Invoke6Th)) return false;
-      if (!object.Equals(Invoke5Th, other.Invoke5Th)) return false;
-      if (!object.Equals(Invoke4Th, other.Invoke4Th)) return false;
-      if (!object.Equals(Invoke2Nd, other.Invoke2Nd)) return false;
-      if (!object.Equals(Invoke1St, other.Invoke1St)) return false;
-      if (!object.Equals(Invoke3Rd, other.Invoke3Rd)) return false;
+      if (!object.Equals(Unk3300LDIAOMFIBPL, other.Unk3300LDIAOMFIBPL)) return false;
+      if (!object.Equals(Unk3300ONGNOHLIIBO, other.Unk3300ONGNOHLIIBO)) return false;
+      if (!object.Equals(Unk3300AHDFHHFHEFM, other.Unk3300AHDFHHFHEFM)) return false;
+      if (!object.Equals(Unk3300GAFFBFFKDIC, other.Unk3300GAFFBFFKDIC)) return false;
+      if (!object.Equals(Unk3300EMGKKHKLIEG, other.Unk3300EMGKKHKLIEG)) return false;
+      if (!object.Equals(Unk3300KFMHLLHECCJ, other.Unk3300KFMHLLHECCJ)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -198,12 +207,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (invoke6Th_ != null) hash ^= Invoke6Th.GetHashCode();
-      if (invoke5Th_ != null) hash ^= Invoke5Th.GetHashCode();
-      if (invoke4Th_ != null) hash ^= Invoke4Th.GetHashCode();
-      if (invoke2Nd_ != null) hash ^= Invoke2Nd.GetHashCode();
-      if (invoke1St_ != null) hash ^= Invoke1St.GetHashCode();
-      if (invoke3Rd_ != null) hash ^= Invoke3Rd.GetHashCode();
+      if (unk3300LDIAOMFIBPL_ != null) hash ^= Unk3300LDIAOMFIBPL.GetHashCode();
+      if (unk3300ONGNOHLIIBO_ != null) hash ^= Unk3300ONGNOHLIIBO.GetHashCode();
+      if (unk3300AHDFHHFHEFM_ != null) hash ^= Unk3300AHDFHHFHEFM.GetHashCode();
+      if (unk3300GAFFBFFKDIC_ != null) hash ^= Unk3300GAFFBFFKDIC.GetHashCode();
+      if (unk3300EMGKKHKLIEG_ != null) hash ^= Unk3300EMGKKHKLIEG.GetHashCode();
+      if (unk3300KFMHLLHECCJ_ != null) hash ^= Unk3300KFMHLLHECCJ.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -222,29 +231,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (invoke4Th_ != null) {
+      if (unk3300GAFFBFFKDIC_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Invoke4Th);
+        output.WriteMessage(Unk3300GAFFBFFKDIC);
       }
-      if (invoke2Nd_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(Invoke2Nd);
+      if (unk3300ONGNOHLIIBO_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Unk3300ONGNOHLIIBO);
       }
-      if (invoke5Th_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Invoke5Th);
+      if (unk3300EMGKKHKLIEG_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EMGKKHKLIEG);
       }
-      if (invoke1St_ != null) {
+      if (unk3300LDIAOMFIBPL_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300LDIAOMFIBPL);
+      }
+      if (unk3300KFMHLLHECCJ_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300KFMHLLHECCJ);
+      }
+      if (unk3300AHDFHHFHEFM_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(Invoke1St);
-      }
-      if (invoke3Rd_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Invoke3Rd);
-      }
-      if (invoke6Th_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(Invoke6Th);
+        output.WriteMessage(Unk3300AHDFHHFHEFM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -256,29 +265,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (invoke4Th_ != null) {
+      if (unk3300GAFFBFFKDIC_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Invoke4Th);
+        output.WriteMessage(Unk3300GAFFBFFKDIC);
       }
-      if (invoke2Nd_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(Invoke2Nd);
+      if (unk3300ONGNOHLIIBO_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Unk3300ONGNOHLIIBO);
       }
-      if (invoke5Th_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Invoke5Th);
+      if (unk3300EMGKKHKLIEG_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EMGKKHKLIEG);
       }
-      if (invoke1St_ != null) {
+      if (unk3300LDIAOMFIBPL_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300LDIAOMFIBPL);
+      }
+      if (unk3300KFMHLLHECCJ_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300KFMHLLHECCJ);
+      }
+      if (unk3300AHDFHHFHEFM_ != null) {
         output.WriteRawTag(82);
-        output.WriteMessage(Invoke1St);
-      }
-      if (invoke3Rd_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Invoke3Rd);
-      }
-      if (invoke6Th_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(Invoke6Th);
+        output.WriteMessage(Unk3300AHDFHHFHEFM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -290,23 +299,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (invoke6Th_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke6Th);
+      if (unk3300LDIAOMFIBPL_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300LDIAOMFIBPL);
       }
-      if (invoke5Th_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke5Th);
+      if (unk3300ONGNOHLIIBO_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300ONGNOHLIIBO);
       }
-      if (invoke4Th_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke4Th);
+      if (unk3300AHDFHHFHEFM_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300AHDFHHFHEFM);
       }
-      if (invoke2Nd_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke2Nd);
+      if (unk3300GAFFBFFKDIC_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300GAFFBFFKDIC);
       }
-      if (invoke1St_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke1St);
+      if (unk3300EMGKKHKLIEG_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EMGKKHKLIEG);
       }
-      if (invoke3Rd_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke3Rd);
+      if (unk3300KFMHLLHECCJ_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KFMHLLHECCJ);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -320,41 +329,41 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.invoke6Th_ != null) {
-        if (invoke6Th_ == null) {
-          Invoke6Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300LDIAOMFIBPL_ != null) {
+        if (unk3300LDIAOMFIBPL_ == null) {
+          Unk3300LDIAOMFIBPL = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke6Th.MergeFrom(other.Invoke6Th);
+        Unk3300LDIAOMFIBPL.MergeFrom(other.Unk3300LDIAOMFIBPL);
       }
-      if (other.invoke5Th_ != null) {
-        if (invoke5Th_ == null) {
-          Invoke5Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300ONGNOHLIIBO_ != null) {
+        if (unk3300ONGNOHLIIBO_ == null) {
+          Unk3300ONGNOHLIIBO = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke5Th.MergeFrom(other.Invoke5Th);
+        Unk3300ONGNOHLIIBO.MergeFrom(other.Unk3300ONGNOHLIIBO);
       }
-      if (other.invoke4Th_ != null) {
-        if (invoke4Th_ == null) {
-          Invoke4Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300AHDFHHFHEFM_ != null) {
+        if (unk3300AHDFHHFHEFM_ == null) {
+          Unk3300AHDFHHFHEFM = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke4Th.MergeFrom(other.Invoke4Th);
+        Unk3300AHDFHHFHEFM.MergeFrom(other.Unk3300AHDFHHFHEFM);
       }
-      if (other.invoke2Nd_ != null) {
-        if (invoke2Nd_ == null) {
-          Invoke2Nd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300GAFFBFFKDIC_ != null) {
+        if (unk3300GAFFBFFKDIC_ == null) {
+          Unk3300GAFFBFFKDIC = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke2Nd.MergeFrom(other.Invoke2Nd);
+        Unk3300GAFFBFFKDIC.MergeFrom(other.Unk3300GAFFBFFKDIC);
       }
-      if (other.invoke1St_ != null) {
-        if (invoke1St_ == null) {
-          Invoke1St = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300EMGKKHKLIEG_ != null) {
+        if (unk3300EMGKKHKLIEG_ == null) {
+          Unk3300EMGKKHKLIEG = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke1St.MergeFrom(other.Invoke1St);
+        Unk3300EMGKKHKLIEG.MergeFrom(other.Unk3300EMGKKHKLIEG);
       }
-      if (other.invoke3Rd_ != null) {
-        if (invoke3Rd_ == null) {
-          Invoke3Rd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+      if (other.unk3300KFMHLLHECCJ_ != null) {
+        if (unk3300KFMHLLHECCJ_ == null) {
+          Unk3300KFMHLLHECCJ = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
         }
-        Invoke3Rd.MergeFrom(other.Invoke3Rd);
+        Unk3300KFMHLLHECCJ.MergeFrom(other.Unk3300KFMHLLHECCJ);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -372,45 +381,45 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (invoke4Th_ == null) {
-              Invoke4Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            if (unk3300GAFFBFFKDIC_ == null) {
+              Unk3300GAFFBFFKDIC = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke4Th);
+            input.ReadMessage(Unk3300GAFFBFFKDIC);
             break;
           }
-          case 42: {
-            if (invoke2Nd_ == null) {
-              Invoke2Nd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+          case 26: {
+            if (unk3300ONGNOHLIIBO_ == null) {
+              Unk3300ONGNOHLIIBO = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke2Nd);
+            input.ReadMessage(Unk3300ONGNOHLIIBO);
             break;
           }
-          case 66: {
-            if (invoke5Th_ == null) {
-              Invoke5Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+          case 34: {
+            if (unk3300EMGKKHKLIEG_ == null) {
+              Unk3300EMGKKHKLIEG = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke5Th);
+            input.ReadMessage(Unk3300EMGKKHKLIEG);
+            break;
+          }
+          case 58: {
+            if (unk3300LDIAOMFIBPL_ == null) {
+              Unk3300LDIAOMFIBPL = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            }
+            input.ReadMessage(Unk3300LDIAOMFIBPL);
+            break;
+          }
+          case 74: {
+            if (unk3300KFMHLLHECCJ_ == null) {
+              Unk3300KFMHLLHECCJ = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            }
+            input.ReadMessage(Unk3300KFMHLLHECCJ);
             break;
           }
           case 82: {
-            if (invoke1St_ == null) {
-              Invoke1St = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            if (unk3300AHDFHHFHEFM_ == null) {
+              Unk3300AHDFHHFHEFM = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke1St);
-            break;
-          }
-          case 98: {
-            if (invoke3Rd_ == null) {
-              Invoke3Rd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
-            }
-            input.ReadMessage(Invoke3Rd);
-            break;
-          }
-          case 114: {
-            if (invoke6Th_ == null) {
-              Invoke6Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
-            }
-            input.ReadMessage(Invoke6Th);
+            input.ReadMessage(Unk3300AHDFHHFHEFM);
             break;
           }
         }
@@ -429,45 +438,45 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (invoke4Th_ == null) {
-              Invoke4Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            if (unk3300GAFFBFFKDIC_ == null) {
+              Unk3300GAFFBFFKDIC = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke4Th);
+            input.ReadMessage(Unk3300GAFFBFFKDIC);
             break;
           }
-          case 42: {
-            if (invoke2Nd_ == null) {
-              Invoke2Nd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+          case 26: {
+            if (unk3300ONGNOHLIIBO_ == null) {
+              Unk3300ONGNOHLIIBO = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke2Nd);
+            input.ReadMessage(Unk3300ONGNOHLIIBO);
             break;
           }
-          case 66: {
-            if (invoke5Th_ == null) {
-              Invoke5Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+          case 34: {
+            if (unk3300EMGKKHKLIEG_ == null) {
+              Unk3300EMGKKHKLIEG = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke5Th);
+            input.ReadMessage(Unk3300EMGKKHKLIEG);
+            break;
+          }
+          case 58: {
+            if (unk3300LDIAOMFIBPL_ == null) {
+              Unk3300LDIAOMFIBPL = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            }
+            input.ReadMessage(Unk3300LDIAOMFIBPL);
+            break;
+          }
+          case 74: {
+            if (unk3300KFMHLLHECCJ_ == null) {
+              Unk3300KFMHLLHECCJ = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            }
+            input.ReadMessage(Unk3300KFMHLLHECCJ);
             break;
           }
           case 82: {
-            if (invoke1St_ == null) {
-              Invoke1St = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
+            if (unk3300AHDFHHFHEFM_ == null) {
+              Unk3300AHDFHHFHEFM = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
-            input.ReadMessage(Invoke1St);
-            break;
-          }
-          case 98: {
-            if (invoke3Rd_ == null) {
-              Invoke3Rd = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
-            }
-            input.ReadMessage(Invoke3Rd);
-            break;
-          }
-          case 114: {
-            if (invoke6Th_ == null) {
-              Invoke6Th = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
-            }
-            input.ReadMessage(Invoke6Th);
+            input.ReadMessage(Unk3300AHDFHHFHEFM);
             break;
           }
         }

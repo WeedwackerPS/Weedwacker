@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvageChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTYWx2YWdlQ2hhbGxlbmdlSW5mby5wcm90bxogU2FsdmFnZUJ1bmRsZUNo",
-            "YWxsZW5nZUluZm8ucHJvdG8aH1NhbHZhZ2VTY29yZUNoYWxsZW5nZUluZm8u",
-            "cHJvdG8i4gEKFFNhbHZhZ2VDaGFsbGVuZ2VJbmZvEhYKDmNoYWxsZW5nZV90",
-            "eXBlGAUgASgNEhEKCWlzX3VubG9jaxgMIAEoCBIyCgtidW5kbGVfaW5mbxgL",
-            "IAEoCzIbLlNhbHZhZ2VCdW5kbGVDaGFsbGVuZ2VJbmZvSAASOgoUc2NvcmVf",
-            "Y2hhbGxlbmdlX2luZm8YDSABKAsyGi5TYWx2YWdlU2NvcmVDaGFsbGVuZ2VJ",
-            "bmZvSAASGwoRYm9zc19jaGFsbGVuZ2VfaWQYAiABKA1IAEISChBjaGFsbGVu",
-            "Z2VfZGV0YWlsQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChpTYWx2YWdlQ2hhbGxlbmdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxogU2FsdmFnZUJ1bmRsZUNoYWxsZW5nZUluZm8u",
+            "cHJvdG8aH1NhbHZhZ2VTY29yZUNoYWxsZW5nZUluZm8ucHJvdG8iogIKFFNh",
+            "bHZhZ2VDaGFsbGVuZ2VJbmZvEhYKDmNoYWxsZW5nZV90eXBlGAsgASgNEhEK",
+            "CWlzX3VubG9jaxgOIAEoCBJSCgtidW5kbGVfaW5mbxgCIAEoCzI7LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2FsdmFnZUJ1bmRsZUNoYWxs",
+            "ZW5nZUluZm9IABJaChRzY29yZV9jaGFsbGVuZ2VfaW5mbxgJIAEoCzI6Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2FsdmFnZVNjb3JlQ2hh",
+            "bGxlbmdlSW5mb0gAEhsKEWJvc3NfY2hhbGxlbmdlX2lkGAwgASgNSABCEgoQ",
+            "Y2hhbGxlbmdlX2RldGFpbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +102,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_type" field.</summary>
-    public const int ChallengeTypeFieldNumber = 5;
+    public const int ChallengeTypeFieldNumber = 11;
     private uint challengeType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +114,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_unlock" field.</summary>
-    public const int IsUnlockFieldNumber = 12;
+    public const int IsUnlockFieldNumber = 14;
     private bool isUnlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bundle_info" field.</summary>
-    public const int BundleInfoFieldNumber = 11;
+    public const int BundleInfoFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfo BundleInfo {
@@ -137,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score_challenge_info" field.</summary>
-    public const int ScoreChallengeInfoFieldNumber = 13;
+    public const int ScoreChallengeInfoFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo ScoreChallengeInfo {
@@ -149,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "boss_challenge_id" field.</summary>
-    public const int BossChallengeIdFieldNumber = 2;
+    public const int BossChallengeIdFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint BossChallengeId {
@@ -164,9 +165,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "challenge_detail" oneof.</summary>
     public enum ChallengeDetailOneofCase {
       None = 0,
-      BundleInfo = 11,
-      ScoreChallengeInfo = 13,
-      BossChallengeId = 2,
+      BundleInfo = 2,
+      ScoreChallengeInfo = 9,
+      BossChallengeId = 12,
     }
     private ChallengeDetailOneofCase challengeDetailCase_ = ChallengeDetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,25 +235,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(BossChallengeId);
-      }
-      if (ChallengeType != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ChallengeType);
-      }
       if (challengeDetailCase_ == ChallengeDetailOneofCase.BundleInfo) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(18);
         output.WriteMessage(BundleInfo);
       }
-      if (IsUnlock != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUnlock);
-      }
       if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(ScoreChallengeInfo);
+      }
+      if (ChallengeType != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ChallengeType);
+      }
+      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BossChallengeId);
+      }
+      if (IsUnlock != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -264,25 +265,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(BossChallengeId);
-      }
-      if (ChallengeType != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ChallengeType);
-      }
       if (challengeDetailCase_ == ChallengeDetailOneofCase.BundleInfo) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(18);
         output.WriteMessage(BundleInfo);
       }
-      if (IsUnlock != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUnlock);
-      }
       if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(ScoreChallengeInfo);
+      }
+      if (ChallengeType != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ChallengeType);
+      }
+      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BossChallengeId);
+      }
+      if (IsUnlock != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -360,15 +361,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            BossChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeType = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfo();
             if (challengeDetailCase_ == ChallengeDetailOneofCase.BundleInfo) {
               subBuilder.MergeFrom(BundleInfo);
@@ -377,17 +370,25 @@ namespace Weedwacker.Shared.Network.Proto {
             BundleInfo = subBuilder;
             break;
           }
-          case 96: {
-            IsUnlock = input.ReadBool();
-            break;
-          }
-          case 106: {
+          case 74: {
             global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo();
             if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) {
               subBuilder.MergeFrom(ScoreChallengeInfo);
             }
             input.ReadMessage(subBuilder);
             ScoreChallengeInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            ChallengeType = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BossChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsUnlock = input.ReadBool();
             break;
           }
         }
@@ -405,15 +406,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            BossChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeType = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalvageBundleChallengeInfo();
             if (challengeDetailCase_ == ChallengeDetailOneofCase.BundleInfo) {
               subBuilder.MergeFrom(BundleInfo);
@@ -422,17 +415,25 @@ namespace Weedwacker.Shared.Network.Proto {
             BundleInfo = subBuilder;
             break;
           }
-          case 96: {
-            IsUnlock = input.ReadBool();
-            break;
-          }
-          case 106: {
+          case 74: {
             global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalvageScoreChallengeInfo();
             if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) {
               subBuilder.MergeFrom(ScoreChallengeInfo);
             }
             input.ReadMessage(subBuilder);
             ScoreChallengeInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            ChallengeType = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BossChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsUnlock = input.ReadBool();
             break;
           }
         }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNDcnlzdGFsTGlua0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoaQ3J5c3Rh",
-            "bExpbmtMZXZlbEluZm8ucHJvdG8iZgodQ3J5c3RhbExpbmtBY3Rpdml0eURl",
-            "dGFpbEluZm8SLgoPbGV2ZWxfaW5mb19saXN0GAMgAygLMhUuQ3J5c3RhbExp",
-            "bmtMZXZlbEluZm8SFQoNZGlmZmljdWx0eV9pZBgHIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNDcnlzdGFsTGlua0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoaQ3J5c3RhbExpbmtMZXZlbElu",
+            "Zm8ucHJvdG8ihgEKHUNyeXN0YWxMaW5rQWN0aXZpdHlEZXRhaWxJbmZvEk4K",
+            "D2xldmVsX2luZm9fbGlzdBgFIAMoCzI1LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQ3J5c3RhbExpbmtMZXZlbEluZm8SFQoNZGlmZmljdWx0",
+            "eV9pZBgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_info_list" field.</summary>
-    public const int LevelInfoListFieldNumber = 3;
+    public const int LevelInfoListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo> _repeated_levelInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo> levelInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 7;
+    public const int DifficultyIdFieldNumber = 12;
     private uint difficultyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,7 +154,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       levelInfoList_.WriteTo(output, _repeated_levelInfoList_codec);
       if (DifficultyId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
@@ -168,7 +169,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       levelInfoList_.WriteTo(ref output, _repeated_levelInfoList_codec);
       if (DifficultyId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
@@ -216,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 42: {
             levelInfoList_.AddEntriesFrom(input, _repeated_levelInfoList_codec);
             break;
           }
-          case 56: {
+          case 96: {
             DifficultyId = input.ReadUInt32();
             break;
           }
@@ -239,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 42: {
             levelInfoList_.AddEntriesFrom(ref input, _repeated_levelInfoList_codec);
             break;
           }
-          case 56: {
+          case 96: {
             DifficultyId = input.ReadUInt32();
             break;
           }

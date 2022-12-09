@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneEntitiesMoveCombineNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRTY2VuZUVudGl0aWVzTW92ZUNvbWJpbmVOb3RpZnkucHJvdG8aFEVudGl0",
-            "eU1vdmVJbmZvLnByb3RvIlAKHlNjZW5lRW50aXRpZXNNb3ZlQ29tYmluZU5v",
-            "dGlmeRIuChVlbnRpdHlfbW92ZV9pbmZvX2xpc3QYCCADKAsyDy5FbnRpdHlN",
-            "b3ZlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiRTY2VuZUVudGl0aWVzTW92ZUNvbWJpbmVOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aFEVudGl0eU1vdmVJbmZvLnBy",
+            "b3RvInAKHlNjZW5lRW50aXRpZXNNb3ZlQ29tYmluZU5vdGlmeRJOChVlbnRp",
+            "dHlfbW92ZV9pbmZvX2xpc3QYDiADKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkVudGl0eU1vdmVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EntityMoveInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,12 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3387
-  /// EnetChannelId: 1
-  /// EnetIsReliable: false
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3452;
+  ///   ENET_CHANNEL_ID = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneEntitiesMoveCombineNotify : pb::IMessage<SceneEntitiesMoveCombineNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_move_info_list" field.</summary>
-    public const int EntityMoveInfoListFieldNumber = 8;
+    public const int EntityMoveInfoListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityMoveInfo> _repeated_entityMoveInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.EntityMoveInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.EntityMoveInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityMoveInfo> entityMoveInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityMoveInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 114: {
             entityMoveInfoList_.AddEntriesFrom(input, _repeated_entityMoveInfoList_codec);
             break;
           }
@@ -211,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 114: {
             entityMoveInfoList_.AddEntriesFrom(ref input, _repeated_entityMoveInfoList_codec);
             break;
           }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AsterMidCampInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBc3Rlck1pZENhbXBJbmZvTm90aWZ5LnByb3RvGhZBc3Rlck1pZENhbXBJ",
-            "bmZvLnByb3RvIj4KFkFzdGVyTWlkQ2FtcEluZm9Ob3RpZnkSJAoJY2FtcF9s",
-            "aXN0GAUgAygLMhEuQXN0ZXJNaWRDYW1wSW5mb0IiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxBc3Rlck1pZENhbXBJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZBc3Rlck1pZENhbXBJbmZvLnByb3RvIl4K",
+            "FkFzdGVyTWlkQ2FtcEluZm9Ob3RpZnkSRAoJY2FtcF9saXN0GAsgAygLMjEu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Bc3Rlck1pZENhbXBJ",
+            "bmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AsterMidCampInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2133
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2195;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AsterMidCampInfoNotify : pb::IMessage<AsterMidCampInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "camp_list" field.</summary>
-    public const int CampListFieldNumber = 5;
+    public const int CampListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> _repeated_campList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> campList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 90: {
             campList_.AddEntriesFrom(input, _repeated_campList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 90: {
             campList_.AddEntriesFrom(ref input, _repeated_campList_codec);
             break;
           }

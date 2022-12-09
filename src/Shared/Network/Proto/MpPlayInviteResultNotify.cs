@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MpPlayInviteResultNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5NcFBsYXlJbnZpdGVSZXN1bHROb3RpZnkucHJvdG8iQQoYTXBQbGF5SW52",
-            "aXRlUmVzdWx0Tm90aWZ5EhIKCm1wX3BsYXlfaWQYCyABKA0SEQoJYWxsX2Fy",
-            "Z2VlGAogASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Ch5NcFBsYXlJbnZpdGVSZXN1bHROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iQQoYTXBQbGF5SW52aXRlUmVzdWx0Tm90",
+            "aWZ5EhEKCWFsbF9hZ3JlZRgOIAEoCBISCgptcF9wbGF5X2lkGAIgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayInviteResultNotify), global::Weedwacker.Shared.Network.Proto.MpPlayInviteResultNotify.Parser, new[]{ "MpPlayId", "AllArgee" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayInviteResultNotify), global::Weedwacker.Shared.Network.Proto.MpPlayInviteResultNotify.Parser, new[]{ "AllAgree", "MpPlayId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1815
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1839;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MpPlayInviteResultNotify : pb::IMessage<MpPlayInviteResultNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MpPlayInviteResultNotify(MpPlayInviteResultNotify other) : this() {
+      allAgree_ = other.allAgree_;
       mpPlayId_ = other.mpPlayId_;
-      allArgee_ = other.allArgee_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +92,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MpPlayInviteResultNotify(this);
     }
 
+    /// <summary>Field number for the "all_agree" field.</summary>
+    public const int AllAgreeFieldNumber = 14;
+    private bool allAgree_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool AllAgree {
+      get { return allAgree_; }
+      set {
+        allAgree_ = value;
+      }
+    }
+
     /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 11;
+    public const int MpPlayIdFieldNumber = 2;
     private uint mpPlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,18 +113,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return mpPlayId_; }
       set {
         mpPlayId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "all_argee" field.</summary>
-    public const int AllArgeeFieldNumber = 10;
-    private bool allArgee_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool AllArgee {
-      get { return allArgee_; }
-      set {
-        allArgee_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (AllAgree != other.AllAgree) return false;
       if (MpPlayId != other.MpPlayId) return false;
-      if (AllArgee != other.AllArgee) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (AllAgree != false) hash ^= AllAgree.GetHashCode();
       if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
-      if (AllArgee != false) hash ^= AllArgee.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AllArgee != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(AllArgee);
-      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(MpPlayId);
+      }
+      if (AllAgree != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(AllAgree);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AllArgee != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(AllArgee);
-      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(MpPlayId);
+      }
+      if (AllAgree != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(AllAgree);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (AllAgree != false) {
+        size += 1 + 1;
+      }
       if (MpPlayId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
-      }
-      if (AllArgee != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.AllAgree != false) {
+        AllAgree = other.AllAgree;
+      }
       if (other.MpPlayId != 0) {
         MpPlayId = other.MpPlayId;
-      }
-      if (other.AllArgee != false) {
-        AllArgee = other.AllArgee;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            AllArgee = input.ReadBool();
+          case 16: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            MpPlayId = input.ReadUInt32();
+          case 112: {
+            AllAgree = input.ReadBool();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            AllArgee = input.ReadBool();
+          case 16: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            MpPlayId = input.ReadUInt32();
+          case 112: {
+            AllAgree = input.ReadBool();
             break;
           }
         }

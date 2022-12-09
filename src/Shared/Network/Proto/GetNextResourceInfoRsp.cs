@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetNextResourceInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXROZXh0UmVzb3VyY2VJbmZvUnNwLnByb3RvGhZSZXNWZXJzaW9uQ29u",
-            "ZmlnLnByb3RvIngKFkdldE5leHRSZXNvdXJjZUluZm9Sc3ASGQoRbmV4dF9y",
-            "ZXNvdXJjZV91cmwYDiABKAkSMgoXbmV4dF9yZXNfdmVyc2lvbl9jb25maWcY",
-            "AiABKAsyES5SZXNWZXJzaW9uQ29uZmlnEg8KB3JldGNvZGUYDCABKAVCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxHZXROZXh0UmVzb3VyY2VJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZSZXNWZXJzaW9uQ29uZmlnLnByb3RvIpgB",
+            "ChZHZXROZXh0UmVzb3VyY2VJbmZvUnNwElIKF25leHRfcmVzX3ZlcnNpb25f",
+            "Y29uZmlnGAYgASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5SZXNWZXJzaW9uQ29uZmlnEg8KB3JldGNvZGUYCCABKAUSGQoRbmV4dF9y",
+            "ZXNvdXJjZV91cmwYDyABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ResVersionConfigReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetNextResourceInfoRsp), global::Weedwacker.Shared.Network.Proto.GetNextResourceInfoRsp.Parser, new[]{ "NextResourceUrl", "NextResVersionConfig", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetNextResourceInfoRsp), global::Weedwacker.Shared.Network.Proto.GetNextResourceInfoRsp.Parser, new[]{ "NextResVersionConfig", "Retcode", "NextResourceUrl" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 120
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 102;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetNextResourceInfoRsp : pb::IMessage<GetNextResourceInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetNextResourceInfoRsp(GetNextResourceInfoRsp other) : this() {
-      nextResourceUrl_ = other.nextResourceUrl_;
       nextResVersionConfig_ = other.nextResVersionConfig_ != null ? other.nextResVersionConfig_.Clone() : null;
       retcode_ = other.retcode_;
+      nextResourceUrl_ = other.nextResourceUrl_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetNextResourceInfoRsp(this);
     }
 
-    /// <summary>Field number for the "next_resource_url" field.</summary>
-    public const int NextResourceUrlFieldNumber = 14;
-    private string nextResourceUrl_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string NextResourceUrl {
-      get { return nextResourceUrl_; }
-      set {
-        nextResourceUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "next_res_version_config" field.</summary>
-    public const int NextResVersionConfigFieldNumber = 2;
+    public const int NextResVersionConfigFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.ResVersionConfig nextResVersionConfig_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_resource_url" field.</summary>
+    public const int NextResourceUrlFieldNumber = 15;
+    private string nextResourceUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NextResourceUrl {
+      get { return nextResourceUrl_; }
+      set {
+        nextResourceUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NextResourceUrl != other.NextResourceUrl) return false;
       if (!object.Equals(NextResVersionConfig, other.NextResVersionConfig)) return false;
       if (Retcode != other.Retcode) return false;
+      if (NextResourceUrl != other.NextResourceUrl) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NextResourceUrl.Length != 0) hash ^= NextResourceUrl.GetHashCode();
       if (nextResVersionConfig_ != null) hash ^= NextResVersionConfig.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (NextResourceUrl.Length != 0) hash ^= NextResourceUrl.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,15 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (nextResVersionConfig_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(50);
         output.WriteMessage(NextResVersionConfig);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       if (NextResourceUrl.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteString(NextResourceUrl);
       }
       if (_unknownFields != null) {
@@ -195,15 +200,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (nextResVersionConfig_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(50);
         output.WriteMessage(NextResVersionConfig);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       if (NextResourceUrl.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(122);
         output.WriteString(NextResourceUrl);
       }
       if (_unknownFields != null) {
@@ -216,14 +221,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NextResourceUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextResourceUrl);
-      }
       if (nextResVersionConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextResVersionConfig);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (NextResourceUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextResourceUrl);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,9 +242,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NextResourceUrl.Length != 0) {
-        NextResourceUrl = other.NextResourceUrl;
-      }
       if (other.nextResVersionConfig_ != null) {
         if (nextResVersionConfig_ == null) {
           NextResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
@@ -248,6 +250,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.NextResourceUrl.Length != 0) {
+        NextResourceUrl = other.NextResourceUrl;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,18 +269,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 50: {
             if (nextResVersionConfig_ == null) {
               NextResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
             }
             input.ReadMessage(NextResVersionConfig);
             break;
           }
-          case 96: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 122: {
             NextResourceUrl = input.ReadString();
             break;
           }
@@ -294,18 +299,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 50: {
             if (nextResVersionConfig_ == null) {
               NextResVersionConfig = new global::Weedwacker.Shared.Network.Proto.ResVersionConfig();
             }
             input.ReadMessage(NextResVersionConfig);
             break;
           }
-          case 96: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 122: {
             NextResourceUrl = input.ReadString();
             break;
           }

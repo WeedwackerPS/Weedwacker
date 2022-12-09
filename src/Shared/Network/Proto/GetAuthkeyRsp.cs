@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetAuthkeyRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNHZXRBdXRoa2V5UnNwLnByb3RvIn8KDUdldEF1dGhrZXlSc3ASEgoKYXV0",
-            "aF9hcHBpZBgEIAEoCRIRCglzaWduX3R5cGUYDyABKA0SDwoHcmV0Y29kZRgG",
-            "IAEoBRITCgthdXRoa2V5X3ZlchgJIAEoDRIQCghnYW1lX2JpehgLIAEoCRIP",
-            "CgdhdXRoa2V5GAMgASgJQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChNHZXRBdXRoa2V5UnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvIpEBCg1HZXRBdXRoa2V5UnNwEg8KB3JldGNvZGUYCCABKAUS",
+            "DwoHYXV0aGtleRgGIAEoCRIbChNVbmszMzAwX0RPRExGQ05PQU1CGA0gASgN",
+            "EhsKE1VuazMzMDBfRkdCSEhQT0tDSkgYAyABKA0SEgoKYXV0aF9hcHBpZBgH",
+            "IAEoCRIQCghnYW1lX2JpehgBIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAuthkeyRsp), global::Weedwacker.Shared.Network.Proto.GetAuthkeyRsp.Parser, new[]{ "AuthAppid", "SignType", "Retcode", "AuthkeyVer", "GameBiz", "Authkey" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAuthkeyRsp), global::Weedwacker.Shared.Network.Proto.GetAuthkeyRsp.Parser, new[]{ "Retcode", "Authkey", "Unk3300DODLFCNOAMB", "Unk3300FGBHHPOKCJH", "AuthAppid", "GameBiz" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1473
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1478;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetAuthkeyRsp : pb::IMessage<GetAuthkeyRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,12 +82,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetAuthkeyRsp(GetAuthkeyRsp other) : this() {
-      authAppid_ = other.authAppid_;
-      signType_ = other.signType_;
       retcode_ = other.retcode_;
-      authkeyVer_ = other.authkeyVer_;
-      gameBiz_ = other.gameBiz_;
       authkey_ = other.authkey_;
+      unk3300DODLFCNOAMB_ = other.unk3300DODLFCNOAMB_;
+      unk3300FGBHHPOKCJH_ = other.unk3300FGBHHPOKCJH_;
+      authAppid_ = other.authAppid_;
+      gameBiz_ = other.gameBiz_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,32 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetAuthkeyRsp(this);
     }
 
-    /// <summary>Field number for the "auth_appid" field.</summary>
-    public const int AuthAppidFieldNumber = 4;
-    private string authAppid_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AuthAppid {
-      get { return authAppid_; }
-      set {
-        authAppid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "sign_type" field.</summary>
-    public const int SignTypeFieldNumber = 15;
-    private uint signType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SignType {
-      get { return signType_; }
-      set {
-        signType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,32 +109,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "authkey_ver" field.</summary>
-    public const int AuthkeyVerFieldNumber = 9;
-    private uint authkeyVer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AuthkeyVer {
-      get { return authkeyVer_; }
-      set {
-        authkeyVer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "game_biz" field.</summary>
-    public const int GameBizFieldNumber = 11;
-    private string gameBiz_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string GameBiz {
-      get { return gameBiz_; }
-      set {
-        gameBiz_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "authkey" field.</summary>
-    public const int AuthkeyFieldNumber = 3;
+    public const int AuthkeyFieldNumber = 6;
     private string authkey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,6 +118,54 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return authkey_; }
       set {
         authkey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DODLFCNOAMB" field.</summary>
+    public const int Unk3300DODLFCNOAMBFieldNumber = 13;
+    private uint unk3300DODLFCNOAMB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DODLFCNOAMB {
+      get { return unk3300DODLFCNOAMB_; }
+      set {
+        unk3300DODLFCNOAMB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FGBHHPOKCJH" field.</summary>
+    public const int Unk3300FGBHHPOKCJHFieldNumber = 3;
+    private uint unk3300FGBHHPOKCJH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FGBHHPOKCJH {
+      get { return unk3300FGBHHPOKCJH_; }
+      set {
+        unk3300FGBHHPOKCJH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "auth_appid" field.</summary>
+    public const int AuthAppidFieldNumber = 7;
+    private string authAppid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AuthAppid {
+      get { return authAppid_; }
+      set {
+        authAppid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "game_biz" field.</summary>
+    public const int GameBizFieldNumber = 1;
+    private string gameBiz_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GameBiz {
+      get { return gameBiz_; }
+      set {
+        gameBiz_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -180,12 +184,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AuthAppid != other.AuthAppid) return false;
-      if (SignType != other.SignType) return false;
       if (Retcode != other.Retcode) return false;
-      if (AuthkeyVer != other.AuthkeyVer) return false;
-      if (GameBiz != other.GameBiz) return false;
       if (Authkey != other.Authkey) return false;
+      if (Unk3300DODLFCNOAMB != other.Unk3300DODLFCNOAMB) return false;
+      if (Unk3300FGBHHPOKCJH != other.Unk3300FGBHHPOKCJH) return false;
+      if (AuthAppid != other.AuthAppid) return false;
+      if (GameBiz != other.GameBiz) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -193,12 +197,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AuthAppid.Length != 0) hash ^= AuthAppid.GetHashCode();
-      if (SignType != 0) hash ^= SignType.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (AuthkeyVer != 0) hash ^= AuthkeyVer.GetHashCode();
-      if (GameBiz.Length != 0) hash ^= GameBiz.GetHashCode();
       if (Authkey.Length != 0) hash ^= Authkey.GetHashCode();
+      if (Unk3300DODLFCNOAMB != 0) hash ^= Unk3300DODLFCNOAMB.GetHashCode();
+      if (Unk3300FGBHHPOKCJH != 0) hash ^= Unk3300FGBHHPOKCJH.GetHashCode();
+      if (AuthAppid.Length != 0) hash ^= AuthAppid.GetHashCode();
+      if (GameBiz.Length != 0) hash ^= GameBiz.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,29 +221,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (GameBiz.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GameBiz);
+      }
+      if (Unk3300FGBHHPOKCJH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FGBHHPOKCJH);
+      }
       if (Authkey.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(Authkey);
       }
       if (AuthAppid.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(AuthAppid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      if (AuthkeyVer != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(AuthkeyVer);
-      }
-      if (GameBiz.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(GameBiz);
-      }
-      if (SignType != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SignType);
+      if (Unk3300DODLFCNOAMB != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300DODLFCNOAMB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -251,29 +255,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GameBiz.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GameBiz);
+      }
+      if (Unk3300FGBHHPOKCJH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FGBHHPOKCJH);
+      }
       if (Authkey.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(Authkey);
       }
       if (AuthAppid.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(AuthAppid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      if (AuthkeyVer != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(AuthkeyVer);
-      }
-      if (GameBiz.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(GameBiz);
-      }
-      if (SignType != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SignType);
+      if (Unk3300DODLFCNOAMB != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300DODLFCNOAMB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -285,23 +289,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AuthAppid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AuthAppid);
-      }
-      if (SignType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SignType);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (AuthkeyVer != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AuthkeyVer);
+      if (Authkey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Authkey);
+      }
+      if (Unk3300DODLFCNOAMB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DODLFCNOAMB);
+      }
+      if (Unk3300FGBHHPOKCJH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FGBHHPOKCJH);
+      }
+      if (AuthAppid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AuthAppid);
       }
       if (GameBiz.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(GameBiz);
-      }
-      if (Authkey.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Authkey);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -315,23 +319,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AuthAppid.Length != 0) {
-        AuthAppid = other.AuthAppid;
-      }
-      if (other.SignType != 0) {
-        SignType = other.SignType;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.AuthkeyVer != 0) {
-        AuthkeyVer = other.AuthkeyVer;
+      if (other.Authkey.Length != 0) {
+        Authkey = other.Authkey;
+      }
+      if (other.Unk3300DODLFCNOAMB != 0) {
+        Unk3300DODLFCNOAMB = other.Unk3300DODLFCNOAMB;
+      }
+      if (other.Unk3300FGBHHPOKCJH != 0) {
+        Unk3300FGBHHPOKCJH = other.Unk3300FGBHHPOKCJH;
+      }
+      if (other.AuthAppid.Length != 0) {
+        AuthAppid = other.AuthAppid;
       }
       if (other.GameBiz.Length != 0) {
         GameBiz = other.GameBiz;
-      }
-      if (other.Authkey.Length != 0) {
-        Authkey = other.Authkey;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -348,28 +352,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            Authkey = input.ReadString();
-            break;
-          }
-          case 34: {
-            AuthAppid = input.ReadString();
-            break;
-          }
-          case 48: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 72: {
-            AuthkeyVer = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 10: {
             GameBiz = input.ReadString();
             break;
           }
-          case 120: {
-            SignType = input.ReadUInt32();
+          case 24: {
+            Unk3300FGBHHPOKCJH = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            Authkey = input.ReadString();
+            break;
+          }
+          case 58: {
+            AuthAppid = input.ReadString();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Unk3300DODLFCNOAMB = input.ReadUInt32();
             break;
           }
         }
@@ -387,28 +391,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            Authkey = input.ReadString();
-            break;
-          }
-          case 34: {
-            AuthAppid = input.ReadString();
-            break;
-          }
-          case 48: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 72: {
-            AuthkeyVer = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 10: {
             GameBiz = input.ReadString();
             break;
           }
-          case 120: {
-            SignType = input.ReadUInt32();
+          case 24: {
+            Unk3300FGBHHPOKCJH = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            Authkey = input.ReadString();
+            break;
+          }
+          case 58: {
+            AuthAppid = input.ReadString();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Unk3300DODLFCNOAMB = input.ReadUInt32();
             break;
           }
         }

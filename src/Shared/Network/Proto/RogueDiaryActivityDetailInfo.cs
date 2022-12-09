@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJSb2d1ZURpYXJ5QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhhSb2d1ZURp",
-            "YXJ5UHJvZ3Jlc3MucHJvdG8aGVJvZ3VlRGlhcnlTdGFnZUluZm8ucHJvdG8i",
-            "qAEKHFJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbEluZm8SKAoKc3RhZ2VfbGlz",
-            "dBgLIAMoCzIULlJvZ3VlRGlhcnlTdGFnZUluZm8SGAoQaXNfaGF2ZV9wcm9n",
-            "cmVzcxgKIAEoCBIZChFpc19jb250ZW50X2Nsb3NlZBgCIAEoCBIpCgxjdXJf",
-            "cHJvZ3Jlc3MYByABKAsyEy5Sb2d1ZURpYXJ5UHJvZ3Jlc3NCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJSb2d1ZURpYXJ5QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhhSb2d1ZURpYXJ5UHJvZ3Jlc3Mu",
+            "cHJvdG8aGVJvZ3VlRGlhcnlTdGFnZUluZm8ucHJvdG8i6AEKHFJvZ3VlRGlh",
+            "cnlBY3Rpdml0eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYAyAB",
+            "KAgSSAoKc3RhZ2VfbGlzdBgLIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uUm9ndWVEaWFyeVN0YWdlSW5mbxIYChBpc19oYXZlX3By",
+            "b2dyZXNzGAUgASgIEkkKDGN1cl9wcm9ncmVzcxgKIAEoCzIzLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUm9ndWVEaWFyeVByb2dyZXNzYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryProgressReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RogueDiaryStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo.Parser, new[]{ "StageList", "IsHaveProgress", "IsContentClosed", "CurProgress" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo.Parser, new[]{ "IsContentClosed", "StageList", "IsHaveProgress", "CurProgress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +77,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryActivityDetailInfo(RogueDiaryActivityDetailInfo other) : this() {
+      isContentClosed_ = other.isContentClosed_;
       stageList_ = other.stageList_.Clone();
       isHaveProgress_ = other.isHaveProgress_;
-      isContentClosed_ = other.isContentClosed_;
       curProgress_ = other.curProgress_ != null ? other.curProgress_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,6 +88,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryActivityDetailInfo Clone() {
       return new RogueDiaryActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 3;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
     }
 
     /// <summary>Field number for the "stage_list" field.</summary>
@@ -100,7 +114,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_have_progress" field.</summary>
-    public const int IsHaveProgressFieldNumber = 10;
+    public const int IsHaveProgressFieldNumber = 5;
     private bool isHaveProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,20 +125,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 2;
-    private bool isContentClosed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsContentClosed {
-      get { return isContentClosed_; }
-      set {
-        isContentClosed_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 7;
+    public const int CurProgressFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress curProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,9 +152,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (IsContentClosed != other.IsContentClosed) return false;
       if(!stageList_.Equals(other.stageList_)) return false;
       if (IsHaveProgress != other.IsHaveProgress) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
       if (!object.Equals(CurProgress, other.CurProgress)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -161,9 +163,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       hash ^= stageList_.GetHashCode();
       if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       if (curProgress_ != null) hash ^= CurProgress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -184,16 +186,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsContentClosed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteBool(IsContentClosed);
       }
-      if (curProgress_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(CurProgress);
-      }
       if (IsHaveProgress != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteBool(IsHaveProgress);
+      }
+      if (curProgress_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurProgress);
       }
       stageList_.WriteTo(output, _repeated_stageList_codec);
       if (_unknownFields != null) {
@@ -207,16 +209,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsContentClosed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteBool(IsContentClosed);
       }
-      if (curProgress_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(CurProgress);
-      }
       if (IsHaveProgress != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteBool(IsHaveProgress);
+      }
+      if (curProgress_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurProgress);
       }
       stageList_.WriteTo(ref output, _repeated_stageList_codec);
       if (_unknownFields != null) {
@@ -229,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += stageList_.CalculateSize(_repeated_stageList_codec);
-      if (IsHaveProgress != false) {
+      if (IsContentClosed != false) {
         size += 1 + 1;
       }
-      if (IsContentClosed != false) {
+      size += stageList_.CalculateSize(_repeated_stageList_codec);
+      if (IsHaveProgress != false) {
         size += 1 + 1;
       }
       if (curProgress_ != null) {
@@ -251,12 +253,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
       stageList_.Add(other.stageList_);
       if (other.IsHaveProgress != false) {
         IsHaveProgress = other.IsHaveProgress;
-      }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
       }
       if (other.curProgress_ != null) {
         if (curProgress_ == null) {
@@ -279,19 +281,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 24: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 58: {
+          case 40: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (curProgress_ == null) {
               CurProgress = new global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress();
             }
             input.ReadMessage(CurProgress);
-            break;
-          }
-          case 80: {
-            IsHaveProgress = input.ReadBool();
             break;
           }
           case 90: {
@@ -313,19 +315,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 24: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 58: {
+          case 40: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (curProgress_ == null) {
               CurProgress = new global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress();
             }
             input.ReadMessage(CurProgress);
-            break;
-          }
-          case 80: {
-            IsHaveProgress = input.ReadBool();
             break;
           }
           case 90: {

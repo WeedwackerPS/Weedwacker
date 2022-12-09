@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampStageInfoChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVXaW50ZXJDYW1wU3RhZ2VJbmZvQ2hhbmdlTm90aWZ5LnByb3RvGhlXaW50",
-            "ZXJDYW1wU3RhZ2VJbmZvLnByb3RvIngKH1dpbnRlckNhbXBTdGFnZUluZm9D",
-            "aGFuZ2VOb3RpZnkSKgoMZXhwbG9yZV9pbmZvGAwgASgLMhQuV2ludGVyQ2Ft",
-            "cFN0YWdlSW5mbxIpCgtiYXR0bGVfaW5mbxgEIAEoCzIULldpbnRlckNhbXBT",
-            "dGFnZUluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiVXaW50ZXJDYW1wU3RhZ2VJbmZvQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhlXaW50ZXJDYW1wU3RhZ2VJ",
+            "bmZvLnByb3RvIrgBCh9XaW50ZXJDYW1wU3RhZ2VJbmZvQ2hhbmdlTm90aWZ5",
+            "EkoKDGV4cGxvcmVfaW5mbxgFIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uV2ludGVyQ2FtcFN0YWdlSW5mbxJJCgtiYXR0bGVfaW5m",
+            "bxgPIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uV2lu",
+            "dGVyQ2FtcFN0YWdlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WinterCampStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8154
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8878;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WinterCampStageInfoChangeNotify : pb::IMessage<WinterCampStageInfoChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "explore_info" field.</summary>
-    public const int ExploreInfoFieldNumber = 12;
+    public const int ExploreInfoFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo exploreInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "battle_info" field.</summary>
-    public const int BattleInfoFieldNumber = 4;
+    public const int BattleInfoFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo battleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,13 +163,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (battleInfo_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(BattleInfo);
-      }
       if (exploreInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(42);
         output.WriteMessage(ExploreInfo);
+      }
+      if (battleInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(BattleInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -176,13 +181,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (battleInfo_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(BattleInfo);
-      }
       if (exploreInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(42);
         output.WriteMessage(ExploreInfo);
+      }
+      if (battleInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(BattleInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,18 +244,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            if (battleInfo_ == null) {
-              BattleInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
-            }
-            input.ReadMessage(BattleInfo);
-            break;
-          }
-          case 98: {
+          case 42: {
             if (exploreInfo_ == null) {
               ExploreInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
             }
             input.ReadMessage(ExploreInfo);
+            break;
+          }
+          case 122: {
+            if (battleInfo_ == null) {
+              BattleInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
+            }
+            input.ReadMessage(BattleInfo);
             break;
           }
         }
@@ -268,18 +273,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            if (battleInfo_ == null) {
-              BattleInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
-            }
-            input.ReadMessage(BattleInfo);
-            break;
-          }
-          case 98: {
+          case 42: {
             if (exploreInfo_ == null) {
               ExploreInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
             }
             input.ReadMessage(ExploreInfo);
+            break;
+          }
+          case 122: {
+            if (battleInfo_ == null) {
+              BattleInfo = new global::Weedwacker.Shared.Network.Proto.WinterCampStageInfo();
+            }
+            input.ReadMessage(BattleInfo);
             break;
           }
         }

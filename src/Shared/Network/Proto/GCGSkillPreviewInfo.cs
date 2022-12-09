@@ -24,31 +24,40 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSkillPreviewInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlHQ0dTa2lsbFByZXZpZXdJbmZvLnByb3RvGh1HQ0dTa2lsbFByZXZpZXdD",
-            "YXJkSW5mby5wcm90bxooR0NHU2tpbGxQcmV2aWV3RWxlbWVudFJlYWN0aW9u",
-            "SW5mby5wcm90bxobR0NHU2tpbGxQcmV2aWV3SHBJbmZvLnByb3RvGiZHQ0dT",
-            "a2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90bxokR0NHU2tpbGxQ",
-            "cmV2aWV3VG9rZW5DaGFuZ2VJbmZvLnByb3RvIqIFChNHQ0dTa2lsbFByZXZp",
-            "ZXdJbmZvEi4KDHJtX2NhcmRfbGlzdBgMIAMoCzIYLkdDR1NraWxsUHJldmll",
-            "d0NhcmRJbmZvEjgKC2hwX2luZm9fbWFwGAggAygLMiMuR0NHU2tpbGxQcmV2",
-            "aWV3SW5mby5IcEluZm9NYXBFbnRyeRJEChFyZWFjdGlvbl9pbmZvX21hcBgF",
-            "IAMoCzIpLkdDR1NraWxsUHJldmlld0luZm8uUmVhY3Rpb25JbmZvTWFwRW50",
-            "cnkSSAodY2hhbmdlX29uc3RhZ2VfY2hhcmFjdGVyX2xpc3QYCSADKAsyIS5H",
-            "Q0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mbxIQCghza2lsbF9pZBgG",
-            "IAEoDRJLChVjYXJkX3Rva2VuX2NoYW5nZV9tYXAYAyADKAsyLC5HQ0dTa2ls",
-            "bFByZXZpZXdJbmZvLkNhcmRUb2tlbkNoYW5nZU1hcEVudHJ5Ei8KDWFkZF9j",
-            "YXJkX2xpc3QYCyADKAsyGC5HQ0dTa2lsbFByZXZpZXdDYXJkSW5mbxpICg5I",
-            "cEluZm9NYXBFbnRyeRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiABKAsyFi5H",
-            "Q0dTa2lsbFByZXZpZXdIcEluZm86AjgBGlsKFFJlYWN0aW9uSW5mb01hcEVu",
-            "dHJ5EgsKA2tleRgBIAEoDRIyCgV2YWx1ZRgCIAEoCzIjLkdDR1NraWxsUHJl",
-            "dmlld0VsZW1lbnRSZWFjdGlvbkluZm86AjgBGloKF0NhcmRUb2tlbkNoYW5n",
-            "ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIuCgV2YWx1ZRgCIAEoCzIfLkdDR1Nr",
-            "aWxsUHJldmlld1Rva2VuQ2hhbmdlSW5mbzoCOAFCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlHQ0dTa2lsbFByZXZpZXdJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGh1HQ0dTa2lsbFByZXZpZXdDYXJkSW5mby5wcm90",
+            "bxooR0NHU2tpbGxQcmV2aWV3RWxlbWVudFJlYWN0aW9uSW5mby5wcm90bxoe",
+            "R0NHU2tpbGxQcmV2aWV3RXh0cmFJbmZvLnByb3RvGhtHQ0dTa2lsbFByZXZp",
+            "ZXdIcEluZm8ucHJvdG8aJkdDR1NraWxsUHJldmlld09uc3RhZ2VDaGFuZ2VJ",
+            "bmZvLnByb3RvGiRHQ0dTa2lsbFByZXZpZXdUb2tlbkNoYW5nZUluZm8ucHJv",
+            "dG8inggKE0dDR1NraWxsUHJldmlld0luZm8SaAodY2hhbmdlX29uc3RhZ2Vf",
+            "Y2hhcmFjdGVyX2xpc3QYBiADKAsyQS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkdDR1NraWxsUHJldmlld09uc3RhZ2VDaGFuZ2VJbmZvElUK",
+            "E1VuazMzMDBfREFKRkpFRE5MS0sYDyADKAsyOC5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkdDR1NraWxsUHJldmlld0NhcmRJbmZvEhAKCHNr",
+            "aWxsX2lkGAwgASgNElgKC2hwX2luZm9fbWFwGAMgAygLMkMuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dTa2lsbFByZXZpZXdJbmZvLkhw",
+            "SW5mb01hcEVudHJ5ElUKE1VuazMzMDBfQUdOT05HRUxGR0MYAiADKAsyOC5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1NraWxsUHJldmll",
+            "d0NhcmRJbmZvEk0KCmV4dHJhX2luZm8YCyABKAsyOS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkdDR1NraWxsUHJldmlld0V4dHJhSW5mbxJk",
+            "ChFyZWFjdGlvbl9pbmZvX21hcBgOIAMoCzJJLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uR0NHU2tpbGxQcmV2aWV3SW5mby5SZWFjdGlvbklu",
+            "Zm9NYXBFbnRyeRJrChVjYXJkX3Rva2VuX2NoYW5nZV9tYXAYCCADKAsyTC5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1NraWxsUHJldmll",
+            "d0luZm8uQ2FyZFRva2VuQ2hhbmdlTWFwRW50cnkaaAoOSHBJbmZvTWFwRW50",
+            "cnkSCwoDa2V5GAEgASgNEkUKBXZhbHVlGAIgASgLMjYuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5HQ0dTa2lsbFByZXZpZXdIcEluZm86AjgB",
+            "GnsKFFJlYWN0aW9uSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRJSCgV2YWx1",
+            "ZRgCIAEoCzJDLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NH",
+            "U2tpbGxQcmV2aWV3RWxlbWVudFJlYWN0aW9uSW5mbzoCOAEaegoXQ2FyZFRv",
+            "a2VuQ2hhbmdlTWFwRW50cnkSCwoDa2V5GAEgASgNEk4KBXZhbHVlGAIgASgL",
+            "Mj8uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dTa2lsbFBy",
+            "ZXZpZXdUb2tlbkNoYW5nZUluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewInfo), global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewInfo.Parser, new[]{ "RmCardList", "HpInfoMap", "ReactionInfoMap", "ChangeOnstageCharacterList", "SkillId", "CardTokenChangeMap", "AddCardList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewInfo), global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewInfo.Parser, new[]{ "ChangeOnstageCharacterList", "Unk3300DAJFJEDNLKK", "SkillId", "HpInfoMap", "Unk3300AGNONGELFGC", "ExtraInfo", "ReactionInfoMap", "CardTokenChangeMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
           }));
     }
     #endregion
@@ -89,13 +98,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGSkillPreviewInfo(GCGSkillPreviewInfo other) : this() {
-      rmCardList_ = other.rmCardList_.Clone();
-      hpInfoMap_ = other.hpInfoMap_.Clone();
-      reactionInfoMap_ = other.reactionInfoMap_.Clone();
       changeOnstageCharacterList_ = other.changeOnstageCharacterList_.Clone();
+      unk3300DAJFJEDNLKK_ = other.unk3300DAJFJEDNLKK_.Clone();
       skillId_ = other.skillId_;
+      hpInfoMap_ = other.hpInfoMap_.Clone();
+      unk3300AGNONGELFGC_ = other.unk3300AGNONGELFGC_.Clone();
+      extraInfo_ = other.extraInfo_ != null ? other.extraInfo_.Clone() : null;
+      reactionInfoMap_ = other.reactionInfoMap_.Clone();
       cardTokenChangeMap_ = other.cardTokenChangeMap_.Clone();
-      addCardList_ = other.addCardList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -105,43 +115,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGSkillPreviewInfo(this);
     }
 
-    /// <summary>Field number for the "rm_card_list" field.</summary>
-    public const int RmCardListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> _repeated_rmCardList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> rmCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> RmCardList {
-      get { return rmCardList_; }
-    }
-
-    /// <summary>Field number for the "hp_info_map" field.</summary>
-    public const int HpInfoMapFieldNumber = 8;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>.Codec _map_hpInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo.Parser), 66);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo> hpInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo> HpInfoMap {
-      get { return hpInfoMap_; }
-    }
-
-    /// <summary>Field number for the "reaction_info_map" field.</summary>
-    public const int ReactionInfoMapFieldNumber = 5;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>.Codec _map_reactionInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo.Parser), 42);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo> reactionInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo> ReactionInfoMap {
-      get { return reactionInfoMap_; }
-    }
-
     /// <summary>Field number for the "change_onstage_character_list" field.</summary>
-    public const int ChangeOnstageCharacterListFieldNumber = 9;
+    public const int ChangeOnstageCharacterListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo> _repeated_changeOnstageCharacterList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo> changeOnstageCharacterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,8 +126,19 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return changeOnstageCharacterList_; }
     }
 
+    /// <summary>Field number for the "Unk3300_DAJFJEDNLKK" field.</summary>
+    public const int Unk3300DAJFJEDNLKKFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> _repeated_unk3300DAJFJEDNLKK_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> unk3300DAJFJEDNLKK_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> Unk3300DAJFJEDNLKK {
+      get { return unk3300DAJFJEDNLKK_; }
+    }
+
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 6;
+    public const int SkillIdFieldNumber = 12;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,26 +149,60 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "hp_info_map" field.</summary>
+    public const int HpInfoMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>.Codec _map_hpInfoMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo.Parser), 26);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo> hpInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewHpInfo> HpInfoMap {
+      get { return hpInfoMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_AGNONGELFGC" field.</summary>
+    public const int Unk3300AGNONGELFGCFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> _repeated_unk3300AGNONGELFGC_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> unk3300AGNONGELFGC_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> Unk3300AGNONGELFGC {
+      get { return unk3300AGNONGELFGC_; }
+    }
+
+    /// <summary>Field number for the "extra_info" field.</summary>
+    public const int ExtraInfoFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfo extraInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfo ExtraInfo {
+      get { return extraInfo_; }
+      set {
+        extraInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reaction_info_map" field.</summary>
+    public const int ReactionInfoMapFieldNumber = 14;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>.Codec _map_reactionInfoMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo.Parser), 114);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo> reactionInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewElementReactionInfo> ReactionInfoMap {
+      get { return reactionInfoMap_; }
+    }
+
     /// <summary>Field number for the "card_token_change_map" field.</summary>
-    public const int CardTokenChangeMapFieldNumber = 3;
+    public const int CardTokenChangeMapFieldNumber = 8;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo>.Codec _map_cardTokenChangeMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo.Parser), 26);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo.Parser), 66);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo> cardTokenChangeMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenChangeInfo> CardTokenChangeMap {
       get { return cardTokenChangeMap_; }
-    }
-
-    /// <summary>Field number for the "add_card_list" field.</summary>
-    public const int AddCardListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> _repeated_addCardList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> addCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewCardInfo> AddCardList {
-      get { return addCardList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,13 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!rmCardList_.Equals(other.rmCardList_)) return false;
-      if (!HpInfoMap.Equals(other.HpInfoMap)) return false;
-      if (!ReactionInfoMap.Equals(other.ReactionInfoMap)) return false;
       if(!changeOnstageCharacterList_.Equals(other.changeOnstageCharacterList_)) return false;
+      if(!unk3300DAJFJEDNLKK_.Equals(other.unk3300DAJFJEDNLKK_)) return false;
       if (SkillId != other.SkillId) return false;
+      if (!HpInfoMap.Equals(other.HpInfoMap)) return false;
+      if(!unk3300AGNONGELFGC_.Equals(other.unk3300AGNONGELFGC_)) return false;
+      if (!object.Equals(ExtraInfo, other.ExtraInfo)) return false;
+      if (!ReactionInfoMap.Equals(other.ReactionInfoMap)) return false;
       if (!CardTokenChangeMap.Equals(other.CardTokenChangeMap)) return false;
-      if(!addCardList_.Equals(other.addCardList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -212,13 +235,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= rmCardList_.GetHashCode();
-      hash ^= HpInfoMap.GetHashCode();
-      hash ^= ReactionInfoMap.GetHashCode();
       hash ^= changeOnstageCharacterList_.GetHashCode();
+      hash ^= unk3300DAJFJEDNLKK_.GetHashCode();
       if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      hash ^= HpInfoMap.GetHashCode();
+      hash ^= unk3300AGNONGELFGC_.GetHashCode();
+      if (extraInfo_ != null) hash ^= ExtraInfo.GetHashCode();
+      hash ^= ReactionInfoMap.GetHashCode();
       hash ^= CardTokenChangeMap.GetHashCode();
-      hash ^= addCardList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -237,16 +261,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      cardTokenChangeMap_.WriteTo(output, _map_cardTokenChangeMap_codec);
-      reactionInfoMap_.WriteTo(output, _map_reactionInfoMap_codec);
-      if (SkillId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(SkillId);
-      }
+      unk3300AGNONGELFGC_.WriteTo(output, _repeated_unk3300AGNONGELFGC_codec);
       hpInfoMap_.WriteTo(output, _map_hpInfoMap_codec);
       changeOnstageCharacterList_.WriteTo(output, _repeated_changeOnstageCharacterList_codec);
-      addCardList_.WriteTo(output, _repeated_addCardList_codec);
-      rmCardList_.WriteTo(output, _repeated_rmCardList_codec);
+      cardTokenChangeMap_.WriteTo(output, _map_cardTokenChangeMap_codec);
+      if (extraInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(ExtraInfo);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SkillId);
+      }
+      reactionInfoMap_.WriteTo(output, _map_reactionInfoMap_codec);
+      unk3300DAJFJEDNLKK_.WriteTo(output, _repeated_unk3300DAJFJEDNLKK_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -257,16 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      cardTokenChangeMap_.WriteTo(ref output, _map_cardTokenChangeMap_codec);
-      reactionInfoMap_.WriteTo(ref output, _map_reactionInfoMap_codec);
-      if (SkillId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(SkillId);
-      }
+      unk3300AGNONGELFGC_.WriteTo(ref output, _repeated_unk3300AGNONGELFGC_codec);
       hpInfoMap_.WriteTo(ref output, _map_hpInfoMap_codec);
       changeOnstageCharacterList_.WriteTo(ref output, _repeated_changeOnstageCharacterList_codec);
-      addCardList_.WriteTo(ref output, _repeated_addCardList_codec);
-      rmCardList_.WriteTo(ref output, _repeated_rmCardList_codec);
+      cardTokenChangeMap_.WriteTo(ref output, _map_cardTokenChangeMap_codec);
+      if (extraInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(ExtraInfo);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SkillId);
+      }
+      reactionInfoMap_.WriteTo(ref output, _map_reactionInfoMap_codec);
+      unk3300DAJFJEDNLKK_.WriteTo(ref output, _repeated_unk3300DAJFJEDNLKK_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -277,15 +309,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += rmCardList_.CalculateSize(_repeated_rmCardList_codec);
-      size += hpInfoMap_.CalculateSize(_map_hpInfoMap_codec);
-      size += reactionInfoMap_.CalculateSize(_map_reactionInfoMap_codec);
       size += changeOnstageCharacterList_.CalculateSize(_repeated_changeOnstageCharacterList_codec);
+      size += unk3300DAJFJEDNLKK_.CalculateSize(_repeated_unk3300DAJFJEDNLKK_codec);
       if (SkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
+      size += hpInfoMap_.CalculateSize(_map_hpInfoMap_codec);
+      size += unk3300AGNONGELFGC_.CalculateSize(_repeated_unk3300AGNONGELFGC_codec);
+      if (extraInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExtraInfo);
+      }
+      size += reactionInfoMap_.CalculateSize(_map_reactionInfoMap_codec);
       size += cardTokenChangeMap_.CalculateSize(_map_cardTokenChangeMap_codec);
-      size += addCardList_.CalculateSize(_repeated_addCardList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -298,15 +333,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      rmCardList_.Add(other.rmCardList_);
-      hpInfoMap_.Add(other.hpInfoMap_);
-      reactionInfoMap_.Add(other.reactionInfoMap_);
       changeOnstageCharacterList_.Add(other.changeOnstageCharacterList_);
+      unk3300DAJFJEDNLKK_.Add(other.unk3300DAJFJEDNLKK_);
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
       }
+      hpInfoMap_.Add(other.hpInfoMap_);
+      unk3300AGNONGELFGC_.Add(other.unk3300AGNONGELFGC_);
+      if (other.extraInfo_ != null) {
+        if (extraInfo_ == null) {
+          ExtraInfo = new global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfo();
+        }
+        ExtraInfo.MergeFrom(other.ExtraInfo);
+      }
+      reactionInfoMap_.Add(other.reactionInfoMap_);
       cardTokenChangeMap_.Add(other.cardTokenChangeMap_);
-      addCardList_.Add(other.addCardList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -322,32 +363,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 18: {
+            unk3300AGNONGELFGC_.AddEntriesFrom(input, _repeated_unk3300AGNONGELFGC_codec);
+            break;
+          }
           case 26: {
-            cardTokenChangeMap_.AddEntriesFrom(input, _map_cardTokenChangeMap_codec);
-            break;
-          }
-          case 42: {
-            reactionInfoMap_.AddEntriesFrom(input, _map_reactionInfoMap_codec);
-            break;
-          }
-          case 48: {
-            SkillId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
             hpInfoMap_.AddEntriesFrom(input, _map_hpInfoMap_codec);
             break;
           }
-          case 74: {
+          case 50: {
             changeOnstageCharacterList_.AddEntriesFrom(input, _repeated_changeOnstageCharacterList_codec);
             break;
           }
-          case 90: {
-            addCardList_.AddEntriesFrom(input, _repeated_addCardList_codec);
+          case 66: {
+            cardTokenChangeMap_.AddEntriesFrom(input, _map_cardTokenChangeMap_codec);
             break;
           }
-          case 98: {
-            rmCardList_.AddEntriesFrom(input, _repeated_rmCardList_codec);
+          case 90: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfo();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 96: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            reactionInfoMap_.AddEntriesFrom(input, _map_reactionInfoMap_codec);
+            break;
+          }
+          case 122: {
+            unk3300DAJFJEDNLKK_.AddEntriesFrom(input, _repeated_unk3300DAJFJEDNLKK_codec);
             break;
           }
         }
@@ -365,32 +413,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 18: {
+            unk3300AGNONGELFGC_.AddEntriesFrom(ref input, _repeated_unk3300AGNONGELFGC_codec);
+            break;
+          }
           case 26: {
-            cardTokenChangeMap_.AddEntriesFrom(ref input, _map_cardTokenChangeMap_codec);
-            break;
-          }
-          case 42: {
-            reactionInfoMap_.AddEntriesFrom(ref input, _map_reactionInfoMap_codec);
-            break;
-          }
-          case 48: {
-            SkillId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
             hpInfoMap_.AddEntriesFrom(ref input, _map_hpInfoMap_codec);
             break;
           }
-          case 74: {
+          case 50: {
             changeOnstageCharacterList_.AddEntriesFrom(ref input, _repeated_changeOnstageCharacterList_codec);
             break;
           }
-          case 90: {
-            addCardList_.AddEntriesFrom(ref input, _repeated_addCardList_codec);
+          case 66: {
+            cardTokenChangeMap_.AddEntriesFrom(ref input, _map_cardTokenChangeMap_codec);
             break;
           }
-          case 98: {
-            rmCardList_.AddEntriesFrom(ref input, _repeated_rmCardList_codec);
+          case 90: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewExtraInfo();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 96: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            reactionInfoMap_.AddEntriesFrom(ref input, _map_reactionInfoMap_codec);
+            break;
+          }
+          case 122: {
+            unk3300DAJFJEDNLKK_.AddEntriesFrom(ref input, _repeated_unk3300DAJFJEDNLKK_codec);
             break;
           }
         }

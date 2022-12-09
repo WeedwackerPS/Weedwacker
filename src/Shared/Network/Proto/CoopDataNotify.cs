@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRDb29wRGF0YU5vdGlmeS5wcm90bxoRQ29vcENoYXB0ZXIucHJvdG8igwEK",
-            "DkNvb3BEYXRhTm90aWZ5EiIKDGNoYXB0ZXJfbGlzdBgPIAMoCzIMLkNvb3BD",
-            "aGFwdGVyEhsKE3ZpZXdlZF9jaGFwdGVyX2xpc3QYByADKA0SGAoQaXNfaGF2",
-            "ZV9wcm9ncmVzcxgKIAEoCBIWCg5jdXJfY29vcF9wb2ludBgFIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRDb29wRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoRQ29vcENoYXB0ZXIucHJvdG8iowEKDkNvb3BEYXRhTm90",
+            "aWZ5EhgKEGlzX2hhdmVfcHJvZ3Jlc3MYCyABKAgSFgoOY3VyX2Nvb3BfcG9p",
+            "bnQYASABKA0SGwoTdmlld2VkX2NoYXB0ZXJfbGlzdBgGIAMoDRJCCgxjaGFw",
+            "dGVyX2xpc3QYAyADKAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkNvb3BDaGFwdGVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CoopChapterReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CoopDataNotify), global::Weedwacker.Shared.Network.Proto.CoopDataNotify.Parser, new[]{ "ChapterList", "ViewedChapterList", "IsHaveProgress", "CurCoopPoint" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CoopDataNotify), global::Weedwacker.Shared.Network.Proto.CoopDataNotify.Parser, new[]{ "IsHaveProgress", "CurCoopPoint", "ViewedChapterList", "ChapterList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1979
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1994;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CoopDataNotify : pb::IMessage<CoopDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CoopDataNotify(CoopDataNotify other) : this() {
-      chapterList_ = other.chapterList_.Clone();
-      viewedChapterList_ = other.viewedChapterList_.Clone();
       isHaveProgress_ = other.isHaveProgress_;
       curCoopPoint_ = other.curCoopPoint_;
+      viewedChapterList_ = other.viewedChapterList_.Clone();
+      chapterList_ = other.chapterList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,30 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CoopDataNotify(this);
     }
 
-    /// <summary>Field number for the "chapter_list" field.</summary>
-    public const int ChapterListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CoopChapter> _repeated_chapterList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.CoopChapter.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter> chapterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter> ChapterList {
-      get { return chapterList_; }
-    }
-
-    /// <summary>Field number for the "viewed_chapter_list" field.</summary>
-    public const int ViewedChapterListFieldNumber = 7;
-    private static readonly pb::FieldCodec<uint> _repeated_viewedChapterList_codec
-        = pb::FieldCodec.ForUInt32(58);
-    private readonly pbc::RepeatedField<uint> viewedChapterList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ViewedChapterList {
-      get { return viewedChapterList_; }
-    }
-
     /// <summary>Field number for the "is_have_progress" field.</summary>
-    public const int IsHaveProgressFieldNumber = 10;
+    public const int IsHaveProgressFieldNumber = 11;
     private bool isHaveProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_coop_point" field.</summary>
-    public const int CurCoopPointFieldNumber = 5;
+    public const int CurCoopPointFieldNumber = 1;
     private uint curCoopPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,6 +118,28 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         curCoopPoint_ = value;
       }
+    }
+
+    /// <summary>Field number for the "viewed_chapter_list" field.</summary>
+    public const int ViewedChapterListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_viewedChapterList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> viewedChapterList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ViewedChapterList {
+      get { return viewedChapterList_; }
+    }
+
+    /// <summary>Field number for the "chapter_list" field.</summary>
+    public const int ChapterListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CoopChapter> _repeated_chapterList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.CoopChapter.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter> chapterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter> ChapterList {
+      get { return chapterList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!chapterList_.Equals(other.chapterList_)) return false;
-      if(!viewedChapterList_.Equals(other.viewedChapterList_)) return false;
       if (IsHaveProgress != other.IsHaveProgress) return false;
       if (CurCoopPoint != other.CurCoopPoint) return false;
+      if(!viewedChapterList_.Equals(other.viewedChapterList_)) return false;
+      if(!chapterList_.Equals(other.chapterList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= chapterList_.GetHashCode();
-      hash ^= viewedChapterList_.GetHashCode();
       if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
       if (CurCoopPoint != 0) hash ^= CurCoopPoint.GetHashCode();
+      hash ^= viewedChapterList_.GetHashCode();
+      hash ^= chapterList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,15 +191,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CurCoopPoint != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(CurCoopPoint);
       }
+      chapterList_.WriteTo(output, _repeated_chapterList_codec);
       viewedChapterList_.WriteTo(output, _repeated_viewedChapterList_codec);
       if (IsHaveProgress != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveProgress);
       }
-      chapterList_.WriteTo(output, _repeated_chapterList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -206,15 +211,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CurCoopPoint != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(CurCoopPoint);
       }
+      chapterList_.WriteTo(ref output, _repeated_chapterList_codec);
       viewedChapterList_.WriteTo(ref output, _repeated_viewedChapterList_codec);
       if (IsHaveProgress != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveProgress);
       }
-      chapterList_.WriteTo(ref output, _repeated_chapterList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -225,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += chapterList_.CalculateSize(_repeated_chapterList_codec);
-      size += viewedChapterList_.CalculateSize(_repeated_viewedChapterList_codec);
       if (IsHaveProgress != false) {
         size += 1 + 1;
       }
       if (CurCoopPoint != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurCoopPoint);
       }
+      size += viewedChapterList_.CalculateSize(_repeated_viewedChapterList_codec);
+      size += chapterList_.CalculateSize(_repeated_chapterList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -245,14 +250,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      chapterList_.Add(other.chapterList_);
-      viewedChapterList_.Add(other.viewedChapterList_);
       if (other.IsHaveProgress != false) {
         IsHaveProgress = other.IsHaveProgress;
       }
       if (other.CurCoopPoint != 0) {
         CurCoopPoint = other.CurCoopPoint;
       }
+      viewedChapterList_.Add(other.viewedChapterList_);
+      chapterList_.Add(other.chapterList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -268,21 +273,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 8: {
             CurCoopPoint = input.ReadUInt32();
             break;
           }
-          case 58:
-          case 56: {
+          case 26: {
+            chapterList_.AddEntriesFrom(input, _repeated_chapterList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
             viewedChapterList_.AddEntriesFrom(input, _repeated_viewedChapterList_codec);
             break;
           }
-          case 80: {
+          case 88: {
             IsHaveProgress = input.ReadBool();
-            break;
-          }
-          case 122: {
-            chapterList_.AddEntriesFrom(input, _repeated_chapterList_codec);
             break;
           }
         }
@@ -300,21 +305,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 8: {
             CurCoopPoint = input.ReadUInt32();
             break;
           }
-          case 58:
-          case 56: {
+          case 26: {
+            chapterList_.AddEntriesFrom(ref input, _repeated_chapterList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
             viewedChapterList_.AddEntriesFrom(ref input, _repeated_viewedChapterList_codec);
             break;
           }
-          case 80: {
+          case 88: {
             IsHaveProgress = input.ReadBool();
-            break;
-          }
-          case 122: {
-            chapterList_.AddEntriesFrom(ref input, _repeated_chapterList_codec);
             break;
           }
         }

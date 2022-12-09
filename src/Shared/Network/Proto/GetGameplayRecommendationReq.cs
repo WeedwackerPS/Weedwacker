@@ -24,18 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetGameplayRecommendationReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHZXRHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVxLnByb3RvGjNHYW1lcGxh",
-            "eVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVlc3QucHJvdG8a",
-            "LEdhbWVwbGF5UmVjb21tZW5kYXRpb25SZWxpcXVhcnlSZXF1ZXN0LnByb3Rv",
-            "GihHYW1lcGxheVJlY29tbWVuZGF0aW9uU2tpbGxSZXF1ZXN0LnByb3RvIpcC",
-            "ChxHZXRHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVxEhEKCWF2YXRhcl9pZBgJ",
-            "IAEoDRI9Cg1za2lsbF9yZXF1ZXN0GKkEIAEoCzIjLkdhbWVwbGF5UmVjb21t",
-            "ZW5kYXRpb25Ta2lsbFJlcXVlc3RIABJFChFyZWxpcXVhcnlfcmVxdWVzdBjJ",
-            "DyABKAsyJy5HYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5UmVxdWVz",
-            "dEgAElQKGWVsZW1lbnRfcmVsaXF1YXJ5X3JlcXVlc3QY0QsgASgLMi4uR2Ft",
-            "ZXBsYXlSZWNvbW1lbmRhdGlvbkVsZW1lbnRSZWxpcXVhcnlSZXF1ZXN0SABC",
-            "CAoGZGV0YWlsQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiJHZXRHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGjNHYW1lcGxheVJlY29tbWVuZGF0",
+            "aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVlc3QucHJvdG8aLEdhbWVwbGF5UmVj",
+            "b21tZW5kYXRpb25SZWxpcXVhcnlSZXF1ZXN0LnByb3RvGihHYW1lcGxheVJl",
+            "Y29tbWVuZGF0aW9uU2tpbGxSZXF1ZXN0LnByb3RvIvYCChxHZXRHYW1lcGxh",
+            "eVJlY29tbWVuZGF0aW9uUmVxEhEKCWF2YXRhcl9pZBgGIAEoDRJdCg1za2ls",
+            "bF9yZXF1ZXN0GJ4MIAEoCzJDLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uR2FtZXBsYXlSZWNvbW1lbmRhdGlvblNraWxsUmVxdWVzdEgAEmQK",
+            "EXJlbGlxdWFyeV9yZXF1ZXN0GEggASgLMkcuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5HYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5",
+            "UmVxdWVzdEgAEnQKGWVsZW1lbnRfcmVsaXF1YXJ5X3JlcXVlc3QY4wYgASgL",
+            "Mk4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HYW1lcGxheVJl",
+            "Y29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVlc3RIAEIICgZkZXRh",
+            "aWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequestReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequestReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -47,10 +49,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 151
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 155;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetGameplayRecommendationReq : pb::IMessage<GetGameplayRecommendationReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -109,7 +115,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 9;
+    public const int AvatarIdFieldNumber = 6;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,7 +127,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "skill_request" field.</summary>
-    public const int SkillRequestFieldNumber = 553;
+    public const int SkillRequestFieldNumber = 1566;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest SkillRequest {
@@ -133,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reliquary_request" field.</summary>
-    public const int ReliquaryRequestFieldNumber = 1993;
+    public const int ReliquaryRequestFieldNumber = 72;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest ReliquaryRequest {
@@ -145,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "element_reliquary_request" field.</summary>
-    public const int ElementReliquaryRequestFieldNumber = 1489;
+    public const int ElementReliquaryRequestFieldNumber = 867;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest ElementReliquaryRequest {
@@ -160,9 +166,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      SkillRequest = 553,
-      ReliquaryRequest = 1993,
-      ElementReliquaryRequest = 1489,
+      SkillRequest = 1566,
+      ReliquaryRequest = 72,
+      ElementReliquaryRequest = 867,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,20 +235,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AvatarId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(AvatarId);
       }
-      if (detailCase_ == DetailOneofCase.SkillRequest) {
-        output.WriteRawTag(202, 34);
-        output.WriteMessage(SkillRequest);
+      if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
+        output.WriteRawTag(194, 4);
+        output.WriteMessage(ReliquaryRequest);
       }
       if (detailCase_ == DetailOneofCase.ElementReliquaryRequest) {
-        output.WriteRawTag(138, 93);
+        output.WriteRawTag(154, 54);
         output.WriteMessage(ElementReliquaryRequest);
       }
-      if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
-        output.WriteRawTag(202, 124);
-        output.WriteMessage(ReliquaryRequest);
+      if (detailCase_ == DetailOneofCase.SkillRequest) {
+        output.WriteRawTag(242, 97);
+        output.WriteMessage(SkillRequest);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -255,20 +261,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AvatarId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(AvatarId);
       }
-      if (detailCase_ == DetailOneofCase.SkillRequest) {
-        output.WriteRawTag(202, 34);
-        output.WriteMessage(SkillRequest);
+      if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
+        output.WriteRawTag(194, 4);
+        output.WriteMessage(ReliquaryRequest);
       }
       if (detailCase_ == DetailOneofCase.ElementReliquaryRequest) {
-        output.WriteRawTag(138, 93);
+        output.WriteRawTag(154, 54);
         output.WriteMessage(ElementReliquaryRequest);
       }
-      if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
-        output.WriteRawTag(202, 124);
-        output.WriteMessage(ReliquaryRequest);
+      if (detailCase_ == DetailOneofCase.SkillRequest) {
+        output.WriteRawTag(242, 97);
+        output.WriteMessage(SkillRequest);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -343,20 +349,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 48: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 4426: {
-            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest();
-            if (detailCase_ == DetailOneofCase.SkillRequest) {
-              subBuilder.MergeFrom(SkillRequest);
+          case 578: {
+            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest();
+            if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
+              subBuilder.MergeFrom(ReliquaryRequest);
             }
             input.ReadMessage(subBuilder);
-            SkillRequest = subBuilder;
+            ReliquaryRequest = subBuilder;
             break;
           }
-          case 11914: {
+          case 6938: {
             global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest();
             if (detailCase_ == DetailOneofCase.ElementReliquaryRequest) {
               subBuilder.MergeFrom(ElementReliquaryRequest);
@@ -365,13 +371,13 @@ namespace Weedwacker.Shared.Network.Proto {
             ElementReliquaryRequest = subBuilder;
             break;
           }
-          case 15946: {
-            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest();
-            if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
-              subBuilder.MergeFrom(ReliquaryRequest);
+          case 12530: {
+            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest();
+            if (detailCase_ == DetailOneofCase.SkillRequest) {
+              subBuilder.MergeFrom(SkillRequest);
             }
             input.ReadMessage(subBuilder);
-            ReliquaryRequest = subBuilder;
+            SkillRequest = subBuilder;
             break;
           }
         }
@@ -389,20 +395,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 48: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 4426: {
-            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest();
-            if (detailCase_ == DetailOneofCase.SkillRequest) {
-              subBuilder.MergeFrom(SkillRequest);
+          case 578: {
+            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest();
+            if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
+              subBuilder.MergeFrom(ReliquaryRequest);
             }
             input.ReadMessage(subBuilder);
-            SkillRequest = subBuilder;
+            ReliquaryRequest = subBuilder;
             break;
           }
-          case 11914: {
+          case 6938: {
             global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest();
             if (detailCase_ == DetailOneofCase.ElementReliquaryRequest) {
               subBuilder.MergeFrom(ElementReliquaryRequest);
@@ -411,13 +417,13 @@ namespace Weedwacker.Shared.Network.Proto {
             ElementReliquaryRequest = subBuilder;
             break;
           }
-          case 15946: {
-            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryRequest();
-            if (detailCase_ == DetailOneofCase.ReliquaryRequest) {
-              subBuilder.MergeFrom(ReliquaryRequest);
+          case 12530: {
+            global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest subBuilder = new global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillRequest();
+            if (detailCase_ == DetailOneofCase.SkillRequest) {
+              subBuilder.MergeFrom(SkillRequest);
             }
             input.ReadMessage(subBuilder);
-            ReliquaryRequest = subBuilder;
+            SkillRequest = subBuilder;
             break;
           }
         }

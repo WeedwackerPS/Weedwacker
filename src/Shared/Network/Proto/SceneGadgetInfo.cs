@@ -24,55 +24,75 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGadgetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTY2VuZUdhZGdldEluZm8ucHJvdG8aF0FiaWxpdHlHYWRnZXRJbmZvLnBy",
-            "b3RvGhZCbG9zc29tQ2hlc3RJbmZvLnByb3RvGhNCb3NzQ2hlc3RJbmZvLnBy",
-            "b3RvGhZDbGllbnRHYWRnZXRJbmZvLnByb3RvGhpDdXN0b21HYWRnZXRUcmVl",
-            "SW5mby5wcm90bxoeRGVzaHJldE9iZWxpc2tHYWRnZXRJbmZvLnByb3RvGhNF",
-            "Y2hvU2hlbGxJbmZvLnByb3RvGhJGaXNoUG9vbEluZm8ucHJvdG8aFEZvdW5k",
-            "YXRpb25JbmZvLnByb3RvGhRHYWRnZXRCb3JuVHlwZS5wcm90bxodR2FkZ2V0",
-            "R2VuZXJhbFJld2FyZEluZm8ucHJvdG8aFEdhZGdldFBsYXlJbmZvLnByb3Rv",
-            "GhZHYXRoZXJHYWRnZXRJbmZvLnByb3RvGgpJdGVtLnByb3RvGhZNcFBsYXlS",
-            "ZXdhcmRJbmZvLnByb3RvGhlOaWdodENyb3dHYWRnZXRJbmZvLnByb3RvGhJP",
-            "ZmZlcmluZ0luZm8ucHJvdG8aElBsYXRmb3JtSW5mby5wcm90bxoZUm9ndWVs",
-            "aWtlR2FkZ2V0SW5mby5wcm90bxoQU2NyZWVuSW5mby5wcm90bxoWU3RhdHVl",
-            "R2FkZ2V0SW5mby5wcm90bxoRVmVoaWNsZUluZm8ucHJvdG8aEVdlYXRoZXJJ",
-            "bmZvLnByb3RvGhFXb3JrdG9wSW5mby5wcm90byL9CgoPU2NlbmVHYWRnZXRJ",
-            "bmZvEhEKCWdhZGdldF9pZBgBIAEoDRIQCghncm91cF9pZBgCIAEoDRIRCglj",
-            "b25maWdfaWQYAyABKA0SFwoPb3duZXJfZW50aXR5X2lkGAQgASgNEiIKCWJv",
-            "cm5fdHlwZRgFIAEoDjIPLkdhZGdldEJvcm5UeXBlEhQKDGdhZGdldF9zdGF0",
-            "ZRgGIAEoDRITCgtnYWRnZXRfdHlwZRgHIAEoDRIYChBpc19zaG93X2N1dHNj",
-            "ZW5lGAggASgIEhkKEWF1dGhvcml0eV9wZWVyX2lkGAkgASgNEhoKEmlzX2Vu",
-            "YWJsZV9pbnRlcmFjdBgKIAEoCBITCgtpbnRlcmFjdF9pZBgLIAEoDRIRCglt",
-            "YXJrX2ZsYWcYFSABKA0SHAoUcHJvcF9vd25lcl9lbnRpdHlfaWQYFiABKA0S",
-            "HwoIcGxhdGZvcm0YFyABKAsyDS5QbGF0Zm9ybUluZm8SGQoRaW50ZXJhY3Rf",
-            "dWlkX2xpc3QYGCADKA0SEAoIZHJhZnRfaWQYGSABKA0SGQoRZ2FkZ2V0X3Rh",
-            "bGtfc3RhdGUYGiABKA0SIgoJcGxheV9pbmZvGGQgASgLMg8uR2FkZ2V0UGxh",
-            "eUluZm8SHAoLdHJpZmxlX2l0ZW0YDCABKAsyBS5JdGVtSAASKgoNZ2F0aGVy",
-            "X2dhZGdldBgNIAEoCzIRLkdhdGhlckdhZGdldEluZm9IABIfCgd3b3JrdG9w",
-            "GA4gASgLMgwuV29ya3RvcEluZm9IABIqCg1jbGllbnRfZ2FkZ2V0GA8gASgL",
-            "MhEuQ2xpZW50R2FkZ2V0SW5mb0gAEh8KB3dlYXRoZXIYESABKAsyDC5XZWF0",
-            "aGVySW5mb0gAEiwKDmFiaWxpdHlfZ2FkZ2V0GBIgASgLMhIuQWJpbGl0eUdh",
-            "ZGdldEluZm9IABIqCg1zdGF0dWVfZ2FkZ2V0GBMgASgLMhEuU3RhdHVlR2Fk",
-            "Z2V0SW5mb0gAEiQKCmJvc3NfY2hlc3QYFCABKAsyDi5Cb3NzQ2hlc3RJbmZv",
-            "SAASKgoNYmxvc3NvbV9jaGVzdBgpIAEoCzIRLkJsb3Nzb21DaGVzdEluZm9I",
-            "ABIrCg5tcF9wbGF5X3Jld2FyZBgqIAEoCzIRLk1wUGxheVJld2FyZEluZm9I",
-            "ABIyCg5nZW5lcmFsX3Jld2FyZBgrIAEoCzIYLkdhZGdldEdlbmVyYWxSZXdh",
-            "cmRJbmZvSAASJgoNb2ZmZXJpbmdfaW5mbxgsIAEoCzINLk9mZmVyaW5nSW5m",
-            "b0gAEioKD2ZvdW5kYXRpb25faW5mbxgtIAEoCzIPLkZvdW5kYXRpb25JbmZv",
-            "SAASJAoMdmVoaWNsZV9pbmZvGC4gASgLMgwuVmVoaWNsZUluZm9IABIkCgpz",
-            "aGVsbF9pbmZvGC8gASgLMg4uRWNob1NoZWxsSW5mb0gAEiIKC3NjcmVlbl9p",
-            "bmZvGDAgASgLMgsuU2NyZWVuSW5mb0gAEicKDmZpc2hfcG9vbF9pbmZvGDsg",
-            "ASgLMg0uRmlzaFBvb2xJbmZvSAASOAoXY3VzdG9tX2dhZGdldF90cmVlX2lu",
-            "Zm8YPCABKAsyFS5DdXN0b21HYWRnZXRUcmVlSW5mb0gAEjUKFXJvZ3VlbGlr",
-            "ZV9nYWRnZXRfaW5mbxg9IAEoCzIULlJvZ3VlbGlrZUdhZGdldEluZm9IABI2",
-            "ChZuaWdodF9jcm93X2dhZGdldF9pbmZvGD4gASgLMhQuTmlnaHRDcm93R2Fk",
-            "Z2V0SW5mb0gAEkAKG2Rlc2hyZXRfb2JlbGlza19nYWRnZXRfaW5mbxg/IAEo",
-            "CzIZLkRlc2hyZXRPYmVsaXNrR2FkZ2V0SW5mb0gAQgkKB2NvbnRlbnRCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVTY2VuZUdhZGdldEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aF0FiaWxpdHlHYWRnZXRJbmZvLnByb3RvGhZCbG9zc29t",
+            "Q2hlc3RJbmZvLnByb3RvGhNCb3NzQ2hlc3RJbmZvLnByb3RvGhZDbGllbnRH",
+            "YWRnZXRJbmZvLnByb3RvGh1Db2luQ29sbGVjdE9wZXJhdG9ySW5mby5wcm90",
+            "bxoaQ3VzdG9tR2FkZ2V0VHJlZUluZm8ucHJvdG8aHkRlc2hyZXRPYmVsaXNr",
+            "R2FkZ2V0SW5mby5wcm90bxoTRWNob1NoZWxsSW5mby5wcm90bxoSRmlzaFBv",
+            "b2xJbmZvLnByb3RvGhRGb3VuZGF0aW9uSW5mby5wcm90bxoUR2FkZ2V0Qm9y",
+            "blR5cGUucHJvdG8aHUdhZGdldEdlbmVyYWxSZXdhcmRJbmZvLnByb3RvGhRH",
+            "YWRnZXRQbGF5SW5mby5wcm90bxoWR2F0aGVyR2FkZ2V0SW5mby5wcm90bxoK",
+            "SXRlbS5wcm90bxoWTXBQbGF5UmV3YXJkSW5mby5wcm90bxoZTmlnaHRDcm93",
+            "R2FkZ2V0SW5mby5wcm90bxoST2ZmZXJpbmdJbmZvLnByb3RvGhJQbGF0Zm9y",
+            "bUluZm8ucHJvdG8aGVJvZ3VlbGlrZUdhZGdldEluZm8ucHJvdG8aEFNjcmVl",
+            "bkluZm8ucHJvdG8aFlN0YXR1ZUdhZGdldEluZm8ucHJvdG8aEVZlaGljbGVJ",
+            "bmZvLnByb3RvGhFXZWF0aGVySW5mby5wcm90bxoRV29ya3RvcEluZm8ucHJv",
+            "dG8i3REKD1NjZW5lR2FkZ2V0SW5mbxIRCglnYWRnZXRfaWQYASABKA0SEAoI",
+            "Z3JvdXBfaWQYAiABKA0SEQoJY29uZmlnX2lkGAMgASgNEhcKD293bmVyX2Vu",
+            "dGl0eV9pZBgEIAEoDRJCCglib3JuX3R5cGUYBSABKA4yLy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdhZGdldEJvcm5UeXBlEhQKDGdhZGdl",
+            "dF9zdGF0ZRgGIAEoDRITCgtnYWRnZXRfdHlwZRgHIAEoDRIYChBpc19zaG93",
+            "X2N1dHNjZW5lGAggASgIEhkKEWF1dGhvcml0eV9wZWVyX2lkGAkgASgNEhoK",
+            "EmlzX2VuYWJsZV9pbnRlcmFjdBgKIAEoCBITCgtpbnRlcmFjdF9pZBgLIAEo",
+            "DRIRCgltYXJrX2ZsYWcYFSABKA0SHAoUcHJvcF9vd25lcl9lbnRpdHlfaWQY",
+            "FiABKA0SPwoIcGxhdGZvcm0YFyABKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlBsYXRmb3JtSW5mbxIZChFpbnRlcmFjdF91aWRfbGlz",
+            "dBgYIAMoDRIQCghkcmFmdF9pZBgZIAEoDRIZChFnYWRnZXRfdGFsa19zdGF0",
+            "ZRgaIAEoDRJCCglwbGF5X2luZm8YZCABKAsyLy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkdhZGdldFBsYXlJbmZvEjwKC3RyaWZsZV9pdGVt",
+            "GAwgASgLMiUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JdGVt",
+            "SAASSgoNZ2F0aGVyX2dhZGdldBgNIAEoCzIxLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uR2F0aGVyR2FkZ2V0SW5mb0gAEj8KB3dvcmt0b3AY",
+            "DiABKAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldvcmt0",
+            "b3BJbmZvSAASSgoNY2xpZW50X2dhZGdldBgPIAEoCzIxLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2xpZW50R2FkZ2V0SW5mb0gAEj8KB3dl",
+            "YXRoZXIYESABKAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LldlYXRoZXJJbmZvSAASTAoOYWJpbGl0eV9nYWRnZXQYEiABKAsyMi5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlHYWRnZXRJbmZv",
+            "SAASSgoNc3RhdHVlX2dhZGdldBgTIAEoCzIxLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uU3RhdHVlR2FkZ2V0SW5mb0gAEkQKCmJvc3NfY2hl",
+            "c3QYFCABKAsyLi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJv",
+            "c3NDaGVzdEluZm9IABJKCg1ibG9zc29tX2NoZXN0GCkgASgLMjEuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CbG9zc29tQ2hlc3RJbmZvSAAS",
+            "SwoObXBfcGxheV9yZXdhcmQYKiABKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLk1wUGxheVJld2FyZEluZm9IABJSCg5nZW5lcmFsX3Jl",
+            "d2FyZBgrIAEoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "R2FkZ2V0R2VuZXJhbFJld2FyZEluZm9IABJGCg1vZmZlcmluZ19pbmZvGCwg",
+            "ASgLMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PZmZlcmlu",
+            "Z0luZm9IABJKCg9mb3VuZGF0aW9uX2luZm8YLSABKAsyLy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkZvdW5kYXRpb25JbmZvSAASRAoMdmVo",
+            "aWNsZV9pbmZvGC4gASgLMiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5WZWhpY2xlSW5mb0gAEkQKCnNoZWxsX2luZm8YLyABKAsyLi5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkVjaG9TaGVsbEluZm9IABJC",
+            "CgtzY3JlZW5faW5mbxgwIAEoCzIrLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uU2NyZWVuSW5mb0gAEkcKDmZpc2hfcG9vbF9pbmZvGDsgASgL",
+            "Mi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GaXNoUG9vbElu",
+            "Zm9IABJYChdjdXN0b21fZ2FkZ2V0X3RyZWVfaW5mbxg8IAEoCzI1LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ3VzdG9tR2FkZ2V0VHJlZUlu",
+            "Zm9IABJVChVyb2d1ZWxpa2VfZ2FkZ2V0X2luZm8YPSABKAsyNC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3VlbGlrZUdhZGdldEluZm9I",
+            "ABJWChZuaWdodF9jcm93X2dhZGdldF9pbmZvGD4gASgLMjQuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5OaWdodENyb3dHYWRnZXRJbmZvSAAS",
+            "YAobZGVzaHJldF9vYmVsaXNrX2dhZGdldF9pbmZvGD8gASgLMjkuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5EZXNocmV0T2JlbGlza0dhZGdl",
+            "dEluZm9IABJeChpjb2luX2NvbGxlY3Rfb3BlcmF0b3JfaW5mbxhAIAEoCzI4",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ29pbkNvbGxlY3RP",
+            "cGVyYXRvckluZm9IAEIJCgdjb250ZW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlossomChestInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BossChestInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ClientGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DeshretObeliskGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EchoShellInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FishPoolInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FoundationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetBornTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetGeneralRewardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetPlayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GatherGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MpPlayRewardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.NightCrowGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OfferingInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlatformInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ScreenInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StatueGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VehicleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WeatherInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WorktopInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlossomChestInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BossChestInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ClientGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DeshretObeliskGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EchoShellInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FishPoolInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FoundationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetBornTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetGeneralRewardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GadgetPlayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GatherGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MpPlayRewardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.NightCrowGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OfferingInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlatformInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ScreenInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StatueGadgetInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VehicleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WeatherInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WorktopInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGadgetInfo), global::Weedwacker.Shared.Network.Proto.SceneGadgetInfo.Parser, new[]{ "GadgetId", "GroupId", "ConfigId", "OwnerEntityId", "BornType", "GadgetState", "GadgetType", "IsShowCutscene", "AuthorityPeerId", "IsEnableInteract", "InteractId", "MarkFlag", "PropOwnerEntityId", "Platform", "InteractUidList", "DraftId", "GadgetTalkState", "PlayInfo", "TrifleItem", "GatherGadget", "Worktop", "ClientGadget", "Weather", "AbilityGadget", "StatueGadget", "BossChest", "BlossomChest", "MpPlayReward", "GeneralReward", "OfferingInfo", "FoundationInfo", "VehicleInfo", "ShellInfo", "ScreenInfo", "FishPoolInfo", "CustomGadgetTreeInfo", "RoguelikeGadgetInfo", "NightCrowGadgetInfo", "DeshretObeliskGadgetInfo" }, new[]{ "Content" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGadgetInfo), global::Weedwacker.Shared.Network.Proto.SceneGadgetInfo.Parser, new[]{ "GadgetId", "GroupId", "ConfigId", "OwnerEntityId", "BornType", "GadgetState", "GadgetType", "IsShowCutscene", "AuthorityPeerId", "IsEnableInteract", "InteractId", "MarkFlag", "PropOwnerEntityId", "Platform", "InteractUidList", "DraftId", "GadgetTalkState", "PlayInfo", "TrifleItem", "GatherGadget", "Worktop", "ClientGadget", "Weather", "AbilityGadget", "StatueGadget", "BossChest", "BlossomChest", "MpPlayReward", "GeneralReward", "OfferingInfo", "FoundationInfo", "VehicleInfo", "ShellInfo", "ScreenInfo", "FishPoolInfo", "CustomGadgetTreeInfo", "RoguelikeGadgetInfo", "NightCrowGadgetInfo", "DeshretObeliskGadgetInfo", "CoinCollectOperatorInfo" }, new[]{ "Content" }, null, null, null)
           }));
     }
     #endregion
@@ -194,6 +214,9 @@ namespace Weedwacker.Shared.Network.Proto {
           break;
         case ContentOneofCase.DeshretObeliskGadgetInfo:
           DeshretObeliskGadgetInfo = other.DeshretObeliskGadgetInfo.Clone();
+          break;
+        case ContentOneofCase.CoinCollectOperatorInfo:
+          CoinCollectOperatorInfo = other.CoinCollectOperatorInfo.Clone();
           break;
       }
 
@@ -673,6 +696,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "coin_collect_operator_info" field.</summary>
+    public const int CoinCollectOperatorInfoFieldNumber = 64;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo CoinCollectOperatorInfo {
+      get { return contentCase_ == ContentOneofCase.CoinCollectOperatorInfo ? (global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo) content_ : null; }
+      set {
+        content_ = value;
+        contentCase_ = value == null ? ContentOneofCase.None : ContentOneofCase.CoinCollectOperatorInfo;
+      }
+    }
+
     private object content_;
     /// <summary>Enum of possible cases for the "content" oneof.</summary>
     public enum ContentOneofCase {
@@ -698,6 +733,7 @@ namespace Weedwacker.Shared.Network.Proto {
       RoguelikeGadgetInfo = 61,
       NightCrowGadgetInfo = 62,
       DeshretObeliskGadgetInfo = 63,
+      CoinCollectOperatorInfo = 64,
     }
     private ContentOneofCase contentCase_ = ContentOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -767,6 +803,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (!object.Equals(RoguelikeGadgetInfo, other.RoguelikeGadgetInfo)) return false;
       if (!object.Equals(NightCrowGadgetInfo, other.NightCrowGadgetInfo)) return false;
       if (!object.Equals(DeshretObeliskGadgetInfo, other.DeshretObeliskGadgetInfo)) return false;
+      if (!object.Equals(CoinCollectOperatorInfo, other.CoinCollectOperatorInfo)) return false;
       if (ContentCase != other.ContentCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -814,6 +851,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (contentCase_ == ContentOneofCase.RoguelikeGadgetInfo) hash ^= RoguelikeGadgetInfo.GetHashCode();
       if (contentCase_ == ContentOneofCase.NightCrowGadgetInfo) hash ^= NightCrowGadgetInfo.GetHashCode();
       if (contentCase_ == ContentOneofCase.DeshretObeliskGadgetInfo) hash ^= DeshretObeliskGadgetInfo.GetHashCode();
+      if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) hash ^= CoinCollectOperatorInfo.GetHashCode();
       hash ^= (int) contentCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -982,6 +1020,10 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(250, 3);
         output.WriteMessage(DeshretObeliskGadgetInfo);
       }
+      if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) {
+        output.WriteRawTag(130, 4);
+        output.WriteMessage(CoinCollectOperatorInfo);
+      }
       if (playInfo_ != null) {
         output.WriteRawTag(162, 6);
         output.WriteMessage(PlayInfo);
@@ -1145,6 +1187,10 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(250, 3);
         output.WriteMessage(DeshretObeliskGadgetInfo);
       }
+      if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) {
+        output.WriteRawTag(130, 4);
+        output.WriteMessage(CoinCollectOperatorInfo);
+      }
       if (playInfo_ != null) {
         output.WriteRawTag(162, 6);
         output.WriteMessage(PlayInfo);
@@ -1273,6 +1319,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (contentCase_ == ContentOneofCase.DeshretObeliskGadgetInfo) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(DeshretObeliskGadgetInfo);
+      }
+      if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectOperatorInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1470,6 +1519,12 @@ namespace Weedwacker.Shared.Network.Proto {
             DeshretObeliskGadgetInfo = new global::Weedwacker.Shared.Network.Proto.DeshretObeliskGadgetInfo();
           }
           DeshretObeliskGadgetInfo.MergeFrom(other.DeshretObeliskGadgetInfo);
+          break;
+        case ContentOneofCase.CoinCollectOperatorInfo:
+          if (CoinCollectOperatorInfo == null) {
+            CoinCollectOperatorInfo = new global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo();
+          }
+          CoinCollectOperatorInfo.MergeFrom(other.CoinCollectOperatorInfo);
           break;
       }
 
@@ -1747,6 +1802,15 @@ namespace Weedwacker.Shared.Network.Proto {
             }
             input.ReadMessage(subBuilder);
             DeshretObeliskGadgetInfo = subBuilder;
+            break;
+          }
+          case 514: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo();
+            if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) {
+              subBuilder.MergeFrom(CoinCollectOperatorInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectOperatorInfo = subBuilder;
             break;
           }
           case 802: {
@@ -2030,6 +2094,15 @@ namespace Weedwacker.Shared.Network.Proto {
             }
             input.ReadMessage(subBuilder);
             DeshretObeliskGadgetInfo = subBuilder;
+            break;
+          }
+          case 514: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectOperatorInfo();
+            if (contentCase_ == ContentOneofCase.CoinCollectOperatorInfo) {
+              subBuilder.MergeFrom(CoinCollectOperatorInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectOperatorInfo = subBuilder;
             break;
           }
           case 802: {

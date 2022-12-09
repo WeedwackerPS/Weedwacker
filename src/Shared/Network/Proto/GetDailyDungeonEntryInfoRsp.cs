@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetDailyDungeonEntryInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFHZXREYWlseUR1bmdlb25FbnRyeUluZm9Sc3AucHJvdG8aG0RhaWx5RHVu",
-            "Z2VvbkVudHJ5SW5mby5wcm90byJnChtHZXREYWlseUR1bmdlb25FbnRyeUlu",
-            "Zm9Sc3ASNwoXZGFpbHlfZHVuZ2Vvbl9pbmZvX2xpc3QYAiADKAsyFi5EYWls",
-            "eUR1bmdlb25FbnRyeUluZm8SDwoHcmV0Y29kZRgOIAEoBUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFHZXREYWlseUR1bmdlb25FbnRyeUluZm9Sc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG0RhaWx5RHVuZ2VvbkVudHJ5SW5m",
+            "by5wcm90byKHAQobR2V0RGFpbHlEdW5nZW9uRW50cnlJbmZvUnNwElcKF2Rh",
+            "aWx5X2R1bmdlb25faW5mb19saXN0GAEgAygLMjYuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5EYWlseUR1bmdlb25FbnRyeUluZm8SDwoHcmV0",
+            "Y29kZRgJIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 967
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 953;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetDailyDungeonEntryInfoRsp : pb::IMessage<GetDailyDungeonEntryInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "daily_dungeon_info_list" field.</summary>
-    public const int DailyDungeonInfoListFieldNumber = 2;
+    public const int DailyDungeonInfoListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfo> _repeated_dailyDungeonInfoList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfo.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfo> dailyDungeonInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DailyDungeonEntryInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 9;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       dailyDungeonInfoList_.WriteTo(output, _repeated_dailyDungeonInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -173,7 +178,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       dailyDungeonInfoList_.WriteTo(ref output, _repeated_dailyDungeonInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -221,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 10: {
             dailyDungeonInfoList_.AddEntriesFrom(input, _repeated_dailyDungeonInfoList_codec);
             break;
           }
-          case 112: {
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -244,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 10: {
             dailyDungeonInfoList_.AddEntriesFrom(ref input, _repeated_dailyDungeonInfoList_codec);
             break;
           }
-          case 112: {
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }

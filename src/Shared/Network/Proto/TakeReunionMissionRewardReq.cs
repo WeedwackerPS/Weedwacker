@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeReunionMissionRewardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFUYWtlUmV1bmlvbk1pc3Npb25SZXdhcmRSZXEucHJvdG8iWgobVGFrZVJl",
-            "dW5pb25NaXNzaW9uUmV3YXJkUmVxEhEKCXJld2FyZF9pZBgHIAEoDRIUCgxy",
-            "ZXdhcmRfaW5kZXgYBCABKA0SEgoKbWlzc2lvbl9pZBgMIAEoDUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFUYWtlUmV1bmlvbk1pc3Npb25SZXdhcmRSZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iWgobVGFrZVJldW5pb25NaXNzaW9u",
+            "UmV3YXJkUmVxEhIKCm1pc3Npb25faWQYAyABKA0SEQoJcmV3YXJkX2lkGAUg",
+            "ASgNEhQKDHJld2FyZF9pbmRleBgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeReunionMissionRewardReq), global::Weedwacker.Shared.Network.Proto.TakeReunionMissionRewardReq.Parser, new[]{ "RewardId", "RewardIndex", "MissionId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeReunionMissionRewardReq), global::Weedwacker.Shared.Network.Proto.TakeReunionMissionRewardReq.Parser, new[]{ "MissionId", "RewardId", "RewardIndex" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5092
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5095;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeReunionMissionRewardReq : pb::IMessage<TakeReunionMissionRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TakeReunionMissionRewardReq(TakeReunionMissionRewardReq other) : this() {
+      missionId_ = other.missionId_;
       rewardId_ = other.rewardId_;
       rewardIndex_ = other.rewardIndex_;
-      missionId_ = other.missionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TakeReunionMissionRewardReq(this);
     }
 
+    /// <summary>Field number for the "mission_id" field.</summary>
+    public const int MissionIdFieldNumber = 3;
+    private uint missionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MissionId {
+      get { return missionId_; }
+      set {
+        missionId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "reward_id" field.</summary>
-    public const int RewardIdFieldNumber = 7;
+    public const int RewardIdFieldNumber = 5;
     private uint rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reward_index" field.</summary>
-    public const int RewardIndexFieldNumber = 4;
+    public const int RewardIndexFieldNumber = 6;
     private uint rewardIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return rewardIndex_; }
       set {
         rewardIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mission_id" field.</summary>
-    public const int MissionIdFieldNumber = 12;
-    private uint missionId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MissionId {
-      get { return missionId_; }
-      set {
-        missionId_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (MissionId != other.MissionId) return false;
       if (RewardId != other.RewardId) return false;
       if (RewardIndex != other.RewardIndex) return false;
-      if (MissionId != other.MissionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (MissionId != 0) hash ^= MissionId.GetHashCode();
       if (RewardId != 0) hash ^= RewardId.GetHashCode();
       if (RewardIndex != 0) hash ^= RewardIndex.GetHashCode();
-      if (MissionId != 0) hash ^= MissionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RewardIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RewardIndex);
+      if (MissionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MissionId);
       }
       if (RewardId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(RewardId);
       }
-      if (MissionId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MissionId);
+      if (RewardIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RewardIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RewardIndex != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RewardIndex);
+      if (MissionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MissionId);
       }
       if (RewardId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(RewardId);
       }
-      if (MissionId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MissionId);
+      if (RewardIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RewardIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (MissionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
+      }
       if (RewardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
       }
       if (RewardIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardIndex);
-      }
-      if (MissionId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.MissionId != 0) {
+        MissionId = other.MissionId;
+      }
       if (other.RewardId != 0) {
         RewardId = other.RewardId;
       }
       if (other.RewardIndex != 0) {
         RewardIndex = other.RewardIndex;
-      }
-      if (other.MissionId != 0) {
-        MissionId = other.MissionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            RewardIndex = input.ReadUInt32();
+          case 24: {
+            MissionId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 40: {
             RewardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            MissionId = input.ReadUInt32();
+          case 48: {
+            RewardIndex = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            RewardIndex = input.ReadUInt32();
+          case 24: {
+            MissionId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 40: {
             RewardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            MissionId = input.ReadUInt32();
+          case 48: {
+            RewardIndex = input.ReadUInt32();
             break;
           }
         }

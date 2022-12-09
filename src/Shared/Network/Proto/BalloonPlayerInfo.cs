@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static BalloonPlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdCYWxsb29uUGxheWVySW5mby5wcm90byJeChFCYWxsb29uUGxheWVySW5m",
-            "bxILCgN1aWQYDyABKA0SEQoJY3VyX3Njb3JlGAIgASgNEhoKEmNvbWJvX2Rp",
-            "c2FibGVfdGltZRgOIAEoDRINCgVjb21ibxgLIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdCYWxsb29uUGxheWVySW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJeChFCYWxsb29uUGxheWVySW5mbxIRCgljdXJfc2Nv",
+            "cmUYCSABKA0SDQoFY29tYm8YCyABKA0SCwoDdWlkGAggASgNEhoKEmNvbWJv",
+            "X2Rpc2FibGVfdGltZRgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonPlayerInfo), global::Weedwacker.Shared.Network.Proto.BalloonPlayerInfo.Parser, new[]{ "Uid", "CurScore", "ComboDisableTime", "Combo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonPlayerInfo), global::Weedwacker.Shared.Network.Proto.BalloonPlayerInfo.Parser, new[]{ "CurScore", "Combo", "Uid", "ComboDisableTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BalloonPlayerInfo(BalloonPlayerInfo other) : this() {
-      uid_ = other.uid_;
       curScore_ = other.curScore_;
-      comboDisableTime_ = other.comboDisableTime_;
       combo_ = other.combo_;
+      uid_ = other.uid_;
+      comboDisableTime_ = other.comboDisableTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BalloonPlayerInfo(this);
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 15;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 2;
+    public const int CurScoreFieldNumber = 9;
     private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,18 +94,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curScore_; }
       set {
         curScore_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "combo_disable_time" field.</summary>
-    public const int ComboDisableTimeFieldNumber = 14;
-    private uint comboDisableTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ComboDisableTime {
-      get { return comboDisableTime_; }
-      set {
-        comboDisableTime_ = value;
       }
     }
 
@@ -130,6 +106,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return combo_; }
       set {
         combo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 8;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combo_disable_time" field.</summary>
+    public const int ComboDisableTimeFieldNumber = 7;
+    private uint comboDisableTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ComboDisableTime {
+      get { return comboDisableTime_; }
+      set {
+        comboDisableTime_ = value;
       }
     }
 
@@ -148,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
       if (CurScore != other.CurScore) return false;
-      if (ComboDisableTime != other.ComboDisableTime) return false;
       if (Combo != other.Combo) return false;
+      if (Uid != other.Uid) return false;
+      if (ComboDisableTime != other.ComboDisableTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (CurScore != 0) hash ^= CurScore.GetHashCode();
-      if (ComboDisableTime != 0) hash ^= ComboDisableTime.GetHashCode();
       if (Combo != 0) hash ^= Combo.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (ComboDisableTime != 0) hash ^= ComboDisableTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,21 +181,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ComboDisableTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComboDisableTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
       if (CurScore != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(72);
         output.WriteUInt32(CurScore);
       }
       if (Combo != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(Combo);
-      }
-      if (ComboDisableTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ComboDisableTime);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,21 +207,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ComboDisableTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComboDisableTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
       if (CurScore != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(72);
         output.WriteUInt32(CurScore);
       }
       if (Combo != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(Combo);
-      }
-      if (ComboDisableTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ComboDisableTime);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,17 +233,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (CurScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
-      if (ComboDisableTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComboDisableTime);
-      }
       if (Combo != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (ComboDisableTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComboDisableTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       if (other.CurScore != 0) {
         CurScore = other.CurScore;
       }
-      if (other.ComboDisableTime != 0) {
-        ComboDisableTime = other.ComboDisableTime;
-      }
       if (other.Combo != 0) {
         Combo = other.Combo;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.ComboDisableTime != 0) {
+        ComboDisableTime = other.ComboDisableTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 56: {
+            ComboDisableTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             CurScore = input.ReadUInt32();
             break;
           }
           case 88: {
             Combo = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ComboDisableTime = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -315,20 +315,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 56: {
+            ComboDisableTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             CurScore = input.ReadUInt32();
             break;
           }
           case 88: {
             Combo = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ComboDisableTime = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            Uid = input.ReadUInt32();
             break;
           }
         }

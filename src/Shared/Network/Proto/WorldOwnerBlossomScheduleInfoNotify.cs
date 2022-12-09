@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldOwnerBlossomScheduleInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilXb3JsZE93bmVyQmxvc3NvbVNjaGVkdWxlSW5mb05vdGlmeS5wcm90bxoZ",
-            "Qmxvc3NvbVNjaGVkdWxlSW5mby5wcm90byJSCiNXb3JsZE93bmVyQmxvc3Nv",
-            "bVNjaGVkdWxlSW5mb05vdGlmeRIrCg1zY2hlZHVsZV9pbmZvGAMgASgLMhQu",
-            "Qmxvc3NvbVNjaGVkdWxlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "CilXb3JsZE93bmVyQmxvc3NvbVNjaGVkdWxlSW5mb05vdGlmeS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoZQmxvc3NvbVNjaGVk",
+            "dWxlSW5mby5wcm90byJyCiNXb3JsZE93bmVyQmxvc3NvbVNjaGVkdWxlSW5m",
+            "b05vdGlmeRJLCg1zY2hlZHVsZV9pbmZvGAogASgLMjQuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5CbG9zc29tU2NoZWR1bGVJbmZvYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2707
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2800;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldOwnerBlossomScheduleInfoNotify : pb::IMessage<WorldOwnerBlossomScheduleInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_info" field.</summary>
-    public const int ScheduleInfoFieldNumber = 3;
+    public const int ScheduleInfoFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo scheduleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,7 +149,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (scheduleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(82);
         output.WriteMessage(ScheduleInfo);
       }
       if (_unknownFields != null) {
@@ -158,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (scheduleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(82);
         output.WriteMessage(ScheduleInfo);
       }
       if (_unknownFields != null) {
@@ -207,7 +212,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 82: {
             if (scheduleInfo_ == null) {
               ScheduleInfo = new global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo();
             }
@@ -229,7 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 82: {
             if (scheduleInfo_ == null) {
               ScheduleInfo = new global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo();
             }

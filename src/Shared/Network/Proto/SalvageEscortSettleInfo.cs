@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvageEscortSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1TYWx2YWdlRXNjb3J0U2V0dGxlSW5mby5wcm90bxokU2FsdmFnZUVzY29y",
-            "dEdhbGxlcnlTZXR0bGVJbmZvLnByb3RvImYKF1NhbHZhZ2VFc2NvcnRTZXR0",
-            "bGVJbmZvEjQKC3NldHRsZV9pbmZvGAMgASgLMh8uU2FsdmFnZUVzY29ydEdh",
-            "bGxlcnlTZXR0bGVJbmZvEhUKDWlzX25ld19yZWNvcmQYAiABKAhCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1TYWx2YWdlRXNjb3J0U2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxokU2FsdmFnZUVzY29ydEdhbGxlcnlTZXR0",
+            "bGVJbmZvLnByb3RvIoYBChdTYWx2YWdlRXNjb3J0U2V0dGxlSW5mbxJUCgtz",
+            "ZXR0bGVfaW5mbxgGIAEoCzI/LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uU2FsdmFnZUVzY29ydEdhbGxlcnlTZXR0bGVJbmZvEhUKDWlzX25l",
+            "d19yZWNvcmQYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SalvageEscortGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 3;
+    public const int SettleInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.SalvageEscortGallerySettleInfo settleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +158,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -175,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -234,7 +235,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 26: {
+          case 50: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.SalvageEscortGallerySettleInfo();
             }
@@ -260,7 +261,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 26: {
+          case 50: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.SalvageEscortGallerySettleInfo();
             }

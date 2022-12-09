@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static ModifierActionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRNb2RpZmllckFjdGlvbi5wcm90bypICg5Nb2RpZmllckFjdGlvbhIZChVN",
-            "T0RJRklFUl9BQ1RJT05fQURERUQQABIbChdNT0RJRklFUl9BQ1RJT05fUkVN",
-            "T1ZFRBABQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChRNb2RpZmllckFjdGlvbi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byooCg5Nb2RpZmllckFjdGlvbhIJCgVBRERFRBAAEgsKB1JF",
+            "TU9WRUQQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.ModifierAction), }, null, null));
@@ -37,8 +36,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Enums
   public enum ModifierAction {
-    [pbr::OriginalName("MODIFIER_ACTION_ADDED")] Added = 0,
-    [pbr::OriginalName("MODIFIER_ACTION_REMOVED")] Removed = 1,
+    /// <summary>
+    /// MODIFIER_ACTION_ADDED
+    /// </summary>
+    [pbr::OriginalName("ADDED")] Added = 0,
+    /// <summary>
+    /// MODIFIER_ACTION_REMOVED
+    /// </summary>
+    [pbr::OriginalName("REMOVED")] Removed = 1,
   }
 
   #endregion

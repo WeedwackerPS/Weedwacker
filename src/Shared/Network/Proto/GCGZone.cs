@@ -24,8 +24,8 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGZoneReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1HQ0dab25lLnByb3RvIhwKB0dDR1pvbmUSEQoJY2FyZF9saXN0GAQgAygN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Cg1HQ0dab25lLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvIhwKB0dDR1pvbmUSEQoJY2FyZF9saXN0GAsgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 4;
+    public const int CardListFieldNumber = 11;
     private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(90);
     private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -184,8 +184,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
+          case 90:
+          case 88: {
             cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
             break;
           }
@@ -204,8 +204,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
+          case 90:
+          case 88: {
             cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
             break;
           }

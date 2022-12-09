@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetOpActivityInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHZXRPcEFjdGl2aXR5SW5mb1JzcC5wcm90bxoUT3BBY3Rpdml0eUluZm8u",
-            "cHJvdG8iVwoUR2V0T3BBY3Rpdml0eUluZm9Sc3ASDwoHcmV0Y29kZRgKIAEo",
-            "BRIuChVvcF9hY3Rpdml0eV9pbmZvX2xpc3QYByADKAsyDy5PcEFjdGl2aXR5",
-            "SW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChpHZXRPcEFjdGl2aXR5SW5mb1JzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoUT3BBY3Rpdml0eUluZm8ucHJvdG8idwoUR2V0",
+            "T3BBY3Rpdml0eUluZm9Sc3ASDwoHcmV0Y29kZRgGIAEoBRJOChVvcF9hY3Rp",
+            "dml0eV9pbmZvX2xpc3QYCCADKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLk9wQWN0aXZpdHlJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OpActivityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5198
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5130;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetOpActivityInfoRsp : pb::IMessage<GetOpActivityInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_activity_info_list" field.</summary>
-    public const int OpActivityInfoListFieldNumber = 7;
+    public const int OpActivityInfoListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OpActivityInfo> _repeated_opActivityInfoList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.OpActivityInfo.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.OpActivityInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OpActivityInfo> opActivityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OpActivityInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      opActivityInfoList_.WriteTo(output, _repeated_opActivityInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      opActivityInfoList_.WriteTo(output, _repeated_opActivityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      opActivityInfoList_.WriteTo(ref output, _repeated_opActivityInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      opActivityInfoList_.WriteTo(ref output, _repeated_opActivityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            opActivityInfoList_.AddEntriesFrom(input, _repeated_opActivityInfoList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            opActivityInfoList_.AddEntriesFrom(input, _repeated_opActivityInfoList_codec);
             break;
           }
         }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            opActivityInfoList_.AddEntriesFrom(ref input, _repeated_opActivityInfoList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            opActivityInfoList_.AddEntriesFrom(ref input, _repeated_opActivityInfoList_codec);
             break;
           }
         }

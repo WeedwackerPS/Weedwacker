@@ -24,19 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static GMObstacleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHTU9ic3RhY2xlSW5mby5wcm90bxoUTWF0aFF1YXRlcm5pb24ucHJvdG8a",
-            "DFZlY3Rvci5wcm90bxoQVmVjdG9yM0ludC5wcm90byL9AQoOR01PYnN0YWNs",
-            "ZUluZm8SEQoJdGltZXN0YW1wGA4gASgDEigKBXNoYXBlGAIgASgOMhkuR01P",
-            "YnN0YWNsZUluZm8uU2hhcGVUeXBlEhMKC29ic3RhY2xlX2lkGA0gASgFEiEK",
-            "CHJvdGF0aW9uGAMgASgLMg8uTWF0aFF1YXRlcm5pb24SFwoGY2VudGVyGAgg",
-            "ASgLMgcuVmVjdG9yEhwKB2V4dGVudHMYDyABKAsyCy5WZWN0b3IzSW50Ij8K",
-            "CVNoYXBlVHlwZRIaChZPQlNUQUNMRV9TSEFQRV9DQVBTVUxFEAASFgoST0JT",
-            "VEFDTEVfU0hBUEVfQk9YEAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRHTU9ic3RhY2xlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoUTWF0aFF1YXRlcm5pb24ucHJvdG8aDFZlY3Rvci5wcm90",
+            "bxoQVmVjdG9yM0ludC5wcm90byKTAwoOR01PYnN0YWNsZUluZm8SSAoFc2hh",
+            "cGUYAiABKA4yOS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdN",
+            "T2JzdGFjbGVJbmZvLlNoYXBlVHlwZRJBCghyb3RhdGlvbhgIIAEoCzIvLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWF0aFF1YXRlcm5pb24S",
+            "NwoGY2VudGVyGA8gASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5WZWN0b3ISEQoJdGltZXN0YW1wGAEgASgDEhMKC29ic3RhY2xlX2lk",
+            "GA0gASgFEjwKB2V4dGVudHMYCSABKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlZlY3RvcjNJbnQiVQoJU2hhcGVUeXBlEiUKIVNIQVBF",
+            "X1RZUEVfT0JTVEFDTEVfU0hBUEVfQ0FQU1VMRRAAEiEKHVNIQVBFX1RZUEVf",
+            "T0JTVEFDTEVfU0hBUEVfQk9YEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MathQuaternionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.Vector3IntReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GMObstacleInfo), global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Parser, new[]{ "Timestamp", "Shape", "ObstacleId", "Rotation", "Center", "Extents" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GMObstacleInfo), global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Parser, new[]{ "Shape", "Rotation", "Center", "Timestamp", "ObstacleId", "Extents" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType) }, null, null)
           }));
     }
     #endregion
@@ -77,11 +80,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GMObstacleInfo(GMObstacleInfo other) : this() {
-      timestamp_ = other.timestamp_;
       shape_ = other.shape_;
-      obstacleId_ = other.obstacleId_;
       rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
       center_ = other.center_ != null ? other.center_.Clone() : null;
+      timestamp_ = other.timestamp_;
+      obstacleId_ = other.obstacleId_;
       extents_ = other.extents_ != null ? other.extents_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,18 +93,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GMObstacleInfo Clone() {
       return new GMObstacleInfo(this);
-    }
-
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 14;
-    private long timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
     }
 
     /// <summary>Field number for the "shape" field.</summary>
@@ -113,6 +104,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return shape_; }
       set {
         shape_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rotation" field.</summary>
+    public const int RotationFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.MathQuaternion rotation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.MathQuaternion Rotation {
+      get { return rotation_; }
+      set {
+        rotation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "center" field.</summary>
+    public const int CenterFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.Vector center_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Center {
+      get { return center_; }
+      set {
+        center_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 1;
+    private long timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
       }
     }
 
@@ -128,32 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "rotation" field.</summary>
-    public const int RotationFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.MathQuaternion rotation_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.MathQuaternion Rotation {
-      get { return rotation_; }
-      set {
-        rotation_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "center" field.</summary>
-    public const int CenterFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector center_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Center {
-      get { return center_; }
-      set {
-        center_ = value;
-      }
-    }
-
     /// <summary>Field number for the "extents" field.</summary>
-    public const int ExtentsFieldNumber = 15;
+    public const int ExtentsFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.Vector3Int extents_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Timestamp != other.Timestamp) return false;
       if (Shape != other.Shape) return false;
-      if (ObstacleId != other.ObstacleId) return false;
       if (!object.Equals(Rotation, other.Rotation)) return false;
       if (!object.Equals(Center, other.Center)) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (ObstacleId != other.ObstacleId) return false;
       if (!object.Equals(Extents, other.Extents)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -192,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
       if (Shape != global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType.ObstacleShapeCapsule) hash ^= Shape.GetHashCode();
-      if (ObstacleId != 0) hash ^= ObstacleId.GetHashCode();
       if (rotation_ != null) hash ^= Rotation.GetHashCode();
       if (center_ != null) hash ^= Center.GetHashCode();
+      if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
+      if (ObstacleId != 0) hash ^= ObstacleId.GetHashCode();
       if (extents_ != null) hash ^= Extents.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -216,29 +219,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Timestamp != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Timestamp);
+      }
       if (Shape != global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType.ObstacleShapeCapsule) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Shape);
       }
       if (rotation_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(66);
         output.WriteMessage(Rotation);
       }
-      if (center_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Center);
+      if (extents_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Extents);
       }
       if (ObstacleId != 0) {
         output.WriteRawTag(104);
         output.WriteInt32(ObstacleId);
       }
-      if (Timestamp != 0L) {
-        output.WriteRawTag(112);
-        output.WriteInt64(Timestamp);
-      }
-      if (extents_ != null) {
+      if (center_ != null) {
         output.WriteRawTag(122);
-        output.WriteMessage(Extents);
+        output.WriteMessage(Center);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -250,29 +253,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Timestamp != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Timestamp);
+      }
       if (Shape != global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType.ObstacleShapeCapsule) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Shape);
       }
       if (rotation_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(66);
         output.WriteMessage(Rotation);
       }
-      if (center_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Center);
+      if (extents_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Extents);
       }
       if (ObstacleId != 0) {
         output.WriteRawTag(104);
         output.WriteInt32(ObstacleId);
       }
-      if (Timestamp != 0L) {
-        output.WriteRawTag(112);
-        output.WriteInt64(Timestamp);
-      }
-      if (extents_ != null) {
+      if (center_ != null) {
         output.WriteRawTag(122);
-        output.WriteMessage(Extents);
+        output.WriteMessage(Center);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -284,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Timestamp != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Timestamp);
-      }
       if (Shape != global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType.ObstacleShapeCapsule) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Shape);
-      }
-      if (ObstacleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ObstacleId);
       }
       if (rotation_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rotation);
       }
       if (center_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Center);
+      }
+      if (Timestamp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Timestamp);
+      }
+      if (ObstacleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ObstacleId);
       }
       if (extents_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Extents);
@@ -314,14 +317,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Timestamp != 0L) {
-        Timestamp = other.Timestamp;
-      }
       if (other.Shape != global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType.ObstacleShapeCapsule) {
         Shape = other.Shape;
-      }
-      if (other.ObstacleId != 0) {
-        ObstacleId = other.ObstacleId;
       }
       if (other.rotation_ != null) {
         if (rotation_ == null) {
@@ -334,6 +331,12 @@ namespace Weedwacker.Shared.Network.Proto {
           Center = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Center.MergeFrom(other.Center);
+      }
+      if (other.Timestamp != 0L) {
+        Timestamp = other.Timestamp;
+      }
+      if (other.ObstacleId != 0) {
+        ObstacleId = other.ObstacleId;
       }
       if (other.extents_ != null) {
         if (extents_ == null) {
@@ -356,37 +359,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Timestamp = input.ReadInt64();
+            break;
+          }
           case 16: {
             Shape = (global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType) input.ReadEnum();
             break;
           }
-          case 26: {
+          case 66: {
             if (rotation_ == null) {
               Rotation = new global::Weedwacker.Shared.Network.Proto.MathQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
           }
-          case 66: {
-            if (center_ == null) {
-              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 74: {
+            if (extents_ == null) {
+              Extents = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
             }
-            input.ReadMessage(Center);
+            input.ReadMessage(Extents);
             break;
           }
           case 104: {
             ObstacleId = input.ReadInt32();
             break;
           }
-          case 112: {
-            Timestamp = input.ReadInt64();
-            break;
-          }
           case 122: {
-            if (extents_ == null) {
-              Extents = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            if (center_ == null) {
+              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(Extents);
+            input.ReadMessage(Center);
             break;
           }
         }
@@ -404,37 +407,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Timestamp = input.ReadInt64();
+            break;
+          }
           case 16: {
             Shape = (global::Weedwacker.Shared.Network.Proto.GMObstacleInfo.Types.ShapeType) input.ReadEnum();
             break;
           }
-          case 26: {
+          case 66: {
             if (rotation_ == null) {
               Rotation = new global::Weedwacker.Shared.Network.Proto.MathQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
           }
-          case 66: {
-            if (center_ == null) {
-              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 74: {
+            if (extents_ == null) {
+              Extents = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
             }
-            input.ReadMessage(Center);
+            input.ReadMessage(Extents);
             break;
           }
           case 104: {
             ObstacleId = input.ReadInt32();
             break;
           }
-          case 112: {
-            Timestamp = input.ReadInt64();
-            break;
-          }
           case 122: {
-            if (extents_ == null) {
-              Extents = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            if (center_ == null) {
+              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(Extents);
+            input.ReadMessage(Center);
             break;
           }
         }
@@ -448,8 +451,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum ShapeType {
-        [pbr::OriginalName("OBSTACLE_SHAPE_CAPSULE")] ObstacleShapeCapsule = 0,
-        [pbr::OriginalName("OBSTACLE_SHAPE_BOX")] ObstacleShapeBox = 1,
+        [pbr::OriginalName("SHAPE_TYPE_OBSTACLE_SHAPE_CAPSULE")] ObstacleShapeCapsule = 0,
+        [pbr::OriginalName("SHAPE_TYPE_OBSTACLE_SHAPE_BOX")] ObstacleShapeBox = 1,
       }
 
     }

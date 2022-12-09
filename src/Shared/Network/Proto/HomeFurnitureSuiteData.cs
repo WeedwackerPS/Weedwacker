@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeFurnitureSuiteDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxIb21lRnVybml0dXJlU3VpdGVEYXRhLnByb3RvGgxWZWN0b3IucHJvdG8i",
-            "lAEKFkhvbWVGdXJuaXR1cmVTdWl0ZURhdGESFwoPaXNfYWxsb3dfc3VtbW9u",
-            "GAogASgIEhAKCHN1aXRlX2lkGAYgASgNEhoKCXNwYXduX3BvcxgIIAEoCzIH",
-            "LlZlY3RvchIMCgRndWlkGA0gASgNEiUKHWluY2x1ZGVkX2Z1cm5pdHVyZV9p",
-            "bmRleF9saXN0GAEgAygFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChxIb21lRnVybml0dXJlU3VpdGVEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8itAEKFkhvbWVGdXJu",
+            "aXR1cmVTdWl0ZURhdGESFwoPaXNfYWxsb3dfc3VtbW9uGAQgASgIEhAKCHN1",
+            "aXRlX2lkGAMgASgNEgwKBGd1aWQYBSABKA0SOgoJc3Bhd25fcG9zGAkgASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISJQod",
+            "aW5jbHVkZWRfZnVybml0dXJlX2luZGV4X2xpc3QYCyADKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData), global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData.Parser, new[]{ "IsAllowSummon", "SuiteId", "SpawnPos", "Guid", "IncludedFurnitureIndexList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData), global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData.Parser, new[]{ "IsAllowSummon", "SuiteId", "Guid", "SpawnPos", "IncludedFurnitureIndexList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,8 +76,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public HomeFurnitureSuiteData(HomeFurnitureSuiteData other) : this() {
       isAllowSummon_ = other.isAllowSummon_;
       suiteId_ = other.suiteId_;
-      spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
       guid_ = other.guid_;
+      spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
       includedFurnitureIndexList_ = other.includedFurnitureIndexList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_allow_summon" field.</summary>
-    public const int IsAllowSummonFieldNumber = 10;
+    public const int IsAllowSummonFieldNumber = 4;
     private bool isAllowSummon_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "suite_id" field.</summary>
-    public const int SuiteIdFieldNumber = 6;
+    public const int SuiteIdFieldNumber = 3;
     private uint suiteId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,20 +112,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "spawn_pos" field.</summary>
-    public const int SpawnPosFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector spawnPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector SpawnPos {
-      get { return spawnPos_; }
-      set {
-        spawnPos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 13;
+    public const int GuidFieldNumber = 5;
     private uint guid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,10 +124,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "spawn_pos" field.</summary>
+    public const int SpawnPosFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.Vector spawnPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector SpawnPos {
+      get { return spawnPos_; }
+      set {
+        spawnPos_ = value;
+      }
+    }
+
     /// <summary>Field number for the "included_furniture_index_list" field.</summary>
-    public const int IncludedFurnitureIndexListFieldNumber = 1;
+    public const int IncludedFurnitureIndexListFieldNumber = 11;
     private static readonly pb::FieldCodec<int> _repeated_includedFurnitureIndexList_codec
-        = pb::FieldCodec.ForInt32(10);
+        = pb::FieldCodec.ForInt32(90);
     private readonly pbc::RepeatedField<int> includedFurnitureIndexList_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,8 +164,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (IsAllowSummon != other.IsAllowSummon) return false;
       if (SuiteId != other.SuiteId) return false;
-      if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
       if (Guid != other.Guid) return false;
+      if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
       if(!includedFurnitureIndexList_.Equals(other.includedFurnitureIndexList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -176,8 +176,8 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       if (IsAllowSummon != false) hash ^= IsAllowSummon.GetHashCode();
       if (SuiteId != 0) hash ^= SuiteId.GetHashCode();
-      if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
       if (Guid != 0) hash ^= Guid.GetHashCode();
+      if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
       hash ^= includedFurnitureIndexList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -197,23 +197,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      includedFurnitureIndexList_.WriteTo(output, _repeated_includedFurnitureIndexList_codec);
       if (SuiteId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SuiteId);
       }
-      if (spawnPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(SpawnPos);
-      }
       if (IsAllowSummon != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsAllowSummon);
       }
       if (Guid != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(Guid);
       }
+      if (spawnPos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SpawnPos);
+      }
+      includedFurnitureIndexList_.WriteTo(output, _repeated_includedFurnitureIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -224,23 +224,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      includedFurnitureIndexList_.WriteTo(ref output, _repeated_includedFurnitureIndexList_codec);
       if (SuiteId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SuiteId);
       }
-      if (spawnPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(SpawnPos);
-      }
       if (IsAllowSummon != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsAllowSummon);
       }
       if (Guid != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(Guid);
       }
+      if (spawnPos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SpawnPos);
+      }
+      includedFurnitureIndexList_.WriteTo(ref output, _repeated_includedFurnitureIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -257,11 +257,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SuiteId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SuiteId);
       }
-      if (spawnPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
-      }
       if (Guid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guid);
+      }
+      if (spawnPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
       }
       size += includedFurnitureIndexList_.CalculateSize(_repeated_includedFurnitureIndexList_codec);
       if (_unknownFields != null) {
@@ -282,14 +282,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SuiteId != 0) {
         SuiteId = other.SuiteId;
       }
+      if (other.Guid != 0) {
+        Guid = other.Guid;
+      }
       if (other.spawnPos_ != null) {
         if (spawnPos_ == null) {
           SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         SpawnPos.MergeFrom(other.SpawnPos);
-      }
-      if (other.Guid != 0) {
-        Guid = other.Guid;
       }
       includedFurnitureIndexList_.Add(other.includedFurnitureIndexList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -307,28 +307,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            includedFurnitureIndexList_.AddEntriesFrom(input, _repeated_includedFurnitureIndexList_codec);
-            break;
-          }
-          case 48: {
+          case 24: {
             SuiteId = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 32: {
+            IsAllowSummon = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Guid = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 80: {
-            IsAllowSummon = input.ReadBool();
-            break;
-          }
-          case 104: {
-            Guid = input.ReadUInt32();
+          case 90:
+          case 88: {
+            includedFurnitureIndexList_.AddEntriesFrom(input, _repeated_includedFurnitureIndexList_codec);
             break;
           }
         }
@@ -346,28 +346,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            includedFurnitureIndexList_.AddEntriesFrom(ref input, _repeated_includedFurnitureIndexList_codec);
-            break;
-          }
-          case 48: {
+          case 24: {
             SuiteId = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 32: {
+            IsAllowSummon = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Guid = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 80: {
-            IsAllowSummon = input.ReadBool();
-            break;
-          }
-          case 104: {
-            Guid = input.ReadUInt32();
+          case 90:
+          case 88: {
+            includedFurnitureIndexList_.AddEntriesFrom(ref input, _repeated_includedFurnitureIndexList_codec);
             break;
           }
         }

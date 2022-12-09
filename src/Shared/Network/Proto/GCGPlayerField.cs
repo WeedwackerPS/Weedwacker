@@ -24,28 +24,36 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGPlayerFieldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHQ0dQbGF5ZXJGaWVsZC5wcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3Rv",
-            "GhVHQ0dQVkVJbnRlbnRpb24ucHJvdG8aGUdDR1dhaXRpbmdDaGFyYWN0ZXIu",
-            "cHJvdG8aDUdDR1pvbmUucHJvdG8i8AQKDkdDR1BsYXllckZpZWxkEjsKD21v",
-            "ZGlmeV96b25lX21hcBgCIAMoCzIiLkdDR1BsYXllckZpZWxkLk1vZGlmeVpv",
-            "bmVNYXBFbnRyeRIaChFjdXJfd2FpdGluZ19pbmRleBj/AiABKA0SHQoLc3Vt",
-            "bW9uX3pvbmUYASABKAsyCC5HQ0dab25lEhUKDWZpZWxkX3Nob3dfaWQYCCAB",
-            "KA0SGQoRY2FyZF9iYWNrX3Nob3dfaWQYDCABKA0SEgoKZGljZV9jb3VudBgD",
-            "IAEoDRIVCg1jb250cm9sbGVyX2lkGAogASgNEh8KDW9uX3N0YWdlX3pvbmUY",
-            "DiABKAsyCC5HQ0dab25lEhEKCWlzX3Bhc3NlZBgHIAEoCBIgCg5jaGFyYWN0",
-            "ZXJfem9uZRgFIAEoCzIILkdDR1pvbmUSHwoXb25fc3RhZ2VfY2hhcmFjdGVy",
-            "X2d1aWQYBiABKA0SHQoLYXNzaXN0X3pvbmUYDyABKAsyCC5HQ0dab25lEhUK",
-            "DWRlY2tfY2FyZF9udW0YDSABKA0SKAoOZGljZV9zaWRlX2xpc3QYCyADKA4y",
-            "EC5HQ0dEaWNlU2lkZVR5cGUSGwoJaGFuZF96b25lGAkgASgLMgguR0NHWm9u",
-            "ZRIpCg5pbnRlbnRpb25fbGlzdBioCSADKAsyEC5HQ0dQVkVJbnRlbnRpb24S",
-            "KgoMd2FpdGluZ19saXN0GAQgAygLMhQuR0NHV2FpdGluZ0NoYXJhY3Rlcho+",
-            "ChJNb2RpZnlab25lTWFwRW50cnkSCwoDa2V5GAEgASgNEhcKBXZhbHVlGAIg",
-            "ASgLMgguR0NHWm9uZToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRHQ0dQbGF5ZXJGaWVsZC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3RvGhVHQ0dQVkVJbnRl",
+            "bnRpb24ucHJvdG8aGUdDR1dhaXRpbmdDaGFyYWN0ZXIucHJvdG8aDUdDR1pv",
+            "bmUucHJvdG8i6gcKDkdDR1BsYXllckZpZWxkEhsKE1VuazMzMDBfSUtKTUdB",
+            "SENGUE0YBSABKA0SWwoPbW9kaWZ5X3pvbmVfbWFwGAcgAygLMkIuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dQbGF5ZXJGaWVsZC5Nb2Rp",
+            "Znlab25lTWFwRW50cnkSHAoTVW5rMzMwMF9HR0hLRkZBREVBTBjbBSABKA0S",
+            "RQoTVW5rMzMwMF9BT1BKSU9ITVBPRhgKIAEoCzIoLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR0NHWm9uZRIbChNVbmszMzAwX0ZERlBITkRP",
+            "Sk1MGAwgASgNEkUKE1VuazMzMDBfSVBMTUhLQ05ETEUYASABKAsyKC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1pvbmUSRQoTVW5rMzMw",
+            "MF9FSUhPTURMRU5NSxgJIAEoCzIoLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uR0NHWm9uZRJKCgx3YWl0aW5nX2xpc3QYAiADKAsyNC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1dhaXRpbmdDaGFyYWN0",
+            "ZXISGwoTVW5rMzMwMF9QQkVDSU5LS0hORBgPIAEoDRIVCg1jb250cm9sbGVy",
+            "X2lkGAYgASgNEkUKE1VuazMzMDBfSU5ESk5KSkpOS0wYCyABKAsyKC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1pvbmUSRQoTVW5rMzMw",
+            "MF9FRk5BRUZCRUNIRBgEIAEoCzIoLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uR0NHWm9uZRIRCglpc19wYXNzZWQYCCABKAgSSQoOaW50ZW50",
+            "aW9uX2xpc3QYsAIgAygLMjAuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5HQ0dQVkVJbnRlbnRpb24SSAoOZGljZV9zaWRlX2xpc3QYDSADKA4y",
+            "MC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR0RpY2VTaWRl",
+            "VHlwZRIbChNVbmszMzAwX0ZKTlBGQklIRkdEGAMgASgNEhsKE1VuazMzMDBf",
+            "R0xOSUZMT0tCUE0YDiABKA0aXgoSTW9kaWZ5Wm9uZU1hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoDRI3CgV2YWx1ZRgCIAEoCzIoLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uR0NHWm9uZToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGDiceSideTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGPVEIntentionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacterReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGZoneReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGPlayerField), global::Weedwacker.Shared.Network.Proto.GCGPlayerField.Parser, new[]{ "ModifyZoneMap", "CurWaitingIndex", "SummonZone", "FieldShowId", "CardBackShowId", "DiceCount", "ControllerId", "OnStageZone", "IsPassed", "CharacterZone", "OnStageCharacterGuid", "AssistZone", "DeckCardNum", "DiceSideList", "HandZone", "IntentionList", "WaitingList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGPlayerField), global::Weedwacker.Shared.Network.Proto.GCGPlayerField.Parser, new[]{ "Unk3300IKJMGAHCFPM", "ModifyZoneMap", "Unk3300GGHKFFADEAL", "Unk3300AOPJIOHMPOF", "Unk3300FDFPHNDOJML", "Unk3300IPLMHKCNDLE", "Unk3300EIHOMDLENMK", "WaitingList", "Unk3300PBECINKKHND", "ControllerId", "Unk3300INDJNJJJNKL", "Unk3300EFNAEFBECHD", "IsPassed", "IntentionList", "DiceSideList", "Unk3300FJNPFBIHFGD", "Unk3300GLNIFLOKBPM" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -86,23 +94,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGPlayerField(GCGPlayerField other) : this() {
+      unk3300IKJMGAHCFPM_ = other.unk3300IKJMGAHCFPM_;
       modifyZoneMap_ = other.modifyZoneMap_.Clone();
-      curWaitingIndex_ = other.curWaitingIndex_;
-      summonZone_ = other.summonZone_ != null ? other.summonZone_.Clone() : null;
-      fieldShowId_ = other.fieldShowId_;
-      cardBackShowId_ = other.cardBackShowId_;
-      diceCount_ = other.diceCount_;
-      controllerId_ = other.controllerId_;
-      onStageZone_ = other.onStageZone_ != null ? other.onStageZone_.Clone() : null;
-      isPassed_ = other.isPassed_;
-      characterZone_ = other.characterZone_ != null ? other.characterZone_.Clone() : null;
-      onStageCharacterGuid_ = other.onStageCharacterGuid_;
-      assistZone_ = other.assistZone_ != null ? other.assistZone_.Clone() : null;
-      deckCardNum_ = other.deckCardNum_;
-      diceSideList_ = other.diceSideList_.Clone();
-      handZone_ = other.handZone_ != null ? other.handZone_.Clone() : null;
-      intentionList_ = other.intentionList_.Clone();
+      unk3300GGHKFFADEAL_ = other.unk3300GGHKFFADEAL_;
+      unk3300AOPJIOHMPOF_ = other.unk3300AOPJIOHMPOF_ != null ? other.unk3300AOPJIOHMPOF_.Clone() : null;
+      unk3300FDFPHNDOJML_ = other.unk3300FDFPHNDOJML_;
+      unk3300IPLMHKCNDLE_ = other.unk3300IPLMHKCNDLE_ != null ? other.unk3300IPLMHKCNDLE_.Clone() : null;
+      unk3300EIHOMDLENMK_ = other.unk3300EIHOMDLENMK_ != null ? other.unk3300EIHOMDLENMK_.Clone() : null;
       waitingList_ = other.waitingList_.Clone();
+      unk3300PBECINKKHND_ = other.unk3300PBECINKKHND_;
+      controllerId_ = other.controllerId_;
+      unk3300INDJNJJJNKL_ = other.unk3300INDJNJJJNKL_ != null ? other.unk3300INDJNJJJNKL_.Clone() : null;
+      unk3300EFNAEFBECHD_ = other.unk3300EFNAEFBECHD_ != null ? other.unk3300EFNAEFBECHD_.Clone() : null;
+      isPassed_ = other.isPassed_;
+      intentionList_ = other.intentionList_.Clone();
+      diceSideList_ = other.diceSideList_.Clone();
+      unk3300FJNPFBIHFGD_ = other.unk3300FJNPFBIHFGD_;
+      unk3300GLNIFLOKBPM_ = other.unk3300GLNIFLOKBPM_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -112,10 +120,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGPlayerField(this);
     }
 
+    /// <summary>Field number for the "Unk3300_IKJMGAHCFPM" field.</summary>
+    public const int Unk3300IKJMGAHCFPMFieldNumber = 5;
+    private uint unk3300IKJMGAHCFPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IKJMGAHCFPM {
+      get { return unk3300IKJMGAHCFPM_; }
+      set {
+        unk3300IKJMGAHCFPM_ = value;
+      }
+    }
+
     /// <summary>Field number for the "modify_zone_map" field.</summary>
-    public const int ModifyZoneMapFieldNumber = 2;
+    public const int ModifyZoneMapFieldNumber = 7;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGZone>.Codec _map_modifyZoneMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGZone>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGZone.Parser), 18);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGZone>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGZone.Parser), 58);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGZone> modifyZoneMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGZone>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,68 +143,91 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return modifyZoneMap_; }
     }
 
-    /// <summary>Field number for the "cur_waiting_index" field.</summary>
-    public const int CurWaitingIndexFieldNumber = 383;
-    private uint curWaitingIndex_;
+    /// <summary>Field number for the "Unk3300_GGHKFFADEAL" field.</summary>
+    public const int Unk3300GGHKFFADEALFieldNumber = 731;
+    private uint unk3300GGHKFFADEAL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurWaitingIndex {
-      get { return curWaitingIndex_; }
+    public uint Unk3300GGHKFFADEAL {
+      get { return unk3300GGHKFFADEAL_; }
       set {
-        curWaitingIndex_ = value;
+        unk3300GGHKFFADEAL_ = value;
       }
     }
 
-    /// <summary>Field number for the "summon_zone" field.</summary>
-    public const int SummonZoneFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.GCGZone summonZone_;
+    /// <summary>Field number for the "Unk3300_AOPJIOHMPOF" field.</summary>
+    public const int Unk3300AOPJIOHMPOFFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.GCGZone unk3300AOPJIOHMPOF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGZone SummonZone {
-      get { return summonZone_; }
+    public global::Weedwacker.Shared.Network.Proto.GCGZone Unk3300AOPJIOHMPOF {
+      get { return unk3300AOPJIOHMPOF_; }
       set {
-        summonZone_ = value;
+        unk3300AOPJIOHMPOF_ = value;
       }
     }
 
-    /// <summary>Field number for the "field_show_id" field.</summary>
-    public const int FieldShowIdFieldNumber = 8;
-    private uint fieldShowId_;
+    /// <summary>Field number for the "Unk3300_FDFPHNDOJML" field.</summary>
+    public const int Unk3300FDFPHNDOJMLFieldNumber = 12;
+    private uint unk3300FDFPHNDOJML_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FieldShowId {
-      get { return fieldShowId_; }
+    public uint Unk3300FDFPHNDOJML {
+      get { return unk3300FDFPHNDOJML_; }
       set {
-        fieldShowId_ = value;
+        unk3300FDFPHNDOJML_ = value;
       }
     }
 
-    /// <summary>Field number for the "card_back_show_id" field.</summary>
-    public const int CardBackShowIdFieldNumber = 12;
-    private uint cardBackShowId_;
+    /// <summary>Field number for the "Unk3300_IPLMHKCNDLE" field.</summary>
+    public const int Unk3300IPLMHKCNDLEFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.GCGZone unk3300IPLMHKCNDLE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CardBackShowId {
-      get { return cardBackShowId_; }
+    public global::Weedwacker.Shared.Network.Proto.GCGZone Unk3300IPLMHKCNDLE {
+      get { return unk3300IPLMHKCNDLE_; }
       set {
-        cardBackShowId_ = value;
+        unk3300IPLMHKCNDLE_ = value;
       }
     }
 
-    /// <summary>Field number for the "dice_count" field.</summary>
-    public const int DiceCountFieldNumber = 3;
-    private uint diceCount_;
+    /// <summary>Field number for the "Unk3300_EIHOMDLENMK" field.</summary>
+    public const int Unk3300EIHOMDLENMKFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.GCGZone unk3300EIHOMDLENMK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DiceCount {
-      get { return diceCount_; }
+    public global::Weedwacker.Shared.Network.Proto.GCGZone Unk3300EIHOMDLENMK {
+      get { return unk3300EIHOMDLENMK_; }
       set {
-        diceCount_ = value;
+        unk3300EIHOMDLENMK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "waiting_list" field.</summary>
+    public const int WaitingListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> _repeated_waitingList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> waitingList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> WaitingList {
+      get { return waitingList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_PBECINKKHND" field.</summary>
+    public const int Unk3300PBECINKKHNDFieldNumber = 15;
+    private uint unk3300PBECINKKHND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PBECINKKHND {
+      get { return unk3300PBECINKKHND_; }
+      set {
+        unk3300PBECINKKHND_ = value;
       }
     }
 
     /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 10;
+    public const int ControllerIdFieldNumber = 6;
     private uint controllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -195,20 +238,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "on_stage_zone" field.</summary>
-    public const int OnStageZoneFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.GCGZone onStageZone_;
+    /// <summary>Field number for the "Unk3300_INDJNJJJNKL" field.</summary>
+    public const int Unk3300INDJNJJJNKLFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.GCGZone unk3300INDJNJJJNKL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGZone OnStageZone {
-      get { return onStageZone_; }
+    public global::Weedwacker.Shared.Network.Proto.GCGZone Unk3300INDJNJJJNKL {
+      get { return unk3300INDJNJJJNKL_; }
       set {
-        onStageZone_ = value;
+        unk3300INDJNJJJNKL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EFNAEFBECHD" field.</summary>
+    public const int Unk3300EFNAEFBECHDFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.GCGZone unk3300EFNAEFBECHD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGZone Unk3300EFNAEFBECHD {
+      get { return unk3300EFNAEFBECHD_; }
+      set {
+        unk3300EFNAEFBECHD_ = value;
       }
     }
 
     /// <summary>Field number for the "is_passed" field.</summary>
-    public const int IsPassedFieldNumber = 7;
+    public const int IsPassedFieldNumber = 8;
     private bool isPassed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -219,81 +274,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "character_zone" field.</summary>
-    public const int CharacterZoneFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.GCGZone characterZone_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGZone CharacterZone {
-      get { return characterZone_; }
-      set {
-        characterZone_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "on_stage_character_guid" field.</summary>
-    public const int OnStageCharacterGuidFieldNumber = 6;
-    private uint onStageCharacterGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OnStageCharacterGuid {
-      get { return onStageCharacterGuid_; }
-      set {
-        onStageCharacterGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "assist_zone" field.</summary>
-    public const int AssistZoneFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.GCGZone assistZone_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGZone AssistZone {
-      get { return assistZone_; }
-      set {
-        assistZone_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "deck_card_num" field.</summary>
-    public const int DeckCardNumFieldNumber = 13;
-    private uint deckCardNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DeckCardNum {
-      get { return deckCardNum_; }
-      set {
-        deckCardNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dice_side_list" field.</summary>
-    public const int DiceSideListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> _repeated_diceSideList_codec
-        = pb::FieldCodec.ForEnum(90, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> DiceSideList {
-      get { return diceSideList_; }
-    }
-
-    /// <summary>Field number for the "hand_zone" field.</summary>
-    public const int HandZoneFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.GCGZone handZone_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGZone HandZone {
-      get { return handZone_; }
-      set {
-        handZone_ = value;
-      }
-    }
-
     /// <summary>Field number for the "intention_list" field.</summary>
-    public const int IntentionListFieldNumber = 1192;
+    public const int IntentionListFieldNumber = 304;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGPVEIntention> _repeated_intentionList_codec
-        = pb::FieldCodec.ForMessage(9538, global::Weedwacker.Shared.Network.Proto.GCGPVEIntention.Parser);
+        = pb::FieldCodec.ForMessage(2434, global::Weedwacker.Shared.Network.Proto.GCGPVEIntention.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGPVEIntention> intentionList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGPVEIntention>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -301,15 +285,39 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return intentionList_; }
     }
 
-    /// <summary>Field number for the "waiting_list" field.</summary>
-    public const int WaitingListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> _repeated_waitingList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> waitingList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter>();
+    /// <summary>Field number for the "dice_side_list" field.</summary>
+    public const int DiceSideListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> _repeated_diceSideList_codec
+        = pb::FieldCodec.ForEnum(106, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter> WaitingList {
-      get { return waitingList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> DiceSideList {
+      get { return diceSideList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_FJNPFBIHFGD" field.</summary>
+    public const int Unk3300FJNPFBIHFGDFieldNumber = 3;
+    private uint unk3300FJNPFBIHFGD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FJNPFBIHFGD {
+      get { return unk3300FJNPFBIHFGD_; }
+      set {
+        unk3300FJNPFBIHFGD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GLNIFLOKBPM" field.</summary>
+    public const int Unk3300GLNIFLOKBPMFieldNumber = 14;
+    private uint unk3300GLNIFLOKBPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GLNIFLOKBPM {
+      get { return unk3300GLNIFLOKBPM_; }
+      set {
+        unk3300GLNIFLOKBPM_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -327,23 +335,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300IKJMGAHCFPM != other.Unk3300IKJMGAHCFPM) return false;
       if (!ModifyZoneMap.Equals(other.ModifyZoneMap)) return false;
-      if (CurWaitingIndex != other.CurWaitingIndex) return false;
-      if (!object.Equals(SummonZone, other.SummonZone)) return false;
-      if (FieldShowId != other.FieldShowId) return false;
-      if (CardBackShowId != other.CardBackShowId) return false;
-      if (DiceCount != other.DiceCount) return false;
-      if (ControllerId != other.ControllerId) return false;
-      if (!object.Equals(OnStageZone, other.OnStageZone)) return false;
-      if (IsPassed != other.IsPassed) return false;
-      if (!object.Equals(CharacterZone, other.CharacterZone)) return false;
-      if (OnStageCharacterGuid != other.OnStageCharacterGuid) return false;
-      if (!object.Equals(AssistZone, other.AssistZone)) return false;
-      if (DeckCardNum != other.DeckCardNum) return false;
-      if(!diceSideList_.Equals(other.diceSideList_)) return false;
-      if (!object.Equals(HandZone, other.HandZone)) return false;
-      if(!intentionList_.Equals(other.intentionList_)) return false;
+      if (Unk3300GGHKFFADEAL != other.Unk3300GGHKFFADEAL) return false;
+      if (!object.Equals(Unk3300AOPJIOHMPOF, other.Unk3300AOPJIOHMPOF)) return false;
+      if (Unk3300FDFPHNDOJML != other.Unk3300FDFPHNDOJML) return false;
+      if (!object.Equals(Unk3300IPLMHKCNDLE, other.Unk3300IPLMHKCNDLE)) return false;
+      if (!object.Equals(Unk3300EIHOMDLENMK, other.Unk3300EIHOMDLENMK)) return false;
       if(!waitingList_.Equals(other.waitingList_)) return false;
+      if (Unk3300PBECINKKHND != other.Unk3300PBECINKKHND) return false;
+      if (ControllerId != other.ControllerId) return false;
+      if (!object.Equals(Unk3300INDJNJJJNKL, other.Unk3300INDJNJJJNKL)) return false;
+      if (!object.Equals(Unk3300EFNAEFBECHD, other.Unk3300EFNAEFBECHD)) return false;
+      if (IsPassed != other.IsPassed) return false;
+      if(!intentionList_.Equals(other.intentionList_)) return false;
+      if(!diceSideList_.Equals(other.diceSideList_)) return false;
+      if (Unk3300FJNPFBIHFGD != other.Unk3300FJNPFBIHFGD) return false;
+      if (Unk3300GLNIFLOKBPM != other.Unk3300GLNIFLOKBPM) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -351,23 +359,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300IKJMGAHCFPM != 0) hash ^= Unk3300IKJMGAHCFPM.GetHashCode();
       hash ^= ModifyZoneMap.GetHashCode();
-      if (CurWaitingIndex != 0) hash ^= CurWaitingIndex.GetHashCode();
-      if (summonZone_ != null) hash ^= SummonZone.GetHashCode();
-      if (FieldShowId != 0) hash ^= FieldShowId.GetHashCode();
-      if (CardBackShowId != 0) hash ^= CardBackShowId.GetHashCode();
-      if (DiceCount != 0) hash ^= DiceCount.GetHashCode();
-      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
-      if (onStageZone_ != null) hash ^= OnStageZone.GetHashCode();
-      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
-      if (characterZone_ != null) hash ^= CharacterZone.GetHashCode();
-      if (OnStageCharacterGuid != 0) hash ^= OnStageCharacterGuid.GetHashCode();
-      if (assistZone_ != null) hash ^= AssistZone.GetHashCode();
-      if (DeckCardNum != 0) hash ^= DeckCardNum.GetHashCode();
-      hash ^= diceSideList_.GetHashCode();
-      if (handZone_ != null) hash ^= HandZone.GetHashCode();
-      hash ^= intentionList_.GetHashCode();
+      if (Unk3300GGHKFFADEAL != 0) hash ^= Unk3300GGHKFFADEAL.GetHashCode();
+      if (unk3300AOPJIOHMPOF_ != null) hash ^= Unk3300AOPJIOHMPOF.GetHashCode();
+      if (Unk3300FDFPHNDOJML != 0) hash ^= Unk3300FDFPHNDOJML.GetHashCode();
+      if (unk3300IPLMHKCNDLE_ != null) hash ^= Unk3300IPLMHKCNDLE.GetHashCode();
+      if (unk3300EIHOMDLENMK_ != null) hash ^= Unk3300EIHOMDLENMK.GetHashCode();
       hash ^= waitingList_.GetHashCode();
+      if (Unk3300PBECINKKHND != 0) hash ^= Unk3300PBECINKKHND.GetHashCode();
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (unk3300INDJNJJJNKL_ != null) hash ^= Unk3300INDJNJJJNKL.GetHashCode();
+      if (unk3300EFNAEFBECHD_ != null) hash ^= Unk3300EFNAEFBECHD.GetHashCode();
+      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
+      hash ^= intentionList_.GetHashCode();
+      hash ^= diceSideList_.GetHashCode();
+      if (Unk3300FJNPFBIHFGD != 0) hash ^= Unk3300FJNPFBIHFGD.GetHashCode();
+      if (Unk3300GLNIFLOKBPM != 0) hash ^= Unk3300GLNIFLOKBPM.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -386,62 +394,62 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (summonZone_ != null) {
+      if (unk3300IPLMHKCNDLE_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(SummonZone);
-      }
-      modifyZoneMap_.WriteTo(output, _map_modifyZoneMap_codec);
-      if (DiceCount != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(DiceCount);
+        output.WriteMessage(Unk3300IPLMHKCNDLE);
       }
       waitingList_.WriteTo(output, _repeated_waitingList_codec);
-      if (characterZone_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(CharacterZone);
+      if (Unk3300FJNPFBIHFGD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FJNPFBIHFGD);
       }
-      if (OnStageCharacterGuid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(OnStageCharacterGuid);
+      if (unk3300EFNAEFBECHD_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EFNAEFBECHD);
       }
-      if (IsPassed != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsPassed);
-      }
-      if (FieldShowId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(FieldShowId);
-      }
-      if (handZone_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(HandZone);
+      if (Unk3300IKJMGAHCFPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IKJMGAHCFPM);
       }
       if (ControllerId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(ControllerId);
       }
-      diceSideList_.WriteTo(output, _repeated_diceSideList_codec);
-      if (CardBackShowId != 0) {
+      modifyZoneMap_.WriteTo(output, _map_modifyZoneMap_codec);
+      if (IsPassed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPassed);
+      }
+      if (unk3300EIHOMDLENMK_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300EIHOMDLENMK);
+      }
+      if (unk3300AOPJIOHMPOF_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300AOPJIOHMPOF);
+      }
+      if (unk3300INDJNJJJNKL_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Unk3300INDJNJJJNKL);
+      }
+      if (Unk3300FDFPHNDOJML != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CardBackShowId);
+        output.WriteUInt32(Unk3300FDFPHNDOJML);
       }
-      if (DeckCardNum != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(DeckCardNum);
+      diceSideList_.WriteTo(output, _repeated_diceSideList_codec);
+      if (Unk3300GLNIFLOKBPM != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNIFLOKBPM);
       }
-      if (onStageZone_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(OnStageZone);
-      }
-      if (assistZone_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(AssistZone);
-      }
-      if (CurWaitingIndex != 0) {
-        output.WriteRawTag(248, 23);
-        output.WriteUInt32(CurWaitingIndex);
+      if (Unk3300PBECINKKHND != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PBECINKKHND);
       }
       intentionList_.WriteTo(output, _repeated_intentionList_codec);
+      if (Unk3300GGHKFFADEAL != 0) {
+        output.WriteRawTag(216, 45);
+        output.WriteUInt32(Unk3300GGHKFFADEAL);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -452,62 +460,62 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (summonZone_ != null) {
+      if (unk3300IPLMHKCNDLE_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(SummonZone);
-      }
-      modifyZoneMap_.WriteTo(ref output, _map_modifyZoneMap_codec);
-      if (DiceCount != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(DiceCount);
+        output.WriteMessage(Unk3300IPLMHKCNDLE);
       }
       waitingList_.WriteTo(ref output, _repeated_waitingList_codec);
-      if (characterZone_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(CharacterZone);
+      if (Unk3300FJNPFBIHFGD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FJNPFBIHFGD);
       }
-      if (OnStageCharacterGuid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(OnStageCharacterGuid);
+      if (unk3300EFNAEFBECHD_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EFNAEFBECHD);
       }
-      if (IsPassed != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsPassed);
-      }
-      if (FieldShowId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(FieldShowId);
-      }
-      if (handZone_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(HandZone);
+      if (Unk3300IKJMGAHCFPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IKJMGAHCFPM);
       }
       if (ControllerId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(ControllerId);
       }
-      diceSideList_.WriteTo(ref output, _repeated_diceSideList_codec);
-      if (CardBackShowId != 0) {
+      modifyZoneMap_.WriteTo(ref output, _map_modifyZoneMap_codec);
+      if (IsPassed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPassed);
+      }
+      if (unk3300EIHOMDLENMK_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300EIHOMDLENMK);
+      }
+      if (unk3300AOPJIOHMPOF_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300AOPJIOHMPOF);
+      }
+      if (unk3300INDJNJJJNKL_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Unk3300INDJNJJJNKL);
+      }
+      if (Unk3300FDFPHNDOJML != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CardBackShowId);
+        output.WriteUInt32(Unk3300FDFPHNDOJML);
       }
-      if (DeckCardNum != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(DeckCardNum);
+      diceSideList_.WriteTo(ref output, _repeated_diceSideList_codec);
+      if (Unk3300GLNIFLOKBPM != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNIFLOKBPM);
       }
-      if (onStageZone_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(OnStageZone);
-      }
-      if (assistZone_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(AssistZone);
-      }
-      if (CurWaitingIndex != 0) {
-        output.WriteRawTag(248, 23);
-        output.WriteUInt32(CurWaitingIndex);
+      if (Unk3300PBECINKKHND != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PBECINKKHND);
       }
       intentionList_.WriteTo(ref output, _repeated_intentionList_codec);
+      if (Unk3300GGHKFFADEAL != 0) {
+        output.WriteRawTag(216, 45);
+        output.WriteUInt32(Unk3300GGHKFFADEAL);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -518,49 +526,49 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300IKJMGAHCFPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IKJMGAHCFPM);
+      }
       size += modifyZoneMap_.CalculateSize(_map_modifyZoneMap_codec);
-      if (CurWaitingIndex != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurWaitingIndex);
+      if (Unk3300GGHKFFADEAL != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GGHKFFADEAL);
       }
-      if (summonZone_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SummonZone);
+      if (unk3300AOPJIOHMPOF_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300AOPJIOHMPOF);
       }
-      if (FieldShowId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FieldShowId);
+      if (Unk3300FDFPHNDOJML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFPHNDOJML);
       }
-      if (CardBackShowId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardBackShowId);
+      if (unk3300IPLMHKCNDLE_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300IPLMHKCNDLE);
       }
-      if (DiceCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DiceCount);
+      if (unk3300EIHOMDLENMK_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIHOMDLENMK);
+      }
+      size += waitingList_.CalculateSize(_repeated_waitingList_codec);
+      if (Unk3300PBECINKKHND != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PBECINKKHND);
       }
       if (ControllerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
-      if (onStageZone_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OnStageZone);
+      if (unk3300INDJNJJJNKL_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300INDJNJJJNKL);
+      }
+      if (unk3300EFNAEFBECHD_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EFNAEFBECHD);
       }
       if (IsPassed != false) {
         size += 1 + 1;
       }
-      if (characterZone_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CharacterZone);
-      }
-      if (OnStageCharacterGuid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OnStageCharacterGuid);
-      }
-      if (assistZone_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AssistZone);
-      }
-      if (DeckCardNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckCardNum);
-      }
-      size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
-      if (handZone_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HandZone);
-      }
       size += intentionList_.CalculateSize(_repeated_intentionList_codec);
-      size += waitingList_.CalculateSize(_repeated_waitingList_codec);
+      size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
+      if (Unk3300FJNPFBIHFGD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FJNPFBIHFGD);
+      }
+      if (Unk3300GLNIFLOKBPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLNIFLOKBPM);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -573,64 +581,64 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300IKJMGAHCFPM != 0) {
+        Unk3300IKJMGAHCFPM = other.Unk3300IKJMGAHCFPM;
+      }
       modifyZoneMap_.Add(other.modifyZoneMap_);
-      if (other.CurWaitingIndex != 0) {
-        CurWaitingIndex = other.CurWaitingIndex;
+      if (other.Unk3300GGHKFFADEAL != 0) {
+        Unk3300GGHKFFADEAL = other.Unk3300GGHKFFADEAL;
       }
-      if (other.summonZone_ != null) {
-        if (summonZone_ == null) {
-          SummonZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+      if (other.unk3300AOPJIOHMPOF_ != null) {
+        if (unk3300AOPJIOHMPOF_ == null) {
+          Unk3300AOPJIOHMPOF = new global::Weedwacker.Shared.Network.Proto.GCGZone();
         }
-        SummonZone.MergeFrom(other.SummonZone);
+        Unk3300AOPJIOHMPOF.MergeFrom(other.Unk3300AOPJIOHMPOF);
       }
-      if (other.FieldShowId != 0) {
-        FieldShowId = other.FieldShowId;
+      if (other.Unk3300FDFPHNDOJML != 0) {
+        Unk3300FDFPHNDOJML = other.Unk3300FDFPHNDOJML;
       }
-      if (other.CardBackShowId != 0) {
-        CardBackShowId = other.CardBackShowId;
+      if (other.unk3300IPLMHKCNDLE_ != null) {
+        if (unk3300IPLMHKCNDLE_ == null) {
+          Unk3300IPLMHKCNDLE = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+        }
+        Unk3300IPLMHKCNDLE.MergeFrom(other.Unk3300IPLMHKCNDLE);
       }
-      if (other.DiceCount != 0) {
-        DiceCount = other.DiceCount;
+      if (other.unk3300EIHOMDLENMK_ != null) {
+        if (unk3300EIHOMDLENMK_ == null) {
+          Unk3300EIHOMDLENMK = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+        }
+        Unk3300EIHOMDLENMK.MergeFrom(other.Unk3300EIHOMDLENMK);
+      }
+      waitingList_.Add(other.waitingList_);
+      if (other.Unk3300PBECINKKHND != 0) {
+        Unk3300PBECINKKHND = other.Unk3300PBECINKKHND;
       }
       if (other.ControllerId != 0) {
         ControllerId = other.ControllerId;
       }
-      if (other.onStageZone_ != null) {
-        if (onStageZone_ == null) {
-          OnStageZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+      if (other.unk3300INDJNJJJNKL_ != null) {
+        if (unk3300INDJNJJJNKL_ == null) {
+          Unk3300INDJNJJJNKL = new global::Weedwacker.Shared.Network.Proto.GCGZone();
         }
-        OnStageZone.MergeFrom(other.OnStageZone);
+        Unk3300INDJNJJJNKL.MergeFrom(other.Unk3300INDJNJJJNKL);
+      }
+      if (other.unk3300EFNAEFBECHD_ != null) {
+        if (unk3300EFNAEFBECHD_ == null) {
+          Unk3300EFNAEFBECHD = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+        }
+        Unk3300EFNAEFBECHD.MergeFrom(other.Unk3300EFNAEFBECHD);
       }
       if (other.IsPassed != false) {
         IsPassed = other.IsPassed;
       }
-      if (other.characterZone_ != null) {
-        if (characterZone_ == null) {
-          CharacterZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-        }
-        CharacterZone.MergeFrom(other.CharacterZone);
-      }
-      if (other.OnStageCharacterGuid != 0) {
-        OnStageCharacterGuid = other.OnStageCharacterGuid;
-      }
-      if (other.assistZone_ != null) {
-        if (assistZone_ == null) {
-          AssistZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-        }
-        AssistZone.MergeFrom(other.AssistZone);
-      }
-      if (other.DeckCardNum != 0) {
-        DeckCardNum = other.DeckCardNum;
-      }
-      diceSideList_.Add(other.diceSideList_);
-      if (other.handZone_ != null) {
-        if (handZone_ == null) {
-          HandZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-        }
-        HandZone.MergeFrom(other.HandZone);
-      }
       intentionList_.Add(other.intentionList_);
-      waitingList_.Add(other.waitingList_);
+      diceSideList_.Add(other.diceSideList_);
+      if (other.Unk3300FJNPFBIHFGD != 0) {
+        Unk3300FJNPFBIHFGD = other.Unk3300FJNPFBIHFGD;
+      }
+      if (other.Unk3300GLNIFLOKBPM != 0) {
+        Unk3300GLNIFLOKBPM = other.Unk3300GLNIFLOKBPM;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -647,87 +655,87 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (summonZone_ == null) {
-              SummonZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            if (unk3300IPLMHKCNDLE_ == null) {
+              Unk3300IPLMHKCNDLE = new global::Weedwacker.Shared.Network.Proto.GCGZone();
             }
-            input.ReadMessage(SummonZone);
+            input.ReadMessage(Unk3300IPLMHKCNDLE);
             break;
           }
           case 18: {
-            modifyZoneMap_.AddEntriesFrom(input, _map_modifyZoneMap_codec);
-            break;
-          }
-          case 24: {
-            DiceCount = input.ReadUInt32();
-            break;
-          }
-          case 34: {
             waitingList_.AddEntriesFrom(input, _repeated_waitingList_codec);
             break;
           }
-          case 42: {
-            if (characterZone_ == null) {
-              CharacterZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+          case 24: {
+            Unk3300FJNPFBIHFGD = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300EFNAEFBECHD_ == null) {
+              Unk3300EFNAEFBECHD = new global::Weedwacker.Shared.Network.Proto.GCGZone();
             }
-            input.ReadMessage(CharacterZone);
+            input.ReadMessage(Unk3300EFNAEFBECHD);
+            break;
+          }
+          case 40: {
+            Unk3300IKJMGAHCFPM = input.ReadUInt32();
             break;
           }
           case 48: {
-            OnStageCharacterGuid = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsPassed = input.ReadBool();
-            break;
-          }
-          case 64: {
-            FieldShowId = input.ReadUInt32();
-            break;
-          }
-          case 74: {
-            if (handZone_ == null) {
-              HandZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(HandZone);
-            break;
-          }
-          case 80: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 90:
-          case 88: {
-            diceSideList_.AddEntriesFrom(input, _repeated_diceSideList_codec);
+          case 58: {
+            modifyZoneMap_.AddEntriesFrom(input, _map_modifyZoneMap_codec);
+            break;
+          }
+          case 64: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (unk3300EIHOMDLENMK_ == null) {
+              Unk3300EIHOMDLENMK = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300EIHOMDLENMK);
+            break;
+          }
+          case 82: {
+            if (unk3300AOPJIOHMPOF_ == null) {
+              Unk3300AOPJIOHMPOF = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300AOPJIOHMPOF);
+            break;
+          }
+          case 90: {
+            if (unk3300INDJNJJJNKL_ == null) {
+              Unk3300INDJNJJJNKL = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300INDJNJJJNKL);
             break;
           }
           case 96: {
-            CardBackShowId = input.ReadUInt32();
+            Unk3300FDFPHNDOJML = input.ReadUInt32();
             break;
           }
+          case 106:
           case 104: {
-            DeckCardNum = input.ReadUInt32();
+            diceSideList_.AddEntriesFrom(input, _repeated_diceSideList_codec);
             break;
           }
-          case 114: {
-            if (onStageZone_ == null) {
-              OnStageZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(OnStageZone);
+          case 112: {
+            Unk3300GLNIFLOKBPM = input.ReadUInt32();
             break;
           }
-          case 122: {
-            if (assistZone_ == null) {
-              AssistZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(AssistZone);
+          case 120: {
+            Unk3300PBECINKKHND = input.ReadUInt32();
             break;
           }
-          case 3064: {
-            CurWaitingIndex = input.ReadUInt32();
-            break;
-          }
-          case 9538: {
+          case 2434: {
             intentionList_.AddEntriesFrom(input, _repeated_intentionList_codec);
+            break;
+          }
+          case 5848: {
+            Unk3300GGHKFFADEAL = input.ReadUInt32();
             break;
           }
         }
@@ -746,87 +754,87 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (summonZone_ == null) {
-              SummonZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            if (unk3300IPLMHKCNDLE_ == null) {
+              Unk3300IPLMHKCNDLE = new global::Weedwacker.Shared.Network.Proto.GCGZone();
             }
-            input.ReadMessage(SummonZone);
+            input.ReadMessage(Unk3300IPLMHKCNDLE);
             break;
           }
           case 18: {
-            modifyZoneMap_.AddEntriesFrom(ref input, _map_modifyZoneMap_codec);
-            break;
-          }
-          case 24: {
-            DiceCount = input.ReadUInt32();
-            break;
-          }
-          case 34: {
             waitingList_.AddEntriesFrom(ref input, _repeated_waitingList_codec);
             break;
           }
-          case 42: {
-            if (characterZone_ == null) {
-              CharacterZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+          case 24: {
+            Unk3300FJNPFBIHFGD = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300EFNAEFBECHD_ == null) {
+              Unk3300EFNAEFBECHD = new global::Weedwacker.Shared.Network.Proto.GCGZone();
             }
-            input.ReadMessage(CharacterZone);
+            input.ReadMessage(Unk3300EFNAEFBECHD);
+            break;
+          }
+          case 40: {
+            Unk3300IKJMGAHCFPM = input.ReadUInt32();
             break;
           }
           case 48: {
-            OnStageCharacterGuid = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            IsPassed = input.ReadBool();
-            break;
-          }
-          case 64: {
-            FieldShowId = input.ReadUInt32();
-            break;
-          }
-          case 74: {
-            if (handZone_ == null) {
-              HandZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(HandZone);
-            break;
-          }
-          case 80: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 90:
-          case 88: {
-            diceSideList_.AddEntriesFrom(ref input, _repeated_diceSideList_codec);
+          case 58: {
+            modifyZoneMap_.AddEntriesFrom(ref input, _map_modifyZoneMap_codec);
+            break;
+          }
+          case 64: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (unk3300EIHOMDLENMK_ == null) {
+              Unk3300EIHOMDLENMK = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300EIHOMDLENMK);
+            break;
+          }
+          case 82: {
+            if (unk3300AOPJIOHMPOF_ == null) {
+              Unk3300AOPJIOHMPOF = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300AOPJIOHMPOF);
+            break;
+          }
+          case 90: {
+            if (unk3300INDJNJJJNKL_ == null) {
+              Unk3300INDJNJJJNKL = new global::Weedwacker.Shared.Network.Proto.GCGZone();
+            }
+            input.ReadMessage(Unk3300INDJNJJJNKL);
             break;
           }
           case 96: {
-            CardBackShowId = input.ReadUInt32();
+            Unk3300FDFPHNDOJML = input.ReadUInt32();
             break;
           }
+          case 106:
           case 104: {
-            DeckCardNum = input.ReadUInt32();
+            diceSideList_.AddEntriesFrom(ref input, _repeated_diceSideList_codec);
             break;
           }
-          case 114: {
-            if (onStageZone_ == null) {
-              OnStageZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(OnStageZone);
+          case 112: {
+            Unk3300GLNIFLOKBPM = input.ReadUInt32();
             break;
           }
-          case 122: {
-            if (assistZone_ == null) {
-              AssistZone = new global::Weedwacker.Shared.Network.Proto.GCGZone();
-            }
-            input.ReadMessage(AssistZone);
+          case 120: {
+            Unk3300PBECINKKHND = input.ReadUInt32();
             break;
           }
-          case 3064: {
-            CurWaitingIndex = input.ReadUInt32();
-            break;
-          }
-          case 9538: {
+          case 2434: {
             intentionList_.AddEntriesFrom(ref input, _repeated_intentionList_codec);
+            break;
+          }
+          case 5848: {
+            Unk3300GGHKFFADEAL = input.ReadUInt32();
             break;
           }
         }

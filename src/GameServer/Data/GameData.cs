@@ -263,16 +263,38 @@ namespace Weedwacker.GameServer.Data
             var ra = typeof(Obj).GetResourceData();
             if (ra == null || !ra.GetResourceFile(path, out var fi)) return;
             map.Clear();
-            var objs = await LoadObjects<Obj[]>(fi);
-            if (objs == null) return;
-            foreach (var obj in objs)
-                map.Add(keySelector(obj), obj);
+            try
+            {
+
+                var objs = await LoadObjects<Obj[]>(fi);
+                if (objs == null) return;
+                foreach (var obj in objs)
+                        map.Add(keySelector(obj), obj);
+                    
+            }
+            catch (Exception ex)
+            {
+
+                Logger.DebugWriteLine(fi.ToString());
+                Logger.WriteErrorLine(ex.Message);
+            }
+            
         }
         static async Task<T?> LoadObjects<T>(FileInfo fi)
         {
             using var sr = new StringReader(await File.ReadAllTextAsync(fi.FullName));
             using var jr = new JsonTextReader(sr);
-            return Serializer.Deserialize<T>(jr);
+                 
+            try
+            {
+                var ret = Serializer.Deserialize<T>(jr);
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteErrorLine(ex.Message);
+                throw;
+            }
         }
         static bool GetResourceFile(this ResourceAttribute ra, string path, out FileInfo fi)
         {

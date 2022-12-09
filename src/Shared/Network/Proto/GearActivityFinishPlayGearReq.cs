@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GearActivityFinishPlayGearReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNHZWFyQWN0aXZpdHlGaW5pc2hQbGF5R2VhclJlcS5wcm90bxoUR2VhckNv",
-            "bHVtbkluZm8ucHJvdG8ihwEKHUdlYXJBY3Rpdml0eUZpbmlzaFBsYXlHZWFy",
-            "UmVxEhIKCmlzX3N1Y2Nlc3MYBCABKAgSEAoIdXNlX2NsdWUYDCABKAgSLgoV",
-            "Z2Vhcl9jb2x1bW5faW5mb19saXN0GAkgAygLMg8uR2VhckNvbHVtbkluZm8S",
-            "EAoIbGV2ZWxfaWQYBSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNHZWFyQWN0aXZpdHlGaW5pc2hQbGF5R2VhclJlcS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoUR2VhckNvbHVtbkluZm8ucHJv",
+            "dG8ipwEKHUdlYXJBY3Rpdml0eUZpbmlzaFBsYXlHZWFyUmVxEhAKCHVzZV9j",
+            "bHVlGAogASgIEhAKCGxldmVsX2lkGAMgASgNEhIKCmlzX3N1Y2Nlc3MYCCAB",
+            "KAgSTgoVZ2Vhcl9jb2x1bW5faW5mb19saXN0GAwgAygLMi8uV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HZWFyQ29sdW1uSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GearColumnInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearReq), global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearReq.Parser, new[]{ "IsSuccess", "UseClue", "GearColumnInfoList", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearReq), global::Weedwacker.Shared.Network.Proto.GearActivityFinishPlayGearReq.Parser, new[]{ "UseClue", "LevelId", "IsSuccess", "GearColumnInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21834
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20236;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GearActivityFinishPlayGearReq : pb::IMessage<GearActivityFinishPlayGearReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +84,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GearActivityFinishPlayGearReq(GearActivityFinishPlayGearReq other) : this() {
-      isSuccess_ = other.isSuccess_;
       useClue_ = other.useClue_;
-      gearColumnInfoList_ = other.gearColumnInfoList_.Clone();
       levelId_ = other.levelId_;
+      isSuccess_ = other.isSuccess_;
+      gearColumnInfoList_ = other.gearColumnInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GearActivityFinishPlayGearReq(this);
     }
 
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 4;
-    private bool isSuccess_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
-      set {
-        isSuccess_ = value;
-      }
-    }
-
     /// <summary>Field number for the "use_clue" field.</summary>
-    public const int UseClueFieldNumber = 12;
+    public const int UseClueFieldNumber = 10;
     private bool useClue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,19 +109,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gear_column_info_list" field.</summary>
-    public const int GearColumnInfoListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> _repeated_gearColumnInfoList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.GearColumnInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> gearColumnInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> GearColumnInfoList {
-      get { return gearColumnInfoList_; }
-    }
-
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 5;
+    public const int LevelIdFieldNumber = 3;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +119,29 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         levelId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 8;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gear_column_info_list" field.</summary>
+    public const int GearColumnInfoListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> _repeated_gearColumnInfoList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GearColumnInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> gearColumnInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearColumnInfo> GearColumnInfoList {
+      get { return gearColumnInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsSuccess != other.IsSuccess) return false;
       if (UseClue != other.UseClue) return false;
-      if(!gearColumnInfoList_.Equals(other.gearColumnInfoList_)) return false;
       if (LevelId != other.LevelId) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if(!gearColumnInfoList_.Equals(other.gearColumnInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (UseClue != false) hash ^= UseClue.GetHashCode();
-      hash ^= gearColumnInfoList_.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      hash ^= gearColumnInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,19 +192,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsSuccess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsSuccess);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(LevelId);
       }
-      gearColumnInfoList_.WriteTo(output, _repeated_gearColumnInfoList_codec);
+      if (IsSuccess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsSuccess);
+      }
       if (UseClue != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(UseClue);
       }
+      gearColumnInfoList_.WriteTo(output, _repeated_gearColumnInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -211,19 +215,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsSuccess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsSuccess);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(LevelId);
       }
-      gearColumnInfoList_.WriteTo(ref output, _repeated_gearColumnInfoList_codec);
+      if (IsSuccess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsSuccess);
+      }
       if (UseClue != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(UseClue);
       }
+      gearColumnInfoList_.WriteTo(ref output, _repeated_gearColumnInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -234,16 +238,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsSuccess != false) {
-        size += 1 + 1;
-      }
       if (UseClue != false) {
         size += 1 + 1;
       }
-      size += gearColumnInfoList_.CalculateSize(_repeated_gearColumnInfoList_codec);
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      size += gearColumnInfoList_.CalculateSize(_repeated_gearColumnInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,16 +260,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsSuccess != false) {
-        IsSuccess = other.IsSuccess;
-      }
       if (other.UseClue != false) {
         UseClue = other.UseClue;
       }
-      gearColumnInfoList_.Add(other.gearColumnInfoList_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      gearColumnInfoList_.Add(other.gearColumnInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -281,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 24: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 74: {
-            gearColumnInfoList_.AddEntriesFrom(input, _repeated_gearColumnInfoList_codec);
+          case 64: {
+            IsSuccess = input.ReadBool();
             break;
           }
-          case 96: {
+          case 80: {
             UseClue = input.ReadBool();
+            break;
+          }
+          case 98: {
+            gearColumnInfoList_.AddEntriesFrom(input, _repeated_gearColumnInfoList_codec);
             break;
           }
         }
@@ -312,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 24: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 74: {
-            gearColumnInfoList_.AddEntriesFrom(ref input, _repeated_gearColumnInfoList_codec);
+          case 64: {
+            IsSuccess = input.ReadBool();
             break;
           }
-          case 96: {
+          case 80: {
             UseClue = input.ReadBool();
+            break;
+          }
+          case 98: {
+            gearColumnInfoList_.AddEntriesFrom(ref input, _repeated_gearColumnInfoList_codec);
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AcceptCityReputationRequestRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRBY2NlcHRDaXR5UmVwdXRhdGlvblJlcXVlc3RSc3AucHJvdG8iVgoeQWNj",
-            "ZXB0Q2l0eVJlcHV0YXRpb25SZXF1ZXN0UnNwEhIKCnJlcXVlc3RfaWQYBSAB",
-            "KA0SDwoHY2l0eV9pZBgNIAEoDRIPCgdyZXRjb2RlGAIgASgFQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRBY2NlcHRDaXR5UmVwdXRhdGlvblJlcXVlc3RSc3AucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iVgoeQWNjZXB0Q2l0eVJlcHV0",
+            "YXRpb25SZXF1ZXN0UnNwEg8KB2NpdHlfaWQYASABKA0SDwoHcmV0Y29kZRgJ",
+            "IAEoBRISCgpyZXF1ZXN0X2lkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AcceptCityReputationRequestRsp), global::Weedwacker.Shared.Network.Proto.AcceptCityReputationRequestRsp.Parser, new[]{ "RequestId", "CityId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AcceptCityReputationRequestRsp), global::Weedwacker.Shared.Network.Proto.AcceptCityReputationRequestRsp.Parser, new[]{ "CityId", "Retcode", "RequestId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2873
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2878;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AcceptCityReputationRequestRsp : pb::IMessage<AcceptCityReputationRequestRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AcceptCityReputationRequestRsp(AcceptCityReputationRequestRsp other) : this() {
-      requestId_ = other.requestId_;
       cityId_ = other.cityId_;
       retcode_ = other.retcode_;
+      requestId_ = other.requestId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AcceptCityReputationRequestRsp(this);
     }
 
-    /// <summary>Field number for the "request_id" field.</summary>
-    public const int RequestIdFieldNumber = 5;
-    private uint requestId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RequestId {
-      get { return requestId_; }
-      set {
-        requestId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 13;
+    public const int CityIdFieldNumber = 1;
     private uint cityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
+    public const int RetcodeFieldNumber = 9;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "request_id" field.</summary>
+    public const int RequestIdFieldNumber = 10;
+    private uint requestId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RequestId {
+      get { return requestId_; }
+      set {
+        requestId_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RequestId != other.RequestId) return false;
       if (CityId != other.CityId) return false;
       if (Retcode != other.Retcode) return false;
+      if (RequestId != other.RequestId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RequestId != 0) hash ^= RequestId.GetHashCode();
       if (CityId != 0) hash ^= CityId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (RequestId != 0) hash ^= RequestId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (CityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CityId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (RequestId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(80);
         output.WriteUInt32(RequestId);
-      }
-      if (CityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CityId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (RequestId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(80);
         output.WriteUInt32(RequestId);
-      }
-      if (CityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RequestId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RequestId);
-      }
       if (CityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (RequestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RequestId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RequestId != 0) {
-        RequestId = other.RequestId;
-      }
       if (other.CityId != 0) {
         CityId = other.CityId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.RequestId != 0) {
+        RequestId = other.RequestId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 80: {
             RequestId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CityId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 80: {
             RequestId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CityId = input.ReadUInt32();
             break;
           }
         }

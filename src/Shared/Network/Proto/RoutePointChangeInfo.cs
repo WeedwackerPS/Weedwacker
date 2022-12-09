@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoutePointChangeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpSb3V0ZVBvaW50Q2hhbmdlSW5mby5wcm90byJXChRSb3V0ZVBvaW50Q2hh",
-            "bmdlSW5mbxIRCgl3YWl0X3RpbWUYBiABKAISFwoPdGFyZ2V0X3ZlbG9jaXR5",
-            "GA4gASgCEhMKC3BvaW50X2luZGV4GAsgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpSb3V0ZVBvaW50Q2hhbmdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJXChRSb3V0ZVBvaW50Q2hhbmdlSW5mbxIXCg90",
+            "YXJnZXRfdmVsb2NpdHkYDCABKAISEQoJd2FpdF90aW1lGA4gASgCEhMKC3Bv",
+            "aW50X2luZGV4GAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo), global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo.Parser, new[]{ "WaitTime", "TargetVelocity", "PointIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo), global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo.Parser, new[]{ "TargetVelocity", "WaitTime", "PointIndex" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoutePointChangeInfo(RoutePointChangeInfo other) : this() {
-      waitTime_ = other.waitTime_;
       targetVelocity_ = other.targetVelocity_;
+      waitTime_ = other.waitTime_;
       pointIndex_ = other.pointIndex_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RoutePointChangeInfo(this);
     }
 
-    /// <summary>Field number for the "wait_time" field.</summary>
-    public const int WaitTimeFieldNumber = 6;
-    private float waitTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float WaitTime {
-      get { return waitTime_; }
-      set {
-        waitTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_velocity" field.</summary>
-    public const int TargetVelocityFieldNumber = 14;
+    public const int TargetVelocityFieldNumber = 12;
     private float targetVelocity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "wait_time" field.</summary>
+    public const int WaitTimeFieldNumber = 14;
+    private float waitTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float WaitTime {
+      get { return waitTime_; }
+      set {
+        waitTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "point_index" field.</summary>
-    public const int PointIndexFieldNumber = 11;
+    public const int PointIndexFieldNumber = 4;
     private uint pointIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(WaitTime, other.WaitTime)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TargetVelocity, other.TargetVelocity)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(WaitTime, other.WaitTime)) return false;
       if (PointIndex != other.PointIndex) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (WaitTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(WaitTime);
       if (TargetVelocity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TargetVelocity);
+      if (WaitTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(WaitTime);
       if (PointIndex != 0) hash ^= PointIndex.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WaitTime != 0F) {
-        output.WriteRawTag(53);
-        output.WriteFloat(WaitTime);
-      }
       if (PointIndex != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointIndex);
       }
       if (TargetVelocity != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(101);
         output.WriteFloat(TargetVelocity);
+      }
+      if (WaitTime != 0F) {
+        output.WriteRawTag(117);
+        output.WriteFloat(WaitTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WaitTime != 0F) {
-        output.WriteRawTag(53);
-        output.WriteFloat(WaitTime);
-      }
       if (PointIndex != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointIndex);
       }
       if (TargetVelocity != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(101);
         output.WriteFloat(TargetVelocity);
+      }
+      if (WaitTime != 0F) {
+        output.WriteRawTag(117);
+        output.WriteFloat(WaitTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,10 +210,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (WaitTime != 0F) {
+      if (TargetVelocity != 0F) {
         size += 1 + 4;
       }
-      if (TargetVelocity != 0F) {
+      if (WaitTime != 0F) {
         size += 1 + 4;
       }
       if (PointIndex != 0) {
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.WaitTime != 0F) {
-        WaitTime = other.WaitTime;
-      }
       if (other.TargetVelocity != 0F) {
         TargetVelocity = other.TargetVelocity;
+      }
+      if (other.WaitTime != 0F) {
+        WaitTime = other.WaitTime;
       }
       if (other.PointIndex != 0) {
         PointIndex = other.PointIndex;
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 53: {
-            WaitTime = input.ReadFloat();
-            break;
-          }
-          case 88: {
+          case 32: {
             PointIndex = input.ReadUInt32();
             break;
           }
-          case 117: {
+          case 101: {
             TargetVelocity = input.ReadFloat();
+            break;
+          }
+          case 117: {
+            WaitTime = input.ReadFloat();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 53: {
-            WaitTime = input.ReadFloat();
-            break;
-          }
-          case 88: {
+          case 32: {
             PointIndex = input.ReadUInt32();
             break;
           }
-          case 117: {
+          case 101: {
             TargetVelocity = input.ReadFloat();
+            break;
+          }
+          case 117: {
+            WaitTime = input.ReadFloat();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MusicGameStartReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90byJUChFNdXNpY0dhbWVTdGFydFJl",
-            "cRIWCg5tdXNpY19iYXNpY19pZBgCIAEoDRIVCg1pc19zYXZlX3Njb3JlGAsg",
-            "ASgIEhAKCHVnY19ndWlkGAMgASgEQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJaChFNdXNpY0dhbWVTdGFydFJlcRIWCg5tdXNpY19i",
+            "YXNpY19pZBgLIAEoDRIVCg1pc19zYXZlX3Njb3JlGAwgASgIEhYKDm11c2lj",
+            "X3NoYXJlX2lkGAkgASgEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameStartReq), global::Weedwacker.Shared.Network.Proto.MusicGameStartReq.Parser, new[]{ "MusicBasicId", "IsSaveScore", "UgcGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameStartReq), global::Weedwacker.Shared.Network.Proto.MusicGameStartReq.Parser, new[]{ "MusicBasicId", "IsSaveScore", "MusicShareId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8406
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8820;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MusicGameStartReq : pb::IMessage<MusicGameStartReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public MusicGameStartReq(MusicGameStartReq other) : this() {
       musicBasicId_ = other.musicBasicId_;
       isSaveScore_ = other.isSaveScore_;
-      ugcGuid_ = other.ugcGuid_;
+      musicShareId_ = other.musicShareId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_basic_id" field.</summary>
-    public const int MusicBasicIdFieldNumber = 2;
+    public const int MusicBasicIdFieldNumber = 11;
     private uint musicBasicId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_save_score" field.</summary>
-    public const int IsSaveScoreFieldNumber = 11;
+    public const int IsSaveScoreFieldNumber = 12;
     private bool isSaveScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,15 +118,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 3;
-    private ulong ugcGuid_;
+    /// <summary>Field number for the "music_share_id" field.</summary>
+    public const int MusicShareIdFieldNumber = 9;
+    private ulong musicShareId_;
+    /// <summary>
+    /// ugc_guid
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong UgcGuid {
-      get { return ugcGuid_; }
+    public ulong MusicShareId {
+      get { return musicShareId_; }
       set {
-        ugcGuid_ = value;
+        musicShareId_ = value;
       }
     }
 
@@ -143,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (MusicBasicId != other.MusicBasicId) return false;
       if (IsSaveScore != other.IsSaveScore) return false;
-      if (UgcGuid != other.UgcGuid) return false;
+      if (MusicShareId != other.MusicShareId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
       if (IsSaveScore != false) hash ^= IsSaveScore.GetHashCode();
-      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (MusicShareId != 0UL) hash ^= MusicShareId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +179,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (MusicShareId != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(MusicShareId);
+      }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteUInt32(MusicBasicId);
       }
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(UgcGuid);
-      }
       if (IsSaveScore != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IsSaveScore);
       }
       if (_unknownFields != null) {
@@ -194,16 +201,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MusicShareId != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(MusicShareId);
+      }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteUInt32(MusicBasicId);
       }
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(UgcGuid);
-      }
       if (IsSaveScore != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IsSaveScore);
       }
       if (_unknownFields != null) {
@@ -222,8 +229,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsSaveScore != false) {
         size += 1 + 1;
       }
-      if (UgcGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      if (MusicShareId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(MusicShareId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -243,8 +250,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsSaveScore != false) {
         IsSaveScore = other.IsSaveScore;
       }
-      if (other.UgcGuid != 0UL) {
-        UgcGuid = other.UgcGuid;
+      if (other.MusicShareId != 0UL) {
+        MusicShareId = other.MusicShareId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +268,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            MusicBasicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            UgcGuid = input.ReadUInt64();
+          case 72: {
+            MusicShareId = input.ReadUInt64();
             break;
           }
           case 88: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             IsSaveScore = input.ReadBool();
             break;
           }
@@ -288,15 +295,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            MusicBasicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            UgcGuid = input.ReadUInt64();
+          case 72: {
+            MusicShareId = input.ReadUInt64();
             break;
           }
           case 88: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             IsSaveScore = input.ReadBool();
             break;
           }

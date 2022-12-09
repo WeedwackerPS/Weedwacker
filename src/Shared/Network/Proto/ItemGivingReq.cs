@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static ItemGivingReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNJdGVtR2l2aW5nUmVxLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8ixwIKDUl0",
-            "ZW1HaXZpbmdSZXESQQoTaXRlbV9ndWlkX2NvdW50X21hcBgPIAMoCzIkLkl0",
-            "ZW1HaXZpbmdSZXEuSXRlbUd1aWRDb3VudE1hcEVudHJ5EhEKCWdpdmluZ19p",
-            "ZBgNIAEoDRIjCg9pdGVtX3BhcmFtX2xpc3QYBCADKAsyCi5JdGVtUGFyYW0S",
-            "NwoQaXRlbV9naXZpbmdfdHlwZRgCIAEoDjIdLkl0ZW1HaXZpbmdSZXEuSXRl",
-            "bUdpdmluZ1R5cGUaNwoVSXRlbUd1aWRDb3VudE1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoBBINCgV2YWx1ZRgCIAEoDToCOAEiSQoOSXRlbUdpdmluZ1R5cGUSGgoW",
-            "SVRFTV9HSVZJTkdfVFlQRV9RVUVTVBAAEhsKF0lURU1fR0lWSU5HX1RZUEVf",
-            "R0FER0VUEAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChNJdGVtR2l2aW5nUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJvdG8ipwMKDUl0ZW1HaXZpbmdSZXES",
+            "EQoJZ2l2aW5nX2lkGAYgASgNElcKEGl0ZW1fZ2l2aW5nX3R5cGUYCCABKA4y",
+            "PS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1HaXZpbmdS",
+            "ZXEuSXRlbUdpdmluZ1R5cGUSQwoPaXRlbV9wYXJhbV9saXN0GAwgAygLMiou",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JdGVtUGFyYW0SYQoT",
+            "aXRlbV9ndWlkX2NvdW50X21hcBgLIAMoCzJELldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uSXRlbUdpdmluZ1JlcS5JdGVtR3VpZENvdW50TWFw",
+            "RW50cnkaNwoVSXRlbUd1aWRDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoBBIN",
+            "CgV2YWx1ZRgCIAEoDToCOAEiSQoOSXRlbUdpdmluZ1R5cGUSGgoWSVRFTV9H",
+            "SVZJTkdfVFlQRV9RVUVTVBAAEhsKF0lURU1fR0lWSU5HX1RZUEVfR0FER0VU",
+            "EAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingReq), global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Parser, new[]{ "ItemGuidCountMap", "GivingId", "ItemParamList", "ItemGivingType" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) }, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingReq), global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Parser, new[]{ "GivingId", "ItemGivingType", "ItemParamList", "ItemGuidCountMap" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) }, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -45,10 +47,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 140
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 185;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ItemGivingReq : pb::IMessage<ItemGivingReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -84,10 +90,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ItemGivingReq(ItemGivingReq other) : this() {
-      itemGuidCountMap_ = other.itemGuidCountMap_.Clone();
       givingId_ = other.givingId_;
-      itemParamList_ = other.itemParamList_.Clone();
       itemGivingType_ = other.itemGivingType_;
+      itemParamList_ = other.itemParamList_.Clone();
+      itemGuidCountMap_ = other.itemGuidCountMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,19 +103,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ItemGivingReq(this);
     }
 
-    /// <summary>Field number for the "item_guid_count_map" field.</summary>
-    public const int ItemGuidCountMapFieldNumber = 15;
-    private static readonly pbc::MapField<ulong, uint>.Codec _map_itemGuidCountMap_codec
-        = new pbc::MapField<ulong, uint>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<ulong, uint> itemGuidCountMap_ = new pbc::MapField<ulong, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<ulong, uint> ItemGuidCountMap {
-      get { return itemGuidCountMap_; }
-    }
-
     /// <summary>Field number for the "giving_id" field.</summary>
-    public const int GivingIdFieldNumber = 13;
+    public const int GivingIdFieldNumber = 6;
     private uint givingId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,19 +115,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "item_param_list" field.</summary>
-    public const int ItemParamListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemParamList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemParamList {
-      get { return itemParamList_; }
-    }
-
     /// <summary>Field number for the "item_giving_type" field.</summary>
-    public const int ItemGivingTypeFieldNumber = 2;
+    public const int ItemGivingTypeFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType itemGivingType_ = global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,6 +125,28 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         itemGivingType_ = value;
       }
+    }
+
+    /// <summary>Field number for the "item_param_list" field.</summary>
+    public const int ItemParamListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemParamList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemParamList {
+      get { return itemParamList_; }
+    }
+
+    /// <summary>Field number for the "item_guid_count_map" field.</summary>
+    public const int ItemGuidCountMapFieldNumber = 11;
+    private static readonly pbc::MapField<ulong, uint>.Codec _map_itemGuidCountMap_codec
+        = new pbc::MapField<ulong, uint>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt32(16, 0), 90);
+    private readonly pbc::MapField<ulong, uint> itemGuidCountMap_ = new pbc::MapField<ulong, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<ulong, uint> ItemGuidCountMap {
+      get { return itemGuidCountMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -158,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ItemGuidCountMap.Equals(other.ItemGuidCountMap)) return false;
       if (GivingId != other.GivingId) return false;
-      if(!itemParamList_.Equals(other.itemParamList_)) return false;
       if (ItemGivingType != other.ItemGivingType) return false;
+      if(!itemParamList_.Equals(other.itemParamList_)) return false;
+      if (!ItemGuidCountMap.Equals(other.ItemGuidCountMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -169,10 +175,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ItemGuidCountMap.GetHashCode();
       if (GivingId != 0) hash ^= GivingId.GetHashCode();
-      hash ^= itemParamList_.GetHashCode();
       if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) hash ^= ItemGivingType.GetHashCode();
+      hash ^= itemParamList_.GetHashCode();
+      hash ^= ItemGuidCountMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -191,16 +197,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) ItemGivingType);
-      }
-      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
       if (GivingId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(GivingId);
       }
+      if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ItemGivingType);
+      }
       itemGuidCountMap_.WriteTo(output, _map_itemGuidCountMap_codec);
+      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -211,16 +217,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) ItemGivingType);
-      }
-      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
       if (GivingId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(GivingId);
       }
+      if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ItemGivingType);
+      }
       itemGuidCountMap_.WriteTo(ref output, _map_itemGuidCountMap_codec);
+      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -231,14 +237,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += itemGuidCountMap_.CalculateSize(_map_itemGuidCountMap_codec);
       if (GivingId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
       }
-      size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
       if (ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ItemGivingType);
       }
+      size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
+      size += itemGuidCountMap_.CalculateSize(_map_itemGuidCountMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -251,14 +257,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      itemGuidCountMap_.Add(other.itemGuidCountMap_);
       if (other.GivingId != 0) {
         GivingId = other.GivingId;
       }
-      itemParamList_.Add(other.itemParamList_);
       if (other.ItemGivingType != global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType.Quest) {
         ItemGivingType = other.ItemGivingType;
       }
+      itemParamList_.Add(other.itemParamList_);
+      itemGuidCountMap_.Add(other.itemGuidCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -274,20 +280,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            ItemGivingType = (global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) input.ReadEnum();
-            break;
-          }
-          case 34: {
-            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
-            break;
-          }
-          case 104: {
+          case 48: {
             GivingId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 64: {
+            ItemGivingType = (global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) input.ReadEnum();
+            break;
+          }
+          case 90: {
             itemGuidCountMap_.AddEntriesFrom(input, _map_itemGuidCountMap_codec);
+            break;
+          }
+          case 98: {
+            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
             break;
           }
         }
@@ -305,20 +311,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            ItemGivingType = (global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) input.ReadEnum();
-            break;
-          }
-          case 34: {
-            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
-            break;
-          }
-          case 104: {
+          case 48: {
             GivingId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 64: {
+            ItemGivingType = (global::Weedwacker.Shared.Network.Proto.ItemGivingReq.Types.ItemGivingType) input.ReadEnum();
+            break;
+          }
+          case 90: {
             itemGuidCountMap_.AddEntriesFrom(ref input, _map_itemGuidCountMap_codec);
+            break;
+          }
+          case 98: {
+            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
             break;
           }
         }

@@ -24,8 +24,8 @@ namespace Weedwacker.Shared.Network.Proto {
     static FurnitureReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9GdXJuaXR1cmUucHJvdG8iGgoJRnVybml0dXJlEg0KBWNvdW50GAEgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Cg9GdXJuaXR1cmUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8iGgoJRnVybml0dXJlEg0KBWNvdW50GAEgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

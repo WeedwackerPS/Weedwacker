@@ -24,20 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static MassiveEntityElementOpBatchNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidNYXNzaXZlRW50aXR5RWxlbWVudE9wQmF0Y2hOb3RpZnkucHJvdG8aDlNo",
-            "YXBlQm94LnByb3RvGhFTaGFwZVNwaGVyZS5wcm90byKhAgohTWFzc2l2ZUVu",
-            "dGl0eUVsZW1lbnRPcEJhdGNoTm90aWZ5EhMKC2VudGl0eV90eXBlGAYgASgF",
-            "Eg4KBm9wX2lkeBgJIAEoDRIPCgd1c2VyX2lkGAsgASgNEhMKC2F0dGFja2Vy",
-            "X2lkGAMgASgNEhsKE3NvdXJjZV9lbGVtZW50X3R5cGUYDCABKAUSHAoUcmVh",
-            "Y3Rpb25fc291cmNlX3R5cGUYBCABKAUSIQoZYXR0YWNrX2VsZW1lbnRfZHVy",
-            "YWJpbGl0eRgHIAEoAhIkCgxzaGFwZV9zcGhlcmUYCiABKAsyDC5TaGFwZVNw",
-            "aGVyZUgAEh4KCXNoYXBlX2JveBgCIAEoCzIJLlNoYXBlQm94SABCDQoLY2hl",
-            "Y2tfc2hhcGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CidNYXNzaXZlRW50aXR5RWxlbWVudE9wQmF0Y2hOb3RpZnkucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aDlNoYXBlQm94LnByb3Rv",
+            "GhFTaGFwZVNwaGVyZS5wcm90byLgAgohTWFzc2l2ZUVudGl0eUVsZW1lbnRP",
+            "cEJhdGNoTm90aWZ5EhMKC2F0dGFja2VyX2lkGAggASgNEiEKGWF0dGFja19l",
+            "bGVtZW50X2R1cmFiaWxpdHkYBCABKAISGwoTVW5rMzMwMF9QTkFOR0ROTkZD",
+            "SBgCIAEoBRITCgtlbnRpdHlfdHlwZRgKIAEoBRIbChNVbmszMzAwX0tOTERK",
+            "UEVNQ0tQGAcgASgFEg4KBm9wX2lkeBgLIAEoDRIPCgd1c2VyX2lkGAEgASgN",
+            "EkQKDHNoYXBlX3NwaGVyZRgOIAEoCzIsLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uU2hhcGVTcGhlcmVIABI+CglzaGFwZV9ib3gYDSABKAsy",
+            "KS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNoYXBlQm94SABC",
+            "DQoLY2hlY2tfc2hhcGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ShapeBoxReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ShapeSphereReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MassiveEntityElementOpBatchNotify), global::Weedwacker.Shared.Network.Proto.MassiveEntityElementOpBatchNotify.Parser, new[]{ "EntityType", "OpIdx", "UserId", "AttackerId", "SourceElementType", "ReactionSourceType", "AttackElementDurability", "ShapeSphere", "ShapeBox" }, new[]{ "CheckShape" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MassiveEntityElementOpBatchNotify), global::Weedwacker.Shared.Network.Proto.MassiveEntityElementOpBatchNotify.Parser, new[]{ "AttackerId", "AttackElementDurability", "Unk3300PNANGDNNFCH", "EntityType", "Unk3300KNLDJPEMCKP", "OpIdx", "UserId", "ShapeSphere", "ShapeBox" }, new[]{ "CheckShape" }, null, null, null)
           }));
     }
     #endregion
@@ -45,10 +46,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 357
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 363;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MassiveEntityElementOpBatchNotify : pb::IMessage<MassiveEntityElementOpBatchNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -84,13 +89,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MassiveEntityElementOpBatchNotify(MassiveEntityElementOpBatchNotify other) : this() {
+      attackerId_ = other.attackerId_;
+      attackElementDurability_ = other.attackElementDurability_;
+      unk3300PNANGDNNFCH_ = other.unk3300PNANGDNNFCH_;
       entityType_ = other.entityType_;
+      unk3300KNLDJPEMCKP_ = other.unk3300KNLDJPEMCKP_;
       opIdx_ = other.opIdx_;
       userId_ = other.userId_;
-      attackerId_ = other.attackerId_;
-      sourceElementType_ = other.sourceElementType_;
-      reactionSourceType_ = other.reactionSourceType_;
-      attackElementDurability_ = other.attackElementDurability_;
       switch (other.CheckShapeCase) {
         case CheckShapeOneofCase.ShapeSphere:
           ShapeSphere = other.ShapeSphere.Clone();
@@ -109,8 +114,44 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MassiveEntityElementOpBatchNotify(this);
     }
 
+    /// <summary>Field number for the "attacker_id" field.</summary>
+    public const int AttackerIdFieldNumber = 8;
+    private uint attackerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AttackerId {
+      get { return attackerId_; }
+      set {
+        attackerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attack_element_durability" field.</summary>
+    public const int AttackElementDurabilityFieldNumber = 4;
+    private float attackElementDurability_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AttackElementDurability {
+      get { return attackElementDurability_; }
+      set {
+        attackElementDurability_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PNANGDNNFCH" field.</summary>
+    public const int Unk3300PNANGDNNFCHFieldNumber = 2;
+    private int unk3300PNANGDNNFCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300PNANGDNNFCH {
+      get { return unk3300PNANGDNNFCH_; }
+      set {
+        unk3300PNANGDNNFCH_ = value;
+      }
+    }
+
     /// <summary>Field number for the "entity_type" field.</summary>
-    public const int EntityTypeFieldNumber = 6;
+    public const int EntityTypeFieldNumber = 10;
     private int entityType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,8 +162,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_KNLDJPEMCKP" field.</summary>
+    public const int Unk3300KNLDJPEMCKPFieldNumber = 7;
+    private int unk3300KNLDJPEMCKP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300KNLDJPEMCKP {
+      get { return unk3300KNLDJPEMCKP_; }
+      set {
+        unk3300KNLDJPEMCKP_ = value;
+      }
+    }
+
     /// <summary>Field number for the "op_idx" field.</summary>
-    public const int OpIdxFieldNumber = 9;
+    public const int OpIdxFieldNumber = 11;
     private uint opIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "user_id" field.</summary>
-    public const int UserIdFieldNumber = 11;
+    public const int UserIdFieldNumber = 1;
     private uint userId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -145,56 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "attacker_id" field.</summary>
-    public const int AttackerIdFieldNumber = 3;
-    private uint attackerId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AttackerId {
-      get { return attackerId_; }
-      set {
-        attackerId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "source_element_type" field.</summary>
-    public const int SourceElementTypeFieldNumber = 12;
-    private int sourceElementType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int SourceElementType {
-      get { return sourceElementType_; }
-      set {
-        sourceElementType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reaction_source_type" field.</summary>
-    public const int ReactionSourceTypeFieldNumber = 4;
-    private int reactionSourceType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int ReactionSourceType {
-      get { return reactionSourceType_; }
-      set {
-        reactionSourceType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "attack_element_durability" field.</summary>
-    public const int AttackElementDurabilityFieldNumber = 7;
-    private float attackElementDurability_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float AttackElementDurability {
-      get { return attackElementDurability_; }
-      set {
-        attackElementDurability_ = value;
-      }
-    }
-
     /// <summary>Field number for the "shape_sphere" field.</summary>
-    public const int ShapeSphereFieldNumber = 10;
+    public const int ShapeSphereFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ShapeSphere ShapeSphere {
@@ -206,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "shape_box" field.</summary>
-    public const int ShapeBoxFieldNumber = 2;
+    public const int ShapeBoxFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ShapeBox ShapeBox {
@@ -221,8 +226,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "check_shape" oneof.</summary>
     public enum CheckShapeOneofCase {
       None = 0,
-      ShapeSphere = 10,
-      ShapeBox = 2,
+      ShapeSphere = 14,
+      ShapeBox = 13,
     }
     private CheckShapeOneofCase checkShapeCase_ = CheckShapeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -253,13 +258,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (AttackerId != other.AttackerId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackElementDurability, other.AttackElementDurability)) return false;
+      if (Unk3300PNANGDNNFCH != other.Unk3300PNANGDNNFCH) return false;
       if (EntityType != other.EntityType) return false;
+      if (Unk3300KNLDJPEMCKP != other.Unk3300KNLDJPEMCKP) return false;
       if (OpIdx != other.OpIdx) return false;
       if (UserId != other.UserId) return false;
-      if (AttackerId != other.AttackerId) return false;
-      if (SourceElementType != other.SourceElementType) return false;
-      if (ReactionSourceType != other.ReactionSourceType) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackElementDurability, other.AttackElementDurability)) return false;
       if (!object.Equals(ShapeSphere, other.ShapeSphere)) return false;
       if (!object.Equals(ShapeBox, other.ShapeBox)) return false;
       if (CheckShapeCase != other.CheckShapeCase) return false;
@@ -270,13 +275,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (AttackerId != 0) hash ^= AttackerId.GetHashCode();
+      if (AttackElementDurability != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackElementDurability);
+      if (Unk3300PNANGDNNFCH != 0) hash ^= Unk3300PNANGDNNFCH.GetHashCode();
       if (EntityType != 0) hash ^= EntityType.GetHashCode();
+      if (Unk3300KNLDJPEMCKP != 0) hash ^= Unk3300KNLDJPEMCKP.GetHashCode();
       if (OpIdx != 0) hash ^= OpIdx.GetHashCode();
       if (UserId != 0) hash ^= UserId.GetHashCode();
-      if (AttackerId != 0) hash ^= AttackerId.GetHashCode();
-      if (SourceElementType != 0) hash ^= SourceElementType.GetHashCode();
-      if (ReactionSourceType != 0) hash ^= ReactionSourceType.GetHashCode();
-      if (AttackElementDurability != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackElementDurability);
       if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) hash ^= ShapeSphere.GetHashCode();
       if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) hash ^= ShapeBox.GetHashCode();
       hash ^= (int) checkShapeCase_;
@@ -298,41 +303,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-        output.WriteRawTag(18);
-        output.WriteMessage(ShapeBox);
-      }
-      if (AttackerId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(AttackerId);
-      }
-      if (ReactionSourceType != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(ReactionSourceType);
-      }
-      if (EntityType != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(EntityType);
-      }
-      if (AttackElementDurability != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(AttackElementDurability);
-      }
-      if (OpIdx != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(OpIdx);
-      }
-      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-        output.WriteRawTag(82);
-        output.WriteMessage(ShapeSphere);
-      }
       if (UserId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(UserId);
       }
-      if (SourceElementType != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(SourceElementType);
+      if (Unk3300PNANGDNNFCH != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Unk3300PNANGDNNFCH);
+      }
+      if (AttackElementDurability != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(AttackElementDurability);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Unk3300KNLDJPEMCKP);
+      }
+      if (AttackerId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AttackerId);
+      }
+      if (EntityType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EntityType);
+      }
+      if (OpIdx != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpIdx);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+        output.WriteRawTag(106);
+        output.WriteMessage(ShapeBox);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ShapeSphere);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -344,41 +349,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-        output.WriteRawTag(18);
-        output.WriteMessage(ShapeBox);
-      }
-      if (AttackerId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(AttackerId);
-      }
-      if (ReactionSourceType != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(ReactionSourceType);
-      }
-      if (EntityType != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(EntityType);
-      }
-      if (AttackElementDurability != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(AttackElementDurability);
-      }
-      if (OpIdx != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(OpIdx);
-      }
-      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-        output.WriteRawTag(82);
-        output.WriteMessage(ShapeSphere);
-      }
       if (UserId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(UserId);
       }
-      if (SourceElementType != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(SourceElementType);
+      if (Unk3300PNANGDNNFCH != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Unk3300PNANGDNNFCH);
+      }
+      if (AttackElementDurability != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(AttackElementDurability);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Unk3300KNLDJPEMCKP);
+      }
+      if (AttackerId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AttackerId);
+      }
+      if (EntityType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EntityType);
+      }
+      if (OpIdx != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpIdx);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+        output.WriteRawTag(106);
+        output.WriteMessage(ShapeBox);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ShapeSphere);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -390,26 +395,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (AttackerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackerId);
+      }
+      if (AttackElementDurability != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300PNANGDNNFCH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300PNANGDNNFCH);
+      }
       if (EntityType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(EntityType);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300KNLDJPEMCKP);
       }
       if (OpIdx != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpIdx);
       }
       if (UserId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UserId);
-      }
-      if (AttackerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackerId);
-      }
-      if (SourceElementType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SourceElementType);
-      }
-      if (ReactionSourceType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReactionSourceType);
-      }
-      if (AttackElementDurability != 0F) {
-        size += 1 + 4;
       }
       if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShapeSphere);
@@ -429,26 +434,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.AttackerId != 0) {
+        AttackerId = other.AttackerId;
+      }
+      if (other.AttackElementDurability != 0F) {
+        AttackElementDurability = other.AttackElementDurability;
+      }
+      if (other.Unk3300PNANGDNNFCH != 0) {
+        Unk3300PNANGDNNFCH = other.Unk3300PNANGDNNFCH;
+      }
       if (other.EntityType != 0) {
         EntityType = other.EntityType;
+      }
+      if (other.Unk3300KNLDJPEMCKP != 0) {
+        Unk3300KNLDJPEMCKP = other.Unk3300KNLDJPEMCKP;
       }
       if (other.OpIdx != 0) {
         OpIdx = other.OpIdx;
       }
       if (other.UserId != 0) {
         UserId = other.UserId;
-      }
-      if (other.AttackerId != 0) {
-        AttackerId = other.AttackerId;
-      }
-      if (other.SourceElementType != 0) {
-        SourceElementType = other.SourceElementType;
-      }
-      if (other.ReactionSourceType != 0) {
-        ReactionSourceType = other.ReactionSourceType;
-      }
-      if (other.AttackElementDurability != 0F) {
-        AttackElementDurability = other.AttackElementDurability;
       }
       switch (other.CheckShapeCase) {
         case CheckShapeOneofCase.ShapeSphere:
@@ -480,7 +485,35 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 8: {
+            UserId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300PNANGDNNFCH = input.ReadInt32();
+            break;
+          }
+          case 37: {
+            AttackElementDurability = input.ReadFloat();
+            break;
+          }
+          case 56: {
+            Unk3300KNLDJPEMCKP = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttackerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityType = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            OpIdx = input.ReadUInt32();
+            break;
+          }
+          case 106: {
             global::Weedwacker.Shared.Network.Proto.ShapeBox subBuilder = new global::Weedwacker.Shared.Network.Proto.ShapeBox();
             if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
               subBuilder.MergeFrom(ShapeBox);
@@ -489,41 +522,13 @@ namespace Weedwacker.Shared.Network.Proto {
             ShapeBox = subBuilder;
             break;
           }
-          case 24: {
-            AttackerId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            ReactionSourceType = input.ReadInt32();
-            break;
-          }
-          case 48: {
-            EntityType = input.ReadInt32();
-            break;
-          }
-          case 61: {
-            AttackElementDurability = input.ReadFloat();
-            break;
-          }
-          case 72: {
-            OpIdx = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 114: {
             global::Weedwacker.Shared.Network.Proto.ShapeSphere subBuilder = new global::Weedwacker.Shared.Network.Proto.ShapeSphere();
             if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
               subBuilder.MergeFrom(ShapeSphere);
             }
             input.ReadMessage(subBuilder);
             ShapeSphere = subBuilder;
-            break;
-          }
-          case 88: {
-            UserId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            SourceElementType = input.ReadInt32();
             break;
           }
         }
@@ -541,7 +546,35 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 8: {
+            UserId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300PNANGDNNFCH = input.ReadInt32();
+            break;
+          }
+          case 37: {
+            AttackElementDurability = input.ReadFloat();
+            break;
+          }
+          case 56: {
+            Unk3300KNLDJPEMCKP = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttackerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityType = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            OpIdx = input.ReadUInt32();
+            break;
+          }
+          case 106: {
             global::Weedwacker.Shared.Network.Proto.ShapeBox subBuilder = new global::Weedwacker.Shared.Network.Proto.ShapeBox();
             if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
               subBuilder.MergeFrom(ShapeBox);
@@ -550,41 +583,13 @@ namespace Weedwacker.Shared.Network.Proto {
             ShapeBox = subBuilder;
             break;
           }
-          case 24: {
-            AttackerId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            ReactionSourceType = input.ReadInt32();
-            break;
-          }
-          case 48: {
-            EntityType = input.ReadInt32();
-            break;
-          }
-          case 61: {
-            AttackElementDurability = input.ReadFloat();
-            break;
-          }
-          case 72: {
-            OpIdx = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 114: {
             global::Weedwacker.Shared.Network.Proto.ShapeSphere subBuilder = new global::Weedwacker.Shared.Network.Proto.ShapeSphere();
             if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
               subBuilder.MergeFrom(ShapeSphere);
             }
             input.ReadMessage(subBuilder);
             ShapeSphere = subBuilder;
-            break;
-          }
-          case 88: {
-            UserId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            SourceElementType = input.ReadInt32();
             break;
           }
         }

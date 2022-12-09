@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChangeTeamNameRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDaGFuZ2VUZWFtTmFtZVJzcC5wcm90byJIChFDaGFuZ2VUZWFtTmFtZVJz",
-            "cBIPCgdyZXRjb2RlGAsgASgFEhEKCXRlYW1fbmFtZRgCIAEoCRIPCgd0ZWFt",
-            "X2lkGAQgASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChdDaGFuZ2VUZWFtTmFtZVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJIChFDaGFuZ2VUZWFtTmFtZVJzcBIPCgdyZXRjb2Rl",
+            "GAIgASgFEhEKCXRlYW1fbmFtZRgPIAEoCRIPCgd0ZWFtX2lkGAUgASgFYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1666
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1696;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ChangeTeamNameRsp : pb::IMessage<ChangeTeamNameRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_name" field.</summary>
-    public const int TeamNameFieldNumber = 2;
+    public const int TeamNameFieldNumber = 15;
     private string teamName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_id" field.</summary>
-    public const int TeamIdFieldNumber = 4;
+    public const int TeamIdFieldNumber = 5;
     private int teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TeamName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(TeamName);
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
       }
       if (TeamId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(TeamId);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(Retcode);
+      if (TeamName.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(TeamName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TeamName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(TeamName);
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
       }
       if (TeamId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(TeamId);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(Retcode);
+      if (TeamName.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(TeamName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            TeamName = input.ReadString();
+          case 16: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 40: {
             TeamId = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 122: {
+            TeamName = input.ReadString();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            TeamName = input.ReadString();
+          case 16: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 40: {
             TeamId = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 122: {
+            TeamName = input.ReadString();
             break;
           }
         }

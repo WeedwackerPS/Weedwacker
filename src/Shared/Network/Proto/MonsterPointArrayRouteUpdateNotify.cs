@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static MonsterPointArrayRouteUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihNb25zdGVyUG9pbnRBcnJheVJvdXRlVXBkYXRlTm90aWZ5LnByb3RvGhJN",
-            "b25zdGVyUm91dGUucHJvdG8iXQoiTW9uc3RlclBvaW50QXJyYXlSb3V0ZVVw",
-            "ZGF0ZU5vdGlmeRIRCgllbnRpdHlfaWQYByABKA0SJAoNbW9uc3Rlcl9yb3V0",
-            "ZRgFIAEoCzINLk1vbnN0ZXJSb3V0ZUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CihNb25zdGVyUG9pbnRBcnJheVJvdXRlVXBkYXRlTm90aWZ5LnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhJNb25zdGVyUm91dGUu",
+            "cHJvdG8ifQoiTW9uc3RlclBvaW50QXJyYXlSb3V0ZVVwZGF0ZU5vdGlmeRIR",
+            "CgllbnRpdHlfaWQYBSABKA0SRAoNbW9uc3Rlcl9yb3V0ZRgLIAEoCzItLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTW9uc3RlclJvdXRlYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MonsterRouteReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3410
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3384;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MonsterPointArrayRouteUpdateNotify : pb::IMessage<MonsterPointArrayRouteUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 7;
+    public const int EntityIdFieldNumber = 5;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "monster_route" field.</summary>
-    public const int MonsterRouteFieldNumber = 5;
+    public const int MonsterRouteFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.MonsterRoute monsterRoute_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (monsterRoute_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(MonsterRoute);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(EntityId);
+      }
+      if (monsterRoute_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(MonsterRoute);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (monsterRoute_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(MonsterRoute);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(EntityId);
+      }
+      if (monsterRoute_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(MonsterRoute);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 40: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (monsterRoute_ == null) {
               MonsterRoute = new global::Weedwacker.Shared.Network.Proto.MonsterRoute();
             }
             input.ReadMessage(MonsterRoute);
-            break;
-          }
-          case 56: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 40: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (monsterRoute_ == null) {
               MonsterRoute = new global::Weedwacker.Shared.Network.Proto.MonsterRoute();
             }
             input.ReadMessage(MonsterRoute);
-            break;
-          }
-          case 56: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

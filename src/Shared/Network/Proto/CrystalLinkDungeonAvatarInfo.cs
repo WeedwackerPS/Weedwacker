@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkDungeonAvatarInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJDcnlzdGFsTGlua0R1bmdlb25BdmF0YXJJbmZvLnByb3RvIkUKHENyeXN0",
-            "YWxMaW5rRHVuZ2VvbkF2YXRhckluZm8SEAoIaXNfdHJpYWwYCCABKAgSEwoL",
-            "YXZhdGFyX2d1aWQYCyABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJDcnlzdGFsTGlua0R1bmdlb25BdmF0YXJJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkUKHENyeXN0YWxMaW5rRHVuZ2Vv",
+            "bkF2YXRhckluZm8SEwoLYXZhdGFyX2d1aWQYBCABKAQSEAoIaXNfdHJpYWwY",
+            "BSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo.Parser, new[]{ "IsTrial", "AvatarGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo.Parser, new[]{ "AvatarGuid", "IsTrial" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CrystalLinkDungeonAvatarInfo(CrystalLinkDungeonAvatarInfo other) : this() {
-      isTrial_ = other.isTrial_;
       avatarGuid_ = other.avatarGuid_;
+      isTrial_ = other.isTrial_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CrystalLinkDungeonAvatarInfo(this);
     }
 
-    /// <summary>Field number for the "is_trial" field.</summary>
-    public const int IsTrialFieldNumber = 8;
-    private bool isTrial_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTrial {
-      get { return isTrial_; }
-      set {
-        isTrial_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 11;
+    public const int AvatarGuidFieldNumber = 4;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarGuid_; }
       set {
         avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_trial" field.</summary>
+    public const int IsTrialFieldNumber = 5;
+    private bool isTrial_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTrial {
+      get { return isTrial_; }
+      set {
+        isTrial_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsTrial != other.IsTrial) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
+      if (IsTrial != other.IsTrial) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsTrial != false) hash ^= IsTrial.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (IsTrial != false) hash ^= IsTrial.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsTrial != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsTrial);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt64(AvatarGuid);
+      }
+      if (IsTrial != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsTrial);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsTrial != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsTrial);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt64(AvatarGuid);
+      }
+      if (IsTrial != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsTrial);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsTrial != false) {
-        size += 1 + 1;
-      }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
+      if (IsTrial != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsTrial != false) {
-        IsTrial = other.IsTrial;
-      }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
+      }
+      if (other.IsTrial != false) {
+        IsTrial = other.IsTrial;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            IsTrial = input.ReadBool();
+          case 32: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 88: {
-            AvatarGuid = input.ReadUInt64();
+          case 40: {
+            IsTrial = input.ReadBool();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            IsTrial = input.ReadBool();
+          case 32: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 88: {
-            AvatarGuid = input.ReadUInt64();
+          case 40: {
+            IsTrial = input.ReadBool();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetAuthSalesmanInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRBdXRoU2FsZXNtYW5JbmZvUnNwLnByb3RvIlUKFkdldEF1dGhTYWxl",
-            "c21hbkluZm9Sc3ASFQoNZGF5X3Jld2FyZF9pZBgFIAEoDRIPCgdyZXRjb2Rl",
-            "GAYgASgFEhMKC3NjaGVkdWxlX2lkGAsgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxHZXRBdXRoU2FsZXNtYW5JbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlUKFkdldEF1dGhTYWxlc21hbkluZm9Sc3AS",
+            "EwoLc2NoZWR1bGVfaWQYDyABKA0SDwoHcmV0Y29kZRgIIAEoBRIVCg1kYXlf",
+            "cmV3YXJkX2lkGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAuthSalesmanInfoRsp), global::Weedwacker.Shared.Network.Proto.GetAuthSalesmanInfoRsp.Parser, new[]{ "DayRewardId", "Retcode", "ScheduleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAuthSalesmanInfoRsp), global::Weedwacker.Shared.Network.Proto.GetAuthSalesmanInfoRsp.Parser, new[]{ "ScheduleId", "Retcode", "DayRewardId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2004
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2087;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetAuthSalesmanInfoRsp : pb::IMessage<GetAuthSalesmanInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetAuthSalesmanInfoRsp(GetAuthSalesmanInfoRsp other) : this() {
-      dayRewardId_ = other.dayRewardId_;
-      retcode_ = other.retcode_;
       scheduleId_ = other.scheduleId_;
+      retcode_ = other.retcode_;
+      dayRewardId_ = other.dayRewardId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetAuthSalesmanInfoRsp(this);
     }
 
-    /// <summary>Field number for the "day_reward_id" field.</summary>
-    public const int DayRewardIdFieldNumber = 5;
-    private uint dayRewardId_;
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 15;
+    private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DayRewardId {
-      get { return dayRewardId_; }
+    public uint ScheduleId {
+      get { return scheduleId_; }
       set {
-        dayRewardId_ = value;
+        scheduleId_ = value;
       }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,15 +117,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 11;
-    private uint scheduleId_;
+    /// <summary>Field number for the "day_reward_id" field.</summary>
+    public const int DayRewardIdFieldNumber = 6;
+    private uint dayRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleId {
-      get { return scheduleId_; }
+    public uint DayRewardId {
+      get { return dayRewardId_; }
       set {
-        scheduleId_ = value;
+        dayRewardId_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DayRewardId != other.DayRewardId) return false;
-      if (Retcode != other.Retcode) return false;
       if (ScheduleId != other.ScheduleId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (DayRewardId != other.DayRewardId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DayRewardId != 0) hash ^= DayRewardId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (DayRewardId != 0) hash ^= DayRewardId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DayRewardId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(DayRewardId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       if (ScheduleId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
@@ -194,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DayRewardId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(DayRewardId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
       if (ScheduleId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DayRewardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayRewardId);
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      if (DayRewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayRewardId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.DayRewardId != 0) {
-        DayRewardId = other.DayRewardId;
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.ScheduleId != 0) {
-        ScheduleId = other.ScheduleId;
+      if (other.DayRewardId != 0) {
+        DayRewardId = other.DayRewardId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 48: {
             DayRewardId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
+          case 120: {
             ScheduleId = input.ReadUInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 48: {
             DayRewardId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
+          case 120: {
             ScheduleId = input.ReadUInt32();
             break;
           }

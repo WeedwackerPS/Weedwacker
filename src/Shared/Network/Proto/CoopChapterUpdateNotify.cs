@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopChapterUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Db29wQ2hhcHRlclVwZGF0ZU5vdGlmeS5wcm90bxoRQ29vcENoYXB0ZXIu",
-            "cHJvdG8iPQoXQ29vcENoYXB0ZXJVcGRhdGVOb3RpZnkSIgoMY2hhcHRlcl9s",
-            "aXN0GA4gAygLMgwuQ29vcENoYXB0ZXJCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1Db29wQ2hhcHRlclVwZGF0ZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoRQ29vcENoYXB0ZXIucHJvdG8iXQoXQ29v",
+            "cENoYXB0ZXJVcGRhdGVOb3RpZnkSQgoMY2hhcHRlcl9saXN0GAQgAygLMiwu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Db29wQ2hhcHRlcmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CoopChapterReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1972
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1967;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CoopChapterUpdateNotify : pb::IMessage<CoopChapterUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chapter_list" field.</summary>
-    public const int ChapterListFieldNumber = 14;
+    public const int ChapterListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CoopChapter> _repeated_chapterList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.CoopChapter.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.CoopChapter.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter> chapterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CoopChapter>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 34: {
             chapterList_.AddEntriesFrom(input, _repeated_chapterList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 34: {
             chapterList_.AddEntriesFrom(ref input, _repeated_chapterList_codec);
             break;
           }

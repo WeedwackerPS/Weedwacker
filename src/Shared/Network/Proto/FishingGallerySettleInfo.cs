@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishingGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5GaXNoaW5nR2FsbGVyeVNldHRsZUluZm8ucHJvdG8aDkZpc2hJbmZvLnBy",
-            "b3RvGhJGaXNoaW5nU2NvcmUucHJvdG8iugEKGEZpc2hpbmdHYWxsZXJ5U2V0",
-            "dGxlSW5mbxI4CghmaXNoX21hcBgLIAMoCzImLkZpc2hpbmdHYWxsZXJ5U2V0",
-            "dGxlSW5mby5GaXNoTWFwRW50cnkSKQoSZmlzaGluZ19zY29yZV9saXN0GA8g",
-            "AygLMg0uRmlzaGluZ1Njb3JlGjkKDEZpc2hNYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SGAoFdmFsdWUYAiABKAsyCS5GaXNoSW5mbzoCOAFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5GaXNoaW5nR2FsbGVyeVNldHRsZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aDkZpc2hJbmZvLnByb3RvGhJGaXNoaW5n",
+            "U2NvcmUucHJvdG8imgIKGEZpc2hpbmdHYWxsZXJ5U2V0dGxlSW5mbxJJChJm",
+            "aXNoaW5nX3Njb3JlX2xpc3QYDyADKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkZpc2hpbmdTY29yZRJYCghmaXNoX21hcBgKIAMoCzJG",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmlzaGluZ0dhbGxl",
+            "cnlTZXR0bGVJbmZvLkZpc2hNYXBFbnRyeRpZCgxGaXNoTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEjgKBXZhbHVlGAIgASgLMikuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5GaXNoSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FishInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FishingScoreReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishingGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.FishingGallerySettleInfo.Parser, new[]{ "FishMap", "FishingScoreList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishingGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.FishingGallerySettleInfo.Parser, new[]{ "FishingScoreList", "FishMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,8 +77,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishingGallerySettleInfo(FishingGallerySettleInfo other) : this() {
-      fishMap_ = other.fishMap_.Clone();
       fishingScoreList_ = other.fishingScoreList_.Clone();
+      fishMap_ = other.fishMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,17 +86,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishingGallerySettleInfo Clone() {
       return new FishingGallerySettleInfo(this);
-    }
-
-    /// <summary>Field number for the "fish_map" field.</summary>
-    public const int FishMapFieldNumber = 11;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>.Codec _map_fishMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FishInfo.Parser), 90);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo> fishMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo> FishMap {
-      get { return fishMap_; }
     }
 
     /// <summary>Field number for the "fishing_score_list" field.</summary>
@@ -106,6 +97,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FishingScore> FishingScoreList {
       get { return fishingScoreList_; }
+    }
+
+    /// <summary>Field number for the "fish_map" field.</summary>
+    public const int FishMapFieldNumber = 10;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>.Codec _map_fishMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FishInfo.Parser), 82);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo> fishMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FishInfo> FishMap {
+      get { return fishMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +125,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!FishMap.Equals(other.FishMap)) return false;
       if(!fishingScoreList_.Equals(other.fishingScoreList_)) return false;
+      if (!FishMap.Equals(other.FishMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= FishMap.GetHashCode();
       hash ^= fishingScoreList_.GetHashCode();
+      hash ^= FishMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,8 +178,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += fishMap_.CalculateSize(_map_fishMap_codec);
       size += fishingScoreList_.CalculateSize(_repeated_fishingScoreList_codec);
+      size += fishMap_.CalculateSize(_map_fishMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -190,8 +192,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      fishMap_.Add(other.fishMap_);
       fishingScoreList_.Add(other.fishingScoreList_);
+      fishMap_.Add(other.fishMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -207,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 82: {
             fishMap_.AddEntriesFrom(input, _map_fishMap_codec);
             break;
           }
@@ -230,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 82: {
             fishMap_.AddEntriesFrom(ref input, _map_fishMap_codec);
             break;
           }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GravenInnocenceRaceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1HcmF2ZW5Jbm5vY2VuY2VSYWNlSW5mby5wcm90bxoiR3JhdmVuSW5ub2Nl",
-            "bmNlUmFjZUxldmVsSW5mby5wcm90byJRChdHcmF2ZW5Jbm5vY2VuY2VSYWNl",
-            "SW5mbxI2Cg9sZXZlbF9pbmZvX2xpc3QYCyADKAsyHS5HcmF2ZW5Jbm5vY2Vu",
-            "Y2VSYWNlTGV2ZWxJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch1HcmF2ZW5Jbm5vY2VuY2VSYWNlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoiR3JhdmVuSW5ub2NlbmNlUmFjZUxldmVs",
+            "SW5mby5wcm90byJxChdHcmF2ZW5Jbm5vY2VuY2VSYWNlSW5mbxJWCg9sZXZl",
+            "bF9pbmZvX2xpc3QYCSADKAsyPS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdyYXZlbklubm9jZW5jZVJhY2VMZXZlbEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_info_list" field.</summary>
-    public const int LevelInfoListFieldNumber = 11;
+    public const int LevelInfoListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfo> _repeated_levelInfoList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfo> levelInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceRaceLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 74: {
             levelInfoList_.AddEntriesFrom(input, _repeated_levelInfoList_codec);
             break;
           }
@@ -206,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 74: {
             levelInfoList_.AddEntriesFrom(ref input, _repeated_levelInfoList_codec);
             break;
           }

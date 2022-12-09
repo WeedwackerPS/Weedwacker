@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityInvocationsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BYmlsaXR5SW52b2NhdGlvbnNOb3RpZnkucHJvdG8aGEFiaWxpdHlJbnZv",
-            "a2VFbnRyeS5wcm90byJAChhBYmlsaXR5SW52b2NhdGlvbnNOb3RpZnkSJAoH",
-            "aW52b2tlcxgCIAMoCzITLkFiaWxpdHlJbnZva2VFbnRyeUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5BYmlsaXR5SW52b2NhdGlvbnNOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGEFiaWxpdHlJbnZva2VFbnRyeS5wcm90",
+            "byJgChhBYmlsaXR5SW52b2NhdGlvbnNOb3RpZnkSRAoHaW52b2tlcxgFIAMo",
+            "CzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eUlu",
+            "dm9rZUVudHJ5YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1198
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1130;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AbilityInvocationsNotify : pb::IMessage<AbilityInvocationsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "invokes" field.</summary>
-    public const int InvokesFieldNumber = 2;
+    public const int InvokesFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> _repeated_invokes_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> invokes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 42: {
             invokes_.AddEntriesFrom(input, _repeated_invokes_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 42: {
             invokes_.AddEntriesFrom(ref input, _repeated_invokes_codec);
             break;
           }

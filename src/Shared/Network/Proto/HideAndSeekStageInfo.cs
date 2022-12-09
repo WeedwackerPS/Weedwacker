@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpIaWRlQW5kU2Vla1N0YWdlSW5mby5wcm90bxohSGlkZUFuZFNlZWtQbGF5",
-            "ZXJCYXR0bGVJbmZvLnByb3RvGhpIaWRlQW5kU2Vla1N0YWdlVHlwZS5wcm90",
-            "byKtAgoUSGlkZUFuZFNlZWtTdGFnZUluZm8SDgoGbWFwX2lkGAggASgNEhcK",
-            "D2lzX3JlY29yZF9zY29yZRgDIAEoCBIpCgpzdGFnZV90eXBlGAcgASgOMhUu",
-            "SGlkZUFuZFNlZWtTdGFnZVR5cGUSQQoPYmF0dGxlX2luZm9fbWFwGAIgAygL",
-            "MiguSGlkZUFuZFNlZWtTdGFnZUluZm8uQmF0dGxlSW5mb01hcEVudHJ5EhYK",
-            "DmhpZGVyX3VpZF9saXN0GAEgAygNEhIKCmh1bnRlcl91aWQYCiABKA0aUgoS",
-            "QmF0dGxlSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRIrCgV2YWx1ZRgCIAEo",
-            "CzIcLkhpZGVBbmRTZWVrUGxheWVyQmF0dGxlSW5mbzoCOAFCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpIaWRlQW5kU2Vla1N0YWdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxohSGlkZUFuZFNlZWtQbGF5ZXJCYXR0bGVJbmZv",
+            "LnByb3RvGhpIaWRlQW5kU2Vla1N0YWdlVHlwZS5wcm90byKNAwoUSGlkZUFu",
+            "ZFNlZWtTdGFnZUluZm8SEgoKaHVudGVyX3VpZBgJIAEoDRJhCg9iYXR0bGVf",
+            "aW5mb19tYXAYCCADKAsySC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkhpZGVBbmRTZWVrU3RhZ2VJbmZvLkJhdHRsZUluZm9NYXBFbnRyeRIX",
+            "Cg9pc19yZWNvcmRfc2NvcmUYBSABKAgSFgoOaGlkZXJfdWlkX2xpc3QYAiAD",
+            "KA0SDgoGbWFwX2lkGA0gASgNEkkKCnN0YWdlX3R5cGUYBiABKA4yNS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhpZGVBbmRTZWVrU3RhZ2VU",
+            "eXBlGnIKEkJhdHRsZUluZm9NYXBFbnRyeRILCgNrZXkYASABKA0SSwoFdmFs",
+            "dWUYAiABKAsyPC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhp",
+            "ZGVBbmRTZWVrUGxheWVyQmF0dGxlSW5mbzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekStageTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo.Parser, new[]{ "MapId", "IsRecordScore", "StageType", "BattleInfoMap", "HiderUidList", "HunterUid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo.Parser, new[]{ "HunterUid", "BattleInfoMap", "IsRecordScore", "HiderUidList", "MapId", "StageType" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,12 +80,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekStageInfo(HideAndSeekStageInfo other) : this() {
-      mapId_ = other.mapId_;
-      isRecordScore_ = other.isRecordScore_;
-      stageType_ = other.stageType_;
-      battleInfoMap_ = other.battleInfoMap_.Clone();
-      hiderUidList_ = other.hiderUidList_.Clone();
       hunterUid_ = other.hunterUid_;
+      battleInfoMap_ = other.battleInfoMap_.Clone();
+      isRecordScore_ = other.isRecordScore_;
+      hiderUidList_ = other.hiderUidList_.Clone();
+      mapId_ = other.mapId_;
+      stageType_ = other.stageType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +95,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HideAndSeekStageInfo(this);
     }
 
-    /// <summary>Field number for the "map_id" field.</summary>
-    public const int MapIdFieldNumber = 8;
-    private uint mapId_;
+    /// <summary>Field number for the "hunter_uid" field.</summary>
+    public const int HunterUidFieldNumber = 9;
+    private uint hunterUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MapId {
-      get { return mapId_; }
+    public uint HunterUid {
+      get { return hunterUid_; }
       set {
-        mapId_ = value;
+        hunterUid_ = value;
       }
     }
 
+    /// <summary>Field number for the "battle_info_map" field.</summary>
+    public const int BattleInfoMapFieldNumber = 8;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>.Codec _map_battleInfoMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo.Parser), 66);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo> battleInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo> BattleInfoMap {
+      get { return battleInfoMap_; }
+    }
+
     /// <summary>Field number for the "is_record_score" field.</summary>
-    public const int IsRecordScoreFieldNumber = 3;
+    public const int IsRecordScoreFieldNumber = 5;
     private bool isRecordScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,33 +130,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage_type" field.</summary>
-    public const int StageTypeFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType stageType_ = global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType StageType {
-      get { return stageType_; }
-      set {
-        stageType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "battle_info_map" field.</summary>
-    public const int BattleInfoMapFieldNumber = 2;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>.Codec _map_battleInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo.Parser), 18);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo> battleInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo> BattleInfoMap {
-      get { return battleInfoMap_; }
-    }
-
     /// <summary>Field number for the "hider_uid_list" field.</summary>
-    public const int HiderUidListFieldNumber = 1;
+    public const int HiderUidListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_hiderUidList_codec
-        = pb::FieldCodec.ForUInt32(10);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> hiderUidList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,15 +141,27 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return hiderUidList_; }
     }
 
-    /// <summary>Field number for the "hunter_uid" field.</summary>
-    public const int HunterUidFieldNumber = 10;
-    private uint hunterUid_;
+    /// <summary>Field number for the "map_id" field.</summary>
+    public const int MapIdFieldNumber = 13;
+    private uint mapId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HunterUid {
-      get { return hunterUid_; }
+    public uint MapId {
+      get { return mapId_; }
       set {
-        hunterUid_ = value;
+        mapId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_type" field.</summary>
+    public const int StageTypeFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType stageType_ = global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType StageType {
+      get { return stageType_; }
+      set {
+        stageType_ = value;
       }
     }
 
@@ -178,12 +180,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MapId != other.MapId) return false;
-      if (IsRecordScore != other.IsRecordScore) return false;
-      if (StageType != other.StageType) return false;
-      if (!BattleInfoMap.Equals(other.BattleInfoMap)) return false;
-      if(!hiderUidList_.Equals(other.hiderUidList_)) return false;
       if (HunterUid != other.HunterUid) return false;
+      if (!BattleInfoMap.Equals(other.BattleInfoMap)) return false;
+      if (IsRecordScore != other.IsRecordScore) return false;
+      if(!hiderUidList_.Equals(other.hiderUidList_)) return false;
+      if (MapId != other.MapId) return false;
+      if (StageType != other.StageType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MapId != 0) hash ^= MapId.GetHashCode();
-      if (IsRecordScore != false) hash ^= IsRecordScore.GetHashCode();
-      if (StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) hash ^= StageType.GetHashCode();
-      hash ^= BattleInfoMap.GetHashCode();
-      hash ^= hiderUidList_.GetHashCode();
       if (HunterUid != 0) hash ^= HunterUid.GetHashCode();
+      hash ^= BattleInfoMap.GetHashCode();
+      if (IsRecordScore != false) hash ^= IsRecordScore.GetHashCode();
+      hash ^= hiderUidList_.GetHashCode();
+      if (MapId != 0) hash ^= MapId.GetHashCode();
+      if (StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) hash ^= StageType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,22 +218,22 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       hiderUidList_.WriteTo(output, _repeated_hiderUidList_codec);
-      battleInfoMap_.WriteTo(output, _map_battleInfoMap_codec);
       if (IsRecordScore != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteBool(IsRecordScore);
       }
       if (StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) StageType);
       }
-      if (MapId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MapId);
-      }
+      battleInfoMap_.WriteTo(output, _map_battleInfoMap_codec);
       if (HunterUid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteUInt32(HunterUid);
+      }
+      if (MapId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MapId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -244,22 +246,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       hiderUidList_.WriteTo(ref output, _repeated_hiderUidList_codec);
-      battleInfoMap_.WriteTo(ref output, _map_battleInfoMap_codec);
       if (IsRecordScore != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteBool(IsRecordScore);
       }
       if (StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) StageType);
       }
-      if (MapId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MapId);
-      }
+      battleInfoMap_.WriteTo(ref output, _map_battleInfoMap_codec);
       if (HunterUid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteUInt32(HunterUid);
+      }
+      if (MapId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MapId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -271,19 +273,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MapId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MapId);
+      if (HunterUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HunterUid);
       }
+      size += battleInfoMap_.CalculateSize(_map_battleInfoMap_codec);
       if (IsRecordScore != false) {
         size += 1 + 1;
       }
+      size += hiderUidList_.CalculateSize(_repeated_hiderUidList_codec);
+      if (MapId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MapId);
+      }
       if (StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StageType);
-      }
-      size += battleInfoMap_.CalculateSize(_map_battleInfoMap_codec);
-      size += hiderUidList_.CalculateSize(_repeated_hiderUidList_codec);
-      if (HunterUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HunterUid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -297,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MapId != 0) {
-        MapId = other.MapId;
+      if (other.HunterUid != 0) {
+        HunterUid = other.HunterUid;
       }
+      battleInfoMap_.Add(other.battleInfoMap_);
       if (other.IsRecordScore != false) {
         IsRecordScore = other.IsRecordScore;
       }
+      hiderUidList_.Add(other.hiderUidList_);
+      if (other.MapId != 0) {
+        MapId = other.MapId;
+      }
       if (other.StageType != global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType.Prepare) {
         StageType = other.StageType;
-      }
-      battleInfoMap_.Add(other.battleInfoMap_);
-      hiderUidList_.Add(other.hiderUidList_);
-      if (other.HunterUid != 0) {
-        HunterUid = other.HunterUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -326,29 +328,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
+          case 18:
+          case 16: {
             hiderUidList_.AddEntriesFrom(input, _repeated_hiderUidList_codec);
             break;
           }
-          case 18: {
-            battleInfoMap_.AddEntriesFrom(input, _map_battleInfoMap_codec);
-            break;
-          }
-          case 24: {
+          case 40: {
             IsRecordScore = input.ReadBool();
             break;
           }
-          case 56: {
+          case 48: {
             StageType = (global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType) input.ReadEnum();
             break;
           }
-          case 64: {
-            MapId = input.ReadUInt32();
+          case 66: {
+            battleInfoMap_.AddEntriesFrom(input, _map_battleInfoMap_codec);
             break;
           }
-          case 80: {
+          case 72: {
             HunterUid = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            MapId = input.ReadUInt32();
             break;
           }
         }
@@ -366,29 +368,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
+          case 18:
+          case 16: {
             hiderUidList_.AddEntriesFrom(ref input, _repeated_hiderUidList_codec);
             break;
           }
-          case 18: {
-            battleInfoMap_.AddEntriesFrom(ref input, _map_battleInfoMap_codec);
-            break;
-          }
-          case 24: {
+          case 40: {
             IsRecordScore = input.ReadBool();
             break;
           }
-          case 56: {
+          case 48: {
             StageType = (global::Weedwacker.Shared.Network.Proto.HideAndSeekStageType) input.ReadEnum();
             break;
           }
-          case 64: {
-            MapId = input.ReadUInt32();
+          case 66: {
+            battleInfoMap_.AddEntriesFrom(ref input, _map_battleInfoMap_codec);
             break;
           }
-          case 80: {
+          case 72: {
             HunterUid = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            MapId = input.ReadUInt32();
             break;
           }
         }

@@ -24,23 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static UgcMusicBriefInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdVZ2NNdXNpY0JyaWVmSW5mby5wcm90byLoAwoRVWdjTXVzaWNCcmllZklu",
-            "Zm8SHAoUaW1wb3J0X2Zyb21fdWdjX2d1aWQYBSABKAQSFAoMaXNfcHVibGlz",
-            "aGVkGAggASgIEhEKCWlzX3BsYXllZBgBIAEoCBIQCghtdXNpY19pZBgCIAEo",
-            "DRIXCg5zYXZlX3BhZ2VfdHlwZRieCSABKA0SEAoIc2F2ZV9pZHgYDCABKA0S",
-            "GAoQY3JlYXRvcl9uaWNrbmFtZRgKIAEoCRIPCgd2ZXJzaW9uGA8gASgNEhEK",
-            "CXNhdmVfdGltZRgDIAEoDRIYCg9hZnRlcl9ub3RlX2xpc3QY6gcgAygNEhkK",
-            "EGJlZm9yZV9ub3RlX2xpc3QY1gcgAygNEhcKD2lzX3Bzbl9wbGF0Zm9ybRgJ",
-            "IAEoCBIcChN0aW1lX2xpbmVfZWRpdF90aW1lGJ4OIAEoDRIgChhpc19jaGFu",
-            "Z2VkX2FmdGVyX3B1Ymxpc2gYCyABKAgSFAoMcHVibGlzaF90aW1lGA0gASgN",
-            "EhEKCW1heF9zY29yZRgOIAEoDRIcChNyZWFsX3RpbWVfZWRpdF90aW1lGMAE",
-            "IAEoDRISCgpub3RlX2NvdW50GAcgASgNEhAKCHVnY19ndWlkGAQgASgEEhYK",
-            "DnNlbGZfbWF4X3Njb3JlGAYgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdVZ2NNdXNpY0JyaWVmSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byLoAwoRVWdjTXVzaWNCcmllZkluZm8SEwoLY3JlYXRl",
+            "X3RpbWUYDCABKA0SEQoJY2FuX3NoYXJlGA8gASgIEhAKCHBvc2l0aW9uGAUg",
+            "ASgNEhwKE1VuazMzMDBfSkVFQkZQRkVISEcYjgQgAygNEhgKEG11c2ljX25v",
+            "dGVfY291bnQYKiABKA0SGwoTVW5rMzMwMF9IS0JIQUlNT0JLTxhBIAMoDRIT",
+            "CgpzaGFyZV90aW1lGNkMIAEoDRIcChRpbXBvcnRfZnJvbV91Z2NfZ3VpZBgN",
+            "IAEoBBIWCg5tdXNpY19zaGFyZV9pZBgIIAEoBBINCgVzY29yZRgHIAEoDRIO",
+            "CgZzZXR0bGUYAyABKAgSDwoHdmVyc2lvbhgLIAEoDRIXCg9pc19wc25fcGxh",
+            "dGZvcm0YAiABKAgSGwoTVW5rMzMwMF9QTE5PRk9IRkFQRRgEIAEoDRIbChNV",
+            "bmszMzAwX0NDTU1QQUhJTURPGF8gASgNEhcKD2F1dGhvcl9uaWNrbmFtZRgJ",
+            "IAEoCRIQCghtdXNpY19pZBgGIAEoDRIbChNVbmszMzAwX0dETkFQTkFJTkJB",
+            "GAogASgIEhEKCW1heF9zY29yZRgBIAEoDRIbChNVbmszMzAwX09CQk1DRkFE",
+            "TklOGA4gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo), global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser, new[]{ "ImportFromUgcGuid", "IsPublished", "IsPlayed", "MusicId", "SavePageType", "SaveIdx", "CreatorNickname", "Version", "SaveTime", "AfterNoteList", "BeforeNoteList", "IsPsnPlatform", "TimeLineEditTime", "IsChangedAfterPublish", "PublishTime", "MaxScore", "RealTimeEditTime", "NoteCount", "UgcGuid", "SelfMaxScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo), global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser, new[]{ "CreateTime", "CanShare", "Position", "Unk3300JEEBFPFEHHG", "MusicNoteCount", "Unk3300HKBHAIMOBKO", "ShareTime", "ImportFromUgcGuid", "MusicShareId", "Score", "Settle", "Version", "IsPsnPlatform", "Unk3300PLNOFOHFAPE", "Unk3300CCMMPAHIMDO", "AuthorNickname", "MusicId", "Unk3300GDNAPNAINBA", "MaxScore", "Unk3300OBBMCFADNIN" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,26 +81,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UgcMusicBriefInfo(UgcMusicBriefInfo other) : this() {
+      createTime_ = other.createTime_;
+      canShare_ = other.canShare_;
+      position_ = other.position_;
+      unk3300JEEBFPFEHHG_ = other.unk3300JEEBFPFEHHG_.Clone();
+      musicNoteCount_ = other.musicNoteCount_;
+      unk3300HKBHAIMOBKO_ = other.unk3300HKBHAIMOBKO_.Clone();
+      shareTime_ = other.shareTime_;
       importFromUgcGuid_ = other.importFromUgcGuid_;
-      isPublished_ = other.isPublished_;
-      isPlayed_ = other.isPlayed_;
-      musicId_ = other.musicId_;
-      savePageType_ = other.savePageType_;
-      saveIdx_ = other.saveIdx_;
-      creatorNickname_ = other.creatorNickname_;
+      musicShareId_ = other.musicShareId_;
+      score_ = other.score_;
+      settle_ = other.settle_;
       version_ = other.version_;
-      saveTime_ = other.saveTime_;
-      afterNoteList_ = other.afterNoteList_.Clone();
-      beforeNoteList_ = other.beforeNoteList_.Clone();
       isPsnPlatform_ = other.isPsnPlatform_;
-      timeLineEditTime_ = other.timeLineEditTime_;
-      isChangedAfterPublish_ = other.isChangedAfterPublish_;
-      publishTime_ = other.publishTime_;
+      unk3300PLNOFOHFAPE_ = other.unk3300PLNOFOHFAPE_;
+      unk3300CCMMPAHIMDO_ = other.unk3300CCMMPAHIMDO_;
+      authorNickname_ = other.authorNickname_;
+      musicId_ = other.musicId_;
+      unk3300GDNAPNAINBA_ = other.unk3300GDNAPNAINBA_;
       maxScore_ = other.maxScore_;
-      realTimeEditTime_ = other.realTimeEditTime_;
-      noteCount_ = other.noteCount_;
-      ugcGuid_ = other.ugcGuid_;
-      selfMaxScore_ = other.selfMaxScore_;
+      unk3300OBBMCFADNIN_ = other.unk3300OBBMCFADNIN_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,8 +110,105 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UgcMusicBriefInfo(this);
     }
 
+    /// <summary>Field number for the "create_time" field.</summary>
+    public const int CreateTimeFieldNumber = 12;
+    private uint createTime_;
+    /// <summary>
+    /// Unk3300_OJOKFBJALIJ
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreateTime {
+      get { return createTime_; }
+      set {
+        createTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "can_share" field.</summary>
+    public const int CanShareFieldNumber = 15;
+    private bool canShare_;
+    /// <summary>
+    /// Unk3300_NCDKCNOLGKB
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CanShare {
+      get { return canShare_; }
+      set {
+        canShare_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 5;
+    private uint position_;
+    /// <summary>
+    /// Unk3300_KMMBLIMKJCM
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JEEBFPFEHHG" field.</summary>
+    public const int Unk3300JEEBFPFEHHGFieldNumber = 526;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300JEEBFPFEHHG_codec
+        = pb::FieldCodec.ForUInt32(4210);
+    private readonly pbc::RepeatedField<uint> unk3300JEEBFPFEHHG_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300JEEBFPFEHHG {
+      get { return unk3300JEEBFPFEHHG_; }
+    }
+
+    /// <summary>Field number for the "music_note_count" field.</summary>
+    public const int MusicNoteCountFieldNumber = 42;
+    private uint musicNoteCount_;
+    /// <summary>
+    /// Unk3300_EGIGIOOKBAB
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MusicNoteCount {
+      get { return musicNoteCount_; }
+      set {
+        musicNoteCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HKBHAIMOBKO" field.</summary>
+    public const int Unk3300HKBHAIMOBKOFieldNumber = 65;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HKBHAIMOBKO_codec
+        = pb::FieldCodec.ForUInt32(522);
+    private readonly pbc::RepeatedField<uint> unk3300HKBHAIMOBKO_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300HKBHAIMOBKO {
+      get { return unk3300HKBHAIMOBKO_; }
+    }
+
+    /// <summary>Field number for the "share_time" field.</summary>
+    public const int ShareTimeFieldNumber = 1625;
+    private uint shareTime_;
+    /// <summary>
+    /// Unk3300_MBKDGBNFPOA
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ShareTime {
+      get { return shareTime_; }
+      set {
+        shareTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "import_from_ugc_guid" field.</summary>
-    public const int ImportFromUgcGuidFieldNumber = 5;
+    public const int ImportFromUgcGuidFieldNumber = 13;
     private ulong importFromUgcGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,80 +219,53 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_published" field.</summary>
-    public const int IsPublishedFieldNumber = 8;
-    private bool isPublished_;
+    /// <summary>Field number for the "music_share_id" field.</summary>
+    public const int MusicShareIdFieldNumber = 8;
+    private ulong musicShareId_;
+    /// <summary>
+    /// ugc_guid
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPublished {
-      get { return isPublished_; }
+    public ulong MusicShareId {
+      get { return musicShareId_; }
       set {
-        isPublished_ = value;
+        musicShareId_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_played" field.</summary>
-    public const int IsPlayedFieldNumber = 1;
-    private bool isPlayed_;
+    /// <summary>Field number for the "score" field.</summary>
+    public const int ScoreFieldNumber = 7;
+    private uint score_;
+    /// <summary>
+    /// Unk3300_PBENMAHHGIL
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPlayed {
-      get { return isPlayed_; }
+    public uint Score {
+      get { return score_; }
       set {
-        isPlayed_ = value;
+        score_ = value;
       }
     }
 
-    /// <summary>Field number for the "music_id" field.</summary>
-    public const int MusicIdFieldNumber = 2;
-    private uint musicId_;
+    /// <summary>Field number for the "settle" field.</summary>
+    public const int SettleFieldNumber = 3;
+    private bool settle_;
+    /// <summary>
+    /// Unk3300_FKIGPAJFPLG
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MusicId {
-      get { return musicId_; }
+    public bool Settle {
+      get { return settle_; }
       set {
-        musicId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "save_page_type" field.</summary>
-    public const int SavePageTypeFieldNumber = 1182;
-    private uint savePageType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SavePageType {
-      get { return savePageType_; }
-      set {
-        savePageType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "save_idx" field.</summary>
-    public const int SaveIdxFieldNumber = 12;
-    private uint saveIdx_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SaveIdx {
-      get { return saveIdx_; }
-      set {
-        saveIdx_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "creator_nickname" field.</summary>
-    public const int CreatorNicknameFieldNumber = 10;
-    private string creatorNickname_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CreatorNickname {
-      get { return creatorNickname_; }
-      set {
-        creatorNickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        settle_ = value;
       }
     }
 
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 15;
+    public const int VersionFieldNumber = 11;
     private uint version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -206,42 +276,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "save_time" field.</summary>
-    public const int SaveTimeFieldNumber = 3;
-    private uint saveTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SaveTime {
-      get { return saveTime_; }
-      set {
-        saveTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "after_note_list" field.</summary>
-    public const int AfterNoteListFieldNumber = 1002;
-    private static readonly pb::FieldCodec<uint> _repeated_afterNoteList_codec
-        = pb::FieldCodec.ForUInt32(8018);
-    private readonly pbc::RepeatedField<uint> afterNoteList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AfterNoteList {
-      get { return afterNoteList_; }
-    }
-
-    /// <summary>Field number for the "before_note_list" field.</summary>
-    public const int BeforeNoteListFieldNumber = 982;
-    private static readonly pb::FieldCodec<uint> _repeated_beforeNoteList_codec
-        = pb::FieldCodec.ForUInt32(7858);
-    private readonly pbc::RepeatedField<uint> beforeNoteList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BeforeNoteList {
-      get { return beforeNoteList_; }
-    }
-
     /// <summary>Field number for the "is_psn_platform" field.</summary>
-    public const int IsPsnPlatformFieldNumber = 9;
+    public const int IsPsnPlatformFieldNumber = 2;
     private bool isPsnPlatform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -252,44 +288,71 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "time_line_edit_time" field.</summary>
-    public const int TimeLineEditTimeFieldNumber = 1822;
-    private uint timeLineEditTime_;
+    /// <summary>Field number for the "Unk3300_PLNOFOHFAPE" field.</summary>
+    public const int Unk3300PLNOFOHFAPEFieldNumber = 4;
+    private uint unk3300PLNOFOHFAPE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeLineEditTime {
-      get { return timeLineEditTime_; }
+    public uint Unk3300PLNOFOHFAPE {
+      get { return unk3300PLNOFOHFAPE_; }
       set {
-        timeLineEditTime_ = value;
+        unk3300PLNOFOHFAPE_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_changed_after_publish" field.</summary>
-    public const int IsChangedAfterPublishFieldNumber = 11;
-    private bool isChangedAfterPublish_;
+    /// <summary>Field number for the "Unk3300_CCMMPAHIMDO" field.</summary>
+    public const int Unk3300CCMMPAHIMDOFieldNumber = 95;
+    private uint unk3300CCMMPAHIMDO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsChangedAfterPublish {
-      get { return isChangedAfterPublish_; }
+    public uint Unk3300CCMMPAHIMDO {
+      get { return unk3300CCMMPAHIMDO_; }
       set {
-        isChangedAfterPublish_ = value;
+        unk3300CCMMPAHIMDO_ = value;
       }
     }
 
-    /// <summary>Field number for the "publish_time" field.</summary>
-    public const int PublishTimeFieldNumber = 13;
-    private uint publishTime_;
+    /// <summary>Field number for the "author_nickname" field.</summary>
+    public const int AuthorNicknameFieldNumber = 9;
+    private string authorNickname_ = "";
+    /// <summary>
+    /// creator_nickname
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PublishTime {
-      get { return publishTime_; }
+    public string AuthorNickname {
+      get { return authorNickname_; }
       set {
-        publishTime_ = value;
+        authorNickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "music_id" field.</summary>
+    public const int MusicIdFieldNumber = 6;
+    private uint musicId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MusicId {
+      get { return musicId_; }
+      set {
+        musicId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GDNAPNAINBA" field.</summary>
+    public const int Unk3300GDNAPNAINBAFieldNumber = 10;
+    private bool unk3300GDNAPNAINBA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300GDNAPNAINBA {
+      get { return unk3300GDNAPNAINBA_; }
+      set {
+        unk3300GDNAPNAINBA_ = value;
       }
     }
 
     /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 14;
+    public const int MaxScoreFieldNumber = 1;
     private uint maxScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -300,51 +363,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "real_time_edit_time" field.</summary>
-    public const int RealTimeEditTimeFieldNumber = 576;
-    private uint realTimeEditTime_;
+    /// <summary>Field number for the "Unk3300_OBBMCFADNIN" field.</summary>
+    public const int Unk3300OBBMCFADNINFieldNumber = 14;
+    private uint unk3300OBBMCFADNIN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RealTimeEditTime {
-      get { return realTimeEditTime_; }
+    public uint Unk3300OBBMCFADNIN {
+      get { return unk3300OBBMCFADNIN_; }
       set {
-        realTimeEditTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "note_count" field.</summary>
-    public const int NoteCountFieldNumber = 7;
-    private uint noteCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NoteCount {
-      get { return noteCount_; }
-      set {
-        noteCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 4;
-    private ulong ugcGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong UgcGuid {
-      get { return ugcGuid_; }
-      set {
-        ugcGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "self_max_score" field.</summary>
-    public const int SelfMaxScoreFieldNumber = 6;
-    private uint selfMaxScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SelfMaxScore {
-      get { return selfMaxScore_; }
-      set {
-        selfMaxScore_ = value;
+        unk3300OBBMCFADNIN_ = value;
       }
     }
 
@@ -363,26 +390,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (CreateTime != other.CreateTime) return false;
+      if (CanShare != other.CanShare) return false;
+      if (Position != other.Position) return false;
+      if(!unk3300JEEBFPFEHHG_.Equals(other.unk3300JEEBFPFEHHG_)) return false;
+      if (MusicNoteCount != other.MusicNoteCount) return false;
+      if(!unk3300HKBHAIMOBKO_.Equals(other.unk3300HKBHAIMOBKO_)) return false;
+      if (ShareTime != other.ShareTime) return false;
       if (ImportFromUgcGuid != other.ImportFromUgcGuid) return false;
-      if (IsPublished != other.IsPublished) return false;
-      if (IsPlayed != other.IsPlayed) return false;
-      if (MusicId != other.MusicId) return false;
-      if (SavePageType != other.SavePageType) return false;
-      if (SaveIdx != other.SaveIdx) return false;
-      if (CreatorNickname != other.CreatorNickname) return false;
+      if (MusicShareId != other.MusicShareId) return false;
+      if (Score != other.Score) return false;
+      if (Settle != other.Settle) return false;
       if (Version != other.Version) return false;
-      if (SaveTime != other.SaveTime) return false;
-      if(!afterNoteList_.Equals(other.afterNoteList_)) return false;
-      if(!beforeNoteList_.Equals(other.beforeNoteList_)) return false;
       if (IsPsnPlatform != other.IsPsnPlatform) return false;
-      if (TimeLineEditTime != other.TimeLineEditTime) return false;
-      if (IsChangedAfterPublish != other.IsChangedAfterPublish) return false;
-      if (PublishTime != other.PublishTime) return false;
+      if (Unk3300PLNOFOHFAPE != other.Unk3300PLNOFOHFAPE) return false;
+      if (Unk3300CCMMPAHIMDO != other.Unk3300CCMMPAHIMDO) return false;
+      if (AuthorNickname != other.AuthorNickname) return false;
+      if (MusicId != other.MusicId) return false;
+      if (Unk3300GDNAPNAINBA != other.Unk3300GDNAPNAINBA) return false;
       if (MaxScore != other.MaxScore) return false;
-      if (RealTimeEditTime != other.RealTimeEditTime) return false;
-      if (NoteCount != other.NoteCount) return false;
-      if (UgcGuid != other.UgcGuid) return false;
-      if (SelfMaxScore != other.SelfMaxScore) return false;
+      if (Unk3300OBBMCFADNIN != other.Unk3300OBBMCFADNIN) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -390,26 +417,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
+      if (CanShare != false) hash ^= CanShare.GetHashCode();
+      if (Position != 0) hash ^= Position.GetHashCode();
+      hash ^= unk3300JEEBFPFEHHG_.GetHashCode();
+      if (MusicNoteCount != 0) hash ^= MusicNoteCount.GetHashCode();
+      hash ^= unk3300HKBHAIMOBKO_.GetHashCode();
+      if (ShareTime != 0) hash ^= ShareTime.GetHashCode();
       if (ImportFromUgcGuid != 0UL) hash ^= ImportFromUgcGuid.GetHashCode();
-      if (IsPublished != false) hash ^= IsPublished.GetHashCode();
-      if (IsPlayed != false) hash ^= IsPlayed.GetHashCode();
-      if (MusicId != 0) hash ^= MusicId.GetHashCode();
-      if (SavePageType != 0) hash ^= SavePageType.GetHashCode();
-      if (SaveIdx != 0) hash ^= SaveIdx.GetHashCode();
-      if (CreatorNickname.Length != 0) hash ^= CreatorNickname.GetHashCode();
+      if (MusicShareId != 0UL) hash ^= MusicShareId.GetHashCode();
+      if (Score != 0) hash ^= Score.GetHashCode();
+      if (Settle != false) hash ^= Settle.GetHashCode();
       if (Version != 0) hash ^= Version.GetHashCode();
-      if (SaveTime != 0) hash ^= SaveTime.GetHashCode();
-      hash ^= afterNoteList_.GetHashCode();
-      hash ^= beforeNoteList_.GetHashCode();
       if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
-      if (TimeLineEditTime != 0) hash ^= TimeLineEditTime.GetHashCode();
-      if (IsChangedAfterPublish != false) hash ^= IsChangedAfterPublish.GetHashCode();
-      if (PublishTime != 0) hash ^= PublishTime.GetHashCode();
+      if (Unk3300PLNOFOHFAPE != 0) hash ^= Unk3300PLNOFOHFAPE.GetHashCode();
+      if (Unk3300CCMMPAHIMDO != 0) hash ^= Unk3300CCMMPAHIMDO.GetHashCode();
+      if (AuthorNickname.Length != 0) hash ^= AuthorNickname.GetHashCode();
+      if (MusicId != 0) hash ^= MusicId.GetHashCode();
+      if (Unk3300GDNAPNAINBA != false) hash ^= Unk3300GDNAPNAINBA.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
-      if (RealTimeEditTime != 0) hash ^= RealTimeEditTime.GetHashCode();
-      if (NoteCount != 0) hash ^= NoteCount.GetHashCode();
-      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
-      if (SelfMaxScore != 0) hash ^= SelfMaxScore.GetHashCode();
+      if (Unk3300OBBMCFADNIN != 0) hash ^= Unk3300OBBMCFADNIN.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -428,79 +455,79 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsPlayed != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsPlayed);
-      }
-      if (MusicId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MusicId);
-      }
-      if (SaveTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SaveTime);
-      }
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(UgcGuid);
-      }
-      if (ImportFromUgcGuid != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(ImportFromUgcGuid);
-      }
-      if (SelfMaxScore != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(SelfMaxScore);
-      }
-      if (NoteCount != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NoteCount);
-      }
-      if (IsPublished != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsPublished);
-      }
-      if (IsPsnPlatform != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsPsnPlatform);
-      }
-      if (CreatorNickname.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(CreatorNickname);
-      }
-      if (IsChangedAfterPublish != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsChangedAfterPublish);
-      }
-      if (SaveIdx != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SaveIdx);
-      }
-      if (PublishTime != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(PublishTime);
-      }
       if (MaxScore != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(MaxScore);
       }
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsPsnPlatform);
+      }
+      if (Settle != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Settle);
+      }
+      if (Unk3300PLNOFOHFAPE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PLNOFOHFAPE);
+      }
+      if (Position != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Position);
+      }
+      if (MusicId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MusicId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Score);
+      }
+      if (MusicShareId != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(MusicShareId);
+      }
+      if (AuthorNickname.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AuthorNickname);
+      }
+      if (Unk3300GDNAPNAINBA != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Unk3300GDNAPNAINBA);
+      }
       if (Version != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(Version);
       }
-      if (RealTimeEditTime != 0) {
-        output.WriteRawTag(128, 36);
-        output.WriteUInt32(RealTimeEditTime);
+      if (CreateTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CreateTime);
       }
-      beforeNoteList_.WriteTo(output, _repeated_beforeNoteList_codec);
-      afterNoteList_.WriteTo(output, _repeated_afterNoteList_codec);
-      if (SavePageType != 0) {
-        output.WriteRawTag(240, 73);
-        output.WriteUInt32(SavePageType);
+      if (ImportFromUgcGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(ImportFromUgcGuid);
       }
-      if (TimeLineEditTime != 0) {
-        output.WriteRawTag(240, 113);
-        output.WriteUInt32(TimeLineEditTime);
+      if (Unk3300OBBMCFADNIN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300OBBMCFADNIN);
+      }
+      if (CanShare != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(CanShare);
+      }
+      if (MusicNoteCount != 0) {
+        output.WriteRawTag(208, 2);
+        output.WriteUInt32(MusicNoteCount);
+      }
+      unk3300HKBHAIMOBKO_.WriteTo(output, _repeated_unk3300HKBHAIMOBKO_codec);
+      if (Unk3300CCMMPAHIMDO != 0) {
+        output.WriteRawTag(248, 5);
+        output.WriteUInt32(Unk3300CCMMPAHIMDO);
+      }
+      unk3300JEEBFPFEHHG_.WriteTo(output, _repeated_unk3300JEEBFPFEHHG_codec);
+      if (ShareTime != 0) {
+        output.WriteRawTag(200, 101);
+        output.WriteUInt32(ShareTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -512,79 +539,79 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsPlayed != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsPlayed);
-      }
-      if (MusicId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MusicId);
-      }
-      if (SaveTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SaveTime);
-      }
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(UgcGuid);
-      }
-      if (ImportFromUgcGuid != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(ImportFromUgcGuid);
-      }
-      if (SelfMaxScore != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(SelfMaxScore);
-      }
-      if (NoteCount != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NoteCount);
-      }
-      if (IsPublished != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsPublished);
-      }
-      if (IsPsnPlatform != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsPsnPlatform);
-      }
-      if (CreatorNickname.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(CreatorNickname);
-      }
-      if (IsChangedAfterPublish != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsChangedAfterPublish);
-      }
-      if (SaveIdx != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SaveIdx);
-      }
-      if (PublishTime != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(PublishTime);
-      }
       if (MaxScore != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(MaxScore);
       }
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsPsnPlatform);
+      }
+      if (Settle != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Settle);
+      }
+      if (Unk3300PLNOFOHFAPE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PLNOFOHFAPE);
+      }
+      if (Position != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Position);
+      }
+      if (MusicId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MusicId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Score);
+      }
+      if (MusicShareId != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(MusicShareId);
+      }
+      if (AuthorNickname.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AuthorNickname);
+      }
+      if (Unk3300GDNAPNAINBA != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Unk3300GDNAPNAINBA);
+      }
       if (Version != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(Version);
       }
-      if (RealTimeEditTime != 0) {
-        output.WriteRawTag(128, 36);
-        output.WriteUInt32(RealTimeEditTime);
+      if (CreateTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CreateTime);
       }
-      beforeNoteList_.WriteTo(ref output, _repeated_beforeNoteList_codec);
-      afterNoteList_.WriteTo(ref output, _repeated_afterNoteList_codec);
-      if (SavePageType != 0) {
-        output.WriteRawTag(240, 73);
-        output.WriteUInt32(SavePageType);
+      if (ImportFromUgcGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(ImportFromUgcGuid);
       }
-      if (TimeLineEditTime != 0) {
-        output.WriteRawTag(240, 113);
-        output.WriteUInt32(TimeLineEditTime);
+      if (Unk3300OBBMCFADNIN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300OBBMCFADNIN);
+      }
+      if (CanShare != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(CanShare);
+      }
+      if (MusicNoteCount != 0) {
+        output.WriteRawTag(208, 2);
+        output.WriteUInt32(MusicNoteCount);
+      }
+      unk3300HKBHAIMOBKO_.WriteTo(ref output, _repeated_unk3300HKBHAIMOBKO_codec);
+      if (Unk3300CCMMPAHIMDO != 0) {
+        output.WriteRawTag(248, 5);
+        output.WriteUInt32(Unk3300CCMMPAHIMDO);
+      }
+      unk3300JEEBFPFEHHG_.WriteTo(ref output, _repeated_unk3300JEEBFPFEHHG_codec);
+      if (ShareTime != 0) {
+        output.WriteRawTag(200, 101);
+        output.WriteUInt32(ShareTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -596,61 +623,61 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (CreateTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateTime);
+      }
+      if (CanShare != false) {
+        size += 1 + 1;
+      }
+      if (Position != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Position);
+      }
+      size += unk3300JEEBFPFEHHG_.CalculateSize(_repeated_unk3300JEEBFPFEHHG_codec);
+      if (MusicNoteCount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MusicNoteCount);
+      }
+      size += unk3300HKBHAIMOBKO_.CalculateSize(_repeated_unk3300HKBHAIMOBKO_codec);
+      if (ShareTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ShareTime);
+      }
       if (ImportFromUgcGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ImportFromUgcGuid);
       }
-      if (IsPublished != false) {
+      if (MusicShareId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(MusicShareId);
+      }
+      if (Score != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (Settle != false) {
         size += 1 + 1;
-      }
-      if (IsPlayed != false) {
-        size += 1 + 1;
-      }
-      if (MusicId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicId);
-      }
-      if (SavePageType != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SavePageType);
-      }
-      if (SaveIdx != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SaveIdx);
-      }
-      if (CreatorNickname.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CreatorNickname);
       }
       if (Version != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Version);
       }
-      if (SaveTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SaveTime);
-      }
-      size += afterNoteList_.CalculateSize(_repeated_afterNoteList_codec);
-      size += beforeNoteList_.CalculateSize(_repeated_beforeNoteList_codec);
       if (IsPsnPlatform != false) {
         size += 1 + 1;
       }
-      if (TimeLineEditTime != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(TimeLineEditTime);
+      if (Unk3300PLNOFOHFAPE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PLNOFOHFAPE);
       }
-      if (IsChangedAfterPublish != false) {
+      if (Unk3300CCMMPAHIMDO != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CCMMPAHIMDO);
+      }
+      if (AuthorNickname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AuthorNickname);
+      }
+      if (MusicId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicId);
+      }
+      if (Unk3300GDNAPNAINBA != false) {
         size += 1 + 1;
-      }
-      if (PublishTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PublishTime);
       }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
       }
-      if (RealTimeEditTime != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(RealTimeEditTime);
-      }
-      if (NoteCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NoteCount);
-      }
-      if (UgcGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
-      }
-      if (SelfMaxScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfMaxScore);
+      if (Unk3300OBBMCFADNIN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OBBMCFADNIN);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -664,61 +691,61 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.CreateTime != 0) {
+        CreateTime = other.CreateTime;
+      }
+      if (other.CanShare != false) {
+        CanShare = other.CanShare;
+      }
+      if (other.Position != 0) {
+        Position = other.Position;
+      }
+      unk3300JEEBFPFEHHG_.Add(other.unk3300JEEBFPFEHHG_);
+      if (other.MusicNoteCount != 0) {
+        MusicNoteCount = other.MusicNoteCount;
+      }
+      unk3300HKBHAIMOBKO_.Add(other.unk3300HKBHAIMOBKO_);
+      if (other.ShareTime != 0) {
+        ShareTime = other.ShareTime;
+      }
       if (other.ImportFromUgcGuid != 0UL) {
         ImportFromUgcGuid = other.ImportFromUgcGuid;
       }
-      if (other.IsPublished != false) {
-        IsPublished = other.IsPublished;
+      if (other.MusicShareId != 0UL) {
+        MusicShareId = other.MusicShareId;
       }
-      if (other.IsPlayed != false) {
-        IsPlayed = other.IsPlayed;
+      if (other.Score != 0) {
+        Score = other.Score;
       }
-      if (other.MusicId != 0) {
-        MusicId = other.MusicId;
-      }
-      if (other.SavePageType != 0) {
-        SavePageType = other.SavePageType;
-      }
-      if (other.SaveIdx != 0) {
-        SaveIdx = other.SaveIdx;
-      }
-      if (other.CreatorNickname.Length != 0) {
-        CreatorNickname = other.CreatorNickname;
+      if (other.Settle != false) {
+        Settle = other.Settle;
       }
       if (other.Version != 0) {
         Version = other.Version;
       }
-      if (other.SaveTime != 0) {
-        SaveTime = other.SaveTime;
-      }
-      afterNoteList_.Add(other.afterNoteList_);
-      beforeNoteList_.Add(other.beforeNoteList_);
       if (other.IsPsnPlatform != false) {
         IsPsnPlatform = other.IsPsnPlatform;
       }
-      if (other.TimeLineEditTime != 0) {
-        TimeLineEditTime = other.TimeLineEditTime;
+      if (other.Unk3300PLNOFOHFAPE != 0) {
+        Unk3300PLNOFOHFAPE = other.Unk3300PLNOFOHFAPE;
       }
-      if (other.IsChangedAfterPublish != false) {
-        IsChangedAfterPublish = other.IsChangedAfterPublish;
+      if (other.Unk3300CCMMPAHIMDO != 0) {
+        Unk3300CCMMPAHIMDO = other.Unk3300CCMMPAHIMDO;
       }
-      if (other.PublishTime != 0) {
-        PublishTime = other.PublishTime;
+      if (other.AuthorNickname.Length != 0) {
+        AuthorNickname = other.AuthorNickname;
+      }
+      if (other.MusicId != 0) {
+        MusicId = other.MusicId;
+      }
+      if (other.Unk3300GDNAPNAINBA != false) {
+        Unk3300GDNAPNAINBA = other.Unk3300GDNAPNAINBA;
       }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
       }
-      if (other.RealTimeEditTime != 0) {
-        RealTimeEditTime = other.RealTimeEditTime;
-      }
-      if (other.NoteCount != 0) {
-        NoteCount = other.NoteCount;
-      }
-      if (other.UgcGuid != 0UL) {
-        UgcGuid = other.UgcGuid;
-      }
-      if (other.SelfMaxScore != 0) {
-        SelfMaxScore = other.SelfMaxScore;
+      if (other.Unk3300OBBMCFADNIN != 0) {
+        Unk3300OBBMCFADNIN = other.Unk3300OBBMCFADNIN;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -736,85 +763,85 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            IsPlayed = input.ReadBool();
-            break;
-          }
-          case 16: {
-            MusicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            SaveTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            UgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 40: {
-            ImportFromUgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 48: {
-            SelfMaxScore = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            NoteCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            IsPublished = input.ReadBool();
-            break;
-          }
-          case 72: {
-            IsPsnPlatform = input.ReadBool();
-            break;
-          }
-          case 82: {
-            CreatorNickname = input.ReadString();
-            break;
-          }
-          case 88: {
-            IsChangedAfterPublish = input.ReadBool();
-            break;
-          }
-          case 96: {
-            SaveIdx = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            PublishTime = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             MaxScore = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 16: {
+            IsPsnPlatform = input.ReadBool();
+            break;
+          }
+          case 24: {
+            Settle = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Unk3300PLNOFOHFAPE = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Position = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            MusicId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            MusicShareId = input.ReadUInt64();
+            break;
+          }
+          case 74: {
+            AuthorNickname = input.ReadString();
+            break;
+          }
+          case 80: {
+            Unk3300GDNAPNAINBA = input.ReadBool();
+            break;
+          }
+          case 88: {
             Version = input.ReadUInt32();
             break;
           }
-          case 4608: {
-            RealTimeEditTime = input.ReadUInt32();
+          case 96: {
+            CreateTime = input.ReadUInt32();
             break;
           }
-          case 7858:
-          case 7856: {
-            beforeNoteList_.AddEntriesFrom(input, _repeated_beforeNoteList_codec);
+          case 104: {
+            ImportFromUgcGuid = input.ReadUInt64();
             break;
           }
-          case 8018:
-          case 8016: {
-            afterNoteList_.AddEntriesFrom(input, _repeated_afterNoteList_codec);
+          case 112: {
+            Unk3300OBBMCFADNIN = input.ReadUInt32();
             break;
           }
-          case 9456: {
-            SavePageType = input.ReadUInt32();
+          case 120: {
+            CanShare = input.ReadBool();
             break;
           }
-          case 14576: {
-            TimeLineEditTime = input.ReadUInt32();
+          case 336: {
+            MusicNoteCount = input.ReadUInt32();
+            break;
+          }
+          case 522:
+          case 520: {
+            unk3300HKBHAIMOBKO_.AddEntriesFrom(input, _repeated_unk3300HKBHAIMOBKO_codec);
+            break;
+          }
+          case 760: {
+            Unk3300CCMMPAHIMDO = input.ReadUInt32();
+            break;
+          }
+          case 4210:
+          case 4208: {
+            unk3300JEEBFPFEHHG_.AddEntriesFrom(input, _repeated_unk3300JEEBFPFEHHG_codec);
+            break;
+          }
+          case 13000: {
+            ShareTime = input.ReadUInt32();
             break;
           }
         }
@@ -833,85 +860,85 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            IsPlayed = input.ReadBool();
-            break;
-          }
-          case 16: {
-            MusicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            SaveTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            UgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 40: {
-            ImportFromUgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 48: {
-            SelfMaxScore = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            NoteCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            IsPublished = input.ReadBool();
-            break;
-          }
-          case 72: {
-            IsPsnPlatform = input.ReadBool();
-            break;
-          }
-          case 82: {
-            CreatorNickname = input.ReadString();
-            break;
-          }
-          case 88: {
-            IsChangedAfterPublish = input.ReadBool();
-            break;
-          }
-          case 96: {
-            SaveIdx = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            PublishTime = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             MaxScore = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 16: {
+            IsPsnPlatform = input.ReadBool();
+            break;
+          }
+          case 24: {
+            Settle = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Unk3300PLNOFOHFAPE = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Position = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            MusicId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            MusicShareId = input.ReadUInt64();
+            break;
+          }
+          case 74: {
+            AuthorNickname = input.ReadString();
+            break;
+          }
+          case 80: {
+            Unk3300GDNAPNAINBA = input.ReadBool();
+            break;
+          }
+          case 88: {
             Version = input.ReadUInt32();
             break;
           }
-          case 4608: {
-            RealTimeEditTime = input.ReadUInt32();
+          case 96: {
+            CreateTime = input.ReadUInt32();
             break;
           }
-          case 7858:
-          case 7856: {
-            beforeNoteList_.AddEntriesFrom(ref input, _repeated_beforeNoteList_codec);
+          case 104: {
+            ImportFromUgcGuid = input.ReadUInt64();
             break;
           }
-          case 8018:
-          case 8016: {
-            afterNoteList_.AddEntriesFrom(ref input, _repeated_afterNoteList_codec);
+          case 112: {
+            Unk3300OBBMCFADNIN = input.ReadUInt32();
             break;
           }
-          case 9456: {
-            SavePageType = input.ReadUInt32();
+          case 120: {
+            CanShare = input.ReadBool();
             break;
           }
-          case 14576: {
-            TimeLineEditTime = input.ReadUInt32();
+          case 336: {
+            MusicNoteCount = input.ReadUInt32();
+            break;
+          }
+          case 522:
+          case 520: {
+            unk3300HKBHAIMOBKO_.AddEntriesFrom(ref input, _repeated_unk3300HKBHAIMOBKO_codec);
+            break;
+          }
+          case 760: {
+            Unk3300CCMMPAHIMDO = input.ReadUInt32();
+            break;
+          }
+          case 4210:
+          case 4208: {
+            unk3300JEEBFPFEHHG_.AddEntriesFrom(ref input, _repeated_unk3300JEEBFPFEHHG_codec);
+            break;
+          }
+          case 13000: {
+            ShareTime = input.ReadUInt32();
             break;
           }
         }

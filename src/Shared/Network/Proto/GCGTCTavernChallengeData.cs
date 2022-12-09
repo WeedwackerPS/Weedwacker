@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTCTavernChallengeDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HQ0dUQ1RhdmVybkNoYWxsZW5nZURhdGEucHJvdG8iTgoYR0NHVENUYXZl",
-            "cm5DaGFsbGVuZ2VEYXRhEhwKFHVubG9ja19sZXZlbF9pZF9saXN0GAEgAygN",
-            "EhQKDGNoYXJhY3Rlcl9pZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5HQ0dUQ1RhdmVybkNoYWxsZW5nZURhdGEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iTgoYR0NHVENUYXZlcm5DaGFsbGVuZ2VE",
+            "YXRhEhwKFHVubG9ja19sZXZlbF9pZF9saXN0GA0gAygNEhQKDGNoYXJhY3Rl",
+            "cl9pZBgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlock_level_id_list" field.</summary>
-    public const int UnlockLevelIdListFieldNumber = 1;
+    public const int UnlockLevelIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_unlockLevelIdList_codec
-        = pb::FieldCodec.ForUInt32(10);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> unlockLevelIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "character_id" field.</summary>
-    public const int CharacterIdFieldNumber = 8;
+    public const int CharacterIdFieldNumber = 4;
     private uint characterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      unlockLevelIdList_.WriteTo(output, _repeated_unlockLevelIdList_codec);
       if (CharacterId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(CharacterId);
       }
+      unlockLevelIdList_.WriteTo(output, _repeated_unlockLevelIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      unlockLevelIdList_.WriteTo(ref output, _repeated_unlockLevelIdList_codec);
       if (CharacterId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(CharacterId);
       }
+      unlockLevelIdList_.WriteTo(ref output, _repeated_unlockLevelIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -215,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            unlockLevelIdList_.AddEntriesFrom(input, _repeated_unlockLevelIdList_codec);
+          case 32: {
+            CharacterId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            CharacterId = input.ReadUInt32();
+          case 106:
+          case 104: {
+            unlockLevelIdList_.AddEntriesFrom(input, _repeated_unlockLevelIdList_codec);
             break;
           }
         }
@@ -239,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            unlockLevelIdList_.AddEntriesFrom(ref input, _repeated_unlockLevelIdList_codec);
+          case 32: {
+            CharacterId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            CharacterId = input.ReadUInt32();
+          case 106:
+          case 104: {
+            unlockLevelIdList_.AddEntriesFrom(ref input, _repeated_unlockLevelIdList_codec);
             break;
           }
         }

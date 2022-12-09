@@ -24,21 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureMapActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNUcmVhc3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojVHJlYXN1",
-            "cmVNYXBCb251c0NoYWxsZW5nZUluZm8ucHJvdG8aG1RyZWFzdXJlTWFwUmVn",
-            "aW9uSW5mby5wcm90byLVAgodVHJlYXN1cmVNYXBBY3Rpdml0eURldGFpbElu",
-            "Zm8SGwoTYWN0aXZlX3JlZ2lvbl9pbmRleBgBIAEoDRIwChByZWdpb25faW5m",
-            "b19saXN0GAYgAygLMhYuVHJlYXN1cmVNYXBSZWdpb25JbmZvEh8KF2lzX21w",
-            "X2NoYWxsZW5nZV90b3VjaGVkGAcgASgIEhsKE3RyZWFzdXJlX2Nsb3NlX3Rp",
-            "bWUYCiABKA0SPAoUYm9udXNfY2hhbGxlbmdlX2xpc3QYBSADKAsyHi5UcmVh",
-            "c3VyZU1hcEJvbnVzQ2hhbGxlbmdlSW5mbxIUCgxjdXJyZW5jeV9udW0YAiAB",
-            "KA0SGQoRcHJldmlld19yZXdhcmRfaWQYDiABKA0SHQoVbWluX29wZW5fcGxh",
-            "eWVyX2xldmVsGAggASgNEhkKEXRvdGFsX21wX3Nwb3RfbnVtGA0gASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiNUcmVhc3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxojVHJlYXN1cmVNYXBCb251c0No",
+            "YWxsZW5nZUluZm8ucHJvdG8aG1RyZWFzdXJlTWFwUmVnaW9uSW5mby5wcm90",
+            "byKVAwodVHJlYXN1cmVNYXBBY3Rpdml0eURldGFpbEluZm8SHwoXaXNfbXBf",
+            "Y2hhbGxlbmdlX3RvdWNoZWQYDyABKAgSGQoRdG90YWxfbXBfc3BvdF9udW0Y",
+            "DCABKA0SGwoTYWN0aXZlX3JlZ2lvbl9pbmRleBgDIAEoDRJcChRib251c19j",
+            "aGFsbGVuZ2VfbGlzdBgNIAMoCzI+LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVHJlYXN1cmVNYXBCb251c0NoYWxsZW5nZUluZm8SHQoVbWlu",
+            "X29wZW5fcGxheWVyX2xldmVsGAggASgNEhkKEXByZXZpZXdfcmV3YXJkX2lk",
+            "GAIgASgNEhsKE3RyZWFzdXJlX2Nsb3NlX3RpbWUYASABKA0SFAoMY3VycmVu",
+            "Y3lfbnVtGAQgASgNElAKEHJlZ2lvbl9pbmZvX2xpc3QYCyADKAsyNi5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRyZWFzdXJlTWFwUmVnaW9u",
+            "SW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo.Parser, new[]{ "ActiveRegionIndex", "RegionInfoList", "IsMpChallengeTouched", "TreasureCloseTime", "BonusChallengeList", "CurrencyNum", "PreviewRewardId", "MinOpenPlayerLevel", "TotalMpSpotNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo.Parser, new[]{ "IsMpChallengeTouched", "TotalMpSpotNum", "ActiveRegionIndex", "BonusChallengeList", "MinOpenPlayerLevel", "PreviewRewardId", "TreasureCloseTime", "CurrencyNum", "RegionInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -79,15 +81,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreasureMapActivityDetailInfo(TreasureMapActivityDetailInfo other) : this() {
-      activeRegionIndex_ = other.activeRegionIndex_;
-      regionInfoList_ = other.regionInfoList_.Clone();
       isMpChallengeTouched_ = other.isMpChallengeTouched_;
-      treasureCloseTime_ = other.treasureCloseTime_;
-      bonusChallengeList_ = other.bonusChallengeList_.Clone();
-      currencyNum_ = other.currencyNum_;
-      previewRewardId_ = other.previewRewardId_;
-      minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
       totalMpSpotNum_ = other.totalMpSpotNum_;
+      activeRegionIndex_ = other.activeRegionIndex_;
+      bonusChallengeList_ = other.bonusChallengeList_.Clone();
+      minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
+      previewRewardId_ = other.previewRewardId_;
+      treasureCloseTime_ = other.treasureCloseTime_;
+      currencyNum_ = other.currencyNum_;
+      regionInfoList_ = other.regionInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,31 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TreasureMapActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "active_region_index" field.</summary>
-    public const int ActiveRegionIndexFieldNumber = 1;
-    private uint activeRegionIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ActiveRegionIndex {
-      get { return activeRegionIndex_; }
-      set {
-        activeRegionIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "region_info_list" field.</summary>
-    public const int RegionInfoListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> _repeated_regionInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> regionInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> RegionInfoList {
-      get { return regionInfoList_; }
-    }
-
     /// <summary>Field number for the "is_mp_challenge_touched" field.</summary>
-    public const int IsMpChallengeTouchedFieldNumber = 7;
+    public const int IsMpChallengeTouchedFieldNumber = 15;
     private bool isMpChallengeTouched_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,51 +111,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "treasure_close_time" field.</summary>
-    public const int TreasureCloseTimeFieldNumber = 10;
-    private uint treasureCloseTime_;
+    /// <summary>Field number for the "total_mp_spot_num" field.</summary>
+    public const int TotalMpSpotNumFieldNumber = 12;
+    private uint totalMpSpotNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TreasureCloseTime {
-      get { return treasureCloseTime_; }
+    public uint TotalMpSpotNum {
+      get { return totalMpSpotNum_; }
       set {
-        treasureCloseTime_ = value;
+        totalMpSpotNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "active_region_index" field.</summary>
+    public const int ActiveRegionIndexFieldNumber = 3;
+    private uint activeRegionIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActiveRegionIndex {
+      get { return activeRegionIndex_; }
+      set {
+        activeRegionIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "bonus_challenge_list" field.</summary>
-    public const int BonusChallengeListFieldNumber = 5;
+    public const int BonusChallengeListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo> _repeated_bonusChallengeList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo> bonusChallengeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapBonusChallengeInfo> BonusChallengeList {
       get { return bonusChallengeList_; }
-    }
-
-    /// <summary>Field number for the "currency_num" field.</summary>
-    public const int CurrencyNumFieldNumber = 2;
-    private uint currencyNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurrencyNum {
-      get { return currencyNum_; }
-      set {
-        currencyNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "preview_reward_id" field.</summary>
-    public const int PreviewRewardIdFieldNumber = 14;
-    private uint previewRewardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PreviewRewardId {
-      get { return previewRewardId_; }
-      set {
-        previewRewardId_ = value;
-      }
     }
 
     /// <summary>Field number for the "min_open_player_level" field.</summary>
@@ -191,16 +158,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_mp_spot_num" field.</summary>
-    public const int TotalMpSpotNumFieldNumber = 13;
-    private uint totalMpSpotNum_;
+    /// <summary>Field number for the "preview_reward_id" field.</summary>
+    public const int PreviewRewardIdFieldNumber = 2;
+    private uint previewRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalMpSpotNum {
-      get { return totalMpSpotNum_; }
+    public uint PreviewRewardId {
+      get { return previewRewardId_; }
       set {
-        totalMpSpotNum_ = value;
+        previewRewardId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "treasure_close_time" field.</summary>
+    public const int TreasureCloseTimeFieldNumber = 1;
+    private uint treasureCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TreasureCloseTime {
+      get { return treasureCloseTime_; }
+      set {
+        treasureCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "currency_num" field.</summary>
+    public const int CurrencyNumFieldNumber = 4;
+    private uint currencyNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurrencyNum {
+      get { return currencyNum_; }
+      set {
+        currencyNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region_info_list" field.</summary>
+    public const int RegionInfoListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> _repeated_regionInfoList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> regionInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo> RegionInfoList {
+      get { return regionInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,15 +220,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ActiveRegionIndex != other.ActiveRegionIndex) return false;
-      if(!regionInfoList_.Equals(other.regionInfoList_)) return false;
       if (IsMpChallengeTouched != other.IsMpChallengeTouched) return false;
-      if (TreasureCloseTime != other.TreasureCloseTime) return false;
-      if(!bonusChallengeList_.Equals(other.bonusChallengeList_)) return false;
-      if (CurrencyNum != other.CurrencyNum) return false;
-      if (PreviewRewardId != other.PreviewRewardId) return false;
-      if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
       if (TotalMpSpotNum != other.TotalMpSpotNum) return false;
+      if (ActiveRegionIndex != other.ActiveRegionIndex) return false;
+      if(!bonusChallengeList_.Equals(other.bonusChallengeList_)) return false;
+      if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
+      if (PreviewRewardId != other.PreviewRewardId) return false;
+      if (TreasureCloseTime != other.TreasureCloseTime) return false;
+      if (CurrencyNum != other.CurrencyNum) return false;
+      if(!regionInfoList_.Equals(other.regionInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -234,15 +236,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ActiveRegionIndex != 0) hash ^= ActiveRegionIndex.GetHashCode();
-      hash ^= regionInfoList_.GetHashCode();
       if (IsMpChallengeTouched != false) hash ^= IsMpChallengeTouched.GetHashCode();
-      if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
-      hash ^= bonusChallengeList_.GetHashCode();
-      if (CurrencyNum != 0) hash ^= CurrencyNum.GetHashCode();
-      if (PreviewRewardId != 0) hash ^= PreviewRewardId.GetHashCode();
-      if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
       if (TotalMpSpotNum != 0) hash ^= TotalMpSpotNum.GetHashCode();
+      if (ActiveRegionIndex != 0) hash ^= ActiveRegionIndex.GetHashCode();
+      hash ^= bonusChallengeList_.GetHashCode();
+      if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
+      if (PreviewRewardId != 0) hash ^= PreviewRewardId.GetHashCode();
+      if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
+      if (CurrencyNum != 0) hash ^= CurrencyNum.GetHashCode();
+      hash ^= regionInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -261,35 +263,35 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ActiveRegionIndex != 0) {
+      if (TreasureCloseTime != 0) {
         output.WriteRawTag(8);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      if (PreviewRewardId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(PreviewRewardId);
+      }
+      if (ActiveRegionIndex != 0) {
+        output.WriteRawTag(24);
         output.WriteUInt32(ActiveRegionIndex);
       }
       if (CurrencyNum != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(CurrencyNum);
-      }
-      bonusChallengeList_.WriteTo(output, _repeated_bonusChallengeList_codec);
-      regionInfoList_.WriteTo(output, _repeated_regionInfoList_codec);
-      if (IsMpChallengeTouched != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsMpChallengeTouched);
       }
       if (MinOpenPlayerLevel != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(MinOpenPlayerLevel);
       }
-      if (TreasureCloseTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TreasureCloseTime);
-      }
+      regionInfoList_.WriteTo(output, _repeated_regionInfoList_codec);
       if (TotalMpSpotNum != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(TotalMpSpotNum);
       }
-      if (PreviewRewardId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(PreviewRewardId);
+      bonusChallengeList_.WriteTo(output, _repeated_bonusChallengeList_codec);
+      if (IsMpChallengeTouched != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsMpChallengeTouched);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -301,35 +303,35 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ActiveRegionIndex != 0) {
+      if (TreasureCloseTime != 0) {
         output.WriteRawTag(8);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      if (PreviewRewardId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(PreviewRewardId);
+      }
+      if (ActiveRegionIndex != 0) {
+        output.WriteRawTag(24);
         output.WriteUInt32(ActiveRegionIndex);
       }
       if (CurrencyNum != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(CurrencyNum);
-      }
-      bonusChallengeList_.WriteTo(ref output, _repeated_bonusChallengeList_codec);
-      regionInfoList_.WriteTo(ref output, _repeated_regionInfoList_codec);
-      if (IsMpChallengeTouched != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsMpChallengeTouched);
       }
       if (MinOpenPlayerLevel != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(MinOpenPlayerLevel);
       }
-      if (TreasureCloseTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TreasureCloseTime);
-      }
+      regionInfoList_.WriteTo(ref output, _repeated_regionInfoList_codec);
       if (TotalMpSpotNum != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(TotalMpSpotNum);
       }
-      if (PreviewRewardId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(PreviewRewardId);
+      bonusChallengeList_.WriteTo(ref output, _repeated_bonusChallengeList_codec);
+      if (IsMpChallengeTouched != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsMpChallengeTouched);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -341,29 +343,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ActiveRegionIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveRegionIndex);
-      }
-      size += regionInfoList_.CalculateSize(_repeated_regionInfoList_codec);
       if (IsMpChallengeTouched != false) {
         size += 1 + 1;
-      }
-      if (TreasureCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
-      }
-      size += bonusChallengeList_.CalculateSize(_repeated_bonusChallengeList_codec);
-      if (CurrencyNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrencyNum);
-      }
-      if (PreviewRewardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewRewardId);
-      }
-      if (MinOpenPlayerLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
       }
       if (TotalMpSpotNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalMpSpotNum);
       }
+      if (ActiveRegionIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveRegionIndex);
+      }
+      size += bonusChallengeList_.CalculateSize(_repeated_bonusChallengeList_codec);
+      if (MinOpenPlayerLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
+      }
+      if (PreviewRewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewRewardId);
+      }
+      if (TreasureCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
+      }
+      if (CurrencyNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrencyNum);
+      }
+      size += regionInfoList_.CalculateSize(_repeated_regionInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -376,29 +378,29 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ActiveRegionIndex != 0) {
-        ActiveRegionIndex = other.ActiveRegionIndex;
-      }
-      regionInfoList_.Add(other.regionInfoList_);
       if (other.IsMpChallengeTouched != false) {
         IsMpChallengeTouched = other.IsMpChallengeTouched;
-      }
-      if (other.TreasureCloseTime != 0) {
-        TreasureCloseTime = other.TreasureCloseTime;
-      }
-      bonusChallengeList_.Add(other.bonusChallengeList_);
-      if (other.CurrencyNum != 0) {
-        CurrencyNum = other.CurrencyNum;
-      }
-      if (other.PreviewRewardId != 0) {
-        PreviewRewardId = other.PreviewRewardId;
-      }
-      if (other.MinOpenPlayerLevel != 0) {
-        MinOpenPlayerLevel = other.MinOpenPlayerLevel;
       }
       if (other.TotalMpSpotNum != 0) {
         TotalMpSpotNum = other.TotalMpSpotNum;
       }
+      if (other.ActiveRegionIndex != 0) {
+        ActiveRegionIndex = other.ActiveRegionIndex;
+      }
+      bonusChallengeList_.Add(other.bonusChallengeList_);
+      if (other.MinOpenPlayerLevel != 0) {
+        MinOpenPlayerLevel = other.MinOpenPlayerLevel;
+      }
+      if (other.PreviewRewardId != 0) {
+        PreviewRewardId = other.PreviewRewardId;
+      }
+      if (other.TreasureCloseTime != 0) {
+        TreasureCloseTime = other.TreasureCloseTime;
+      }
+      if (other.CurrencyNum != 0) {
+        CurrencyNum = other.CurrencyNum;
+      }
+      regionInfoList_.Add(other.regionInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -415,39 +417,39 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            ActiveRegionIndex = input.ReadUInt32();
+            TreasureCloseTime = input.ReadUInt32();
             break;
           }
           case 16: {
+            PreviewRewardId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ActiveRegionIndex = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             CurrencyNum = input.ReadUInt32();
-            break;
-          }
-          case 42: {
-            bonusChallengeList_.AddEntriesFrom(input, _repeated_bonusChallengeList_codec);
-            break;
-          }
-          case 50: {
-            regionInfoList_.AddEntriesFrom(input, _repeated_regionInfoList_codec);
-            break;
-          }
-          case 56: {
-            IsMpChallengeTouched = input.ReadBool();
             break;
           }
           case 64: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 80: {
-            TreasureCloseTime = input.ReadUInt32();
+          case 90: {
+            regionInfoList_.AddEntriesFrom(input, _repeated_regionInfoList_codec);
             break;
           }
-          case 104: {
+          case 96: {
             TotalMpSpotNum = input.ReadUInt32();
             break;
           }
-          case 112: {
-            PreviewRewardId = input.ReadUInt32();
+          case 106: {
+            bonusChallengeList_.AddEntriesFrom(input, _repeated_bonusChallengeList_codec);
+            break;
+          }
+          case 120: {
+            IsMpChallengeTouched = input.ReadBool();
             break;
           }
         }
@@ -466,39 +468,39 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            ActiveRegionIndex = input.ReadUInt32();
+            TreasureCloseTime = input.ReadUInt32();
             break;
           }
           case 16: {
+            PreviewRewardId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ActiveRegionIndex = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             CurrencyNum = input.ReadUInt32();
-            break;
-          }
-          case 42: {
-            bonusChallengeList_.AddEntriesFrom(ref input, _repeated_bonusChallengeList_codec);
-            break;
-          }
-          case 50: {
-            regionInfoList_.AddEntriesFrom(ref input, _repeated_regionInfoList_codec);
-            break;
-          }
-          case 56: {
-            IsMpChallengeTouched = input.ReadBool();
             break;
           }
           case 64: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 80: {
-            TreasureCloseTime = input.ReadUInt32();
+          case 90: {
+            regionInfoList_.AddEntriesFrom(ref input, _repeated_regionInfoList_codec);
             break;
           }
-          case 104: {
+          case 96: {
             TotalMpSpotNum = input.ReadUInt32();
             break;
           }
-          case 112: {
-            PreviewRewardId = input.ReadUInt32();
+          case 106: {
+            bonusChallengeList_.AddEntriesFrom(ref input, _repeated_bonusChallengeList_codec);
+            break;
+          }
+          case 120: {
+            IsMpChallengeTouched = input.ReadBool();
             break;
           }
         }

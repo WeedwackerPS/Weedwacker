@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetUpLunchBoxWidgetReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTZXRVcEx1bmNoQm94V2lkZ2V0UmVxLnByb3RvGhJMdW5jaEJveERhdGEu",
-            "cHJvdG8iPwoWU2V0VXBMdW5jaEJveFdpZGdldFJlcRIlCg5sdW5jaF9ib3hf",
-            "ZGF0YRgGIAEoCzINLkx1bmNoQm94RGF0YUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxTZXRVcEx1bmNoQm94V2lkZ2V0UmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhJMdW5jaEJveERhdGEucHJvdG8iXwoWU2V0",
+            "VXBMdW5jaEJveFdpZGdldFJlcRJFCg5sdW5jaF9ib3hfZGF0YRgHIAEoCzIt",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTHVuY2hCb3hEYXRh",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LunchBoxDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4272
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4267;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetUpLunchBoxWidgetReq : pb::IMessage<SetUpLunchBoxWidgetReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "lunch_box_data" field.</summary>
-    public const int LunchBoxDataFieldNumber = 6;
+    public const int LunchBoxDataFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.LunchBoxData lunchBoxData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (lunchBoxData_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(LunchBoxData);
       }
       if (_unknownFields != null) {
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (lunchBoxData_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(LunchBoxData);
       }
       if (_unknownFields != null) {
@@ -206,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 58: {
             if (lunchBoxData_ == null) {
               LunchBoxData = new global::Weedwacker.Shared.Network.Proto.LunchBoxData();
             }
@@ -228,7 +233,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 58: {
             if (lunchBoxData_ == null) {
               LunchBoxData = new global::Weedwacker.Shared.Network.Proto.LunchBoxData();
             }

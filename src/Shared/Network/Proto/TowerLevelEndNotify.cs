@@ -24,20 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerLevelEndNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlUb3dlckxldmVsRW5kTm90aWZ5LnByb3RvGg9JdGVtUGFyYW0ucHJvdG8i",
-            "uwIKE1Rvd2VyTGV2ZWxFbmROb3RpZnkSFQoNbmV4dF9mbG9vcl9pZBgEIAEo",
-            "DRIkChByZXdhcmRfaXRlbV9saXN0GAwgAygLMgouSXRlbVBhcmFtEhYKDmNv",
-            "bnRpbnVlX3N0YXRlGA8gASgNEhIKCmlzX3N1Y2Nlc3MYBSABKAgSHwoXZmlu",
-            "aXNoZWRfc3Rhcl9jb25kX2xpc3QYBiADKA0imQEKEUNvbnRpbnVlU3RhdGVU",
-            "eXBlEigKJENPTlRJTlVFX1NUQVRFX1RZUEVfQ0FOX05PVF9DT05USU5VRRAA",
-            "EiwKKENPTlRJTlVFX1NUQVRFX1RZUEVfQ0FOX0VOVEVSX05FWFRfTEVWRUwQ",
-            "ARIsCihDT05USU5VRV9TVEFURV9UWVBFX0NBTl9FTlRFUl9ORVhUX0ZMT09S",
-            "EAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChlUb3dlckxldmVsRW5kTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJvdG8i2wIKE1Rvd2VyTGV2",
+            "ZWxFbmROb3RpZnkSFgoOY29udGludWVfc3RhdGUYAiABKA0SHwoXZmluaXNo",
+            "ZWRfc3Rhcl9jb25kX2xpc3QYBiADKA0SFQoNbmV4dF9mbG9vcl9pZBgEIAEo",
+            "DRISCgppc19zdWNjZXNzGA8gASgIEkQKEHJld2FyZF9pdGVtX2xpc3QYCiAD",
+            "KAsyKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJh",
+            "bSKZAQoRQ29udGludWVTdGF0ZVR5cGUSKAokQ09OVElOVUVfU1RBVEVfVFlQ",
+            "RV9DQU5fTk9UX0NPTlRJTlVFEAASLAooQ09OVElOVUVfU1RBVEVfVFlQRV9D",
+            "QU5fRU5URVJfTkVYVF9MRVZFTBABEiwKKENPTlRJTlVFX1NUQVRFX1RZUEVf",
+            "Q0FOX0VOVEVSX05FWFRfRkxPT1IQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify), global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify.Parser, new[]{ "NextFloorId", "RewardItemList", "ContinueState", "IsSuccess", "FinishedStarCondList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify.Types.ContinueStateType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify), global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify.Parser, new[]{ "ContinueState", "FinishedStarCondList", "NextFloorId", "IsSuccess", "RewardItemList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelEndNotify.Types.ContinueStateType) }, null, null)
           }));
     }
     #endregion
@@ -45,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2495
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2433;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TowerLevelEndNotify : pb::IMessage<TowerLevelEndNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,11 +87,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerLevelEndNotify(TowerLevelEndNotify other) : this() {
-      nextFloorId_ = other.nextFloorId_;
-      rewardItemList_ = other.rewardItemList_.Clone();
       continueState_ = other.continueState_;
-      isSuccess_ = other.isSuccess_;
       finishedStarCondList_ = other.finishedStarCondList_.Clone();
+      nextFloorId_ = other.nextFloorId_;
+      isSuccess_ = other.isSuccess_;
+      rewardItemList_ = other.rewardItemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,50 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerLevelEndNotify(this);
     }
 
-    /// <summary>Field number for the "next_floor_id" field.</summary>
-    public const int NextFloorIdFieldNumber = 4;
-    private uint nextFloorId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextFloorId {
-      get { return nextFloorId_; }
-      set {
-        nextFloorId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reward_item_list" field.</summary>
-    public const int RewardItemListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
-      get { return rewardItemList_; }
-    }
-
     /// <summary>Field number for the "continue_state" field.</summary>
-    public const int ContinueStateFieldNumber = 15;
+    public const int ContinueStateFieldNumber = 2;
     private uint continueState_;
+    /// <summary>
+    /// Unk3300_BOPIBKGAMID
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ContinueState {
       get { return continueState_; }
       set {
         continueState_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 5;
-    private bool isSuccess_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
-      set {
-        isSuccess_ = value;
       }
     }
 
@@ -153,6 +125,44 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> FinishedStarCondList {
       get { return finishedStarCondList_; }
+    }
+
+    /// <summary>Field number for the "next_floor_id" field.</summary>
+    public const int NextFloorIdFieldNumber = 4;
+    private uint nextFloorId_;
+    /// <summary>
+    /// Unk3300_AHBGPMBHPMO
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextFloorId {
+      get { return nextFloorId_; }
+      set {
+        nextFloorId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 15;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_item_list" field.</summary>
+    public const int RewardItemListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
+      get { return rewardItemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NextFloorId != other.NextFloorId) return false;
-      if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
       if (ContinueState != other.ContinueState) return false;
-      if (IsSuccess != other.IsSuccess) return false;
       if(!finishedStarCondList_.Equals(other.finishedStarCondList_)) return false;
+      if (NextFloorId != other.NextFloorId) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -182,11 +192,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NextFloorId != 0) hash ^= NextFloorId.GetHashCode();
-      hash ^= rewardItemList_.GetHashCode();
       if (ContinueState != 0) hash ^= ContinueState.GetHashCode();
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       hash ^= finishedStarCondList_.GetHashCode();
+      if (NextFloorId != 0) hash ^= NextFloorId.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      hash ^= rewardItemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,19 +215,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ContinueState != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ContinueState);
+      }
       if (NextFloorId != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(NextFloorId);
       }
-      if (IsSuccess != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsSuccess);
-      }
       finishedStarCondList_.WriteTo(output, _repeated_finishedStarCondList_codec);
       rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
-      if (ContinueState != 0) {
+      if (IsSuccess != false) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ContinueState);
+        output.WriteBool(IsSuccess);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -229,19 +239,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ContinueState != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ContinueState);
+      }
       if (NextFloorId != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(NextFloorId);
       }
-      if (IsSuccess != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsSuccess);
-      }
       finishedStarCondList_.WriteTo(ref output, _repeated_finishedStarCondList_codec);
       rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
-      if (ContinueState != 0) {
+      if (IsSuccess != false) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ContinueState);
+        output.WriteBool(IsSuccess);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -253,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NextFloorId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextFloorId);
-      }
-      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
       if (ContinueState != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContinueState);
+      }
+      size += finishedStarCondList_.CalculateSize(_repeated_finishedStarCondList_codec);
+      if (NextFloorId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextFloorId);
       }
       if (IsSuccess != false) {
         size += 1 + 1;
       }
-      size += finishedStarCondList_.CalculateSize(_repeated_finishedStarCondList_codec);
+      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -276,17 +286,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NextFloorId != 0) {
-        NextFloorId = other.NextFloorId;
-      }
-      rewardItemList_.Add(other.rewardItemList_);
       if (other.ContinueState != 0) {
         ContinueState = other.ContinueState;
+      }
+      finishedStarCondList_.Add(other.finishedStarCondList_);
+      if (other.NextFloorId != 0) {
+        NextFloorId = other.NextFloorId;
       }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      finishedStarCondList_.Add(other.finishedStarCondList_);
+      rewardItemList_.Add(other.rewardItemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -302,12 +312,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            NextFloorId = input.ReadUInt32();
+          case 16: {
+            ContinueState = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsSuccess = input.ReadBool();
+          case 32: {
+            NextFloorId = input.ReadUInt32();
             break;
           }
           case 50:
@@ -315,12 +325,12 @@ namespace Weedwacker.Shared.Network.Proto {
             finishedStarCondList_.AddEntriesFrom(input, _repeated_finishedStarCondList_codec);
             break;
           }
-          case 98: {
+          case 82: {
             rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
             break;
           }
           case 120: {
-            ContinueState = input.ReadUInt32();
+            IsSuccess = input.ReadBool();
             break;
           }
         }
@@ -338,12 +348,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            NextFloorId = input.ReadUInt32();
+          case 16: {
+            ContinueState = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsSuccess = input.ReadBool();
+          case 32: {
+            NextFloorId = input.ReadUInt32();
             break;
           }
           case 50:
@@ -351,12 +361,12 @@ namespace Weedwacker.Shared.Network.Proto {
             finishedStarCondList_.AddEntriesFrom(ref input, _repeated_finishedStarCondList_codec);
             break;
           }
-          case 98: {
+          case 82: {
             rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
             break;
           }
           case 120: {
-            ContinueState = input.ReadUInt32();
+            IsSuccess = input.ReadBool();
             break;
           }
         }

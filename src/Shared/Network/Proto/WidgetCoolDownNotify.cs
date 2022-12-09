@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetCoolDownNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpXaWRnZXRDb29sRG93bk5vdGlmeS5wcm90bxoYV2lkZ2V0Q29vbERvd25E",
-            "YXRhLnByb3RvIocBChRXaWRnZXRDb29sRG93bk5vdGlmeRI3Chpub3JtYWxf",
-            "Y29vbF9kb3duX2RhdGFfbGlzdBgBIAMoCzITLldpZGdldENvb2xEb3duRGF0",
-            "YRI2Chlncm91cF9jb29sX2Rvd25fZGF0YV9saXN0GAwgAygLMhMuV2lkZ2V0",
-            "Q29vbERvd25EYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChpXaWRnZXRDb29sRG93bk5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoYV2lkZ2V0Q29vbERvd25EYXRhLnByb3RvIscB",
+            "ChRXaWRnZXRDb29sRG93bk5vdGlmeRJXChpub3JtYWxfY29vbF9kb3duX2Rh",
+            "dGFfbGlzdBgCIAMoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uV2lkZ2V0Q29vbERvd25EYXRhElYKGWdyb3VwX2Nvb2xfZG93bl9kYXRh",
+            "X2xpc3QYDiADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LldpZGdldENvb2xEb3duRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetCoolDownDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4295
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4268;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetCoolDownNotify : pb::IMessage<WidgetCoolDownNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "normal_cool_down_data_list" field.</summary>
-    public const int NormalCoolDownDataListFieldNumber = 1;
+    public const int NormalCoolDownDataListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_normalCoolDownDataList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> normalCoolDownDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "group_cool_down_data_list" field.</summary>
-    public const int GroupCoolDownDataListFieldNumber = 12;
+    public const int GroupCoolDownDataListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_groupCoolDownDataList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> groupCoolDownDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 18: {
             normalCoolDownDataList_.AddEntriesFrom(input, _repeated_normalCoolDownDataList_codec);
             break;
           }
-          case 98: {
+          case 114: {
             groupCoolDownDataList_.AddEntriesFrom(input, _repeated_groupCoolDownDataList_codec);
             break;
           }
@@ -234,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 18: {
             normalCoolDownDataList_.AddEntriesFrom(ref input, _repeated_normalCoolDownDataList_codec);
             break;
           }
-          case 98: {
+          case 114: {
             groupCoolDownDataList_.AddEntriesFrom(ref input, _repeated_groupCoolDownDataList_codec);
             break;
           }

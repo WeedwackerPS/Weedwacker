@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClientAbilityChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9DbGllbnRBYmlsaXR5Q2hhbmdlTm90aWZ5LnByb3RvGhhBYmlsaXR5SW52",
-            "b2tlRW50cnkucHJvdG8iagoZQ2xpZW50QWJpbGl0eUNoYW5nZU5vdGlmeRIU",
-            "Cgxpc19pbml0X2hhc2gYCSABKAgSEQoJZW50aXR5X2lkGAIgASgNEiQKB2lu",
-            "dm9rZXMYAyADKAsyEy5BYmlsaXR5SW52b2tlRW50cnlCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch9DbGllbnRBYmlsaXR5Q2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhhBYmlsaXR5SW52b2tlRW50cnkucHJv",
+            "dG8iigEKGUNsaWVudEFiaWxpdHlDaGFuZ2VOb3RpZnkSFAoMaXNfaW5pdF9o",
+            "YXNoGAogASgIEkQKB2ludm9rZXMYDiADKAsyMy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlJbnZva2VFbnRyeRIRCgllbnRpdHlf",
+            "aWQYCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ClientAbilityChangeNotify), global::Weedwacker.Shared.Network.Proto.ClientAbilityChangeNotify.Parser, new[]{ "IsInitHash", "EntityId", "Invokes" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ClientAbilityChangeNotify), global::Weedwacker.Shared.Network.Proto.ClientAbilityChangeNotify.Parser, new[]{ "IsInitHash", "Invokes", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1175
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1139;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ClientAbilityChangeNotify : pb::IMessage<ClientAbilityChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ClientAbilityChangeNotify(ClientAbilityChangeNotify other) : this() {
       isInitHash_ = other.isInitHash_;
-      entityId_ = other.entityId_;
       invokes_ = other.invokes_.Clone();
+      entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_init_hash" field.</summary>
-    public const int IsInitHashFieldNumber = 9;
+    public const int IsInitHashFieldNumber = 10;
     private bool isInitHash_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,8 +108,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "invokes" field.</summary>
+    public const int InvokesFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> _repeated_invokes_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> invokes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> Invokes {
+      get { return invokes_; }
+    }
+
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 2;
+    public const int EntityIdFieldNumber = 11;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,17 +129,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         entityId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "invokes" field.</summary>
-    public const int InvokesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> _repeated_invokes_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> invokes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry> Invokes {
-      get { return invokes_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsInitHash != other.IsInitHash) return false;
-      if (EntityId != other.EntityId) return false;
       if(!invokes_.Equals(other.invokes_)) return false;
+      if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsInitHash != false) hash ^= IsInitHash.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       hash ^= invokes_.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +177,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (IsInitHash != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsInitHash);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
       }
       invokes_.WriteTo(output, _repeated_invokes_codec);
-      if (IsInitHash != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsInitHash);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +196,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsInitHash != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsInitHash);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
       }
       invokes_.WriteTo(ref output, _repeated_invokes_codec);
-      if (IsInitHash != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsInitHash);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -213,10 +218,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsInitHash != false) {
         size += 1 + 1;
       }
+      size += invokes_.CalculateSize(_repeated_invokes_codec);
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      size += invokes_.CalculateSize(_repeated_invokes_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -232,10 +237,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsInitHash != false) {
         IsInitHash = other.IsInitHash;
       }
+      invokes_.Add(other.invokes_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      invokes_.Add(other.invokes_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -251,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 80: {
+            IsInitHash = input.ReadBool();
+            break;
+          }
+          case 88: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 26: {
+          case 114: {
             invokes_.AddEntriesFrom(input, _repeated_invokes_codec);
-            break;
-          }
-          case 72: {
-            IsInitHash = input.ReadBool();
             break;
           }
         }
@@ -278,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 80: {
+            IsInitHash = input.ReadBool();
+            break;
+          }
+          case 88: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 26: {
+          case 114: {
             invokes_.AddEntriesFrom(ref input, _repeated_invokes_codec);
-            break;
-          }
-          case 72: {
-            IsInitHash = input.ReadBool();
             break;
           }
         }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeEditCustomFurnitureRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBIb21lRWRpdEN1c3RvbUZ1cm5pdHVyZVJzcC5wcm90bxodSG9tZUN1c3Rv",
-            "bUZ1cm5pdHVyZUluZm8ucHJvdG8iZgoaSG9tZUVkaXRDdXN0b21GdXJuaXR1",
-            "cmVSc3ASNwoVY3VzdG9tX2Z1cm5pdHVyZV9pbmZvGAsgASgLMhguSG9tZUN1",
-            "c3RvbUZ1cm5pdHVyZUluZm8SDwoHcmV0Y29kZRgOIAEoBUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBIb21lRWRpdEN1c3RvbUZ1cm5pdHVyZVJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxodSG9tZUN1c3RvbUZ1cm5pdHVyZUlu",
+            "Zm8ucHJvdG8ihgEKGkhvbWVFZGl0Q3VzdG9tRnVybml0dXJlUnNwEg8KB3Jl",
+            "dGNvZGUYASABKAUSVwoVY3VzdG9tX2Z1cm5pdHVyZV9pbmZvGAIgASgLMjgu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lQ3VzdG9tRnVy",
+            "bml0dXJlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeEditCustomFurnitureRsp), global::Weedwacker.Shared.Network.Proto.HomeEditCustomFurnitureRsp.Parser, new[]{ "CustomFurnitureInfo", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeEditCustomFurnitureRsp), global::Weedwacker.Shared.Network.Proto.HomeEditCustomFurnitureRsp.Parser, new[]{ "Retcode", "CustomFurnitureInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4496
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4769;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeEditCustomFurnitureRsp : pb::IMessage<HomeEditCustomFurnitureRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeEditCustomFurnitureRsp(HomeEditCustomFurnitureRsp other) : this() {
-      customFurnitureInfo_ = other.customFurnitureInfo_ != null ? other.customFurnitureInfo_.Clone() : null;
       retcode_ = other.retcode_;
+      customFurnitureInfo_ = other.customFurnitureInfo_ != null ? other.customFurnitureInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeEditCustomFurnitureRsp(this);
     }
 
-    /// <summary>Field number for the "custom_furniture_info" field.</summary>
-    public const int CustomFurnitureInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo customFurnitureInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo CustomFurnitureInfo {
-      get { return customFurnitureInfo_; }
-      set {
-        customFurnitureInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "custom_furniture_info" field.</summary>
+    public const int CustomFurnitureInfoFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo customFurnitureInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo CustomFurnitureInfo {
+      get { return customFurnitureInfo_; }
+      set {
+        customFurnitureInfo_ = value;
       }
     }
 
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(CustomFurnitureInfo, other.CustomFurnitureInfo)) return false;
       if (Retcode != other.Retcode) return false;
+      if (!object.Equals(CustomFurnitureInfo, other.CustomFurnitureInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (customFurnitureInfo_ != null) hash ^= CustomFurnitureInfo.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (customFurnitureInfo_ != null) hash ^= CustomFurnitureInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (customFurnitureInfo_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(CustomFurnitureInfo);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
+      }
+      if (customFurnitureInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CustomFurnitureInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (customFurnitureInfo_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(CustomFurnitureInfo);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
+      }
+      if (customFurnitureInfo_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CustomFurnitureInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (customFurnitureInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CustomFurnitureInfo);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (customFurnitureInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CustomFurnitureInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.customFurnitureInfo_ != null) {
         if (customFurnitureInfo_ == null) {
           CustomFurnitureInfo = new global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo();
         }
         CustomFurnitureInfo.MergeFrom(other.CustomFurnitureInfo);
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 18: {
             if (customFurnitureInfo_ == null) {
               CustomFurnitureInfo = new global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo();
             }
             input.ReadMessage(CustomFurnitureInfo);
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 18: {
             if (customFurnitureInfo_ == null) {
               CustomFurnitureInfo = new global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo();
             }
             input.ReadMessage(CustomFurnitureInfo);
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBalloonGalleryScoreNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNIb21lQmFsbG9vbkdhbGxlcnlTY29yZU5vdGlmeS5wcm90byJ0Ch1Ib21l",
-            "QmFsbG9vbkdhbGxlcnlTY29yZU5vdGlmeRIZChF0cmlnZ2VyX2VudGl0eV9p",
-            "ZBgKIAEoDRIRCgljdXJfc2NvcmUYCSABKA0SEQoJYWRkX3Njb3JlGAcgASgN",
-            "EhIKCmdhbGxlcnlfaWQYBSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNIb21lQmFsbG9vbkdhbGxlcnlTY29yZU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJ0Ch1Ib21lQmFsbG9vbkdhbGxl",
+            "cnlTY29yZU5vdGlmeRISCgpnYWxsZXJ5X2lkGAEgASgNEhkKEXRyaWdnZXJf",
+            "ZW50aXR5X2lkGAMgASgNEhEKCWFkZF9zY29yZRgEIAEoDRIRCgljdXJfc2Nv",
+            "cmUYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBalloonGalleryScoreNotify), global::Weedwacker.Shared.Network.Proto.HomeBalloonGalleryScoreNotify.Parser, new[]{ "TriggerEntityId", "CurScore", "AddScore", "GalleryId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBalloonGalleryScoreNotify), global::Weedwacker.Shared.Network.Proto.HomeBalloonGalleryScoreNotify.Parser, new[]{ "GalleryId", "TriggerEntityId", "AddScore", "CurScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4654
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4734;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeBalloonGalleryScoreNotify : pb::IMessage<HomeBalloonGalleryScoreNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBalloonGalleryScoreNotify(HomeBalloonGalleryScoreNotify other) : this() {
-      triggerEntityId_ = other.triggerEntityId_;
-      curScore_ = other.curScore_;
-      addScore_ = other.addScore_;
       galleryId_ = other.galleryId_;
+      triggerEntityId_ = other.triggerEntityId_;
+      addScore_ = other.addScore_;
+      curScore_ = other.curScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,8 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeBalloonGalleryScoreNotify(this);
     }
 
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 1;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "trigger_entity_id" field.</summary>
-    public const int TriggerEntityIdFieldNumber = 10;
+    public const int TriggerEntityIdFieldNumber = 3;
     private uint triggerEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,20 +119,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 9;
-    private uint curScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurScore {
-      get { return curScore_; }
-      set {
-        curScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "add_score" field.</summary>
-    public const int AddScoreFieldNumber = 7;
+    public const int AddScoreFieldNumber = 4;
     private uint addScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,15 +131,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 5;
-    private uint galleryId_;
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 14;
+    private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
+    public uint CurScore {
+      get { return curScore_; }
       set {
-        galleryId_ = value;
+        curScore_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TriggerEntityId != other.TriggerEntityId) return false;
-      if (CurScore != other.CurScore) return false;
-      if (AddScore != other.AddScore) return false;
       if (GalleryId != other.GalleryId) return false;
+      if (TriggerEntityId != other.TriggerEntityId) return false;
+      if (AddScore != other.AddScore) return false;
+      if (CurScore != other.CurScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TriggerEntityId != 0) hash ^= TriggerEntityId.GetHashCode();
-      if (CurScore != 0) hash ^= CurScore.GetHashCode();
-      if (AddScore != 0) hash ^= AddScore.GetHashCode();
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (TriggerEntityId != 0) hash ^= TriggerEntityId.GetHashCode();
+      if (AddScore != 0) hash ^= AddScore.GetHashCode();
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,20 +192,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GalleryId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(GalleryId);
       }
+      if (TriggerEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(TriggerEntityId);
+      }
       if (AddScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(AddScore);
       }
       if (CurScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(CurScore);
-      }
-      if (TriggerEntityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TriggerEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,20 +218,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GalleryId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(GalleryId);
       }
+      if (TriggerEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(TriggerEntityId);
+      }
       if (AddScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(AddScore);
       }
       if (CurScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(CurScore);
-      }
-      if (TriggerEntityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TriggerEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
       if (TriggerEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TriggerEntityId);
-      }
-      if (CurScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
       if (AddScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AddScore);
       }
-      if (GalleryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
       if (other.TriggerEntityId != 0) {
         TriggerEntityId = other.TriggerEntityId;
-      }
-      if (other.CurScore != 0) {
-        CurScore = other.CurScore;
       }
       if (other.AddScore != 0) {
         AddScore = other.AddScore;
       }
-      if (other.GalleryId != 0) {
-        GalleryId = other.GalleryId;
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 8: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 24: {
+            TriggerEntityId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             AddScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 112: {
             CurScore = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            TriggerEntityId = input.ReadUInt32();
             break;
           }
         }
@@ -321,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 8: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 24: {
+            TriggerEntityId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             AddScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 112: {
             CurScore = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            TriggerEntityId = input.ReadUInt32();
             break;
           }
         }

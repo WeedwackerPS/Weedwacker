@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassCurScheduleUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidCYXR0bGVQYXNzQ3VyU2NoZWR1bGVVcGRhdGVOb3RpZnkucHJvdG8aGEJh",
-            "dHRsZVBhc3NTY2hlZHVsZS5wcm90byJpCiFCYXR0bGVQYXNzQ3VyU2NoZWR1",
-            "bGVVcGRhdGVOb3RpZnkSGQoRaGF2ZV9jdXJfc2NoZWR1bGUYCyABKAgSKQoM",
-            "Y3VyX3NjaGVkdWxlGAEgASgLMhMuQmF0dGxlUGFzc1NjaGVkdWxlQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CidCYXR0bGVQYXNzQ3VyU2NoZWR1bGVVcGRhdGVOb3RpZnkucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGEJhdHRsZVBhc3NTY2hl",
+            "ZHVsZS5wcm90byKJAQohQmF0dGxlUGFzc0N1clNjaGVkdWxlVXBkYXRlTm90",
+            "aWZ5EkkKDGN1cl9zY2hlZHVsZRgCIAEoCzIzLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQmF0dGxlUGFzc1NjaGVkdWxlEhkKEWhhdmVfY3Vy",
+            "X3NjaGVkdWxlGAwgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassScheduleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassCurScheduleUpdateNotify), global::Weedwacker.Shared.Network.Proto.BattlePassCurScheduleUpdateNotify.Parser, new[]{ "HaveCurSchedule", "CurSchedule" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassCurScheduleUpdateNotify), global::Weedwacker.Shared.Network.Proto.BattlePassCurScheduleUpdateNotify.Parser, new[]{ "CurSchedule", "HaveCurSchedule" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2607
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2635;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BattlePassCurScheduleUpdateNotify : pb::IMessage<BattlePassCurScheduleUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassCurScheduleUpdateNotify(BattlePassCurScheduleUpdateNotify other) : this() {
-      haveCurSchedule_ = other.haveCurSchedule_;
       curSchedule_ = other.curSchedule_ != null ? other.curSchedule_.Clone() : null;
+      haveCurSchedule_ = other.haveCurSchedule_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassCurScheduleUpdateNotify(this);
     }
 
-    /// <summary>Field number for the "have_cur_schedule" field.</summary>
-    public const int HaveCurScheduleFieldNumber = 11;
-    private bool haveCurSchedule_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HaveCurSchedule {
-      get { return haveCurSchedule_; }
-      set {
-        haveCurSchedule_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_schedule" field.</summary>
-    public const int CurScheduleFieldNumber = 1;
+    public const int CurScheduleFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.BattlePassSchedule curSchedule_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curSchedule_; }
       set {
         curSchedule_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "have_cur_schedule" field.</summary>
+    public const int HaveCurScheduleFieldNumber = 12;
+    private bool haveCurSchedule_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HaveCurSchedule {
+      get { return haveCurSchedule_; }
+      set {
+        haveCurSchedule_ = value;
       }
     }
 
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HaveCurSchedule != other.HaveCurSchedule) return false;
       if (!object.Equals(CurSchedule, other.CurSchedule)) return false;
+      if (HaveCurSchedule != other.HaveCurSchedule) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
       if (curSchedule_ != null) hash ^= CurSchedule.GetHashCode();
+      if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (curSchedule_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteMessage(CurSchedule);
       }
       if (HaveCurSchedule != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(HaveCurSchedule);
       }
       if (_unknownFields != null) {
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (curSchedule_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteMessage(CurSchedule);
       }
       if (HaveCurSchedule != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(HaveCurSchedule);
       }
       if (_unknownFields != null) {
@@ -193,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HaveCurSchedule != false) {
-        size += 1 + 1;
-      }
       if (curSchedule_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurSchedule);
+      }
+      if (HaveCurSchedule != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.HaveCurSchedule != false) {
-        HaveCurSchedule = other.HaveCurSchedule;
-      }
       if (other.curSchedule_ != null) {
         if (curSchedule_ == null) {
           CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
         }
         CurSchedule.MergeFrom(other.CurSchedule);
+      }
+      if (other.HaveCurSchedule != false) {
+        HaveCurSchedule = other.HaveCurSchedule;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 18: {
             if (curSchedule_ == null) {
               CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
             }
             input.ReadMessage(CurSchedule);
             break;
           }
-          case 88: {
+          case 96: {
             HaveCurSchedule = input.ReadBool();
             break;
           }
@@ -261,14 +266,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 18: {
             if (curSchedule_ == null) {
               CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
             }
             input.ReadMessage(CurSchedule);
             break;
           }
-          case 88: {
+          case 96: {
             HaveCurSchedule = input.ReadBool();
             break;
           }

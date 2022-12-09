@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static SegmentInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFTZWdtZW50SW5mby5wcm90byI7CgtTZWdtZW50SW5mbxIOCgZvZmZzZXQY",
-            "AyABKA0SDgoGbW9kdWxlGAcgASgNEgwKBHNpemUYCCABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChFTZWdtZW50SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byI7CgtTZWdtZW50SW5mbxIOCgZtb2R1bGUYASABKA0SDAoEc2l6",
+            "ZRgHIAEoDRIOCgZvZmZzZXQYCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SegmentInfo), global::Weedwacker.Shared.Network.Proto.SegmentInfo.Parser, new[]{ "Offset", "Module", "Size" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SegmentInfo), global::Weedwacker.Shared.Network.Proto.SegmentInfo.Parser, new[]{ "Module", "Size", "Offset" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,9 +71,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SegmentInfo(SegmentInfo other) : this() {
-      offset_ = other.offset_;
       module_ = other.module_;
       size_ = other.size_;
+      offset_ = other.offset_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SegmentInfo(this);
     }
 
-    /// <summary>Field number for the "offset" field.</summary>
-    public const int OffsetFieldNumber = 3;
-    private uint offset_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Offset {
-      get { return offset_; }
-      set {
-        offset_ = value;
-      }
-    }
-
     /// <summary>Field number for the "module" field.</summary>
-    public const int ModuleFieldNumber = 7;
+    public const int ModuleFieldNumber = 1;
     private uint module_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "size" field.</summary>
-    public const int SizeFieldNumber = 8;
+    public const int SizeFieldNumber = 7;
     private uint size_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return size_; }
       set {
         size_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "offset" field.</summary>
+    public const int OffsetFieldNumber = 11;
+    private uint offset_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Offset {
+      get { return offset_; }
+      set {
+        offset_ = value;
       }
     }
 
@@ -134,9 +134,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Offset != other.Offset) return false;
       if (Module != other.Module) return false;
       if (Size != other.Size) return false;
+      if (Offset != other.Offset) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -144,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Offset != 0) hash ^= Offset.GetHashCode();
       if (Module != 0) hash ^= Module.GetHashCode();
       if (Size != 0) hash ^= Size.GetHashCode();
+      if (Offset != 0) hash ^= Offset.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -165,17 +165,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Offset != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Offset);
-      }
       if (Module != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(Module);
       }
       if (Size != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(Size);
+      }
+      if (Offset != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Offset);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -187,17 +187,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Offset != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Offset);
-      }
       if (Module != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(Module);
       }
       if (Size != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(Size);
+      }
+      if (Offset != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Offset);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,14 +209,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Offset != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Offset);
-      }
       if (Module != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Module);
       }
       if (Size != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Size);
+      }
+      if (Offset != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Offset);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -230,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Offset != 0) {
-        Offset = other.Offset;
-      }
       if (other.Module != 0) {
         Module = other.Module;
       }
       if (other.Size != 0) {
         Size = other.Size;
+      }
+      if (other.Offset != 0) {
+        Offset = other.Offset;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -254,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Offset = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             Module = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 56: {
             Size = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Offset = input.ReadUInt32();
             break;
           }
         }
@@ -281,16 +281,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Offset = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             Module = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 56: {
             Size = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Offset = input.ReadUInt32();
             break;
           }
         }

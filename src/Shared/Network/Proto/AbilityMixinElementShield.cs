@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinElementShieldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9BYmlsaXR5TWl4aW5FbGVtZW50U2hpZWxkLnByb3RvIpYBChlBYmlsaXR5",
-            "TWl4aW5FbGVtZW50U2hpZWxkEhIKCnN1Yl9zaGllbGQYCiABKAISDgoGc2hp",
-            "ZWxkGAggASgCEhMKC2Fic29yYl90eXBlGAEgASgNEhIKCnBsYXllcl9udW0Y",
-            "BCABKA0SGAoQaXNfc2hpZWxkX2Jyb2tlbhgJIAEoCBISCgptYXhfc2hpZWxk",
-            "GAwgASgCQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch9BYmlsaXR5TWl4aW5FbGVtZW50U2hpZWxkLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIpYBChlBYmlsaXR5TWl4aW5FbGVtZW50",
+            "U2hpZWxkEhIKCnBsYXllcl9udW0YCSABKA0SDgoGc2hpZWxkGAUgASgCEhgK",
+            "EGlzX3NoaWVsZF9icm9rZW4YCCABKAgSEgoKc3ViX3NoaWVsZBgEIAEoAhIS",
+            "CgptYXhfc2hpZWxkGA0gASgCEhMKC2Fic29yYl90eXBlGAogASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinElementShield), global::Weedwacker.Shared.Network.Proto.AbilityMixinElementShield.Parser, new[]{ "SubShield", "Shield", "AbsorbType", "PlayerNum", "IsShieldBroken", "MaxShield" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinElementShield), global::Weedwacker.Shared.Network.Proto.AbilityMixinElementShield.Parser, new[]{ "PlayerNum", "Shield", "IsShieldBroken", "SubShield", "MaxShield", "AbsorbType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMixinElementShield(AbilityMixinElementShield other) : this() {
-      subShield_ = other.subShield_;
-      shield_ = other.shield_;
-      absorbType_ = other.absorbType_;
       playerNum_ = other.playerNum_;
+      shield_ = other.shield_;
       isShieldBroken_ = other.isShieldBroken_;
+      subShield_ = other.subShield_;
       maxShield_ = other.maxShield_;
+      absorbType_ = other.absorbType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,44 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityMixinElementShield(this);
     }
 
-    /// <summary>Field number for the "sub_shield" field.</summary>
-    public const int SubShieldFieldNumber = 10;
-    private float subShield_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float SubShield {
-      get { return subShield_; }
-      set {
-        subShield_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "shield" field.</summary>
-    public const int ShieldFieldNumber = 8;
-    private float shield_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Shield {
-      get { return shield_; }
-      set {
-        shield_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "absorb_type" field.</summary>
-    public const int AbsorbTypeFieldNumber = 1;
-    private uint absorbType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AbsorbType {
-      get { return absorbType_; }
-      set {
-        absorbType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "player_num" field.</summary>
-    public const int PlayerNumFieldNumber = 4;
+    public const int PlayerNumFieldNumber = 9;
     private uint playerNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,8 +101,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "shield" field.</summary>
+    public const int ShieldFieldNumber = 5;
+    private float shield_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Shield {
+      get { return shield_; }
+      set {
+        shield_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_shield_broken" field.</summary>
-    public const int IsShieldBrokenFieldNumber = 9;
+    public const int IsShieldBrokenFieldNumber = 8;
     private bool isShieldBroken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,8 +125,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "sub_shield" field.</summary>
+    public const int SubShieldFieldNumber = 4;
+    private float subShield_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float SubShield {
+      get { return subShield_; }
+      set {
+        subShield_ = value;
+      }
+    }
+
     /// <summary>Field number for the "max_shield" field.</summary>
-    public const int MaxShieldFieldNumber = 12;
+    public const int MaxShieldFieldNumber = 13;
     private float maxShield_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,6 +146,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return maxShield_; }
       set {
         maxShield_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "absorb_type" field.</summary>
+    public const int AbsorbTypeFieldNumber = 10;
+    private uint absorbType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AbsorbType {
+      get { return absorbType_; }
+      set {
+        absorbType_ = value;
       }
     }
 
@@ -176,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SubShield, other.SubShield)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Shield, other.Shield)) return false;
-      if (AbsorbType != other.AbsorbType) return false;
       if (PlayerNum != other.PlayerNum) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Shield, other.Shield)) return false;
       if (IsShieldBroken != other.IsShieldBroken) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SubShield, other.SubShield)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MaxShield, other.MaxShield)) return false;
+      if (AbsorbType != other.AbsorbType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SubShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SubShield);
-      if (Shield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Shield);
-      if (AbsorbType != 0) hash ^= AbsorbType.GetHashCode();
       if (PlayerNum != 0) hash ^= PlayerNum.GetHashCode();
+      if (Shield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Shield);
       if (IsShieldBroken != false) hash ^= IsShieldBroken.GetHashCode();
+      if (SubShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SubShield);
       if (MaxShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MaxShield);
+      if (AbsorbType != 0) hash ^= AbsorbType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,28 +213,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AbsorbType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AbsorbType);
-      }
-      if (PlayerNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(PlayerNum);
+      if (SubShield != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(SubShield);
       }
       if (Shield != 0F) {
-        output.WriteRawTag(69);
+        output.WriteRawTag(45);
         output.WriteFloat(Shield);
       }
       if (IsShieldBroken != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(IsShieldBroken);
       }
-      if (SubShield != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(SubShield);
+      if (PlayerNum != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PlayerNum);
+      }
+      if (AbsorbType != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(AbsorbType);
       }
       if (MaxShield != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(109);
         output.WriteFloat(MaxShield);
       }
       if (_unknownFields != null) {
@@ -247,28 +247,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AbsorbType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AbsorbType);
-      }
-      if (PlayerNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(PlayerNum);
+      if (SubShield != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(SubShield);
       }
       if (Shield != 0F) {
-        output.WriteRawTag(69);
+        output.WriteRawTag(45);
         output.WriteFloat(Shield);
       }
       if (IsShieldBroken != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(IsShieldBroken);
       }
-      if (SubShield != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(SubShield);
+      if (PlayerNum != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PlayerNum);
+      }
+      if (AbsorbType != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(AbsorbType);
       }
       if (MaxShield != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(109);
         output.WriteFloat(MaxShield);
       }
       if (_unknownFields != null) {
@@ -281,23 +281,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SubShield != 0F) {
-        size += 1 + 4;
+      if (PlayerNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerNum);
       }
       if (Shield != 0F) {
         size += 1 + 4;
       }
-      if (AbsorbType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AbsorbType);
-      }
-      if (PlayerNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerNum);
-      }
       if (IsShieldBroken != false) {
         size += 1 + 1;
       }
+      if (SubShield != 0F) {
+        size += 1 + 4;
+      }
       if (MaxShield != 0F) {
         size += 1 + 4;
+      }
+      if (AbsorbType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AbsorbType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -311,23 +311,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SubShield != 0F) {
-        SubShield = other.SubShield;
+      if (other.PlayerNum != 0) {
+        PlayerNum = other.PlayerNum;
       }
       if (other.Shield != 0F) {
         Shield = other.Shield;
       }
-      if (other.AbsorbType != 0) {
-        AbsorbType = other.AbsorbType;
-      }
-      if (other.PlayerNum != 0) {
-        PlayerNum = other.PlayerNum;
-      }
       if (other.IsShieldBroken != false) {
         IsShieldBroken = other.IsShieldBroken;
       }
+      if (other.SubShield != 0F) {
+        SubShield = other.SubShield;
+      }
       if (other.MaxShield != 0F) {
         MaxShield = other.MaxShield;
+      }
+      if (other.AbsorbType != 0) {
+        AbsorbType = other.AbsorbType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -344,27 +344,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            AbsorbType = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            PlayerNum = input.ReadUInt32();
-            break;
-          }
-          case 69: {
-            Shield = input.ReadFloat();
-            break;
-          }
-          case 72: {
-            IsShieldBroken = input.ReadBool();
-            break;
-          }
-          case 85: {
+          case 37: {
             SubShield = input.ReadFloat();
             break;
           }
-          case 101: {
+          case 45: {
+            Shield = input.ReadFloat();
+            break;
+          }
+          case 64: {
+            IsShieldBroken = input.ReadBool();
+            break;
+          }
+          case 72: {
+            PlayerNum = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            AbsorbType = input.ReadUInt32();
+            break;
+          }
+          case 109: {
             MaxShield = input.ReadFloat();
             break;
           }
@@ -383,27 +383,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            AbsorbType = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            PlayerNum = input.ReadUInt32();
-            break;
-          }
-          case 69: {
-            Shield = input.ReadFloat();
-            break;
-          }
-          case 72: {
-            IsShieldBroken = input.ReadBool();
-            break;
-          }
-          case 85: {
+          case 37: {
             SubShield = input.ReadFloat();
             break;
           }
-          case 101: {
+          case 45: {
+            Shield = input.ReadFloat();
+            break;
+          }
+          case 64: {
+            IsShieldBroken = input.ReadBool();
+            break;
+          }
+          case 72: {
+            PlayerNum = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            AbsorbType = input.ReadUInt32();
+            break;
+          }
+          case 109: {
             MaxShield = input.ReadFloat();
             break;
           }

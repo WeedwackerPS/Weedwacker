@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static MoonfinTrialActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRNb29uZmluVHJpYWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aG01vb25m",
-            "aW5UcmlhbExldmVsSW5mby5wcm90byLUAQoeTW9vbmZpblRyaWFsQWN0aXZp",
-            "dHlEZXRhaWxJbmZvEkkKDmxldmVsX2luZm9fbWFwGAUgAygLMjEuTW9vbmZp",
-            "blRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvLkxldmVsSW5mb01hcEVudHJ5EhoK",
-            "EnNwZWNpYWxfZmlzaF9jb3VudBgLIAEoDRpLChFMZXZlbEluZm9NYXBFbnRy",
-            "eRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiABKAsyFi5Nb29uZmluVHJpYWxM",
-            "ZXZlbEluZm86AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "CiRNb29uZmluVHJpYWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG01vb25maW5UcmlhbExldmVs",
+            "SW5mby5wcm90byKUAgoeTW9vbmZpblRyaWFsQWN0aXZpdHlEZXRhaWxJbmZv",
+            "EhoKEnNwZWNpYWxfZmlzaF9jb3VudBgNIAEoDRJpCg5sZXZlbF9pbmZvX21h",
+            "cBgFIAMoCzJRLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTW9v",
+            "bmZpblRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvLkxldmVsSW5mb01hcEVudHJ5",
+            "GmsKEUxldmVsSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRJFCgV2YWx1ZRgC",
+            "IAEoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTW9vbmZp",
+            "blRyaWFsTGV2ZWxJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MoonfinTrialLevelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo.Parser, new[]{ "LevelInfoMap", "SpecialFishCount" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo.Parser, new[]{ "SpecialFishCount", "LevelInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,8 +77,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MoonfinTrialActivityDetailInfo(MoonfinTrialActivityDetailInfo other) : this() {
-      levelInfoMap_ = other.levelInfoMap_.Clone();
       specialFishCount_ = other.specialFishCount_;
+      levelInfoMap_ = other.levelInfoMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,6 +86,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MoonfinTrialActivityDetailInfo Clone() {
       return new MoonfinTrialActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "special_fish_count" field.</summary>
+    public const int SpecialFishCountFieldNumber = 13;
+    private uint specialFishCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SpecialFishCount {
+      get { return specialFishCount_; }
+      set {
+        specialFishCount_ = value;
+      }
     }
 
     /// <summary>Field number for the "level_info_map" field.</summary>
@@ -96,18 +109,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MoonfinTrialLevelInfo> LevelInfoMap {
       get { return levelInfoMap_; }
-    }
-
-    /// <summary>Field number for the "special_fish_count" field.</summary>
-    public const int SpecialFishCountFieldNumber = 11;
-    private uint specialFishCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SpecialFishCount {
-      get { return specialFishCount_; }
-      set {
-        specialFishCount_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,8 +126,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!LevelInfoMap.Equals(other.LevelInfoMap)) return false;
       if (SpecialFishCount != other.SpecialFishCount) return false;
+      if (!LevelInfoMap.Equals(other.LevelInfoMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= LevelInfoMap.GetHashCode();
       if (SpecialFishCount != 0) hash ^= SpecialFishCount.GetHashCode();
+      hash ^= LevelInfoMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,7 +157,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       levelInfoMap_.WriteTo(output, _map_levelInfoMap_codec);
       if (SpecialFishCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(SpecialFishCount);
       }
       if (_unknownFields != null) {
@@ -171,7 +172,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       levelInfoMap_.WriteTo(ref output, _map_levelInfoMap_codec);
       if (SpecialFishCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(SpecialFishCount);
       }
       if (_unknownFields != null) {
@@ -184,10 +185,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += levelInfoMap_.CalculateSize(_map_levelInfoMap_codec);
       if (SpecialFishCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SpecialFishCount);
       }
+      size += levelInfoMap_.CalculateSize(_map_levelInfoMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -200,10 +201,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      levelInfoMap_.Add(other.levelInfoMap_);
       if (other.SpecialFishCount != 0) {
         SpecialFishCount = other.SpecialFishCount;
       }
+      levelInfoMap_.Add(other.levelInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -223,7 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
             levelInfoMap_.AddEntriesFrom(input, _map_levelInfoMap_codec);
             break;
           }
-          case 88: {
+          case 104: {
             SpecialFishCount = input.ReadUInt32();
             break;
           }
@@ -246,7 +247,7 @@ namespace Weedwacker.Shared.Network.Proto {
             levelInfoMap_.AddEntriesFrom(ref input, _map_levelInfoMap_codec);
             break;
           }
-          case 88: {
+          case 104: {
             SpecialFishCount = input.ReadUInt32();
             break;
           }

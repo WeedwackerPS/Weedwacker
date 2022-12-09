@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static VectorPlaneReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFWZWN0b3JQbGFuZS5wcm90byIjCgtWZWN0b3JQbGFuZRIJCgF4GAEgASgC",
-            "EgkKAXkYAiABKAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChFWZWN0b3JQbGFuZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byIjCgtWZWN0b3JQbGFuZRIJCgF4GAEgASgCEgkKAXkYAiABKAJi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

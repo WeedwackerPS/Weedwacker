@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static DigActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtEaWdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aEkRpZ01hcmtQb2ludC5w",
-            "cm90byJsChVEaWdBY3Rpdml0eURldGFpbEluZm8SFQoNc3RhZ2VfaWRfbGlz",
-            "dBgPIAMoDRIqChNkaWdfbWFya19wb2ludF9saXN0GAsgAygLMg0uRGlnTWFy",
-            "a1BvaW50EhAKCHN0YWdlX2lkGAggASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtEaWdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEkRpZ01hcmtQb2ludC5wcm90byKMAQoVRGln",
+            "QWN0aXZpdHlEZXRhaWxJbmZvEhAKCHN0YWdlX2lkGAMgASgNEkoKE2RpZ19t",
+            "YXJrX3BvaW50X2xpc3QYDCADKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkRpZ01hcmtQb2ludBIVCg1zdGFnZV9pZF9saXN0GAUgAygN",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DigMarkPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo.Parser, new[]{ "StageIdList", "DigMarkPointList", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo.Parser, new[]{ "StageId", "DigMarkPointList", "StageIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DigActivityDetailInfo(DigActivityDetailInfo other) : this() {
-      stageIdList_ = other.stageIdList_.Clone();
-      digMarkPointList_ = other.digMarkPointList_.Clone();
       stageId_ = other.stageId_;
+      digMarkPointList_ = other.digMarkPointList_.Clone();
+      stageIdList_ = other.stageIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,30 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DigActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "stage_id_list" field.</summary>
-    public const int StageIdListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_stageIdList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> stageIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> StageIdList {
-      get { return stageIdList_; }
-    }
-
-    /// <summary>Field number for the "dig_mark_point_list" field.</summary>
-    public const int DigMarkPointListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> _repeated_digMarkPointList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.DigMarkPoint.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> digMarkPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> DigMarkPointList {
-      get { return digMarkPointList_; }
-    }
-
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 8;
+    public const int StageIdFieldNumber = 3;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +96,28 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         stageId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "dig_mark_point_list" field.</summary>
+    public const int DigMarkPointListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> _repeated_digMarkPointList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.DigMarkPoint.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> digMarkPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> DigMarkPointList {
+      get { return digMarkPointList_; }
+    }
+
+    /// <summary>Field number for the "stage_id_list" field.</summary>
+    public const int StageIdListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_stageIdList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> stageIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> StageIdList {
+      get { return stageIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!stageIdList_.Equals(other.stageIdList_)) return false;
-      if(!digMarkPointList_.Equals(other.digMarkPointList_)) return false;
       if (StageId != other.StageId) return false;
+      if(!digMarkPointList_.Equals(other.digMarkPointList_)) return false;
+      if(!stageIdList_.Equals(other.stageIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -144,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= stageIdList_.GetHashCode();
-      hash ^= digMarkPointList_.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= digMarkPointList_.GetHashCode();
+      hash ^= stageIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,11 +167,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (StageId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(StageId);
       }
-      digMarkPointList_.WriteTo(output, _repeated_digMarkPointList_codec);
       stageIdList_.WriteTo(output, _repeated_stageIdList_codec);
+      digMarkPointList_.WriteTo(output, _repeated_digMarkPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (StageId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(StageId);
       }
-      digMarkPointList_.WriteTo(ref output, _repeated_digMarkPointList_codec);
       stageIdList_.WriteTo(ref output, _repeated_stageIdList_codec);
+      digMarkPointList_.WriteTo(ref output, _repeated_digMarkPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -197,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += stageIdList_.CalculateSize(_repeated_stageIdList_codec);
-      size += digMarkPointList_.CalculateSize(_repeated_digMarkPointList_codec);
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
+      size += digMarkPointList_.CalculateSize(_repeated_digMarkPointList_codec);
+      size += stageIdList_.CalculateSize(_repeated_stageIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -214,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      stageIdList_.Add(other.stageIdList_);
-      digMarkPointList_.Add(other.digMarkPointList_);
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
+      digMarkPointList_.Add(other.digMarkPointList_);
+      stageIdList_.Add(other.stageIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -234,17 +235,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 24: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 90: {
-            digMarkPointList_.AddEntriesFrom(input, _repeated_digMarkPointList_codec);
+          case 42:
+          case 40: {
+            stageIdList_.AddEntriesFrom(input, _repeated_stageIdList_codec);
             break;
           }
-          case 122:
-          case 120: {
-            stageIdList_.AddEntriesFrom(input, _repeated_stageIdList_codec);
+          case 98: {
+            digMarkPointList_.AddEntriesFrom(input, _repeated_digMarkPointList_codec);
             break;
           }
         }
@@ -262,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 24: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 90: {
-            digMarkPointList_.AddEntriesFrom(ref input, _repeated_digMarkPointList_codec);
+          case 42:
+          case 40: {
+            stageIdList_.AddEntriesFrom(ref input, _repeated_stageIdList_codec);
             break;
           }
-          case 122:
-          case 120: {
-            stageIdList_.AddEntriesFrom(ref input, _repeated_stageIdList_codec);
+          case 98: {
+            digMarkPointList_.AddEntriesFrom(ref input, _repeated_digMarkPointList_codec);
             break;
           }
         }

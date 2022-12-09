@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageBoothUsedItemDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5WaW50YWdlQm9vdGhVc2VkSXRlbURhdGEucHJvdG8iPgoYVmludGFnZUJv",
-            "b3RoVXNlZEl0ZW1EYXRhEg8KB2lzX29wZW4YByABKAgSEQoJZ2FkZ2V0X2lk",
-            "GAggASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch5WaW50YWdlQm9vdGhVc2VkSXRlbURhdGEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iPgoYVmludGFnZUJvb3RoVXNlZEl0ZW1E",
+            "YXRhEg8KB2lzX29wZW4YCiABKAgSEQoJZ2FkZ2V0X2lkGAMgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 7;
+    public const int IsOpenFieldNumber = 10;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gadget_id" field.</summary>
-    public const int GadgetIdFieldNumber = 8;
+    public const int GadgetIdFieldNumber = 3;
     private uint gadgetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsOpen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsOpen);
-      }
       if (GadgetId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(GadgetId);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsOpen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsOpen);
-      }
       if (GadgetId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(GadgetId);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            IsOpen = input.ReadBool();
+          case 24: {
+            GadgetId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            GadgetId = input.ReadUInt32();
+          case 80: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            IsOpen = input.ReadBool();
+          case 24: {
+            GadgetId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            GadgetId = input.ReadUInt32();
+          case 80: {
+            IsOpen = input.ReadBool();
             break;
           }
         }

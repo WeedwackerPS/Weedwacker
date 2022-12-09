@@ -25,16 +25,16 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitQbGFudEZsb3dlckdldEZyaWVuZEZsb3dlcldpc2hMaXN0UnNwLnByb3Rv",
-            "GiVQbGFudEZsb3dlckZyaWVuZEZsb3dlcldpc2hEYXRhLnByb3RvIpABCiVQ",
-            "bGFudEZsb3dlckdldEZyaWVuZEZsb3dlcldpc2hMaXN0UnNwEg8KB3JldGNv",
-            "ZGUYBiABKAUSEwoLc2NoZWR1bGVfaWQYAiABKA0SQQoXZnJpZW5kX2Zsb3dl",
-            "cl93aXNoX2xpc3QYCSADKAsyIC5QbGFudEZsb3dlckZyaWVuZEZsb3dlcldp",
-            "c2hEYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Eh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGiVQbGFudEZsb3dl",
+            "ckZyaWVuZEZsb3dlcldpc2hEYXRhLnByb3RvIrABCiVQbGFudEZsb3dlckdl",
+            "dEZyaWVuZEZsb3dlcldpc2hMaXN0UnNwEhMKC3NjaGVkdWxlX2lkGA4gASgN",
+            "Eg8KB3JldGNvZGUYByABKAUSYQoXZnJpZW5kX2Zsb3dlcl93aXNoX2xpc3QY",
+            "DSADKAsyQC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYW50",
+            "Rmxvd2VyRnJpZW5kRmxvd2VyV2lzaERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlantFlowerGetFriendFlowerWishListRsp), global::Weedwacker.Shared.Network.Proto.PlantFlowerGetFriendFlowerWishListRsp.Parser, new[]{ "Retcode", "ScheduleId", "FriendFlowerWishList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlantFlowerGetFriendFlowerWishListRsp), global::Weedwacker.Shared.Network.Proto.PlantFlowerGetFriendFlowerWishListRsp.Parser, new[]{ "ScheduleId", "Retcode", "FriendFlowerWishList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8511
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8682;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlantFlowerGetFriendFlowerWishListRsp : pb::IMessage<PlantFlowerGetFriendFlowerWishListRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlantFlowerGetFriendFlowerWishListRsp(PlantFlowerGetFriendFlowerWishListRsp other) : this() {
-      retcode_ = other.retcode_;
       scheduleId_ = other.scheduleId_;
+      retcode_ = other.retcode_;
       friendFlowerWishList_ = other.friendFlowerWishList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -92,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlantFlowerGetFriendFlowerWishListRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 2;
+    public const int ScheduleIdFieldNumber = 14;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,10 +108,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 7;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "friend_flower_wish_list" field.</summary>
-    public const int FriendFlowerWishListFieldNumber = 9;
+    public const int FriendFlowerWishListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishData> _repeated_friendFlowerWishList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishData.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishData> friendFlowerWishList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlantFlowerFriendFlowerWishData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (ScheduleId != other.ScheduleId) return false;
+      if (Retcode != other.Retcode) return false;
       if(!friendFlowerWishList_.Equals(other.friendFlowerWishList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -152,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= friendFlowerWishList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -173,15 +177,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ScheduleId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ScheduleId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
       friendFlowerWishList_.WriteTo(output, _repeated_friendFlowerWishList_codec);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ScheduleId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -192,15 +196,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ScheduleId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ScheduleId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
       friendFlowerWishList_.WriteTo(ref output, _repeated_friendFlowerWishList_codec);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ScheduleId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       size += friendFlowerWishList_.CalculateSize(_repeated_friendFlowerWishList_codec);
       if (_unknownFields != null) {
@@ -230,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       friendFlowerWishList_.Add(other.friendFlowerWishList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -252,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 74: {
+          case 106: {
             friendFlowerWishList_.AddEntriesFrom(input, _repeated_friendFlowerWishList_codec);
+            break;
+          }
+          case 112: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -279,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 74: {
+          case 106: {
             friendFlowerWishList_.AddEntriesFrom(ref input, _repeated_friendFlowerWishList_codec);
+            break;
+          }
+          case 112: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }

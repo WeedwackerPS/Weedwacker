@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestUpdateQuestTimeVarNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNRdWVzdFVwZGF0ZVF1ZXN0VGltZVZhck5vdGlmeS5wcm90byKxAQodUXVl",
-            "c3RVcGRhdGVRdWVzdFRpbWVWYXJOb3RpZnkSRAoMdGltZV92YXJfbWFwGAEg",
-            "AygLMi4uUXVlc3RVcGRhdGVRdWVzdFRpbWVWYXJOb3RpZnkuVGltZVZhck1h",
-            "cEVudHJ5EhcKD3BhcmVudF9xdWVzdF9pZBgDIAEoDRoxCg9UaW1lVmFyTWFw",
-            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNRdWVzdFVwZGF0ZVF1ZXN0VGltZVZhck5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byLRAQodUXVlc3RVcGRhdGVRdWVz",
+            "dFRpbWVWYXJOb3RpZnkSZAoMdGltZV92YXJfbWFwGAEgAygLMk4uV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5RdWVzdFVwZGF0ZVF1ZXN0VGlt",
+            "ZVZhck5vdGlmeS5UaW1lVmFyTWFwRW50cnkSFwoPcGFyZW50X3F1ZXN0X2lk",
+            "GA4gASgNGjEKD1RpbWVWYXJNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
+            "dWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 456
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 482;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestUpdateQuestTimeVarNotify : pb::IMessage<QuestUpdateQuestTimeVarNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_id" field.</summary>
-    public const int ParentQuestIdFieldNumber = 3;
+    public const int ParentQuestIdFieldNumber = 14;
     private uint parentQuestId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,7 +164,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       timeVarMap_.WriteTo(output, _map_timeVarMap_codec);
       if (ParentQuestId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteUInt32(ParentQuestId);
       }
       if (_unknownFields != null) {
@@ -174,7 +179,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       timeVarMap_.WriteTo(ref output, _map_timeVarMap_codec);
       if (ParentQuestId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteUInt32(ParentQuestId);
       }
       if (_unknownFields != null) {
@@ -226,7 +231,7 @@ namespace Weedwacker.Shared.Network.Proto {
             timeVarMap_.AddEntriesFrom(input, _map_timeVarMap_codec);
             break;
           }
-          case 24: {
+          case 112: {
             ParentQuestId = input.ReadUInt32();
             break;
           }
@@ -249,7 +254,7 @@ namespace Weedwacker.Shared.Network.Proto {
             timeVarMap_.AddEntriesFrom(ref input, _map_timeVarMap_codec);
             break;
           }
-          case 24: {
+          case 112: {
             ParentQuestId = input.ReadUInt32();
             break;
           }

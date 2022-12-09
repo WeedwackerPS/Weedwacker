@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinGlobalShieldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BYmlsaXR5TWl4aW5HbG9iYWxTaGllbGQucHJvdG8iogEKGEFiaWxpdHlN",
-            "aXhpbkdsb2JhbFNoaWVsZBIYChBpc19jcmVhdGVfZWZmZWN0GAQgASgIEhIK",
-            "CnN1Yl9zaGllbGQYByABKAISFQoNaGVpZ2h0X29mZnNldBgFIAEoAhIRCglh",
-            "dmF0YXJfaWQYCyABKA0SEgoKbWF4X3NoaWVsZBgKIAEoAhIaChJzaGllbGRf",
-            "ZWZmZWN0X25hbWUYAiABKAlCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5BYmlsaXR5TWl4aW5HbG9iYWxTaGllbGQucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iogEKGEFiaWxpdHlNaXhpbkdsb2JhbFNo",
+            "aWVsZBISCgptYXhfc2hpZWxkGA4gASgCEhgKEGlzX2NyZWF0ZV9lZmZlY3QY",
+            "BCABKAgSGgoSc2hpZWxkX2VmZmVjdF9uYW1lGAwgASgJEhIKCnN1Yl9zaGll",
+            "bGQYCiABKAISEQoJYXZhdGFyX2lkGAMgASgNEhUKDWhlaWdodF9vZmZzZXQY",
+            "ASABKAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinGlobalShield), global::Weedwacker.Shared.Network.Proto.AbilityMixinGlobalShield.Parser, new[]{ "IsCreateEffect", "SubShield", "HeightOffset", "AvatarId", "MaxShield", "ShieldEffectName" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinGlobalShield), global::Weedwacker.Shared.Network.Proto.AbilityMixinGlobalShield.Parser, new[]{ "MaxShield", "IsCreateEffect", "ShieldEffectName", "SubShield", "AvatarId", "HeightOffset" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMixinGlobalShield(AbilityMixinGlobalShield other) : this() {
-      isCreateEffect_ = other.isCreateEffect_;
-      subShield_ = other.subShield_;
-      heightOffset_ = other.heightOffset_;
-      avatarId_ = other.avatarId_;
       maxShield_ = other.maxShield_;
+      isCreateEffect_ = other.isCreateEffect_;
       shieldEffectName_ = other.shieldEffectName_;
+      subShield_ = other.subShield_;
+      avatarId_ = other.avatarId_;
+      heightOffset_ = other.heightOffset_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +87,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMixinGlobalShield Clone() {
       return new AbilityMixinGlobalShield(this);
+    }
+
+    /// <summary>Field number for the "max_shield" field.</summary>
+    public const int MaxShieldFieldNumber = 14;
+    private float maxShield_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float MaxShield {
+      get { return maxShield_; }
+      set {
+        maxShield_ = value;
+      }
     }
 
     /// <summary>Field number for the "is_create_effect" field.</summary>
@@ -101,8 +113,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "shield_effect_name" field.</summary>
+    public const int ShieldEffectNameFieldNumber = 12;
+    private string shieldEffectName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ShieldEffectName {
+      get { return shieldEffectName_; }
+      set {
+        shieldEffectName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sub_shield" field.</summary>
-    public const int SubShieldFieldNumber = 7;
+    public const int SubShieldFieldNumber = 10;
     private float subShield_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,20 +137,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "height_offset" field.</summary>
-    public const int HeightOffsetFieldNumber = 5;
-    private float heightOffset_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float HeightOffset {
-      get { return heightOffset_; }
-      set {
-        heightOffset_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 11;
+    public const int AvatarIdFieldNumber = 3;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,27 +149,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_shield" field.</summary>
-    public const int MaxShieldFieldNumber = 10;
-    private float maxShield_;
+    /// <summary>Field number for the "height_offset" field.</summary>
+    public const int HeightOffsetFieldNumber = 1;
+    private float heightOffset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float MaxShield {
-      get { return maxShield_; }
+    public float HeightOffset {
+      get { return heightOffset_; }
       set {
-        maxShield_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "shield_effect_name" field.</summary>
-    public const int ShieldEffectNameFieldNumber = 2;
-    private string shieldEffectName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ShieldEffectName {
-      get { return shieldEffectName_; }
-      set {
-        shieldEffectName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        heightOffset_ = value;
       }
     }
 
@@ -176,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsCreateEffect != other.IsCreateEffect) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SubShield, other.SubShield)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HeightOffset, other.HeightOffset)) return false;
-      if (AvatarId != other.AvatarId) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MaxShield, other.MaxShield)) return false;
+      if (IsCreateEffect != other.IsCreateEffect) return false;
       if (ShieldEffectName != other.ShieldEffectName) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SubShield, other.SubShield)) return false;
+      if (AvatarId != other.AvatarId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HeightOffset, other.HeightOffset)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsCreateEffect != false) hash ^= IsCreateEffect.GetHashCode();
-      if (SubShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SubShield);
-      if (HeightOffset != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HeightOffset);
-      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (MaxShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MaxShield);
+      if (IsCreateEffect != false) hash ^= IsCreateEffect.GetHashCode();
       if (ShieldEffectName.Length != 0) hash ^= ShieldEffectName.GetHashCode();
+      if (SubShield != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SubShield);
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (HeightOffset != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HeightOffset);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,29 +213,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ShieldEffectName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ShieldEffectName);
+      if (HeightOffset != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(HeightOffset);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(AvatarId);
       }
       if (IsCreateEffect != false) {
         output.WriteRawTag(32);
         output.WriteBool(IsCreateEffect);
       }
-      if (HeightOffset != 0F) {
-        output.WriteRawTag(45);
-        output.WriteFloat(HeightOffset);
-      }
       if (SubShield != 0F) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(85);
         output.WriteFloat(SubShield);
       }
-      if (MaxShield != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(MaxShield);
+      if (ShieldEffectName.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(ShieldEffectName);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(AvatarId);
+      if (MaxShield != 0F) {
+        output.WriteRawTag(117);
+        output.WriteFloat(MaxShield);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,29 +247,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ShieldEffectName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ShieldEffectName);
+      if (HeightOffset != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(HeightOffset);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(AvatarId);
       }
       if (IsCreateEffect != false) {
         output.WriteRawTag(32);
         output.WriteBool(IsCreateEffect);
       }
-      if (HeightOffset != 0F) {
-        output.WriteRawTag(45);
-        output.WriteFloat(HeightOffset);
-      }
       if (SubShield != 0F) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(85);
         output.WriteFloat(SubShield);
       }
-      if (MaxShield != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(MaxShield);
+      if (ShieldEffectName.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(ShieldEffectName);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(AvatarId);
+      if (MaxShield != 0F) {
+        output.WriteRawTag(117);
+        output.WriteFloat(MaxShield);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -281,23 +281,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (MaxShield != 0F) {
+        size += 1 + 4;
+      }
       if (IsCreateEffect != false) {
         size += 1 + 1;
       }
-      if (SubShield != 0F) {
-        size += 1 + 4;
+      if (ShieldEffectName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShieldEffectName);
       }
-      if (HeightOffset != 0F) {
+      if (SubShield != 0F) {
         size += 1 + 4;
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
       }
-      if (MaxShield != 0F) {
+      if (HeightOffset != 0F) {
         size += 1 + 4;
-      }
-      if (ShieldEffectName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShieldEffectName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -311,23 +311,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.MaxShield != 0F) {
+        MaxShield = other.MaxShield;
+      }
       if (other.IsCreateEffect != false) {
         IsCreateEffect = other.IsCreateEffect;
+      }
+      if (other.ShieldEffectName.Length != 0) {
+        ShieldEffectName = other.ShieldEffectName;
       }
       if (other.SubShield != 0F) {
         SubShield = other.SubShield;
       }
-      if (other.HeightOffset != 0F) {
-        HeightOffset = other.HeightOffset;
-      }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
       }
-      if (other.MaxShield != 0F) {
-        MaxShield = other.MaxShield;
-      }
-      if (other.ShieldEffectName.Length != 0) {
-        ShieldEffectName = other.ShieldEffectName;
+      if (other.HeightOffset != 0F) {
+        HeightOffset = other.HeightOffset;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -344,28 +344,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            ShieldEffectName = input.ReadString();
+          case 13: {
+            HeightOffset = input.ReadFloat();
+            break;
+          }
+          case 24: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 32: {
             IsCreateEffect = input.ReadBool();
             break;
           }
-          case 45: {
-            HeightOffset = input.ReadFloat();
-            break;
-          }
-          case 61: {
+          case 85: {
             SubShield = input.ReadFloat();
             break;
           }
-          case 85: {
-            MaxShield = input.ReadFloat();
+          case 98: {
+            ShieldEffectName = input.ReadString();
             break;
           }
-          case 88: {
-            AvatarId = input.ReadUInt32();
+          case 117: {
+            MaxShield = input.ReadFloat();
             break;
           }
         }
@@ -383,28 +383,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            ShieldEffectName = input.ReadString();
+          case 13: {
+            HeightOffset = input.ReadFloat();
+            break;
+          }
+          case 24: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 32: {
             IsCreateEffect = input.ReadBool();
             break;
           }
-          case 45: {
-            HeightOffset = input.ReadFloat();
-            break;
-          }
-          case 61: {
+          case 85: {
             SubShield = input.ReadFloat();
             break;
           }
-          case 85: {
-            MaxShield = input.ReadFloat();
+          case 98: {
+            ShieldEffectName = input.ReadString();
             break;
           }
-          case 88: {
-            AvatarId = input.ReadUInt32();
+          case 117: {
+            MaxShield = input.ReadFloat();
             break;
           }
         }

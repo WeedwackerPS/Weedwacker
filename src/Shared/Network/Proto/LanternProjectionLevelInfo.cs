@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternProjectionLevelInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBMYW50ZXJuUHJvamVjdGlvbkxldmVsSW5mby5wcm90byKCAQoaTGFudGVy",
-            "blByb2plY3Rpb25MZXZlbEluZm8SFwoPbWluX2ZpbmlzaF90aW1lGAEgASgN",
-            "EgoKAmlkGAIgASgNEhMKC2lzX2ZpbmlzaGVkGAcgASgIEhQKDGlzX2Nhbl9z",
-            "dGFydBgJIAEoCBIUCgxpc19zaG93X3RpcHMYCiABKAhCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBMYW50ZXJuUHJvamVjdGlvbkxldmVsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKCAQoaTGFudGVyblByb2plY3Rpb25M",
+            "ZXZlbEluZm8SEwoLaXNfZmluaXNoZWQYByABKAgSFAoMaXNfY2FuX3N0YXJ0",
+            "GA4gASgIEgoKAmlkGAogASgNEhQKDGlzX3Nob3dfdGlwcxgPIAEoCBIXCg9t",
+            "aW5fZmluaXNoX3RpbWUYBSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo), global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo.Parser, new[]{ "MinFinishTime", "Id", "IsFinished", "IsCanStart", "IsShowTips" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo), global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo.Parser, new[]{ "IsFinished", "IsCanStart", "Id", "IsShowTips", "MinFinishTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternProjectionLevelInfo(LanternProjectionLevelInfo other) : this() {
-      minFinishTime_ = other.minFinishTime_;
-      id_ = other.id_;
       isFinished_ = other.isFinished_;
       isCanStart_ = other.isCanStart_;
+      id_ = other.id_;
       isShowTips_ = other.isShowTips_;
+      minFinishTime_ = other.minFinishTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,30 +85,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternProjectionLevelInfo Clone() {
       return new LanternProjectionLevelInfo(this);
-    }
-
-    /// <summary>Field number for the "min_finish_time" field.</summary>
-    public const int MinFinishTimeFieldNumber = 1;
-    private uint minFinishTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinFinishTime {
-      get { return minFinishTime_; }
-      set {
-        minFinishTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 2;
-    private uint id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
     }
 
     /// <summary>Field number for the "is_finished" field.</summary>
@@ -124,7 +100,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_can_start" field.</summary>
-    public const int IsCanStartFieldNumber = 9;
+    public const int IsCanStartFieldNumber = 14;
     private bool isCanStart_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +111,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 10;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_show_tips" field.</summary>
-    public const int IsShowTipsFieldNumber = 10;
+    public const int IsShowTipsFieldNumber = 15;
     private bool isShowTips_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +132,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isShowTips_; }
       set {
         isShowTips_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "min_finish_time" field.</summary>
+    public const int MinFinishTimeFieldNumber = 5;
+    private uint minFinishTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinFinishTime {
+      get { return minFinishTime_; }
+      set {
+        minFinishTime_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MinFinishTime != other.MinFinishTime) return false;
-      if (Id != other.Id) return false;
       if (IsFinished != other.IsFinished) return false;
       if (IsCanStart != other.IsCanStart) return false;
+      if (Id != other.Id) return false;
       if (IsShowTips != other.IsShowTips) return false;
+      if (MinFinishTime != other.MinFinishTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MinFinishTime != 0) hash ^= MinFinishTime.GetHashCode();
-      if (Id != 0) hash ^= Id.GetHashCode();
       if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (IsCanStart != false) hash ^= IsCanStart.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (IsShowTips != false) hash ^= IsShowTips.GetHashCode();
+      if (MinFinishTime != 0) hash ^= MinFinishTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,23 +198,23 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MinFinishTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(MinFinishTime);
-      }
-      if (Id != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Id);
       }
       if (IsFinished != false) {
         output.WriteRawTag(56);
         output.WriteBool(IsFinished);
       }
+      if (Id != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Id);
+      }
       if (IsCanStart != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteBool(IsCanStart);
       }
       if (IsShowTips != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsShowTips);
       }
       if (_unknownFields != null) {
@@ -228,23 +228,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MinFinishTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(MinFinishTime);
-      }
-      if (Id != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Id);
       }
       if (IsFinished != false) {
         output.WriteRawTag(56);
         output.WriteBool(IsFinished);
       }
+      if (Id != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Id);
+      }
       if (IsCanStart != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteBool(IsCanStart);
       }
       if (IsShowTips != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsShowTips);
       }
       if (_unknownFields != null) {
@@ -257,20 +257,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MinFinishTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinFinishTime);
-      }
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-      }
       if (IsFinished != false) {
         size += 1 + 1;
       }
       if (IsCanStart != false) {
         size += 1 + 1;
       }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
       if (IsShowTips != false) {
         size += 1 + 1;
+      }
+      if (MinFinishTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinFinishTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MinFinishTime != 0) {
-        MinFinishTime = other.MinFinishTime;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
-      }
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
       }
       if (other.IsCanStart != false) {
         IsCanStart = other.IsCanStart;
       }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
       if (other.IsShowTips != false) {
         IsShowTips = other.IsShowTips;
+      }
+      if (other.MinFinishTime != 0) {
+        MinFinishTime = other.MinFinishTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -314,23 +314,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             MinFinishTime = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Id = input.ReadUInt32();
             break;
           }
           case 56: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
+          case 80: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             IsCanStart = input.ReadBool();
             break;
           }
-          case 80: {
+          case 120: {
             IsShowTips = input.ReadBool();
             break;
           }
@@ -349,23 +349,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             MinFinishTime = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Id = input.ReadUInt32();
             break;
           }
           case 56: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
+          case 80: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             IsCanStart = input.ReadBool();
             break;
           }
-          case 80: {
+          case 120: {
             IsShowTips = input.ReadBool();
             break;
           }

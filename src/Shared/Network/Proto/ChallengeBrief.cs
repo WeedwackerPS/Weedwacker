@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChallengeBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRDaGFsbGVuZ2VCcmllZi5wcm90byJpCg5DaGFsbGVuZ2VCcmllZhIUCgxj",
-            "dXJfcHJvZ3Jlc3MYCSABKA0SFwoPY2hhbGxlbmdlX2luZGV4GAogASgNEhIK",
-            "CmlzX3N1Y2Nlc3MYBCABKAgSFAoMY2hhbGxlbmdlX2lkGAggASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRDaGFsbGVuZ2VCcmllZi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byJpCg5DaGFsbGVuZ2VCcmllZhIXCg9jaGFsbGVuZ2VfaW5k",
+            "ZXgYBSABKA0SFAoMY3VyX3Byb2dyZXNzGA8gASgNEhIKCmlzX3N1Y2Nlc3MY",
+            "DCABKAgSFAoMY2hhbGxlbmdlX2lkGAEgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChallengeBrief), global::Weedwacker.Shared.Network.Proto.ChallengeBrief.Parser, new[]{ "CurProgress", "ChallengeIndex", "IsSuccess", "ChallengeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChallengeBrief), global::Weedwacker.Shared.Network.Proto.ChallengeBrief.Parser, new[]{ "ChallengeIndex", "CurProgress", "IsSuccess", "ChallengeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChallengeBrief(ChallengeBrief other) : this() {
-      curProgress_ = other.curProgress_;
       challengeIndex_ = other.challengeIndex_;
+      curProgress_ = other.curProgress_;
       isSuccess_ = other.isSuccess_;
       challengeId_ = other.challengeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -85,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChallengeBrief(this);
     }
 
-    /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 9;
-    private uint curProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurProgress {
-      get { return curProgress_; }
-      set {
-        curProgress_ = value;
-      }
-    }
-
     /// <summary>Field number for the "challenge_index" field.</summary>
-    public const int ChallengeIndexFieldNumber = 10;
+    public const int ChallengeIndexFieldNumber = 5;
     private uint challengeIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,8 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cur_progress" field.</summary>
+    public const int CurProgressFieldNumber = 15;
+    private uint curProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurProgress {
+      get { return curProgress_; }
+      set {
+        curProgress_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 4;
+    public const int IsSuccessFieldNumber = 12;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,7 +122,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 8;
+    public const int ChallengeIdFieldNumber = 1;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurProgress != other.CurProgress) return false;
       if (ChallengeIndex != other.ChallengeIndex) return false;
+      if (CurProgress != other.CurProgress) return false;
       if (IsSuccess != other.IsSuccess) return false;
       if (ChallengeId != other.ChallengeId) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -159,8 +159,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
       if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
+      if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
       if (_unknownFields != null) {
@@ -181,21 +181,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsSuccess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsSuccess);
-      }
       if (ChallengeId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChallengeId);
       }
-      if (CurProgress != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurProgress);
-      }
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(ChallengeIndex);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsSuccess);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CurProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,21 +207,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsSuccess != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsSuccess);
-      }
       if (ChallengeId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChallengeId);
       }
-      if (CurProgress != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurProgress);
-      }
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(ChallengeIndex);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsSuccess);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CurProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,11 +233,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
-      }
       if (ChallengeIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
+      }
+      if (CurProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
       }
       if (IsSuccess != false) {
         size += 1 + 1;
@@ -257,11 +257,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurProgress != 0) {
-        CurProgress = other.CurProgress;
-      }
       if (other.ChallengeIndex != 0) {
         ChallengeIndex = other.ChallengeIndex;
+      }
+      if (other.CurProgress != 0) {
+        CurProgress = other.CurProgress;
       }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 64: {
+          case 8: {
             ChallengeId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurProgress = input.ReadUInt32();
+          case 40: {
+            ChallengeIndex = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ChallengeIndex = input.ReadUInt32();
+          case 96: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 120: {
+            CurProgress = input.ReadUInt32();
             break;
           }
         }
@@ -315,20 +315,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 64: {
+          case 8: {
             ChallengeId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurProgress = input.ReadUInt32();
+          case 40: {
+            ChallengeIndex = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ChallengeIndex = input.ReadUInt32();
+          case 96: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 120: {
+            CurProgress = input.ReadUInt32();
             break;
           }
         }

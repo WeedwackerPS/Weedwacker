@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeStakeRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVIb21lU3Rha2VSZWNvcmQucHJvdG8aGUhvbWVTdGFrZVBsYXlSZWNvcmQu",
-            "cHJvdG8iPAoPSG9tZVN0YWtlUmVjb3JkEikKC3JlY29yZF9saXN0GA0gAygL",
-            "MhQuSG9tZVN0YWtlUGxheVJlY29yZEIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVIb21lU3Rha2VSZWNvcmQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aGUhvbWVTdGFrZVBsYXlSZWNvcmQucHJvdG8iXAoPSG9t",
+            "ZVN0YWtlUmVjb3JkEkkKC3JlY29yZF9saXN0GAkgAygLMjQuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lU3Rha2VQbGF5UmVjb3JkYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "record_list" field.</summary>
-    public const int RecordListFieldNumber = 13;
+    public const int RecordListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecord> _repeated_recordList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecord.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecord.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecord> recordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeStakePlayRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 74: {
             recordList_.AddEntriesFrom(input, _repeated_recordList_codec);
             break;
           }
@@ -205,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 74: {
             recordList_.AddEntriesFrom(ref input, _repeated_recordList_codec);
             break;
           }

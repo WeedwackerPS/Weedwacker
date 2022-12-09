@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunaRiteAreaInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZMdW5hUml0ZUFyZWFJbmZvLnByb3RvGhxMdW5hUml0ZUhpbnRTdGF0dXNU",
-            "eXBlLnByb3RvIqEBChBMdW5hUml0ZUFyZWFJbmZvEhYKDnNhY3JpZmljZV9s",
-            "aXN0GAsgAygNEiwKC2hpbnRfc3RhdHVzGAcgASgOMhcuTHVuYVJpdGVIaW50",
-            "U3RhdHVzVHlwZRIdChVzYWNyaWZpY2VfcmV3YXJkX2xpc3QYBCADKA0SDwoH",
-            "YXJlYV9pZBgIIAEoDRIXCg9jaGFsbGVuZ2VfaW5kZXgYBiABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZMdW5hUml0ZUFyZWFJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhxMdW5hUml0ZUhpbnRTdGF0dXNUeXBlLnByb3RvIsEB",
+            "ChBMdW5hUml0ZUFyZWFJbmZvEh0KFXNhY3JpZmljZV9yZXdhcmRfbGlzdBgL",
+            "IAMoDRIPCgdhcmVhX2lkGA8gASgNEhcKD2NoYWxsZW5nZV9pbmRleBgBIAEo",
+            "DRJMCgtoaW50X3N0YXR1cxgHIAEoDjI3LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uTHVuYVJpdGVIaW50U3RhdHVzVHlwZRIWCg5zYWNyaWZp",
+            "Y2VfbGlzdBgOIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo), global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo.Parser, new[]{ "SacrificeList", "HintStatus", "SacrificeRewardList", "AreaId", "ChallengeIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo), global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo.Parser, new[]{ "SacrificeRewardList", "AreaId", "ChallengeIndex", "HintStatus", "SacrificeList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +75,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LunaRiteAreaInfo(LunaRiteAreaInfo other) : this() {
-      sacrificeList_ = other.sacrificeList_.Clone();
-      hintStatus_ = other.hintStatus_;
       sacrificeRewardList_ = other.sacrificeRewardList_.Clone();
       areaId_ = other.areaId_;
       challengeIndex_ = other.challengeIndex_;
+      hintStatus_ = other.hintStatus_;
+      sacrificeList_ = other.sacrificeList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,15 +89,39 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LunaRiteAreaInfo(this);
     }
 
-    /// <summary>Field number for the "sacrifice_list" field.</summary>
-    public const int SacrificeListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_sacrificeList_codec
+    /// <summary>Field number for the "sacrifice_reward_list" field.</summary>
+    public const int SacrificeRewardListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_sacrificeRewardList_codec
         = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> sacrificeList_ = new pbc::RepeatedField<uint>();
+    private readonly pbc::RepeatedField<uint> sacrificeRewardList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SacrificeList {
-      get { return sacrificeList_; }
+    public pbc::RepeatedField<uint> SacrificeRewardList {
+      get { return sacrificeRewardList_; }
+    }
+
+    /// <summary>Field number for the "area_id" field.</summary>
+    public const int AreaIdFieldNumber = 15;
+    private uint areaId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AreaId {
+      get { return areaId_; }
+      set {
+        areaId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_index" field.</summary>
+    public const int ChallengeIndexFieldNumber = 1;
+    private uint challengeIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeIndex {
+      get { return challengeIndex_; }
+      set {
+        challengeIndex_ = value;
+      }
     }
 
     /// <summary>Field number for the "hint_status" field.</summary>
@@ -111,39 +136,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "sacrifice_reward_list" field.</summary>
-    public const int SacrificeRewardListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_sacrificeRewardList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> sacrificeRewardList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "sacrifice_list" field.</summary>
+    public const int SacrificeListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_sacrificeList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> sacrificeList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SacrificeRewardList {
-      get { return sacrificeRewardList_; }
-    }
-
-    /// <summary>Field number for the "area_id" field.</summary>
-    public const int AreaIdFieldNumber = 8;
-    private uint areaId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AreaId {
-      get { return areaId_; }
-      set {
-        areaId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_index" field.</summary>
-    public const int ChallengeIndexFieldNumber = 6;
-    private uint challengeIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeIndex {
-      get { return challengeIndex_; }
-      set {
-        challengeIndex_ = value;
-      }
+    public pbc::RepeatedField<uint> SacrificeList {
+      get { return sacrificeList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!sacrificeList_.Equals(other.sacrificeList_)) return false;
-      if (HintStatus != other.HintStatus) return false;
       if(!sacrificeRewardList_.Equals(other.sacrificeRewardList_)) return false;
       if (AreaId != other.AreaId) return false;
       if (ChallengeIndex != other.ChallengeIndex) return false;
+      if (HintStatus != other.HintStatus) return false;
+      if(!sacrificeList_.Equals(other.sacrificeList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -173,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= sacrificeList_.GetHashCode();
-      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) hash ^= HintStatus.GetHashCode();
       hash ^= sacrificeRewardList_.GetHashCode();
       if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
+      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) hash ^= HintStatus.GetHashCode();
+      hash ^= sacrificeList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -196,20 +197,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      sacrificeRewardList_.WriteTo(output, _repeated_sacrificeRewardList_codec);
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChallengeIndex);
       }
       if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
         output.WriteRawTag(56);
         output.WriteEnum((int) HintStatus);
       }
+      sacrificeRewardList_.WriteTo(output, _repeated_sacrificeRewardList_codec);
+      sacrificeList_.WriteTo(output, _repeated_sacrificeList_codec);
       if (AreaId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(AreaId);
       }
-      sacrificeList_.WriteTo(output, _repeated_sacrificeList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -220,20 +221,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      sacrificeRewardList_.WriteTo(ref output, _repeated_sacrificeRewardList_codec);
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChallengeIndex);
       }
       if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
         output.WriteRawTag(56);
         output.WriteEnum((int) HintStatus);
       }
+      sacrificeRewardList_.WriteTo(ref output, _repeated_sacrificeRewardList_codec);
+      sacrificeList_.WriteTo(ref output, _repeated_sacrificeList_codec);
       if (AreaId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(AreaId);
       }
-      sacrificeList_.WriteTo(ref output, _repeated_sacrificeList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -244,10 +245,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += sacrificeList_.CalculateSize(_repeated_sacrificeList_codec);
-      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HintStatus);
-      }
       size += sacrificeRewardList_.CalculateSize(_repeated_sacrificeRewardList_codec);
       if (AreaId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
@@ -255,6 +252,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ChallengeIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
       }
+      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HintStatus);
+      }
+      size += sacrificeList_.CalculateSize(_repeated_sacrificeList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -267,10 +268,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      sacrificeList_.Add(other.sacrificeList_);
-      if (other.HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        HintStatus = other.HintStatus;
-      }
       sacrificeRewardList_.Add(other.sacrificeRewardList_);
       if (other.AreaId != 0) {
         AreaId = other.AreaId;
@@ -278,6 +275,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ChallengeIndex != 0) {
         ChallengeIndex = other.ChallengeIndex;
       }
+      if (other.HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
+        HintStatus = other.HintStatus;
+      }
+      sacrificeList_.Add(other.sacrificeList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -293,12 +294,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
-            sacrificeRewardList_.AddEntriesFrom(input, _repeated_sacrificeRewardList_codec);
-            break;
-          }
-          case 48: {
+          case 8: {
             ChallengeIndex = input.ReadUInt32();
             break;
           }
@@ -306,13 +302,18 @@ namespace Weedwacker.Shared.Network.Proto {
             HintStatus = (global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType) input.ReadEnum();
             break;
           }
-          case 64: {
-            AreaId = input.ReadUInt32();
-            break;
-          }
           case 90:
           case 88: {
+            sacrificeRewardList_.AddEntriesFrom(input, _repeated_sacrificeRewardList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
             sacrificeList_.AddEntriesFrom(input, _repeated_sacrificeList_codec);
+            break;
+          }
+          case 120: {
+            AreaId = input.ReadUInt32();
             break;
           }
         }
@@ -330,12 +331,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
-            sacrificeRewardList_.AddEntriesFrom(ref input, _repeated_sacrificeRewardList_codec);
-            break;
-          }
-          case 48: {
+          case 8: {
             ChallengeIndex = input.ReadUInt32();
             break;
           }
@@ -343,13 +339,18 @@ namespace Weedwacker.Shared.Network.Proto {
             HintStatus = (global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType) input.ReadEnum();
             break;
           }
-          case 64: {
-            AreaId = input.ReadUInt32();
-            break;
-          }
           case 90:
           case 88: {
+            sacrificeRewardList_.AddEntriesFrom(ref input, _repeated_sacrificeRewardList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
             sacrificeList_.AddEntriesFrom(ref input, _repeated_sacrificeList_codec);
+            break;
+          }
+          case 120: {
+            AreaId = input.ReadUInt32();
             break;
           }
         }

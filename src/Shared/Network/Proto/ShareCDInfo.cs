@@ -24,14 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShareCDInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFTaGFyZUNESW5mby5wcm90byJICgtTaGFyZUNESW5mbxINCgVpbmRleBgC",
-            "IAEoDRIVCg1jZF9zdGFydF90aW1lGA4gASgEEhMKC3NoYXJlX2NkX2lkGAwg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChFTaGFyZUNESW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byJICgtTaGFyZUNESW5mbxIVCg1jZF9zdGFydF90aW1lGAEgASgE",
+            "EhMKC3NoYXJlX2NkX2lkGAwgASgNEg0KBWluZGV4GA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShareCDInfo), global::Weedwacker.Shared.Network.Proto.ShareCDInfo.Parser, new[]{ "Index", "CdStartTime", "ShareCdId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShareCDInfo), global::Weedwacker.Shared.Network.Proto.ShareCDInfo.Parser, new[]{ "CdStartTime", "ShareCdId", "Index" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +71,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ShareCDInfo(ShareCDInfo other) : this() {
-      index_ = other.index_;
       cdStartTime_ = other.cdStartTime_;
       shareCdId_ = other.shareCdId_;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ShareCDInfo(this);
     }
 
-    /// <summary>Field number for the "index" field.</summary>
-    public const int IndexFieldNumber = 2;
-    private uint index_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Index {
-      get { return index_; }
-      set {
-        index_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cd_start_time" field.</summary>
-    public const int CdStartTimeFieldNumber = 14;
+    public const int CdStartTimeFieldNumber = 1;
     private ulong cdStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,6 +107,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 13;
+    private uint index_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Index {
+      get { return index_; }
+      set {
+        index_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -135,9 +134,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Index != other.Index) return false;
       if (CdStartTime != other.CdStartTime) return false;
       if (ShareCdId != other.ShareCdId) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Index != 0) hash ^= Index.GetHashCode();
       if (CdStartTime != 0UL) hash ^= CdStartTime.GetHashCode();
       if (ShareCdId != 0) hash ^= ShareCdId.GetHashCode();
+      if (Index != 0) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +165,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Index != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Index);
+      if (CdStartTime != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(CdStartTime);
       }
       if (ShareCdId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(ShareCdId);
       }
-      if (CdStartTime != 0UL) {
-        output.WriteRawTag(112);
-        output.WriteUInt64(CdStartTime);
+      if (Index != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Index);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +187,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Index != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Index);
+      if (CdStartTime != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(CdStartTime);
       }
       if (ShareCdId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(ShareCdId);
       }
-      if (CdStartTime != 0UL) {
-        output.WriteRawTag(112);
-        output.WriteUInt64(CdStartTime);
+      if (Index != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Index);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +209,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Index != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
-      }
       if (CdStartTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CdStartTime);
       }
       if (ShareCdId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShareCdId);
+      }
+      if (Index != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Index != 0) {
-        Index = other.Index;
-      }
       if (other.CdStartTime != 0UL) {
         CdStartTime = other.CdStartTime;
       }
       if (other.ShareCdId != 0) {
         ShareCdId = other.ShareCdId;
+      }
+      if (other.Index != 0) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Index = input.ReadUInt32();
+          case 8: {
+            CdStartTime = input.ReadUInt64();
             break;
           }
           case 96: {
             ShareCdId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CdStartTime = input.ReadUInt64();
+          case 104: {
+            Index = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +281,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Index = input.ReadUInt32();
+          case 8: {
+            CdStartTime = input.ReadUInt64();
             break;
           }
           case 96: {
             ShareCdId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CdStartTime = input.ReadUInt64();
+          case 104: {
+            Index = input.ReadUInt32();
             break;
           }
         }

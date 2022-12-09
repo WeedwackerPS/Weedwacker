@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgRemoveCardsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHQ0dNc2dSZW1vdmVDYXJkcy5wcm90bxoPR0NHUmVhc29uLnByb3RvGhFH",
-            "Q0dab25lVHlwZS5wcm90byJ6ChFHQ0dNc2dSZW1vdmVDYXJkcxIVCg1jb250",
-            "cm9sbGVyX2lkGA8gASgNEhoKBHpvbmUYCiABKA4yDC5HQ0dab25lVHlwZRIa",
-            "CgZyZWFzb24YBSABKA4yCi5HQ0dSZWFzb24SFgoOY2FyZF9ndWlkX2xpc3QY",
-            "ASADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChdHQ0dNc2dSZW1vdmVDYXJkcy5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoPR0NHUmVhc29uLnByb3RvGhFHQ0dab25lVHlwZS5w",
+            "cm90byK6AQoRR0NHTXNnUmVtb3ZlQ2FyZHMSFgoOY2FyZF9ndWlkX2xpc3QY",
+            "AiADKA0SOgoGcmVhc29uGA0gASgOMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5HQ0dSZWFzb24SFQoNY29udHJvbGxlcl9pZBgJIAEoDRI6",
+            "CgR6b25lGA8gASgOMiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5HQ0dab25lVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGReasonReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGZoneTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards), global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards.Parser, new[]{ "ControllerId", "Zone", "Reason", "CardGuidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards), global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards.Parser, new[]{ "CardGuidList", "Reason", "ControllerId", "Zone" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgRemoveCards(GCGMsgRemoveCards other) : this() {
+      cardGuidList_ = other.cardGuidList_.Clone();
+      reason_ = other.reason_;
       controllerId_ = other.controllerId_;
       zone_ = other.zone_;
-      reason_ = other.reason_;
-      cardGuidList_ = other.cardGuidList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,8 +88,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgRemoveCards(this);
     }
 
+    /// <summary>Field number for the "card_guid_list" field.</summary>
+    public const int CardGuidListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_cardGuidList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> cardGuidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CardGuidList {
+      get { return cardGuidList_; }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 13;
+    private global::Weedwacker.Shared.Network.Proto.GCGReason reason_ = global::Weedwacker.Shared.Network.Proto.GCGReason.Default;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
     /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 15;
+    public const int ControllerIdFieldNumber = 9;
     private uint controllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +124,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "zone" field.</summary>
-    public const int ZoneFieldNumber = 10;
+    public const int ZoneFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.GCGZoneType zone_ = global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,29 +133,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         zone_ = value;
       }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.GCGReason reason_ = global::Weedwacker.Shared.Network.Proto.GCGReason.Default;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "card_guid_list" field.</summary>
-    public const int CardGuidListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_cardGuidList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> cardGuidList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CardGuidList {
-      get { return cardGuidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,10 +150,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!cardGuidList_.Equals(other.cardGuidList_)) return false;
+      if (Reason != other.Reason) return false;
       if (ControllerId != other.ControllerId) return false;
       if (Zone != other.Zone) return false;
-      if (Reason != other.Reason) return false;
-      if(!cardGuidList_.Equals(other.cardGuidList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= cardGuidList_.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) hash ^= Reason.GetHashCode();
       if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (Zone != global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid) hash ^= Zone.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) hash ^= Reason.GetHashCode();
-      hash ^= cardGuidList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,17 +184,17 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       cardGuidList_.WriteTo(output, _repeated_cardGuidList_codec);
+      if (ControllerId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ControllerId);
+      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Reason);
       }
       if (Zone != global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) Zone);
-      }
-      if (ControllerId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ControllerId);
+        output.WriteEnum((int) Zone);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -206,17 +207,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       cardGuidList_.WriteTo(ref output, _repeated_cardGuidList_codec);
+      if (ControllerId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ControllerId);
+      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Reason);
       }
       if (Zone != global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) Zone);
-      }
-      if (ControllerId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ControllerId);
+        output.WriteEnum((int) Zone);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -228,16 +229,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += cardGuidList_.CalculateSize(_repeated_cardGuidList_codec);
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
       if (ControllerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
       if (Zone != global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Zone);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
-      size += cardGuidList_.CalculateSize(_repeated_cardGuidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -250,16 +251,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      cardGuidList_.Add(other.cardGuidList_);
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
+        Reason = other.Reason;
+      }
       if (other.ControllerId != 0) {
         ControllerId = other.ControllerId;
       }
       if (other.Zone != global::Weedwacker.Shared.Network.Proto.GCGZoneType.Invalid) {
         Zone = other.Zone;
       }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        Reason = other.Reason;
-      }
-      cardGuidList_.Add(other.cardGuidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -275,21 +276,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
+          case 18:
+          case 16: {
             cardGuidList_.AddEntriesFrom(input, _repeated_cardGuidList_codec);
             break;
           }
-          case 40: {
+          case 72: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GCGReason) input.ReadEnum();
             break;
           }
-          case 80: {
-            Zone = (global::Weedwacker.Shared.Network.Proto.GCGZoneType) input.ReadEnum();
-            break;
-          }
           case 120: {
-            ControllerId = input.ReadUInt32();
+            Zone = (global::Weedwacker.Shared.Network.Proto.GCGZoneType) input.ReadEnum();
             break;
           }
         }
@@ -307,21 +308,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
+          case 18:
+          case 16: {
             cardGuidList_.AddEntriesFrom(ref input, _repeated_cardGuidList_codec);
             break;
           }
-          case 40: {
+          case 72: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GCGReason) input.ReadEnum();
             break;
           }
-          case 80: {
-            Zone = (global::Weedwacker.Shared.Network.Proto.GCGZoneType) input.ReadEnum();
-            break;
-          }
           case 120: {
-            ControllerId = input.ReadUInt32();
+            Zone = (global::Weedwacker.Shared.Network.Proto.GCGZoneType) input.ReadEnum();
             break;
           }
         }

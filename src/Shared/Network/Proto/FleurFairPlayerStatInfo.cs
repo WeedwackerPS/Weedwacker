@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairPlayerStatInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1GbGV1ckZhaXJQbGF5ZXJTdGF0SW5mby5wcm90bxoUUHJvZmlsZVBpY3R1",
-            "cmUucHJvdG8iqgEKF0ZsZXVyRmFpclBsYXllclN0YXRJbmZvEhEKCW9ubGlu",
-            "ZV9pZBgLIAEoCRILCgN1aWQYCCABKA0SKAoPcHJvZmlsZV9waWN0dXJlGAEg",
-            "ASgLMg8uUHJvZmlsZVBpY3R1cmUSDwoHc3RhdF9pZBgDIAEoDRISCgpoZWFk",
-            "X2ltYWdlGAYgASgNEhEKCW5pY2tfbmFtZRgPIAEoCRINCgVwYXJhbRgFIAEo",
-            "BUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1GbGV1ckZhaXJQbGF5ZXJTdGF0SW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoUUHJvZmlsZVBpY3R1cmUucHJvdG8iygEK",
+            "F0ZsZXVyRmFpclBsYXllclN0YXRJbmZvEkgKD3Byb2ZpbGVfcGljdHVyZRgF",
+            "IAEoCzIvLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUHJvZmls",
+            "ZVBpY3R1cmUSDwoHc3RhdF9pZBgEIAEoDRISCgpoZWFkX2ltYWdlGAYgASgN",
+            "Eg0KBXBhcmFtGAggASgFEgsKA3VpZBgJIAEoDRIRCgluaWNrX25hbWUYAiAB",
+            "KAkSEQoJb25saW5lX2lkGAsgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ProfilePictureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo), global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo.Parser, new[]{ "OnlineId", "Uid", "ProfilePicture", "StatId", "HeadImage", "NickName", "Param" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo), global::Weedwacker.Shared.Network.Proto.FleurFairPlayerStatInfo.Parser, new[]{ "ProfilePicture", "StatId", "HeadImage", "Param", "Uid", "NickName", "OnlineId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,13 +75,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairPlayerStatInfo(FleurFairPlayerStatInfo other) : this() {
-      onlineId_ = other.onlineId_;
-      uid_ = other.uid_;
       profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
       statId_ = other.statId_;
       headImage_ = other.headImage_;
-      nickName_ = other.nickName_;
       param_ = other.param_;
+      uid_ = other.uid_;
+      nickName_ = other.nickName_;
+      onlineId_ = other.onlineId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,32 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FleurFairPlayerStatInfo(this);
     }
 
-    /// <summary>Field number for the "online_id" field.</summary>
-    public const int OnlineIdFieldNumber = 11;
-    private string onlineId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OnlineId {
-      get { return onlineId_; }
-      set {
-        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 8;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "profile_picture" field.</summary>
-    public const int ProfilePictureFieldNumber = 1;
+    public const int ProfilePictureFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.ProfilePicture profilePicture_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stat_id" field.</summary>
-    public const int StatIdFieldNumber = 3;
+    public const int StatIdFieldNumber = 4;
     private uint statId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,8 +127,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "param" field.</summary>
+    public const int ParamFieldNumber = 8;
+    private int param_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Param {
+      get { return param_; }
+      set {
+        param_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 9;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "nick_name" field.</summary>
-    public const int NickNameFieldNumber = 15;
+    public const int NickNameFieldNumber = 2;
     private string nickName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,15 +163,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "param" field.</summary>
-    public const int ParamFieldNumber = 5;
-    private int param_;
+    /// <summary>Field number for the "online_id" field.</summary>
+    public const int OnlineIdFieldNumber = 11;
+    private string onlineId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Param {
-      get { return param_; }
+    public string OnlineId {
+      get { return onlineId_; }
       set {
-        param_ = value;
+        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -189,13 +190,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OnlineId != other.OnlineId) return false;
-      if (Uid != other.Uid) return false;
       if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
       if (StatId != other.StatId) return false;
       if (HeadImage != other.HeadImage) return false;
-      if (NickName != other.NickName) return false;
       if (Param != other.Param) return false;
+      if (Uid != other.Uid) return false;
+      if (NickName != other.NickName) return false;
+      if (OnlineId != other.OnlineId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
       if (StatId != 0) hash ^= StatId.GetHashCode();
       if (HeadImage != 0) hash ^= HeadImage.GetHashCode();
-      if (NickName.Length != 0) hash ^= NickName.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (NickName.Length != 0) hash ^= NickName.GetHashCode();
+      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -228,33 +229,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (profilePicture_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ProfilePicture);
+      if (NickName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NickName);
       }
       if (StatId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(StatId);
       }
-      if (Param != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Param);
+      if (profilePicture_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ProfilePicture);
       }
       if (HeadImage != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(HeadImage);
       }
-      if (Uid != 0) {
+      if (Param != 0) {
         output.WriteRawTag(64);
+        output.WriteInt32(Param);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
         output.WriteUInt32(Uid);
       }
       if (OnlineId.Length != 0) {
         output.WriteRawTag(90);
         output.WriteString(OnlineId);
-      }
-      if (NickName.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(NickName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -266,33 +267,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (profilePicture_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ProfilePicture);
+      if (NickName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(NickName);
       }
       if (StatId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(StatId);
       }
-      if (Param != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Param);
+      if (profilePicture_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ProfilePicture);
       }
       if (HeadImage != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(HeadImage);
       }
-      if (Uid != 0) {
+      if (Param != 0) {
         output.WriteRawTag(64);
+        output.WriteInt32(Param);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
         output.WriteUInt32(Uid);
       }
       if (OnlineId.Length != 0) {
         output.WriteRawTag(90);
         output.WriteString(OnlineId);
-      }
-      if (NickName.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(NickName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -304,12 +305,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OnlineId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
-      }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (profilePicture_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
       }
@@ -319,11 +314,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (HeadImage != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HeadImage);
       }
+      if (Param != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Param);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
       if (NickName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NickName);
       }
-      if (Param != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Param);
+      if (OnlineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -337,12 +338,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OnlineId.Length != 0) {
-        OnlineId = other.OnlineId;
-      }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       if (other.profilePicture_ != null) {
         if (profilePicture_ == null) {
           ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
@@ -355,11 +350,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.HeadImage != 0) {
         HeadImage = other.HeadImage;
       }
+      if (other.Param != 0) {
+        Param = other.Param;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
       if (other.NickName.Length != 0) {
         NickName = other.NickName;
       }
-      if (other.Param != 0) {
-        Param = other.Param;
+      if (other.OnlineId.Length != 0) {
+        OnlineId = other.OnlineId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -376,19 +377,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 18: {
+            NickName = input.ReadString();
+            break;
+          }
+          case 32: {
+            StatId = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             if (profilePicture_ == null) {
               ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
             }
             input.ReadMessage(ProfilePicture);
-            break;
-          }
-          case 24: {
-            StatId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            Param = input.ReadInt32();
             break;
           }
           case 48: {
@@ -396,15 +397,15 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 64: {
+            Param = input.ReadInt32();
+            break;
+          }
+          case 72: {
             Uid = input.ReadUInt32();
             break;
           }
           case 90: {
             OnlineId = input.ReadString();
-            break;
-          }
-          case 122: {
-            NickName = input.ReadString();
             break;
           }
         }
@@ -422,19 +423,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 18: {
+            NickName = input.ReadString();
+            break;
+          }
+          case 32: {
+            StatId = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             if (profilePicture_ == null) {
               ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
             }
             input.ReadMessage(ProfilePicture);
-            break;
-          }
-          case 24: {
-            StatId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            Param = input.ReadInt32();
             break;
           }
           case 48: {
@@ -442,15 +443,15 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 64: {
+            Param = input.ReadInt32();
+            break;
+          }
+          case 72: {
             Uid = input.ReadUInt32();
             break;
           }
           case 90: {
             OnlineId = input.ReadString();
-            break;
-          }
-          case 122: {
-            NickName = input.ReadString();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonEnterPosInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEdW5nZW9uRW50ZXJQb3NJbmZvLnByb3RvIjkKE0R1bmdlb25FbnRlclBv",
-            "c0luZm8SEAoIcXVlc3RfaWQYDSABKA0SEAoIcG9pbnRfaWQYBiABKA1CIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlEdW5nZW9uRW50ZXJQb3NJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIjkKE0R1bmdlb25FbnRlclBvc0luZm8SEAoIcXVl",
+            "c3RfaWQYBiABKA0SEAoIcG9pbnRfaWQYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 13;
+    public const int QuestIdFieldNumber = 6;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 6;
+    public const int PointIdFieldNumber = 14;
     private uint pointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PointId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(PointId);
-      }
       if (QuestId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(QuestId);
+      }
+      if (PointId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PointId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(PointId);
-      }
       if (QuestId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(QuestId);
+      }
+      if (PointId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 48: {
-            PointId = input.ReadUInt32();
+            QuestId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            QuestId = input.ReadUInt32();
+          case 112: {
+            PointId = input.ReadUInt32();
             break;
           }
         }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 48: {
-            PointId = input.ReadUInt32();
+            QuestId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            QuestId = input.ReadUInt32();
+          case 112: {
+            PointId = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GlobalBuildingInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HbG9iYWxCdWlsZGluZ0luZm9Ob3RpZnkucHJvdG8aEkJ1aWxkaW5nSW5m",
-            "by5wcm90byJmChhHbG9iYWxCdWlsZGluZ0luZm9Ob3RpZnkSEwoLY3VycmVu",
-            "dF9udW0YBSABKA0SJAoNYnVpbGRpbmdfbGlzdBgDIAMoCzINLkJ1aWxkaW5n",
-            "SW5mbxIPCgdtYXhfbnVtGA0gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch5HbG9iYWxCdWlsZGluZ0luZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aEkJ1aWxkaW5nSW5mby5wcm90byKGAQoY",
+            "R2xvYmFsQnVpbGRpbmdJbmZvTm90aWZ5Eg8KB21heF9udW0YASABKA0SEwoL",
+            "Y3VycmVudF9udW0YAyABKA0SRAoNYnVpbGRpbmdfbGlzdBgPIAMoCzItLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQnVpbGRpbmdJbmZvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BuildingInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GlobalBuildingInfoNotify), global::Weedwacker.Shared.Network.Proto.GlobalBuildingInfoNotify.Parser, new[]{ "CurrentNum", "BuildingList", "MaxNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GlobalBuildingInfoNotify), global::Weedwacker.Shared.Network.Proto.GlobalBuildingInfoNotify.Parser, new[]{ "MaxNum", "CurrentNum", "BuildingList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5320
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5302;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GlobalBuildingInfoNotify : pb::IMessage<GlobalBuildingInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GlobalBuildingInfoNotify(GlobalBuildingInfoNotify other) : this() {
+      maxNum_ = other.maxNum_;
       currentNum_ = other.currentNum_;
       buildingList_ = other.buildingList_.Clone();
-      maxNum_ = other.maxNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GlobalBuildingInfoNotify(this);
     }
 
+    /// <summary>Field number for the "max_num" field.</summary>
+    public const int MaxNumFieldNumber = 1;
+    private uint maxNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxNum {
+      get { return maxNum_; }
+      set {
+        maxNum_ = value;
+      }
+    }
+
     /// <summary>Field number for the "current_num" field.</summary>
-    public const int CurrentNumFieldNumber = 5;
+    public const int CurrentNumFieldNumber = 3;
     private uint currentNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,26 +120,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "building_list" field.</summary>
-    public const int BuildingListFieldNumber = 3;
+    public const int BuildingListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BuildingInfo> _repeated_buildingList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.BuildingInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.BuildingInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BuildingInfo> buildingList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BuildingInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BuildingInfo> BuildingList {
       get { return buildingList_; }
-    }
-
-    /// <summary>Field number for the "max_num" field.</summary>
-    public const int MaxNumFieldNumber = 13;
-    private uint maxNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxNum {
-      get { return maxNum_; }
-      set {
-        maxNum_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (MaxNum != other.MaxNum) return false;
       if (CurrentNum != other.CurrentNum) return false;
       if(!buildingList_.Equals(other.buildingList_)) return false;
-      if (MaxNum != other.MaxNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (MaxNum != 0) hash ^= MaxNum.GetHashCode();
       if (CurrentNum != 0) hash ^= CurrentNum.GetHashCode();
       hash ^= buildingList_.GetHashCode();
-      if (MaxNum != 0) hash ^= MaxNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      buildingList_.WriteTo(output, _repeated_buildingList_codec);
-      if (CurrentNum != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurrentNum);
-      }
       if (MaxNum != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(MaxNum);
       }
+      if (CurrentNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CurrentNum);
+      }
+      buildingList_.WriteTo(output, _repeated_buildingList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -190,15 +195,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      buildingList_.WriteTo(ref output, _repeated_buildingList_codec);
-      if (CurrentNum != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurrentNum);
-      }
       if (MaxNum != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(MaxNum);
       }
+      if (CurrentNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CurrentNum);
+      }
+      buildingList_.WriteTo(ref output, _repeated_buildingList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (MaxNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxNum);
+      }
       if (CurrentNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentNum);
       }
       size += buildingList_.CalculateSize(_repeated_buildingList_codec);
-      if (MaxNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxNum);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +233,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.MaxNum != 0) {
+        MaxNum = other.MaxNum;
+      }
       if (other.CurrentNum != 0) {
         CurrentNum = other.CurrentNum;
       }
       buildingList_.Add(other.buildingList_);
-      if (other.MaxNum != 0) {
-        MaxNum = other.MaxNum;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            buildingList_.AddEntriesFrom(input, _repeated_buildingList_codec);
+          case 8: {
+            MaxNum = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 24: {
             CurrentNum = input.ReadUInt32();
             break;
           }
-          case 104: {
-            MaxNum = input.ReadUInt32();
+          case 122: {
+            buildingList_.AddEntriesFrom(input, _repeated_buildingList_codec);
             break;
           }
         }
@@ -277,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            buildingList_.AddEntriesFrom(ref input, _repeated_buildingList_codec);
+          case 8: {
+            MaxNum = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 24: {
             CurrentNum = input.ReadUInt32();
             break;
           }
-          case 104: {
-            MaxNum = input.ReadUInt32();
+          case 122: {
+            buildingList_.AddEntriesFrom(ref input, _repeated_buildingList_codec);
             break;
           }
         }

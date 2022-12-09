@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarRewardEventInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Ib21lQXZhdGFyUmV3YXJkRXZlbnRJbmZvLnByb3RvInkKGUhvbWVBdmF0",
-            "YXJSZXdhcmRFdmVudEluZm8SEQoJYXZhdGFyX2lkGAEgASgNEgwKBGd1aWQY",
-            "DCABKA0SEAoIZXZlbnRfaWQYAiABKA0SEAoIc3VpdGVfaWQYDiABKA0SFwoP",
-            "cmFuZG9tX3Bvc2l0aW9uGAkgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9Ib21lQXZhdGFyUmV3YXJkRXZlbnRJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvInkKGUhvbWVBdmF0YXJSZXdhcmRFdmVu",
+            "dEluZm8SFwoPcmFuZG9tX3Bvc2l0aW9uGAkgASgNEhAKCHN1aXRlX2lkGAsg",
+            "ASgNEgwKBGd1aWQYBiABKA0SEAoIZXZlbnRfaWQYBSABKA0SEQoJYXZhdGFy",
+            "X2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo), global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo.Parser, new[]{ "AvatarId", "Guid", "EventId", "SuiteId", "RandomPosition" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo), global::Weedwacker.Shared.Network.Proto.HomeAvatarRewardEventInfo.Parser, new[]{ "RandomPosition", "SuiteId", "Guid", "EventId", "AvatarId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarRewardEventInfo(HomeAvatarRewardEventInfo other) : this() {
-      avatarId_ = other.avatarId_;
+      randomPosition_ = other.randomPosition_;
+      suiteId_ = other.suiteId_;
       guid_ = other.guid_;
       eventId_ = other.eventId_;
-      suiteId_ = other.suiteId_;
-      randomPosition_ = other.randomPosition_;
+      avatarId_ = other.avatarId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,54 +85,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarRewardEventInfo Clone() {
       return new HomeAvatarRewardEventInfo(this);
-    }
-
-    /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 1;
-    private uint avatarId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AvatarId {
-      get { return avatarId_; }
-      set {
-        avatarId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 12;
-    private uint guid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Guid {
-      get { return guid_; }
-      set {
-        guid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "event_id" field.</summary>
-    public const int EventIdFieldNumber = 2;
-    private uint eventId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EventId {
-      get { return eventId_; }
-      set {
-        eventId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "suite_id" field.</summary>
-    public const int SuiteIdFieldNumber = 14;
-    private uint suiteId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SuiteId {
-      get { return suiteId_; }
-      set {
-        suiteId_ = value;
-      }
     }
 
     /// <summary>Field number for the "random_position" field.</summary>
@@ -144,6 +96,54 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return randomPosition_; }
       set {
         randomPosition_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "suite_id" field.</summary>
+    public const int SuiteIdFieldNumber = 11;
+    private uint suiteId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SuiteId {
+      get { return suiteId_; }
+      set {
+        suiteId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "guid" field.</summary>
+    public const int GuidFieldNumber = 6;
+    private uint guid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Guid {
+      get { return guid_; }
+      set {
+        guid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 5;
+    private uint eventId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EventId {
+      get { return eventId_; }
+      set {
+        eventId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 7;
+    private uint avatarId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarId {
+      get { return avatarId_; }
+      set {
+        avatarId_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AvatarId != other.AvatarId) return false;
+      if (RandomPosition != other.RandomPosition) return false;
+      if (SuiteId != other.SuiteId) return false;
       if (Guid != other.Guid) return false;
       if (EventId != other.EventId) return false;
-      if (SuiteId != other.SuiteId) return false;
-      if (RandomPosition != other.RandomPosition) return false;
+      if (AvatarId != other.AvatarId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (RandomPosition != 0) hash ^= RandomPosition.GetHashCode();
+      if (SuiteId != 0) hash ^= SuiteId.GetHashCode();
       if (Guid != 0) hash ^= Guid.GetHashCode();
       if (EventId != 0) hash ^= EventId.GetHashCode();
-      if (SuiteId != 0) hash ^= SuiteId.GetHashCode();
-      if (RandomPosition != 0) hash ^= RandomPosition.GetHashCode();
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,24 +197,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AvatarId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AvatarId);
-      }
       if (EventId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteUInt32(EventId);
+      }
+      if (Guid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Guid);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AvatarId);
       }
       if (RandomPosition != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(RandomPosition);
       }
-      if (Guid != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(Guid);
-      }
       if (SuiteId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(SuiteId);
       }
       if (_unknownFields != null) {
@@ -227,24 +227,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AvatarId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AvatarId);
-      }
       if (EventId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteUInt32(EventId);
+      }
+      if (Guid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Guid);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AvatarId);
       }
       if (RandomPosition != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(RandomPosition);
       }
-      if (Guid != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(Guid);
-      }
       if (SuiteId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(SuiteId);
       }
       if (_unknownFields != null) {
@@ -257,8 +257,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AvatarId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      if (RandomPosition != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandomPosition);
+      }
+      if (SuiteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SuiteId);
       }
       if (Guid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guid);
@@ -266,11 +269,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EventId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
       }
-      if (SuiteId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SuiteId);
-      }
-      if (RandomPosition != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandomPosition);
+      if (AvatarId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,8 +284,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AvatarId != 0) {
-        AvatarId = other.AvatarId;
+      if (other.RandomPosition != 0) {
+        RandomPosition = other.RandomPosition;
+      }
+      if (other.SuiteId != 0) {
+        SuiteId = other.SuiteId;
       }
       if (other.Guid != 0) {
         Guid = other.Guid;
@@ -293,11 +296,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EventId != 0) {
         EventId = other.EventId;
       }
-      if (other.SuiteId != 0) {
-        SuiteId = other.SuiteId;
-      }
-      if (other.RandomPosition != 0) {
-        RandomPosition = other.RandomPosition;
+      if (other.AvatarId != 0) {
+        AvatarId = other.AvatarId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -314,23 +314,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            AvatarId = input.ReadUInt32();
+          case 40: {
+            EventId = input.ReadUInt32();
             break;
           }
-          case 16: {
-            EventId = input.ReadUInt32();
+          case 48: {
+            Guid = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 72: {
             RandomPosition = input.ReadUInt32();
             break;
           }
-          case 96: {
-            Guid = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 88: {
             SuiteId = input.ReadUInt32();
             break;
           }
@@ -349,23 +349,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            AvatarId = input.ReadUInt32();
+          case 40: {
+            EventId = input.ReadUInt32();
             break;
           }
-          case 16: {
-            EventId = input.ReadUInt32();
+          case 48: {
+            Guid = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            AvatarId = input.ReadUInt32();
             break;
           }
           case 72: {
             RandomPosition = input.ReadUInt32();
             break;
           }
-          case 96: {
-            Guid = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 88: {
             SuiteId = input.ReadUInt32();
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetInvestigationMonsterReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHZXRJbnZlc3RpZ2F0aW9uTW9uc3RlclJlcS5wcm90byJHChpHZXRJbnZl",
-            "c3RpZ2F0aW9uTW9uc3RlclJlcRIUCgxjaXR5X2lkX2xpc3QYAyADKA0SEwoL",
-            "aXNfZm9yX21hcmsYBCABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBHZXRJbnZlc3RpZ2F0aW9uTW9uc3RlclJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJHChpHZXRJbnZlc3RpZ2F0aW9uTW9u",
+            "c3RlclJlcRITCgtpc19mb3JfbWFyaxgIIAEoCBIUCgxjaXR5X2lkX2xpc3QY",
+            "CyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetInvestigationMonsterReq), global::Weedwacker.Shared.Network.Proto.GetInvestigationMonsterReq.Parser, new[]{ "CityIdList", "IsForMark" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetInvestigationMonsterReq), global::Weedwacker.Shared.Network.Proto.GetInvestigationMonsterReq.Parser, new[]{ "IsForMark", "CityIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1901
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1930;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetInvestigationMonsterReq : pb::IMessage<GetInvestigationMonsterReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetInvestigationMonsterReq(GetInvestigationMonsterReq other) : this() {
-      cityIdList_ = other.cityIdList_.Clone();
       isForMark_ = other.isForMark_;
+      cityIdList_ = other.cityIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetInvestigationMonsterReq(this);
     }
 
-    /// <summary>Field number for the "city_id_list" field.</summary>
-    public const int CityIdListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_cityIdList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> cityIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CityIdList {
-      get { return cityIdList_; }
-    }
-
     /// <summary>Field number for the "is_for_mark" field.</summary>
-    public const int IsForMarkFieldNumber = 4;
+    public const int IsForMarkFieldNumber = 8;
     private bool isForMark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isForMark_ = value;
       }
+    }
+
+    /// <summary>Field number for the "city_id_list" field.</summary>
+    public const int CityIdListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_cityIdList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> cityIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CityIdList {
+      get { return cityIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!cityIdList_.Equals(other.cityIdList_)) return false;
       if (IsForMark != other.IsForMark) return false;
+      if(!cityIdList_.Equals(other.cityIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= cityIdList_.GetHashCode();
       if (IsForMark != false) hash ^= IsForMark.GetHashCode();
+      hash ^= cityIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      cityIdList_.WriteTo(output, _repeated_cityIdList_codec);
       if (IsForMark != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteBool(IsForMark);
       }
+      cityIdList_.WriteTo(output, _repeated_cityIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      cityIdList_.WriteTo(ref output, _repeated_cityIdList_codec);
       if (IsForMark != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteBool(IsForMark);
       }
+      cityIdList_.WriteTo(ref output, _repeated_cityIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += cityIdList_.CalculateSize(_repeated_cityIdList_codec);
       if (IsForMark != false) {
         size += 1 + 1;
       }
+      size += cityIdList_.CalculateSize(_repeated_cityIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      cityIdList_.Add(other.cityIdList_);
       if (other.IsForMark != false) {
         IsForMark = other.IsForMark;
       }
+      cityIdList_.Add(other.cityIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
-            cityIdList_.AddEntriesFrom(input, _repeated_cityIdList_codec);
+          case 64: {
+            IsForMark = input.ReadBool();
             break;
           }
-          case 32: {
-            IsForMark = input.ReadBool();
+          case 90:
+          case 88: {
+            cityIdList_.AddEntriesFrom(input, _repeated_cityIdList_codec);
             break;
           }
         }
@@ -245,13 +249,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
-            cityIdList_.AddEntriesFrom(ref input, _repeated_cityIdList_codec);
+          case 64: {
+            IsForMark = input.ReadBool();
             break;
           }
-          case 32: {
-            IsForMark = input.ReadBool();
+          case 90:
+          case 88: {
+            cityIdList_.AddEntriesFrom(ref input, _repeated_cityIdList_codec);
             break;
           }
         }

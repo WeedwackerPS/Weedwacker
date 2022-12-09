@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SealBattleProgressNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5TZWFsQmF0dGxlUHJvZ3Jlc3NOb3RpZnkucHJvdG8igQEKGFNlYWxCYXR0",
-            "bGVQcm9ncmVzc05vdGlmeRIWCg5zZWFsX2VudGl0eV9pZBgJIAEoDRIUCgxt",
-            "YXhfcHJvZ3Jlc3MYCiABKA0SEwoLc2VhbF9yYWRpdXMYBCABKA0SEAoIcHJv",
-            "Z3Jlc3MYBSABKA0SEAoIZW5kX3RpbWUYAiABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5TZWFsQmF0dGxlUHJvZ3Jlc3NOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8igQEKGFNlYWxCYXR0bGVQcm9ncmVzc05v",
+            "dGlmeRIQCghlbmRfdGltZRgFIAEoDRITCgtzZWFsX3JhZGl1cxgBIAEoDRIU",
+            "CgxtYXhfcHJvZ3Jlc3MYCSABKA0SFgoOc2VhbF9lbnRpdHlfaWQYBiABKA0S",
+            "EAoIcHJvZ3Jlc3MYBCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SealBattleProgressNotify), global::Weedwacker.Shared.Network.Proto.SealBattleProgressNotify.Parser, new[]{ "SealEntityId", "MaxProgress", "SealRadius", "Progress", "EndTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SealBattleProgressNotify), global::Weedwacker.Shared.Network.Proto.SealBattleProgressNotify.Parser, new[]{ "EndTime", "SealRadius", "MaxProgress", "SealEntityId", "Progress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 232
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 265;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SealBattleProgressNotify : pb::IMessage<SealBattleProgressNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +82,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SealBattleProgressNotify(SealBattleProgressNotify other) : this() {
-      sealEntityId_ = other.sealEntityId_;
-      maxProgress_ = other.maxProgress_;
-      sealRadius_ = other.sealRadius_;
-      progress_ = other.progress_;
       endTime_ = other.endTime_;
+      sealRadius_ = other.sealRadius_;
+      maxProgress_ = other.maxProgress_;
+      sealEntityId_ = other.sealEntityId_;
+      progress_ = other.progress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,32 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SealBattleProgressNotify(this);
     }
 
-    /// <summary>Field number for the "seal_entity_id" field.</summary>
-    public const int SealEntityIdFieldNumber = 9;
-    private uint sealEntityId_;
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 5;
+    private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SealEntityId {
-      get { return sealEntityId_; }
+    public uint EndTime {
+      get { return endTime_; }
       set {
-        sealEntityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "max_progress" field.</summary>
-    public const int MaxProgressFieldNumber = 10;
-    private uint maxProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxProgress {
-      get { return maxProgress_; }
-      set {
-        maxProgress_ = value;
+        endTime_ = value;
       }
     }
 
     /// <summary>Field number for the "seal_radius" field.</summary>
-    public const int SealRadiusFieldNumber = 4;
+    public const int SealRadiusFieldNumber = 1;
     private uint sealRadius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,8 +120,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "max_progress" field.</summary>
+    public const int MaxProgressFieldNumber = 9;
+    private uint maxProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxProgress {
+      get { return maxProgress_; }
+      set {
+        maxProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seal_entity_id" field.</summary>
+    public const int SealEntityIdFieldNumber = 6;
+    private uint sealEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SealEntityId {
+      get { return sealEntityId_; }
+      set {
+        sealEntityId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 5;
+    public const int ProgressFieldNumber = 4;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,18 +153,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return progress_; }
       set {
         progress_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 2;
-    private uint endTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
-      set {
-        endTime_ = value;
       }
     }
 
@@ -167,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SealEntityId != other.SealEntityId) return false;
-      if (MaxProgress != other.MaxProgress) return false;
-      if (SealRadius != other.SealRadius) return false;
-      if (Progress != other.Progress) return false;
       if (EndTime != other.EndTime) return false;
+      if (SealRadius != other.SealRadius) return false;
+      if (MaxProgress != other.MaxProgress) return false;
+      if (SealEntityId != other.SealEntityId) return false;
+      if (Progress != other.Progress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SealEntityId != 0) hash ^= SealEntityId.GetHashCode();
-      if (MaxProgress != 0) hash ^= MaxProgress.GetHashCode();
-      if (SealRadius != 0) hash ^= SealRadius.GetHashCode();
-      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (SealRadius != 0) hash ^= SealRadius.GetHashCode();
+      if (MaxProgress != 0) hash ^= MaxProgress.GetHashCode();
+      if (SealEntityId != 0) hash ^= SealEntityId.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,24 +206,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EndTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(EndTime);
-      }
       if (SealRadius != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(SealRadius);
       }
       if (Progress != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(Progress);
       }
+      if (EndTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EndTime);
+      }
       if (SealEntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(SealEntityId);
       }
       if (MaxProgress != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteUInt32(MaxProgress);
       }
       if (_unknownFields != null) {
@@ -232,24 +236,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EndTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(EndTime);
-      }
       if (SealRadius != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(SealRadius);
       }
       if (Progress != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(Progress);
       }
+      if (EndTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EndTime);
+      }
       if (SealEntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(SealEntityId);
       }
       if (MaxProgress != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteUInt32(MaxProgress);
       }
       if (_unknownFields != null) {
@@ -262,20 +266,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SealEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SealEntityId);
-      }
-      if (MaxProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxProgress);
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (SealRadius != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SealRadius);
       }
+      if (MaxProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxProgress);
+      }
+      if (SealEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SealEntityId);
+      }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-      }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SealEntityId != 0) {
-        SealEntityId = other.SealEntityId;
-      }
-      if (other.MaxProgress != 0) {
-        MaxProgress = other.MaxProgress;
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
       }
       if (other.SealRadius != 0) {
         SealRadius = other.SealRadius;
       }
+      if (other.MaxProgress != 0) {
+        MaxProgress = other.MaxProgress;
+      }
+      if (other.SealEntityId != 0) {
+        SealEntityId = other.SealEntityId;
+      }
       if (other.Progress != 0) {
         Progress = other.Progress;
-      }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -319,23 +323,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            EndTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 8: {
             SealRadius = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 32: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 40: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             SealEntityId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             MaxProgress = input.ReadUInt32();
             break;
           }
@@ -354,23 +358,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            EndTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 8: {
             SealRadius = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 32: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 40: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             SealEntityId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             MaxProgress = input.ReadUInt32();
             break;
           }

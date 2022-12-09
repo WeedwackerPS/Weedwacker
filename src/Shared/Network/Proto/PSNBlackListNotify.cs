@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static PSNBlackListNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQU05CbGFja0xpc3ROb3RpZnkucHJvdG8aEUZyaWVuZEJyaWVmLnByb3Rv",
-            "IjkKElBTTkJsYWNrTGlzdE5vdGlmeRIjCg1wc25fYmxhY2tsaXN0GAsgAygL",
-            "MgwuRnJpZW5kQnJpZWZCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChhQU05CbGFja0xpc3ROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEUZyaWVuZEJyaWVmLnByb3RvIlkKElBTTkJsYWNr",
+            "TGlzdE5vdGlmeRJDCg1wc25fYmxhY2tsaXN0GA0gAygLMiwuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5GcmllbmRCcmllZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4040
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4085;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PSNBlackListNotify : pb::IMessage<PSNBlackListNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "psn_blacklist" field.</summary>
-    public const int PsnBlacklistFieldNumber = 11;
+    public const int PsnBlacklistFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_psnBlacklist_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> psnBlacklist_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 106: {
             psnBlacklist_.AddEntriesFrom(input, _repeated_psnBlacklist_codec);
             break;
           }
@@ -210,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 106: {
             psnBlacklist_.AddEntriesFrom(ref input, _repeated_psnBlacklist_codec);
             break;
           }

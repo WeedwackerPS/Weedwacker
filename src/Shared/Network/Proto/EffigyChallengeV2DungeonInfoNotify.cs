@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeV2DungeonInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihFZmZpZ3lDaGFsbGVuZ2VWMkR1bmdlb25JbmZvTm90aWZ5LnByb3RvImsK",
-            "IkVmZmlneUNoYWxsZW5nZVYyRHVuZ2VvbkluZm9Ob3RpZnkSIQoZY2hhbGxl",
-            "bmdlX21vZGVfZGlmZmljdWx0eRgCIAEoDRIQCghza2lsbF9ubxgEIAEoDRIQ",
-            "CghsZXZlbF9pZBgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "CihFZmZpZ3lDaGFsbGVuZ2VWMkR1bmdlb25JbmZvTm90aWZ5LnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvImsKIkVmZmlneUNoYWxs",
+            "ZW5nZVYyRHVuZ2VvbkluZm9Ob3RpZnkSIQoZY2hhbGxlbmdlX21vZGVfZGlm",
+            "ZmljdWx0eRgNIAEoDRIQCghza2lsbF9ubxgPIAEoDRIQCghsZXZlbF9pZBgC",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 22835
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 24761;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EffigyChallengeV2DungeonInfoNotify : pb::IMessage<EffigyChallengeV2DungeonInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
-    public const int ChallengeModeDifficultyFieldNumber = 2;
+    public const int ChallengeModeDifficultyFieldNumber = 13;
     private uint challengeModeDifficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "skill_no" field.</summary>
-    public const int SkillNoFieldNumber = 4;
+    public const int SkillNoFieldNumber = 15;
     private uint skillNo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 13;
+    public const int LevelIdFieldNumber = 2;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeModeDifficulty != 0) {
+      if (LevelId != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(LevelId);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(104);
         output.WriteUInt32(ChallengeModeDifficulty);
       }
       if (SkillNo != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(120);
         output.WriteUInt32(SkillNo);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeModeDifficulty != 0) {
+      if (LevelId != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(LevelId);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(104);
         output.WriteUInt32(ChallengeModeDifficulty);
       }
       if (SkillNo != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(120);
         output.WriteUInt32(SkillNo);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -262,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            ChallengeModeDifficulty = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            SkillNo = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
           case 104: {
-            LevelId = input.ReadUInt32();
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SkillNo = input.ReadUInt32();
             break;
           }
         }
@@ -289,15 +293,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            ChallengeModeDifficulty = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            SkillNo = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
           case 104: {
-            LevelId = input.ReadUInt32();
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SkillNo = input.ReadUInt32();
             break;
           }
         }

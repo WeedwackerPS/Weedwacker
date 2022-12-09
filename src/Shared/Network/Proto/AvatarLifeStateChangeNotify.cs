@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarLifeStateChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBdmF0YXJMaWZlU3RhdGVDaGFuZ2VOb3RpZnkucHJvdG8aE1BsYXllckRp",
-            "ZVR5cGUucHJvdG8aEFNlcnZlckJ1ZmYucHJvdG8i2AEKG0F2YXRhckxpZmVT",
-            "dGF0ZUNoYW5nZU5vdGlmeRISCgpsaWZlX3N0YXRlGA0gASgNEhIKCmF0dGFj",
-            "a190YWcYCiABKAkSIAoIZGllX3R5cGUYAiABKA4yDi5QbGF5ZXJEaWVUeXBl",
-            "EiUKEHNlcnZlcl9idWZmX2xpc3QYDCADKAsyCy5TZXJ2ZXJCdWZmEhkKEW1v",
-            "dmVfcmVsaWFibGVfc2VxGAUgASgNEhgKEHNvdXJjZV9lbnRpdHlfaWQYAyAB",
-            "KA0SEwoLYXZhdGFyX2d1aWQYCyABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFBdmF0YXJMaWZlU3RhdGVDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aE1BsYXllckRpZVR5cGUucHJvdG8a",
+            "EFNlcnZlckJ1ZmYucHJvdG8imAIKG0F2YXRhckxpZmVTdGF0ZUNoYW5nZU5v",
+            "dGlmeRIYChBzb3VyY2VfZW50aXR5X2lkGAsgASgNEkUKEHNlcnZlcl9idWZm",
+            "X2xpc3QYDiADKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LlNlcnZlckJ1ZmYSGQoRbW92ZV9yZWxpYWJsZV9zZXEYDCABKA0SEgoKbGlm",
+            "ZV9zdGF0ZRgGIAEoDRJACghkaWVfdHlwZRgFIAEoDjIuLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uUGxheWVyRGllVHlwZRISCgphdHRhY2tf",
+            "dGFnGA8gASgJEhMKC2F2YXRhcl9ndWlkGAIgASgEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerDieTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ServerBuffReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarLifeStateChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarLifeStateChangeNotify.Parser, new[]{ "LifeState", "AttackTag", "DieType", "ServerBuffList", "MoveReliableSeq", "SourceEntityId", "AvatarGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarLifeStateChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarLifeStateChangeNotify.Parser, new[]{ "SourceEntityId", "ServerBuffList", "MoveReliableSeq", "LifeState", "DieType", "AttackTag", "AvatarGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1290
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1247;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarLifeStateChangeNotify : pb::IMessage<AvatarLifeStateChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,12 +86,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarLifeStateChangeNotify(AvatarLifeStateChangeNotify other) : this() {
-      lifeState_ = other.lifeState_;
-      attackTag_ = other.attackTag_;
-      dieType_ = other.dieType_;
+      sourceEntityId_ = other.sourceEntityId_;
       serverBuffList_ = other.serverBuffList_.Clone();
       moveReliableSeq_ = other.moveReliableSeq_;
-      sourceEntityId_ = other.sourceEntityId_;
+      lifeState_ = other.lifeState_;
+      dieType_ = other.dieType_;
+      attackTag_ = other.attackTag_;
       avatarGuid_ = other.avatarGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -97,67 +102,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarLifeStateChangeNotify(this);
     }
 
-    /// <summary>Field number for the "life_state" field.</summary>
-    public const int LifeStateFieldNumber = 13;
-    private uint lifeState_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LifeState {
-      get { return lifeState_; }
-      set {
-        lifeState_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "attack_tag" field.</summary>
-    public const int AttackTagFieldNumber = 10;
-    private string attackTag_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AttackTag {
-      get { return attackTag_; }
-      set {
-        attackTag_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "die_type" field.</summary>
-    public const int DieTypeFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.PlayerDieType dieType_ = global::Weedwacker.Shared.Network.Proto.PlayerDieType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.PlayerDieType DieType {
-      get { return dieType_; }
-      set {
-        dieType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "server_buff_list" field.</summary>
-    public const int ServerBuffListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
-      get { return serverBuffList_; }
-    }
-
-    /// <summary>Field number for the "move_reliable_seq" field.</summary>
-    public const int MoveReliableSeqFieldNumber = 5;
-    private uint moveReliableSeq_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MoveReliableSeq {
-      get { return moveReliableSeq_; }
-      set {
-        moveReliableSeq_ = value;
-      }
-    }
-
     /// <summary>Field number for the "source_entity_id" field.</summary>
-    public const int SourceEntityIdFieldNumber = 3;
+    public const int SourceEntityIdFieldNumber = 11;
     private uint sourceEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,8 +114,67 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "server_buff_list" field.</summary>
+    public const int ServerBuffListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
+      get { return serverBuffList_; }
+    }
+
+    /// <summary>Field number for the "move_reliable_seq" field.</summary>
+    public const int MoveReliableSeqFieldNumber = 12;
+    private uint moveReliableSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MoveReliableSeq {
+      get { return moveReliableSeq_; }
+      set {
+        moveReliableSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "life_state" field.</summary>
+    public const int LifeStateFieldNumber = 6;
+    private uint lifeState_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LifeState {
+      get { return lifeState_; }
+      set {
+        lifeState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "die_type" field.</summary>
+    public const int DieTypeFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.PlayerDieType dieType_ = global::Weedwacker.Shared.Network.Proto.PlayerDieType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.PlayerDieType DieType {
+      get { return dieType_; }
+      set {
+        dieType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attack_tag" field.</summary>
+    public const int AttackTagFieldNumber = 15;
+    private string attackTag_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AttackTag {
+      get { return attackTag_; }
+      set {
+        attackTag_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 11;
+    public const int AvatarGuidFieldNumber = 2;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -195,12 +200,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LifeState != other.LifeState) return false;
-      if (AttackTag != other.AttackTag) return false;
-      if (DieType != other.DieType) return false;
+      if (SourceEntityId != other.SourceEntityId) return false;
       if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
       if (MoveReliableSeq != other.MoveReliableSeq) return false;
-      if (SourceEntityId != other.SourceEntityId) return false;
+      if (LifeState != other.LifeState) return false;
+      if (DieType != other.DieType) return false;
+      if (AttackTag != other.AttackTag) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -209,12 +214,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LifeState != 0) hash ^= LifeState.GetHashCode();
-      if (AttackTag.Length != 0) hash ^= AttackTag.GetHashCode();
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) hash ^= DieType.GetHashCode();
+      if (SourceEntityId != 0) hash ^= SourceEntityId.GetHashCode();
       hash ^= serverBuffList_.GetHashCode();
       if (MoveReliableSeq != 0) hash ^= MoveReliableSeq.GetHashCode();
-      if (SourceEntityId != 0) hash ^= SourceEntityId.GetHashCode();
+      if (LifeState != 0) hash ^= LifeState.GetHashCode();
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) hash ^= DieType.GetHashCode();
+      if (AttackTag.Length != 0) hash ^= AttackTag.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -234,30 +239,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+      if (AvatarGuid != 0UL) {
         output.WriteRawTag(16);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        output.WriteRawTag(40);
         output.WriteEnum((int) DieType);
       }
+      if (LifeState != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LifeState);
+      }
       if (SourceEntityId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteUInt32(SourceEntityId);
       }
       if (MoveReliableSeq != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(MoveReliableSeq);
       }
-      if (AttackTag.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(AttackTag);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
-        output.WriteUInt64(AvatarGuid);
-      }
       serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
-      if (LifeState != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LifeState);
+      if (AttackTag.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(AttackTag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -269,30 +274,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+      if (AvatarGuid != 0UL) {
         output.WriteRawTag(16);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        output.WriteRawTag(40);
         output.WriteEnum((int) DieType);
       }
+      if (LifeState != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LifeState);
+      }
       if (SourceEntityId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteUInt32(SourceEntityId);
       }
       if (MoveReliableSeq != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(MoveReliableSeq);
       }
-      if (AttackTag.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(AttackTag);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
-        output.WriteUInt64(AvatarGuid);
-      }
       serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
-      if (LifeState != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LifeState);
+      if (AttackTag.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(AttackTag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -304,21 +309,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LifeState != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
-      }
-      if (AttackTag.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AttackTag);
-      }
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
+      if (SourceEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceEntityId);
       }
       size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
       if (MoveReliableSeq != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MoveReliableSeq);
       }
-      if (SourceEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceEntityId);
+      if (LifeState != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
+      }
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
+      }
+      if (AttackTag.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AttackTag);
       }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
@@ -335,21 +340,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LifeState != 0) {
-        LifeState = other.LifeState;
-      }
-      if (other.AttackTag.Length != 0) {
-        AttackTag = other.AttackTag;
-      }
-      if (other.DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        DieType = other.DieType;
+      if (other.SourceEntityId != 0) {
+        SourceEntityId = other.SourceEntityId;
       }
       serverBuffList_.Add(other.serverBuffList_);
       if (other.MoveReliableSeq != 0) {
         MoveReliableSeq = other.MoveReliableSeq;
       }
-      if (other.SourceEntityId != 0) {
-        SourceEntityId = other.SourceEntityId;
+      if (other.LifeState != 0) {
+        LifeState = other.LifeState;
+      }
+      if (other.DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        DieType = other.DieType;
+      }
+      if (other.AttackTag.Length != 0) {
+        AttackTag = other.AttackTag;
       }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
@@ -370,31 +375,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
-            break;
-          }
-          case 24: {
-            SourceEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            MoveReliableSeq = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            AttackTag = input.ReadString();
-            break;
-          }
-          case 88: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 98: {
+          case 40: {
+            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            SourceEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            MoveReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
             break;
           }
-          case 104: {
-            LifeState = input.ReadUInt32();
+          case 122: {
+            AttackTag = input.ReadString();
             break;
           }
         }
@@ -413,31 +418,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
-            break;
-          }
-          case 24: {
-            SourceEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            MoveReliableSeq = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            AttackTag = input.ReadString();
-            break;
-          }
-          case 88: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 98: {
+          case 40: {
+            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            SourceEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            MoveReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
             break;
           }
-          case 104: {
-            LifeState = input.ReadUInt32();
+          case 122: {
+            AttackTag = input.ReadString();
             break;
           }
         }

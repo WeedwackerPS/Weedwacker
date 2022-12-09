@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AddNoGachaAvatarCardNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBZGROb0dhY2hhQXZhdGFyQ2FyZE5vdGlmeS5wcm90bxomQWRkTm9HYWNo",
-            "YUF2YXRhckNhcmRUcmFuc2Zlckl0ZW0ucHJvdG8i4gEKGkFkZE5vR2FjaGFB",
-            "dmF0YXJDYXJkTm90aWZ5Ej0KEnRyYW5zZmVyX2l0ZW1fbGlzdBgEIAMoCzIh",
-            "LkFkZE5vR2FjaGFBdmF0YXJDYXJkVHJhbnNmZXJJdGVtEh0KFWluaXRpYWxf",
-            "cHJvbW90ZV9sZXZlbBgCIAEoDRIRCglhdmF0YXJfaWQYCCABKA0SGwoTaXNf",
-            "dHJhbnNmZXJfdG9faXRlbRgGIAEoCBIOCgZyZWFzb24YCSABKA0SFQoNaW5p",
-            "dGlhbF9sZXZlbBgKIAEoDRIPCgdpdGVtX2lkGA4gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBZGROb0dhY2hhQXZhdGFyQ2FyZE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxomQWRkTm9HYWNoYUF2YXRhckNhcmRU",
+            "cmFuc2Zlckl0ZW0ucHJvdG8ihgIKGkFkZE5vR2FjaGFBdmF0YXJDYXJkTm90",
+            "aWZ5Eg4KBnJlYXNvbhgJIAEoDRIbChNVbmszMzAwX01HQVBIUE9MS0tFGAcg",
+            "ASgNEg8KB2l0ZW1faWQYAiABKA0SEQoJYXZhdGFyX2lkGAQgASgNEhsKE2lz",
+            "X3RyYW5zZmVyX3RvX2l0ZW0YDiABKAgSGwoTVW5rMzMwMF9HUEJJTkFMTUZE",
+            "RhgIIAEoDRJdChJ0cmFuc2Zlcl9pdGVtX2xpc3QYBiADKAsyQS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFkZE5vR2FjaGFBdmF0YXJDYXJk",
+            "VHJhbnNmZXJJdGVtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardNotify), global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardNotify.Parser, new[]{ "TransferItemList", "InitialPromoteLevel", "AvatarId", "IsTransferToItem", "Reason", "InitialLevel", "ItemId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardNotify), global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardNotify.Parser, new[]{ "Reason", "Unk3300MGAPHPOLKKE", "ItemId", "AvatarId", "IsTransferToItem", "Unk3300GPBINALMFDF", "TransferItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1655
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1610;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AddNoGachaAvatarCardNotify : pb::IMessage<AddNoGachaAvatarCardNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,13 +86,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddNoGachaAvatarCardNotify(AddNoGachaAvatarCardNotify other) : this() {
-      transferItemList_ = other.transferItemList_.Clone();
-      initialPromoteLevel_ = other.initialPromoteLevel_;
+      reason_ = other.reason_;
+      unk3300MGAPHPOLKKE_ = other.unk3300MGAPHPOLKKE_;
+      itemId_ = other.itemId_;
       avatarId_ = other.avatarId_;
       isTransferToItem_ = other.isTransferToItem_;
-      reason_ = other.reason_;
-      initialLevel_ = other.initialLevel_;
-      itemId_ = other.itemId_;
+      unk3300GPBINALMFDF_ = other.unk3300GPBINALMFDF_;
+      transferItemList_ = other.transferItemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,53 +100,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddNoGachaAvatarCardNotify Clone() {
       return new AddNoGachaAvatarCardNotify(this);
-    }
-
-    /// <summary>Field number for the "transfer_item_list" field.</summary>
-    public const int TransferItemListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> _repeated_transferItemList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> transferItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> TransferItemList {
-      get { return transferItemList_; }
-    }
-
-    /// <summary>Field number for the "initial_promote_level" field.</summary>
-    public const int InitialPromoteLevelFieldNumber = 2;
-    private uint initialPromoteLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint InitialPromoteLevel {
-      get { return initialPromoteLevel_; }
-      set {
-        initialPromoteLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 8;
-    private uint avatarId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AvatarId {
-      get { return avatarId_; }
-      set {
-        avatarId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_transfer_to_item" field.</summary>
-    public const int IsTransferToItemFieldNumber = 6;
-    private bool isTransferToItem_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTransferToItem {
-      get { return isTransferToItem_; }
-      set {
-        isTransferToItem_ = value;
-      }
     }
 
     /// <summary>Field number for the "reason" field.</summary>
@@ -156,20 +114,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "initial_level" field.</summary>
-    public const int InitialLevelFieldNumber = 10;
-    private uint initialLevel_;
+    /// <summary>Field number for the "Unk3300_MGAPHPOLKKE" field.</summary>
+    public const int Unk3300MGAPHPOLKKEFieldNumber = 7;
+    private uint unk3300MGAPHPOLKKE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint InitialLevel {
-      get { return initialLevel_; }
+    public uint Unk3300MGAPHPOLKKE {
+      get { return unk3300MGAPHPOLKKE_; }
       set {
-        initialLevel_ = value;
+        unk3300MGAPHPOLKKE_ = value;
       }
     }
 
     /// <summary>Field number for the "item_id" field.</summary>
-    public const int ItemIdFieldNumber = 14;
+    public const int ItemIdFieldNumber = 2;
     private uint itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -178,6 +136,53 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         itemId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 4;
+    private uint avatarId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarId {
+      get { return avatarId_; }
+      set {
+        avatarId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_transfer_to_item" field.</summary>
+    public const int IsTransferToItemFieldNumber = 14;
+    private bool isTransferToItem_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTransferToItem {
+      get { return isTransferToItem_; }
+      set {
+        isTransferToItem_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GPBINALMFDF" field.</summary>
+    public const int Unk3300GPBINALMFDFFieldNumber = 8;
+    private uint unk3300GPBINALMFDF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GPBINALMFDF {
+      get { return unk3300GPBINALMFDF_; }
+      set {
+        unk3300GPBINALMFDF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "transfer_item_list" field.</summary>
+    public const int TransferItemListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> _repeated_transferItemList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> transferItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AddNoGachaAvatarCardTransferItem> TransferItemList {
+      get { return transferItemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -195,13 +200,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!transferItemList_.Equals(other.transferItemList_)) return false;
-      if (InitialPromoteLevel != other.InitialPromoteLevel) return false;
+      if (Reason != other.Reason) return false;
+      if (Unk3300MGAPHPOLKKE != other.Unk3300MGAPHPOLKKE) return false;
+      if (ItemId != other.ItemId) return false;
       if (AvatarId != other.AvatarId) return false;
       if (IsTransferToItem != other.IsTransferToItem) return false;
-      if (Reason != other.Reason) return false;
-      if (InitialLevel != other.InitialLevel) return false;
-      if (ItemId != other.ItemId) return false;
+      if (Unk3300GPBINALMFDF != other.Unk3300GPBINALMFDF) return false;
+      if(!transferItemList_.Equals(other.transferItemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= transferItemList_.GetHashCode();
-      if (InitialPromoteLevel != 0) hash ^= InitialPromoteLevel.GetHashCode();
+      if (Reason != 0) hash ^= Reason.GetHashCode();
+      if (Unk3300MGAPHPOLKKE != 0) hash ^= Unk3300MGAPHPOLKKE.GetHashCode();
+      if (ItemId != 0) hash ^= ItemId.GetHashCode();
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (IsTransferToItem != false) hash ^= IsTransferToItem.GetHashCode();
-      if (Reason != 0) hash ^= Reason.GetHashCode();
-      if (InitialLevel != 0) hash ^= InitialLevel.GetHashCode();
-      if (ItemId != 0) hash ^= ItemId.GetHashCode();
+      if (Unk3300GPBINALMFDF != 0) hash ^= Unk3300GPBINALMFDF.GetHashCode();
+      hash ^= transferItemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -234,30 +239,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (InitialPromoteLevel != 0) {
+      if (ItemId != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(InitialPromoteLevel);
-      }
-      transferItemList_.WriteTo(output, _repeated_transferItemList_codec);
-      if (IsTransferToItem != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsTransferToItem);
+        output.WriteUInt32(ItemId);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(AvatarId);
+      }
+      transferItemList_.WriteTo(output, _repeated_transferItemList_codec);
+      if (Unk3300MGAPHPOLKKE != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300MGAPHPOLKKE);
+      }
+      if (Unk3300GPBINALMFDF != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300GPBINALMFDF);
       }
       if (Reason != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(Reason);
       }
-      if (InitialLevel != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(InitialLevel);
-      }
-      if (ItemId != 0) {
+      if (IsTransferToItem != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(ItemId);
+        output.WriteBool(IsTransferToItem);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -269,30 +274,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (InitialPromoteLevel != 0) {
+      if (ItemId != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(InitialPromoteLevel);
-      }
-      transferItemList_.WriteTo(ref output, _repeated_transferItemList_codec);
-      if (IsTransferToItem != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsTransferToItem);
+        output.WriteUInt32(ItemId);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteUInt32(AvatarId);
+      }
+      transferItemList_.WriteTo(ref output, _repeated_transferItemList_codec);
+      if (Unk3300MGAPHPOLKKE != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300MGAPHPOLKKE);
+      }
+      if (Unk3300GPBINALMFDF != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300GPBINALMFDF);
       }
       if (Reason != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(Reason);
       }
-      if (InitialLevel != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(InitialLevel);
-      }
-      if (ItemId != 0) {
+      if (IsTransferToItem != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(ItemId);
+        output.WriteBool(IsTransferToItem);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -304,9 +309,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += transferItemList_.CalculateSize(_repeated_transferItemList_codec);
-      if (InitialPromoteLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InitialPromoteLevel);
+      if (Reason != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Reason);
+      }
+      if (Unk3300MGAPHPOLKKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MGAPHPOLKKE);
+      }
+      if (ItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
@@ -314,15 +324,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsTransferToItem != false) {
         size += 1 + 1;
       }
-      if (Reason != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Reason);
+      if (Unk3300GPBINALMFDF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GPBINALMFDF);
       }
-      if (InitialLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InitialLevel);
-      }
-      if (ItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
-      }
+      size += transferItemList_.CalculateSize(_repeated_transferItemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -335,9 +340,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      transferItemList_.Add(other.transferItemList_);
-      if (other.InitialPromoteLevel != 0) {
-        InitialPromoteLevel = other.InitialPromoteLevel;
+      if (other.Reason != 0) {
+        Reason = other.Reason;
+      }
+      if (other.Unk3300MGAPHPOLKKE != 0) {
+        Unk3300MGAPHPOLKKE = other.Unk3300MGAPHPOLKKE;
+      }
+      if (other.ItemId != 0) {
+        ItemId = other.ItemId;
       }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
@@ -345,15 +355,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsTransferToItem != false) {
         IsTransferToItem = other.IsTransferToItem;
       }
-      if (other.Reason != 0) {
-        Reason = other.Reason;
+      if (other.Unk3300GPBINALMFDF != 0) {
+        Unk3300GPBINALMFDF = other.Unk3300GPBINALMFDF;
       }
-      if (other.InitialLevel != 0) {
-        InitialLevel = other.InitialLevel;
-      }
-      if (other.ItemId != 0) {
-        ItemId = other.ItemId;
-      }
+      transferItemList_.Add(other.transferItemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -370,31 +375,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            InitialPromoteLevel = input.ReadUInt32();
+            ItemId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             transferItemList_.AddEntriesFrom(input, _repeated_transferItemList_codec);
             break;
           }
-          case 48: {
-            IsTransferToItem = input.ReadBool();
+          case 56: {
+            Unk3300MGAPHPOLKKE = input.ReadUInt32();
             break;
           }
           case 64: {
-            AvatarId = input.ReadUInt32();
+            Unk3300GPBINALMFDF = input.ReadUInt32();
             break;
           }
           case 72: {
             Reason = input.ReadUInt32();
             break;
           }
-          case 80: {
-            InitialLevel = input.ReadUInt32();
-            break;
-          }
           case 112: {
-            ItemId = input.ReadUInt32();
+            IsTransferToItem = input.ReadBool();
             break;
           }
         }
@@ -413,31 +418,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            InitialPromoteLevel = input.ReadUInt32();
+            ItemId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             transferItemList_.AddEntriesFrom(ref input, _repeated_transferItemList_codec);
             break;
           }
-          case 48: {
-            IsTransferToItem = input.ReadBool();
+          case 56: {
+            Unk3300MGAPHPOLKKE = input.ReadUInt32();
             break;
           }
           case 64: {
-            AvatarId = input.ReadUInt32();
+            Unk3300GPBINALMFDF = input.ReadUInt32();
             break;
           }
           case 72: {
             Reason = input.ReadUInt32();
             break;
           }
-          case 80: {
-            InitialLevel = input.ReadUInt32();
-            break;
-          }
           case 112: {
-            ItemId = input.ReadUInt32();
+            IsTransferToItem = input.ReadBool();
             break;
           }
         }

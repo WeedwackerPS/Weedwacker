@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetRecentMpPlayerListRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HZXRSZWNlbnRNcFBsYXllckxpc3RSc3AucHJvdG8aEUZyaWVuZEJyaWVm",
-            "LnByb3RvIl4KGEdldFJlY2VudE1wUGxheWVyTGlzdFJzcBIPCgdyZXRjb2Rl",
-            "GA0gASgFEjEKG3JlY2VudF9tcF9wbGF5ZXJfYnJpZWZfbGlzdBgOIAMoCzIM",
-            "LkZyaWVuZEJyaWVmQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "Ch5HZXRSZWNlbnRNcFBsYXllckxpc3RSc3AucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aEUZyaWVuZEJyaWVmLnByb3RvIn4KGEdl",
+            "dFJlY2VudE1wUGxheWVyTGlzdFJzcBJRChtyZWNlbnRfbXBfcGxheWVyX2Jy",
+            "aWVmX2xpc3QYCSADKAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkZyaWVuZEJyaWVmEg8KB3JldGNvZGUYDSABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetRecentMpPlayerListRsp), global::Weedwacker.Shared.Network.Proto.GetRecentMpPlayerListRsp.Parser, new[]{ "Retcode", "RecentMpPlayerBriefList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetRecentMpPlayerListRsp), global::Weedwacker.Shared.Network.Proto.GetRecentMpPlayerListRsp.Parser, new[]{ "RecentMpPlayerBriefList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4050
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4046;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetRecentMpPlayerListRsp : pb::IMessage<GetRecentMpPlayerListRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetRecentMpPlayerListRsp(GetRecentMpPlayerListRsp other) : this() {
-      retcode_ = other.retcode_;
       recentMpPlayerBriefList_ = other.recentMpPlayerBriefList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,6 +92,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetRecentMpPlayerListRsp Clone() {
       return new GetRecentMpPlayerListRsp(this);
+    }
+
+    /// <summary>Field number for the "recent_mp_player_brief_list" field.</summary>
+    public const int RecentMpPlayerBriefListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_recentMpPlayerBriefList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> recentMpPlayerBriefList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> RecentMpPlayerBriefList {
+      get { return recentMpPlayerBriefList_; }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -100,17 +115,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "recent_mp_player_brief_list" field.</summary>
-    public const int RecentMpPlayerBriefListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_recentMpPlayerBriefList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> recentMpPlayerBriefList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> RecentMpPlayerBriefList {
-      get { return recentMpPlayerBriefList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!recentMpPlayerBriefList_.Equals(other.recentMpPlayerBriefList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= recentMpPlayerBriefList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      recentMpPlayerBriefList_.WriteTo(output, _repeated_recentMpPlayerBriefList_codec);
       if (Retcode != 0) {
         output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
-      recentMpPlayerBriefList_.WriteTo(output, _repeated_recentMpPlayerBriefList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      recentMpPlayerBriefList_.WriteTo(ref output, _repeated_recentMpPlayerBriefList_codec);
       if (Retcode != 0) {
         output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
-      recentMpPlayerBriefList_.WriteTo(ref output, _repeated_recentMpPlayerBriefList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -187,10 +191,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += recentMpPlayerBriefList_.CalculateSize(_repeated_recentMpPlayerBriefList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += recentMpPlayerBriefList_.CalculateSize(_repeated_recentMpPlayerBriefList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -203,10 +207,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      recentMpPlayerBriefList_.Add(other.recentMpPlayerBriefList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      recentMpPlayerBriefList_.Add(other.recentMpPlayerBriefList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -222,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 74: {
+            recentMpPlayerBriefList_.AddEntriesFrom(input, _repeated_recentMpPlayerBriefList_codec);
             break;
           }
-          case 114: {
-            recentMpPlayerBriefList_.AddEntriesFrom(input, _repeated_recentMpPlayerBriefList_codec);
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -245,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 74: {
+            recentMpPlayerBriefList_.AddEntriesFrom(ref input, _repeated_recentMpPlayerBriefList_codec);
             break;
           }
-          case 114: {
-            recentMpPlayerBriefList_.AddEntriesFrom(ref input, _repeated_recentMpPlayerBriefList_codec);
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

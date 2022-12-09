@@ -24,23 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarSkillDepotChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBdmF0YXJTa2lsbERlcG90Q2hhbmdlTm90aWZ5LnByb3RvItIDChxBdmF0",
-            "YXJTa2lsbERlcG90Q2hhbmdlTm90aWZ5EhYKDnNraWxsX2RlcG90X2lkGA8g",
-            "ASgNEl8KG3Byb3VkX3NraWxsX2V4dHJhX2xldmVsX21hcBgOIAMoCzI6LkF2",
-            "YXRhclNraWxsRGVwb3RDaGFuZ2VOb3RpZnkuUHJvdWRTa2lsbEV4dHJhTGV2",
-            "ZWxNYXBFbnRyeRIWCg50YWxlbnRfaWRfbGlzdBgJIAMoDRIYChBwcm91ZF9z",
-            "a2lsbF9saXN0GAQgAygNEh4KFmNvcmVfcHJvdWRfc2tpbGxfbGV2ZWwYAiAB",
-            "KA0SEQoJZW50aXR5X2lkGAcgASgNEhMKC2F2YXRhcl9ndWlkGAwgASgEEkkK",
-            "D3NraWxsX2xldmVsX21hcBgDIAMoCzIwLkF2YXRhclNraWxsRGVwb3RDaGFu",
-            "Z2VOb3RpZnkuU2tpbGxMZXZlbE1hcEVudHJ5Gj4KHFByb3VkU2tpbGxFeHRy",
-            "YUxldmVsTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
-            "ARo0ChJTa2lsbExldmVsTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiJBdmF0YXJTa2lsbERlcG90Q2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIpIEChxBdmF0YXJTa2lsbERlcG90",
+            "Q2hhbmdlTm90aWZ5En8KG3Byb3VkX3NraWxsX2V4dHJhX2xldmVsX21hcBgJ",
+            "IAMoCzJaLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZhdGFy",
+            "U2tpbGxEZXBvdENoYW5nZU5vdGlmeS5Qcm91ZFNraWxsRXh0cmFMZXZlbE1h",
+            "cEVudHJ5EhgKEHByb3VkX3NraWxsX2xpc3QYAyADKA0SEQoJZW50aXR5X2lk",
+            "GAUgASgNEhMKC2F2YXRhcl9ndWlkGAcgASgEEmkKD3NraWxsX2xldmVsX21h",
+            "cBgBIAMoCzJQLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZh",
+            "dGFyU2tpbGxEZXBvdENoYW5nZU5vdGlmeS5Ta2lsbExldmVsTWFwRW50cnkS",
+            "FgoOc2tpbGxfZGVwb3RfaWQYDSABKA0SFgoOdGFsZW50X2lkX2xpc3QYDiAD",
+            "KA0SHgoWY29yZV9wcm91ZF9za2lsbF9sZXZlbBgPIAEoDRo+ChxQcm91ZFNr",
+            "aWxsRXh0cmFMZXZlbE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoDToCOAEaNAoSU2tpbGxMZXZlbE1hcEVudHJ5EgsKA2tleRgBIAEoDRIN",
+            "CgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillDepotChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillDepotChangeNotify.Parser, new[]{ "SkillDepotId", "ProudSkillExtraLevelMap", "TalentIdList", "ProudSkillList", "CoreProudSkillLevel", "EntityId", "AvatarGuid", "SkillLevelMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillDepotChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillDepotChangeNotify.Parser, new[]{ "ProudSkillExtraLevelMap", "ProudSkillList", "EntityId", "AvatarGuid", "SkillLevelMap", "SkillDepotId", "TalentIdList", "CoreProudSkillLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -48,9 +49,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1035
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1019;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarSkillDepotChangeNotify : pb::IMessage<AvatarSkillDepotChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -86,14 +91,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarSkillDepotChangeNotify(AvatarSkillDepotChangeNotify other) : this() {
-      skillDepotId_ = other.skillDepotId_;
       proudSkillExtraLevelMap_ = other.proudSkillExtraLevelMap_.Clone();
-      talentIdList_ = other.talentIdList_.Clone();
       proudSkillList_ = other.proudSkillList_.Clone();
-      coreProudSkillLevel_ = other.coreProudSkillLevel_;
       entityId_ = other.entityId_;
       avatarGuid_ = other.avatarGuid_;
       skillLevelMap_ = other.skillLevelMap_.Clone();
+      skillDepotId_ = other.skillDepotId_;
+      talentIdList_ = other.talentIdList_.Clone();
+      coreProudSkillLevel_ = other.coreProudSkillLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -103,22 +108,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarSkillDepotChangeNotify(this);
     }
 
-    /// <summary>Field number for the "skill_depot_id" field.</summary>
-    public const int SkillDepotIdFieldNumber = 15;
-    private uint skillDepotId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillDepotId {
-      get { return skillDepotId_; }
-      set {
-        skillDepotId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "proud_skill_extra_level_map" field.</summary>
-    public const int ProudSkillExtraLevelMapFieldNumber = 14;
+    public const int ProudSkillExtraLevelMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, uint>.Codec _map_proudSkillExtraLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 114);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 74);
     private readonly pbc::MapField<uint, uint> proudSkillExtraLevelMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,21 +119,10 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return proudSkillExtraLevelMap_; }
     }
 
-    /// <summary>Field number for the "talent_id_list" field.</summary>
-    public const int TalentIdListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_talentIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> talentIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TalentIdList {
-      get { return talentIdList_; }
-    }
-
     /// <summary>Field number for the "proud_skill_list" field.</summary>
-    public const int ProudSkillListFieldNumber = 4;
+    public const int ProudSkillListFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_proudSkillList_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(26);
     private readonly pbc::RepeatedField<uint> proudSkillList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,20 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return proudSkillList_; }
     }
 
-    /// <summary>Field number for the "core_proud_skill_level" field.</summary>
-    public const int CoreProudSkillLevelFieldNumber = 2;
-    private uint coreProudSkillLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoreProudSkillLevel {
-      get { return coreProudSkillLevel_; }
-      set {
-        coreProudSkillLevel_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 7;
+    public const int EntityIdFieldNumber = 5;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -173,7 +143,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 12;
+    public const int AvatarGuidFieldNumber = 7;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,14 +155,49 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "skill_level_map" field.</summary>
-    public const int SkillLevelMapFieldNumber = 3;
+    public const int SkillLevelMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, uint>.Codec _map_skillLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
     private readonly pbc::MapField<uint, uint> skillLevelMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> SkillLevelMap {
       get { return skillLevelMap_; }
+    }
+
+    /// <summary>Field number for the "skill_depot_id" field.</summary>
+    public const int SkillDepotIdFieldNumber = 13;
+    private uint skillDepotId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillDepotId {
+      get { return skillDepotId_; }
+      set {
+        skillDepotId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talent_id_list" field.</summary>
+    public const int TalentIdListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_talentIdList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> talentIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TalentIdList {
+      get { return talentIdList_; }
+    }
+
+    /// <summary>Field number for the "core_proud_skill_level" field.</summary>
+    public const int CoreProudSkillLevelFieldNumber = 15;
+    private uint coreProudSkillLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CoreProudSkillLevel {
+      get { return coreProudSkillLevel_; }
+      set {
+        coreProudSkillLevel_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SkillDepotId != other.SkillDepotId) return false;
       if (!ProudSkillExtraLevelMap.Equals(other.ProudSkillExtraLevelMap)) return false;
-      if(!talentIdList_.Equals(other.talentIdList_)) return false;
       if(!proudSkillList_.Equals(other.proudSkillList_)) return false;
-      if (CoreProudSkillLevel != other.CoreProudSkillLevel) return false;
       if (EntityId != other.EntityId) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
       if (!SkillLevelMap.Equals(other.SkillLevelMap)) return false;
+      if (SkillDepotId != other.SkillDepotId) return false;
+      if(!talentIdList_.Equals(other.talentIdList_)) return false;
+      if (CoreProudSkillLevel != other.CoreProudSkillLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -225,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
       hash ^= ProudSkillExtraLevelMap.GetHashCode();
-      hash ^= talentIdList_.GetHashCode();
       hash ^= proudSkillList_.GetHashCode();
-      if (CoreProudSkillLevel != 0) hash ^= CoreProudSkillLevel.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       hash ^= SkillLevelMap.GetHashCode();
+      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
+      hash ^= talentIdList_.GetHashCode();
+      if (CoreProudSkillLevel != 0) hash ^= CoreProudSkillLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -251,25 +256,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CoreProudSkillLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CoreProudSkillLevel);
-      }
       skillLevelMap_.WriteTo(output, _map_skillLevelMap_codec);
       proudSkillList_.WriteTo(output, _repeated_proudSkillList_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(EntityId);
       }
-      talentIdList_.WriteTo(output, _repeated_talentIdList_codec);
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt64(AvatarGuid);
       }
       proudSkillExtraLevelMap_.WriteTo(output, _map_proudSkillExtraLevelMap_codec);
       if (SkillDepotId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(SkillDepotId);
+      }
+      talentIdList_.WriteTo(output, _repeated_talentIdList_codec);
+      if (CoreProudSkillLevel != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CoreProudSkillLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -281,25 +286,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CoreProudSkillLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CoreProudSkillLevel);
-      }
       skillLevelMap_.WriteTo(ref output, _map_skillLevelMap_codec);
       proudSkillList_.WriteTo(ref output, _repeated_proudSkillList_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(EntityId);
       }
-      talentIdList_.WriteTo(ref output, _repeated_talentIdList_codec);
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt64(AvatarGuid);
       }
       proudSkillExtraLevelMap_.WriteTo(ref output, _map_proudSkillExtraLevelMap_codec);
       if (SkillDepotId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(SkillDepotId);
+      }
+      talentIdList_.WriteTo(ref output, _repeated_talentIdList_codec);
+      if (CoreProudSkillLevel != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CoreProudSkillLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -311,15 +316,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SkillDepotId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
-      }
       size += proudSkillExtraLevelMap_.CalculateSize(_map_proudSkillExtraLevelMap_codec);
-      size += talentIdList_.CalculateSize(_repeated_talentIdList_codec);
       size += proudSkillList_.CalculateSize(_repeated_proudSkillList_codec);
-      if (CoreProudSkillLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoreProudSkillLevel);
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
@@ -327,6 +325,13 @@ namespace Weedwacker.Shared.Network.Proto {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
       size += skillLevelMap_.CalculateSize(_map_skillLevelMap_codec);
+      if (SkillDepotId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
+      }
+      size += talentIdList_.CalculateSize(_repeated_talentIdList_codec);
+      if (CoreProudSkillLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoreProudSkillLevel);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -339,15 +344,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SkillDepotId != 0) {
-        SkillDepotId = other.SkillDepotId;
-      }
       proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
-      talentIdList_.Add(other.talentIdList_);
       proudSkillList_.Add(other.proudSkillList_);
-      if (other.CoreProudSkillLevel != 0) {
-        CoreProudSkillLevel = other.CoreProudSkillLevel;
-      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
@@ -355,6 +353,13 @@ namespace Weedwacker.Shared.Network.Proto {
         AvatarGuid = other.AvatarGuid;
       }
       skillLevelMap_.Add(other.skillLevelMap_);
+      if (other.SkillDepotId != 0) {
+        SkillDepotId = other.SkillDepotId;
+      }
+      talentIdList_.Add(other.talentIdList_);
+      if (other.CoreProudSkillLevel != 0) {
+        CoreProudSkillLevel = other.CoreProudSkillLevel;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -370,38 +375,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            CoreProudSkillLevel = input.ReadUInt32();
-            break;
-          }
-          case 26: {
+          case 10: {
             skillLevelMap_.AddEntriesFrom(input, _map_skillLevelMap_codec);
             break;
           }
-          case 34:
-          case 32: {
+          case 26:
+          case 24: {
             proudSkillList_.AddEntriesFrom(input, _repeated_proudSkillList_codec);
             break;
           }
-          case 56: {
+          case 40: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
-            talentIdList_.AddEntriesFrom(input, _repeated_talentIdList_codec);
-            break;
-          }
-          case 96: {
+          case 56: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 114: {
+          case 74: {
             proudSkillExtraLevelMap_.AddEntriesFrom(input, _map_proudSkillExtraLevelMap_codec);
             break;
           }
-          case 120: {
+          case 104: {
             SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            talentIdList_.AddEntriesFrom(input, _repeated_talentIdList_codec);
+            break;
+          }
+          case 120: {
+            CoreProudSkillLevel = input.ReadUInt32();
             break;
           }
         }
@@ -419,38 +424,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            CoreProudSkillLevel = input.ReadUInt32();
-            break;
-          }
-          case 26: {
+          case 10: {
             skillLevelMap_.AddEntriesFrom(ref input, _map_skillLevelMap_codec);
             break;
           }
-          case 34:
-          case 32: {
+          case 26:
+          case 24: {
             proudSkillList_.AddEntriesFrom(ref input, _repeated_proudSkillList_codec);
             break;
           }
-          case 56: {
+          case 40: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
-            talentIdList_.AddEntriesFrom(ref input, _repeated_talentIdList_codec);
-            break;
-          }
-          case 96: {
+          case 56: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 114: {
+          case 74: {
             proudSkillExtraLevelMap_.AddEntriesFrom(ref input, _map_proudSkillExtraLevelMap_codec);
             break;
           }
-          case 120: {
+          case 104: {
             SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            talentIdList_.AddEntriesFrom(ref input, _repeated_talentIdList_codec);
+            break;
+          }
+          case 120: {
+            CoreProudSkillLevel = input.ReadUInt32();
             break;
           }
         }

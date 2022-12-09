@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoStageDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNTdW1vU3RhZ2VEYXRhLnByb3RvGhJTdW1vVGVhbURhdGEucHJvdG8iegoN",
-            "U3Vtb1N0YWdlRGF0YRIRCgltYXhfc2NvcmUYASABKA0SEQoJb3Blbl90aW1l",
-            "GAUgASgNEhAKCHN0YWdlX2lkGAMgASgNEiAKCXRlYW1fbGlzdBgHIAMoCzIN",
-            "LlN1bW9UZWFtRGF0YRIPCgdpc19vcGVuGAsgASgIQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChNTdW1vU3RhZ2VEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhJTdW1vVGVhbURhdGEucHJvdG8imgEKDVN1bW9TdGFnZURh",
+            "dGESEAoIc3RhZ2VfaWQYAiABKA0SEQoJb3Blbl90aW1lGA8gASgNEkAKCXRl",
+            "YW1fbGlzdBgBIAMoCzItLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uU3Vtb1RlYW1EYXRhEhEKCW1heF9zY29yZRgHIAEoDRIPCgdpc19vcGVu",
+            "GAggASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SumoTeamDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoStageData), global::Weedwacker.Shared.Network.Proto.SumoStageData.Parser, new[]{ "MaxScore", "OpenTime", "StageId", "TeamList", "IsOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoStageData), global::Weedwacker.Shared.Network.Proto.SumoStageData.Parser, new[]{ "StageId", "OpenTime", "TeamList", "MaxScore", "IsOpen" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +74,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoStageData(SumoStageData other) : this() {
-      maxScore_ = other.maxScore_;
-      openTime_ = other.openTime_;
       stageId_ = other.stageId_;
+      openTime_ = other.openTime_;
       teamList_ = other.teamList_.Clone();
+      maxScore_ = other.maxScore_;
       isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,32 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SumoStageData(this);
     }
 
-    /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 1;
-    private uint maxScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxScore {
-      get { return maxScore_; }
-      set {
-        maxScore_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 5;
-    private uint openTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenTime {
-      get { return openTime_; }
-      set {
-        openTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 3;
+    public const int StageIdFieldNumber = 2;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,10 +100,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 15;
+    private uint openTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "team_list" field.</summary>
-    public const int TeamListFieldNumber = 7;
+    public const int TeamListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoTeamData> _repeated_teamList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.SumoTeamData.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.SumoTeamData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData> teamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,8 +123,20 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return teamList_; }
     }
 
+    /// <summary>Field number for the "max_score" field.</summary>
+    public const int MaxScoreFieldNumber = 7;
+    private uint maxScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxScore {
+      get { return maxScore_; }
+      set {
+        maxScore_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 11;
+    public const int IsOpenFieldNumber = 8;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MaxScore != other.MaxScore) return false;
-      if (OpenTime != other.OpenTime) return false;
       if (StageId != other.StageId) return false;
+      if (OpenTime != other.OpenTime) return false;
       if(!teamList_.Equals(other.teamList_)) return false;
+      if (MaxScore != other.MaxScore) return false;
       if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -173,10 +174,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       hash ^= teamList_.GetHashCode();
+      if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -196,22 +197,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxScore != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MaxScore);
-      }
+      teamList_.WriteTo(output, _repeated_teamList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      if (OpenTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(OpenTime);
+      if (MaxScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxScore);
       }
-      teamList_.WriteTo(output, _repeated_teamList_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -223,22 +224,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxScore != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MaxScore);
-      }
+      teamList_.WriteTo(ref output, _repeated_teamList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      if (OpenTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(OpenTime);
+      if (MaxScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxScore);
       }
-      teamList_.WriteTo(ref output, _repeated_teamList_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -250,16 +251,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MaxScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (OpenTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-      }
       size += teamList_.CalculateSize(_repeated_teamList_codec);
+      if (MaxScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
+      }
       if (IsOpen != false) {
         size += 1 + 1;
       }
@@ -275,16 +276,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MaxScore != 0) {
-        MaxScore = other.MaxScore;
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
       if (other.OpenTime != 0) {
         OpenTime = other.OpenTime;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
-      }
       teamList_.Add(other.teamList_);
+      if (other.MaxScore != 0) {
+        MaxScore = other.MaxScore;
+      }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
@@ -303,24 +304,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 10: {
             teamList_.AddEntriesFrom(input, _repeated_teamList_codec);
             break;
           }
-          case 88: {
+          case 16: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 120: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }
@@ -338,24 +339,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 10: {
             teamList_.AddEntriesFrom(ref input, _repeated_teamList_codec);
             break;
           }
-          case 88: {
+          case 16: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 120: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }

@@ -24,16 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static InstableSprayLevelFinishNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRJbnN0YWJsZVNwcmF5TGV2ZWxGaW5pc2hOb3RpZnkucHJvdG8ijgEKHklu",
-            "c3RhYmxlU3ByYXlMZXZlbEZpbmlzaE5vdGlmeRIbChNpc19uZWVkX3N3aXRj",
-            "aF90ZWFtGAsgASgIEhwKFGlzX3NraXBfYmxhY2tfc2NyZWVuGAcgASgIEg0K",
-            "BXJvdW5kGA8gASgNEhAKCHN0YWdlX2lkGAggASgNEhAKCGxldmVsX2lkGAog",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiRJbnN0YWJsZVNwcmF5TGV2ZWxGaW5pc2hOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ijQEKHkluc3RhYmxlU3ByYXlM",
+            "ZXZlbEZpbmlzaE5vdGlmeRINCgVyb3VuZBgCIAEoDRIQCghsZXZlbF9pZBgP",
+            "IAEoDRIbChNVbmszMzAwX0FNRUJBUElQTEdMGAMgASgIEhsKE1VuazMzMDBf",
+            "REhLSEJLTEJJUEEYDCABKAgSEAoIc3RhZ2VfaWQYCiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayLevelFinishNotify), global::Weedwacker.Shared.Network.Proto.InstableSprayLevelFinishNotify.Parser, new[]{ "IsNeedSwitchTeam", "IsSkipBlackScreen", "Round", "StageId", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayLevelFinishNotify), global::Weedwacker.Shared.Network.Proto.InstableSprayLevelFinishNotify.Parser, new[]{ "Round", "LevelId", "Unk3300AMEBAPIPLGL", "Unk3300DHKHBKLBIPA", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21961
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 21512;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class InstableSprayLevelFinishNotify : pb::IMessage<InstableSprayLevelFinishNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +82,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstableSprayLevelFinishNotify(InstableSprayLevelFinishNotify other) : this() {
-      isNeedSwitchTeam_ = other.isNeedSwitchTeam_;
-      isSkipBlackScreen_ = other.isSkipBlackScreen_;
       round_ = other.round_;
-      stageId_ = other.stageId_;
       levelId_ = other.levelId_;
+      unk3300AMEBAPIPLGL_ = other.unk3300AMEBAPIPLGL_;
+      unk3300DHKHBKLBIPA_ = other.unk3300DHKHBKLBIPA_;
+      stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,32 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InstableSprayLevelFinishNotify(this);
     }
 
-    /// <summary>Field number for the "is_need_switch_team" field.</summary>
-    public const int IsNeedSwitchTeamFieldNumber = 11;
-    private bool isNeedSwitchTeam_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNeedSwitchTeam {
-      get { return isNeedSwitchTeam_; }
-      set {
-        isNeedSwitchTeam_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_skip_black_screen" field.</summary>
-    public const int IsSkipBlackScreenFieldNumber = 7;
-    private bool isSkipBlackScreen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSkipBlackScreen {
-      get { return isSkipBlackScreen_; }
-      set {
-        isSkipBlackScreen_ = value;
-      }
-    }
-
     /// <summary>Field number for the "round" field.</summary>
-    public const int RoundFieldNumber = 15;
+    public const int RoundFieldNumber = 2;
     private uint round_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 8;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
-      set {
-        stageId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 10;
+    public const int LevelIdFieldNumber = 15;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,6 +117,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return levelId_; }
       set {
         levelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AMEBAPIPLGL" field.</summary>
+    public const int Unk3300AMEBAPIPLGLFieldNumber = 3;
+    private bool unk3300AMEBAPIPLGL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300AMEBAPIPLGL {
+      get { return unk3300AMEBAPIPLGL_; }
+      set {
+        unk3300AMEBAPIPLGL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DHKHBKLBIPA" field.</summary>
+    public const int Unk3300DHKHBKLBIPAFieldNumber = 12;
+    private bool unk3300DHKHBKLBIPA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300DHKHBKLBIPA {
+      get { return unk3300DHKHBKLBIPA_; }
+      set {
+        unk3300DHKHBKLBIPA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 10;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
       }
     }
 
@@ -168,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsNeedSwitchTeam != other.IsNeedSwitchTeam) return false;
-      if (IsSkipBlackScreen != other.IsSkipBlackScreen) return false;
       if (Round != other.Round) return false;
-      if (StageId != other.StageId) return false;
       if (LevelId != other.LevelId) return false;
+      if (Unk3300AMEBAPIPLGL != other.Unk3300AMEBAPIPLGL) return false;
+      if (Unk3300DHKHBKLBIPA != other.Unk3300DHKHBKLBIPA) return false;
+      if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsNeedSwitchTeam != false) hash ^= IsNeedSwitchTeam.GetHashCode();
-      if (IsSkipBlackScreen != false) hash ^= IsSkipBlackScreen.GetHashCode();
       if (Round != 0) hash ^= Round.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (Unk3300AMEBAPIPLGL != false) hash ^= Unk3300AMEBAPIPLGL.GetHashCode();
+      if (Unk3300DHKHBKLBIPA != false) hash ^= Unk3300DHKHBKLBIPA.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,25 +206,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsSkipBlackScreen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsSkipBlackScreen);
+      if (Round != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Round);
+      }
+      if (Unk3300AMEBAPIPLGL != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Unk3300AMEBAPIPLGL);
       }
       if (StageId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteUInt32(StageId);
       }
+      if (Unk3300DHKHBKLBIPA != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300DHKHBKLBIPA);
+      }
       if (LevelId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(LevelId);
-      }
-      if (IsNeedSwitchTeam != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsNeedSwitchTeam);
-      }
-      if (Round != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(Round);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -233,25 +236,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsSkipBlackScreen != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsSkipBlackScreen);
+      if (Round != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Round);
+      }
+      if (Unk3300AMEBAPIPLGL != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Unk3300AMEBAPIPLGL);
       }
       if (StageId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteUInt32(StageId);
       }
+      if (Unk3300DHKHBKLBIPA != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300DHKHBKLBIPA);
+      }
       if (LevelId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(LevelId);
-      }
-      if (IsNeedSwitchTeam != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsNeedSwitchTeam);
-      }
-      if (Round != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(Round);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -263,20 +266,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsNeedSwitchTeam != false) {
-        size += 1 + 1;
-      }
-      if (IsSkipBlackScreen != false) {
-        size += 1 + 1;
-      }
       if (Round != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
       }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-      }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (Unk3300AMEBAPIPLGL != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300DHKHBKLBIPA != false) {
+        size += 1 + 1;
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsNeedSwitchTeam != false) {
-        IsNeedSwitchTeam = other.IsNeedSwitchTeam;
-      }
-      if (other.IsSkipBlackScreen != false) {
-        IsSkipBlackScreen = other.IsSkipBlackScreen;
-      }
       if (other.Round != 0) {
         Round = other.Round;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
-      }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
+      }
+      if (other.Unk3300AMEBAPIPLGL != false) {
+        Unk3300AMEBAPIPLGL = other.Unk3300AMEBAPIPLGL;
+      }
+      if (other.Unk3300DHKHBKLBIPA != false) {
+        Unk3300DHKHBKLBIPA = other.Unk3300DHKHBKLBIPA;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -320,24 +323,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            IsSkipBlackScreen = input.ReadBool();
+          case 16: {
+            Round = input.ReadUInt32();
             break;
           }
-          case 64: {
-            StageId = input.ReadUInt32();
+          case 24: {
+            Unk3300AMEBAPIPLGL = input.ReadBool();
             break;
           }
           case 80: {
-            LevelId = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            IsNeedSwitchTeam = input.ReadBool();
+          case 96: {
+            Unk3300DHKHBKLBIPA = input.ReadBool();
             break;
           }
           case 120: {
-            Round = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -355,24 +358,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            IsSkipBlackScreen = input.ReadBool();
+          case 16: {
+            Round = input.ReadUInt32();
             break;
           }
-          case 64: {
-            StageId = input.ReadUInt32();
+          case 24: {
+            Unk3300AMEBAPIPLGL = input.ReadBool();
             break;
           }
           case 80: {
-            LevelId = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            IsNeedSwitchTeam = input.ReadBool();
+          case 96: {
+            Unk3300DHKHBKLBIPA = input.ReadBool();
             break;
           }
           case 120: {
-            Round = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
         }

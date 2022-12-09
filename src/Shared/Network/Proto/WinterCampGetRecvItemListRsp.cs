@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampGetRecvItemListRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJXaW50ZXJDYW1wR2V0UmVjdkl0ZW1MaXN0UnNwLnByb3RvGhxXaW50ZXJD",
-            "YW1wUmVjdkl0ZW1EYXRhLnByb3RvImUKHFdpbnRlckNhbXBHZXRSZWN2SXRl",
-            "bUxpc3RSc3ASNAoTcmVjdl9pdGVtX2RhdGFfbGlzdBgIIAMoCzIXLldpbnRl",
-            "ckNhbXBSZWN2SXRlbURhdGESDwoHcmV0Y29kZRgGIAEoBUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJXaW50ZXJDYW1wR2V0UmVjdkl0ZW1MaXN0UnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhxXaW50ZXJDYW1wUmVjdkl0ZW1E",
+            "YXRhLnByb3RvIoUBChxXaW50ZXJDYW1wR2V0UmVjdkl0ZW1MaXN0UnNwElQK",
+            "E3JlY3ZfaXRlbV9kYXRhX2xpc3QYBiADKAsyNy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLldpbnRlckNhbXBSZWN2SXRlbURhdGESDwoHcmV0",
+            "Y29kZRgFIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8423
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8957;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WinterCampGetRecvItemListRsp : pb::IMessage<WinterCampGetRecvItemListRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "recv_item_data_list" field.</summary>
-    public const int RecvItemDataListFieldNumber = 8;
+    public const int RecvItemDataListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData> _repeated_recvItemDataList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData> recvItemDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
+    public const int RetcodeFieldNumber = 5;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       recvItemDataList_.WriteTo(output, _repeated_recvItemDataList_codec);
@@ -172,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       recvItemDataList_.WriteTo(ref output, _repeated_recvItemDataList_codec);
@@ -221,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 50: {
             recvItemDataList_.AddEntriesFrom(input, _repeated_recvItemDataList_codec);
             break;
           }
@@ -244,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 50: {
             recvItemDataList_.AddEntriesFrom(ref input, _repeated_recvItemDataList_codec);
             break;
           }

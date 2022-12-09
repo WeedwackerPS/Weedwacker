@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChallengeRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVDaGFsbGVuZ2VSZWNvcmQucHJvdG8icwoPQ2hhbGxlbmdlUmVjb3JkEh0K",
-            "FWNoYWxsZW5nZV9yZWNvcmRfdHlwZRgOIAEoDRIXCg9jaGFsbGVuZ2VfaW5k",
-            "ZXgYDyABKA0SFAoMY2hhbGxlbmdlX2lkGAEgASgNEhIKCmJlc3RfdmFsdWUY",
-            "CCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChVDaGFsbGVuZ2VSZWNvcmQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8icwoPQ2hhbGxlbmdlUmVjb3JkEh0KFWNoYWxsZW5nZV9y",
+            "ZWNvcmRfdHlwZRgCIAEoDRIXCg9jaGFsbGVuZ2VfaW5kZXgYAyABKA0SFAoM",
+            "Y2hhbGxlbmdlX2lkGAkgASgNEhIKCmJlc3RfdmFsdWUYBCABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_record_type" field.</summary>
-    public const int ChallengeRecordTypeFieldNumber = 14;
+    public const int ChallengeRecordTypeFieldNumber = 2;
     private uint challengeRecordType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_index" field.</summary>
-    public const int ChallengeIndexFieldNumber = 15;
+    public const int ChallengeIndexFieldNumber = 3;
     private uint challengeIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 1;
+    public const int ChallengeIdFieldNumber = 9;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_value" field.</summary>
-    public const int BestValueFieldNumber = 8;
+    public const int BestValueFieldNumber = 4;
     private uint bestValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -182,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (BestValue != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(BestValue);
-      }
       if (ChallengeRecordType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(ChallengeRecordType);
       }
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChallengeIndex);
+      }
+      if (BestValue != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(BestValue);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (BestValue != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(BestValue);
-      }
       if (ChallengeRecordType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(ChallengeRecordType);
       }
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChallengeIndex);
+      }
+      if (BestValue != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(BestValue);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            BestValue = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 16: {
             ChallengeRecordType = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 24: {
             ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            BestValue = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }
@@ -316,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            BestValue = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 16: {
             ChallengeRecordType = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 24: {
             ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            BestValue = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }

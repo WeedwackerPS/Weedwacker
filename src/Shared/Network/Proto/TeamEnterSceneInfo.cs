@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static TeamEnterSceneInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhUZWFtRW50ZXJTY2VuZUluZm8ucHJvdG8aGUFiaWxpdHlDb250cm9sQmxv",
-            "Y2sucHJvdG8aGkFiaWxpdHlTeW5jU3RhdGVJbmZvLnByb3RvIpMBChJUZWFt",
-            "RW50ZXJTY2VuZUluZm8SMwoVYWJpbGl0eV9jb250cm9sX2Jsb2NrGAcgASgL",
-            "MhQuQWJpbGl0eUNvbnRyb2xCbG9jaxIwChF0ZWFtX2FiaWxpdHlfaW5mbxgK",
-            "IAEoCzIVLkFiaWxpdHlTeW5jU3RhdGVJbmZvEhYKDnRlYW1fZW50aXR5X2lk",
-            "GA8gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChhUZWFtRW50ZXJTY2VuZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aGUFiaWxpdHlDb250cm9sQmxvY2sucHJvdG8aGkFi",
+            "aWxpdHlTeW5jU3RhdGVJbmZvLnByb3RvItMBChJUZWFtRW50ZXJTY2VuZUlu",
+            "Zm8SUAoRdGVhbV9hYmlsaXR5X2luZm8YBiABKAsyNS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlTeW5jU3RhdGVJbmZvElMKFWFi",
+            "aWxpdHlfY29udHJvbF9ibG9jaxgFIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQWJpbGl0eUNvbnRyb2xCbG9jaxIWCg50ZWFtX2Vu",
+            "dGl0eV9pZBgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityControlBlockReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TeamEnterSceneInfo), global::Weedwacker.Shared.Network.Proto.TeamEnterSceneInfo.Parser, new[]{ "AbilityControlBlock", "TeamAbilityInfo", "TeamEntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TeamEnterSceneInfo), global::Weedwacker.Shared.Network.Proto.TeamEnterSceneInfo.Parser, new[]{ "TeamAbilityInfo", "AbilityControlBlock", "TeamEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,8 +76,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TeamEnterSceneInfo(TeamEnterSceneInfo other) : this() {
-      abilityControlBlock_ = other.abilityControlBlock_ != null ? other.abilityControlBlock_.Clone() : null;
       teamAbilityInfo_ = other.teamAbilityInfo_ != null ? other.teamAbilityInfo_.Clone() : null;
+      abilityControlBlock_ = other.abilityControlBlock_ != null ? other.abilityControlBlock_.Clone() : null;
       teamEntityId_ = other.teamEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,20 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TeamEnterSceneInfo(this);
     }
 
-    /// <summary>Field number for the "ability_control_block" field.</summary>
-    public const int AbilityControlBlockFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.AbilityControlBlock abilityControlBlock_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityControlBlock AbilityControlBlock {
-      get { return abilityControlBlock_; }
-      set {
-        abilityControlBlock_ = value;
-      }
-    }
-
     /// <summary>Field number for the "team_ability_info" field.</summary>
-    public const int TeamAbilityInfoFieldNumber = 10;
+    public const int TeamAbilityInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo teamAbilityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,8 +100,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "ability_control_block" field.</summary>
+    public const int AbilityControlBlockFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.AbilityControlBlock abilityControlBlock_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilityControlBlock AbilityControlBlock {
+      get { return abilityControlBlock_; }
+      set {
+        abilityControlBlock_ = value;
+      }
+    }
+
     /// <summary>Field number for the "team_entity_id" field.</summary>
-    public const int TeamEntityIdFieldNumber = 15;
+    public const int TeamEntityIdFieldNumber = 11;
     private uint teamEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AbilityControlBlock, other.AbilityControlBlock)) return false;
       if (!object.Equals(TeamAbilityInfo, other.TeamAbilityInfo)) return false;
+      if (!object.Equals(AbilityControlBlock, other.AbilityControlBlock)) return false;
       if (TeamEntityId != other.TeamEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -148,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (abilityControlBlock_ != null) hash ^= AbilityControlBlock.GetHashCode();
       if (teamAbilityInfo_ != null) hash ^= TeamAbilityInfo.GetHashCode();
+      if (abilityControlBlock_ != null) hash ^= AbilityControlBlock.GetHashCode();
       if (TeamEntityId != 0) hash ^= TeamEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,15 +171,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (abilityControlBlock_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteMessage(AbilityControlBlock);
       }
       if (teamAbilityInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(TeamAbilityInfo);
       }
       if (TeamEntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(TeamEntityId);
       }
       if (_unknownFields != null) {
@@ -192,15 +193,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (abilityControlBlock_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteMessage(AbilityControlBlock);
       }
       if (teamAbilityInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(TeamAbilityInfo);
       }
       if (TeamEntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(TeamEntityId);
       }
       if (_unknownFields != null) {
@@ -213,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (abilityControlBlock_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityControlBlock);
-      }
       if (teamAbilityInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TeamAbilityInfo);
+      }
+      if (abilityControlBlock_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityControlBlock);
       }
       if (TeamEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TeamEntityId);
@@ -234,17 +235,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.abilityControlBlock_ != null) {
-        if (abilityControlBlock_ == null) {
-          AbilityControlBlock = new global::Weedwacker.Shared.Network.Proto.AbilityControlBlock();
-        }
-        AbilityControlBlock.MergeFrom(other.AbilityControlBlock);
-      }
       if (other.teamAbilityInfo_ != null) {
         if (teamAbilityInfo_ == null) {
           TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
         }
         TeamAbilityInfo.MergeFrom(other.TeamAbilityInfo);
+      }
+      if (other.abilityControlBlock_ != null) {
+        if (abilityControlBlock_ == null) {
+          AbilityControlBlock = new global::Weedwacker.Shared.Network.Proto.AbilityControlBlock();
+        }
+        AbilityControlBlock.MergeFrom(other.AbilityControlBlock);
       }
       if (other.TeamEntityId != 0) {
         TeamEntityId = other.TeamEntityId;
@@ -264,21 +265,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 42: {
             if (abilityControlBlock_ == null) {
               AbilityControlBlock = new global::Weedwacker.Shared.Network.Proto.AbilityControlBlock();
             }
             input.ReadMessage(AbilityControlBlock);
             break;
           }
-          case 82: {
+          case 50: {
             if (teamAbilityInfo_ == null) {
               TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(TeamAbilityInfo);
             break;
           }
-          case 120: {
+          case 88: {
             TeamEntityId = input.ReadUInt32();
             break;
           }
@@ -297,21 +298,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 42: {
             if (abilityControlBlock_ == null) {
               AbilityControlBlock = new global::Weedwacker.Shared.Network.Proto.AbilityControlBlock();
             }
             input.ReadMessage(AbilityControlBlock);
             break;
           }
-          case 82: {
+          case 50: {
             if (teamAbilityInfo_ == null) {
               TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(TeamAbilityInfo);
             break;
           }
-          case 120: {
+          case 88: {
             TeamEntityId = input.ReadUInt32();
             break;
           }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static MainCoopFailNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhNYWluQ29vcEZhaWxOb3RpZnkucHJvdG8iPAoSTWFpbkNvb3BGYWlsTm90",
-            "aWZ5EhIKCnRleHRtYXBfaWQYByABKAkSEgoKY2hhcHRlcl9pZBgPIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhNYWluQ29vcEZhaWxOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iPAoSTWFpbkNvb3BGYWlsTm90aWZ5EhIKCnRleHRt",
+            "YXBfaWQYByABKAkSEgoKY2hhcHRlcl9pZBgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1951
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1956;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MainCoopFailNotify : pb::IMessage<MainCoopFailNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -100,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chapter_id" field.</summary>
-    public const int ChapterIdFieldNumber = 15;
+    public const int ChapterIdFieldNumber = 14;
     private uint chapterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,7 +164,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteString(TextmapId);
       }
       if (ChapterId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
@@ -178,7 +182,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteString(TextmapId);
       }
       if (ChapterId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
@@ -234,7 +238,7 @@ namespace Weedwacker.Shared.Network.Proto {
             TextmapId = input.ReadString();
             break;
           }
-          case 120: {
+          case 112: {
             ChapterId = input.ReadUInt32();
             break;
           }
@@ -257,7 +261,7 @@ namespace Weedwacker.Shared.Network.Proto {
             TextmapId = input.ReadString();
             break;
           }
-          case 120: {
+          case 112: {
             ChapterId = input.ReadUInt32();
             break;
           }

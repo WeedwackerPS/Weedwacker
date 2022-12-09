@@ -24,21 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerMonthlyCombatRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Ub3dlck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8aGlRvd2VyRmlnaHRS",
-            "ZWNvcmRQYWlyLnByb3RvIoIDChhUb3dlck1vbnRobHlDb21iYXRSZWNvcmQS",
-            "NAoVbW9zdF9raWxsX2F2YXRhcl9wYWlyGA4gASgLMhUuVG93ZXJGaWdodFJl",
-            "Y29yZFBhaXISQQoibW9zdF9jYXN0X25vcm1hbF9za2lsbF9hdmF0YXJfcGFp",
-            "chgIIAEoCzIVLlRvd2VyRmlnaHRSZWNvcmRQYWlyEjYKF21vc3RfcmV2ZWFs",
-            "X2F2YXRhcl9saXN0GAYgAygLMhUuVG93ZXJGaWdodFJlY29yZFBhaXISQQoi",
-            "bW9zdF9jYXN0X2VuZXJneV9za2lsbF9hdmF0YXJfcGFpchgEIAEoCzIVLlRv",
-            "d2VyRmlnaHRSZWNvcmRQYWlyEjUKFmhpZ2hlc3RfZHBzX2F2YXRyX3BhaXIY",
-            "DCABKAsyFS5Ub3dlckZpZ2h0UmVjb3JkUGFpchI7Chxtb3N0X3Rha2VfZGFt",
-            "YWdlX2F2YXRhcl9wYWlyGAkgASgLMhUuVG93ZXJGaWdodFJlY29yZFBhaXJC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5Ub3dlck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGlRvd2VyRmlnaHRSZWNvcmRQYWlyLnBy",
+            "b3RvIpYEChhUb3dlck1vbnRobHlDb21iYXRSZWNvcmQSVgoXbW9zdF9yZXZl",
+            "YWxfYXZhdGFyX2xpc3QYAyADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlRvd2VyRmlnaHRSZWNvcmRQYWlyElIKE1VuazMzMDBfRUlH",
+            "RUdPR0ZKTkQYCCABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlRvd2VyRmlnaHRSZWNvcmRQYWlyElIKE1VuazMzMDBfT0FMTEhKUEJP",
+            "SE8YAiABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRv",
+            "d2VyRmlnaHRSZWNvcmRQYWlyElIKE1VuazMzMDBfS01DTFBIRUROQ0oYDiAB",
+            "KAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRvd2VyRmln",
+            "aHRSZWNvcmRQYWlyElIKE1VuazMzMDBfS0lLUE1OUEtMREcYByABKAsyNS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRvd2VyRmlnaHRSZWNv",
+            "cmRQYWlyElIKE1VuazMzMDBfQ0NGSE9GQ0lFUEYYDyABKAsyNS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRvd2VyRmlnaHRSZWNvcmRQYWly",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TowerFightRecordPairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord), global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord.Parser, new[]{ "MostKillAvatarPair", "MostCastNormalSkillAvatarPair", "MostRevealAvatarList", "MostCastEnergySkillAvatarPair", "HighestDpsAvatrPair", "MostTakeDamageAvatarPair" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord), global::Weedwacker.Shared.Network.Proto.TowerMonthlyCombatRecord.Parser, new[]{ "MostRevealAvatarList", "Unk3300EIGEGOGFJND", "Unk3300OALLHJPBOHO", "Unk3300KMCLPHEDNCJ", "Unk3300KIKPMNPKLDG", "Unk3300CCFHOFCIEPF" }, null, null, null, null)
           }));
     }
     #endregion
@@ -79,12 +83,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerMonthlyCombatRecord(TowerMonthlyCombatRecord other) : this() {
-      mostKillAvatarPair_ = other.mostKillAvatarPair_ != null ? other.mostKillAvatarPair_.Clone() : null;
-      mostCastNormalSkillAvatarPair_ = other.mostCastNormalSkillAvatarPair_ != null ? other.mostCastNormalSkillAvatarPair_.Clone() : null;
       mostRevealAvatarList_ = other.mostRevealAvatarList_.Clone();
-      mostCastEnergySkillAvatarPair_ = other.mostCastEnergySkillAvatarPair_ != null ? other.mostCastEnergySkillAvatarPair_.Clone() : null;
-      highestDpsAvatrPair_ = other.highestDpsAvatrPair_ != null ? other.highestDpsAvatrPair_.Clone() : null;
-      mostTakeDamageAvatarPair_ = other.mostTakeDamageAvatarPair_ != null ? other.mostTakeDamageAvatarPair_.Clone() : null;
+      unk3300EIGEGOGFJND_ = other.unk3300EIGEGOGFJND_ != null ? other.unk3300EIGEGOGFJND_.Clone() : null;
+      unk3300OALLHJPBOHO_ = other.unk3300OALLHJPBOHO_ != null ? other.unk3300OALLHJPBOHO_.Clone() : null;
+      unk3300KMCLPHEDNCJ_ = other.unk3300KMCLPHEDNCJ_ != null ? other.unk3300KMCLPHEDNCJ_.Clone() : null;
+      unk3300KIKPMNPKLDG_ = other.unk3300KIKPMNPKLDG_ != null ? other.unk3300KIKPMNPKLDG_.Clone() : null;
+      unk3300CCFHOFCIEPF_ = other.unk3300CCFHOFCIEPF_ != null ? other.unk3300CCFHOFCIEPF_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,34 +98,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerMonthlyCombatRecord(this);
     }
 
-    /// <summary>Field number for the "most_kill_avatar_pair" field.</summary>
-    public const int MostKillAvatarPairFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair mostKillAvatarPair_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair MostKillAvatarPair {
-      get { return mostKillAvatarPair_; }
-      set {
-        mostKillAvatarPair_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "most_cast_normal_skill_avatar_pair" field.</summary>
-    public const int MostCastNormalSkillAvatarPairFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair mostCastNormalSkillAvatarPair_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair MostCastNormalSkillAvatarPair {
-      get { return mostCastNormalSkillAvatarPair_; }
-      set {
-        mostCastNormalSkillAvatarPair_ = value;
-      }
-    }
-
     /// <summary>Field number for the "most_reveal_avatar_list" field.</summary>
-    public const int MostRevealAvatarListFieldNumber = 6;
+    public const int MostRevealAvatarListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair> _repeated_mostRevealAvatarList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair> mostRevealAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,39 +109,63 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return mostRevealAvatarList_; }
     }
 
-    /// <summary>Field number for the "most_cast_energy_skill_avatar_pair" field.</summary>
-    public const int MostCastEnergySkillAvatarPairFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair mostCastEnergySkillAvatarPair_;
+    /// <summary>Field number for the "Unk3300_EIGEGOGFJND" field.</summary>
+    public const int Unk3300EIGEGOGFJNDFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair unk3300EIGEGOGFJND_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair MostCastEnergySkillAvatarPair {
-      get { return mostCastEnergySkillAvatarPair_; }
+    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair Unk3300EIGEGOGFJND {
+      get { return unk3300EIGEGOGFJND_; }
       set {
-        mostCastEnergySkillAvatarPair_ = value;
+        unk3300EIGEGOGFJND_ = value;
       }
     }
 
-    /// <summary>Field number for the "highest_dps_avatr_pair" field.</summary>
-    public const int HighestDpsAvatrPairFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair highestDpsAvatrPair_;
+    /// <summary>Field number for the "Unk3300_OALLHJPBOHO" field.</summary>
+    public const int Unk3300OALLHJPBOHOFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair unk3300OALLHJPBOHO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair HighestDpsAvatrPair {
-      get { return highestDpsAvatrPair_; }
+    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair Unk3300OALLHJPBOHO {
+      get { return unk3300OALLHJPBOHO_; }
       set {
-        highestDpsAvatrPair_ = value;
+        unk3300OALLHJPBOHO_ = value;
       }
     }
 
-    /// <summary>Field number for the "most_take_damage_avatar_pair" field.</summary>
-    public const int MostTakeDamageAvatarPairFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair mostTakeDamageAvatarPair_;
+    /// <summary>Field number for the "Unk3300_KMCLPHEDNCJ" field.</summary>
+    public const int Unk3300KMCLPHEDNCJFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair unk3300KMCLPHEDNCJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair MostTakeDamageAvatarPair {
-      get { return mostTakeDamageAvatarPair_; }
+    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair Unk3300KMCLPHEDNCJ {
+      get { return unk3300KMCLPHEDNCJ_; }
       set {
-        mostTakeDamageAvatarPair_ = value;
+        unk3300KMCLPHEDNCJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KIKPMNPKLDG" field.</summary>
+    public const int Unk3300KIKPMNPKLDGFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair unk3300KIKPMNPKLDG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair Unk3300KIKPMNPKLDG {
+      get { return unk3300KIKPMNPKLDG_; }
+      set {
+        unk3300KIKPMNPKLDG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CCFHOFCIEPF" field.</summary>
+    public const int Unk3300CCFHOFCIEPFFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair unk3300CCFHOFCIEPF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair Unk3300CCFHOFCIEPF {
+      get { return unk3300CCFHOFCIEPF_; }
+      set {
+        unk3300CCFHOFCIEPF_ = value;
       }
     }
 
@@ -180,12 +184,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(MostKillAvatarPair, other.MostKillAvatarPair)) return false;
-      if (!object.Equals(MostCastNormalSkillAvatarPair, other.MostCastNormalSkillAvatarPair)) return false;
       if(!mostRevealAvatarList_.Equals(other.mostRevealAvatarList_)) return false;
-      if (!object.Equals(MostCastEnergySkillAvatarPair, other.MostCastEnergySkillAvatarPair)) return false;
-      if (!object.Equals(HighestDpsAvatrPair, other.HighestDpsAvatrPair)) return false;
-      if (!object.Equals(MostTakeDamageAvatarPair, other.MostTakeDamageAvatarPair)) return false;
+      if (!object.Equals(Unk3300EIGEGOGFJND, other.Unk3300EIGEGOGFJND)) return false;
+      if (!object.Equals(Unk3300OALLHJPBOHO, other.Unk3300OALLHJPBOHO)) return false;
+      if (!object.Equals(Unk3300KMCLPHEDNCJ, other.Unk3300KMCLPHEDNCJ)) return false;
+      if (!object.Equals(Unk3300KIKPMNPKLDG, other.Unk3300KIKPMNPKLDG)) return false;
+      if (!object.Equals(Unk3300CCFHOFCIEPF, other.Unk3300CCFHOFCIEPF)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -193,12 +197,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (mostKillAvatarPair_ != null) hash ^= MostKillAvatarPair.GetHashCode();
-      if (mostCastNormalSkillAvatarPair_ != null) hash ^= MostCastNormalSkillAvatarPair.GetHashCode();
       hash ^= mostRevealAvatarList_.GetHashCode();
-      if (mostCastEnergySkillAvatarPair_ != null) hash ^= MostCastEnergySkillAvatarPair.GetHashCode();
-      if (highestDpsAvatrPair_ != null) hash ^= HighestDpsAvatrPair.GetHashCode();
-      if (mostTakeDamageAvatarPair_ != null) hash ^= MostTakeDamageAvatarPair.GetHashCode();
+      if (unk3300EIGEGOGFJND_ != null) hash ^= Unk3300EIGEGOGFJND.GetHashCode();
+      if (unk3300OALLHJPBOHO_ != null) hash ^= Unk3300OALLHJPBOHO.GetHashCode();
+      if (unk3300KMCLPHEDNCJ_ != null) hash ^= Unk3300KMCLPHEDNCJ.GetHashCode();
+      if (unk3300KIKPMNPKLDG_ != null) hash ^= Unk3300KIKPMNPKLDG.GetHashCode();
+      if (unk3300CCFHOFCIEPF_ != null) hash ^= Unk3300CCFHOFCIEPF.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,26 +221,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (mostCastEnergySkillAvatarPair_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(MostCastEnergySkillAvatarPair);
+      if (unk3300OALLHJPBOHO_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Unk3300OALLHJPBOHO);
       }
       mostRevealAvatarList_.WriteTo(output, _repeated_mostRevealAvatarList_codec);
-      if (mostCastNormalSkillAvatarPair_ != null) {
+      if (unk3300KIKPMNPKLDG_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300EIGEGOGFJND_ != null) {
         output.WriteRawTag(66);
-        output.WriteMessage(MostCastNormalSkillAvatarPair);
+        output.WriteMessage(Unk3300EIGEGOGFJND);
       }
-      if (mostTakeDamageAvatarPair_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(MostTakeDamageAvatarPair);
-      }
-      if (highestDpsAvatrPair_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(HighestDpsAvatrPair);
-      }
-      if (mostKillAvatarPair_ != null) {
+      if (unk3300KMCLPHEDNCJ_ != null) {
         output.WriteRawTag(114);
-        output.WriteMessage(MostKillAvatarPair);
+        output.WriteMessage(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300CCFHOFCIEPF);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -248,26 +252,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (mostCastEnergySkillAvatarPair_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(MostCastEnergySkillAvatarPair);
+      if (unk3300OALLHJPBOHO_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Unk3300OALLHJPBOHO);
       }
       mostRevealAvatarList_.WriteTo(ref output, _repeated_mostRevealAvatarList_codec);
-      if (mostCastNormalSkillAvatarPair_ != null) {
+      if (unk3300KIKPMNPKLDG_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300EIGEGOGFJND_ != null) {
         output.WriteRawTag(66);
-        output.WriteMessage(MostCastNormalSkillAvatarPair);
+        output.WriteMessage(Unk3300EIGEGOGFJND);
       }
-      if (mostTakeDamageAvatarPair_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(MostTakeDamageAvatarPair);
-      }
-      if (highestDpsAvatrPair_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(HighestDpsAvatrPair);
-      }
-      if (mostKillAvatarPair_ != null) {
+      if (unk3300KMCLPHEDNCJ_ != null) {
         output.WriteRawTag(114);
-        output.WriteMessage(MostKillAvatarPair);
+        output.WriteMessage(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300CCFHOFCIEPF);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -279,21 +283,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (mostKillAvatarPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MostKillAvatarPair);
-      }
-      if (mostCastNormalSkillAvatarPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MostCastNormalSkillAvatarPair);
-      }
       size += mostRevealAvatarList_.CalculateSize(_repeated_mostRevealAvatarList_codec);
-      if (mostCastEnergySkillAvatarPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MostCastEnergySkillAvatarPair);
+      if (unk3300EIGEGOGFJND_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIGEGOGFJND);
       }
-      if (highestDpsAvatrPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HighestDpsAvatrPair);
+      if (unk3300OALLHJPBOHO_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300OALLHJPBOHO);
       }
-      if (mostTakeDamageAvatarPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MostTakeDamageAvatarPair);
+      if (unk3300KMCLPHEDNCJ_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300KIKPMNPKLDG_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CCFHOFCIEPF);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -307,36 +311,36 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.mostKillAvatarPair_ != null) {
-        if (mostKillAvatarPair_ == null) {
-          MostKillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-        }
-        MostKillAvatarPair.MergeFrom(other.MostKillAvatarPair);
-      }
-      if (other.mostCastNormalSkillAvatarPair_ != null) {
-        if (mostCastNormalSkillAvatarPair_ == null) {
-          MostCastNormalSkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-        }
-        MostCastNormalSkillAvatarPair.MergeFrom(other.MostCastNormalSkillAvatarPair);
-      }
       mostRevealAvatarList_.Add(other.mostRevealAvatarList_);
-      if (other.mostCastEnergySkillAvatarPair_ != null) {
-        if (mostCastEnergySkillAvatarPair_ == null) {
-          MostCastEnergySkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+      if (other.unk3300EIGEGOGFJND_ != null) {
+        if (unk3300EIGEGOGFJND_ == null) {
+          Unk3300EIGEGOGFJND = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
         }
-        MostCastEnergySkillAvatarPair.MergeFrom(other.MostCastEnergySkillAvatarPair);
+        Unk3300EIGEGOGFJND.MergeFrom(other.Unk3300EIGEGOGFJND);
       }
-      if (other.highestDpsAvatrPair_ != null) {
-        if (highestDpsAvatrPair_ == null) {
-          HighestDpsAvatrPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+      if (other.unk3300OALLHJPBOHO_ != null) {
+        if (unk3300OALLHJPBOHO_ == null) {
+          Unk3300OALLHJPBOHO = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
         }
-        HighestDpsAvatrPair.MergeFrom(other.HighestDpsAvatrPair);
+        Unk3300OALLHJPBOHO.MergeFrom(other.Unk3300OALLHJPBOHO);
       }
-      if (other.mostTakeDamageAvatarPair_ != null) {
-        if (mostTakeDamageAvatarPair_ == null) {
-          MostTakeDamageAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+      if (other.unk3300KMCLPHEDNCJ_ != null) {
+        if (unk3300KMCLPHEDNCJ_ == null) {
+          Unk3300KMCLPHEDNCJ = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
         }
-        MostTakeDamageAvatarPair.MergeFrom(other.MostTakeDamageAvatarPair);
+        Unk3300KMCLPHEDNCJ.MergeFrom(other.Unk3300KMCLPHEDNCJ);
+      }
+      if (other.unk3300KIKPMNPKLDG_ != null) {
+        if (unk3300KIKPMNPKLDG_ == null) {
+          Unk3300KIKPMNPKLDG = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+        }
+        Unk3300KIKPMNPKLDG.MergeFrom(other.Unk3300KIKPMNPKLDG);
+      }
+      if (other.unk3300CCFHOFCIEPF_ != null) {
+        if (unk3300CCFHOFCIEPF_ == null) {
+          Unk3300CCFHOFCIEPF = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+        }
+        Unk3300CCFHOFCIEPF.MergeFrom(other.Unk3300CCFHOFCIEPF);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -353,43 +357,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            if (mostCastEnergySkillAvatarPair_ == null) {
-              MostCastEnergySkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+          case 18: {
+            if (unk3300OALLHJPBOHO_ == null) {
+              Unk3300OALLHJPBOHO = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostCastEnergySkillAvatarPair);
+            input.ReadMessage(Unk3300OALLHJPBOHO);
             break;
           }
-          case 50: {
+          case 26: {
             mostRevealAvatarList_.AddEntriesFrom(input, _repeated_mostRevealAvatarList_codec);
             break;
           }
+          case 58: {
+            if (unk3300KIKPMNPKLDG_ == null) {
+              Unk3300KIKPMNPKLDG = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KIKPMNPKLDG);
+            break;
+          }
           case 66: {
-            if (mostCastNormalSkillAvatarPair_ == null) {
-              MostCastNormalSkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            if (unk3300EIGEGOGFJND_ == null) {
+              Unk3300EIGEGOGFJND = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostCastNormalSkillAvatarPair);
-            break;
-          }
-          case 74: {
-            if (mostTakeDamageAvatarPair_ == null) {
-              MostTakeDamageAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-            }
-            input.ReadMessage(MostTakeDamageAvatarPair);
-            break;
-          }
-          case 98: {
-            if (highestDpsAvatrPair_ == null) {
-              HighestDpsAvatrPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-            }
-            input.ReadMessage(HighestDpsAvatrPair);
+            input.ReadMessage(Unk3300EIGEGOGFJND);
             break;
           }
           case 114: {
-            if (mostKillAvatarPair_ == null) {
-              MostKillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            if (unk3300KMCLPHEDNCJ_ == null) {
+              Unk3300KMCLPHEDNCJ = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostKillAvatarPair);
+            input.ReadMessage(Unk3300KMCLPHEDNCJ);
+            break;
+          }
+          case 122: {
+            if (unk3300CCFHOFCIEPF_ == null) {
+              Unk3300CCFHOFCIEPF = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300CCFHOFCIEPF);
             break;
           }
         }
@@ -407,43 +411,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            if (mostCastEnergySkillAvatarPair_ == null) {
-              MostCastEnergySkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+          case 18: {
+            if (unk3300OALLHJPBOHO_ == null) {
+              Unk3300OALLHJPBOHO = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostCastEnergySkillAvatarPair);
+            input.ReadMessage(Unk3300OALLHJPBOHO);
             break;
           }
-          case 50: {
+          case 26: {
             mostRevealAvatarList_.AddEntriesFrom(ref input, _repeated_mostRevealAvatarList_codec);
             break;
           }
+          case 58: {
+            if (unk3300KIKPMNPKLDG_ == null) {
+              Unk3300KIKPMNPKLDG = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KIKPMNPKLDG);
+            break;
+          }
           case 66: {
-            if (mostCastNormalSkillAvatarPair_ == null) {
-              MostCastNormalSkillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            if (unk3300EIGEGOGFJND_ == null) {
+              Unk3300EIGEGOGFJND = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostCastNormalSkillAvatarPair);
-            break;
-          }
-          case 74: {
-            if (mostTakeDamageAvatarPair_ == null) {
-              MostTakeDamageAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-            }
-            input.ReadMessage(MostTakeDamageAvatarPair);
-            break;
-          }
-          case 98: {
-            if (highestDpsAvatrPair_ == null) {
-              HighestDpsAvatrPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
-            }
-            input.ReadMessage(HighestDpsAvatrPair);
+            input.ReadMessage(Unk3300EIGEGOGFJND);
             break;
           }
           case 114: {
-            if (mostKillAvatarPair_ == null) {
-              MostKillAvatarPair = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            if (unk3300KMCLPHEDNCJ_ == null) {
+              Unk3300KMCLPHEDNCJ = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
             }
-            input.ReadMessage(MostKillAvatarPair);
+            input.ReadMessage(Unk3300KMCLPHEDNCJ);
+            break;
+          }
+          case 122: {
+            if (unk3300CCFHOFCIEPF_ == null) {
+              Unk3300CCFHOFCIEPF = new global::Weedwacker.Shared.Network.Proto.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300CCFHOFCIEPF);
             break;
           }
         }

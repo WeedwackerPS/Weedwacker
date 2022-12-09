@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarTalkFinishInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRIb21lQXZhdGFyVGFsa0ZpbmlzaEluZm9Ob3RpZnkucHJvdG8aHkhvbWVB",
-            "dmF0YXJUYWxrRmluaXNoSW5mby5wcm90byJaCh5Ib21lQXZhdGFyVGFsa0Zp",
-            "bmlzaEluZm9Ob3RpZnkSOAoVYXZhdGFyX3RhbGtfaW5mb19saXN0GAkgAygL",
-            "MhkuSG9tZUF2YXRhclRhbGtGaW5pc2hJbmZvQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRIb21lQXZhdGFyVGFsa0ZpbmlzaEluZm9Ob3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHkhvbWVBdmF0YXJUYWxrRmlu",
+            "aXNoSW5mby5wcm90byJ6Ch5Ib21lQXZhdGFyVGFsa0ZpbmlzaEluZm9Ob3Rp",
+            "ZnkSWAoVYXZhdGFyX3RhbGtfaW5mb19saXN0GAkgAygLMjkuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lQXZhdGFyVGFsa0ZpbmlzaElu",
+            "Zm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeAvatarTalkFinishInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4896
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4757;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeAvatarTalkFinishInfoNotify : pb::IMessage<HomeAvatarTalkFinishInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

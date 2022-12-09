@@ -24,11 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunaRiteDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhMdW5hUml0ZURldGFpbEluZm8ucHJvdG8aFkx1bmFSaXRlQXJlYUluZm8u",
-            "cHJvdG8aF0x1bmFSaXRlSGludFBvaW50LnByb3RvImcKEkx1bmFSaXRlRGV0",
-            "YWlsSW5mbxImCgpoaW50X3BvaW50GAMgAygLMhIuTHVuYVJpdGVIaW50UG9p",
-            "bnQSKQoOYXJlYV9pbmZvX2xpc3QYDSADKAsyES5MdW5hUml0ZUFyZWFJbmZv",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhMdW5hUml0ZURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFkx1bmFSaXRlQXJlYUluZm8ucHJvdG8aF0x1bmFS",
+            "aXRlSGludFBvaW50LnByb3RvIqcBChJMdW5hUml0ZURldGFpbEluZm8SRgoK",
+            "aGludF9wb2ludBgEIAMoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uTHVuYVJpdGVIaW50UG9pbnQSSQoOYXJlYV9pbmZvX2xpc3QYByAD",
+            "KAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkx1bmFSaXRl",
+            "QXJlYUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hint_point" field.</summary>
-    public const int HintPointFieldNumber = 3;
+    public const int HintPointFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> _repeated_hintPoint_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> hintPoint_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "area_info_list" field.</summary>
-    public const int AreaInfoListFieldNumber = 13;
+    public const int AreaInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo> _repeated_areaInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo> areaInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteAreaInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -205,11 +207,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 34: {
             hintPoint_.AddEntriesFrom(input, _repeated_hintPoint_codec);
             break;
           }
-          case 106: {
+          case 58: {
             areaInfoList_.AddEntriesFrom(input, _repeated_areaInfoList_codec);
             break;
           }
@@ -228,11 +230,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 34: {
             hintPoint_.AddEntriesFrom(ref input, _repeated_hintPoint_codec);
             break;
           }
-          case 106: {
+          case 58: {
             areaInfoList_.AddEntriesFrom(ref input, _repeated_areaInfoList_codec);
             break;
           }

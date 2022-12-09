@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtIaWRlQW5kU2Vla1NldHRsZUluZm8ucHJvdG8aG0V4aGliaXRpb25EaXNw",
-            "bGF5SW5mby5wcm90bxoUUHJvZmlsZVBpY3R1cmUucHJvdG8isgEKFUhpZGVB",
-            "bmRTZWVrU2V0dGxlSW5mbxILCgN1aWQYAiABKA0SKAoPcHJvZmlsZV9waWN0",
-            "dXJlGAEgASgLMg8uUHJvZmlsZVBpY3R1cmUSKQoJY2FyZF9saXN0GAggAygL",
-            "MhYuRXhoaWJpdGlvbkRpc3BsYXlJbmZvEhAKCG5pY2tuYW1lGAMgASgJEhIK",
-            "CmhlYWRfaW1hZ2UYBCABKA0SEQoJb25saW5lX2lkGAogASgJQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtIaWRlQW5kU2Vla1NldHRsZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aG0V4aGliaXRpb25EaXNwbGF5SW5mby5wcm90",
+            "bxoUUHJvZmlsZVBpY3R1cmUucHJvdG8i8gEKFUhpZGVBbmRTZWVrU2V0dGxl",
+            "SW5mbxJJCgljYXJkX2xpc3QYAiADKAsyNi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkV4aGliaXRpb25EaXNwbGF5SW5mbxIQCghuaWNrbmFt",
+            "ZRgPIAEoCRISCgpoZWFkX2ltYWdlGAkgASgNEgsKA3VpZBgGIAEoDRIRCglv",
+            "bmxpbmVfaWQYBSABKAkSSAoPcHJvZmlsZV9waWN0dXJlGA4gASgLMi8uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Qcm9maWxlUGljdHVyZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ProfilePictureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo.Parser, new[]{ "Uid", "ProfilePicture", "CardList", "Nickname", "HeadImage", "OnlineId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo.Parser, new[]{ "CardList", "Nickname", "HeadImage", "Uid", "OnlineId", "ProfilePicture" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,12 +77,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekSettleInfo(HideAndSeekSettleInfo other) : this() {
-      uid_ = other.uid_;
-      profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
       cardList_ = other.cardList_.Clone();
       nickname_ = other.nickname_;
       headImage_ = other.headImage_;
+      uid_ = other.uid_;
       onlineId_ = other.onlineId_;
+      profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,34 +92,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HideAndSeekSettleInfo(this);
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 2;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "profile_picture" field.</summary>
-    public const int ProfilePictureFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.ProfilePicture profilePicture_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ProfilePicture ProfilePicture {
-      get { return profilePicture_; }
-      set {
-        profilePicture_ = value;
-      }
-    }
-
     /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 8;
+    public const int CardListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_cardList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> cardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "nickname" field.</summary>
-    public const int NicknameFieldNumber = 3;
+    public const int NicknameFieldNumber = 15;
     private string nickname_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,7 +116,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "head_image" field.</summary>
-    public const int HeadImageFieldNumber = 4;
+    public const int HeadImageFieldNumber = 9;
     private uint headImage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,8 +127,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 6;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "online_id" field.</summary>
-    public const int OnlineIdFieldNumber = 10;
+    public const int OnlineIdFieldNumber = 5;
     private string onlineId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,6 +148,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return onlineId_; }
       set {
         onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "profile_picture" field.</summary>
+    public const int ProfilePictureFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.ProfilePicture profilePicture_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ProfilePicture ProfilePicture {
+      get { return profilePicture_; }
+      set {
+        profilePicture_ = value;
       }
     }
 
@@ -176,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
-      if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
       if(!cardList_.Equals(other.cardList_)) return false;
       if (Nickname != other.Nickname) return false;
       if (HeadImage != other.HeadImage) return false;
+      if (Uid != other.Uid) return false;
       if (OnlineId != other.OnlineId) return false;
+      if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
       hash ^= cardList_.GetHashCode();
       if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
       if (HeadImage != 0) hash ^= HeadImage.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
+      if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,26 +215,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (profilePicture_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ProfilePicture);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
-      }
-      if (Nickname.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Nickname);
-      }
-      if (HeadImage != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(HeadImage);
-      }
       cardList_.WriteTo(output, _repeated_cardList_codec);
       if (OnlineId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(42);
         output.WriteString(OnlineId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Uid);
+      }
+      if (HeadImage != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(HeadImage);
+      }
+      if (profilePicture_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(Nickname);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -244,26 +246,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (profilePicture_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ProfilePicture);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
-      }
-      if (Nickname.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Nickname);
-      }
-      if (HeadImage != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(HeadImage);
-      }
       cardList_.WriteTo(ref output, _repeated_cardList_codec);
       if (OnlineId.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(42);
         output.WriteString(OnlineId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Uid);
+      }
+      if (HeadImage != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(HeadImage);
+      }
+      if (profilePicture_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(Nickname);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -275,12 +277,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
-      if (profilePicture_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
-      }
       size += cardList_.CalculateSize(_repeated_cardList_codec);
       if (Nickname.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
@@ -288,8 +284,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (HeadImage != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HeadImage);
       }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
       if (OnlineId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
+      }
+      if (profilePicture_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -303,15 +305,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
-      if (other.profilePicture_ != null) {
-        if (profilePicture_ == null) {
-          ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
-        }
-        ProfilePicture.MergeFrom(other.ProfilePicture);
-      }
       cardList_.Add(other.cardList_);
       if (other.Nickname.Length != 0) {
         Nickname = other.Nickname;
@@ -319,8 +312,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.HeadImage != 0) {
         HeadImage = other.HeadImage;
       }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
       if (other.OnlineId.Length != 0) {
         OnlineId = other.OnlineId;
+      }
+      if (other.profilePicture_ != null) {
+        if (profilePicture_ == null) {
+          ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
+        }
+        ProfilePicture.MergeFrom(other.ProfilePicture);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -337,31 +339,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 18: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 42: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 48: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            HeadImage = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (profilePicture_ == null) {
               ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
             }
             input.ReadMessage(ProfilePicture);
             break;
           }
-          case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26: {
+          case 122: {
             Nickname = input.ReadString();
-            break;
-          }
-          case 32: {
-            HeadImage = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
-            break;
-          }
-          case 82: {
-            OnlineId = input.ReadString();
             break;
           }
         }
@@ -379,31 +381,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 18: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 42: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 48: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            HeadImage = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (profilePicture_ == null) {
               ProfilePicture = new global::Weedwacker.Shared.Network.Proto.ProfilePicture();
             }
             input.ReadMessage(ProfilePicture);
             break;
           }
-          case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26: {
+          case 122: {
             Nickname = input.ReadString();
-            break;
-          }
-          case 32: {
-            HeadImage = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
-            break;
-          }
-          case 82: {
-            OnlineId = input.ReadString();
             break;
           }
         }

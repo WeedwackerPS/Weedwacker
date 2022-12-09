@@ -25,15 +25,16 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllckxlYXZlTm90aWZ5LnByb3Rv",
-            "GitEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllckxlYXZlUmVhc29uLnByb3Rv",
-            "InMKJUR1bmdlb25DYW5kaWRhdGVUZWFtUGxheWVyTGVhdmVOb3RpZnkSNgoG",
-            "cmVhc29uGAMgASgOMiYuRHVuZ2VvbkNhbmRpZGF0ZVRlYW1QbGF5ZXJMZWF2",
-            "ZVJlYXNvbhISCgpwbGF5ZXJfdWlkGA0gASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Eh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGitEdW5nZW9uQ2Fu",
+            "ZGlkYXRlVGVhbVBsYXllckxlYXZlUmVhc29uLnByb3RvIpMBCiVEdW5nZW9u",
+            "Q2FuZGlkYXRlVGVhbVBsYXllckxlYXZlTm90aWZ5EhIKCnBsYXllcl91aWQY",
+            "ByABKA0SVgoGcmVhc29uGAEgASgOMkYuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5EdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllckxlYXZlUmVh",
+            "c29uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveNotify.Parser, new[]{ "Reason", "PlayerUid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveNotify.Parser, new[]{ "PlayerUid", "Reason" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 926
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 972;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonCandidateTeamPlayerLeaveNotify : pb::IMessage<DungeonCandidateTeamPlayerLeaveNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonCandidateTeamPlayerLeaveNotify(DungeonCandidateTeamPlayerLeaveNotify other) : this() {
-      reason_ = other.reason_;
       playerUid_ = other.playerUid_;
+      reason_ = other.reason_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonCandidateTeamPlayerLeaveNotify(this);
     }
 
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason reason_ = global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
     /// <summary>Field number for the "player_uid" field.</summary>
-    public const int PlayerUidFieldNumber = 13;
+    public const int PlayerUidFieldNumber = 7;
     private uint playerUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playerUid_; }
       set {
         playerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason reason_ = global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
       }
     }
 
@@ -129,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Reason != other.Reason) return false;
       if (PlayerUid != other.PlayerUid) return false;
+      if (Reason != other.Reason) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,8 +143,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) hash ^= Reason.GetHashCode();
       if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteEnum((int) Reason);
       }
       if (PlayerUid != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(PlayerUid);
       }
       if (_unknownFields != null) {
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteEnum((int) Reason);
       }
       if (PlayerUid != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(PlayerUid);
       }
       if (_unknownFields != null) {
@@ -194,11 +199,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
       if (PlayerUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -212,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
-        Reason = other.Reason;
-      }
       if (other.PlayerUid != 0) {
         PlayerUid = other.PlayerUid;
+      }
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason.TplrNormal) {
+        Reason = other.Reason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -233,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             Reason = (global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason) input.ReadEnum();
             break;
           }
-          case 104: {
+          case 56: {
             PlayerUid = input.ReadUInt32();
             break;
           }
@@ -256,11 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             Reason = (global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason) input.ReadEnum();
             break;
           }
-          case 104: {
+          case 56: {
             PlayerUid = input.ReadUInt32();
             break;
           }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureMapRegionInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFUcmVhc3VyZU1hcFJlZ2lvbkluZm9Ob3RpZnkucHJvdG8aG1RyZWFzdXJl",
-            "TWFwUmVnaW9uSW5mby5wcm90byJKChtUcmVhc3VyZU1hcFJlZ2lvbkluZm9O",
-            "b3RpZnkSKwoLcmVnaW9uX2luZm8YDiABKAsyFi5UcmVhc3VyZU1hcFJlZ2lv",
-            "bkluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiFUcmVhc3VyZU1hcFJlZ2lvbkluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG1RyZWFzdXJlTWFwUmVnaW9uSW5m",
+            "by5wcm90byJqChtUcmVhc3VyZU1hcFJlZ2lvbkluZm9Ob3RpZnkSSwoLcmVn",
+            "aW9uX2luZm8YByABKAsyNi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlRyZWFzdXJlTWFwUmVnaW9uSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2185
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2179;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TreasureMapRegionInfoNotify : pb::IMessage<TreasureMapRegionInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_info" field.</summary>
-    public const int RegionInfoFieldNumber = 14;
+    public const int RegionInfoFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo regionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (regionInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(58);
         output.WriteMessage(RegionInfo);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (regionInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(58);
         output.WriteMessage(RegionInfo);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 58: {
             if (regionInfo_ == null) {
               RegionInfo = new global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 58: {
             if (regionInfo_ == null) {
               RegionInfo = new global::Weedwacker.Shared.Network.Proto.TreasureMapRegionInfo();
             }

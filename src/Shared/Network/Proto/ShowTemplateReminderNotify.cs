@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShowTemplateReminderNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBTaG93VGVtcGxhdGVSZW1pbmRlck5vdGlmeS5wcm90byKQAQoaU2hvd1Rl",
-            "bXBsYXRlUmVtaW5kZXJOb3RpZnkSEQoJaXNfcmV2b2tlGAEgASgIEhwKFHRl",
-            "bXBsYXRlX3JlbWluZGVyX2lkGA4gASgNEhYKDnBhcmFtX3VpZF9saXN0GAMg",
-            "AygNEhIKCnBhcmFtX2xpc3QYCiADKAUSFQoNaXNfbmVlZF9jYWNoZRgPIAEo",
-            "CEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBTaG93VGVtcGxhdGVSZW1pbmRlck5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKgAQoaU2hvd1RlbXBsYXRlUmVtaW5k",
+            "ZXJOb3RpZnkSGwoTVW5rMzMwMF9MQUJDTkJFR0NFRBgGIAEoCBISCgpwYXJh",
+            "bV9saXN0GAQgAygFEhwKFHRlbXBsYXRlX3JlbWluZGVyX2lkGAIgASgNEhsK",
+            "E1VuazMzMDBfQUVOSUlCQkJQSkMYDCABKAgSFgoOcGFyYW1fdWlkX2xpc3QY",
+            "ByADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShowTemplateReminderNotify), global::Weedwacker.Shared.Network.Proto.ShowTemplateReminderNotify.Parser, new[]{ "IsRevoke", "TemplateReminderId", "ParamUidList", "ParamList", "IsNeedCache" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShowTemplateReminderNotify), global::Weedwacker.Shared.Network.Proto.ShowTemplateReminderNotify.Parser, new[]{ "Unk3300LABCNBEGCED", "ParamList", "TemplateReminderId", "Unk3300AENIIBBBPJC", "ParamUidList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3491
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3300;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ShowTemplateReminderNotify : pb::IMessage<ShowTemplateReminderNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ShowTemplateReminderNotify(ShowTemplateReminderNotify other) : this() {
-      isRevoke_ = other.isRevoke_;
-      templateReminderId_ = other.templateReminderId_;
-      paramUidList_ = other.paramUidList_.Clone();
+      unk3300LABCNBEGCED_ = other.unk3300LABCNBEGCED_;
       paramList_ = other.paramList_.Clone();
-      isNeedCache_ = other.isNeedCache_;
+      templateReminderId_ = other.templateReminderId_;
+      unk3300AENIIBBBPJC_ = other.unk3300AENIIBBBPJC_;
+      paramUidList_ = other.paramUidList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +97,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ShowTemplateReminderNotify(this);
     }
 
-    /// <summary>Field number for the "is_revoke" field.</summary>
-    public const int IsRevokeFieldNumber = 1;
-    private bool isRevoke_;
+    /// <summary>Field number for the "Unk3300_LABCNBEGCED" field.</summary>
+    public const int Unk3300LABCNBEGCEDFieldNumber = 6;
+    private bool unk3300LABCNBEGCED_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsRevoke {
-      get { return isRevoke_; }
+    public bool Unk3300LABCNBEGCED {
+      get { return unk3300LABCNBEGCED_; }
       set {
-        isRevoke_ = value;
+        unk3300LABCNBEGCED_ = value;
       }
     }
 
+    /// <summary>Field number for the "param_list" field.</summary>
+    public const int ParamListFieldNumber = 4;
+    private static readonly pb::FieldCodec<int> _repeated_paramList_codec
+        = pb::FieldCodec.ForInt32(34);
+    private readonly pbc::RepeatedField<int> paramList_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> ParamList {
+      get { return paramList_; }
+    }
+
     /// <summary>Field number for the "template_reminder_id" field.</summary>
-    public const int TemplateReminderIdFieldNumber = 14;
+    public const int TemplateReminderIdFieldNumber = 2;
     private uint templateReminderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,38 +132,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_AENIIBBBPJC" field.</summary>
+    public const int Unk3300AENIIBBBPJCFieldNumber = 12;
+    private bool unk3300AENIIBBBPJC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300AENIIBBBPJC {
+      get { return unk3300AENIIBBBPJC_; }
+      set {
+        unk3300AENIIBBBPJC_ = value;
+      }
+    }
+
     /// <summary>Field number for the "param_uid_list" field.</summary>
-    public const int ParamUidListFieldNumber = 3;
+    public const int ParamUidListFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_paramUidList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(58);
     private readonly pbc::RepeatedField<uint> paramUidList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> ParamUidList {
       get { return paramUidList_; }
-    }
-
-    /// <summary>Field number for the "param_list" field.</summary>
-    public const int ParamListFieldNumber = 10;
-    private static readonly pb::FieldCodec<int> _repeated_paramList_codec
-        = pb::FieldCodec.ForInt32(82);
-    private readonly pbc::RepeatedField<int> paramList_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<int> ParamList {
-      get { return paramList_; }
-    }
-
-    /// <summary>Field number for the "is_need_cache" field.</summary>
-    public const int IsNeedCacheFieldNumber = 15;
-    private bool isNeedCache_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNeedCache {
-      get { return isNeedCache_; }
-      set {
-        isNeedCache_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsRevoke != other.IsRevoke) return false;
-      if (TemplateReminderId != other.TemplateReminderId) return false;
-      if(!paramUidList_.Equals(other.paramUidList_)) return false;
+      if (Unk3300LABCNBEGCED != other.Unk3300LABCNBEGCED) return false;
       if(!paramList_.Equals(other.paramList_)) return false;
-      if (IsNeedCache != other.IsNeedCache) return false;
+      if (TemplateReminderId != other.TemplateReminderId) return false;
+      if (Unk3300AENIIBBBPJC != other.Unk3300AENIIBBBPJC) return false;
+      if(!paramUidList_.Equals(other.paramUidList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsRevoke != false) hash ^= IsRevoke.GetHashCode();
-      if (TemplateReminderId != 0) hash ^= TemplateReminderId.GetHashCode();
-      hash ^= paramUidList_.GetHashCode();
+      if (Unk3300LABCNBEGCED != false) hash ^= Unk3300LABCNBEGCED.GetHashCode();
       hash ^= paramList_.GetHashCode();
-      if (IsNeedCache != false) hash ^= IsNeedCache.GetHashCode();
+      if (TemplateReminderId != 0) hash ^= TemplateReminderId.GetHashCode();
+      if (Unk3300AENIIBBBPJC != false) hash ^= Unk3300AENIIBBBPJC.GetHashCode();
+      hash ^= paramUidList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -200,19 +205,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsRevoke != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsRevoke);
-      }
-      paramUidList_.WriteTo(output, _repeated_paramUidList_codec);
-      paramList_.WriteTo(output, _repeated_paramList_codec);
       if (TemplateReminderId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(TemplateReminderId);
       }
-      if (IsNeedCache != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsNeedCache);
+      paramList_.WriteTo(output, _repeated_paramList_codec);
+      if (Unk3300LABCNBEGCED != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300LABCNBEGCED);
+      }
+      paramUidList_.WriteTo(output, _repeated_paramUidList_codec);
+      if (Unk3300AENIIBBBPJC != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300AENIIBBBPJC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -224,19 +229,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsRevoke != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsRevoke);
-      }
-      paramUidList_.WriteTo(ref output, _repeated_paramUidList_codec);
-      paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (TemplateReminderId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(TemplateReminderId);
       }
-      if (IsNeedCache != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsNeedCache);
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
+      if (Unk3300LABCNBEGCED != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300LABCNBEGCED);
+      }
+      paramUidList_.WriteTo(ref output, _repeated_paramUidList_codec);
+      if (Unk3300AENIIBBBPJC != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300AENIIBBBPJC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -248,17 +253,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsRevoke != false) {
+      if (Unk3300LABCNBEGCED != false) {
         size += 1 + 1;
       }
+      size += paramList_.CalculateSize(_repeated_paramList_codec);
       if (TemplateReminderId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateReminderId);
       }
-      size += paramUidList_.CalculateSize(_repeated_paramUidList_codec);
-      size += paramList_.CalculateSize(_repeated_paramList_codec);
-      if (IsNeedCache != false) {
+      if (Unk3300AENIIBBBPJC != false) {
         size += 1 + 1;
       }
+      size += paramUidList_.CalculateSize(_repeated_paramUidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -271,17 +276,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsRevoke != false) {
-        IsRevoke = other.IsRevoke;
+      if (other.Unk3300LABCNBEGCED != false) {
+        Unk3300LABCNBEGCED = other.Unk3300LABCNBEGCED;
       }
+      paramList_.Add(other.paramList_);
       if (other.TemplateReminderId != 0) {
         TemplateReminderId = other.TemplateReminderId;
       }
-      paramUidList_.Add(other.paramUidList_);
-      paramList_.Add(other.paramList_);
-      if (other.IsNeedCache != false) {
-        IsNeedCache = other.IsNeedCache;
+      if (other.Unk3300AENIIBBBPJC != false) {
+        Unk3300AENIIBBBPJC = other.Unk3300AENIIBBBPJC;
       }
+      paramUidList_.Add(other.paramUidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -297,26 +302,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsRevoke = input.ReadBool();
-            break;
-          }
-          case 26:
-          case 24: {
-            paramUidList_.AddEntriesFrom(input, _repeated_paramUidList_codec);
-            break;
-          }
-          case 82:
-          case 80: {
-            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
-            break;
-          }
-          case 112: {
+          case 16: {
             TemplateReminderId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            IsNeedCache = input.ReadBool();
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+            break;
+          }
+          case 48: {
+            Unk3300LABCNBEGCED = input.ReadBool();
+            break;
+          }
+          case 58:
+          case 56: {
+            paramUidList_.AddEntriesFrom(input, _repeated_paramUidList_codec);
+            break;
+          }
+          case 96: {
+            Unk3300AENIIBBBPJC = input.ReadBool();
             break;
           }
         }
@@ -334,26 +339,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsRevoke = input.ReadBool();
-            break;
-          }
-          case 26:
-          case 24: {
-            paramUidList_.AddEntriesFrom(ref input, _repeated_paramUidList_codec);
-            break;
-          }
-          case 82:
-          case 80: {
-            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
-            break;
-          }
-          case 112: {
+          case 16: {
             TemplateReminderId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            IsNeedCache = input.ReadBool();
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+            break;
+          }
+          case 48: {
+            Unk3300LABCNBEGCED = input.ReadBool();
+            break;
+          }
+          case 58:
+          case 56: {
+            paramUidList_.AddEntriesFrom(ref input, _repeated_paramUidList_codec);
+            break;
+          }
+          case 96: {
+            Unk3300AENIIBBBPJC = input.ReadBool();
             break;
           }
         }

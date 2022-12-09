@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryDungeonInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFSb2d1ZURpYXJ5RHVuZ2VvbkluZm9Ob3RpZnkucHJvdG8aGFJvZ3VlRGlh",
-            "cnlSb29tSW5mby5wcm90byL1AQobUm9ndWVEaWFyeUR1bmdlb25JbmZvTm90",
-            "aWZ5EhAKCHN0YWdlX2lkGAwgASgNEhoKEnJvdW5kX21vbnN0ZXJfbGlzdBgP",
-            "IAMoDRIMCgR0aW1lGAQgASgNEhAKCGN1cl9yb29tGAUgASgNEhEKCWN1cl9y",
-            "b3VuZBgGIAEoDRIMCgRjb2luGAsgASgNEhIKCmRpZmZpY3VsdHkYCCABKA0S",
-            "EgoKZHVuZ2Vvbl9pZBgOIAEoDRImCglyb29tX2xpc3QYByADKAsyEy5Sb2d1",
-            "ZURpYXJ5Um9vbUluZm8SFwoPcm91bmRfY2FyZF9saXN0GAogAygNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFSb2d1ZURpYXJ5RHVuZ2VvbkluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGFJvZ3VlRGlhcnlSb29tSW5mby5w",
+            "cm90byKaAgobUm9ndWVEaWFyeUR1bmdlb25JbmZvTm90aWZ5EhAKCHN0YWdl",
+            "X2lkGAwgASgNEgwKBHRpbWUYCSABKA0SGwoTVW5rMzMwMF9NTUJFSkdERkNH",
+            "RRgGIAMoDRIQCghjdXJfcm9vbRgBIAEoDRIbChNVbmszMzAwX0RLQ0ZHTEFL",
+            "UEpMGAggAygNEhIKCmR1bmdlb25faWQYByABKA0SRgoJcm9vbV9saXN0GAUg",
+            "AygLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Sb2d1ZURp",
+            "YXJ5Um9vbUluZm8SEgoKZGlmZmljdWx0eRgOIAEoDRIRCgljdXJfcm91bmQY",
+            "CiABKA0SDAoEY29pbhgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonInfoNotify), global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonInfoNotify.Parser, new[]{ "StageId", "RoundMonsterList", "Time", "CurRoom", "CurRound", "Coin", "Difficulty", "DungeonId", "RoomList", "RoundCardList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonInfoNotify), global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonInfoNotify.Parser, new[]{ "StageId", "Time", "Unk3300MMBEJGDFCGE", "CurRoom", "Unk3300DKCFGLAKPJL", "DungeonId", "RoomList", "Difficulty", "CurRound", "Coin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8597
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8096;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class RogueDiaryDungeonInfoNotify : pb::IMessage<RogueDiaryDungeonInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,15 +88,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryDungeonInfoNotify(RogueDiaryDungeonInfoNotify other) : this() {
       stageId_ = other.stageId_;
-      roundMonsterList_ = other.roundMonsterList_.Clone();
       time_ = other.time_;
+      unk3300MMBEJGDFCGE_ = other.unk3300MMBEJGDFCGE_.Clone();
       curRoom_ = other.curRoom_;
-      curRound_ = other.curRound_;
-      coin_ = other.coin_;
-      difficulty_ = other.difficulty_;
+      unk3300DKCFGLAKPJL_ = other.unk3300DKCFGLAKPJL_.Clone();
       dungeonId_ = other.dungeonId_;
       roomList_ = other.roomList_.Clone();
-      roundCardList_ = other.roundCardList_.Clone();
+      difficulty_ = other.difficulty_;
+      curRound_ = other.curRound_;
+      coin_ = other.coin_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -113,19 +118,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "round_monster_list" field.</summary>
-    public const int RoundMonsterListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_roundMonsterList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> roundMonsterList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> RoundMonsterList {
-      get { return roundMonsterList_; }
-    }
-
     /// <summary>Field number for the "time" field.</summary>
-    public const int TimeFieldNumber = 4;
+    public const int TimeFieldNumber = 9;
     private uint time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,8 +130,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_MMBEJGDFCGE" field.</summary>
+    public const int Unk3300MMBEJGDFCGEFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300MMBEJGDFCGE_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> unk3300MMBEJGDFCGE_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300MMBEJGDFCGE {
+      get { return unk3300MMBEJGDFCGE_; }
+    }
+
     /// <summary>Field number for the "cur_room" field.</summary>
-    public const int CurRoomFieldNumber = 5;
+    public const int CurRoomFieldNumber = 1;
     private uint curRoom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,44 +153,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cur_round" field.</summary>
-    public const int CurRoundFieldNumber = 6;
-    private uint curRound_;
+    /// <summary>Field number for the "Unk3300_DKCFGLAKPJL" field.</summary>
+    public const int Unk3300DKCFGLAKPJLFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300DKCFGLAKPJL_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> unk3300DKCFGLAKPJL_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurRound {
-      get { return curRound_; }
-      set {
-        curRound_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "coin" field.</summary>
-    public const int CoinFieldNumber = 11;
-    private uint coin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Coin {
-      get { return coin_; }
-      set {
-        coin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 8;
-    private uint difficulty_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Difficulty {
-      get { return difficulty_; }
-      set {
-        difficulty_ = value;
-      }
+    public pbc::RepeatedField<uint> Unk3300DKCFGLAKPJL {
+      get { return unk3300DKCFGLAKPJL_; }
     }
 
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 14;
+    public const int DungeonIdFieldNumber = 7;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -197,9 +177,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "room_list" field.</summary>
-    public const int RoomListFieldNumber = 7;
+    public const int RoomListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo> _repeated_roomList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo> roomList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -207,15 +187,40 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return roomList_; }
     }
 
-    /// <summary>Field number for the "round_card_list" field.</summary>
-    public const int RoundCardListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_roundCardList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> roundCardList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "difficulty" field.</summary>
+    public const int DifficultyFieldNumber = 14;
+    private uint difficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> RoundCardList {
-      get { return roundCardList_; }
+    public uint Difficulty {
+      get { return difficulty_; }
+      set {
+        difficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_round" field.</summary>
+    public const int CurRoundFieldNumber = 10;
+    private uint curRound_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurRound {
+      get { return curRound_; }
+      set {
+        curRound_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "coin" field.</summary>
+    public const int CoinFieldNumber = 3;
+    private uint coin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Coin {
+      get { return coin_; }
+      set {
+        coin_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (StageId != other.StageId) return false;
-      if(!roundMonsterList_.Equals(other.roundMonsterList_)) return false;
       if (Time != other.Time) return false;
+      if(!unk3300MMBEJGDFCGE_.Equals(other.unk3300MMBEJGDFCGE_)) return false;
       if (CurRoom != other.CurRoom) return false;
-      if (CurRound != other.CurRound) return false;
-      if (Coin != other.Coin) return false;
-      if (Difficulty != other.Difficulty) return false;
+      if(!unk3300DKCFGLAKPJL_.Equals(other.unk3300DKCFGLAKPJL_)) return false;
       if (DungeonId != other.DungeonId) return false;
       if(!roomList_.Equals(other.roomList_)) return false;
-      if(!roundCardList_.Equals(other.roundCardList_)) return false;
+      if (Difficulty != other.Difficulty) return false;
+      if (CurRound != other.CurRound) return false;
+      if (Coin != other.Coin) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -251,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      hash ^= roundMonsterList_.GetHashCode();
       if (Time != 0) hash ^= Time.GetHashCode();
+      hash ^= unk3300MMBEJGDFCGE_.GetHashCode();
       if (CurRoom != 0) hash ^= CurRoom.GetHashCode();
-      if (CurRound != 0) hash ^= CurRound.GetHashCode();
-      if (Coin != 0) hash ^= Coin.GetHashCode();
-      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      hash ^= unk3300DKCFGLAKPJL_.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       hash ^= roomList_.GetHashCode();
-      hash ^= roundCardList_.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      if (CurRound != 0) hash ^= CurRound.GetHashCode();
+      if (Coin != 0) hash ^= Coin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -278,37 +283,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Time != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Time);
-      }
       if (CurRoom != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(CurRoom);
       }
-      if (CurRound != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CurRound);
+      if (Coin != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Coin);
       }
       roomList_.WriteTo(output, _repeated_roomList_codec);
-      if (Difficulty != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Difficulty);
+      unk3300MMBEJGDFCGE_.WriteTo(output, _repeated_unk3300MMBEJGDFCGE_codec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(DungeonId);
       }
-      roundCardList_.WriteTo(output, _repeated_roundCardList_codec);
-      if (Coin != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(Coin);
+      unk3300DKCFGLAKPJL_.WriteTo(output, _repeated_unk3300DKCFGLAKPJL_codec);
+      if (Time != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Time);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurRound);
       }
       if (StageId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(StageId);
       }
-      if (DungeonId != 0) {
+      if (Difficulty != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(DungeonId);
+        output.WriteUInt32(Difficulty);
       }
-      roundMonsterList_.WriteTo(output, _repeated_roundMonsterList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -319,37 +324,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Time != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Time);
-      }
       if (CurRoom != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(CurRoom);
       }
-      if (CurRound != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CurRound);
+      if (Coin != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Coin);
       }
       roomList_.WriteTo(ref output, _repeated_roomList_codec);
-      if (Difficulty != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Difficulty);
+      unk3300MMBEJGDFCGE_.WriteTo(ref output, _repeated_unk3300MMBEJGDFCGE_codec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(DungeonId);
       }
-      roundCardList_.WriteTo(ref output, _repeated_roundCardList_codec);
-      if (Coin != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(Coin);
+      unk3300DKCFGLAKPJL_.WriteTo(ref output, _repeated_unk3300DKCFGLAKPJL_codec);
+      if (Time != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Time);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurRound);
       }
       if (StageId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(StageId);
       }
-      if (DungeonId != 0) {
+      if (Difficulty != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(DungeonId);
+        output.WriteUInt32(Difficulty);
       }
-      roundMonsterList_.WriteTo(ref output, _repeated_roundMonsterList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -363,12 +368,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      size += roundMonsterList_.CalculateSize(_repeated_roundMonsterList_codec);
       if (Time != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Time);
       }
+      size += unk3300MMBEJGDFCGE_.CalculateSize(_repeated_unk3300MMBEJGDFCGE_codec);
       if (CurRoom != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRoom);
+      }
+      size += unk3300DKCFGLAKPJL_.CalculateSize(_repeated_unk3300DKCFGLAKPJL_codec);
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      size += roomList_.CalculateSize(_repeated_roomList_codec);
+      if (Difficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
       }
       if (CurRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRound);
@@ -376,14 +389,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Coin != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
       }
-      if (Difficulty != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
-      }
-      if (DungeonId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-      }
-      size += roomList_.CalculateSize(_repeated_roomList_codec);
-      size += roundCardList_.CalculateSize(_repeated_roundCardList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -399,12 +404,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      roundMonsterList_.Add(other.roundMonsterList_);
       if (other.Time != 0) {
         Time = other.Time;
       }
+      unk3300MMBEJGDFCGE_.Add(other.unk3300MMBEJGDFCGE_);
       if (other.CurRoom != 0) {
         CurRoom = other.CurRoom;
+      }
+      unk3300DKCFGLAKPJL_.Add(other.unk3300DKCFGLAKPJL_);
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      roomList_.Add(other.roomList_);
+      if (other.Difficulty != 0) {
+        Difficulty = other.Difficulty;
       }
       if (other.CurRound != 0) {
         CurRound = other.CurRound;
@@ -412,14 +425,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Coin != 0) {
         Coin = other.Coin;
       }
-      if (other.Difficulty != 0) {
-        Difficulty = other.Difficulty;
-      }
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
-      }
-      roomList_.Add(other.roomList_);
-      roundCardList_.Add(other.roundCardList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -435,33 +440,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Time = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 8: {
             CurRoom = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CurRound = input.ReadUInt32();
+          case 24: {
+            Coin = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 42: {
             roomList_.AddEntriesFrom(input, _repeated_roomList_codec);
             break;
           }
+          case 50:
+          case 48: {
+            unk3300MMBEJGDFCGE_.AddEntriesFrom(input, _repeated_unk3300MMBEJGDFCGE_codec);
+            break;
+          }
+          case 56: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 66:
           case 64: {
-            Difficulty = input.ReadUInt32();
+            unk3300DKCFGLAKPJL_.AddEntriesFrom(input, _repeated_unk3300DKCFGLAKPJL_codec);
             break;
           }
-          case 82:
+          case 72: {
+            Time = input.ReadUInt32();
+            break;
+          }
           case 80: {
-            roundCardList_.AddEntriesFrom(input, _repeated_roundCardList_codec);
-            break;
-          }
-          case 88: {
-            Coin = input.ReadUInt32();
+            CurRound = input.ReadUInt32();
             break;
           }
           case 96: {
@@ -469,12 +479,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 112: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 122:
-          case 120: {
-            roundMonsterList_.AddEntriesFrom(input, _repeated_roundMonsterList_codec);
+            Difficulty = input.ReadUInt32();
             break;
           }
         }
@@ -492,33 +497,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Time = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 8: {
             CurRoom = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CurRound = input.ReadUInt32();
+          case 24: {
+            Coin = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 42: {
             roomList_.AddEntriesFrom(ref input, _repeated_roomList_codec);
             break;
           }
+          case 50:
+          case 48: {
+            unk3300MMBEJGDFCGE_.AddEntriesFrom(ref input, _repeated_unk3300MMBEJGDFCGE_codec);
+            break;
+          }
+          case 56: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 66:
           case 64: {
-            Difficulty = input.ReadUInt32();
+            unk3300DKCFGLAKPJL_.AddEntriesFrom(ref input, _repeated_unk3300DKCFGLAKPJL_codec);
             break;
           }
-          case 82:
+          case 72: {
+            Time = input.ReadUInt32();
+            break;
+          }
           case 80: {
-            roundCardList_.AddEntriesFrom(ref input, _repeated_roundCardList_codec);
-            break;
-          }
-          case 88: {
-            Coin = input.ReadUInt32();
+            CurRound = input.ReadUInt32();
             break;
           }
           case 96: {
@@ -526,12 +536,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 112: {
-            DungeonId = input.ReadUInt32();
-            break;
-          }
-          case 122:
-          case 120: {
-            roundMonsterList_.AddEntriesFrom(ref input, _repeated_roundMonsterList_codec);
+            Difficulty = input.ReadUInt32();
             break;
           }
         }

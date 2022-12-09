@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleFleurFairInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtJbkJhdHRsZUZsZXVyRmFpckluZm8ucHJvdG8iqwEKFUluQmF0dGxlRmxl",
-            "dXJGYWlySW5mbxIXCg9nYWxsZXJ5X2lkX2xpc3QYBSADKA0SGwoTZ2FsbGVy",
-            "eV9zdGFnZV9pbmRleBgGIAEoDRIbChNwcmV2aWV3X3N0YWdlX2luZGV4GAgg",
-            "ASgNEh0KFWFiaWxpdHlfZ3JvdXBfaWRfbGlzdBgCIAMoDRIgChhwcmV2aWV3",
-            "X2Rpc3BsYXlfZHVyYXRpb24YDCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtJbkJhdHRsZUZsZXVyRmFpckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8irQEKFUluQmF0dGxlRmxldXJGYWlySW5mbxIb",
+            "ChNnYWxsZXJ5X3N0YWdlX2luZGV4GAcgASgNEiAKGHByZXZpZXdfZGlzcGxh",
+            "eV9kdXJhdGlvbhgLIAEoDRIbChNVbmszMzAwX05OUE1CRkdKRUxMGA8gAygN",
+            "EhsKE3ByZXZpZXdfc3RhZ2VfaW5kZXgYCSABKA0SGwoTVW5rMzMwMF9JSkJL",
+            "S0xHT01JRRgOIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo), global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo.Parser, new[]{ "GalleryIdList", "GalleryStageIndex", "PreviewStageIndex", "AbilityGroupIdList", "PreviewDisplayDuration" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo), global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo.Parser, new[]{ "GalleryStageIndex", "PreviewDisplayDuration", "Unk3300NNPMBFGJELL", "PreviewStageIndex", "Unk3300IJBKKLGOMIE" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleFleurFairInfo(InBattleFleurFairInfo other) : this() {
-      galleryIdList_ = other.galleryIdList_.Clone();
       galleryStageIndex_ = other.galleryStageIndex_;
-      previewStageIndex_ = other.previewStageIndex_;
-      abilityGroupIdList_ = other.abilityGroupIdList_.Clone();
       previewDisplayDuration_ = other.previewDisplayDuration_;
+      unk3300NNPMBFGJELL_ = other.unk3300NNPMBFGJELL_.Clone();
+      previewStageIndex_ = other.previewStageIndex_;
+      unk3300IJBKKLGOMIE_ = other.unk3300IJBKKLGOMIE_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleFleurFairInfo(this);
     }
 
-    /// <summary>Field number for the "gallery_id_list" field.</summary>
-    public const int GalleryIdListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_galleryIdList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> galleryIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> GalleryIdList {
-      get { return galleryIdList_; }
-    }
-
     /// <summary>Field number for the "gallery_stage_index" field.</summary>
-    public const int GalleryStageIndexFieldNumber = 6;
+    public const int GalleryStageIndexFieldNumber = 7;
     private uint galleryStageIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,8 +100,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "preview_display_duration" field.</summary>
+    public const int PreviewDisplayDurationFieldNumber = 11;
+    private uint previewDisplayDuration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PreviewDisplayDuration {
+      get { return previewDisplayDuration_; }
+      set {
+        previewDisplayDuration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NNPMBFGJELL" field.</summary>
+    public const int Unk3300NNPMBFGJELLFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300NNPMBFGJELL_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300NNPMBFGJELL_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300NNPMBFGJELL {
+      get { return unk3300NNPMBFGJELL_; }
+    }
+
     /// <summary>Field number for the "preview_stage_index" field.</summary>
-    public const int PreviewStageIndexFieldNumber = 8;
+    public const int PreviewStageIndexFieldNumber = 9;
     private uint previewStageIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,27 +135,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "ability_group_id_list" field.</summary>
-    public const int AbilityGroupIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_abilityGroupIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> abilityGroupIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_IJBKKLGOMIE" field.</summary>
+    public const int Unk3300IJBKKLGOMIEFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300IJBKKLGOMIE_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> unk3300IJBKKLGOMIE_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AbilityGroupIdList {
-      get { return abilityGroupIdList_; }
-    }
-
-    /// <summary>Field number for the "preview_display_duration" field.</summary>
-    public const int PreviewDisplayDurationFieldNumber = 12;
-    private uint previewDisplayDuration_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PreviewDisplayDuration {
-      get { return previewDisplayDuration_; }
-      set {
-        previewDisplayDuration_ = value;
-      }
+    public pbc::RepeatedField<uint> Unk3300IJBKKLGOMIE {
+      get { return unk3300IJBKKLGOMIE_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!galleryIdList_.Equals(other.galleryIdList_)) return false;
       if (GalleryStageIndex != other.GalleryStageIndex) return false;
-      if (PreviewStageIndex != other.PreviewStageIndex) return false;
-      if(!abilityGroupIdList_.Equals(other.abilityGroupIdList_)) return false;
       if (PreviewDisplayDuration != other.PreviewDisplayDuration) return false;
+      if(!unk3300NNPMBFGJELL_.Equals(other.unk3300NNPMBFGJELL_)) return false;
+      if (PreviewStageIndex != other.PreviewStageIndex) return false;
+      if(!unk3300IJBKKLGOMIE_.Equals(other.unk3300IJBKKLGOMIE_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -173,11 +173,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= galleryIdList_.GetHashCode();
       if (GalleryStageIndex != 0) hash ^= GalleryStageIndex.GetHashCode();
-      if (PreviewStageIndex != 0) hash ^= PreviewStageIndex.GetHashCode();
-      hash ^= abilityGroupIdList_.GetHashCode();
       if (PreviewDisplayDuration != 0) hash ^= PreviewDisplayDuration.GetHashCode();
+      hash ^= unk3300NNPMBFGJELL_.GetHashCode();
+      if (PreviewStageIndex != 0) hash ^= PreviewStageIndex.GetHashCode();
+      hash ^= unk3300IJBKKLGOMIE_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -196,20 +196,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      abilityGroupIdList_.WriteTo(output, _repeated_abilityGroupIdList_codec);
-      galleryIdList_.WriteTo(output, _repeated_galleryIdList_codec);
       if (GalleryStageIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(GalleryStageIndex);
       }
       if (PreviewStageIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(PreviewStageIndex);
       }
       if (PreviewDisplayDuration != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(PreviewDisplayDuration);
       }
+      unk3300IJBKKLGOMIE_.WriteTo(output, _repeated_unk3300IJBKKLGOMIE_codec);
+      unk3300NNPMBFGJELL_.WriteTo(output, _repeated_unk3300NNPMBFGJELL_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -220,20 +220,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      abilityGroupIdList_.WriteTo(ref output, _repeated_abilityGroupIdList_codec);
-      galleryIdList_.WriteTo(ref output, _repeated_galleryIdList_codec);
       if (GalleryStageIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(GalleryStageIndex);
       }
       if (PreviewStageIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(PreviewStageIndex);
       }
       if (PreviewDisplayDuration != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(PreviewDisplayDuration);
       }
+      unk3300IJBKKLGOMIE_.WriteTo(ref output, _repeated_unk3300IJBKKLGOMIE_codec);
+      unk3300NNPMBFGJELL_.WriteTo(ref output, _repeated_unk3300NNPMBFGJELL_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -244,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += galleryIdList_.CalculateSize(_repeated_galleryIdList_codec);
       if (GalleryStageIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryStageIndex);
       }
-      if (PreviewStageIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewStageIndex);
-      }
-      size += abilityGroupIdList_.CalculateSize(_repeated_abilityGroupIdList_codec);
       if (PreviewDisplayDuration != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewDisplayDuration);
       }
+      size += unk3300NNPMBFGJELL_.CalculateSize(_repeated_unk3300NNPMBFGJELL_codec);
+      if (PreviewStageIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewStageIndex);
+      }
+      size += unk3300IJBKKLGOMIE_.CalculateSize(_repeated_unk3300IJBKKLGOMIE_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -267,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      galleryIdList_.Add(other.galleryIdList_);
       if (other.GalleryStageIndex != 0) {
         GalleryStageIndex = other.GalleryStageIndex;
       }
-      if (other.PreviewStageIndex != 0) {
-        PreviewStageIndex = other.PreviewStageIndex;
-      }
-      abilityGroupIdList_.Add(other.abilityGroupIdList_);
       if (other.PreviewDisplayDuration != 0) {
         PreviewDisplayDuration = other.PreviewDisplayDuration;
       }
+      unk3300NNPMBFGJELL_.Add(other.unk3300NNPMBFGJELL_);
+      if (other.PreviewStageIndex != 0) {
+        PreviewStageIndex = other.PreviewStageIndex;
+      }
+      unk3300IJBKKLGOMIE_.Add(other.unk3300IJBKKLGOMIE_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -293,26 +293,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            abilityGroupIdList_.AddEntriesFrom(input, _repeated_abilityGroupIdList_codec);
-            break;
-          }
-          case 42:
-          case 40: {
-            galleryIdList_.AddEntriesFrom(input, _repeated_galleryIdList_codec);
-            break;
-          }
-          case 48: {
+          case 56: {
             GalleryStageIndex = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 72: {
             PreviewStageIndex = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             PreviewDisplayDuration = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            unk3300IJBKKLGOMIE_.AddEntriesFrom(input, _repeated_unk3300IJBKKLGOMIE_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300NNPMBFGJELL_.AddEntriesFrom(input, _repeated_unk3300NNPMBFGJELL_codec);
             break;
           }
         }
@@ -330,26 +330,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            abilityGroupIdList_.AddEntriesFrom(ref input, _repeated_abilityGroupIdList_codec);
-            break;
-          }
-          case 42:
-          case 40: {
-            galleryIdList_.AddEntriesFrom(ref input, _repeated_galleryIdList_codec);
-            break;
-          }
-          case 48: {
+          case 56: {
             GalleryStageIndex = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 72: {
             PreviewStageIndex = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             PreviewDisplayDuration = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            unk3300IJBKKLGOMIE_.AddEntriesFrom(ref input, _repeated_unk3300IJBKKLGOMIE_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300NNPMBFGJELL_.AddEntriesFrom(ref input, _repeated_unk3300NNPMBFGJELL_codec);
             break;
           }
         }

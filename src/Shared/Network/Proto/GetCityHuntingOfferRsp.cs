@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetCityHuntingOfferRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRDaXR5SHVudGluZ09mZmVyUnNwLnByb3RvGhZIdW50aW5nT2ZmZXJE",
-            "YXRhLnByb3RvGhFIdW50aW5nUGFpci5wcm90byLRAQoWR2V0Q2l0eUh1bnRp",
-            "bmdPZmZlclJzcBIPCgdyZXRjb2RlGAkgASgFEi0KEmh1bnRpbmdfb2ZmZXJf",
-            "bGlzdBgNIAMoCzIRLkh1bnRpbmdPZmZlckRhdGESDwoHY2l0eV9pZBgCIAEo",
-            "DRIqChRvbmdvaW5nX2h1bnRpbmdfcGFpchgIIAEoCzIMLkh1bnRpbmdQYWly",
-            "Eh8KF2N1cl93ZWVrX2ZpbmlzaGVkX2NvdW50GAEgASgNEhkKEW5leHRfcmVm",
-            "cmVzaF90aW1lGAQgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChxHZXRDaXR5SHVudGluZ09mZmVyUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZIdW50aW5nT2ZmZXJEYXRhLnByb3RvGhFI",
+            "dW50aW5nUGFpci5wcm90byKRAgoWR2V0Q2l0eUh1bnRpbmdPZmZlclJzcBJN",
+            "ChJodW50aW5nX29mZmVyX2xpc3QYAiADKAsyMS5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkh1bnRpbmdPZmZlckRhdGESDwoHcmV0Y29kZRgJ",
+            "IAEoBRIfChdjdXJfd2Vla19maW5pc2hlZF9jb3VudBgBIAEoDRJKChRvbmdv",
+            "aW5nX2h1bnRpbmdfcGFpchgPIAEoCzIsLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uSHVudGluZ1BhaXISGQoRbmV4dF9yZWZyZXNoX3RpbWUY",
+            "BSABKA0SDwoHY2l0eV9pZBgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HuntingOfferDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HuntingPairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCityHuntingOfferRsp), global::Weedwacker.Shared.Network.Proto.GetCityHuntingOfferRsp.Parser, new[]{ "Retcode", "HuntingOfferList", "CityId", "OngoingHuntingPair", "CurWeekFinishedCount", "NextRefreshTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCityHuntingOfferRsp), global::Weedwacker.Shared.Network.Proto.GetCityHuntingOfferRsp.Parser, new[]{ "HuntingOfferList", "Retcode", "CurWeekFinishedCount", "OngoingHuntingPair", "NextRefreshTime", "CityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4307
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4335;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetCityHuntingOfferRsp : pb::IMessage<GetCityHuntingOfferRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,12 +86,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCityHuntingOfferRsp(GetCityHuntingOfferRsp other) : this() {
-      retcode_ = other.retcode_;
       huntingOfferList_ = other.huntingOfferList_.Clone();
-      cityId_ = other.cityId_;
-      ongoingHuntingPair_ = other.ongoingHuntingPair_ != null ? other.ongoingHuntingPair_.Clone() : null;
+      retcode_ = other.retcode_;
       curWeekFinishedCount_ = other.curWeekFinishedCount_;
+      ongoingHuntingPair_ = other.ongoingHuntingPair_ != null ? other.ongoingHuntingPair_.Clone() : null;
       nextRefreshTime_ = other.nextRefreshTime_;
+      cityId_ = other.cityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,6 +99,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCityHuntingOfferRsp Clone() {
       return new GetCityHuntingOfferRsp(this);
+    }
+
+    /// <summary>Field number for the "hunting_offer_list" field.</summary>
+    public const int HuntingOfferListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> _repeated_huntingOfferList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HuntingOfferData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> huntingOfferList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> HuntingOfferList {
+      get { return huntingOfferList_; }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -105,41 +121,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hunting_offer_list" field.</summary>
-    public const int HuntingOfferListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> _repeated_huntingOfferList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HuntingOfferData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> huntingOfferList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HuntingOfferData> HuntingOfferList {
-      get { return huntingOfferList_; }
-    }
-
-    /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 2;
-    private uint cityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CityId {
-      get { return cityId_; }
-      set {
-        cityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ongoing_hunting_pair" field.</summary>
-    public const int OngoingHuntingPairFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.HuntingPair ongoingHuntingPair_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HuntingPair OngoingHuntingPair {
-      get { return ongoingHuntingPair_; }
-      set {
-        ongoingHuntingPair_ = value;
       }
     }
 
@@ -155,8 +136,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "ongoing_hunting_pair" field.</summary>
+    public const int OngoingHuntingPairFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.HuntingPair ongoingHuntingPair_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HuntingPair OngoingHuntingPair {
+      get { return ongoingHuntingPair_; }
+      set {
+        ongoingHuntingPair_ = value;
+      }
+    }
+
     /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 4;
+    public const int NextRefreshTimeFieldNumber = 5;
     private uint nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,6 +157,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return nextRefreshTime_; }
       set {
         nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city_id" field.</summary>
+    public const int CityIdFieldNumber = 12;
+    private uint cityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CityId {
+      get { return cityId_; }
+      set {
+        cityId_ = value;
       }
     }
 
@@ -182,12 +187,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!huntingOfferList_.Equals(other.huntingOfferList_)) return false;
-      if (CityId != other.CityId) return false;
-      if (!object.Equals(OngoingHuntingPair, other.OngoingHuntingPair)) return false;
+      if (Retcode != other.Retcode) return false;
       if (CurWeekFinishedCount != other.CurWeekFinishedCount) return false;
+      if (!object.Equals(OngoingHuntingPair, other.OngoingHuntingPair)) return false;
       if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (CityId != other.CityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -195,12 +200,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= huntingOfferList_.GetHashCode();
-      if (CityId != 0) hash ^= CityId.GetHashCode();
-      if (ongoingHuntingPair_ != null) hash ^= OngoingHuntingPair.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CurWeekFinishedCount != 0) hash ^= CurWeekFinishedCount.GetHashCode();
+      if (ongoingHuntingPair_ != null) hash ^= OngoingHuntingPair.GetHashCode();
       if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (CityId != 0) hash ^= CityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -223,23 +228,23 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(CurWeekFinishedCount);
       }
-      if (CityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CityId);
-      }
+      huntingOfferList_.WriteTo(output, _repeated_huntingOfferList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(NextRefreshTime);
-      }
-      if (ongoingHuntingPair_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(OngoingHuntingPair);
       }
       if (Retcode != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      huntingOfferList_.WriteTo(output, _repeated_huntingOfferList_codec);
+      if (CityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CityId);
+      }
+      if (ongoingHuntingPair_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(OngoingHuntingPair);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -254,23 +259,23 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(CurWeekFinishedCount);
       }
-      if (CityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CityId);
-      }
+      huntingOfferList_.WriteTo(ref output, _repeated_huntingOfferList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(NextRefreshTime);
-      }
-      if (ongoingHuntingPair_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(OngoingHuntingPair);
       }
       if (Retcode != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      huntingOfferList_.WriteTo(ref output, _repeated_huntingOfferList_codec);
+      if (CityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CityId);
+      }
+      if (ongoingHuntingPair_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(OngoingHuntingPair);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -281,21 +286,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += huntingOfferList_.CalculateSize(_repeated_huntingOfferList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      size += huntingOfferList_.CalculateSize(_repeated_huntingOfferList_codec);
-      if (CityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
-      }
-      if (ongoingHuntingPair_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OngoingHuntingPair);
       }
       if (CurWeekFinishedCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurWeekFinishedCount);
       }
+      if (ongoingHuntingPair_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OngoingHuntingPair);
+      }
       if (NextRefreshTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (CityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -309,12 +314,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      huntingOfferList_.Add(other.huntingOfferList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      huntingOfferList_.Add(other.huntingOfferList_);
-      if (other.CityId != 0) {
-        CityId = other.CityId;
+      if (other.CurWeekFinishedCount != 0) {
+        CurWeekFinishedCount = other.CurWeekFinishedCount;
       }
       if (other.ongoingHuntingPair_ != null) {
         if (ongoingHuntingPair_ == null) {
@@ -322,11 +327,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         OngoingHuntingPair.MergeFrom(other.OngoingHuntingPair);
       }
-      if (other.CurWeekFinishedCount != 0) {
-        CurWeekFinishedCount = other.CurWeekFinishedCount;
-      }
       if (other.NextRefreshTime != 0) {
         NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.CityId != 0) {
+        CityId = other.CityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -347,27 +352,27 @@ namespace Weedwacker.Shared.Network.Proto {
             CurWeekFinishedCount = input.ReadUInt32();
             break;
           }
-          case 16: {
-            CityId = input.ReadUInt32();
+          case 18: {
+            huntingOfferList_.AddEntriesFrom(input, _repeated_huntingOfferList_codec);
             break;
           }
-          case 32: {
+          case 40: {
             NextRefreshTime = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (ongoingHuntingPair_ == null) {
-              OngoingHuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
-            }
-            input.ReadMessage(OngoingHuntingPair);
             break;
           }
           case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
-            huntingOfferList_.AddEntriesFrom(input, _repeated_huntingOfferList_codec);
+          case 96: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (ongoingHuntingPair_ == null) {
+              OngoingHuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
+            }
+            input.ReadMessage(OngoingHuntingPair);
             break;
           }
         }
@@ -389,27 +394,27 @@ namespace Weedwacker.Shared.Network.Proto {
             CurWeekFinishedCount = input.ReadUInt32();
             break;
           }
-          case 16: {
-            CityId = input.ReadUInt32();
+          case 18: {
+            huntingOfferList_.AddEntriesFrom(ref input, _repeated_huntingOfferList_codec);
             break;
           }
-          case 32: {
+          case 40: {
             NextRefreshTime = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (ongoingHuntingPair_ == null) {
-              OngoingHuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
-            }
-            input.ReadMessage(OngoingHuntingPair);
             break;
           }
           case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
-            huntingOfferList_.AddEntriesFrom(ref input, _repeated_huntingOfferList_codec);
+          case 96: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (ongoingHuntingPair_ == null) {
+              OngoingHuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
+            }
+            input.ReadMessage(OngoingHuntingPair);
             break;
           }
         }

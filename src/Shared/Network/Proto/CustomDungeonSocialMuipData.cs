@@ -24,11 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonSocialMuipDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFDdXN0b21EdW5nZW9uU29jaWFsTXVpcERhdGEucHJvdG8iZQobQ3VzdG9t",
-            "RHVuZ2VvblNvY2lhbE11aXBEYXRhEhAKCHBsYXlfbnVtGAEgASgNEhAKCGxp",
-            "a2VfbnVtGAIgASgNEhEKCXN0b3JlX251bRgDIAEoDRIPCgd3aW5fbnVtGAQg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiFDdXN0b21EdW5nZW9uU29jaWFsTXVpcERhdGEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iZQobQ3VzdG9tRHVuZ2VvblNvY2lh",
+            "bE11aXBEYXRhEhAKCHBsYXlfbnVtGAEgASgNEhAKCGxpa2VfbnVtGAIgASgN",
+            "EhEKCXN0b3JlX251bRgDIAEoDRIPCgd3aW5fbnVtGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

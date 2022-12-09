@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ParentQuestInferenceDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRQYXJlbnRRdWVzdEluZmVyZW5jZURhdGFOb3RpZnkucHJvdG8aF0luZmVy",
-            "ZW5jZVBhZ2VJbmZvLnByb3RvImoKHlBhcmVudFF1ZXN0SW5mZXJlbmNlRGF0",
-            "YU5vdGlmeRIXCg9wYXJlbnRfcXVlc3RfaWQYAiABKA0SLwoTaW5mZXJlbmNl",
-            "X3BhZ2VfbGlzdBgBIAMoCzISLkluZmVyZW5jZVBhZ2VJbmZvQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRQYXJlbnRRdWVzdEluZmVyZW5jZURhdGFOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aF0luZmVyZW5jZVBhZ2VJbmZv",
+            "LnByb3RvIooBCh5QYXJlbnRRdWVzdEluZmVyZW5jZURhdGFOb3RpZnkSFwoP",
+            "cGFyZW50X3F1ZXN0X2lkGAggASgNEk8KE2luZmVyZW5jZV9wYWdlX2xpc3QY",
+            "DiADKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkluZmVy",
+            "ZW5jZVBhZ2VJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InferencePageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 402
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 493;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ParentQuestInferenceDataNotify : pb::IMessage<ParentQuestInferenceDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_id" field.</summary>
-    public const int ParentQuestIdFieldNumber = 2;
+    public const int ParentQuestIdFieldNumber = 8;
     private uint parentQuestId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "inference_page_list" field.</summary>
-    public const int InferencePageListFieldNumber = 1;
+    public const int InferencePageListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InferencePageInfo> _repeated_inferencePageList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferencePageInfo> inferencePageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferencePageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      inferencePageList_.WriteTo(output, _repeated_inferencePageList_codec);
       if (ParentQuestId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(ParentQuestId);
       }
+      inferencePageList_.WriteTo(output, _repeated_inferencePageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      inferencePageList_.WriteTo(ref output, _repeated_inferencePageList_codec);
       if (ParentQuestId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(ParentQuestId);
       }
+      inferencePageList_.WriteTo(ref output, _repeated_inferencePageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            inferencePageList_.AddEntriesFrom(input, _repeated_inferencePageList_codec);
+          case 64: {
+            ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 16: {
-            ParentQuestId = input.ReadUInt32();
+          case 114: {
+            inferencePageList_.AddEntriesFrom(input, _repeated_inferencePageList_codec);
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            inferencePageList_.AddEntriesFrom(ref input, _repeated_inferencePageList_codec);
+          case 64: {
+            ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 16: {
-            ParentQuestId = input.ReadUInt32();
+          case 114: {
+            inferencePageList_.AddEntriesFrom(ref input, _repeated_inferencePageList_codec);
             break;
           }
         }

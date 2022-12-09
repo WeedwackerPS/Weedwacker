@@ -25,14 +25,14 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllckxlYXZlUmVhc29uLnByb3Rv",
-            "KpQCCiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllckxlYXZlUmVhc29uEjoK",
-            "NkRVTkdFT05fQ0FORElEQVRFX1RFQU1fUExBWUVSX0xFQVZFX1JFQVNPTl9U",
-            "UExSX05PUk1BTBAAEjcKM0RVTkdFT05fQ0FORElEQVRFX1RFQU1fUExBWUVS",
-            "X0xFQVZFX1JFQVNPTl9UUExSX0RJRRABEjsKN0RVTkdFT05fQ0FORElEQVRF",
-            "X1RFQU1fUExBWUVSX0xFQVZFX1JFQVNPTl9UUExSX0JFX0tJQ0sQAhI5CjVE",
-            "VU5HRU9OX0NBTkRJREFURV9URUFNX1BMQVlFUl9MRUFWRV9SRUFTT05fRElT",
-            "Q09OTkVDVBADQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Eh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvKpkCCiVEdW5nZW9u",
+            "Q2FuZGlkYXRlVGVhbVBsYXllckxlYXZlUmVhc29uEjoKNkRVTkdFT05fQ0FO",
+            "RElEQVRFX1RFQU1fUExBWUVSX0xFQVZFX1JFQVNPTl9UUExSX05PUk1BTBAA",
+            "EjcKM0RVTkdFT05fQ0FORElEQVRFX1RFQU1fUExBWUVSX0xFQVZFX1JFQVNP",
+            "Tl9UUExSX0RJRRABEjsKN0RVTkdFT05fQ0FORElEQVRFX1RFQU1fUExBWUVS",
+            "X0xFQVZFX1JFQVNPTl9UUExSX0JFX0tJQ0sQAhI+CjpEVU5HRU9OX0NBTkRJ",
+            "REFURV9URUFNX1BMQVlFUl9MRUFWRV9SRUFTT05fVFBMUl9ESVNDT05ORUNU",
+            "EANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerLeaveReason), }, null, null));
@@ -45,7 +45,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_NORMAL")] TplrNormal = 0,
     [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_DIE")] TplrDie = 1,
     [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_BE_KICK")] TplrBeKick = 2,
-    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_DISCONNECT")] Disconnect = 3,
+    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_DISCONNECT")] TplrDisconnect = 3,
   }
 
   #endregion

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetIsAutoUnlockSpecificEquipReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVTZXRJc0F1dG9VbmxvY2tTcGVjaWZpY0VxdWlwUmVxLnByb3RvIkgKH1Nl",
-            "dElzQXV0b1VubG9ja1NwZWNpZmljRXF1aXBSZXESJQodaXNfYXV0b191bmxv",
-            "Y2tfc3BlY2lmaWNfZXF1aXAYDiABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVTZXRJc0F1dG9VbmxvY2tTcGVjaWZpY0VxdWlwUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkgKH1NldElzQXV0b1VubG9j",
+            "a1NwZWNpZmljRXF1aXBSZXESJQodaXNfYXV0b191bmxvY2tfc3BlY2lmaWNf",
+            "ZXF1aXAYCCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 620
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 602;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetIsAutoUnlockSpecificEquipReq : pb::IMessage<SetIsAutoUnlockSpecificEquipReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_auto_unlock_specific_equip" field.</summary>
-    public const int IsAutoUnlockSpecificEquipFieldNumber = 14;
+    public const int IsAutoUnlockSpecificEquipFieldNumber = 8;
     private bool isAutoUnlockSpecificEquip_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsAutoUnlockSpecificEquip != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteBool(IsAutoUnlockSpecificEquip);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsAutoUnlockSpecificEquip != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteBool(IsAutoUnlockSpecificEquip);
       }
       if (_unknownFields != null) {
@@ -203,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
+          case 64: {
             IsAutoUnlockSpecificEquip = input.ReadBool();
             break;
           }
@@ -222,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
+          case 64: {
             IsAutoUnlockSpecificEquip = input.ReadBool();
             break;
           }

@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
 {
     internal class FetterSystem
     {
-        public const uint DEFAULT_STATE = (uint)FetterState.NOT_OPEN;
+        public const uint DEFAULT_STATE = (uint)Enums.FetterState.NOT_OPEN;
         [BsonIgnore] private Player.Player Owner; // Loaded by DatabaseManager
         [BsonIgnore] private Avatar Avatar; // Loaded by DatabaseManager
         [BsonIgnore] public FetterCharacterCardData CardData => GameServer.AvatarInfo[Avatar.AvatarId].CardData;

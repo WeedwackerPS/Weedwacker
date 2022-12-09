@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriPoetryThemeDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxJcm9kb3JpUG9ldHJ5VGhlbWVEYXRhLnByb3RvIrQBChZJcm9kb3JpUG9l",
-            "dHJ5VGhlbWVEYXRhEhoKEnNjYW5uZWRfaW5kZXhfbGlzdBgBIAMoDRIUCgxs",
-            "aW5lX2lkX2xpc3QYBCADKA0SFAoMbWF4X3Byb2dyZXNzGAIgASgNEhAKCHRo",
-            "ZW1lX2lkGA0gASgNEhAKCHByb2dyZXNzGAUgASgNEhQKDG1pbl9wcm9ncmVz",
-            "cxgMIAEoDRIYChBzZWxlY3RlZF9saW5lX2lkGAkgASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxJcm9kb3JpUG9ldHJ5VGhlbWVEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIsYBChZJcm9kb3JpUG9ldHJ5VGhlbWVEYXRh",
+            "EhsKE1VuazMzMDBfSEZNS1BOT0JQREsYDiABKA0SGwoTVW5rMzMwMF9DTk5N",
+            "RUhPR0dMTBgKIAMoDRIQCghwcm9ncmVzcxgLIAEoDRIQCgh0aGVtZV9pZBgM",
+            "IAEoDRIUCgxtYXhfcHJvZ3Jlc3MYByABKA0SGwoTVW5rMzMwMF9IT0RKS0tE",
+            "QkpEShgPIAMoDRIbChNVbmszMzAwX05KSE1OTElBR0lLGAYgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriPoetryThemeData), global::Weedwacker.Shared.Network.Proto.IrodoriPoetryThemeData.Parser, new[]{ "ScannedIndexList", "LineIdList", "MaxProgress", "ThemeId", "Progress", "MinProgress", "SelectedLineId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriPoetryThemeData), global::Weedwacker.Shared.Network.Proto.IrodoriPoetryThemeData.Parser, new[]{ "Unk3300HFMKPNOBPDK", "Unk3300CNNMEHOGGLL", "Progress", "ThemeId", "MaxProgress", "Unk3300HODJKKDBJDJ", "Unk3300NJHMNLIAGIK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,13 +75,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriPoetryThemeData(IrodoriPoetryThemeData other) : this() {
-      scannedIndexList_ = other.scannedIndexList_.Clone();
-      lineIdList_ = other.lineIdList_.Clone();
-      maxProgress_ = other.maxProgress_;
-      themeId_ = other.themeId_;
+      unk3300HFMKPNOBPDK_ = other.unk3300HFMKPNOBPDK_;
+      unk3300CNNMEHOGGLL_ = other.unk3300CNNMEHOGGLL_.Clone();
       progress_ = other.progress_;
-      minProgress_ = other.minProgress_;
-      selectedLineId_ = other.selectedLineId_;
+      themeId_ = other.themeId_;
+      maxProgress_ = other.maxProgress_;
+      unk3300HODJKKDBJDJ_ = other.unk3300HODJKKDBJDJ_.Clone();
+      unk3300NJHMNLIAGIK_ = other.unk3300NJHMNLIAGIK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,54 +91,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IrodoriPoetryThemeData(this);
     }
 
-    /// <summary>Field number for the "scanned_index_list" field.</summary>
-    public const int ScannedIndexListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_scannedIndexList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> scannedIndexList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_HFMKPNOBPDK" field.</summary>
+    public const int Unk3300HFMKPNOBPDKFieldNumber = 14;
+    private uint unk3300HFMKPNOBPDK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ScannedIndexList {
-      get { return scannedIndexList_; }
-    }
-
-    /// <summary>Field number for the "line_id_list" field.</summary>
-    public const int LineIdListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_lineIdList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> lineIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LineIdList {
-      get { return lineIdList_; }
-    }
-
-    /// <summary>Field number for the "max_progress" field.</summary>
-    public const int MaxProgressFieldNumber = 2;
-    private uint maxProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxProgress {
-      get { return maxProgress_; }
+    public uint Unk3300HFMKPNOBPDK {
+      get { return unk3300HFMKPNOBPDK_; }
       set {
-        maxProgress_ = value;
+        unk3300HFMKPNOBPDK_ = value;
       }
     }
 
-    /// <summary>Field number for the "theme_id" field.</summary>
-    public const int ThemeIdFieldNumber = 13;
-    private uint themeId_;
+    /// <summary>Field number for the "Unk3300_CNNMEHOGGLL" field.</summary>
+    public const int Unk3300CNNMEHOGGLLFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300CNNMEHOGGLL_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unk3300CNNMEHOGGLL_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ThemeId {
-      get { return themeId_; }
-      set {
-        themeId_ = value;
-      }
+    public pbc::RepeatedField<uint> Unk3300CNNMEHOGGLL {
+      get { return unk3300CNNMEHOGGLL_; }
     }
 
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 5;
+    public const int ProgressFieldNumber = 11;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,27 +126,50 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "min_progress" field.</summary>
-    public const int MinProgressFieldNumber = 12;
-    private uint minProgress_;
+    /// <summary>Field number for the "theme_id" field.</summary>
+    public const int ThemeIdFieldNumber = 12;
+    private uint themeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinProgress {
-      get { return minProgress_; }
+    public uint ThemeId {
+      get { return themeId_; }
       set {
-        minProgress_ = value;
+        themeId_ = value;
       }
     }
 
-    /// <summary>Field number for the "selected_line_id" field.</summary>
-    public const int SelectedLineIdFieldNumber = 9;
-    private uint selectedLineId_;
+    /// <summary>Field number for the "max_progress" field.</summary>
+    public const int MaxProgressFieldNumber = 7;
+    private uint maxProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SelectedLineId {
-      get { return selectedLineId_; }
+    public uint MaxProgress {
+      get { return maxProgress_; }
       set {
-        selectedLineId_ = value;
+        maxProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HODJKKDBJDJ" field.</summary>
+    public const int Unk3300HODJKKDBJDJFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HODJKKDBJDJ_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300HODJKKDBJDJ_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300HODJKKDBJDJ {
+      get { return unk3300HODJKKDBJDJ_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NJHMNLIAGIK" field.</summary>
+    public const int Unk3300NJHMNLIAGIKFieldNumber = 6;
+    private uint unk3300NJHMNLIAGIK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NJHMNLIAGIK {
+      get { return unk3300NJHMNLIAGIK_; }
+      set {
+        unk3300NJHMNLIAGIK_ = value;
       }
     }
 
@@ -187,13 +188,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!scannedIndexList_.Equals(other.scannedIndexList_)) return false;
-      if(!lineIdList_.Equals(other.lineIdList_)) return false;
-      if (MaxProgress != other.MaxProgress) return false;
-      if (ThemeId != other.ThemeId) return false;
+      if (Unk3300HFMKPNOBPDK != other.Unk3300HFMKPNOBPDK) return false;
+      if(!unk3300CNNMEHOGGLL_.Equals(other.unk3300CNNMEHOGGLL_)) return false;
       if (Progress != other.Progress) return false;
-      if (MinProgress != other.MinProgress) return false;
-      if (SelectedLineId != other.SelectedLineId) return false;
+      if (ThemeId != other.ThemeId) return false;
+      if (MaxProgress != other.MaxProgress) return false;
+      if(!unk3300HODJKKDBJDJ_.Equals(other.unk3300HODJKKDBJDJ_)) return false;
+      if (Unk3300NJHMNLIAGIK != other.Unk3300NJHMNLIAGIK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -201,13 +202,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= scannedIndexList_.GetHashCode();
-      hash ^= lineIdList_.GetHashCode();
-      if (MaxProgress != 0) hash ^= MaxProgress.GetHashCode();
-      if (ThemeId != 0) hash ^= ThemeId.GetHashCode();
+      if (Unk3300HFMKPNOBPDK != 0) hash ^= Unk3300HFMKPNOBPDK.GetHashCode();
+      hash ^= unk3300CNNMEHOGGLL_.GetHashCode();
       if (Progress != 0) hash ^= Progress.GetHashCode();
-      if (MinProgress != 0) hash ^= MinProgress.GetHashCode();
-      if (SelectedLineId != 0) hash ^= SelectedLineId.GetHashCode();
+      if (ThemeId != 0) hash ^= ThemeId.GetHashCode();
+      if (MaxProgress != 0) hash ^= MaxProgress.GetHashCode();
+      hash ^= unk3300HODJKKDBJDJ_.GetHashCode();
+      if (Unk3300NJHMNLIAGIK != 0) hash ^= Unk3300NJHMNLIAGIK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -226,28 +227,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      scannedIndexList_.WriteTo(output, _repeated_scannedIndexList_codec);
+      if (Unk3300NJHMNLIAGIK != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300NJHMNLIAGIK);
+      }
       if (MaxProgress != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxProgress);
       }
-      lineIdList_.WriteTo(output, _repeated_lineIdList_codec);
+      unk3300CNNMEHOGGLL_.WriteTo(output, _repeated_unk3300CNNMEHOGGLL_codec);
       if (Progress != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(88);
         output.WriteUInt32(Progress);
       }
-      if (SelectedLineId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(SelectedLineId);
-      }
-      if (MinProgress != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MinProgress);
-      }
       if (ThemeId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(ThemeId);
       }
+      if (Unk3300HFMKPNOBPDK != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300HFMKPNOBPDK);
+      }
+      unk3300HODJKKDBJDJ_.WriteTo(output, _repeated_unk3300HODJKKDBJDJ_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -258,28 +259,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      scannedIndexList_.WriteTo(ref output, _repeated_scannedIndexList_codec);
+      if (Unk3300NJHMNLIAGIK != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300NJHMNLIAGIK);
+      }
       if (MaxProgress != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxProgress);
       }
-      lineIdList_.WriteTo(ref output, _repeated_lineIdList_codec);
+      unk3300CNNMEHOGGLL_.WriteTo(ref output, _repeated_unk3300CNNMEHOGGLL_codec);
       if (Progress != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(88);
         output.WriteUInt32(Progress);
       }
-      if (SelectedLineId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(SelectedLineId);
-      }
-      if (MinProgress != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MinProgress);
-      }
       if (ThemeId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(ThemeId);
       }
+      if (Unk3300HFMKPNOBPDK != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300HFMKPNOBPDK);
+      }
+      unk3300HODJKKDBJDJ_.WriteTo(ref output, _repeated_unk3300HODJKKDBJDJ_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -290,22 +291,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += scannedIndexList_.CalculateSize(_repeated_scannedIndexList_codec);
-      size += lineIdList_.CalculateSize(_repeated_lineIdList_codec);
-      if (MaxProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxProgress);
+      if (Unk3300HFMKPNOBPDK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HFMKPNOBPDK);
+      }
+      size += unk3300CNNMEHOGGLL_.CalculateSize(_repeated_unk3300CNNMEHOGGLL_codec);
+      if (Progress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
       if (ThemeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ThemeId);
       }
-      if (Progress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
+      if (MaxProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxProgress);
       }
-      if (MinProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinProgress);
-      }
-      if (SelectedLineId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelectedLineId);
+      size += unk3300HODJKKDBJDJ_.CalculateSize(_repeated_unk3300HODJKKDBJDJ_codec);
+      if (Unk3300NJHMNLIAGIK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NJHMNLIAGIK);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -319,22 +320,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      scannedIndexList_.Add(other.scannedIndexList_);
-      lineIdList_.Add(other.lineIdList_);
-      if (other.MaxProgress != 0) {
-        MaxProgress = other.MaxProgress;
+      if (other.Unk3300HFMKPNOBPDK != 0) {
+        Unk3300HFMKPNOBPDK = other.Unk3300HFMKPNOBPDK;
+      }
+      unk3300CNNMEHOGGLL_.Add(other.unk3300CNNMEHOGGLL_);
+      if (other.Progress != 0) {
+        Progress = other.Progress;
       }
       if (other.ThemeId != 0) {
         ThemeId = other.ThemeId;
       }
-      if (other.Progress != 0) {
-        Progress = other.Progress;
+      if (other.MaxProgress != 0) {
+        MaxProgress = other.MaxProgress;
       }
-      if (other.MinProgress != 0) {
-        MinProgress = other.MinProgress;
-      }
-      if (other.SelectedLineId != 0) {
-        SelectedLineId = other.SelectedLineId;
+      unk3300HODJKKDBJDJ_.Add(other.unk3300HODJKKDBJDJ_);
+      if (other.Unk3300NJHMNLIAGIK != 0) {
+        Unk3300NJHMNLIAGIK = other.Unk3300NJHMNLIAGIK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -351,34 +352,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            scannedIndexList_.AddEntriesFrom(input, _repeated_scannedIndexList_codec);
+          case 48: {
+            Unk3300NJHMNLIAGIK = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 56: {
             MaxProgress = input.ReadUInt32();
             break;
           }
-          case 34:
-          case 32: {
-            lineIdList_.AddEntriesFrom(input, _repeated_lineIdList_codec);
+          case 82:
+          case 80: {
+            unk3300CNNMEHOGGLL_.AddEntriesFrom(input, _repeated_unk3300CNNMEHOGGLL_codec);
             break;
           }
-          case 40: {
+          case 88: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 72: {
-            SelectedLineId = input.ReadUInt32();
-            break;
-          }
           case 96: {
-            MinProgress = input.ReadUInt32();
+            ThemeId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            ThemeId = input.ReadUInt32();
+          case 112: {
+            Unk3300HFMKPNOBPDK = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300HODJKKDBJDJ_.AddEntriesFrom(input, _repeated_unk3300HODJKKDBJDJ_codec);
             break;
           }
         }
@@ -396,34 +397,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            scannedIndexList_.AddEntriesFrom(ref input, _repeated_scannedIndexList_codec);
+          case 48: {
+            Unk3300NJHMNLIAGIK = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 56: {
             MaxProgress = input.ReadUInt32();
             break;
           }
-          case 34:
-          case 32: {
-            lineIdList_.AddEntriesFrom(ref input, _repeated_lineIdList_codec);
+          case 82:
+          case 80: {
+            unk3300CNNMEHOGGLL_.AddEntriesFrom(ref input, _repeated_unk3300CNNMEHOGGLL_codec);
             break;
           }
-          case 40: {
+          case 88: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 72: {
-            SelectedLineId = input.ReadUInt32();
-            break;
-          }
           case 96: {
-            MinProgress = input.ReadUInt32();
+            ThemeId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            ThemeId = input.ReadUInt32();
+          case 112: {
+            Unk3300HFMKPNOBPDK = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300HODJKKDBJDJ_.AddEntriesFrom(ref input, _repeated_unk3300HODJKKDBJDJ_codec);
             break;
           }
         }

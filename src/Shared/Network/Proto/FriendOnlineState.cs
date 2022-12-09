@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static FriendOnlineStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGcmllbmRPbmxpbmVTdGF0ZS5wcm90bypfChFGcmllbmRPbmxpbmVTdGF0",
-            "ZRIqCiZGUklFTkRfT05MSU5FX1NUQVRFX0ZSRUlFTkRfRElTQ09OTkVDVBAA",
-            "Eh4KGkZSSUVORF9PTkxJTkVfU1RBVEVfT05MSU5FEAFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdGcmllbmRPbmxpbmVTdGF0ZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bypXChFGcmllbmRPbmxpbmVTdGF0ZRIiCh5GUklFTkRf",
+            "T05MSU5FX1NUQVRFX0RJU0NPTk5FQ1QQABIeChpGUklFTkRfT05MSU5FX1NU",
+            "QVRFX09OTElORRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.FriendOnlineState), }, null, null));
@@ -37,7 +37,7 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Enums
   public enum FriendOnlineState {
-    [pbr::OriginalName("FRIEND_ONLINE_STATE_FREIEND_DISCONNECT")] FreiendDisconnect = 0,
+    [pbr::OriginalName("FRIEND_ONLINE_STATE_DISCONNECT")] Disconnect = 0,
     [pbr::OriginalName("FRIEND_ONLINE_STATE_ONLINE")] Online = 1,
   }
 

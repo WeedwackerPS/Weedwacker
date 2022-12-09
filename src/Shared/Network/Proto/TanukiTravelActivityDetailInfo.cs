@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static TanukiTravelActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRUYW51a2lUcmF2ZWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aG1RhbnVr",
-            "aVRyYXZlbExldmVsRGF0YS5wcm90byKYAQoeVGFudWtpVHJhdmVsQWN0aXZp",
-            "dHlEZXRhaWxJbmZvEj0KHXRhbnVraV90cmF2ZWxfbGV2ZWxfZGF0YV9saXN0",
-            "GAQgAygLMhYuVGFudWtpVHJhdmVsTGV2ZWxEYXRhEhkKEWlzX2NvbnRlbnRf",
-            "Y2xvc2VkGAsgASgIEhwKFGZpbmlzaGVkX2xldmVsX2luZGV4GAogASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRUYW51a2lUcmF2ZWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG1RhbnVraVRyYXZlbExldmVs",
+            "RGF0YS5wcm90byK4AQoeVGFudWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZv",
+            "El0KHXRhbnVraV90cmF2ZWxfbGV2ZWxfZGF0YV9saXN0GAUgAygLMjYuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5UYW51a2lUcmF2ZWxMZXZl",
+            "bERhdGESGQoRaXNfY29udGVudF9jbG9zZWQYDCABKAgSHAoUZmluaXNoZWRf",
+            "bGV2ZWxfaW5kZXgYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,9 +88,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tanuki_travel_level_data_list" field.</summary>
-    public const int TanukiTravelLevelDataListFieldNumber = 4;
+    public const int TanukiTravelLevelDataListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelData> _repeated_tanukiTravelLevelDataList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelData.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelData> tanukiTravelLevelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TanukiTravelLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 11;
+    public const int IsContentClosedFieldNumber = 12;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_level_index" field.</summary>
-    public const int FinishedLevelIndexFieldNumber = 10;
+    public const int FinishedLevelIndexFieldNumber = 15;
     private uint finishedLevelIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       tanukiTravelLevelDataList_.WriteTo(output, _repeated_tanukiTravelLevelDataList_codec);
-      if (FinishedLevelIndex != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FinishedLevelIndex);
-      }
       if (IsContentClosed != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IsContentClosed);
+      }
+      if (FinishedLevelIndex != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FinishedLevelIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -187,13 +188,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       tanukiTravelLevelDataList_.WriteTo(ref output, _repeated_tanukiTravelLevelDataList_codec);
-      if (FinishedLevelIndex != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FinishedLevelIndex);
-      }
       if (IsContentClosed != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteBool(IsContentClosed);
+      }
+      if (FinishedLevelIndex != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FinishedLevelIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -246,16 +247,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 42: {
             tanukiTravelLevelDataList_.AddEntriesFrom(input, _repeated_tanukiTravelLevelDataList_codec);
             break;
           }
-          case 80: {
-            FinishedLevelIndex = input.ReadUInt32();
+          case 96: {
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            IsContentClosed = input.ReadBool();
+          case 120: {
+            FinishedLevelIndex = input.ReadUInt32();
             break;
           }
         }
@@ -273,16 +274,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 42: {
             tanukiTravelLevelDataList_.AddEntriesFrom(ref input, _repeated_tanukiTravelLevelDataList_codec);
             break;
           }
-          case 80: {
-            FinishedLevelIndex = input.ReadUInt32();
+          case 96: {
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            IsContentClosed = input.ReadBool();
+          case 120: {
+            FinishedLevelIndex = input.ReadUInt32();
             break;
           }
         }

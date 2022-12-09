@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PublishCustomDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1QdWJsaXNoQ3VzdG9tRHVuZ2VvblJlcS5wcm90byJBChdQdWJsaXNoQ3Vz",
-            "dG9tRHVuZ2VvblJlcRIQCgh0YWdfbGlzdBgBIAMoDRIUCgxkdW5nZW9uX2d1",
-            "aWQYBSABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch1QdWJsaXNoQ3VzdG9tRHVuZ2VvblJlcS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJBChdQdWJsaXNoQ3VzdG9tRHVuZ2VvblJl",
+            "cRIUCgxkdW5nZW9uX2d1aWQYBiABKAQSEAoIdGFnX2xpc3QYCSADKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PublishCustomDungeonReq), global::Weedwacker.Shared.Network.Proto.PublishCustomDungeonReq.Parser, new[]{ "TagList", "DungeonGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PublishCustomDungeonReq), global::Weedwacker.Shared.Network.Proto.PublishCustomDungeonReq.Parser, new[]{ "DungeonGuid", "TagList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6242
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6245;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PublishCustomDungeonReq : pb::IMessage<PublishCustomDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PublishCustomDungeonReq(PublishCustomDungeonReq other) : this() {
-      tagList_ = other.tagList_.Clone();
       dungeonGuid_ = other.dungeonGuid_;
+      tagList_ = other.tagList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PublishCustomDungeonReq(this);
     }
 
-    /// <summary>Field number for the "tag_list" field.</summary>
-    public const int TagListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TagList {
-      get { return tagList_; }
-    }
-
     /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 5;
+    public const int DungeonGuidFieldNumber = 6;
     private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         dungeonGuid_ = value;
       }
+    }
+
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TagList {
+      get { return tagList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!tagList_.Equals(other.tagList_)) return false;
       if (DungeonGuid != other.DungeonGuid) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= tagList_.GetHashCode();
       if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      hash ^= tagList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      tagList_.WriteTo(output, _repeated_tagList_codec);
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt64(DungeonGuid);
       }
+      tagList_.WriteTo(output, _repeated_tagList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      tagList_.WriteTo(ref output, _repeated_tagList_codec);
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt64(DungeonGuid);
       }
+      tagList_.WriteTo(ref output, _repeated_tagList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += tagList_.CalculateSize(_repeated_tagList_codec);
       if (DungeonGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
       }
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      tagList_.Add(other.tagList_);
       if (other.DungeonGuid != 0UL) {
         DungeonGuid = other.DungeonGuid;
       }
+      tagList_.Add(other.tagList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+          case 48: {
+            DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 40: {
-            DungeonGuid = input.ReadUInt64();
+          case 74:
+          case 72: {
+            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
             break;
           }
         }
@@ -245,13 +249,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+          case 48: {
+            DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 40: {
-            DungeonGuid = input.ReadUInt64();
+          case 74:
+          case 72: {
+            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
             break;
           }
         }

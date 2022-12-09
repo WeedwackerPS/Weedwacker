@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AllWidgetBackgroundActiveStateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipBbGxXaWRnZXRCYWNrZ3JvdW5kQWN0aXZlU3RhdGVOb3RpZnkucHJvdG8i",
-            "TQokQWxsV2lkZ2V0QmFja2dyb3VuZEFjdGl2ZVN0YXRlTm90aWZ5EiUKHWJh",
-            "Y2tncm91bmRfYWN0aXZlX3dpZGdldF9saXN0GAMgAygNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CipBbGxXaWRnZXRCYWNrZ3JvdW5kQWN0aXZlU3RhdGVOb3RpZnkucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iTQokQWxsV2lkZ2V0",
+            "QmFja2dyb3VuZEFjdGl2ZVN0YXRlTm90aWZ5EiUKHWJhY2tncm91bmRfYWN0",
+            "aXZlX3dpZGdldF9saXN0GAIgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6092
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5932;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AllWidgetBackgroundActiveStateNotify : pb::IMessage<AllWidgetBackgroundActiveStateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "background_active_widget_list" field.</summary>
-    public const int BackgroundActiveWidgetListFieldNumber = 3;
+    public const int BackgroundActiveWidgetListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_backgroundActiveWidgetList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> backgroundActiveWidgetList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,8 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
+          case 18:
+          case 16: {
             backgroundActiveWidgetList_.AddEntriesFrom(input, _repeated_backgroundActiveWidgetList_codec);
             break;
           }
@@ -211,8 +215,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
+          case 18:
+          case 16: {
             backgroundActiveWidgetList_.AddEntriesFrom(ref input, _repeated_backgroundActiveWidgetList_codec);
             break;
           }

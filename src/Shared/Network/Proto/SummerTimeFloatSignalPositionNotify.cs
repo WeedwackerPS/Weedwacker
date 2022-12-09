@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeFloatSignalPositionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilTdW1tZXJUaW1lRmxvYXRTaWduYWxQb3NpdGlvbk5vdGlmeS5wcm90bxoM",
-            "VmVjdG9yLnByb3RvInUKI1N1bW1lclRpbWVGbG9hdFNpZ25hbFBvc2l0aW9u",
-            "Tm90aWZ5EhkKCHBvc2l0aW9uGAEgASgLMgcuVmVjdG9yEhoKEmlzX3RyYW5z",
-            "ZmVyX2FuY2hvchgFIAEoCBIXCg9mbG9hdF9zaWduYWxfaWQYByABKA1CIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CilTdW1tZXJUaW1lRmxvYXRTaWduYWxQb3NpdGlvbk5vdGlmeS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoMVmVjdG9yLnByb3Rv",
+            "IpUBCiNTdW1tZXJUaW1lRmxvYXRTaWduYWxQb3NpdGlvbk5vdGlmeRIaChJp",
+            "c190cmFuc2Zlcl9hbmNob3IYBiABKAgSFwoPZmxvYXRfc2lnbmFsX2lkGA8g",
+            "ASgNEjkKCHBvc2l0aW9uGA4gASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5WZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeFloatSignalPositionNotify), global::Weedwacker.Shared.Network.Proto.SummerTimeFloatSignalPositionNotify.Parser, new[]{ "Position", "IsTransferAnchor", "FloatSignalId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeFloatSignalPositionNotify), global::Weedwacker.Shared.Network.Proto.SummerTimeFloatSignalPositionNotify.Parser, new[]{ "IsTransferAnchor", "FloatSignalId", "Position" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8077
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8701;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SummerTimeFloatSignalPositionNotify : pb::IMessage<SummerTimeFloatSignalPositionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeFloatSignalPositionNotify(SummerTimeFloatSignalPositionNotify other) : this() {
-      position_ = other.position_ != null ? other.position_.Clone() : null;
       isTransferAnchor_ = other.isTransferAnchor_;
       floatSignalId_ = other.floatSignalId_;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SummerTimeFloatSignalPositionNotify(this);
     }
 
-    /// <summary>Field number for the "position" field.</summary>
-    public const int PositionFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.Vector position_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Position {
-      get { return position_; }
-      set {
-        position_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_transfer_anchor" field.</summary>
-    public const int IsTransferAnchorFieldNumber = 5;
+    public const int IsTransferAnchorFieldNumber = 6;
     private bool isTransferAnchor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "float_signal_id" field.</summary>
-    public const int FloatSignalIdFieldNumber = 7;
+    public const int FloatSignalIdFieldNumber = 15;
     private uint floatSignalId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return floatSignalId_; }
       set {
         floatSignalId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Position {
+      get { return position_; }
+      set {
+        position_ = value;
       }
     }
 
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Position, other.Position)) return false;
       if (IsTransferAnchor != other.IsTransferAnchor) return false;
       if (FloatSignalId != other.FloatSignalId) return false;
+      if (!object.Equals(Position, other.Position)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (position_ != null) hash ^= Position.GetHashCode();
       if (IsTransferAnchor != false) hash ^= IsTransferAnchor.GetHashCode();
       if (FloatSignalId != 0) hash ^= FloatSignalId.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (position_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Position);
-      }
       if (IsTransferAnchor != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteBool(IsTransferAnchor);
       }
+      if (position_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Position);
+      }
       if (FloatSignalId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(FloatSignalId);
       }
       if (_unknownFields != null) {
@@ -194,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (position_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Position);
-      }
       if (IsTransferAnchor != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteBool(IsTransferAnchor);
       }
+      if (position_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Position);
+      }
       if (FloatSignalId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(FloatSignalId);
       }
       if (_unknownFields != null) {
@@ -216,14 +221,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (position_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
-      }
       if (IsTransferAnchor != false) {
         size += 1 + 1;
       }
       if (FloatSignalId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloatSignalId);
+      }
+      if (position_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,17 +242,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.position_ != null) {
-        if (position_ == null) {
-          Position = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Position.MergeFrom(other.Position);
-      }
       if (other.IsTransferAnchor != false) {
         IsTransferAnchor = other.IsTransferAnchor;
       }
       if (other.FloatSignalId != 0) {
         FloatSignalId = other.FloatSignalId;
+      }
+      if (other.position_ != null) {
+        if (position_ == null) {
+          Position = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Position.MergeFrom(other.Position);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,18 +269,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 48: {
+            IsTransferAnchor = input.ReadBool();
+            break;
+          }
+          case 114: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
             break;
           }
-          case 40: {
-            IsTransferAnchor = input.ReadBool();
-            break;
-          }
-          case 56: {
+          case 120: {
             FloatSignalId = input.ReadUInt32();
             break;
           }
@@ -294,18 +299,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 48: {
+            IsTransferAnchor = input.ReadBool();
+            break;
+          }
+          case 114: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
             break;
           }
-          case 40: {
-            IsTransferAnchor = input.ReadBool();
-            break;
-          }
-          case 56: {
+          case 120: {
             FloatSignalId = input.ReadUInt32();
             break;
           }

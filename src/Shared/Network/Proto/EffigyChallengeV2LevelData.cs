@@ -24,17 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeV2LevelDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBFZmZpZ3lDaGFsbGVuZ2VWMkxldmVsRGF0YS5wcm90byLaAQoaRWZmaWd5",
-            "Q2hhbGxlbmdlVjJMZXZlbERhdGESJgoeY2hhbGxlbmdlX21vZGVfZGlmZmlj",
-            "dWx0eV9wYXNzGAEgASgNEhAKCGxldmVsX2lkGAUgASgNEisKI2NoYWxsZW5n",
-            "ZV9tb2RlX2xhc3RfY2hvb3NlX3NraWxsX25vGAogASgNEhYKDmJlc3RfY29z",
-            "dF90aW1lGAwgASgNEhUKDWlzX2xldmVsX29wZW4YByABKAgSJgoeY2hhbGxl",
-            "bmdlX21vZGVfZGlmZmljdWx0eV9vcGVuGA0gASgNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBFZmZpZ3lDaGFsbGVuZ2VWMkxldmVsRGF0YS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byK5AQoaRWZmaWd5Q2hhbGxlbmdlVjJM",
+            "ZXZlbERhdGESGwoTVW5rMzMwMF9QUE9FTUVJTEJJQRgNIAEoDRIVCg1pc19s",
+            "ZXZlbF9vcGVuGAQgASgIEhsKE1VuazMzMDBfS0pFT0FERE1KTUkYCSABKA0S",
+            "GwoTVW5rMzMwMF9KTUdBQ09ETUpMRxgCIAEoDRIbChNVbmszMzAwX0lKQUdP",
+            "QUtPQUJIGAcgASgNEhAKCGxldmVsX2lkGAwgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData.Parser, new[]{ "ChallengeModeDifficultyPass", "LevelId", "ChallengeModeLastChooseSkillNo", "BestCostTime", "IsLevelOpen", "ChallengeModeDifficultyOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData.Parser, new[]{ "Unk3300PPOEMEILBIA", "IsLevelOpen", "Unk3300KJEOADDMJMI", "Unk3300JMGACODMJLG", "Unk3300IJAGOAKOABH", "LevelId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyChallengeV2LevelData(EffigyChallengeV2LevelData other) : this() {
-      challengeModeDifficultyPass_ = other.challengeModeDifficultyPass_;
-      levelId_ = other.levelId_;
-      challengeModeLastChooseSkillNo_ = other.challengeModeLastChooseSkillNo_;
-      bestCostTime_ = other.bestCostTime_;
+      unk3300PPOEMEILBIA_ = other.unk3300PPOEMEILBIA_;
       isLevelOpen_ = other.isLevelOpen_;
-      challengeModeDifficultyOpen_ = other.challengeModeDifficultyOpen_;
+      unk3300KJEOADDMJMI_ = other.unk3300KJEOADDMJMI_;
+      unk3300JMGACODMJLG_ = other.unk3300JMGACODMJLG_;
+      unk3300IJAGOAKOABH_ = other.unk3300IJAGOAKOABH_;
+      levelId_ = other.levelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,56 +89,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EffigyChallengeV2LevelData(this);
     }
 
-    /// <summary>Field number for the "challenge_mode_difficulty_pass" field.</summary>
-    public const int ChallengeModeDifficultyPassFieldNumber = 1;
-    private uint challengeModeDifficultyPass_;
+    /// <summary>Field number for the "Unk3300_PPOEMEILBIA" field.</summary>
+    public const int Unk3300PPOEMEILBIAFieldNumber = 13;
+    private uint unk3300PPOEMEILBIA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeModeDifficultyPass {
-      get { return challengeModeDifficultyPass_; }
+    public uint Unk3300PPOEMEILBIA {
+      get { return unk3300PPOEMEILBIA_; }
       set {
-        challengeModeDifficultyPass_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 5;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_mode_last_choose_skill_no" field.</summary>
-    public const int ChallengeModeLastChooseSkillNoFieldNumber = 10;
-    private uint challengeModeLastChooseSkillNo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeModeLastChooseSkillNo {
-      get { return challengeModeLastChooseSkillNo_; }
-      set {
-        challengeModeLastChooseSkillNo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "best_cost_time" field.</summary>
-    public const int BestCostTimeFieldNumber = 12;
-    private uint bestCostTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BestCostTime {
-      get { return bestCostTime_; }
-      set {
-        bestCostTime_ = value;
+        unk3300PPOEMEILBIA_ = value;
       }
     }
 
     /// <summary>Field number for the "is_level_open" field.</summary>
-    public const int IsLevelOpenFieldNumber = 7;
+    public const int IsLevelOpenFieldNumber = 4;
     private bool isLevelOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,15 +113,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "challenge_mode_difficulty_open" field.</summary>
-    public const int ChallengeModeDifficultyOpenFieldNumber = 13;
-    private uint challengeModeDifficultyOpen_;
+    /// <summary>Field number for the "Unk3300_KJEOADDMJMI" field.</summary>
+    public const int Unk3300KJEOADDMJMIFieldNumber = 9;
+    private uint unk3300KJEOADDMJMI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeModeDifficultyOpen {
-      get { return challengeModeDifficultyOpen_; }
+    public uint Unk3300KJEOADDMJMI {
+      get { return unk3300KJEOADDMJMI_; }
       set {
-        challengeModeDifficultyOpen_ = value;
+        unk3300KJEOADDMJMI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JMGACODMJLG" field.</summary>
+    public const int Unk3300JMGACODMJLGFieldNumber = 2;
+    private uint unk3300JMGACODMJLG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JMGACODMJLG {
+      get { return unk3300JMGACODMJLG_; }
+      set {
+        unk3300JMGACODMJLG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IJAGOAKOABH" field.</summary>
+    public const int Unk3300IJAGOAKOABHFieldNumber = 7;
+    private uint unk3300IJAGOAKOABH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IJAGOAKOABH {
+      get { return unk3300IJAGOAKOABH_; }
+      set {
+        unk3300IJAGOAKOABH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 12;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
       }
     }
 
@@ -177,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ChallengeModeDifficultyPass != other.ChallengeModeDifficultyPass) return false;
-      if (LevelId != other.LevelId) return false;
-      if (ChallengeModeLastChooseSkillNo != other.ChallengeModeLastChooseSkillNo) return false;
-      if (BestCostTime != other.BestCostTime) return false;
+      if (Unk3300PPOEMEILBIA != other.Unk3300PPOEMEILBIA) return false;
       if (IsLevelOpen != other.IsLevelOpen) return false;
-      if (ChallengeModeDifficultyOpen != other.ChallengeModeDifficultyOpen) return false;
+      if (Unk3300KJEOADDMJMI != other.Unk3300KJEOADDMJMI) return false;
+      if (Unk3300JMGACODMJLG != other.Unk3300JMGACODMJLG) return false;
+      if (Unk3300IJAGOAKOABH != other.Unk3300IJAGOAKOABH) return false;
+      if (LevelId != other.LevelId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ChallengeModeDifficultyPass != 0) hash ^= ChallengeModeDifficultyPass.GetHashCode();
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
-      if (ChallengeModeLastChooseSkillNo != 0) hash ^= ChallengeModeLastChooseSkillNo.GetHashCode();
-      if (BestCostTime != 0) hash ^= BestCostTime.GetHashCode();
+      if (Unk3300PPOEMEILBIA != 0) hash ^= Unk3300PPOEMEILBIA.GetHashCode();
       if (IsLevelOpen != false) hash ^= IsLevelOpen.GetHashCode();
-      if (ChallengeModeDifficultyOpen != 0) hash ^= ChallengeModeDifficultyOpen.GetHashCode();
+      if (Unk3300KJEOADDMJMI != 0) hash ^= Unk3300KJEOADDMJMI.GetHashCode();
+      if (Unk3300JMGACODMJLG != 0) hash ^= Unk3300JMGACODMJLG.GetHashCode();
+      if (Unk3300IJAGOAKOABH != 0) hash ^= Unk3300IJAGOAKOABH.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -214,29 +213,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeModeDifficultyPass != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeModeDifficultyPass);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LevelId);
+      if (Unk3300JMGACODMJLG != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300JMGACODMJLG);
       }
       if (IsLevelOpen != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteBool(IsLevelOpen);
       }
-      if (ChallengeModeLastChooseSkillNo != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeModeLastChooseSkillNo);
+      if (Unk3300IJAGOAKOABH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IJAGOAKOABH);
       }
-      if (BestCostTime != 0) {
+      if (Unk3300KJEOADDMJMI != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300KJEOADDMJMI);
+      }
+      if (LevelId != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(BestCostTime);
+        output.WriteUInt32(LevelId);
       }
-      if (ChallengeModeDifficultyOpen != 0) {
+      if (Unk3300PPOEMEILBIA != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(ChallengeModeDifficultyOpen);
+        output.WriteUInt32(Unk3300PPOEMEILBIA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -248,29 +247,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeModeDifficultyPass != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeModeDifficultyPass);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LevelId);
+      if (Unk3300JMGACODMJLG != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300JMGACODMJLG);
       }
       if (IsLevelOpen != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteBool(IsLevelOpen);
       }
-      if (ChallengeModeLastChooseSkillNo != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeModeLastChooseSkillNo);
+      if (Unk3300IJAGOAKOABH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IJAGOAKOABH);
       }
-      if (BestCostTime != 0) {
+      if (Unk3300KJEOADDMJMI != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300KJEOADDMJMI);
+      }
+      if (LevelId != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(BestCostTime);
+        output.WriteUInt32(LevelId);
       }
-      if (ChallengeModeDifficultyOpen != 0) {
+      if (Unk3300PPOEMEILBIA != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(ChallengeModeDifficultyOpen);
+        output.WriteUInt32(Unk3300PPOEMEILBIA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -282,23 +281,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ChallengeModeDifficultyPass != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficultyPass);
-      }
-      if (LevelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-      }
-      if (ChallengeModeLastChooseSkillNo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeLastChooseSkillNo);
-      }
-      if (BestCostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestCostTime);
+      if (Unk3300PPOEMEILBIA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPOEMEILBIA);
       }
       if (IsLevelOpen != false) {
         size += 1 + 1;
       }
-      if (ChallengeModeDifficultyOpen != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficultyOpen);
+      if (Unk3300KJEOADDMJMI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KJEOADDMJMI);
+      }
+      if (Unk3300JMGACODMJLG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JMGACODMJLG);
+      }
+      if (Unk3300IJAGOAKOABH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IJAGOAKOABH);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -312,23 +311,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ChallengeModeDifficultyPass != 0) {
-        ChallengeModeDifficultyPass = other.ChallengeModeDifficultyPass;
-      }
-      if (other.LevelId != 0) {
-        LevelId = other.LevelId;
-      }
-      if (other.ChallengeModeLastChooseSkillNo != 0) {
-        ChallengeModeLastChooseSkillNo = other.ChallengeModeLastChooseSkillNo;
-      }
-      if (other.BestCostTime != 0) {
-        BestCostTime = other.BestCostTime;
+      if (other.Unk3300PPOEMEILBIA != 0) {
+        Unk3300PPOEMEILBIA = other.Unk3300PPOEMEILBIA;
       }
       if (other.IsLevelOpen != false) {
         IsLevelOpen = other.IsLevelOpen;
       }
-      if (other.ChallengeModeDifficultyOpen != 0) {
-        ChallengeModeDifficultyOpen = other.ChallengeModeDifficultyOpen;
+      if (other.Unk3300KJEOADDMJMI != 0) {
+        Unk3300KJEOADDMJMI = other.Unk3300KJEOADDMJMI;
+      }
+      if (other.Unk3300JMGACODMJLG != 0) {
+        Unk3300JMGACODMJLG = other.Unk3300JMGACODMJLG;
+      }
+      if (other.Unk3300IJAGOAKOABH != 0) {
+        Unk3300IJAGOAKOABH = other.Unk3300IJAGOAKOABH;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -345,28 +344,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ChallengeModeDifficultyPass = input.ReadUInt32();
+          case 16: {
+            Unk3300JMGACODMJLG = input.ReadUInt32();
             break;
           }
-          case 40: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 32: {
             IsLevelOpen = input.ReadBool();
             break;
           }
-          case 80: {
-            ChallengeModeLastChooseSkillNo = input.ReadUInt32();
+          case 56: {
+            Unk3300IJAGOAKOABH = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300KJEOADDMJMI = input.ReadUInt32();
             break;
           }
           case 96: {
-            BestCostTime = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
           case 104: {
-            ChallengeModeDifficultyOpen = input.ReadUInt32();
+            Unk3300PPOEMEILBIA = input.ReadUInt32();
             break;
           }
         }
@@ -384,28 +383,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ChallengeModeDifficultyPass = input.ReadUInt32();
+          case 16: {
+            Unk3300JMGACODMJLG = input.ReadUInt32();
             break;
           }
-          case 40: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 32: {
             IsLevelOpen = input.ReadBool();
             break;
           }
-          case 80: {
-            ChallengeModeLastChooseSkillNo = input.ReadUInt32();
+          case 56: {
+            Unk3300IJAGOAKOABH = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300KJEOADDMJMI = input.ReadUInt32();
             break;
           }
           case 96: {
-            BestCostTime = input.ReadUInt32();
+            LevelId = input.ReadUInt32();
             break;
           }
           case 104: {
-            ChallengeModeDifficultyOpen = input.ReadUInt32();
+            Unk3300PPOEMEILBIA = input.ReadUInt32();
             break;
           }
         }

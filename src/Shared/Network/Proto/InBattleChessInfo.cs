@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleChessInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdJbkJhdHRsZUNoZXNzSW5mby5wcm90bxoTQ2hlc3NDYXJkSW5mby5wcm90",
-            "bxoWQ2hlc3NNeXN0ZXJ5SW5mby5wcm90bxoVQ2hlc3NQbGF5ZXJJbmZvLnBy",
-            "b3RvIoUDChFJbkJhdHRsZUNoZXNzSW5mbxIZChFiYW5fY2FyZF90YWdfbGlz",
-            "dBgCIAMoDRINCgVyb3VuZBgEIAEoDRIvChdzZWxlY3RlZF9jYXJkX2luZm9f",
-            "bGlzdBgJIAMoCzIOLkNoZXNzQ2FyZEluZm8SJwoMbXlzdGVyeV9pbmZvGAEg",
-            "ASgLMhEuQ2hlc3NNeXN0ZXJ5SW5mbxI+Cg9wbGF5ZXJfaW5mb19tYXAYCCAD",
-            "KAsyJS5JbkJhdHRsZUNoZXNzSW5mby5QbGF5ZXJJbmZvTWFwRW50cnkSHgoW",
-            "bWF4X2VzY2FwYWJsZV9tb25zdGVycxgGIAEoDRIYChBlc2NhcGVkX21vbnN0",
-            "ZXJzGAwgASgNEhMKC3RvdGFsX3JvdW5kGA4gASgNEhUKDWxlZnRfbW9uc3Rl",
-            "cnMYDyABKA0aRgoSUGxheWVySW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRIf",
-            "CgV2YWx1ZRgCIAEoCzIQLkNoZXNzUGxheWVySW5mbzoCOAFCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdJbkJhdHRsZUNoZXNzSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoTQ2hlc3NDYXJkSW5mby5wcm90bxoWQ2hlc3NNeXN0",
+            "ZXJ5SW5mby5wcm90bxoVQ2hlc3NQbGF5ZXJJbmZvLnByb3RvIoUEChFJbkJh",
+            "dHRsZUNoZXNzSW5mbxINCgVyb3VuZBgCIAEoDRJHCgxteXN0ZXJ5X2luZm8Y",
+            "BiABKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoZXNz",
+            "TXlzdGVyeUluZm8SXgoPcGxheWVyX2luZm9fbWFwGA8gAygLMkUuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JbkJhdHRsZUNoZXNzSW5mby5Q",
+            "bGF5ZXJJbmZvTWFwRW50cnkSHgoWbWF4X2VzY2FwYWJsZV9tb25zdGVycxgH",
+            "IAEoDRIYChBlc2NhcGVkX21vbnN0ZXJzGAsgASgNEk8KF3NlbGVjdGVkX2Nh",
+            "cmRfaW5mb19saXN0GAQgAygLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5DaGVzc0NhcmRJbmZvEhMKC3RvdGFsX3JvdW5kGA0gASgNEhUK",
+            "DWxlZnRfbW9uc3RlcnMYBSABKA0SGQoRYmFuX2NhcmRfdGFnX2xpc3QYASAD",
+            "KA0aZgoSUGxheWVySW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRI/CgV2YWx1",
+            "ZRgCIAEoCzIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hl",
+            "c3NQbGF5ZXJJbmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessCardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChessMysteryInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleChessInfo), global::Weedwacker.Shared.Network.Proto.InBattleChessInfo.Parser, new[]{ "BanCardTagList", "Round", "SelectedCardInfoList", "MysteryInfo", "PlayerInfoMap", "MaxEscapableMonsters", "EscapedMonsters", "TotalRound", "LeftMonsters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleChessInfo), global::Weedwacker.Shared.Network.Proto.InBattleChessInfo.Parser, new[]{ "Round", "MysteryInfo", "PlayerInfoMap", "MaxEscapableMonsters", "EscapedMonsters", "SelectedCardInfoList", "TotalRound", "LeftMonsters", "BanCardTagList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -80,15 +83,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleChessInfo(InBattleChessInfo other) : this() {
-      banCardTagList_ = other.banCardTagList_.Clone();
       round_ = other.round_;
-      selectedCardInfoList_ = other.selectedCardInfoList_.Clone();
       mysteryInfo_ = other.mysteryInfo_ != null ? other.mysteryInfo_.Clone() : null;
       playerInfoMap_ = other.playerInfoMap_.Clone();
       maxEscapableMonsters_ = other.maxEscapableMonsters_;
       escapedMonsters_ = other.escapedMonsters_;
+      selectedCardInfoList_ = other.selectedCardInfoList_.Clone();
       totalRound_ = other.totalRound_;
       leftMonsters_ = other.leftMonsters_;
+      banCardTagList_ = other.banCardTagList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,19 +101,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleChessInfo(this);
     }
 
-    /// <summary>Field number for the "ban_card_tag_list" field.</summary>
-    public const int BanCardTagListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_banCardTagList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> banCardTagList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BanCardTagList {
-      get { return banCardTagList_; }
-    }
-
     /// <summary>Field number for the "round" field.</summary>
-    public const int RoundFieldNumber = 4;
+    public const int RoundFieldNumber = 2;
     private uint round_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,19 +113,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "selected_card_info_list" field.</summary>
-    public const int SelectedCardInfoListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> _repeated_selectedCardInfoList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ChessCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> selectedCardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> SelectedCardInfoList {
-      get { return selectedCardInfoList_; }
-    }
-
     /// <summary>Field number for the "mystery_info" field.</summary>
-    public const int MysteryInfoFieldNumber = 1;
+    public const int MysteryInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo mysteryInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -145,9 +126,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_info_map" field.</summary>
-    public const int PlayerInfoMapFieldNumber = 8;
+    public const int PlayerInfoMapFieldNumber = 15;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo>.Codec _map_playerInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo.Parser), 66);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo.Parser), 122);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo> playerInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "max_escapable_monsters" field.</summary>
-    public const int MaxEscapableMonstersFieldNumber = 6;
+    public const int MaxEscapableMonstersFieldNumber = 7;
     private uint maxEscapableMonsters_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,7 +149,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "escaped_monsters" field.</summary>
-    public const int EscapedMonstersFieldNumber = 12;
+    public const int EscapedMonstersFieldNumber = 11;
     private uint escapedMonsters_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,8 +160,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "selected_card_info_list" field.</summary>
+    public const int SelectedCardInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> _repeated_selectedCardInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ChessCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> selectedCardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> SelectedCardInfoList {
+      get { return selectedCardInfoList_; }
+    }
+
     /// <summary>Field number for the "total_round" field.</summary>
-    public const int TotalRoundFieldNumber = 14;
+    public const int TotalRoundFieldNumber = 13;
     private uint totalRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +184,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "left_monsters" field.</summary>
-    public const int LeftMonstersFieldNumber = 15;
+    public const int LeftMonstersFieldNumber = 5;
     private uint leftMonsters_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -201,6 +193,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         leftMonsters_ = value;
       }
+    }
+
+    /// <summary>Field number for the "ban_card_tag_list" field.</summary>
+    public const int BanCardTagListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_banCardTagList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> banCardTagList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BanCardTagList {
+      get { return banCardTagList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -218,15 +221,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!banCardTagList_.Equals(other.banCardTagList_)) return false;
       if (Round != other.Round) return false;
-      if(!selectedCardInfoList_.Equals(other.selectedCardInfoList_)) return false;
       if (!object.Equals(MysteryInfo, other.MysteryInfo)) return false;
       if (!PlayerInfoMap.Equals(other.PlayerInfoMap)) return false;
       if (MaxEscapableMonsters != other.MaxEscapableMonsters) return false;
       if (EscapedMonsters != other.EscapedMonsters) return false;
+      if(!selectedCardInfoList_.Equals(other.selectedCardInfoList_)) return false;
       if (TotalRound != other.TotalRound) return false;
       if (LeftMonsters != other.LeftMonsters) return false;
+      if(!banCardTagList_.Equals(other.banCardTagList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -234,15 +237,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= banCardTagList_.GetHashCode();
       if (Round != 0) hash ^= Round.GetHashCode();
-      hash ^= selectedCardInfoList_.GetHashCode();
       if (mysteryInfo_ != null) hash ^= MysteryInfo.GetHashCode();
       hash ^= PlayerInfoMap.GetHashCode();
       if (MaxEscapableMonsters != 0) hash ^= MaxEscapableMonsters.GetHashCode();
       if (EscapedMonsters != 0) hash ^= EscapedMonsters.GetHashCode();
+      hash ^= selectedCardInfoList_.GetHashCode();
       if (TotalRound != 0) hash ^= TotalRound.GetHashCode();
       if (LeftMonsters != 0) hash ^= LeftMonsters.GetHashCode();
+      hash ^= banCardTagList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -261,33 +264,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (mysteryInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(MysteryInfo);
-      }
       banCardTagList_.WriteTo(output, _repeated_banCardTagList_codec);
       if (Round != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(Round);
       }
+      selectedCardInfoList_.WriteTo(output, _repeated_selectedCardInfoList_codec);
+      if (LeftMonsters != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftMonsters);
+      }
+      if (mysteryInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MysteryInfo);
+      }
       if (MaxEscapableMonsters != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxEscapableMonsters);
       }
-      playerInfoMap_.WriteTo(output, _map_playerInfoMap_codec);
-      selectedCardInfoList_.WriteTo(output, _repeated_selectedCardInfoList_codec);
       if (EscapedMonsters != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(EscapedMonsters);
       }
       if (TotalRound != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(TotalRound);
       }
-      if (LeftMonsters != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(LeftMonsters);
-      }
+      playerInfoMap_.WriteTo(output, _map_playerInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -298,33 +301,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (mysteryInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(MysteryInfo);
-      }
       banCardTagList_.WriteTo(ref output, _repeated_banCardTagList_codec);
       if (Round != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(Round);
       }
+      selectedCardInfoList_.WriteTo(ref output, _repeated_selectedCardInfoList_codec);
+      if (LeftMonsters != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftMonsters);
+      }
+      if (mysteryInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MysteryInfo);
+      }
       if (MaxEscapableMonsters != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxEscapableMonsters);
       }
-      playerInfoMap_.WriteTo(ref output, _map_playerInfoMap_codec);
-      selectedCardInfoList_.WriteTo(ref output, _repeated_selectedCardInfoList_codec);
       if (EscapedMonsters != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(EscapedMonsters);
       }
       if (TotalRound != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(TotalRound);
       }
-      if (LeftMonsters != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(LeftMonsters);
-      }
+      playerInfoMap_.WriteTo(ref output, _map_playerInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -335,11 +338,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += banCardTagList_.CalculateSize(_repeated_banCardTagList_codec);
       if (Round != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
       }
-      size += selectedCardInfoList_.CalculateSize(_repeated_selectedCardInfoList_codec);
       if (mysteryInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MysteryInfo);
       }
@@ -350,12 +351,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EscapedMonsters != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EscapedMonsters);
       }
+      size += selectedCardInfoList_.CalculateSize(_repeated_selectedCardInfoList_codec);
       if (TotalRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalRound);
       }
       if (LeftMonsters != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftMonsters);
       }
+      size += banCardTagList_.CalculateSize(_repeated_banCardTagList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -368,11 +371,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      banCardTagList_.Add(other.banCardTagList_);
       if (other.Round != 0) {
         Round = other.Round;
       }
-      selectedCardInfoList_.Add(other.selectedCardInfoList_);
       if (other.mysteryInfo_ != null) {
         if (mysteryInfo_ == null) {
           MysteryInfo = new global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo();
@@ -386,12 +387,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EscapedMonsters != 0) {
         EscapedMonsters = other.EscapedMonsters;
       }
+      selectedCardInfoList_.Add(other.selectedCardInfoList_);
       if (other.TotalRound != 0) {
         TotalRound = other.TotalRound;
       }
       if (other.LeftMonsters != 0) {
         LeftMonsters = other.LeftMonsters;
       }
+      banCardTagList_.Add(other.banCardTagList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -407,44 +410,44 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 10:
+          case 8: {
+            banCardTagList_.AddEntriesFrom(input, _repeated_banCardTagList_codec);
+            break;
+          }
+          case 16: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            selectedCardInfoList_.AddEntriesFrom(input, _repeated_selectedCardInfoList_codec);
+            break;
+          }
+          case 40: {
+            LeftMonsters = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (mysteryInfo_ == null) {
               MysteryInfo = new global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo();
             }
             input.ReadMessage(MysteryInfo);
             break;
           }
-          case 18:
-          case 16: {
-            banCardTagList_.AddEntriesFrom(input, _repeated_banCardTagList_codec);
-            break;
-          }
-          case 32: {
-            Round = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             MaxEscapableMonsters = input.ReadUInt32();
             break;
           }
-          case 66: {
-            playerInfoMap_.AddEntriesFrom(input, _map_playerInfoMap_codec);
-            break;
-          }
-          case 74: {
-            selectedCardInfoList_.AddEntriesFrom(input, _repeated_selectedCardInfoList_codec);
-            break;
-          }
-          case 96: {
+          case 88: {
             EscapedMonsters = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             TotalRound = input.ReadUInt32();
             break;
           }
-          case 120: {
-            LeftMonsters = input.ReadUInt32();
+          case 122: {
+            playerInfoMap_.AddEntriesFrom(input, _map_playerInfoMap_codec);
             break;
           }
         }
@@ -462,44 +465,44 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 10:
+          case 8: {
+            banCardTagList_.AddEntriesFrom(ref input, _repeated_banCardTagList_codec);
+            break;
+          }
+          case 16: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            selectedCardInfoList_.AddEntriesFrom(ref input, _repeated_selectedCardInfoList_codec);
+            break;
+          }
+          case 40: {
+            LeftMonsters = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (mysteryInfo_ == null) {
               MysteryInfo = new global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo();
             }
             input.ReadMessage(MysteryInfo);
             break;
           }
-          case 18:
-          case 16: {
-            banCardTagList_.AddEntriesFrom(ref input, _repeated_banCardTagList_codec);
-            break;
-          }
-          case 32: {
-            Round = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             MaxEscapableMonsters = input.ReadUInt32();
             break;
           }
-          case 66: {
-            playerInfoMap_.AddEntriesFrom(ref input, _map_playerInfoMap_codec);
-            break;
-          }
-          case 74: {
-            selectedCardInfoList_.AddEntriesFrom(ref input, _repeated_selectedCardInfoList_codec);
-            break;
-          }
-          case 96: {
+          case 88: {
             EscapedMonsters = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             TotalRound = input.ReadUInt32();
             break;
           }
-          case 120: {
-            LeftMonsters = input.ReadUInt32();
+          case 122: {
+            playerInfoMap_.AddEntriesFrom(ref input, _map_playerInfoMap_codec);
             break;
           }
         }

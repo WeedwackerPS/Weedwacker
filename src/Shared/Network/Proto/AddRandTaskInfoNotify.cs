@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AddRandTaskInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBZGRSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8aDFZlY3Rvci5wcm90byJD",
-            "ChVBZGRSYW5kVGFza0luZm9Ob3RpZnkSFAoMcmFuZF90YXNrX2lkGAUgASgN",
-            "EhQKA3BvcxgNIAEoCzIHLlZlY3RvckIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtBZGRSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byJjChVBZGRSYW5kVGFz",
+            "a0luZm9Ob3RpZnkSFAoMcmFuZF90YXNrX2lkGAcgASgNEjQKA3BvcxgCIAEo",
+            "CzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 119
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 154;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AddRandTaskInfoNotify : pb::IMessage<AddRandTaskInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rand_task_id" field.</summary>
-    public const int RandTaskIdFieldNumber = 5;
+    public const int RandTaskIdFieldNumber = 7;
     private uint randTaskId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 13;
+    public const int PosFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RandTaskId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RandTaskId);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(18);
         output.WriteMessage(Pos);
+      }
+      if (RandTaskId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(RandTaskId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RandTaskId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RandTaskId);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(18);
         output.WriteMessage(Pos);
+      }
+      if (RandTaskId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(RandTaskId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            RandTaskId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 18: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 56: {
+            RandTaskId = input.ReadUInt32();
             break;
           }
         }
@@ -260,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            RandTaskId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 18: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 56: {
+            RandTaskId = input.ReadUInt32();
             break;
           }
         }

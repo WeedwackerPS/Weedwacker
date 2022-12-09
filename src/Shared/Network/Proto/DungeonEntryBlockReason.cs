@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonEntryBlockReasonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1EdW5nZW9uRW50cnlCbG9ja1JlYXNvbi5wcm90byqyAQoXRHVuZ2VvbkVu",
-            "dHJ5QmxvY2tSZWFzb24SIwofRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05f",
-            "Tk9ORRAAEiQKIERVTkdFT05fRU5UUllfQkxPQ0tfUkVBU09OX0xFVkVMEAES",
-            "JAogRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05fUVVFU1QQAhImCiJEVU5H",
-            "RU9OX0VOVFJZX0JMT0NLX1JFQVNPTl9NVUxJUExFEANCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1EdW5nZW9uRW50cnlCbG9ja1JlYXNvbi5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byqzAQoXRHVuZ2VvbkVudHJ5QmxvY2tSZWFz",
+            "b24SIwofRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05fTk9ORRAAEiQKIERV",
+            "TkdFT05fRU5UUllfQkxPQ0tfUkVBU09OX0xFVkVMEAESJAogRFVOR0VPTl9F",
+            "TlRSWV9CTE9DS19SRUFTT05fUVVFU1QQAhInCiNEVU5HRU9OX0VOVFJZX0JM",
+            "T0NLX1JFQVNPTl9NVUxUSVBMRRADYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason), }, null, null));
@@ -42,7 +42,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_NONE")] None = 0,
     [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_LEVEL")] Level = 1,
     [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_QUEST")] Quest = 2,
-    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_MULIPLE")] Muliple = 3,
+    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_MULTIPLE")] Multiple = 3,
   }
 
   #endregion

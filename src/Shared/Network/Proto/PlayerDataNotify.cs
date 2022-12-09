@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQbGF5ZXJEYXRhTm90aWZ5LnByb3RvGg9Qcm9wVmFsdWUucHJvdG8i2QEK",
-            "EFBsYXllckRhdGFOb3RpZnkSEwoLc2VydmVyX3RpbWUYByABKAQSEQoJbmlj",
-            "a19uYW1lGAggASgJEhwKFGlzX2ZpcnN0X2xvZ2luX3RvZGF5GAwgASgIEhEK",
-            "CXJlZ2lvbl9pZBgGIAEoDRIwCghwcm9wX21hcBgPIAMoCzIeLlBsYXllckRh",
-            "dGFOb3RpZnkuUHJvcE1hcEVudHJ5GjoKDFByb3BNYXBFbnRyeRILCgNrZXkY",
-            "ASABKA0SGQoFdmFsdWUYAiABKAsyCi5Qcm9wVmFsdWU6AjgBQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZQbGF5ZXJEYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGg9Qcm9wVmFsdWUucHJvdG8imQIKEFBsYXllckRhdGFO",
+            "b3RpZnkSHAoUaXNfZmlyc3RfbG9naW5fdG9kYXkYDCABKAgSEQoJbmlja19u",
+            "YW1lGAkgASgJEhMKC3NlcnZlcl90aW1lGAEgASgEElAKCHByb3BfbWFwGAQg",
+            "AygLMj4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGF5ZXJE",
+            "YXRhTm90aWZ5LlByb3BNYXBFbnRyeRIRCglyZWdpb25faWQYAiABKA0aWgoM",
+            "UHJvcE1hcEVudHJ5EgsKA2tleRgBIAEoDRI5CgV2YWx1ZRgCIAEoCzIqLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUHJvcFZhbHVlOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PropValueReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerDataNotify), global::Weedwacker.Shared.Network.Proto.PlayerDataNotify.Parser, new[]{ "ServerTime", "NickName", "IsFirstLoginToday", "RegionId", "PropMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerDataNotify), global::Weedwacker.Shared.Network.Proto.PlayerDataNotify.Parser, new[]{ "IsFirstLoginToday", "NickName", "ServerTime", "PropMap", "RegionId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 190
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 147;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerDataNotify : pb::IMessage<PlayerDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,11 +86,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerDataNotify(PlayerDataNotify other) : this() {
-      serverTime_ = other.serverTime_;
-      nickName_ = other.nickName_;
       isFirstLoginToday_ = other.isFirstLoginToday_;
-      regionId_ = other.regionId_;
+      nickName_ = other.nickName_;
+      serverTime_ = other.serverTime_;
       propMap_ = other.propMap_.Clone();
+      regionId_ = other.regionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,30 +98,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerDataNotify Clone() {
       return new PlayerDataNotify(this);
-    }
-
-    /// <summary>Field number for the "server_time" field.</summary>
-    public const int ServerTimeFieldNumber = 7;
-    private ulong serverTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong ServerTime {
-      get { return serverTime_; }
-      set {
-        serverTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "nick_name" field.</summary>
-    public const int NickNameFieldNumber = 8;
-    private string nickName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string NickName {
-      get { return nickName_; }
-      set {
-        nickName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "is_first_login_today" field.</summary>
@@ -130,8 +112,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "nick_name" field.</summary>
+    public const int NickNameFieldNumber = 9;
+    private string nickName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NickName {
+      get { return nickName_; }
+      set {
+        nickName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "server_time" field.</summary>
+    public const int ServerTimeFieldNumber = 1;
+    private ulong serverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ServerTime {
+      get { return serverTime_; }
+      set {
+        serverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_map" field.</summary>
+    public const int PropMapFieldNumber = 4;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec _map_propMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 34);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> propMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> PropMap {
+      get { return propMap_; }
+    }
+
     /// <summary>Field number for the "region_id" field.</summary>
-    public const int RegionIdFieldNumber = 6;
+    public const int RegionIdFieldNumber = 2;
     private uint regionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,17 +157,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         regionId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "prop_map" field.</summary>
-    public const int PropMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec _map_propMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 122);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> propMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> PropMap {
-      get { return propMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ServerTime != other.ServerTime) return false;
-      if (NickName != other.NickName) return false;
       if (IsFirstLoginToday != other.IsFirstLoginToday) return false;
-      if (RegionId != other.RegionId) return false;
+      if (NickName != other.NickName) return false;
+      if (ServerTime != other.ServerTime) return false;
       if (!PropMap.Equals(other.PropMap)) return false;
+      if (RegionId != other.RegionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ServerTime != 0UL) hash ^= ServerTime.GetHashCode();
-      if (NickName.Length != 0) hash ^= NickName.GetHashCode();
       if (IsFirstLoginToday != false) hash ^= IsFirstLoginToday.GetHashCode();
-      if (RegionId != 0) hash ^= RegionId.GetHashCode();
+      if (NickName.Length != 0) hash ^= NickName.GetHashCode();
+      if (ServerTime != 0UL) hash ^= ServerTime.GetHashCode();
       hash ^= PropMap.GetHashCode();
+      if (RegionId != 0) hash ^= RegionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,23 +209,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RegionId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(RegionId);
-      }
       if (ServerTime != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt64(ServerTime);
       }
+      if (RegionId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(RegionId);
+      }
+      propMap_.WriteTo(output, _map_propMap_codec);
       if (NickName.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(74);
         output.WriteString(NickName);
       }
       if (IsFirstLoginToday != false) {
         output.WriteRawTag(96);
         output.WriteBool(IsFirstLoginToday);
       }
-      propMap_.WriteTo(output, _map_propMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -230,23 +236,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RegionId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(RegionId);
-      }
       if (ServerTime != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt64(ServerTime);
       }
+      if (RegionId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(RegionId);
+      }
+      propMap_.WriteTo(ref output, _map_propMap_codec);
       if (NickName.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(74);
         output.WriteString(NickName);
       }
       if (IsFirstLoginToday != false) {
         output.WriteRawTag(96);
         output.WriteBool(IsFirstLoginToday);
       }
-      propMap_.WriteTo(ref output, _map_propMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -257,19 +263,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ServerTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ServerTime);
+      if (IsFirstLoginToday != false) {
+        size += 1 + 1;
       }
       if (NickName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(NickName);
       }
-      if (IsFirstLoginToday != false) {
-        size += 1 + 1;
+      if (ServerTime != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ServerTime);
       }
+      size += propMap_.CalculateSize(_map_propMap_codec);
       if (RegionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionId);
       }
-      size += propMap_.CalculateSize(_map_propMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -282,19 +288,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ServerTime != 0UL) {
-        ServerTime = other.ServerTime;
+      if (other.IsFirstLoginToday != false) {
+        IsFirstLoginToday = other.IsFirstLoginToday;
       }
       if (other.NickName.Length != 0) {
         NickName = other.NickName;
       }
-      if (other.IsFirstLoginToday != false) {
-        IsFirstLoginToday = other.IsFirstLoginToday;
+      if (other.ServerTime != 0UL) {
+        ServerTime = other.ServerTime;
       }
+      propMap_.Add(other.propMap_);
       if (other.RegionId != 0) {
         RegionId = other.RegionId;
       }
-      propMap_.Add(other.propMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -310,24 +316,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            RegionId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             ServerTime = input.ReadUInt64();
             break;
           }
-          case 66: {
+          case 16: {
+            RegionId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            propMap_.AddEntriesFrom(input, _map_propMap_codec);
+            break;
+          }
+          case 74: {
             NickName = input.ReadString();
             break;
           }
           case 96: {
             IsFirstLoginToday = input.ReadBool();
-            break;
-          }
-          case 122: {
-            propMap_.AddEntriesFrom(input, _map_propMap_codec);
             break;
           }
         }
@@ -345,24 +351,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            RegionId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             ServerTime = input.ReadUInt64();
             break;
           }
-          case 66: {
+          case 16: {
+            RegionId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
+            break;
+          }
+          case 74: {
             NickName = input.ReadString();
             break;
           }
           case 96: {
             IsFirstLoginToday = input.ReadBool();
-            break;
-          }
-          case 122: {
-            propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
             break;
           }
         }

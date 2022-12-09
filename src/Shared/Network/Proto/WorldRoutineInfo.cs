@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldRoutineInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZXb3JsZFJvdXRpbmVJbmZvLnByb3RvImYKEFdvcmxkUm91dGluZUluZm8S",
-            "EAoIcHJvZ3Jlc3MYBCABKA0SEwoLaXNfZmluaXNoZWQYDiABKAgSFwoPZmlu",
-            "aXNoX3Byb2dyZXNzGAMgASgNEhIKCnJvdXRpbmVfaWQYCyABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZXb3JsZFJvdXRpbmVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvImYKEFdvcmxkUm91dGluZUluZm8SFwoPZmluaXNoX3By",
+            "b2dyZXNzGAEgASgNEhIKCnJvdXRpbmVfaWQYCiABKA0SEAoIcHJvZ3Jlc3MY",
+            "ByABKA0SEwoLaXNfZmluaXNoZWQYDyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo), global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo.Parser, new[]{ "Progress", "IsFinished", "FinishProgress", "RoutineId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo), global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo.Parser, new[]{ "FinishProgress", "RoutineId", "Progress", "IsFinished" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorldRoutineInfo(WorldRoutineInfo other) : this() {
-      progress_ = other.progress_;
-      isFinished_ = other.isFinished_;
       finishProgress_ = other.finishProgress_;
       routineId_ = other.routineId_;
+      progress_ = other.progress_;
+      isFinished_ = other.isFinished_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,32 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WorldRoutineInfo(this);
     }
 
-    /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 4;
-    private uint progress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Progress {
-      get { return progress_; }
-      set {
-        progress_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 14;
-    private bool isFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
-    }
-
     /// <summary>Field number for the "finish_progress" field.</summary>
-    public const int FinishProgressFieldNumber = 3;
+    public const int FinishProgressFieldNumber = 1;
     private uint finishProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "routine_id" field.</summary>
-    public const int RoutineIdFieldNumber = 11;
+    public const int RoutineIdFieldNumber = 10;
     private uint routineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,6 +106,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return routineId_; }
       set {
         routineId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "progress" field.</summary>
+    public const int ProgressFieldNumber = 7;
+    private uint progress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Progress {
+      get { return progress_; }
+      set {
+        progress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 15;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
       }
     }
 
@@ -148,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Progress != other.Progress) return false;
-      if (IsFinished != other.IsFinished) return false;
       if (FinishProgress != other.FinishProgress) return false;
       if (RoutineId != other.RoutineId) return false;
+      if (Progress != other.Progress) return false;
+      if (IsFinished != other.IsFinished) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Progress != 0) hash ^= Progress.GetHashCode();
-      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (FinishProgress != 0) hash ^= FinishProgress.GetHashCode();
       if (RoutineId != 0) hash ^= RoutineId.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,19 +182,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (FinishProgress != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(FinishProgress);
       }
       if (Progress != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(Progress);
       }
       if (RoutineId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(RoutineId);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -208,19 +208,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (FinishProgress != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(FinishProgress);
       }
       if (Progress != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(Progress);
       }
       if (RoutineId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(RoutineId);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -233,17 +233,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Progress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-      }
-      if (IsFinished != false) {
-        size += 1 + 1;
-      }
       if (FinishProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishProgress);
       }
       if (RoutineId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoutineId);
+      }
+      if (Progress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
+      }
+      if (IsFinished != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Progress != 0) {
-        Progress = other.Progress;
-      }
-      if (other.IsFinished != false) {
-        IsFinished = other.IsFinished;
-      }
       if (other.FinishProgress != 0) {
         FinishProgress = other.FinishProgress;
       }
       if (other.RoutineId != 0) {
         RoutineId = other.RoutineId;
+      }
+      if (other.Progress != 0) {
+        Progress = other.Progress;
+      }
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,19 +284,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             FinishProgress = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 56: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             RoutineId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 120: {
             IsFinished = input.ReadBool();
             break;
           }
@@ -315,19 +315,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             FinishProgress = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 56: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             RoutineId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 120: {
             IsFinished = input.ReadBool();
             break;
           }

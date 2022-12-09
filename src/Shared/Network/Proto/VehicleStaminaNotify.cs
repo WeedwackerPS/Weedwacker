@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static VehicleStaminaNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpWZWhpY2xlU3RhbWluYU5vdGlmeS5wcm90byI+ChRWZWhpY2xlU3RhbWlu",
-            "YU5vdGlmeRIRCgllbnRpdHlfaWQYBiABKA0SEwoLY3VyX3N0YW1pbmEYDiAB",
-            "KAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChpWZWhpY2xlU3RhbWluYU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byI+ChRWZWhpY2xlU3RhbWluYU5vdGlmeRIRCgll",
+            "bnRpdHlfaWQYDCABKA0SEwoLY3VyX3N0YW1pbmEYCSABKAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 834
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 880;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VehicleStaminaNotify : pb::IMessage<VehicleStaminaNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 6;
+    public const int EntityIdFieldNumber = 12;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_stamina" field.</summary>
-    public const int CurStaminaFieldNumber = 14;
+    public const int CurStaminaFieldNumber = 9;
     private float curStamina_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
-      }
       if (CurStamina != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(77);
         output.WriteFloat(CurStamina);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
-      }
       if (CurStamina != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(77);
         output.WriteFloat(CurStamina);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            EntityId = input.ReadUInt32();
+          case 77: {
+            CurStamina = input.ReadFloat();
             break;
           }
-          case 117: {
-            CurStamina = input.ReadFloat();
+          case 96: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            EntityId = input.ReadUInt32();
+          case 77: {
+            CurStamina = input.ReadFloat();
             break;
           }
-          case 117: {
-            CurStamina = input.ReadFloat();
+          case 96: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

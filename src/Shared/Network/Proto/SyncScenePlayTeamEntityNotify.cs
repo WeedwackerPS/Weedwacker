@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static SyncScenePlayTeamEntityNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTeW5jU2NlbmVQbGF5VGVhbUVudGl0eU5vdGlmeS5wcm90bxoYUGxheVRl",
-            "YW1FbnRpdHlJbmZvLnByb3RvImAKHVN5bmNTY2VuZVBsYXlUZWFtRW50aXR5",
-            "Tm90aWZ5EhAKCHNjZW5lX2lkGAIgASgNEi0KEGVudGl0eV9pbmZvX2xpc3QY",
-            "AyADKAsyEy5QbGF5VGVhbUVudGl0eUluZm9CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNTeW5jU2NlbmVQbGF5VGVhbUVudGl0eU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoYUGxheVRlYW1FbnRpdHlJbmZv",
+            "LnByb3RvIoABCh1TeW5jU2NlbmVQbGF5VGVhbUVudGl0eU5vdGlmeRIQCghz",
+            "Y2VuZV9pZBgHIAEoDRJNChBlbnRpdHlfaW5mb19saXN0GAMgAygLMjMuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGF5VGVhbUVudGl0eUlu",
+            "Zm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayTeamEntityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3333
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3393;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SyncScenePlayTeamEntityNotify : pb::IMessage<SyncScenePlayTeamEntityNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 2;
+    public const int SceneIdFieldNumber = 7;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      entityInfoList_.WriteTo(output, _repeated_entityInfoList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
-      entityInfoList_.WriteTo(output, _repeated_entityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      entityInfoList_.WriteTo(ref output, _repeated_entityInfoList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
-      entityInfoList_.WriteTo(ref output, _repeated_entityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
           case 26: {
             entityInfoList_.AddEntriesFrom(input, _repeated_entityInfoList_codec);
+            break;
+          }
+          case 56: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
           case 26: {
             entityInfoList_.AddEntriesFrom(ref input, _repeated_entityInfoList_codec);
+            break;
+          }
+          case 56: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }

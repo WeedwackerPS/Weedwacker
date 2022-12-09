@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarSkillChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BdmF0YXJTa2lsbENoYW5nZU5vdGlmeS5wcm90byKYAQoXQXZhdGFyU2tp",
-            "bGxDaGFuZ2VOb3RpZnkSEQoJY3VyX2xldmVsGAsgASgNEhMKC2F2YXRhcl9n",
-            "dWlkGAIgASgEEhEKCWVudGl0eV9pZBgHIAEoDRIWCg5za2lsbF9kZXBvdF9p",
-            "ZBgNIAEoDRIRCglvbGRfbGV2ZWwYASABKA0SFwoPYXZhdGFyX3NraWxsX2lk",
-            "GAYgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch1BdmF0YXJTa2lsbENoYW5nZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byKYAQoXQXZhdGFyU2tpbGxDaGFuZ2VOb3Rp",
+            "ZnkSEwoLYXZhdGFyX2d1aWQYBCABKAQSEQoJb2xkX2xldmVsGAcgASgNEhEK",
+            "CWN1cl9sZXZlbBgPIAEoDRIWCg5za2lsbF9kZXBvdF9pZBgGIAEoDRIRCgll",
+            "bnRpdHlfaWQYASABKA0SFwoPYXZhdGFyX3NraWxsX2lkGAsgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillChangeNotify.Parser, new[]{ "CurLevel", "AvatarGuid", "EntityId", "SkillDepotId", "OldLevel", "AvatarSkillId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillChangeNotify.Parser, new[]{ "AvatarGuid", "OldLevel", "CurLevel", "SkillDepotId", "EntityId", "AvatarSkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1097
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1099;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarSkillChangeNotify : pb::IMessage<AvatarSkillChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarSkillChangeNotify(AvatarSkillChangeNotify other) : this() {
-      curLevel_ = other.curLevel_;
       avatarGuid_ = other.avatarGuid_;
-      entityId_ = other.entityId_;
-      skillDepotId_ = other.skillDepotId_;
       oldLevel_ = other.oldLevel_;
+      curLevel_ = other.curLevel_;
+      skillDepotId_ = other.skillDepotId_;
+      entityId_ = other.entityId_;
       avatarSkillId_ = other.avatarSkillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -94,20 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarSkillChangeNotify(this);
     }
 
-    /// <summary>Field number for the "cur_level" field.</summary>
-    public const int CurLevelFieldNumber = 11;
-    private uint curLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurLevel {
-      get { return curLevel_; }
-      set {
-        curLevel_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 2;
+    public const int AvatarGuidFieldNumber = 4;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,32 +110,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 7;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "skill_depot_id" field.</summary>
-    public const int SkillDepotIdFieldNumber = 13;
-    private uint skillDepotId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillDepotId {
-      get { return skillDepotId_; }
-      set {
-        skillDepotId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "old_level" field.</summary>
-    public const int OldLevelFieldNumber = 1;
+    public const int OldLevelFieldNumber = 7;
     private uint oldLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,8 +122,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cur_level" field.</summary>
+    public const int CurLevelFieldNumber = 15;
+    private uint curLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurLevel {
+      get { return curLevel_; }
+      set {
+        curLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_depot_id" field.</summary>
+    public const int SkillDepotIdFieldNumber = 6;
+    private uint skillDepotId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillDepotId {
+      get { return skillDepotId_; }
+      set {
+        skillDepotId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 1;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "avatar_skill_id" field.</summary>
-    public const int AvatarSkillIdFieldNumber = 6;
+    public const int AvatarSkillIdFieldNumber = 11;
     private uint avatarSkillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,11 +185,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurLevel != other.CurLevel) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
-      if (EntityId != other.EntityId) return false;
-      if (SkillDepotId != other.SkillDepotId) return false;
       if (OldLevel != other.OldLevel) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if (SkillDepotId != other.SkillDepotId) return false;
+      if (EntityId != other.EntityId) return false;
       if (AvatarSkillId != other.AvatarSkillId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -194,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
       if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (AvatarSkillId != 0) hash ^= AvatarSkillId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -218,29 +222,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OldLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(OldLevel);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(AvatarGuid);
-      }
-      if (AvatarSkillId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AvatarSkillId);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
       }
-      if (CurLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurLevel);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(AvatarGuid);
       }
       if (SkillDepotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(SkillDepotId);
+      }
+      if (OldLevel != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(OldLevel);
+      }
+      if (AvatarSkillId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(AvatarSkillId);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CurLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -252,29 +256,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OldLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(OldLevel);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(AvatarGuid);
-      }
-      if (AvatarSkillId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AvatarSkillId);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
       }
-      if (CurLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurLevel);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(AvatarGuid);
       }
       if (SkillDepotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(SkillDepotId);
+      }
+      if (OldLevel != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(OldLevel);
+      }
+      if (AvatarSkillId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(AvatarSkillId);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CurLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -286,20 +290,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
-      }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (OldLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
+      }
+      if (CurLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
       }
       if (SkillDepotId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
       }
-      if (OldLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (AvatarSkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarSkillId);
@@ -316,20 +320,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurLevel != 0) {
-        CurLevel = other.CurLevel;
-      }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.OldLevel != 0) {
+        OldLevel = other.OldLevel;
+      }
+      if (other.CurLevel != 0) {
+        CurLevel = other.CurLevel;
       }
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }
-      if (other.OldLevel != 0) {
-        OldLevel = other.OldLevel;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       if (other.AvatarSkillId != 0) {
         AvatarSkillId = other.AvatarSkillId;
@@ -350,27 +354,27 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            OldLevel = input.ReadUInt32();
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 32: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
           case 48: {
-            AvatarSkillId = input.ReadUInt32();
+            SkillDepotId = input.ReadUInt32();
             break;
           }
           case 56: {
-            EntityId = input.ReadUInt32();
+            OldLevel = input.ReadUInt32();
             break;
           }
           case 88: {
-            CurLevel = input.ReadUInt32();
+            AvatarSkillId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            SkillDepotId = input.ReadUInt32();
+          case 120: {
+            CurLevel = input.ReadUInt32();
             break;
           }
         }
@@ -389,27 +393,27 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            OldLevel = input.ReadUInt32();
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 32: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
           case 48: {
-            AvatarSkillId = input.ReadUInt32();
+            SkillDepotId = input.ReadUInt32();
             break;
           }
           case 56: {
-            EntityId = input.ReadUInt32();
+            OldLevel = input.ReadUInt32();
             break;
           }
           case 88: {
-            CurLevel = input.ReadUInt32();
+            AvatarSkillId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            SkillDepotId = input.ReadUInt32();
+          case 120: {
+            CurLevel = input.ReadUInt32();
             break;
           }
         }

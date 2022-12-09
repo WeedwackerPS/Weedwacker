@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteFireworksReformFactorInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipMYW50ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8i",
-            "TwokTGFudGVyblJpdGVGaXJld29ya3NSZWZvcm1GYWN0b3JJbmZvEhQKDGZh",
-            "Y3Rvcl92YWx1ZRgFIAEoDRIRCglmYWN0b3JfaWQYDSABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CipMYW50ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iTwokTGFudGVyblJp",
+            "dGVGaXJld29ya3NSZWZvcm1GYWN0b3JJbmZvEhQKDGZhY3Rvcl92YWx1ZRgM",
+            "IAEoDRIRCglmYWN0b3JfaWQYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "factor_value" field.</summary>
-    public const int FactorValueFieldNumber = 5;
+    public const int FactorValueFieldNumber = 12;
     private uint factorValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "factor_id" field.</summary>
-    public const int FactorIdFieldNumber = 13;
+    public const int FactorIdFieldNumber = 15;
     private uint factorId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +152,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (FactorValue != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(FactorValue);
       }
       if (FactorId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(FactorId);
       }
       if (_unknownFields != null) {
@@ -170,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (FactorValue != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(FactorValue);
       }
       if (FactorId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(FactorId);
       }
       if (_unknownFields != null) {
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 96: {
             FactorValue = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 120: {
             FactorId = input.ReadUInt32();
             break;
           }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 96: {
             FactorValue = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 120: {
             FactorId = input.ReadUInt32();
             break;
           }

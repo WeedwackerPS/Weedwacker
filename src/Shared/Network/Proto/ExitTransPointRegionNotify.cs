@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExitTransPointRegionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBFeGl0VHJhbnNQb2ludFJlZ2lvbk5vdGlmeS5wcm90byJAChpFeGl0VHJh",
-            "bnNQb2ludFJlZ2lvbk5vdGlmeRIQCghwb2ludF9pZBgBIAEoDRIQCghzY2Vu",
-            "ZV9pZBgHIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiBFeGl0VHJhbnNQb2ludFJlZ2lvbk5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJAChpFeGl0VHJhbnNQb2ludFJlZ2lv",
+            "bk5vdGlmeRIQCghwb2ludF9pZBgEIAEoDRIQCghzY2VuZV9pZBgBIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 282
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 290;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ExitTransPointRegionNotify : pb::IMessage<ExitTransPointRegionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 1;
+    public const int PointIdFieldNumber = 4;
     private uint pointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 7;
+    public const int SceneIdFieldNumber = 1;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PointId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(PointId);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(SceneId);
+      }
+      if (PointId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(PointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PointId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(PointId);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(SceneId);
+      }
+      if (PointId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(PointId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,11 +237,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PointId = input.ReadUInt32();
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            SceneId = input.ReadUInt32();
+          case 32: {
+            PointId = input.ReadUInt32();
             break;
           }
         }
@@ -256,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PointId = input.ReadUInt32();
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            SceneId = input.ReadUInt32();
+          case 32: {
+            PointId = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeOfferingLevelRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBUYWtlT2ZmZXJpbmdMZXZlbFJld2FyZFJzcC5wcm90bxoPSXRlbVBhcmFt",
-            "LnByb3RvInUKGlRha2VPZmZlcmluZ0xldmVsUmV3YXJkUnNwEhMKC29mZmVy",
-            "aW5nX2lkGAMgASgNEhIKCnRha2VfbGV2ZWwYBCABKA0SDwoHcmV0Y29kZRgI",
-            "IAEoBRIdCglpdGVtX2xpc3QYAiADKAsyCi5JdGVtUGFyYW1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBUYWtlT2ZmZXJpbmdMZXZlbFJld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoPSXRlbVBhcmFtLnByb3RvIpUBChpU",
+            "YWtlT2ZmZXJpbmdMZXZlbFJld2FyZFJzcBI9CglpdGVtX2xpc3QYBCADKAsy",
+            "Ki5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJhbRIT",
+            "CgtvZmZlcmluZ19pZBgMIAEoDRISCgp0YWtlX2xldmVsGAogASgNEg8KB3Jl",
+            "dGNvZGUYAyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeOfferingLevelRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeOfferingLevelRewardRsp.Parser, new[]{ "OfferingId", "TakeLevel", "Retcode", "ItemList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeOfferingLevelRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeOfferingLevelRewardRsp.Parser, new[]{ "ItemList", "OfferingId", "TakeLevel", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2911
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2902;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeOfferingLevelRewardRsp : pb::IMessage<TakeOfferingLevelRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TakeOfferingLevelRewardRsp(TakeOfferingLevelRewardRsp other) : this() {
+      itemList_ = other.itemList_.Clone();
       offeringId_ = other.offeringId_;
       takeLevel_ = other.takeLevel_;
       retcode_ = other.retcode_;
-      itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,8 +96,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TakeOfferingLevelRewardRsp(this);
     }
 
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
+      get { return itemList_; }
+    }
+
     /// <summary>Field number for the "offering_id" field.</summary>
-    public const int OfferingIdFieldNumber = 3;
+    public const int OfferingIdFieldNumber = 12;
     private uint offeringId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "take_level" field.</summary>
-    public const int TakeLevelFieldNumber = 4;
+    public const int TakeLevelFieldNumber = 10;
     private uint takeLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +132,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 3;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,17 +141,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
-      get { return itemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!itemList_.Equals(other.itemList_)) return false;
       if (OfferingId != other.OfferingId) return false;
       if (TakeLevel != other.TakeLevel) return false;
       if (Retcode != other.Retcode) return false;
-      if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= itemList_.GetHashCode();
       if (OfferingId != 0) hash ^= OfferingId.GetHashCode();
       if (TakeLevel != 0) hash ^= TakeLevel.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,18 +191,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      itemList_.WriteTo(output, _repeated_itemList_codec);
-      if (OfferingId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(OfferingId);
+        output.WriteInt32(Retcode);
       }
+      itemList_.WriteTo(output, _repeated_itemList_codec);
       if (TakeLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(TakeLevel);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
+      if (OfferingId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OfferingId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -209,18 +214,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      itemList_.WriteTo(ref output, _repeated_itemList_codec);
-      if (OfferingId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(OfferingId);
+        output.WriteInt32(Retcode);
       }
+      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (TakeLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(TakeLevel);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
+      if (OfferingId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OfferingId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,6 +237,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (OfferingId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OfferingId);
       }
@@ -241,7 +247,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -254,6 +259,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      itemList_.Add(other.itemList_);
       if (other.OfferingId != 0) {
         OfferingId = other.OfferingId;
       }
@@ -263,7 +269,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -279,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 34: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 24: {
-            OfferingId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 80: {
             TakeLevel = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            OfferingId = input.ReadUInt32();
             break;
           }
         }
@@ -310,20 +315,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 34: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 24: {
-            OfferingId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 80: {
             TakeLevel = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            OfferingId = input.ReadUInt32();
             break;
           }
         }

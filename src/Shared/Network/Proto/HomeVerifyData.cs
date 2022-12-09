@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeVerifyDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRIb21lVmVyaWZ5RGF0YS5wcm90bxoiSG9tZVNjZW5lQXJyYW5nZW1lbnRN",
-            "dWlwRGF0YS5wcm90bxoZSG9tZVZlcmlmeVNjZW5lRGF0YS5wcm90bxoSTGFu",
-            "Z3VhZ2VUeXBlLnByb3RvItsBCg5Ib21lVmVyaWZ5RGF0YRILCgNhaWQYByAB",
-            "KAkSEQoJdGltZXN0YW1wGA8gASgHEgsKA3VpZBgFIAEoDRI3ChBhcnJhbmdl",
-            "bWVudF9kYXRhGAkgASgLMh0uSG9tZVNjZW5lQXJyYW5nZW1lbnRNdWlwRGF0",
-            "YRIOCgZyZWdpb24YAyABKAkSDQoFdG9rZW4YASABKAkSJwoJaG9tZV9pbmZv",
-            "GAYgASgLMhQuSG9tZVZlcmlmeVNjZW5lRGF0YRIbCgRsYW5nGAggASgOMg0u",
-            "TGFuZ3VhZ2VUeXBlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChRIb21lVmVyaWZ5RGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoiSG9tZVNjZW5lQXJyYW5nZW1lbnRNdWlwRGF0YS5wcm90",
+            "bxoZSG9tZVZlcmlmeVNjZW5lRGF0YS5wcm90bxoSTGFuZ3VhZ2VUeXBlLnBy",
+            "b3RvIrsCCg5Ib21lVmVyaWZ5RGF0YRJHCglob21lX2luZm8YBCABKAsyNC5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVWZXJpZnlTY2Vu",
+            "ZURhdGESVwoQYXJyYW5nZW1lbnRfZGF0YRgJIAEoCzI9LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZVNjZW5lQXJyYW5nZW1lbnRNdWlw",
+            "RGF0YRIRCgl0aW1lc3RhbXAYCyABKAcSDQoFdG9rZW4YASABKAkSCwoDYWlk",
+            "GAogASgJEjsKBGxhbmcYBiABKA4yLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkxhbmd1YWdlVHlwZRILCgN1aWQYAiABKA0SDgoGcmVnaW9u",
+            "GAcgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementMuipDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeVerifySceneDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LanguageTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeVerifyData), global::Weedwacker.Shared.Network.Proto.HomeVerifyData.Parser, new[]{ "Aid", "Timestamp", "Uid", "ArrangementData", "Region", "Token", "HomeInfo", "Lang" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeVerifyData), global::Weedwacker.Shared.Network.Proto.HomeVerifyData.Parser, new[]{ "HomeInfo", "ArrangementData", "Timestamp", "Token", "Aid", "Lang", "Uid", "Region" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,14 +79,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeVerifyData(HomeVerifyData other) : this() {
-      aid_ = other.aid_;
-      timestamp_ = other.timestamp_;
-      uid_ = other.uid_;
-      arrangementData_ = other.arrangementData_ != null ? other.arrangementData_.Clone() : null;
-      region_ = other.region_;
-      token_ = other.token_;
       homeInfo_ = other.homeInfo_ != null ? other.homeInfo_.Clone() : null;
+      arrangementData_ = other.arrangementData_ != null ? other.arrangementData_.Clone() : null;
+      timestamp_ = other.timestamp_;
+      token_ = other.token_;
+      aid_ = other.aid_;
       lang_ = other.lang_;
+      uid_ = other.uid_;
+      region_ = other.region_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,39 +96,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeVerifyData(this);
     }
 
-    /// <summary>Field number for the "aid" field.</summary>
-    public const int AidFieldNumber = 7;
-    private string aid_ = "";
+    /// <summary>Field number for the "home_info" field.</summary>
+    public const int HomeInfoFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData homeInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Aid {
-      get { return aid_; }
+    public global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData HomeInfo {
+      get { return homeInfo_; }
       set {
-        aid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 15;
-    private uint timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 5;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
+        homeInfo_ = value;
       }
     }
 
@@ -142,15 +120,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "region" field.</summary>
-    public const int RegionFieldNumber = 3;
-    private string region_ = "";
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 11;
+    private uint timestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Region {
-      get { return region_; }
+    public uint Timestamp {
+      get { return timestamp_; }
       set {
-        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        timestamp_ = value;
       }
     }
 
@@ -166,20 +144,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "home_info" field.</summary>
-    public const int HomeInfoFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData homeInfo_;
+    /// <summary>Field number for the "aid" field.</summary>
+    public const int AidFieldNumber = 10;
+    private string aid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData HomeInfo {
-      get { return homeInfo_; }
+    public string Aid {
+      get { return aid_; }
       set {
-        homeInfo_ = value;
+        aid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "lang" field.</summary>
-    public const int LangFieldNumber = 8;
+    public const int LangFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.LanguageType lang_ = global::Weedwacker.Shared.Network.Proto.LanguageType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,6 +165,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return lang_; }
       set {
         lang_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 2;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region" field.</summary>
+    public const int RegionFieldNumber = 7;
+    private string region_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Region {
+      get { return region_; }
+      set {
+        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -205,14 +207,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Aid != other.Aid) return false;
-      if (Timestamp != other.Timestamp) return false;
-      if (Uid != other.Uid) return false;
-      if (!object.Equals(ArrangementData, other.ArrangementData)) return false;
-      if (Region != other.Region) return false;
-      if (Token != other.Token) return false;
       if (!object.Equals(HomeInfo, other.HomeInfo)) return false;
+      if (!object.Equals(ArrangementData, other.ArrangementData)) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (Token != other.Token) return false;
+      if (Aid != other.Aid) return false;
       if (Lang != other.Lang) return false;
+      if (Uid != other.Uid) return false;
+      if (Region != other.Region) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -220,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Aid.Length != 0) hash ^= Aid.GetHashCode();
-      if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (arrangementData_ != null) hash ^= ArrangementData.GetHashCode();
-      if (Region.Length != 0) hash ^= Region.GetHashCode();
-      if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (homeInfo_ != null) hash ^= HomeInfo.GetHashCode();
+      if (arrangementData_ != null) hash ^= ArrangementData.GetHashCode();
+      if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
+      if (Token.Length != 0) hash ^= Token.GetHashCode();
+      if (Aid.Length != 0) hash ^= Aid.GetHashCode();
       if (Lang != global::Weedwacker.Shared.Network.Proto.LanguageType.None) hash ^= Lang.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Region.Length != 0) hash ^= Region.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -250,32 +252,32 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(10);
         output.WriteString(Token);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Region);
-      }
       if (Uid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(Uid);
       }
       if (homeInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(34);
         output.WriteMessage(HomeInfo);
       }
-      if (Aid.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Aid);
-      }
       if (Lang != global::Weedwacker.Shared.Network.Proto.LanguageType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Lang);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Region);
       }
       if (arrangementData_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(ArrangementData);
       }
+      if (Aid.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Aid);
+      }
       if (Timestamp != 0) {
-        output.WriteRawTag(125);
+        output.WriteRawTag(93);
         output.WriteFixed32(Timestamp);
       }
       if (_unknownFields != null) {
@@ -292,32 +294,32 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(10);
         output.WriteString(Token);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Region);
-      }
       if (Uid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(Uid);
       }
       if (homeInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(34);
         output.WriteMessage(HomeInfo);
       }
-      if (Aid.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Aid);
-      }
       if (Lang != global::Weedwacker.Shared.Network.Proto.LanguageType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Lang);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Region);
       }
       if (arrangementData_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(ArrangementData);
       }
+      if (Aid.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Aid);
+      }
       if (Timestamp != 0) {
-        output.WriteRawTag(125);
+        output.WriteRawTag(93);
         output.WriteFixed32(Timestamp);
       }
       if (_unknownFields != null) {
@@ -330,29 +332,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Aid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Aid);
-      }
-      if (Timestamp != 0) {
-        size += 1 + 4;
-      }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      if (homeInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HomeInfo);
       }
       if (arrangementData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ArrangementData);
       }
-      if (Region.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
+      if (Timestamp != 0) {
+        size += 1 + 4;
       }
       if (Token.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
-      if (homeInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HomeInfo);
+      if (Aid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Aid);
       }
       if (Lang != global::Weedwacker.Shared.Network.Proto.LanguageType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Lang);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (Region.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -366,14 +368,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Aid.Length != 0) {
-        Aid = other.Aid;
-      }
-      if (other.Timestamp != 0) {
-        Timestamp = other.Timestamp;
-      }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
+      if (other.homeInfo_ != null) {
+        if (homeInfo_ == null) {
+          HomeInfo = new global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData();
+        }
+        HomeInfo.MergeFrom(other.HomeInfo);
       }
       if (other.arrangementData_ != null) {
         if (arrangementData_ == null) {
@@ -381,20 +380,23 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         ArrangementData.MergeFrom(other.ArrangementData);
       }
-      if (other.Region.Length != 0) {
-        Region = other.Region;
+      if (other.Timestamp != 0) {
+        Timestamp = other.Timestamp;
       }
       if (other.Token.Length != 0) {
         Token = other.Token;
       }
-      if (other.homeInfo_ != null) {
-        if (homeInfo_ == null) {
-          HomeInfo = new global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData();
-        }
-        HomeInfo.MergeFrom(other.HomeInfo);
+      if (other.Aid.Length != 0) {
+        Aid = other.Aid;
       }
       if (other.Lang != global::Weedwacker.Shared.Network.Proto.LanguageType.None) {
         Lang = other.Lang;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.Region.Length != 0) {
+        Region = other.Region;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -415,27 +417,23 @@ namespace Weedwacker.Shared.Network.Proto {
             Token = input.ReadString();
             break;
           }
-          case 26: {
-            Region = input.ReadString();
-            break;
-          }
-          case 40: {
+          case 16: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 34: {
             if (homeInfo_ == null) {
               HomeInfo = new global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData();
             }
             input.ReadMessage(HomeInfo);
             break;
           }
-          case 58: {
-            Aid = input.ReadString();
+          case 48: {
+            Lang = (global::Weedwacker.Shared.Network.Proto.LanguageType) input.ReadEnum();
             break;
           }
-          case 64: {
-            Lang = (global::Weedwacker.Shared.Network.Proto.LanguageType) input.ReadEnum();
+          case 58: {
+            Region = input.ReadString();
             break;
           }
           case 74: {
@@ -445,7 +443,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(ArrangementData);
             break;
           }
-          case 125: {
+          case 82: {
+            Aid = input.ReadString();
+            break;
+          }
+          case 93: {
             Timestamp = input.ReadFixed32();
             break;
           }
@@ -468,27 +470,23 @@ namespace Weedwacker.Shared.Network.Proto {
             Token = input.ReadString();
             break;
           }
-          case 26: {
-            Region = input.ReadString();
-            break;
-          }
-          case 40: {
+          case 16: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 34: {
             if (homeInfo_ == null) {
               HomeInfo = new global::Weedwacker.Shared.Network.Proto.HomeVerifySceneData();
             }
             input.ReadMessage(HomeInfo);
             break;
           }
-          case 58: {
-            Aid = input.ReadString();
+          case 48: {
+            Lang = (global::Weedwacker.Shared.Network.Proto.LanguageType) input.ReadEnum();
             break;
           }
-          case 64: {
-            Lang = (global::Weedwacker.Shared.Network.Proto.LanguageType) input.ReadEnum();
+          case 58: {
+            Region = input.ReadString();
             break;
           }
           case 74: {
@@ -498,7 +496,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(ArrangementData);
             break;
           }
-          case 125: {
+          case 82: {
+            Aid = input.ReadString();
+            break;
+          }
+          case 93: {
             Timestamp = input.ReadFixed32();
             break;
           }

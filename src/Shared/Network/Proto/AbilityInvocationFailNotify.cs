@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityInvocationFailNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBYmlsaXR5SW52b2NhdGlvbkZhaWxOb3RpZnkucHJvdG8aGEFiaWxpdHlJ",
-            "bnZva2VFbnRyeS5wcm90byJlChtBYmlsaXR5SW52b2NhdGlvbkZhaWxOb3Rp",
-            "ZnkSDgoGcmVhc29uGAcgASgJEhEKCWVudGl0eV9pZBgNIAEoDRIjCgZpbnZv",
-            "a2UYAyABKAsyEy5BYmlsaXR5SW52b2tlRW50cnlCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFBYmlsaXR5SW52b2NhdGlvbkZhaWxOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGEFiaWxpdHlJbnZva2VFbnRyeS5w",
+            "cm90byKFAQobQWJpbGl0eUludm9jYXRpb25GYWlsTm90aWZ5EhEKCWVudGl0",
+            "eV9pZBgEIAEoDRIOCgZyZWFzb24YCCABKAkSQwoGaW52b2tlGAsgASgLMjMu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BYmlsaXR5SW52b2tl",
+            "RW50cnliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvocationFailNotify), global::Weedwacker.Shared.Network.Proto.AbilityInvocationFailNotify.Parser, new[]{ "Reason", "EntityId", "Invoke" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvocationFailNotify), global::Weedwacker.Shared.Network.Proto.AbilityInvocationFailNotify.Parser, new[]{ "EntityId", "Reason", "Invoke" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1107
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1200;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AbilityInvocationFailNotify : pb::IMessage<AbilityInvocationFailNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityInvocationFailNotify(AbilityInvocationFailNotify other) : this() {
-      reason_ = other.reason_;
       entityId_ = other.entityId_;
+      reason_ = other.reason_;
       invoke_ = other.invoke_ != null ? other.invoke_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityInvocationFailNotify(this);
     }
 
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 7;
-    private string reason_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Reason {
-      get { return reason_; }
-      set {
-        reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 13;
+    public const int EntityIdFieldNumber = 4;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,8 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 8;
+    private string reason_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Reason {
+      get { return reason_; }
+      set {
+        reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "invoke" field.</summary>
-    public const int InvokeFieldNumber = 3;
+    public const int InvokeFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry invoke_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Reason != other.Reason) return false;
       if (EntityId != other.EntityId) return false;
+      if (Reason != other.Reason) return false;
       if (!object.Equals(Invoke, other.Invoke)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Reason.Length != 0) hash ^= Reason.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Reason.Length != 0) hash ^= Reason.GetHashCode();
       if (invoke_ != null) hash ^= Invoke.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (invoke_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Invoke);
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
       }
       if (Reason.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteString(Reason);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+      if (invoke_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Invoke);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (invoke_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Invoke);
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
       }
       if (Reason.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteString(Reason);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+      if (invoke_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Invoke);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,11 +221,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Reason.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Reason.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
       }
       if (invoke_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invoke);
@@ -237,11 +242,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Reason.Length != 0) {
-        Reason = other.Reason;
-      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
+      }
+      if (other.Reason.Length != 0) {
+        Reason = other.Reason;
       }
       if (other.invoke_ != null) {
         if (invoke_ == null) {
@@ -264,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            Reason = input.ReadString();
+            break;
+          }
+          case 90: {
             if (invoke_ == null) {
               Invoke = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
             input.ReadMessage(Invoke);
-            break;
-          }
-          case 58: {
-            Reason = input.ReadString();
-            break;
-          }
-          case 104: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -294,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            Reason = input.ReadString();
+            break;
+          }
+          case 90: {
             if (invoke_ == null) {
               Invoke = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry();
             }
             input.ReadMessage(Invoke);
-            break;
-          }
-          case 58: {
-            Reason = input.ReadString();
-            break;
-          }
-          case 104: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

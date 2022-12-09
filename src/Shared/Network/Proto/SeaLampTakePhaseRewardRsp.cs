@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SeaLampTakePhaseRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TZWFMYW1wVGFrZVBoYXNlUmV3YXJkUnNwLnByb3RvIj4KGVNlYUxhbXBU",
-            "YWtlUGhhc2VSZXdhcmRSc3ASEAoIcGhhc2VfaWQYAiABKA0SDwoHcmV0Y29k",
-            "ZRgGIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "Ch9TZWFMYW1wVGFrZVBoYXNlUmV3YXJkUnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIj4KGVNlYUxhbXBUYWtlUGhhc2VSZXdh",
+            "cmRSc3ASEAoIcGhhc2VfaWQYDSABKA0SDwoHcmV0Y29kZRgGIAEoBWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2190
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2105;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SeaLampTakePhaseRewardRsp : pb::IMessage<SeaLampTakePhaseRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "phase_id" field.</summary>
-    public const int PhaseIdFieldNumber = 2;
+    public const int PhaseIdFieldNumber = 13;
     private uint phaseId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PhaseId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(PhaseId);
-      }
       if (Retcode != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (PhaseId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(PhaseId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PhaseId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(PhaseId);
-      }
       if (Retcode != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (PhaseId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(PhaseId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            PhaseId = input.ReadUInt32();
-            break;
-          }
           case 48: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            PhaseId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            PhaseId = input.ReadUInt32();
-            break;
-          }
           case 48: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            PhaseId = input.ReadUInt32();
             break;
           }
         }

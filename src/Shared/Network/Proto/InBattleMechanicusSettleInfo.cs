@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJJbkJhdHRsZU1lY2hhbmljdXNTZXR0bGVJbmZvLnByb3RvGiFNdWx0aXN0",
-            "YWdlU2V0dGxlV2F0Y2hlckluZm8ucHJvdG8i6wEKHEluQmF0dGxlTWVjaGFu",
-            "aWN1c1NldHRsZUluZm8SFQoNc2NlbmVfdGltZV9tcxgPIAEoBBITCgt0b3Rh",
-            "bF90b2tlbhgEIAEoDRISCgpyZWFsX3Rva2VuGAggASgNEjIKDHdhdGNoZXJf",
-            "bGlzdBgHIAMoCzIcLk11bHRpc3RhZ2VTZXR0bGVXYXRjaGVySW5mbxISCgpp",
-            "c19zdWNjZXNzGAYgASgIEhIKCnBsYXlfaW5kZXgYAyABKA0SHQoVZGlmZmlj",
-            "dWx0eV9wZXJjZW50YWdlGAogASgNEhAKCGdyb3VwX2lkGA0gASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJJbkJhdHRsZU1lY2hhbmljdXNTZXR0bGVJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGiFNdWx0aXN0YWdlU2V0dGxlV2F0",
+            "Y2hlckluZm8ucHJvdG8imgIKHEluQmF0dGxlTWVjaGFuaWN1c1NldHRsZUlu",
+            "Zm8SFQoNc2NlbmVfdGltZV9tcxgMIAEoBBISCgppc19zdWNjZXNzGA0gASgI",
+            "EhAKCGdyb3VwX2lkGAogASgNEhsKE1VuazMzMDBfRUtBSUFQTE5JUE0YCSAB",
+            "KA0SGwoTVW5rMzMwMF9IQUVPUEFPQkJGRRgEIAEoDRIbChNVbmszMzAwX05B",
+            "TUJCSE1KSkxOGAsgASgNEhIKCnBsYXlfaW5kZXgYCCABKA0SUgoMd2F0Y2hl",
+            "cl9saXN0GA8gAygLMjwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5NdWx0aXN0YWdlU2V0dGxlV2F0Y2hlckluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusSettleInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusSettleInfo.Parser, new[]{ "SceneTimeMs", "TotalToken", "RealToken", "WatcherList", "IsSuccess", "PlayIndex", "DifficultyPercentage", "GroupId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusSettleInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusSettleInfo.Parser, new[]{ "SceneTimeMs", "IsSuccess", "GroupId", "Unk3300EKAIAPLNIPM", "Unk3300HAEOPAOBBFE", "Unk3300NAMBBHMJJLN", "PlayIndex", "WatcherList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,13 +78,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusSettleInfo(InBattleMechanicusSettleInfo other) : this() {
       sceneTimeMs_ = other.sceneTimeMs_;
-      totalToken_ = other.totalToken_;
-      realToken_ = other.realToken_;
-      watcherList_ = other.watcherList_.Clone();
       isSuccess_ = other.isSuccess_;
-      playIndex_ = other.playIndex_;
-      difficultyPercentage_ = other.difficultyPercentage_;
       groupId_ = other.groupId_;
+      unk3300EKAIAPLNIPM_ = other.unk3300EKAIAPLNIPM_;
+      unk3300HAEOPAOBBFE_ = other.unk3300HAEOPAOBBFE_;
+      unk3300NAMBBHMJJLN_ = other.unk3300NAMBBHMJJLN_;
+      playIndex_ = other.playIndex_;
+      watcherList_ = other.watcherList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_time_ms" field.</summary>
-    public const int SceneTimeMsFieldNumber = 15;
+    public const int SceneTimeMsFieldNumber = 12;
     private ulong sceneTimeMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,43 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_token" field.</summary>
-    public const int TotalTokenFieldNumber = 4;
-    private uint totalToken_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalToken {
-      get { return totalToken_; }
-      set {
-        totalToken_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "real_token" field.</summary>
-    public const int RealTokenFieldNumber = 8;
-    private uint realToken_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RealToken {
-      get { return realToken_; }
-      set {
-        realToken_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "watcher_list" field.</summary>
-    public const int WatcherListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> _repeated_watcherList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> watcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> WatcherList {
-      get { return watcherList_; }
-    }
-
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 6;
+    public const int IsSuccessFieldNumber = 13;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,8 +118,56 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 10;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EKAIAPLNIPM" field.</summary>
+    public const int Unk3300EKAIAPLNIPMFieldNumber = 9;
+    private uint unk3300EKAIAPLNIPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EKAIAPLNIPM {
+      get { return unk3300EKAIAPLNIPM_; }
+      set {
+        unk3300EKAIAPLNIPM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HAEOPAOBBFE" field.</summary>
+    public const int Unk3300HAEOPAOBBFEFieldNumber = 4;
+    private uint unk3300HAEOPAOBBFE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HAEOPAOBBFE {
+      get { return unk3300HAEOPAOBBFE_; }
+      set {
+        unk3300HAEOPAOBBFE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NAMBBHMJJLN" field.</summary>
+    public const int Unk3300NAMBBHMJJLNFieldNumber = 11;
+    private uint unk3300NAMBBHMJJLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NAMBBHMJJLN {
+      get { return unk3300NAMBBHMJJLN_; }
+      set {
+        unk3300NAMBBHMJJLN_ = value;
+      }
+    }
+
     /// <summary>Field number for the "play_index" field.</summary>
-    public const int PlayIndexFieldNumber = 3;
+    public const int PlayIndexFieldNumber = 8;
     private uint playIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,28 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "difficulty_percentage" field.</summary>
-    public const int DifficultyPercentageFieldNumber = 10;
-    private uint difficultyPercentage_;
+    /// <summary>Field number for the "watcher_list" field.</summary>
+    public const int WatcherListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> _repeated_watcherList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> watcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DifficultyPercentage {
-      get { return difficultyPercentage_; }
-      set {
-        difficultyPercentage_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 13;
-    private uint groupId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupId {
-      get { return groupId_; }
-      set {
-        groupId_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo> WatcherList {
+      get { return watcherList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -204,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (SceneTimeMs != other.SceneTimeMs) return false;
-      if (TotalToken != other.TotalToken) return false;
-      if (RealToken != other.RealToken) return false;
-      if(!watcherList_.Equals(other.watcherList_)) return false;
       if (IsSuccess != other.IsSuccess) return false;
-      if (PlayIndex != other.PlayIndex) return false;
-      if (DifficultyPercentage != other.DifficultyPercentage) return false;
       if (GroupId != other.GroupId) return false;
+      if (Unk3300EKAIAPLNIPM != other.Unk3300EKAIAPLNIPM) return false;
+      if (Unk3300HAEOPAOBBFE != other.Unk3300HAEOPAOBBFE) return false;
+      if (Unk3300NAMBBHMJJLN != other.Unk3300NAMBBHMJJLN) return false;
+      if (PlayIndex != other.PlayIndex) return false;
+      if(!watcherList_.Equals(other.watcherList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -219,13 +220,13 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (SceneTimeMs != 0UL) hash ^= SceneTimeMs.GetHashCode();
-      if (TotalToken != 0) hash ^= TotalToken.GetHashCode();
-      if (RealToken != 0) hash ^= RealToken.GetHashCode();
-      hash ^= watcherList_.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
-      if (DifficultyPercentage != 0) hash ^= DifficultyPercentage.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (Unk3300EKAIAPLNIPM != 0) hash ^= Unk3300EKAIAPLNIPM.GetHashCode();
+      if (Unk3300HAEOPAOBBFE != 0) hash ^= Unk3300HAEOPAOBBFE.GetHashCode();
+      if (Unk3300NAMBBHMJJLN != 0) hash ^= Unk3300NAMBBHMJJLN.GetHashCode();
+      if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
+      hash ^= watcherList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -244,35 +245,35 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300HAEOPAOBBFE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300HAEOPAOBBFE);
+      }
       if (PlayIndex != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(PlayIndex);
       }
-      if (TotalToken != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalToken);
+      if (Unk3300EKAIAPLNIPM != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300EKAIAPLNIPM);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(GroupId);
+      }
+      if (Unk3300NAMBBHMJJLN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300NAMBBHMJJLN);
+      }
+      if (SceneTimeMs != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(SceneTimeMs);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteBool(IsSuccess);
       }
       watcherList_.WriteTo(output, _repeated_watcherList_codec);
-      if (RealToken != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(RealToken);
-      }
-      if (DifficultyPercentage != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(DifficultyPercentage);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GroupId);
-      }
-      if (SceneTimeMs != 0UL) {
-        output.WriteRawTag(120);
-        output.WriteUInt64(SceneTimeMs);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -283,35 +284,35 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300HAEOPAOBBFE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300HAEOPAOBBFE);
+      }
       if (PlayIndex != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(PlayIndex);
       }
-      if (TotalToken != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalToken);
+      if (Unk3300EKAIAPLNIPM != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300EKAIAPLNIPM);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(GroupId);
+      }
+      if (Unk3300NAMBBHMJJLN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300NAMBBHMJJLN);
+      }
+      if (SceneTimeMs != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(SceneTimeMs);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteBool(IsSuccess);
       }
       watcherList_.WriteTo(ref output, _repeated_watcherList_codec);
-      if (RealToken != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(RealToken);
-      }
-      if (DifficultyPercentage != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(DifficultyPercentage);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GroupId);
-      }
-      if (SceneTimeMs != 0UL) {
-        output.WriteRawTag(120);
-        output.WriteUInt64(SceneTimeMs);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -325,25 +326,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SceneTimeMs != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneTimeMs);
       }
-      if (TotalToken != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalToken);
-      }
-      if (RealToken != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RealToken);
-      }
-      size += watcherList_.CalculateSize(_repeated_watcherList_codec);
       if (IsSuccess != false) {
         size += 1 + 1;
-      }
-      if (PlayIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
-      }
-      if (DifficultyPercentage != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyPercentage);
       }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
+      if (Unk3300EKAIAPLNIPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EKAIAPLNIPM);
+      }
+      if (Unk3300HAEOPAOBBFE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HAEOPAOBBFE);
+      }
+      if (Unk3300NAMBBHMJJLN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NAMBBHMJJLN);
+      }
+      if (PlayIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
+      }
+      size += watcherList_.CalculateSize(_repeated_watcherList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -359,25 +360,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SceneTimeMs != 0UL) {
         SceneTimeMs = other.SceneTimeMs;
       }
-      if (other.TotalToken != 0) {
-        TotalToken = other.TotalToken;
-      }
-      if (other.RealToken != 0) {
-        RealToken = other.RealToken;
-      }
-      watcherList_.Add(other.watcherList_);
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
-      }
-      if (other.PlayIndex != 0) {
-        PlayIndex = other.PlayIndex;
-      }
-      if (other.DifficultyPercentage != 0) {
-        DifficultyPercentage = other.DifficultyPercentage;
       }
       if (other.GroupId != 0) {
         GroupId = other.GroupId;
       }
+      if (other.Unk3300EKAIAPLNIPM != 0) {
+        Unk3300EKAIAPLNIPM = other.Unk3300EKAIAPLNIPM;
+      }
+      if (other.Unk3300HAEOPAOBBFE != 0) {
+        Unk3300HAEOPAOBBFE = other.Unk3300HAEOPAOBBFE;
+      }
+      if (other.Unk3300NAMBBHMJJLN != 0) {
+        Unk3300NAMBBHMJJLN = other.Unk3300NAMBBHMJJLN;
+      }
+      if (other.PlayIndex != 0) {
+        PlayIndex = other.PlayIndex;
+      }
+      watcherList_.Add(other.watcherList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -393,36 +394,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            PlayIndex = input.ReadUInt32();
-            break;
-          }
           case 32: {
-            TotalToken = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 58: {
-            watcherList_.AddEntriesFrom(input, _repeated_watcherList_codec);
+            Unk3300HAEOPAOBBFE = input.ReadUInt32();
             break;
           }
           case 64: {
-            RealToken = input.ReadUInt32();
+            PlayIndex = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300EKAIAPLNIPM = input.ReadUInt32();
             break;
           }
           case 80: {
-            DifficultyPercentage = input.ReadUInt32();
-            break;
-          }
-          case 104: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
+            Unk3300NAMBBHMJJLN = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             SceneTimeMs = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 122: {
+            watcherList_.AddEntriesFrom(input, _repeated_watcherList_codec);
             break;
           }
         }
@@ -440,36 +441,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            PlayIndex = input.ReadUInt32();
-            break;
-          }
           case 32: {
-            TotalToken = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 58: {
-            watcherList_.AddEntriesFrom(ref input, _repeated_watcherList_codec);
+            Unk3300HAEOPAOBBFE = input.ReadUInt32();
             break;
           }
           case 64: {
-            RealToken = input.ReadUInt32();
+            PlayIndex = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300EKAIAPLNIPM = input.ReadUInt32();
             break;
           }
           case 80: {
-            DifficultyPercentage = input.ReadUInt32();
-            break;
-          }
-          case 104: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
+            Unk3300NAMBBHMJJLN = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             SceneTimeMs = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 122: {
+            watcherList_.AddEntriesFrom(ref input, _repeated_watcherList_codec);
             break;
           }
         }

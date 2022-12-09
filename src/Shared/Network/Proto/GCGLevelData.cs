@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGLevelDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHQ0dMZXZlbERhdGEucHJvdG8iRAoMR0NHTGV2ZWxEYXRhEiIKGmZpbmlz",
-            "aGVkX2NoYWxsZW5nZV9pZF9saXN0GAogAygNEhAKCGxldmVsX2lkGAkgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChJHQ0dMZXZlbERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iRAoMR0NHTGV2ZWxEYXRhEiIKGmZpbmlzaGVkX2NoYWxsZW5n",
+            "ZV9pZF9saXN0GA0gAygNEhAKCGxldmVsX2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
-    public const int FinishedChallengeIdListFieldNumber = 10;
+    public const int FinishedChallengeIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
-        = pb::FieldCodec.ForUInt32(82);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 9;
+    public const int LevelIdFieldNumber = 7;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (LevelId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(LevelId);
       }
       finishedChallengeIdList_.WriteTo(output, _repeated_finishedChallengeIdList_codec);
@@ -165,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LevelId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(LevelId);
       }
       finishedChallengeIdList_.WriteTo(ref output, _repeated_finishedChallengeIdList_codec);
@@ -214,12 +214,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 56: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 106:
+          case 104: {
             finishedChallengeIdList_.AddEntriesFrom(input, _repeated_finishedChallengeIdList_codec);
             break;
           }
@@ -238,12 +238,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 56: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 106:
+          case 104: {
             finishedChallengeIdList_.AddEntriesFrom(ref input, _repeated_finishedChallengeIdList_codec);
             break;
           }

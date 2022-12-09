@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtCombatSteerMotionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5FdnRDb21iYXRTdGVlck1vdGlvbkluZm8ucHJvdG8aDFZlY3Rvci5wcm90",
-            "byJ5ChhFdnRDb21iYXRTdGVlck1vdGlvbkluZm8SFAoDcG9zGAwgASgLMgcu",
-            "VmVjdG9yEhkKCHZlbG9jaXR5GAogASgLMgcuVmVjdG9yEhEKCWVudGl0eV9p",
-            "ZBgEIAEoDRIZCghmYWNlX2RpchgBIAEoCzIHLlZlY3RvckIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5FdnRDb21iYXRTdGVlck1vdGlvbkluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byLZAQoYRXZ0Q29t",
+            "YmF0U3RlZXJNb3Rpb25JbmZvEjkKCGZhY2VfZGlyGAUgASgLMicuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISNAoDcG9zGAEgASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISOQoI",
+            "dmVsb2NpdHkYCCABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZlY3RvchIRCgllbnRpdHlfaWQYCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtCombatSteerMotionInfo), global::Weedwacker.Shared.Network.Proto.EvtCombatSteerMotionInfo.Parser, new[]{ "Pos", "Velocity", "EntityId", "FaceDir" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtCombatSteerMotionInfo), global::Weedwacker.Shared.Network.Proto.EvtCombatSteerMotionInfo.Parser, new[]{ "FaceDir", "Pos", "Velocity", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtCombatSteerMotionInfo(EvtCombatSteerMotionInfo other) : this() {
+      faceDir_ = other.faceDir_ != null ? other.faceDir_.Clone() : null;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
       velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
       entityId_ = other.entityId_;
-      faceDir_ = other.faceDir_ != null ? other.faceDir_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +88,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtCombatSteerMotionInfo(this);
     }
 
+    /// <summary>Field number for the "face_dir" field.</summary>
+    public const int FaceDirFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.Vector faceDir_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector FaceDir {
+      get { return faceDir_; }
+      set {
+        faceDir_ = value;
+      }
+    }
+
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 12;
+    public const int PosFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "velocity" field.</summary>
-    public const int VelocityFieldNumber = 10;
+    public const int VelocityFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.Vector velocity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +125,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 4;
+    public const int EntityIdFieldNumber = 11;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,18 +133,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityId_; }
       set {
         entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "face_dir" field.</summary>
-    public const int FaceDirFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.Vector faceDir_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector FaceDir {
-      get { return faceDir_; }
-      set {
-        faceDir_ = value;
       }
     }
 
@@ -149,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(FaceDir, other.FaceDir)) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
       if (!object.Equals(Velocity, other.Velocity)) return false;
       if (EntityId != other.EntityId) return false;
-      if (!object.Equals(FaceDir, other.FaceDir)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (faceDir_ != null) hash ^= FaceDir.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
       if (velocity_ != null) hash ^= Velocity.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (faceDir_ != null) hash ^= FaceDir.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +184,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (faceDir_ != null) {
+      if (pos_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Pos);
+      }
+      if (faceDir_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(FaceDir);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(EntityId);
-      }
       if (velocity_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(66);
         output.WriteMessage(Velocity);
       }
-      if (pos_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Pos);
+      if (EntityId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +210,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (faceDir_ != null) {
+      if (pos_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Pos);
+      }
+      if (faceDir_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(FaceDir);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(EntityId);
-      }
       if (velocity_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(66);
         output.WriteMessage(Velocity);
       }
-      if (pos_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(Pos);
+      if (EntityId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,6 +236,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (faceDir_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FaceDir);
+      }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
@@ -242,9 +247,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-      }
-      if (faceDir_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FaceDir);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,6 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public void MergeFrom(EvtCombatSteerMotionInfo other) {
       if (other == null) {
         return;
+      }
+      if (other.faceDir_ != null) {
+        if (faceDir_ == null) {
+          FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        FaceDir.MergeFrom(other.FaceDir);
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
@@ -272,12 +280,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
-      }
-      if (other.faceDir_ != null) {
-        if (faceDir_ == null) {
-          FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        FaceDir.MergeFrom(other.FaceDir);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -295,28 +297,28 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (pos_ == null) {
+              Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 42: {
             if (faceDir_ == null) {
               FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FaceDir);
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 66: {
             if (velocity_ == null) {
               Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Velocity);
             break;
           }
-          case 98: {
-            if (pos_ == null) {
-              Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Pos);
+          case 88: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -335,28 +337,28 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (pos_ == null) {
+              Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 42: {
             if (faceDir_ == null) {
               FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FaceDir);
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 66: {
             if (velocity_ == null) {
               Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Velocity);
             break;
           }
-          case 98: {
-            if (pos_ == null) {
-              Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Pos);
+          case 88: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

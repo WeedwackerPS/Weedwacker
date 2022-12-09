@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekMapInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhIaWRlQW5kU2Vla01hcEluZm8ucHJvdG8iQAoSSGlkZUFuZFNlZWtNYXBJ",
-            "bmZvEh4KFm1hdGNoX2xvY2tfcmVhc29uX2xpc3QYCyADKA0SCgoCaWQYByAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChhIaWRlQW5kU2Vla01hcEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iQAoSSGlkZUFuZFNlZWtNYXBJbmZvEh4KFm1hdGNo",
+            "X2xvY2tfcmVhc29uX2xpc3QYBiADKA0SCgoCaWQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "match_lock_reason_list" field.</summary>
-    public const int MatchLockReasonListFieldNumber = 11;
+    public const int MatchLockReasonListFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_matchLockReasonList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(50);
     private readonly pbc::RepeatedField<uint> matchLockReasonList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 7;
+    public const int IdFieldNumber = 12;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      matchLockReasonList_.WriteTo(output, _repeated_matchLockReasonList_codec);
       if (Id != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(Id);
       }
-      matchLockReasonList_.WriteTo(output, _repeated_matchLockReasonList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      matchLockReasonList_.WriteTo(ref output, _repeated_matchLockReasonList_codec);
       if (Id != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(Id);
       }
-      matchLockReasonList_.WriteTo(ref output, _repeated_matchLockReasonList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -215,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            Id = input.ReadUInt32();
+          case 50:
+          case 48: {
+            matchLockReasonList_.AddEntriesFrom(input, _repeated_matchLockReasonList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            matchLockReasonList_.AddEntriesFrom(input, _repeated_matchLockReasonList_codec);
+          case 96: {
+            Id = input.ReadUInt32();
             break;
           }
         }
@@ -239,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            Id = input.ReadUInt32();
+          case 50:
+          case 48: {
+            matchLockReasonList_.AddEntriesFrom(ref input, _repeated_matchLockReasonList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            matchLockReasonList_.AddEntriesFrom(ref input, _repeated_matchLockReasonList_codec);
+          case 96: {
+            Id = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ProudSkillExtraLevelNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBQcm91ZFNraWxsRXh0cmFMZXZlbE5vdGlmeS5wcm90byJxChpQcm91ZFNr",
-            "aWxsRXh0cmFMZXZlbE5vdGlmeRITCgt0YWxlbnRfdHlwZRgLIAEoDRIUCgx0",
-            "YWxlbnRfaW5kZXgYCCABKA0SEwoLYXZhdGFyX2d1aWQYDyABKAQSEwoLZXh0",
-            "cmFfbGV2ZWwYAyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "CiBQcm91ZFNraWxsRXh0cmFMZXZlbE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJxChpQcm91ZFNraWxsRXh0cmFMZXZl",
+            "bE5vdGlmeRITCgthdmF0YXJfZ3VpZBgNIAEoBBITCgt0YWxlbnRfdHlwZRgE",
+            "IAEoDRIUCgx0YWxlbnRfaW5kZXgYCCABKA0SEwoLZXh0cmFfbGV2ZWwYAiAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ProudSkillExtraLevelNotify), global::Weedwacker.Shared.Network.Proto.ProudSkillExtraLevelNotify.Parser, new[]{ "TalentType", "TalentIndex", "AvatarGuid", "ExtraLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ProudSkillExtraLevelNotify), global::Weedwacker.Shared.Network.Proto.ProudSkillExtraLevelNotify.Parser, new[]{ "AvatarGuid", "TalentType", "TalentIndex", "ExtraLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1081
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1025;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ProudSkillExtraLevelNotify : pb::IMessage<ProudSkillExtraLevelNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ProudSkillExtraLevelNotify(ProudSkillExtraLevelNotify other) : this() {
+      avatarGuid_ = other.avatarGuid_;
       talentType_ = other.talentType_;
       talentIndex_ = other.talentIndex_;
-      avatarGuid_ = other.avatarGuid_;
       extraLevel_ = other.extraLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,9 +95,24 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ProudSkillExtraLevelNotify(this);
     }
 
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 13;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "talent_type" field.</summary>
-    public const int TalentTypeFieldNumber = 11;
+    public const int TalentTypeFieldNumber = 4;
     private uint talentType_;
+    /// <summary>
+    /// Unk3300_ODIOPLHJHAE
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TalentType {
@@ -106,6 +125,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Field number for the "talent_index" field.</summary>
     public const int TalentIndexFieldNumber = 8;
     private uint talentIndex_;
+    /// <summary>
+    /// Unk3300_LKNFMODMEIA
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TalentIndex {
@@ -115,21 +137,12 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 15;
-    private ulong avatarGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong AvatarGuid {
-      get { return avatarGuid_; }
-      set {
-        avatarGuid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "extra_level" field.</summary>
-    public const int ExtraLevelFieldNumber = 3;
+    public const int ExtraLevelFieldNumber = 2;
     private uint extraLevel_;
+    /// <summary>
+    /// Unk3300_IPDBADAAHBA
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ExtraLevel {
@@ -154,9 +167,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (AvatarGuid != other.AvatarGuid) return false;
       if (TalentType != other.TalentType) return false;
       if (TalentIndex != other.TalentIndex) return false;
-      if (AvatarGuid != other.AvatarGuid) return false;
       if (ExtraLevel != other.ExtraLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -165,9 +178,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (TalentType != 0) hash ^= TalentType.GetHashCode();
       if (TalentIndex != 0) hash ^= TalentIndex.GetHashCode();
-      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (ExtraLevel != 0) hash ^= ExtraLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -188,19 +201,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ExtraLevel != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(ExtraLevel);
+      }
+      if (TalentType != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TalentType);
       }
       if (TalentIndex != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(TalentIndex);
       }
-      if (TalentType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TalentType);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -214,19 +227,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ExtraLevel != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(ExtraLevel);
+      }
+      if (TalentType != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TalentType);
       }
       if (TalentIndex != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(TalentIndex);
       }
-      if (TalentType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TalentType);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -239,14 +252,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
       if (TalentType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentType);
       }
       if (TalentIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentIndex);
-      }
-      if (AvatarGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
       if (ExtraLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExtraLevel);
@@ -263,14 +276,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
+      }
       if (other.TalentType != 0) {
         TalentType = other.TalentType;
       }
       if (other.TalentIndex != 0) {
         TalentIndex = other.TalentIndex;
-      }
-      if (other.AvatarGuid != 0UL) {
-        AvatarGuid = other.AvatarGuid;
       }
       if (other.ExtraLevel != 0) {
         ExtraLevel = other.ExtraLevel;
@@ -290,19 +303,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 16: {
             ExtraLevel = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            TalentType = input.ReadUInt32();
             break;
           }
           case 64: {
             TalentIndex = input.ReadUInt32();
             break;
           }
-          case 88: {
-            TalentType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 104: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
@@ -321,19 +334,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 16: {
             ExtraLevel = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            TalentType = input.ReadUInt32();
             break;
           }
           case 64: {
             TalentIndex = input.ReadUInt32();
             break;
           }
-          case 88: {
-            TalentType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 104: {
             AvatarGuid = input.ReadUInt64();
             break;
           }

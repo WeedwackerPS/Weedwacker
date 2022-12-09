@@ -24,28 +24,32 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxJbkJhdHRsZU1lY2hhbmljdXNJbmZvLnByb3RvGiBJbkJhdHRsZU1lY2hh",
-            "bmljdXNDYXJkSW5mby5wcm90bxojSW5CYXR0bGVNZWNoYW5pY3VzTW9uc3Rl",
-            "ckluZm8ucHJvdG8aIkluQmF0dGxlTWVjaGFuaWN1c1BsYXllckluZm8ucHJv",
-            "dG8aIUluQmF0dGxlTWVjaGFuaWN1c1N0YWdlVHlwZS5wcm90byK9BAoWSW5C",
-            "YXR0bGVNZWNoYW5pY3VzSW5mbxIUCgxsZWZ0X21vbnN0ZXIYBSABKA0SFAoM",
-            "d2FpdF9zZWNvbmRzGA0gASgNEhYKDWVudHJhbmNlX2xpc3QYmgMgAygNEhEK",
-            "CWV4aXRfbGlzdBhzIAMoDRI2ChFoaXN0b3J5X2NhcmRfbGlzdBgLIAMoCzIb",
-            "LkluQmF0dGxlTWVjaGFuaWN1c0NhcmRJbmZvEh4KFm1heF9lc2NhcGVfbW9u",
-            "c3Rlcl9udW0YCiABKA0SHwoXYnVpbGRpbmdfc3RhZ2VfZHVyYXRpb24YBCAB",
-            "KA0SEwoLZHVyYXRpb25fbXMYCCABKAQSKwoFc3RhZ2UYCSABKA4yHC5JbkJh",
-            "dHRsZU1lY2hhbmljdXNTdGFnZVR5cGUSEwoLdG90YWxfcm91bmQYDCABKA0S",
-            "NAoMbW9uc3Rlcl9saXN0GA4gAygLMh4uSW5CYXR0bGVNZWNoYW5pY3VzTW9u",
-            "c3RlckluZm8SGwoTZXNjYXBlZF9tb25zdGVyX251bRgGIAEoDRINCgVyb3Vu",
-            "ZBgDIAEoDRIzCg5waWNrX2NhcmRfbGlzdBgPIAMoCzIbLkluQmF0dGxlTWVj",
-            "aGFuaWN1c0NhcmRJbmZvEjIKC3BsYXllcl9saXN0GAcgAygLMh0uSW5CYXR0",
-            "bGVNZWNoYW5pY3VzUGxheWVySW5mbxIaChJ3YWl0X2JlZ2luX3RpbWVfdXMY",
-            "ASABKAQSFQoNYmVnaW5fdGltZV9tcxgCIAEoBEIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxJbkJhdHRsZU1lY2hhbmljdXNJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGiBJbkJhdHRsZU1lY2hhbmljdXNDYXJkSW5m",
+            "by5wcm90bxojSW5CYXR0bGVNZWNoYW5pY3VzTW9uc3RlckluZm8ucHJvdG8a",
+            "IkluQmF0dGxlTWVjaGFuaWN1c1BsYXllckluZm8ucHJvdG8aIUluQmF0dGxl",
+            "TWVjaGFuaWN1c1N0YWdlVHlwZS5wcm90byL5BQoWSW5CYXR0bGVNZWNoYW5p",
+            "Y3VzSW5mbxIcChNVbmszMzAwX01OTkRFTEtJQkxHGJAFIAMoDRIcChNVbmsz",
+            "MzAwX0dIQkVIUEdCQklIGKsFIAMoDRJLCgVzdGFnZRgHIAEoDjI8LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSW5CYXR0bGVNZWNoYW5pY3Vz",
+            "U3RhZ2VUeXBlEhsKE1VuazMzMDBfRUJPSUdGTU9LSEsYBCABKA0SFAoMd2Fp",
+            "dF9zZWNvbmRzGA0gASgNEhgKEGxlZnRfbW9uc3Rlcl9udW0YDyABKA0SGwoT",
+            "VW5rMzMwMF9JRklQS0xPR0VPRhgGIAEoBBJSCgtwbGF5ZXJfbGlzdBgMIAMo",
+            "CzI9LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSW5CYXR0bGVN",
+            "ZWNoYW5pY3VzUGxheWVySW5mbxITCgt0b3RhbF9yb3VuZBgBIAEoDRIbChNV",
+            "bmszMzAwX0lBUElOT0xJQUxGGA4gASgEElQKDG1vbnN0ZXJfbGlzdBgJIAMo",
+            "CzI+LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSW5CYXR0bGVN",
+            "ZWNoYW5pY3VzTW9uc3RlckluZm8SGwoTVW5rMzMwMF9DSUpBTENBTUhDRBgD",
+            "IAEoDRIaChJ3YWl0X2JlZ2luX3RpbWVfdXMYAiABKAQSVgoRaGlzdG9yeV9j",
+            "YXJkX2xpc3QYBSADKAsyOy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkluQmF0dGxlTWVjaGFuaWN1c0NhcmRJbmZvElMKDnBpY2tfY2FyZF9s",
+            "aXN0GAggAygLMjsuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5J",
+            "bkJhdHRsZU1lY2hhbmljdXNDYXJkSW5mbxIbChNlc2NhcGVkX21vbnN0ZXJf",
+            "bnVtGAogASgNEg0KBXJvdW5kGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo.Parser, new[]{ "LeftMonster", "WaitSeconds", "EntranceList", "ExitList", "HistoryCardList", "MaxEscapeMonsterNum", "BuildingStageDuration", "DurationMs", "Stage", "TotalRound", "MonsterList", "EscapedMonsterNum", "Round", "PickCardList", "PlayerList", "WaitBeginTimeUs", "BeginTimeMs" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo.Parser, new[]{ "Unk3300MNNDELKIBLG", "Unk3300GHBEHPGBBIH", "Stage", "Unk3300EBOIGFMOKHK", "WaitSeconds", "LeftMonsterNum", "Unk3300IFIPKLOGEOF", "PlayerList", "TotalRound", "Unk3300IAPINOLIALF", "MonsterList", "Unk3300CIJALCAMHCD", "WaitBeginTimeUs", "HistoryCardList", "PickCardList", "EscapedMonsterNum", "Round" }, null, null, null, null)
           }));
     }
     #endregion
@@ -86,23 +90,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusInfo(InBattleMechanicusInfo other) : this() {
-      leftMonster_ = other.leftMonster_;
-      waitSeconds_ = other.waitSeconds_;
-      entranceList_ = other.entranceList_.Clone();
-      exitList_ = other.exitList_.Clone();
-      historyCardList_ = other.historyCardList_.Clone();
-      maxEscapeMonsterNum_ = other.maxEscapeMonsterNum_;
-      buildingStageDuration_ = other.buildingStageDuration_;
-      durationMs_ = other.durationMs_;
+      unk3300MNNDELKIBLG_ = other.unk3300MNNDELKIBLG_.Clone();
+      unk3300GHBEHPGBBIH_ = other.unk3300GHBEHPGBBIH_.Clone();
       stage_ = other.stage_;
+      unk3300EBOIGFMOKHK_ = other.unk3300EBOIGFMOKHK_;
+      waitSeconds_ = other.waitSeconds_;
+      leftMonsterNum_ = other.leftMonsterNum_;
+      unk3300IFIPKLOGEOF_ = other.unk3300IFIPKLOGEOF_;
+      playerList_ = other.playerList_.Clone();
       totalRound_ = other.totalRound_;
+      unk3300IAPINOLIALF_ = other.unk3300IAPINOLIALF_;
       monsterList_ = other.monsterList_.Clone();
+      unk3300CIJALCAMHCD_ = other.unk3300CIJALCAMHCD_;
+      waitBeginTimeUs_ = other.waitBeginTimeUs_;
+      historyCardList_ = other.historyCardList_.Clone();
+      pickCardList_ = other.pickCardList_.Clone();
       escapedMonsterNum_ = other.escapedMonsterNum_;
       round_ = other.round_;
-      pickCardList_ = other.pickCardList_.Clone();
-      playerList_ = other.playerList_.Clone();
-      waitBeginTimeUs_ = other.waitBeginTimeUs_;
-      beginTimeMs_ = other.beginTimeMs_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -112,15 +116,49 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleMechanicusInfo(this);
     }
 
-    /// <summary>Field number for the "left_monster" field.</summary>
-    public const int LeftMonsterFieldNumber = 5;
-    private uint leftMonster_;
+    /// <summary>Field number for the "Unk3300_MNNDELKIBLG" field.</summary>
+    public const int Unk3300MNNDELKIBLGFieldNumber = 656;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300MNNDELKIBLG_codec
+        = pb::FieldCodec.ForUInt32(5250);
+    private readonly pbc::RepeatedField<uint> unk3300MNNDELKIBLG_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftMonster {
-      get { return leftMonster_; }
+    public pbc::RepeatedField<uint> Unk3300MNNDELKIBLG {
+      get { return unk3300MNNDELKIBLG_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GHBEHPGBBIH" field.</summary>
+    public const int Unk3300GHBEHPGBBIHFieldNumber = 683;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300GHBEHPGBBIH_codec
+        = pb::FieldCodec.ForUInt32(5466);
+    private readonly pbc::RepeatedField<uint> unk3300GHBEHPGBBIH_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300GHBEHPGBBIH {
+      get { return unk3300GHBEHPGBBIH_; }
+    }
+
+    /// <summary>Field number for the "stage" field.</summary>
+    public const int StageFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType stage_ = global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType Stage {
+      get { return stage_; }
       set {
-        leftMonster_ = value;
+        stage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EBOIGFMOKHK" field.</summary>
+    public const int Unk3300EBOIGFMOKHKFieldNumber = 4;
+    private uint unk3300EBOIGFMOKHK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EBOIGFMOKHK {
+      get { return unk3300EBOIGFMOKHK_; }
+      set {
+        unk3300EBOIGFMOKHK_ = value;
       }
     }
 
@@ -136,89 +174,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entrance_list" field.</summary>
-    public const int EntranceListFieldNumber = 410;
-    private static readonly pb::FieldCodec<uint> _repeated_entranceList_codec
-        = pb::FieldCodec.ForUInt32(3282);
-    private readonly pbc::RepeatedField<uint> entranceList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "left_monster_num" field.</summary>
+    public const int LeftMonsterNumFieldNumber = 15;
+    private uint leftMonsterNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> EntranceList {
-      get { return entranceList_; }
-    }
-
-    /// <summary>Field number for the "exit_list" field.</summary>
-    public const int ExitListFieldNumber = 115;
-    private static readonly pb::FieldCodec<uint> _repeated_exitList_codec
-        = pb::FieldCodec.ForUInt32(922);
-    private readonly pbc::RepeatedField<uint> exitList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExitList {
-      get { return exitList_; }
-    }
-
-    /// <summary>Field number for the "history_card_list" field.</summary>
-    public const int HistoryCardListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> _repeated_historyCardList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> historyCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> HistoryCardList {
-      get { return historyCardList_; }
-    }
-
-    /// <summary>Field number for the "max_escape_monster_num" field.</summary>
-    public const int MaxEscapeMonsterNumFieldNumber = 10;
-    private uint maxEscapeMonsterNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxEscapeMonsterNum {
-      get { return maxEscapeMonsterNum_; }
+    public uint LeftMonsterNum {
+      get { return leftMonsterNum_; }
       set {
-        maxEscapeMonsterNum_ = value;
+        leftMonsterNum_ = value;
       }
     }
 
-    /// <summary>Field number for the "building_stage_duration" field.</summary>
-    public const int BuildingStageDurationFieldNumber = 4;
-    private uint buildingStageDuration_;
+    /// <summary>Field number for the "Unk3300_IFIPKLOGEOF" field.</summary>
+    public const int Unk3300IFIPKLOGEOFFieldNumber = 6;
+    private ulong unk3300IFIPKLOGEOF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BuildingStageDuration {
-      get { return buildingStageDuration_; }
+    public ulong Unk3300IFIPKLOGEOF {
+      get { return unk3300IFIPKLOGEOF_; }
       set {
-        buildingStageDuration_ = value;
+        unk3300IFIPKLOGEOF_ = value;
       }
     }
 
-    /// <summary>Field number for the "duration_ms" field.</summary>
-    public const int DurationMsFieldNumber = 8;
-    private ulong durationMs_;
+    /// <summary>Field number for the "player_list" field.</summary>
+    public const int PlayerListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> _repeated_playerList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> playerList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong DurationMs {
-      get { return durationMs_; }
-      set {
-        durationMs_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "stage" field.</summary>
-    public const int StageFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType stage_ = global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType Stage {
-      get { return stage_; }
-      set {
-        stage_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> PlayerList {
+      get { return playerList_; }
     }
 
     /// <summary>Field number for the "total_round" field.</summary>
-    public const int TotalRoundFieldNumber = 12;
+    public const int TotalRoundFieldNumber = 1;
     private uint totalRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -229,10 +221,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_IAPINOLIALF" field.</summary>
+    public const int Unk3300IAPINOLIALFFieldNumber = 14;
+    private ulong unk3300IAPINOLIALF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Unk3300IAPINOLIALF {
+      get { return unk3300IAPINOLIALF_; }
+      set {
+        unk3300IAPINOLIALF_ = value;
+      }
+    }
+
     /// <summary>Field number for the "monster_list" field.</summary>
-    public const int MonsterListFieldNumber = 14;
+    public const int MonsterListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfo> _repeated_monsterList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfo> monsterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusMonsterInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -240,8 +244,54 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return monsterList_; }
     }
 
+    /// <summary>Field number for the "Unk3300_CIJALCAMHCD" field.</summary>
+    public const int Unk3300CIJALCAMHCDFieldNumber = 3;
+    private uint unk3300CIJALCAMHCD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CIJALCAMHCD {
+      get { return unk3300CIJALCAMHCD_; }
+      set {
+        unk3300CIJALCAMHCD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wait_begin_time_us" field.</summary>
+    public const int WaitBeginTimeUsFieldNumber = 2;
+    private ulong waitBeginTimeUs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong WaitBeginTimeUs {
+      get { return waitBeginTimeUs_; }
+      set {
+        waitBeginTimeUs_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "history_card_list" field.</summary>
+    public const int HistoryCardListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> _repeated_historyCardList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> historyCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> HistoryCardList {
+      get { return historyCardList_; }
+    }
+
+    /// <summary>Field number for the "pick_card_list" field.</summary>
+    public const int PickCardListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> _repeated_pickCardList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> pickCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> PickCardList {
+      get { return pickCardList_; }
+    }
+
     /// <summary>Field number for the "escaped_monster_num" field.</summary>
-    public const int EscapedMonsterNumFieldNumber = 6;
+    public const int EscapedMonsterNumFieldNumber = 10;
     private uint escapedMonsterNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -253,7 +303,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "round" field.</summary>
-    public const int RoundFieldNumber = 3;
+    public const int RoundFieldNumber = 11;
     private uint round_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -261,52 +311,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return round_; }
       set {
         round_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "pick_card_list" field.</summary>
-    public const int PickCardListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> _repeated_pickCardList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> pickCardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo> PickCardList {
-      get { return pickCardList_; }
-    }
-
-    /// <summary>Field number for the "player_list" field.</summary>
-    public const int PlayerListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> _repeated_playerList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> playerList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPlayerInfo> PlayerList {
-      get { return playerList_; }
-    }
-
-    /// <summary>Field number for the "wait_begin_time_us" field.</summary>
-    public const int WaitBeginTimeUsFieldNumber = 1;
-    private ulong waitBeginTimeUs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong WaitBeginTimeUs {
-      get { return waitBeginTimeUs_; }
-      set {
-        waitBeginTimeUs_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "begin_time_ms" field.</summary>
-    public const int BeginTimeMsFieldNumber = 2;
-    private ulong beginTimeMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong BeginTimeMs {
-      get { return beginTimeMs_; }
-      set {
-        beginTimeMs_ = value;
       }
     }
 
@@ -325,23 +329,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LeftMonster != other.LeftMonster) return false;
-      if (WaitSeconds != other.WaitSeconds) return false;
-      if(!entranceList_.Equals(other.entranceList_)) return false;
-      if(!exitList_.Equals(other.exitList_)) return false;
-      if(!historyCardList_.Equals(other.historyCardList_)) return false;
-      if (MaxEscapeMonsterNum != other.MaxEscapeMonsterNum) return false;
-      if (BuildingStageDuration != other.BuildingStageDuration) return false;
-      if (DurationMs != other.DurationMs) return false;
+      if(!unk3300MNNDELKIBLG_.Equals(other.unk3300MNNDELKIBLG_)) return false;
+      if(!unk3300GHBEHPGBBIH_.Equals(other.unk3300GHBEHPGBBIH_)) return false;
       if (Stage != other.Stage) return false;
+      if (Unk3300EBOIGFMOKHK != other.Unk3300EBOIGFMOKHK) return false;
+      if (WaitSeconds != other.WaitSeconds) return false;
+      if (LeftMonsterNum != other.LeftMonsterNum) return false;
+      if (Unk3300IFIPKLOGEOF != other.Unk3300IFIPKLOGEOF) return false;
+      if(!playerList_.Equals(other.playerList_)) return false;
       if (TotalRound != other.TotalRound) return false;
+      if (Unk3300IAPINOLIALF != other.Unk3300IAPINOLIALF) return false;
       if(!monsterList_.Equals(other.monsterList_)) return false;
+      if (Unk3300CIJALCAMHCD != other.Unk3300CIJALCAMHCD) return false;
+      if (WaitBeginTimeUs != other.WaitBeginTimeUs) return false;
+      if(!historyCardList_.Equals(other.historyCardList_)) return false;
+      if(!pickCardList_.Equals(other.pickCardList_)) return false;
       if (EscapedMonsterNum != other.EscapedMonsterNum) return false;
       if (Round != other.Round) return false;
-      if(!pickCardList_.Equals(other.pickCardList_)) return false;
-      if(!playerList_.Equals(other.playerList_)) return false;
-      if (WaitBeginTimeUs != other.WaitBeginTimeUs) return false;
-      if (BeginTimeMs != other.BeginTimeMs) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -349,23 +353,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LeftMonster != 0) hash ^= LeftMonster.GetHashCode();
-      if (WaitSeconds != 0) hash ^= WaitSeconds.GetHashCode();
-      hash ^= entranceList_.GetHashCode();
-      hash ^= exitList_.GetHashCode();
-      hash ^= historyCardList_.GetHashCode();
-      if (MaxEscapeMonsterNum != 0) hash ^= MaxEscapeMonsterNum.GetHashCode();
-      if (BuildingStageDuration != 0) hash ^= BuildingStageDuration.GetHashCode();
-      if (DurationMs != 0UL) hash ^= DurationMs.GetHashCode();
+      hash ^= unk3300MNNDELKIBLG_.GetHashCode();
+      hash ^= unk3300GHBEHPGBBIH_.GetHashCode();
       if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) hash ^= Stage.GetHashCode();
+      if (Unk3300EBOIGFMOKHK != 0) hash ^= Unk3300EBOIGFMOKHK.GetHashCode();
+      if (WaitSeconds != 0) hash ^= WaitSeconds.GetHashCode();
+      if (LeftMonsterNum != 0) hash ^= LeftMonsterNum.GetHashCode();
+      if (Unk3300IFIPKLOGEOF != 0UL) hash ^= Unk3300IFIPKLOGEOF.GetHashCode();
+      hash ^= playerList_.GetHashCode();
       if (TotalRound != 0) hash ^= TotalRound.GetHashCode();
+      if (Unk3300IAPINOLIALF != 0UL) hash ^= Unk3300IAPINOLIALF.GetHashCode();
       hash ^= monsterList_.GetHashCode();
+      if (Unk3300CIJALCAMHCD != 0) hash ^= Unk3300CIJALCAMHCD.GetHashCode();
+      if (WaitBeginTimeUs != 0UL) hash ^= WaitBeginTimeUs.GetHashCode();
+      hash ^= historyCardList_.GetHashCode();
+      hash ^= pickCardList_.GetHashCode();
       if (EscapedMonsterNum != 0) hash ^= EscapedMonsterNum.GetHashCode();
       if (Round != 0) hash ^= Round.GetHashCode();
-      hash ^= pickCardList_.GetHashCode();
-      hash ^= playerList_.GetHashCode();
-      if (WaitBeginTimeUs != 0UL) hash ^= WaitBeginTimeUs.GetHashCode();
-      if (BeginTimeMs != 0UL) hash ^= BeginTimeMs.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -384,56 +388,56 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WaitBeginTimeUs != 0UL) {
-        output.WriteRawTag(8);
-        output.WriteUInt64(WaitBeginTimeUs);
-      }
-      if (BeginTimeMs != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(BeginTimeMs);
-      }
-      if (Round != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Round);
-      }
-      if (BuildingStageDuration != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BuildingStageDuration);
-      }
-      if (LeftMonster != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LeftMonster);
-      }
-      if (EscapedMonsterNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EscapedMonsterNum);
-      }
-      playerList_.WriteTo(output, _repeated_playerList_codec);
-      if (DurationMs != 0UL) {
-        output.WriteRawTag(64);
-        output.WriteUInt64(DurationMs);
-      }
-      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
-        output.WriteRawTag(72);
-        output.WriteEnum((int) Stage);
-      }
-      if (MaxEscapeMonsterNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(MaxEscapeMonsterNum);
-      }
-      historyCardList_.WriteTo(output, _repeated_historyCardList_codec);
       if (TotalRound != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(TotalRound);
       }
+      if (WaitBeginTimeUs != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(WaitBeginTimeUs);
+      }
+      if (Unk3300CIJALCAMHCD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300CIJALCAMHCD);
+      }
+      if (Unk3300EBOIGFMOKHK != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300EBOIGFMOKHK);
+      }
+      historyCardList_.WriteTo(output, _repeated_historyCardList_codec);
+      if (Unk3300IFIPKLOGEOF != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Unk3300IFIPKLOGEOF);
+      }
+      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Stage);
+      }
+      pickCardList_.WriteTo(output, _repeated_pickCardList_codec);
+      monsterList_.WriteTo(output, _repeated_monsterList_codec);
+      if (EscapedMonsterNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EscapedMonsterNum);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Round);
+      }
+      playerList_.WriteTo(output, _repeated_playerList_codec);
       if (WaitSeconds != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(WaitSeconds);
       }
-      monsterList_.WriteTo(output, _repeated_monsterList_codec);
-      pickCardList_.WriteTo(output, _repeated_pickCardList_codec);
-      exitList_.WriteTo(output, _repeated_exitList_codec);
-      entranceList_.WriteTo(output, _repeated_entranceList_codec);
+      if (Unk3300IAPINOLIALF != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Unk3300IAPINOLIALF);
+      }
+      if (LeftMonsterNum != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(LeftMonsterNum);
+      }
+      unk3300MNNDELKIBLG_.WriteTo(output, _repeated_unk3300MNNDELKIBLG_codec);
+      unk3300GHBEHPGBBIH_.WriteTo(output, _repeated_unk3300GHBEHPGBBIH_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -444,56 +448,56 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WaitBeginTimeUs != 0UL) {
-        output.WriteRawTag(8);
-        output.WriteUInt64(WaitBeginTimeUs);
-      }
-      if (BeginTimeMs != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(BeginTimeMs);
-      }
-      if (Round != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Round);
-      }
-      if (BuildingStageDuration != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BuildingStageDuration);
-      }
-      if (LeftMonster != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LeftMonster);
-      }
-      if (EscapedMonsterNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EscapedMonsterNum);
-      }
-      playerList_.WriteTo(ref output, _repeated_playerList_codec);
-      if (DurationMs != 0UL) {
-        output.WriteRawTag(64);
-        output.WriteUInt64(DurationMs);
-      }
-      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
-        output.WriteRawTag(72);
-        output.WriteEnum((int) Stage);
-      }
-      if (MaxEscapeMonsterNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(MaxEscapeMonsterNum);
-      }
-      historyCardList_.WriteTo(ref output, _repeated_historyCardList_codec);
       if (TotalRound != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(TotalRound);
       }
+      if (WaitBeginTimeUs != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(WaitBeginTimeUs);
+      }
+      if (Unk3300CIJALCAMHCD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300CIJALCAMHCD);
+      }
+      if (Unk3300EBOIGFMOKHK != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300EBOIGFMOKHK);
+      }
+      historyCardList_.WriteTo(ref output, _repeated_historyCardList_codec);
+      if (Unk3300IFIPKLOGEOF != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Unk3300IFIPKLOGEOF);
+      }
+      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Stage);
+      }
+      pickCardList_.WriteTo(ref output, _repeated_pickCardList_codec);
+      monsterList_.WriteTo(ref output, _repeated_monsterList_codec);
+      if (EscapedMonsterNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EscapedMonsterNum);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Round);
+      }
+      playerList_.WriteTo(ref output, _repeated_playerList_codec);
       if (WaitSeconds != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(WaitSeconds);
       }
-      monsterList_.WriteTo(ref output, _repeated_monsterList_codec);
-      pickCardList_.WriteTo(ref output, _repeated_pickCardList_codec);
-      exitList_.WriteTo(ref output, _repeated_exitList_codec);
-      entranceList_.WriteTo(ref output, _repeated_entranceList_codec);
+      if (Unk3300IAPINOLIALF != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(Unk3300IAPINOLIALF);
+      }
+      if (LeftMonsterNum != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(LeftMonsterNum);
+      }
+      unk3300MNNDELKIBLG_.WriteTo(ref output, _repeated_unk3300MNNDELKIBLG_codec);
+      unk3300GHBEHPGBBIH_.WriteTo(ref output, _repeated_unk3300GHBEHPGBBIH_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -504,44 +508,44 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LeftMonster != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftMonster);
+      size += unk3300MNNDELKIBLG_.CalculateSize(_repeated_unk3300MNNDELKIBLG_codec);
+      size += unk3300GHBEHPGBBIH_.CalculateSize(_repeated_unk3300GHBEHPGBBIH_codec);
+      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stage);
+      }
+      if (Unk3300EBOIGFMOKHK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EBOIGFMOKHK);
       }
       if (WaitSeconds != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WaitSeconds);
       }
-      size += entranceList_.CalculateSize(_repeated_entranceList_codec);
-      size += exitList_.CalculateSize(_repeated_exitList_codec);
-      size += historyCardList_.CalculateSize(_repeated_historyCardList_codec);
-      if (MaxEscapeMonsterNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxEscapeMonsterNum);
+      if (LeftMonsterNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftMonsterNum);
       }
-      if (BuildingStageDuration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingStageDuration);
+      if (Unk3300IFIPKLOGEOF != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300IFIPKLOGEOF);
       }
-      if (DurationMs != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DurationMs);
-      }
-      if (Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stage);
-      }
+      size += playerList_.CalculateSize(_repeated_playerList_codec);
       if (TotalRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalRound);
       }
+      if (Unk3300IAPINOLIALF != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300IAPINOLIALF);
+      }
       size += monsterList_.CalculateSize(_repeated_monsterList_codec);
+      if (Unk3300CIJALCAMHCD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CIJALCAMHCD);
+      }
+      if (WaitBeginTimeUs != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(WaitBeginTimeUs);
+      }
+      size += historyCardList_.CalculateSize(_repeated_historyCardList_codec);
+      size += pickCardList_.CalculateSize(_repeated_pickCardList_codec);
       if (EscapedMonsterNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EscapedMonsterNum);
       }
       if (Round != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
-      }
-      size += pickCardList_.CalculateSize(_repeated_pickCardList_codec);
-      size += playerList_.CalculateSize(_repeated_playerList_codec);
-      if (WaitBeginTimeUs != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(WaitBeginTimeUs);
-      }
-      if (BeginTimeMs != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BeginTimeMs);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -555,44 +559,44 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LeftMonster != 0) {
-        LeftMonster = other.LeftMonster;
+      unk3300MNNDELKIBLG_.Add(other.unk3300MNNDELKIBLG_);
+      unk3300GHBEHPGBBIH_.Add(other.unk3300GHBEHPGBBIH_);
+      if (other.Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
+        Stage = other.Stage;
+      }
+      if (other.Unk3300EBOIGFMOKHK != 0) {
+        Unk3300EBOIGFMOKHK = other.Unk3300EBOIGFMOKHK;
       }
       if (other.WaitSeconds != 0) {
         WaitSeconds = other.WaitSeconds;
       }
-      entranceList_.Add(other.entranceList_);
-      exitList_.Add(other.exitList_);
-      historyCardList_.Add(other.historyCardList_);
-      if (other.MaxEscapeMonsterNum != 0) {
-        MaxEscapeMonsterNum = other.MaxEscapeMonsterNum;
+      if (other.LeftMonsterNum != 0) {
+        LeftMonsterNum = other.LeftMonsterNum;
       }
-      if (other.BuildingStageDuration != 0) {
-        BuildingStageDuration = other.BuildingStageDuration;
+      if (other.Unk3300IFIPKLOGEOF != 0UL) {
+        Unk3300IFIPKLOGEOF = other.Unk3300IFIPKLOGEOF;
       }
-      if (other.DurationMs != 0UL) {
-        DurationMs = other.DurationMs;
-      }
-      if (other.Stage != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType.None) {
-        Stage = other.Stage;
-      }
+      playerList_.Add(other.playerList_);
       if (other.TotalRound != 0) {
         TotalRound = other.TotalRound;
       }
+      if (other.Unk3300IAPINOLIALF != 0UL) {
+        Unk3300IAPINOLIALF = other.Unk3300IAPINOLIALF;
+      }
       monsterList_.Add(other.monsterList_);
+      if (other.Unk3300CIJALCAMHCD != 0) {
+        Unk3300CIJALCAMHCD = other.Unk3300CIJALCAMHCD;
+      }
+      if (other.WaitBeginTimeUs != 0UL) {
+        WaitBeginTimeUs = other.WaitBeginTimeUs;
+      }
+      historyCardList_.Add(other.historyCardList_);
+      pickCardList_.Add(other.pickCardList_);
       if (other.EscapedMonsterNum != 0) {
         EscapedMonsterNum = other.EscapedMonsterNum;
       }
       if (other.Round != 0) {
         Round = other.Round;
-      }
-      pickCardList_.Add(other.pickCardList_);
-      playerList_.Add(other.playerList_);
-      if (other.WaitBeginTimeUs != 0UL) {
-        WaitBeginTimeUs = other.WaitBeginTimeUs;
-      }
-      if (other.BeginTimeMs != 0UL) {
-        BeginTimeMs = other.BeginTimeMs;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -610,73 +614,73 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            WaitBeginTimeUs = input.ReadUInt64();
+            TotalRound = input.ReadUInt32();
             break;
           }
           case 16: {
-            BeginTimeMs = input.ReadUInt64();
+            WaitBeginTimeUs = input.ReadUInt64();
             break;
           }
           case 24: {
-            Round = input.ReadUInt32();
+            Unk3300CIJALCAMHCD = input.ReadUInt32();
             break;
           }
           case 32: {
-            BuildingStageDuration = input.ReadUInt32();
+            Unk3300EBOIGFMOKHK = input.ReadUInt32();
             break;
           }
-          case 40: {
-            LeftMonster = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            EscapedMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            playerList_.AddEntriesFrom(input, _repeated_playerList_codec);
-            break;
-          }
-          case 64: {
-            DurationMs = input.ReadUInt64();
-            break;
-          }
-          case 72: {
-            Stage = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType) input.ReadEnum();
-            break;
-          }
-          case 80: {
-            MaxEscapeMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 42: {
             historyCardList_.AddEntriesFrom(input, _repeated_historyCardList_codec);
             break;
           }
-          case 96: {
-            TotalRound = input.ReadUInt32();
+          case 48: {
+            Unk3300IFIPKLOGEOF = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Stage = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            pickCardList_.AddEntriesFrom(input, _repeated_pickCardList_codec);
+            break;
+          }
+          case 74: {
+            monsterList_.AddEntriesFrom(input, _repeated_monsterList_codec);
+            break;
+          }
+          case 80: {
+            EscapedMonsterNum = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            playerList_.AddEntriesFrom(input, _repeated_playerList_codec);
             break;
           }
           case 104: {
             WaitSeconds = input.ReadUInt32();
             break;
           }
-          case 114: {
-            monsterList_.AddEntriesFrom(input, _repeated_monsterList_codec);
+          case 112: {
+            Unk3300IAPINOLIALF = input.ReadUInt64();
             break;
           }
-          case 122: {
-            pickCardList_.AddEntriesFrom(input, _repeated_pickCardList_codec);
+          case 120: {
+            LeftMonsterNum = input.ReadUInt32();
             break;
           }
-          case 922:
-          case 920: {
-            exitList_.AddEntriesFrom(input, _repeated_exitList_codec);
+          case 5250:
+          case 5248: {
+            unk3300MNNDELKIBLG_.AddEntriesFrom(input, _repeated_unk3300MNNDELKIBLG_codec);
             break;
           }
-          case 3282:
-          case 3280: {
-            entranceList_.AddEntriesFrom(input, _repeated_entranceList_codec);
+          case 5466:
+          case 5464: {
+            unk3300GHBEHPGBBIH_.AddEntriesFrom(input, _repeated_unk3300GHBEHPGBBIH_codec);
             break;
           }
         }
@@ -695,73 +699,73 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            WaitBeginTimeUs = input.ReadUInt64();
+            TotalRound = input.ReadUInt32();
             break;
           }
           case 16: {
-            BeginTimeMs = input.ReadUInt64();
+            WaitBeginTimeUs = input.ReadUInt64();
             break;
           }
           case 24: {
-            Round = input.ReadUInt32();
+            Unk3300CIJALCAMHCD = input.ReadUInt32();
             break;
           }
           case 32: {
-            BuildingStageDuration = input.ReadUInt32();
+            Unk3300EBOIGFMOKHK = input.ReadUInt32();
             break;
           }
-          case 40: {
-            LeftMonster = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            EscapedMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            playerList_.AddEntriesFrom(ref input, _repeated_playerList_codec);
-            break;
-          }
-          case 64: {
-            DurationMs = input.ReadUInt64();
-            break;
-          }
-          case 72: {
-            Stage = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType) input.ReadEnum();
-            break;
-          }
-          case 80: {
-            MaxEscapeMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 42: {
             historyCardList_.AddEntriesFrom(ref input, _repeated_historyCardList_codec);
             break;
           }
-          case 96: {
-            TotalRound = input.ReadUInt32();
+          case 48: {
+            Unk3300IFIPKLOGEOF = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Stage = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusStageType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            pickCardList_.AddEntriesFrom(ref input, _repeated_pickCardList_codec);
+            break;
+          }
+          case 74: {
+            monsterList_.AddEntriesFrom(ref input, _repeated_monsterList_codec);
+            break;
+          }
+          case 80: {
+            EscapedMonsterNum = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            playerList_.AddEntriesFrom(ref input, _repeated_playerList_codec);
             break;
           }
           case 104: {
             WaitSeconds = input.ReadUInt32();
             break;
           }
-          case 114: {
-            monsterList_.AddEntriesFrom(ref input, _repeated_monsterList_codec);
+          case 112: {
+            Unk3300IAPINOLIALF = input.ReadUInt64();
             break;
           }
-          case 122: {
-            pickCardList_.AddEntriesFrom(ref input, _repeated_pickCardList_codec);
+          case 120: {
+            LeftMonsterNum = input.ReadUInt32();
             break;
           }
-          case 922:
-          case 920: {
-            exitList_.AddEntriesFrom(ref input, _repeated_exitList_codec);
+          case 5250:
+          case 5248: {
+            unk3300MNNDELKIBLG_.AddEntriesFrom(ref input, _repeated_unk3300MNNDELKIBLG_codec);
             break;
           }
-          case 3282:
-          case 3280: {
-            entranceList_.AddEntriesFrom(ref input, _repeated_entranceList_codec);
+          case 5466:
+          case 5464: {
+            unk3300GHBEHPGBBIH_.AddEntriesFrom(ref input, _repeated_unk3300GHBEHPGBBIH_codec);
             break;
           }
         }

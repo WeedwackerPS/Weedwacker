@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlitzRushActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFCbGl0elJ1c2hBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFEJsaXR6UnVz",
-            "aFN0YWdlLnByb3RvGhZQYXJrb3VyTGV2ZWxJbmZvLnByb3RvIq0BChtCbGl0",
-            "elJ1c2hBY3Rpdml0eURldGFpbEluZm8SIwoKc3RhZ2VfbGlzdBgKIAMoCzIP",
-            "LkJsaXR6UnVzaFN0YWdlEhoKEmNvbnRlbnRfY2xvc2VfdGltZRgOIAEoDRIZ",
-            "ChFpc19jb250ZW50X2Nsb3NlZBgCIAEoCBIyChdwYXJrb3VyX2xldmVsX2lu",
-            "Zm9fbGlzdBgGIAMoCzIRLlBhcmtvdXJMZXZlbEluZm9CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFCbGl0elJ1c2hBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aFEJsaXR6UnVzaFN0YWdlLnByb3Rv",
+            "GhZQYXJrb3VyTGV2ZWxJbmZvLnByb3RvIu0BChtCbGl0elJ1c2hBY3Rpdml0",
+            "eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYASABKAgSGgoSY29u",
+            "dGVudF9jbG9zZV90aW1lGAggASgNElIKF3BhcmtvdXJfbGV2ZWxfaW5mb19s",
+            "aXN0GAQgAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Q",
+            "YXJrb3VyTGV2ZWxJbmZvEkMKCnN0YWdlX2xpc3QYBiADKAsyLy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJsaXR6UnVzaFN0YWdlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BlitzRushStageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ParkourLevelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo.Parser, new[]{ "StageList", "ContentCloseTime", "IsContentClosed", "ParkourLevelInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo.Parser, new[]{ "IsContentClosed", "ContentCloseTime", "ParkourLevelInfoList", "StageList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +77,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BlitzRushActivityDetailInfo(BlitzRushActivityDetailInfo other) : this() {
-      stageList_ = other.stageList_.Clone();
-      contentCloseTime_ = other.contentCloseTime_;
       isContentClosed_ = other.isContentClosed_;
+      contentCloseTime_ = other.contentCloseTime_;
       parkourLevelInfoList_ = other.parkourLevelInfoList_.Clone();
+      stageList_ = other.stageList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,31 +90,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BlitzRushActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "stage_list" field.</summary>
-    public const int StageListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> _repeated_stageList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.BlitzRushStage.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> stageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> StageList {
-      get { return stageList_; }
-    }
-
-    /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 14;
-    private uint contentCloseTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentCloseTime {
-      get { return contentCloseTime_; }
-      set {
-        contentCloseTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 2;
+    public const int IsContentClosedFieldNumber = 1;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,15 +102,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 8;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "parkour_level_info_list" field.</summary>
-    public const int ParkourLevelInfoListFieldNumber = 6;
+    public const int ParkourLevelInfoListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo> _repeated_parkourLevelInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo> parkourLevelInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ParkourLevelInfo> ParkourLevelInfoList {
       get { return parkourLevelInfoList_; }
+    }
+
+    /// <summary>Field number for the "stage_list" field.</summary>
+    public const int StageListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> _repeated_stageList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.BlitzRushStage.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> stageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlitzRushStage> StageList {
+      get { return stageList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!stageList_.Equals(other.stageList_)) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
       if(!parkourLevelInfoList_.Equals(other.parkourLevelInfoList_)) return false;
+      if(!stageList_.Equals(other.stageList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= stageList_.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
       hash ^= parkourLevelInfoList_.GetHashCode();
+      hash ^= stageList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,13 +185,13 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsContentClosed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(IsContentClosed);
       }
       parkourLevelInfoList_.WriteTo(output, _repeated_parkourLevelInfoList_codec);
       stageList_.WriteTo(output, _repeated_stageList_codec);
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(ContentCloseTime);
       }
       if (_unknownFields != null) {
@@ -203,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsContentClosed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(IsContentClosed);
       }
       parkourLevelInfoList_.WriteTo(ref output, _repeated_parkourLevelInfoList_codec);
       stageList_.WriteTo(ref output, _repeated_stageList_codec);
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(ContentCloseTime);
       }
       if (_unknownFields != null) {
@@ -222,14 +224,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += stageList_.CalculateSize(_repeated_stageList_codec);
-      if (ContentCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-      }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
       size += parkourLevelInfoList_.CalculateSize(_repeated_parkourLevelInfoList_codec);
+      size += stageList_.CalculateSize(_repeated_stageList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -242,14 +244,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      stageList_.Add(other.stageList_);
-      if (other.ContentCloseTime != 0) {
-        ContentCloseTime = other.ContentCloseTime;
-      }
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
       parkourLevelInfoList_.Add(other.parkourLevelInfoList_);
+      stageList_.Add(other.stageList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -265,19 +267,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 50: {
+          case 34: {
             parkourLevelInfoList_.AddEntriesFrom(input, _repeated_parkourLevelInfoList_codec);
             break;
           }
-          case 82: {
+          case 50: {
             stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
             break;
           }
-          case 112: {
+          case 64: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }
@@ -296,19 +298,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 50: {
+          case 34: {
             parkourLevelInfoList_.AddEntriesFrom(ref input, _repeated_parkourLevelInfoList_codec);
             break;
           }
-          case 82: {
+          case 50: {
             stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
             break;
           }
-          case 112: {
+          case 64: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }

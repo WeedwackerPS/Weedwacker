@@ -24,18 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuickUseWidgetRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdRdWlja1VzZVdpZGdldFJzcC5wcm90bxoZQ2xpZW50Q29sbGVjdG9yRGF0",
-            "YS5wcm90bxoiT25lb2ZHYXRoZXJQb2ludERldGVjdG9yRGF0YS5wcm90bxom",
-            "U2t5Q3J5c3RhbERldGVjdG9yUXVpY2tVc2VSZXN1bHQucHJvdG8ihwIKEVF1",
-            "aWNrVXNlV2lkZ2V0UnNwEhMKC21hdGVyaWFsX2lkGAYgASgNEg8KB3JldGNv",
-            "ZGUYBSABKAUSNgoNZGV0ZWN0b3JfZGF0YRgDIAEoCzIdLk9uZW9mR2F0aGVy",
-            "UG9pbnREZXRlY3RvckRhdGFIABI1ChVjbGllbnRfY29sbGVjdG9yX2RhdGEY",
-            "DyABKAsyFC5DbGllbnRDb2xsZWN0b3JEYXRhSAASVAolc2t5X2NyeXN0YWxf",
-            "ZGV0ZWN0b3JfcXVpY2tfdXNlX3Jlc3VsdBjapwogASgLMiEuU2t5Q3J5c3Rh",
-            "bERldGVjdG9yUXVpY2tVc2VSZXN1bHRIAEIHCgVwYXJhbUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdRdWlja1VzZVdpZGdldFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoZQ2xpZW50Q29sbGVjdG9yRGF0YS5wcm90bxojT25l",
+            "b2ZmR2F0aGVyUG9pbnREZXRlY3RvckRhdGEucHJvdG8aJlNreUNyeXN0YWxE",
+            "ZXRlY3RvclF1aWNrVXNlUmVzdWx0LnByb3RvIugCChFRdWlja1VzZVdpZGdl",
+            "dFJzcBITCgttYXRlcmlhbF9pZBgLIAEoDRIPCgdyZXRjb2RlGAwgASgFElcK",
+            "DWRldGVjdG9yX2RhdGEYDiABKAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLk9uZW9mZkdhdGhlclBvaW50RGV0ZWN0b3JEYXRhSAASVQoV",
+            "Y2xpZW50X2NvbGxlY3Rvcl9kYXRhGAogASgLMjQuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5DbGllbnRDb2xsZWN0b3JEYXRhSAASdAolc2t5",
+            "X2NyeXN0YWxfZGV0ZWN0b3JfcXVpY2tfdXNlX3Jlc3VsdBiiwgogASgLMkEu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ta3lDcnlzdGFsRGV0",
+            "ZWN0b3JRdWlja1VzZVJlc3VsdEgAQgcKBXBhcmFtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ClientCollectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResultReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ClientCollectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuickUseWidgetRsp), global::Weedwacker.Shared.Network.Proto.QuickUseWidgetRsp.Parser, new[]{ "MaterialId", "Retcode", "DetectorData", "ClientCollectorData", "SkyCrystalDetectorQuickUseResult" }, new[]{ "Param" }, null, null, null)
           }));
@@ -45,9 +47,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4270
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4265;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuickUseWidgetRsp : pb::IMessage<QuickUseWidgetRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -107,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 6;
+    public const int MaterialIdFieldNumber = 11;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,7 +125,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 12;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,11 +137,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "detector_data" field.</summary>
-    public const int DetectorDataFieldNumber = 3;
+    public const int DetectorDataFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData DetectorData {
-      get { return paramCase_ == ParamOneofCase.DetectorData ? (global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData) param_ : null; }
+    public global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData DetectorData {
+      get { return paramCase_ == ParamOneofCase.DetectorData ? (global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData) param_ : null; }
       set {
         param_ = value;
         paramCase_ = value == null ? ParamOneofCase.None : ParamOneofCase.DetectorData;
@@ -143,7 +149,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "client_collector_data" field.</summary>
-    public const int ClientCollectorDataFieldNumber = 15;
+    public const int ClientCollectorDataFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ClientCollectorData ClientCollectorData {
@@ -155,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "sky_crystal_detector_quick_use_result" field.</summary>
-    public const int SkyCrystalDetectorQuickUseResultFieldNumber = 168922;
+    public const int SkyCrystalDetectorQuickUseResultFieldNumber = 172322;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResult SkyCrystalDetectorQuickUseResult {
@@ -170,9 +176,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "param" oneof.</summary>
     public enum ParamOneofCase {
       None = 0,
-      DetectorData = 3,
-      ClientCollectorData = 15,
-      SkyCrystalDetectorQuickUseResult = 168922,
+      DetectorData = 14,
+      ClientCollectorData = 10,
+      SkyCrystalDetectorQuickUseResult = 172322,
     }
     private ParamOneofCase paramCase_ = ParamOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -240,24 +246,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (paramCase_ == ParamOneofCase.DetectorData) {
-        output.WriteRawTag(26);
-        output.WriteMessage(DetectorData);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
-      if (MaterialId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MaterialId);
-      }
       if (paramCase_ == ParamOneofCase.ClientCollectorData) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(82);
         output.WriteMessage(ClientCollectorData);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(MaterialId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Retcode);
+      }
+      if (paramCase_ == ParamOneofCase.DetectorData) {
+        output.WriteRawTag(114);
+        output.WriteMessage(DetectorData);
+      }
       if (paramCase_ == ParamOneofCase.SkyCrystalDetectorQuickUseResult) {
-        output.WriteRawTag(210, 189, 82);
+        output.WriteRawTag(146, 146, 84);
         output.WriteMessage(SkyCrystalDetectorQuickUseResult);
       }
       if (_unknownFields != null) {
@@ -270,24 +276,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (paramCase_ == ParamOneofCase.DetectorData) {
-        output.WriteRawTag(26);
-        output.WriteMessage(DetectorData);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
-      if (MaterialId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MaterialId);
-      }
       if (paramCase_ == ParamOneofCase.ClientCollectorData) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(82);
         output.WriteMessage(ClientCollectorData);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(MaterialId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Retcode);
+      }
+      if (paramCase_ == ParamOneofCase.DetectorData) {
+        output.WriteRawTag(114);
+        output.WriteMessage(DetectorData);
+      }
       if (paramCase_ == ParamOneofCase.SkyCrystalDetectorQuickUseResult) {
-        output.WriteRawTag(210, 189, 82);
+        output.WriteRawTag(146, 146, 84);
         output.WriteMessage(SkyCrystalDetectorQuickUseResult);
       }
       if (_unknownFields != null) {
@@ -336,7 +342,7 @@ namespace Weedwacker.Shared.Network.Proto {
       switch (other.ParamCase) {
         case ParamOneofCase.DetectorData:
           if (DetectorData == null) {
-            DetectorData = new global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData();
+            DetectorData = new global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData();
           }
           DetectorData.MergeFrom(other.DetectorData);
           break;
@@ -369,24 +375,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData();
-            if (paramCase_ == ParamOneofCase.DetectorData) {
-              subBuilder.MergeFrom(DetectorData);
-            }
-            input.ReadMessage(subBuilder);
-            DetectorData = subBuilder;
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 82: {
             global::Weedwacker.Shared.Network.Proto.ClientCollectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.ClientCollectorData();
             if (paramCase_ == ParamOneofCase.ClientCollectorData) {
               subBuilder.MergeFrom(ClientCollectorData);
@@ -395,7 +384,24 @@ namespace Weedwacker.Shared.Network.Proto {
             ClientCollectorData = subBuilder;
             break;
           }
-          case 1351378: {
+          case 88: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData();
+            if (paramCase_ == ParamOneofCase.DetectorData) {
+              subBuilder.MergeFrom(DetectorData);
+            }
+            input.ReadMessage(subBuilder);
+            DetectorData = subBuilder;
+            break;
+          }
+          case 1378578: {
             global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResult subBuilder = new global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResult();
             if (paramCase_ == ParamOneofCase.SkyCrystalDetectorQuickUseResult) {
               subBuilder.MergeFrom(SkyCrystalDetectorQuickUseResult);
@@ -419,24 +425,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData();
-            if (paramCase_ == ParamOneofCase.DetectorData) {
-              subBuilder.MergeFrom(DetectorData);
-            }
-            input.ReadMessage(subBuilder);
-            DetectorData = subBuilder;
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 82: {
             global::Weedwacker.Shared.Network.Proto.ClientCollectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.ClientCollectorData();
             if (paramCase_ == ParamOneofCase.ClientCollectorData) {
               subBuilder.MergeFrom(ClientCollectorData);
@@ -445,7 +434,24 @@ namespace Weedwacker.Shared.Network.Proto {
             ClientCollectorData = subBuilder;
             break;
           }
-          case 1351378: {
+          case 88: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData subBuilder = new global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData();
+            if (paramCase_ == ParamOneofCase.DetectorData) {
+              subBuilder.MergeFrom(DetectorData);
+            }
+            input.ReadMessage(subBuilder);
+            DetectorData = subBuilder;
+            break;
+          }
+          case 1378578: {
             global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResult subBuilder = new global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorQuickUseResult();
             if (paramCase_ == ParamOneofCase.SkyCrystalDetectorQuickUseResult) {
               subBuilder.MergeFrom(SkyCrystalDetectorQuickUseResult);

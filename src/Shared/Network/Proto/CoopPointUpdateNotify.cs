@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopPointUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtDb29wUG9pbnRVcGRhdGVOb3RpZnkucHJvdG8aD0Nvb3BQb2ludC5wcm90",
-            "byI3ChVDb29wUG9pbnRVcGRhdGVOb3RpZnkSHgoKY29vcF9wb2ludBgNIAEo",
-            "CzIKLkNvb3BQb2ludEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChtDb29wUG9pbnRVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aD0Nvb3BQb2ludC5wcm90byJXChVDb29wUG9p",
+            "bnRVcGRhdGVOb3RpZnkSPgoKY29vcF9wb2ludBgIIAEoCzIqLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ29vcFBvaW50YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CoopPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1991
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1958;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CoopPointUpdateNotify : pb::IMessage<CoopPointUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "coop_point" field.</summary>
-    public const int CoopPointFieldNumber = 13;
+    public const int CoopPointFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.CoopPoint coopPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (coopPoint_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(CoopPoint);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (coopPoint_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(CoopPoint);
       }
       if (_unknownFields != null) {
@@ -205,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 66: {
             if (coopPoint_ == null) {
               CoopPoint = new global::Weedwacker.Shared.Network.Proto.CoopPoint();
             }
@@ -227,7 +231,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 66: {
             if (coopPoint_ == null) {
               CoopPoint = new global::Weedwacker.Shared.Network.Proto.CoopPoint();
             }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaWishRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHYWNoYVdpc2hSc3AucHJvdG8ilgEKDEdhY2hhV2lzaFJzcBISCgpnYWNo",
-            "YV90eXBlGAggASgNEhkKEWdhY2hhX3NjaGVkdWxlX2lkGAcgASgNEhkKEXdp",
-            "c2hfbWF4X3Byb2dyZXNzGAIgASgNEhUKDXdpc2hfcHJvZ3Jlc3MYBSABKA0S",
-            "FAoMd2lzaF9pdGVtX2lkGAMgASgNEg8KB3JldGNvZGUYDiABKAVCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJHYWNoYVdpc2hSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8ilgEKDEdhY2hhV2lzaFJzcBIUCgx3aXNoX2l0ZW1faWQYBiAB",
+            "KA0SFQoNd2lzaF9wcm9ncmVzcxgPIAEoDRIZChFnYWNoYV9zY2hlZHVsZV9p",
+            "ZBgLIAEoDRIPCgdyZXRjb2RlGA0gASgFEhkKEXdpc2hfbWF4X3Byb2dyZXNz",
+            "GAogASgNEhIKCmdhY2hhX3R5cGUYCCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaWishRsp), global::Weedwacker.Shared.Network.Proto.GachaWishRsp.Parser, new[]{ "GachaType", "GachaScheduleId", "WishMaxProgress", "WishProgress", "WishItemId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GachaWishRsp), global::Weedwacker.Shared.Network.Proto.GachaWishRsp.Parser, new[]{ "WishItemId", "WishProgress", "GachaScheduleId", "Retcode", "WishMaxProgress", "GachaType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1521
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1543;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GachaWishRsp : pb::IMessage<GachaWishRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,12 +82,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GachaWishRsp(GachaWishRsp other) : this() {
-      gachaType_ = other.gachaType_;
-      gachaScheduleId_ = other.gachaScheduleId_;
-      wishMaxProgress_ = other.wishMaxProgress_;
-      wishProgress_ = other.wishProgress_;
       wishItemId_ = other.wishItemId_;
+      wishProgress_ = other.wishProgress_;
+      gachaScheduleId_ = other.gachaScheduleId_;
       retcode_ = other.retcode_;
+      wishMaxProgress_ = other.wishMaxProgress_;
+      gachaType_ = other.gachaType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,6 +95,75 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GachaWishRsp Clone() {
       return new GachaWishRsp(this);
+    }
+
+    /// <summary>Field number for the "wish_item_id" field.</summary>
+    public const int WishItemIdFieldNumber = 6;
+    private uint wishItemId_;
+    /// <summary>
+    /// Unk3300_NMOKGFGDFFC
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishItemId {
+      get { return wishItemId_; }
+      set {
+        wishItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_progress" field.</summary>
+    public const int WishProgressFieldNumber = 15;
+    private uint wishProgress_;
+    /// <summary>
+    /// Unk3300_KEIJFMKAKDH
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishProgress {
+      get { return wishProgress_; }
+      set {
+        wishProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_schedule_id" field.</summary>
+    public const int GachaScheduleIdFieldNumber = 11;
+    private uint gachaScheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaScheduleId {
+      get { return gachaScheduleId_; }
+      set {
+        gachaScheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 13;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_max_progress" field.</summary>
+    public const int WishMaxProgressFieldNumber = 10;
+    private uint wishMaxProgress_;
+    /// <summary>
+    /// Unk3300_BLLMPAJNCPI
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishMaxProgress {
+      get { return wishMaxProgress_; }
+      set {
+        wishMaxProgress_ = value;
+      }
     }
 
     /// <summary>Field number for the "gacha_type" field.</summary>
@@ -102,66 +175,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return gachaType_; }
       set {
         gachaType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gacha_schedule_id" field.</summary>
-    public const int GachaScheduleIdFieldNumber = 7;
-    private uint gachaScheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GachaScheduleId {
-      get { return gachaScheduleId_; }
-      set {
-        gachaScheduleId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_max_progress" field.</summary>
-    public const int WishMaxProgressFieldNumber = 2;
-    private uint wishMaxProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishMaxProgress {
-      get { return wishMaxProgress_; }
-      set {
-        wishMaxProgress_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_progress" field.</summary>
-    public const int WishProgressFieldNumber = 5;
-    private uint wishProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishProgress {
-      get { return wishProgress_; }
-      set {
-        wishProgress_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_item_id" field.</summary>
-    public const int WishItemIdFieldNumber = 3;
-    private uint wishItemId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishItemId {
-      get { return wishItemId_; }
-      set {
-        wishItemId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
       }
     }
 
@@ -180,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GachaType != other.GachaType) return false;
-      if (GachaScheduleId != other.GachaScheduleId) return false;
-      if (WishMaxProgress != other.WishMaxProgress) return false;
-      if (WishProgress != other.WishProgress) return false;
       if (WishItemId != other.WishItemId) return false;
+      if (WishProgress != other.WishProgress) return false;
+      if (GachaScheduleId != other.GachaScheduleId) return false;
       if (Retcode != other.Retcode) return false;
+      if (WishMaxProgress != other.WishMaxProgress) return false;
+      if (GachaType != other.GachaType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -193,12 +206,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GachaType != 0) hash ^= GachaType.GetHashCode();
-      if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
-      if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
-      if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
       if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
+      if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
+      if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
+      if (GachaType != 0) hash ^= GachaType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,29 +230,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WishMaxProgress != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WishMaxProgress);
-      }
       if (WishItemId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(WishItemId);
-      }
-      if (WishProgress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(WishProgress);
-      }
-      if (GachaScheduleId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GachaScheduleId);
       }
       if (GachaType != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(GachaType);
       }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaScheduleId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
+      }
+      if (WishProgress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WishProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -251,29 +264,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WishMaxProgress != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WishMaxProgress);
-      }
       if (WishItemId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(WishItemId);
-      }
-      if (WishProgress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(WishProgress);
-      }
-      if (GachaScheduleId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GachaScheduleId);
       }
       if (GachaType != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(GachaType);
       }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaScheduleId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
+      }
+      if (WishProgress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WishProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -285,23 +298,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GachaType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
-      }
-      if (GachaScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
-      }
-      if (WishMaxProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
+      if (WishItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
       }
       if (WishProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
       }
-      if (WishItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
+      if (GachaScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (WishMaxProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
+      }
+      if (GachaType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -315,23 +328,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GachaType != 0) {
-        GachaType = other.GachaType;
-      }
-      if (other.GachaScheduleId != 0) {
-        GachaScheduleId = other.GachaScheduleId;
-      }
-      if (other.WishMaxProgress != 0) {
-        WishMaxProgress = other.WishMaxProgress;
+      if (other.WishItemId != 0) {
+        WishItemId = other.WishItemId;
       }
       if (other.WishProgress != 0) {
         WishProgress = other.WishProgress;
       }
-      if (other.WishItemId != 0) {
-        WishItemId = other.WishItemId;
+      if (other.GachaScheduleId != 0) {
+        GachaScheduleId = other.GachaScheduleId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.WishMaxProgress != 0) {
+        WishMaxProgress = other.WishMaxProgress;
+      }
+      if (other.GachaType != 0) {
+        GachaType = other.GachaType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -348,28 +361,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            WishMaxProgress = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 48: {
             WishItemId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            WishProgress = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            GachaScheduleId = input.ReadUInt32();
             break;
           }
           case 64: {
             GachaType = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 80: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            WishProgress = input.ReadUInt32();
             break;
           }
         }
@@ -387,28 +400,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            WishMaxProgress = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 48: {
             WishItemId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            WishProgress = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            GachaScheduleId = input.ReadUInt32();
             break;
           }
           case 64: {
             GachaType = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 80: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            WishProgress = input.ReadUInt32();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static CookRecipeDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRDb29rUmVjaXBlRGF0YS5wcm90byI4Cg5Db29rUmVjaXBlRGF0YRITCgtw",
-            "cm9maWNpZW5jeRgNIAEoDRIRCglyZWNpcGVfaWQYCSABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRDb29rUmVjaXBlRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byI4Cg5Db29rUmVjaXBlRGF0YRITCgtwcm9maWNpZW5jeRgI",
+            "IAEoDRIRCglyZWNpcGVfaWQYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "proficiency" field.</summary>
-    public const int ProficiencyFieldNumber = 13;
+    public const int ProficiencyFieldNumber = 8;
     private uint proficiency_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "recipe_id" field.</summary>
-    public const int RecipeIdFieldNumber = 9;
+    public const int RecipeIdFieldNumber = 14;
     private uint recipeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RecipeId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(RecipeId);
-      }
       if (Proficiency != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteUInt32(Proficiency);
+      }
+      if (RecipeId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RecipeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RecipeId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(RecipeId);
-      }
       if (Proficiency != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteUInt32(Proficiency);
+      }
+      if (RecipeId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RecipeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            RecipeId = input.ReadUInt32();
+          case 64: {
+            Proficiency = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Proficiency = input.ReadUInt32();
+          case 112: {
+            RecipeId = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            RecipeId = input.ReadUInt32();
+          case 64: {
+            Proficiency = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Proficiency = input.ReadUInt32();
+          case 112: {
+            RecipeId = input.ReadUInt32();
             break;
           }
         }

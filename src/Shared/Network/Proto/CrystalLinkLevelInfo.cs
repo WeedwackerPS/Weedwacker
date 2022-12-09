@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkLevelInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpDcnlzdGFsTGlua0xldmVsSW5mby5wcm90bxoZQ3J5c3RhbExpbmtUZWFt",
-            "SW5mby5wcm90byJ7ChRDcnlzdGFsTGlua0xldmVsSW5mbxIsCg50ZWFtX2lu",
-            "Zm9fbGlzdBgKIAMoCzIULkNyeXN0YWxMaW5rVGVhbUluZm8SDwoHaXNfb3Bl",
-            "bhgJIAEoCBIQCghsZXZlbF9pZBgOIAEoDRISCgpiZXN0X3Njb3JlGAUgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpDcnlzdGFsTGlua0xldmVsSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoZQ3J5c3RhbExpbmtUZWFtSW5mby5wcm90byKb",
+            "AQoUQ3J5c3RhbExpbmtMZXZlbEluZm8SDwoHaXNfb3BlbhgEIAEoCBJMCg50",
+            "ZWFtX2luZm9fbGlzdBgDIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQ3J5c3RhbExpbmtUZWFtSW5mbxIQCghsZXZlbF9pZBgOIAEo",
+            "DRISCgpiZXN0X3Njb3JlGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo.Parser, new[]{ "TeamInfoList", "IsOpen", "LevelId", "BestScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkLevelInfo.Parser, new[]{ "IsOpen", "TeamInfoList", "LevelId", "BestScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +74,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CrystalLinkLevelInfo(CrystalLinkLevelInfo other) : this() {
-      teamInfoList_ = other.teamInfoList_.Clone();
       isOpen_ = other.isOpen_;
+      teamInfoList_ = other.teamInfoList_.Clone();
       levelId_ = other.levelId_;
       bestScore_ = other.bestScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -86,19 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CrystalLinkLevelInfo(this);
     }
 
-    /// <summary>Field number for the "team_info_list" field.</summary>
-    public const int TeamInfoListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> _repeated_teamInfoList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> teamInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> TeamInfoList {
-      get { return teamInfoList_; }
-    }
-
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 9;
+    public const int IsOpenFieldNumber = 4;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,6 +97,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isOpen_ = value;
       }
+    }
+
+    /// <summary>Field number for the "team_info_list" field.</summary>
+    public const int TeamInfoListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> _repeated_teamInfoList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> teamInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo> TeamInfoList {
+      get { return teamInfoList_; }
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
@@ -122,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 5;
+    public const int BestScoreFieldNumber = 7;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!teamInfoList_.Equals(other.teamInfoList_)) return false;
       if (IsOpen != other.IsOpen) return false;
+      if(!teamInfoList_.Equals(other.teamInfoList_)) return false;
       if (LevelId != other.LevelId) return false;
       if (BestScore != other.BestScore) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -159,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= teamInfoList_.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      hash ^= teamInfoList_.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (BestScore != 0) hash ^= BestScore.GetHashCode();
       if (_unknownFields != null) {
@@ -181,15 +182,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BestScore != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BestScore);
-      }
+      teamInfoList_.WriteTo(output, _repeated_teamInfoList_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteBool(IsOpen);
       }
-      teamInfoList_.WriteTo(output, _repeated_teamInfoList_codec);
+      if (BestScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(BestScore);
+      }
       if (LevelId != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
@@ -204,15 +205,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BestScore != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BestScore);
-      }
+      teamInfoList_.WriteTo(ref output, _repeated_teamInfoList_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteBool(IsOpen);
       }
-      teamInfoList_.WriteTo(ref output, _repeated_teamInfoList_codec);
+      if (BestScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(BestScore);
+      }
       if (LevelId != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
@@ -227,10 +228,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += teamInfoList_.CalculateSize(_repeated_teamInfoList_codec);
       if (IsOpen != false) {
         size += 1 + 1;
       }
+      size += teamInfoList_.CalculateSize(_repeated_teamInfoList_codec);
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
@@ -249,10 +250,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      teamInfoList_.Add(other.teamInfoList_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
+      teamInfoList_.Add(other.teamInfoList_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
@@ -274,16 +275,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            BestScore = input.ReadUInt32();
+          case 26: {
+            teamInfoList_.AddEntriesFrom(input, _repeated_teamInfoList_codec);
             break;
           }
-          case 72: {
+          case 32: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 82: {
-            teamInfoList_.AddEntriesFrom(input, _repeated_teamInfoList_codec);
+          case 56: {
+            BestScore = input.ReadUInt32();
             break;
           }
           case 112: {
@@ -305,16 +306,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            BestScore = input.ReadUInt32();
+          case 26: {
+            teamInfoList_.AddEntriesFrom(ref input, _repeated_teamInfoList_codec);
             break;
           }
-          case 72: {
+          case 32: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 82: {
-            teamInfoList_.AddEntriesFrom(ref input, _repeated_teamInfoList_codec);
+          case 56: {
+            BestScore = input.ReadUInt32();
             break;
           }
           case 112: {

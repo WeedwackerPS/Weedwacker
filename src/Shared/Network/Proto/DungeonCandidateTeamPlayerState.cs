@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonCandidateTeamPlayerStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlLnByb3RvKrcBCh9E",
-            "dW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlEiwKKERVTkdFT05fQ0FO",
-            "RElEQVRFX1RFQU1fUExBWUVSX1NUQVRFX0lETEUQABI3CjNEVU5HRU9OX0NB",
-            "TkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9DSEFOR0lOR19BVkFUQVIQARIt",
-            "CilEVU5HRU9OX0NBTkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9SRUFEWRAC",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvKrgBCh9EdW5nZW9uQ2FuZGlk",
+            "YXRlVGVhbVBsYXllclN0YXRlEiwKKERVTkdFT05fQ0FORElEQVRFX1RFQU1f",
+            "UExBWUVSX1NUQVRFX0lETEUQABI4CjREVU5HRU9OX0NBTkRJREFURV9URUFN",
+            "X1BMQVlFUl9TVEFURV9DSEFOR0lOR19BVl9BVEFSEAESLQopRFVOR0VPTl9D",
+            "QU5ESURBVEVfVEVBTV9QTEFZRVJfU1RBVEVfUkVBRFkQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerState), }, null, null));
@@ -40,7 +40,7 @@ namespace Weedwacker.Shared.Network.Proto {
   #region Enums
   public enum DungeonCandidateTeamPlayerState {
     [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE")] Idle = 0,
-    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_CHANGING_AVATAR")] ChangingAvatar = 1,
+    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_CHANGING_AV_ATAR")] ChangingAvAtar = 1,
     [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_READY")] Ready = 2,
   }
 

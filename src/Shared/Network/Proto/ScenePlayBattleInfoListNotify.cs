@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayBattleInfoListNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTY2VuZVBsYXlCYXR0bGVJbmZvTGlzdE5vdGlmeS5wcm90bxoZU2NlbmVQ",
-            "bGF5QmF0dGxlSW5mby5wcm90byJPCh1TY2VuZVBsYXlCYXR0bGVJbmZvTGlz",
-            "dE5vdGlmeRIuChBiYXR0bGVfaW5mb19saXN0GAwgAygLMhQuU2NlbmVQbGF5",
-            "QmF0dGxlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiNTY2VuZVBsYXlCYXR0bGVJbmZvTGlzdE5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoZU2NlbmVQbGF5QmF0dGxlSW5m",
+            "by5wcm90byJvCh1TY2VuZVBsYXlCYXR0bGVJbmZvTGlzdE5vdGlmeRJOChBi",
+            "YXR0bGVfaW5mb19saXN0GA4gAygLMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5TY2VuZVBsYXlCYXR0bGVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4431
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4375;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayBattleInfoListNotify : pb::IMessage<ScenePlayBattleInfoListNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "battle_info_list" field.</summary>
-    public const int BattleInfoListFieldNumber = 12;
+    public const int BattleInfoListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo> _repeated_battleInfoList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo> battleInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 114: {
             battleInfoList_.AddEntriesFrom(input, _repeated_battleInfoList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 114: {
             battleInfoList_.AddEntriesFrom(ref input, _repeated_battleInfoList_codec);
             break;
           }

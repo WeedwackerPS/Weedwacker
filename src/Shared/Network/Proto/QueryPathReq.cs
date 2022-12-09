@@ -24,21 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static QueryPathReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJRdWVyeVBhdGhSZXEucHJvdG8aEVF1ZXJ5RmlsdGVyLnByb3RvGgxWZWN0",
-            "b3IucHJvdG8aEFZlY3RvcjNJbnQucHJvdG8i5AIKDFF1ZXJ5UGF0aFJlcRIs",
-            "CgpxdWVyeV90eXBlGA0gASgOMhguUXVlcnlQYXRoUmVxLk9wdGlvblR5cGUS",
-            "IgoNc291cmNlX2V4dGVuZBgGIAEoCzILLlZlY3RvcjNJbnQSGwoKc291cmNl",
-            "X3BvcxgCIAEoCzIHLlZlY3RvchIcCgZmaWx0ZXIYDCABKAsyDC5RdWVyeUZp",
-            "bHRlchIQCghxdWVyeV9pZBgPIAEoBRInChJkZXN0aW5hdGlvbl9leHRlbmQY",
-            "BCABKAsyCy5WZWN0b3IzSW50EiAKD2Rlc3RpbmF0aW9uX3BvcxgKIAMoCzIH",
-            "LlZlY3RvchIQCghzY2VuZV9pZBgLIAEoDSJYCgpPcHRpb25UeXBlEhQKEE9Q",
-            "VElPTl9UWVBFX05PTkUQABIWChJPUFRJT05fVFlQRV9OT1JNQUwQARIcChhP",
-            "UFRJT05fVFlQRV9GSVJTVF9DQU5fR08QAkIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJRdWVyeVBhdGhSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aEVF1ZXJ5RmlsdGVyLnByb3RvGgxWZWN0b3IucHJvdG8aEFZl",
+            "Y3RvcjNJbnQucHJvdG8iqwQKDFF1ZXJ5UGF0aFJlcRI8CgZmaWx0ZXIYByAB",
+            "KAsyLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlF1ZXJ5Rmls",
+            "dGVyEhAKCHF1ZXJ5X2lkGAMgASgFEkAKD2Rlc3RpbmF0aW9uX3BvcxgGIAMo",
+            "CzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yEkwK",
+            "CnF1ZXJ5X3R5cGUYCyABKA4yOC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlF1ZXJ5UGF0aFJlcS5PcHRpb25UeXBlEkgKE1VuazMzMDBfTEhO",
+            "R1BKRk9NSUsYBCABKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZlY3RvcjNJbnQSEAoIc2NlbmVfaWQYAiABKA0SOwoKc291cmNlX3Bv",
+            "cxgIIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVj",
+            "dG9yEkgKE1VuazMzMDBfQ0xHSkJCSkRPTE4YBSABKAsyKy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvcjNJbnQiWAoKT3B0aW9uVHlw",
+            "ZRIUChBPUFRJT05fVFlQRV9OT05FEAASFgoST1BUSU9OX1RZUEVfTk9STUFM",
+            "EAESHAoYT1BUSU9OX1RZUEVfRklSU1RfQ0FOX0dPEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.QueryFilterReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.Vector3IntReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryPathReq), global::Weedwacker.Shared.Network.Proto.QueryPathReq.Parser, new[]{ "QueryType", "SourceExtend", "SourcePos", "Filter", "QueryId", "DestinationExtend", "DestinationPos", "SceneId" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryPathReq), global::Weedwacker.Shared.Network.Proto.QueryPathReq.Parser, new[]{ "Filter", "QueryId", "DestinationPos", "QueryType", "Unk3300LHNGPJFOMIK", "SceneId", "SourcePos", "Unk3300CLGJBBJDOLN" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) }, null, null)
           }));
     }
     #endregion
@@ -46,10 +50,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2372
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2379;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class QueryPathReq : pb::IMessage<QueryPathReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,14 +93,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QueryPathReq(QueryPathReq other) : this() {
-      queryType_ = other.queryType_;
-      sourceExtend_ = other.sourceExtend_ != null ? other.sourceExtend_.Clone() : null;
-      sourcePos_ = other.sourcePos_ != null ? other.sourcePos_.Clone() : null;
       filter_ = other.filter_ != null ? other.filter_.Clone() : null;
       queryId_ = other.queryId_;
-      destinationExtend_ = other.destinationExtend_ != null ? other.destinationExtend_.Clone() : null;
       destinationPos_ = other.destinationPos_.Clone();
+      queryType_ = other.queryType_;
+      unk3300LHNGPJFOMIK_ = other.unk3300LHNGPJFOMIK_ != null ? other.unk3300LHNGPJFOMIK_.Clone() : null;
       sceneId_ = other.sceneId_;
+      sourcePos_ = other.sourcePos_ != null ? other.sourcePos_.Clone() : null;
+      unk3300CLGJBBJDOLN_ = other.unk3300CLGJBBJDOLN_ != null ? other.unk3300CLGJBBJDOLN_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -102,44 +110,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new QueryPathReq(this);
     }
 
-    /// <summary>Field number for the "query_type" field.</summary>
-    public const int QueryTypeFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType queryType_ = global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType QueryType {
-      get { return queryType_; }
-      set {
-        queryType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "source_extend" field.</summary>
-    public const int SourceExtendFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.Vector3Int sourceExtend_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector3Int SourceExtend {
-      get { return sourceExtend_; }
-      set {
-        sourceExtend_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "source_pos" field.</summary>
-    public const int SourcePosFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.Vector sourcePos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector SourcePos {
-      get { return sourcePos_; }
-      set {
-        sourcePos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "filter" field.</summary>
-    public const int FilterFieldNumber = 12;
+    public const int FilterFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.QueryFilter filter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "query_id" field.</summary>
-    public const int QueryIdFieldNumber = 15;
+    public const int QueryIdFieldNumber = 3;
     private int queryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,22 +134,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "destination_extend" field.</summary>
-    public const int DestinationExtendFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.Vector3Int destinationExtend_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector3Int DestinationExtend {
-      get { return destinationExtend_; }
-      set {
-        destinationExtend_ = value;
-      }
-    }
-
     /// <summary>Field number for the "destination_pos" field.</summary>
-    public const int DestinationPosFieldNumber = 10;
+    public const int DestinationPosFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_destinationPos_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> destinationPos_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,8 +145,32 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return destinationPos_; }
     }
 
+    /// <summary>Field number for the "query_type" field.</summary>
+    public const int QueryTypeFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType queryType_ = global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType QueryType {
+      get { return queryType_; }
+      set {
+        queryType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LHNGPJFOMIK" field.</summary>
+    public const int Unk3300LHNGPJFOMIKFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.Vector3Int unk3300LHNGPJFOMIK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector3Int Unk3300LHNGPJFOMIK {
+      get { return unk3300LHNGPJFOMIK_; }
+      set {
+        unk3300LHNGPJFOMIK_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 11;
+    public const int SceneIdFieldNumber = 2;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,6 +178,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sceneId_; }
       set {
         sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "source_pos" field.</summary>
+    public const int SourcePosFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.Vector sourcePos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector SourcePos {
+      get { return sourcePos_; }
+      set {
+        sourcePos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CLGJBBJDOLN" field.</summary>
+    public const int Unk3300CLGJBBJDOLNFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.Vector3Int unk3300CLGJBBJDOLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector3Int Unk3300CLGJBBJDOLN {
+      get { return unk3300CLGJBBJDOLN_; }
+      set {
+        unk3300CLGJBBJDOLN_ = value;
       }
     }
 
@@ -212,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (QueryType != other.QueryType) return false;
-      if (!object.Equals(SourceExtend, other.SourceExtend)) return false;
-      if (!object.Equals(SourcePos, other.SourcePos)) return false;
       if (!object.Equals(Filter, other.Filter)) return false;
       if (QueryId != other.QueryId) return false;
-      if (!object.Equals(DestinationExtend, other.DestinationExtend)) return false;
       if(!destinationPos_.Equals(other.destinationPos_)) return false;
+      if (QueryType != other.QueryType) return false;
+      if (!object.Equals(Unk3300LHNGPJFOMIK, other.Unk3300LHNGPJFOMIK)) return false;
       if (SceneId != other.SceneId) return false;
+      if (!object.Equals(SourcePos, other.SourcePos)) return false;
+      if (!object.Equals(Unk3300CLGJBBJDOLN, other.Unk3300CLGJBBJDOLN)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -227,14 +235,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) hash ^= QueryType.GetHashCode();
-      if (sourceExtend_ != null) hash ^= SourceExtend.GetHashCode();
-      if (sourcePos_ != null) hash ^= SourcePos.GetHashCode();
       if (filter_ != null) hash ^= Filter.GetHashCode();
       if (QueryId != 0) hash ^= QueryId.GetHashCode();
-      if (destinationExtend_ != null) hash ^= DestinationExtend.GetHashCode();
       hash ^= destinationPos_.GetHashCode();
+      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) hash ^= QueryType.GetHashCode();
+      if (unk3300LHNGPJFOMIK_ != null) hash ^= Unk3300LHNGPJFOMIK.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (sourcePos_ != null) hash ^= SourcePos.GetHashCode();
+      if (unk3300CLGJBBJDOLN_ != null) hash ^= Unk3300CLGJBBJDOLN.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -253,34 +261,34 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (sourcePos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(SourcePos);
-      }
-      if (destinationExtend_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(DestinationExtend);
-      }
-      if (sourceExtend_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(SourceExtend);
-      }
-      destinationPos_.WriteTo(output, _repeated_destinationPos_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(SceneId);
       }
+      if (QueryId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(QueryId);
+      }
+      if (unk3300LHNGPJFOMIK_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300LHNGPJFOMIK);
+      }
+      if (unk3300CLGJBBJDOLN_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Unk3300CLGJBBJDOLN);
+      }
+      destinationPos_.WriteTo(output, _repeated_destinationPos_codec);
       if (filter_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(Filter);
       }
-      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
-        output.WriteRawTag(104);
-        output.WriteEnum((int) QueryType);
+      if (sourcePos_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(SourcePos);
       }
-      if (QueryId != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(QueryId);
+      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) QueryType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -292,34 +300,34 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (sourcePos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(SourcePos);
-      }
-      if (destinationExtend_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(DestinationExtend);
-      }
-      if (sourceExtend_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(SourceExtend);
-      }
-      destinationPos_.WriteTo(ref output, _repeated_destinationPos_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(SceneId);
       }
+      if (QueryId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(QueryId);
+      }
+      if (unk3300LHNGPJFOMIK_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300LHNGPJFOMIK);
+      }
+      if (unk3300CLGJBBJDOLN_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Unk3300CLGJBBJDOLN);
+      }
+      destinationPos_.WriteTo(ref output, _repeated_destinationPos_codec);
       if (filter_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(Filter);
       }
-      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
-        output.WriteRawTag(104);
-        output.WriteEnum((int) QueryType);
+      if (sourcePos_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(SourcePos);
       }
-      if (QueryId != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(QueryId);
+      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) QueryType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -331,27 +339,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryType);
-      }
-      if (sourceExtend_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceExtend);
-      }
-      if (sourcePos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourcePos);
-      }
       if (filter_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filter);
       }
       if (QueryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
       }
-      if (destinationExtend_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DestinationExtend);
-      }
       size += destinationPos_.CalculateSize(_repeated_destinationPos_codec);
+      if (QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryType);
+      }
+      if (unk3300LHNGPJFOMIK_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300LHNGPJFOMIK);
+      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (sourcePos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourcePos);
+      }
+      if (unk3300CLGJBBJDOLN_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CLGJBBJDOLN);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -365,21 +373,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
-        QueryType = other.QueryType;
-      }
-      if (other.sourceExtend_ != null) {
-        if (sourceExtend_ == null) {
-          SourceExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-        }
-        SourceExtend.MergeFrom(other.SourceExtend);
-      }
-      if (other.sourcePos_ != null) {
-        if (sourcePos_ == null) {
-          SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        SourcePos.MergeFrom(other.SourcePos);
-      }
       if (other.filter_ != null) {
         if (filter_ == null) {
           Filter = new global::Weedwacker.Shared.Network.Proto.QueryFilter();
@@ -389,15 +382,30 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.QueryId != 0) {
         QueryId = other.QueryId;
       }
-      if (other.destinationExtend_ != null) {
-        if (destinationExtend_ == null) {
-          DestinationExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-        }
-        DestinationExtend.MergeFrom(other.DestinationExtend);
-      }
       destinationPos_.Add(other.destinationPos_);
+      if (other.QueryType != global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType.None) {
+        QueryType = other.QueryType;
+      }
+      if (other.unk3300LHNGPJFOMIK_ != null) {
+        if (unk3300LHNGPJFOMIK_ == null) {
+          Unk3300LHNGPJFOMIK = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+        }
+        Unk3300LHNGPJFOMIK.MergeFrom(other.Unk3300LHNGPJFOMIK);
+      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.sourcePos_ != null) {
+        if (sourcePos_ == null) {
+          SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        SourcePos.MergeFrom(other.SourcePos);
+      }
+      if (other.unk3300CLGJBBJDOLN_ != null) {
+        if (unk3300CLGJBBJDOLN_ == null) {
+          Unk3300CLGJBBJDOLN = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+        }
+        Unk3300CLGJBBJDOLN.MergeFrom(other.Unk3300CLGJBBJDOLN);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -414,48 +422,48 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (sourcePos_ == null) {
-              SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(SourcePos);
-            break;
-          }
-          case 34: {
-            if (destinationExtend_ == null) {
-              DestinationExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-            }
-            input.ReadMessage(DestinationExtend);
-            break;
-          }
-          case 50: {
-            if (sourceExtend_ == null) {
-              SourceExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-            }
-            input.ReadMessage(SourceExtend);
-            break;
-          }
-          case 82: {
-            destinationPos_.AddEntriesFrom(input, _repeated_destinationPos_codec);
-            break;
-          }
-          case 88: {
+          case 16: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 24: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300LHNGPJFOMIK_ == null) {
+              Unk3300LHNGPJFOMIK = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            }
+            input.ReadMessage(Unk3300LHNGPJFOMIK);
+            break;
+          }
+          case 42: {
+            if (unk3300CLGJBBJDOLN_ == null) {
+              Unk3300CLGJBBJDOLN = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            }
+            input.ReadMessage(Unk3300CLGJBBJDOLN);
+            break;
+          }
+          case 50: {
+            destinationPos_.AddEntriesFrom(input, _repeated_destinationPos_codec);
+            break;
+          }
+          case 58: {
             if (filter_ == null) {
               Filter = new global::Weedwacker.Shared.Network.Proto.QueryFilter();
             }
             input.ReadMessage(Filter);
             break;
           }
-          case 104: {
-            QueryType = (global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) input.ReadEnum();
+          case 66: {
+            if (sourcePos_ == null) {
+              SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(SourcePos);
             break;
           }
-          case 120: {
-            QueryId = input.ReadInt32();
+          case 88: {
+            QueryType = (global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) input.ReadEnum();
             break;
           }
         }
@@ -473,48 +481,48 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (sourcePos_ == null) {
-              SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(SourcePos);
-            break;
-          }
-          case 34: {
-            if (destinationExtend_ == null) {
-              DestinationExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-            }
-            input.ReadMessage(DestinationExtend);
-            break;
-          }
-          case 50: {
-            if (sourceExtend_ == null) {
-              SourceExtend = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
-            }
-            input.ReadMessage(SourceExtend);
-            break;
-          }
-          case 82: {
-            destinationPos_.AddEntriesFrom(ref input, _repeated_destinationPos_codec);
-            break;
-          }
-          case 88: {
+          case 16: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 24: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300LHNGPJFOMIK_ == null) {
+              Unk3300LHNGPJFOMIK = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            }
+            input.ReadMessage(Unk3300LHNGPJFOMIK);
+            break;
+          }
+          case 42: {
+            if (unk3300CLGJBBJDOLN_ == null) {
+              Unk3300CLGJBBJDOLN = new global::Weedwacker.Shared.Network.Proto.Vector3Int();
+            }
+            input.ReadMessage(Unk3300CLGJBBJDOLN);
+            break;
+          }
+          case 50: {
+            destinationPos_.AddEntriesFrom(ref input, _repeated_destinationPos_codec);
+            break;
+          }
+          case 58: {
             if (filter_ == null) {
               Filter = new global::Weedwacker.Shared.Network.Proto.QueryFilter();
             }
             input.ReadMessage(Filter);
             break;
           }
-          case 104: {
-            QueryType = (global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) input.ReadEnum();
+          case 66: {
+            if (sourcePos_ == null) {
+              SourcePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(SourcePos);
             break;
           }
-          case 120: {
-            QueryId = input.ReadInt32();
+          case 88: {
+            QueryType = (global::Weedwacker.Shared.Network.Proto.QueryPathReq.Types.OptionType) input.ReadEnum();
             break;
           }
         }

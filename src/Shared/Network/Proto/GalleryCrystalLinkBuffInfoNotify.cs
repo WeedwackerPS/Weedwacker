@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GalleryCrystalLinkBuffInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZHYWxsZXJ5Q3J5c3RhbExpbmtCdWZmSW5mb05vdGlmeS5wcm90byJeCiBH",
-            "YWxsZXJ5Q3J5c3RhbExpbmtCdWZmSW5mb05vdGlmeRISCgpnYWxsZXJ5X2lk",
-            "GA0gASgNEhUKDWlzX2J1ZmZfdmFsaWQYCyABKAgSDwoHYnVmZl9pZBgOIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZHYWxsZXJ5Q3J5c3RhbExpbmtCdWZmSW5mb05vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJeCiBHYWxsZXJ5Q3J5c3Rh",
+            "bExpbmtCdWZmSW5mb05vdGlmeRIVCg1pc19idWZmX3ZhbGlkGAsgASgIEg8K",
+            "B2J1ZmZfaWQYDiABKA0SEgoKZ2FsbGVyeV9pZBgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryCrystalLinkBuffInfoNotify), global::Weedwacker.Shared.Network.Proto.GalleryCrystalLinkBuffInfoNotify.Parser, new[]{ "GalleryId", "IsBuffValid", "BuffId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryCrystalLinkBuffInfoNotify), global::Weedwacker.Shared.Network.Proto.GalleryCrystalLinkBuffInfoNotify.Parser, new[]{ "IsBuffValid", "BuffId", "GalleryId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5539
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5516;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GalleryCrystalLinkBuffInfoNotify : pb::IMessage<GalleryCrystalLinkBuffInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GalleryCrystalLinkBuffInfoNotify(GalleryCrystalLinkBuffInfoNotify other) : this() {
-      galleryId_ = other.galleryId_;
       isBuffValid_ = other.isBuffValid_;
       buffId_ = other.buffId_;
+      galleryId_ = other.galleryId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,18 +91,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GalleryCrystalLinkBuffInfoNotify Clone() {
       return new GalleryCrystalLinkBuffInfoNotify(this);
-    }
-
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 13;
-    private uint galleryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
-      set {
-        galleryId_ = value;
-      }
     }
 
     /// <summary>Field number for the "is_buff_valid" field.</summary>
@@ -125,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 6;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GalleryId != other.GalleryId) return false;
       if (IsBuffValid != other.IsBuffValid) return false;
       if (BuffId != other.BuffId) return false;
+      if (GalleryId != other.GalleryId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       if (IsBuffValid != false) hash ^= IsBuffValid.GetHashCode();
       if (BuffId != 0) hash ^= BuffId.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,13 +175,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (GalleryId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(GalleryId);
+      }
       if (IsBuffValid != false) {
         output.WriteRawTag(88);
         output.WriteBool(IsBuffValid);
-      }
-      if (GalleryId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GalleryId);
       }
       if (BuffId != 0) {
         output.WriteRawTag(112);
@@ -193,13 +197,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GalleryId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(GalleryId);
+      }
       if (IsBuffValid != false) {
         output.WriteRawTag(88);
         output.WriteBool(IsBuffValid);
-      }
-      if (GalleryId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GalleryId);
       }
       if (BuffId != 0) {
         output.WriteRawTag(112);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GalleryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-      }
       if (IsBuffValid != false) {
         size += 1 + 1;
       }
       if (BuffId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffId);
+      }
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GalleryId != 0) {
-        GalleryId = other.GalleryId;
-      }
       if (other.IsBuffValid != false) {
         IsBuffValid = other.IsBuffValid;
       }
       if (other.BuffId != 0) {
         BuffId = other.BuffId;
+      }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,12 +264,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            IsBuffValid = input.ReadBool();
+          case 48: {
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            GalleryId = input.ReadUInt32();
+          case 88: {
+            IsBuffValid = input.ReadBool();
             break;
           }
           case 112: {
@@ -287,12 +291,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            IsBuffValid = input.ReadBool();
+          case 48: {
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            GalleryId = input.ReadUInt32();
+          case 88: {
+            IsBuffValid = input.ReadBool();
             break;
           }
           case 112: {

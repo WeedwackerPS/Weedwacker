@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageHuntingThirdStageSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihWaW50YWdlSHVudGluZ1RoaXJkU3RhZ2VTZXR0bGVJbmZvLnByb3RvIksK",
-            "IlZpbnRhZ2VIdW50aW5nVGhpcmRTdGFnZVNldHRsZUluZm8SEQoJbGVmdF90",
-            "aW1lGA0gASgNEhIKCmlzX3N1Y2Nlc3MYCSABKAhCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CihWaW50YWdlSHVudGluZ1RoaXJkU3RhZ2VTZXR0bGVJbmZvLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIksKIlZpbnRhZ2VIdW50",
+            "aW5nVGhpcmRTdGFnZVNldHRsZUluZm8SEgoKaXNfc3VjY2VzcxgCIAEoCBIR",
+            "CglsZWZ0X3RpbWUYAyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo.Parser, new[]{ "LeftTime", "IsSuccess" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo.Parser, new[]{ "IsSuccess", "LeftTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageHuntingThirdStageSettleInfo(VintageHuntingThirdStageSettleInfo other) : this() {
-      leftTime_ = other.leftTime_;
       isSuccess_ = other.isSuccess_;
+      leftTime_ = other.leftTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageHuntingThirdStageSettleInfo(this);
     }
 
-    /// <summary>Field number for the "left_time" field.</summary>
-    public const int LeftTimeFieldNumber = 13;
-    private uint leftTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftTime {
-      get { return leftTime_; }
-      set {
-        leftTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 9;
+    public const int IsSuccessFieldNumber = 2;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isSuccess_; }
       set {
         isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "left_time" field.</summary>
+    public const int LeftTimeFieldNumber = 3;
+    private uint leftTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LeftTime {
+      get { return leftTime_; }
+      set {
+        leftTime_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LeftTime != other.LeftTime) return false;
       if (IsSuccess != other.IsSuccess) return false;
+      if (LeftTime != other.LeftTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LeftTime != 0) hash ^= LeftTime.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (LeftTime != 0) hash ^= LeftTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +152,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsSuccess != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteBool(IsSuccess);
       }
       if (LeftTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteUInt32(LeftTime);
       }
       if (_unknownFields != null) {
@@ -170,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsSuccess != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteBool(IsSuccess);
       }
       if (LeftTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteUInt32(LeftTime);
       }
       if (_unknownFields != null) {
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LeftTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTime);
-      }
       if (IsSuccess != false) {
         size += 1 + 1;
+      }
+      if (LeftTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LeftTime != 0) {
-        LeftTime = other.LeftTime;
-      }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
+      }
+      if (other.LeftTime != 0) {
+        LeftTime = other.LeftTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 16: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 104: {
+          case 24: {
             LeftTime = input.ReadUInt32();
             break;
           }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 16: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 104: {
+          case 24: {
             LeftTime = input.ReadUInt32();
             break;
           }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ViewCodexRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJWaWV3Q29kZXhSc3AucHJvdG8aE0NvZGV4VHlwZURhdGEucHJvdG8iqAEK",
-            "DFZpZXdDb2RleFJzcBIPCgdyZXRjb2RlGAwgASgFEh0KFXB1c2hfdGlwc19y",
-            "ZXdhcmRfbGlzdBgKIAMoDRIjChtyZWNlbnRfdmlld2VkX3B1c2h0aXBzX2xp",
-            "c3QYAyADKA0SJgoOdHlwZV9kYXRhX2xpc3QYCSADKAsyDi5Db2RleFR5cGVE",
-            "YXRhEhsKE3B1c2hfdGlwc19yZWFkX2xpc3QYDyADKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJWaWV3Q29kZXhSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aE0NvZGV4VHlwZURhdGEucHJvdG8ixgEKDFZpZXdDb2RleFJz",
+            "cBJGCg50eXBlX2RhdGFfbGlzdBgMIAMoCzIuLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQ29kZXhUeXBlRGF0YRIbChNVbmszMzAwX0lETk9M",
+            "QUxIRkZBGAMgAygNEhsKE1VuazMzMDBfQ0JHREFBT0JHTkIYCiADKA0SDwoH",
+            "cmV0Y29kZRgLIAEoBRIjChtyZWNlbnRfdmlld2VkX3B1c2h0aXBzX2xpc3QY",
+            "DiADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CodexTypeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ViewCodexRsp), global::Weedwacker.Shared.Network.Proto.ViewCodexRsp.Parser, new[]{ "Retcode", "PushTipsRewardList", "RecentViewedPushtipsList", "TypeDataList", "PushTipsReadList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ViewCodexRsp), global::Weedwacker.Shared.Network.Proto.ViewCodexRsp.Parser, new[]{ "TypeDataList", "Unk3300IDNOLALHFFA", "Unk3300CBGDAAOBGNB", "Retcode", "RecentViewedPushtipsList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4201
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4210;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ViewCodexRsp : pb::IMessage<ViewCodexRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +84,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ViewCodexRsp(ViewCodexRsp other) : this() {
-      retcode_ = other.retcode_;
-      pushTipsRewardList_ = other.pushTipsRewardList_.Clone();
-      recentViewedPushtipsList_ = other.recentViewedPushtipsList_.Clone();
       typeDataList_ = other.typeDataList_.Clone();
-      pushTipsReadList_ = other.pushTipsReadList_.Clone();
+      unk3300IDNOLALHFFA_ = other.unk3300IDNOLALHFFA_.Clone();
+      unk3300CBGDAAOBGNB_ = other.unk3300CBGDAAOBGNB_.Clone();
+      retcode_ = other.retcode_;
+      recentViewedPushtipsList_ = other.recentViewedPushtipsList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,8 +98,41 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ViewCodexRsp(this);
     }
 
+    /// <summary>Field number for the "type_data_list" field.</summary>
+    public const int TypeDataListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CodexTypeData> _repeated_typeDataList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.CodexTypeData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData> typeDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData> TypeDataList {
+      get { return typeDataList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_IDNOLALHFFA" field.</summary>
+    public const int Unk3300IDNOLALHFFAFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300IDNOLALHFFA_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unk3300IDNOLALHFFA_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300IDNOLALHFFA {
+      get { return unk3300IDNOLALHFFA_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_CBGDAAOBGNB" field.</summary>
+    public const int Unk3300CBGDAAOBGNBFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300CBGDAAOBGNB_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unk3300CBGDAAOBGNB_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300CBGDAAOBGNB {
+      get { return unk3300CBGDAAOBGNB_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,48 +143,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "push_tips_reward_list" field.</summary>
-    public const int PushTipsRewardListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_pushTipsRewardList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> pushTipsRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> PushTipsRewardList {
-      get { return pushTipsRewardList_; }
-    }
-
     /// <summary>Field number for the "recent_viewed_pushtips_list" field.</summary>
-    public const int RecentViewedPushtipsListFieldNumber = 3;
+    public const int RecentViewedPushtipsListFieldNumber = 14;
     private static readonly pb::FieldCodec<uint> _repeated_recentViewedPushtipsList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(114);
     private readonly pbc::RepeatedField<uint> recentViewedPushtipsList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> RecentViewedPushtipsList {
       get { return recentViewedPushtipsList_; }
-    }
-
-    /// <summary>Field number for the "type_data_list" field.</summary>
-    public const int TypeDataListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CodexTypeData> _repeated_typeDataList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.CodexTypeData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData> typeDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CodexTypeData> TypeDataList {
-      get { return typeDataList_; }
-    }
-
-    /// <summary>Field number for the "push_tips_read_list" field.</summary>
-    public const int PushTipsReadListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_pushTipsReadList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> pushTipsReadList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> PushTipsReadList {
-      get { return pushTipsReadList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -164,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if(!pushTipsRewardList_.Equals(other.pushTipsRewardList_)) return false;
-      if(!recentViewedPushtipsList_.Equals(other.recentViewedPushtipsList_)) return false;
       if(!typeDataList_.Equals(other.typeDataList_)) return false;
-      if(!pushTipsReadList_.Equals(other.pushTipsReadList_)) return false;
+      if(!unk3300IDNOLALHFFA_.Equals(other.unk3300IDNOLALHFFA_)) return false;
+      if(!unk3300CBGDAAOBGNB_.Equals(other.unk3300CBGDAAOBGNB_)) return false;
+      if (Retcode != other.Retcode) return false;
+      if(!recentViewedPushtipsList_.Equals(other.recentViewedPushtipsList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= pushTipsRewardList_.GetHashCode();
-      hash ^= recentViewedPushtipsList_.GetHashCode();
       hash ^= typeDataList_.GetHashCode();
-      hash ^= pushTipsReadList_.GetHashCode();
+      hash ^= unk3300IDNOLALHFFA_.GetHashCode();
+      hash ^= unk3300CBGDAAOBGNB_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= recentViewedPushtipsList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -199,14 +204,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      recentViewedPushtipsList_.WriteTo(output, _repeated_recentViewedPushtipsList_codec);
-      typeDataList_.WriteTo(output, _repeated_typeDataList_codec);
-      pushTipsRewardList_.WriteTo(output, _repeated_pushTipsRewardList_codec);
+      unk3300IDNOLALHFFA_.WriteTo(output, _repeated_unk3300IDNOLALHFFA_codec);
+      unk3300CBGDAAOBGNB_.WriteTo(output, _repeated_unk3300CBGDAAOBGNB_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      pushTipsReadList_.WriteTo(output, _repeated_pushTipsReadList_codec);
+      typeDataList_.WriteTo(output, _repeated_typeDataList_codec);
+      recentViewedPushtipsList_.WriteTo(output, _repeated_recentViewedPushtipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -217,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      recentViewedPushtipsList_.WriteTo(ref output, _repeated_recentViewedPushtipsList_codec);
-      typeDataList_.WriteTo(ref output, _repeated_typeDataList_codec);
-      pushTipsRewardList_.WriteTo(ref output, _repeated_pushTipsRewardList_codec);
+      unk3300IDNOLALHFFA_.WriteTo(ref output, _repeated_unk3300IDNOLALHFFA_codec);
+      unk3300CBGDAAOBGNB_.WriteTo(ref output, _repeated_unk3300CBGDAAOBGNB_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      pushTipsReadList_.WriteTo(ref output, _repeated_pushTipsReadList_codec);
+      typeDataList_.WriteTo(ref output, _repeated_typeDataList_codec);
+      recentViewedPushtipsList_.WriteTo(ref output, _repeated_recentViewedPushtipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -235,13 +240,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += typeDataList_.CalculateSize(_repeated_typeDataList_codec);
+      size += unk3300IDNOLALHFFA_.CalculateSize(_repeated_unk3300IDNOLALHFFA_codec);
+      size += unk3300CBGDAAOBGNB_.CalculateSize(_repeated_unk3300CBGDAAOBGNB_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += pushTipsRewardList_.CalculateSize(_repeated_pushTipsRewardList_codec);
       size += recentViewedPushtipsList_.CalculateSize(_repeated_recentViewedPushtipsList_codec);
-      size += typeDataList_.CalculateSize(_repeated_typeDataList_codec);
-      size += pushTipsReadList_.CalculateSize(_repeated_pushTipsReadList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -254,13 +259,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      typeDataList_.Add(other.typeDataList_);
+      unk3300IDNOLALHFFA_.Add(other.unk3300IDNOLALHFFA_);
+      unk3300CBGDAAOBGNB_.Add(other.unk3300CBGDAAOBGNB_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      pushTipsRewardList_.Add(other.pushTipsRewardList_);
       recentViewedPushtipsList_.Add(other.recentViewedPushtipsList_);
-      typeDataList_.Add(other.typeDataList_);
-      pushTipsReadList_.Add(other.pushTipsReadList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -278,25 +283,25 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 26:
           case 24: {
-            recentViewedPushtipsList_.AddEntriesFrom(input, _repeated_recentViewedPushtipsList_codec);
-            break;
-          }
-          case 74: {
-            typeDataList_.AddEntriesFrom(input, _repeated_typeDataList_codec);
+            unk3300IDNOLALHFFA_.AddEntriesFrom(input, _repeated_unk3300IDNOLALHFFA_codec);
             break;
           }
           case 82:
           case 80: {
-            pushTipsRewardList_.AddEntriesFrom(input, _repeated_pushTipsRewardList_codec);
+            unk3300CBGDAAOBGNB_.AddEntriesFrom(input, _repeated_unk3300CBGDAAOBGNB_codec);
             break;
           }
-          case 96: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122:
-          case 120: {
-            pushTipsReadList_.AddEntriesFrom(input, _repeated_pushTipsReadList_codec);
+          case 98: {
+            typeDataList_.AddEntriesFrom(input, _repeated_typeDataList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
+            recentViewedPushtipsList_.AddEntriesFrom(input, _repeated_recentViewedPushtipsList_codec);
             break;
           }
         }
@@ -316,25 +321,25 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 26:
           case 24: {
-            recentViewedPushtipsList_.AddEntriesFrom(ref input, _repeated_recentViewedPushtipsList_codec);
-            break;
-          }
-          case 74: {
-            typeDataList_.AddEntriesFrom(ref input, _repeated_typeDataList_codec);
+            unk3300IDNOLALHFFA_.AddEntriesFrom(ref input, _repeated_unk3300IDNOLALHFFA_codec);
             break;
           }
           case 82:
           case 80: {
-            pushTipsRewardList_.AddEntriesFrom(ref input, _repeated_pushTipsRewardList_codec);
+            unk3300CBGDAAOBGNB_.AddEntriesFrom(ref input, _repeated_unk3300CBGDAAOBGNB_codec);
             break;
           }
-          case 96: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122:
-          case 120: {
-            pushTipsReadList_.AddEntriesFrom(ref input, _repeated_pushTipsReadList_codec);
+          case 98: {
+            typeDataList_.AddEntriesFrom(ref input, _repeated_typeDataList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
+            recentViewedPushtipsList_.AddEntriesFrom(ref input, _repeated_recentViewedPushtipsList_codec);
             break;
           }
         }

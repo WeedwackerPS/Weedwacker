@@ -24,21 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeDungeonSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBSb2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5wcm90bxodUm9ndWVsaWtl",
-            "U2V0dGxlQ29pbkluZm8ucHJvdG8i8QIKGlJvZ3VlbGlrZUR1bmdlb25TZXR0",
-            "bGVJbmZvEhAKCHN0YWdlX2lkGAUgASgNEhYKDmlzX2ZpbmFsX2xldmVsGA8g",
-            "ASgIEmUKH2ZpbmlzaGVkX2NoYWxsZW5nZV9jZWxsX251bV9tYXAYAyADKAsy",
-            "PC5Sb2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5GaW5pc2hlZENoYWxsZW5n",
-            "ZUNlbGxOdW1NYXBFbnRyeRIdChVpc19jb2luX2NfcmVhY2hfbGltaXQYDSAB",
-            "KAgSEQoJY3VyX2xldmVsGAkgASgNEhgKEHRvdGFsX2NvaW5fYl9udW0YBiAB",
-            "KA0SGAoQdG90YWxfY29pbl9jX251bRgKIAEoDRpcCiBGaW5pc2hlZENoYWxs",
-            "ZW5nZUNlbGxOdW1NYXBFbnRyeRILCgNrZXkYASABKA0SJwoFdmFsdWUYAiAB",
-            "KAsyGC5Sb2d1ZWxpa2VTZXR0bGVDb2luSW5mbzoCOAFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBSb2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxodUm9ndWVsaWtlU2V0dGxlQ29pbklu",
+            "Zm8ucHJvdG8iuwMKGlJvZ3VlbGlrZUR1bmdlb25TZXR0bGVJbmZvEhAKCHN0",
+            "YWdlX2lkGAkgASgNEhsKE1VuazMzMDBfR01NRUNNUERKTUkYCCABKA0SGwoT",
+            "VW5rMzMwMF9QQkVMTU9KS0tIUBgEIAEoDRIRCgljdXJfbGV2ZWwYDiABKA0S",
+            "GwoTVW5rMzMwMF9BSElFRU5HS1BGQRgKIAEoCBIbChNVbmszMzAwX0JQTEtK",
+            "TUlPS0hNGA8gASgIEoUBCh9maW5pc2hlZF9jaGFsbGVuZ2VfY2VsbF9udW1f",
+            "bWFwGAYgAygLMlwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5S",
+            "b2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5GaW5pc2hlZENoYWxsZW5nZUNl",
+            "bGxOdW1NYXBFbnRyeRp8CiBGaW5pc2hlZENoYWxsZW5nZUNlbGxOdW1NYXBF",
+            "bnRyeRILCgNrZXkYASABKA0SRwoFdmFsdWUYAiABKAsyOC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3VlbGlrZVNldHRsZUNvaW5JbmZv",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo.Parser, new[]{ "StageId", "IsFinalLevel", "FinishedChallengeCellNumMap", "IsCoinCReachLimit", "CurLevel", "TotalCoinBNum", "TotalCoinCNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo.Parser, new[]{ "StageId", "Unk3300GMMECMPDJMI", "Unk3300PBELMOJKKHP", "CurLevel", "Unk3300AHIEENGKPFA", "Unk3300BPLKJMIOKHM", "FinishedChallengeCellNumMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -80,12 +82,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeDungeonSettleInfo(RoguelikeDungeonSettleInfo other) : this() {
       stageId_ = other.stageId_;
-      isFinalLevel_ = other.isFinalLevel_;
-      finishedChallengeCellNumMap_ = other.finishedChallengeCellNumMap_.Clone();
-      isCoinCReachLimit_ = other.isCoinCReachLimit_;
+      unk3300GMMECMPDJMI_ = other.unk3300GMMECMPDJMI_;
+      unk3300PBELMOJKKHP_ = other.unk3300PBELMOJKKHP_;
       curLevel_ = other.curLevel_;
-      totalCoinBNum_ = other.totalCoinBNum_;
-      totalCoinCNum_ = other.totalCoinCNum_;
+      unk3300AHIEENGKPFA_ = other.unk3300AHIEENGKPFA_;
+      unk3300BPLKJMIOKHM_ = other.unk3300BPLKJMIOKHM_;
+      finishedChallengeCellNumMap_ = other.finishedChallengeCellNumMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 5;
+    public const int StageIdFieldNumber = 9;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,43 +109,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_final_level" field.</summary>
-    public const int IsFinalLevelFieldNumber = 15;
-    private bool isFinalLevel_;
+    /// <summary>Field number for the "Unk3300_GMMECMPDJMI" field.</summary>
+    public const int Unk3300GMMECMPDJMIFieldNumber = 8;
+    private uint unk3300GMMECMPDJMI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinalLevel {
-      get { return isFinalLevel_; }
+    public uint Unk3300GMMECMPDJMI {
+      get { return unk3300GMMECMPDJMI_; }
       set {
-        isFinalLevel_ = value;
+        unk3300GMMECMPDJMI_ = value;
       }
     }
 
-    /// <summary>Field number for the "finished_challenge_cell_num_map" field.</summary>
-    public const int FinishedChallengeCellNumMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>.Codec _map_finishedChallengeCellNumMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo.Parser), 26);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo> finishedChallengeCellNumMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>();
+    /// <summary>Field number for the "Unk3300_PBELMOJKKHP" field.</summary>
+    public const int Unk3300PBELMOJKKHPFieldNumber = 4;
+    private uint unk3300PBELMOJKKHP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo> FinishedChallengeCellNumMap {
-      get { return finishedChallengeCellNumMap_; }
-    }
-
-    /// <summary>Field number for the "is_coin_c_reach_limit" field.</summary>
-    public const int IsCoinCReachLimitFieldNumber = 13;
-    private bool isCoinCReachLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCoinCReachLimit {
-      get { return isCoinCReachLimit_; }
+    public uint Unk3300PBELMOJKKHP {
+      get { return unk3300PBELMOJKKHP_; }
       set {
-        isCoinCReachLimit_ = value;
+        unk3300PBELMOJKKHP_ = value;
       }
     }
 
     /// <summary>Field number for the "cur_level" field.</summary>
-    public const int CurLevelFieldNumber = 9;
+    public const int CurLevelFieldNumber = 14;
     private uint curLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,28 +145,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_coin_b_num" field.</summary>
-    public const int TotalCoinBNumFieldNumber = 6;
-    private uint totalCoinBNum_;
+    /// <summary>Field number for the "Unk3300_AHIEENGKPFA" field.</summary>
+    public const int Unk3300AHIEENGKPFAFieldNumber = 10;
+    private bool unk3300AHIEENGKPFA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalCoinBNum {
-      get { return totalCoinBNum_; }
+    public bool Unk3300AHIEENGKPFA {
+      get { return unk3300AHIEENGKPFA_; }
       set {
-        totalCoinBNum_ = value;
+        unk3300AHIEENGKPFA_ = value;
       }
     }
 
-    /// <summary>Field number for the "total_coin_c_num" field.</summary>
-    public const int TotalCoinCNumFieldNumber = 10;
-    private uint totalCoinCNum_;
+    /// <summary>Field number for the "Unk3300_BPLKJMIOKHM" field.</summary>
+    public const int Unk3300BPLKJMIOKHMFieldNumber = 15;
+    private bool unk3300BPLKJMIOKHM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalCoinCNum {
-      get { return totalCoinCNum_; }
+    public bool Unk3300BPLKJMIOKHM {
+      get { return unk3300BPLKJMIOKHM_; }
       set {
-        totalCoinCNum_ = value;
+        unk3300BPLKJMIOKHM_ = value;
       }
+    }
+
+    /// <summary>Field number for the "finished_challenge_cell_num_map" field.</summary>
+    public const int FinishedChallengeCellNumMapFieldNumber = 6;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>.Codec _map_finishedChallengeCellNumMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo.Parser), 50);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo> finishedChallengeCellNumMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo> FinishedChallengeCellNumMap {
+      get { return finishedChallengeCellNumMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,12 +196,12 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (StageId != other.StageId) return false;
-      if (IsFinalLevel != other.IsFinalLevel) return false;
-      if (!FinishedChallengeCellNumMap.Equals(other.FinishedChallengeCellNumMap)) return false;
-      if (IsCoinCReachLimit != other.IsCoinCReachLimit) return false;
+      if (Unk3300GMMECMPDJMI != other.Unk3300GMMECMPDJMI) return false;
+      if (Unk3300PBELMOJKKHP != other.Unk3300PBELMOJKKHP) return false;
       if (CurLevel != other.CurLevel) return false;
-      if (TotalCoinBNum != other.TotalCoinBNum) return false;
-      if (TotalCoinCNum != other.TotalCoinCNum) return false;
+      if (Unk3300AHIEENGKPFA != other.Unk3300AHIEENGKPFA) return false;
+      if (Unk3300BPLKJMIOKHM != other.Unk3300BPLKJMIOKHM) return false;
+      if (!FinishedChallengeCellNumMap.Equals(other.FinishedChallengeCellNumMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -208,12 +210,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (IsFinalLevel != false) hash ^= IsFinalLevel.GetHashCode();
-      hash ^= FinishedChallengeCellNumMap.GetHashCode();
-      if (IsCoinCReachLimit != false) hash ^= IsCoinCReachLimit.GetHashCode();
+      if (Unk3300GMMECMPDJMI != 0) hash ^= Unk3300GMMECMPDJMI.GetHashCode();
+      if (Unk3300PBELMOJKKHP != 0) hash ^= Unk3300PBELMOJKKHP.GetHashCode();
       if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-      if (TotalCoinBNum != 0) hash ^= TotalCoinBNum.GetHashCode();
-      if (TotalCoinCNum != 0) hash ^= TotalCoinCNum.GetHashCode();
+      if (Unk3300AHIEENGKPFA != false) hash ^= Unk3300AHIEENGKPFA.GetHashCode();
+      if (Unk3300BPLKJMIOKHM != false) hash ^= Unk3300BPLKJMIOKHM.GetHashCode();
+      hash ^= FinishedChallengeCellNumMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -232,30 +234,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300PBELMOJKKHP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PBELMOJKKHP);
+      }
       finishedChallengeCellNumMap_.WriteTo(output, _map_finishedChallengeCellNumMap_codec);
+      if (Unk3300GMMECMPDJMI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300GMMECMPDJMI);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(StageId);
       }
-      if (TotalCoinBNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalCoinBNum);
+      if (Unk3300AHIEENGKPFA != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Unk3300AHIEENGKPFA);
       }
       if (CurLevel != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(CurLevel);
       }
-      if (TotalCoinCNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TotalCoinCNum);
-      }
-      if (IsCoinCReachLimit != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsCoinCReachLimit);
-      }
-      if (IsFinalLevel != false) {
+      if (Unk3300BPLKJMIOKHM != false) {
         output.WriteRawTag(120);
-        output.WriteBool(IsFinalLevel);
+        output.WriteBool(Unk3300BPLKJMIOKHM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -267,30 +269,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300PBELMOJKKHP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PBELMOJKKHP);
+      }
       finishedChallengeCellNumMap_.WriteTo(ref output, _map_finishedChallengeCellNumMap_codec);
+      if (Unk3300GMMECMPDJMI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300GMMECMPDJMI);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(StageId);
       }
-      if (TotalCoinBNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalCoinBNum);
+      if (Unk3300AHIEENGKPFA != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(Unk3300AHIEENGKPFA);
       }
       if (CurLevel != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(CurLevel);
       }
-      if (TotalCoinCNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(TotalCoinCNum);
-      }
-      if (IsCoinCReachLimit != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsCoinCReachLimit);
-      }
-      if (IsFinalLevel != false) {
+      if (Unk3300BPLKJMIOKHM != false) {
         output.WriteRawTag(120);
-        output.WriteBool(IsFinalLevel);
+        output.WriteBool(Unk3300BPLKJMIOKHM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -305,22 +307,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      if (IsFinalLevel != false) {
-        size += 1 + 1;
+      if (Unk3300GMMECMPDJMI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GMMECMPDJMI);
       }
-      size += finishedChallengeCellNumMap_.CalculateSize(_map_finishedChallengeCellNumMap_codec);
-      if (IsCoinCReachLimit != false) {
-        size += 1 + 1;
+      if (Unk3300PBELMOJKKHP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PBELMOJKKHP);
       }
       if (CurLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
       }
-      if (TotalCoinBNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalCoinBNum);
+      if (Unk3300AHIEENGKPFA != false) {
+        size += 1 + 1;
       }
-      if (TotalCoinCNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalCoinCNum);
+      if (Unk3300BPLKJMIOKHM != false) {
+        size += 1 + 1;
       }
+      size += finishedChallengeCellNumMap_.CalculateSize(_map_finishedChallengeCellNumMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -336,22 +338,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      if (other.IsFinalLevel != false) {
-        IsFinalLevel = other.IsFinalLevel;
+      if (other.Unk3300GMMECMPDJMI != 0) {
+        Unk3300GMMECMPDJMI = other.Unk3300GMMECMPDJMI;
       }
-      finishedChallengeCellNumMap_.Add(other.finishedChallengeCellNumMap_);
-      if (other.IsCoinCReachLimit != false) {
-        IsCoinCReachLimit = other.IsCoinCReachLimit;
+      if (other.Unk3300PBELMOJKKHP != 0) {
+        Unk3300PBELMOJKKHP = other.Unk3300PBELMOJKKHP;
       }
       if (other.CurLevel != 0) {
         CurLevel = other.CurLevel;
       }
-      if (other.TotalCoinBNum != 0) {
-        TotalCoinBNum = other.TotalCoinBNum;
+      if (other.Unk3300AHIEENGKPFA != false) {
+        Unk3300AHIEENGKPFA = other.Unk3300AHIEENGKPFA;
       }
-      if (other.TotalCoinCNum != 0) {
-        TotalCoinCNum = other.TotalCoinCNum;
+      if (other.Unk3300BPLKJMIOKHM != false) {
+        Unk3300BPLKJMIOKHM = other.Unk3300BPLKJMIOKHM;
       }
+      finishedChallengeCellNumMap_.Add(other.finishedChallengeCellNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -367,32 +369,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 32: {
+            Unk3300PBELMOJKKHP = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             finishedChallengeCellNumMap_.AddEntriesFrom(input, _map_finishedChallengeCellNumMap_codec);
             break;
           }
-          case 40: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            TotalCoinBNum = input.ReadUInt32();
+          case 64: {
+            Unk3300GMMECMPDJMI = input.ReadUInt32();
             break;
           }
           case 72: {
-            CurLevel = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
           case 80: {
-            TotalCoinCNum = input.ReadUInt32();
+            Unk3300AHIEENGKPFA = input.ReadBool();
             break;
           }
-          case 104: {
-            IsCoinCReachLimit = input.ReadBool();
+          case 112: {
+            CurLevel = input.ReadUInt32();
             break;
           }
           case 120: {
-            IsFinalLevel = input.ReadBool();
+            Unk3300BPLKJMIOKHM = input.ReadBool();
             break;
           }
         }
@@ -410,32 +412,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 32: {
+            Unk3300PBELMOJKKHP = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             finishedChallengeCellNumMap_.AddEntriesFrom(ref input, _map_finishedChallengeCellNumMap_codec);
             break;
           }
-          case 40: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            TotalCoinBNum = input.ReadUInt32();
+          case 64: {
+            Unk3300GMMECMPDJMI = input.ReadUInt32();
             break;
           }
           case 72: {
-            CurLevel = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
           case 80: {
-            TotalCoinCNum = input.ReadUInt32();
+            Unk3300AHIEENGKPFA = input.ReadBool();
             break;
           }
-          case 104: {
-            IsCoinCReachLimit = input.ReadBool();
+          case 112: {
+            CurLevel = input.ReadUInt32();
             break;
           }
           case 120: {
-            IsFinalLevel = input.ReadBool();
+            Unk3300BPLKJMIOKHM = input.ReadBool();
             break;
           }
         }

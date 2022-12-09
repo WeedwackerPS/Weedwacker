@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeFurnitureGroupDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxIb21lRnVybml0dXJlR3JvdXBEYXRhLnByb3RvGhdIb21lRnVybml0dXJl",
-            "RGF0YS5wcm90byJqChZIb21lRnVybml0dXJlR3JvdXBEYXRhEh0KFWdyb3Vw",
-            "X2Z1cm5pdHVyZV9pbmRleBgIIAEoDRIxChV2aXJ0dWFsX2Z1cm5pdXJlX2xp",
-            "c3QYAyADKAsyEi5Ib21lRnVybml0dXJlRGF0YUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxIb21lRnVybml0dXJlR3JvdXBEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhdIb21lRnVybml0dXJlRGF0YS5wcm90byKL",
+            "AQoWSG9tZUZ1cm5pdHVyZUdyb3VwRGF0YRJSChZ2aXJ0dWFsX2Z1cm5pdHVy",
+            "ZV9saXN0GAEgAygLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5Ib21lRnVybml0dXJlRGF0YRIdChVncm91cF9mdXJuaXR1cmVfaW5kZXgY",
+            "DyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeFurnitureDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData), global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData.Parser, new[]{ "GroupFurnitureIndex", "VirtualFurniureList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData), global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData.Parser, new[]{ "VirtualFurnitureList", "GroupFurnitureIndex" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +74,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeFurnitureGroupData(HomeFurnitureGroupData other) : this() {
+      virtualFurnitureList_ = other.virtualFurnitureList_.Clone();
       groupFurnitureIndex_ = other.groupFurnitureIndex_;
-      virtualFurniureList_ = other.virtualFurniureList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +85,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeFurnitureGroupData(this);
     }
 
+    /// <summary>Field number for the "virtual_furniture_list" field.</summary>
+    public const int VirtualFurnitureListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_virtualFurnitureList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> virtualFurnitureList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> VirtualFurnitureList {
+      get { return virtualFurnitureList_; }
+    }
+
     /// <summary>Field number for the "group_furniture_index" field.</summary>
-    public const int GroupFurnitureIndexFieldNumber = 8;
+    public const int GroupFurnitureIndexFieldNumber = 15;
     private uint groupFurnitureIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,17 +106,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         groupFurnitureIndex_ = value;
       }
-    }
-
-    /// <summary>Field number for the "virtual_furniure_list" field.</summary>
-    public const int VirtualFurniureListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_virtualFurniureList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> virtualFurniureList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> VirtualFurniureList {
-      get { return virtualFurniureList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!virtualFurnitureList_.Equals(other.virtualFurnitureList_)) return false;
       if (GroupFurnitureIndex != other.GroupFurnitureIndex) return false;
-      if(!virtualFurniureList_.Equals(other.virtualFurniureList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= virtualFurnitureList_.GetHashCode();
       if (GroupFurnitureIndex != 0) hash ^= GroupFurnitureIndex.GetHashCode();
-      hash ^= virtualFurniureList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,9 +152,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      virtualFurniureList_.WriteTo(output, _repeated_virtualFurniureList_codec);
+      virtualFurnitureList_.WriteTo(output, _repeated_virtualFurnitureList_codec);
       if (GroupFurnitureIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(GroupFurnitureIndex);
       }
       if (_unknownFields != null) {
@@ -166,9 +167,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      virtualFurniureList_.WriteTo(ref output, _repeated_virtualFurniureList_codec);
+      virtualFurnitureList_.WriteTo(ref output, _repeated_virtualFurnitureList_codec);
       if (GroupFurnitureIndex != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(GroupFurnitureIndex);
       }
       if (_unknownFields != null) {
@@ -181,10 +182,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += virtualFurnitureList_.CalculateSize(_repeated_virtualFurnitureList_codec);
       if (GroupFurnitureIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupFurnitureIndex);
       }
-      size += virtualFurniureList_.CalculateSize(_repeated_virtualFurniureList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -197,10 +198,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      virtualFurnitureList_.Add(other.virtualFurnitureList_);
       if (other.GroupFurnitureIndex != 0) {
         GroupFurnitureIndex = other.GroupFurnitureIndex;
       }
-      virtualFurniureList_.Add(other.virtualFurniureList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -216,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            virtualFurniureList_.AddEntriesFrom(input, _repeated_virtualFurniureList_codec);
+          case 10: {
+            virtualFurnitureList_.AddEntriesFrom(input, _repeated_virtualFurnitureList_codec);
             break;
           }
-          case 64: {
+          case 120: {
             GroupFurnitureIndex = input.ReadUInt32();
             break;
           }
@@ -239,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            virtualFurniureList_.AddEntriesFrom(ref input, _repeated_virtualFurniureList_codec);
+          case 10: {
+            virtualFurnitureList_.AddEntriesFrom(ref input, _repeated_virtualFurnitureList_codec);
             break;
           }
-          case 64: {
+          case 120: {
             GroupFurnitureIndex = input.ReadUInt32();
             break;
           }

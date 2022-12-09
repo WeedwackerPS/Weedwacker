@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MechanicusCandidateTeamCreateRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZNZWNoYW5pY3VzQ2FuZGlkYXRlVGVhbUNyZWF0ZVJzcC5wcm90byJgCiBN",
-            "ZWNoYW5pY3VzQ2FuZGlkYXRlVGVhbUNyZWF0ZVJzcBISCgpkdW5nZW9uX2lk",
-            "GAEgASgNEg8KB3JldGNvZGUYByABKAUSFwoPZGlmZmljdWx0X2xldmVsGAog",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiZNZWNoYW5pY3VzQ2FuZGlkYXRlVGVhbUNyZWF0ZVJzcC5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJgCiBNZWNoYW5pY3VzQ2Fu",
+            "ZGlkYXRlVGVhbUNyZWF0ZVJzcBIXCg9kaWZmaWN1bHRfbGV2ZWwYCyABKA0S",
+            "EgoKZHVuZ2Vvbl9pZBgFIAEoDRIPCgdyZXRjb2RlGAogASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusCandidateTeamCreateRsp), global::Weedwacker.Shared.Network.Proto.MechanicusCandidateTeamCreateRsp.Parser, new[]{ "DungeonId", "Retcode", "DifficultLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusCandidateTeamCreateRsp), global::Weedwacker.Shared.Network.Proto.MechanicusCandidateTeamCreateRsp.Parser, new[]{ "DifficultLevel", "DungeonId", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3905
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3942;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MechanicusCandidateTeamCreateRsp : pb::IMessage<MechanicusCandidateTeamCreateRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MechanicusCandidateTeamCreateRsp(MechanicusCandidateTeamCreateRsp other) : this() {
+      difficultLevel_ = other.difficultLevel_;
       dungeonId_ = other.dungeonId_;
       retcode_ = other.retcode_;
-      difficultLevel_ = other.difficultLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MechanicusCandidateTeamCreateRsp(this);
     }
 
+    /// <summary>Field number for the "difficult_level" field.</summary>
+    public const int DifficultLevelFieldNumber = 11;
+    private uint difficultLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DifficultLevel {
+      get { return difficultLevel_; }
+      set {
+        difficultLevel_ = value;
+      }
+    }
+
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 1;
+    public const int DungeonIdFieldNumber = 5;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,18 +126,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "difficult_level" field.</summary>
-    public const int DifficultLevelFieldNumber = 10;
-    private uint difficultLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DifficultLevel {
-      get { return difficultLevel_; }
-      set {
-        difficultLevel_ = value;
       }
     }
 
@@ -141,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (DifficultLevel != other.DifficultLevel) return false;
       if (DungeonId != other.DungeonId) return false;
       if (Retcode != other.Retcode) return false;
-      if (DifficultLevel != other.DifficultLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (DifficultLevel != 0) hash ^= DifficultLevel.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (DifficultLevel != 0) hash ^= DifficultLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DungeonId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(DungeonId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
       }
       if (DifficultLevel != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(DifficultLevel);
       }
       if (_unknownFields != null) {
@@ -195,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DungeonId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(DungeonId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
       }
       if (DifficultLevel != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(DifficultLevel);
       }
       if (_unknownFields != null) {
@@ -216,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (DifficultLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultLevel);
+      }
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (DifficultLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.DifficultLevel != 0) {
+        DifficultLevel = other.DifficultLevel;
+      }
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
-      }
-      if (other.DifficultLevel != 0) {
-        DifficultLevel = other.DifficultLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             DungeonId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 80: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
+          case 88: {
             DifficultLevel = input.ReadUInt32();
             break;
           }
@@ -288,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             DungeonId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 80: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
+          case 88: {
             DifficultLevel = input.ReadUInt32();
             break;
           }

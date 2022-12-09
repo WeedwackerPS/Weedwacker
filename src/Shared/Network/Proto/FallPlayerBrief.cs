@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static FallPlayerBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVGYWxsUGxheWVyQnJpZWYucHJvdG8iQAoPRmFsbFBsYXllckJyaWVmEgsK",
-            "A3VpZBgNIAEoDRIRCglpc19ncm91bmQYBSABKAgSDQoFc2NvcmUYCiABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVGYWxsUGxheWVyQnJpZWYucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iQAoPRmFsbFBsYXllckJyaWVmEhEKCWlzX2dyb3VuZBgH",
+            "IAEoCBILCgN1aWQYAiABKA0SDQoFc2NvcmUYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallPlayerBrief), global::Weedwacker.Shared.Network.Proto.FallPlayerBrief.Parser, new[]{ "Uid", "IsGround", "Score" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallPlayerBrief), global::Weedwacker.Shared.Network.Proto.FallPlayerBrief.Parser, new[]{ "IsGround", "Uid", "Score" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FallPlayerBrief(FallPlayerBrief other) : this() {
-      uid_ = other.uid_;
       isGround_ = other.isGround_;
+      uid_ = other.uid_;
       score_ = other.score_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FallPlayerBrief(this);
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 13;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_ground" field.</summary>
-    public const int IsGroundFieldNumber = 5;
+    public const int IsGroundFieldNumber = 7;
     private bool isGround_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,8 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 2;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 10;
+    public const int ScoreFieldNumber = 12;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
       if (IsGround != other.IsGround) return false;
+      if (Uid != other.Uid) return false;
       if (Score != other.Score) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -144,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (IsGround != false) hash ^= IsGround.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -165,17 +165,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Uid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Uid);
+      }
       if (IsGround != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteBool(IsGround);
       }
       if (Score != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(Score);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -187,17 +187,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Uid);
+      }
       if (IsGround != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteBool(IsGround);
       }
       if (Score != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(Score);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (IsGround != false) {
         size += 1 + 1;
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
@@ -230,11 +230,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       if (other.IsGround != false) {
         IsGround = other.IsGround;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
       }
       if (other.Score != 0) {
         Score = other.Score;
@@ -254,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 16: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             IsGround = input.ReadBool();
             break;
           }
-          case 80: {
+          case 96: {
             Score = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -281,16 +281,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 16: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             IsGround = input.ReadBool();
             break;
           }
-          case 80: {
+          case 96: {
             Score = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Uid = input.ReadUInt32();
             break;
           }
         }

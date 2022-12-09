@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static McoinExchangeHcoinRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtNY29pbkV4Y2hhbmdlSGNvaW5Sc3AucHJvdG8iSwoVTWNvaW5FeGNoYW5n",
-            "ZUhjb2luUnNwEhIKCm1jb2luX2Nvc3QYCCABKA0SDQoFaGNvaW4YByABKA0S",
-            "DwoHcmV0Y29kZRgEIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChtNY29pbkV4Y2hhbmdlSGNvaW5Sc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iSwoVTWNvaW5FeGNoYW5nZUhjb2luUnNwEhIK",
+            "Cm1jb2luX2Nvc3QYDCABKA0SDwoHcmV0Y29kZRgKIAEoBRINCgVoY29pbhgB",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.McoinExchangeHcoinRsp), global::Weedwacker.Shared.Network.Proto.McoinExchangeHcoinRsp.Parser, new[]{ "McoinCost", "Hcoin", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.McoinExchangeHcoinRsp), global::Weedwacker.Shared.Network.Proto.McoinExchangeHcoinRsp.Parser, new[]{ "McoinCost", "Retcode", "Hcoin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 687
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 687;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class McoinExchangeHcoinRsp : pb::IMessage<McoinExchangeHcoinRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public McoinExchangeHcoinRsp(McoinExchangeHcoinRsp other) : this() {
       mcoinCost_ = other.mcoinCost_;
-      hcoin_ = other.hcoin_;
       retcode_ = other.retcode_;
+      hcoin_ = other.hcoin_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mcoin_cost" field.</summary>
-    public const int McoinCostFieldNumber = 8;
+    public const int McoinCostFieldNumber = 12;
     private uint mcoinCost_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "hcoin" field.</summary>
-    public const int HcoinFieldNumber = 7;
-    private uint hcoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Hcoin {
-      get { return hcoin_; }
-      set {
-        hcoin_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hcoin" field.</summary>
+    public const int HcoinFieldNumber = 1;
+    private uint hcoin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Hcoin {
+      get { return hcoin_; }
+      set {
+        hcoin_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (McoinCost != other.McoinCost) return false;
-      if (Hcoin != other.Hcoin) return false;
       if (Retcode != other.Retcode) return false;
+      if (Hcoin != other.Hcoin) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (McoinCost != 0) hash ^= McoinCost.GetHashCode();
-      if (Hcoin != 0) hash ^= Hcoin.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Hcoin != 0) hash ^= Hcoin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,16 +175,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (Hcoin != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(Hcoin);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
       if (McoinCost != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(McoinCost);
       }
       if (_unknownFields != null) {
@@ -193,16 +197,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (Hcoin != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(Hcoin);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
       if (McoinCost != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(McoinCost);
       }
       if (_unknownFields != null) {
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (McoinCost != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(McoinCost);
       }
-      if (Hcoin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Hcoin);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Hcoin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Hcoin);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.McoinCost != 0) {
         McoinCost = other.McoinCost;
       }
-      if (other.Hcoin != 0) {
-        Hcoin = other.Hcoin;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.Hcoin != 0) {
+        Hcoin = other.Hcoin;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             Hcoin = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
             McoinCost = input.ReadUInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             Hcoin = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
             McoinCost = input.ReadUInt32();
             break;
           }

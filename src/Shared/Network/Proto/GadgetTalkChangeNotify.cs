@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GadgetTalkChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHYWRnZXRUYWxrQ2hhbmdlTm90aWZ5LnByb3RvIlEKFkdhZGdldFRhbGtD",
-            "aGFuZ2VOb3RpZnkSGAoQZ2FkZ2V0X2VudGl0eV9pZBgFIAEoDRIdChVjdXJf",
-            "Z2FkZ2V0X3RhbGtfc3RhdGUYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxHYWRnZXRUYWxrQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlEKFkdhZGdldFRhbGtDaGFuZ2VOb3RpZnkS",
+            "HQoVY3VyX2dhZGdldF90YWxrX3N0YXRlGAwgASgNEhgKEGdhZGdldF9lbnRp",
+            "dHlfaWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetTalkChangeNotify), global::Weedwacker.Shared.Network.Proto.GadgetTalkChangeNotify.Parser, new[]{ "GadgetEntityId", "CurGadgetTalkState" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetTalkChangeNotify), global::Weedwacker.Shared.Network.Proto.GadgetTalkChangeNotify.Parser, new[]{ "CurGadgetTalkState", "GadgetEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 839
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 816;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GadgetTalkChangeNotify : pb::IMessage<GadgetTalkChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GadgetTalkChangeNotify(GadgetTalkChangeNotify other) : this() {
-      gadgetEntityId_ = other.gadgetEntityId_;
       curGadgetTalkState_ = other.curGadgetTalkState_;
+      gadgetEntityId_ = other.gadgetEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GadgetTalkChangeNotify(this);
     }
 
-    /// <summary>Field number for the "gadget_entity_id" field.</summary>
-    public const int GadgetEntityIdFieldNumber = 5;
-    private uint gadgetEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GadgetEntityId {
-      get { return gadgetEntityId_; }
-      set {
-        gadgetEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_gadget_talk_state" field.</summary>
-    public const int CurGadgetTalkStateFieldNumber = 15;
+    public const int CurGadgetTalkStateFieldNumber = 12;
     private uint curGadgetTalkState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curGadgetTalkState_; }
       set {
         curGadgetTalkState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_entity_id" field.</summary>
+    public const int GadgetEntityIdFieldNumber = 13;
+    private uint gadgetEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetEntityId {
+      get { return gadgetEntityId_; }
+      set {
+        gadgetEntityId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GadgetEntityId != other.GadgetEntityId) return false;
       if (CurGadgetTalkState != other.CurGadgetTalkState) return false;
+      if (GadgetEntityId != other.GadgetEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
       if (CurGadgetTalkState != 0) hash ^= CurGadgetTalkState.GetHashCode();
+      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GadgetEntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GadgetEntityId);
-      }
       if (CurGadgetTalkState != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(CurGadgetTalkState);
+      }
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GadgetEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GadgetEntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GadgetEntityId);
-      }
       if (CurGadgetTalkState != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(CurGadgetTalkState);
+      }
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GadgetEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GadgetEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
-      }
       if (CurGadgetTalkState != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurGadgetTalkState);
+      }
+      if (GadgetEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GadgetEntityId != 0) {
-        GadgetEntityId = other.GadgetEntityId;
-      }
       if (other.CurGadgetTalkState != 0) {
         CurGadgetTalkState = other.CurGadgetTalkState;
+      }
+      if (other.GadgetEntityId != 0) {
+        GadgetEntityId = other.GadgetEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            GadgetEntityId = input.ReadUInt32();
+          case 96: {
+            CurGadgetTalkState = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CurGadgetTalkState = input.ReadUInt32();
+          case 104: {
+            GadgetEntityId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            GadgetEntityId = input.ReadUInt32();
+          case 96: {
+            CurGadgetTalkState = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CurGadgetTalkState = input.ReadUInt32();
+          case 104: {
+            GadgetEntityId = input.ReadUInt32();
             break;
           }
         }

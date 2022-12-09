@@ -25,10 +25,10 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjBDaGFubmVsZXJTbGFiTG9vcER1bmdlb25TZWxlY3RDb25kaXRpb25SZXEu",
-            "cHJvdG8idQoqQ2hhbm5lbGVyU2xhYkxvb3BEdW5nZW9uU2VsZWN0Q29uZGl0",
-            "aW9uUmVxEhUKDWR1bmdlb25faW5kZXgYBCABKA0SGQoRY29uZGl0aW9uX2lk",
-            "X2xpc3QYAyADKA0SFQoNZGlmZmljdWx0eV9pZBgIIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "cHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8idQoqQ2hh",
+            "bm5lbGVyU2xhYkxvb3BEdW5nZW9uU2VsZWN0Q29uZGl0aW9uUmVxEhUKDWR1",
+            "bmdlb25faW5kZXgYByABKA0SGQoRY29uZGl0aW9uX2lkX2xpc3QYDyADKA0S",
+            "FQoNZGlmZmljdWx0eV9pZBgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8503
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8659;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChannelerSlabLoopDungeonSelectConditionReq : pb::IMessage<ChannelerSlabLoopDungeonSelectConditionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_index" field.</summary>
-    public const int DungeonIndexFieldNumber = 4;
+    public const int DungeonIndexFieldNumber = 7;
     private uint dungeonIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "condition_id_list" field.</summary>
-    public const int ConditionIdListFieldNumber = 3;
+    public const int ConditionIdListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_conditionIdList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> conditionIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 8;
+    public const int DifficultyIdFieldNumber = 11;
     private uint difficultyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
       if (DungeonIndex != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(DungeonIndex);
       }
       if (DifficultyId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteUInt32(DifficultyId);
       }
+      conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +195,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
       if (DungeonIndex != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(DungeonIndex);
       }
       if (DifficultyId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteUInt32(DifficultyId);
       }
+      conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -251,17 +255,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
-            conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
-            break;
-          }
-          case 32: {
+          case 56: {
             DungeonIndex = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 88: {
             DifficultyId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
             break;
           }
         }
@@ -279,17 +283,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
-            conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
-            break;
-          }
-          case 32: {
+          case 56: {
             DungeonIndex = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 88: {
             DifficultyId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
             break;
           }
         }

@@ -47,5 +47,11 @@ namespace Weedwacker.GameServer.Enums
         MATERIAL_ACTIVITY_JIGSAW = 40, // Event tab?
         MATERIAL_ARANARA,
         MATERIAL_DESHRET_MANUAL,
+        MATERIAL_RENAME_ITEM,
+        MATERIAL_GCG_EXCHANGE_ITEM,
+        MATERIAL_GCG_CARD,
+        MATERIAL_GCG_CARD_FACE,
+        MATERIAL_GCG_CARD_BACK,
+        MATERIAL_GCG_FIELD,
     }
 }

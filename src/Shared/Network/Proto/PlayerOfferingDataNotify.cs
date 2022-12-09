@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerOfferingDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5QbGF5ZXJPZmZlcmluZ0RhdGFOb3RpZnkucHJvdG8aGFBsYXllck9mZmVy",
-            "aW5nRGF0YS5wcm90byJLChhQbGF5ZXJPZmZlcmluZ0RhdGFOb3RpZnkSLwoS",
-            "b2ZmZXJpbmdfZGF0YV9saXN0GAIgAygLMhMuUGxheWVyT2ZmZXJpbmdEYXRh",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch5QbGF5ZXJPZmZlcmluZ0RhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGFBsYXllck9mZmVyaW5nRGF0YS5wcm90",
+            "byJrChhQbGF5ZXJPZmZlcmluZ0RhdGFOb3RpZnkSTwoSb2ZmZXJpbmdfZGF0",
+            "YV9saXN0GAsgAygLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5QbGF5ZXJPZmZlcmluZ0RhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerOfferingDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2923
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2911;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerOfferingDataNotify : pb::IMessage<PlayerOfferingDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "offering_data_list" field.</summary>
-    public const int OfferingDataListFieldNumber = 2;
+    public const int OfferingDataListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerOfferingData> _repeated_offeringDataList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PlayerOfferingData.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.PlayerOfferingData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerOfferingData> offeringDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerOfferingData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 90: {
             offeringDataList_.AddEntriesFrom(input, _repeated_offeringDataList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 90: {
             offeringDataList_.AddEntriesFrom(ref input, _repeated_offeringDataList_codec);
             break;
           }

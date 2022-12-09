@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetMailItemRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHZXRNYWlsSXRlbVJzcC5wcm90bxoQRXF1aXBQYXJhbS5wcm90byJXCg5H",
-            "ZXRNYWlsSXRlbVJzcBIPCgdyZXRjb2RlGAcgASgFEhQKDG1haWxfaWRfbGlz",
-            "dBgDIAMoDRIeCglpdGVtX2xpc3QYAiADKAsyCy5FcXVpcFBhcmFtQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRHZXRNYWlsSXRlbVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoQRXF1aXBQYXJhbS5wcm90byJ3Cg5HZXRNYWlsSXRlbVJz",
+            "cBI+CglpdGVtX2xpc3QYBiADKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkVxdWlwUGFyYW0SFAoMbWFpbF9pZF9saXN0GAMgAygNEg8K",
+            "B3JldGNvZGUYByABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EquipParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetMailItemRsp), global::Weedwacker.Shared.Network.Proto.GetMailItemRsp.Parser, new[]{ "Retcode", "MailIdList", "ItemList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetMailItemRsp), global::Weedwacker.Shared.Network.Proto.GetMailItemRsp.Parser, new[]{ "ItemList", "MailIdList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1407
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1500;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetMailItemRsp : pb::IMessage<GetMailItemRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetMailItemRsp(GetMailItemRsp other) : this() {
-      retcode_ = other.retcode_;
-      mailIdList_ = other.mailIdList_.Clone();
       itemList_ = other.itemList_.Clone();
+      mailIdList_ = other.mailIdList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,16 +94,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetMailItemRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
-    private int retcode_;
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EquipParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.EquipParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam> ItemList {
+      get { return itemList_; }
     }
 
     /// <summary>Field number for the "mail_id_list" field.</summary>
@@ -112,15 +116,16 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return mailIdList_; }
     }
 
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EquipParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.EquipParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam>();
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 7;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EquipParam> ItemList {
-      get { return itemList_; }
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,9 +143,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if(!mailIdList_.Equals(other.mailIdList_)) return false;
       if(!itemList_.Equals(other.itemList_)) return false;
+      if(!mailIdList_.Equals(other.mailIdList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -148,9 +153,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= mailIdList_.GetHashCode();
       hash ^= itemList_.GetHashCode();
+      hash ^= mailIdList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -169,8 +174,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      itemList_.WriteTo(output, _repeated_itemList_codec);
       mailIdList_.WriteTo(output, _repeated_mailIdList_codec);
+      itemList_.WriteTo(output, _repeated_itemList_codec);
       if (Retcode != 0) {
         output.WriteRawTag(56);
         output.WriteInt32(Retcode);
@@ -185,8 +190,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       mailIdList_.WriteTo(ref output, _repeated_mailIdList_codec);
+      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (Retcode != 0) {
         output.WriteRawTag(56);
         output.WriteInt32(Retcode);
@@ -201,11 +206,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
+      size += mailIdList_.CalculateSize(_repeated_mailIdList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += mailIdList_.CalculateSize(_repeated_mailIdList_codec);
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -218,11 +223,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      itemList_.Add(other.itemList_);
+      mailIdList_.Add(other.mailIdList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      mailIdList_.Add(other.mailIdList_);
-      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -238,13 +243,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
-            break;
-          }
           case 26:
           case 24: {
             mailIdList_.AddEntriesFrom(input, _repeated_mailIdList_codec);
+            break;
+          }
+          case 50: {
+            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
           case 56: {
@@ -266,13 +271,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
-            break;
-          }
           case 26:
           case 24: {
             mailIdList_.AddEntriesFrom(ref input, _repeated_mailIdList_codec);
+            break;
+          }
+          case 50: {
+            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
           case 56: {

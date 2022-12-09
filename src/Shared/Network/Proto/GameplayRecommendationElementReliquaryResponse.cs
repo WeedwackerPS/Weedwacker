@@ -25,17 +25,17 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRHYW1lcGxheVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlc3Bv",
-            "bnNlLnByb3RvGjFHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5TWFp",
-            "blByb3BEYXRhLnByb3RvIqUBCi5HYW1lcGxheVJlY29tbWVuZGF0aW9uRWxl",
-            "bWVudFJlbGlxdWFyeVJlc3BvbnNlEhQKDGVsZW1lbnRfdHlwZRgLIAEoDRJJ",
-            "ChNtYWluX3Byb3BfZGF0YV9saXN0GAUgAygLMiwuR2FtZXBsYXlSZWNvbW1l",
-            "bmRhdGlvblJlbGlxdWFyeU1haW5Qcm9wRGF0YRISCgplcXVpcF90eXBlGA8g",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "bnNlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGjFH",
+            "YW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5TWFpblByb3BEYXRhLnBy",
+            "b3RvIsUBCi5HYW1lcGxheVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFy",
+            "eVJlc3BvbnNlEhQKDGVsZW1lbnRfdHlwZRgBIAEoDRISCgplcXVpcF90eXBl",
+            "GAkgASgNEmkKE21haW5fcHJvcF9kYXRhX2xpc3QYBSADKAsyTC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdhbWVwbGF5UmVjb21tZW5kYXRp",
+            "b25SZWxpcXVhcnlNYWluUHJvcERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryMainPropDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryResponse), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryResponse.Parser, new[]{ "ElementType", "MainPropDataList", "EquipType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryResponse), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryResponse.Parser, new[]{ "ElementType", "EquipType", "MainPropDataList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,8 +77,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameplayRecommendationElementReliquaryResponse(GameplayRecommendationElementReliquaryResponse other) : this() {
       elementType_ = other.elementType_;
-      mainPropDataList_ = other.mainPropDataList_.Clone();
       equipType_ = other.equipType_;
+      mainPropDataList_ = other.mainPropDataList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "element_type" field.</summary>
-    public const int ElementTypeFieldNumber = 11;
+    public const int ElementTypeFieldNumber = 1;
     private uint elementType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,6 +97,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return elementType_; }
       set {
         elementType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "equip_type" field.</summary>
+    public const int EquipTypeFieldNumber = 9;
+    private uint equipType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EquipType {
+      get { return equipType_; }
+      set {
+        equipType_ = value;
       }
     }
 
@@ -109,18 +121,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GameplayRecommendationReliquaryMainPropData> MainPropDataList {
       get { return mainPropDataList_; }
-    }
-
-    /// <summary>Field number for the "equip_type" field.</summary>
-    public const int EquipTypeFieldNumber = 15;
-    private uint equipType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EquipType {
-      get { return equipType_; }
-      set {
-        equipType_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ElementType != other.ElementType) return false;
-      if(!mainPropDataList_.Equals(other.mainPropDataList_)) return false;
       if (EquipType != other.EquipType) return false;
+      if(!mainPropDataList_.Equals(other.mainPropDataList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ElementType != 0) hash ^= ElementType.GetHashCode();
-      hash ^= mainPropDataList_.GetHashCode();
       if (EquipType != 0) hash ^= EquipType.GetHashCode();
+      hash ^= mainPropDataList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      mainPropDataList_.WriteTo(output, _repeated_mainPropDataList_codec);
       if (ElementType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(ElementType);
       }
+      mainPropDataList_.WriteTo(output, _repeated_mainPropDataList_codec);
       if (EquipType != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
@@ -188,13 +188,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      mainPropDataList_.WriteTo(ref output, _repeated_mainPropDataList_codec);
       if (ElementType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteUInt32(ElementType);
       }
+      mainPropDataList_.WriteTo(ref output, _repeated_mainPropDataList_codec);
       if (EquipType != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
@@ -210,10 +210,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ElementType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
       }
-      size += mainPropDataList_.CalculateSize(_repeated_mainPropDataList_codec);
       if (EquipType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
       }
+      size += mainPropDataList_.CalculateSize(_repeated_mainPropDataList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -229,10 +229,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ElementType != 0) {
         ElementType = other.ElementType;
       }
-      mainPropDataList_.Add(other.mainPropDataList_);
       if (other.EquipType != 0) {
         EquipType = other.EquipType;
       }
+      mainPropDataList_.Add(other.mainPropDataList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -248,15 +248,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
           case 42: {
             mainPropDataList_.AddEntriesFrom(input, _repeated_mainPropDataList_codec);
             break;
           }
-          case 88: {
-            ElementType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 72: {
             EquipType = input.ReadUInt32();
             break;
           }
@@ -275,15 +275,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
           case 42: {
             mainPropDataList_.AddEntriesFrom(ref input, _repeated_mainPropDataList_codec);
             break;
           }
-          case 88: {
-            ElementType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
+          case 72: {
             EquipType = input.ReadUInt32();
             break;
           }

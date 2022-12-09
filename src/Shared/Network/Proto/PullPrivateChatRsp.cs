@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PullPrivateChatRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQdWxsUHJpdmF0ZUNoYXRSc3AucHJvdG8aDkNoYXRJbmZvLnByb3RvIkMK",
-            "ElB1bGxQcml2YXRlQ2hhdFJzcBIcCgljaGF0X2luZm8YDyADKAsyCS5DaGF0",
-            "SW5mbxIPCgdyZXRjb2RlGAsgASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhQdWxsUHJpdmF0ZUNoYXRSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aDkNoYXRJbmZvLnByb3RvImMKElB1bGxQcml2YXRl",
+            "Q2hhdFJzcBI8CgljaGF0X2luZm8YBiADKAsyKS5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkNoYXRJbmZvEg8KB3JldGNvZGUYASABKAViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChatInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4953
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5011;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PullPrivateChatRsp : pb::IMessage<PullPrivateChatRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chat_info" field.</summary>
-    public const int ChatInfoFieldNumber = 15;
+    public const int ChatInfoFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChatInfo> _repeated_chatInfo_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ChatInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ChatInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChatInfo> chatInfo_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChatInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       chatInfo_.WriteTo(output, _repeated_chatInfo_codec);
@@ -171,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       chatInfo_.WriteTo(ref output, _repeated_chatInfo_codec);
@@ -220,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122: {
+          case 50: {
             chatInfo_.AddEntriesFrom(input, _repeated_chatInfo_codec);
             break;
           }
@@ -243,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122: {
+          case 50: {
             chatInfo_.AddEntriesFrom(ref input, _repeated_chatInfo_codec);
             break;
           }

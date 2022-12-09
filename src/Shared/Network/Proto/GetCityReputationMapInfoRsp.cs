@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetCityReputationMapInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFHZXRDaXR5UmVwdXRhdGlvbk1hcEluZm9Sc3AucHJvdG8imgEKG0dldENp",
-            "dHlSZXB1dGF0aW9uTWFwSW5mb1JzcBIPCgdyZXRjb2RlGAsgASgFEhYKDmlz",
-            "X25ld19odW50aW5nGAogASgIEhYKDmlzX25ld19yZXF1ZXN0GAIgASgIEiAK",
-            "GHVubG9ja19odW50aW5nX2NpdHlfbGlzdBgJIAMoDRIYChByZXdhcmRfY2l0",
-            "eV9saXN0GAMgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "CiFHZXRDaXR5UmVwdXRhdGlvbk1hcEluZm9Sc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iogEKG0dldENpdHlSZXB1dGF0aW9u",
+            "TWFwSW5mb1JzcBIPCgdyZXRjb2RlGA0gASgFEhsKE1VuazMzMDBfREFJR0hI",
+            "UEpIT08YBCADKA0SGwoTVW5rMzMwMF9HSkZOT1BOTUZORxgMIAEoCBIbChNV",
+            "bmszMzAwX05DTUhNT0RJSUtNGAUgASgIEhsKE1VuazMzMDBfUEFQQk9IS09N",
+            "RksYDyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCityReputationMapInfoRsp), global::Weedwacker.Shared.Network.Proto.GetCityReputationMapInfoRsp.Parser, new[]{ "Retcode", "IsNewHunting", "IsNewRequest", "UnlockHuntingCityList", "RewardCityList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCityReputationMapInfoRsp), global::Weedwacker.Shared.Network.Proto.GetCityReputationMapInfoRsp.Parser, new[]{ "Retcode", "Unk3300DAIGHHPJHOO", "Unk3300GJFNOPNMFNG", "Unk3300NCMHMODIIKM", "Unk3300PAPBOHKOMFK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2848
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2848;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetCityReputationMapInfoRsp : pb::IMessage<GetCityReputationMapInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +84,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCityReputationMapInfoRsp(GetCityReputationMapInfoRsp other) : this() {
       retcode_ = other.retcode_;
-      isNewHunting_ = other.isNewHunting_;
-      isNewRequest_ = other.isNewRequest_;
-      unlockHuntingCityList_ = other.unlockHuntingCityList_.Clone();
-      rewardCityList_ = other.rewardCityList_.Clone();
+      unk3300DAIGHHPJHOO_ = other.unk3300DAIGHHPJHOO_.Clone();
+      unk3300GJFNOPNMFNG_ = other.unk3300GJFNOPNMFNG_;
+      unk3300NCMHMODIIKM_ = other.unk3300NCMHMODIIKM_;
+      unk3300PAPBOHKOMFK_ = other.unk3300PAPBOHKOMFK_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,50 +109,50 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_new_hunting" field.</summary>
-    public const int IsNewHuntingFieldNumber = 10;
-    private bool isNewHunting_;
+    /// <summary>Field number for the "Unk3300_DAIGHHPJHOO" field.</summary>
+    public const int Unk3300DAIGHHPJHOOFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300DAIGHHPJHOO_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> unk3300DAIGHHPJHOO_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewHunting {
-      get { return isNewHunting_; }
+    public pbc::RepeatedField<uint> Unk3300DAIGHHPJHOO {
+      get { return unk3300DAIGHHPJHOO_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GJFNOPNMFNG" field.</summary>
+    public const int Unk3300GJFNOPNMFNGFieldNumber = 12;
+    private bool unk3300GJFNOPNMFNG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300GJFNOPNMFNG {
+      get { return unk3300GJFNOPNMFNG_; }
       set {
-        isNewHunting_ = value;
+        unk3300GJFNOPNMFNG_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_new_request" field.</summary>
-    public const int IsNewRequestFieldNumber = 2;
-    private bool isNewRequest_;
+    /// <summary>Field number for the "Unk3300_NCMHMODIIKM" field.</summary>
+    public const int Unk3300NCMHMODIIKMFieldNumber = 5;
+    private bool unk3300NCMHMODIIKM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRequest {
-      get { return isNewRequest_; }
+    public bool Unk3300NCMHMODIIKM {
+      get { return unk3300NCMHMODIIKM_; }
       set {
-        isNewRequest_ = value;
+        unk3300NCMHMODIIKM_ = value;
       }
     }
 
-    /// <summary>Field number for the "unlock_hunting_city_list" field.</summary>
-    public const int UnlockHuntingCityListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockHuntingCityList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> unlockHuntingCityList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_PAPBOHKOMFK" field.</summary>
+    public const int Unk3300PAPBOHKOMFKFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300PAPBOHKOMFK_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300PAPBOHKOMFK_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockHuntingCityList {
-      get { return unlockHuntingCityList_; }
-    }
-
-    /// <summary>Field number for the "reward_city_list" field.</summary>
-    public const int RewardCityListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_rewardCityList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> rewardCityList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> RewardCityList {
-      get { return rewardCityList_; }
+    public pbc::RepeatedField<uint> Unk3300PAPBOHKOMFK {
+      get { return unk3300PAPBOHKOMFK_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,10 +171,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if (IsNewHunting != other.IsNewHunting) return false;
-      if (IsNewRequest != other.IsNewRequest) return false;
-      if(!unlockHuntingCityList_.Equals(other.unlockHuntingCityList_)) return false;
-      if(!rewardCityList_.Equals(other.rewardCityList_)) return false;
+      if(!unk3300DAIGHHPJHOO_.Equals(other.unk3300DAIGHHPJHOO_)) return false;
+      if (Unk3300GJFNOPNMFNG != other.Unk3300GJFNOPNMFNG) return false;
+      if (Unk3300NCMHMODIIKM != other.Unk3300NCMHMODIIKM) return false;
+      if(!unk3300PAPBOHKOMFK_.Equals(other.unk3300PAPBOHKOMFK_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,10 +183,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (IsNewHunting != false) hash ^= IsNewHunting.GetHashCode();
-      if (IsNewRequest != false) hash ^= IsNewRequest.GetHashCode();
-      hash ^= unlockHuntingCityList_.GetHashCode();
-      hash ^= rewardCityList_.GetHashCode();
+      hash ^= unk3300DAIGHHPJHOO_.GetHashCode();
+      if (Unk3300GJFNOPNMFNG != false) hash ^= Unk3300GJFNOPNMFNG.GetHashCode();
+      if (Unk3300NCMHMODIIKM != false) hash ^= Unk3300NCMHMODIIKM.GetHashCode();
+      hash ^= unk3300PAPBOHKOMFK_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -201,20 +205,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsNewRequest != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNewRequest);
+      unk3300DAIGHHPJHOO_.WriteTo(output, _repeated_unk3300DAIGHHPJHOO_codec);
+      if (Unk3300NCMHMODIIKM != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300NCMHMODIIKM);
       }
-      rewardCityList_.WriteTo(output, _repeated_rewardCityList_codec);
-      unlockHuntingCityList_.WriteTo(output, _repeated_unlockHuntingCityList_codec);
-      if (IsNewHunting != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsNewHunting);
+      if (Unk3300GJFNOPNMFNG != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300GJFNOPNMFNG);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
+      unk3300PAPBOHKOMFK_.WriteTo(output, _repeated_unk3300PAPBOHKOMFK_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -225,20 +229,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsNewRequest != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNewRequest);
+      unk3300DAIGHHPJHOO_.WriteTo(ref output, _repeated_unk3300DAIGHHPJHOO_codec);
+      if (Unk3300NCMHMODIIKM != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300NCMHMODIIKM);
       }
-      rewardCityList_.WriteTo(ref output, _repeated_rewardCityList_codec);
-      unlockHuntingCityList_.WriteTo(ref output, _repeated_unlockHuntingCityList_codec);
-      if (IsNewHunting != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsNewHunting);
+      if (Unk3300GJFNOPNMFNG != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300GJFNOPNMFNG);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
+      unk3300PAPBOHKOMFK_.WriteTo(ref output, _repeated_unk3300PAPBOHKOMFK_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -252,14 +256,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (IsNewHunting != false) {
+      size += unk3300DAIGHHPJHOO_.CalculateSize(_repeated_unk3300DAIGHHPJHOO_codec);
+      if (Unk3300GJFNOPNMFNG != false) {
         size += 1 + 1;
       }
-      if (IsNewRequest != false) {
+      if (Unk3300NCMHMODIIKM != false) {
         size += 1 + 1;
       }
-      size += unlockHuntingCityList_.CalculateSize(_repeated_unlockHuntingCityList_codec);
-      size += rewardCityList_.CalculateSize(_repeated_rewardCityList_codec);
+      size += unk3300PAPBOHKOMFK_.CalculateSize(_repeated_unk3300PAPBOHKOMFK_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -275,14 +279,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.IsNewHunting != false) {
-        IsNewHunting = other.IsNewHunting;
+      unk3300DAIGHHPJHOO_.Add(other.unk3300DAIGHHPJHOO_);
+      if (other.Unk3300GJFNOPNMFNG != false) {
+        Unk3300GJFNOPNMFNG = other.Unk3300GJFNOPNMFNG;
       }
-      if (other.IsNewRequest != false) {
-        IsNewRequest = other.IsNewRequest;
+      if (other.Unk3300NCMHMODIIKM != false) {
+        Unk3300NCMHMODIIKM = other.Unk3300NCMHMODIIKM;
       }
-      unlockHuntingCityList_.Add(other.unlockHuntingCityList_);
-      rewardCityList_.Add(other.rewardCityList_);
+      unk3300PAPBOHKOMFK_.Add(other.unk3300PAPBOHKOMFK_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -298,26 +302,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            IsNewRequest = input.ReadBool();
+          case 34:
+          case 32: {
+            unk3300DAIGHHPJHOO_.AddEntriesFrom(input, _repeated_unk3300DAIGHHPJHOO_codec);
             break;
           }
-          case 26:
-          case 24: {
-            rewardCityList_.AddEntriesFrom(input, _repeated_rewardCityList_codec);
+          case 40: {
+            Unk3300NCMHMODIIKM = input.ReadBool();
             break;
           }
-          case 74:
-          case 72: {
-            unlockHuntingCityList_.AddEntriesFrom(input, _repeated_unlockHuntingCityList_codec);
+          case 96: {
+            Unk3300GJFNOPNMFNG = input.ReadBool();
             break;
           }
-          case 80: {
-            IsNewHunting = input.ReadBool();
-            break;
-          }
-          case 88: {
+          case 104: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300PAPBOHKOMFK_.AddEntriesFrom(input, _repeated_unk3300PAPBOHKOMFK_codec);
             break;
           }
         }
@@ -335,26 +339,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            IsNewRequest = input.ReadBool();
+          case 34:
+          case 32: {
+            unk3300DAIGHHPJHOO_.AddEntriesFrom(ref input, _repeated_unk3300DAIGHHPJHOO_codec);
             break;
           }
-          case 26:
-          case 24: {
-            rewardCityList_.AddEntriesFrom(ref input, _repeated_rewardCityList_codec);
+          case 40: {
+            Unk3300NCMHMODIIKM = input.ReadBool();
             break;
           }
-          case 74:
-          case 72: {
-            unlockHuntingCityList_.AddEntriesFrom(ref input, _repeated_unlockHuntingCityList_codec);
+          case 96: {
+            Unk3300GJFNOPNMFNG = input.ReadBool();
             break;
           }
-          case 80: {
-            IsNewHunting = input.ReadBool();
-            break;
-          }
-          case 88: {
+          case 104: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300PAPBOHKOMFK_.AddEntriesFrom(ref input, _repeated_unk3300PAPBOHKOMFK_codec);
             break;
           }
         }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneCreateEntityReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTY2VuZUNyZWF0ZUVudGl0eVJlcS5wcm90bxoWQ3JlYXRlRW50aXR5SW5m",
-            "by5wcm90bxoSQ3JlYXRlUmVhc29uLnByb3RvInwKFFNjZW5lQ3JlYXRlRW50",
-            "aXR5UmVxEiEKBmVudGl0eRgBIAEoCzIRLkNyZWF0ZUVudGl0eUluZm8SIgoa",
-            "aXNfZGVzdHJveV93aGVuX2Rpc2Nvbm5lY3QYCiABKAgSHQoGcmVhc29uGAMg",
-            "ASgOMg0uQ3JlYXRlUmVhc29uQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpTY2VuZUNyZWF0ZUVudGl0eVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoWQ3JlYXRlRW50aXR5SW5mby5wcm90bxoSQ3Jl",
+            "YXRlUmVhc29uLnByb3RvIrwBChRTY2VuZUNyZWF0ZUVudGl0eVJlcRI9CgZy",
+            "ZWFzb24YBCABKA4yLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkNyZWF0ZVJlYXNvbhJBCgZlbnRpdHkYCCABKAsyMS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkNyZWF0ZUVudGl0eUluZm8SIgoaaXNfZGVz",
+            "dHJveV93aGVuX2Rpc2Nvbm5lY3QYDyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CreateEntityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CreateReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneCreateEntityReq), global::Weedwacker.Shared.Network.Proto.SceneCreateEntityReq.Parser, new[]{ "Entity", "IsDestroyWhenDisconnect", "Reason" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneCreateEntityReq), global::Weedwacker.Shared.Network.Proto.SceneCreateEntityReq.Parser, new[]{ "Reason", "Entity", "IsDestroyWhenDisconnect" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 288
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 294;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneCreateEntityReq : pb::IMessage<SceneCreateEntityReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneCreateEntityReq(SceneCreateEntityReq other) : this() {
+      reason_ = other.reason_;
       entity_ = other.entity_ != null ? other.entity_.Clone() : null;
       isDestroyWhenDisconnect_ = other.isDestroyWhenDisconnect_;
-      reason_ = other.reason_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,8 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneCreateEntityReq(this);
     }
 
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.CreateReason reason_ = global::Weedwacker.Shared.Network.Proto.CreateReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CreateReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
     /// <summary>Field number for the "entity" field.</summary>
-    public const int EntityFieldNumber = 1;
+    public const int EntityFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.CreateEntityInfo entity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,7 +122,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_destroy_when_disconnect" field.</summary>
-    public const int IsDestroyWhenDisconnectFieldNumber = 10;
+    public const int IsDestroyWhenDisconnectFieldNumber = 15;
     private bool isDestroyWhenDisconnect_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,18 +130,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isDestroyWhenDisconnect_; }
       set {
         isDestroyWhenDisconnect_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.CreateReason reason_ = global::Weedwacker.Shared.Network.Proto.CreateReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CreateReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
       }
     }
 
@@ -143,9 +148,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Reason != other.Reason) return false;
       if (!object.Equals(Entity, other.Entity)) return false;
       if (IsDestroyWhenDisconnect != other.IsDestroyWhenDisconnect) return false;
-      if (Reason != other.Reason) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) hash ^= Reason.GetHashCode();
       if (entity_ != null) hash ^= Entity.GetHashCode();
       if (IsDestroyWhenDisconnect != false) hash ^= IsDestroyWhenDisconnect.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,16 +179,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (entity_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Entity);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Reason);
       }
+      if (entity_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Entity);
+      }
       if (IsDestroyWhenDisconnect != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsDestroyWhenDisconnect);
       }
       if (_unknownFields != null) {
@@ -196,16 +201,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (entity_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Entity);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Reason);
       }
+      if (entity_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Entity);
+      }
       if (IsDestroyWhenDisconnect != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsDestroyWhenDisconnect);
       }
       if (_unknownFields != null) {
@@ -218,14 +223,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
       if (entity_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
       }
       if (IsDestroyWhenDisconnect != false) {
         size += 1 + 1;
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,6 +244,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
+        Reason = other.Reason;
+      }
       if (other.entity_ != null) {
         if (entity_ == null) {
           Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
@@ -247,9 +255,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.IsDestroyWhenDisconnect != false) {
         IsDestroyWhenDisconnect = other.IsDestroyWhenDisconnect;
-      }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.CreateReason.None) {
-        Reason = other.Reason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -266,18 +271,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 32: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.CreateReason) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (entity_ == null) {
               Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
             }
             input.ReadMessage(Entity);
             break;
           }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.CreateReason) input.ReadEnum();
-            break;
-          }
-          case 80: {
+          case 120: {
             IsDestroyWhenDisconnect = input.ReadBool();
             break;
           }
@@ -296,18 +301,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 32: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.CreateReason) input.ReadEnum();
+            break;
+          }
+          case 66: {
             if (entity_ == null) {
               Entity = new global::Weedwacker.Shared.Network.Proto.CreateEntityInfo();
             }
             input.ReadMessage(Entity);
             break;
           }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.CreateReason) input.ReadEnum();
-            break;
-          }
-          case 80: {
+          case 120: {
             IsDestroyWhenDisconnect = input.ReadBool();
             break;
           }

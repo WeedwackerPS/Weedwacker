@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryWindFieldInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TY2VuZUdhbGxlcnlXaW5kRmllbGRJbmZvLnByb3RvIvMBChlTY2VuZUdh",
-            "bGxlcnlXaW5kRmllbGRJbmZvEhoKEmtpbGxlZF9tb25zdGVyX251bRgFIAEo",
-            "DRIgChhjaGFsbGVuZ2VfYmFsbF9tYXhfY291bnQYDCABKA0SDwoHc2hvd19p",
-            "ZBgPIAEoDRIcChRjaGFsbGVuZ2VfdG90YWxfdGltZRgEIAEoDRIgChhjaGFs",
-            "bGVuZ2VfYmFsbF9jdXJfY291bnQYCSABKA0SEAoIY29pbl9udW0YASABKA0S",
-            "GwoTY2hhbGxlbmdlX3RpbWVzdGFtcBgNIAEoDRIYChBlbGVtZW50X2JhbGxf",
-            "bnVtGAogASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Ch9TY2VuZUdhbGxlcnlXaW5kRmllbGRJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIoMCChlTY2VuZUdhbGxlcnlXaW5kRmll",
+            "bGRJbmZvEhsKE1VuazMzMDBfTU1PTlBETUlFQk4YBiABKA0SGwoTVW5rMzMw",
+            "MF9PSkhKUEJDQU9OQRgCIAEoDRIbChNVbmszMzAwX05CSUJLRktPQ0ZLGA8g",
+            "ASgNEhsKE1VuazMzMDBfRUtNSE1ISkRISUwYDSABKA0SGwoTVW5rMzMwMF9H",
+            "TkpLT0NMSkZOTRgHIAEoDRIbChNVbmszMzAwX0dOS0NGSE1ET0hKGAMgASgN",
+            "EhsKE1VuazMzMDBfRkZPREFLTUtHRUsYBCABKA0SGwoTVW5rMzMwMF9HTE5I",
+            "QkpKSklOSxgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryWindFieldInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryWindFieldInfo.Parser, new[]{ "KilledMonsterNum", "ChallengeBallMaxCount", "ShowId", "ChallengeTotalTime", "ChallengeBallCurCount", "CoinNum", "ChallengeTimestamp", "ElementBallNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryWindFieldInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryWindFieldInfo.Parser, new[]{ "Unk3300MMONPDMIEBN", "Unk3300OJHJPBCAONA", "Unk3300NBIBKFKOCFK", "Unk3300EKMHMHJDHIL", "Unk3300GNJKOCLJFNM", "Unk3300GNKCFHMDOHJ", "Unk3300FFODAKMKGEK", "Unk3300GLNHBJJJINK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,14 +76,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryWindFieldInfo(SceneGalleryWindFieldInfo other) : this() {
-      killedMonsterNum_ = other.killedMonsterNum_;
-      challengeBallMaxCount_ = other.challengeBallMaxCount_;
-      showId_ = other.showId_;
-      challengeTotalTime_ = other.challengeTotalTime_;
-      challengeBallCurCount_ = other.challengeBallCurCount_;
-      coinNum_ = other.coinNum_;
-      challengeTimestamp_ = other.challengeTimestamp_;
-      elementBallNum_ = other.elementBallNum_;
+      unk3300MMONPDMIEBN_ = other.unk3300MMONPDMIEBN_;
+      unk3300OJHJPBCAONA_ = other.unk3300OJHJPBCAONA_;
+      unk3300NBIBKFKOCFK_ = other.unk3300NBIBKFKOCFK_;
+      unk3300EKMHMHJDHIL_ = other.unk3300EKMHMHJDHIL_;
+      unk3300GNJKOCLJFNM_ = other.unk3300GNJKOCLJFNM_;
+      unk3300GNKCFHMDOHJ_ = other.unk3300GNKCFHMDOHJ_;
+      unk3300FFODAKMKGEK_ = other.unk3300FFODAKMKGEK_;
+      unk3300GLNHBJJJINK_ = other.unk3300GLNHBJJJINK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,99 +93,99 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryWindFieldInfo(this);
     }
 
-    /// <summary>Field number for the "killed_monster_num" field.</summary>
-    public const int KilledMonsterNumFieldNumber = 5;
-    private uint killedMonsterNum_;
+    /// <summary>Field number for the "Unk3300_MMONPDMIEBN" field.</summary>
+    public const int Unk3300MMONPDMIEBNFieldNumber = 6;
+    private uint unk3300MMONPDMIEBN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KilledMonsterNum {
-      get { return killedMonsterNum_; }
+    public uint Unk3300MMONPDMIEBN {
+      get { return unk3300MMONPDMIEBN_; }
       set {
-        killedMonsterNum_ = value;
+        unk3300MMONPDMIEBN_ = value;
       }
     }
 
-    /// <summary>Field number for the "challenge_ball_max_count" field.</summary>
-    public const int ChallengeBallMaxCountFieldNumber = 12;
-    private uint challengeBallMaxCount_;
+    /// <summary>Field number for the "Unk3300_OJHJPBCAONA" field.</summary>
+    public const int Unk3300OJHJPBCAONAFieldNumber = 2;
+    private uint unk3300OJHJPBCAONA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeBallMaxCount {
-      get { return challengeBallMaxCount_; }
+    public uint Unk3300OJHJPBCAONA {
+      get { return unk3300OJHJPBCAONA_; }
       set {
-        challengeBallMaxCount_ = value;
+        unk3300OJHJPBCAONA_ = value;
       }
     }
 
-    /// <summary>Field number for the "show_id" field.</summary>
-    public const int ShowIdFieldNumber = 15;
-    private uint showId_;
+    /// <summary>Field number for the "Unk3300_NBIBKFKOCFK" field.</summary>
+    public const int Unk3300NBIBKFKOCFKFieldNumber = 15;
+    private uint unk3300NBIBKFKOCFK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShowId {
-      get { return showId_; }
+    public uint Unk3300NBIBKFKOCFK {
+      get { return unk3300NBIBKFKOCFK_; }
       set {
-        showId_ = value;
+        unk3300NBIBKFKOCFK_ = value;
       }
     }
 
-    /// <summary>Field number for the "challenge_total_time" field.</summary>
-    public const int ChallengeTotalTimeFieldNumber = 4;
-    private uint challengeTotalTime_;
+    /// <summary>Field number for the "Unk3300_EKMHMHJDHIL" field.</summary>
+    public const int Unk3300EKMHMHJDHILFieldNumber = 13;
+    private uint unk3300EKMHMHJDHIL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeTotalTime {
-      get { return challengeTotalTime_; }
+    public uint Unk3300EKMHMHJDHIL {
+      get { return unk3300EKMHMHJDHIL_; }
       set {
-        challengeTotalTime_ = value;
+        unk3300EKMHMHJDHIL_ = value;
       }
     }
 
-    /// <summary>Field number for the "challenge_ball_cur_count" field.</summary>
-    public const int ChallengeBallCurCountFieldNumber = 9;
-    private uint challengeBallCurCount_;
+    /// <summary>Field number for the "Unk3300_GNJKOCLJFNM" field.</summary>
+    public const int Unk3300GNJKOCLJFNMFieldNumber = 7;
+    private uint unk3300GNJKOCLJFNM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeBallCurCount {
-      get { return challengeBallCurCount_; }
+    public uint Unk3300GNJKOCLJFNM {
+      get { return unk3300GNJKOCLJFNM_; }
       set {
-        challengeBallCurCount_ = value;
+        unk3300GNJKOCLJFNM_ = value;
       }
     }
 
-    /// <summary>Field number for the "coin_num" field.</summary>
-    public const int CoinNumFieldNumber = 1;
-    private uint coinNum_;
+    /// <summary>Field number for the "Unk3300_GNKCFHMDOHJ" field.</summary>
+    public const int Unk3300GNKCFHMDOHJFieldNumber = 3;
+    private uint unk3300GNKCFHMDOHJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoinNum {
-      get { return coinNum_; }
+    public uint Unk3300GNKCFHMDOHJ {
+      get { return unk3300GNKCFHMDOHJ_; }
       set {
-        coinNum_ = value;
+        unk3300GNKCFHMDOHJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "challenge_timestamp" field.</summary>
-    public const int ChallengeTimestampFieldNumber = 13;
-    private uint challengeTimestamp_;
+    /// <summary>Field number for the "Unk3300_FFODAKMKGEK" field.</summary>
+    public const int Unk3300FFODAKMKGEKFieldNumber = 4;
+    private uint unk3300FFODAKMKGEK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeTimestamp {
-      get { return challengeTimestamp_; }
+    public uint Unk3300FFODAKMKGEK {
+      get { return unk3300FFODAKMKGEK_; }
       set {
-        challengeTimestamp_ = value;
+        unk3300FFODAKMKGEK_ = value;
       }
     }
 
-    /// <summary>Field number for the "element_ball_num" field.</summary>
-    public const int ElementBallNumFieldNumber = 10;
-    private uint elementBallNum_;
+    /// <summary>Field number for the "Unk3300_GLNHBJJJINK" field.</summary>
+    public const int Unk3300GLNHBJJJINKFieldNumber = 14;
+    private uint unk3300GLNHBJJJINK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ElementBallNum {
-      get { return elementBallNum_; }
+    public uint Unk3300GLNHBJJJINK {
+      get { return unk3300GLNHBJJJINK_; }
       set {
-        elementBallNum_ = value;
+        unk3300GLNHBJJJINK_ = value;
       }
     }
 
@@ -204,14 +204,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (KilledMonsterNum != other.KilledMonsterNum) return false;
-      if (ChallengeBallMaxCount != other.ChallengeBallMaxCount) return false;
-      if (ShowId != other.ShowId) return false;
-      if (ChallengeTotalTime != other.ChallengeTotalTime) return false;
-      if (ChallengeBallCurCount != other.ChallengeBallCurCount) return false;
-      if (CoinNum != other.CoinNum) return false;
-      if (ChallengeTimestamp != other.ChallengeTimestamp) return false;
-      if (ElementBallNum != other.ElementBallNum) return false;
+      if (Unk3300MMONPDMIEBN != other.Unk3300MMONPDMIEBN) return false;
+      if (Unk3300OJHJPBCAONA != other.Unk3300OJHJPBCAONA) return false;
+      if (Unk3300NBIBKFKOCFK != other.Unk3300NBIBKFKOCFK) return false;
+      if (Unk3300EKMHMHJDHIL != other.Unk3300EKMHMHJDHIL) return false;
+      if (Unk3300GNJKOCLJFNM != other.Unk3300GNJKOCLJFNM) return false;
+      if (Unk3300GNKCFHMDOHJ != other.Unk3300GNKCFHMDOHJ) return false;
+      if (Unk3300FFODAKMKGEK != other.Unk3300FFODAKMKGEK) return false;
+      if (Unk3300GLNHBJJJINK != other.Unk3300GLNHBJJJINK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -219,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (KilledMonsterNum != 0) hash ^= KilledMonsterNum.GetHashCode();
-      if (ChallengeBallMaxCount != 0) hash ^= ChallengeBallMaxCount.GetHashCode();
-      if (ShowId != 0) hash ^= ShowId.GetHashCode();
-      if (ChallengeTotalTime != 0) hash ^= ChallengeTotalTime.GetHashCode();
-      if (ChallengeBallCurCount != 0) hash ^= ChallengeBallCurCount.GetHashCode();
-      if (CoinNum != 0) hash ^= CoinNum.GetHashCode();
-      if (ChallengeTimestamp != 0) hash ^= ChallengeTimestamp.GetHashCode();
-      if (ElementBallNum != 0) hash ^= ElementBallNum.GetHashCode();
+      if (Unk3300MMONPDMIEBN != 0) hash ^= Unk3300MMONPDMIEBN.GetHashCode();
+      if (Unk3300OJHJPBCAONA != 0) hash ^= Unk3300OJHJPBCAONA.GetHashCode();
+      if (Unk3300NBIBKFKOCFK != 0) hash ^= Unk3300NBIBKFKOCFK.GetHashCode();
+      if (Unk3300EKMHMHJDHIL != 0) hash ^= Unk3300EKMHMHJDHIL.GetHashCode();
+      if (Unk3300GNJKOCLJFNM != 0) hash ^= Unk3300GNJKOCLJFNM.GetHashCode();
+      if (Unk3300GNKCFHMDOHJ != 0) hash ^= Unk3300GNKCFHMDOHJ.GetHashCode();
+      if (Unk3300FFODAKMKGEK != 0) hash ^= Unk3300FFODAKMKGEK.GetHashCode();
+      if (Unk3300GLNHBJJJINK != 0) hash ^= Unk3300GLNHBJJJINK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -245,37 +245,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CoinNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CoinNum);
+      if (Unk3300OJHJPBCAONA != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300OJHJPBCAONA);
       }
-      if (ChallengeTotalTime != 0) {
+      if (Unk3300GNKCFHMDOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300GNKCFHMDOHJ);
+      }
+      if (Unk3300FFODAKMKGEK != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ChallengeTotalTime);
+        output.WriteUInt32(Unk3300FFODAKMKGEK);
       }
-      if (KilledMonsterNum != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(KilledMonsterNum);
+      if (Unk3300MMONPDMIEBN != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300MMONPDMIEBN);
       }
-      if (ChallengeBallCurCount != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ChallengeBallCurCount);
+      if (Unk3300GNJKOCLJFNM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300GNJKOCLJFNM);
       }
-      if (ElementBallNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ElementBallNum);
-      }
-      if (ChallengeBallMaxCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ChallengeBallMaxCount);
-      }
-      if (ChallengeTimestamp != 0) {
+      if (Unk3300EKMHMHJDHIL != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(ChallengeTimestamp);
+        output.WriteUInt32(Unk3300EKMHMHJDHIL);
       }
-      if (ShowId != 0) {
+      if (Unk3300GLNHBJJJINK != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNHBJJJINK);
+      }
+      if (Unk3300NBIBKFKOCFK != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ShowId);
+        output.WriteUInt32(Unk3300NBIBKFKOCFK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -287,37 +287,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CoinNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CoinNum);
+      if (Unk3300OJHJPBCAONA != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300OJHJPBCAONA);
       }
-      if (ChallengeTotalTime != 0) {
+      if (Unk3300GNKCFHMDOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300GNKCFHMDOHJ);
+      }
+      if (Unk3300FFODAKMKGEK != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ChallengeTotalTime);
+        output.WriteUInt32(Unk3300FFODAKMKGEK);
       }
-      if (KilledMonsterNum != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(KilledMonsterNum);
+      if (Unk3300MMONPDMIEBN != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300MMONPDMIEBN);
       }
-      if (ChallengeBallCurCount != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ChallengeBallCurCount);
+      if (Unk3300GNJKOCLJFNM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300GNJKOCLJFNM);
       }
-      if (ElementBallNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ElementBallNum);
-      }
-      if (ChallengeBallMaxCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ChallengeBallMaxCount);
-      }
-      if (ChallengeTimestamp != 0) {
+      if (Unk3300EKMHMHJDHIL != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(ChallengeTimestamp);
+        output.WriteUInt32(Unk3300EKMHMHJDHIL);
       }
-      if (ShowId != 0) {
+      if (Unk3300GLNHBJJJINK != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNHBJJJINK);
+      }
+      if (Unk3300NBIBKFKOCFK != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(ShowId);
+        output.WriteUInt32(Unk3300NBIBKFKOCFK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -329,29 +329,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (KilledMonsterNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterNum);
+      if (Unk3300MMONPDMIEBN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MMONPDMIEBN);
       }
-      if (ChallengeBallMaxCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallMaxCount);
+      if (Unk3300OJHJPBCAONA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OJHJPBCAONA);
       }
-      if (ShowId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShowId);
+      if (Unk3300NBIBKFKOCFK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NBIBKFKOCFK);
       }
-      if (ChallengeTotalTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTotalTime);
+      if (Unk3300EKMHMHJDHIL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EKMHMHJDHIL);
       }
-      if (ChallengeBallCurCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallCurCount);
+      if (Unk3300GNJKOCLJFNM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNJKOCLJFNM);
       }
-      if (CoinNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinNum);
+      if (Unk3300GNKCFHMDOHJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNKCFHMDOHJ);
       }
-      if (ChallengeTimestamp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTimestamp);
+      if (Unk3300FFODAKMKGEK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FFODAKMKGEK);
       }
-      if (ElementBallNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementBallNum);
+      if (Unk3300GLNHBJJJINK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLNHBJJJINK);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -365,29 +365,29 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.KilledMonsterNum != 0) {
-        KilledMonsterNum = other.KilledMonsterNum;
+      if (other.Unk3300MMONPDMIEBN != 0) {
+        Unk3300MMONPDMIEBN = other.Unk3300MMONPDMIEBN;
       }
-      if (other.ChallengeBallMaxCount != 0) {
-        ChallengeBallMaxCount = other.ChallengeBallMaxCount;
+      if (other.Unk3300OJHJPBCAONA != 0) {
+        Unk3300OJHJPBCAONA = other.Unk3300OJHJPBCAONA;
       }
-      if (other.ShowId != 0) {
-        ShowId = other.ShowId;
+      if (other.Unk3300NBIBKFKOCFK != 0) {
+        Unk3300NBIBKFKOCFK = other.Unk3300NBIBKFKOCFK;
       }
-      if (other.ChallengeTotalTime != 0) {
-        ChallengeTotalTime = other.ChallengeTotalTime;
+      if (other.Unk3300EKMHMHJDHIL != 0) {
+        Unk3300EKMHMHJDHIL = other.Unk3300EKMHMHJDHIL;
       }
-      if (other.ChallengeBallCurCount != 0) {
-        ChallengeBallCurCount = other.ChallengeBallCurCount;
+      if (other.Unk3300GNJKOCLJFNM != 0) {
+        Unk3300GNJKOCLJFNM = other.Unk3300GNJKOCLJFNM;
       }
-      if (other.CoinNum != 0) {
-        CoinNum = other.CoinNum;
+      if (other.Unk3300GNKCFHMDOHJ != 0) {
+        Unk3300GNKCFHMDOHJ = other.Unk3300GNKCFHMDOHJ;
       }
-      if (other.ChallengeTimestamp != 0) {
-        ChallengeTimestamp = other.ChallengeTimestamp;
+      if (other.Unk3300FFODAKMKGEK != 0) {
+        Unk3300FFODAKMKGEK = other.Unk3300FFODAKMKGEK;
       }
-      if (other.ElementBallNum != 0) {
-        ElementBallNum = other.ElementBallNum;
+      if (other.Unk3300GLNHBJJJINK != 0) {
+        Unk3300GLNHBJJJINK = other.Unk3300GLNHBJJJINK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -404,36 +404,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            CoinNum = input.ReadUInt32();
+          case 16: {
+            Unk3300OJHJPBCAONA = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300GNKCFHMDOHJ = input.ReadUInt32();
             break;
           }
           case 32: {
-            ChallengeTotalTime = input.ReadUInt32();
+            Unk3300FFODAKMKGEK = input.ReadUInt32();
             break;
           }
-          case 40: {
-            KilledMonsterNum = input.ReadUInt32();
+          case 48: {
+            Unk3300MMONPDMIEBN = input.ReadUInt32();
             break;
           }
-          case 72: {
-            ChallengeBallCurCount = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            ElementBallNum = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            ChallengeBallMaxCount = input.ReadUInt32();
+          case 56: {
+            Unk3300GNJKOCLJFNM = input.ReadUInt32();
             break;
           }
           case 104: {
-            ChallengeTimestamp = input.ReadUInt32();
+            Unk3300EKMHMHJDHIL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300GLNHBJJJINK = input.ReadUInt32();
             break;
           }
           case 120: {
-            ShowId = input.ReadUInt32();
+            Unk3300NBIBKFKOCFK = input.ReadUInt32();
             break;
           }
         }
@@ -451,36 +451,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            CoinNum = input.ReadUInt32();
+          case 16: {
+            Unk3300OJHJPBCAONA = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300GNKCFHMDOHJ = input.ReadUInt32();
             break;
           }
           case 32: {
-            ChallengeTotalTime = input.ReadUInt32();
+            Unk3300FFODAKMKGEK = input.ReadUInt32();
             break;
           }
-          case 40: {
-            KilledMonsterNum = input.ReadUInt32();
+          case 48: {
+            Unk3300MMONPDMIEBN = input.ReadUInt32();
             break;
           }
-          case 72: {
-            ChallengeBallCurCount = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            ElementBallNum = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            ChallengeBallMaxCount = input.ReadUInt32();
+          case 56: {
+            Unk3300GNJKOCLJFNM = input.ReadUInt32();
             break;
           }
           case 104: {
-            ChallengeTimestamp = input.ReadUInt32();
+            Unk3300EKMHMHJDHIL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300GLNHBJJJINK = input.ReadUInt32();
             break;
           }
           case 120: {
-            ShowId = input.ReadUInt32();
+            Unk3300NBIBKFKOCFK = input.ReadUInt32();
             break;
           }
         }

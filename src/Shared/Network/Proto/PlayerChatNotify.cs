@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerChatNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQbGF5ZXJDaGF0Tm90aWZ5LnByb3RvGg5DaGF0SW5mby5wcm90byJEChBQ",
-            "bGF5ZXJDaGF0Tm90aWZ5EhwKCWNoYXRfaW5mbxgDIAEoCzIJLkNoYXRJbmZv",
-            "EhIKCmNoYW5uZWxfaWQYBiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZQbGF5ZXJDaGF0Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGg5DaGF0SW5mby5wcm90byJkChBQbGF5ZXJDaGF0Tm90",
+            "aWZ5EjwKCWNoYXRfaW5mbxgLIAEoCzIpLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQ2hhdEluZm8SEgoKY2hhbm5lbF9pZBgNIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChatInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3010
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3265;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerChatNotify : pb::IMessage<PlayerChatNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chat_info" field.</summary>
-    public const int ChatInfoFieldNumber = 3;
+    public const int ChatInfoFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.ChatInfo chatInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "channel_id" field.</summary>
-    public const int ChannelIdFieldNumber = 6;
+    public const int ChannelIdFieldNumber = 13;
     private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (chatInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(90);
         output.WriteMessage(ChatInfo);
       }
       if (ChannelId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(ChannelId);
       }
       if (_unknownFields != null) {
@@ -175,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (chatInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(90);
         output.WriteMessage(ChatInfo);
       }
       if (ChannelId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(ChannelId);
       }
       if (_unknownFields != null) {
@@ -234,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 90: {
             if (chatInfo_ == null) {
               ChatInfo = new global::Weedwacker.Shared.Network.Proto.ChatInfo();
             }
             input.ReadMessage(ChatInfo);
             break;
           }
-          case 48: {
+          case 104: {
             ChannelId = input.ReadUInt32();
             break;
           }
@@ -260,14 +265,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 90: {
             if (chatInfo_ == null) {
               ChatInfo = new global::Weedwacker.Shared.Network.Proto.ChatInfo();
             }
             input.ReadMessage(ChatInfo);
             break;
           }
-          case 48: {
+          case 104: {
             ChannelId = input.ReadUInt32();
             break;
           }

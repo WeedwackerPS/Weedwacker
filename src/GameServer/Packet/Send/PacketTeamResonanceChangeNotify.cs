@@ -16,7 +16,8 @@ namespace Weedwacker.GameServer.Packet.Send
                 {
                     AvatarGuid = avatar.Guid
                 };
-                info.AddTeamResonanceIdList.AddRange(teamInfo.TeamResonances.Select(w => (uint)w.teamResonanceId));
+                //info.AddTeamResonanceIdList.AddRange(teamInfo.TeamResonances.Select(w => (uint)w.teamResonanceId));
+                info.Unk3300LPAKGGBBDNJ.AddRange(teamInfo.TeamResonances.Select(w => (uint)w.teamResonanceId));
                 p.InfoList.Add(info);
             }
         }

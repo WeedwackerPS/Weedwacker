@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BalloonSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdCYWxsb29uU2V0dGxlSW5mby5wcm90bxoWT25saW5lUGxheWVySW5mby5w",
-            "cm90byKFAQoRQmFsbG9vblNldHRsZUluZm8SCwoDdWlkGAMgASgNEhMKC3No",
-            "b290X2NvdW50GAwgASgNEhEKCW1heF9jb21ibxgJIAEoDRITCgtmaW5hbF9z",
-            "Y29yZRgHIAEoDRImCgtwbGF5ZXJfaW5mbxgCIAEoCzIRLk9ubGluZVBsYXll",
-            "ckluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChdCYWxsb29uU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byKlAQoRQmFs",
+            "bG9vblNldHRsZUluZm8SRgoLcGxheWVyX2luZm8YCCABKAsyMS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk9ubGluZVBsYXllckluZm8SCwoD",
+            "dWlkGA0gASgNEhMKC2ZpbmFsX3Njb3JlGAIgASgNEhEKCW1heF9jb21ibxgH",
+            "IAEoDRITCgtzaG9vdF9jb3VudBgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonSettleInfo), global::Weedwacker.Shared.Network.Proto.BalloonSettleInfo.Parser, new[]{ "Uid", "ShootCount", "MaxCombo", "FinalScore", "PlayerInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BalloonSettleInfo), global::Weedwacker.Shared.Network.Proto.BalloonSettleInfo.Parser, new[]{ "PlayerInfo", "Uid", "FinalScore", "MaxCombo", "ShootCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BalloonSettleInfo(BalloonSettleInfo other) : this() {
-      uid_ = other.uid_;
-      shootCount_ = other.shootCount_;
-      maxCombo_ = other.maxCombo_;
-      finalScore_ = other.finalScore_;
       playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
+      uid_ = other.uid_;
+      finalScore_ = other.finalScore_;
+      maxCombo_ = other.maxCombo_;
+      shootCount_ = other.shootCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +88,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BalloonSettleInfo(this);
     }
 
+    /// <summary>Field number for the "player_info" field.</summary>
+    public const int PlayerInfoFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo PlayerInfo {
+      get { return playerInfo_; }
+      set {
+        playerInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 3;
+    public const int UidFieldNumber = 13;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,32 +112,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "shoot_count" field.</summary>
-    public const int ShootCountFieldNumber = 12;
-    private uint shootCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShootCount {
-      get { return shootCount_; }
-      set {
-        shootCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "max_combo" field.</summary>
-    public const int MaxComboFieldNumber = 9;
-    private uint maxCombo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxCombo {
-      get { return maxCombo_; }
-      set {
-        maxCombo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 7;
+    public const int FinalScoreFieldNumber = 2;
     private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,15 +124,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
+    /// <summary>Field number for the "max_combo" field.</summary>
+    public const int MaxComboFieldNumber = 7;
+    private uint maxCombo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo PlayerInfo {
-      get { return playerInfo_; }
+    public uint MaxCombo {
+      get { return maxCombo_; }
       set {
-        playerInfo_ = value;
+        maxCombo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "shoot_count" field.</summary>
+    public const int ShootCountFieldNumber = 14;
+    private uint shootCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ShootCount {
+      get { return shootCount_; }
+      set {
+        shootCount_ = value;
       }
     }
 
@@ -163,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
-      if (ShootCount != other.ShootCount) return false;
-      if (MaxCombo != other.MaxCombo) return false;
-      if (FinalScore != other.FinalScore) return false;
       if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
+      if (Uid != other.Uid) return false;
+      if (FinalScore != other.FinalScore) return false;
+      if (MaxCombo != other.MaxCombo) return false;
+      if (ShootCount != other.ShootCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (ShootCount != 0) hash ^= ShootCount.GetHashCode();
-      if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
-      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
+      if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
+      if (ShootCount != 0) hash ^= ShootCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,24 +198,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (playerInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(PlayerInfo);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Uid);
-      }
       if (FinalScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(FinalScore);
       }
       if (MaxCombo != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxCombo);
       }
+      if (playerInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(PlayerInfo);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Uid);
+      }
       if (ShootCount != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(ShootCount);
       }
       if (_unknownFields != null) {
@@ -228,24 +228,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (playerInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(PlayerInfo);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Uid);
-      }
       if (FinalScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(FinalScore);
       }
       if (MaxCombo != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(MaxCombo);
       }
+      if (playerInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(PlayerInfo);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Uid);
+      }
       if (ShootCount != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(ShootCount);
       }
       if (_unknownFields != null) {
@@ -258,20 +258,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (playerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
+      }
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
-      if (ShootCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShootCount);
-      }
-      if (MaxCombo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
       }
       if (FinalScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
-      if (playerInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
+      if (MaxCombo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
+      }
+      if (ShootCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShootCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -285,23 +285,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
-      if (other.ShootCount != 0) {
-        ShootCount = other.ShootCount;
-      }
-      if (other.MaxCombo != 0) {
-        MaxCombo = other.MaxCombo;
-      }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
-      }
       if (other.playerInfo_ != null) {
         if (playerInfo_ == null) {
           PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
         }
         PlayerInfo.MergeFrom(other.PlayerInfo);
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
+      }
+      if (other.MaxCombo != 0) {
+        MaxCombo = other.MaxCombo;
+      }
+      if (other.ShootCount != 0) {
+        ShootCount = other.ShootCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -318,26 +318,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 16: {
+            FinalScore = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 24: {
+          case 104: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 56: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            MaxCombo = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 112: {
             ShootCount = input.ReadUInt32();
             break;
           }
@@ -356,26 +356,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 16: {
+            FinalScore = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 24: {
+          case 104: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 56: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            MaxCombo = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 112: {
             ShootCount = input.ReadUInt32();
             break;
           }

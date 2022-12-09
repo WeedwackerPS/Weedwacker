@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkBuffInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDcnlzdGFsTGlua0J1ZmZJbmZvLnByb3RvIkMKE0NyeXN0YWxMaW5rQnVm",
-            "ZkluZm8SFgoOZWZmZWN0X2J1ZmZfaWQYASABKA0SFAoMY29uZF9idWZmX2lk",
-            "GAogASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChlDcnlzdGFsTGlua0J1ZmZJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIk8KE0NyeXN0YWxMaW5rQnVmZkluZm8SGwoTVW5r",
+            "MzMwMF9CR0tMQUZDQk5PQRgGIAEoDRIbChNVbmszMzAwX1BGTEFPQ01FRklM",
+            "GAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser, new[]{ "EffectBuffId", "CondBuffId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser, new[]{ "Unk3300BGKLAFCBNOA", "Unk3300PFLAOCMEFIL" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CrystalLinkBuffInfo(CrystalLinkBuffInfo other) : this() {
-      effectBuffId_ = other.effectBuffId_;
-      condBuffId_ = other.condBuffId_;
+      unk3300BGKLAFCBNOA_ = other.unk3300BGKLAFCBNOA_;
+      unk3300PFLAOCMEFIL_ = other.unk3300PFLAOCMEFIL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,27 +83,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CrystalLinkBuffInfo(this);
     }
 
-    /// <summary>Field number for the "effect_buff_id" field.</summary>
-    public const int EffectBuffIdFieldNumber = 1;
-    private uint effectBuffId_;
+    /// <summary>Field number for the "Unk3300_BGKLAFCBNOA" field.</summary>
+    public const int Unk3300BGKLAFCBNOAFieldNumber = 6;
+    private uint unk3300BGKLAFCBNOA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EffectBuffId {
-      get { return effectBuffId_; }
+    public uint Unk3300BGKLAFCBNOA {
+      get { return unk3300BGKLAFCBNOA_; }
       set {
-        effectBuffId_ = value;
+        unk3300BGKLAFCBNOA_ = value;
       }
     }
 
-    /// <summary>Field number for the "cond_buff_id" field.</summary>
-    public const int CondBuffIdFieldNumber = 10;
-    private uint condBuffId_;
+    /// <summary>Field number for the "Unk3300_PFLAOCMEFIL" field.</summary>
+    public const int Unk3300PFLAOCMEFILFieldNumber = 4;
+    private uint unk3300PFLAOCMEFIL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CondBuffId {
-      get { return condBuffId_; }
+    public uint Unk3300PFLAOCMEFIL {
+      get { return unk3300PFLAOCMEFIL_; }
       set {
-        condBuffId_ = value;
+        unk3300PFLAOCMEFIL_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EffectBuffId != other.EffectBuffId) return false;
-      if (CondBuffId != other.CondBuffId) return false;
+      if (Unk3300BGKLAFCBNOA != other.Unk3300BGKLAFCBNOA) return false;
+      if (Unk3300PFLAOCMEFIL != other.Unk3300PFLAOCMEFIL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EffectBuffId != 0) hash ^= EffectBuffId.GetHashCode();
-      if (CondBuffId != 0) hash ^= CondBuffId.GetHashCode();
+      if (Unk3300BGKLAFCBNOA != 0) hash ^= Unk3300BGKLAFCBNOA.GetHashCode();
+      if (Unk3300PFLAOCMEFIL != 0) hash ^= Unk3300PFLAOCMEFIL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EffectBuffId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(EffectBuffId);
+      if (Unk3300PFLAOCMEFIL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PFLAOCMEFIL);
       }
-      if (CondBuffId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CondBuffId);
+      if (Unk3300BGKLAFCBNOA != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300BGKLAFCBNOA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EffectBuffId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(EffectBuffId);
+      if (Unk3300PFLAOCMEFIL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PFLAOCMEFIL);
       }
-      if (CondBuffId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CondBuffId);
+      if (Unk3300BGKLAFCBNOA != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300BGKLAFCBNOA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EffectBuffId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EffectBuffId);
+      if (Unk3300BGKLAFCBNOA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BGKLAFCBNOA);
       }
-      if (CondBuffId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CondBuffId);
+      if (Unk3300PFLAOCMEFIL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PFLAOCMEFIL);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EffectBuffId != 0) {
-        EffectBuffId = other.EffectBuffId;
+      if (other.Unk3300BGKLAFCBNOA != 0) {
+        Unk3300BGKLAFCBNOA = other.Unk3300BGKLAFCBNOA;
       }
-      if (other.CondBuffId != 0) {
-        CondBuffId = other.CondBuffId;
+      if (other.Unk3300PFLAOCMEFIL != 0) {
+        Unk3300PFLAOCMEFIL = other.Unk3300PFLAOCMEFIL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            EffectBuffId = input.ReadUInt32();
+          case 32: {
+            Unk3300PFLAOCMEFIL = input.ReadUInt32();
             break;
           }
-          case 80: {
-            CondBuffId = input.ReadUInt32();
+          case 48: {
+            Unk3300BGKLAFCBNOA = input.ReadUInt32();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            EffectBuffId = input.ReadUInt32();
+          case 32: {
+            Unk3300PFLAOCMEFIL = input.ReadUInt32();
             break;
           }
-          case 80: {
-            CondBuffId = input.ReadUInt32();
+          case 48: {
+            Unk3300BGKLAFCBNOA = input.ReadUInt32();
             break;
           }
         }

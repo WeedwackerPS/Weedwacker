@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabLoopDungeonInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJDaGFubmVsZXJTbGFiTG9vcER1bmdlb25JbmZvLnByb3RvIqwBChxDaGFu",
-            "bmVsZXJTbGFiTG9vcER1bmdlb25JbmZvEg0KBXNjb3JlGAcgASgNEhUKDWR1",
-            "bmdlb25faW5kZXgYBCABKA0SEQoJb3Blbl90aW1lGAwgASgNEiIKGmlzX2Zp",
-            "cnN0X3Bhc3NfcmV3YXJkX3Rha2VuGAkgASgIEh4KFmxhc3RfY29uZGl0aW9u",
-            "X2lkX2xpc3QYDiADKA0SDwoHaXNfb3BlbhgBIAEoCEIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJDaGFubmVsZXJTbGFiTG9vcER1bmdlb25JbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIqwBChxDaGFubmVsZXJTbGFiTG9v",
+            "cER1bmdlb25JbmZvEiIKGmlzX2ZpcnN0X3Bhc3NfcmV3YXJkX3Rha2VuGAkg",
+            "ASgIEg0KBXNjb3JlGAcgASgNEh4KFmxhc3RfY29uZGl0aW9uX2lkX2xpc3QY",
+            "CiADKA0SFQoNZHVuZ2Vvbl9pbmRleBgBIAEoDRIPCgdpc19vcGVuGAQgASgI",
+            "EhEKCW9wZW5fdGltZRgNIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonInfo.Parser, new[]{ "Score", "DungeonIndex", "OpenTime", "IsFirstPassRewardTaken", "LastConditionIdList", "IsOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonInfo.Parser, new[]{ "IsFirstPassRewardTaken", "Score", "LastConditionIdList", "DungeonIndex", "IsOpen", "OpenTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabLoopDungeonInfo(ChannelerSlabLoopDungeonInfo other) : this() {
-      score_ = other.score_;
-      dungeonIndex_ = other.dungeonIndex_;
-      openTime_ = other.openTime_;
       isFirstPassRewardTaken_ = other.isFirstPassRewardTaken_;
+      score_ = other.score_;
       lastConditionIdList_ = other.lastConditionIdList_.Clone();
+      dungeonIndex_ = other.dungeonIndex_;
       isOpen_ = other.isOpen_;
+      openTime_ = other.openTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,42 +87,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabLoopDungeonInfo Clone() {
       return new ChannelerSlabLoopDungeonInfo(this);
-    }
-
-    /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 7;
-    private uint score_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Score {
-      get { return score_; }
-      set {
-        score_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_index" field.</summary>
-    public const int DungeonIndexFieldNumber = 4;
-    private uint dungeonIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonIndex {
-      get { return dungeonIndex_; }
-      set {
-        dungeonIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 12;
-    private uint openTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenTime {
-      get { return openTime_; }
-      set {
-        openTime_ = value;
-      }
     }
 
     /// <summary>Field number for the "is_first_pass_reward_taken" field.</summary>
@@ -137,10 +101,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "score" field.</summary>
+    public const int ScoreFieldNumber = 7;
+    private uint score_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
     /// <summary>Field number for the "last_condition_id_list" field.</summary>
-    public const int LastConditionIdListFieldNumber = 14;
+    public const int LastConditionIdListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_lastConditionIdList_codec
-        = pb::FieldCodec.ForUInt32(114);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> lastConditionIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,8 +124,20 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return lastConditionIdList_; }
     }
 
+    /// <summary>Field number for the "dungeon_index" field.</summary>
+    public const int DungeonIndexFieldNumber = 1;
+    private uint dungeonIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonIndex {
+      get { return dungeonIndex_; }
+      set {
+        dungeonIndex_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 1;
+    public const int IsOpenFieldNumber = 4;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,6 +145,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isOpen_; }
       set {
         isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 13;
+    private uint openTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
       }
     }
 
@@ -175,12 +175,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Score != other.Score) return false;
-      if (DungeonIndex != other.DungeonIndex) return false;
-      if (OpenTime != other.OpenTime) return false;
       if (IsFirstPassRewardTaken != other.IsFirstPassRewardTaken) return false;
+      if (Score != other.Score) return false;
       if(!lastConditionIdList_.Equals(other.lastConditionIdList_)) return false;
+      if (DungeonIndex != other.DungeonIndex) return false;
       if (IsOpen != other.IsOpen) return false;
+      if (OpenTime != other.OpenTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -188,12 +188,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Score != 0) hash ^= Score.GetHashCode();
-      if (DungeonIndex != 0) hash ^= DungeonIndex.GetHashCode();
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (IsFirstPassRewardTaken != false) hash ^= IsFirstPassRewardTaken.GetHashCode();
+      if (Score != 0) hash ^= Score.GetHashCode();
       hash ^= lastConditionIdList_.GetHashCode();
+      if (DungeonIndex != 0) hash ^= DungeonIndex.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -212,13 +212,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsOpen != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsOpen);
-      }
       if (DungeonIndex != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(DungeonIndex);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
       }
       if (Score != 0) {
         output.WriteRawTag(56);
@@ -228,11 +228,11 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(72);
         output.WriteBool(IsFirstPassRewardTaken);
       }
+      lastConditionIdList_.WriteTo(output, _repeated_lastConditionIdList_codec);
       if (OpenTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
       }
-      lastConditionIdList_.WriteTo(output, _repeated_lastConditionIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -243,13 +243,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsOpen != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsOpen);
-      }
       if (DungeonIndex != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(DungeonIndex);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
       }
       if (Score != 0) {
         output.WriteRawTag(56);
@@ -259,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(72);
         output.WriteBool(IsFirstPassRewardTaken);
       }
+      lastConditionIdList_.WriteTo(ref output, _repeated_lastConditionIdList_codec);
       if (OpenTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
       }
-      lastConditionIdList_.WriteTo(ref output, _repeated_lastConditionIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -274,21 +274,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Score != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
-      }
-      if (DungeonIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonIndex);
-      }
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-      }
       if (IsFirstPassRewardTaken != false) {
         size += 1 + 1;
       }
+      if (Score != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
       size += lastConditionIdList_.CalculateSize(_repeated_lastConditionIdList_codec);
+      if (DungeonIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonIndex);
+      }
       if (IsOpen != false) {
         size += 1 + 1;
+      }
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -302,21 +302,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Score != 0) {
-        Score = other.Score;
-      }
-      if (other.DungeonIndex != 0) {
-        DungeonIndex = other.DungeonIndex;
-      }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
-      }
       if (other.IsFirstPassRewardTaken != false) {
         IsFirstPassRewardTaken = other.IsFirstPassRewardTaken;
       }
+      if (other.Score != 0) {
+        Score = other.Score;
+      }
       lastConditionIdList_.Add(other.lastConditionIdList_);
+      if (other.DungeonIndex != 0) {
+        DungeonIndex = other.DungeonIndex;
+      }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -334,11 +334,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            IsOpen = input.ReadBool();
+            DungeonIndex = input.ReadUInt32();
             break;
           }
           case 32: {
-            DungeonIndex = input.ReadUInt32();
+            IsOpen = input.ReadBool();
             break;
           }
           case 56: {
@@ -349,13 +349,13 @@ namespace Weedwacker.Shared.Network.Proto {
             IsFirstPassRewardTaken = input.ReadBool();
             break;
           }
-          case 96: {
-            OpenTime = input.ReadUInt32();
+          case 82:
+          case 80: {
+            lastConditionIdList_.AddEntriesFrom(input, _repeated_lastConditionIdList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            lastConditionIdList_.AddEntriesFrom(input, _repeated_lastConditionIdList_codec);
+          case 104: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }
@@ -374,11 +374,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            IsOpen = input.ReadBool();
+            DungeonIndex = input.ReadUInt32();
             break;
           }
           case 32: {
-            DungeonIndex = input.ReadUInt32();
+            IsOpen = input.ReadBool();
             break;
           }
           case 56: {
@@ -389,13 +389,13 @@ namespace Weedwacker.Shared.Network.Proto {
             IsFirstPassRewardTaken = input.ReadBool();
             break;
           }
-          case 96: {
-            OpenTime = input.ReadUInt32();
+          case 82:
+          case 80: {
+            lastConditionIdList_.AddEntriesFrom(ref input, _repeated_lastConditionIdList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            lastConditionIdList_.AddEntriesFrom(ref input, _repeated_lastConditionIdList_codec);
+          case 104: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }

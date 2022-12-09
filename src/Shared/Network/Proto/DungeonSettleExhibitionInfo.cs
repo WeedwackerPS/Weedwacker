@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonSettleExhibitionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8ucHJvdG8aG0V4aGliaXRp",
-            "b25EaXNwbGF5SW5mby5wcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byJw",
-            "ChtEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8SJgoLcGxheWVyX2luZm8Y",
-            "AyABKAsyES5PbmxpbmVQbGF5ZXJJbmZvEikKCWNhcmRfbGlzdBgNIAMoCzIW",
-            "LkV4aGliaXRpb25EaXNwbGF5SW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG0V4aGliaXRpb25EaXNwbGF5SW5m",
+            "by5wcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byKwAQobRHVuZ2VvblNl",
+            "dHRsZUV4aGliaXRpb25JbmZvEkYKC3BsYXllcl9pbmZvGA4gASgLMjEuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PbmxpbmVQbGF5ZXJJbmZv",
+            "EkkKCWNhcmRfbGlzdBgNIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uRXhoaWJpdGlvbkRpc3BsYXlJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 3;
+    public const int PlayerInfoFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      cardList_.WriteTo(output, _repeated_cardList_codec);
       if (playerInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(PlayerInfo);
       }
-      cardList_.WriteTo(output, _repeated_cardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,11 +168,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
       if (playerInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(PlayerInfo);
       }
-      cardList_.WriteTo(ref output, _repeated_cardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,15 +221,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 106: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 114: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
-            break;
-          }
-          case 106: {
-            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
             break;
           }
         }
@@ -246,15 +247,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 106: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 114: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
-            break;
-          }
-          case 106: {
-            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
             break;
           }
         }

@@ -14,5 +14,6 @@ namespace Weedwacker.GameServer.Enums
         SHOP_PRECONDITION_SHEET_REST,
         SHOP_PRECONDITION_HOME_LEVEL,
         SHOP_PRECONDITION_QUEST_FINISH,
+        SHOP_PRECONDITION_GCG_LEVEL,
     }
 }

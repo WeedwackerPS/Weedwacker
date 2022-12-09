@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static CityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5DaXR5SW5mby5wcm90byI/CghDaXR5SW5mbxIPCgdjaXR5X2lkGA8gASgN",
-            "EhMKC2NyeXN0YWxfbnVtGAMgASgNEg0KBWxldmVsGAQgASgNQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Cg5DaXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byI/CghDaXR5SW5mbxIPCgdjaXR5X2lkGAkgASgNEg0KBWxldmVsGAwg",
+            "ASgNEhMKC2NyeXN0YWxfbnVtGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityInfo), global::Weedwacker.Shared.Network.Proto.CityInfo.Parser, new[]{ "CityId", "CrystalNum", "Level" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityInfo), global::Weedwacker.Shared.Network.Proto.CityInfo.Parser, new[]{ "CityId", "Level", "CrystalNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CityInfo(CityInfo other) : this() {
       cityId_ = other.cityId_;
-      crystalNum_ = other.crystalNum_;
       level_ = other.level_;
+      crystalNum_ = other.crystalNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 15;
+    public const int CityIdFieldNumber = 9;
     private uint cityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "crystal_num" field.</summary>
-    public const int CrystalNumFieldNumber = 3;
-    private uint crystalNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CrystalNum {
-      get { return crystalNum_; }
-      set {
-        crystalNum_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 4;
+    public const int LevelFieldNumber = 12;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return level_; }
       set {
         level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "crystal_num" field.</summary>
+    public const int CrystalNumFieldNumber = 2;
+    private uint crystalNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CrystalNum {
+      get { return crystalNum_; }
+      set {
+        crystalNum_ = value;
       }
     }
 
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (CityId != other.CityId) return false;
-      if (CrystalNum != other.CrystalNum) return false;
       if (Level != other.Level) return false;
+      if (CrystalNum != other.CrystalNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (CityId != 0) hash ^= CityId.GetHashCode();
-      if (CrystalNum != 0) hash ^= CrystalNum.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
+      if (CrystalNum != 0) hash ^= CrystalNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,16 +166,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CrystalNum != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(CrystalNum);
       }
-      if (Level != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Level);
-      }
       if (CityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(CityId);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Level);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,16 +188,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CrystalNum != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(CrystalNum);
       }
-      if (Level != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Level);
-      }
       if (CityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(CityId);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Level);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -212,11 +212,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
-      if (CrystalNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CrystalNum);
-      }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (CrystalNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CrystalNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -233,11 +233,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CityId != 0) {
         CityId = other.CityId;
       }
-      if (other.CrystalNum != 0) {
-        CrystalNum = other.CrystalNum;
-      }
       if (other.Level != 0) {
         Level = other.Level;
+      }
+      if (other.CrystalNum != 0) {
+        CrystalNum = other.CrystalNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -254,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 16: {
             CrystalNum = input.ReadUInt32();
             break;
           }
-          case 32: {
-            Level = input.ReadUInt32();
+          case 72: {
+            CityId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CityId = input.ReadUInt32();
+          case 96: {
+            Level = input.ReadUInt32();
             break;
           }
         }
@@ -281,16 +281,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 16: {
             CrystalNum = input.ReadUInt32();
             break;
           }
-          case 32: {
-            Level = input.ReadUInt32();
+          case 72: {
+            CityId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CityId = input.ReadUInt32();
+          case 96: {
+            Level = input.ReadUInt32();
             break;
           }
         }

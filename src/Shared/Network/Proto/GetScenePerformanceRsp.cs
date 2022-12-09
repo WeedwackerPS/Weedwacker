@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetScenePerformanceRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRTY2VuZVBlcmZvcm1hbmNlUnNwLnByb3RvGgxWZWN0b3IucHJvdG8i",
-            "2gEKFkdldFNjZW5lUGVyZm9ybWFuY2VSc3ASEwoLbW9uc3Rlcl9udW0YCSAB",
-            "KA0SGgoSZ2F0aGVyX251bV9pbnNpZ2h0GAEgASgNEhIKCmdhZGdldF9udW0Y",
-            "BiABKA0SDwoHcmV0Y29kZRgHIAEoBRIZChFkeW5hbWljX2dyb3VwX251bRgM",
-            "IAEoDRIRCglncm91cF9udW0YAiABKA0SFAoDcG9zGAQgASgLMgcuVmVjdG9y",
-            "EhIKCmVudGl0eV9udW0YCCABKA0SEgoKZ2F0aGVyX251bRgNIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxHZXRTY2VuZVBlcmZvcm1hbmNlUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8iqgIKFkdldFNjZW5l",
+            "UGVyZm9ybWFuY2VSc3ASDwoHcmV0Y29kZRgBIAEoBRIbChNVbmszMzAwX0dM",
+            "TkZJRlBOSklFGAQgASgNEhsKE1VuazMzMDBfSUhCUENQQ0pJQkMYAiABKA0S",
+            "GwoTVW5rMzMwMF9NTUFMSklGREtKSxgNIAEoDRIbChNVbmszMzAwX1BEUEpF",
+            "TUVLSEtEGAogASgNEhsKE1VuazMzMDBfTElPRkdBSEtOSUEYDiABKA0SGwoT",
+            "VW5rMzMwMF9NSUpNS0xCR0tNTBgLIAEoDRIbChNVbmszMzAwX0pNTEpMTktM",
+            "Sk5QGA8gASgNEjQKA3BvcxgJIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uVmVjdG9yYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetScenePerformanceRsp), global::Weedwacker.Shared.Network.Proto.GetScenePerformanceRsp.Parser, new[]{ "MonsterNum", "GatherNumInsight", "GadgetNum", "Retcode", "DynamicGroupNum", "GroupNum", "Pos", "EntityNum", "GatherNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetScenePerformanceRsp), global::Weedwacker.Shared.Network.Proto.GetScenePerformanceRsp.Parser, new[]{ "Retcode", "Unk3300GLNFIFPNJIE", "Unk3300IHBPCPCJIBC", "Unk3300MMALJIFDKJK", "Unk3300PDPJEMEKHKD", "Unk3300LIOFGAHKNIA", "Unk3300MIJMKLBGKML", "Unk3300JMLJLNKLJNP", "Pos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3137
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3010;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetScenePerformanceRsp : pb::IMessage<GetScenePerformanceRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,15 +86,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetScenePerformanceRsp(GetScenePerformanceRsp other) : this() {
-      monsterNum_ = other.monsterNum_;
-      gatherNumInsight_ = other.gatherNumInsight_;
-      gadgetNum_ = other.gadgetNum_;
       retcode_ = other.retcode_;
-      dynamicGroupNum_ = other.dynamicGroupNum_;
-      groupNum_ = other.groupNum_;
+      unk3300GLNFIFPNJIE_ = other.unk3300GLNFIFPNJIE_;
+      unk3300IHBPCPCJIBC_ = other.unk3300IHBPCPCJIBC_;
+      unk3300MMALJIFDKJK_ = other.unk3300MMALJIFDKJK_;
+      unk3300PDPJEMEKHKD_ = other.unk3300PDPJEMEKHKD_;
+      unk3300LIOFGAHKNIA_ = other.unk3300LIOFGAHKNIA_;
+      unk3300MIJMKLBGKML_ = other.unk3300MIJMKLBGKML_;
+      unk3300JMLJLNKLJNP_ = other.unk3300JMLJLNKLJNP_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-      entityNum_ = other.entityNum_;
-      gatherNum_ = other.gatherNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,44 +104,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetScenePerformanceRsp(this);
     }
 
-    /// <summary>Field number for the "monster_num" field.</summary>
-    public const int MonsterNumFieldNumber = 9;
-    private uint monsterNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MonsterNum {
-      get { return monsterNum_; }
-      set {
-        monsterNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gather_num_insight" field.</summary>
-    public const int GatherNumInsightFieldNumber = 1;
-    private uint gatherNumInsight_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GatherNumInsight {
-      get { return gatherNumInsight_; }
-      set {
-        gatherNumInsight_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gadget_num" field.</summary>
-    public const int GadgetNumFieldNumber = 6;
-    private uint gadgetNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GadgetNum {
-      get { return gadgetNum_; }
-      set {
-        gadgetNum_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -146,32 +116,92 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dynamic_group_num" field.</summary>
-    public const int DynamicGroupNumFieldNumber = 12;
-    private uint dynamicGroupNum_;
+    /// <summary>Field number for the "Unk3300_GLNFIFPNJIE" field.</summary>
+    public const int Unk3300GLNFIFPNJIEFieldNumber = 4;
+    private uint unk3300GLNFIFPNJIE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DynamicGroupNum {
-      get { return dynamicGroupNum_; }
+    public uint Unk3300GLNFIFPNJIE {
+      get { return unk3300GLNFIFPNJIE_; }
       set {
-        dynamicGroupNum_ = value;
+        unk3300GLNFIFPNJIE_ = value;
       }
     }
 
-    /// <summary>Field number for the "group_num" field.</summary>
-    public const int GroupNumFieldNumber = 2;
-    private uint groupNum_;
+    /// <summary>Field number for the "Unk3300_IHBPCPCJIBC" field.</summary>
+    public const int Unk3300IHBPCPCJIBCFieldNumber = 2;
+    private uint unk3300IHBPCPCJIBC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupNum {
-      get { return groupNum_; }
+    public uint Unk3300IHBPCPCJIBC {
+      get { return unk3300IHBPCPCJIBC_; }
       set {
-        groupNum_ = value;
+        unk3300IHBPCPCJIBC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MMALJIFDKJK" field.</summary>
+    public const int Unk3300MMALJIFDKJKFieldNumber = 13;
+    private uint unk3300MMALJIFDKJK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MMALJIFDKJK {
+      get { return unk3300MMALJIFDKJK_; }
+      set {
+        unk3300MMALJIFDKJK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PDPJEMEKHKD" field.</summary>
+    public const int Unk3300PDPJEMEKHKDFieldNumber = 10;
+    private uint unk3300PDPJEMEKHKD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PDPJEMEKHKD {
+      get { return unk3300PDPJEMEKHKD_; }
+      set {
+        unk3300PDPJEMEKHKD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LIOFGAHKNIA" field.</summary>
+    public const int Unk3300LIOFGAHKNIAFieldNumber = 14;
+    private uint unk3300LIOFGAHKNIA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LIOFGAHKNIA {
+      get { return unk3300LIOFGAHKNIA_; }
+      set {
+        unk3300LIOFGAHKNIA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MIJMKLBGKML" field.</summary>
+    public const int Unk3300MIJMKLBGKMLFieldNumber = 11;
+    private uint unk3300MIJMKLBGKML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MIJMKLBGKML {
+      get { return unk3300MIJMKLBGKML_; }
+      set {
+        unk3300MIJMKLBGKML_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JMLJLNKLJNP" field.</summary>
+    public const int Unk3300JMLJLNKLJNPFieldNumber = 15;
+    private uint unk3300JMLJLNKLJNP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JMLJLNKLJNP {
+      get { return unk3300JMLJLNKLJNP_; }
+      set {
+        unk3300JMLJLNKLJNP_ = value;
       }
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 4;
+    public const int PosFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,30 +209,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pos_; }
       set {
         pos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_num" field.</summary>
-    public const int EntityNumFieldNumber = 8;
-    private uint entityNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityNum {
-      get { return entityNum_; }
-      set {
-        entityNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gather_num" field.</summary>
-    public const int GatherNumFieldNumber = 13;
-    private uint gatherNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GatherNum {
-      get { return gatherNum_; }
-      set {
-        gatherNum_ = value;
       }
     }
 
@@ -221,15 +227,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MonsterNum != other.MonsterNum) return false;
-      if (GatherNumInsight != other.GatherNumInsight) return false;
-      if (GadgetNum != other.GadgetNum) return false;
       if (Retcode != other.Retcode) return false;
-      if (DynamicGroupNum != other.DynamicGroupNum) return false;
-      if (GroupNum != other.GroupNum) return false;
+      if (Unk3300GLNFIFPNJIE != other.Unk3300GLNFIFPNJIE) return false;
+      if (Unk3300IHBPCPCJIBC != other.Unk3300IHBPCPCJIBC) return false;
+      if (Unk3300MMALJIFDKJK != other.Unk3300MMALJIFDKJK) return false;
+      if (Unk3300PDPJEMEKHKD != other.Unk3300PDPJEMEKHKD) return false;
+      if (Unk3300LIOFGAHKNIA != other.Unk3300LIOFGAHKNIA) return false;
+      if (Unk3300MIJMKLBGKML != other.Unk3300MIJMKLBGKML) return false;
+      if (Unk3300JMLJLNKLJNP != other.Unk3300JMLJLNKLJNP) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
-      if (EntityNum != other.EntityNum) return false;
-      if (GatherNum != other.GatherNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -237,15 +243,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MonsterNum != 0) hash ^= MonsterNum.GetHashCode();
-      if (GatherNumInsight != 0) hash ^= GatherNumInsight.GetHashCode();
-      if (GadgetNum != 0) hash ^= GadgetNum.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (DynamicGroupNum != 0) hash ^= DynamicGroupNum.GetHashCode();
-      if (GroupNum != 0) hash ^= GroupNum.GetHashCode();
+      if (Unk3300GLNFIFPNJIE != 0) hash ^= Unk3300GLNFIFPNJIE.GetHashCode();
+      if (Unk3300IHBPCPCJIBC != 0) hash ^= Unk3300IHBPCPCJIBC.GetHashCode();
+      if (Unk3300MMALJIFDKJK != 0) hash ^= Unk3300MMALJIFDKJK.GetHashCode();
+      if (Unk3300PDPJEMEKHKD != 0) hash ^= Unk3300PDPJEMEKHKD.GetHashCode();
+      if (Unk3300LIOFGAHKNIA != 0) hash ^= Unk3300LIOFGAHKNIA.GetHashCode();
+      if (Unk3300MIJMKLBGKML != 0) hash ^= Unk3300MIJMKLBGKML.GetHashCode();
+      if (Unk3300JMLJLNKLJNP != 0) hash ^= Unk3300JMLJLNKLJNP.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
-      if (EntityNum != 0) hash ^= EntityNum.GetHashCode();
-      if (GatherNum != 0) hash ^= GatherNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -264,41 +270,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GatherNumInsight != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GatherNumInsight);
-      }
-      if (GroupNum != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(GroupNum);
-      }
-      if (pos_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Pos);
-      }
-      if (GadgetNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(GadgetNum);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
-      if (EntityNum != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(EntityNum);
+      if (Unk3300IHBPCPCJIBC != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300IHBPCPCJIBC);
       }
-      if (MonsterNum != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MonsterNum);
+      if (Unk3300GLNFIFPNJIE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GLNFIFPNJIE);
       }
-      if (DynamicGroupNum != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(DynamicGroupNum);
+      if (pos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Pos);
       }
-      if (GatherNum != 0) {
+      if (Unk3300PDPJEMEKHKD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PDPJEMEKHKD);
+      }
+      if (Unk3300MIJMKLBGKML != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300MIJMKLBGKML);
+      }
+      if (Unk3300MMALJIFDKJK != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(GatherNum);
+        output.WriteUInt32(Unk3300MMALJIFDKJK);
+      }
+      if (Unk3300LIOFGAHKNIA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LIOFGAHKNIA);
+      }
+      if (Unk3300JMLJLNKLJNP != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300JMLJLNKLJNP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -310,41 +316,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GatherNumInsight != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GatherNumInsight);
-      }
-      if (GroupNum != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(GroupNum);
-      }
-      if (pos_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Pos);
-      }
-      if (GadgetNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(GadgetNum);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
-      if (EntityNum != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(EntityNum);
+      if (Unk3300IHBPCPCJIBC != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300IHBPCPCJIBC);
       }
-      if (MonsterNum != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MonsterNum);
+      if (Unk3300GLNFIFPNJIE != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GLNFIFPNJIE);
       }
-      if (DynamicGroupNum != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(DynamicGroupNum);
+      if (pos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Pos);
       }
-      if (GatherNum != 0) {
+      if (Unk3300PDPJEMEKHKD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PDPJEMEKHKD);
+      }
+      if (Unk3300MIJMKLBGKML != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300MIJMKLBGKML);
+      }
+      if (Unk3300MMALJIFDKJK != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(GatherNum);
+        output.WriteUInt32(Unk3300MMALJIFDKJK);
+      }
+      if (Unk3300LIOFGAHKNIA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LIOFGAHKNIA);
+      }
+      if (Unk3300JMLJLNKLJNP != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300JMLJLNKLJNP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -356,32 +362,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MonsterNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterNum);
-      }
-      if (GatherNumInsight != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GatherNumInsight);
-      }
-      if (GadgetNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetNum);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (DynamicGroupNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DynamicGroupNum);
+      if (Unk3300GLNFIFPNJIE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLNFIFPNJIE);
       }
-      if (GroupNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupNum);
+      if (Unk3300IHBPCPCJIBC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IHBPCPCJIBC);
+      }
+      if (Unk3300MMALJIFDKJK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MMALJIFDKJK);
+      }
+      if (Unk3300PDPJEMEKHKD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PDPJEMEKHKD);
+      }
+      if (Unk3300LIOFGAHKNIA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LIOFGAHKNIA);
+      }
+      if (Unk3300MIJMKLBGKML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MIJMKLBGKML);
+      }
+      if (Unk3300JMLJLNKLJNP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JMLJLNKLJNP);
       }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
-      }
-      if (EntityNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityNum);
-      }
-      if (GatherNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GatherNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -395,35 +401,35 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MonsterNum != 0) {
-        MonsterNum = other.MonsterNum;
-      }
-      if (other.GatherNumInsight != 0) {
-        GatherNumInsight = other.GatherNumInsight;
-      }
-      if (other.GadgetNum != 0) {
-        GadgetNum = other.GadgetNum;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.DynamicGroupNum != 0) {
-        DynamicGroupNum = other.DynamicGroupNum;
+      if (other.Unk3300GLNFIFPNJIE != 0) {
+        Unk3300GLNFIFPNJIE = other.Unk3300GLNFIFPNJIE;
       }
-      if (other.GroupNum != 0) {
-        GroupNum = other.GroupNum;
+      if (other.Unk3300IHBPCPCJIBC != 0) {
+        Unk3300IHBPCPCJIBC = other.Unk3300IHBPCPCJIBC;
+      }
+      if (other.Unk3300MMALJIFDKJK != 0) {
+        Unk3300MMALJIFDKJK = other.Unk3300MMALJIFDKJK;
+      }
+      if (other.Unk3300PDPJEMEKHKD != 0) {
+        Unk3300PDPJEMEKHKD = other.Unk3300PDPJEMEKHKD;
+      }
+      if (other.Unk3300LIOFGAHKNIA != 0) {
+        Unk3300LIOFGAHKNIA = other.Unk3300LIOFGAHKNIA;
+      }
+      if (other.Unk3300MIJMKLBGKML != 0) {
+        Unk3300MIJMKLBGKML = other.Unk3300MIJMKLBGKML;
+      }
+      if (other.Unk3300JMLJLNKLJNP != 0) {
+        Unk3300JMLJLNKLJNP = other.Unk3300JMLJLNKLJNP;
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
-      }
-      if (other.EntityNum != 0) {
-        EntityNum = other.EntityNum;
-      }
-      if (other.GatherNum != 0) {
-        GatherNum = other.GatherNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -441,42 +447,42 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            GatherNumInsight = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 16: {
-            GroupNum = input.ReadUInt32();
+            Unk3300IHBPCPCJIBC = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            Unk3300GLNFIFPNJIE = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 48: {
-            GadgetNum = input.ReadUInt32();
+          case 80: {
+            Unk3300PDPJEMEKHKD = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            EntityNum = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            MonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            DynamicGroupNum = input.ReadUInt32();
+          case 88: {
+            Unk3300MIJMKLBGKML = input.ReadUInt32();
             break;
           }
           case 104: {
-            GatherNum = input.ReadUInt32();
+            Unk3300MMALJIFDKJK = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300LIOFGAHKNIA = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300JMLJLNKLJNP = input.ReadUInt32();
             break;
           }
         }
@@ -495,42 +501,42 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            GatherNumInsight = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 16: {
-            GroupNum = input.ReadUInt32();
+            Unk3300IHBPCPCJIBC = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            Unk3300GLNFIFPNJIE = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 48: {
-            GadgetNum = input.ReadUInt32();
+          case 80: {
+            Unk3300PDPJEMEKHKD = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            EntityNum = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            MonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            DynamicGroupNum = input.ReadUInt32();
+          case 88: {
+            Unk3300MIJMKLBGKML = input.ReadUInt32();
             break;
           }
           case 104: {
-            GatherNum = input.ReadUInt32();
+            Unk3300MMALJIFDKJK = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300LIOFGAHKNIA = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300JMLJLNKLJNP = input.ReadUInt32();
             break;
           }
         }

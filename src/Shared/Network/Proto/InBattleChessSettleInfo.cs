@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleChessSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1JbkJhdHRsZUNoZXNzU2V0dGxlSW5mby5wcm90bxobRXhoaWJpdGlvbkRp",
-            "c3BsYXlJbmZvLnByb3RvIsgBChdJbkJhdHRsZUNoZXNzU2V0dGxlSW5mbxIS",
-            "Cgppc19zdWNjZXNzGAcgASgIEhEKCWNoZXNzX2V4cBgLIAEoDRITCgtjaGVz",
-            "c19sZXZlbBgNIAEoDRIXCg9vbGRfY2hlc3NfbGV2ZWwYCiABKA0SKgoKc2Nv",
-            "cmVfbGlzdBgBIAMoCzIWLkV4aGliaXRpb25EaXNwbGF5SW5mbxIVCg1zY2Vu",
-            "ZV90aW1lX21zGA4gASgEEhUKDW9sZF9jaGVzc19leHAYAiABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1JbkJhdHRsZUNoZXNzU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxobRXhoaWJpdGlvbkRpc3BsYXlJbmZvLnBy",
+            "b3RvIoQCChdJbkJhdHRsZUNoZXNzU2V0dGxlSW5mbxIbChNVbmszMzAwX0xQ",
+            "QU5GRUJGSk9KGAUgASgNEhUKDXNjZW5lX3RpbWVfbXMYCCABKAQSGwoTVW5r",
+            "MzMwMF9OS0hERkhBUE5DThgNIAEoDRISCgppc19zdWNjZXNzGAYgASgIEhsK",
+            "E1VuazMzMDBfRU1OTExESkhNRUkYASABKA0SSgoKc2NvcmVfbGlzdBgEIAMo",
+            "CzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRXhoaWJpdGlv",
+            "bkRpc3BsYXlJbmZvEhsKE1VuazMzMDBfSVBHSUxKQ0JBQksYAiABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleChessSettleInfo), global::Weedwacker.Shared.Network.Proto.InBattleChessSettleInfo.Parser, new[]{ "IsSuccess", "ChessExp", "ChessLevel", "OldChessLevel", "ScoreList", "SceneTimeMs", "OldChessExp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleChessSettleInfo), global::Weedwacker.Shared.Network.Proto.InBattleChessSettleInfo.Parser, new[]{ "Unk3300LPANFEBFJOJ", "SceneTimeMs", "Unk3300NKHDFHAPNCN", "IsSuccess", "Unk3300EMNLLDJHMEI", "ScoreList", "Unk3300IPGILJCBABK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,13 +77,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleChessSettleInfo(InBattleChessSettleInfo other) : this() {
-      isSuccess_ = other.isSuccess_;
-      chessExp_ = other.chessExp_;
-      chessLevel_ = other.chessLevel_;
-      oldChessLevel_ = other.oldChessLevel_;
-      scoreList_ = other.scoreList_.Clone();
+      unk3300LPANFEBFJOJ_ = other.unk3300LPANFEBFJOJ_;
       sceneTimeMs_ = other.sceneTimeMs_;
-      oldChessExp_ = other.oldChessExp_;
+      unk3300NKHDFHAPNCN_ = other.unk3300NKHDFHAPNCN_;
+      isSuccess_ = other.isSuccess_;
+      unk3300EMNLLDJHMEI_ = other.unk3300EMNLLDJHMEI_;
+      scoreList_ = other.scoreList_.Clone();
+      unk3300IPGILJCBABK_ = other.unk3300IPGILJCBABK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,67 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleChessSettleInfo(this);
     }
 
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 7;
-    private bool isSuccess_;
+    /// <summary>Field number for the "Unk3300_LPANFEBFJOJ" field.</summary>
+    public const int Unk3300LPANFEBFJOJFieldNumber = 5;
+    private uint unk3300LPANFEBFJOJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
+    public uint Unk3300LPANFEBFJOJ {
+      get { return unk3300LPANFEBFJOJ_; }
       set {
-        isSuccess_ = value;
+        unk3300LPANFEBFJOJ_ = value;
       }
-    }
-
-    /// <summary>Field number for the "chess_exp" field.</summary>
-    public const int ChessExpFieldNumber = 11;
-    private uint chessExp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChessExp {
-      get { return chessExp_; }
-      set {
-        chessExp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "chess_level" field.</summary>
-    public const int ChessLevelFieldNumber = 13;
-    private uint chessLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChessLevel {
-      get { return chessLevel_; }
-      set {
-        chessLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "old_chess_level" field.</summary>
-    public const int OldChessLevelFieldNumber = 10;
-    private uint oldChessLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OldChessLevel {
-      get { return oldChessLevel_; }
-      set {
-        oldChessLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "score_list" field.</summary>
-    public const int ScoreListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
-      get { return scoreList_; }
     }
 
     /// <summary>Field number for the "scene_time_ms" field.</summary>
-    public const int SceneTimeMsFieldNumber = 14;
+    public const int SceneTimeMsFieldNumber = 8;
     private ulong sceneTimeMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,15 +117,62 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "old_chess_exp" field.</summary>
-    public const int OldChessExpFieldNumber = 2;
-    private uint oldChessExp_;
+    /// <summary>Field number for the "Unk3300_NKHDFHAPNCN" field.</summary>
+    public const int Unk3300NKHDFHAPNCNFieldNumber = 13;
+    private uint unk3300NKHDFHAPNCN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OldChessExp {
-      get { return oldChessExp_; }
+    public uint Unk3300NKHDFHAPNCN {
+      get { return unk3300NKHDFHAPNCN_; }
       set {
-        oldChessExp_ = value;
+        unk3300NKHDFHAPNCN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 6;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EMNLLDJHMEI" field.</summary>
+    public const int Unk3300EMNLLDJHMEIFieldNumber = 1;
+    private uint unk3300EMNLLDJHMEI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EMNLLDJHMEI {
+      get { return unk3300EMNLLDJHMEI_; }
+      set {
+        unk3300EMNLLDJHMEI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "score_list" field.</summary>
+    public const int ScoreListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
+      get { return scoreList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_IPGILJCBABK" field.</summary>
+    public const int Unk3300IPGILJCBABKFieldNumber = 2;
+    private uint unk3300IPGILJCBABK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IPGILJCBABK {
+      get { return unk3300IPGILJCBABK_; }
+      set {
+        unk3300IPGILJCBABK_ = value;
       }
     }
 
@@ -189,13 +191,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsSuccess != other.IsSuccess) return false;
-      if (ChessExp != other.ChessExp) return false;
-      if (ChessLevel != other.ChessLevel) return false;
-      if (OldChessLevel != other.OldChessLevel) return false;
-      if(!scoreList_.Equals(other.scoreList_)) return false;
+      if (Unk3300LPANFEBFJOJ != other.Unk3300LPANFEBFJOJ) return false;
       if (SceneTimeMs != other.SceneTimeMs) return false;
-      if (OldChessExp != other.OldChessExp) return false;
+      if (Unk3300NKHDFHAPNCN != other.Unk3300NKHDFHAPNCN) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (Unk3300EMNLLDJHMEI != other.Unk3300EMNLLDJHMEI) return false;
+      if(!scoreList_.Equals(other.scoreList_)) return false;
+      if (Unk3300IPGILJCBABK != other.Unk3300IPGILJCBABK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (ChessExp != 0) hash ^= ChessExp.GetHashCode();
-      if (ChessLevel != 0) hash ^= ChessLevel.GetHashCode();
-      if (OldChessLevel != 0) hash ^= OldChessLevel.GetHashCode();
-      hash ^= scoreList_.GetHashCode();
+      if (Unk3300LPANFEBFJOJ != 0) hash ^= Unk3300LPANFEBFJOJ.GetHashCode();
       if (SceneTimeMs != 0UL) hash ^= SceneTimeMs.GetHashCode();
-      if (OldChessExp != 0) hash ^= OldChessExp.GetHashCode();
+      if (Unk3300NKHDFHAPNCN != 0) hash ^= Unk3300NKHDFHAPNCN.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (Unk3300EMNLLDJHMEI != 0) hash ^= Unk3300EMNLLDJHMEI.GetHashCode();
+      hash ^= scoreList_.GetHashCode();
+      if (Unk3300IPGILJCBABK != 0) hash ^= Unk3300IPGILJCBABK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -228,30 +230,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      scoreList_.WriteTo(output, _repeated_scoreList_codec);
-      if (OldChessExp != 0) {
+      if (Unk3300EMNLLDJHMEI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300EMNLLDJHMEI);
+      }
+      if (Unk3300IPGILJCBABK != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(OldChessExp);
+        output.WriteUInt32(Unk3300IPGILJCBABK);
+      }
+      scoreList_.WriteTo(output, _repeated_scoreList_codec);
+      if (Unk3300LPANFEBFJOJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LPANFEBFJOJ);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteBool(IsSuccess);
       }
-      if (OldChessLevel != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(OldChessLevel);
-      }
-      if (ChessExp != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ChessExp);
-      }
-      if (ChessLevel != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ChessLevel);
-      }
       if (SceneTimeMs != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt64(SceneTimeMs);
+      }
+      if (Unk3300NKHDFHAPNCN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NKHDFHAPNCN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -263,30 +265,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
-      if (OldChessExp != 0) {
+      if (Unk3300EMNLLDJHMEI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300EMNLLDJHMEI);
+      }
+      if (Unk3300IPGILJCBABK != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(OldChessExp);
+        output.WriteUInt32(Unk3300IPGILJCBABK);
+      }
+      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
+      if (Unk3300LPANFEBFJOJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LPANFEBFJOJ);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteBool(IsSuccess);
       }
-      if (OldChessLevel != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(OldChessLevel);
-      }
-      if (ChessExp != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ChessExp);
-      }
-      if (ChessLevel != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ChessLevel);
-      }
       if (SceneTimeMs != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt64(SceneTimeMs);
+      }
+      if (Unk3300NKHDFHAPNCN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NKHDFHAPNCN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -298,24 +300,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsSuccess != false) {
-        size += 1 + 1;
+      if (Unk3300LPANFEBFJOJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPANFEBFJOJ);
       }
-      if (ChessExp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChessExp);
-      }
-      if (ChessLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChessLevel);
-      }
-      if (OldChessLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldChessLevel);
-      }
-      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
       if (SceneTimeMs != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneTimeMs);
       }
-      if (OldChessExp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldChessExp);
+      if (Unk3300NKHDFHAPNCN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NKHDFHAPNCN);
+      }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300EMNLLDJHMEI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EMNLLDJHMEI);
+      }
+      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
+      if (Unk3300IPGILJCBABK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IPGILJCBABK);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -329,24 +331,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsSuccess != false) {
-        IsSuccess = other.IsSuccess;
+      if (other.Unk3300LPANFEBFJOJ != 0) {
+        Unk3300LPANFEBFJOJ = other.Unk3300LPANFEBFJOJ;
       }
-      if (other.ChessExp != 0) {
-        ChessExp = other.ChessExp;
-      }
-      if (other.ChessLevel != 0) {
-        ChessLevel = other.ChessLevel;
-      }
-      if (other.OldChessLevel != 0) {
-        OldChessLevel = other.OldChessLevel;
-      }
-      scoreList_.Add(other.scoreList_);
       if (other.SceneTimeMs != 0UL) {
         SceneTimeMs = other.SceneTimeMs;
       }
-      if (other.OldChessExp != 0) {
-        OldChessExp = other.OldChessExp;
+      if (other.Unk3300NKHDFHAPNCN != 0) {
+        Unk3300NKHDFHAPNCN = other.Unk3300NKHDFHAPNCN;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.Unk3300EMNLLDJHMEI != 0) {
+        Unk3300EMNLLDJHMEI = other.Unk3300EMNLLDJHMEI;
+      }
+      scoreList_.Add(other.scoreList_);
+      if (other.Unk3300IPGILJCBABK != 0) {
+        Unk3300IPGILJCBABK = other.Unk3300IPGILJCBABK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -363,32 +365,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+          case 8: {
+            Unk3300EMNLLDJHMEI = input.ReadUInt32();
             break;
           }
           case 16: {
-            OldChessExp = input.ReadUInt32();
+            Unk3300IPGILJCBABK = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 34: {
+            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300LPANFEBFJOJ = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 80: {
-            OldChessLevel = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            ChessExp = input.ReadUInt32();
+          case 64: {
+            SceneTimeMs = input.ReadUInt64();
             break;
           }
           case 104: {
-            ChessLevel = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            SceneTimeMs = input.ReadUInt64();
+            Unk3300NKHDFHAPNCN = input.ReadUInt32();
             break;
           }
         }
@@ -406,32 +408,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+          case 8: {
+            Unk3300EMNLLDJHMEI = input.ReadUInt32();
             break;
           }
           case 16: {
-            OldChessExp = input.ReadUInt32();
+            Unk3300IPGILJCBABK = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 34: {
+            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300LPANFEBFJOJ = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 80: {
-            OldChessLevel = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            ChessExp = input.ReadUInt32();
+          case 64: {
+            SceneTimeMs = input.ReadUInt64();
             break;
           }
           case 104: {
-            ChessLevel = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            SceneTimeMs = input.ReadUInt64();
+            Unk3300NKHDFHAPNCN = input.ReadUInt32();
             break;
           }
         }

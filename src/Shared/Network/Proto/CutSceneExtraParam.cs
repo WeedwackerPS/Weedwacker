@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static CutSceneExtraParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDdXRTY2VuZUV4dHJhUGFyYW0ucHJvdG8iLwoSQ3V0U2NlbmVFeHRyYVBh",
-            "cmFtEhkKEWRldGFpbF9wYXJhbV9saXN0GAEgAygBQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhDdXRTY2VuZUV4dHJhUGFyYW0ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iLwoSQ3V0U2NlbmVFeHRyYVBhcmFtEhkKEWRldGFp",
+            "bF9wYXJhbV9saXN0GA0gAygBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "detail_param_list" field.</summary>
-    public const int DetailParamListFieldNumber = 1;
+    public const int DetailParamListFieldNumber = 13;
     private static readonly pb::FieldCodec<double> _repeated_detailParamList_codec
-        = pb::FieldCodec.ForDouble(10);
+        = pb::FieldCodec.ForDouble(106);
     private readonly pbc::RepeatedField<double> detailParamList_ = new pbc::RepeatedField<double>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 9: {
+          case 106:
+          case 105: {
             detailParamList_.AddEntriesFrom(input, _repeated_detailParamList_codec);
             break;
           }
@@ -205,8 +205,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 9: {
+          case 106:
+          case 105: {
             detailParamList_.AddEntriesFrom(ref input, _repeated_detailParamList_codec);
             break;
           }

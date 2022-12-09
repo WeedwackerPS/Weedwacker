@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetCustomDungeonRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlHZXRDdXN0b21EdW5nZW9uUnNwLnByb3RvGhpDdXN0b21EdW5nZW9uQmFu",
-            "SW5mby5wcm90bxoYQ3VzdG9tRHVuZ2VvbkJyaWVmLnByb3RvIngKE0dldEN1",
-            "c3RvbUR1bmdlb25Sc3ASDwoHcmV0Y29kZRgKIAEoBRInCghiYW5faW5mbxgO",
-            "IAEoCzIVLkN1c3RvbUR1bmdlb25CYW5JbmZvEicKCmJyaWVmX2xpc3QYBSAD",
-            "KAsyEy5DdXN0b21EdW5nZW9uQnJpZWZCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlHZXRDdXN0b21EdW5nZW9uUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhpDdXN0b21EdW5nZW9uQmFuSW5mby5wcm90bxoY",
+            "Q3VzdG9tRHVuZ2VvbkJyaWVmLnByb3RvIrgBChNHZXRDdXN0b21EdW5nZW9u",
+            "UnNwEkcKCmJyaWVmX2xpc3QYBSADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25CcmllZhIPCgdyZXRjb2RlGAMg",
+            "ASgFEkcKCGJhbl9pbmZvGAogASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5DdXN0b21EdW5nZW9uQmFuSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCustomDungeonRsp), global::Weedwacker.Shared.Network.Proto.GetCustomDungeonRsp.Parser, new[]{ "Retcode", "BanInfo", "BriefList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCustomDungeonRsp), global::Weedwacker.Shared.Network.Proto.GetCustomDungeonRsp.Parser, new[]{ "BriefList", "Retcode", "BanInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6227
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6211;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetCustomDungeonRsp : pb::IMessage<GetCustomDungeonRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCustomDungeonRsp(GetCustomDungeonRsp other) : this() {
+      briefList_ = other.briefList_.Clone();
       retcode_ = other.retcode_;
       banInfo_ = other.banInfo_ != null ? other.banInfo_.Clone() : null;
-      briefList_ = other.briefList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,30 +94,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCustomDungeonRsp Clone() {
       return new GetCustomDungeonRsp(this);
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ban_info" field.</summary>
-    public const int BanInfoFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo banInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo BanInfo {
-      get { return banInfo_; }
-      set {
-        banInfo_ = value;
-      }
     }
 
     /// <summary>Field number for the "brief_list" field.</summary>
@@ -124,6 +105,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief> BriefList {
       get { return briefList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 3;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ban_info" field.</summary>
+    public const int BanInfoFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo banInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo BanInfo {
+      get { return banInfo_; }
+      set {
+        banInfo_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!briefList_.Equals(other.briefList_)) return false;
       if (Retcode != other.Retcode) return false;
       if (!object.Equals(BanInfo, other.BanInfo)) return false;
-      if(!briefList_.Equals(other.briefList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= briefList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (banInfo_ != null) hash ^= BanInfo.GetHashCode();
-      hash ^= briefList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      briefList_.WriteTo(output, _repeated_briefList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
+      briefList_.WriteTo(output, _repeated_briefList_codec);
       if (banInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(82);
         output.WriteMessage(BanInfo);
       }
       if (_unknownFields != null) {
@@ -191,13 +196,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      briefList_.WriteTo(ref output, _repeated_briefList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
+      briefList_.WriteTo(ref output, _repeated_briefList_codec);
       if (banInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(82);
         output.WriteMessage(BanInfo);
       }
       if (_unknownFields != null) {
@@ -210,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += briefList_.CalculateSize(_repeated_briefList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (banInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BanInfo);
       }
-      size += briefList_.CalculateSize(_repeated_briefList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -229,6 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      briefList_.Add(other.briefList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
@@ -238,7 +244,6 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         BanInfo.MergeFrom(other.BanInfo);
       }
-      briefList_.Add(other.briefList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -254,15 +259,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
           case 42: {
             briefList_.AddEntriesFrom(input, _repeated_briefList_codec);
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 82: {
             if (banInfo_ == null) {
               BanInfo = new global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo();
             }
@@ -284,15 +289,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
           case 42: {
             briefList_.AddEntriesFrom(ref input, _repeated_briefList_codec);
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 82: {
             if (banInfo_ == null) {
               BanInfo = new global::Weedwacker.Shared.Network.Proto.CustomDungeonBanInfo();
             }

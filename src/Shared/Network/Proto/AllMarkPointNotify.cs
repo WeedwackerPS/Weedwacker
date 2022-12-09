@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AllMarkPointNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhBbGxNYXJrUG9pbnROb3RpZnkucHJvdG8aEk1hcE1hcmtQb2ludC5wcm90",
-            "byI2ChJBbGxNYXJrUG9pbnROb3RpZnkSIAoJbWFya19saXN0GAcgAygLMg0u",
-            "TWFwTWFya1BvaW50QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChhBbGxNYXJrUG9pbnROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEk1hcE1hcmtQb2ludC5wcm90byJWChJBbGxNYXJr",
+            "UG9pbnROb3RpZnkSQAoJbWFya19saXN0GAIgAygLMi0uV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5NYXBNYXJrUG9pbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MapMarkPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3283
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3322;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AllMarkPointNotify : pb::IMessage<AllMarkPointNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mark_list" field.</summary>
-    public const int MarkListFieldNumber = 7;
+    public const int MarkListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MapMarkPoint> _repeated_markList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.MapMarkPoint.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.MapMarkPoint.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkPoint> markList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkPoint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 18: {
             markList_.AddEntriesFrom(input, _repeated_markList_codec);
             break;
           }
@@ -210,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 18: {
             markList_.AddEntriesFrom(ref input, _repeated_markList_codec);
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static StoreCustomDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTdG9yZUN1c3RvbUR1bmdlb25SZXEucHJvdG8iRgoVU3RvcmVDdXN0b21E",
-            "dW5nZW9uUmVxEhcKD2lzX2NhbmNlbF9zdG9yZRgJIAEoCBIUCgxkdW5nZW9u",
-            "X2d1aWQYCyABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChtTdG9yZUN1c3RvbUR1bmdlb25SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iRgoVU3RvcmVDdXN0b21EdW5nZW9uUmVxEhQK",
+            "DGR1bmdlb25fZ3VpZBgMIAEoBBIXCg9pc19jYW5jZWxfc3RvcmUYCyABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreCustomDungeonReq), global::Weedwacker.Shared.Network.Proto.StoreCustomDungeonReq.Parser, new[]{ "IsCancelStore", "DungeonGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreCustomDungeonReq), global::Weedwacker.Shared.Network.Proto.StoreCustomDungeonReq.Parser, new[]{ "DungeonGuid", "IsCancelStore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6213
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6250;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class StoreCustomDungeonReq : pb::IMessage<StoreCustomDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StoreCustomDungeonReq(StoreCustomDungeonReq other) : this() {
-      isCancelStore_ = other.isCancelStore_;
       dungeonGuid_ = other.dungeonGuid_;
+      isCancelStore_ = other.isCancelStore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StoreCustomDungeonReq(this);
     }
 
-    /// <summary>Field number for the "is_cancel_store" field.</summary>
-    public const int IsCancelStoreFieldNumber = 9;
-    private bool isCancelStore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCancelStore {
-      get { return isCancelStore_; }
-      set {
-        isCancelStore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 11;
+    public const int DungeonGuidFieldNumber = 12;
     private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dungeonGuid_; }
       set {
         dungeonGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_cancel_store" field.</summary>
+    public const int IsCancelStoreFieldNumber = 11;
+    private bool isCancelStore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCancelStore {
+      get { return isCancelStore_; }
+      set {
+        isCancelStore_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsCancelStore != other.IsCancelStore) return false;
       if (DungeonGuid != other.DungeonGuid) return false;
+      if (IsCancelStore != other.IsCancelStore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsCancelStore != false) hash ^= IsCancelStore.GetHashCode();
       if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      if (IsCancelStore != false) hash ^= IsCancelStore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsCancelStore != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteBool(IsCancelStore);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt64(DungeonGuid);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsCancelStore != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteBool(IsCancelStore);
       }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt64(DungeonGuid);
       }
       if (_unknownFields != null) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsCancelStore != false) {
-        size += 1 + 1;
-      }
       if (DungeonGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
+      }
+      if (IsCancelStore != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsCancelStore != false) {
-        IsCancelStore = other.IsCancelStore;
-      }
       if (other.DungeonGuid != 0UL) {
         DungeonGuid = other.DungeonGuid;
+      }
+      if (other.IsCancelStore != false) {
+        IsCancelStore = other.IsCancelStore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 88: {
             IsCancelStore = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             DungeonGuid = input.ReadUInt64();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 88: {
             IsCancelStore = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             DungeonGuid = input.ReadUInt64();
             break;
           }

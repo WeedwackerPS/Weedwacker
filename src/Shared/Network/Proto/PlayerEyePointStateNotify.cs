@@ -24,23 +24,26 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerEyePointStateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9QbGF5ZXJFeWVQb2ludFN0YXRlTm90aWZ5LnByb3RvGhhDeWxpbmRlclJl",
-            "Z2lvblNpemUucHJvdG8aF1BvbHlnb25SZWdpb25TaXplLnByb3RvGgxWZWN0",
-            "b3IucHJvdG8ikgMKGVBsYXllckV5ZVBvaW50U3RhdGVOb3RpZnkSGAoQcmVn",
-            "aW9uX2VudGl0eV9pZBgPIAEoDRIeCg1leWVfcG9pbnRfcG9zGAEgASgLMgcu",
-            "VmVjdG9yEhgKEGlzX3VzZV9leWVfcG9pbnQYAyABKAgSGAoQcmVnaW9uX2Nv",
-            "bmZpZ19pZBgHIAEoDRIUCgxyZWdpb25fc2hhcGUYDCABKA0SHAoUaXNfZmls",
-            "dGVyX3N0cmVhbV9wb3MYAiABKAgSFQoNZml4X2xvZF9sZXZlbBgFIAEoBRIX",
-            "Cg9yZWdpb25fZ3JvdXBfaWQYBCABKA0SGAoNc3BoZXJlX3JhZGl1cxj/ASAB",
-            "KAJIABIeCgpjdWJpY19zaXplGJ8OIAEoCzIHLlZlY3RvckgAEi0KDWN5bGlu",
-            "ZGVyX3NpemUYxg4gASgLMhMuQ3lsaW5kZXJSZWdpb25TaXplSAASKwoMcG9s",
-            "eWdvbl9zaXplGO0GIAEoCzISLlBvbHlnb25SZWdpb25TaXplSABCDQoLcmVn",
-            "aW9uX3NpemVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch9QbGF5ZXJFeWVQb2ludFN0YXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhhDeWxpbmRlclJlZ2lvblNpemUucHJv",
+            "dG8aF1BvbHlnb25SZWdpb25TaXplLnByb3RvGgxWZWN0b3IucHJvdG8ipQQK",
+            "GVBsYXllckV5ZVBvaW50U3RhdGVOb3RpZnkSPgoNZXllX3BvaW50X3BvcxgM",
+            "IAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9y",
+            "EhsKE1VuazMzMDBfS0ZPSE9CTE1NTEIYCSABKAgSGwoTVW5rMzMwMF9HTkZK",
+            "SU9FR0hPRRgBIAEoDRIbChNVbmszMzAwX0JJSEVLTkZERERJGAggASgNEhUK",
+            "DWZpeF9sb2RfbGV2ZWwYCyABKAUSGwoTVW5rMzMwMF9OSVBGQ0ZDQkZBRRgO",
+            "IAEoCBIbChNVbmszMzAwX0pHRU1LS0pBSEtBGA0gASgNEhsKE1VuazMzMDBf",
+            "RU9QRk5CQkJHUEsYBiABKA0SGAoNc3BoZXJlX3JhZGl1cxiFCyABKAJIABI+",
+            "CgpjdWJpY19zaXplGNIKIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVmVjdG9ySAASTQoNY3lsaW5kZXJfc2l6ZRjiCSABKAsyMy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkN5bGluZGVyUmVnaW9u",
+            "U2l6ZUgAEksKDHBvbHlnb25fc2l6ZRjgBCABKAsyMi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlBvbHlnb25SZWdpb25TaXplSABCDQoLcmVn",
+            "aW9uX3NpemViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CylinderRegionSizeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PolygonRegionSizeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerEyePointStateNotify), global::Weedwacker.Shared.Network.Proto.PlayerEyePointStateNotify.Parser, new[]{ "RegionEntityId", "EyePointPos", "IsUseEyePoint", "RegionConfigId", "RegionShape", "IsFilterStreamPos", "FixLodLevel", "RegionGroupId", "SphereRadius", "CubicSize", "CylinderSize", "PolygonSize" }, new[]{ "RegionSize" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerEyePointStateNotify), global::Weedwacker.Shared.Network.Proto.PlayerEyePointStateNotify.Parser, new[]{ "EyePointPos", "Unk3300KFOHOBLMMLB", "Unk3300GNFJIOEGHOE", "Unk3300BIHEKNFDDDI", "FixLodLevel", "Unk3300NIPFCFCBFAE", "Unk3300JGEMKKJAHKA", "Unk3300EOPFNBBBGPK", "SphereRadius", "CubicSize", "CylinderSize", "PolygonSize" }, new[]{ "RegionSize" }, null, null, null)
           }));
     }
     #endregion
@@ -48,9 +51,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3051
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3079;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerEyePointStateNotify : pb::IMessage<PlayerEyePointStateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -86,14 +93,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerEyePointStateNotify(PlayerEyePointStateNotify other) : this() {
-      regionEntityId_ = other.regionEntityId_;
       eyePointPos_ = other.eyePointPos_ != null ? other.eyePointPos_.Clone() : null;
-      isUseEyePoint_ = other.isUseEyePoint_;
-      regionConfigId_ = other.regionConfigId_;
-      regionShape_ = other.regionShape_;
-      isFilterStreamPos_ = other.isFilterStreamPos_;
+      unk3300KFOHOBLMMLB_ = other.unk3300KFOHOBLMMLB_;
+      unk3300GNFJIOEGHOE_ = other.unk3300GNFJIOEGHOE_;
+      unk3300BIHEKNFDDDI_ = other.unk3300BIHEKNFDDDI_;
       fixLodLevel_ = other.fixLodLevel_;
-      regionGroupId_ = other.regionGroupId_;
+      unk3300NIPFCFCBFAE_ = other.unk3300NIPFCFCBFAE_;
+      unk3300JGEMKKJAHKA_ = other.unk3300JGEMKKJAHKA_;
+      unk3300EOPFNBBBGPK_ = other.unk3300EOPFNBBBGPK_;
       switch (other.RegionSizeCase) {
         case RegionSizeOneofCase.SphereRadius:
           SphereRadius = other.SphereRadius;
@@ -118,20 +125,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerEyePointStateNotify(this);
     }
 
-    /// <summary>Field number for the "region_entity_id" field.</summary>
-    public const int RegionEntityIdFieldNumber = 15;
-    private uint regionEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegionEntityId {
-      get { return regionEntityId_; }
-      set {
-        regionEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "eye_point_pos" field.</summary>
-    public const int EyePointPosFieldNumber = 1;
+    public const int EyePointPosFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.Vector eyePointPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,56 +137,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_use_eye_point" field.</summary>
-    public const int IsUseEyePointFieldNumber = 3;
-    private bool isUseEyePoint_;
+    /// <summary>Field number for the "Unk3300_KFOHOBLMMLB" field.</summary>
+    public const int Unk3300KFOHOBLMMLBFieldNumber = 9;
+    private bool unk3300KFOHOBLMMLB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUseEyePoint {
-      get { return isUseEyePoint_; }
+    public bool Unk3300KFOHOBLMMLB {
+      get { return unk3300KFOHOBLMMLB_; }
       set {
-        isUseEyePoint_ = value;
+        unk3300KFOHOBLMMLB_ = value;
       }
     }
 
-    /// <summary>Field number for the "region_config_id" field.</summary>
-    public const int RegionConfigIdFieldNumber = 7;
-    private uint regionConfigId_;
+    /// <summary>Field number for the "Unk3300_GNFJIOEGHOE" field.</summary>
+    public const int Unk3300GNFJIOEGHOEFieldNumber = 1;
+    private uint unk3300GNFJIOEGHOE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegionConfigId {
-      get { return regionConfigId_; }
+    public uint Unk3300GNFJIOEGHOE {
+      get { return unk3300GNFJIOEGHOE_; }
       set {
-        regionConfigId_ = value;
+        unk3300GNFJIOEGHOE_ = value;
       }
     }
 
-    /// <summary>Field number for the "region_shape" field.</summary>
-    public const int RegionShapeFieldNumber = 12;
-    private uint regionShape_;
+    /// <summary>Field number for the "Unk3300_BIHEKNFDDDI" field.</summary>
+    public const int Unk3300BIHEKNFDDDIFieldNumber = 8;
+    private uint unk3300BIHEKNFDDDI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegionShape {
-      get { return regionShape_; }
+    public uint Unk3300BIHEKNFDDDI {
+      get { return unk3300BIHEKNFDDDI_; }
       set {
-        regionShape_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_filter_stream_pos" field.</summary>
-    public const int IsFilterStreamPosFieldNumber = 2;
-    private bool isFilterStreamPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFilterStreamPos {
-      get { return isFilterStreamPos_; }
-      set {
-        isFilterStreamPos_ = value;
+        unk3300BIHEKNFDDDI_ = value;
       }
     }
 
     /// <summary>Field number for the "fix_lod_level" field.</summary>
-    public const int FixLodLevelFieldNumber = 5;
+    public const int FixLodLevelFieldNumber = 11;
     private int fixLodLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -202,20 +185,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "region_group_id" field.</summary>
-    public const int RegionGroupIdFieldNumber = 4;
-    private uint regionGroupId_;
+    /// <summary>Field number for the "Unk3300_NIPFCFCBFAE" field.</summary>
+    public const int Unk3300NIPFCFCBFAEFieldNumber = 14;
+    private bool unk3300NIPFCFCBFAE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegionGroupId {
-      get { return regionGroupId_; }
+    public bool Unk3300NIPFCFCBFAE {
+      get { return unk3300NIPFCFCBFAE_; }
       set {
-        regionGroupId_ = value;
+        unk3300NIPFCFCBFAE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JGEMKKJAHKA" field.</summary>
+    public const int Unk3300JGEMKKJAHKAFieldNumber = 13;
+    private uint unk3300JGEMKKJAHKA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JGEMKKJAHKA {
+      get { return unk3300JGEMKKJAHKA_; }
+      set {
+        unk3300JGEMKKJAHKA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EOPFNBBBGPK" field.</summary>
+    public const int Unk3300EOPFNBBBGPKFieldNumber = 6;
+    private uint unk3300EOPFNBBBGPK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EOPFNBBBGPK {
+      get { return unk3300EOPFNBBBGPK_; }
+      set {
+        unk3300EOPFNBBBGPK_ = value;
       }
     }
 
     /// <summary>Field number for the "sphere_radius" field.</summary>
-    public const int SphereRadiusFieldNumber = 255;
+    public const int SphereRadiusFieldNumber = 1413;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float SphereRadius {
@@ -227,7 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cubic_size" field.</summary>
-    public const int CubicSizeFieldNumber = 1823;
+    public const int CubicSizeFieldNumber = 1362;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.Vector CubicSize {
@@ -239,7 +246,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cylinder_size" field.</summary>
-    public const int CylinderSizeFieldNumber = 1862;
+    public const int CylinderSizeFieldNumber = 1250;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CylinderRegionSize CylinderSize {
@@ -251,7 +258,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "polygon_size" field.</summary>
-    public const int PolygonSizeFieldNumber = 877;
+    public const int PolygonSizeFieldNumber = 608;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.PolygonRegionSize PolygonSize {
@@ -266,10 +273,10 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "region_size" oneof.</summary>
     public enum RegionSizeOneofCase {
       None = 0,
-      SphereRadius = 255,
-      CubicSize = 1823,
-      CylinderSize = 1862,
-      PolygonSize = 877,
+      SphereRadius = 1413,
+      CubicSize = 1362,
+      CylinderSize = 1250,
+      PolygonSize = 608,
     }
     private RegionSizeOneofCase regionSizeCase_ = RegionSizeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -300,14 +307,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RegionEntityId != other.RegionEntityId) return false;
       if (!object.Equals(EyePointPos, other.EyePointPos)) return false;
-      if (IsUseEyePoint != other.IsUseEyePoint) return false;
-      if (RegionConfigId != other.RegionConfigId) return false;
-      if (RegionShape != other.RegionShape) return false;
-      if (IsFilterStreamPos != other.IsFilterStreamPos) return false;
+      if (Unk3300KFOHOBLMMLB != other.Unk3300KFOHOBLMMLB) return false;
+      if (Unk3300GNFJIOEGHOE != other.Unk3300GNFJIOEGHOE) return false;
+      if (Unk3300BIHEKNFDDDI != other.Unk3300BIHEKNFDDDI) return false;
       if (FixLodLevel != other.FixLodLevel) return false;
-      if (RegionGroupId != other.RegionGroupId) return false;
+      if (Unk3300NIPFCFCBFAE != other.Unk3300NIPFCFCBFAE) return false;
+      if (Unk3300JGEMKKJAHKA != other.Unk3300JGEMKKJAHKA) return false;
+      if (Unk3300EOPFNBBBGPK != other.Unk3300EOPFNBBBGPK) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SphereRadius, other.SphereRadius)) return false;
       if (!object.Equals(CubicSize, other.CubicSize)) return false;
       if (!object.Equals(CylinderSize, other.CylinderSize)) return false;
@@ -320,14 +327,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RegionEntityId != 0) hash ^= RegionEntityId.GetHashCode();
       if (eyePointPos_ != null) hash ^= EyePointPos.GetHashCode();
-      if (IsUseEyePoint != false) hash ^= IsUseEyePoint.GetHashCode();
-      if (RegionConfigId != 0) hash ^= RegionConfigId.GetHashCode();
-      if (RegionShape != 0) hash ^= RegionShape.GetHashCode();
-      if (IsFilterStreamPos != false) hash ^= IsFilterStreamPos.GetHashCode();
+      if (Unk3300KFOHOBLMMLB != false) hash ^= Unk3300KFOHOBLMMLB.GetHashCode();
+      if (Unk3300GNFJIOEGHOE != 0) hash ^= Unk3300GNFJIOEGHOE.GetHashCode();
+      if (Unk3300BIHEKNFDDDI != 0) hash ^= Unk3300BIHEKNFDDDI.GetHashCode();
       if (FixLodLevel != 0) hash ^= FixLodLevel.GetHashCode();
-      if (RegionGroupId != 0) hash ^= RegionGroupId.GetHashCode();
+      if (Unk3300NIPFCFCBFAE != false) hash ^= Unk3300NIPFCFCBFAE.GetHashCode();
+      if (Unk3300JGEMKKJAHKA != 0) hash ^= Unk3300JGEMKKJAHKA.GetHashCode();
+      if (Unk3300EOPFNBBBGPK != 0) hash ^= Unk3300EOPFNBBBGPK.GetHashCode();
       if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SphereRadius);
       if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) hash ^= CubicSize.GetHashCode();
       if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) hash ^= CylinderSize.GetHashCode();
@@ -351,53 +358,53 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (eyePointPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(EyePointPos);
+      if (Unk3300GNFJIOEGHOE != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300GNFJIOEGHOE);
       }
-      if (IsFilterStreamPos != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsFilterStreamPos);
+      if (Unk3300EOPFNBBBGPK != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300EOPFNBBBGPK);
       }
-      if (IsUseEyePoint != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsUseEyePoint);
+      if (Unk3300BIHEKNFDDDI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BIHEKNFDDDI);
       }
-      if (RegionGroupId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RegionGroupId);
+      if (Unk3300KFOHOBLMMLB != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KFOHOBLMMLB);
       }
       if (FixLodLevel != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(88);
         output.WriteInt32(FixLodLevel);
       }
-      if (RegionConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(RegionConfigId);
+      if (eyePointPos_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(EyePointPos);
       }
-      if (RegionShape != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RegionShape);
+      if (Unk3300JGEMKKJAHKA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300JGEMKKJAHKA);
       }
-      if (RegionEntityId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(RegionEntityId);
-      }
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
-        output.WriteRawTag(253, 15);
-        output.WriteFloat(SphereRadius);
+      if (Unk3300NIPFCFCBFAE != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300NIPFCFCBFAE);
       }
       if (regionSizeCase_ == RegionSizeOneofCase.PolygonSize) {
-        output.WriteRawTag(234, 54);
+        output.WriteRawTag(130, 38);
         output.WriteMessage(PolygonSize);
       }
+      if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
+        output.WriteRawTag(146, 78);
+        output.WriteMessage(CylinderSize);
+      }
       if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) {
-        output.WriteRawTag(250, 113);
+        output.WriteRawTag(146, 85);
         output.WriteMessage(CubicSize);
       }
-      if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
-        output.WriteRawTag(178, 116);
-        output.WriteMessage(CylinderSize);
+      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
+        output.WriteRawTag(173, 88);
+        output.WriteFloat(SphereRadius);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -409,53 +416,53 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (eyePointPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(EyePointPos);
+      if (Unk3300GNFJIOEGHOE != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300GNFJIOEGHOE);
       }
-      if (IsFilterStreamPos != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsFilterStreamPos);
+      if (Unk3300EOPFNBBBGPK != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300EOPFNBBBGPK);
       }
-      if (IsUseEyePoint != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsUseEyePoint);
+      if (Unk3300BIHEKNFDDDI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BIHEKNFDDDI);
       }
-      if (RegionGroupId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RegionGroupId);
+      if (Unk3300KFOHOBLMMLB != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KFOHOBLMMLB);
       }
       if (FixLodLevel != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(88);
         output.WriteInt32(FixLodLevel);
       }
-      if (RegionConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(RegionConfigId);
+      if (eyePointPos_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(EyePointPos);
       }
-      if (RegionShape != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RegionShape);
+      if (Unk3300JGEMKKJAHKA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300JGEMKKJAHKA);
       }
-      if (RegionEntityId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(RegionEntityId);
-      }
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
-        output.WriteRawTag(253, 15);
-        output.WriteFloat(SphereRadius);
+      if (Unk3300NIPFCFCBFAE != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300NIPFCFCBFAE);
       }
       if (regionSizeCase_ == RegionSizeOneofCase.PolygonSize) {
-        output.WriteRawTag(234, 54);
+        output.WriteRawTag(130, 38);
         output.WriteMessage(PolygonSize);
       }
+      if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
+        output.WriteRawTag(146, 78);
+        output.WriteMessage(CylinderSize);
+      }
       if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) {
-        output.WriteRawTag(250, 113);
+        output.WriteRawTag(146, 85);
         output.WriteMessage(CubicSize);
       }
-      if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
-        output.WriteRawTag(178, 116);
-        output.WriteMessage(CylinderSize);
+      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
+        output.WriteRawTag(173, 88);
+        output.WriteFloat(SphereRadius);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -467,29 +474,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RegionEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionEntityId);
-      }
       if (eyePointPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(EyePointPos);
       }
-      if (IsUseEyePoint != false) {
+      if (Unk3300KFOHOBLMMLB != false) {
         size += 1 + 1;
       }
-      if (RegionConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionConfigId);
+      if (Unk3300GNFJIOEGHOE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNFJIOEGHOE);
       }
-      if (RegionShape != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionShape);
-      }
-      if (IsFilterStreamPos != false) {
-        size += 1 + 1;
+      if (Unk3300BIHEKNFDDDI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BIHEKNFDDDI);
       }
       if (FixLodLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FixLodLevel);
       }
-      if (RegionGroupId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionGroupId);
+      if (Unk3300NIPFCFCBFAE != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300JGEMKKJAHKA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JGEMKKJAHKA);
+      }
+      if (Unk3300EOPFNBBBGPK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EOPFNBBBGPK);
       }
       if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
         size += 2 + 4;
@@ -515,32 +522,32 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RegionEntityId != 0) {
-        RegionEntityId = other.RegionEntityId;
-      }
       if (other.eyePointPos_ != null) {
         if (eyePointPos_ == null) {
           EyePointPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         EyePointPos.MergeFrom(other.EyePointPos);
       }
-      if (other.IsUseEyePoint != false) {
-        IsUseEyePoint = other.IsUseEyePoint;
+      if (other.Unk3300KFOHOBLMMLB != false) {
+        Unk3300KFOHOBLMMLB = other.Unk3300KFOHOBLMMLB;
       }
-      if (other.RegionConfigId != 0) {
-        RegionConfigId = other.RegionConfigId;
+      if (other.Unk3300GNFJIOEGHOE != 0) {
+        Unk3300GNFJIOEGHOE = other.Unk3300GNFJIOEGHOE;
       }
-      if (other.RegionShape != 0) {
-        RegionShape = other.RegionShape;
-      }
-      if (other.IsFilterStreamPos != false) {
-        IsFilterStreamPos = other.IsFilterStreamPos;
+      if (other.Unk3300BIHEKNFDDDI != 0) {
+        Unk3300BIHEKNFDDDI = other.Unk3300BIHEKNFDDDI;
       }
       if (other.FixLodLevel != 0) {
         FixLodLevel = other.FixLodLevel;
       }
-      if (other.RegionGroupId != 0) {
-        RegionGroupId = other.RegionGroupId;
+      if (other.Unk3300NIPFCFCBFAE != false) {
+        Unk3300NIPFCFCBFAE = other.Unk3300NIPFCFCBFAE;
+      }
+      if (other.Unk3300JGEMKKJAHKA != 0) {
+        Unk3300JGEMKKJAHKA = other.Unk3300JGEMKKJAHKA;
+      }
+      if (other.Unk3300EOPFNBBBGPK != 0) {
+        Unk3300EOPFNBBBGPK = other.Unk3300EOPFNBBBGPK;
       }
       switch (other.RegionSizeCase) {
         case RegionSizeOneofCase.SphereRadius:
@@ -581,46 +588,42 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 8: {
+            Unk3300GNFJIOEGHOE = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300EOPFNBBBGPK = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300BIHEKNFDDDI = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300KFOHOBLMMLB = input.ReadBool();
+            break;
+          }
+          case 88: {
+            FixLodLevel = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (eyePointPos_ == null) {
               EyePointPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(EyePointPos);
             break;
           }
-          case 16: {
-            IsFilterStreamPos = input.ReadBool();
+          case 104: {
+            Unk3300JGEMKKJAHKA = input.ReadUInt32();
             break;
           }
-          case 24: {
-            IsUseEyePoint = input.ReadBool();
+          case 112: {
+            Unk3300NIPFCFCBFAE = input.ReadBool();
             break;
           }
-          case 32: {
-            RegionGroupId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            FixLodLevel = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            RegionConfigId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            RegionShape = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            RegionEntityId = input.ReadUInt32();
-            break;
-          }
-          case 2045: {
-            SphereRadius = input.ReadFloat();
-            break;
-          }
-          case 7018: {
+          case 4866: {
             global::Weedwacker.Shared.Network.Proto.PolygonRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.PolygonRegionSize();
             if (regionSizeCase_ == RegionSizeOneofCase.PolygonSize) {
               subBuilder.MergeFrom(PolygonSize);
@@ -629,7 +632,16 @@ namespace Weedwacker.Shared.Network.Proto {
             PolygonSize = subBuilder;
             break;
           }
-          case 14586: {
+          case 10002: {
+            global::Weedwacker.Shared.Network.Proto.CylinderRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.CylinderRegionSize();
+            if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
+              subBuilder.MergeFrom(CylinderSize);
+            }
+            input.ReadMessage(subBuilder);
+            CylinderSize = subBuilder;
+            break;
+          }
+          case 10898: {
             global::Weedwacker.Shared.Network.Proto.Vector subBuilder = new global::Weedwacker.Shared.Network.Proto.Vector();
             if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) {
               subBuilder.MergeFrom(CubicSize);
@@ -638,13 +650,8 @@ namespace Weedwacker.Shared.Network.Proto {
             CubicSize = subBuilder;
             break;
           }
-          case 14898: {
-            global::Weedwacker.Shared.Network.Proto.CylinderRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.CylinderRegionSize();
-            if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
-              subBuilder.MergeFrom(CylinderSize);
-            }
-            input.ReadMessage(subBuilder);
-            CylinderSize = subBuilder;
+          case 11309: {
+            SphereRadius = input.ReadFloat();
             break;
           }
         }
@@ -662,46 +669,42 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 8: {
+            Unk3300GNFJIOEGHOE = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300EOPFNBBBGPK = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300BIHEKNFDDDI = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300KFOHOBLMMLB = input.ReadBool();
+            break;
+          }
+          case 88: {
+            FixLodLevel = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (eyePointPos_ == null) {
               EyePointPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(EyePointPos);
             break;
           }
-          case 16: {
-            IsFilterStreamPos = input.ReadBool();
+          case 104: {
+            Unk3300JGEMKKJAHKA = input.ReadUInt32();
             break;
           }
-          case 24: {
-            IsUseEyePoint = input.ReadBool();
+          case 112: {
+            Unk3300NIPFCFCBFAE = input.ReadBool();
             break;
           }
-          case 32: {
-            RegionGroupId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            FixLodLevel = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            RegionConfigId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            RegionShape = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            RegionEntityId = input.ReadUInt32();
-            break;
-          }
-          case 2045: {
-            SphereRadius = input.ReadFloat();
-            break;
-          }
-          case 7018: {
+          case 4866: {
             global::Weedwacker.Shared.Network.Proto.PolygonRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.PolygonRegionSize();
             if (regionSizeCase_ == RegionSizeOneofCase.PolygonSize) {
               subBuilder.MergeFrom(PolygonSize);
@@ -710,7 +713,16 @@ namespace Weedwacker.Shared.Network.Proto {
             PolygonSize = subBuilder;
             break;
           }
-          case 14586: {
+          case 10002: {
+            global::Weedwacker.Shared.Network.Proto.CylinderRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.CylinderRegionSize();
+            if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
+              subBuilder.MergeFrom(CylinderSize);
+            }
+            input.ReadMessage(subBuilder);
+            CylinderSize = subBuilder;
+            break;
+          }
+          case 10898: {
             global::Weedwacker.Shared.Network.Proto.Vector subBuilder = new global::Weedwacker.Shared.Network.Proto.Vector();
             if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) {
               subBuilder.MergeFrom(CubicSize);
@@ -719,13 +731,8 @@ namespace Weedwacker.Shared.Network.Proto {
             CubicSize = subBuilder;
             break;
           }
-          case 14898: {
-            global::Weedwacker.Shared.Network.Proto.CylinderRegionSize subBuilder = new global::Weedwacker.Shared.Network.Proto.CylinderRegionSize();
-            if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) {
-              subBuilder.MergeFrom(CylinderSize);
-            }
-            input.ReadMessage(subBuilder);
-            CylinderSize = subBuilder;
+          case 11309: {
+            SphereRadius = input.ReadFloat();
             break;
           }
         }

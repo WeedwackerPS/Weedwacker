@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryBounceConjuringInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVTY2VuZUdhbGxlcnlCb3VuY2VDb25qdXJpbmdJbmZvLnByb3RvIl0KH1Nj",
-            "ZW5lR2FsbGVyeUJvdW5jZUNvbmp1cmluZ0luZm8SJQoddG90YWxfZGVzdHJv",
-            "eWVkX21hY2hpbmVfY291bnQYBCABKA0SEwoLdG90YWxfc2NvcmUYBiABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVTY2VuZUdhbGxlcnlCb3VuY2VDb25qdXJpbmdJbmZvLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIl0KH1NjZW5lR2FsbGVyeUJv",
+            "dW5jZUNvbmp1cmluZ0luZm8SEwoLdG90YWxfc2NvcmUYBCABKA0SJQoddG90",
+            "YWxfZGVzdHJveWVkX21hY2hpbmVfY291bnQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryBounceConjuringInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryBounceConjuringInfo.Parser, new[]{ "TotalDestroyedMachineCount", "TotalScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryBounceConjuringInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryBounceConjuringInfo.Parser, new[]{ "TotalScore", "TotalDestroyedMachineCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryBounceConjuringInfo(SceneGalleryBounceConjuringInfo other) : this() {
-      totalDestroyedMachineCount_ = other.totalDestroyedMachineCount_;
       totalScore_ = other.totalScore_;
+      totalDestroyedMachineCount_ = other.totalDestroyedMachineCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryBounceConjuringInfo(this);
     }
 
-    /// <summary>Field number for the "total_destroyed_machine_count" field.</summary>
-    public const int TotalDestroyedMachineCountFieldNumber = 4;
-    private uint totalDestroyedMachineCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalDestroyedMachineCount {
-      get { return totalDestroyedMachineCount_; }
-      set {
-        totalDestroyedMachineCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "total_score" field.</summary>
-    public const int TotalScoreFieldNumber = 6;
+    public const int TotalScoreFieldNumber = 4;
     private uint totalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return totalScore_; }
       set {
         totalScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_destroyed_machine_count" field.</summary>
+    public const int TotalDestroyedMachineCountFieldNumber = 12;
+    private uint totalDestroyedMachineCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalDestroyedMachineCount {
+      get { return totalDestroyedMachineCount_; }
+      set {
+        totalDestroyedMachineCount_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TotalDestroyedMachineCount != other.TotalDestroyedMachineCount) return false;
       if (TotalScore != other.TotalScore) return false;
+      if (TotalDestroyedMachineCount != other.TotalDestroyedMachineCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TotalDestroyedMachineCount != 0) hash ^= TotalDestroyedMachineCount.GetHashCode();
       if (TotalScore != 0) hash ^= TotalScore.GetHashCode();
+      if (TotalDestroyedMachineCount != 0) hash ^= TotalDestroyedMachineCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TotalDestroyedMachineCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalDestroyedMachineCount);
-      }
       if (TotalScore != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(TotalScore);
+      }
+      if (TotalDestroyedMachineCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalDestroyedMachineCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TotalDestroyedMachineCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalDestroyedMachineCount);
-      }
       if (TotalScore != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(TotalScore);
+      }
+      if (TotalDestroyedMachineCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalDestroyedMachineCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TotalDestroyedMachineCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalDestroyedMachineCount);
-      }
       if (TotalScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalScore);
+      }
+      if (TotalDestroyedMachineCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalDestroyedMachineCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TotalDestroyedMachineCount != 0) {
-        TotalDestroyedMachineCount = other.TotalDestroyedMachineCount;
-      }
       if (other.TotalScore != 0) {
         TotalScore = other.TotalScore;
+      }
+      if (other.TotalDestroyedMachineCount != 0) {
+        TotalDestroyedMachineCount = other.TotalDestroyedMachineCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            TotalDestroyedMachineCount = input.ReadUInt32();
+            TotalScore = input.ReadUInt32();
             break;
           }
-          case 48: {
-            TotalScore = input.ReadUInt32();
+          case 96: {
+            TotalDestroyedMachineCount = input.ReadUInt32();
             break;
           }
         }
@@ -250,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            TotalDestroyedMachineCount = input.ReadUInt32();
+            TotalScore = input.ReadUInt32();
             break;
           }
-          case 48: {
-            TotalScore = input.ReadUInt32();
+          case 96: {
+            TotalDestroyedMachineCount = input.ReadUInt32();
             break;
           }
         }

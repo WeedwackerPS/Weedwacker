@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopProgressUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Db29wUHJvZ3Jlc3NVcGRhdGVOb3RpZnkucHJvdG8iTAoYQ29vcFByb2dy",
-            "ZXNzVXBkYXRlTm90aWZ5EhYKDmN1cl9jb29wX3BvaW50GAsgASgNEhgKEGlz",
-            "X2hhdmVfcHJvZ3Jlc3MYDCABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5Db29wUHJvZ3Jlc3NVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iTAoYQ29vcFByb2dyZXNzVXBkYXRlTm90",
+            "aWZ5EhYKDmN1cl9jb29wX3BvaW50GAQgASgNEhgKEGlzX2hhdmVfcHJvZ3Jl",
+            "c3MYCCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1998
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1987;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CoopProgressUpdateNotify : pb::IMessage<CoopProgressUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_coop_point" field.</summary>
-    public const int CurCoopPointFieldNumber = 11;
+    public const int CurCoopPointFieldNumber = 4;
     private uint curCoopPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_have_progress" field.</summary>
-    public const int IsHaveProgressFieldNumber = 12;
+    public const int IsHaveProgressFieldNumber = 8;
     private bool isHaveProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CurCoopPoint != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(CurCoopPoint);
       }
       if (IsHaveProgress != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsHaveProgress);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CurCoopPoint != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(CurCoopPoint);
       }
       if (IsHaveProgress != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsHaveProgress);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 32: {
             CurCoopPoint = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 64: {
             IsHaveProgress = input.ReadBool();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 32: {
             CurCoopPoint = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 64: {
             IsHaveProgress = input.ReadBool();
             break;
           }

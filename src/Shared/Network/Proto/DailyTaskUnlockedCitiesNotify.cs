@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static DailyTaskUnlockedCitiesNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNEYWlseVRhc2tVbmxvY2tlZENpdGllc05vdGlmeS5wcm90byI7Ch1EYWls",
-            "eVRhc2tVbmxvY2tlZENpdGllc05vdGlmeRIaChJ1bmxvY2tlZF9jaXR5X2xp",
-            "c3QYDCADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiNEYWlseVRhc2tVbmxvY2tlZENpdGllc05vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byI7Ch1EYWlseVRhc2tVbmxvY2tl",
+            "ZENpdGllc05vdGlmeRIaChJ1bmxvY2tlZF9jaXR5X2xpc3QYDyADKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 186
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 169;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DailyTaskUnlockedCitiesNotify : pb::IMessage<DailyTaskUnlockedCitiesNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlocked_city_list" field.</summary>
-    public const int UnlockedCityListFieldNumber = 12;
+    public const int UnlockedCityListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_unlockedCityList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> unlockedCityList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,8 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98:
-          case 96: {
+          case 122:
+          case 120: {
             unlockedCityList_.AddEntriesFrom(input, _repeated_unlockedCityList_codec);
             break;
           }
@@ -211,8 +215,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98:
-          case 96: {
+          case 122:
+          case 120: {
             unlockedCityList_.AddEntriesFrom(ref input, _repeated_unlockedCityList_codec);
             break;
           }

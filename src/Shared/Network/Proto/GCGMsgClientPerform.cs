@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgClientPerformReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlHQ0dNc2dDbGllbnRQZXJmb3JtLnByb3RvGhpHQ0dDbGllbnRQZXJmb3Jt",
-            "VHlwZS5wcm90byJWChNHQ0dNc2dDbGllbnRQZXJmb3JtEhIKCnBhcmFtX2xp",
-            "c3QYAiADKA0SKwoMcGVyZm9ybV90eXBlGAUgASgOMhUuR0NHQ2xpZW50UGVy",
-            "Zm9ybVR5cGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChlHQ0dNc2dDbGllbnRQZXJmb3JtLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhpHQ0dDbGllbnRQZXJmb3JtVHlwZS5wcm90byJ2",
+            "ChNHQ0dNc2dDbGllbnRQZXJmb3JtEhIKCnBhcmFtX2xpc3QYBCADKA0SSwoM",
+            "cGVyZm9ybV90eXBlGAEgASgOMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HQ0dDbGllbnRQZXJmb3JtVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGClientPerformTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "param_list" field.</summary>
-    public const int ParamListFieldNumber = 2;
+    public const int ParamListFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(34);
     private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "perform_type" field.</summary>
-    public const int PerformTypeFieldNumber = 5;
+    public const int PerformTypeFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.GCGClientPerformType performType_ = global::Weedwacker.Shared.Network.Proto.GCGClientPerformType.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      paramList_.WriteTo(output, _repeated_paramList_codec);
       if (PerformType != global::Weedwacker.Shared.Network.Proto.GCGClientPerformType.Invalid) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteEnum((int) PerformType);
       }
+      paramList_.WriteTo(output, _repeated_paramList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -166,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (PerformType != global::Weedwacker.Shared.Network.Proto.GCGClientPerformType.Invalid) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteEnum((int) PerformType);
       }
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -216,13 +216,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+          case 8: {
+            PerformType = (global::Weedwacker.Shared.Network.Proto.GCGClientPerformType) input.ReadEnum();
             break;
           }
-          case 40: {
-            PerformType = (global::Weedwacker.Shared.Network.Proto.GCGClientPerformType) input.ReadEnum();
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
             break;
           }
         }
@@ -240,13 +240,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+          case 8: {
+            PerformType = (global::Weedwacker.Shared.Network.Proto.GCGClientPerformType) input.ReadEnum();
             break;
           }
-          case 40: {
-            PerformType = (global::Weedwacker.Shared.Network.Proto.GCGClientPerformType) input.ReadEnum();
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
             break;
           }
         }

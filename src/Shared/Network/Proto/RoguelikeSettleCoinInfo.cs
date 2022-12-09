@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeSettleCoinInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Sb2d1ZWxpa2VTZXR0bGVDb2luSW5mby5wcm90byJLChdSb2d1ZWxpa2VT",
-            "ZXR0bGVDb2luSW5mbxIOCgZjb2luX2MYCCABKA0SDgoGY29pbl9iGAogASgN",
-            "EhAKCGNlbGxfbnVtGAEgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1Sb2d1ZWxpa2VTZXR0bGVDb2luSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJjChdSb2d1ZWxpa2VTZXR0bGVDb2luSW5m",
+            "bxIbChNVbmszMzAwX01GS09JTU9OQ0xBGAogASgNEhsKE1VuazMzMDBfTEZF",
+            "S0dCQkFNSEUYDCABKA0SDgoGY29pbl9jGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo.Parser, new[]{ "CoinC", "CoinB", "CellNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeSettleCoinInfo.Parser, new[]{ "Unk3300MFKOIMONCLA", "Unk3300LFEKGBBAMHE", "CoinC" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeSettleCoinInfo(RoguelikeSettleCoinInfo other) : this() {
+      unk3300MFKOIMONCLA_ = other.unk3300MFKOIMONCLA_;
+      unk3300LFEKGBBAMHE_ = other.unk3300LFEKGBBAMHE_;
       coinC_ = other.coinC_;
-      coinB_ = other.coinB_;
-      cellNum_ = other.cellNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RoguelikeSettleCoinInfo(this);
     }
 
+    /// <summary>Field number for the "Unk3300_MFKOIMONCLA" field.</summary>
+    public const int Unk3300MFKOIMONCLAFieldNumber = 10;
+    private uint unk3300MFKOIMONCLA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MFKOIMONCLA {
+      get { return unk3300MFKOIMONCLA_; }
+      set {
+        unk3300MFKOIMONCLA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LFEKGBBAMHE" field.</summary>
+    public const int Unk3300LFEKGBBAMHEFieldNumber = 12;
+    private uint unk3300LFEKGBBAMHE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LFEKGBBAMHE {
+      get { return unk3300LFEKGBBAMHE_; }
+      set {
+        unk3300LFEKGBBAMHE_ = value;
+      }
+    }
+
     /// <summary>Field number for the "coin_c" field.</summary>
-    public const int CoinCFieldNumber = 8;
+    public const int CoinCFieldNumber = 6;
     private uint coinC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -93,30 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return coinC_; }
       set {
         coinC_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "coin_b" field.</summary>
-    public const int CoinBFieldNumber = 10;
-    private uint coinB_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoinB {
-      get { return coinB_; }
-      set {
-        coinB_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cell_num" field.</summary>
-    public const int CellNumFieldNumber = 1;
-    private uint cellNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CellNum {
-      get { return cellNum_; }
-      set {
-        cellNum_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300MFKOIMONCLA != other.Unk3300MFKOIMONCLA) return false;
+      if (Unk3300LFEKGBBAMHE != other.Unk3300LFEKGBBAMHE) return false;
       if (CoinC != other.CoinC) return false;
-      if (CoinB != other.CoinB) return false;
-      if (CellNum != other.CellNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300MFKOIMONCLA != 0) hash ^= Unk3300MFKOIMONCLA.GetHashCode();
+      if (Unk3300LFEKGBBAMHE != 0) hash ^= Unk3300LFEKGBBAMHE.GetHashCode();
       if (CoinC != 0) hash ^= CoinC.GetHashCode();
-      if (CoinB != 0) hash ^= CoinB.GetHashCode();
-      if (CellNum != 0) hash ^= CellNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CellNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CellNum);
-      }
       if (CoinC != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(CoinC);
       }
-      if (CoinB != 0) {
+      if (Unk3300MFKOIMONCLA != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(CoinB);
+        output.WriteUInt32(Unk3300MFKOIMONCLA);
+      }
+      if (Unk3300LFEKGBBAMHE != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300LFEKGBBAMHE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CellNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CellNum);
-      }
       if (CoinC != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(CoinC);
       }
-      if (CoinB != 0) {
+      if (Unk3300MFKOIMONCLA != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(CoinB);
+        output.WriteUInt32(Unk3300MFKOIMONCLA);
+      }
+      if (Unk3300LFEKGBBAMHE != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300LFEKGBBAMHE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300MFKOIMONCLA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MFKOIMONCLA);
+      }
+      if (Unk3300LFEKGBBAMHE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LFEKGBBAMHE);
+      }
       if (CoinC != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinC);
-      }
-      if (CoinB != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinB);
-      }
-      if (CellNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CellNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300MFKOIMONCLA != 0) {
+        Unk3300MFKOIMONCLA = other.Unk3300MFKOIMONCLA;
+      }
+      if (other.Unk3300LFEKGBBAMHE != 0) {
+        Unk3300LFEKGBBAMHE = other.Unk3300LFEKGBBAMHE;
+      }
       if (other.CoinC != 0) {
         CoinC = other.CoinC;
-      }
-      if (other.CoinB != 0) {
-        CoinB = other.CoinB;
-      }
-      if (other.CellNum != 0) {
-        CellNum = other.CellNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            CellNum = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 48: {
             CoinC = input.ReadUInt32();
             break;
           }
           case 80: {
-            CoinB = input.ReadUInt32();
+            Unk3300MFKOIMONCLA = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300LFEKGBBAMHE = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            CellNum = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 48: {
             CoinC = input.ReadUInt32();
             break;
           }
           case 80: {
-            CoinB = input.ReadUInt32();
+            Unk3300MFKOIMONCLA = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300LFEKGBBAMHE = input.ReadUInt32();
             break;
           }
         }

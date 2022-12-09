@@ -24,16 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGGameBusinessTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3RvKvICChNHQ0dHYW1lQnVzaW5l",
-            "c3NUeXBlEh8KG0dDR19HQU1FX0JVU0lORVNTX1RZUEVfTk9ORRAAEh0KGUdD",
-            "R19HQU1FX0JVU0lORVNTX1RZUEVfR00QARIgChxHQ0dfR0FNRV9CVVNJTkVT",
-            "U19UWVBFX01BVENIEAISHgoaR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9QVlAQ",
-            "AxIrCidHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX1RBVkVSTl9DSEFMTEVOR0UQ",
-            "BBIqCiZHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX0NPTlNUX0NIQUxMRU5HRRAF",
-            "EioKJkdDR19HQU1FX0JVU0lORVNTX1RZUEVfV09STERfQ0hBTExFTkdFEAYS",
-            "KQolR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9CT1NTX0NIQUxMRU5HRRAHEikK",
-            "JUdDR19HQU1FX0JVU0lORVNTX1RZUEVfV0VFS19DSEFMTEVOR0UQCEIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvKugDChNHQ0dHYW1lQnVzaW5lc3NUeXBlEh8KG0dD",
+            "R19HQU1FX0JVU0lORVNTX1RZUEVfTk9ORRAAEh0KGUdDR19HQU1FX0JVU0lO",
+            "RVNTX1RZUEVfR00QARIgChxHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX01BVENI",
+            "EAISHgoaR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9QVlAQAxIrCidHQ0dfR0FN",
+            "RV9CVVNJTkVTU19UWVBFX1RBVkVSTl9DSEFMTEVOR0UQBBIqCiZHQ0dfR0FN",
+            "RV9CVVNJTkVTU19UWVBFX0NPTlNUX0NIQUxMRU5HRRAFEioKJkdDR19HQU1F",
+            "X0JVU0lORVNTX1RZUEVfV09STERfQ0hBTExFTkdFEAYSKQolR0NHX0dBTUVf",
+            "QlVTSU5FU1NfVFlQRV9CT1NTX0NIQUxMRU5HRRAHEikKJUdDR19HQU1FX0JV",
+            "U0lORVNTX1RZUEVfV0VFS19DSEFMTEVOR0UQCBIqCiZHQ0dfR0FNRV9CVVNJ",
+            "TkVTU19UWVBFX0JSRUFLX0NIQUxMRU5HRRAJEiAKHEdDR19HQU1FX0JVU0lO",
+            "RVNTX1RZUEVfUVVFU1QQChImCiJHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX0dV",
+            "SURFX0dST1VQEAtiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType), }, null, null));
@@ -52,6 +55,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WORLD_CHALLENGE")] WorldChallenge = 6,
     [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_BOSS_CHALLENGE")] BossChallenge = 7,
     [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WEEK_CHALLENGE")] WeekChallenge = 8,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_BREAK_CHALLENGE")] BreakChallenge = 9,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_QUEST")] Quest = 10,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_GUIDE_GROUP")] GuideGroup = 11,
   }
 
   #endregion

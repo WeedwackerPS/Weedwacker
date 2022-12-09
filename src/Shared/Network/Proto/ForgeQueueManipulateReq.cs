@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeQueueManipulateReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJlcS5wcm90bxoeRm9yZ2VRdWV1ZU1h",
-            "bmlwdWxhdGVUeXBlLnByb3RvImUKF0ZvcmdlUXVldWVNYW5pcHVsYXRlUmVx",
-            "EhYKDmZvcmdlX3F1ZXVlX2lkGAUgASgNEjIKD21hbmlwdWxhdGVfdHlwZRgN",
-            "IAEoDjIZLkZvcmdlUXVldWVNYW5pcHVsYXRlVHlwZUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJlcS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoeRm9yZ2VRdWV1ZU1hbmlwdWxhdGVUeXBl",
+            "LnByb3RvIoUBChdGb3JnZVF1ZXVlTWFuaXB1bGF0ZVJlcRIWCg5mb3JnZV9x",
+            "dWV1ZV9pZBgDIAEoDRJSCg9tYW5pcHVsYXRlX3R5cGUYBCABKA4yOS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZvcmdlUXVldWVNYW5pcHVs",
+            "YXRlVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 624
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 622;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ForgeQueueManipulateReq : pb::IMessage<ForgeQueueManipulateReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "forge_queue_id" field.</summary>
-    public const int ForgeQueueIdFieldNumber = 5;
+    public const int ForgeQueueIdFieldNumber = 3;
     private uint forgeQueueId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "manipulate_type" field.</summary>
-    public const int ManipulateTypeFieldNumber = 13;
+    public const int ManipulateTypeFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType manipulateType_ = global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ForgeQueueId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(ForgeQueueId);
       }
       if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ManipulateType);
       }
       if (_unknownFields != null) {
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ForgeQueueId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(ForgeQueueId);
       }
       if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteEnum((int) ManipulateType);
       }
       if (_unknownFields != null) {
@@ -233,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 24: {
             ForgeQueueId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 32: {
             ManipulateType = (global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType) input.ReadEnum();
             break;
           }
@@ -256,11 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 24: {
             ForgeQueueId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 32: {
             ManipulateType = (global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType) input.ReadEnum();
             break;
           }

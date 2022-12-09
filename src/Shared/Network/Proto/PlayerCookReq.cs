@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerCookReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNQbGF5ZXJDb29rUmVxLnByb3RvImIKDVBsYXllckNvb2tSZXESEgoKY29v",
-            "a19jb3VudBgBIAEoDRITCgtxdGVfcXVhbGl0eRgMIAEoDRIRCglyZWNpcGVf",
-            "aWQYCCABKA0SFQoNYXNzaXN0X2F2YXRhchgOIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChNQbGF5ZXJDb29rUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvImIKDVBsYXllckNvb2tSZXESEQoJcmVjaXBlX2lkGAEgASgN",
+            "EhMKC3F0ZV9xdWFsaXR5GAUgASgNEhIKCmNvb2tfY291bnQYByABKA0SFQoN",
+            "YXNzaXN0X2F2YXRhchgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerCookReq), global::Weedwacker.Shared.Network.Proto.PlayerCookReq.Parser, new[]{ "CookCount", "QteQuality", "RecipeId", "AssistAvatar" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerCookReq), global::Weedwacker.Shared.Network.Proto.PlayerCookReq.Parser, new[]{ "RecipeId", "QteQuality", "CookCount", "AssistAvatar" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 194
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 105;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerCookReq : pb::IMessage<PlayerCookReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerCookReq(PlayerCookReq other) : this() {
-      cookCount_ = other.cookCount_;
-      qteQuality_ = other.qteQuality_;
       recipeId_ = other.recipeId_;
+      qteQuality_ = other.qteQuality_;
+      cookCount_ = other.cookCount_;
       assistAvatar_ = other.assistAvatar_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,32 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerCookReq(this);
     }
 
-    /// <summary>Field number for the "cook_count" field.</summary>
-    public const int CookCountFieldNumber = 1;
-    private uint cookCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CookCount {
-      get { return cookCount_; }
-      set {
-        cookCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "qte_quality" field.</summary>
-    public const int QteQualityFieldNumber = 12;
-    private uint qteQuality_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QteQuality {
-      get { return qteQuality_; }
-      set {
-        qteQuality_ = value;
-      }
-    }
-
     /// <summary>Field number for the "recipe_id" field.</summary>
-    public const int RecipeIdFieldNumber = 8;
+    public const int RecipeIdFieldNumber = 1;
     private uint recipeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,8 +107,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "qte_quality" field.</summary>
+    public const int QteQualityFieldNumber = 5;
+    private uint qteQuality_;
+    /// <summary>
+    /// Unk3300_NDPHNNOFEBL
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint QteQuality {
+      get { return qteQuality_; }
+      set {
+        qteQuality_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cook_count" field.</summary>
+    public const int CookCountFieldNumber = 7;
+    private uint cookCount_;
+    /// <summary>
+    /// Unk3300_JPICLIDLIEC
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CookCount {
+      get { return cookCount_; }
+      set {
+        cookCount_ = value;
+      }
+    }
+
     /// <summary>Field number for the "assist_avatar" field.</summary>
-    public const int AssistAvatarFieldNumber = 14;
+    public const int AssistAvatarFieldNumber = 12;
     private uint assistAvatar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,9 +164,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CookCount != other.CookCount) return false;
-      if (QteQuality != other.QteQuality) return false;
       if (RecipeId != other.RecipeId) return false;
+      if (QteQuality != other.QteQuality) return false;
+      if (CookCount != other.CookCount) return false;
       if (AssistAvatar != other.AssistAvatar) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -165,9 +175,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CookCount != 0) hash ^= CookCount.GetHashCode();
-      if (QteQuality != 0) hash ^= QteQuality.GetHashCode();
       if (RecipeId != 0) hash ^= RecipeId.GetHashCode();
+      if (QteQuality != 0) hash ^= QteQuality.GetHashCode();
+      if (CookCount != 0) hash ^= CookCount.GetHashCode();
       if (AssistAvatar != 0) hash ^= AssistAvatar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -187,20 +197,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CookCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CookCount);
-      }
       if (RecipeId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(RecipeId);
       }
       if (QteQuality != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(QteQuality);
       }
+      if (CookCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CookCount);
+      }
       if (AssistAvatar != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(AssistAvatar);
       }
       if (_unknownFields != null) {
@@ -213,20 +223,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CookCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CookCount);
-      }
       if (RecipeId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(RecipeId);
       }
       if (QteQuality != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(QteQuality);
       }
+      if (CookCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CookCount);
+      }
       if (AssistAvatar != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(AssistAvatar);
       }
       if (_unknownFields != null) {
@@ -239,14 +249,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CookCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CookCount);
+      if (RecipeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecipeId);
       }
       if (QteQuality != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QteQuality);
       }
-      if (RecipeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecipeId);
+      if (CookCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CookCount);
       }
       if (AssistAvatar != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AssistAvatar);
@@ -263,14 +273,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CookCount != 0) {
-        CookCount = other.CookCount;
+      if (other.RecipeId != 0) {
+        RecipeId = other.RecipeId;
       }
       if (other.QteQuality != 0) {
         QteQuality = other.QteQuality;
       }
-      if (other.RecipeId != 0) {
-        RecipeId = other.RecipeId;
+      if (other.CookCount != 0) {
+        CookCount = other.CookCount;
       }
       if (other.AssistAvatar != 0) {
         AssistAvatar = other.AssistAvatar;
@@ -291,18 +301,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CookCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             RecipeId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 40: {
             QteQuality = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
+            CookCount = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             AssistAvatar = input.ReadUInt32();
             break;
           }
@@ -322,18 +332,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CookCount = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             RecipeId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 40: {
             QteQuality = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
+            CookCount = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             AssistAvatar = input.ReadUInt32();
             break;
           }

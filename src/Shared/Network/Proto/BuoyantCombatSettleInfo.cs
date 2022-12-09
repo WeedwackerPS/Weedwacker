@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BuoyantCombatSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1CdW95YW50Q29tYmF0U2V0dGxlSW5mby5wcm90bxokQnVveWFudENvbWJh",
-            "dEdhbGxlcnlTZXR0bGVJbmZvLnByb3RvImYKF0J1b3lhbnRDb21iYXRTZXR0",
-            "bGVJbmZvEhUKDWlzX25ld19yZWNvcmQYASABKAgSNAoLc2V0dGxlX2luZm8Y",
-            "AyABKAsyHy5CdW95YW50Q29tYmF0R2FsbGVyeVNldHRsZUluZm9CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1CdW95YW50Q29tYmF0U2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxokQnVveWFudENvbWJhdEdhbGxlcnlTZXR0",
+            "bGVJbmZvLnByb3RvIoYBChdCdW95YW50Q29tYmF0U2V0dGxlSW5mbxJUCgtz",
+            "ZXR0bGVfaW5mbxgOIAEoCzI/LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQnVveWFudENvbWJhdEdhbGxlcnlTZXR0bGVJbmZvEhUKDWlzX25l",
+            "d19yZWNvcmQYAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatSettleInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatSettleInfo.Parser, new[]{ "IsNewRecord", "SettleInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatSettleInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatSettleInfo.Parser, new[]{ "SettleInfo", "IsNewRecord" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +74,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuoyantCombatSettleInfo(BuoyantCombatSettleInfo other) : this() {
-      isNewRecord_ = other.isNewRecord_;
       settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
+      isNewRecord_ = other.isNewRecord_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BuoyantCombatSettleInfo(this);
     }
 
-    /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 1;
-    private bool isNewRecord_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecord {
-      get { return isNewRecord_; }
-      set {
-        isNewRecord_ = value;
-      }
-    }
-
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 3;
+    public const int SettleInfoFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo settleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +94,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return settleInfo_; }
       set {
         settleInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 2;
+    private bool isNewRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
+      set {
+        isNewRecord_ = value;
       }
     }
 
@@ -123,8 +124,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsNewRecord != other.IsNewRecord) return false;
       if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
+      if (IsNewRecord != other.IsNewRecord) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
       if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
+      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,11 +154,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsNewRecord != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -171,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsNewRecord != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteBool(IsNewRecord);
       }
       if (settleInfo_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
@@ -188,11 +189,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsNewRecord != false) {
-        size += 1 + 1;
-      }
       if (settleInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
+      }
+      if (IsNewRecord != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,14 +207,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsNewRecord != false) {
-        IsNewRecord = other.IsNewRecord;
-      }
       if (other.settleInfo_ != null) {
         if (settleInfo_ == null) {
           SettleInfo = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo();
         }
         SettleInfo.MergeFrom(other.SettleInfo);
+      }
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 26: {
+          case 114: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo();
             }
@@ -256,11 +257,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             IsNewRecord = input.ReadBool();
             break;
           }
-          case 26: {
+          case 114: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo();
             }

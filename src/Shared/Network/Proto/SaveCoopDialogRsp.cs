@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SaveCoopDialogRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdTYXZlQ29vcERpYWxvZ1JzcC5wcm90byJNChFTYXZlQ29vcERpYWxvZ1Jz",
-            "cBIRCglkaWFsb2dfaWQYCCABKA0SFAoMbWFpbl9jb29wX2lkGAogASgNEg8K",
-            "B3JldGNvZGUYByABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChdTYXZlQ29vcERpYWxvZ1JzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJeChFTYXZlQ29vcERpYWxvZ1JzcBIPCgdyZXRjb2Rl",
+            "GAUgASgFEhsKE1VuazMzMDBfQU1LRERKRVBBS00YDyABKA0SGwoTVW5rMzMw",
+            "MF9LTUJHTklJQ05BRhgJIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SaveCoopDialogRsp), global::Weedwacker.Shared.Network.Proto.SaveCoopDialogRsp.Parser, new[]{ "DialogId", "MainCoopId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SaveCoopDialogRsp), global::Weedwacker.Shared.Network.Proto.SaveCoopDialogRsp.Parser, new[]{ "Retcode", "Unk3300AMKDDJEPAKM", "Unk3300KMBGNIICNAF" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1962
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1960;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SaveCoopDialogRsp : pb::IMessage<SaveCoopDialogRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SaveCoopDialogRsp(SaveCoopDialogRsp other) : this() {
-      dialogId_ = other.dialogId_;
-      mainCoopId_ = other.mainCoopId_;
       retcode_ = other.retcode_;
+      unk3300AMKDDJEPAKM_ = other.unk3300AMKDDJEPAKM_;
+      unk3300KMBGNIICNAF_ = other.unk3300KMBGNIICNAF_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,32 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SaveCoopDialogRsp(this);
     }
 
-    /// <summary>Field number for the "dialog_id" field.</summary>
-    public const int DialogIdFieldNumber = 8;
-    private uint dialogId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DialogId {
-      get { return dialogId_; }
-      set {
-        dialogId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "main_coop_id" field.</summary>
-    public const int MainCoopIdFieldNumber = 10;
-    private uint mainCoopId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MainCoopId {
-      get { return mainCoopId_; }
-      set {
-        mainCoopId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 5;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +102,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AMKDDJEPAKM" field.</summary>
+    public const int Unk3300AMKDDJEPAKMFieldNumber = 15;
+    private uint unk3300AMKDDJEPAKM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AMKDDJEPAKM {
+      get { return unk3300AMKDDJEPAKM_; }
+      set {
+        unk3300AMKDDJEPAKM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KMBGNIICNAF" field.</summary>
+    public const int Unk3300KMBGNIICNAFFieldNumber = 9;
+    private uint unk3300KMBGNIICNAF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KMBGNIICNAF {
+      get { return unk3300KMBGNIICNAF_; }
+      set {
+        unk3300KMBGNIICNAF_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DialogId != other.DialogId) return false;
-      if (MainCoopId != other.MainCoopId) return false;
       if (Retcode != other.Retcode) return false;
+      if (Unk3300AMKDDJEPAKM != other.Unk3300AMKDDJEPAKM) return false;
+      if (Unk3300KMBGNIICNAF != other.Unk3300KMBGNIICNAF) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DialogId != 0) hash ^= DialogId.GetHashCode();
-      if (MainCoopId != 0) hash ^= MainCoopId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Unk3300AMKDDJEPAKM != 0) hash ^= Unk3300AMKDDJEPAKM.GetHashCode();
+      if (Unk3300KMBGNIICNAF != 0) hash ^= Unk3300KMBGNIICNAF.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
-      if (DialogId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(DialogId);
+      if (Unk3300KMBGNIICNAF != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300KMBGNIICNAF);
       }
-      if (MainCoopId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(MainCoopId);
+      if (Unk3300AMKDDJEPAKM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300AMKDDJEPAKM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
-      if (DialogId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(DialogId);
+      if (Unk3300KMBGNIICNAF != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300KMBGNIICNAF);
       }
-      if (MainCoopId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(MainCoopId);
+      if (Unk3300AMKDDJEPAKM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300AMKDDJEPAKM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DialogId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DialogId);
-      }
-      if (MainCoopId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MainCoopId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Unk3300AMKDDJEPAKM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AMKDDJEPAKM);
+      }
+      if (Unk3300KMBGNIICNAF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KMBGNIICNAF);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.DialogId != 0) {
-        DialogId = other.DialogId;
-      }
-      if (other.MainCoopId != 0) {
-        MainCoopId = other.MainCoopId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.Unk3300AMKDDJEPAKM != 0) {
+        Unk3300AMKDDJEPAKM = other.Unk3300AMKDDJEPAKM;
+      }
+      if (other.Unk3300KMBGNIICNAF != 0) {
+        Unk3300KMBGNIICNAF = other.Unk3300KMBGNIICNAF;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
-            DialogId = input.ReadUInt32();
+          case 72: {
+            Unk3300KMBGNIICNAF = input.ReadUInt32();
             break;
           }
-          case 80: {
-            MainCoopId = input.ReadUInt32();
+          case 120: {
+            Unk3300AMKDDJEPAKM = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
-            DialogId = input.ReadUInt32();
+          case 72: {
+            Unk3300KMBGNIICNAF = input.ReadUInt32();
             break;
           }
-          case 80: {
-            MainCoopId = input.ReadUInt32();
+          case 120: {
+            Unk3300AMKDDJEPAKM = input.ReadUInt32();
             break;
           }
         }

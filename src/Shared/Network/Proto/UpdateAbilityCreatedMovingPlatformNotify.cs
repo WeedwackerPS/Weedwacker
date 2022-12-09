@@ -25,12 +25,13 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5VcGRhdGVBYmlsaXR5Q3JlYXRlZE1vdmluZ1BsYXRmb3JtTm90aWZ5LnBy",
-            "b3RvIsoBCihVcGRhdGVBYmlsaXR5Q3JlYXRlZE1vdmluZ1BsYXRmb3JtTm90",
-            "aWZ5EhEKCWVudGl0eV9pZBgEIAEoDRJBCgdvcF90eXBlGAMgASgOMjAuVXBk",
-            "YXRlQWJpbGl0eUNyZWF0ZWRNb3ZpbmdQbGF0Zm9ybU5vdGlmeS5PcFR5cGUi",
-            "SAoGT3BUeXBlEhAKDE9QX1RZUEVfTk9ORRAAEhQKEE9QX1RZUEVfQUNUSVZB",
-            "VEUQARIWChJPUF9UWVBFX0RFQUNUSVZBVEUQAkIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "b3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIuoBCihVcGRh",
+            "dGVBYmlsaXR5Q3JlYXRlZE1vdmluZ1BsYXRmb3JtTm90aWZ5EhEKCWVudGl0",
+            "eV9pZBgBIAEoDRJhCgdvcF90eXBlGA8gASgOMlAuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5VcGRhdGVBYmlsaXR5Q3JlYXRlZE1vdmluZ1Bs",
+            "YXRmb3JtTm90aWZ5Lk9wVHlwZSJICgZPcFR5cGUSEAoMT1BfVFlQRV9OT05F",
+            "EAASFAoQT1BfVFlQRV9BQ1RJVkFURRABEhYKEk9QX1RZUEVfREVBQ1RJVkFU",
+            "RRACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 881
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 825;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class UpdateAbilityCreatedMovingPlatformNotify : pb::IMessage<UpdateAbilityCreatedMovingPlatformNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 4;
+    public const int EntityIdFieldNumber = 1;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_type" field.</summary>
-    public const int OpTypeFieldNumber = 3;
+    public const int OpTypeFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType opType_ = global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,13 +165,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OpType != global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) OpType);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
+      }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) OpType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -178,13 +183,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OpType != global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) OpType);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
+      }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) OpType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,12 +240,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType) input.ReadEnum();
+          case 8: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
+          case 120: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType) input.ReadEnum();
             break;
           }
         }
@@ -258,12 +263,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType) input.ReadEnum();
+          case 8: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
+          case 120: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.UpdateAbilityCreatedMovingPlatformNotify.Types.OpType) input.ReadEnum();
             break;
           }
         }

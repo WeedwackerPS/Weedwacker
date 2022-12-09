@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetCompoundDataRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHZXRDb21wb3VuZERhdGFSc3AucHJvdG8aF0NvbXBvdW5kUXVldWVEYXRh",
-            "LnByb3RvIncKEkdldENvbXBvdW5kRGF0YVJzcBIPCgdyZXRjb2RlGAMgASgF",
-            "EhwKFHVubG9ja19jb21wb3VuZF9saXN0GAsgAygNEjIKFmNvbXBvdW5kX3F1",
-            "ZV9kYXRhX2xpc3QYByADKAsyEi5Db21wb3VuZFF1ZXVlRGF0YUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHZXRDb21wb3VuZERhdGFSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aF0NvbXBvdW5kUXVldWVEYXRhLnByb3RvIpcBChJH",
+            "ZXRDb21wb3VuZERhdGFSc3ASUgoWY29tcG91bmRfcXVlX2RhdGFfbGlzdBgE",
+            "IAMoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ29tcG91",
+            "bmRRdWV1ZURhdGESHAoUdW5sb2NrX2NvbXBvdW5kX2xpc3QYCiADKA0SDwoH",
+            "cmV0Y29kZRgPIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CompoundQueueDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCompoundDataRsp), global::Weedwacker.Shared.Network.Proto.GetCompoundDataRsp.Parser, new[]{ "Retcode", "UnlockCompoundList", "CompoundQueDataList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetCompoundDataRsp), global::Weedwacker.Shared.Network.Proto.GetCompoundDataRsp.Parser, new[]{ "CompoundQueDataList", "UnlockCompoundList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 149
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 115;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetCompoundDataRsp : pb::IMessage<GetCompoundDataRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetCompoundDataRsp(GetCompoundDataRsp other) : this() {
-      retcode_ = other.retcode_;
-      unlockCompoundList_ = other.unlockCompoundList_.Clone();
       compoundQueDataList_ = other.compoundQueDataList_.Clone();
+      unlockCompoundList_ = other.unlockCompoundList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +95,33 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetCompoundDataRsp(this);
     }
 
+    /// <summary>Field number for the "compound_que_data_list" field.</summary>
+    public const int CompoundQueDataListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> _repeated_compoundQueDataList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.CompoundQueueData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> compoundQueDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData>();
+    /// <summary>
+    /// compound_queue_data_list
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> CompoundQueDataList {
+      get { return compoundQueDataList_; }
+    }
+
+    /// <summary>Field number for the "unlock_compound_list" field.</summary>
+    public const int UnlockCompoundListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockCompoundList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unlockCompoundList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnlockCompoundList {
+      get { return unlockCompoundList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 15;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,28 +130,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "unlock_compound_list" field.</summary>
-    public const int UnlockCompoundListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockCompoundList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> unlockCompoundList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockCompoundList {
-      get { return unlockCompoundList_; }
-    }
-
-    /// <summary>Field number for the "compound_que_data_list" field.</summary>
-    public const int CompoundQueDataListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> _repeated_compoundQueDataList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.CompoundQueueData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> compoundQueDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CompoundQueueData> CompoundQueDataList {
-      get { return compoundQueDataList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if(!unlockCompoundList_.Equals(other.unlockCompoundList_)) return false;
       if(!compoundQueDataList_.Equals(other.compoundQueDataList_)) return false;
+      if(!unlockCompoundList_.Equals(other.unlockCompoundList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= unlockCompoundList_.GetHashCode();
       hash ^= compoundQueDataList_.GetHashCode();
+      hash ^= unlockCompoundList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -170,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
-      }
       compoundQueDataList_.WriteTo(output, _repeated_compoundQueDataList_codec);
       unlockCompoundList_.WriteTo(output, _repeated_unlockCompoundList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -186,12 +194,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
-      }
       compoundQueDataList_.WriteTo(ref output, _repeated_compoundQueDataList_codec);
       unlockCompoundList_.WriteTo(ref output, _repeated_unlockCompoundList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -202,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += compoundQueDataList_.CalculateSize(_repeated_compoundQueDataList_codec);
+      size += unlockCompoundList_.CalculateSize(_repeated_unlockCompoundList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += unlockCompoundList_.CalculateSize(_repeated_unlockCompoundList_codec);
-      size += compoundQueDataList_.CalculateSize(_repeated_compoundQueDataList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -219,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      compoundQueDataList_.Add(other.compoundQueDataList_);
+      unlockCompoundList_.Add(other.unlockCompoundList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      unlockCompoundList_.Add(other.unlockCompoundList_);
-      compoundQueDataList_.Add(other.compoundQueDataList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -239,17 +247,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 58: {
+          case 34: {
             compoundQueDataList_.AddEntriesFrom(input, _repeated_compoundQueDataList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 82:
+          case 80: {
             unlockCompoundList_.AddEntriesFrom(input, _repeated_unlockCompoundList_codec);
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -267,17 +275,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 58: {
+          case 34: {
             compoundQueDataList_.AddEntriesFrom(ref input, _repeated_compoundQueDataList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 82:
+          case 80: {
             unlockCompoundList_.AddEntriesFrom(ref input, _repeated_unlockCompoundList_codec);
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaUpdateBaseReactionDamageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilBYmlsaXR5TWV0YVVwZGF0ZUJhc2VSZWFjdGlvbkRhbWFnZS5wcm90bxoT",
-            "QWJpbGl0eVN0cmluZy5wcm90byKmAQojQWJpbGl0eU1ldGFVcGRhdGVCYXNl",
-            "UmVhY3Rpb25EYW1hZ2USGAoQc291cmNlX2Nhc3Rlcl9pZBgPIAEoDRIkCgxh",
-            "YmlsaXR5X25hbWUYASABKAsyDi5BYmlsaXR5U3RyaW5nEigKEGdsb2JhbF92",
-            "YWx1ZV9rZXkYBCABKAsyDi5BYmlsaXR5U3RyaW5nEhUKDXJlYWN0aW9uX3R5",
-            "cGUYCCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CilBYmlsaXR5TWV0YVVwZGF0ZUJhc2VSZWFjdGlvbkRhbWFnZS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoTQWJpbGl0eVN0cmlu",
+            "Zy5wcm90byLvAQojQWJpbGl0eU1ldGFVcGRhdGVCYXNlUmVhY3Rpb25EYW1h",
+            "Z2USGwoTVW5rMzMwMF9PSVBBRUdBTUNMSRgCIAEoDRIbChNVbmszMzAwX0NB",
+            "S0VKQ0pLSE9BGA0gASgNEkQKDGFiaWxpdHlfbmFtZRgGIAEoCzIuLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eVN0cmluZxJIChBn",
+            "bG9iYWxfdmFsdWVfa2V5GA4gASgLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5BYmlsaXR5U3RyaW5nYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityStringReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMetaUpdateBaseReactionDamage), global::Weedwacker.Shared.Network.Proto.AbilityMetaUpdateBaseReactionDamage.Parser, new[]{ "SourceCasterId", "AbilityName", "GlobalValueKey", "ReactionType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMetaUpdateBaseReactionDamage), global::Weedwacker.Shared.Network.Proto.AbilityMetaUpdateBaseReactionDamage.Parser, new[]{ "Unk3300OIPAEGAMCLI", "Unk3300CAKEJCJKHOA", "AbilityName", "GlobalValueKey" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMetaUpdateBaseReactionDamage(AbilityMetaUpdateBaseReactionDamage other) : this() {
-      sourceCasterId_ = other.sourceCasterId_;
+      unk3300OIPAEGAMCLI_ = other.unk3300OIPAEGAMCLI_;
+      unk3300CAKEJCJKHOA_ = other.unk3300CAKEJCJKHOA_;
       abilityName_ = other.abilityName_ != null ? other.abilityName_.Clone() : null;
       globalValueKey_ = other.globalValueKey_ != null ? other.globalValueKey_.Clone() : null;
-      reactionType_ = other.reactionType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +89,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityMetaUpdateBaseReactionDamage(this);
     }
 
-    /// <summary>Field number for the "source_caster_id" field.</summary>
-    public const int SourceCasterIdFieldNumber = 15;
-    private uint sourceCasterId_;
+    /// <summary>Field number for the "Unk3300_OIPAEGAMCLI" field.</summary>
+    public const int Unk3300OIPAEGAMCLIFieldNumber = 2;
+    private uint unk3300OIPAEGAMCLI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SourceCasterId {
-      get { return sourceCasterId_; }
+    public uint Unk3300OIPAEGAMCLI {
+      get { return unk3300OIPAEGAMCLI_; }
       set {
-        sourceCasterId_ = value;
+        unk3300OIPAEGAMCLI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CAKEJCJKHOA" field.</summary>
+    public const int Unk3300CAKEJCJKHOAFieldNumber = 13;
+    private uint unk3300CAKEJCJKHOA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CAKEJCJKHOA {
+      get { return unk3300CAKEJCJKHOA_; }
+      set {
+        unk3300CAKEJCJKHOA_ = value;
       }
     }
 
     /// <summary>Field number for the "ability_name" field.</summary>
-    public const int AbilityNameFieldNumber = 1;
+    public const int AbilityNameFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.AbilityString abilityName_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "global_value_key" field.</summary>
-    public const int GlobalValueKeyFieldNumber = 4;
+    public const int GlobalValueKeyFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.AbilityString globalValueKey_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,18 +134,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return globalValueKey_; }
       set {
         globalValueKey_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reaction_type" field.</summary>
-    public const int ReactionTypeFieldNumber = 8;
-    private uint reactionType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ReactionType {
-      get { return reactionType_; }
-      set {
-        reactionType_ = value;
       }
     }
 
@@ -151,10 +152,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SourceCasterId != other.SourceCasterId) return false;
+      if (Unk3300OIPAEGAMCLI != other.Unk3300OIPAEGAMCLI) return false;
+      if (Unk3300CAKEJCJKHOA != other.Unk3300CAKEJCJKHOA) return false;
       if (!object.Equals(AbilityName, other.AbilityName)) return false;
       if (!object.Equals(GlobalValueKey, other.GlobalValueKey)) return false;
-      if (ReactionType != other.ReactionType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,10 +163,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SourceCasterId != 0) hash ^= SourceCasterId.GetHashCode();
+      if (Unk3300OIPAEGAMCLI != 0) hash ^= Unk3300OIPAEGAMCLI.GetHashCode();
+      if (Unk3300CAKEJCJKHOA != 0) hash ^= Unk3300CAKEJCJKHOA.GetHashCode();
       if (abilityName_ != null) hash ^= AbilityName.GetHashCode();
       if (globalValueKey_ != null) hash ^= GlobalValueKey.GetHashCode();
-      if (ReactionType != 0) hash ^= ReactionType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -184,21 +185,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300OIPAEGAMCLI != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300OIPAEGAMCLI);
+      }
       if (abilityName_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(50);
         output.WriteMessage(AbilityName);
       }
+      if (Unk3300CAKEJCJKHOA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300CAKEJCJKHOA);
+      }
       if (globalValueKey_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(114);
         output.WriteMessage(GlobalValueKey);
-      }
-      if (ReactionType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ReactionType);
-      }
-      if (SourceCasterId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SourceCasterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -210,21 +211,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300OIPAEGAMCLI != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300OIPAEGAMCLI);
+      }
       if (abilityName_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(50);
         output.WriteMessage(AbilityName);
       }
+      if (Unk3300CAKEJCJKHOA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300CAKEJCJKHOA);
+      }
       if (globalValueKey_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(114);
         output.WriteMessage(GlobalValueKey);
-      }
-      if (ReactionType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ReactionType);
-      }
-      if (SourceCasterId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SourceCasterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -236,17 +237,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SourceCasterId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceCasterId);
+      if (Unk3300OIPAEGAMCLI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OIPAEGAMCLI);
+      }
+      if (Unk3300CAKEJCJKHOA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CAKEJCJKHOA);
       }
       if (abilityName_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityName);
       }
       if (globalValueKey_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(GlobalValueKey);
-      }
-      if (ReactionType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReactionType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -260,8 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SourceCasterId != 0) {
-        SourceCasterId = other.SourceCasterId;
+      if (other.Unk3300OIPAEGAMCLI != 0) {
+        Unk3300OIPAEGAMCLI = other.Unk3300OIPAEGAMCLI;
+      }
+      if (other.Unk3300CAKEJCJKHOA != 0) {
+        Unk3300CAKEJCJKHOA = other.Unk3300CAKEJCJKHOA;
       }
       if (other.abilityName_ != null) {
         if (abilityName_ == null) {
@@ -274,9 +278,6 @@ namespace Weedwacker.Shared.Network.Proto {
           GlobalValueKey = new global::Weedwacker.Shared.Network.Proto.AbilityString();
         }
         GlobalValueKey.MergeFrom(other.GlobalValueKey);
-      }
-      if (other.ReactionType != 0) {
-        ReactionType = other.ReactionType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -293,26 +294,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 16: {
+            Unk3300OIPAEGAMCLI = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (abilityName_ == null) {
               AbilityName = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(AbilityName);
             break;
           }
-          case 34: {
+          case 104: {
+            Unk3300CAKEJCJKHOA = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (globalValueKey_ == null) {
               GlobalValueKey = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(GlobalValueKey);
-            break;
-          }
-          case 64: {
-            ReactionType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            SourceCasterId = input.ReadUInt32();
             break;
           }
         }
@@ -330,26 +331,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 16: {
+            Unk3300OIPAEGAMCLI = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (abilityName_ == null) {
               AbilityName = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(AbilityName);
             break;
           }
-          case 34: {
+          case 104: {
+            Unk3300CAKEJCJKHOA = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (globalValueKey_ == null) {
               GlobalValueKey = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(GlobalValueKey);
-            break;
-          }
-          case 64: {
-            ReactionType = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            SourceCasterId = input.ReadUInt32();
             break;
           }
         }

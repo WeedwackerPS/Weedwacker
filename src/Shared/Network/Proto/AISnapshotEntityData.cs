@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static AISnapshotEntityDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpBSVNuYXBzaG90RW50aXR5RGF0YS5wcm90bxogQUlTbmFwc2hvdEVudGl0",
-            "eVNraWxsQ3ljbGUucHJvdG8irgMKFEFJU25hcHNob3RFbnRpdHlEYXRhEhEK",
-            "CXRpY2tfdGltZRgFIAEoAhIOCgZ0YWN0aWMYAiABKA0SOgoVZmluaXNoZWRf",
-            "c2tpbGxfY3ljbGVzGAkgAygLMhsuQUlTbmFwc2hvdEVudGl0eVNraWxsQ3lj",
-            "bGUSFgoObW92ZWRfZGlzdGFuY2UYBCABKAISFAoMYWlfdGFyZ2V0X2lkGA0g",
-            "ASgNEhgKEHRocmVhdF90YXJnZXRfaWQYAyABKA0SGAoQdGhyZWF0X2xpc3Rf",
-            "c2l6ZRgBIAEoDRIRCgllbnRpdHlfaWQYDyABKA0SQgoPaGl0dGluZ19hdmF0",
-            "YXJzGAcgAygLMikuQUlTbmFwc2hvdEVudGl0eURhdGEuSGl0dGluZ0F2YXRh",
-            "cnNFbnRyeRIaChJkaXN0YW5jZV90b19wbGF5ZXIYCyABKAISGAoQYXR0YWNr",
-            "X3RhcmdldF9pZBgKIAEoDRIRCglyZWFsX3RpbWUYDiABKAIaNQoTSGl0dGlu",
-            "Z0F2YXRhcnNFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpBSVNuYXBzaG90RW50aXR5RGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxogQUlTbmFwc2hvdEVudGl0eVNraWxsQ3ljbGUu",
+            "cHJvdG8iogQKFEFJU25hcHNob3RFbnRpdHlEYXRhEloKFWZpbmlzaGVkX3Nr",
+            "aWxsX2N5Y2xlcxgOIAMoCzI7LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQUlTbmFwc2hvdEVudGl0eVNraWxsQ3ljbGUSGAoQYXR0YWNrX3Rh",
+            "cmdldF9pZBgCIAEoDRIRCgllbnRpdHlfaWQYBiABKA0SGwoTVW5rMzMwMF9B",
+            "TEJNRU1NSkVKQRgNIAEoAhIbChNVbmszMzAwX0lBREpDREpPS05EGAUgASgN",
+            "EhsKE1VuazMzMDBfRk5DSURMREtBTk8YByABKA0SGwoTVW5rMzMwMF9HUENG",
+            "T0NJRkhDRBgPIAEoAhIbChNVbmszMzAwX0ZNQkJFSUhDQ0pPGAwgASgCEhsK",
+            "E1VuazMzMDBfTElKSURKT0xMRUIYCyABKAISGwoTVW5rMzMwMF9HTkJPQUpI",
+            "TU5KTxgJIAEoDRJiCg9oaXR0aW5nX2F2YXRhcnMYBCADKAsySS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFJU25hcHNob3RFbnRpdHlEYXRh",
+            "LkhpdHRpbmdBdmF0YXJzRW50cnkSGwoTVW5rMzMwMF9GSUtFQUVQTE9IShgD",
+            "IAEoDRo1ChNIaXR0aW5nQXZhdGFyc0VudHJ5EgsKA2tleRgBIAEoDRINCgV2",
+            "YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AISnapshotEntityData), global::Weedwacker.Shared.Network.Proto.AISnapshotEntityData.Parser, new[]{ "TickTime", "Tactic", "FinishedSkillCycles", "MovedDistance", "AiTargetId", "ThreatTargetId", "ThreatListSize", "EntityId", "HittingAvatars", "DistanceToPlayer", "AttackTargetId", "RealTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AISnapshotEntityData), global::Weedwacker.Shared.Network.Proto.AISnapshotEntityData.Parser, new[]{ "FinishedSkillCycles", "AttackTargetId", "EntityId", "Unk3300ALBMEMMJEJA", "Unk3300IADJCDJOKND", "Unk3300FNCIDLDKANO", "Unk3300GPCFOCIFHCD", "Unk3300FMBBEIHCCJO", "Unk3300LIJIDJOLLEB", "Unk3300GNBOAJHMNJO", "HittingAvatars", "Unk3300FIKEAEPLOHJ" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -80,18 +83,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AISnapshotEntityData(AISnapshotEntityData other) : this() {
-      tickTime_ = other.tickTime_;
-      tactic_ = other.tactic_;
       finishedSkillCycles_ = other.finishedSkillCycles_.Clone();
-      movedDistance_ = other.movedDistance_;
-      aiTargetId_ = other.aiTargetId_;
-      threatTargetId_ = other.threatTargetId_;
-      threatListSize_ = other.threatListSize_;
-      entityId_ = other.entityId_;
-      hittingAvatars_ = other.hittingAvatars_.Clone();
-      distanceToPlayer_ = other.distanceToPlayer_;
       attackTargetId_ = other.attackTargetId_;
-      realTime_ = other.realTime_;
+      entityId_ = other.entityId_;
+      unk3300ALBMEMMJEJA_ = other.unk3300ALBMEMMJEJA_;
+      unk3300IADJCDJOKND_ = other.unk3300IADJCDJOKND_;
+      unk3300FNCIDLDKANO_ = other.unk3300FNCIDLDKANO_;
+      unk3300GPCFOCIFHCD_ = other.unk3300GPCFOCIFHCD_;
+      unk3300FMBBEIHCCJO_ = other.unk3300FMBBEIHCCJO_;
+      unk3300LIJIDJOLLEB_ = other.unk3300LIJIDJOLLEB_;
+      unk3300GNBOAJHMNJO_ = other.unk3300GNBOAJHMNJO_;
+      hittingAvatars_ = other.hittingAvatars_.Clone();
+      unk3300FIKEAEPLOHJ_ = other.unk3300FIKEAEPLOHJ_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,34 +104,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AISnapshotEntityData(this);
     }
 
-    /// <summary>Field number for the "tick_time" field.</summary>
-    public const int TickTimeFieldNumber = 5;
-    private float tickTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float TickTime {
-      get { return tickTime_; }
-      set {
-        tickTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "tactic" field.</summary>
-    public const int TacticFieldNumber = 2;
-    private uint tactic_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Tactic {
-      get { return tactic_; }
-      set {
-        tactic_ = value;
-      }
-    }
-
     /// <summary>Field number for the "finished_skill_cycles" field.</summary>
-    public const int FinishedSkillCyclesFieldNumber = 9;
+    public const int FinishedSkillCyclesFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle> _repeated_finishedSkillCycles_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle> finishedSkillCycles_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,91 +115,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return finishedSkillCycles_; }
     }
 
-    /// <summary>Field number for the "moved_distance" field.</summary>
-    public const int MovedDistanceFieldNumber = 4;
-    private float movedDistance_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float MovedDistance {
-      get { return movedDistance_; }
-      set {
-        movedDistance_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ai_target_id" field.</summary>
-    public const int AiTargetIdFieldNumber = 13;
-    private uint aiTargetId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AiTargetId {
-      get { return aiTargetId_; }
-      set {
-        aiTargetId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "threat_target_id" field.</summary>
-    public const int ThreatTargetIdFieldNumber = 3;
-    private uint threatTargetId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ThreatTargetId {
-      get { return threatTargetId_; }
-      set {
-        threatTargetId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "threat_list_size" field.</summary>
-    public const int ThreatListSizeFieldNumber = 1;
-    private uint threatListSize_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ThreatListSize {
-      get { return threatListSize_; }
-      set {
-        threatListSize_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hitting_avatars" field.</summary>
-    public const int HittingAvatarsFieldNumber = 7;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_hittingAvatars_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
-    private readonly pbc::MapField<uint, uint> hittingAvatars_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> HittingAvatars {
-      get { return hittingAvatars_; }
-    }
-
-    /// <summary>Field number for the "distance_to_player" field.</summary>
-    public const int DistanceToPlayerFieldNumber = 11;
-    private float distanceToPlayer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float DistanceToPlayer {
-      get { return distanceToPlayer_; }
-      set {
-        distanceToPlayer_ = value;
-      }
-    }
-
     /// <summary>Field number for the "attack_target_id" field.</summary>
-    public const int AttackTargetIdFieldNumber = 10;
+    public const int AttackTargetIdFieldNumber = 2;
     private uint attackTargetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -231,15 +127,122 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "real_time" field.</summary>
-    public const int RealTimeFieldNumber = 14;
-    private float realTime_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 6;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float RealTime {
-      get { return realTime_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        realTime_ = value;
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ALBMEMMJEJA" field.</summary>
+    public const int Unk3300ALBMEMMJEJAFieldNumber = 13;
+    private float unk3300ALBMEMMJEJA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300ALBMEMMJEJA {
+      get { return unk3300ALBMEMMJEJA_; }
+      set {
+        unk3300ALBMEMMJEJA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IADJCDJOKND" field.</summary>
+    public const int Unk3300IADJCDJOKNDFieldNumber = 5;
+    private uint unk3300IADJCDJOKND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IADJCDJOKND {
+      get { return unk3300IADJCDJOKND_; }
+      set {
+        unk3300IADJCDJOKND_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FNCIDLDKANO" field.</summary>
+    public const int Unk3300FNCIDLDKANOFieldNumber = 7;
+    private uint unk3300FNCIDLDKANO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FNCIDLDKANO {
+      get { return unk3300FNCIDLDKANO_; }
+      set {
+        unk3300FNCIDLDKANO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GPCFOCIFHCD" field.</summary>
+    public const int Unk3300GPCFOCIFHCDFieldNumber = 15;
+    private float unk3300GPCFOCIFHCD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300GPCFOCIFHCD {
+      get { return unk3300GPCFOCIFHCD_; }
+      set {
+        unk3300GPCFOCIFHCD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FMBBEIHCCJO" field.</summary>
+    public const int Unk3300FMBBEIHCCJOFieldNumber = 12;
+    private float unk3300FMBBEIHCCJO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300FMBBEIHCCJO {
+      get { return unk3300FMBBEIHCCJO_; }
+      set {
+        unk3300FMBBEIHCCJO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LIJIDJOLLEB" field.</summary>
+    public const int Unk3300LIJIDJOLLEBFieldNumber = 11;
+    private float unk3300LIJIDJOLLEB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300LIJIDJOLLEB {
+      get { return unk3300LIJIDJOLLEB_; }
+      set {
+        unk3300LIJIDJOLLEB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GNBOAJHMNJO" field.</summary>
+    public const int Unk3300GNBOAJHMNJOFieldNumber = 9;
+    private uint unk3300GNBOAJHMNJO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GNBOAJHMNJO {
+      get { return unk3300GNBOAJHMNJO_; }
+      set {
+        unk3300GNBOAJHMNJO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hitting_avatars" field.</summary>
+    public const int HittingAvatarsFieldNumber = 4;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_hittingAvatars_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
+    private readonly pbc::MapField<uint, uint> hittingAvatars_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> HittingAvatars {
+      get { return hittingAvatars_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_FIKEAEPLOHJ" field.</summary>
+    public const int Unk3300FIKEAEPLOHJFieldNumber = 3;
+    private uint unk3300FIKEAEPLOHJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FIKEAEPLOHJ {
+      get { return unk3300FIKEAEPLOHJ_; }
+      set {
+        unk3300FIKEAEPLOHJ_ = value;
       }
     }
 
@@ -258,18 +261,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TickTime, other.TickTime)) return false;
-      if (Tactic != other.Tactic) return false;
       if(!finishedSkillCycles_.Equals(other.finishedSkillCycles_)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MovedDistance, other.MovedDistance)) return false;
-      if (AiTargetId != other.AiTargetId) return false;
-      if (ThreatTargetId != other.ThreatTargetId) return false;
-      if (ThreatListSize != other.ThreatListSize) return false;
-      if (EntityId != other.EntityId) return false;
-      if (!HittingAvatars.Equals(other.HittingAvatars)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(DistanceToPlayer, other.DistanceToPlayer)) return false;
       if (AttackTargetId != other.AttackTargetId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RealTime, other.RealTime)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300ALBMEMMJEJA, other.Unk3300ALBMEMMJEJA)) return false;
+      if (Unk3300IADJCDJOKND != other.Unk3300IADJCDJOKND) return false;
+      if (Unk3300FNCIDLDKANO != other.Unk3300FNCIDLDKANO) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300GPCFOCIFHCD, other.Unk3300GPCFOCIFHCD)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300FMBBEIHCCJO, other.Unk3300FMBBEIHCCJO)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300LIJIDJOLLEB, other.Unk3300LIJIDJOLLEB)) return false;
+      if (Unk3300GNBOAJHMNJO != other.Unk3300GNBOAJHMNJO) return false;
+      if (!HittingAvatars.Equals(other.HittingAvatars)) return false;
+      if (Unk3300FIKEAEPLOHJ != other.Unk3300FIKEAEPLOHJ) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -277,18 +280,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TickTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TickTime);
-      if (Tactic != 0) hash ^= Tactic.GetHashCode();
       hash ^= finishedSkillCycles_.GetHashCode();
-      if (MovedDistance != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MovedDistance);
-      if (AiTargetId != 0) hash ^= AiTargetId.GetHashCode();
-      if (ThreatTargetId != 0) hash ^= ThreatTargetId.GetHashCode();
-      if (ThreatListSize != 0) hash ^= ThreatListSize.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      hash ^= HittingAvatars.GetHashCode();
-      if (DistanceToPlayer != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(DistanceToPlayer);
       if (AttackTargetId != 0) hash ^= AttackTargetId.GetHashCode();
-      if (RealTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RealTime);
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Unk3300ALBMEMMJEJA != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300ALBMEMMJEJA);
+      if (Unk3300IADJCDJOKND != 0) hash ^= Unk3300IADJCDJOKND.GetHashCode();
+      if (Unk3300FNCIDLDKANO != 0) hash ^= Unk3300FNCIDLDKANO.GetHashCode();
+      if (Unk3300GPCFOCIFHCD != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300GPCFOCIFHCD);
+      if (Unk3300FMBBEIHCCJO != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300FMBBEIHCCJO);
+      if (Unk3300LIJIDJOLLEB != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300LIJIDJOLLEB);
+      if (Unk3300GNBOAJHMNJO != 0) hash ^= Unk3300GNBOAJHMNJO.GetHashCode();
+      hash ^= HittingAvatars.GetHashCode();
+      if (Unk3300FIKEAEPLOHJ != 0) hash ^= Unk3300FIKEAEPLOHJ.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -307,47 +310,47 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ThreatListSize != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ThreatListSize);
-      }
-      if (Tactic != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Tactic);
-      }
-      if (ThreatTargetId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ThreatTargetId);
-      }
-      if (MovedDistance != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(MovedDistance);
-      }
-      if (TickTime != 0F) {
-        output.WriteRawTag(45);
-        output.WriteFloat(TickTime);
-      }
-      hittingAvatars_.WriteTo(output, _map_hittingAvatars_codec);
-      finishedSkillCycles_.WriteTo(output, _repeated_finishedSkillCycles_codec);
       if (AttackTargetId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(AttackTargetId);
       }
-      if (DistanceToPlayer != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(DistanceToPlayer);
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FIKEAEPLOHJ);
       }
-      if (AiTargetId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(AiTargetId);
-      }
-      if (RealTime != 0F) {
-        output.WriteRawTag(117);
-        output.WriteFloat(RealTime);
+      hittingAvatars_.WriteTo(output, _map_hittingAvatars_codec);
+      if (Unk3300IADJCDJOKND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IADJCDJOKND);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GNBOAJHMNJO);
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Unk3300LIJIDJOLLEB);
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Unk3300FMBBEIHCCJO);
+      }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Unk3300ALBMEMMJEJA);
+      }
+      finishedSkillCycles_.WriteTo(output, _repeated_finishedSkillCycles_codec);
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Unk3300GPCFOCIFHCD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -359,47 +362,47 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ThreatListSize != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ThreatListSize);
-      }
-      if (Tactic != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Tactic);
-      }
-      if (ThreatTargetId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ThreatTargetId);
-      }
-      if (MovedDistance != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(MovedDistance);
-      }
-      if (TickTime != 0F) {
-        output.WriteRawTag(45);
-        output.WriteFloat(TickTime);
-      }
-      hittingAvatars_.WriteTo(ref output, _map_hittingAvatars_codec);
-      finishedSkillCycles_.WriteTo(ref output, _repeated_finishedSkillCycles_codec);
       if (AttackTargetId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(AttackTargetId);
       }
-      if (DistanceToPlayer != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(DistanceToPlayer);
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FIKEAEPLOHJ);
       }
-      if (AiTargetId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(AiTargetId);
-      }
-      if (RealTime != 0F) {
-        output.WriteRawTag(117);
-        output.WriteFloat(RealTime);
+      hittingAvatars_.WriteTo(ref output, _map_hittingAvatars_codec);
+      if (Unk3300IADJCDJOKND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IADJCDJOKND);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GNBOAJHMNJO);
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Unk3300LIJIDJOLLEB);
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Unk3300FMBBEIHCCJO);
+      }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Unk3300ALBMEMMJEJA);
+      }
+      finishedSkillCycles_.WriteTo(ref output, _repeated_finishedSkillCycles_codec);
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Unk3300GPCFOCIFHCD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -411,37 +414,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TickTime != 0F) {
-        size += 1 + 4;
-      }
-      if (Tactic != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Tactic);
-      }
       size += finishedSkillCycles_.CalculateSize(_repeated_finishedSkillCycles_codec);
-      if (MovedDistance != 0F) {
-        size += 1 + 4;
-      }
-      if (AiTargetId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AiTargetId);
-      }
-      if (ThreatTargetId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ThreatTargetId);
-      }
-      if (ThreatListSize != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ThreatListSize);
+      if (AttackTargetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300IADJCDJOKND != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IADJCDJOKND);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNBOAJHMNJO);
+      }
       size += hittingAvatars_.CalculateSize(_map_hittingAvatars_codec);
-      if (DistanceToPlayer != 0F) {
-        size += 1 + 4;
-      }
-      if (AttackTargetId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
-      }
-      if (RealTime != 0F) {
-        size += 1 + 4;
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FIKEAEPLOHJ);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -455,37 +458,37 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TickTime != 0F) {
-        TickTime = other.TickTime;
-      }
-      if (other.Tactic != 0) {
-        Tactic = other.Tactic;
-      }
       finishedSkillCycles_.Add(other.finishedSkillCycles_);
-      if (other.MovedDistance != 0F) {
-        MovedDistance = other.MovedDistance;
-      }
-      if (other.AiTargetId != 0) {
-        AiTargetId = other.AiTargetId;
-      }
-      if (other.ThreatTargetId != 0) {
-        ThreatTargetId = other.ThreatTargetId;
-      }
-      if (other.ThreatListSize != 0) {
-        ThreatListSize = other.ThreatListSize;
+      if (other.AttackTargetId != 0) {
+        AttackTargetId = other.AttackTargetId;
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
+      if (other.Unk3300ALBMEMMJEJA != 0F) {
+        Unk3300ALBMEMMJEJA = other.Unk3300ALBMEMMJEJA;
+      }
+      if (other.Unk3300IADJCDJOKND != 0) {
+        Unk3300IADJCDJOKND = other.Unk3300IADJCDJOKND;
+      }
+      if (other.Unk3300FNCIDLDKANO != 0) {
+        Unk3300FNCIDLDKANO = other.Unk3300FNCIDLDKANO;
+      }
+      if (other.Unk3300GPCFOCIFHCD != 0F) {
+        Unk3300GPCFOCIFHCD = other.Unk3300GPCFOCIFHCD;
+      }
+      if (other.Unk3300FMBBEIHCCJO != 0F) {
+        Unk3300FMBBEIHCCJO = other.Unk3300FMBBEIHCCJO;
+      }
+      if (other.Unk3300LIJIDJOLLEB != 0F) {
+        Unk3300LIJIDJOLLEB = other.Unk3300LIJIDJOLLEB;
+      }
+      if (other.Unk3300GNBOAJHMNJO != 0) {
+        Unk3300GNBOAJHMNJO = other.Unk3300GNBOAJHMNJO;
+      }
       hittingAvatars_.Add(other.hittingAvatars_);
-      if (other.DistanceToPlayer != 0F) {
-        DistanceToPlayer = other.DistanceToPlayer;
-      }
-      if (other.AttackTargetId != 0) {
-        AttackTargetId = other.AttackTargetId;
-      }
-      if (other.RealTime != 0F) {
-        RealTime = other.RealTime;
+      if (other.Unk3300FIKEAEPLOHJ != 0) {
+        Unk3300FIKEAEPLOHJ = other.Unk3300FIKEAEPLOHJ;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -502,52 +505,52 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ThreatListSize = input.ReadUInt32();
-            break;
-          }
           case 16: {
-            Tactic = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            ThreatTargetId = input.ReadUInt32();
-            break;
-          }
-          case 37: {
-            MovedDistance = input.ReadFloat();
-            break;
-          }
-          case 45: {
-            TickTime = input.ReadFloat();
-            break;
-          }
-          case 58: {
-            hittingAvatars_.AddEntriesFrom(input, _map_hittingAvatars_codec);
-            break;
-          }
-          case 74: {
-            finishedSkillCycles_.AddEntriesFrom(input, _repeated_finishedSkillCycles_codec);
-            break;
-          }
-          case 80: {
             AttackTargetId = input.ReadUInt32();
             break;
           }
-          case 93: {
-            DistanceToPlayer = input.ReadFloat();
+          case 24: {
+            Unk3300FIKEAEPLOHJ = input.ReadUInt32();
             break;
           }
-          case 104: {
-            AiTargetId = input.ReadUInt32();
+          case 34: {
+            hittingAvatars_.AddEntriesFrom(input, _map_hittingAvatars_codec);
             break;
           }
-          case 117: {
-            RealTime = input.ReadFloat();
+          case 40: {
+            Unk3300IADJCDJOKND = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 48: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300FNCIDLDKANO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GNBOAJHMNJO = input.ReadUInt32();
+            break;
+          }
+          case 93: {
+            Unk3300LIJIDJOLLEB = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Unk3300FMBBEIHCCJO = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Unk3300ALBMEMMJEJA = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            finishedSkillCycles_.AddEntriesFrom(input, _repeated_finishedSkillCycles_codec);
+            break;
+          }
+          case 125: {
+            Unk3300GPCFOCIFHCD = input.ReadFloat();
             break;
           }
         }
@@ -565,52 +568,52 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ThreatListSize = input.ReadUInt32();
-            break;
-          }
           case 16: {
-            Tactic = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            ThreatTargetId = input.ReadUInt32();
-            break;
-          }
-          case 37: {
-            MovedDistance = input.ReadFloat();
-            break;
-          }
-          case 45: {
-            TickTime = input.ReadFloat();
-            break;
-          }
-          case 58: {
-            hittingAvatars_.AddEntriesFrom(ref input, _map_hittingAvatars_codec);
-            break;
-          }
-          case 74: {
-            finishedSkillCycles_.AddEntriesFrom(ref input, _repeated_finishedSkillCycles_codec);
-            break;
-          }
-          case 80: {
             AttackTargetId = input.ReadUInt32();
             break;
           }
-          case 93: {
-            DistanceToPlayer = input.ReadFloat();
+          case 24: {
+            Unk3300FIKEAEPLOHJ = input.ReadUInt32();
             break;
           }
-          case 104: {
-            AiTargetId = input.ReadUInt32();
+          case 34: {
+            hittingAvatars_.AddEntriesFrom(ref input, _map_hittingAvatars_codec);
             break;
           }
-          case 117: {
-            RealTime = input.ReadFloat();
+          case 40: {
+            Unk3300IADJCDJOKND = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 48: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300FNCIDLDKANO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GNBOAJHMNJO = input.ReadUInt32();
+            break;
+          }
+          case 93: {
+            Unk3300LIJIDJOLLEB = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Unk3300FMBBEIHCCJO = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Unk3300ALBMEMMJEJA = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            finishedSkillCycles_.AddEntriesFrom(ref input, _repeated_finishedSkillCycles_codec);
+            break;
+          }
+          case 125: {
+            Unk3300GPCFOCIFHCD = input.ReadFloat();
             break;
           }
         }

@@ -24,22 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDdXN0b21EdW5nZW9uQnJpZWYucHJvdG8aG0N1c3RvbUR1bmdlb25BYnN0",
-            "cmFjdC5wcm90bxoaQ3VzdG9tRHVuZ2VvblNldHRpbmcucHJvdG8aGUN1c3Rv",
-            "bUR1bmdlb25Tb2NpYWwucHJvdG8aGEN1c3RvbUR1bmdlb25TdGF0ZS5wcm90",
-            "byK7AgoSQ3VzdG9tRHVuZ2VvbkJyaWVmEiYKB3NldHRpbmcYAiABKAsyFS5D",
-            "dXN0b21EdW5nZW9uU2V0dGluZxIXCg9pc19wc25fcGxhdGZvcm0YDSABKAgS",
-            "JAoGc29jaWFsGAcgASgLMhQuQ3VzdG9tRHVuZ2VvblNvY2lhbBIUCgxkdW5n",
-            "ZW9uX2d1aWQYCiABKAQSFgoObGFzdF9zYXZlX3RpbWUYDiABKA0SEAoIdGFn",
-            "X2xpc3QYDyADKA0SEgoKZHVuZ2Vvbl9pZBgFIAEoDRIcChRiYXR0bGVfbWlu",
-            "X2Nvc3RfdGltZRgMIAEoDRIiCgVzdGF0ZRgBIAEoDjITLkN1c3RvbUR1bmdl",
-            "b25TdGF0ZRIoCghhYnN0cmFjdBgEIAEoCzIWLkN1c3RvbUR1bmdlb25BYnN0",
-            "cmFjdEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChhDdXN0b21EdW5nZW9uQnJpZWYucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0N1c3RvbUR1bmdlb25BYnN0cmFjdC5wcm90bxoa",
+            "Q3VzdG9tRHVuZ2VvblNldHRpbmcucHJvdG8aGUN1c3RvbUR1bmdlb25Tb2Np",
+            "YWwucHJvdG8aGEN1c3RvbUR1bmdlb25TdGF0ZS5wcm90byK7AwoSQ3VzdG9t",
+            "RHVuZ2VvbkJyaWVmEhQKDGR1bmdlb25fZ3VpZBgOIAEoBBJICghhYnN0cmFj",
+            "dBgIIAEoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ3Vz",
+            "dG9tRHVuZ2VvbkFic3RyYWN0EhAKCHRhZ19saXN0GAQgAygNEhcKD2lzX3Bz",
+            "bl9wbGF0Zm9ybRgJIAEoCBJECgZzb2NpYWwYCiABKAsyNC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25Tb2NpYWwSQgoF",
+            "c3RhdGUYAiABKA4yMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkN1c3RvbUR1bmdlb25TdGF0ZRIcChRiYXR0bGVfbWluX2Nvc3RfdGltZRgP",
+            "IAEoDRISCgpkdW5nZW9uX2lkGAMgASgNEkYKB3NldHRpbmcYByABKAsyNS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25T",
+            "ZXR0aW5nEhYKDmxhc3Rfc2F2ZV90aW1lGAwgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstractReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSettingReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSocialReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief), global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief.Parser, new[]{ "Setting", "IsPsnPlatform", "Social", "DungeonGuid", "LastSaveTime", "TagList", "DungeonId", "BattleMinCostTime", "State", "Abstract" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief), global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief.Parser, new[]{ "DungeonGuid", "Abstract", "TagList", "IsPsnPlatform", "Social", "State", "BattleMinCostTime", "DungeonId", "Setting", "LastSaveTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,16 +82,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeonBrief(CustomDungeonBrief other) : this() {
-      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
+      dungeonGuid_ = other.dungeonGuid_;
+      abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
+      tagList_ = other.tagList_.Clone();
       isPsnPlatform_ = other.isPsnPlatform_;
       social_ = other.social_ != null ? other.social_.Clone() : null;
-      dungeonGuid_ = other.dungeonGuid_;
-      lastSaveTime_ = other.lastSaveTime_;
-      tagList_ = other.tagList_.Clone();
-      dungeonId_ = other.dungeonId_;
-      battleMinCostTime_ = other.battleMinCostTime_;
       state_ = other.state_;
-      abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
+      battleMinCostTime_ = other.battleMinCostTime_;
+      dungeonId_ = other.dungeonId_;
+      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
+      lastSaveTime_ = other.lastSaveTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,20 +101,43 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CustomDungeonBrief(this);
     }
 
-    /// <summary>Field number for the "setting" field.</summary>
-    public const int SettingFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
+    /// <summary>Field number for the "dungeon_guid" field.</summary>
+    public const int DungeonGuidFieldNumber = 14;
+    private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
-      get { return setting_; }
+    public ulong DungeonGuid {
+      get { return dungeonGuid_; }
       set {
-        setting_ = value;
+        dungeonGuid_ = value;
       }
     }
 
+    /// <summary>Field number for the "abstract" field.</summary>
+    public const int AbstractFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract abstract_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract Abstract {
+      get { return abstract_; }
+      set {
+        abstract_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TagList {
+      get { return tagList_; }
+    }
+
     /// <summary>Field number for the "is_psn_platform" field.</summary>
-    public const int IsPsnPlatformFieldNumber = 13;
+    public const int IsPsnPlatformFieldNumber = 9;
     private bool isPsnPlatform_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,7 +149,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "social" field.</summary>
-    public const int SocialFieldNumber = 7;
+    public const int SocialFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial social_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,67 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 10;
-    private ulong dungeonGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong DungeonGuid {
-      get { return dungeonGuid_; }
-      set {
-        dungeonGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "last_save_time" field.</summary>
-    public const int LastSaveTimeFieldNumber = 14;
-    private uint lastSaveTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastSaveTime {
-      get { return lastSaveTime_; }
-      set {
-        lastSaveTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "tag_list" field.</summary>
-    public const int TagListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TagList {
-      get { return tagList_; }
-    }
-
-    /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 5;
-    private uint dungeonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonId {
-      get { return dungeonId_; }
-      set {
-        dungeonId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "battle_min_cost_time" field.</summary>
-    public const int BattleMinCostTimeFieldNumber = 12;
-    private uint battleMinCostTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BattleMinCostTime {
-      get { return battleMinCostTime_; }
-      set {
-        battleMinCostTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 1;
+    public const int StateFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonState state_ = global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -206,15 +172,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "abstract" field.</summary>
-    public const int AbstractFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract abstract_;
+    /// <summary>Field number for the "battle_min_cost_time" field.</summary>
+    public const int BattleMinCostTimeFieldNumber = 15;
+    private uint battleMinCostTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract Abstract {
-      get { return abstract_; }
+    public uint BattleMinCostTime {
+      get { return battleMinCostTime_; }
       set {
-        abstract_ = value;
+        battleMinCostTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 3;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "setting" field.</summary>
+    public const int SettingFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
+      get { return setting_; }
+      set {
+        setting_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_save_time" field.</summary>
+    public const int LastSaveTimeFieldNumber = 12;
+    private uint lastSaveTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastSaveTime {
+      get { return lastSaveTime_; }
+      set {
+        lastSaveTime_ = value;
       }
     }
 
@@ -233,16 +235,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Setting, other.Setting)) return false;
+      if (DungeonGuid != other.DungeonGuid) return false;
+      if (!object.Equals(Abstract, other.Abstract)) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
       if (IsPsnPlatform != other.IsPsnPlatform) return false;
       if (!object.Equals(Social, other.Social)) return false;
-      if (DungeonGuid != other.DungeonGuid) return false;
-      if (LastSaveTime != other.LastSaveTime) return false;
-      if(!tagList_.Equals(other.tagList_)) return false;
-      if (DungeonId != other.DungeonId) return false;
-      if (BattleMinCostTime != other.BattleMinCostTime) return false;
       if (State != other.State) return false;
-      if (!object.Equals(Abstract, other.Abstract)) return false;
+      if (BattleMinCostTime != other.BattleMinCostTime) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (!object.Equals(Setting, other.Setting)) return false;
+      if (LastSaveTime != other.LastSaveTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +252,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (setting_ != null) hash ^= Setting.GetHashCode();
+      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      if (abstract_ != null) hash ^= Abstract.GetHashCode();
+      hash ^= tagList_.GetHashCode();
       if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
       if (social_ != null) hash ^= Social.GetHashCode();
-      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
-      if (LastSaveTime != 0) hash ^= LastSaveTime.GetHashCode();
-      hash ^= tagList_.GetHashCode();
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-      if (BattleMinCostTime != 0) hash ^= BattleMinCostTime.GetHashCode();
       if (State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) hash ^= State.GetHashCode();
-      if (abstract_ != null) hash ^= Abstract.GetHashCode();
+      if (BattleMinCostTime != 0) hash ^= BattleMinCostTime.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (setting_ != null) hash ^= Setting.GetHashCode();
+      if (LastSaveTime != 0) hash ^= LastSaveTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -279,42 +281,42 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
+      if (DungeonId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DungeonId);
+      }
+      tagList_.WriteTo(output, _repeated_tagList_codec);
       if (setting_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(58);
         output.WriteMessage(Setting);
       }
       if (abstract_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(66);
         output.WriteMessage(Abstract);
       }
-      if (DungeonId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(DungeonId);
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsPsnPlatform);
       }
       if (social_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(82);
         output.WriteMessage(Social);
       }
+      if (LastSaveTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LastSaveTime);
+      }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt64(DungeonGuid);
       }
       if (BattleMinCostTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(BattleMinCostTime);
       }
-      if (IsPsnPlatform != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPsnPlatform);
-      }
-      if (LastSaveTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LastSaveTime);
-      }
-      tagList_.WriteTo(output, _repeated_tagList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -326,42 +328,42 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
+      if (DungeonId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DungeonId);
+      }
+      tagList_.WriteTo(ref output, _repeated_tagList_codec);
       if (setting_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(58);
         output.WriteMessage(Setting);
       }
       if (abstract_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(66);
         output.WriteMessage(Abstract);
       }
-      if (DungeonId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(DungeonId);
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsPsnPlatform);
       }
       if (social_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(82);
         output.WriteMessage(Social);
       }
+      if (LastSaveTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LastSaveTime);
+      }
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt64(DungeonGuid);
       }
       if (BattleMinCostTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(BattleMinCostTime);
       }
-      if (IsPsnPlatform != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPsnPlatform);
-      }
-      if (LastSaveTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LastSaveTime);
-      }
-      tagList_.WriteTo(ref output, _repeated_tagList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -372,33 +374,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (setting_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
+      if (DungeonGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
       }
+      if (abstract_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
+      }
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
       if (IsPsnPlatform != false) {
         size += 1 + 1;
       }
       if (social_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Social);
       }
-      if (DungeonGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
-      }
-      if (LastSaveTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSaveTime);
-      }
-      size += tagList_.CalculateSize(_repeated_tagList_codec);
-      if (DungeonId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      if (State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (BattleMinCostTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BattleMinCostTime);
       }
-      if (State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
-      if (abstract_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
+      if (setting_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
+      }
+      if (LastSaveTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSaveTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -412,12 +414,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.setting_ != null) {
-        if (setting_ == null) {
-          Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
-        }
-        Setting.MergeFrom(other.Setting);
+      if (other.DungeonGuid != 0UL) {
+        DungeonGuid = other.DungeonGuid;
       }
+      if (other.abstract_ != null) {
+        if (abstract_ == null) {
+          Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
+        }
+        Abstract.MergeFrom(other.Abstract);
+      }
+      tagList_.Add(other.tagList_);
       if (other.IsPsnPlatform != false) {
         IsPsnPlatform = other.IsPsnPlatform;
       }
@@ -427,27 +433,23 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Social.MergeFrom(other.Social);
       }
-      if (other.DungeonGuid != 0UL) {
-        DungeonGuid = other.DungeonGuid;
-      }
-      if (other.LastSaveTime != 0) {
-        LastSaveTime = other.LastSaveTime;
-      }
-      tagList_.Add(other.tagList_);
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
+      if (other.State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
+        State = other.State;
       }
       if (other.BattleMinCostTime != 0) {
         BattleMinCostTime = other.BattleMinCostTime;
       }
-      if (other.State != global::Weedwacker.Shared.Network.Proto.CustomDungeonState.Edit) {
-        State = other.State;
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
       }
-      if (other.abstract_ != null) {
-        if (abstract_ == null) {
-          Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
+      if (other.setting_ != null) {
+        if (setting_ == null) {
+          Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
         }
-        Abstract.MergeFrom(other.Abstract);
+        Setting.MergeFrom(other.Setting);
+      }
+      if (other.LastSaveTime != 0) {
+        LastSaveTime = other.LastSaveTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -464,54 +466,54 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             State = (global::Weedwacker.Shared.Network.Proto.CustomDungeonState) input.ReadEnum();
             break;
           }
-          case 18: {
+          case 24: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            break;
+          }
+          case 58: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
             break;
           }
-          case 34: {
+          case 66: {
             if (abstract_ == null) {
               Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
             }
             input.ReadMessage(Abstract);
             break;
           }
-          case 40: {
-            DungeonId = input.ReadUInt32();
+          case 72: {
+            IsPsnPlatform = input.ReadBool();
             break;
           }
-          case 58: {
+          case 82: {
             if (social_ == null) {
               Social = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial();
             }
             input.ReadMessage(Social);
             break;
           }
-          case 80: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
           case 96: {
-            BattleMinCostTime = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            IsPsnPlatform = input.ReadBool();
-            break;
-          }
-          case 112: {
             LastSaveTime = input.ReadUInt32();
             break;
           }
-          case 122:
+          case 112: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
           case 120: {
-            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            BattleMinCostTime = input.ReadUInt32();
             break;
           }
         }
@@ -529,54 +531,54 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             State = (global::Weedwacker.Shared.Network.Proto.CustomDungeonState) input.ReadEnum();
             break;
           }
-          case 18: {
+          case 24: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            break;
+          }
+          case 58: {
             if (setting_ == null) {
               Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
             }
             input.ReadMessage(Setting);
             break;
           }
-          case 34: {
+          case 66: {
             if (abstract_ == null) {
               Abstract = new global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract();
             }
             input.ReadMessage(Abstract);
             break;
           }
-          case 40: {
-            DungeonId = input.ReadUInt32();
+          case 72: {
+            IsPsnPlatform = input.ReadBool();
             break;
           }
-          case 58: {
+          case 82: {
             if (social_ == null) {
               Social = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSocial();
             }
             input.ReadMessage(Social);
             break;
           }
-          case 80: {
-            DungeonGuid = input.ReadUInt64();
-            break;
-          }
           case 96: {
-            BattleMinCostTime = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            IsPsnPlatform = input.ReadBool();
-            break;
-          }
-          case 112: {
             LastSaveTime = input.ReadUInt32();
             break;
           }
-          case 122:
+          case 112: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
           case 120: {
-            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            BattleMinCostTime = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GallerySumoKillMonsterNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHYWxsZXJ5U3Vtb0tpbGxNb25zdGVyTm90aWZ5LnByb3RvIoIBChxHYWxs",
-            "ZXJ5U3Vtb0tpbGxNb25zdGVyTm90aWZ5Eh8KF2tpbGxfbm9ybWFsX21vc250",
-            "ZXJfbnVtGAQgASgNEg0KBXNjb3JlGAcgASgNEh4KFmtpbGxfZWxpdGVfbW9u",
-            "c3Rlcl9udW0YDiABKA0SEgoKZ2FsbGVyeV9pZBgLIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJHYWxsZXJ5U3Vtb0tpbGxNb25zdGVyTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIoIBChxHYWxsZXJ5U3Vtb0tpbGxN",
+            "b25zdGVyTm90aWZ5Eg0KBXNjb3JlGAYgASgNEhIKCmdhbGxlcnlfaWQYCyAB",
+            "KA0SHgoWa2lsbF9lbGl0ZV9tb25zdGVyX251bRgOIAEoDRIfChdraWxsX25v",
+            "cm1hbF9tb25zdGVyX251bRgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GallerySumoKillMonsterNotify), global::Weedwacker.Shared.Network.Proto.GallerySumoKillMonsterNotify.Parser, new[]{ "KillNormalMosnterNum", "Score", "KillEliteMonsterNum", "GalleryId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GallerySumoKillMonsterNotify), global::Weedwacker.Shared.Network.Proto.GallerySumoKillMonsterNotify.Parser, new[]{ "Score", "GalleryId", "KillEliteMonsterNum", "KillNormalMonsterNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5582
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5590;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GallerySumoKillMonsterNotify : pb::IMessage<GallerySumoKillMonsterNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GallerySumoKillMonsterNotify(GallerySumoKillMonsterNotify other) : this() {
-      killNormalMosnterNum_ = other.killNormalMosnterNum_;
       score_ = other.score_;
-      killEliteMonsterNum_ = other.killEliteMonsterNum_;
       galleryId_ = other.galleryId_;
+      killEliteMonsterNum_ = other.killEliteMonsterNum_;
+      killNormalMonsterNum_ = other.killNormalMonsterNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GallerySumoKillMonsterNotify(this);
     }
 
-    /// <summary>Field number for the "kill_normal_mosnter_num" field.</summary>
-    public const int KillNormalMosnterNumFieldNumber = 4;
-    private uint killNormalMosnterNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KillNormalMosnterNum {
-      get { return killNormalMosnterNum_; }
-      set {
-        killNormalMosnterNum_ = value;
-      }
-    }
-
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 7;
+    public const int ScoreFieldNumber = 6;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return score_; }
       set {
         score_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 11;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
       }
     }
 
@@ -127,15 +131,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 11;
-    private uint galleryId_;
+    /// <summary>Field number for the "kill_normal_monster_num" field.</summary>
+    public const int KillNormalMonsterNumFieldNumber = 4;
+    private uint killNormalMonsterNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
+    public uint KillNormalMonsterNum {
+      get { return killNormalMonsterNum_; }
       set {
-        galleryId_ = value;
+        killNormalMonsterNum_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (KillNormalMosnterNum != other.KillNormalMosnterNum) return false;
       if (Score != other.Score) return false;
-      if (KillEliteMonsterNum != other.KillEliteMonsterNum) return false;
       if (GalleryId != other.GalleryId) return false;
+      if (KillEliteMonsterNum != other.KillEliteMonsterNum) return false;
+      if (KillNormalMonsterNum != other.KillNormalMonsterNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (KillNormalMosnterNum != 0) hash ^= KillNormalMosnterNum.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
-      if (KillEliteMonsterNum != 0) hash ^= KillEliteMonsterNum.GetHashCode();
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (KillEliteMonsterNum != 0) hash ^= KillEliteMonsterNum.GetHashCode();
+      if (KillNormalMonsterNum != 0) hash ^= KillNormalMonsterNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (KillNormalMosnterNum != 0) {
+      if (KillNormalMonsterNum != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(KillNormalMosnterNum);
+        output.WriteUInt32(KillNormalMonsterNum);
       }
       if (Score != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteUInt32(Score);
       }
       if (GalleryId != 0) {
@@ -213,12 +217,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (KillNormalMosnterNum != 0) {
+      if (KillNormalMonsterNum != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(KillNormalMosnterNum);
+        output.WriteUInt32(KillNormalMonsterNum);
       }
       if (Score != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteUInt32(Score);
       }
       if (GalleryId != 0) {
@@ -239,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (KillNormalMosnterNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillNormalMosnterNum);
-      }
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
       if (KillEliteMonsterNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillEliteMonsterNum);
       }
-      if (GalleryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      if (KillNormalMonsterNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillNormalMonsterNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.KillNormalMosnterNum != 0) {
-        KillNormalMosnterNum = other.KillNormalMosnterNum;
-      }
       if (other.Score != 0) {
         Score = other.Score;
+      }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
       }
       if (other.KillEliteMonsterNum != 0) {
         KillEliteMonsterNum = other.KillEliteMonsterNum;
       }
-      if (other.GalleryId != 0) {
-        GalleryId = other.GalleryId;
+      if (other.KillNormalMonsterNum != 0) {
+        KillNormalMonsterNum = other.KillNormalMonsterNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -291,10 +295,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            KillNormalMosnterNum = input.ReadUInt32();
+            KillNormalMonsterNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 48: {
             Score = input.ReadUInt32();
             break;
           }
@@ -322,10 +326,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            KillNormalMosnterNum = input.ReadUInt32();
+            KillNormalMonsterNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 48: {
             Score = input.ReadUInt32();
             break;
           }

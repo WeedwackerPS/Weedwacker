@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeStakePlayRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lU3Rha2VQbGF5UmVjb3JkLnByb3RvGhlIb21lR3JvdXBQbGF5ZXJJ",
-            "bmZvLnByb3RvImAKE0hvbWVTdGFrZVBsYXlSZWNvcmQSNgoYZW5nYWdlZF9w",
-            "bGF5ZXJfaW5mb19saXN0GA4gAygLMhQuSG9tZUdyb3VwUGxheWVySW5mbxIR",
-            "Cgl0aW1lc3RhbXAYCSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlIb21lU3Rha2VQbGF5UmVjb3JkLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhlIb21lR3JvdXBQbGF5ZXJJbmZvLnByb3RvIoAB",
+            "ChNIb21lU3Rha2VQbGF5UmVjb3JkElYKGGVuZ2FnZWRfcGxheWVyX2luZm9f",
+            "bGlzdBgHIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "SG9tZUdyb3VwUGxheWVySW5mbxIRCgl0aW1lc3RhbXAYAyABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "engaged_player_info_list" field.</summary>
-    public const int EngagedPlayerInfoListFieldNumber = 14;
+    public const int EngagedPlayerInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo> _repeated_engagedPlayerInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo> engagedPlayerInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeGroupPlayerInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 9;
+    public const int TimestampFieldNumber = 3;
     private uint timestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,7 +153,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Timestamp != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(Timestamp);
       }
       engagedPlayerInfoList_.WriteTo(output, _repeated_engagedPlayerInfoList_codec);
@@ -167,7 +168,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Timestamp != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(Timestamp);
       }
       engagedPlayerInfoList_.WriteTo(ref output, _repeated_engagedPlayerInfoList_codec);
@@ -216,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 24: {
             Timestamp = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 58: {
             engagedPlayerInfoList_.AddEntriesFrom(input, _repeated_engagedPlayerInfoList_codec);
             break;
           }
@@ -239,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 24: {
             Timestamp = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 58: {
             engagedPlayerInfoList_.AddEntriesFrom(ref input, _repeated_engagedPlayerInfoList_codec);
             break;
           }

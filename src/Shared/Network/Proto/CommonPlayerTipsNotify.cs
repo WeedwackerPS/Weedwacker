@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CommonPlayerTipsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxDb21tb25QbGF5ZXJUaXBzTm90aWZ5LnByb3RvIkcKFkNvbW1vblBsYXll",
-            "clRpcHNOb3RpZnkSEwoLbm90aWZ5X3R5cGUYAyABKA0SGAoQdGV4dF9tYXBf",
-            "aWRfbGlzdBgJIAMoCUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChxDb21tb25QbGF5ZXJUaXBzTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkcKFkNvbW1vblBsYXllclRpcHNOb3RpZnkS",
+            "EwoLbm90aWZ5X3R5cGUYDyABKA0SGAoQdGV4dF9tYXBfaWRfbGlzdBgIIAMo",
+            "CWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8466
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8167;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CommonPlayerTipsNotify : pb::IMessage<CommonPlayerTipsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "notify_type" field.</summary>
-    public const int NotifyTypeFieldNumber = 3;
+    public const int NotifyTypeFieldNumber = 15;
     private uint notifyType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,9 +105,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "text_map_id_list" field.</summary>
-    public const int TextMapIdListFieldNumber = 9;
+    public const int TextMapIdListFieldNumber = 8;
     private static readonly pb::FieldCodec<string> _repeated_textMapIdList_codec
-        = pb::FieldCodec.ForString(74);
+        = pb::FieldCodec.ForString(66);
     private readonly pbc::RepeatedField<string> textMapIdList_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      textMapIdList_.WriteTo(output, _repeated_textMapIdList_codec);
       if (NotifyType != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(120);
         output.WriteUInt32(NotifyType);
       }
-      textMapIdList_.WriteTo(output, _repeated_textMapIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      textMapIdList_.WriteTo(ref output, _repeated_textMapIdList_codec);
       if (NotifyType != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(120);
         output.WriteUInt32(NotifyType);
       }
-      textMapIdList_.WriteTo(ref output, _repeated_textMapIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,12 +224,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            NotifyType = input.ReadUInt32();
+          case 66: {
+            textMapIdList_.AddEntriesFrom(input, _repeated_textMapIdList_codec);
             break;
           }
-          case 74: {
-            textMapIdList_.AddEntriesFrom(input, _repeated_textMapIdList_codec);
+          case 120: {
+            NotifyType = input.ReadUInt32();
             break;
           }
         }
@@ -243,12 +247,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            NotifyType = input.ReadUInt32();
+          case 66: {
+            textMapIdList_.AddEntriesFrom(ref input, _repeated_textMapIdList_codec);
             break;
           }
-          case 74: {
-            textMapIdList_.AddEntriesFrom(ref input, _repeated_textMapIdList_codec);
+          case 120: {
+            NotifyType = input.ReadUInt32();
             break;
           }
         }

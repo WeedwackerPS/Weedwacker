@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static DeshretObeliskGadgetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5EZXNocmV0T2JlbGlza0dhZGdldEluZm8ucHJvdG8iMQoYRGVzaHJldE9i",
-            "ZWxpc2tHYWRnZXRJbmZvEhUKDWFyZ3VtZW50X2xpc3QYASADKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5EZXNocmV0T2JlbGlza0dhZGdldEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iMQoYRGVzaHJldE9iZWxpc2tHYWRnZXRJ",
+            "bmZvEhUKDWFyZ3VtZW50X2xpc3QYASADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

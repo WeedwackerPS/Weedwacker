@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static BuoyantCombatDailyInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxCdW95YW50Q29tYmF0RGFpbHlJbmZvLnByb3RvIkAKFkJ1b3lhbnRDb21i",
-            "YXREYWlseUluZm8SEgoKc3RhcnRfdGltZRgCIAEoDRISCgpiZXN0X3Njb3Jl",
-            "GA0gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChxCdW95YW50Q29tYmF0RGFpbHlJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkAKFkJ1b3lhbnRDb21iYXREYWlseUluZm8S",
+            "EgoKYmVzdF9zY29yZRgFIAEoDRISCgpzdGFydF90aW1lGAogASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo.Parser, new[]{ "StartTime", "BestScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo.Parser, new[]{ "BestScore", "StartTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuoyantCombatDailyInfo(BuoyantCombatDailyInfo other) : this() {
-      startTime_ = other.startTime_;
       bestScore_ = other.bestScore_;
+      startTime_ = other.startTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BuoyantCombatDailyInfo(this);
     }
 
-    /// <summary>Field number for the "start_time" field.</summary>
-    public const int StartTimeFieldNumber = 2;
-    private uint startTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StartTime {
-      get { return startTime_; }
-      set {
-        startTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 13;
+    public const int BestScoreFieldNumber = 5;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return bestScore_; }
       set {
         bestScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "start_time" field.</summary>
+    public const int StartTimeFieldNumber = 10;
+    private uint startTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StartTime {
+      get { return startTime_; }
+      set {
+        startTime_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (StartTime != other.StartTime) return false;
       if (BestScore != other.BestScore) return false;
+      if (StartTime != other.StartTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (StartTime != 0) hash ^= StartTime.GetHashCode();
       if (BestScore != 0) hash ^= BestScore.GetHashCode();
+      if (StartTime != 0) hash ^= StartTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StartTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(StartTime);
-      }
       if (BestScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(BestScore);
+      }
+      if (StartTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StartTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(StartTime);
-      }
       if (BestScore != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(BestScore);
+      }
+      if (StartTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StartTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (StartTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
-      }
       if (BestScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestScore);
+      }
+      if (StartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.StartTime != 0) {
-        StartTime = other.StartTime;
-      }
       if (other.BestScore != 0) {
         BestScore = other.BestScore;
+      }
+      if (other.StartTime != 0) {
+        StartTime = other.StartTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            StartTime = input.ReadUInt32();
+          case 40: {
+            BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
-            BestScore = input.ReadUInt32();
+          case 80: {
+            StartTime = input.ReadUInt32();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            StartTime = input.ReadUInt32();
+          case 40: {
+            BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
-            BestScore = input.ReadUInt32();
+          case 80: {
+            StartTime = input.ReadUInt32();
             break;
           }
         }

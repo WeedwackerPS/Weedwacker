@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassMissionUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNCYXR0bGVQYXNzTWlzc2lvblVwZGF0ZU5vdGlmeS5wcm90bxoXQmF0dGxl",
-            "UGFzc01pc3Npb24ucHJvdG8iSQodQmF0dGxlUGFzc01pc3Npb25VcGRhdGVO",
-            "b3RpZnkSKAoMbWlzc2lvbl9saXN0GAEgAygLMhIuQmF0dGxlUGFzc01pc3Np",
-            "b25CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiNCYXR0bGVQYXNzTWlzc2lvblVwZGF0ZU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoXQmF0dGxlUGFzc01pc3Npb24u",
+            "cHJvdG8iaQodQmF0dGxlUGFzc01pc3Npb25VcGRhdGVOb3RpZnkSSAoMbWlz",
+            "c2lvbl9saXN0GAEgAygLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5CYXR0bGVQYXNzTWlzc2lvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassMissionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2618
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2641;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BattlePassMissionUpdateNotify : pb::IMessage<BattlePassMissionUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

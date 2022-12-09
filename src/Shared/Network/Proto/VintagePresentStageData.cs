@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintagePresentStageDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1WaW50YWdlUHJlc2VudFN0YWdlRGF0YS5wcm90bxodVmludGFnZVByZXNl",
-            "bnRMZXZlbERhdGEucHJvdG8i/gEKF1ZpbnRhZ2VQcmVzZW50U3RhZ2VEYXRh",
-            "EhEKCW9wZW5fdGltZRgBIAEoDRIQCghzdGFnZV9pZBgPIAEoDRIRCglpc19m",
-            "aW5pc2gYDSABKAgSDwoHaXNfb3BlbhgKIAEoCBJIChFwcmVzZW50X2xldmVs",
-            "X21hcBgCIAMoCzItLlZpbnRhZ2VQcmVzZW50U3RhZ2VEYXRhLlByZXNlbnRM",
-            "ZXZlbE1hcEVudHJ5GlAKFFByZXNlbnRMZXZlbE1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoDRInCgV2YWx1ZRgCIAEoCzIYLlZpbnRhZ2VQcmVzZW50TGV2ZWxEYXRh",
-            "OgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "Ch1WaW50YWdlUHJlc2VudFN0YWdlRGF0YS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxodVmludGFnZVByZXNlbnRMZXZlbERhdGEu",
+            "cHJvdG8ivgIKF1ZpbnRhZ2VQcmVzZW50U3RhZ2VEYXRhEg8KB2lzX29wZW4Y",
+            "BCABKAgSEQoJaXNfZmluaXNoGAogASgIEmgKEXByZXNlbnRfbGV2ZWxfbWFw",
+            "GAsgAygLMk0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WaW50",
+            "YWdlUHJlc2VudFN0YWdlRGF0YS5QcmVzZW50TGV2ZWxNYXBFbnRyeRIRCglv",
+            "cGVuX3RpbWUYCCABKA0SEAoIc3RhZ2VfaWQYASABKA0acAoUUHJlc2VudExl",
+            "dmVsTWFwRW50cnkSCwoDa2V5GAEgASgNEkcKBXZhbHVlGAIgASgLMjguV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WaW50YWdlUHJlc2VudExl",
+            "dmVsRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintagePresentLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintagePresentStageData), global::Weedwacker.Shared.Network.Proto.VintagePresentStageData.Parser, new[]{ "OpenTime", "StageId", "IsFinish", "IsOpen", "PresentLevelMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintagePresentStageData), global::Weedwacker.Shared.Network.Proto.VintagePresentStageData.Parser, new[]{ "IsOpen", "IsFinish", "PresentLevelMap", "OpenTime", "StageId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -77,11 +78,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintagePresentStageData(VintagePresentStageData other) : this() {
+      isOpen_ = other.isOpen_;
+      isFinish_ = other.isFinish_;
+      presentLevelMap_ = other.presentLevelMap_.Clone();
       openTime_ = other.openTime_;
       stageId_ = other.stageId_;
-      isFinish_ = other.isFinish_;
-      isOpen_ = other.isOpen_;
-      presentLevelMap_ = other.presentLevelMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,8 +92,43 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintagePresentStageData(this);
     }
 
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 4;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_finish" field.</summary>
+    public const int IsFinishFieldNumber = 10;
+    private bool isFinish_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinish {
+      get { return isFinish_; }
+      set {
+        isFinish_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "present_level_map" field.</summary>
+    public const int PresentLevelMapFieldNumber = 11;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>.Codec _map_presentLevelMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData.Parser), 90);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData> presentLevelMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData> PresentLevelMap {
+      get { return presentLevelMap_; }
+    }
+
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 1;
+    public const int OpenTimeFieldNumber = 8;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,7 +140,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 15;
+    public const int StageIdFieldNumber = 1;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,41 +149,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         stageId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "is_finish" field.</summary>
-    public const int IsFinishFieldNumber = 13;
-    private bool isFinish_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinish {
-      get { return isFinish_; }
-      set {
-        isFinish_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 10;
-    private bool isOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOpen {
-      get { return isOpen_; }
-      set {
-        isOpen_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "present_level_map" field.</summary>
-    public const int PresentLevelMapFieldNumber = 2;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>.Codec _map_presentLevelMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData.Parser), 18);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData> presentLevelMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintagePresentLevelData> PresentLevelMap {
-      get { return presentLevelMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -165,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (IsOpen != other.IsOpen) return false;
+      if (IsFinish != other.IsFinish) return false;
+      if (!PresentLevelMap.Equals(other.PresentLevelMap)) return false;
       if (OpenTime != other.OpenTime) return false;
       if (StageId != other.StageId) return false;
-      if (IsFinish != other.IsFinish) return false;
-      if (IsOpen != other.IsOpen) return false;
-      if (!PresentLevelMap.Equals(other.PresentLevelMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -177,11 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (IsFinish != false) hash ^= IsFinish.GetHashCode();
+      hash ^= PresentLevelMap.GetHashCode();
       if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-      hash ^= PresentLevelMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -200,23 +201,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OpenTime != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(OpenTime);
-      }
-      presentLevelMap_.WriteTo(output, _map_presentLevelMap_codec);
-      if (IsOpen != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsOpen);
-      }
-      if (IsFinish != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsFinish);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsFinish != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsFinish);
+      }
+      presentLevelMap_.WriteTo(output, _map_presentLevelMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -227,23 +228,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OpenTime != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(OpenTime);
-      }
-      presentLevelMap_.WriteTo(ref output, _map_presentLevelMap_codec);
-      if (IsOpen != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsOpen);
-      }
-      if (IsFinish != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsFinish);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsFinish != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsFinish);
+      }
+      presentLevelMap_.WriteTo(ref output, _map_presentLevelMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -254,19 +255,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      if (IsFinish != false) {
+        size += 1 + 1;
+      }
+      size += presentLevelMap_.CalculateSize(_map_presentLevelMap_codec);
       if (OpenTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      if (IsFinish != false) {
-        size += 1 + 1;
-      }
-      if (IsOpen != false) {
-        size += 1 + 1;
-      }
-      size += presentLevelMap_.CalculateSize(_map_presentLevelMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -279,19 +280,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      if (other.IsFinish != false) {
+        IsFinish = other.IsFinish;
+      }
+      presentLevelMap_.Add(other.presentLevelMap_);
       if (other.OpenTime != 0) {
         OpenTime = other.OpenTime;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      if (other.IsFinish != false) {
-        IsFinish = other.IsFinish;
-      }
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
-      }
-      presentLevelMap_.Add(other.presentLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -308,23 +309,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            OpenTime = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
-          case 18: {
-            presentLevelMap_.AddEntriesFrom(input, _map_presentLevelMap_codec);
-            break;
-          }
-          case 80: {
+          case 32: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
+          case 64: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             IsFinish = input.ReadBool();
             break;
           }
-          case 120: {
-            StageId = input.ReadUInt32();
+          case 90: {
+            presentLevelMap_.AddEntriesFrom(input, _map_presentLevelMap_codec);
             break;
           }
         }
@@ -343,23 +344,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            OpenTime = input.ReadUInt32();
+            StageId = input.ReadUInt32();
             break;
           }
-          case 18: {
-            presentLevelMap_.AddEntriesFrom(ref input, _map_presentLevelMap_codec);
-            break;
-          }
-          case 80: {
+          case 32: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
+          case 64: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             IsFinish = input.ReadBool();
             break;
           }
-          case 120: {
-            StageId = input.ReadUInt32();
+          case 90: {
+            presentLevelMap_.AddEntriesFrom(ref input, _map_presentLevelMap_codec);
             break;
           }
         }

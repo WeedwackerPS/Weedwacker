@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaAddOrGetAbilityAndTriggerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipBYmlsaXR5TWV0YUFkZE9yR2V0QWJpbGl0eUFuZFRyaWdnZXIucHJvdG8a",
-            "E0FiaWxpdHlTdHJpbmcucHJvdG8ikAEKJEFiaWxpdHlNZXRhQWRkT3JHZXRB",
-            "YmlsaXR5QW5kVHJpZ2dlchIkCgxhYmlsaXR5X25hbWUYDSABKAsyDi5BYmls",
-            "aXR5U3RyaW5nEhgKEHRyaWdnZXJfYXJndW1lbnQYAyABKAISKAoQYWJpbGl0",
-            "eV9vdmVycmlkZRgIIAEoCzIOLkFiaWxpdHlTdHJpbmdCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CipBYmlsaXR5TWV0YUFkZE9yR2V0QWJpbGl0eUFuZFRyaWdnZXIucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aE0FiaWxpdHlTdHJp",
+            "bmcucHJvdG8i0AEKJEFiaWxpdHlNZXRhQWRkT3JHZXRBYmlsaXR5QW5kVHJp",
+            "Z2dlchIYChB0cmlnZ2VyX2FyZ3VtZW50GAQgASgCEkQKDGFiaWxpdHlfbmFt",
+            "ZRgMIAEoCzIuLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJp",
+            "bGl0eVN0cmluZxJIChBhYmlsaXR5X292ZXJyaWRlGA0gASgLMi4uV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BYmlsaXR5U3RyaW5nYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityStringReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMetaAddOrGetAbilityAndTrigger), global::Weedwacker.Shared.Network.Proto.AbilityMetaAddOrGetAbilityAndTrigger.Parser, new[]{ "AbilityName", "TriggerArgument", "AbilityOverride" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMetaAddOrGetAbilityAndTrigger), global::Weedwacker.Shared.Network.Proto.AbilityMetaAddOrGetAbilityAndTrigger.Parser, new[]{ "TriggerArgument", "AbilityName", "AbilityOverride" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +76,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMetaAddOrGetAbilityAndTrigger(AbilityMetaAddOrGetAbilityAndTrigger other) : this() {
-      abilityName_ = other.abilityName_ != null ? other.abilityName_.Clone() : null;
       triggerArgument_ = other.triggerArgument_;
+      abilityName_ = other.abilityName_ != null ? other.abilityName_.Clone() : null;
       abilityOverride_ = other.abilityOverride_ != null ? other.abilityOverride_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,20 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityMetaAddOrGetAbilityAndTrigger(this);
     }
 
-    /// <summary>Field number for the "ability_name" field.</summary>
-    public const int AbilityNameFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.AbilityString abilityName_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityString AbilityName {
-      get { return abilityName_; }
-      set {
-        abilityName_ = value;
-      }
-    }
-
     /// <summary>Field number for the "trigger_argument" field.</summary>
-    public const int TriggerArgumentFieldNumber = 3;
+    public const int TriggerArgumentFieldNumber = 4;
     private float triggerArgument_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,8 +100,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "ability_name" field.</summary>
+    public const int AbilityNameFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.AbilityString abilityName_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilityString AbilityName {
+      get { return abilityName_; }
+      set {
+        abilityName_ = value;
+      }
+    }
+
     /// <summary>Field number for the "ability_override" field.</summary>
-    public const int AbilityOverrideFieldNumber = 8;
+    public const int AbilityOverrideFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.AbilityString abilityOverride_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AbilityName, other.AbilityName)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TriggerArgument, other.TriggerArgument)) return false;
+      if (!object.Equals(AbilityName, other.AbilityName)) return false;
       if (!object.Equals(AbilityOverride, other.AbilityOverride)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -147,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (abilityName_ != null) hash ^= AbilityName.GetHashCode();
       if (TriggerArgument != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TriggerArgument);
+      if (abilityName_ != null) hash ^= AbilityName.GetHashCode();
       if (abilityOverride_ != null) hash ^= AbilityOverride.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -169,16 +171,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TriggerArgument != 0F) {
-        output.WriteRawTag(29);
+        output.WriteRawTag(37);
         output.WriteFloat(TriggerArgument);
       }
-      if (abilityOverride_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(AbilityOverride);
-      }
       if (abilityName_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(98);
         output.WriteMessage(AbilityName);
+      }
+      if (abilityOverride_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(AbilityOverride);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,16 +193,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TriggerArgument != 0F) {
-        output.WriteRawTag(29);
+        output.WriteRawTag(37);
         output.WriteFloat(TriggerArgument);
       }
-      if (abilityOverride_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(AbilityOverride);
-      }
       if (abilityName_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(98);
         output.WriteMessage(AbilityName);
+      }
+      if (abilityOverride_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(AbilityOverride);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -212,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (abilityName_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityName);
-      }
       if (TriggerArgument != 0F) {
         size += 1 + 4;
+      }
+      if (abilityName_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityName);
       }
       if (abilityOverride_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityOverride);
@@ -233,14 +235,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TriggerArgument != 0F) {
+        TriggerArgument = other.TriggerArgument;
+      }
       if (other.abilityName_ != null) {
         if (abilityName_ == null) {
           AbilityName = new global::Weedwacker.Shared.Network.Proto.AbilityString();
         }
         AbilityName.MergeFrom(other.AbilityName);
-      }
-      if (other.TriggerArgument != 0F) {
-        TriggerArgument = other.TriggerArgument;
       }
       if (other.abilityOverride_ != null) {
         if (abilityOverride_ == null) {
@@ -263,22 +265,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 29: {
+          case 37: {
             TriggerArgument = input.ReadFloat();
             break;
           }
-          case 66: {
-            if (abilityOverride_ == null) {
-              AbilityOverride = new global::Weedwacker.Shared.Network.Proto.AbilityString();
-            }
-            input.ReadMessage(AbilityOverride);
-            break;
-          }
-          case 106: {
+          case 98: {
             if (abilityName_ == null) {
               AbilityName = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(AbilityName);
+            break;
+          }
+          case 106: {
+            if (abilityOverride_ == null) {
+              AbilityOverride = new global::Weedwacker.Shared.Network.Proto.AbilityString();
+            }
+            input.ReadMessage(AbilityOverride);
             break;
           }
         }
@@ -296,22 +298,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 29: {
+          case 37: {
             TriggerArgument = input.ReadFloat();
             break;
           }
-          case 66: {
-            if (abilityOverride_ == null) {
-              AbilityOverride = new global::Weedwacker.Shared.Network.Proto.AbilityString();
-            }
-            input.ReadMessage(AbilityOverride);
-            break;
-          }
-          case 106: {
+          case 98: {
             if (abilityName_ == null) {
               AbilityName = new global::Weedwacker.Shared.Network.Proto.AbilityString();
             }
             input.ReadMessage(AbilityName);
+            break;
+          }
+          case 106: {
+            if (abilityOverride_ == null) {
+              AbilityOverride = new global::Weedwacker.Shared.Network.Proto.AbilityString();
+            }
+            input.ReadMessage(AbilityOverride);
             break;
           }
         }

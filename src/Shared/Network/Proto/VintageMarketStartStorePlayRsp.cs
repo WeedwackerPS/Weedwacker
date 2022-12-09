@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketStartStorePlayRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRWaW50YWdlTWFya2V0U3RhcnRTdG9yZVBsYXlSc3AucHJvdG8ifAoeVmlu",
-            "dGFnZU1hcmtldFN0YXJ0U3RvcmVQbGF5UnNwEhkKEXByZXZfcm91bmRfY29p",
-            "bl9iGAcgASgNEhMKC3N0b3JlX3JvdW5kGAIgASgNEhkKEXByZXZfcm91bmRf",
-            "Y29pbl9jGAUgASgNEg8KB3JldGNvZGUYCCABKAVCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRWaW50YWdlTWFya2V0U3RhcnRTdG9yZVBsYXlSc3AucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8igAEKHlZpbnRhZ2VNYXJrZXRT",
+            "dGFydFN0b3JlUGxheVJzcBITCgtzdG9yZV9yb3VuZBgKIAEoDRIbChNVbmsz",
+            "MzAwX0xDQ05FS0dPTkZHGAkgASgNEg8KB3JldGNvZGUYASABKAUSGwoTVW5r",
+            "MzMwMF9BREpLSUlKRk5NRRgPIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStartStorePlayRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStartStorePlayRsp.Parser, new[]{ "PrevRoundCoinB", "StoreRound", "PrevRoundCoinC", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStartStorePlayRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStartStorePlayRsp.Parser, new[]{ "StoreRound", "Unk3300LCCNEKGONFG", "Retcode", "Unk3300ADJKIIJFNME" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 22130
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23017;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketStartStorePlayRsp : pb::IMessage<VintageMarketStartStorePlayRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketStartStorePlayRsp(VintageMarketStartStorePlayRsp other) : this() {
-      prevRoundCoinB_ = other.prevRoundCoinB_;
       storeRound_ = other.storeRound_;
-      prevRoundCoinC_ = other.prevRoundCoinC_;
+      unk3300LCCNEKGONFG_ = other.unk3300LCCNEKGONFG_;
       retcode_ = other.retcode_;
+      unk3300ADJKIIJFNME_ = other.unk3300ADJKIIJFNME_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketStartStorePlayRsp(this);
     }
 
-    /// <summary>Field number for the "prev_round_coin_b" field.</summary>
-    public const int PrevRoundCoinBFieldNumber = 7;
-    private uint prevRoundCoinB_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PrevRoundCoinB {
-      get { return prevRoundCoinB_; }
-      set {
-        prevRoundCoinB_ = value;
-      }
-    }
-
     /// <summary>Field number for the "store_round" field.</summary>
-    public const int StoreRoundFieldNumber = 2;
+    public const int StoreRoundFieldNumber = 10;
     private uint storeRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,20 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "prev_round_coin_c" field.</summary>
-    public const int PrevRoundCoinCFieldNumber = 5;
-    private uint prevRoundCoinC_;
+    /// <summary>Field number for the "Unk3300_LCCNEKGONFG" field.</summary>
+    public const int Unk3300LCCNEKGONFGFieldNumber = 9;
+    private uint unk3300LCCNEKGONFG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PrevRoundCoinC {
-      get { return prevRoundCoinC_; }
+    public uint Unk3300LCCNEKGONFG {
+      get { return unk3300LCCNEKGONFG_; }
       set {
-        prevRoundCoinC_ = value;
+        unk3300LCCNEKGONFG_ = value;
       }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +128,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ADJKIIJFNME" field.</summary>
+    public const int Unk3300ADJKIIJFNMEFieldNumber = 15;
+    private uint unk3300ADJKIIJFNME_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300ADJKIIJFNME {
+      get { return unk3300ADJKIIJFNME_; }
+      set {
+        unk3300ADJKIIJFNME_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PrevRoundCoinB != other.PrevRoundCoinB) return false;
       if (StoreRound != other.StoreRound) return false;
-      if (PrevRoundCoinC != other.PrevRoundCoinC) return false;
+      if (Unk3300LCCNEKGONFG != other.Unk3300LCCNEKGONFG) return false;
       if (Retcode != other.Retcode) return false;
+      if (Unk3300ADJKIIJFNME != other.Unk3300ADJKIIJFNME) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PrevRoundCoinB != 0) hash ^= PrevRoundCoinB.GetHashCode();
       if (StoreRound != 0) hash ^= StoreRound.GetHashCode();
-      if (PrevRoundCoinC != 0) hash ^= PrevRoundCoinC.GetHashCode();
+      if (Unk3300LCCNEKGONFG != 0) hash ^= Unk3300LCCNEKGONFG.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Unk3300ADJKIIJFNME != 0) hash ^= Unk3300ADJKIIJFNME.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,21 +191,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Retcode != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (Unk3300LCCNEKGONFG != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300LCCNEKGONFG);
+      }
       if (StoreRound != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(StoreRound);
       }
-      if (PrevRoundCoinC != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(PrevRoundCoinC);
-      }
-      if (PrevRoundCoinB != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(PrevRoundCoinB);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
+      if (Unk3300ADJKIIJFNME != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300ADJKIIJFNME);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +217,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (Unk3300LCCNEKGONFG != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300LCCNEKGONFG);
+      }
       if (StoreRound != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(StoreRound);
       }
-      if (PrevRoundCoinC != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(PrevRoundCoinC);
-      }
-      if (PrevRoundCoinB != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(PrevRoundCoinB);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
+      if (Unk3300ADJKIIJFNME != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300ADJKIIJFNME);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PrevRoundCoinB != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrevRoundCoinB);
-      }
       if (StoreRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreRound);
       }
-      if (PrevRoundCoinC != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrevRoundCoinC);
+      if (Unk3300LCCNEKGONFG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LCCNEKGONFG);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Unk3300ADJKIIJFNME != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ADJKIIJFNME);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.PrevRoundCoinB != 0) {
-        PrevRoundCoinB = other.PrevRoundCoinB;
-      }
       if (other.StoreRound != 0) {
         StoreRound = other.StoreRound;
       }
-      if (other.PrevRoundCoinC != 0) {
-        PrevRoundCoinC = other.PrevRoundCoinC;
+      if (other.Unk3300LCCNEKGONFG != 0) {
+        Unk3300LCCNEKGONFG = other.Unk3300LCCNEKGONFG;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.Unk3300ADJKIIJFNME != 0) {
+        Unk3300ADJKIIJFNME = other.Unk3300ADJKIIJFNME;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Unk3300LCCNEKGONFG = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             StoreRound = input.ReadUInt32();
             break;
           }
-          case 40: {
-            PrevRoundCoinC = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            PrevRoundCoinB = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            Unk3300ADJKIIJFNME = input.ReadUInt32();
             break;
           }
         }
@@ -321,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Unk3300LCCNEKGONFG = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             StoreRound = input.ReadUInt32();
             break;
           }
-          case 40: {
-            PrevRoundCoinC = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            PrevRoundCoinB = input.ReadUInt32();
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            Unk3300ADJKIIJFNME = input.ReadUInt32();
             break;
           }
         }

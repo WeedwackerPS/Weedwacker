@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static AddFriendNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVBZGRGcmllbmROb3RpZnkucHJvdG8aEUZyaWVuZEJyaWVmLnByb3RvIlAK",
-            "D0FkZEZyaWVuZE5vdGlmeRISCgp0YXJnZXRfdWlkGAsgASgNEikKE3Rhcmdl",
-            "dF9mcmllbmRfYnJpZWYYCiABKAsyDC5GcmllbmRCcmllZkIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVBZGRGcmllbmROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aEUZyaWVuZEJyaWVmLnByb3RvInAKD0FkZEZyaWVuZE5v",
+            "dGlmeRJJChN0YXJnZXRfZnJpZW5kX2JyaWVmGAIgASgLMiwuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5GcmllbmRCcmllZhISCgp0YXJnZXRf",
+            "dWlkGA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddFriendNotify), global::Weedwacker.Shared.Network.Proto.AddFriendNotify.Parser, new[]{ "TargetUid", "TargetFriendBrief" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddFriendNotify), global::Weedwacker.Shared.Network.Proto.AddFriendNotify.Parser, new[]{ "TargetFriendBrief", "TargetUid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4022
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4037;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AddFriendNotify : pb::IMessage<AddFriendNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddFriendNotify(AddFriendNotify other) : this() {
-      targetUid_ = other.targetUid_;
       targetFriendBrief_ = other.targetFriendBrief_ != null ? other.targetFriendBrief_.Clone() : null;
+      targetUid_ = other.targetUid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AddFriendNotify(this);
     }
 
-    /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 11;
-    private uint targetUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetUid {
-      get { return targetUid_; }
-      set {
-        targetUid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_friend_brief" field.</summary>
-    public const int TargetFriendBriefFieldNumber = 10;
+    public const int TargetFriendBriefFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.FriendBrief targetFriendBrief_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return targetFriendBrief_; }
       set {
         targetFriendBrief_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_uid" field.</summary>
+    public const int TargetUidFieldNumber = 15;
+    private uint targetUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetUid {
+      get { return targetUid_; }
+      set {
+        targetUid_ = value;
       }
     }
 
@@ -127,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TargetUid != other.TargetUid) return false;
       if (!object.Equals(TargetFriendBrief, other.TargetFriendBrief)) return false;
+      if (TargetUid != other.TargetUid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (targetFriendBrief_ != null) hash ^= TargetFriendBrief.GetHashCode();
+      if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (targetFriendBrief_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(TargetFriendBrief);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
@@ -175,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (targetFriendBrief_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(TargetFriendBrief);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
@@ -192,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TargetUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
-      }
       if (targetFriendBrief_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetFriendBrief);
+      }
+      if (TargetUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TargetUid != 0) {
-        TargetUid = other.TargetUid;
-      }
       if (other.targetFriendBrief_ != null) {
         if (targetFriendBrief_ == null) {
           TargetFriendBrief = new global::Weedwacker.Shared.Network.Proto.FriendBrief();
         }
         TargetFriendBrief.MergeFrom(other.TargetFriendBrief);
+      }
+      if (other.TargetUid != 0) {
+        TargetUid = other.TargetUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -234,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 18: {
             if (targetFriendBrief_ == null) {
               TargetFriendBrief = new global::Weedwacker.Shared.Network.Proto.FriendBrief();
             }
             input.ReadMessage(TargetFriendBrief);
             break;
           }
-          case 88: {
+          case 120: {
             TargetUid = input.ReadUInt32();
             break;
           }
@@ -260,14 +265,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 18: {
             if (targetFriendBrief_ == null) {
               TargetFriendBrief = new global::Weedwacker.Shared.Network.Proto.FriendBrief();
             }
             input.ReadMessage(TargetFriendBrief);
             break;
           }
-          case 88: {
+          case 120: {
             TargetUid = input.ReadUInt32();
             break;
           }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTY2VuZUdhbGxlcnlJbmZvTm90aWZ5LnByb3RvGhZTY2VuZUdhbGxlcnlJ",
-            "bmZvLnByb3RvIkEKFlNjZW5lR2FsbGVyeUluZm9Ob3RpZnkSJwoMZ2FsbGVy",
-            "eV9pbmZvGAQgASgLMhEuU2NlbmVHYWxsZXJ5SW5mb0IiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxTY2VuZUdhbGxlcnlJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZTY2VuZUdhbGxlcnlJbmZvLnByb3RvImEK",
+            "FlNjZW5lR2FsbGVyeUluZm9Ob3RpZnkSRwoMZ2FsbGVyeV9pbmZvGAsgASgL",
+            "MjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TY2VuZUdhbGxl",
+            "cnlJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SceneGalleryInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5581
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5525;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneGalleryInfoNotify : pb::IMessage<SceneGalleryInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_info" field.</summary>
-    public const int GalleryInfoFieldNumber = 4;
+    public const int GalleryInfoFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.SceneGalleryInfo galleryInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (galleryInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(90);
         output.WriteMessage(GalleryInfo);
       }
       if (_unknownFields != null) {
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (galleryInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(90);
         output.WriteMessage(GalleryInfo);
       }
       if (_unknownFields != null) {
@@ -205,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 90: {
             if (galleryInfo_ == null) {
               GalleryInfo = new global::Weedwacker.Shared.Network.Proto.SceneGalleryInfo();
             }
@@ -227,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 90: {
             if (galleryInfo_ == null) {
               GalleryInfo = new global::Weedwacker.Shared.Network.Proto.SceneGalleryInfo();
             }

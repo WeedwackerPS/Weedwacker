@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static DraftOwnerInviteNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxEcmFmdE93bmVySW52aXRlTm90aWZ5LnByb3RvIkgKFkRyYWZ0T3duZXJJ",
-            "bnZpdGVOb3RpZnkSEAoIZHJhZnRfaWQYBCABKA0SHAoUaW52aXRlX2RlYWRs",
-            "aW5lX3RpbWUYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChxEcmFmdE93bmVySW52aXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkgKFkRyYWZ0T3duZXJJbnZpdGVOb3RpZnkS",
+            "HAoUaW52aXRlX2RlYWRsaW5lX3RpbWUYBSABKA0SEAoIZHJhZnRfaWQYByAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerInviteNotify), global::Weedwacker.Shared.Network.Proto.DraftOwnerInviteNotify.Parser, new[]{ "DraftId", "InviteDeadlineTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerInviteNotify), global::Weedwacker.Shared.Network.Proto.DraftOwnerInviteNotify.Parser, new[]{ "InviteDeadlineTime", "DraftId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5407
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5500;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DraftOwnerInviteNotify : pb::IMessage<DraftOwnerInviteNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DraftOwnerInviteNotify(DraftOwnerInviteNotify other) : this() {
-      draftId_ = other.draftId_;
       inviteDeadlineTime_ = other.inviteDeadlineTime_;
+      draftId_ = other.draftId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DraftOwnerInviteNotify(this);
     }
 
-    /// <summary>Field number for the "draft_id" field.</summary>
-    public const int DraftIdFieldNumber = 4;
-    private uint draftId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DraftId {
-      get { return draftId_; }
-      set {
-        draftId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "invite_deadline_time" field.</summary>
-    public const int InviteDeadlineTimeFieldNumber = 15;
+    public const int InviteDeadlineTimeFieldNumber = 5;
     private uint inviteDeadlineTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return inviteDeadlineTime_; }
       set {
         inviteDeadlineTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "draft_id" field.</summary>
+    public const int DraftIdFieldNumber = 7;
+    private uint draftId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DraftId {
+      get { return draftId_; }
+      set {
+        draftId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DraftId != other.DraftId) return false;
       if (InviteDeadlineTime != other.InviteDeadlineTime) return false;
+      if (DraftId != other.DraftId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DraftId != 0) hash ^= DraftId.GetHashCode();
       if (InviteDeadlineTime != 0) hash ^= InviteDeadlineTime.GetHashCode();
+      if (DraftId != 0) hash ^= DraftId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DraftId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(DraftId);
-      }
       if (InviteDeadlineTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(InviteDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DraftId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(DraftId);
-      }
       if (InviteDeadlineTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(InviteDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DraftId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
-      }
       if (InviteDeadlineTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InviteDeadlineTime);
+      }
+      if (DraftId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.DraftId != 0) {
-        DraftId = other.DraftId;
-      }
       if (other.InviteDeadlineTime != 0) {
         InviteDeadlineTime = other.InviteDeadlineTime;
+      }
+      if (other.DraftId != 0) {
+        DraftId = other.DraftId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            DraftId = input.ReadUInt32();
+          case 40: {
+            InviteDeadlineTime = input.ReadUInt32();
             break;
           }
-          case 120: {
-            InviteDeadlineTime = input.ReadUInt32();
+          case 56: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            DraftId = input.ReadUInt32();
+          case 40: {
+            InviteDeadlineTime = input.ReadUInt32();
             break;
           }
-          case 120: {
-            InviteDeadlineTime = input.ReadUInt32();
+          case 56: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlSb2d1ZURpYXJ5U3RhZ2VJbmZvLnByb3RvGh1Sb2d1ZURpYXJ5RHVuZ2Vv",
-            "blJlY29yZC5wcm90byJrChNSb2d1ZURpYXJ5U3RhZ2VJbmZvEhAKCHN0YWdl",
-            "X2lkGAEgASgNEi0KC2Jlc3RfcmVjb3JkGAwgASgLMhguUm9ndWVEaWFyeUR1",
-            "bmdlb25SZWNvcmQSEwoLaXNfaGF2ZV90cnkYCiABKAhCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlSb2d1ZURpYXJ5U3RhZ2VJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGh1Sb2d1ZURpYXJ5RHVuZ2VvblJlY29yZC5wcm90",
+            "byKLAQoTUm9ndWVEaWFyeVN0YWdlSW5mbxIQCghzdGFnZV9pZBgPIAEoDRJN",
+            "CgtiZXN0X3JlY29yZBgJIAEoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uUm9ndWVEaWFyeUR1bmdlb25SZWNvcmQSEwoLaXNfaGF2ZV90",
+            "cnkYCyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 1;
+    public const int StageIdFieldNumber = 15;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_record" field.</summary>
-    public const int BestRecordFieldNumber = 12;
+    public const int BestRecordFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord bestRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_have_try" field.</summary>
-    public const int IsHaveTryFieldNumber = 10;
+    public const int IsHaveTryFieldNumber = 11;
     private bool isHaveTry_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StageId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(StageId);
+      if (bestRecord_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BestRecord);
       }
       if (IsHaveTry != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveTry);
       }
-      if (bestRecord_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(BestRecord);
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StageId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(StageId);
+      if (bestRecord_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BestRecord);
       }
       if (IsHaveTry != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveTry);
       }
-      if (bestRecord_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(BestRecord);
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -259,19 +260,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            IsHaveTry = input.ReadBool();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (bestRecord_ == null) {
               BestRecord = new global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord();
             }
             input.ReadMessage(BestRecord);
+            break;
+          }
+          case 88: {
+            IsHaveTry = input.ReadBool();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -289,19 +290,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            IsHaveTry = input.ReadBool();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (bestRecord_ == null) {
               BestRecord = new global::Weedwacker.Shared.Network.Proto.RogueDiaryDungeonRecord();
             }
             input.ReadMessage(BestRecord);
+            break;
+          }
+          case 88: {
+            IsHaveTry = input.ReadBool();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
             break;
           }
         }

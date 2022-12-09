@@ -24,18 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionMissionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSZXVuaW9uTWlzc2lvbkluZm8ucHJvdG8aGFJldW5pb25XYXRjaGVySW5m",
-            "by5wcm90byKAAgoSUmV1bmlvbk1pc3Npb25JbmZvEjEKFGN1cl9kYXlfd2F0",
-            "Y2hlcl9saXN0GAMgAygLMhMuUmV1bmlvbldhdGNoZXJJbmZvEhEKCWN1cl9z",
-            "Y29yZRgLIAEoDRIXCg9pc190YWtlbl9yZXdhcmQYCCABKAgSHAoUaXNfdGFr",
-            "ZW5fcmV3YXJkX2xpc3QYBiADKAgSGQoRbmV4dF9yZWZyZXNoX3RpbWUYBSAB",
-            "KA0SEwoLaXNfZmluaXNoZWQYCSABKAgSEgoKbWlzc2lvbl9pZBgMIAEoDRIp",
-            "Cgx3YXRjaGVyX2xpc3QYAiADKAsyEy5SZXVuaW9uV2F0Y2hlckluZm9CIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhSZXVuaW9uTWlzc2lvbkluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aGFJldW5pb25XYXRjaGVySW5mby5wcm90byLAAgoS",
+            "UmV1bmlvbk1pc3Npb25JbmZvEhcKD2lzX3Rha2VuX3Jld2FyZBgKIAEoCBIT",
+            "Cgtpc19maW5pc2hlZBgNIAEoCBJJCgx3YXRjaGVyX2xpc3QYDyADKAsyMy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJldW5pb25XYXRjaGVy",
+            "SW5mbxJRChRjdXJfZGF5X3dhdGNoZXJfbGlzdBgIIAMoCzIzLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUmV1bmlvbldhdGNoZXJJbmZvEhkK",
+            "EW5leHRfcmVmcmVzaF90aW1lGAUgASgNEhwKFGlzX3Rha2VuX3Jld2FyZF9s",
+            "aXN0GAQgAygIEhIKCm1pc3Npb25faWQYCSABKA0SEQoJY3VyX3Njb3JlGAIg",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionMissionInfo), global::Weedwacker.Shared.Network.Proto.ReunionMissionInfo.Parser, new[]{ "CurDayWatcherList", "CurScore", "IsTakenReward", "IsTakenRewardList", "NextRefreshTime", "IsFinished", "MissionId", "WatcherList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionMissionInfo), global::Weedwacker.Shared.Network.Proto.ReunionMissionInfo.Parser, new[]{ "IsTakenReward", "IsFinished", "WatcherList", "CurDayWatcherList", "NextRefreshTime", "IsTakenRewardList", "MissionId", "CurScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,14 +78,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReunionMissionInfo(ReunionMissionInfo other) : this() {
-      curDayWatcherList_ = other.curDayWatcherList_.Clone();
-      curScore_ = other.curScore_;
       isTakenReward_ = other.isTakenReward_;
-      isTakenRewardList_ = other.isTakenRewardList_.Clone();
-      nextRefreshTime_ = other.nextRefreshTime_;
       isFinished_ = other.isFinished_;
-      missionId_ = other.missionId_;
       watcherList_ = other.watcherList_.Clone();
+      curDayWatcherList_ = other.curDayWatcherList_.Clone();
+      nextRefreshTime_ = other.nextRefreshTime_;
+      isTakenRewardList_ = other.isTakenRewardList_.Clone();
+      missionId_ = other.missionId_;
+      curScore_ = other.curScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,31 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ReunionMissionInfo(this);
     }
 
-    /// <summary>Field number for the "cur_day_watcher_list" field.</summary>
-    public const int CurDayWatcherListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> _repeated_curDayWatcherList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> curDayWatcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> CurDayWatcherList {
-      get { return curDayWatcherList_; }
-    }
-
-    /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 11;
-    private uint curScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurScore {
-      get { return curScore_; }
-      set {
-        curScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_taken_reward" field.</summary>
-    public const int IsTakenRewardFieldNumber = 8;
+    public const int IsTakenRewardFieldNumber = 10;
     private bool isTakenReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,15 +107,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_taken_reward_list" field.</summary>
-    public const int IsTakenRewardListFieldNumber = 6;
-    private static readonly pb::FieldCodec<bool> _repeated_isTakenRewardList_codec
-        = pb::FieldCodec.ForBool(50);
-    private readonly pbc::RepeatedField<bool> isTakenRewardList_ = new pbc::RepeatedField<bool>();
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 13;
+    private bool isFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<bool> IsTakenRewardList {
-      get { return isTakenRewardList_; }
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "watcher_list" field.</summary>
+    public const int WatcherListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> _repeated_watcherList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> watcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> WatcherList {
+      get { return watcherList_; }
+    }
+
+    /// <summary>Field number for the "cur_day_watcher_list" field.</summary>
+    public const int CurDayWatcherListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> _repeated_curDayWatcherList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> curDayWatcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> CurDayWatcherList {
+      get { return curDayWatcherList_; }
     }
 
     /// <summary>Field number for the "next_refresh_time" field.</summary>
@@ -151,20 +153,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 9;
-    private bool isFinished_;
+    /// <summary>Field number for the "is_taken_reward_list" field.</summary>
+    public const int IsTakenRewardListFieldNumber = 4;
+    private static readonly pb::FieldCodec<bool> _repeated_isTakenRewardList_codec
+        = pb::FieldCodec.ForBool(34);
+    private readonly pbc::RepeatedField<bool> isTakenRewardList_ = new pbc::RepeatedField<bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
+    public pbc::RepeatedField<bool> IsTakenRewardList {
+      get { return isTakenRewardList_; }
     }
 
     /// <summary>Field number for the "mission_id" field.</summary>
-    public const int MissionIdFieldNumber = 12;
+    public const int MissionIdFieldNumber = 9;
     private uint missionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,15 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "watcher_list" field.</summary>
-    public const int WatcherListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> _repeated_watcherList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> watcherList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo>();
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 2;
+    private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo> WatcherList {
-      get { return watcherList_; }
+    public uint CurScore {
+      get { return curScore_; }
+      set {
+        curScore_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -201,14 +203,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!curDayWatcherList_.Equals(other.curDayWatcherList_)) return false;
-      if (CurScore != other.CurScore) return false;
       if (IsTakenReward != other.IsTakenReward) return false;
-      if(!isTakenRewardList_.Equals(other.isTakenRewardList_)) return false;
-      if (NextRefreshTime != other.NextRefreshTime) return false;
       if (IsFinished != other.IsFinished) return false;
-      if (MissionId != other.MissionId) return false;
       if(!watcherList_.Equals(other.watcherList_)) return false;
+      if(!curDayWatcherList_.Equals(other.curDayWatcherList_)) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
+      if(!isTakenRewardList_.Equals(other.isTakenRewardList_)) return false;
+      if (MissionId != other.MissionId) return false;
+      if (CurScore != other.CurScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -216,14 +218,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= curDayWatcherList_.GetHashCode();
-      if (CurScore != 0) hash ^= CurScore.GetHashCode();
       if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
-      hash ^= isTakenRewardList_.GetHashCode();
-      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-      if (MissionId != 0) hash ^= MissionId.GetHashCode();
       hash ^= watcherList_.GetHashCode();
+      hash ^= curDayWatcherList_.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      hash ^= isTakenRewardList_.GetHashCode();
+      if (MissionId != 0) hash ^= MissionId.GetHashCode();
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -242,29 +244,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      watcherList_.WriteTo(output, _repeated_watcherList_codec);
-      curDayWatcherList_.WriteTo(output, _repeated_curDayWatcherList_codec);
+      if (CurScore != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurScore);
+      }
+      isTakenRewardList_.WriteTo(output, _repeated_isTakenRewardList_codec);
       if (NextRefreshTime != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(NextRefreshTime);
       }
-      isTakenRewardList_.WriteTo(output, _repeated_isTakenRewardList_codec);
+      curDayWatcherList_.WriteTo(output, _repeated_curDayWatcherList_codec);
+      if (MissionId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(MissionId);
+      }
       if (IsTakenReward != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(IsTakenReward);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteBool(IsFinished);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurScore);
-      }
-      if (MissionId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MissionId);
-      }
+      watcherList_.WriteTo(output, _repeated_watcherList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -275,29 +277,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      watcherList_.WriteTo(ref output, _repeated_watcherList_codec);
-      curDayWatcherList_.WriteTo(ref output, _repeated_curDayWatcherList_codec);
+      if (CurScore != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurScore);
+      }
+      isTakenRewardList_.WriteTo(ref output, _repeated_isTakenRewardList_codec);
       if (NextRefreshTime != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(NextRefreshTime);
       }
-      isTakenRewardList_.WriteTo(ref output, _repeated_isTakenRewardList_codec);
+      curDayWatcherList_.WriteTo(ref output, _repeated_curDayWatcherList_codec);
+      if (MissionId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(MissionId);
+      }
       if (IsTakenReward != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(80);
         output.WriteBool(IsTakenReward);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteBool(IsFinished);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurScore);
-      }
-      if (MissionId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MissionId);
-      }
+      watcherList_.WriteTo(ref output, _repeated_watcherList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -308,24 +310,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += curDayWatcherList_.CalculateSize(_repeated_curDayWatcherList_codec);
-      if (CurScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
-      }
       if (IsTakenReward != false) {
         size += 1 + 1;
-      }
-      size += isTakenRewardList_.CalculateSize(_repeated_isTakenRewardList_codec);
-      if (NextRefreshTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
       }
       if (IsFinished != false) {
         size += 1 + 1;
       }
+      size += watcherList_.CalculateSize(_repeated_watcherList_codec);
+      size += curDayWatcherList_.CalculateSize(_repeated_curDayWatcherList_codec);
+      if (NextRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      size += isTakenRewardList_.CalculateSize(_repeated_isTakenRewardList_codec);
       if (MissionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
       }
-      size += watcherList_.CalculateSize(_repeated_watcherList_codec);
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -338,24 +340,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      curDayWatcherList_.Add(other.curDayWatcherList_);
-      if (other.CurScore != 0) {
-        CurScore = other.CurScore;
-      }
       if (other.IsTakenReward != false) {
         IsTakenReward = other.IsTakenReward;
-      }
-      isTakenRewardList_.Add(other.isTakenRewardList_);
-      if (other.NextRefreshTime != 0) {
-        NextRefreshTime = other.NextRefreshTime;
       }
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
       }
+      watcherList_.Add(other.watcherList_);
+      curDayWatcherList_.Add(other.curDayWatcherList_);
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
+      }
+      isTakenRewardList_.Add(other.isTakenRewardList_);
       if (other.MissionId != 0) {
         MissionId = other.MissionId;
       }
-      watcherList_.Add(other.watcherList_);
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -371,37 +373,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            watcherList_.AddEntriesFrom(input, _repeated_watcherList_codec);
+          case 16: {
+            CurScore = input.ReadUInt32();
             break;
           }
-          case 26: {
-            curDayWatcherList_.AddEntriesFrom(input, _repeated_curDayWatcherList_codec);
+          case 34:
+          case 32: {
+            isTakenRewardList_.AddEntriesFrom(input, _repeated_isTakenRewardList_codec);
             break;
           }
           case 40: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
-            isTakenRewardList_.AddEntriesFrom(input, _repeated_isTakenRewardList_codec);
-            break;
-          }
-          case 64: {
-            IsTakenReward = input.ReadBool();
+          case 66: {
+            curDayWatcherList_.AddEntriesFrom(input, _repeated_curDayWatcherList_codec);
             break;
           }
           case 72: {
+            MissionId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+          case 104: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 88: {
-            CurScore = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            MissionId = input.ReadUInt32();
+          case 122: {
+            watcherList_.AddEntriesFrom(input, _repeated_watcherList_codec);
             break;
           }
         }
@@ -419,37 +421,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            watcherList_.AddEntriesFrom(ref input, _repeated_watcherList_codec);
+          case 16: {
+            CurScore = input.ReadUInt32();
             break;
           }
-          case 26: {
-            curDayWatcherList_.AddEntriesFrom(ref input, _repeated_curDayWatcherList_codec);
+          case 34:
+          case 32: {
+            isTakenRewardList_.AddEntriesFrom(ref input, _repeated_isTakenRewardList_codec);
             break;
           }
           case 40: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
-            isTakenRewardList_.AddEntriesFrom(ref input, _repeated_isTakenRewardList_codec);
-            break;
-          }
-          case 64: {
-            IsTakenReward = input.ReadBool();
+          case 66: {
+            curDayWatcherList_.AddEntriesFrom(ref input, _repeated_curDayWatcherList_codec);
             break;
           }
           case 72: {
+            MissionId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+          case 104: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 88: {
-            CurScore = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            MissionId = input.ReadUInt32();
+          case 122: {
+            watcherList_.AddEntriesFrom(ref input, _repeated_watcherList_codec);
             break;
           }
         }

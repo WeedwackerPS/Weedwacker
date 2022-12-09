@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestProgressUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9RdWVzdFByb2dyZXNzVXBkYXRlTm90aWZ5LnByb3RvImcKGVF1ZXN0UHJv",
-            "Z3Jlc3NVcGRhdGVOb3RpZnkSEAoIcXVlc3RfaWQYDCABKA0SGgoSZmFpbF9w",
-            "cm9ncmVzc19saXN0GAYgAygNEhwKFGZpbmlzaF9wcm9ncmVzc19saXN0GA0g",
-            "AygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "Ch9RdWVzdFByb2dyZXNzVXBkYXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvImcKGVF1ZXN0UHJvZ3Jlc3NVcGRhdGVO",
+            "b3RpZnkSEAoIcXVlc3RfaWQYCSABKA0SHAoUZmluaXNoX3Byb2dyZXNzX2xp",
+            "c3QYDCADKA0SGgoSZmFpbF9wcm9ncmVzc19saXN0GA8gAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestProgressUpdateNotify), global::Weedwacker.Shared.Network.Proto.QuestProgressUpdateNotify.Parser, new[]{ "QuestId", "FailProgressList", "FinishProgressList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestProgressUpdateNotify), global::Weedwacker.Shared.Network.Proto.QuestProgressUpdateNotify.Parser, new[]{ "QuestId", "FinishProgressList", "FailProgressList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 482
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 490;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestProgressUpdateNotify : pb::IMessage<QuestProgressUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuestProgressUpdateNotify(QuestProgressUpdateNotify other) : this() {
       questId_ = other.questId_;
-      failProgressList_ = other.failProgressList_.Clone();
       finishProgressList_ = other.finishProgressList_.Clone();
+      failProgressList_ = other.failProgressList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 12;
+    public const int QuestIdFieldNumber = 9;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,26 +105,26 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "fail_progress_list" field.</summary>
-    public const int FailProgressListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_failProgressList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> failProgressList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FailProgressList {
-      get { return failProgressList_; }
-    }
-
     /// <summary>Field number for the "finish_progress_list" field.</summary>
-    public const int FinishProgressListFieldNumber = 13;
+    public const int FinishProgressListFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_finishProgressList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(98);
     private readonly pbc::RepeatedField<uint> finishProgressList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> FinishProgressList {
       get { return finishProgressList_; }
+    }
+
+    /// <summary>Field number for the "fail_progress_list" field.</summary>
+    public const int FailProgressListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_failProgressList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> failProgressList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FailProgressList {
+      get { return failProgressList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,8 +143,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (QuestId != other.QuestId) return false;
-      if(!failProgressList_.Equals(other.failProgressList_)) return false;
       if(!finishProgressList_.Equals(other.finishProgressList_)) return false;
+      if(!failProgressList_.Equals(other.failProgressList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,8 +153,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
-      hash ^= failProgressList_.GetHashCode();
       hash ^= finishProgressList_.GetHashCode();
+      hash ^= failProgressList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -170,12 +173,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      failProgressList_.WriteTo(output, _repeated_failProgressList_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestId);
       }
       finishProgressList_.WriteTo(output, _repeated_finishProgressList_codec);
+      failProgressList_.WriteTo(output, _repeated_failProgressList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -186,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      failProgressList_.WriteTo(ref output, _repeated_failProgressList_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestId);
       }
       finishProgressList_.WriteTo(ref output, _repeated_finishProgressList_codec);
+      failProgressList_.WriteTo(ref output, _repeated_failProgressList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -205,8 +208,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
-      size += failProgressList_.CalculateSize(_repeated_failProgressList_codec);
       size += finishProgressList_.CalculateSize(_repeated_finishProgressList_codec);
+      size += failProgressList_.CalculateSize(_repeated_failProgressList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -222,8 +225,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.QuestId != 0) {
         QuestId = other.QuestId;
       }
-      failProgressList_.Add(other.failProgressList_);
       finishProgressList_.Add(other.finishProgressList_);
+      failProgressList_.Add(other.failProgressList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -239,18 +242,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
-            failProgressList_.AddEntriesFrom(input, _repeated_failProgressList_codec);
-            break;
-          }
-          case 96: {
+          case 72: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 98:
+          case 96: {
             finishProgressList_.AddEntriesFrom(input, _repeated_finishProgressList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            failProgressList_.AddEntriesFrom(input, _repeated_failProgressList_codec);
             break;
           }
         }
@@ -268,18 +271,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
-            failProgressList_.AddEntriesFrom(ref input, _repeated_failProgressList_codec);
-            break;
-          }
-          case 96: {
+          case 72: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 98:
+          case 96: {
             finishProgressList_.AddEntriesFrom(ref input, _repeated_finishProgressList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            failProgressList_.AddEntriesFrom(ref input, _repeated_failProgressList_codec);
             break;
           }
         }

@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetUpdateExtraCDRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXaWRnZXRVcGRhdGVFeHRyYUNEUnNwLnByb3RvGhhXaWRnZXRDb29sRG93",
-            "bkRhdGEucHJvdG8aF1dpZGdldEV4dHJhQ2RUeXBlLnByb3RvIqMBChZXaWRn",
-            "ZXRVcGRhdGVFeHRyYUNEUnNwEg8KB3JldGNvZGUYDiABKAUSEwoLbWF0ZXJp",
-            "YWxfaWQYCyABKA0SKQoNZXh0cmFfY2RfdHlwZRgGIAEoDjISLldpZGdldEV4",
-            "dHJhQ2RUeXBlEiYKCWNvb2xfZGF0YRgKIAEoCzITLldpZGdldENvb2xEb3du",
-            "RGF0YRIQCghjZF9ncm91cBgPIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxXaWRnZXRVcGRhdGVFeHRyYUNEUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhhXaWRnZXRDb29sRG93bkRhdGEucHJvdG8a",
+            "F1dpZGdldEV4dHJhQ2RUeXBlLnByb3RvIuMBChZXaWRnZXRVcGRhdGVFeHRy",
+            "YUNEUnNwEkYKCWNvb2xfZGF0YRgKIAEoCzIzLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uV2lkZ2V0Q29vbERvd25EYXRhEkkKDWV4dHJhX2Nk",
+            "X3R5cGUYBSABKA4yMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LldpZGdldEV4dHJhQ2RUeXBlEg8KB3JldGNvZGUYDSABKAUSEAoIY2RfZ3Jv",
+            "dXAYCyABKA0SEwoLbWF0ZXJpYWxfaWQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetCoolDownDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetExtraCdTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetUpdateExtraCDRsp), global::Weedwacker.Shared.Network.Proto.WidgetUpdateExtraCDRsp.Parser, new[]{ "Retcode", "MaterialId", "ExtraCdType", "CoolData", "CdGroup" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetUpdateExtraCDRsp), global::Weedwacker.Shared.Network.Proto.WidgetUpdateExtraCDRsp.Parser, new[]{ "CoolData", "ExtraCdType", "Retcode", "CdGroup", "MaterialId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6056
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6076;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetUpdateExtraCDRsp : pb::IMessage<WidgetUpdateExtraCDRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,11 +85,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetUpdateExtraCDRsp(WidgetUpdateExtraCDRsp other) : this() {
-      retcode_ = other.retcode_;
-      materialId_ = other.materialId_;
-      extraCdType_ = other.extraCdType_;
       coolData_ = other.coolData_ != null ? other.coolData_.Clone() : null;
+      extraCdType_ = other.extraCdType_;
+      retcode_ = other.retcode_;
       cdGroup_ = other.cdGroup_;
+      materialId_ = other.materialId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,42 +97,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetUpdateExtraCDRsp Clone() {
       return new WidgetUpdateExtraCDRsp(this);
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 11;
-    private uint materialId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaterialId {
-      get { return materialId_; }
-      set {
-        materialId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "extra_cd_type" field.</summary>
-    public const int ExtraCdTypeFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType extraCdType_ = global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType ExtraCdType {
-      get { return extraCdType_; }
-      set {
-        extraCdType_ = value;
-      }
     }
 
     /// <summary>Field number for the "cool_data" field.</summary>
@@ -142,8 +111,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "extra_cd_type" field.</summary>
+    public const int ExtraCdTypeFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType extraCdType_ = global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType ExtraCdType {
+      get { return extraCdType_; }
+      set {
+        extraCdType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 13;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "cd_group" field.</summary>
-    public const int CdGroupFieldNumber = 15;
+    public const int CdGroupFieldNumber = 11;
     private uint cdGroup_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,6 +144,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return cdGroup_; }
       set {
         cdGroup_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "material_id" field.</summary>
+    public const int MaterialIdFieldNumber = 7;
+    private uint materialId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaterialId {
+      get { return materialId_; }
+      set {
+        materialId_ = value;
       }
     }
 
@@ -169,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if (MaterialId != other.MaterialId) return false;
-      if (ExtraCdType != other.ExtraCdType) return false;
       if (!object.Equals(CoolData, other.CoolData)) return false;
+      if (ExtraCdType != other.ExtraCdType) return false;
+      if (Retcode != other.Retcode) return false;
       if (CdGroup != other.CdGroup) return false;
+      if (MaterialId != other.MaterialId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
-      if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) hash ^= ExtraCdType.GetHashCode();
       if (coolData_ != null) hash ^= CoolData.GetHashCode();
+      if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) hash ^= ExtraCdType.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CdGroup != 0) hash ^= CdGroup.GetHashCode();
+      if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,24 +210,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteEnum((int) ExtraCdType);
+      }
+      if (MaterialId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaterialId);
       }
       if (coolData_ != null) {
         output.WriteRawTag(82);
         output.WriteMessage(CoolData);
       }
-      if (MaterialId != 0) {
+      if (CdGroup != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(MaterialId);
+        output.WriteUInt32(CdGroup);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
-      }
-      if (CdGroup != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CdGroup);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -235,24 +240,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteEnum((int) ExtraCdType);
+      }
+      if (MaterialId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaterialId);
       }
       if (coolData_ != null) {
         output.WriteRawTag(82);
         output.WriteMessage(CoolData);
       }
-      if (MaterialId != 0) {
+      if (CdGroup != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(MaterialId);
+        output.WriteUInt32(CdGroup);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
-      }
-      if (CdGroup != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CdGroup);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,20 +269,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (MaterialId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
+      if (coolData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CoolData);
       }
       if (ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ExtraCdType);
       }
-      if (coolData_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CoolData);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (CdGroup != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CdGroup);
+      }
+      if (MaterialId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -291,23 +296,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      if (other.MaterialId != 0) {
-        MaterialId = other.MaterialId;
-      }
-      if (other.ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
-        ExtraCdType = other.ExtraCdType;
-      }
       if (other.coolData_ != null) {
         if (coolData_ == null) {
           CoolData = new global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData();
         }
         CoolData.MergeFrom(other.CoolData);
       }
+      if (other.ExtraCdType != global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType.None) {
+        ExtraCdType = other.ExtraCdType;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.CdGroup != 0) {
         CdGroup = other.CdGroup;
+      }
+      if (other.MaterialId != 0) {
+        MaterialId = other.MaterialId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -324,8 +329,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 40: {
             ExtraCdType = (global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            MaterialId = input.ReadUInt32();
             break;
           }
           case 82: {
@@ -336,15 +345,11 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 88: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 120: {
             CdGroup = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -362,8 +367,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 40: {
             ExtraCdType = (global::Weedwacker.Shared.Network.Proto.WidgetExtraCdType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            MaterialId = input.ReadUInt32();
             break;
           }
           case 82: {
@@ -374,15 +383,11 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 88: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 120: {
             CdGroup = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

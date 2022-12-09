@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeGetQueueDataRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpGb3JnZUdldFF1ZXVlRGF0YVJzcC5wcm90bxoURm9yZ2VRdWV1ZURhdGEu",
-            "cHJvdG8iyAEKFEZvcmdlR2V0UXVldWVEYXRhUnNwEkEKD2ZvcmdlX3F1ZXVl",
-            "X21hcBgCIAMoCzIoLkZvcmdlR2V0UXVldWVEYXRhUnNwLkZvcmdlUXVldWVN",
-            "YXBFbnRyeRIPCgdyZXRjb2RlGA8gASgFEhUKDW1heF9xdWV1ZV9udW0YBiAB",
-            "KA0aRQoSRm9yZ2VRdWV1ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIeCgV2YWx1",
-            "ZRgCIAEoCzIPLkZvcmdlUXVldWVEYXRhOgI4AUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpGb3JnZUdldFF1ZXVlRGF0YVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoURm9yZ2VRdWV1ZURhdGEucHJvdG8iiAIKFEZv",
+            "cmdlR2V0UXVldWVEYXRhUnNwEhUKDW1heF9xdWV1ZV9udW0YBCABKA0SYQoP",
+            "Zm9yZ2VfcXVldWVfbWFwGAkgAygLMkguV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Gb3JnZUdldFF1ZXVlRGF0YVJzcC5Gb3JnZVF1ZXVlTWFw",
+            "RW50cnkSDwoHcmV0Y29kZRgPIAEoBRplChJGb3JnZVF1ZXVlTWFwRW50cnkS",
+            "CwoDa2V5GAEgASgNEj4KBXZhbHVlGAIgASgLMi8uV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5Gb3JnZVF1ZXVlRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForgeQueueDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeGetQueueDataRsp), global::Weedwacker.Shared.Network.Proto.ForgeGetQueueDataRsp.Parser, new[]{ "ForgeQueueMap", "Retcode", "MaxQueueNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeGetQueueDataRsp), global::Weedwacker.Shared.Network.Proto.ForgeGetQueueDataRsp.Parser, new[]{ "MaxQueueNum", "ForgeQueueMap", "Retcode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 641
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 667;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ForgeGetQueueDataRsp : pb::IMessage<ForgeGetQueueDataRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ForgeGetQueueDataRsp(ForgeGetQueueDataRsp other) : this() {
+      maxQueueNum_ = other.maxQueueNum_;
       forgeQueueMap_ = other.forgeQueueMap_.Clone();
       retcode_ = other.retcode_;
-      maxQueueNum_ = other.maxQueueNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,10 +97,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ForgeGetQueueDataRsp(this);
     }
 
+    /// <summary>Field number for the "max_queue_num" field.</summary>
+    public const int MaxQueueNumFieldNumber = 4;
+    private uint maxQueueNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxQueueNum {
+      get { return maxQueueNum_; }
+      set {
+        maxQueueNum_ = value;
+      }
+    }
+
     /// <summary>Field number for the "forge_queue_map" field.</summary>
-    public const int ForgeQueueMapFieldNumber = 2;
+    public const int ForgeQueueMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec _map_forgeQueueMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser), 18);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser), 74);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData> forgeQueueMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,18 +132,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_queue_num" field.</summary>
-    public const int MaxQueueNumFieldNumber = 6;
-    private uint maxQueueNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxQueueNum {
-      get { return maxQueueNum_; }
-      set {
-        maxQueueNum_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -142,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (MaxQueueNum != other.MaxQueueNum) return false;
       if (!ForgeQueueMap.Equals(other.ForgeQueueMap)) return false;
       if (Retcode != other.Retcode) return false;
-      if (MaxQueueNum != other.MaxQueueNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (MaxQueueNum != 0) hash ^= MaxQueueNum.GetHashCode();
       hash ^= ForgeQueueMap.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (MaxQueueNum != 0) hash ^= MaxQueueNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,11 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      forgeQueueMap_.WriteTo(output, _map_forgeQueueMap_codec);
       if (MaxQueueNum != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(MaxQueueNum);
       }
+      forgeQueueMap_.WriteTo(output, _map_forgeQueueMap_codec);
       if (Retcode != 0) {
         output.WriteRawTag(120);
         output.WriteInt32(Retcode);
@@ -192,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      forgeQueueMap_.WriteTo(ref output, _map_forgeQueueMap_codec);
       if (MaxQueueNum != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(MaxQueueNum);
       }
+      forgeQueueMap_.WriteTo(ref output, _map_forgeQueueMap_codec);
       if (Retcode != 0) {
         output.WriteRawTag(120);
         output.WriteInt32(Retcode);
@@ -211,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (MaxQueueNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxQueueNum);
+      }
       size += forgeQueueMap_.CalculateSize(_map_forgeQueueMap_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (MaxQueueNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxQueueNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -230,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.MaxQueueNum != 0) {
+        MaxQueueNum = other.MaxQueueNum;
+      }
       forgeQueueMap_.Add(other.forgeQueueMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
-      }
-      if (other.MaxQueueNum != 0) {
-        MaxQueueNum = other.MaxQueueNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -252,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            forgeQueueMap_.AddEntriesFrom(input, _map_forgeQueueMap_codec);
+          case 32: {
+            MaxQueueNum = input.ReadUInt32();
             break;
           }
-          case 48: {
-            MaxQueueNum = input.ReadUInt32();
+          case 74: {
+            forgeQueueMap_.AddEntriesFrom(input, _map_forgeQueueMap_codec);
             break;
           }
           case 120: {
@@ -279,12 +284,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            forgeQueueMap_.AddEntriesFrom(ref input, _map_forgeQueueMap_codec);
+          case 32: {
+            MaxQueueNum = input.ReadUInt32();
             break;
           }
-          case 48: {
-            MaxQueueNum = input.ReadUInt32();
+          case 74: {
+            forgeQueueMap_.AddEntriesFrom(ref input, _map_forgeQueueMap_codec);
             break;
           }
           case 120: {

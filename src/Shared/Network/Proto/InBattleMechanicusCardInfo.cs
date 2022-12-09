@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusCardInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBJbkJhdHRsZU1lY2hhbmljdXNDYXJkSW5mby5wcm90bxoqSW5CYXR0bGVN",
-            "ZWNoYW5pY3VzQ2FyZENoYWxsZW5nZVN0YXRlLnByb3RvIsIBChpJbkJhdHRs",
-            "ZU1lY2hhbmljdXNDYXJkSW5mbxIWCg5yYW5kX2VmZmVjdF9pZBgMIAEoDRIR",
-            "CgllbmRfcm91bmQYAyABKA0SPgoPY2hhbGxlbmdlX3N0YXRlGAUgASgOMiUu",
-            "SW5CYXR0bGVNZWNoYW5pY3VzQ2FyZENoYWxsZW5nZVN0YXRlEhMKC2Nvc3Rf",
-            "cG9pbnRzGAEgASgNEg8KB2NhcmRfaWQYCyABKA0SEwoLYmVnaW5fcm91bmQY",
-            "CCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiBJbkJhdHRsZU1lY2hhbmljdXNDYXJkSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoqSW5CYXR0bGVNZWNoYW5pY3VzQ2Fy",
+            "ZENoYWxsZW5nZVN0YXRlLnByb3RvIvkBChpJbkJhdHRsZU1lY2hhbmljdXND",
+            "YXJkSW5mbxIbChNVbmszMzAwX0tDSUVJTk1FUERIGAIgASgNEhsKE1VuazMz",
+            "MDBfTkRBT09LS0dKUEgYByABKA0SEwoLY29zdF9wb2ludHMYBSABKA0SDwoH",
+            "Y2FyZF9pZBgDIAEoDRIbChNVbmszMzAwX0ZOQUhLSE9EQktOGA0gASgNEl4K",
+            "D2NoYWxsZW5nZV9zdGF0ZRgPIAEoDjJFLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uSW5CYXR0bGVNZWNoYW5pY3VzQ2FyZENoYWxsZW5nZVN0",
+            "YXRlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser, new[]{ "RandEffectId", "EndRound", "ChallengeState", "CostPoints", "CardId", "BeginRound" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardInfo.Parser, new[]{ "Unk3300KCIEINMEPDH", "Unk3300NDAOOKKGJPH", "CostPoints", "CardId", "Unk3300FNAHKHODBKN", "ChallengeState" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +77,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusCardInfo(InBattleMechanicusCardInfo other) : this() {
-      randEffectId_ = other.randEffectId_;
-      endRound_ = other.endRound_;
-      challengeState_ = other.challengeState_;
+      unk3300KCIEINMEPDH_ = other.unk3300KCIEINMEPDH_;
+      unk3300NDAOOKKGJPH_ = other.unk3300NDAOOKKGJPH_;
       costPoints_ = other.costPoints_;
       cardId_ = other.cardId_;
-      beginRound_ = other.beginRound_;
+      unk3300FNAHKHODBKN_ = other.unk3300FNAHKHODBKN_;
+      challengeState_ = other.challengeState_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,44 +92,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleMechanicusCardInfo(this);
     }
 
-    /// <summary>Field number for the "rand_effect_id" field.</summary>
-    public const int RandEffectIdFieldNumber = 12;
-    private uint randEffectId_;
+    /// <summary>Field number for the "Unk3300_KCIEINMEPDH" field.</summary>
+    public const int Unk3300KCIEINMEPDHFieldNumber = 2;
+    private uint unk3300KCIEINMEPDH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RandEffectId {
-      get { return randEffectId_; }
+    public uint Unk3300KCIEINMEPDH {
+      get { return unk3300KCIEINMEPDH_; }
       set {
-        randEffectId_ = value;
+        unk3300KCIEINMEPDH_ = value;
       }
     }
 
-    /// <summary>Field number for the "end_round" field.</summary>
-    public const int EndRoundFieldNumber = 3;
-    private uint endRound_;
+    /// <summary>Field number for the "Unk3300_NDAOOKKGJPH" field.</summary>
+    public const int Unk3300NDAOOKKGJPHFieldNumber = 7;
+    private uint unk3300NDAOOKKGJPH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndRound {
-      get { return endRound_; }
+    public uint Unk3300NDAOOKKGJPH {
+      get { return unk3300NDAOOKKGJPH_; }
       set {
-        endRound_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "challenge_state" field.</summary>
-    public const int ChallengeStateFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState challengeState_ = global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState ChallengeState {
-      get { return challengeState_; }
-      set {
-        challengeState_ = value;
+        unk3300NDAOOKKGJPH_ = value;
       }
     }
 
     /// <summary>Field number for the "cost_points" field.</summary>
-    public const int CostPointsFieldNumber = 1;
+    public const int CostPointsFieldNumber = 5;
     private uint costPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,7 +129,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 11;
+    public const int CardIdFieldNumber = 3;
     private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,15 +140,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "begin_round" field.</summary>
-    public const int BeginRoundFieldNumber = 8;
-    private uint beginRound_;
+    /// <summary>Field number for the "Unk3300_FNAHKHODBKN" field.</summary>
+    public const int Unk3300FNAHKHODBKNFieldNumber = 13;
+    private uint unk3300FNAHKHODBKN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginRound {
-      get { return beginRound_; }
+    public uint Unk3300FNAHKHODBKN {
+      get { return unk3300FNAHKHODBKN_; }
       set {
-        beginRound_ = value;
+        unk3300FNAHKHODBKN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_state" field.</summary>
+    public const int ChallengeStateFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState challengeState_ = global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState ChallengeState {
+      get { return challengeState_; }
+      set {
+        challengeState_ = value;
       }
     }
 
@@ -178,12 +179,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RandEffectId != other.RandEffectId) return false;
-      if (EndRound != other.EndRound) return false;
-      if (ChallengeState != other.ChallengeState) return false;
+      if (Unk3300KCIEINMEPDH != other.Unk3300KCIEINMEPDH) return false;
+      if (Unk3300NDAOOKKGJPH != other.Unk3300NDAOOKKGJPH) return false;
       if (CostPoints != other.CostPoints) return false;
       if (CardId != other.CardId) return false;
-      if (BeginRound != other.BeginRound) return false;
+      if (Unk3300FNAHKHODBKN != other.Unk3300FNAHKHODBKN) return false;
+      if (ChallengeState != other.ChallengeState) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,12 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RandEffectId != 0) hash ^= RandEffectId.GetHashCode();
-      if (EndRound != 0) hash ^= EndRound.GetHashCode();
-      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) hash ^= ChallengeState.GetHashCode();
+      if (Unk3300KCIEINMEPDH != 0) hash ^= Unk3300KCIEINMEPDH.GetHashCode();
+      if (Unk3300NDAOOKKGJPH != 0) hash ^= Unk3300NDAOOKKGJPH.GetHashCode();
       if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
       if (CardId != 0) hash ^= CardId.GetHashCode();
-      if (BeginRound != 0) hash ^= BeginRound.GetHashCode();
+      if (Unk3300FNAHKHODBKN != 0) hash ^= Unk3300FNAHKHODBKN.GetHashCode();
+      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) hash ^= ChallengeState.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -215,29 +216,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CostPoints != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CostPoints);
-      }
-      if (EndRound != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(EndRound);
-      }
-      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) ChallengeState);
-      }
-      if (BeginRound != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(BeginRound);
+      if (Unk3300KCIEINMEPDH != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300KCIEINMEPDH);
       }
       if (CardId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (RandEffectId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RandEffectId);
+      if (CostPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Unk3300NDAOOKKGJPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300NDAOOKKGJPH);
+      }
+      if (Unk3300FNAHKHODBKN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) ChallengeState);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -249,29 +250,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CostPoints != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CostPoints);
-      }
-      if (EndRound != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(EndRound);
-      }
-      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) ChallengeState);
-      }
-      if (BeginRound != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(BeginRound);
+      if (Unk3300KCIEINMEPDH != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300KCIEINMEPDH);
       }
       if (CardId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (RandEffectId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RandEffectId);
+      if (CostPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Unk3300NDAOOKKGJPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300NDAOOKKGJPH);
+      }
+      if (Unk3300FNAHKHODBKN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) ChallengeState);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -283,14 +284,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RandEffectId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandEffectId);
+      if (Unk3300KCIEINMEPDH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KCIEINMEPDH);
       }
-      if (EndRound != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndRound);
-      }
-      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChallengeState);
+      if (Unk3300NDAOOKKGJPH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NDAOOKKGJPH);
       }
       if (CostPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
@@ -298,8 +296,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
-      if (BeginRound != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginRound);
+      if (Unk3300FNAHKHODBKN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChallengeState);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -313,14 +314,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RandEffectId != 0) {
-        RandEffectId = other.RandEffectId;
+      if (other.Unk3300KCIEINMEPDH != 0) {
+        Unk3300KCIEINMEPDH = other.Unk3300KCIEINMEPDH;
       }
-      if (other.EndRound != 0) {
-        EndRound = other.EndRound;
-      }
-      if (other.ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
-        ChallengeState = other.ChallengeState;
+      if (other.Unk3300NDAOOKKGJPH != 0) {
+        Unk3300NDAOOKKGJPH = other.Unk3300NDAOOKKGJPH;
       }
       if (other.CostPoints != 0) {
         CostPoints = other.CostPoints;
@@ -328,8 +326,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CardId != 0) {
         CardId = other.CardId;
       }
-      if (other.BeginRound != 0) {
-        BeginRound = other.BeginRound;
+      if (other.Unk3300FNAHKHODBKN != 0) {
+        Unk3300FNAHKHODBKN = other.Unk3300FNAHKHODBKN;
+      }
+      if (other.ChallengeState != global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState.None) {
+        ChallengeState = other.ChallengeState;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -346,28 +347,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            CostPoints = input.ReadUInt32();
+          case 16: {
+            Unk3300KCIEINMEPDH = input.ReadUInt32();
             break;
           }
           case 24: {
-            EndRound = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeState = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState) input.ReadEnum();
-            break;
-          }
-          case 64: {
-            BeginRound = input.ReadUInt32();
-            break;
-          }
-          case 88: {
             CardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            RandEffectId = input.ReadUInt32();
+          case 40: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300NDAOOKKGJPH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FNAHKHODBKN = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ChallengeState = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState) input.ReadEnum();
             break;
           }
         }
@@ -385,28 +386,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            CostPoints = input.ReadUInt32();
+          case 16: {
+            Unk3300KCIEINMEPDH = input.ReadUInt32();
             break;
           }
           case 24: {
-            EndRound = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeState = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState) input.ReadEnum();
-            break;
-          }
-          case 64: {
-            BeginRound = input.ReadUInt32();
-            break;
-          }
-          case 88: {
             CardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            RandEffectId = input.ReadUInt32();
+          case 40: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300NDAOOKKGJPH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FNAHKHODBKN = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ChallengeState = (global::Weedwacker.Shared.Network.Proto.InBattleMechanicusCardChallengeState) input.ReadEnum();
             break;
           }
         }

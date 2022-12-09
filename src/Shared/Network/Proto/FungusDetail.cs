@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusDetailReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJGdW5ndXNEZXRhaWwucHJvdG8iewoMRnVuZ3VzRGV0YWlsEhQKDGlzX2N1",
-            "bHRpdmF0ZRgFIAEoCBIVCg1jYXB0dXJlX29yZGVyGAYgASgNEg8KB25hbWVf",
-            "aWQYDiABKA0SGgoSbWluX2N1bHRpdmF0ZV9zdGVwGAEgASgNEhEKCWZ1bmd1",
-            "c19pZBgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChJGdW5ndXNEZXRhaWwucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iggEKDEZ1bmd1c0RldGFpbBIPCgduYW1lX2lkGAggASgNEhsK",
+            "E1VuazMzMDBfRUhOQkRKUEFOS0wYAiABKA0SEQoJZnVuZ3VzX2lkGAMgASgN",
+            "EhQKDGlzX2N1bHRpdmF0ZRgHIAEoCBIbChNVbmszMzAwX0dDTEJQREpERURO",
+            "GA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusDetail), global::Weedwacker.Shared.Network.Proto.FungusDetail.Parser, new[]{ "IsCultivate", "CaptureOrder", "NameId", "MinCultivateStep", "FungusId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusDetail), global::Weedwacker.Shared.Network.Proto.FungusDetail.Parser, new[]{ "NameId", "Unk3300EHNBDJPANKL", "FungusId", "IsCultivate", "Unk3300GCLBPDJDEDN" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusDetail(FungusDetail other) : this() {
-      isCultivate_ = other.isCultivate_;
-      captureOrder_ = other.captureOrder_;
       nameId_ = other.nameId_;
-      minCultivateStep_ = other.minCultivateStep_;
+      unk3300EHNBDJPANKL_ = other.unk3300EHNBDJPANKL_;
       fungusId_ = other.fungusId_;
+      isCultivate_ = other.isCultivate_;
+      unk3300GCLBPDJDEDN_ = other.unk3300GCLBPDJDEDN_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,32 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusDetail(this);
     }
 
-    /// <summary>Field number for the "is_cultivate" field.</summary>
-    public const int IsCultivateFieldNumber = 5;
-    private bool isCultivate_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCultivate {
-      get { return isCultivate_; }
-      set {
-        isCultivate_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "capture_order" field.</summary>
-    public const int CaptureOrderFieldNumber = 6;
-    private uint captureOrder_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CaptureOrder {
-      get { return captureOrder_; }
-      set {
-        captureOrder_ = value;
-      }
-    }
-
     /// <summary>Field number for the "name_id" field.</summary>
-    public const int NameIdFieldNumber = 14;
+    public const int NameIdFieldNumber = 8;
     private uint nameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,20 +99,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "min_cultivate_step" field.</summary>
-    public const int MinCultivateStepFieldNumber = 1;
-    private uint minCultivateStep_;
+    /// <summary>Field number for the "Unk3300_EHNBDJPANKL" field.</summary>
+    public const int Unk3300EHNBDJPANKLFieldNumber = 2;
+    private uint unk3300EHNBDJPANKL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinCultivateStep {
-      get { return minCultivateStep_; }
+    public uint Unk3300EHNBDJPANKL {
+      get { return unk3300EHNBDJPANKL_; }
       set {
-        minCultivateStep_ = value;
+        unk3300EHNBDJPANKL_ = value;
       }
     }
 
     /// <summary>Field number for the "fungus_id" field.</summary>
-    public const int FungusIdFieldNumber = 9;
+    public const int FungusIdFieldNumber = 3;
     private uint fungusId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +120,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return fungusId_; }
       set {
         fungusId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_cultivate" field.</summary>
+    public const int IsCultivateFieldNumber = 7;
+    private bool isCultivate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCultivate {
+      get { return isCultivate_; }
+      set {
+        isCultivate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCLBPDJDEDN" field.</summary>
+    public const int Unk3300GCLBPDJDEDNFieldNumber = 13;
+    private uint unk3300GCLBPDJDEDN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GCLBPDJDEDN {
+      get { return unk3300GCLBPDJDEDN_; }
+      set {
+        unk3300GCLBPDJDEDN_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsCultivate != other.IsCultivate) return false;
-      if (CaptureOrder != other.CaptureOrder) return false;
       if (NameId != other.NameId) return false;
-      if (MinCultivateStep != other.MinCultivateStep) return false;
+      if (Unk3300EHNBDJPANKL != other.Unk3300EHNBDJPANKL) return false;
       if (FungusId != other.FungusId) return false;
+      if (IsCultivate != other.IsCultivate) return false;
+      if (Unk3300GCLBPDJDEDN != other.Unk3300GCLBPDJDEDN) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsCultivate != false) hash ^= IsCultivate.GetHashCode();
-      if (CaptureOrder != 0) hash ^= CaptureOrder.GetHashCode();
       if (NameId != 0) hash ^= NameId.GetHashCode();
-      if (MinCultivateStep != 0) hash ^= MinCultivateStep.GetHashCode();
+      if (Unk3300EHNBDJPANKL != 0) hash ^= Unk3300EHNBDJPANKL.GetHashCode();
       if (FungusId != 0) hash ^= FungusId.GetHashCode();
+      if (IsCultivate != false) hash ^= IsCultivate.GetHashCode();
+      if (Unk3300GCLBPDJDEDN != 0) hash ^= Unk3300GCLBPDJDEDN.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,25 +197,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MinCultivateStep != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MinCultivateStep);
-      }
-      if (IsCultivate != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsCultivate);
-      }
-      if (CaptureOrder != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CaptureOrder);
+      if (Unk3300EHNBDJPANKL != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EHNBDJPANKL);
       }
       if (FungusId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(FungusId);
       }
+      if (IsCultivate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCultivate);
+      }
       if (NameId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(NameId);
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300GCLBPDJDEDN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,25 +227,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MinCultivateStep != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MinCultivateStep);
-      }
-      if (IsCultivate != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsCultivate);
-      }
-      if (CaptureOrder != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CaptureOrder);
+      if (Unk3300EHNBDJPANKL != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EHNBDJPANKL);
       }
       if (FungusId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(FungusId);
       }
+      if (IsCultivate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCultivate);
+      }
       if (NameId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(NameId);
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300GCLBPDJDEDN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -257,20 +257,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsCultivate != false) {
-        size += 1 + 1;
-      }
-      if (CaptureOrder != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureOrder);
-      }
       if (NameId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NameId);
       }
-      if (MinCultivateStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinCultivateStep);
+      if (Unk3300EHNBDJPANKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHNBDJPANKL);
       }
       if (FungusId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
+      }
+      if (IsCultivate != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCLBPDJDEDN);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsCultivate != false) {
-        IsCultivate = other.IsCultivate;
-      }
-      if (other.CaptureOrder != 0) {
-        CaptureOrder = other.CaptureOrder;
-      }
       if (other.NameId != 0) {
         NameId = other.NameId;
       }
-      if (other.MinCultivateStep != 0) {
-        MinCultivateStep = other.MinCultivateStep;
+      if (other.Unk3300EHNBDJPANKL != 0) {
+        Unk3300EHNBDJPANKL = other.Unk3300EHNBDJPANKL;
       }
       if (other.FungusId != 0) {
         FungusId = other.FungusId;
+      }
+      if (other.IsCultivate != false) {
+        IsCultivate = other.IsCultivate;
+      }
+      if (other.Unk3300GCLBPDJDEDN != 0) {
+        Unk3300GCLBPDJDEDN = other.Unk3300GCLBPDJDEDN;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -314,24 +314,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            MinCultivateStep = input.ReadUInt32();
+          case 16: {
+            Unk3300EHNBDJPANKL = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsCultivate = input.ReadBool();
-            break;
-          }
-          case 48: {
-            CaptureOrder = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 24: {
             FungusId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
+            IsCultivate = input.ReadBool();
+            break;
+          }
+          case 64: {
             NameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300GCLBPDJDEDN = input.ReadUInt32();
             break;
           }
         }
@@ -349,24 +349,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            MinCultivateStep = input.ReadUInt32();
+          case 16: {
+            Unk3300EHNBDJPANKL = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsCultivate = input.ReadBool();
-            break;
-          }
-          case 48: {
-            CaptureOrder = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 24: {
             FungusId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
+            IsCultivate = input.ReadBool();
+            break;
+          }
+          case 64: {
             NameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300GCLBPDJDEDN = input.ReadUInt32();
             break;
           }
         }

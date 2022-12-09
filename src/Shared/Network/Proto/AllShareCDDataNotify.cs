@@ -24,12 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AllShareCDDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpBbGxTaGFyZUNERGF0YU5vdGlmeS5wcm90bxoRU2hhcmVDREluZm8ucHJv",
-            "dG8ioQEKFEFsbFNoYXJlQ0REYXRhTm90aWZ5EkQKEXNoYXJlX2NkX2luZm9f",
-            "bWFwGAIgAygLMikuQWxsU2hhcmVDRERhdGFOb3RpZnkuU2hhcmVDZEluZm9N",
-            "YXBFbnRyeRpDChNTaGFyZUNkSW5mb01hcEVudHJ5EgsKA2tleRgBIAEoDRIb",
-            "CgV2YWx1ZRgCIAEoCzIMLlNoYXJlQ0RJbmZvOgI4AUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpBbGxTaGFyZUNERGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoRU2hhcmVDREluZm8ucHJvdG8i4QEKFEFsbFNo",
+            "YXJlQ0REYXRhTm90aWZ5EmQKEXNoYXJlX2NkX2luZm9fbWFwGA0gAygLMkku",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BbGxTaGFyZUNERGF0",
+            "YU5vdGlmeS5TaGFyZUNkSW5mb01hcEVudHJ5GmMKE1NoYXJlQ2RJbmZvTWFw",
+            "RW50cnkSCwoDa2V5GAEgASgNEjsKBXZhbHVlGAIgASgLMiwuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5TaGFyZUNESW5mbzoCOAFiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ShareCDInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 9072
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 9079;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AllShareCDDataNotify : pb::IMessage<AllShareCDDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "share_cd_info_map" field.</summary>
-    public const int ShareCdInfoMapFieldNumber = 2;
+    public const int ShareCdInfoMapFieldNumber = 13;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ShareCDInfo>.Codec _map_shareCdInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ShareCDInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ShareCDInfo.Parser), 18);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ShareCDInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ShareCDInfo.Parser), 106);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ShareCDInfo> shareCdInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ShareCDInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +199,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 106: {
             shareCdInfoMap_.AddEntriesFrom(input, _map_shareCdInfoMap_codec);
             break;
           }
@@ -212,7 +218,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 106: {
             shareCdInfoMap_.AddEntriesFrom(ref input, _map_shareCdInfoMap_codec);
             break;
           }

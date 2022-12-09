@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static FinishDeliveryNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpGaW5pc2hEZWxpdmVyeU5vdGlmeS5wcm90byJcChRGaW5pc2hEZWxpdmVy",
-            "eU5vdGlmeRIcChRmaW5pc2hlZF9xdWVzdF9pbmRleBgBIAEoDRITCgtzY2hl",
-            "ZHVsZV9pZBgKIAEoDRIRCglkYXlfaW5kZXgYDCABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpGaW5pc2hEZWxpdmVyeU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJcChRGaW5pc2hEZWxpdmVyeU5vdGlmeRIcChRm",
+            "aW5pc2hlZF9xdWVzdF9pbmRleBgMIAEoDRIRCglkYXlfaW5kZXgYByABKA0S",
+            "EwoLc2NoZWR1bGVfaWQYBiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FinishDeliveryNotify), global::Weedwacker.Shared.Network.Proto.FinishDeliveryNotify.Parser, new[]{ "FinishedQuestIndex", "ScheduleId", "DayIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FinishDeliveryNotify), global::Weedwacker.Shared.Network.Proto.FinishDeliveryNotify.Parser, new[]{ "FinishedQuestIndex", "DayIndex", "ScheduleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2089
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2030;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FinishDeliveryNotify : pb::IMessage<FinishDeliveryNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FinishDeliveryNotify(FinishDeliveryNotify other) : this() {
       finishedQuestIndex_ = other.finishedQuestIndex_;
-      scheduleId_ = other.scheduleId_;
       dayIndex_ = other.dayIndex_;
+      scheduleId_ = other.scheduleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_quest_index" field.</summary>
-    public const int FinishedQuestIndexFieldNumber = 1;
+    public const int FinishedQuestIndexFieldNumber = 12;
     private uint finishedQuestIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 10;
-    private uint scheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleId {
-      get { return scheduleId_; }
-      set {
-        scheduleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "day_index" field.</summary>
-    public const int DayIndexFieldNumber = 12;
+    public const int DayIndexFieldNumber = 7;
     private uint dayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dayIndex_; }
       set {
         dayIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 6;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (FinishedQuestIndex != other.FinishedQuestIndex) return false;
-      if (ScheduleId != other.ScheduleId) return false;
       if (DayIndex != other.DayIndex) return false;
+      if (ScheduleId != other.ScheduleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (FinishedQuestIndex != 0) hash ^= FinishedQuestIndex.GetHashCode();
-      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FinishedQuestIndex != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FinishedQuestIndex);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(ScheduleId);
       }
       if (DayIndex != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(DayIndex);
+      }
+      if (FinishedQuestIndex != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FinishedQuestIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FinishedQuestIndex != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FinishedQuestIndex);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(ScheduleId);
       }
       if (DayIndex != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(DayIndex);
+      }
+      if (FinishedQuestIndex != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FinishedQuestIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (FinishedQuestIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishedQuestIndex);
       }
-      if (ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-      }
       if (DayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.FinishedQuestIndex != 0) {
         FinishedQuestIndex = other.FinishedQuestIndex;
       }
-      if (other.ScheduleId != 0) {
-        ScheduleId = other.ScheduleId;
-      }
       if (other.DayIndex != 0) {
         DayIndex = other.DayIndex;
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            FinishedQuestIndex = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 48: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 56: {
             DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            FinishedQuestIndex = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            FinishedQuestIndex = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 48: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 56: {
             DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            FinishedQuestIndex = input.ReadUInt32();
             break;
           }
         }

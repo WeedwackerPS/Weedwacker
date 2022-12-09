@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGGameBriefDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHQ0dHYW1lQnJpZWZEYXRhLnByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBl",
-            "LnByb3RvGhhHQ0dQbGF5ZXJCcmllZkRhdGEucHJvdG8ipwEKEEdDR0dhbWVC",
-            "cmllZkRhdGESDwoHZ2FtZV9pZBgOIAEoDRIQCghnYW1lX3VpZBgJIAEoDRIr",
-            "Cg1idXNpbmVzc190eXBlGA0gASgOMhQuR0NHR2FtZUJ1c2luZXNzVHlwZRIT",
-            "Cgt2ZXJpZnlfY29kZRgFIAEoDRIuChFwbGF5ZXJfYnJpZWZfbGlzdBgMIAMo",
-            "CzITLkdDR1BsYXllckJyaWVmRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZHQ0dHYW1lQnJpZWZEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3RvGhhHQ0dQ",
+            "bGF5ZXJCcmllZkRhdGEucHJvdG8ikQIKEEdDR0dhbWVCcmllZkRhdGESGwoT",
+            "VW5rMzMwMF9OQ0xET0dOQ0hHRhgNIAEoDRJLCg1idXNpbmVzc190eXBlGAgg",
+            "ASgOMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dHYW1l",
+            "QnVzaW5lc3NUeXBlEhsKE1VuazMzMDBfRkpKRE1JQklCSk4YDiABKA0SFQoN",
+            "cGxhdGZvcm1fdHlwZRgGIAEoDRIPCgdnYW1lX2lkGAwgASgNEk4KEXBsYXll",
+            "cl9icmllZl9saXN0GAUgAygLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HQ0dQbGF5ZXJCcmllZkRhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGGameBusinessTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGameBriefData), global::Weedwacker.Shared.Network.Proto.GCGGameBriefData.Parser, new[]{ "GameId", "GameUid", "BusinessType", "VerifyCode", "PlayerBriefList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGameBriefData), global::Weedwacker.Shared.Network.Proto.GCGGameBriefData.Parser, new[]{ "Unk3300NCLDOGNCHGF", "BusinessType", "Unk3300FJJDMIBIBJN", "PlatformType", "GameId", "PlayerBriefList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +77,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGGameBriefData(GCGGameBriefData other) : this() {
-      gameId_ = other.gameId_;
-      gameUid_ = other.gameUid_;
+      unk3300NCLDOGNCHGF_ = other.unk3300NCLDOGNCHGF_;
       businessType_ = other.businessType_;
-      verifyCode_ = other.verifyCode_;
+      unk3300FJJDMIBIBJN_ = other.unk3300FJJDMIBIBJN_;
+      platformType_ = other.platformType_;
+      gameId_ = other.gameId_;
       playerBriefList_ = other.playerBriefList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,32 +92,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGGameBriefData(this);
     }
 
-    /// <summary>Field number for the "game_id" field.</summary>
-    public const int GameIdFieldNumber = 14;
-    private uint gameId_;
+    /// <summary>Field number for the "Unk3300_NCLDOGNCHGF" field.</summary>
+    public const int Unk3300NCLDOGNCHGFFieldNumber = 13;
+    private uint unk3300NCLDOGNCHGF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GameId {
-      get { return gameId_; }
+    public uint Unk3300NCLDOGNCHGF {
+      get { return unk3300NCLDOGNCHGF_; }
       set {
-        gameId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "game_uid" field.</summary>
-    public const int GameUidFieldNumber = 9;
-    private uint gameUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GameUid {
-      get { return gameUid_; }
-      set {
-        gameUid_ = value;
+        unk3300NCLDOGNCHGF_ = value;
       }
     }
 
     /// <summary>Field number for the "business_type" field.</summary>
-    public const int BusinessTypeFieldNumber = 13;
+    public const int BusinessTypeFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType businessType_ = global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,22 +116,46 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "verify_code" field.</summary>
-    public const int VerifyCodeFieldNumber = 5;
-    private uint verifyCode_;
+    /// <summary>Field number for the "Unk3300_FJJDMIBIBJN" field.</summary>
+    public const int Unk3300FJJDMIBIBJNFieldNumber = 14;
+    private uint unk3300FJJDMIBIBJN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint VerifyCode {
-      get { return verifyCode_; }
+    public uint Unk3300FJJDMIBIBJN {
+      get { return unk3300FJJDMIBIBJN_; }
       set {
-        verifyCode_ = value;
+        unk3300FJJDMIBIBJN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "platform_type" field.</summary>
+    public const int PlatformTypeFieldNumber = 6;
+    private uint platformType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlatformType {
+      get { return platformType_; }
+      set {
+        platformType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "game_id" field.</summary>
+    public const int GameIdFieldNumber = 12;
+    private uint gameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GameId {
+      get { return gameId_; }
+      set {
+        gameId_ = value;
       }
     }
 
     /// <summary>Field number for the "player_brief_list" field.</summary>
-    public const int PlayerBriefListFieldNumber = 12;
+    public const int PlayerBriefListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefData> _repeated_playerBriefList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefData.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefData> playerBriefList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGPlayerBriefData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -163,10 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GameId != other.GameId) return false;
-      if (GameUid != other.GameUid) return false;
+      if (Unk3300NCLDOGNCHGF != other.Unk3300NCLDOGNCHGF) return false;
       if (BusinessType != other.BusinessType) return false;
-      if (VerifyCode != other.VerifyCode) return false;
+      if (Unk3300FJJDMIBIBJN != other.Unk3300FJJDMIBIBJN) return false;
+      if (PlatformType != other.PlatformType) return false;
+      if (GameId != other.GameId) return false;
       if(!playerBriefList_.Equals(other.playerBriefList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -175,10 +191,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GameId != 0) hash ^= GameId.GetHashCode();
-      if (GameUid != 0) hash ^= GameUid.GetHashCode();
+      if (Unk3300NCLDOGNCHGF != 0) hash ^= Unk3300NCLDOGNCHGF.GetHashCode();
       if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-      if (VerifyCode != 0) hash ^= VerifyCode.GetHashCode();
+      if (Unk3300FJJDMIBIBJN != 0) hash ^= Unk3300FJJDMIBIBJN.GetHashCode();
+      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
+      if (GameId != 0) hash ^= GameId.GetHashCode();
       hash ^= playerBriefList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -198,22 +215,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (VerifyCode != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(VerifyCode);
-      }
-      if (GameUid != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(GameUid);
-      }
       playerBriefList_.WriteTo(output, _repeated_playerBriefList_codec);
+      if (PlatformType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PlatformType);
+      }
       if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteEnum((int) BusinessType);
       }
       if (GameId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(GameId);
+      }
+      if (Unk3300NCLDOGNCHGF != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NCLDOGNCHGF);
+      }
+      if (Unk3300FJJDMIBIBJN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300FJJDMIBIBJN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -225,22 +246,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (VerifyCode != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(VerifyCode);
-      }
-      if (GameUid != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(GameUid);
-      }
       playerBriefList_.WriteTo(ref output, _repeated_playerBriefList_codec);
+      if (PlatformType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PlatformType);
+      }
       if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteEnum((int) BusinessType);
       }
       if (GameId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(GameId);
+      }
+      if (Unk3300NCLDOGNCHGF != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NCLDOGNCHGF);
+      }
+      if (Unk3300FJJDMIBIBJN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300FJJDMIBIBJN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -252,17 +277,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GameId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
-      }
-      if (GameUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameUid);
+      if (Unk3300NCLDOGNCHGF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NCLDOGNCHGF);
       }
       if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
       }
-      if (VerifyCode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(VerifyCode);
+      if (Unk3300FJJDMIBIBJN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FJJDMIBIBJN);
+      }
+      if (PlatformType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
+      }
+      if (GameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
       }
       size += playerBriefList_.CalculateSize(_repeated_playerBriefList_codec);
       if (_unknownFields != null) {
@@ -277,17 +305,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GameId != 0) {
-        GameId = other.GameId;
-      }
-      if (other.GameUid != 0) {
-        GameUid = other.GameUid;
+      if (other.Unk3300NCLDOGNCHGF != 0) {
+        Unk3300NCLDOGNCHGF = other.Unk3300NCLDOGNCHGF;
       }
       if (other.BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
         BusinessType = other.BusinessType;
       }
-      if (other.VerifyCode != 0) {
-        VerifyCode = other.VerifyCode;
+      if (other.Unk3300FJJDMIBIBJN != 0) {
+        Unk3300FJJDMIBIBJN = other.Unk3300FJJDMIBIBJN;
+      }
+      if (other.PlatformType != 0) {
+        PlatformType = other.PlatformType;
+      }
+      if (other.GameId != 0) {
+        GameId = other.GameId;
       }
       playerBriefList_.Add(other.playerBriefList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -305,24 +336,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            VerifyCode = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            GameUid = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 42: {
             playerBriefList_.AddEntriesFrom(input, _repeated_playerBriefList_codec);
             break;
           }
-          case 104: {
+          case 48: {
+            PlatformType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
             break;
           }
-          case 112: {
+          case 96: {
             GameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300NCLDOGNCHGF = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300FJJDMIBIBJN = input.ReadUInt32();
             break;
           }
         }
@@ -340,24 +375,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            VerifyCode = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            GameUid = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 42: {
             playerBriefList_.AddEntriesFrom(ref input, _repeated_playerBriefList_codec);
             break;
           }
-          case 104: {
+          case 48: {
+            PlatformType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
             break;
           }
-          case 112: {
+          case 96: {
             GameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300NCLDOGNCHGF = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300FJJDMIBIBJN = input.ReadUInt32();
             break;
           }
         }

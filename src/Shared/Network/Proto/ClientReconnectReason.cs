@@ -24,11 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClientReconnectReasonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtDbGllbnRSZWNvbm5lY3RSZWFzb24ucHJvdG8qdAoVQ2xpZW50UmVjb25u",
-            "ZWN0UmVhc29uEisKJ0NMSUVOVF9SRUNPTk5FQ1RfUkVBU09OX1JFQ09OTk5F",
-            "Q1RfTk9ORRAAEi4KKkNMSUVOVF9SRUNPTk5FQ1RfUkVBU09OX1JFQ09OTk5F",
-            "Q1RfUVVJVF9NUBABQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChtDbGllbnRSZWNvbm5lY3RSZWFzb24ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8qXgoVQ2xpZW50UmVjb25uZWN0UmVhc29uEiAK",
+            "HENMSUVOVF9SRUNPTk5FQ1RfUkVBU09OX05PTkUQABIjCh9DTElFTlRfUkVD",
+            "T05ORUNUX1JFQVNPTl9RVUlUX01QEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.ClientReconnectReason), }, null, null));
@@ -38,8 +37,8 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Enums
   public enum ClientReconnectReason {
-    [pbr::OriginalName("CLIENT_RECONNECT_REASON_RECONNNECT_NONE")] ReconnnectNone = 0,
-    [pbr::OriginalName("CLIENT_RECONNECT_REASON_RECONNNECT_QUIT_MP")] ReconnnectQuitMp = 1,
+    [pbr::OriginalName("CLIENT_RECONNECT_REASON_NONE")] None = 0,
+    [pbr::OriginalName("CLIENT_RECONNECT_REASON_QUIT_MP")] QuitMp = 1,
   }
 
   #endregion

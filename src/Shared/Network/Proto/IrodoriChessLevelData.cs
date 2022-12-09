@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessLevelDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtJcm9kb3JpQ2hlc3NMZXZlbERhdGEucHJvdG8aGUlyb2RvcmlDaGVzc01h",
-            "cERhdGEucHJvdG8imAEKFUlyb2RvcmlDaGVzc0xldmVsRGF0YRIRCglvcGVu",
-            "X3RpbWUYCCABKA0SEAoIbGV2ZWxfaWQYDyABKA0SKwoNaGFyZF9tYXBfZGF0",
-            "YRgHIAEoCzIULklyb2RvcmlDaGVzc01hcERhdGESLQoPbm9ybWFsX21hcF9k",
-            "YXRhGAsgASgLMhQuSXJvZG9yaUNoZXNzTWFwRGF0YUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtJcm9kb3JpQ2hlc3NMZXZlbERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGUlyb2RvcmlDaGVzc01hcERhdGEucHJvdG8i",
+            "4gEKFUlyb2RvcmlDaGVzc0xldmVsRGF0YRJRChNVbmszMzAwX0dDSUdOQ0dP",
+            "Qk1MGAYgASgLMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5J",
+            "cm9kb3JpQ2hlc3NNYXBEYXRhEhAKCGxldmVsX2lkGA4gASgNElEKE1VuazMz",
+            "MDBfQkdJTkVNSEJOQUQYCiABKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLklyb2RvcmlDaGVzc01hcERhdGESEQoJb3Blbl90aW1lGAgg",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IrodoriChessMapDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData), global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData.Parser, new[]{ "OpenTime", "LevelId", "HardMapData", "NormalMapData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData), global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData.Parser, new[]{ "Unk3300GCIGNCGOBML", "LevelId", "Unk3300BGINEMHBNAD", "OpenTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessLevelData(IrodoriChessLevelData other) : this() {
-      openTime_ = other.openTime_;
+      unk3300GCIGNCGOBML_ = other.unk3300GCIGNCGOBML_ != null ? other.unk3300GCIGNCGOBML_.Clone() : null;
       levelId_ = other.levelId_;
-      hardMapData_ = other.hardMapData_ != null ? other.hardMapData_.Clone() : null;
-      normalMapData_ = other.normalMapData_ != null ? other.normalMapData_.Clone() : null;
+      unk3300BGINEMHBNAD_ = other.unk3300BGINEMHBNAD_ != null ? other.unk3300BGINEMHBNAD_.Clone() : null;
+      openTime_ = other.openTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,6 +87,42 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessLevelData Clone() {
       return new IrodoriChessLevelData(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_GCIGNCGOBML" field.</summary>
+    public const int Unk3300GCIGNCGOBMLFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData unk3300GCIGNCGOBML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData Unk3300GCIGNCGOBML {
+      get { return unk3300GCIGNCGOBML_; }
+      set {
+        unk3300GCIGNCGOBML_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 14;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BGINEMHBNAD" field.</summary>
+    public const int Unk3300BGINEMHBNADFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData unk3300BGINEMHBNAD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData Unk3300BGINEMHBNAD {
+      get { return unk3300BGINEMHBNAD_; }
+      set {
+        unk3300BGINEMHBNAD_ = value;
+      }
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
@@ -96,42 +134,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return openTime_; }
       set {
         openTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 15;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hard_map_data" field.</summary>
-    public const int HardMapDataFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData hardMapData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData HardMapData {
-      get { return hardMapData_; }
-      set {
-        hardMapData_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "normal_map_data" field.</summary>
-    public const int NormalMapDataFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData normalMapData_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData NormalMapData {
-      get { return normalMapData_; }
-      set {
-        normalMapData_ = value;
       }
     }
 
@@ -150,10 +152,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OpenTime != other.OpenTime) return false;
+      if (!object.Equals(Unk3300GCIGNCGOBML, other.Unk3300GCIGNCGOBML)) return false;
       if (LevelId != other.LevelId) return false;
-      if (!object.Equals(HardMapData, other.HardMapData)) return false;
-      if (!object.Equals(NormalMapData, other.NormalMapData)) return false;
+      if (!object.Equals(Unk3300BGINEMHBNAD, other.Unk3300BGINEMHBNAD)) return false;
+      if (OpenTime != other.OpenTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +163,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
+      if (unk3300GCIGNCGOBML_ != null) hash ^= Unk3300GCIGNCGOBML.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
-      if (hardMapData_ != null) hash ^= HardMapData.GetHashCode();
-      if (normalMapData_ != null) hash ^= NormalMapData.GetHashCode();
+      if (unk3300BGINEMHBNAD_ != null) hash ^= Unk3300BGINEMHBNAD.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,20 +185,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (hardMapData_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(HardMapData);
+      if (unk3300GCIGNCGOBML_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Unk3300GCIGNCGOBML);
       }
       if (OpenTime != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(OpenTime);
       }
-      if (normalMapData_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(NormalMapData);
+      if (unk3300BGINEMHBNAD_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300BGINEMHBNAD);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -209,20 +211,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (hardMapData_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(HardMapData);
+      if (unk3300GCIGNCGOBML_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Unk3300GCIGNCGOBML);
       }
       if (OpenTime != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(OpenTime);
       }
-      if (normalMapData_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(NormalMapData);
+      if (unk3300BGINEMHBNAD_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300BGINEMHBNAD);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -235,17 +237,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
+      if (unk3300GCIGNCGOBML_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300GCIGNCGOBML);
       }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
-      if (hardMapData_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HardMapData);
+      if (unk3300BGINEMHBNAD_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300BGINEMHBNAD);
       }
-      if (normalMapData_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NormalMapData);
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -259,23 +261,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
+      if (other.unk3300GCIGNCGOBML_ != null) {
+        if (unk3300GCIGNCGOBML_ == null) {
+          Unk3300GCIGNCGOBML = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+        }
+        Unk3300GCIGNCGOBML.MergeFrom(other.Unk3300GCIGNCGOBML);
       }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
-      if (other.hardMapData_ != null) {
-        if (hardMapData_ == null) {
-          HardMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+      if (other.unk3300BGINEMHBNAD_ != null) {
+        if (unk3300BGINEMHBNAD_ == null) {
+          Unk3300BGINEMHBNAD = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
         }
-        HardMapData.MergeFrom(other.HardMapData);
+        Unk3300BGINEMHBNAD.MergeFrom(other.Unk3300BGINEMHBNAD);
       }
-      if (other.normalMapData_ != null) {
-        if (normalMapData_ == null) {
-          NormalMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
-        }
-        NormalMapData.MergeFrom(other.NormalMapData);
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -292,25 +294,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            if (hardMapData_ == null) {
-              HardMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+          case 50: {
+            if (unk3300GCIGNCGOBML_ == null) {
+              Unk3300GCIGNCGOBML = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
             }
-            input.ReadMessage(HardMapData);
+            input.ReadMessage(Unk3300GCIGNCGOBML);
             break;
           }
           case 64: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 90: {
-            if (normalMapData_ == null) {
-              NormalMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+          case 82: {
+            if (unk3300BGINEMHBNAD_ == null) {
+              Unk3300BGINEMHBNAD = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
             }
-            input.ReadMessage(NormalMapData);
+            input.ReadMessage(Unk3300BGINEMHBNAD);
             break;
           }
-          case 120: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }
@@ -329,25 +331,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            if (hardMapData_ == null) {
-              HardMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+          case 50: {
+            if (unk3300GCIGNCGOBML_ == null) {
+              Unk3300GCIGNCGOBML = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
             }
-            input.ReadMessage(HardMapData);
+            input.ReadMessage(Unk3300GCIGNCGOBML);
             break;
           }
           case 64: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 90: {
-            if (normalMapData_ == null) {
-              NormalMapData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
+          case 82: {
+            if (unk3300BGINEMHBNAD_ == null) {
+              Unk3300BGINEMHBNAD = new global::Weedwacker.Shared.Network.Proto.IrodoriChessMapData();
             }
-            input.ReadMessage(NormalMapData);
+            input.ReadMessage(Unk3300BGINEMHBNAD);
             break;
           }
-          case 120: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }

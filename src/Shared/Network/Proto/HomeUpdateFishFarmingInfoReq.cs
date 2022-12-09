@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeUpdateFishFarmingInfoReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJIb21lVXBkYXRlRmlzaEZhcm1pbmdJbmZvUmVxLnByb3RvGhlIb21lRmlz",
-            "aEZhcm1pbmdJbmZvLnByb3RvIk8KHEhvbWVVcGRhdGVGaXNoRmFybWluZ0lu",
-            "Zm9SZXESLwoRZmlzaF9mYXJtaW5nX2luZm8YBSABKAsyFC5Ib21lRmlzaEZh",
-            "cm1pbmdJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiJIb21lVXBkYXRlRmlzaEZhcm1pbmdJbmZvUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhlIb21lRmlzaEZhcm1pbmdJbmZv",
+            "LnByb3RvIm8KHEhvbWVVcGRhdGVGaXNoRmFybWluZ0luZm9SZXESTwoRZmlz",
+            "aF9mYXJtaW5nX2luZm8YAyABKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkhvbWVGaXNoRmFybWluZ0luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeFishFarmingInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4544
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4767;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeUpdateFishFarmingInfoReq : pb::IMessage<HomeUpdateFishFarmingInfoReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fish_farming_info" field.</summary>
-    public const int FishFarmingInfoFieldNumber = 5;
+    public const int FishFarmingInfoFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.HomeFishFarmingInfo fishFarmingInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (fishFarmingInfo_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(26);
         output.WriteMessage(FishFarmingInfo);
       }
       if (_unknownFields != null) {
@@ -158,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (fishFarmingInfo_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(26);
         output.WriteMessage(FishFarmingInfo);
       }
       if (_unknownFields != null) {
@@ -207,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 26: {
             if (fishFarmingInfo_ == null) {
               FishFarmingInfo = new global::Weedwacker.Shared.Network.Proto.HomeFishFarmingInfo();
             }
@@ -229,7 +233,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 26: {
             if (fishFarmingInfo_ == null) {
               FishFarmingInfo = new global::Weedwacker.Shared.Network.Proto.HomeFishFarmingInfo();
             }

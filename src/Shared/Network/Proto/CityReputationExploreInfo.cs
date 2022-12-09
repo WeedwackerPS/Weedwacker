@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CityReputationExploreInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9DaXR5UmVwdXRhdGlvbkV4cGxvcmVJbmZvLnByb3RvImgKGUNpdHlSZXB1",
-            "dGF0aW9uRXhwbG9yZUluZm8SIQoZdGFrZW5fZXhwbG9yZV9yZXdhcmRfbGlz",
-            "dBgCIAMoDRIXCg9leHBsb3JlX3BlcmNlbnQYDiABKA0SDwoHaXNfb3BlbhgP",
-            "IAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "Ch9DaXR5UmVwdXRhdGlvbkV4cGxvcmVJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvImgKGUNpdHlSZXB1dGF0aW9uRXhwbG9y",
+            "ZUluZm8SFwoPZXhwbG9yZV9wZXJjZW50GAEgASgNEiEKGXRha2VuX2V4cGxv",
+            "cmVfcmV3YXJkX2xpc3QYDyADKA0SDwoHaXNfb3BlbhgNIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo), global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo.Parser, new[]{ "TakenExploreRewardList", "ExplorePercent", "IsOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo), global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo.Parser, new[]{ "ExplorePercent", "TakenExploreRewardList", "IsOpen" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CityReputationExploreInfo(CityReputationExploreInfo other) : this() {
-      takenExploreRewardList_ = other.takenExploreRewardList_.Clone();
       explorePercent_ = other.explorePercent_;
+      takenExploreRewardList_ = other.takenExploreRewardList_.Clone();
       isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,19 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CityReputationExploreInfo(this);
     }
 
-    /// <summary>Field number for the "taken_explore_reward_list" field.</summary>
-    public const int TakenExploreRewardListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_takenExploreRewardList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> takenExploreRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenExploreRewardList {
-      get { return takenExploreRewardList_; }
-    }
-
     /// <summary>Field number for the "explore_percent" field.</summary>
-    public const int ExplorePercentFieldNumber = 14;
+    public const int ExplorePercentFieldNumber = 1;
     private uint explorePercent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "taken_explore_reward_list" field.</summary>
+    public const int TakenExploreRewardListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_takenExploreRewardList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> takenExploreRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TakenExploreRewardList {
+      get { return takenExploreRewardList_; }
+    }
+
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 15;
+    public const int IsOpenFieldNumber = 13;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!takenExploreRewardList_.Equals(other.takenExploreRewardList_)) return false;
       if (ExplorePercent != other.ExplorePercent) return false;
+      if(!takenExploreRewardList_.Equals(other.takenExploreRewardList_)) return false;
       if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= takenExploreRewardList_.GetHashCode();
       if (ExplorePercent != 0) hash ^= ExplorePercent.GetHashCode();
+      hash ^= takenExploreRewardList_.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -166,15 +165,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      takenExploreRewardList_.WriteTo(output, _repeated_takenExploreRewardList_codec);
       if (ExplorePercent != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(ExplorePercent);
       }
       if (IsOpen != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteBool(IsOpen);
       }
+      takenExploreRewardList_.WriteTo(output, _repeated_takenExploreRewardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -185,15 +184,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      takenExploreRewardList_.WriteTo(ref output, _repeated_takenExploreRewardList_codec);
       if (ExplorePercent != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(ExplorePercent);
       }
       if (IsOpen != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteBool(IsOpen);
       }
+      takenExploreRewardList_.WriteTo(ref output, _repeated_takenExploreRewardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -204,10 +203,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += takenExploreRewardList_.CalculateSize(_repeated_takenExploreRewardList_codec);
       if (ExplorePercent != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExplorePercent);
       }
+      size += takenExploreRewardList_.CalculateSize(_repeated_takenExploreRewardList_codec);
       if (IsOpen != false) {
         size += 1 + 1;
       }
@@ -223,10 +222,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      takenExploreRewardList_.Add(other.takenExploreRewardList_);
       if (other.ExplorePercent != 0) {
         ExplorePercent = other.ExplorePercent;
       }
+      takenExploreRewardList_.Add(other.takenExploreRewardList_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
@@ -245,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            takenExploreRewardList_.AddEntriesFrom(input, _repeated_takenExploreRewardList_codec);
-            break;
-          }
-          case 112: {
+          case 8: {
             ExplorePercent = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 122:
+          case 120: {
+            takenExploreRewardList_.AddEntriesFrom(input, _repeated_takenExploreRewardList_codec);
             break;
           }
         }
@@ -273,17 +272,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            takenExploreRewardList_.AddEntriesFrom(ref input, _repeated_takenExploreRewardList_codec);
-            break;
-          }
-          case 112: {
+          case 8: {
             ExplorePercent = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 122:
+          case 120: {
+            takenExploreRewardList_.AddEntriesFrom(ref input, _repeated_takenExploreRewardList_codec);
             break;
           }
         }

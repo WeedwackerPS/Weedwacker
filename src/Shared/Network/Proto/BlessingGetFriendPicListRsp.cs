@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlessingGetFriendPicListRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFCbGVzc2luZ0dldEZyaWVuZFBpY0xpc3RSc3AucHJvdG8aG0JsZXNzaW5n",
-            "RnJpZW5kUGljRGF0YS5wcm90byJkChtCbGVzc2luZ0dldEZyaWVuZFBpY0xp",
-            "c3RSc3ASDwoHcmV0Y29kZRgCIAEoBRI0ChRmcmllbmRfcGljX2RhdGFfbGlz",
-            "dBgGIAMoCzIWLkJsZXNzaW5nRnJpZW5kUGljRGF0YUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFCbGVzc2luZ0dldEZyaWVuZFBpY0xpc3RSc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG0JsZXNzaW5nRnJpZW5kUGljRGF0",
+            "YS5wcm90byKEAQobQmxlc3NpbmdHZXRGcmllbmRQaWNMaXN0UnNwEg8KB3Jl",
+            "dGNvZGUYCyABKAUSVAoUZnJpZW5kX3BpY19kYXRhX2xpc3QYCCADKAsyNi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJsZXNzaW5nRnJpZW5k",
+            "UGljRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BlessingFriendPicDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2056
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2076;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BlessingGetFriendPicListRsp : pb::IMessage<BlessingGetFriendPicListRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "friend_pic_data_list" field.</summary>
-    public const int FriendPicDataListFieldNumber = 6;
+    public const int FriendPicDataListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BlessingFriendPicData> _repeated_friendPicDataList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.BlessingFriendPicData.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.BlessingFriendPicData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlessingFriendPicData> friendPicDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlessingFriendPicData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      friendPicDataList_.WriteTo(output, _repeated_friendPicDataList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      friendPicDataList_.WriteTo(output, _repeated_friendPicDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      friendPicDataList_.WriteTo(ref output, _repeated_friendPicDataList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      friendPicDataList_.WriteTo(ref output, _repeated_friendPicDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            friendPicDataList_.AddEntriesFrom(input, _repeated_friendPicDataList_codec);
             break;
           }
-          case 50: {
-            friendPicDataList_.AddEntriesFrom(input, _repeated_friendPicDataList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            friendPicDataList_.AddEntriesFrom(ref input, _repeated_friendPicDataList_codec);
             break;
           }
-          case 50: {
-            friendPicDataList_.AddEntriesFrom(ref input, _repeated_friendPicDataList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

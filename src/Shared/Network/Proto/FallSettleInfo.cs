@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static FallSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGYWxsU2V0dGxlSW5mby5wcm90bxoWT25saW5lUGxheWVySW5mby5wcm90",
-            "byKXAgoORmFsbFNldHRsZUluZm8SEwoLY2F0Y2hfY291bnQYDyABKA0SJgoL",
-            "cGxheWVyX2luZm8YDSABKAsyES5PbmxpbmVQbGF5ZXJJbmZvEgsKA3VpZBgO",
-            "IAEoDRJRChtmbG93ZXJfcmluZ19jYXRjaF9jb3VudF9tYXAYAyADKAsyLC5G",
-            "YWxsU2V0dGxlSW5mby5GbG93ZXJSaW5nQ2F0Y2hDb3VudE1hcEVudHJ5EhMK",
-            "C3JlbWFpbl90aW1lGAogASgNEhMKC2ZpbmFsX3Njb3JlGAEgASgNGj4KHEZs",
-            "b3dlclJpbmdDYXRjaENvdW50TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZh",
-            "bHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChRGYWxsU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byLXAgoORmFsbFNl",
+            "dHRsZUluZm8SEwoLZmluYWxfc2NvcmUYDiABKA0SRgoLcGxheWVyX2luZm8Y",
+            "CSABKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk9ubGlu",
+            "ZVBsYXllckluZm8ScQobZmxvd2VyX3JpbmdfY2F0Y2hfY291bnRfbWFwGA0g",
+            "AygLMkwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GYWxsU2V0",
+            "dGxlSW5mby5GbG93ZXJSaW5nQ2F0Y2hDb3VudE1hcEVudHJ5EgsKA3VpZBgC",
+            "IAEoDRITCgtjYXRjaF9jb3VudBgBIAEoDRITCgtyZW1haW5fdGltZRgGIAEo",
+            "DRo+ChxGbG93ZXJSaW5nQ2F0Y2hDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEo",
+            "DRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallSettleInfo), global::Weedwacker.Shared.Network.Proto.FallSettleInfo.Parser, new[]{ "CatchCount", "PlayerInfo", "Uid", "FlowerRingCatchCountMap", "RemainTime", "FinalScore" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallSettleInfo), global::Weedwacker.Shared.Network.Proto.FallSettleInfo.Parser, new[]{ "FinalScore", "PlayerInfo", "FlowerRingCatchCountMap", "Uid", "CatchCount", "RemainTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -77,12 +78,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FallSettleInfo(FallSettleInfo other) : this() {
-      catchCount_ = other.catchCount_;
-      playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
-      uid_ = other.uid_;
-      flowerRingCatchCountMap_ = other.flowerRingCatchCountMap_.Clone();
-      remainTime_ = other.remainTime_;
       finalScore_ = other.finalScore_;
+      playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
+      flowerRingCatchCountMap_ = other.flowerRingCatchCountMap_.Clone();
+      uid_ = other.uid_;
+      catchCount_ = other.catchCount_;
+      remainTime_ = other.remainTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FallSettleInfo(this);
     }
 
-    /// <summary>Field number for the "catch_count" field.</summary>
-    public const int CatchCountFieldNumber = 15;
-    private uint catchCount_;
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 14;
+    private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CatchCount {
-      get { return catchCount_; }
+    public uint FinalScore {
+      get { return finalScore_; }
       set {
-        catchCount_ = value;
+        finalScore_ = value;
       }
     }
 
     /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 13;
+    public const int PlayerInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,8 +117,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "flower_ring_catch_count_map" field.</summary>
+    public const int FlowerRingCatchCountMapFieldNumber = 13;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_flowerRingCatchCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
+    private readonly pbc::MapField<uint, uint> flowerRingCatchCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> FlowerRingCatchCountMap {
+      get { return flowerRingCatchCountMap_; }
+    }
+
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 14;
+    public const int UidFieldNumber = 2;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,19 +140,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "flower_ring_catch_count_map" field.</summary>
-    public const int FlowerRingCatchCountMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_flowerRingCatchCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> flowerRingCatchCountMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "catch_count" field.</summary>
+    public const int CatchCountFieldNumber = 1;
+    private uint catchCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> FlowerRingCatchCountMap {
-      get { return flowerRingCatchCountMap_; }
+    public uint CatchCount {
+      get { return catchCount_; }
+      set {
+        catchCount_ = value;
+      }
     }
 
     /// <summary>Field number for the "remain_time" field.</summary>
-    public const int RemainTimeFieldNumber = 10;
+    public const int RemainTimeFieldNumber = 6;
     private uint remainTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,18 +161,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return remainTime_; }
       set {
         remainTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 1;
-    private uint finalScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
-      set {
-        finalScore_ = value;
       }
     }
 
@@ -178,12 +179,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CatchCount != other.CatchCount) return false;
-      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
-      if (Uid != other.Uid) return false;
-      if (!FlowerRingCatchCountMap.Equals(other.FlowerRingCatchCountMap)) return false;
-      if (RemainTime != other.RemainTime) return false;
       if (FinalScore != other.FinalScore) return false;
+      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
+      if (!FlowerRingCatchCountMap.Equals(other.FlowerRingCatchCountMap)) return false;
+      if (Uid != other.Uid) return false;
+      if (CatchCount != other.CatchCount) return false;
+      if (RemainTime != other.RemainTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -191,12 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CatchCount != 0) hash ^= CatchCount.GetHashCode();
-      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      hash ^= FlowerRingCatchCountMap.GetHashCode();
-      if (RemainTime != 0) hash ^= RemainTime.GetHashCode();
       if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
+      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
+      hash ^= FlowerRingCatchCountMap.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (CatchCount != 0) hash ^= CatchCount.GetHashCode();
+      if (RemainTime != 0) hash ^= RemainTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -215,26 +216,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FinalScore != 0) {
+      if (CatchCount != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(FinalScore);
+        output.WriteUInt32(CatchCount);
       }
-      flowerRingCatchCountMap_.WriteTo(output, _map_flowerRingCatchCountMap_codec);
+      if (Uid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Uid);
+      }
       if (RemainTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(RemainTime);
       }
       if (playerInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(PlayerInfo);
       }
-      if (Uid != 0) {
+      flowerRingCatchCountMap_.WriteTo(output, _map_flowerRingCatchCountMap_codec);
+      if (FinalScore != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(Uid);
-      }
-      if (CatchCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CatchCount);
+        output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -246,26 +247,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FinalScore != 0) {
+      if (CatchCount != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(FinalScore);
+        output.WriteUInt32(CatchCount);
       }
-      flowerRingCatchCountMap_.WriteTo(ref output, _map_flowerRingCatchCountMap_codec);
+      if (Uid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Uid);
+      }
       if (RemainTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(48);
         output.WriteUInt32(RemainTime);
       }
       if (playerInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(PlayerInfo);
       }
-      if (Uid != 0) {
+      flowerRingCatchCountMap_.WriteTo(ref output, _map_flowerRingCatchCountMap_codec);
+      if (FinalScore != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(Uid);
-      }
-      if (CatchCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CatchCount);
+        output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -277,21 +278,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CatchCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CatchCount);
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (playerInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
       }
+      size += flowerRingCatchCountMap_.CalculateSize(_map_flowerRingCatchCountMap_codec);
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      size += flowerRingCatchCountMap_.CalculateSize(_map_flowerRingCatchCountMap_codec);
+      if (CatchCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CatchCount);
+      }
       if (RemainTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RemainTime);
-      }
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -305,8 +306,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CatchCount != 0) {
-        CatchCount = other.CatchCount;
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
       }
       if (other.playerInfo_ != null) {
         if (playerInfo_ == null) {
@@ -314,15 +315,15 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         PlayerInfo.MergeFrom(other.PlayerInfo);
       }
+      flowerRingCatchCountMap_.Add(other.flowerRingCatchCountMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      flowerRingCatchCountMap_.Add(other.flowerRingCatchCountMap_);
+      if (other.CatchCount != 0) {
+        CatchCount = other.CatchCount;
+      }
       if (other.RemainTime != 0) {
         RemainTime = other.RemainTime;
-      }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -340,30 +341,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            FinalScore = input.ReadUInt32();
+            CatchCount = input.ReadUInt32();
             break;
           }
-          case 26: {
-            flowerRingCatchCountMap_.AddEntriesFrom(input, _map_flowerRingCatchCountMap_codec);
+          case 16: {
+            Uid = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 48: {
             RemainTime = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 112: {
-            Uid = input.ReadUInt32();
+          case 106: {
+            flowerRingCatchCountMap_.AddEntriesFrom(input, _map_flowerRingCatchCountMap_codec);
             break;
           }
-          case 120: {
-            CatchCount = input.ReadUInt32();
+          case 112: {
+            FinalScore = input.ReadUInt32();
             break;
           }
         }
@@ -382,30 +383,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            FinalScore = input.ReadUInt32();
+            CatchCount = input.ReadUInt32();
             break;
           }
-          case 26: {
-            flowerRingCatchCountMap_.AddEntriesFrom(ref input, _map_flowerRingCatchCountMap_codec);
+          case 16: {
+            Uid = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 48: {
             RemainTime = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 112: {
-            Uid = input.ReadUInt32();
+          case 106: {
+            flowerRingCatchCountMap_.AddEntriesFrom(ref input, _map_flowerRingCatchCountMap_codec);
             break;
           }
-          case 120: {
-            CatchCount = input.ReadUInt32();
+          case 112: {
+            FinalScore = input.ReadUInt32();
             break;
           }
         }

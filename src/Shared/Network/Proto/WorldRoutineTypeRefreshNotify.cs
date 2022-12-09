@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldRoutineTypeRefreshNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNXb3JsZFJvdXRpbmVUeXBlUmVmcmVzaE5vdGlmeS5wcm90bxoaV29ybGRS",
-            "b3V0aW5lVHlwZUluZm8ucHJvdG8iUgodV29ybGRSb3V0aW5lVHlwZVJlZnJl",
-            "c2hOb3RpZnkSMQoSd29ybGRfcm91dGluZV90eXBlGAcgASgLMhUuV29ybGRS",
-            "b3V0aW5lVHlwZUluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "CiNXb3JsZFJvdXRpbmVUeXBlUmVmcmVzaE5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoaV29ybGRSb3V0aW5lVHlwZUlu",
+            "Zm8ucHJvdG8icgodV29ybGRSb3V0aW5lVHlwZVJlZnJlc2hOb3RpZnkSUQoS",
+            "d29ybGRfcm91dGluZV90eXBlGAEgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5Xb3JsZFJvdXRpbmVUeXBlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3525
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3522;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldRoutineTypeRefreshNotify : pb::IMessage<WorldRoutineTypeRefreshNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "world_routine_type" field.</summary>
-    public const int WorldRoutineTypeFieldNumber = 7;
+    public const int WorldRoutineTypeFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo worldRoutineType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (worldRoutineType_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(10);
         output.WriteMessage(WorldRoutineType);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (worldRoutineType_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(10);
         output.WriteMessage(WorldRoutineType);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 10: {
             if (worldRoutineType_ == null) {
               WorldRoutineType = new global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 10: {
             if (worldRoutineType_ == null) {
               WorldRoutineType = new global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo();
             }

@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static RequestLiveInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSZXF1ZXN0TGl2ZUluZm9Sc3AucHJvdG8iYAoSUmVxdWVzdExpdmVJbmZv",
-            "UnNwEhYKDnNwYXJlX2xpdmVfdXJsGA4gASgJEg8KB3JldGNvZGUYCSABKAUS",
-            "EAoIbGl2ZV91cmwYDCABKAkSDwoHbGl2ZV9pZBgCIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhSZXF1ZXN0TGl2ZUluZm9Sc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8icAoSUmVxdWVzdExpdmVJbmZvUnNwEg8KB3JldGNv",
+            "ZGUYDSABKAUSGwoTVW5rMzMwMF9CRE9HQ1BLUExPSxgLIAEoCRIbChNVbmsz",
+            "MzAwX0ROR0dJT0lLTEhDGAYgASgJEg8KB2xpdmVfaWQYCiABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RequestLiveInfoRsp), global::Weedwacker.Shared.Network.Proto.RequestLiveInfoRsp.Parser, new[]{ "SpareLiveUrl", "Retcode", "LiveUrl", "LiveId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RequestLiveInfoRsp), global::Weedwacker.Shared.Network.Proto.RequestLiveInfoRsp.Parser, new[]{ "Retcode", "Unk3300BDOGCPKPLOK", "Unk3300DNGGIOIKLHC", "LiveId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 888
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 894;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RequestLiveInfoRsp : pb::IMessage<RequestLiveInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestLiveInfoRsp(RequestLiveInfoRsp other) : this() {
-      spareLiveUrl_ = other.spareLiveUrl_;
       retcode_ = other.retcode_;
-      liveUrl_ = other.liveUrl_;
+      unk3300BDOGCPKPLOK_ = other.unk3300BDOGCPKPLOK_;
+      unk3300DNGGIOIKLHC_ = other.unk3300DNGGIOIKLHC_;
       liveId_ = other.liveId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RequestLiveInfoRsp(this);
     }
 
-    /// <summary>Field number for the "spare_live_url" field.</summary>
-    public const int SpareLiveUrlFieldNumber = 14;
-    private string spareLiveUrl_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SpareLiveUrl {
-      get { return spareLiveUrl_; }
-      set {
-        spareLiveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,20 +107,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "live_url" field.</summary>
-    public const int LiveUrlFieldNumber = 12;
-    private string liveUrl_ = "";
+    /// <summary>Field number for the "Unk3300_BDOGCPKPLOK" field.</summary>
+    public const int Unk3300BDOGCPKPLOKFieldNumber = 11;
+    private string unk3300BDOGCPKPLOK_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string LiveUrl {
-      get { return liveUrl_; }
+    public string Unk3300BDOGCPKPLOK {
+      get { return unk3300BDOGCPKPLOK_; }
       set {
-        liveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300BDOGCPKPLOK_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DNGGIOIKLHC" field.</summary>
+    public const int Unk3300DNGGIOIKLHCFieldNumber = 6;
+    private string unk3300DNGGIOIKLHC_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Unk3300DNGGIOIKLHC {
+      get { return unk3300DNGGIOIKLHC_; }
+      set {
+        unk3300DNGGIOIKLHC_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "live_id" field.</summary>
-    public const int LiveIdFieldNumber = 2;
+    public const int LiveIdFieldNumber = 10;
     private uint liveId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SpareLiveUrl != other.SpareLiveUrl) return false;
       if (Retcode != other.Retcode) return false;
-      if (LiveUrl != other.LiveUrl) return false;
+      if (Unk3300BDOGCPKPLOK != other.Unk3300BDOGCPKPLOK) return false;
+      if (Unk3300DNGGIOIKLHC != other.Unk3300DNGGIOIKLHC) return false;
       if (LiveId != other.LiveId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -164,9 +169,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SpareLiveUrl.Length != 0) hash ^= SpareLiveUrl.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (LiveUrl.Length != 0) hash ^= LiveUrl.GetHashCode();
+      if (Unk3300BDOGCPKPLOK.Length != 0) hash ^= Unk3300BDOGCPKPLOK.GetHashCode();
+      if (Unk3300DNGGIOIKLHC.Length != 0) hash ^= Unk3300DNGGIOIKLHC.GetHashCode();
       if (LiveId != 0) hash ^= LiveId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -186,21 +191,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300DNGGIOIKLHC.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Unk3300DNGGIOIKLHC);
+      }
       if (LiveId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(LiveId);
       }
+      if (Unk3300BDOGCPKPLOK.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Unk3300BDOGCPKPLOK);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
-      }
-      if (LiveUrl.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(LiveUrl);
-      }
-      if (SpareLiveUrl.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(SpareLiveUrl);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -212,21 +217,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300DNGGIOIKLHC.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Unk3300DNGGIOIKLHC);
+      }
       if (LiveId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt32(LiveId);
       }
+      if (Unk3300BDOGCPKPLOK.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Unk3300BDOGCPKPLOK);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
-      }
-      if (LiveUrl.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(LiveUrl);
-      }
-      if (SpareLiveUrl.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(SpareLiveUrl);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -238,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SpareLiveUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SpareLiveUrl);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (LiveUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LiveUrl);
+      if (Unk3300BDOGCPKPLOK.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300BDOGCPKPLOK);
+      }
+      if (Unk3300DNGGIOIKLHC.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300DNGGIOIKLHC);
       }
       if (LiveId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LiveId);
@@ -262,14 +267,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SpareLiveUrl.Length != 0) {
-        SpareLiveUrl = other.SpareLiveUrl;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.LiveUrl.Length != 0) {
-        LiveUrl = other.LiveUrl;
+      if (other.Unk3300BDOGCPKPLOK.Length != 0) {
+        Unk3300BDOGCPKPLOK = other.Unk3300BDOGCPKPLOK;
+      }
+      if (other.Unk3300DNGGIOIKLHC.Length != 0) {
+        Unk3300DNGGIOIKLHC = other.Unk3300DNGGIOIKLHC;
       }
       if (other.LiveId != 0) {
         LiveId = other.LiveId;
@@ -289,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 50: {
+            Unk3300DNGGIOIKLHC = input.ReadString();
+            break;
+          }
+          case 80: {
             LiveId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 90: {
+            Unk3300BDOGCPKPLOK = input.ReadString();
+            break;
+          }
+          case 104: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 98: {
-            LiveUrl = input.ReadString();
-            break;
-          }
-          case 114: {
-            SpareLiveUrl = input.ReadString();
             break;
           }
         }
@@ -320,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 50: {
+            Unk3300DNGGIOIKLHC = input.ReadString();
+            break;
+          }
+          case 80: {
             LiveId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 90: {
+            Unk3300BDOGCPKPLOK = input.ReadString();
+            break;
+          }
+          case 104: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 98: {
-            LiveUrl = input.ReadString();
-            break;
-          }
-          case 114: {
-            SpareLiveUrl = input.ReadString();
             break;
           }
         }

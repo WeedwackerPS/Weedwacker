@@ -24,26 +24,36 @@ namespace Weedwacker.Shared.Network.Proto {
     static MultistagePlayInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhNdWx0aXN0YWdlUGxheUluZm8ucHJvdG8aF0NoYXJBbXVzZW1lbnRJbmZv",
+            "ChhNdWx0aXN0YWdlUGxheUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0JyaWNrQnJlYWtlclN0YWdlSW5mby5wcm90bxoX",
+            "Q2hhckFtdXNlbWVudEluZm8ucHJvdG8aGkNvaW5Db2xsZWN0U3RhZ2VJbmZv",
             "LnByb3RvGhpIaWRlQW5kU2Vla1N0YWdlSW5mby5wcm90bxoXSW5CYXR0bGVD",
-            "aGVzc0luZm8ucHJvdG8aG0luQmF0dGxlRmxldXJGYWlySW5mby5wcm90bxoc",
-            "SW5CYXR0bGVNZWNoYW5pY3VzSW5mby5wcm90bxoWSXJvZG9yaUNoZXNzSW5m",
-            "by5wcm90byLVAwoSTXVsdGlzdGFnZVBsYXlJbmZvEhIKCnBsYXlfaW5kZXgY",
-            "DSABKA0SEQoJcGxheV90eXBlGAsgASgNEhIKCnN0YWdlX3R5cGUYCiABKA0S",
-            "EAoIZHVyYXRpb24YCCABKA0SEAoIZ3JvdXBfaWQYDCABKA0SEgoKYmVnaW5f",
-            "dGltZRgJIAEoDRITCgtzdGFnZV9pbmRleBgBIAEoDRIzCg9tZWNoYW5pY3Vz",
-            "X2luZm8YtgogASgLMhcuSW5CYXR0bGVNZWNoYW5pY3VzSW5mb0gAEjIKD2Zs",
-            "ZXVyX2ZhaXJfaW5mbxioCCABKAsyFi5JbkJhdHRsZUZsZXVyRmFpckluZm9I",
-            "ABIzChJoaWRlX2FuZF9zZWVrX2luZm8YbCABKAsyFS5IaWRlQW5kU2Vla1N0",
-            "YWdlSW5mb0gAEikKCmNoZXNzX2luZm8Y3g0gASgLMhIuSW5CYXR0bGVDaGVz",
-            "c0luZm9IABIwChJpcm9kb3JpX2NoZXNzX2luZm8YkwQgASgLMhEuSXJvZG9y",
-            "aUNoZXNzSW5mb0gAEjIKE2NoYXJfYW11c2VtZW50X2luZm8YxAIgASgLMhIu",
-            "Q2hhckFtdXNlbWVudEluZm9IAEIICgZkZXRhaWxCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "aGVzc0luZm8ucHJvdG8aG0luQmF0dGxlRmxldXJGYWlySW5mby5wcm90bxoe",
+            "SW5CYXR0bGVJcm9kb3JpQ2hlc3NJbmZvLnByb3RvGhxJbkJhdHRsZU1lY2hh",
+            "bmljdXNJbmZvLnByb3RvIsoGChJNdWx0aXN0YWdlUGxheUluZm8SEgoKcGxh",
+            "eV9pbmRleBgNIAEoDRIQCghkdXJhdGlvbhgCIAEoDRISCgpzdGFnZV90eXBl",
+            "GAUgASgNEhAKCGdyb3VwX2lkGAEgASgNEhMKC3N0YWdlX2luZGV4GAogASgN",
+            "EhIKCmJlZ2luX3RpbWUYCSABKA0SEQoJcGxheV90eXBlGA8gASgNElMKD21l",
+            "Y2hhbmljdXNfaW5mbxiXCiABKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkluQmF0dGxlTWVjaGFuaWN1c0luZm9IABJSCg9mbGV1cl9m",
+            "YWlyX2luZm8Y3gsgASgLMjYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5JbkJhdHRsZUZsZXVyRmFpckluZm9IABJUChJoaWRlX2FuZF9zZWVr",
+            "X2luZm8YvQ0gASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5IaWRlQW5kU2Vla1N0YWdlSW5mb0gAEkkKCmNoZXNzX2luZm8Y3A0gASgL",
+            "MjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JbkJhdHRsZUNo",
+            "ZXNzSW5mb0gAElgKEmlyb2RvcmlfY2hlc3NfaW5mbxirDiABKAsyOS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkluQmF0dGxlSXJvZG9yaUNo",
+            "ZXNzSW5mb0gAElIKE2NoYXJfYW11c2VtZW50X2luZm8Y9wcgASgLMjIuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DaGFyQW11c2VtZW50SW5m",
+            "b0gAElUKEmJyaWNrX2JyZWFrZXJfaW5mbxijBCABKAsyNi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkJyaWNrQnJlYWtlclN0YWdlSW5mb0gA",
+            "ElMKEWNvaW5fY29sbGVjdF9pbmZvGO8JIAEoCzI1LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uQ29pbkNvbGxlY3RTdGFnZUluZm9IAEIICgZk",
+            "ZXRhaWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CharAmusementInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleChessInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriChessInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CharAmusementInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleChessInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MultistagePlayInfo), global::Weedwacker.Shared.Network.Proto.MultistagePlayInfo.Parser, new[]{ "PlayIndex", "PlayType", "StageType", "Duration", "GroupId", "BeginTime", "StageIndex", "MechanicusInfo", "FleurFairInfo", "HideAndSeekInfo", "ChessInfo", "IrodoriChessInfo", "CharAmusementInfo" }, new[]{ "Detail" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MultistagePlayInfo), global::Weedwacker.Shared.Network.Proto.MultistagePlayInfo.Parser, new[]{ "PlayIndex", "Duration", "StageType", "GroupId", "StageIndex", "BeginTime", "PlayType", "MechanicusInfo", "FleurFairInfo", "HideAndSeekInfo", "ChessInfo", "IrodoriChessInfo", "CharAmusementInfo", "BrickBreakerInfo", "CoinCollectInfo" }, new[]{ "Detail" }, null, null, null)
           }));
     }
     #endregion
@@ -85,12 +95,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MultistagePlayInfo(MultistagePlayInfo other) : this() {
       playIndex_ = other.playIndex_;
-      playType_ = other.playType_;
-      stageType_ = other.stageType_;
       duration_ = other.duration_;
+      stageType_ = other.stageType_;
       groupId_ = other.groupId_;
-      beginTime_ = other.beginTime_;
       stageIndex_ = other.stageIndex_;
+      beginTime_ = other.beginTime_;
+      playType_ = other.playType_;
       switch (other.DetailCase) {
         case DetailOneofCase.MechanicusInfo:
           MechanicusInfo = other.MechanicusInfo.Clone();
@@ -109,6 +119,12 @@ namespace Weedwacker.Shared.Network.Proto {
           break;
         case DetailOneofCase.CharAmusementInfo:
           CharAmusementInfo = other.CharAmusementInfo.Clone();
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          BrickBreakerInfo = other.BrickBreakerInfo.Clone();
+          break;
+        case DetailOneofCase.CoinCollectInfo:
+          CoinCollectInfo = other.CoinCollectInfo.Clone();
           break;
       }
 
@@ -133,32 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "play_type" field.</summary>
-    public const int PlayTypeFieldNumber = 11;
-    private uint playType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlayType {
-      get { return playType_; }
-      set {
-        playType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "stage_type" field.</summary>
-    public const int StageTypeFieldNumber = 10;
-    private uint stageType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageType {
-      get { return stageType_; }
-      set {
-        stageType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "duration" field.</summary>
-    public const int DurationFieldNumber = 8;
+    public const int DurationFieldNumber = 2;
     private uint duration_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -169,8 +161,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "stage_type" field.</summary>
+    public const int StageTypeFieldNumber = 5;
+    private uint stageType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageType {
+      get { return stageType_; }
+      set {
+        stageType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 12;
+    public const int GroupIdFieldNumber = 1;
     private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -178,6 +182,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return groupId_; }
       set {
         groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_index" field.</summary>
+    public const int StageIndexFieldNumber = 10;
+    private uint stageIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageIndex {
+      get { return stageIndex_; }
+      set {
+        stageIndex_ = value;
       }
     }
 
@@ -193,20 +209,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage_index" field.</summary>
-    public const int StageIndexFieldNumber = 1;
-    private uint stageIndex_;
+    /// <summary>Field number for the "play_type" field.</summary>
+    public const int PlayTypeFieldNumber = 15;
+    private uint playType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageIndex {
-      get { return stageIndex_; }
+    public uint PlayType {
+      get { return playType_; }
       set {
-        stageIndex_ = value;
+        playType_ = value;
       }
     }
 
     /// <summary>Field number for the "mechanicus_info" field.</summary>
-    public const int MechanicusInfoFieldNumber = 1334;
+    public const int MechanicusInfoFieldNumber = 1303;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo MechanicusInfo {
@@ -218,7 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fleur_fair_info" field.</summary>
-    public const int FleurFairInfoFieldNumber = 1064;
+    public const int FleurFairInfoFieldNumber = 1502;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo FleurFairInfo {
@@ -230,7 +246,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hide_and_seek_info" field.</summary>
-    public const int HideAndSeekInfoFieldNumber = 108;
+    public const int HideAndSeekInfoFieldNumber = 1725;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo HideAndSeekInfo {
@@ -242,7 +258,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chess_info" field.</summary>
-    public const int ChessInfoFieldNumber = 1758;
+    public const int ChessInfoFieldNumber = 1756;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.InBattleChessInfo ChessInfo {
@@ -254,11 +270,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "irodori_chess_info" field.</summary>
-    public const int IrodoriChessInfoFieldNumber = 531;
+    public const int IrodoriChessInfoFieldNumber = 1835;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo IrodoriChessInfo {
-      get { return detailCase_ == DetailOneofCase.IrodoriChessInfo ? (global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo) detail_ : null; }
+    public global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo IrodoriChessInfo {
+      get { return detailCase_ == DetailOneofCase.IrodoriChessInfo ? (global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo) detail_ : null; }
       set {
         detail_ = value;
         detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IrodoriChessInfo;
@@ -266,7 +282,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "char_amusement_info" field.</summary>
-    public const int CharAmusementInfoFieldNumber = 324;
+    public const int CharAmusementInfoFieldNumber = 1015;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CharAmusementInfo CharAmusementInfo {
@@ -277,16 +293,42 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "brick_breaker_info" field.</summary>
+    public const int BrickBreakerInfoFieldNumber = 547;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo BrickBreakerInfo {
+      get { return detailCase_ == DetailOneofCase.BrickBreakerInfo ? (global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BrickBreakerInfo;
+      }
+    }
+
+    /// <summary>Field number for the "coin_collect_info" field.</summary>
+    public const int CoinCollectInfoFieldNumber = 1263;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo CoinCollectInfo {
+      get { return detailCase_ == DetailOneofCase.CoinCollectInfo ? (global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CoinCollectInfo;
+      }
+    }
+
     private object detail_;
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      MechanicusInfo = 1334,
-      FleurFairInfo = 1064,
-      HideAndSeekInfo = 108,
-      ChessInfo = 1758,
-      IrodoriChessInfo = 531,
-      CharAmusementInfo = 324,
+      MechanicusInfo = 1303,
+      FleurFairInfo = 1502,
+      HideAndSeekInfo = 1725,
+      ChessInfo = 1756,
+      IrodoriChessInfo = 1835,
+      CharAmusementInfo = 1015,
+      BrickBreakerInfo = 547,
+      CoinCollectInfo = 1263,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -318,18 +360,20 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (PlayIndex != other.PlayIndex) return false;
-      if (PlayType != other.PlayType) return false;
-      if (StageType != other.StageType) return false;
       if (Duration != other.Duration) return false;
+      if (StageType != other.StageType) return false;
       if (GroupId != other.GroupId) return false;
-      if (BeginTime != other.BeginTime) return false;
       if (StageIndex != other.StageIndex) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (PlayType != other.PlayType) return false;
       if (!object.Equals(MechanicusInfo, other.MechanicusInfo)) return false;
       if (!object.Equals(FleurFairInfo, other.FleurFairInfo)) return false;
       if (!object.Equals(HideAndSeekInfo, other.HideAndSeekInfo)) return false;
       if (!object.Equals(ChessInfo, other.ChessInfo)) return false;
       if (!object.Equals(IrodoriChessInfo, other.IrodoriChessInfo)) return false;
       if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
+      if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
+      if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
       if (DetailCase != other.DetailCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -339,18 +383,20 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
-      if (PlayType != 0) hash ^= PlayType.GetHashCode();
-      if (StageType != 0) hash ^= StageType.GetHashCode();
       if (Duration != 0) hash ^= Duration.GetHashCode();
+      if (StageType != 0) hash ^= StageType.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
-      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
       if (StageIndex != 0) hash ^= StageIndex.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (PlayType != 0) hash ^= PlayType.GetHashCode();
       if (detailCase_ == DetailOneofCase.MechanicusInfo) hash ^= MechanicusInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.FleurFairInfo) hash ^= FleurFairInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.HideAndSeekInfo) hash ^= HideAndSeekInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.ChessInfo) hash ^= ChessInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.IrodoriChessInfo) hash ^= IrodoriChessInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
       hash ^= (int) detailCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -370,57 +416,65 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StageIndex != 0) {
+      if (GroupId != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(StageIndex);
+        output.WriteUInt32(GroupId);
       }
       if (Duration != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Duration);
+      }
+      if (StageType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StageType);
       }
       if (BeginTime != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(BeginTime);
       }
-      if (StageType != 0) {
+      if (StageIndex != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(StageType);
-      }
-      if (PlayType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(PlayType);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(GroupId);
+        output.WriteUInt32(StageIndex);
       }
       if (PlayIndex != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(PlayIndex);
       }
-      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-        output.WriteRawTag(226, 6);
-        output.WriteMessage(HideAndSeekInfo);
+      if (PlayType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PlayType);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(154, 34);
+        output.WriteMessage(BrickBreakerInfo);
       }
       if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-        output.WriteRawTag(162, 20);
+        output.WriteRawTag(186, 63);
         output.WriteMessage(CharAmusementInfo);
       }
-      if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
-        output.WriteRawTag(154, 33);
-        output.WriteMessage(IrodoriChessInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-        output.WriteRawTag(194, 66);
-        output.WriteMessage(FleurFairInfo);
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(250, 78);
+        output.WriteMessage(CoinCollectInfo);
       }
       if (detailCase_ == DetailOneofCase.MechanicusInfo) {
-        output.WriteRawTag(178, 83);
+        output.WriteRawTag(186, 81);
         output.WriteMessage(MechanicusInfo);
       }
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(242, 93);
+        output.WriteMessage(FleurFairInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(234, 107);
+        output.WriteMessage(HideAndSeekInfo);
+      }
       if (detailCase_ == DetailOneofCase.ChessInfo) {
-        output.WriteRawTag(242, 109);
+        output.WriteRawTag(226, 109);
         output.WriteMessage(ChessInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
+        output.WriteRawTag(218, 114);
+        output.WriteMessage(IrodoriChessInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -432,57 +486,65 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StageIndex != 0) {
+      if (GroupId != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(StageIndex);
+        output.WriteUInt32(GroupId);
       }
       if (Duration != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Duration);
+      }
+      if (StageType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StageType);
       }
       if (BeginTime != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(BeginTime);
       }
-      if (StageType != 0) {
+      if (StageIndex != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(StageType);
-      }
-      if (PlayType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(PlayType);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(GroupId);
+        output.WriteUInt32(StageIndex);
       }
       if (PlayIndex != 0) {
         output.WriteRawTag(104);
         output.WriteUInt32(PlayIndex);
       }
-      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-        output.WriteRawTag(226, 6);
-        output.WriteMessage(HideAndSeekInfo);
+      if (PlayType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PlayType);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(154, 34);
+        output.WriteMessage(BrickBreakerInfo);
       }
       if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-        output.WriteRawTag(162, 20);
+        output.WriteRawTag(186, 63);
         output.WriteMessage(CharAmusementInfo);
       }
-      if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
-        output.WriteRawTag(154, 33);
-        output.WriteMessage(IrodoriChessInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-        output.WriteRawTag(194, 66);
-        output.WriteMessage(FleurFairInfo);
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(250, 78);
+        output.WriteMessage(CoinCollectInfo);
       }
       if (detailCase_ == DetailOneofCase.MechanicusInfo) {
-        output.WriteRawTag(178, 83);
+        output.WriteRawTag(186, 81);
         output.WriteMessage(MechanicusInfo);
       }
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(242, 93);
+        output.WriteMessage(FleurFairInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(234, 107);
+        output.WriteMessage(HideAndSeekInfo);
+      }
       if (detailCase_ == DetailOneofCase.ChessInfo) {
-        output.WriteRawTag(242, 109);
+        output.WriteRawTag(226, 109);
         output.WriteMessage(ChessInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
+        output.WriteRawTag(218, 114);
+        output.WriteMessage(IrodoriChessInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -497,23 +559,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (PlayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
       }
-      if (PlayType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Duration);
       }
       if (StageType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageType);
       }
-      if (Duration != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Duration);
-      }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (StageIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageIndex);
       }
       if (BeginTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
       }
-      if (StageIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageIndex);
+      if (PlayType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
       }
       if (detailCase_ == DetailOneofCase.MechanicusInfo) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(MechanicusInfo);
@@ -533,6 +595,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharAmusementInfo);
       }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -548,23 +616,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.PlayIndex != 0) {
         PlayIndex = other.PlayIndex;
       }
-      if (other.PlayType != 0) {
-        PlayType = other.PlayType;
+      if (other.Duration != 0) {
+        Duration = other.Duration;
       }
       if (other.StageType != 0) {
         StageType = other.StageType;
       }
-      if (other.Duration != 0) {
-        Duration = other.Duration;
-      }
       if (other.GroupId != 0) {
         GroupId = other.GroupId;
+      }
+      if (other.StageIndex != 0) {
+        StageIndex = other.StageIndex;
       }
       if (other.BeginTime != 0) {
         BeginTime = other.BeginTime;
       }
-      if (other.StageIndex != 0) {
-        StageIndex = other.StageIndex;
+      if (other.PlayType != 0) {
+        PlayType = other.PlayType;
       }
       switch (other.DetailCase) {
         case DetailOneofCase.MechanicusInfo:
@@ -593,7 +661,7 @@ namespace Weedwacker.Shared.Network.Proto {
           break;
         case DetailOneofCase.IrodoriChessInfo:
           if (IrodoriChessInfo == null) {
-            IrodoriChessInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo();
+            IrodoriChessInfo = new global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo();
           }
           IrodoriChessInfo.MergeFrom(other.IrodoriChessInfo);
           break;
@@ -602,6 +670,18 @@ namespace Weedwacker.Shared.Network.Proto {
             CharAmusementInfo = new global::Weedwacker.Shared.Network.Proto.CharAmusementInfo();
           }
           CharAmusementInfo.MergeFrom(other.CharAmusementInfo);
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          if (BrickBreakerInfo == null) {
+            BrickBreakerInfo = new global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo();
+          }
+          BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
+          break;
+        case DetailOneofCase.CoinCollectInfo:
+          if (CoinCollectInfo == null) {
+            CoinCollectInfo = new global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo();
+          }
+          CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
           break;
       }
 
@@ -621,11 +701,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            StageIndex = input.ReadUInt32();
+            GroupId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 16: {
             Duration = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            StageType = input.ReadUInt32();
             break;
           }
           case 72: {
@@ -633,31 +717,27 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 80: {
-            StageType = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            PlayType = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            GroupId = input.ReadUInt32();
+            StageIndex = input.ReadUInt32();
             break;
           }
           case 104: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 866: {
-            global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo();
-            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-              subBuilder.MergeFrom(HideAndSeekInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HideAndSeekInfo = subBuilder;
+          case 120: {
+            PlayType = input.ReadUInt32();
             break;
           }
-          case 2594: {
+          case 4378: {
+            global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 8122: {
             global::Weedwacker.Shared.Network.Proto.CharAmusementInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementInfo();
             if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
               subBuilder.MergeFrom(CharAmusementInfo);
@@ -666,25 +746,16 @@ namespace Weedwacker.Shared.Network.Proto {
             CharAmusementInfo = subBuilder;
             break;
           }
-          case 4250: {
-            global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo();
-            if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
-              subBuilder.MergeFrom(IrodoriChessInfo);
+          case 10106: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
             }
             input.ReadMessage(subBuilder);
-            IrodoriChessInfo = subBuilder;
+            CoinCollectInfo = subBuilder;
             break;
           }
-          case 8514: {
-            global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo();
-            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-              subBuilder.MergeFrom(FleurFairInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FleurFairInfo = subBuilder;
-            break;
-          }
-          case 10674: {
+          case 10426: {
             global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo();
             if (detailCase_ == DetailOneofCase.MechanicusInfo) {
               subBuilder.MergeFrom(MechanicusInfo);
@@ -693,13 +764,40 @@ namespace Weedwacker.Shared.Network.Proto {
             MechanicusInfo = subBuilder;
             break;
           }
-          case 14066: {
+          case 12018: {
+            global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 13802: {
+            global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 14050: {
             global::Weedwacker.Shared.Network.Proto.InBattleChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleChessInfo();
             if (detailCase_ == DetailOneofCase.ChessInfo) {
               subBuilder.MergeFrom(ChessInfo);
             }
             input.ReadMessage(subBuilder);
             ChessInfo = subBuilder;
+            break;
+          }
+          case 14682: {
+            global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
+              subBuilder.MergeFrom(IrodoriChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriChessInfo = subBuilder;
             break;
           }
         }
@@ -718,11 +816,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            StageIndex = input.ReadUInt32();
+            GroupId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 16: {
             Duration = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            StageType = input.ReadUInt32();
             break;
           }
           case 72: {
@@ -730,31 +832,27 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 80: {
-            StageType = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            PlayType = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            GroupId = input.ReadUInt32();
+            StageIndex = input.ReadUInt32();
             break;
           }
           case 104: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 866: {
-            global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo();
-            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-              subBuilder.MergeFrom(HideAndSeekInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HideAndSeekInfo = subBuilder;
+          case 120: {
+            PlayType = input.ReadUInt32();
             break;
           }
-          case 2594: {
+          case 4378: {
+            global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BrickBreakerStageInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 8122: {
             global::Weedwacker.Shared.Network.Proto.CharAmusementInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementInfo();
             if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
               subBuilder.MergeFrom(CharAmusementInfo);
@@ -763,25 +861,16 @@ namespace Weedwacker.Shared.Network.Proto {
             CharAmusementInfo = subBuilder;
             break;
           }
-          case 4250: {
-            global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriChessInfo();
-            if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
-              subBuilder.MergeFrom(IrodoriChessInfo);
+          case 10106: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectStageInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
             }
             input.ReadMessage(subBuilder);
-            IrodoriChessInfo = subBuilder;
+            CoinCollectInfo = subBuilder;
             break;
           }
-          case 8514: {
-            global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo();
-            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-              subBuilder.MergeFrom(FleurFairInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FleurFairInfo = subBuilder;
-            break;
-          }
-          case 10674: {
+          case 10426: {
             global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleMechanicusInfo();
             if (detailCase_ == DetailOneofCase.MechanicusInfo) {
               subBuilder.MergeFrom(MechanicusInfo);
@@ -790,13 +879,40 @@ namespace Weedwacker.Shared.Network.Proto {
             MechanicusInfo = subBuilder;
             break;
           }
-          case 14066: {
+          case 12018: {
+            global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleFleurFairInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 13802: {
+            global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekStageInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 14050: {
             global::Weedwacker.Shared.Network.Proto.InBattleChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleChessInfo();
             if (detailCase_ == DetailOneofCase.ChessInfo) {
               subBuilder.MergeFrom(ChessInfo);
             }
             input.ReadMessage(subBuilder);
             ChessInfo = subBuilder;
+            break;
+          }
+          case 14682: {
+            global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InBattleIrodoriChessInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriChessInfo) {
+              subBuilder.MergeFrom(IrodoriChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriChessInfo = subBuilder;
             break;
           }
         }

@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static MailChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZNYWlsQ2hhbmdlTm90aWZ5LnByb3RvGg5NYWlsRGF0YS5wcm90byJKChBN",
-            "YWlsQ2hhbmdlTm90aWZ5EhwKCW1haWxfbGlzdBgOIAMoCzIJLk1haWxEYXRh",
-            "EhgKEGRlbF9tYWlsX2lkX2xpc3QYCCADKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZNYWlsQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGg5NYWlsRGF0YS5wcm90byJqChBNYWlsQ2hhbmdlTm90",
+            "aWZ5EhgKEGRlbF9tYWlsX2lkX2xpc3QYDyADKA0SPAoJbWFpbF9saXN0GAIg",
+            "AygLMikuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NYWlsRGF0",
+            "YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MailDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MailChangeNotify), global::Weedwacker.Shared.Network.Proto.MailChangeNotify.Parser, new[]{ "MailList", "DelMailIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MailChangeNotify), global::Weedwacker.Shared.Network.Proto.MailChangeNotify.Parser, new[]{ "DelMailIdList", "MailList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1498
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1430;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MailChangeNotify : pb::IMessage<MailChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MailChangeNotify(MailChangeNotify other) : this() {
-      mailList_ = other.mailList_.Clone();
       delMailIdList_ = other.delMailIdList_.Clone();
+      mailList_ = other.mailList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,26 +93,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MailChangeNotify(this);
     }
 
-    /// <summary>Field number for the "mail_list" field.</summary>
-    public const int MailListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MailData> _repeated_mailList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.MailData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData> mailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData> MailList {
-      get { return mailList_; }
-    }
-
     /// <summary>Field number for the "del_mail_id_list" field.</summary>
-    public const int DelMailIdListFieldNumber = 8;
+    public const int DelMailIdListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_delMailIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> delMailIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> DelMailIdList {
       get { return delMailIdList_; }
+    }
+
+    /// <summary>Field number for the "mail_list" field.</summary>
+    public const int MailListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MailData> _repeated_mailList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.MailData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData> mailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MailData> MailList {
+      get { return mailList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!mailList_.Equals(other.mailList_)) return false;
       if(!delMailIdList_.Equals(other.delMailIdList_)) return false;
+      if(!mailList_.Equals(other.mailList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= mailList_.GetHashCode();
       hash ^= delMailIdList_.GetHashCode();
+      hash ^= mailList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -154,8 +159,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      delMailIdList_.WriteTo(output, _repeated_delMailIdList_codec);
       mailList_.WriteTo(output, _repeated_mailList_codec);
+      delMailIdList_.WriteTo(output, _repeated_delMailIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -166,8 +171,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      delMailIdList_.WriteTo(ref output, _repeated_delMailIdList_codec);
       mailList_.WriteTo(ref output, _repeated_mailList_codec);
+      delMailIdList_.WriteTo(ref output, _repeated_delMailIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -178,8 +183,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += mailList_.CalculateSize(_repeated_mailList_codec);
       size += delMailIdList_.CalculateSize(_repeated_delMailIdList_codec);
+      size += mailList_.CalculateSize(_repeated_mailList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -192,8 +197,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      mailList_.Add(other.mailList_);
       delMailIdList_.Add(other.delMailIdList_);
+      mailList_.Add(other.mailList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
-            delMailIdList_.AddEntriesFrom(input, _repeated_delMailIdList_codec);
+          case 18: {
+            mailList_.AddEntriesFrom(input, _repeated_mailList_codec);
             break;
           }
-          case 114: {
-            mailList_.AddEntriesFrom(input, _repeated_mailList_codec);
+          case 122:
+          case 120: {
+            delMailIdList_.AddEntriesFrom(input, _repeated_delMailIdList_codec);
             break;
           }
         }
@@ -233,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
-            delMailIdList_.AddEntriesFrom(ref input, _repeated_delMailIdList_codec);
+          case 18: {
+            mailList_.AddEntriesFrom(ref input, _repeated_mailList_codec);
             break;
           }
-          case 114: {
-            mailList_.AddEntriesFrom(ref input, _repeated_mailList_codec);
+          case 122:
+          case 120: {
+            delMailIdList_.AddEntriesFrom(ref input, _repeated_delMailIdList_codec);
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReportFightAntiCheatNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBSZXBvcnRGaWdodEFudGlDaGVhdE5vdGlmeS5wcm90byJFChpSZXBvcnRG",
-            "aWdodEFudGlDaGVhdE5vdGlmeRITCgtjaGVhdF9jb3VudBgIIAEoDRISCgpj",
-            "aGVhdF90eXBlGAwgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "CiBSZXBvcnRGaWdodEFudGlDaGVhdE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJWChpSZXBvcnRGaWdodEFudGlDaGVh",
+            "dE5vdGlmeRIbChNVbmszMzAwX01JRk5BQUFEQkJQGAggASgNEhsKE1VuazMz",
+            "MDBfQUJDS01QUE1OQ0gYCiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReportFightAntiCheatNotify), global::Weedwacker.Shared.Network.Proto.ReportFightAntiCheatNotify.Parser, new[]{ "CheatCount", "CheatType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReportFightAntiCheatNotify), global::Weedwacker.Shared.Network.Proto.ReportFightAntiCheatNotify.Parser, new[]{ "Unk3300MIFNAAADBBP", "Unk3300ABCKMPPMNCH" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 368
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 388;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ReportFightAntiCheatNotify : pb::IMessage<ReportFightAntiCheatNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReportFightAntiCheatNotify(ReportFightAntiCheatNotify other) : this() {
-      cheatCount_ = other.cheatCount_;
-      cheatType_ = other.cheatType_;
+      unk3300MIFNAAADBBP_ = other.unk3300MIFNAAADBBP_;
+      unk3300ABCKMPPMNCH_ = other.unk3300ABCKMPPMNCH_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,27 +93,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ReportFightAntiCheatNotify(this);
     }
 
-    /// <summary>Field number for the "cheat_count" field.</summary>
-    public const int CheatCountFieldNumber = 8;
-    private uint cheatCount_;
+    /// <summary>Field number for the "Unk3300_MIFNAAADBBP" field.</summary>
+    public const int Unk3300MIFNAAADBBPFieldNumber = 8;
+    private uint unk3300MIFNAAADBBP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CheatCount {
-      get { return cheatCount_; }
+    public uint Unk3300MIFNAAADBBP {
+      get { return unk3300MIFNAAADBBP_; }
       set {
-        cheatCount_ = value;
+        unk3300MIFNAAADBBP_ = value;
       }
     }
 
-    /// <summary>Field number for the "cheat_type" field.</summary>
-    public const int CheatTypeFieldNumber = 12;
-    private uint cheatType_;
+    /// <summary>Field number for the "Unk3300_ABCKMPPMNCH" field.</summary>
+    public const int Unk3300ABCKMPPMNCHFieldNumber = 10;
+    private uint unk3300ABCKMPPMNCH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CheatType {
-      get { return cheatType_; }
+    public uint Unk3300ABCKMPPMNCH {
+      get { return unk3300ABCKMPPMNCH_; }
       set {
-        cheatType_ = value;
+        unk3300ABCKMPPMNCH_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CheatCount != other.CheatCount) return false;
-      if (CheatType != other.CheatType) return false;
+      if (Unk3300MIFNAAADBBP != other.Unk3300MIFNAAADBBP) return false;
+      if (Unk3300ABCKMPPMNCH != other.Unk3300ABCKMPPMNCH) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CheatCount != 0) hash ^= CheatCount.GetHashCode();
-      if (CheatType != 0) hash ^= CheatType.GetHashCode();
+      if (Unk3300MIFNAAADBBP != 0) hash ^= Unk3300MIFNAAADBBP.GetHashCode();
+      if (Unk3300ABCKMPPMNCH != 0) hash ^= Unk3300ABCKMPPMNCH.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CheatCount != 0) {
+      if (Unk3300MIFNAAADBBP != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(CheatCount);
+        output.WriteUInt32(Unk3300MIFNAAADBBP);
       }
-      if (CheatType != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CheatType);
+      if (Unk3300ABCKMPPMNCH != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300ABCKMPPMNCH);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CheatCount != 0) {
+      if (Unk3300MIFNAAADBBP != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(CheatCount);
+        output.WriteUInt32(Unk3300MIFNAAADBBP);
       }
-      if (CheatType != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CheatType);
+      if (Unk3300ABCKMPPMNCH != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300ABCKMPPMNCH);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CheatCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CheatCount);
+      if (Unk3300MIFNAAADBBP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MIFNAAADBBP);
       }
-      if (CheatType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CheatType);
+      if (Unk3300ABCKMPPMNCH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ABCKMPPMNCH);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CheatCount != 0) {
-        CheatCount = other.CheatCount;
+      if (other.Unk3300MIFNAAADBBP != 0) {
+        Unk3300MIFNAAADBBP = other.Unk3300MIFNAAADBBP;
       }
-      if (other.CheatType != 0) {
-        CheatType = other.CheatType;
+      if (other.Unk3300ABCKMPPMNCH != 0) {
+        Unk3300ABCKMPPMNCH = other.Unk3300ABCKMPPMNCH;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -233,11 +237,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 64: {
-            CheatCount = input.ReadUInt32();
+            Unk3300MIFNAAADBBP = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CheatType = input.ReadUInt32();
+          case 80: {
+            Unk3300ABCKMPPMNCH = input.ReadUInt32();
             break;
           }
         }
@@ -256,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 64: {
-            CheatCount = input.ReadUInt32();
+            Unk3300MIFNAAADBBP = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CheatType = input.ReadUInt32();
+          case 80: {
+            Unk3300ABCKMPPMNCH = input.ReadUInt32();
             break;
           }
         }

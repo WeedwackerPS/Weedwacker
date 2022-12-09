@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static BirthdayReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5CaXJ0aGRheS5wcm90byImCghCaXJ0aGRheRINCgVtb250aBgBIAEoDRIL",
-            "CgNkYXkYAiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Cg5CaXJ0aGRheS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byImCghCaXJ0aGRheRINCgVtb250aBgBIAEoDRILCgNkYXkYAiABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

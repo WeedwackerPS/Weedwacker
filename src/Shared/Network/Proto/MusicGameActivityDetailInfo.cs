@@ -24,20 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static MusicGameActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFNdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFU11c2ljR2Ft",
-            "ZVJlY29yZC5wcm90bxoXVWdjTXVzaWNCcmllZkluZm8ucHJvdG8imQIKG011",
-            "c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mbxIrCg91Z2NfcmVjb3JkX2xpc3QY",
-            "BCADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxIrCg91Z2Nfc2VhcmNoX2xpc3QY",
-            "ByADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxJTChVtdXNpY19nYW1lX3JlY29y",
-            "ZF9tYXAYCCADKAsyNC5NdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8uTXVz",
-            "aWNHYW1lUmVjb3JkTWFwRW50cnkaSwoXTXVzaWNHYW1lUmVjb3JkTWFwRW50",
-            "cnkSCwoDa2V5GAEgASgNEh8KBXZhbHVlGAIgASgLMhAuTXVzaWNHYW1lUmVj",
-            "b3JkOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiFNdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aFU11c2ljR2FtZVJlY29yZC5wcm90",
+            "bxoXVWdjTXVzaWNCcmllZkluZm8ucHJvdG8ipQMKG011c2ljR2FtZUFjdGl2",
+            "aXR5RGV0YWlsSW5mbxJRChVwZXJzb25fY3VzdG9tX2JlYXRtYXAYAiADKAsy",
+            "Mi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlVnY011c2ljQnJp",
+            "ZWZJbmZvElEKFW90aGVyc19jdXN0b21fYmVhdG1hcBgMIAMoCzIyLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVWdjTXVzaWNCcmllZkluZm8S",
+            "cwoVbXVzaWNfZ2FtZV9yZWNvcmRfbWFwGAkgAygLMlQuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5NdXNpY0dhbWVBY3Rpdml0eURldGFpbElu",
+            "Zm8uTXVzaWNHYW1lUmVjb3JkTWFwRW50cnkaawoXTXVzaWNHYW1lUmVjb3Jk",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEj8KBXZhbHVlGAIgASgLMjAuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NdXNpY0dhbWVSZWNvcmQ6AjgB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MusicGameRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo.Parser, new[]{ "UgcRecordList", "UgcSearchList", "MusicGameRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo.Parser, new[]{ "PersonCustomBeatmap", "OthersCustomBeatmap", "MusicGameRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MusicGameActivityDetailInfo(MusicGameActivityDetailInfo other) : this() {
-      ugcRecordList_ = other.ugcRecordList_.Clone();
-      ugcSearchList_ = other.ugcSearchList_.Clone();
+      personCustomBeatmap_ = other.personCustomBeatmap_.Clone();
+      othersCustomBeatmap_ = other.othersCustomBeatmap_.Clone();
       musicGameRecordMap_ = other.musicGameRecordMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,32 +93,38 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MusicGameActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "ugc_record_list" field.</summary>
-    public const int UgcRecordListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> _repeated_ugcRecordList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> ugcRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo>();
+    /// <summary>Field number for the "person_custom_beatmap" field.</summary>
+    public const int PersonCustomBeatmapFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> _repeated_personCustomBeatmap_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> personCustomBeatmap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo>();
+    /// <summary>
+    /// Unk3300_AAGCDCOIPJM
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> UgcRecordList {
-      get { return ugcRecordList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> PersonCustomBeatmap {
+      get { return personCustomBeatmap_; }
     }
 
-    /// <summary>Field number for the "ugc_search_list" field.</summary>
-    public const int UgcSearchListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> _repeated_ugcSearchList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> ugcSearchList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo>();
+    /// <summary>Field number for the "others_custom_beatmap" field.</summary>
+    public const int OthersCustomBeatmapFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> _repeated_othersCustomBeatmap_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> othersCustomBeatmap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo>();
+    /// <summary>
+    /// Unk3300_OKHAACGHMAP
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> UgcSearchList {
-      get { return ugcSearchList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo> OthersCustomBeatmap {
+      get { return othersCustomBeatmap_; }
     }
 
     /// <summary>Field number for the "music_game_record_map" field.</summary>
-    public const int MusicGameRecordMapFieldNumber = 8;
+    public const int MusicGameRecordMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MusicGameRecord>.Codec _map_musicGameRecordMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MusicGameRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.MusicGameRecord.Parser), 66);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MusicGameRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.MusicGameRecord.Parser), 74);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MusicGameRecord> musicGameRecordMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.MusicGameRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!ugcRecordList_.Equals(other.ugcRecordList_)) return false;
-      if(!ugcSearchList_.Equals(other.ugcSearchList_)) return false;
+      if(!personCustomBeatmap_.Equals(other.personCustomBeatmap_)) return false;
+      if(!othersCustomBeatmap_.Equals(other.othersCustomBeatmap_)) return false;
       if (!MusicGameRecordMap.Equals(other.MusicGameRecordMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -148,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ugcRecordList_.GetHashCode();
-      hash ^= ugcSearchList_.GetHashCode();
+      hash ^= personCustomBeatmap_.GetHashCode();
+      hash ^= othersCustomBeatmap_.GetHashCode();
       hash ^= MusicGameRecordMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -169,9 +178,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      ugcRecordList_.WriteTo(output, _repeated_ugcRecordList_codec);
-      ugcSearchList_.WriteTo(output, _repeated_ugcSearchList_codec);
+      personCustomBeatmap_.WriteTo(output, _repeated_personCustomBeatmap_codec);
       musicGameRecordMap_.WriteTo(output, _map_musicGameRecordMap_codec);
+      othersCustomBeatmap_.WriteTo(output, _repeated_othersCustomBeatmap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,9 +191,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      ugcRecordList_.WriteTo(ref output, _repeated_ugcRecordList_codec);
-      ugcSearchList_.WriteTo(ref output, _repeated_ugcSearchList_codec);
+      personCustomBeatmap_.WriteTo(ref output, _repeated_personCustomBeatmap_codec);
       musicGameRecordMap_.WriteTo(ref output, _map_musicGameRecordMap_codec);
+      othersCustomBeatmap_.WriteTo(ref output, _repeated_othersCustomBeatmap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -195,8 +204,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += ugcRecordList_.CalculateSize(_repeated_ugcRecordList_codec);
-      size += ugcSearchList_.CalculateSize(_repeated_ugcSearchList_codec);
+      size += personCustomBeatmap_.CalculateSize(_repeated_personCustomBeatmap_codec);
+      size += othersCustomBeatmap_.CalculateSize(_repeated_othersCustomBeatmap_codec);
       size += musicGameRecordMap_.CalculateSize(_map_musicGameRecordMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,8 +219,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      ugcRecordList_.Add(other.ugcRecordList_);
-      ugcSearchList_.Add(other.ugcSearchList_);
+      personCustomBeatmap_.Add(other.personCustomBeatmap_);
+      othersCustomBeatmap_.Add(other.othersCustomBeatmap_);
       musicGameRecordMap_.Add(other.musicGameRecordMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -228,16 +237,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            ugcRecordList_.AddEntriesFrom(input, _repeated_ugcRecordList_codec);
+          case 18: {
+            personCustomBeatmap_.AddEntriesFrom(input, _repeated_personCustomBeatmap_codec);
             break;
           }
-          case 58: {
-            ugcSearchList_.AddEntriesFrom(input, _repeated_ugcSearchList_codec);
-            break;
-          }
-          case 66: {
+          case 74: {
             musicGameRecordMap_.AddEntriesFrom(input, _map_musicGameRecordMap_codec);
+            break;
+          }
+          case 98: {
+            othersCustomBeatmap_.AddEntriesFrom(input, _repeated_othersCustomBeatmap_codec);
             break;
           }
         }
@@ -255,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            ugcRecordList_.AddEntriesFrom(ref input, _repeated_ugcRecordList_codec);
+          case 18: {
+            personCustomBeatmap_.AddEntriesFrom(ref input, _repeated_personCustomBeatmap_codec);
             break;
           }
-          case 58: {
-            ugcSearchList_.AddEntriesFrom(ref input, _repeated_ugcSearchList_codec);
-            break;
-          }
-          case 66: {
+          case 74: {
             musicGameRecordMap_.AddEntriesFrom(ref input, _map_musicGameRecordMap_codec);
+            break;
+          }
+          case 98: {
+            othersCustomBeatmap_.AddEntriesFrom(ref input, _repeated_othersCustomBeatmap_codec);
             break;
           }
         }

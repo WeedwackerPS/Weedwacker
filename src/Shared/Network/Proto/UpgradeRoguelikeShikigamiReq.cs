@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static UpgradeRoguelikeShikigamiReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJVcGdyYWRlUm9ndWVsaWtlU2hpa2lnYW1pUmVxLnByb3RvIlEKHFVwZ3Jh",
-            "ZGVSb2d1ZWxpa2VTaGlraWdhbWlSZXESFQoNdXBncmFkZV9sZXZlbBgGIAEo",
-            "DRIaChJzaGlraWdhbWlfZ3JvdXBfaWQYDyABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJVcGdyYWRlUm9ndWVsaWtlU2hpa2lnYW1pUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlEKHFVwZ3JhZGVSb2d1ZWxpa2VT",
+            "aGlraWdhbWlSZXESGgoSc2hpa2lnYW1pX2dyb3VwX2lkGA8gASgNEhUKDXVw",
+            "Z3JhZGVfbGV2ZWwYCiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiReq), global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiReq.Parser, new[]{ "UpgradeLevel", "ShikigamiGroupId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiReq), global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiReq.Parser, new[]{ "ShikigamiGroupId", "UpgradeLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8151
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8282;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class UpgradeRoguelikeShikigamiReq : pb::IMessage<UpgradeRoguelikeShikigamiReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpgradeRoguelikeShikigamiReq(UpgradeRoguelikeShikigamiReq other) : this() {
-      upgradeLevel_ = other.upgradeLevel_;
       shikigamiGroupId_ = other.shikigamiGroupId_;
+      upgradeLevel_ = other.upgradeLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,18 +91,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpgradeRoguelikeShikigamiReq Clone() {
       return new UpgradeRoguelikeShikigamiReq(this);
-    }
-
-    /// <summary>Field number for the "upgrade_level" field.</summary>
-    public const int UpgradeLevelFieldNumber = 6;
-    private uint upgradeLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint UpgradeLevel {
-      get { return upgradeLevel_; }
-      set {
-        upgradeLevel_ = value;
-      }
     }
 
     /// <summary>Field number for the "shikigami_group_id" field.</summary>
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return shikigamiGroupId_; }
       set {
         shikigamiGroupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "upgrade_level" field.</summary>
+    public const int UpgradeLevelFieldNumber = 10;
+    private uint upgradeLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UpgradeLevel {
+      get { return upgradeLevel_; }
+      set {
+        upgradeLevel_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UpgradeLevel != other.UpgradeLevel) return false;
       if (ShikigamiGroupId != other.ShikigamiGroupId) return false;
+      if (UpgradeLevel != other.UpgradeLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UpgradeLevel != 0) hash ^= UpgradeLevel.GetHashCode();
       if (ShikigamiGroupId != 0) hash ^= ShikigamiGroupId.GetHashCode();
+      if (UpgradeLevel != 0) hash ^= UpgradeLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (UpgradeLevel != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(80);
         output.WriteUInt32(UpgradeLevel);
       }
       if (ShikigamiGroupId != 0) {
@@ -176,7 +180,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (UpgradeLevel != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(80);
         output.WriteUInt32(UpgradeLevel);
       }
       if (ShikigamiGroupId != 0) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (UpgradeLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UpgradeLevel);
-      }
       if (ShikigamiGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShikigamiGroupId);
+      }
+      if (UpgradeLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UpgradeLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.UpgradeLevel != 0) {
-        UpgradeLevel = other.UpgradeLevel;
-      }
       if (other.ShikigamiGroupId != 0) {
         ShikigamiGroupId = other.ShikigamiGroupId;
+      }
+      if (other.UpgradeLevel != 0) {
+        UpgradeLevel = other.UpgradeLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,7 +236,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 80: {
             UpgradeLevel = input.ReadUInt32();
             break;
           }
@@ -255,7 +259,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 80: {
             UpgradeLevel = input.ReadUInt32();
             break;
           }

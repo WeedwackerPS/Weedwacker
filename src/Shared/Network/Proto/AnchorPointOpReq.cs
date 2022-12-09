@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static AnchorPointOpReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZBbmNob3JQb2ludE9wUmVxLnByb3RvIsEBChBBbmNob3JQb2ludE9wUmVx",
-            "EhcKD2FuY2hvcl9wb2ludF9pZBgJIAEoDRIcChRhbmNob3JfcG9pbnRfb3Bf",
-            "dHlwZRgMIAEoDSJ2ChFBbmNob3JQb2ludE9wVHlwZRIdChlBTkNIT1JfUE9J",
-            "TlRfT1BfVFlQRV9OT05FEAASIQodQU5DSE9SX1BPSU5UX09QX1RZUEVfVEVM",
-            "RVBPUlQQARIfChtBTkNIT1JfUE9JTlRfT1BfVFlQRV9SRU1PVkUQAkIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZBbmNob3JQb2ludE9wUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIsEBChBBbmNob3JQb2ludE9wUmVxEhcKD2FuY2hvcl9w",
+            "b2ludF9pZBgEIAEoDRIcChRhbmNob3JfcG9pbnRfb3BfdHlwZRgKIAEoDSJ2",
+            "ChFBbmNob3JQb2ludE9wVHlwZRIdChlBTkNIT1JfUE9JTlRfT1BfVFlQRV9O",
+            "T05FEAASIQodQU5DSE9SX1BPSU5UX09QX1RZUEVfVEVMRVBPUlQQARIfChtB",
+            "TkNIT1JfUE9JTlRfT1BfVFlQRV9SRU1PVkUQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4257
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4285;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AnchorPointOpReq : pb::IMessage<AnchorPointOpReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "anchor_point_id" field.</summary>
-    public const int AnchorPointIdFieldNumber = 9;
+    public const int AnchorPointIdFieldNumber = 4;
     private uint anchorPointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "anchor_point_op_type" field.</summary>
-    public const int AnchorPointOpTypeFieldNumber = 12;
+    public const int AnchorPointOpTypeFieldNumber = 10;
     private uint anchorPointOpType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AnchorPointId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteUInt32(AnchorPointId);
       }
       if (AnchorPointOpType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(AnchorPointOpType);
       }
       if (_unknownFields != null) {
@@ -178,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AnchorPointId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteUInt32(AnchorPointId);
       }
       if (AnchorPointOpType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(AnchorPointOpType);
       }
       if (_unknownFields != null) {
@@ -234,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 32: {
             AnchorPointId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             AnchorPointOpType = input.ReadUInt32();
             break;
           }
@@ -257,11 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 32: {
             AnchorPointId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             AnchorPointOpType = input.ReadUInt32();
             break;
           }

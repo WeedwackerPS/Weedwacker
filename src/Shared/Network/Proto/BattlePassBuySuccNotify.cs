@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassBuySuccNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1CYXR0bGVQYXNzQnV5U3VjY05vdGlmeS5wcm90bxoPSXRlbVBhcmFtLnBy",
-            "b3RvInsKF0JhdHRsZVBhc3NCdXlTdWNjTm90aWZ5EhMKC3NjaGVkdWxlX2lk",
-            "GAQgASgNEhkKEXByb2R1Y3RfcGxheV90eXBlGAsgASgNEhEKCWFkZF9wb2lu",
-            "dBgMIAEoDRIdCglpdGVtX2xpc3QYCSADKAsyCi5JdGVtUGFyYW1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1CYXR0bGVQYXNzQnV5U3VjY05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoPSXRlbVBhcmFtLnByb3RvIqcBChdCYXR0",
+            "bGVQYXNzQnV5U3VjY05vdGlmeRIbChNVbmszMzAwX1BKT0RGSktBRkxHGAQg",
+            "ASgNEhsKE1VuazMzMDBfSUpPSUtLRE5LREUYCSABKA0SEwoLc2NoZWR1bGVf",
+            "aWQYCyABKA0SPQoJaXRlbV9saXN0GAogAygLMiouV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5JdGVtUGFyYW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassBuySuccNotify), global::Weedwacker.Shared.Network.Proto.BattlePassBuySuccNotify.Parser, new[]{ "ScheduleId", "ProductPlayType", "AddPoint", "ItemList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassBuySuccNotify), global::Weedwacker.Shared.Network.Proto.BattlePassBuySuccNotify.Parser, new[]{ "Unk3300PJODFJKAFLG", "Unk3300IJOIKKDNKDE", "ScheduleId", "ItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2614
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2602;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BattlePassBuySuccNotify : pb::IMessage<BattlePassBuySuccNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassBuySuccNotify(BattlePassBuySuccNotify other) : this() {
+      unk3300PJODFJKAFLG_ = other.unk3300PJODFJKAFLG_;
+      unk3300IJOIKKDNKDE_ = other.unk3300IJOIKKDNKDE_;
       scheduleId_ = other.scheduleId_;
-      productPlayType_ = other.productPlayType_;
-      addPoint_ = other.addPoint_;
       itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,8 +96,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassBuySuccNotify(this);
     }
 
+    /// <summary>Field number for the "Unk3300_PJODFJKAFLG" field.</summary>
+    public const int Unk3300PJODFJKAFLGFieldNumber = 4;
+    private uint unk3300PJODFJKAFLG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PJODFJKAFLG {
+      get { return unk3300PJODFJKAFLG_; }
+      set {
+        unk3300PJODFJKAFLG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IJOIKKDNKDE" field.</summary>
+    public const int Unk3300IJOIKKDNKDEFieldNumber = 9;
+    private uint unk3300IJOIKKDNKDE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IJOIKKDNKDE {
+      get { return unk3300IJOIKKDNKDE_; }
+      set {
+        unk3300IJOIKKDNKDE_ = value;
+      }
+    }
+
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 4;
+    public const int ScheduleIdFieldNumber = 11;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,34 +132,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "product_play_type" field.</summary>
-    public const int ProductPlayTypeFieldNumber = 11;
-    private uint productPlayType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ProductPlayType {
-      get { return productPlayType_; }
-      set {
-        productPlayType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "add_point" field.</summary>
-    public const int AddPointFieldNumber = 12;
-    private uint addPoint_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AddPoint {
-      get { return addPoint_; }
-      set {
-        addPoint_ = value;
-      }
-    }
-
     /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 9;
+    public const int ItemListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300PJODFJKAFLG != other.Unk3300PJODFJKAFLG) return false;
+      if (Unk3300IJOIKKDNKDE != other.Unk3300IJOIKKDNKDE) return false;
       if (ScheduleId != other.ScheduleId) return false;
-      if (ProductPlayType != other.ProductPlayType) return false;
-      if (AddPoint != other.AddPoint) return false;
       if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -164,9 +169,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300PJODFJKAFLG != 0) hash ^= Unk3300PJODFJKAFLG.GetHashCode();
+      if (Unk3300IJOIKKDNKDE != 0) hash ^= Unk3300IJOIKKDNKDE.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      if (ProductPlayType != 0) hash ^= ProductPlayType.GetHashCode();
-      if (AddPoint != 0) hash ^= AddPoint.GetHashCode();
       hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -186,18 +191,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ScheduleId != 0) {
+      if (Unk3300PJODFJKAFLG != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ScheduleId);
+        output.WriteUInt32(Unk3300PJODFJKAFLG);
+      }
+      if (Unk3300IJOIKKDNKDE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300IJOIKKDNKDE);
       }
       itemList_.WriteTo(output, _repeated_itemList_codec);
-      if (ProductPlayType != 0) {
+      if (ScheduleId != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(ProductPlayType);
-      }
-      if (AddPoint != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(AddPoint);
+        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -209,18 +214,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ScheduleId != 0) {
+      if (Unk3300PJODFJKAFLG != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ScheduleId);
+        output.WriteUInt32(Unk3300PJODFJKAFLG);
+      }
+      if (Unk3300IJOIKKDNKDE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300IJOIKKDNKDE);
       }
       itemList_.WriteTo(ref output, _repeated_itemList_codec);
-      if (ProductPlayType != 0) {
+      if (ScheduleId != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(ProductPlayType);
-      }
-      if (AddPoint != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(AddPoint);
+        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,14 +237,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300PJODFJKAFLG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PJODFJKAFLG);
+      }
+      if (Unk3300IJOIKKDNKDE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IJOIKKDNKDE);
+      }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-      }
-      if (ProductPlayType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ProductPlayType);
-      }
-      if (AddPoint != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AddPoint);
       }
       size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
@@ -254,14 +259,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300PJODFJKAFLG != 0) {
+        Unk3300PJODFJKAFLG = other.Unk3300PJODFJKAFLG;
+      }
+      if (other.Unk3300IJOIKKDNKDE != 0) {
+        Unk3300IJOIKKDNKDE = other.Unk3300IJOIKKDNKDE;
+      }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
-      }
-      if (other.ProductPlayType != 0) {
-        ProductPlayType = other.ProductPlayType;
-      }
-      if (other.AddPoint != 0) {
-        AddPoint = other.AddPoint;
       }
       itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -280,19 +285,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            ScheduleId = input.ReadUInt32();
+            Unk3300PJODFJKAFLG = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 72: {
+            Unk3300IJOIKKDNKDE = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
           case 88: {
-            ProductPlayType = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            AddPoint = input.ReadUInt32();
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -311,19 +316,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            ScheduleId = input.ReadUInt32();
+            Unk3300PJODFJKAFLG = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 72: {
+            Unk3300IJOIKKDNKDE = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
           case 88: {
-            ProductPlayType = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            AddPoint = input.ReadUInt32();
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinAvatarSteerByCameraReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVBYmlsaXR5TWl4aW5BdmF0YXJTdGVlckJ5Q2FtZXJhLnByb3RvGgxWZWN0",
-            "b3IucHJvdG8iWwofQWJpbGl0eU1peGluQXZhdGFyU3RlZXJCeUNhbWVyYRIb",
-            "Cgp0YXJnZXRfZGlyGAcgASgLMgcuVmVjdG9yEhsKCnRhcmdldF9wb3MYBiAB",
-            "KAsyBy5WZWN0b3JCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "CiVBYmlsaXR5TWl4aW5BdmF0YXJTdGVlckJ5Q2FtZXJhLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8imwEK",
+            "H0FiaWxpdHlNaXhpbkF2YXRhclN0ZWVyQnlDYW1lcmESOwoKdGFyZ2V0X2Rp",
+            "chgHIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVj",
+            "dG9yEjsKCnRhcmdldF9wb3MYAiABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "target_pos" field.</summary>
-    public const int TargetPosFieldNumber = 6;
+    public const int TargetPosFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.Vector targetPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,7 +154,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (targetPos_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(18);
         output.WriteMessage(TargetPos);
       }
       if (targetDir_ != null) {
@@ -171,7 +172,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (targetPos_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(18);
         output.WriteMessage(TargetPos);
       }
       if (targetDir_ != null) {
@@ -233,7 +234,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 18: {
             if (targetPos_ == null) {
               TargetPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -262,7 +263,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 18: {
             if (targetPos_ == null) {
               TargetPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoTeamDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJTdW1vVGVhbURhdGEucHJvdG8aFFN1bW9BdmF0YXJJbmZvLnByb3RvIlAK",
-            "DFN1bW9UZWFtRGF0YRIVCg1za2lsbF9pZF9saXN0GA4gAygNEikKEGF2YXRh",
-            "cl9pbmZvX2xpc3QYAyADKAsyDy5TdW1vQXZhdGFySW5mb0IiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJTdW1vVGVhbURhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aFFN1bW9BdmF0YXJJbmZvLnByb3RvInAKDFN1bW9UZWFtRGF0",
+            "YRIVCg1za2lsbF9pZF9saXN0GAwgAygNEkkKEGF2YXRhcl9pbmZvX2xpc3QY",
+            "BCADKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlN1bW9B",
+            "dmF0YXJJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SumoAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "skill_id_list" field.</summary>
-    public const int SkillIdListFieldNumber = 14;
+    public const int SkillIdListFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_skillIdList_codec
-        = pb::FieldCodec.ForUInt32(114);
+        = pb::FieldCodec.ForUInt32(98);
     private readonly pbc::RepeatedField<uint> skillIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_info_list" field.</summary>
-    public const int AvatarInfoListFieldNumber = 3;
+    public const int AvatarInfoListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoAvatarInfo> _repeated_avatarInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.SumoAvatarInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.SumoAvatarInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoAvatarInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -204,12 +205,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 34: {
             avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
             break;
           }
-          case 114:
-          case 112: {
+          case 98:
+          case 96: {
             skillIdList_.AddEntriesFrom(input, _repeated_skillIdList_codec);
             break;
           }
@@ -228,12 +229,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 34: {
             avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
             break;
           }
-          case 114:
-          case 112: {
+          case 98:
+          case 96: {
             skillIdList_.AddEntriesFrom(ref input, _repeated_skillIdList_codec);
             break;
           }

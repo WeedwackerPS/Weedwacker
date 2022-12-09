@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabTakeoffBuffReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFDaGFubmVsZXJTbGFiVGFrZW9mZkJ1ZmZSZXEucHJvdG8iTgobQ2hhbm5l",
-            "bGVyU2xhYlRha2VvZmZCdWZmUmVxEg0KBWlzX21wGAogASgIEg8KB3Nsb3Rf",
-            "aWQYDCABKA0SDwoHYnVmZl9pZBgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFDaGFubmVsZXJTbGFiVGFrZW9mZkJ1ZmZSZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iTgobQ2hhbm5lbGVyU2xhYlRha2Vv",
+            "ZmZCdWZmUmVxEg8KB3Nsb3RfaWQYAyABKA0SDwoHYnVmZl9pZBgMIAEoDRIN",
+            "CgVpc19tcBgKIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabTakeoffBuffReq), global::Weedwacker.Shared.Network.Proto.ChannelerSlabTakeoffBuffReq.Parser, new[]{ "IsMp", "SlotId", "BuffId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabTakeoffBuffReq), global::Weedwacker.Shared.Network.Proto.ChannelerSlabTakeoffBuffReq.Parser, new[]{ "SlotId", "BuffId", "IsMp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8516
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8299;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChannelerSlabTakeoffBuffReq : pb::IMessage<ChannelerSlabTakeoffBuffReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabTakeoffBuffReq(ChannelerSlabTakeoffBuffReq other) : this() {
-      isMp_ = other.isMp_;
       slotId_ = other.slotId_;
       buffId_ = other.buffId_;
+      isMp_ = other.isMp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabTakeoffBuffReq(this);
     }
 
-    /// <summary>Field number for the "is_mp" field.</summary>
-    public const int IsMpFieldNumber = 10;
-    private bool isMp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsMp {
-      get { return isMp_; }
-      set {
-        isMp_ = value;
-      }
-    }
-
     /// <summary>Field number for the "slot_id" field.</summary>
-    public const int SlotIdFieldNumber = 12;
+    public const int SlotIdFieldNumber = 3;
     private uint slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "buff_id" field.</summary>
-    public const int BuffIdFieldNumber = 9;
+    public const int BuffIdFieldNumber = 12;
     private uint buffId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return buffId_; }
       set {
         buffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_mp" field.</summary>
+    public const int IsMpFieldNumber = 10;
+    private bool isMp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsMp {
+      get { return isMp_; }
+      set {
+        isMp_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsMp != other.IsMp) return false;
       if (SlotId != other.SlotId) return false;
       if (BuffId != other.BuffId) return false;
+      if (IsMp != other.IsMp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsMp != false) hash ^= IsMp.GetHashCode();
       if (SlotId != 0) hash ^= SlotId.GetHashCode();
       if (BuffId != 0) hash ^= BuffId.GetHashCode();
+      if (IsMp != false) hash ^= IsMp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BuffId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BuffId);
+      if (SlotId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SlotId);
       }
       if (IsMp != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsMp);
       }
-      if (SlotId != 0) {
+      if (BuffId != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(SlotId);
+        output.WriteUInt32(BuffId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BuffId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BuffId);
+      if (SlotId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SlotId);
       }
       if (IsMp != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsMp);
       }
-      if (SlotId != 0) {
+      if (BuffId != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(SlotId);
+        output.WriteUInt32(BuffId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsMp != false) {
-        size += 1 + 1;
-      }
       if (SlotId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotId);
       }
       if (BuffId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffId);
+      }
+      if (IsMp != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsMp != false) {
-        IsMp = other.IsMp;
-      }
       if (other.SlotId != 0) {
         SlotId = other.SlotId;
       }
       if (other.BuffId != 0) {
         BuffId = other.BuffId;
+      }
+      if (other.IsMp != false) {
+        IsMp = other.IsMp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,8 +265,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            BuffId = input.ReadUInt32();
+          case 24: {
+            SlotId = input.ReadUInt32();
             break;
           }
           case 80: {
@@ -270,7 +274,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 96: {
-            SlotId = input.ReadUInt32();
+            BuffId = input.ReadUInt32();
             break;
           }
         }
@@ -288,8 +292,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            BuffId = input.ReadUInt32();
+          case 24: {
+            SlotId = input.ReadUInt32();
             break;
           }
           case 80: {
@@ -297,7 +301,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 96: {
-            SlotId = input.ReadUInt32();
+            BuffId = input.ReadUInt32();
             break;
           }
         }

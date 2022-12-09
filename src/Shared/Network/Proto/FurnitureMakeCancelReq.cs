@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static FurnitureMakeCancelReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxGdXJuaXR1cmVNYWtlQ2FuY2VsUmVxLnByb3RvIjgKFkZ1cm5pdHVyZU1h",
-            "a2VDYW5jZWxSZXESDQoFaW5kZXgYBCABKA0SDwoHbWFrZV9pZBgPIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxGdXJuaXR1cmVNYWtlQ2FuY2VsUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIjgKFkZ1cm5pdHVyZU1ha2VDYW5jZWxSZXES",
+            "DwoHbWFrZV9pZBgOIAEoDRINCgVpbmRleBgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FurnitureMakeCancelReq), global::Weedwacker.Shared.Network.Proto.FurnitureMakeCancelReq.Parser, new[]{ "Index", "MakeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FurnitureMakeCancelReq), global::Weedwacker.Shared.Network.Proto.FurnitureMakeCancelReq.Parser, new[]{ "MakeId", "Index" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4555
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4726;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FurnitureMakeCancelReq : pb::IMessage<FurnitureMakeCancelReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FurnitureMakeCancelReq(FurnitureMakeCancelReq other) : this() {
-      index_ = other.index_;
       makeId_ = other.makeId_;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,6 +90,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FurnitureMakeCancelReq Clone() {
       return new FurnitureMakeCancelReq(this);
+    }
+
+    /// <summary>Field number for the "make_id" field.</summary>
+    public const int MakeIdFieldNumber = 14;
+    private uint makeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MakeId {
+      get { return makeId_; }
+      set {
+        makeId_ = value;
+      }
     }
 
     /// <summary>Field number for the "index" field.</summary>
@@ -97,18 +113,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return index_; }
       set {
         index_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "make_id" field.</summary>
-    public const int MakeIdFieldNumber = 15;
-    private uint makeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MakeId {
-      get { return makeId_; }
-      set {
-        makeId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Index != other.Index) return false;
       if (MakeId != other.MakeId) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Index != 0) hash ^= Index.GetHashCode();
       if (MakeId != 0) hash ^= MakeId.GetHashCode();
+      if (Index != 0) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -161,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Index);
       }
       if (MakeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(MakeId);
       }
       if (_unknownFields != null) {
@@ -179,7 +183,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Index);
       }
       if (MakeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(MakeId);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Index != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
-      }
       if (MakeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MakeId);
+      }
+      if (Index != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Index != 0) {
-        Index = other.Index;
-      }
       if (other.MakeId != 0) {
         MakeId = other.MakeId;
+      }
+      if (other.Index != 0) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,7 +239,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Index = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 112: {
             MakeId = input.ReadUInt32();
             break;
           }
@@ -258,7 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Index = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 112: {
             MakeId = input.ReadUInt32();
             break;
           }

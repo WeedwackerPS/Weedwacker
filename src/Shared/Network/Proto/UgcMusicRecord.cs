@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static UgcMusicRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRVZ2NNdXNpY1JlY29yZC5wcm90bxoTVWdjTXVzaWNUcmFjay5wcm90byJM",
-            "Cg5VZ2NNdXNpY1JlY29yZBIoChBtdXNpY190cmFja19saXN0GAQgAygLMg4u",
-            "VWdjTXVzaWNUcmFjaxIQCghtdXNpY19pZBgNIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRVZ2NNdXNpY1JlY29yZC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoTVWdjTXVzaWNUcmFjay5wcm90byJsCg5VZ2NNdXNpY1Jl",
+            "Y29yZBIQCghtdXNpY19pZBgBIAEoDRJIChBtdXNpY190cmFja19saXN0GAQg",
+            "AygLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5VZ2NNdXNp",
+            "Y1RyYWNrYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.UgcMusicTrackReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcMusicRecord), global::Weedwacker.Shared.Network.Proto.UgcMusicRecord.Parser, new[]{ "MusicTrackList", "MusicId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcMusicRecord), global::Weedwacker.Shared.Network.Proto.UgcMusicRecord.Parser, new[]{ "MusicId", "MusicTrackList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UgcMusicRecord(UgcMusicRecord other) : this() {
-      musicTrackList_ = other.musicTrackList_.Clone();
       musicId_ = other.musicId_;
+      musicTrackList_ = other.musicTrackList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -81,6 +82,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UgcMusicRecord Clone() {
       return new UgcMusicRecord(this);
+    }
+
+    /// <summary>Field number for the "music_id" field.</summary>
+    public const int MusicIdFieldNumber = 1;
+    private uint musicId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MusicId {
+      get { return musicId_; }
+      set {
+        musicId_ = value;
+      }
     }
 
     /// <summary>Field number for the "music_track_list" field.</summary>
@@ -92,18 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.UgcMusicTrack> MusicTrackList {
       get { return musicTrackList_; }
-    }
-
-    /// <summary>Field number for the "music_id" field.</summary>
-    public const int MusicIdFieldNumber = 13;
-    private uint musicId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MusicId {
-      get { return musicId_; }
-      set {
-        musicId_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!musicTrackList_.Equals(other.musicTrackList_)) return false;
       if (MusicId != other.MusicId) return false;
+      if(!musicTrackList_.Equals(other.musicTrackList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= musicTrackList_.GetHashCode();
       if (MusicId != 0) hash ^= MusicId.GetHashCode();
+      hash ^= musicTrackList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      musicTrackList_.WriteTo(output, _repeated_musicTrackList_codec);
       if (MusicId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(MusicId);
       }
+      musicTrackList_.WriteTo(output, _repeated_musicTrackList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      musicTrackList_.WriteTo(ref output, _repeated_musicTrackList_codec);
       if (MusicId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(MusicId);
       }
+      musicTrackList_.WriteTo(ref output, _repeated_musicTrackList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += musicTrackList_.CalculateSize(_repeated_musicTrackList_codec);
       if (MusicId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicId);
       }
+      size += musicTrackList_.CalculateSize(_repeated_musicTrackList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      musicTrackList_.Add(other.musicTrackList_);
       if (other.MusicId != 0) {
         MusicId = other.MusicId;
       }
+      musicTrackList_.Add(other.musicTrackList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            musicTrackList_.AddEntriesFrom(input, _repeated_musicTrackList_codec);
+          case 8: {
+            MusicId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            MusicId = input.ReadUInt32();
+          case 34: {
+            musicTrackList_.AddEntriesFrom(input, _repeated_musicTrackList_codec);
             break;
           }
         }
@@ -238,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            musicTrackList_.AddEntriesFrom(ref input, _repeated_musicTrackList_codec);
+          case 8: {
+            MusicId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            MusicId = input.ReadUInt32();
+          case 34: {
+            musicTrackList_.AddEntriesFrom(ref input, _repeated_musicTrackList_codec);
             break;
           }
         }
