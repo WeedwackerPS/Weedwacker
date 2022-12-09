@@ -266,13 +266,32 @@ namespace Weedwacker.GameServer.Data
             var objs = await LoadObjects<Obj[]>(fi);
             if (objs == null) return;
             foreach (var obj in objs)
-                map.Add(keySelector(obj), obj);
+                try
+                {
+
+                    map.Add(keySelector(obj), obj);
+                }
+                catch (Exception ex)
+                {
+                    Logger.WriteErrorLine(ex.Message);
+                    Logger.WriteErrorLine(fi.Name);
+                }
         }
         static async Task<T?> LoadObjects<T>(FileInfo fi)
         {
             using var sr = new StringReader(await File.ReadAllTextAsync(fi.FullName));
             using var jr = new JsonTextReader(sr);
-            return Serializer.Deserialize<T>(jr);
+            try
+            {
+                var ret = Serializer.Deserialize<T>(jr);
+                return ret;
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
+
+
         }
         static bool GetResourceFile(this ResourceAttribute ra, string path, out FileInfo fi)
         {
