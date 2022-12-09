@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetQuestLackingResourceReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHZXRRdWVzdExhY2tpbmdSZXNvdXJjZVJlcS5wcm90byIuChpHZXRRdWVz",
-            "dExhY2tpbmdSZXNvdXJjZVJlcRIQCghxdWVzdF9pZBgEIAEoDUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBHZXRRdWVzdExhY2tpbmdSZXNvdXJjZVJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byIuChpHZXRRdWVzdExhY2tpbmdSZXNv",
+            "dXJjZVJlcRIQCghxdWVzdF9pZBgNIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 467
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 453;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetQuestLackingResourceReq : pb::IMessage<GetQuestLackingResourceReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 4;
+    public const int QuestIdFieldNumber = 13;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (QuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(QuestId);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (QuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(QuestId);
       }
       if (_unknownFields != null) {
@@ -202,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 104: {
             QuestId = input.ReadUInt32();
             break;
           }
@@ -221,7 +225,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 104: {
             QuestId = input.ReadUInt32();
             break;
           }

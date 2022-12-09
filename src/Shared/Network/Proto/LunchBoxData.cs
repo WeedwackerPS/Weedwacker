@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunchBoxDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJMdW5jaEJveERhdGEucHJvdG8ihQEKDEx1bmNoQm94RGF0YRI9ChFzbG90",
-            "X21hdGVyaWFsX21hcBgDIAMoCzIiLkx1bmNoQm94RGF0YS5TbG90TWF0ZXJp",
-            "YWxNYXBFbnRyeRo2ChRTbG90TWF0ZXJpYWxNYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChJMdW5jaEJveERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8ipQEKDEx1bmNoQm94RGF0YRJdChFzbG90X21hdGVyaWFsX21h",
+            "cBgEIAMoCzJCLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTHVu",
+            "Y2hCb3hEYXRhLlNsb3RNYXRlcmlhbE1hcEVudHJ5GjYKFFNsb3RNYXRlcmlh",
+            "bE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "slot_material_map" field.</summary>
-    public const int SlotMaterialMapFieldNumber = 3;
+    public const int SlotMaterialMapFieldNumber = 4;
     private static readonly pbc::MapField<uint, uint>.Codec _map_slotMaterialMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
     private readonly pbc::MapField<uint, uint> slotMaterialMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 34: {
             slotMaterialMap_.AddEntriesFrom(input, _map_slotMaterialMap_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 34: {
             slotMaterialMap_.AddEntriesFrom(ref input, _map_slotMaterialMap_codec);
             break;
           }

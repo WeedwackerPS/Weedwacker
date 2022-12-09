@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayerLocationNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TY2VuZVBsYXllckxvY2F0aW9uTm90aWZ5LnByb3RvGhhQbGF5ZXJMb2Nh",
-            "dGlvbkluZm8ucHJvdG8aGVZlaGljbGVMb2NhdGlvbkluZm8ucHJvdG8iiwEK",
-            "GVNjZW5lUGxheWVyTG9jYXRpb25Ob3RpZnkSLgoQdmVoaWNsZV9sb2NfbGlz",
-            "dBgDIAMoCzIULlZlaGljbGVMb2NhdGlvbkluZm8SEAoIc2NlbmVfaWQYCSAB",
-            "KA0SLAoPcGxheWVyX2xvY19saXN0GA4gAygLMhMuUGxheWVyTG9jYXRpb25J",
-            "bmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "Ch9TY2VuZVBsYXllckxvY2F0aW9uTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhhQbGF5ZXJMb2NhdGlvbkluZm8ucHJv",
+            "dG8aGVZlaGljbGVMb2NhdGlvbkluZm8ucHJvdG8iywEKGVNjZW5lUGxheWVy",
+            "TG9jYXRpb25Ob3RpZnkSEAoIc2NlbmVfaWQYCyABKA0STgoQdmVoaWNsZV9s",
+            "b2NfbGlzdBgGIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uVmVoaWNsZUxvY2F0aW9uSW5mbxJMCg9wbGF5ZXJfbG9jX2xpc3QYBCAD",
+            "KAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllckxv",
+            "Y2F0aW9uSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerLocationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VehicleLocationInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerLocationNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerLocationNotify.Parser, new[]{ "VehicleLocList", "SceneId", "PlayerLocList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerLocationNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerLocationNotify.Parser, new[]{ "SceneId", "VehicleLocList", "PlayerLocList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 248
-  /// EnetChannelId: 1
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 248;
+  ///   ENET_CHANNEL_ID = 1;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayerLocationNotify : pb::IMessage<ScenePlayerLocationNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayerLocationNotify(ScenePlayerLocationNotify other) : this() {
-      vehicleLocList_ = other.vehicleLocList_.Clone();
       sceneId_ = other.sceneId_;
+      vehicleLocList_ = other.vehicleLocList_.Clone();
       playerLocList_ = other.playerLocList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -92,19 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ScenePlayerLocationNotify(this);
     }
 
-    /// <summary>Field number for the "vehicle_loc_list" field.</summary>
-    public const int VehicleLocListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> _repeated_vehicleLocList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> vehicleLocList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> VehicleLocList {
-      get { return vehicleLocList_; }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 9;
+    public const int SceneIdFieldNumber = 11;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,10 +109,21 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "vehicle_loc_list" field.</summary>
+    public const int VehicleLocListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> _repeated_vehicleLocList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> vehicleLocList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VehicleLocationInfo> VehicleLocList {
+      get { return vehicleLocList_; }
+    }
+
     /// <summary>Field number for the "player_loc_list" field.</summary>
-    public const int PlayerLocListFieldNumber = 14;
+    public const int PlayerLocListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo> _repeated_playerLocList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo> playerLocList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!vehicleLocList_.Equals(other.vehicleLocList_)) return false;
       if (SceneId != other.SceneId) return false;
+      if(!vehicleLocList_.Equals(other.vehicleLocList_)) return false;
       if(!playerLocList_.Equals(other.playerLocList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= vehicleLocList_.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      hash ^= vehicleLocList_.GetHashCode();
       hash ^= playerLocList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      playerLocList_.WriteTo(output, _repeated_playerLocList_codec);
       vehicleLocList_.WriteTo(output, _repeated_vehicleLocList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneId);
       }
-      playerLocList_.WriteTo(output, _repeated_playerLocList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -188,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      playerLocList_.WriteTo(ref output, _repeated_playerLocList_codec);
       vehicleLocList_.WriteTo(ref output, _repeated_vehicleLocList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneId);
       }
-      playerLocList_.WriteTo(ref output, _repeated_playerLocList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -204,10 +209,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += vehicleLocList_.CalculateSize(_repeated_vehicleLocList_codec);
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
+      size += vehicleLocList_.CalculateSize(_repeated_vehicleLocList_codec);
       size += playerLocList_.CalculateSize(_repeated_playerLocList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -221,10 +226,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      vehicleLocList_.Add(other.vehicleLocList_);
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
+      vehicleLocList_.Add(other.vehicleLocList_);
       playerLocList_.Add(other.playerLocList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -241,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 34: {
+            playerLocList_.AddEntriesFrom(input, _repeated_playerLocList_codec);
+            break;
+          }
+          case 50: {
             vehicleLocList_.AddEntriesFrom(input, _repeated_vehicleLocList_codec);
             break;
           }
-          case 72: {
+          case 88: {
             SceneId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            playerLocList_.AddEntriesFrom(input, _repeated_playerLocList_codec);
             break;
           }
         }
@@ -268,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 34: {
+            playerLocList_.AddEntriesFrom(ref input, _repeated_playerLocList_codec);
+            break;
+          }
+          case 50: {
             vehicleLocList_.AddEntriesFrom(ref input, _repeated_vehicleLocList_codec);
             break;
           }
-          case 72: {
+          case 88: {
             SceneId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            playerLocList_.AddEntriesFrom(ref input, _repeated_playerLocList_codec);
             break;
           }
         }

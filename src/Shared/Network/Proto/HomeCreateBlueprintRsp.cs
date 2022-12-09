@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeCreateBlueprintRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxIb21lQ3JlYXRlQmx1ZXByaW50UnNwLnByb3RvGhtIb21lQmx1ZXByaW50",
-            "U2xvdEluZm8ucHJvdG8iVAoWSG9tZUNyZWF0ZUJsdWVwcmludFJzcBIpCglz",
-            "bG90X2luZm8YASABKAsyFi5Ib21lQmx1ZXByaW50U2xvdEluZm8SDwoHcmV0",
-            "Y29kZRgKIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChxIb21lQ3JlYXRlQmx1ZXByaW50UnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhtIb21lQmx1ZXByaW50U2xvdEluZm8ucHJv",
+            "dG8idAoWSG9tZUNyZWF0ZUJsdWVwcmludFJzcBIPCgdyZXRjb2RlGA8gASgF",
+            "EkkKCXNsb3RfaW5mbxgGIAEoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uSG9tZUJsdWVwcmludFNsb3RJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintRsp), global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintRsp.Parser, new[]{ "SlotInfo", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintRsp), global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintRsp.Parser, new[]{ "Retcode", "SlotInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4606
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4806;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeCreateBlueprintRsp : pb::IMessage<HomeCreateBlueprintRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeCreateBlueprintRsp(HomeCreateBlueprintRsp other) : this() {
-      slotInfo_ = other.slotInfo_ != null ? other.slotInfo_.Clone() : null;
       retcode_ = other.retcode_;
+      slotInfo_ = other.slotInfo_ != null ? other.slotInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeCreateBlueprintRsp(this);
     }
 
-    /// <summary>Field number for the "slot_info" field.</summary>
-    public const int SlotInfoFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo slotInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo SlotInfo {
-      get { return slotInfo_; }
-      set {
-        slotInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
+    public const int RetcodeFieldNumber = 15;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "slot_info" field.</summary>
+    public const int SlotInfoFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo slotInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo SlotInfo {
+      get { return slotInfo_; }
+      set {
+        slotInfo_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(SlotInfo, other.SlotInfo)) return false;
       if (Retcode != other.Retcode) return false;
+      if (!object.Equals(SlotInfo, other.SlotInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (slotInfo_ != null) hash ^= SlotInfo.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (slotInfo_ != null) hash ^= SlotInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (slotInfo_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(50);
         output.WriteMessage(SlotInfo);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (slotInfo_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(50);
         output.WriteMessage(SlotInfo);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (slotInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SlotInfo);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (slotInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SlotInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.slotInfo_ != null) {
         if (slotInfo_ == null) {
           SlotInfo = new global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo();
         }
         SlotInfo.MergeFrom(other.SlotInfo);
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 50: {
             if (slotInfo_ == null) {
               SlotInfo = new global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo();
             }
             input.ReadMessage(SlotInfo);
             break;
           }
-          case 80: {
+          case 120: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -261,14 +265,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 50: {
             if (slotInfo_ == null) {
               SlotInfo = new global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo();
             }
             input.ReadMessage(SlotInfo);
             break;
           }
-          case 80: {
+          case 120: {
             Retcode = input.ReadInt32();
             break;
           }

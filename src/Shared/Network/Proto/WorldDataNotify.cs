@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVXb3JsZERhdGFOb3RpZnkucHJvdG8aD1Byb3BWYWx1ZS5wcm90byLmAQoP",
-            "V29ybGREYXRhTm90aWZ5EjoKDndvcmxkX3Byb3BfbWFwGAkgAygLMiIuV29y",
-            "bGREYXRhTm90aWZ5LldvcmxkUHJvcE1hcEVudHJ5Gj8KEVdvcmxkUHJvcE1h",
-            "cEVudHJ5EgsKA2tleRgBIAEoDRIZCgV2YWx1ZRgCIAEoCzIKLlByb3BWYWx1",
-            "ZToCOAEiVgoIRGF0YVR5cGUSEgoOREFUQV9UWVBFX05PTkUQABIZChVEQVRB",
-            "X1RZUEVfV09STERfTEVWRUwQARIbChdEQVRBX1RZUEVfSVNfSU5fTVBfTU9E",
-            "RRACQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChVXb3JsZERhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aD1Byb3BWYWx1ZS5wcm90byKmAgoPV29ybGREYXRhTm90",
+            "aWZ5EloKDndvcmxkX3Byb3BfbWFwGAYgAygLMkIuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5Xb3JsZERhdGFOb3RpZnkuV29ybGRQcm9wTWFw",
+            "RW50cnkaXwoRV29ybGRQcm9wTWFwRW50cnkSCwoDa2V5GAEgASgNEjkKBXZh",
+            "bHVlGAIgASgLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Q",
+            "cm9wVmFsdWU6AjgBIlYKCERhdGFUeXBlEhIKDkRBVEFfVFlQRV9OT05FEAAS",
+            "GQoVREFUQV9UWVBFX1dPUkxEX0xFVkVMEAESGwoXREFUQV9UWVBFX0lTX0lO",
+            "X01QX01PREUQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PropValueReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -43,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3308
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3436;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldDataNotify : pb::IMessage<WorldDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "world_prop_map" field.</summary>
-    public const int WorldPropMapFieldNumber = 9;
+    public const int WorldPropMapFieldNumber = 6;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec _map_worldPropMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 74);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 50);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> worldPropMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -196,7 +201,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 50: {
             worldPropMap_.AddEntriesFrom(input, _map_worldPropMap_codec);
             break;
           }
@@ -215,7 +220,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 50: {
             worldPropMap_.AddEntriesFrom(ref input, _map_worldPropMap_codec);
             break;
           }

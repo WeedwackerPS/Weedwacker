@@ -24,20 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassMissionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdCYXR0bGVQYXNzTWlzc2lvbi5wcm90byLRAgoRQmF0dGxlUGFzc01pc3Np",
-            "b24SFAoMY3VyX3Byb2dyZXNzGA0gASgNEjgKDm1pc3Npb25fc3RhdHVzGA8g",
-            "ASgOMiAuQmF0dGxlUGFzc01pc3Npb24uTWlzc2lvblN0YXR1cxISCgptaXNz",
-            "aW9uX2lkGAsgASgNEiAKGHJld2FyZF9iYXR0bGVfcGFzc19wb2ludBgDIAEo",
-            "DRIUCgxtaXNzaW9uX3R5cGUYDCABKA0SFgoOdG90YWxfcHJvZ3Jlc3MYBiAB",
-            "KA0ihwEKDU1pc3Npb25TdGF0dXMSGgoWTUlTU0lPTl9TVEFUVVNfSU5WQUxJ",
-            "RBAAEh0KGU1JU1NJT05fU1RBVFVTX1VORklOSVNIRUQQARIbChdNSVNTSU9O",
-            "X1NUQVRVU19GSU5JU0hFRBACEh4KGk1JU1NJT05fU1RBVFVTX1BPSU5UX1RB",
-            "S0VOEANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChdCYXR0bGVQYXNzTWlzc2lvbi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byLxAgoRQmF0dGxlUGFzc01pc3Npb24SFAoMY3VyX3By",
+            "b2dyZXNzGAogASgNEhQKDG1pc3Npb25fdHlwZRgJIAEoDRIgChhyZXdhcmRf",
+            "YmF0dGxlX3Bhc3NfcG9pbnQYDiABKA0SFgoOdG90YWxfcHJvZ3Jlc3MYDCAB",
+            "KA0SEgoKbWlzc2lvbl9pZBgPIAEoDRJYCg5taXNzaW9uX3N0YXR1cxgLIAEo",
+            "DjJALldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQmF0dGxlUGFz",
+            "c01pc3Npb24uTWlzc2lvblN0YXR1cyKHAQoNTWlzc2lvblN0YXR1cxIaChZN",
+            "SVNTSU9OX1NUQVRVU19JTlZBTElEEAASHQoZTUlTU0lPTl9TVEFUVVNfVU5G",
+            "SU5JU0hFRBABEhsKF01JU1NJT05fU1RBVFVTX0ZJTklTSEVEEAISHgoaTUlT",
+            "U0lPTl9TVEFUVVNfUE9JTlRfVEFLRU4QA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassMission), global::Weedwacker.Shared.Network.Proto.BattlePassMission.Parser, new[]{ "CurProgress", "MissionStatus", "MissionId", "RewardBattlePassPoint", "MissionType", "TotalProgress" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassMission), global::Weedwacker.Shared.Network.Proto.BattlePassMission.Parser, new[]{ "CurProgress", "MissionType", "RewardBattlePassPoint", "TotalProgress", "MissionId", "MissionStatus" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus) }, null, null)
           }));
     }
     #endregion
@@ -79,11 +79,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassMission(BattlePassMission other) : this() {
       curProgress_ = other.curProgress_;
-      missionStatus_ = other.missionStatus_;
-      missionId_ = other.missionId_;
-      rewardBattlePassPoint_ = other.rewardBattlePassPoint_;
       missionType_ = other.missionType_;
+      rewardBattlePassPoint_ = other.rewardBattlePassPoint_;
       totalProgress_ = other.totalProgress_;
+      missionId_ = other.missionId_;
+      missionStatus_ = other.missionStatus_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 13;
+    public const int CurProgressFieldNumber = 10;
     private uint curProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,44 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "mission_status" field.</summary>
-    public const int MissionStatusFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus missionStatus_ = global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus MissionStatus {
-      get { return missionStatus_; }
-      set {
-        missionStatus_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mission_id" field.</summary>
-    public const int MissionIdFieldNumber = 11;
-    private uint missionId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MissionId {
-      get { return missionId_; }
-      set {
-        missionId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reward_battle_pass_point" field.</summary>
-    public const int RewardBattlePassPointFieldNumber = 3;
-    private uint rewardBattlePassPoint_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RewardBattlePassPoint {
-      get { return rewardBattlePassPoint_; }
-      set {
-        rewardBattlePassPoint_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mission_type" field.</summary>
-    public const int MissionTypeFieldNumber = 12;
+    public const int MissionTypeFieldNumber = 9;
     private uint missionType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,8 +117,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "reward_battle_pass_point" field.</summary>
+    public const int RewardBattlePassPointFieldNumber = 14;
+    private uint rewardBattlePassPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RewardBattlePassPoint {
+      get { return rewardBattlePassPoint_; }
+      set {
+        rewardBattlePassPoint_ = value;
+      }
+    }
+
     /// <summary>Field number for the "total_progress" field.</summary>
-    public const int TotalProgressFieldNumber = 6;
+    public const int TotalProgressFieldNumber = 12;
     private uint totalProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,6 +138,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return totalProgress_; }
       set {
         totalProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mission_id" field.</summary>
+    public const int MissionIdFieldNumber = 15;
+    private uint missionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MissionId {
+      get { return missionId_; }
+      set {
+        missionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mission_status" field.</summary>
+    public const int MissionStatusFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus missionStatus_ = global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus MissionStatus {
+      get { return missionStatus_; }
+      set {
+        missionStatus_ = value;
       }
     }
 
@@ -181,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (CurProgress != other.CurProgress) return false;
-      if (MissionStatus != other.MissionStatus) return false;
-      if (MissionId != other.MissionId) return false;
-      if (RewardBattlePassPoint != other.RewardBattlePassPoint) return false;
       if (MissionType != other.MissionType) return false;
+      if (RewardBattlePassPoint != other.RewardBattlePassPoint) return false;
       if (TotalProgress != other.TotalProgress) return false;
+      if (MissionId != other.MissionId) return false;
+      if (MissionStatus != other.MissionStatus) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,11 +194,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
-      if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) hash ^= MissionStatus.GetHashCode();
-      if (MissionId != 0) hash ^= MissionId.GetHashCode();
-      if (RewardBattlePassPoint != 0) hash ^= RewardBattlePassPoint.GetHashCode();
       if (MissionType != 0) hash ^= MissionType.GetHashCode();
+      if (RewardBattlePassPoint != 0) hash ^= RewardBattlePassPoint.GetHashCode();
       if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
+      if (MissionId != 0) hash ^= MissionId.GetHashCode();
+      if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) hash ^= MissionStatus.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,29 +217,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RewardBattlePassPoint != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(RewardBattlePassPoint);
-      }
-      if (TotalProgress != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalProgress);
-      }
-      if (MissionId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MissionId);
-      }
       if (MissionType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(MissionType);
       }
       if (CurProgress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(CurProgress);
       }
       if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteEnum((int) MissionStatus);
+      }
+      if (TotalProgress != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalProgress);
+      }
+      if (RewardBattlePassPoint != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RewardBattlePassPoint);
+      }
+      if (MissionId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MissionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -251,29 +251,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RewardBattlePassPoint != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(RewardBattlePassPoint);
-      }
-      if (TotalProgress != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalProgress);
-      }
-      if (MissionId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MissionId);
-      }
       if (MissionType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(MissionType);
       }
       if (CurProgress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(CurProgress);
       }
       if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteEnum((int) MissionStatus);
+      }
+      if (TotalProgress != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalProgress);
+      }
+      if (RewardBattlePassPoint != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RewardBattlePassPoint);
+      }
+      if (MissionId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MissionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -288,20 +288,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CurProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
       }
-      if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MissionStatus);
-      }
-      if (MissionId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
+      if (MissionType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionType);
       }
       if (RewardBattlePassPoint != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardBattlePassPoint);
       }
-      if (MissionType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionType);
-      }
       if (TotalProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      }
+      if (MissionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
+      }
+      if (MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MissionStatus);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -318,20 +318,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CurProgress != 0) {
         CurProgress = other.CurProgress;
       }
-      if (other.MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
-        MissionStatus = other.MissionStatus;
-      }
-      if (other.MissionId != 0) {
-        MissionId = other.MissionId;
+      if (other.MissionType != 0) {
+        MissionType = other.MissionType;
       }
       if (other.RewardBattlePassPoint != 0) {
         RewardBattlePassPoint = other.RewardBattlePassPoint;
       }
-      if (other.MissionType != 0) {
-        MissionType = other.MissionType;
-      }
       if (other.TotalProgress != 0) {
         TotalProgress = other.TotalProgress;
+      }
+      if (other.MissionId != 0) {
+        MissionId = other.MissionId;
+      }
+      if (other.MissionStatus != global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus.Invalid) {
+        MissionStatus = other.MissionStatus;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -348,28 +348,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            RewardBattlePassPoint = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            TotalProgress = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            MissionId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 72: {
             MissionType = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             CurProgress = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             MissionStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus) input.ReadEnum();
+            break;
+          }
+          case 96: {
+            TotalProgress = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            RewardBattlePassPoint = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            MissionId = input.ReadUInt32();
             break;
           }
         }
@@ -387,28 +387,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            RewardBattlePassPoint = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            TotalProgress = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            MissionId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 72: {
             MissionType = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             CurProgress = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             MissionStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassMission.Types.MissionStatus) input.ReadEnum();
+            break;
+          }
+          case 96: {
+            TotalProgress = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            RewardBattlePassPoint = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            MissionId = input.ReadUInt32();
             break;
           }
         }

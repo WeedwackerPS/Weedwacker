@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairReplayMiniGameReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBGbGV1ckZhaXJSZXBsYXlNaW5pR2FtZVJlcS5wcm90byIxChpGbGV1ckZh",
-            "aXJSZXBsYXlNaW5pR2FtZVJlcRITCgttaW5pZ2FtZV9pZBgFIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBGbGV1ckZhaXJSZXBsYXlNaW5pR2FtZVJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byIxChpGbGV1ckZhaXJSZXBsYXlNaW5p",
+            "R2FtZVJlcRITCgttaW5pZ2FtZV9pZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2181
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2127;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FleurFairReplayMiniGameReq : pb::IMessage<FleurFairReplayMiniGameReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "minigame_id" field.</summary>
-    public const int MinigameIdFieldNumber = 5;
+    public const int MinigameIdFieldNumber = 3;
     private uint minigameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MinigameId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(MinigameId);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MinigameId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(MinigameId);
       }
       if (_unknownFields != null) {
@@ -202,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 24: {
             MinigameId = input.ReadUInt32();
             break;
           }
@@ -221,7 +225,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 24: {
             MinigameId = input.ReadUInt32();
             break;
           }

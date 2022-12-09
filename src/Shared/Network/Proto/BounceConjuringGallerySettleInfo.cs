@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static BounceConjuringGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZCb3VuY2VDb25qdXJpbmdHYWxsZXJ5U2V0dGxlSW5mby5wcm90bxobRXho",
-            "aWJpdGlvbkRpc3BsYXlJbmZvLnByb3RvGhZPbmxpbmVQbGF5ZXJJbmZvLnBy",
-            "b3RvIocDCiBCb3VuY2VDb25qdXJpbmdHYWxsZXJ5U2V0dGxlSW5mbxImCgtw",
-            "bGF5ZXJfaW5mbxgOIAEoCzIRLk9ubGluZVBsYXllckluZm8SHwoXZGVzdHJv",
-            "eWVkX21hY2hpbmVfY291bnQYBSABKA0SEwoLZmV2ZXJfY291bnQYBiABKA0S",
-            "GAoQbm9ybWFsX2hpdF9jb3VudBgEIAEoDRIOCgZkYW1hZ2UYCyABKAISTwoQ",
-            "Z2FkZ2V0X2NvdW50X21hcBgPIAMoCzI1LkJvdW5jZUNvbmp1cmluZ0dhbGxl",
-            "cnlTZXR0bGVJbmZvLkdhZGdldENvdW50TWFwRW50cnkSDQoFc2NvcmUYDCAB",
-            "KA0SGQoRcGVyZmVjdF9oaXRfY291bnQYCCABKA0SKQoJY2FyZF9saXN0GAcg",
-            "AygLMhYuRXhoaWJpdGlvbkRpc3BsYXlJbmZvGjUKE0dhZGdldENvdW50TWFw",
-            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZCb3VuY2VDb25qdXJpbmdHYWxsZXJ5U2V0dGxlSW5mby5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxobRXhoaWJpdGlvbkRpc3Bs",
+            "YXlJbmZvLnByb3RvGhZPbmxpbmVQbGF5ZXJJbmZvLnByb3RvIvADCiBCb3Vu",
+            "Y2VDb25qdXJpbmdHYWxsZXJ5U2V0dGxlSW5mbxIbChNVbmszMzAwX1BFTEhC",
+            "SkRNS0FFGAYgASgNEg0KBXNjb3JlGA8gASgNEm8KEGdhZGdldF9jb3VudF9t",
+            "YXAYAyADKAsyVS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJv",
+            "dW5jZUNvbmp1cmluZ0dhbGxlcnlTZXR0bGVJbmZvLkdhZGdldENvdW50TWFw",
+            "RW50cnkSGwoTVW5rMzMwMF9DTkdPQk9GREVPRRgLIAEoDRIbChNVbmszMzAw",
+            "X05LR0ZLTEdERkFDGAEgASgNEkYKC3BsYXllcl9pbmZvGAIgASgLMjEuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PbmxpbmVQbGF5ZXJJbmZv",
+            "Eg4KBmRhbWFnZRgMIAEoAhIbChNVbmszMzAwX0JKSENES05GREZOGAcgASgN",
+            "EkkKCWNhcmRfbGlzdBgJIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uRXhoaWJpdGlvbkRpc3BsYXlJbmZvGjUKE0dhZGdldENvdW50",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo.Parser, new[]{ "PlayerInfo", "DestroyedMachineCount", "FeverCount", "NormalHitCount", "Damage", "GadgetCountMap", "Score", "PerfectHitCount", "CardList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BounceConjuringGallerySettleInfo.Parser, new[]{ "Unk3300PELHBJDMKAE", "Score", "GadgetCountMap", "Unk3300CNGOBOFDEOE", "Unk3300NKGFKLGDFAC", "PlayerInfo", "Damage", "Unk3300BJHCDKNFDFN", "CardList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -80,14 +83,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BounceConjuringGallerySettleInfo(BounceConjuringGallerySettleInfo other) : this() {
-      playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
-      destroyedMachineCount_ = other.destroyedMachineCount_;
-      feverCount_ = other.feverCount_;
-      normalHitCount_ = other.normalHitCount_;
-      damage_ = other.damage_;
-      gadgetCountMap_ = other.gadgetCountMap_.Clone();
+      unk3300PELHBJDMKAE_ = other.unk3300PELHBJDMKAE_;
       score_ = other.score_;
-      perfectHitCount_ = other.perfectHitCount_;
+      gadgetCountMap_ = other.gadgetCountMap_.Clone();
+      unk3300CNGOBOFDEOE_ = other.unk3300CNGOBOFDEOE_;
+      unk3300NKGFKLGDFAC_ = other.unk3300NKGFKLGDFAC_;
+      playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
+      damage_ = other.damage_;
+      unk3300BJHCDKNFDFN_ = other.unk3300BJHCDKNFDFN_;
       cardList_ = other.cardList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -98,79 +101,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BounceConjuringGallerySettleInfo(this);
     }
 
-    /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
+    /// <summary>Field number for the "Unk3300_PELHBJDMKAE" field.</summary>
+    public const int Unk3300PELHBJDMKAEFieldNumber = 6;
+    private uint unk3300PELHBJDMKAE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo PlayerInfo {
-      get { return playerInfo_; }
+    public uint Unk3300PELHBJDMKAE {
+      get { return unk3300PELHBJDMKAE_; }
       set {
-        playerInfo_ = value;
+        unk3300PELHBJDMKAE_ = value;
       }
-    }
-
-    /// <summary>Field number for the "destroyed_machine_count" field.</summary>
-    public const int DestroyedMachineCountFieldNumber = 5;
-    private uint destroyedMachineCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DestroyedMachineCount {
-      get { return destroyedMachineCount_; }
-      set {
-        destroyedMachineCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fever_count" field.</summary>
-    public const int FeverCountFieldNumber = 6;
-    private uint feverCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FeverCount {
-      get { return feverCount_; }
-      set {
-        feverCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "normal_hit_count" field.</summary>
-    public const int NormalHitCountFieldNumber = 4;
-    private uint normalHitCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NormalHitCount {
-      get { return normalHitCount_; }
-      set {
-        normalHitCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "damage" field.</summary>
-    public const int DamageFieldNumber = 11;
-    private float damage_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Damage {
-      get { return damage_; }
-      set {
-        damage_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gadget_count_map" field.</summary>
-    public const int GadgetCountMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_gadgetCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<uint, uint> gadgetCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> GadgetCountMap {
-      get { return gadgetCountMap_; }
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 12;
+    public const int ScoreFieldNumber = 15;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,22 +125,81 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "perfect_hit_count" field.</summary>
-    public const int PerfectHitCountFieldNumber = 8;
-    private uint perfectHitCount_;
+    /// <summary>Field number for the "gadget_count_map" field.</summary>
+    public const int GadgetCountMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_gadgetCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> gadgetCountMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PerfectHitCount {
-      get { return perfectHitCount_; }
+    public pbc::MapField<uint, uint> GadgetCountMap {
+      get { return gadgetCountMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_CNGOBOFDEOE" field.</summary>
+    public const int Unk3300CNGOBOFDEOEFieldNumber = 11;
+    private uint unk3300CNGOBOFDEOE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CNGOBOFDEOE {
+      get { return unk3300CNGOBOFDEOE_; }
       set {
-        perfectHitCount_ = value;
+        unk3300CNGOBOFDEOE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NKGFKLGDFAC" field.</summary>
+    public const int Unk3300NKGFKLGDFACFieldNumber = 1;
+    private uint unk3300NKGFKLGDFAC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NKGFKLGDFAC {
+      get { return unk3300NKGFKLGDFAC_; }
+      set {
+        unk3300NKGFKLGDFAC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_info" field.</summary>
+    public const int PlayerInfoFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo playerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo PlayerInfo {
+      get { return playerInfo_; }
+      set {
+        playerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage" field.</summary>
+    public const int DamageFieldNumber = 12;
+    private float damage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Damage {
+      get { return damage_; }
+      set {
+        damage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BJHCDKNFDFN" field.</summary>
+    public const int Unk3300BJHCDKNFDFNFieldNumber = 7;
+    private uint unk3300BJHCDKNFDFN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BJHCDKNFDFN {
+      get { return unk3300BJHCDKNFDFN_; }
+      set {
+        unk3300BJHCDKNFDFN_ = value;
       }
     }
 
     /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 7;
+    public const int CardListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_cardList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> cardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -219,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
-      if (DestroyedMachineCount != other.DestroyedMachineCount) return false;
-      if (FeverCount != other.FeverCount) return false;
-      if (NormalHitCount != other.NormalHitCount) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Damage, other.Damage)) return false;
-      if (!GadgetCountMap.Equals(other.GadgetCountMap)) return false;
+      if (Unk3300PELHBJDMKAE != other.Unk3300PELHBJDMKAE) return false;
       if (Score != other.Score) return false;
-      if (PerfectHitCount != other.PerfectHitCount) return false;
+      if (!GadgetCountMap.Equals(other.GadgetCountMap)) return false;
+      if (Unk3300CNGOBOFDEOE != other.Unk3300CNGOBOFDEOE) return false;
+      if (Unk3300NKGFKLGDFAC != other.Unk3300NKGFKLGDFAC) return false;
+      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Damage, other.Damage)) return false;
+      if (Unk3300BJHCDKNFDFN != other.Unk3300BJHCDKNFDFN) return false;
       if(!cardList_.Equals(other.cardList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -235,14 +238,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
-      if (DestroyedMachineCount != 0) hash ^= DestroyedMachineCount.GetHashCode();
-      if (FeverCount != 0) hash ^= FeverCount.GetHashCode();
-      if (NormalHitCount != 0) hash ^= NormalHitCount.GetHashCode();
-      if (Damage != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Damage);
-      hash ^= GadgetCountMap.GetHashCode();
+      if (Unk3300PELHBJDMKAE != 0) hash ^= Unk3300PELHBJDMKAE.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
-      if (PerfectHitCount != 0) hash ^= PerfectHitCount.GetHashCode();
+      hash ^= GadgetCountMap.GetHashCode();
+      if (Unk3300CNGOBOFDEOE != 0) hash ^= Unk3300CNGOBOFDEOE.GetHashCode();
+      if (Unk3300NKGFKLGDFAC != 0) hash ^= Unk3300NKGFKLGDFAC.GetHashCode();
+      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
+      if (Damage != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Damage);
+      if (Unk3300BJHCDKNFDFN != 0) hash ^= Unk3300BJHCDKNFDFN.GetHashCode();
       hash ^= cardList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -262,36 +265,36 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (NormalHitCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(NormalHitCount);
-      }
-      if (DestroyedMachineCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(DestroyedMachineCount);
-      }
-      if (FeverCount != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FeverCount);
-      }
-      cardList_.WriteTo(output, _repeated_cardList_codec);
-      if (PerfectHitCount != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(PerfectHitCount);
-      }
-      if (Damage != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(Damage);
-      }
-      if (Score != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(Score);
+      if (Unk3300NKGFKLGDFAC != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300NKGFKLGDFAC);
       }
       if (playerInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(18);
         output.WriteMessage(PlayerInfo);
       }
       gadgetCountMap_.WriteTo(output, _map_gadgetCountMap_codec);
+      if (Unk3300PELHBJDMKAE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300PELHBJDMKAE);
+      }
+      if (Unk3300BJHCDKNFDFN != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300BJHCDKNFDFN);
+      }
+      cardList_.WriteTo(output, _repeated_cardList_codec);
+      if (Unk3300CNGOBOFDEOE != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300CNGOBOFDEOE);
+      }
+      if (Damage != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Damage);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Score);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -302,36 +305,36 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (NormalHitCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(NormalHitCount);
-      }
-      if (DestroyedMachineCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(DestroyedMachineCount);
-      }
-      if (FeverCount != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FeverCount);
-      }
-      cardList_.WriteTo(ref output, _repeated_cardList_codec);
-      if (PerfectHitCount != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(PerfectHitCount);
-      }
-      if (Damage != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(Damage);
-      }
-      if (Score != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(Score);
+      if (Unk3300NKGFKLGDFAC != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300NKGFKLGDFAC);
       }
       if (playerInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(18);
         output.WriteMessage(PlayerInfo);
       }
       gadgetCountMap_.WriteTo(ref output, _map_gadgetCountMap_codec);
+      if (Unk3300PELHBJDMKAE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300PELHBJDMKAE);
+      }
+      if (Unk3300BJHCDKNFDFN != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300BJHCDKNFDFN);
+      }
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
+      if (Unk3300CNGOBOFDEOE != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300CNGOBOFDEOE);
+      }
+      if (Damage != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Damage);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Score);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -342,27 +345,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300PELHBJDMKAE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PELHBJDMKAE);
+      }
+      if (Score != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      size += gadgetCountMap_.CalculateSize(_map_gadgetCountMap_codec);
+      if (Unk3300CNGOBOFDEOE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CNGOBOFDEOE);
+      }
+      if (Unk3300NKGFKLGDFAC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NKGFKLGDFAC);
+      }
       if (playerInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
-      }
-      if (DestroyedMachineCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DestroyedMachineCount);
-      }
-      if (FeverCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FeverCount);
-      }
-      if (NormalHitCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NormalHitCount);
       }
       if (Damage != 0F) {
         size += 1 + 4;
       }
-      size += gadgetCountMap_.CalculateSize(_map_gadgetCountMap_codec);
-      if (Score != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
-      }
-      if (PerfectHitCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PerfectHitCount);
+      if (Unk3300BJHCDKNFDFN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BJHCDKNFDFN);
       }
       size += cardList_.CalculateSize(_repeated_cardList_codec);
       if (_unknownFields != null) {
@@ -377,30 +380,30 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300PELHBJDMKAE != 0) {
+        Unk3300PELHBJDMKAE = other.Unk3300PELHBJDMKAE;
+      }
+      if (other.Score != 0) {
+        Score = other.Score;
+      }
+      gadgetCountMap_.Add(other.gadgetCountMap_);
+      if (other.Unk3300CNGOBOFDEOE != 0) {
+        Unk3300CNGOBOFDEOE = other.Unk3300CNGOBOFDEOE;
+      }
+      if (other.Unk3300NKGFKLGDFAC != 0) {
+        Unk3300NKGFKLGDFAC = other.Unk3300NKGFKLGDFAC;
+      }
       if (other.playerInfo_ != null) {
         if (playerInfo_ == null) {
           PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
         }
         PlayerInfo.MergeFrom(other.PlayerInfo);
       }
-      if (other.DestroyedMachineCount != 0) {
-        DestroyedMachineCount = other.DestroyedMachineCount;
-      }
-      if (other.FeverCount != 0) {
-        FeverCount = other.FeverCount;
-      }
-      if (other.NormalHitCount != 0) {
-        NormalHitCount = other.NormalHitCount;
-      }
       if (other.Damage != 0F) {
         Damage = other.Damage;
       }
-      gadgetCountMap_.Add(other.gadgetCountMap_);
-      if (other.Score != 0) {
-        Score = other.Score;
-      }
-      if (other.PerfectHitCount != 0) {
-        PerfectHitCount = other.PerfectHitCount;
+      if (other.Unk3300BJHCDKNFDFN != 0) {
+        Unk3300BJHCDKNFDFN = other.Unk3300BJHCDKNFDFN;
       }
       cardList_.Add(other.cardList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -418,43 +421,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            NormalHitCount = input.ReadUInt32();
+          case 8: {
+            Unk3300NKGFKLGDFAC = input.ReadUInt32();
             break;
           }
-          case 40: {
-            DestroyedMachineCount = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            FeverCount = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
-            break;
-          }
-          case 64: {
-            PerfectHitCount = input.ReadUInt32();
-            break;
-          }
-          case 93: {
-            Damage = input.ReadFloat();
-            break;
-          }
-          case 96: {
-            Score = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 18: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 122: {
+          case 26: {
             gadgetCountMap_.AddEntriesFrom(input, _map_gadgetCountMap_codec);
+            break;
+          }
+          case 48: {
+            Unk3300PELHBJDMKAE = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300BJHCDKNFDFN = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 88: {
+            Unk3300CNGOBOFDEOE = input.ReadUInt32();
+            break;
+          }
+          case 101: {
+            Damage = input.ReadFloat();
+            break;
+          }
+          case 120: {
+            Score = input.ReadUInt32();
             break;
           }
         }
@@ -472,43 +475,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            NormalHitCount = input.ReadUInt32();
+          case 8: {
+            Unk3300NKGFKLGDFAC = input.ReadUInt32();
             break;
           }
-          case 40: {
-            DestroyedMachineCount = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            FeverCount = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
-            break;
-          }
-          case 64: {
-            PerfectHitCount = input.ReadUInt32();
-            break;
-          }
-          case 93: {
-            Damage = input.ReadFloat();
-            break;
-          }
-          case 96: {
-            Score = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 18: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(PlayerInfo);
             break;
           }
-          case 122: {
+          case 26: {
             gadgetCountMap_.AddEntriesFrom(ref input, _map_gadgetCountMap_codec);
+            break;
+          }
+          case 48: {
+            Unk3300PELHBJDMKAE = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300BJHCDKNFDFN = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 88: {
+            Unk3300CNGOBOFDEOE = input.ReadUInt32();
+            break;
+          }
+          case 101: {
+            Damage = input.ReadFloat();
+            break;
+          }
+          case 120: {
+            Score = input.ReadUInt32();
             break;
           }
         }

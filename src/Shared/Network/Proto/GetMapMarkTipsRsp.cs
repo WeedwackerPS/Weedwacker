@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetMapMarkTipsRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHZXRNYXBNYXJrVGlwc1JzcC5wcm90bxoVTWFwTWFya1RpcHNJbmZvLnBy",
-            "b3RvIk4KEUdldE1hcE1hcmtUaXBzUnNwEg8KB3JldGNvZGUYByABKAUSKAoO",
-            "bWFya190aXBzX2xpc3QYCyADKAsyEC5NYXBNYXJrVGlwc0luZm9CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdHZXRNYXBNYXJrVGlwc1JzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoVTWFwTWFya1RpcHNJbmZvLnByb3RvIm4KEUdldE1h",
+            "cE1hcmtUaXBzUnNwEkgKDm1hcmtfdGlwc19saXN0GAggAygLMjAuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NYXBNYXJrVGlwc0luZm8SDwoH",
+            "cmV0Y29kZRgLIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetMapMarkTipsRsp), global::Weedwacker.Shared.Network.Proto.GetMapMarkTipsRsp.Parser, new[]{ "Retcode", "MarkTipsList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetMapMarkTipsRsp), global::Weedwacker.Shared.Network.Proto.GetMapMarkTipsRsp.Parser, new[]{ "MarkTipsList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3327
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3272;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetMapMarkTipsRsp : pb::IMessage<GetMapMarkTipsRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetMapMarkTipsRsp(GetMapMarkTipsRsp other) : this() {
-      retcode_ = other.retcode_;
       markTipsList_ = other.markTipsList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetMapMarkTipsRsp(this);
     }
 
+    /// <summary>Field number for the "mark_tips_list" field.</summary>
+    public const int MarkTipsListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> _repeated_markTipsList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> markTipsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> MarkTipsList {
+      get { return markTipsList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,17 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "mark_tips_list" field.</summary>
-    public const int MarkTipsListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> _repeated_markTipsList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> markTipsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MapMarkTipsInfo> MarkTipsList {
-      get { return markTipsList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!markTipsList_.Equals(other.markTipsList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= markTipsList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      markTipsList_.WriteTo(output, _repeated_markTipsList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      markTipsList_.WriteTo(output, _repeated_markTipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      markTipsList_.WriteTo(ref output, _repeated_markTipsList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      markTipsList_.WriteTo(ref output, _repeated_markTipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += markTipsList_.CalculateSize(_repeated_markTipsList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += markTipsList_.CalculateSize(_repeated_markTipsList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      markTipsList_.Add(other.markTipsList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      markTipsList_.Add(other.markTipsList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            markTipsList_.AddEntriesFrom(input, _repeated_markTipsList_codec);
             break;
           }
-          case 90: {
-            markTipsList_.AddEntriesFrom(input, _repeated_markTipsList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -243,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            markTipsList_.AddEntriesFrom(ref input, _repeated_markTipsList_codec);
             break;
           }
-          case 90: {
-            markTipsList_.AddEntriesFrom(ref input, _repeated_markTipsList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTCTavernChallengeUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZHQ0dUQ1RhdmVybkNoYWxsZW5nZVVwZGF0ZU5vdGlmeS5wcm90bxoeR0NH",
-            "VENUYXZlcm5DaGFsbGVuZ2VEYXRhLnByb3RvIlcKIEdDR1RDVGF2ZXJuQ2hh",
-            "bGxlbmdlVXBkYXRlTm90aWZ5EjMKEHRhdmVybl9jaGFsbGVuZ2UYBSABKAsy",
-            "GS5HQ0dUQ1RhdmVybkNoYWxsZW5nZURhdGFCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiZHQ0dUQ1RhdmVybkNoYWxsZW5nZVVwZGF0ZU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoeR0NHVENUYXZlcm5DaGFs",
+            "bGVuZ2VEYXRhLnByb3RvIncKIEdDR1RDVGF2ZXJuQ2hhbGxlbmdlVXBkYXRl",
+            "Tm90aWZ5ElMKEHRhdmVybl9jaGFsbGVuZ2UYDCABKAsyOS5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1RDVGF2ZXJuQ2hhbGxlbmdlRGF0",
+            "YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGTCTavernChallengeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7184
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7907;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGTCTavernChallengeUpdateNotify : pb::IMessage<GCGTCTavernChallengeUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tavern_challenge" field.</summary>
-    public const int TavernChallengeFieldNumber = 5;
+    public const int TavernChallengeFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.GCGTCTavernChallengeData tavernChallenge_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (tavernChallenge_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(98);
         output.WriteMessage(TavernChallenge);
       }
       if (_unknownFields != null) {
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (tavernChallenge_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(98);
         output.WriteMessage(TavernChallenge);
       }
       if (_unknownFields != null) {
@@ -206,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 98: {
             if (tavernChallenge_ == null) {
               TavernChallenge = new global::Weedwacker.Shared.Network.Proto.GCGTCTavernChallengeData();
             }
@@ -228,7 +233,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 98: {
             if (tavernChallenge_ == null) {
               TavernChallenge = new global::Weedwacker.Shared.Network.Proto.GCGTCTavernChallengeData();
             }

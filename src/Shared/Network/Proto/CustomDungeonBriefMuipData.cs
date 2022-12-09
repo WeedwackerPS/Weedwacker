@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonBriefMuipDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBDdXN0b21EdW5nZW9uQnJpZWZNdWlwRGF0YS5wcm90bxojQ3VzdG9tRHVu",
-            "Z2VvbkFic3RyYWN0TXVpcERhdGEucHJvdG8aIkN1c3RvbUR1bmdlb25TZXR0",
-            "aW5nTXVpcERhdGEucHJvdG8aIUN1c3RvbUR1bmdlb25Tb2NpYWxNdWlwRGF0",
-            "YS5wcm90byKCAgoaQ3VzdG9tRHVuZ2VvbkJyaWVmTXVpcERhdGESFAoMZHVu",
-            "Z2Vvbl9ndWlkGAEgASgEEhIKCmR1bmdlb25faWQYAiABKA0SGAoQY3JlYXRv",
-            "cl9uaWNrbmFtZRgDIAEoCRIQCgh0YWdfbGlzdBgEIAMoDRIuCgdzZXR0aW5n",
-            "GAUgASgLMh0uQ3VzdG9tRHVuZ2VvblNldHRpbmdNdWlwRGF0YRIwCghhYnN0",
-            "cmFjdBgGIAEoCzIeLkN1c3RvbUR1bmdlb25BYnN0cmFjdE11aXBEYXRhEiwK",
-            "BnNvY2lhbBgHIAEoCzIcLkN1c3RvbUR1bmdlb25Tb2NpYWxNdWlwRGF0YUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBDdXN0b21EdW5nZW9uQnJpZWZNdWlwRGF0YS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxojQ3VzdG9tRHVuZ2VvbkFic3RyYWN0",
+            "TXVpcERhdGEucHJvdG8aIkN1c3RvbUR1bmdlb25TZXR0aW5nTXVpcERhdGEu",
+            "cHJvdG8aIUN1c3RvbUR1bmdlb25Tb2NpYWxNdWlwRGF0YS5wcm90byLiAgoa",
+            "Q3VzdG9tRHVuZ2VvbkJyaWVmTXVpcERhdGESFAoMZHVuZ2Vvbl9ndWlkGAEg",
+            "ASgEEhIKCmR1bmdlb25faWQYAiABKA0SGAoQY3JlYXRvcl9uaWNrbmFtZRgD",
+            "IAEoCRIQCgh0YWdfbGlzdBgEIAMoDRJOCgdzZXR0aW5nGAUgASgLMj0uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DdXN0b21EdW5nZW9uU2V0",
+            "dGluZ011aXBEYXRhElAKCGFic3RyYWN0GAYgASgLMj4uV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5DdXN0b21EdW5nZW9uQWJzdHJhY3RNdWlw",
+            "RGF0YRJMCgZzb2NpYWwYByABKAsyPC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkN1c3RvbUR1bmdlb25Tb2NpYWxNdWlwRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstractMuipDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSettingMuipDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSocialMuipDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

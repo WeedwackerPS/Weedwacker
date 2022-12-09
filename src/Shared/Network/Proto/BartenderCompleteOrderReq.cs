@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static BartenderCompleteOrderReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9CYXJ0ZW5kZXJDb21wbGV0ZU9yZGVyUmVxLnByb3RvGg9JdGVtUGFyYW0u",
-            "cHJvdG8ivAEKGUJhcnRlbmRlckNvbXBsZXRlT3JkZXJSZXESEAoIY3VwX3R5",
-            "cGUYDiABKA0SEQoJcXRlX2NvdW50GAcgASgNEhAKCHF1ZXN0X2lkGAsgASgN",
-            "Eh0KCWl0ZW1fbGlzdBgKIAMoCzIKLkl0ZW1QYXJhbRIXCg9pc192aWV3X2Zv",
-            "cm11bGEYCSABKAgSGwoTb3B0aW9uYWxfb3JkZXJfbGlzdBgGIAMoDRITCgty",
-            "ZXRyeV9jb3VudBgDIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "Ch9CYXJ0ZW5kZXJDb21wbGV0ZU9yZGVyUmVxLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJvdG8i+QEKGUJh",
+            "cnRlbmRlckNvbXBsZXRlT3JkZXJSZXESEAoIcXVlc3RfaWQYDiABKA0SGwoT",
+            "b3B0aW9uYWxfb3JkZXJfbGlzdBgPIAMoDRIbChNVbmszMzAwX05LTUhISEhH",
+            "SElGGAYgASgNEhsKE1VuazMzMDBfTE9OSEtKRkRPTkQYBSABKA0SGwoTVW5r",
+            "MzMwMF9QT0VHUEZKTE5HQhgLIAEoDRIXCg9pc192aWV3X2Zvcm11bGEYCCAB",
+            "KAgSPQoJaXRlbV9saXN0GAwgAygLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5JdGVtUGFyYW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderReq), global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderReq.Parser, new[]{ "CupType", "QteCount", "QuestId", "ItemList", "IsViewFormula", "OptionalOrderList", "RetryCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderReq), global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderReq.Parser, new[]{ "QuestId", "OptionalOrderList", "Unk3300NKMHHHHGHIF", "Unk3300LONHKJFDOND", "Unk3300POEGPFJLNGB", "IsViewFormula", "ItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8414
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8880;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class BartenderCompleteOrderReq : pb::IMessage<BartenderCompleteOrderReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,13 +86,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BartenderCompleteOrderReq(BartenderCompleteOrderReq other) : this() {
-      cupType_ = other.cupType_;
-      qteCount_ = other.qteCount_;
       questId_ = other.questId_;
-      itemList_ = other.itemList_.Clone();
-      isViewFormula_ = other.isViewFormula_;
       optionalOrderList_ = other.optionalOrderList_.Clone();
-      retryCount_ = other.retryCount_;
+      unk3300NKMHHHHGHIF_ = other.unk3300NKMHHHHGHIF_;
+      unk3300LONHKJFDOND_ = other.unk3300LONHKJFDOND_;
+      unk3300POEGPFJLNGB_ = other.unk3300POEGPFJLNGB_;
+      isViewFormula_ = other.isViewFormula_;
+      itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,32 +102,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BartenderCompleteOrderReq(this);
     }
 
-    /// <summary>Field number for the "cup_type" field.</summary>
-    public const int CupTypeFieldNumber = 14;
-    private uint cupType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CupType {
-      get { return cupType_; }
-      set {
-        cupType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "qte_count" field.</summary>
-    public const int QteCountFieldNumber = 7;
-    private uint qteCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QteCount {
-      get { return qteCount_; }
-      set {
-        qteCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 11;
+    public const int QuestIdFieldNumber = 14;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -133,19 +114,55 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    /// <summary>Field number for the "optional_order_list" field.</summary>
+    public const int OptionalOrderListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_optionalOrderList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> optionalOrderList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
-      get { return itemList_; }
+    public pbc::RepeatedField<uint> OptionalOrderList {
+      get { return optionalOrderList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NKMHHHHGHIF" field.</summary>
+    public const int Unk3300NKMHHHHGHIFFieldNumber = 6;
+    private uint unk3300NKMHHHHGHIF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NKMHHHHGHIF {
+      get { return unk3300NKMHHHHGHIF_; }
+      set {
+        unk3300NKMHHHHGHIF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LONHKJFDOND" field.</summary>
+    public const int Unk3300LONHKJFDONDFieldNumber = 5;
+    private uint unk3300LONHKJFDOND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LONHKJFDOND {
+      get { return unk3300LONHKJFDOND_; }
+      set {
+        unk3300LONHKJFDOND_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_POEGPFJLNGB" field.</summary>
+    public const int Unk3300POEGPFJLNGBFieldNumber = 11;
+    private uint unk3300POEGPFJLNGB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300POEGPFJLNGB {
+      get { return unk3300POEGPFJLNGB_; }
+      set {
+        unk3300POEGPFJLNGB_ = value;
+      }
     }
 
     /// <summary>Field number for the "is_view_formula" field.</summary>
-    public const int IsViewFormulaFieldNumber = 9;
+    public const int IsViewFormulaFieldNumber = 8;
     private bool isViewFormula_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,27 +173,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "optional_order_list" field.</summary>
-    public const int OptionalOrderListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_optionalOrderList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> optionalOrderList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> OptionalOrderList {
-      get { return optionalOrderList_; }
-    }
-
-    /// <summary>Field number for the "retry_count" field.</summary>
-    public const int RetryCountFieldNumber = 3;
-    private uint retryCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RetryCount {
-      get { return retryCount_; }
-      set {
-        retryCount_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
+      get { return itemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,13 +199,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CupType != other.CupType) return false;
-      if (QteCount != other.QteCount) return false;
       if (QuestId != other.QuestId) return false;
-      if(!itemList_.Equals(other.itemList_)) return false;
-      if (IsViewFormula != other.IsViewFormula) return false;
       if(!optionalOrderList_.Equals(other.optionalOrderList_)) return false;
-      if (RetryCount != other.RetryCount) return false;
+      if (Unk3300NKMHHHHGHIF != other.Unk3300NKMHHHHGHIF) return false;
+      if (Unk3300LONHKJFDOND != other.Unk3300LONHKJFDOND) return false;
+      if (Unk3300POEGPFJLNGB != other.Unk3300POEGPFJLNGB) return false;
+      if (IsViewFormula != other.IsViewFormula) return false;
+      if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -208,13 +213,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CupType != 0) hash ^= CupType.GetHashCode();
-      if (QteCount != 0) hash ^= QteCount.GetHashCode();
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
-      hash ^= itemList_.GetHashCode();
-      if (IsViewFormula != false) hash ^= IsViewFormula.GetHashCode();
       hash ^= optionalOrderList_.GetHashCode();
-      if (RetryCount != 0) hash ^= RetryCount.GetHashCode();
+      if (Unk3300NKMHHHHGHIF != 0) hash ^= Unk3300NKMHHHHGHIF.GetHashCode();
+      if (Unk3300LONHKJFDOND != 0) hash ^= Unk3300LONHKJFDOND.GetHashCode();
+      if (Unk3300POEGPFJLNGB != 0) hash ^= Unk3300POEGPFJLNGB.GetHashCode();
+      if (IsViewFormula != false) hash ^= IsViewFormula.GetHashCode();
+      hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -233,28 +238,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RetryCount != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(RetryCount);
+      if (Unk3300LONHKJFDOND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LONHKJFDOND);
       }
-      optionalOrderList_.WriteTo(output, _repeated_optionalOrderList_codec);
-      if (QteCount != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(QteCount);
+      if (Unk3300NKMHHHHGHIF != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300NKMHHHHGHIF);
       }
       if (IsViewFormula != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(IsViewFormula);
+      }
+      if (Unk3300POEGPFJLNGB != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300POEGPFJLNGB);
       }
       itemList_.WriteTo(output, _repeated_itemList_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(QuestId);
       }
-      if (CupType != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CupType);
-      }
+      optionalOrderList_.WriteTo(output, _repeated_optionalOrderList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -265,28 +270,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RetryCount != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(RetryCount);
+      if (Unk3300LONHKJFDOND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LONHKJFDOND);
       }
-      optionalOrderList_.WriteTo(ref output, _repeated_optionalOrderList_codec);
-      if (QteCount != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(QteCount);
+      if (Unk3300NKMHHHHGHIF != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300NKMHHHHGHIF);
       }
       if (IsViewFormula != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteBool(IsViewFormula);
+      }
+      if (Unk3300POEGPFJLNGB != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300POEGPFJLNGB);
       }
       itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(QuestId);
       }
-      if (CupType != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CupType);
-      }
+      optionalOrderList_.WriteTo(ref output, _repeated_optionalOrderList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -297,23 +302,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CupType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CupType);
-      }
-      if (QteCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QteCount);
-      }
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
+      size += optionalOrderList_.CalculateSize(_repeated_optionalOrderList_codec);
+      if (Unk3300NKMHHHHGHIF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NKMHHHHGHIF);
+      }
+      if (Unk3300LONHKJFDOND != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LONHKJFDOND);
+      }
+      if (Unk3300POEGPFJLNGB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300POEGPFJLNGB);
+      }
       if (IsViewFormula != false) {
         size += 1 + 1;
       }
-      size += optionalOrderList_.CalculateSize(_repeated_optionalOrderList_codec);
-      if (RetryCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RetryCount);
-      }
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -326,23 +331,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CupType != 0) {
-        CupType = other.CupType;
-      }
-      if (other.QteCount != 0) {
-        QteCount = other.QteCount;
-      }
       if (other.QuestId != 0) {
         QuestId = other.QuestId;
       }
-      itemList_.Add(other.itemList_);
+      optionalOrderList_.Add(other.optionalOrderList_);
+      if (other.Unk3300NKMHHHHGHIF != 0) {
+        Unk3300NKMHHHHGHIF = other.Unk3300NKMHHHHGHIF;
+      }
+      if (other.Unk3300LONHKJFDOND != 0) {
+        Unk3300LONHKJFDOND = other.Unk3300LONHKJFDOND;
+      }
+      if (other.Unk3300POEGPFJLNGB != 0) {
+        Unk3300POEGPFJLNGB = other.Unk3300POEGPFJLNGB;
+      }
       if (other.IsViewFormula != false) {
         IsViewFormula = other.IsViewFormula;
       }
-      optionalOrderList_.Add(other.optionalOrderList_);
-      if (other.RetryCount != 0) {
-        RetryCount = other.RetryCount;
-      }
+      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -358,33 +363,33 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            RetryCount = input.ReadUInt32();
+          case 40: {
+            Unk3300LONHKJFDOND = input.ReadUInt32();
             break;
           }
-          case 50:
           case 48: {
-            optionalOrderList_.AddEntriesFrom(input, _repeated_optionalOrderList_codec);
+            Unk3300NKMHHHHGHIF = input.ReadUInt32();
             break;
           }
-          case 56: {
-            QteCount = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 64: {
             IsViewFormula = input.ReadBool();
             break;
           }
-          case 82: {
+          case 88: {
+            Unk3300POEGPFJLNGB = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 88: {
+          case 112: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CupType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            optionalOrderList_.AddEntriesFrom(input, _repeated_optionalOrderList_codec);
             break;
           }
         }
@@ -402,33 +407,33 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            RetryCount = input.ReadUInt32();
+          case 40: {
+            Unk3300LONHKJFDOND = input.ReadUInt32();
             break;
           }
-          case 50:
           case 48: {
-            optionalOrderList_.AddEntriesFrom(ref input, _repeated_optionalOrderList_codec);
+            Unk3300NKMHHHHGHIF = input.ReadUInt32();
             break;
           }
-          case 56: {
-            QteCount = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 64: {
             IsViewFormula = input.ReadBool();
             break;
           }
-          case 82: {
+          case 88: {
+            Unk3300POEGPFJLNGB = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 88: {
+          case 112: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CupType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            optionalOrderList_.AddEntriesFrom(ref input, _repeated_optionalOrderList_codec);
             break;
           }
         }

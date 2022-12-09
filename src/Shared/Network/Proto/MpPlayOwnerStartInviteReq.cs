@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MpPlayOwnerStartInviteReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9NcFBsYXlPd25lclN0YXJ0SW52aXRlUmVxLnByb3RvIkYKGU1wUGxheU93",
-            "bmVyU3RhcnRJbnZpdGVSZXESEgoKbXBfcGxheV9pZBgDIAEoDRIVCg1pc19z",
-            "a2lwX21hdGNoGAYgASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch9NcFBsYXlPd25lclN0YXJ0SW52aXRlUmVxLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkYKGU1wUGxheU93bmVyU3RhcnRJbnZp",
+            "dGVSZXESFQoNaXNfc2tpcF9tYXRjaBgJIAEoCBISCgptcF9wbGF5X2lkGAog",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayOwnerStartInviteReq), global::Weedwacker.Shared.Network.Proto.MpPlayOwnerStartInviteReq.Parser, new[]{ "MpPlayId", "IsSkipMatch" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MpPlayOwnerStartInviteReq), global::Weedwacker.Shared.Network.Proto.MpPlayOwnerStartInviteReq.Parser, new[]{ "IsSkipMatch", "MpPlayId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1837
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1809;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MpPlayOwnerStartInviteReq : pb::IMessage<MpPlayOwnerStartInviteReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MpPlayOwnerStartInviteReq(MpPlayOwnerStartInviteReq other) : this() {
-      mpPlayId_ = other.mpPlayId_;
       isSkipMatch_ = other.isSkipMatch_;
+      mpPlayId_ = other.mpPlayId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MpPlayOwnerStartInviteReq(this);
     }
 
-    /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 3;
-    private uint mpPlayId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MpPlayId {
-      get { return mpPlayId_; }
-      set {
-        mpPlayId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_skip_match" field.</summary>
-    public const int IsSkipMatchFieldNumber = 6;
+    public const int IsSkipMatchFieldNumber = 9;
     private bool isSkipMatch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isSkipMatch_; }
       set {
         isSkipMatch_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mp_play_id" field.</summary>
+    public const int MpPlayIdFieldNumber = 10;
+    private uint mpPlayId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MpPlayId {
+      get { return mpPlayId_; }
+      set {
+        mpPlayId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MpPlayId != other.MpPlayId) return false;
       if (IsSkipMatch != other.IsSkipMatch) return false;
+      if (MpPlayId != other.MpPlayId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
       if (IsSkipMatch != false) hash ^= IsSkipMatch.GetHashCode();
+      if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MpPlayId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MpPlayId);
-      }
       if (IsSkipMatch != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(IsSkipMatch);
+      }
+      if (MpPlayId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(MpPlayId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MpPlayId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MpPlayId);
-      }
       if (IsSkipMatch != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteBool(IsSkipMatch);
+      }
+      if (MpPlayId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(MpPlayId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MpPlayId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
-      }
       if (IsSkipMatch != false) {
         size += 1 + 1;
+      }
+      if (MpPlayId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MpPlayId != 0) {
-        MpPlayId = other.MpPlayId;
-      }
       if (other.IsSkipMatch != false) {
         IsSkipMatch = other.IsSkipMatch;
+      }
+      if (other.MpPlayId != 0) {
+        MpPlayId = other.MpPlayId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            MpPlayId = input.ReadUInt32();
+          case 72: {
+            IsSkipMatch = input.ReadBool();
             break;
           }
-          case 48: {
-            IsSkipMatch = input.ReadBool();
+          case 80: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            MpPlayId = input.ReadUInt32();
+          case 72: {
+            IsSkipMatch = input.ReadBool();
             break;
           }
-          case 48: {
-            IsSkipMatch = input.ReadBool();
+          case 80: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
         }

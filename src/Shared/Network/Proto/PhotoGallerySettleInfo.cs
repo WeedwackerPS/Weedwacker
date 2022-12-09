@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PhotoGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxQaG90b0dhbGxlcnlTZXR0bGVJbmZvLnByb3RvGhdHYWxsZXJ5U3RvcFJl",
-            "YXNvbi5wcm90byI8ChZQaG90b0dhbGxlcnlTZXR0bGVJbmZvEiIKBnJlYXNv",
-            "bhgHIAEoDjISLkdhbGxlcnlTdG9wUmVhc29uQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxQaG90b0dhbGxlcnlTZXR0bGVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90byJc",
+            "ChZQaG90b0dhbGxlcnlTZXR0bGVJbmZvEkIKBnJlYXNvbhgNIAEoDjIyLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR2FsbGVyeVN0b3BSZWFz",
+            "b25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 7;
+    public const int ReasonFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -151,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -197,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 104: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
@@ -216,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 104: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }

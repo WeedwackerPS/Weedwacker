@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarSummonAllEventNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRIb21lQXZhdGFyU3VtbW9uQWxsRXZlbnROb3RpZnkucHJvdG8aH0hvbWVB",
-            "dmF0YXJTdW1tb25FdmVudEluZm8ucHJvdG8iVwoeSG9tZUF2YXRhclN1bW1v",
-            "bkFsbEV2ZW50Tm90aWZ5EjUKEXN1bW1vbl9ldmVudF9saXN0GAEgAygLMhou",
-            "SG9tZUF2YXRhclN1bW1vbkV2ZW50SW5mb0IiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiRIb21lQXZhdGFyU3VtbW9uQWxsRXZlbnROb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aH0hvbWVBdmF0YXJTdW1tb25F",
+            "dmVudEluZm8ucHJvdG8idwoeSG9tZUF2YXRhclN1bW1vbkFsbEV2ZW50Tm90",
+            "aWZ5ElUKEXN1bW1vbl9ldmVudF9saXN0GA4gAygLMjouV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5Ib21lQXZhdGFyU3VtbW9uRXZlbnRJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4808
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4670;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeAvatarSummonAllEventNotify : pb::IMessage<HomeAvatarSummonAllEventNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "summon_event_list" field.</summary>
-    public const int SummonEventListFieldNumber = 1;
+    public const int SummonEventListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo> _repeated_summonEventList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo> summonEventList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonEventInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 114: {
             summonEventList_.AddEntriesFrom(input, _repeated_summonEventList_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 114: {
             summonEventList_.AddEntriesFrom(ref input, _repeated_summonEventList_codec);
             break;
           }

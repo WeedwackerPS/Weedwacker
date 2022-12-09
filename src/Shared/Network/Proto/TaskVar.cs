@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static TaskVarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1UYXNrVmFyLnByb3RvIioKB1Rhc2tWYXISCwoDa2V5GAggASgNEhIKCnZh",
-            "bHVlX2xpc3QYBiADKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "Cg1UYXNrVmFyLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvIioKB1Rhc2tWYXISCwoDa2V5GAIgASgNEhIKCnZhbHVlX2xpc3QYByAD",
+            "KAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "key" field.</summary>
-    public const int KeyFieldNumber = 8;
+    public const int KeyFieldNumber = 2;
     private uint key_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "value_list" field.</summary>
-    public const int ValueListFieldNumber = 6;
+    public const int ValueListFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_valueList_codec
-        = pb::FieldCodec.ForInt32(50);
+        = pb::FieldCodec.ForInt32(58);
     private readonly pbc::RepeatedField<int> valueList_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      valueList_.WriteTo(output, _repeated_valueList_codec);
       if (Key != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Key);
       }
+      valueList_.WriteTo(output, _repeated_valueList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      valueList_.WriteTo(ref output, _repeated_valueList_codec);
       if (Key != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteUInt32(Key);
       }
+      valueList_.WriteTo(ref output, _repeated_valueList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
-            valueList_.AddEntriesFrom(input, _repeated_valueList_codec);
+          case 16: {
+            Key = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Key = input.ReadUInt32();
+          case 58:
+          case 56: {
+            valueList_.AddEntriesFrom(input, _repeated_valueList_codec);
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
-            valueList_.AddEntriesFrom(ref input, _repeated_valueList_codec);
+          case 16: {
+            Key = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Key = input.ReadUInt32();
+          case 58:
+          case 56: {
+            valueList_.AddEntriesFrom(ref input, _repeated_valueList_codec);
             break;
           }
         }

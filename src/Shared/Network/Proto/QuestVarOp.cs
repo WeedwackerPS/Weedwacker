@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestVarOpReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBRdWVzdFZhck9wLnByb3RvIjoKClF1ZXN0VmFyT3ASDQoFaW5kZXgYCSAB",
-            "KA0SDQoFdmFsdWUYBSABKAUSDgoGaXNfYWRkGAYgASgIQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChBRdWVzdFZhck9wLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIjoKClF1ZXN0VmFyT3ASDQoFaW5kZXgYCSABKA0SDgoGaXNfYWRk",
+            "GAMgASgIEg0KBXZhbHVlGAggASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestVarOp), global::Weedwacker.Shared.Network.Proto.QuestVarOp.Parser, new[]{ "Index", "Value", "IsAdd" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestVarOp), global::Weedwacker.Shared.Network.Proto.QuestVarOp.Parser, new[]{ "Index", "IsAdd", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuestVarOp(QuestVarOp other) : this() {
       index_ = other.index_;
-      value_ = other.value_;
       isAdd_ = other.isAdd_;
+      value_ = other.value_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 5;
-    private int value_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Value {
-      get { return value_; }
-      set {
-        value_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_add" field.</summary>
-    public const int IsAddFieldNumber = 6;
+    public const int IsAddFieldNumber = 3;
     private bool isAdd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isAdd_; }
       set {
         isAdd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 8;
+    private int value_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Value {
+      get { return value_; }
+      set {
+        value_ = value;
       }
     }
 
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Index != other.Index) return false;
-      if (Value != other.Value) return false;
       if (IsAdd != other.IsAdd) return false;
+      if (Value != other.Value) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Index != 0) hash ^= Index.GetHashCode();
-      if (Value != 0) hash ^= Value.GetHashCode();
       if (IsAdd != false) hash ^= IsAdd.GetHashCode();
+      if (Value != 0) hash ^= Value.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -165,13 +165,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Value != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Value);
-      }
       if (IsAdd != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsAdd);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Value);
       }
       if (Index != 0) {
         output.WriteRawTag(72);
@@ -187,13 +187,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Value != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Value);
-      }
       if (IsAdd != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsAdd);
+      }
+      if (Value != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Value);
       }
       if (Index != 0) {
         output.WriteRawTag(72);
@@ -212,11 +212,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Index != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
       }
-      if (Value != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
-      }
       if (IsAdd != false) {
         size += 1 + 1;
+      }
+      if (Value != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -233,11 +233,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Index != 0) {
         Index = other.Index;
       }
-      if (other.Value != 0) {
-        Value = other.Value;
-      }
       if (other.IsAdd != false) {
         IsAdd = other.IsAdd;
+      }
+      if (other.Value != 0) {
+        Value = other.Value;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -254,12 +254,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            Value = input.ReadInt32();
+          case 24: {
+            IsAdd = input.ReadBool();
             break;
           }
-          case 48: {
-            IsAdd = input.ReadBool();
+          case 64: {
+            Value = input.ReadInt32();
             break;
           }
           case 72: {
@@ -281,12 +281,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            Value = input.ReadInt32();
+          case 24: {
+            IsAdd = input.ReadBool();
             break;
           }
-          case 48: {
-            IsAdd = input.ReadBool();
+          case 64: {
+            Value = input.ReadInt32();
             break;
           }
           case 72: {

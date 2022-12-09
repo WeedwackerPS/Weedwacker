@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureSeelieCollectOrbsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVUcmVhc3VyZVNlZWxpZUNvbGxlY3RPcmJzTm90aWZ5LnByb3RvIkkKH1Ry",
-            "ZWFzdXJlU2VlbGllQ29sbGVjdE9yYnNOb3RpZnkSEwoLY3VycmVudF9udW0Y",
-            "CyABKA0SEQoJdG90YWxfbnVtGAUgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVUcmVhc3VyZVNlZWxpZUNvbGxlY3RPcmJzTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkkKH1RyZWFzdXJlU2VlbGll",
+            "Q29sbGVjdE9yYnNOb3RpZnkSEwoLY3VycmVudF9udW0YDCABKA0SEQoJdG90",
+            "YWxfbnVtGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20754
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20380;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TreasureSeelieCollectOrbsNotify : pb::IMessage<TreasureSeelieCollectOrbsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "current_num" field.</summary>
-    public const int CurrentNumFieldNumber = 11;
+    public const int CurrentNumFieldNumber = 12;
     private uint currentNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "total_num" field.</summary>
-    public const int TotalNumFieldNumber = 5;
+    public const int TotalNumFieldNumber = 2;
     private uint totalNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TotalNum != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(TotalNum);
       }
       if (CurrentNum != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(CurrentNum);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TotalNum != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(TotalNum);
       }
       if (CurrentNum != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(CurrentNum);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 16: {
             TotalNum = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 96: {
             CurrentNum = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 16: {
             TotalNum = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 96: {
             CurrentNum = input.ReadUInt32();
             break;
           }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeAchievementRewardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5UYWtlQWNoaWV2ZW1lbnRSZXdhcmRSZXEucHJvdG8iKwoYVGFrZUFjaGll",
-            "dmVtZW50UmV3YXJkUmVxEg8KB2lkX2xpc3QYDSADKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5UYWtlQWNoaWV2ZW1lbnRSZXdhcmRSZXEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iKwoYVGFrZUFjaGlldmVtZW50UmV3YXJk",
+            "UmVxEg8KB2lkX2xpc3QYCSADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2675
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2672;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeAchievementRewardReq : pb::IMessage<TakeAchievementRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id_list" field.</summary>
-    public const int IdListFieldNumber = 13;
+    public const int IdListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_idList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> idList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,8 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106:
-          case 104: {
+          case 74:
+          case 72: {
             idList_.AddEntriesFrom(input, _repeated_idList_codec);
             break;
           }
@@ -211,8 +215,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106:
-          case 104: {
+          case 74:
+          case 72: {
             idList_.AddEntriesFrom(ref input, _repeated_idList_codec);
             break;
           }

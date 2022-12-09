@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DragonSpineChapterFinishNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiREcmFnb25TcGluZUNoYXB0ZXJGaW5pc2hOb3RpZnkucHJvdG8iZwoeRHJh",
-            "Z29uU3BpbmVDaGFwdGVyRmluaXNoTm90aWZ5EhMKC3NjaGVkdWxlX2lkGA0g",
-            "ASgNEhIKCmNoYXB0ZXJfaWQYCyABKA0SHAoUd2VhcG9uX2VuaGFuY2VfbGV2",
-            "ZWwYDiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiREcmFnb25TcGluZUNoYXB0ZXJGaW5pc2hOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iZwoeRHJhZ29uU3BpbmVDaGFw",
+            "dGVyRmluaXNoTm90aWZ5EhIKCmNoYXB0ZXJfaWQYDiABKA0SHAoUd2VhcG9u",
+            "X2VuaGFuY2VfbGV2ZWwYDCABKA0SEwoLc2NoZWR1bGVfaWQYBSABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineChapterFinishNotify), global::Weedwacker.Shared.Network.Proto.DragonSpineChapterFinishNotify.Parser, new[]{ "ScheduleId", "ChapterId", "WeaponEnhanceLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineChapterFinishNotify), global::Weedwacker.Shared.Network.Proto.DragonSpineChapterFinishNotify.Parser, new[]{ "ChapterId", "WeaponEnhanceLevel", "ScheduleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2069
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2149;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DragonSpineChapterFinishNotify : pb::IMessage<DragonSpineChapterFinishNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DragonSpineChapterFinishNotify(DragonSpineChapterFinishNotify other) : this() {
-      scheduleId_ = other.scheduleId_;
       chapterId_ = other.chapterId_;
       weaponEnhanceLevel_ = other.weaponEnhanceLevel_;
+      scheduleId_ = other.scheduleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DragonSpineChapterFinishNotify(this);
     }
 
-    /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 13;
-    private uint scheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleId {
-      get { return scheduleId_; }
-      set {
-        scheduleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "chapter_id" field.</summary>
-    public const int ChapterIdFieldNumber = 11;
+    public const int ChapterIdFieldNumber = 14;
     private uint chapterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "weapon_enhance_level" field.</summary>
-    public const int WeaponEnhanceLevelFieldNumber = 14;
+    public const int WeaponEnhanceLevelFieldNumber = 12;
     private uint weaponEnhanceLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return weaponEnhanceLevel_; }
       set {
         weaponEnhanceLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 5;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ScheduleId != other.ScheduleId) return false;
       if (ChapterId != other.ChapterId) return false;
       if (WeaponEnhanceLevel != other.WeaponEnhanceLevel) return false;
+      if (ScheduleId != other.ScheduleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
       if (WeaponEnhanceLevel != 0) hash ^= WeaponEnhanceLevel.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChapterId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ChapterId);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(ScheduleId);
       }
       if (WeaponEnhanceLevel != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(WeaponEnhanceLevel);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChapterId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ChapterId);
-      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(ScheduleId);
       }
       if (WeaponEnhanceLevel != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteUInt32(WeaponEnhanceLevel);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-      }
       if (ChapterId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
       }
       if (WeaponEnhanceLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEnhanceLevel);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ScheduleId != 0) {
-        ScheduleId = other.ScheduleId;
-      }
       if (other.ChapterId != 0) {
         ChapterId = other.ChapterId;
       }
       if (other.WeaponEnhanceLevel != 0) {
         WeaponEnhanceLevel = other.WeaponEnhanceLevel;
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            ChapterId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 40: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 96: {
             WeaponEnhanceLevel = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ChapterId = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            ChapterId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 40: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 96: {
             WeaponEnhanceLevel = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ChapterId = input.ReadUInt32();
             break;
           }
         }

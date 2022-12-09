@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetUgcBriefInfoReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHZXRVZ2NCcmllZkluZm9SZXEucHJvdG8aDVVnY1R5cGUucHJvdG8iQgoS",
-            "R2V0VWdjQnJpZWZJbmZvUmVxEhAKCHVnY19ndWlkGAcgASgEEhoKCHVnY190",
-            "eXBlGAogASgOMgguVWdjVHlwZUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHZXRVZ2NCcmllZkluZm9SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aDVVnY1R5cGUucHJvdG8iYgoSR2V0VWdjQnJpZWZJ",
+            "bmZvUmVxEhAKCHVnY19ndWlkGAUgASgEEjoKCHVnY190eXBlGAEgASgOMigu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5VZ2NUeXBlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.UgcTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6325
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6322;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetUgcBriefInfoReq : pb::IMessage<GetUgcBriefInfoReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 7;
+    public const int UgcGuidFieldNumber = 5;
     private ulong ugcGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ugc_type" field.</summary>
-    public const int UgcTypeFieldNumber = 10;
+    public const int UgcTypeFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.UgcType ugcType_ = global::Weedwacker.Shared.Network.Proto.UgcType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(UgcGuid);
-      }
       if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteEnum((int) UgcType);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(UgcGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(UgcGuid);
-      }
       if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteEnum((int) UgcType);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(UgcGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,12 +237,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            UgcGuid = input.ReadUInt64();
+          case 8: {
+            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
             break;
           }
-          case 80: {
-            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
+          case 40: {
+            UgcGuid = input.ReadUInt64();
             break;
           }
         }
@@ -255,12 +260,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            UgcGuid = input.ReadUInt64();
+          case 8: {
+            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
             break;
           }
-          case 80: {
-            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
+          case 40: {
+            UgcGuid = input.ReadUInt64();
             break;
           }
         }

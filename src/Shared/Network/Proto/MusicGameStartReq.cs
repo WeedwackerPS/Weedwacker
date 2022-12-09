@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MusicGameStartReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90byJUChFNdXNpY0dhbWVTdGFydFJl",
-            "cRIWCg5tdXNpY19iYXNpY19pZBgCIAEoDRIVCg1pc19zYXZlX3Njb3JlGAsg",
-            "ASgIEhAKCHVnY19ndWlkGAMgASgEQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJUChFNdXNpY0dhbWVTdGFydFJlcRIWCg5tdXNpY19i",
+            "YXNpY19pZBgLIAEoDRIVCg1pc19zYXZlX3Njb3JlGAwgASgIEhAKCHVnY19n",
+            "dWlkGAkgASgEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8406
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8820;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MusicGameStartReq : pb::IMessage<MusicGameStartReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_basic_id" field.</summary>
-    public const int MusicBasicIdFieldNumber = 2;
+    public const int MusicBasicIdFieldNumber = 11;
     private uint musicBasicId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_save_score" field.</summary>
-    public const int IsSaveScoreFieldNumber = 11;
+    public const int IsSaveScoreFieldNumber = 12;
     private bool isSaveScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 3;
+    public const int UgcGuidFieldNumber = 9;
     private ulong ugcGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MusicBasicId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MusicBasicId);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(72);
         output.WriteUInt64(UgcGuid);
       }
-      if (IsSaveScore != false) {
+      if (MusicBasicId != 0) {
         output.WriteRawTag(88);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(96);
         output.WriteBool(IsSaveScore);
       }
       if (_unknownFields != null) {
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MusicBasicId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MusicBasicId);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(72);
         output.WriteUInt64(UgcGuid);
       }
-      if (IsSaveScore != false) {
+      if (MusicBasicId != 0) {
         output.WriteRawTag(88);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(96);
         output.WriteBool(IsSaveScore);
       }
       if (_unknownFields != null) {
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            MusicBasicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 72: {
             UgcGuid = input.ReadUInt64();
             break;
           }
           case 88: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             IsSaveScore = input.ReadBool();
             break;
           }
@@ -288,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            MusicBasicId = input.ReadUInt32();
-            break;
-          }
-          case 24: {
+          case 72: {
             UgcGuid = input.ReadUInt64();
             break;
           }
           case 88: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             IsSaveScore = input.ReadBool();
             break;
           }

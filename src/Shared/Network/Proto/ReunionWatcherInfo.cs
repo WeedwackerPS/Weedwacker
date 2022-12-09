@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionWatcherInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSZXVuaW9uV2F0Y2hlckluZm8ucHJvdG8iiwEKElJldW5pb25XYXRjaGVy",
-            "SW5mbxIaChJyZXdhcmRfdW5sb2NrX3RpbWUYDCABKA0SEgoKd2F0Y2hlcl9p",
-            "ZBgDIAEoDRIWCg50b3RhbF9wcm9ncmVzcxgEIAEoDRIUCgxjdXJfcHJvZ3Jl",
-            "c3MYCyABKA0SFwoPaXNfdGFrZW5fcmV3YXJkGA4gASgIQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhSZXVuaW9uV2F0Y2hlckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iiwEKElJldW5pb25XYXRjaGVySW5mbxIWCg50b3Rh",
+            "bF9wcm9ncmVzcxgEIAEoDRIaChJyZXdhcmRfdW5sb2NrX3RpbWUYASABKA0S",
+            "EgoKd2F0Y2hlcl9pZBgJIAEoDRIXCg9pc190YWtlbl9yZXdhcmQYDCABKAgS",
+            "FAoMY3VyX3Byb2dyZXNzGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo), global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser, new[]{ "RewardUnlockTime", "WatcherId", "TotalProgress", "CurProgress", "IsTakenReward" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo), global::Weedwacker.Shared.Network.Proto.ReunionWatcherInfo.Parser, new[]{ "TotalProgress", "RewardUnlockTime", "WatcherId", "IsTakenReward", "CurProgress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReunionWatcherInfo(ReunionWatcherInfo other) : this() {
+      totalProgress_ = other.totalProgress_;
       rewardUnlockTime_ = other.rewardUnlockTime_;
       watcherId_ = other.watcherId_;
-      totalProgress_ = other.totalProgress_;
-      curProgress_ = other.curProgress_;
       isTakenReward_ = other.isTakenReward_;
+      curProgress_ = other.curProgress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,30 +85,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReunionWatcherInfo Clone() {
       return new ReunionWatcherInfo(this);
-    }
-
-    /// <summary>Field number for the "reward_unlock_time" field.</summary>
-    public const int RewardUnlockTimeFieldNumber = 12;
-    private uint rewardUnlockTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RewardUnlockTime {
-      get { return rewardUnlockTime_; }
-      set {
-        rewardUnlockTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "watcher_id" field.</summary>
-    public const int WatcherIdFieldNumber = 3;
-    private uint watcherId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WatcherId {
-      get { return watcherId_; }
-      set {
-        watcherId_ = value;
-      }
     }
 
     /// <summary>Field number for the "total_progress" field.</summary>
@@ -123,20 +99,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 11;
-    private uint curProgress_;
+    /// <summary>Field number for the "reward_unlock_time" field.</summary>
+    public const int RewardUnlockTimeFieldNumber = 1;
+    private uint rewardUnlockTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurProgress {
-      get { return curProgress_; }
+    public uint RewardUnlockTime {
+      get { return rewardUnlockTime_; }
       set {
-        curProgress_ = value;
+        rewardUnlockTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "watcher_id" field.</summary>
+    public const int WatcherIdFieldNumber = 9;
+    private uint watcherId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WatcherId {
+      get { return watcherId_; }
+      set {
+        watcherId_ = value;
       }
     }
 
     /// <summary>Field number for the "is_taken_reward" field.</summary>
-    public const int IsTakenRewardFieldNumber = 14;
+    public const int IsTakenRewardFieldNumber = 12;
     private bool isTakenReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +132,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isTakenReward_; }
       set {
         isTakenReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_progress" field.</summary>
+    public const int CurProgressFieldNumber = 10;
+    private uint curProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurProgress {
+      get { return curProgress_; }
+      set {
+        curProgress_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (TotalProgress != other.TotalProgress) return false;
       if (RewardUnlockTime != other.RewardUnlockTime) return false;
       if (WatcherId != other.WatcherId) return false;
-      if (TotalProgress != other.TotalProgress) return false;
-      if (CurProgress != other.CurProgress) return false;
       if (IsTakenReward != other.IsTakenReward) return false;
+      if (CurProgress != other.CurProgress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
       if (RewardUnlockTime != 0) hash ^= RewardUnlockTime.GetHashCode();
       if (WatcherId != 0) hash ^= WatcherId.GetHashCode();
-      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
-      if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
       if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
+      if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,24 +197,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WatcherId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WatcherId);
+      if (RewardUnlockTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RewardUnlockTime);
       }
       if (TotalProgress != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(TotalProgress);
       }
+      if (WatcherId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(WatcherId);
+      }
       if (CurProgress != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(CurProgress);
       }
-      if (RewardUnlockTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RewardUnlockTime);
-      }
       if (IsTakenReward != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteBool(IsTakenReward);
       }
       if (_unknownFields != null) {
@@ -227,24 +227,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WatcherId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WatcherId);
+      if (RewardUnlockTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RewardUnlockTime);
       }
       if (TotalProgress != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(TotalProgress);
       }
+      if (WatcherId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(WatcherId);
+      }
       if (CurProgress != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(CurProgress);
       }
-      if (RewardUnlockTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(RewardUnlockTime);
-      }
       if (IsTakenReward != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteBool(IsTakenReward);
       }
       if (_unknownFields != null) {
@@ -257,20 +257,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (TotalProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      }
       if (RewardUnlockTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardUnlockTime);
       }
       if (WatcherId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WatcherId);
       }
-      if (TotalProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      if (IsTakenReward != false) {
+        size += 1 + 1;
       }
       if (CurProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
-      }
-      if (IsTakenReward != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TotalProgress != 0) {
+        TotalProgress = other.TotalProgress;
+      }
       if (other.RewardUnlockTime != 0) {
         RewardUnlockTime = other.RewardUnlockTime;
       }
       if (other.WatcherId != 0) {
         WatcherId = other.WatcherId;
       }
-      if (other.TotalProgress != 0) {
-        TotalProgress = other.TotalProgress;
+      if (other.IsTakenReward != false) {
+        IsTakenReward = other.IsTakenReward;
       }
       if (other.CurProgress != 0) {
         CurProgress = other.CurProgress;
-      }
-      if (other.IsTakenReward != false) {
-        IsTakenReward = other.IsTakenReward;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -314,23 +314,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            WatcherId = input.ReadUInt32();
+          case 8: {
+            RewardUnlockTime = input.ReadUInt32();
             break;
           }
           case 32: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 72: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             CurProgress = input.ReadUInt32();
             break;
           }
           case 96: {
-            RewardUnlockTime = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             IsTakenReward = input.ReadBool();
             break;
           }
@@ -349,23 +349,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            WatcherId = input.ReadUInt32();
+          case 8: {
+            RewardUnlockTime = input.ReadUInt32();
             break;
           }
           case 32: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 72: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             CurProgress = input.ReadUInt32();
             break;
           }
           case 96: {
-            RewardUnlockTime = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             IsTakenReward = input.ReadBool();
             break;
           }

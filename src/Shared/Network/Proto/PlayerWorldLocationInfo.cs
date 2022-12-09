@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerWorldLocationInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1QbGF5ZXJXb3JsZExvY2F0aW9uSW5mby5wcm90bxoYUGxheWVyTG9jYXRp",
-            "b25JbmZvLnByb3RvIlQKF1BsYXllcldvcmxkTG9jYXRpb25JbmZvEhAKCHNj",
-            "ZW5lX2lkGAEgASgNEicKCnBsYXllcl9sb2MYDCABKAsyEy5QbGF5ZXJMb2Nh",
-            "dGlvbkluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch1QbGF5ZXJXb3JsZExvY2F0aW9uSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoYUGxheWVyTG9jYXRpb25JbmZvLnByb3Rv",
+            "InQKF1BsYXllcldvcmxkTG9jYXRpb25JbmZvEkcKCnBsYXllcl9sb2MYAyAB",
+            "KAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllckxv",
+            "Y2F0aW9uSW5mbxIQCghzY2VuZV9pZBgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerLocationInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo), global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo.Parser, new[]{ "SceneId", "PlayerLoc" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo), global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo.Parser, new[]{ "PlayerLoc", "SceneId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerWorldLocationInfo(PlayerWorldLocationInfo other) : this() {
-      sceneId_ = other.sceneId_;
       playerLoc_ = other.playerLoc_ != null ? other.playerLoc_.Clone() : null;
+      sceneId_ = other.sceneId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerWorldLocationInfo(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 1;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "player_loc" field.</summary>
-    public const int PlayerLocFieldNumber = 12;
+    public const int PlayerLocFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo playerLoc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playerLoc_; }
       set {
         playerLoc_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 11;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
       }
     }
 
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SceneId != other.SceneId) return false;
       if (!object.Equals(PlayerLoc, other.PlayerLoc)) return false;
+      if (SceneId != other.SceneId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (playerLoc_ != null) hash ^= PlayerLoc.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
-      }
       if (playerLoc_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(26);
         output.WriteMessage(PlayerLoc);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
-      }
       if (playerLoc_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(26);
         output.WriteMessage(PlayerLoc);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
       if (playerLoc_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerLoc);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,14 +206,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
       if (other.playerLoc_ != null) {
         if (playerLoc_ == null) {
           PlayerLoc = new global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo();
         }
         PlayerLoc.MergeFrom(other.PlayerLoc);
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,15 +230,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 26: {
             if (playerLoc_ == null) {
               PlayerLoc = new global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo();
             }
             input.ReadMessage(PlayerLoc);
+            break;
+          }
+          case 88: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }
@@ -256,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 26: {
             if (playerLoc_ == null) {
               PlayerLoc = new global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo();
             }
             input.ReadMessage(PlayerLoc);
+            break;
+          }
+          case 88: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }

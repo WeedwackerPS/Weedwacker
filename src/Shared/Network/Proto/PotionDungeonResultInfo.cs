@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionDungeonResultInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Qb3Rpb25EdW5nZW9uUmVzdWx0SW5mby5wcm90byKQAQoXUG90aW9uRHVu",
-            "Z2VvblJlc3VsdEluZm8SEwoLZmluYWxfc2NvcmUYCCABKA0SEQoJbGVmdF90",
-            "aW1lGAkgASgNEhgKEGRpZmZpY3VsdHlfbGV2ZWwYDiABKA0SDwoHbW9kZV9p",
-            "ZBgLIAEoDRIQCghsZXZlbF9pZBgEIAEoDRIQCghzdGFnZV9pZBgCIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1Qb3Rpb25EdW5nZW9uUmVzdWx0SW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byKQAQoXUG90aW9uRHVuZ2VvblJlc3VsdElu",
+            "Zm8SEQoJbGVmdF90aW1lGAcgASgNEg8KB21vZGVfaWQYDSABKA0SEAoIc3Rh",
+            "Z2VfaWQYASABKA0SEAoIbGV2ZWxfaWQYAiABKA0SEwoLZmluYWxfc2NvcmUY",
+            "DyABKA0SGAoQZGlmZmljdWx0eV9sZXZlbBgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo), global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo.Parser, new[]{ "FinalScore", "LeftTime", "DifficultyLevel", "ModeId", "LevelId", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo), global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo.Parser, new[]{ "LeftTime", "ModeId", "StageId", "LevelId", "FinalScore", "DifficultyLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,12 +73,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PotionDungeonResultInfo(PotionDungeonResultInfo other) : this() {
-      finalScore_ = other.finalScore_;
       leftTime_ = other.leftTime_;
-      difficultyLevel_ = other.difficultyLevel_;
       modeId_ = other.modeId_;
-      levelId_ = other.levelId_;
       stageId_ = other.stageId_;
+      levelId_ = other.levelId_;
+      finalScore_ = other.finalScore_;
+      difficultyLevel_ = other.difficultyLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PotionDungeonResultInfo(this);
     }
 
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 8;
-    private uint finalScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
-      set {
-        finalScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "left_time" field.</summary>
-    public const int LeftTimeFieldNumber = 9;
+    public const int LeftTimeFieldNumber = 7;
     private uint leftTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,20 +100,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "difficulty_level" field.</summary>
-    public const int DifficultyLevelFieldNumber = 14;
-    private uint difficultyLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DifficultyLevel {
-      get { return difficultyLevel_; }
-      set {
-        difficultyLevel_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mode_id" field.</summary>
-    public const int ModeIdFieldNumber = 11;
+    public const int ModeIdFieldNumber = 13;
     private uint modeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,8 +112,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 1;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 4;
+    public const int LevelIdFieldNumber = 2;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,15 +136,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 2;
-    private uint stageId_;
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 15;
+    private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
+    public uint FinalScore {
+      get { return finalScore_; }
       set {
-        stageId_ = value;
+        finalScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "difficulty_level" field.</summary>
+    public const int DifficultyLevelFieldNumber = 8;
+    private uint difficultyLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DifficultyLevel {
+      get { return difficultyLevel_; }
+      set {
+        difficultyLevel_ = value;
       }
     }
 
@@ -175,12 +175,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FinalScore != other.FinalScore) return false;
       if (LeftTime != other.LeftTime) return false;
-      if (DifficultyLevel != other.DifficultyLevel) return false;
       if (ModeId != other.ModeId) return false;
-      if (LevelId != other.LevelId) return false;
       if (StageId != other.StageId) return false;
+      if (LevelId != other.LevelId) return false;
+      if (FinalScore != other.FinalScore) return false;
+      if (DifficultyLevel != other.DifficultyLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -188,12 +188,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (LeftTime != 0) hash ^= LeftTime.GetHashCode();
-      if (DifficultyLevel != 0) hash ^= DifficultyLevel.GetHashCode();
       if (ModeId != 0) hash ^= ModeId.GetHashCode();
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
+      if (DifficultyLevel != 0) hash ^= DifficultyLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,28 +213,28 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (StageId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
       }
-      if (FinalScore != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(FinalScore);
-      }
       if (LeftTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(LeftTime);
       }
+      if (DifficultyLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(DifficultyLevel);
+      }
       if (ModeId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(ModeId);
       }
-      if (DifficultyLevel != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DifficultyLevel);
+      if (FinalScore != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,28 +247,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (StageId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(StageId);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
       }
-      if (FinalScore != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(FinalScore);
-      }
       if (LeftTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(LeftTime);
       }
+      if (DifficultyLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(DifficultyLevel);
+      }
       if (ModeId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(ModeId);
       }
-      if (DifficultyLevel != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DifficultyLevel);
+      if (FinalScore != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -280,23 +280,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
-      }
       if (LeftTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTime);
-      }
-      if (DifficultyLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyLevel);
       }
       if (ModeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModeId);
       }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
+      }
+      if (DifficultyLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -310,23 +310,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
-      }
       if (other.LeftTime != 0) {
         LeftTime = other.LeftTime;
-      }
-      if (other.DifficultyLevel != 0) {
-        DifficultyLevel = other.DifficultyLevel;
       }
       if (other.ModeId != 0) {
         ModeId = other.ModeId;
       }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
+      }
+      if (other.DifficultyLevel != 0) {
+        DifficultyLevel = other.DifficultyLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -343,28 +343,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 16: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 56: {
             LeftTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
+            DifficultyLevel = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ModeId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DifficultyLevel = input.ReadUInt32();
+          case 120: {
+            FinalScore = input.ReadUInt32();
             break;
           }
         }
@@ -382,28 +382,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 16: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 56: {
             LeftTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
+            DifficultyLevel = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ModeId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DifficultyLevel = input.ReadUInt32();
+          case 120: {
+            FinalScore = input.ReadUInt32();
             break;
           }
         }

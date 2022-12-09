@@ -24,21 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtAvatarEnterFocusNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9FdnRBdmF0YXJFbnRlckZvY3VzTm90aWZ5LnByb3RvGhFGb3J3YXJkVHlw",
-            "ZS5wcm90bxoMVmVjdG9yLnByb3RvIusCChlFdnRBdmF0YXJFbnRlckZvY3Vz",
-            "Tm90aWZ5EhEKCWVudGl0eV9pZBgBIAEoDRIQCghjYW5fbW92ZRgKIAEoCBIh",
-            "ChllbnRlcl9ob2xkaW5nX2ZvY3VzX3Nob290GA0gASgIEhkKEWRpc2FibGVf",
-            "YWltX2xheWVyGAYgASgIEhYKDnVzZV9hdXRvX2ZvY3VzGAUgASgIEhIKCmZh",
-            "c3RfZm9jdXMYAyABKAgSFwoPc2hvd19jcm9zc19oYWlyGAwgASgIEiAKGGVu",
-            "dGVyX25vcm1hbF9mb2N1c19zaG9vdBgOIAEoCBIiCgxmb3J3YXJkX3R5cGUY",
-            "CCABKA4yDC5Gb3J3YXJkVHlwZRIeCg1mb2N1c19mb3J3YXJkGAcgASgLMgcu",
-            "VmVjdG9yEhQKDGRpc2FibGVfYW5pbRgJIAEoCBIYChB1c2VfZm9jdXNfc3Rp",
-            "Y2t5GA8gASgIEhAKCHVzZV9neXJvGAsgASgIQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9FdnRBdmF0YXJFbnRlckZvY3VzTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhFGb3J3YXJkVHlwZS5wcm90bxoMVmVj",
+            "dG9yLnByb3RvItQDChlFdnRBdmF0YXJFbnRlckZvY3VzTm90aWZ5EkIKDGZv",
+            "cndhcmRfdHlwZRgOIAEoDjIsLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uRm9yd2FyZFR5cGUSGwoTVW5rMzMwMF9OUEJMREdQQ0RPQxgPIAEo",
+            "CBIbChNVbmszMzAwX0lKSEhERkRJSk1BGAQgASgIEhsKE1VuazMzMDBfTkFM",
+            "R0pCTEdOSkkYDSABKAgSGwoTVW5rMzMwMF9PT09QUEhFSktESRgCIAEoCBIb",
+            "ChNVbmszMzAwX0tNQUZCTUtKREFLGAkgASgIEhsKE1VuazMzMDBfTE5MT09L",
+            "REhKR0YYCCABKAgSEQoJZW50aXR5X2lkGAEgASgNEhsKE1VuazMzMDBfR0dI",
+            "Q0VHSkVITkQYCyABKAgSGwoTVW5rMzMwMF9OTE5JQkpBRkFERxgHIAEoCBI+",
+            "Cg1mb2N1c19mb3J3YXJkGAMgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5WZWN0b3ISGwoTVW5rMzMwMF9DREFKSkhJUElLSBgMIAEo",
+            "CBIbChNVbmszMzAwX0ZISERETkVORUREGAYgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAvatarEnterFocusNotify), global::Weedwacker.Shared.Network.Proto.EvtAvatarEnterFocusNotify.Parser, new[]{ "EntityId", "CanMove", "EnterHoldingFocusShoot", "DisableAimLayer", "UseAutoFocus", "FastFocus", "ShowCrossHair", "EnterNormalFocusShoot", "ForwardType", "FocusForward", "DisableAnim", "UseFocusSticky", "UseGyro" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAvatarEnterFocusNotify), global::Weedwacker.Shared.Network.Proto.EvtAvatarEnterFocusNotify.Parser, new[]{ "ForwardType", "Unk3300NPBLDGPCDOC", "Unk3300IJHHDFDIJMA", "Unk3300NALGJBLGNJI", "Unk3300OOOPPHEJKDI", "Unk3300KMAFBMKJDAK", "Unk3300LNLOOKDHJGF", "EntityId", "Unk3300GGHCEGJEHND", "Unk3300NLNIBJAFADG", "FocusForward", "Unk3300CDAJJHIPIKH", "Unk3300FHHDDNENEDD" }, null, null, null, null)
           }));
     }
     #endregion
@@ -46,10 +48,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 304
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 344;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtAvatarEnterFocusNotify : pb::IMessage<EvtAvatarEnterFocusNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,19 +91,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtAvatarEnterFocusNotify(EvtAvatarEnterFocusNotify other) : this() {
-      entityId_ = other.entityId_;
-      canMove_ = other.canMove_;
-      enterHoldingFocusShoot_ = other.enterHoldingFocusShoot_;
-      disableAimLayer_ = other.disableAimLayer_;
-      useAutoFocus_ = other.useAutoFocus_;
-      fastFocus_ = other.fastFocus_;
-      showCrossHair_ = other.showCrossHair_;
-      enterNormalFocusShoot_ = other.enterNormalFocusShoot_;
       forwardType_ = other.forwardType_;
+      unk3300NPBLDGPCDOC_ = other.unk3300NPBLDGPCDOC_;
+      unk3300IJHHDFDIJMA_ = other.unk3300IJHHDFDIJMA_;
+      unk3300NALGJBLGNJI_ = other.unk3300NALGJBLGNJI_;
+      unk3300OOOPPHEJKDI_ = other.unk3300OOOPPHEJKDI_;
+      unk3300KMAFBMKJDAK_ = other.unk3300KMAFBMKJDAK_;
+      unk3300LNLOOKDHJGF_ = other.unk3300LNLOOKDHJGF_;
+      entityId_ = other.entityId_;
+      unk3300GGHCEGJEHND_ = other.unk3300GGHCEGJEHND_;
+      unk3300NLNIBJAFADG_ = other.unk3300NLNIBJAFADG_;
       focusForward_ = other.focusForward_ != null ? other.focusForward_.Clone() : null;
-      disableAnim_ = other.disableAnim_;
-      useFocusSticky_ = other.useFocusSticky_;
-      useGyro_ = other.useGyro_;
+      unk3300CDAJJHIPIKH_ = other.unk3300CDAJJHIPIKH_;
+      unk3300FHHDDNENEDD_ = other.unk3300FHHDDNENEDD_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -105,6 +111,90 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtAvatarEnterFocusNotify Clone() {
       return new EvtAvatarEnterFocusNotify(this);
+    }
+
+    /// <summary>Field number for the "forward_type" field.</summary>
+    public const int ForwardTypeFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ForwardType ForwardType {
+      get { return forwardType_; }
+      set {
+        forwardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NPBLDGPCDOC" field.</summary>
+    public const int Unk3300NPBLDGPCDOCFieldNumber = 15;
+    private bool unk3300NPBLDGPCDOC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NPBLDGPCDOC {
+      get { return unk3300NPBLDGPCDOC_; }
+      set {
+        unk3300NPBLDGPCDOC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IJHHDFDIJMA" field.</summary>
+    public const int Unk3300IJHHDFDIJMAFieldNumber = 4;
+    private bool unk3300IJHHDFDIJMA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300IJHHDFDIJMA {
+      get { return unk3300IJHHDFDIJMA_; }
+      set {
+        unk3300IJHHDFDIJMA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NALGJBLGNJI" field.</summary>
+    public const int Unk3300NALGJBLGNJIFieldNumber = 13;
+    private bool unk3300NALGJBLGNJI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NALGJBLGNJI {
+      get { return unk3300NALGJBLGNJI_; }
+      set {
+        unk3300NALGJBLGNJI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OOOPPHEJKDI" field.</summary>
+    public const int Unk3300OOOPPHEJKDIFieldNumber = 2;
+    private bool unk3300OOOPPHEJKDI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300OOOPPHEJKDI {
+      get { return unk3300OOOPPHEJKDI_; }
+      set {
+        unk3300OOOPPHEJKDI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KMAFBMKJDAK" field.</summary>
+    public const int Unk3300KMAFBMKJDAKFieldNumber = 9;
+    private bool unk3300KMAFBMKJDAK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300KMAFBMKJDAK {
+      get { return unk3300KMAFBMKJDAK_; }
+      set {
+        unk3300KMAFBMKJDAK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LNLOOKDHJGF" field.</summary>
+    public const int Unk3300LNLOOKDHJGFFieldNumber = 8;
+    private bool unk3300LNLOOKDHJGF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300LNLOOKDHJGF {
+      get { return unk3300LNLOOKDHJGF_; }
+      set {
+        unk3300LNLOOKDHJGF_ = value;
+      }
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
@@ -119,104 +209,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "can_move" field.</summary>
-    public const int CanMoveFieldNumber = 10;
-    private bool canMove_;
+    /// <summary>Field number for the "Unk3300_GGHCEGJEHND" field.</summary>
+    public const int Unk3300GGHCEGJEHNDFieldNumber = 11;
+    private bool unk3300GGHCEGJEHND_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool CanMove {
-      get { return canMove_; }
+    public bool Unk3300GGHCEGJEHND {
+      get { return unk3300GGHCEGJEHND_; }
       set {
-        canMove_ = value;
+        unk3300GGHCEGJEHND_ = value;
       }
     }
 
-    /// <summary>Field number for the "enter_holding_focus_shoot" field.</summary>
-    public const int EnterHoldingFocusShootFieldNumber = 13;
-    private bool enterHoldingFocusShoot_;
+    /// <summary>Field number for the "Unk3300_NLNIBJAFADG" field.</summary>
+    public const int Unk3300NLNIBJAFADGFieldNumber = 7;
+    private bool unk3300NLNIBJAFADG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool EnterHoldingFocusShoot {
-      get { return enterHoldingFocusShoot_; }
+    public bool Unk3300NLNIBJAFADG {
+      get { return unk3300NLNIBJAFADG_; }
       set {
-        enterHoldingFocusShoot_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "disable_aim_layer" field.</summary>
-    public const int DisableAimLayerFieldNumber = 6;
-    private bool disableAimLayer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool DisableAimLayer {
-      get { return disableAimLayer_; }
-      set {
-        disableAimLayer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "use_auto_focus" field.</summary>
-    public const int UseAutoFocusFieldNumber = 5;
-    private bool useAutoFocus_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool UseAutoFocus {
-      get { return useAutoFocus_; }
-      set {
-        useAutoFocus_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fast_focus" field.</summary>
-    public const int FastFocusFieldNumber = 3;
-    private bool fastFocus_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool FastFocus {
-      get { return fastFocus_; }
-      set {
-        fastFocus_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "show_cross_hair" field.</summary>
-    public const int ShowCrossHairFieldNumber = 12;
-    private bool showCrossHair_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool ShowCrossHair {
-      get { return showCrossHair_; }
-      set {
-        showCrossHair_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "enter_normal_focus_shoot" field.</summary>
-    public const int EnterNormalFocusShootFieldNumber = 14;
-    private bool enterNormalFocusShoot_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool EnterNormalFocusShoot {
-      get { return enterNormalFocusShoot_; }
-      set {
-        enterNormalFocusShoot_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ForwardType ForwardType {
-      get { return forwardType_; }
-      set {
-        forwardType_ = value;
+        unk3300NLNIBJAFADG_ = value;
       }
     }
 
     /// <summary>Field number for the "focus_forward" field.</summary>
-    public const int FocusForwardFieldNumber = 7;
+    public const int FocusForwardFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.Vector focusForward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -227,39 +245,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "disable_anim" field.</summary>
-    public const int DisableAnimFieldNumber = 9;
-    private bool disableAnim_;
+    /// <summary>Field number for the "Unk3300_CDAJJHIPIKH" field.</summary>
+    public const int Unk3300CDAJJHIPIKHFieldNumber = 12;
+    private bool unk3300CDAJJHIPIKH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool DisableAnim {
-      get { return disableAnim_; }
+    public bool Unk3300CDAJJHIPIKH {
+      get { return unk3300CDAJJHIPIKH_; }
       set {
-        disableAnim_ = value;
+        unk3300CDAJJHIPIKH_ = value;
       }
     }
 
-    /// <summary>Field number for the "use_focus_sticky" field.</summary>
-    public const int UseFocusStickyFieldNumber = 15;
-    private bool useFocusSticky_;
+    /// <summary>Field number for the "Unk3300_FHHDDNENEDD" field.</summary>
+    public const int Unk3300FHHDDNENEDDFieldNumber = 6;
+    private bool unk3300FHHDDNENEDD_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool UseFocusSticky {
-      get { return useFocusSticky_; }
+    public bool Unk3300FHHDDNENEDD {
+      get { return unk3300FHHDDNENEDD_; }
       set {
-        useFocusSticky_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "use_gyro" field.</summary>
-    public const int UseGyroFieldNumber = 11;
-    private bool useGyro_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool UseGyro {
-      get { return useGyro_; }
-      set {
-        useGyro_ = value;
+        unk3300FHHDDNENEDD_ = value;
       }
     }
 
@@ -278,19 +284,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
-      if (CanMove != other.CanMove) return false;
-      if (EnterHoldingFocusShoot != other.EnterHoldingFocusShoot) return false;
-      if (DisableAimLayer != other.DisableAimLayer) return false;
-      if (UseAutoFocus != other.UseAutoFocus) return false;
-      if (FastFocus != other.FastFocus) return false;
-      if (ShowCrossHair != other.ShowCrossHair) return false;
-      if (EnterNormalFocusShoot != other.EnterNormalFocusShoot) return false;
       if (ForwardType != other.ForwardType) return false;
+      if (Unk3300NPBLDGPCDOC != other.Unk3300NPBLDGPCDOC) return false;
+      if (Unk3300IJHHDFDIJMA != other.Unk3300IJHHDFDIJMA) return false;
+      if (Unk3300NALGJBLGNJI != other.Unk3300NALGJBLGNJI) return false;
+      if (Unk3300OOOPPHEJKDI != other.Unk3300OOOPPHEJKDI) return false;
+      if (Unk3300KMAFBMKJDAK != other.Unk3300KMAFBMKJDAK) return false;
+      if (Unk3300LNLOOKDHJGF != other.Unk3300LNLOOKDHJGF) return false;
+      if (EntityId != other.EntityId) return false;
+      if (Unk3300GGHCEGJEHND != other.Unk3300GGHCEGJEHND) return false;
+      if (Unk3300NLNIBJAFADG != other.Unk3300NLNIBJAFADG) return false;
       if (!object.Equals(FocusForward, other.FocusForward)) return false;
-      if (DisableAnim != other.DisableAnim) return false;
-      if (UseFocusSticky != other.UseFocusSticky) return false;
-      if (UseGyro != other.UseGyro) return false;
+      if (Unk3300CDAJJHIPIKH != other.Unk3300CDAJJHIPIKH) return false;
+      if (Unk3300FHHDDNENEDD != other.Unk3300FHHDDNENEDD) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -298,19 +304,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (CanMove != false) hash ^= CanMove.GetHashCode();
-      if (EnterHoldingFocusShoot != false) hash ^= EnterHoldingFocusShoot.GetHashCode();
-      if (DisableAimLayer != false) hash ^= DisableAimLayer.GetHashCode();
-      if (UseAutoFocus != false) hash ^= UseAutoFocus.GetHashCode();
-      if (FastFocus != false) hash ^= FastFocus.GetHashCode();
-      if (ShowCrossHair != false) hash ^= ShowCrossHair.GetHashCode();
-      if (EnterNormalFocusShoot != false) hash ^= EnterNormalFocusShoot.GetHashCode();
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (Unk3300NPBLDGPCDOC != false) hash ^= Unk3300NPBLDGPCDOC.GetHashCode();
+      if (Unk3300IJHHDFDIJMA != false) hash ^= Unk3300IJHHDFDIJMA.GetHashCode();
+      if (Unk3300NALGJBLGNJI != false) hash ^= Unk3300NALGJBLGNJI.GetHashCode();
+      if (Unk3300OOOPPHEJKDI != false) hash ^= Unk3300OOOPPHEJKDI.GetHashCode();
+      if (Unk3300KMAFBMKJDAK != false) hash ^= Unk3300KMAFBMKJDAK.GetHashCode();
+      if (Unk3300LNLOOKDHJGF != false) hash ^= Unk3300LNLOOKDHJGF.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Unk3300GGHCEGJEHND != false) hash ^= Unk3300GGHCEGJEHND.GetHashCode();
+      if (Unk3300NLNIBJAFADG != false) hash ^= Unk3300NLNIBJAFADG.GetHashCode();
       if (focusForward_ != null) hash ^= FocusForward.GetHashCode();
-      if (DisableAnim != false) hash ^= DisableAnim.GetHashCode();
-      if (UseFocusSticky != false) hash ^= UseFocusSticky.GetHashCode();
-      if (UseGyro != false) hash ^= UseGyro.GetHashCode();
+      if (Unk3300CDAJJHIPIKH != false) hash ^= Unk3300CDAJJHIPIKH.GetHashCode();
+      if (Unk3300FHHDDNENEDD != false) hash ^= Unk3300FHHDDNENEDD.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -333,53 +339,53 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
       }
-      if (FastFocus != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(FastFocus);
-      }
-      if (UseAutoFocus != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(UseAutoFocus);
-      }
-      if (DisableAimLayer != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(DisableAimLayer);
+      if (Unk3300OOOPPHEJKDI != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300OOOPPHEJKDI);
       }
       if (focusForward_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(26);
         output.WriteMessage(FocusForward);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+      if (Unk3300IJHHDFDIJMA != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300IJHHDFDIJMA);
+      }
+      if (Unk3300FHHDDNENEDD != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300FHHDDNENEDD);
+      }
+      if (Unk3300NLNIBJAFADG != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Unk3300NLNIBJAFADG);
+      }
+      if (Unk3300LNLOOKDHJGF != false) {
         output.WriteRawTag(64);
+        output.WriteBool(Unk3300LNLOOKDHJGF);
+      }
+      if (Unk3300KMAFBMKJDAK != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KMAFBMKJDAK);
+      }
+      if (Unk3300GGHCEGJEHND != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300GGHCEGJEHND);
+      }
+      if (Unk3300CDAJJHIPIKH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300CDAJJHIPIKH);
+      }
+      if (Unk3300NALGJBLGNJI != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Unk3300NALGJBLGNJI);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(112);
         output.WriteEnum((int) ForwardType);
       }
-      if (DisableAnim != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(DisableAnim);
-      }
-      if (CanMove != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(CanMove);
-      }
-      if (UseGyro != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(UseGyro);
-      }
-      if (ShowCrossHair != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(ShowCrossHair);
-      }
-      if (EnterHoldingFocusShoot != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(EnterHoldingFocusShoot);
-      }
-      if (EnterNormalFocusShoot != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(EnterNormalFocusShoot);
-      }
-      if (UseFocusSticky != false) {
+      if (Unk3300NPBLDGPCDOC != false) {
         output.WriteRawTag(120);
-        output.WriteBool(UseFocusSticky);
+        output.WriteBool(Unk3300NPBLDGPCDOC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -395,53 +401,53 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(EntityId);
       }
-      if (FastFocus != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(FastFocus);
-      }
-      if (UseAutoFocus != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(UseAutoFocus);
-      }
-      if (DisableAimLayer != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(DisableAimLayer);
+      if (Unk3300OOOPPHEJKDI != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300OOOPPHEJKDI);
       }
       if (focusForward_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(26);
         output.WriteMessage(FocusForward);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+      if (Unk3300IJHHDFDIJMA != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300IJHHDFDIJMA);
+      }
+      if (Unk3300FHHDDNENEDD != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300FHHDDNENEDD);
+      }
+      if (Unk3300NLNIBJAFADG != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Unk3300NLNIBJAFADG);
+      }
+      if (Unk3300LNLOOKDHJGF != false) {
         output.WriteRawTag(64);
+        output.WriteBool(Unk3300LNLOOKDHJGF);
+      }
+      if (Unk3300KMAFBMKJDAK != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KMAFBMKJDAK);
+      }
+      if (Unk3300GGHCEGJEHND != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300GGHCEGJEHND);
+      }
+      if (Unk3300CDAJJHIPIKH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300CDAJJHIPIKH);
+      }
+      if (Unk3300NALGJBLGNJI != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Unk3300NALGJBLGNJI);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(112);
         output.WriteEnum((int) ForwardType);
       }
-      if (DisableAnim != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(DisableAnim);
-      }
-      if (CanMove != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(CanMove);
-      }
-      if (UseGyro != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(UseGyro);
-      }
-      if (ShowCrossHair != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(ShowCrossHair);
-      }
-      if (EnterHoldingFocusShoot != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(EnterHoldingFocusShoot);
-      }
-      if (EnterNormalFocusShoot != false) {
-        output.WriteRawTag(112);
-        output.WriteBool(EnterNormalFocusShoot);
-      }
-      if (UseFocusSticky != false) {
+      if (Unk3300NPBLDGPCDOC != false) {
         output.WriteRawTag(120);
-        output.WriteBool(UseFocusSticky);
+        output.WriteBool(Unk3300NPBLDGPCDOC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -453,43 +459,43 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      }
+      if (Unk3300NPBLDGPCDOC != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300IJHHDFDIJMA != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300NALGJBLGNJI != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300OOOPPHEJKDI != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300KMAFBMKJDAK != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300LNLOOKDHJGF != false) {
+        size += 1 + 1;
+      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (CanMove != false) {
+      if (Unk3300GGHCEGJEHND != false) {
         size += 1 + 1;
       }
-      if (EnterHoldingFocusShoot != false) {
+      if (Unk3300NLNIBJAFADG != false) {
         size += 1 + 1;
-      }
-      if (DisableAimLayer != false) {
-        size += 1 + 1;
-      }
-      if (UseAutoFocus != false) {
-        size += 1 + 1;
-      }
-      if (FastFocus != false) {
-        size += 1 + 1;
-      }
-      if (ShowCrossHair != false) {
-        size += 1 + 1;
-      }
-      if (EnterNormalFocusShoot != false) {
-        size += 1 + 1;
-      }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
       if (focusForward_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FocusForward);
       }
-      if (DisableAnim != false) {
+      if (Unk3300CDAJJHIPIKH != false) {
         size += 1 + 1;
       }
-      if (UseFocusSticky != false) {
-        size += 1 + 1;
-      }
-      if (UseGyro != false) {
+      if (Unk3300FHHDDNENEDD != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -504,32 +510,35 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
+      if (other.Unk3300NPBLDGPCDOC != false) {
+        Unk3300NPBLDGPCDOC = other.Unk3300NPBLDGPCDOC;
+      }
+      if (other.Unk3300IJHHDFDIJMA != false) {
+        Unk3300IJHHDFDIJMA = other.Unk3300IJHHDFDIJMA;
+      }
+      if (other.Unk3300NALGJBLGNJI != false) {
+        Unk3300NALGJBLGNJI = other.Unk3300NALGJBLGNJI;
+      }
+      if (other.Unk3300OOOPPHEJKDI != false) {
+        Unk3300OOOPPHEJKDI = other.Unk3300OOOPPHEJKDI;
+      }
+      if (other.Unk3300KMAFBMKJDAK != false) {
+        Unk3300KMAFBMKJDAK = other.Unk3300KMAFBMKJDAK;
+      }
+      if (other.Unk3300LNLOOKDHJGF != false) {
+        Unk3300LNLOOKDHJGF = other.Unk3300LNLOOKDHJGF;
+      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.CanMove != false) {
-        CanMove = other.CanMove;
+      if (other.Unk3300GGHCEGJEHND != false) {
+        Unk3300GGHCEGJEHND = other.Unk3300GGHCEGJEHND;
       }
-      if (other.EnterHoldingFocusShoot != false) {
-        EnterHoldingFocusShoot = other.EnterHoldingFocusShoot;
-      }
-      if (other.DisableAimLayer != false) {
-        DisableAimLayer = other.DisableAimLayer;
-      }
-      if (other.UseAutoFocus != false) {
-        UseAutoFocus = other.UseAutoFocus;
-      }
-      if (other.FastFocus != false) {
-        FastFocus = other.FastFocus;
-      }
-      if (other.ShowCrossHair != false) {
-        ShowCrossHair = other.ShowCrossHair;
-      }
-      if (other.EnterNormalFocusShoot != false) {
-        EnterNormalFocusShoot = other.EnterNormalFocusShoot;
-      }
-      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        ForwardType = other.ForwardType;
+      if (other.Unk3300NLNIBJAFADG != false) {
+        Unk3300NLNIBJAFADG = other.Unk3300NLNIBJAFADG;
       }
       if (other.focusForward_ != null) {
         if (focusForward_ == null) {
@@ -537,14 +546,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         FocusForward.MergeFrom(other.FocusForward);
       }
-      if (other.DisableAnim != false) {
-        DisableAnim = other.DisableAnim;
+      if (other.Unk3300CDAJJHIPIKH != false) {
+        Unk3300CDAJJHIPIKH = other.Unk3300CDAJJHIPIKH;
       }
-      if (other.UseFocusSticky != false) {
-        UseFocusSticky = other.UseFocusSticky;
-      }
-      if (other.UseGyro != false) {
-        UseGyro = other.UseGyro;
+      if (other.Unk3300FHHDDNENEDD != false) {
+        Unk3300FHHDDNENEDD = other.Unk3300FHHDDNENEDD;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -565,55 +571,55 @@ namespace Weedwacker.Shared.Network.Proto {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 24: {
-            FastFocus = input.ReadBool();
+          case 16: {
+            Unk3300OOOPPHEJKDI = input.ReadBool();
             break;
           }
-          case 40: {
-            UseAutoFocus = input.ReadBool();
-            break;
-          }
-          case 48: {
-            DisableAimLayer = input.ReadBool();
-            break;
-          }
-          case 58: {
+          case 26: {
             if (focusForward_ == null) {
               FocusForward = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FocusForward);
             break;
           }
+          case 32: {
+            Unk3300IJHHDFDIJMA = input.ReadBool();
+            break;
+          }
+          case 48: {
+            Unk3300FHHDDNENEDD = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Unk3300NLNIBJAFADG = input.ReadBool();
+            break;
+          }
           case 64: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            Unk3300LNLOOKDHJGF = input.ReadBool();
             break;
           }
           case 72: {
-            DisableAnim = input.ReadBool();
-            break;
-          }
-          case 80: {
-            CanMove = input.ReadBool();
+            Unk3300KMAFBMKJDAK = input.ReadBool();
             break;
           }
           case 88: {
-            UseGyro = input.ReadBool();
+            Unk3300GGHCEGJEHND = input.ReadBool();
             break;
           }
           case 96: {
-            ShowCrossHair = input.ReadBool();
+            Unk3300CDAJJHIPIKH = input.ReadBool();
             break;
           }
           case 104: {
-            EnterHoldingFocusShoot = input.ReadBool();
+            Unk3300NALGJBLGNJI = input.ReadBool();
             break;
           }
           case 112: {
-            EnterNormalFocusShoot = input.ReadBool();
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
           case 120: {
-            UseFocusSticky = input.ReadBool();
+            Unk3300NPBLDGPCDOC = input.ReadBool();
             break;
           }
         }
@@ -635,55 +641,55 @@ namespace Weedwacker.Shared.Network.Proto {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 24: {
-            FastFocus = input.ReadBool();
+          case 16: {
+            Unk3300OOOPPHEJKDI = input.ReadBool();
             break;
           }
-          case 40: {
-            UseAutoFocus = input.ReadBool();
-            break;
-          }
-          case 48: {
-            DisableAimLayer = input.ReadBool();
-            break;
-          }
-          case 58: {
+          case 26: {
             if (focusForward_ == null) {
               FocusForward = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FocusForward);
             break;
           }
+          case 32: {
+            Unk3300IJHHDFDIJMA = input.ReadBool();
+            break;
+          }
+          case 48: {
+            Unk3300FHHDDNENEDD = input.ReadBool();
+            break;
+          }
+          case 56: {
+            Unk3300NLNIBJAFADG = input.ReadBool();
+            break;
+          }
           case 64: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            Unk3300LNLOOKDHJGF = input.ReadBool();
             break;
           }
           case 72: {
-            DisableAnim = input.ReadBool();
-            break;
-          }
-          case 80: {
-            CanMove = input.ReadBool();
+            Unk3300KMAFBMKJDAK = input.ReadBool();
             break;
           }
           case 88: {
-            UseGyro = input.ReadBool();
+            Unk3300GGHCEGJEHND = input.ReadBool();
             break;
           }
           case 96: {
-            ShowCrossHair = input.ReadBool();
+            Unk3300CDAJJHIPIKH = input.ReadBool();
             break;
           }
           case 104: {
-            EnterHoldingFocusShoot = input.ReadBool();
+            Unk3300NALGJBLGNJI = input.ReadBool();
             break;
           }
           case 112: {
-            EnterNormalFocusShoot = input.ReadBool();
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
           case 120: {
-            UseFocusSticky = input.ReadBool();
+            Unk3300NPBLDGPCDOC = input.ReadBool();
             break;
           }
         }

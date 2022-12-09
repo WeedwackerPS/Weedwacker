@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopCgUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDb29wQ2dVcGRhdGVOb3RpZnkucHJvdG8iJQoSQ29vcENnVXBkYXRlTm90",
-            "aWZ5Eg8KB2NnX2xpc3QYDSADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhDb29wQ2dVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iJQoSQ29vcENnVXBkYXRlTm90aWZ5Eg8KB2NnX2xp",
+            "c3QYCCADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1994
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1962;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CoopCgUpdateNotify : pb::IMessage<CoopCgUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,9 +91,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cg_list" field.</summary>
-    public const int CgListFieldNumber = 13;
+    public const int CgListFieldNumber = 8;
     private static readonly pb::FieldCodec<uint> _repeated_cgList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(66);
     private readonly pbc::RepeatedField<uint> cgList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -190,8 +194,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106:
-          case 104: {
+          case 66:
+          case 64: {
             cgList_.AddEntriesFrom(input, _repeated_cgList_codec);
             break;
           }
@@ -210,8 +214,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106:
-          case 104: {
+          case 66:
+          case 64: {
             cgList_.AddEntriesFrom(ref input, _repeated_cgList_codec);
             break;
           }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeBattlePassRewardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJlcS5wcm90bxogQmF0dGxlUGFzc1Jl",
-            "d2FyZFRha2VPcHRpb24ucHJvdG8iUAoXVGFrZUJhdHRsZVBhc3NSZXdhcmRS",
-            "ZXESNQoQdGFrZV9vcHRpb25fbGlzdBgMIAMoCzIbLkJhdHRsZVBhc3NSZXdh",
-            "cmRUYWtlT3B0aW9uQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJlcS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxogQmF0dGxlUGFzc1Jld2FyZFRha2VPcHRp",
+            "b24ucHJvdG8icAoXVGFrZUJhdHRsZVBhc3NSZXdhcmRSZXESVQoQdGFrZV9v",
+            "cHRpb25fbGlzdBgJIAMoCzI7LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQmF0dGxlUGFzc1Jld2FyZFRha2VPcHRpb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2602
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2627;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeBattlePassRewardReq : pb::IMessage<TakeBattlePassRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "take_option_list" field.</summary>
-    public const int TakeOptionListFieldNumber = 12;
+    public const int TakeOptionListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption> _repeated_takeOptionList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption> takeOptionList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 74: {
             takeOptionList_.AddEntriesFrom(input, _repeated_takeOptionList_codec);
             break;
           }
@@ -212,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 74: {
             takeOptionList_.AddEntriesFrom(ref input, _repeated_takeOptionList_codec);
             break;
           }

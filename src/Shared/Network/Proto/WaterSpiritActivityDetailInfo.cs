@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WaterSpiritActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNXYXRlclNwaXJpdEFjdGl2aXR5RGV0YWlsSW5mby5wcm90byLPAQodV2F0",
-            "ZXJTcGlyaXRBY3Rpdml0eURldGFpbEluZm8SSgoPc2VhcmNoX3RpbWVfbWFw",
-            "GAkgAygLMjEuV2F0ZXJTcGlyaXRBY3Rpdml0eURldGFpbEluZm8uU2VhcmNo",
-            "VGltZU1hcEVudHJ5EhgKEHJlZ2lvbl9zZWFyY2hfaWQYAiABKA0SEgoKbXBf",
-            "cGxheV9pZBgPIAEoDRo0ChJTZWFyY2hUaW1lTWFwRW50cnkSCwoDa2V5GAEg",
-            "ASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNXYXRlclNwaXJpdEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byLvAQodV2F0ZXJTcGlyaXRBY3Rp",
+            "dml0eURldGFpbEluZm8SagoPc2VhcmNoX3RpbWVfbWFwGA0gAygLMlEuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5XYXRlclNwaXJpdEFjdGl2",
+            "aXR5RGV0YWlsSW5mby5TZWFyY2hUaW1lTWFwRW50cnkSGAoQcmVnaW9uX3Nl",
+            "YXJjaF9pZBgEIAEoDRISCgptcF9wbGF5X2lkGAkgASgNGjQKElNlYXJjaFRp",
+            "bWVNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,9 +89,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "search_time_map" field.</summary>
-    public const int SearchTimeMapFieldNumber = 9;
+    public const int SearchTimeMapFieldNumber = 13;
     private static readonly pbc::MapField<uint, uint>.Codec _map_searchTimeMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 74);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
     private readonly pbc::MapField<uint, uint> searchTimeMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +100,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_search_id" field.</summary>
-    public const int RegionSearchIdFieldNumber = 2;
+    public const int RegionSearchIdFieldNumber = 4;
     private uint regionSearchId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 15;
+    public const int MpPlayIdFieldNumber = 9;
     private uint mpPlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -169,14 +170,14 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (RegionSearchId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(RegionSearchId);
       }
-      searchTimeMap_.WriteTo(output, _map_searchTimeMap_codec);
       if (MpPlayId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(MpPlayId);
       }
+      searchTimeMap_.WriteTo(output, _map_searchTimeMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -188,14 +189,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RegionSearchId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(RegionSearchId);
       }
-      searchTimeMap_.WriteTo(ref output, _map_searchTimeMap_codec);
       if (MpPlayId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteUInt32(MpPlayId);
       }
+      searchTimeMap_.WriteTo(ref output, _map_searchTimeMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -247,16 +248,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 32: {
             RegionSearchId = input.ReadUInt32();
             break;
           }
-          case 74: {
-            searchTimeMap_.AddEntriesFrom(input, _map_searchTimeMap_codec);
+          case 72: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            MpPlayId = input.ReadUInt32();
+          case 106: {
+            searchTimeMap_.AddEntriesFrom(input, _map_searchTimeMap_codec);
             break;
           }
         }
@@ -274,16 +275,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 32: {
             RegionSearchId = input.ReadUInt32();
             break;
           }
-          case 74: {
-            searchTimeMap_.AddEntriesFrom(ref input, _map_searchTimeMap_codec);
+          case 72: {
+            MpPlayId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            MpPlayId = input.ReadUInt32();
+          case 106: {
+            searchTimeMap_.AddEntriesFrom(ref input, _map_searchTimeMap_codec);
             break;
           }
         }

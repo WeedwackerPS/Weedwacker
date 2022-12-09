@@ -24,27 +24,32 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneTeamAvatarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTY2VuZVRlYW1BdmF0YXIucHJvdG8aGUFiaWxpdHlDb250cm9sQmxvY2su",
-            "cHJvdG8aGkFiaWxpdHlTeW5jU3RhdGVJbmZvLnByb3RvGhBBdmF0YXJJbmZv",
-            "LnByb3RvGhVTY2VuZUF2YXRhckluZm8ucHJvdG8aFVNjZW5lRW50aXR5SW5m",
-            "by5wcm90bxoQU2VydmVyQnVmZi5wcm90byKYBAoPU2NlbmVUZWFtQXZhdGFy",
-            "EjIKE2F2YXRhcl9hYmlsaXR5X2luZm8YBSABKAsyFS5BYmlsaXR5U3luY1N0",
-            "YXRlSW5mbxIgCgthdmF0YXJfaW5mbxgIIAEoCzILLkF2YXRhckluZm8SFAoL",
-            "aXNfb25fc2NlbmUYmAEgASgIEhEKCWVudGl0eV9pZBgJIAEoDRITCgthdmF0",
-            "YXJfZ3VpZBgPIAEoBBIQCghzY2VuZV9pZBgBIAEoDRIYChB3ZWFwb25fZW50",
-            "aXR5X2lkGAcgASgNEisKEXNjZW5lX2F2YXRhcl9pbmZvGAMgASgLMhAuU2Nl",
-            "bmVBdmF0YXJJbmZvEhMKC3dlYXBvbl9ndWlkGAQgASgEEjIKE3dlYXBvbl9h",
-            "YmlsaXR5X2luZm8YCyABKAsyFS5BYmlsaXR5U3luY1N0YXRlSW5mbxIrChFz",
-            "Y2VuZV9lbnRpdHlfaW5mbxgMIAEoCzIQLlNjZW5lRW50aXR5SW5mbxISCgpw",
-            "bGF5ZXJfdWlkGA4gASgNEhQKDGlzX3JlY29ubmVjdBgGIAEoCBIzChVhYmls",
-            "aXR5X2NvbnRyb2xfYmxvY2sYAiABKAsyFC5BYmlsaXR5Q29udHJvbEJsb2Nr",
-            "EhwKFGlzX3BsYXllcl9jdXJfYXZhdGFyGA0gASgIEiUKEHNlcnZlcl9idWZm",
-            "X2xpc3QYCiADKAsyCy5TZXJ2ZXJCdWZmQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVTY2VuZVRlYW1BdmF0YXIucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aGUFiaWxpdHlDb250cm9sQmxvY2sucHJvdG8aGkFiaWxp",
+            "dHlTeW5jU3RhdGVJbmZvLnByb3RvGhBBdmF0YXJJbmZvLnByb3RvGhVTY2Vu",
+            "ZUF2YXRhckluZm8ucHJvdG8aFVNjZW5lRW50aXR5SW5mby5wcm90bxoQU2Vy",
+            "dmVyQnVmZi5wcm90byL3BQoPU2NlbmVUZWFtQXZhdGFyEksKEXNjZW5lX2F2",
+            "YXRhcl9pbmZvGA4gASgLMjAuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5TY2VuZUF2YXRhckluZm8SQAoLYXZhdGFyX2luZm8YDyABKAsyKy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkF2YXRhckluZm8SEQoJ",
+            "ZW50aXR5X2lkGAogASgNElIKE2F2YXRhcl9hYmlsaXR5X2luZm8YBiABKAsy",
+            "NS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlTeW5j",
+            "U3RhdGVJbmZvElMKFWFiaWxpdHlfY29udHJvbF9ibG9jaxgCIAEoCzI0Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eUNvbnRyb2xC",
+            "bG9jaxIcChRpc19wbGF5ZXJfY3VyX2F2YXRhchgIIAEoCBJSChN3ZWFwb25f",
+            "YWJpbGl0eV9pbmZvGAQgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5BYmlsaXR5U3luY1N0YXRlSW5mbxITCgt3ZWFwb25fZ3VpZBgM",
+            "IAEoBBISCgpwbGF5ZXJfdWlkGAEgASgNEksKEXNjZW5lX2VudGl0eV9pbmZv",
+            "GAsgASgLMjAuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TY2Vu",
+            "ZUVudGl0eUluZm8SGAoQd2VhcG9uX2VudGl0eV9pZBgFIAEoDRIQCghzY2Vu",
+            "ZV9pZBgJIAEoDRIUCgtJc1JlY29ubmVjdBjxBCABKAgSEwoLYXZhdGFyX2d1",
+            "aWQYAyABKAQSEwoLaXNfb25fc2NlbmUYDSABKAgSRQoQc2VydmVyX2J1ZmZf",
+            "bGlzdBgHIAMoCzIrLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "U2VydmVyQnVmZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityControlBlockReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AvatarInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SceneAvatarInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SceneEntityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ServerBuffReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneTeamAvatar), global::Weedwacker.Shared.Network.Proto.SceneTeamAvatar.Parser, new[]{ "AvatarAbilityInfo", "AvatarInfo", "IsOnScene", "EntityId", "AvatarGuid", "SceneId", "WeaponEntityId", "SceneAvatarInfo", "WeaponGuid", "WeaponAbilityInfo", "SceneEntityInfo", "PlayerUid", "IsReconnect", "AbilityControlBlock", "IsPlayerCurAvatar", "ServerBuffList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneTeamAvatar), global::Weedwacker.Shared.Network.Proto.SceneTeamAvatar.Parser, new[]{ "SceneAvatarInfo", "AvatarInfo", "EntityId", "AvatarAbilityInfo", "AbilityControlBlock", "IsPlayerCurAvatar", "WeaponAbilityInfo", "WeaponGuid", "PlayerUid", "SceneEntityInfo", "WeaponEntityId", "SceneId", "IsReconnect", "AvatarGuid", "IsOnScene", "ServerBuffList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -85,21 +90,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneTeamAvatar(SceneTeamAvatar other) : this() {
-      avatarAbilityInfo_ = other.avatarAbilityInfo_ != null ? other.avatarAbilityInfo_.Clone() : null;
-      avatarInfo_ = other.avatarInfo_ != null ? other.avatarInfo_.Clone() : null;
-      isOnScene_ = other.isOnScene_;
-      entityId_ = other.entityId_;
-      avatarGuid_ = other.avatarGuid_;
-      sceneId_ = other.sceneId_;
-      weaponEntityId_ = other.weaponEntityId_;
       sceneAvatarInfo_ = other.sceneAvatarInfo_ != null ? other.sceneAvatarInfo_.Clone() : null;
-      weaponGuid_ = other.weaponGuid_;
-      weaponAbilityInfo_ = other.weaponAbilityInfo_ != null ? other.weaponAbilityInfo_.Clone() : null;
-      sceneEntityInfo_ = other.sceneEntityInfo_ != null ? other.sceneEntityInfo_.Clone() : null;
-      playerUid_ = other.playerUid_;
-      isReconnect_ = other.isReconnect_;
+      avatarInfo_ = other.avatarInfo_ != null ? other.avatarInfo_.Clone() : null;
+      entityId_ = other.entityId_;
+      avatarAbilityInfo_ = other.avatarAbilityInfo_ != null ? other.avatarAbilityInfo_.Clone() : null;
       abilityControlBlock_ = other.abilityControlBlock_ != null ? other.abilityControlBlock_.Clone() : null;
       isPlayerCurAvatar_ = other.isPlayerCurAvatar_;
+      weaponAbilityInfo_ = other.weaponAbilityInfo_ != null ? other.weaponAbilityInfo_.Clone() : null;
+      weaponGuid_ = other.weaponGuid_;
+      playerUid_ = other.playerUid_;
+      sceneEntityInfo_ = other.sceneEntityInfo_ != null ? other.sceneEntityInfo_.Clone() : null;
+      weaponEntityId_ = other.weaponEntityId_;
+      sceneId_ = other.sceneId_;
+      isReconnect_ = other.isReconnect_;
+      avatarGuid_ = other.avatarGuid_;
+      isOnScene_ = other.isOnScene_;
       serverBuffList_ = other.serverBuffList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -110,92 +115,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneTeamAvatar(this);
     }
 
-    /// <summary>Field number for the "avatar_ability_info" field.</summary>
-    public const int AvatarAbilityInfoFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo avatarAbilityInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo AvatarAbilityInfo {
-      get { return avatarAbilityInfo_; }
-      set {
-        avatarAbilityInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "avatar_info" field.</summary>
-    public const int AvatarInfoFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.AvatarInfo avatarInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AvatarInfo AvatarInfo {
-      get { return avatarInfo_; }
-      set {
-        avatarInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_on_scene" field.</summary>
-    public const int IsOnSceneFieldNumber = 152;
-    private bool isOnScene_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOnScene {
-      get { return isOnScene_; }
-      set {
-        isOnScene_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 9;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 15;
-    private ulong avatarGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong AvatarGuid {
-      get { return avatarGuid_; }
-      set {
-        avatarGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 1;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "weapon_entity_id" field.</summary>
-    public const int WeaponEntityIdFieldNumber = 7;
-    private uint weaponEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WeaponEntityId {
-      get { return weaponEntityId_; }
-      set {
-        weaponEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_avatar_info" field.</summary>
-    public const int SceneAvatarInfoFieldNumber = 3;
+    public const int SceneAvatarInfoFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo sceneAvatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -206,63 +127,42 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "weapon_guid" field.</summary>
-    public const int WeaponGuidFieldNumber = 4;
-    private ulong weaponGuid_;
+    /// <summary>Field number for the "avatar_info" field.</summary>
+    public const int AvatarInfoFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.AvatarInfo avatarInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong WeaponGuid {
-      get { return weaponGuid_; }
+    public global::Weedwacker.Shared.Network.Proto.AvatarInfo AvatarInfo {
+      get { return avatarInfo_; }
       set {
-        weaponGuid_ = value;
+        avatarInfo_ = value;
       }
     }
 
-    /// <summary>Field number for the "weapon_ability_info" field.</summary>
-    public const int WeaponAbilityInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo weaponAbilityInfo_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 10;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo WeaponAbilityInfo {
-      get { return weaponAbilityInfo_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        weaponAbilityInfo_ = value;
+        entityId_ = value;
       }
     }
 
-    /// <summary>Field number for the "scene_entity_info" field.</summary>
-    public const int SceneEntityInfoFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.SceneEntityInfo sceneEntityInfo_;
+    /// <summary>Field number for the "avatar_ability_info" field.</summary>
+    public const int AvatarAbilityInfoFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo avatarAbilityInfo_;
+    /// <summary>
+    /// Unk3300_EMAGOKCPPKN
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.SceneEntityInfo SceneEntityInfo {
-      get { return sceneEntityInfo_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo AvatarAbilityInfo {
+      get { return avatarAbilityInfo_; }
       set {
-        sceneEntityInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "player_uid" field.</summary>
-    public const int PlayerUidFieldNumber = 14;
-    private uint playerUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlayerUid {
-      get { return playerUid_; }
-      set {
-        playerUid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_reconnect" field.</summary>
-    public const int IsReconnectFieldNumber = 6;
-    private bool isReconnect_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsReconnect {
-      get { return isReconnect_; }
-      set {
-        isReconnect_ = value;
+        avatarAbilityInfo_ = value;
       }
     }
 
@@ -279,8 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_player_cur_avatar" field.</summary>
-    public const int IsPlayerCurAvatarFieldNumber = 13;
+    public const int IsPlayerCurAvatarFieldNumber = 8;
     private bool isPlayerCurAvatar_;
+    /// <summary>
+    /// Unk3300_ONCNAJBJGKM
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IsPlayerCurAvatar {
@@ -290,10 +193,124 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "weapon_ability_info" field.</summary>
+    public const int WeaponAbilityInfoFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo weaponAbilityInfo_;
+    /// <summary>
+    /// Unk3300_FCDDPFADNAI
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo WeaponAbilityInfo {
+      get { return weaponAbilityInfo_; }
+      set {
+        weaponAbilityInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_guid" field.</summary>
+    public const int WeaponGuidFieldNumber = 12;
+    private ulong weaponGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong WeaponGuid {
+      get { return weaponGuid_; }
+      set {
+        weaponGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_uid" field.</summary>
+    public const int PlayerUidFieldNumber = 1;
+    private uint playerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayerUid {
+      get { return playerUid_; }
+      set {
+        playerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_entity_info" field.</summary>
+    public const int SceneEntityInfoFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.SceneEntityInfo sceneEntityInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.SceneEntityInfo SceneEntityInfo {
+      get { return sceneEntityInfo_; }
+      set {
+        sceneEntityInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_entity_id" field.</summary>
+    public const int WeaponEntityIdFieldNumber = 5;
+    private uint weaponEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeaponEntityId {
+      get { return weaponEntityId_; }
+      set {
+        weaponEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 9;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "IsReconnect" field.</summary>
+    public const int IsReconnectFieldNumber = 625;
+    private bool isReconnect_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsReconnect {
+      get { return isReconnect_; }
+      set {
+        isReconnect_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 3;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_on_scene" field.</summary>
+    public const int IsOnSceneFieldNumber = 13;
+    private bool isOnScene_;
+    /// <summary>
+    /// Unk3300_GENGJLPJCCN
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOnScene {
+      get { return isOnScene_; }
+      set {
+        isOnScene_ = value;
+      }
+    }
+
     /// <summary>Field number for the "server_buff_list" field.</summary>
-    public const int ServerBuffListFieldNumber = 10;
+    public const int ServerBuffListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -316,21 +333,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AvatarAbilityInfo, other.AvatarAbilityInfo)) return false;
-      if (!object.Equals(AvatarInfo, other.AvatarInfo)) return false;
-      if (IsOnScene != other.IsOnScene) return false;
-      if (EntityId != other.EntityId) return false;
-      if (AvatarGuid != other.AvatarGuid) return false;
-      if (SceneId != other.SceneId) return false;
-      if (WeaponEntityId != other.WeaponEntityId) return false;
       if (!object.Equals(SceneAvatarInfo, other.SceneAvatarInfo)) return false;
-      if (WeaponGuid != other.WeaponGuid) return false;
-      if (!object.Equals(WeaponAbilityInfo, other.WeaponAbilityInfo)) return false;
-      if (!object.Equals(SceneEntityInfo, other.SceneEntityInfo)) return false;
-      if (PlayerUid != other.PlayerUid) return false;
-      if (IsReconnect != other.IsReconnect) return false;
+      if (!object.Equals(AvatarInfo, other.AvatarInfo)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(AvatarAbilityInfo, other.AvatarAbilityInfo)) return false;
       if (!object.Equals(AbilityControlBlock, other.AbilityControlBlock)) return false;
       if (IsPlayerCurAvatar != other.IsPlayerCurAvatar) return false;
+      if (!object.Equals(WeaponAbilityInfo, other.WeaponAbilityInfo)) return false;
+      if (WeaponGuid != other.WeaponGuid) return false;
+      if (PlayerUid != other.PlayerUid) return false;
+      if (!object.Equals(SceneEntityInfo, other.SceneEntityInfo)) return false;
+      if (WeaponEntityId != other.WeaponEntityId) return false;
+      if (SceneId != other.SceneId) return false;
+      if (IsReconnect != other.IsReconnect) return false;
+      if (AvatarGuid != other.AvatarGuid) return false;
+      if (IsOnScene != other.IsOnScene) return false;
       if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -339,21 +356,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (avatarAbilityInfo_ != null) hash ^= AvatarAbilityInfo.GetHashCode();
-      if (avatarInfo_ != null) hash ^= AvatarInfo.GetHashCode();
-      if (IsOnScene != false) hash ^= IsOnScene.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      if (WeaponEntityId != 0) hash ^= WeaponEntityId.GetHashCode();
       if (sceneAvatarInfo_ != null) hash ^= SceneAvatarInfo.GetHashCode();
-      if (WeaponGuid != 0UL) hash ^= WeaponGuid.GetHashCode();
-      if (weaponAbilityInfo_ != null) hash ^= WeaponAbilityInfo.GetHashCode();
-      if (sceneEntityInfo_ != null) hash ^= SceneEntityInfo.GetHashCode();
-      if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
-      if (IsReconnect != false) hash ^= IsReconnect.GetHashCode();
+      if (avatarInfo_ != null) hash ^= AvatarInfo.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (avatarAbilityInfo_ != null) hash ^= AvatarAbilityInfo.GetHashCode();
       if (abilityControlBlock_ != null) hash ^= AbilityControlBlock.GetHashCode();
       if (IsPlayerCurAvatar != false) hash ^= IsPlayerCurAvatar.GetHashCode();
+      if (weaponAbilityInfo_ != null) hash ^= WeaponAbilityInfo.GetHashCode();
+      if (WeaponGuid != 0UL) hash ^= WeaponGuid.GetHashCode();
+      if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
+      if (sceneEntityInfo_ != null) hash ^= SceneEntityInfo.GetHashCode();
+      if (WeaponEntityId != 0) hash ^= WeaponEntityId.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (IsReconnect != false) hash ^= IsReconnect.GetHashCode();
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (IsOnScene != false) hash ^= IsOnScene.GetHashCode();
       hash ^= serverBuffList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -373,66 +390,66 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneId != 0) {
+      if (PlayerUid != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
+        output.WriteUInt32(PlayerUid);
       }
       if (abilityControlBlock_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(AbilityControlBlock);
       }
-      if (sceneAvatarInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(SceneAvatarInfo);
-      }
-      if (WeaponGuid != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(WeaponGuid);
-      }
-      if (avatarAbilityInfo_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(AvatarAbilityInfo);
-      }
-      if (IsReconnect != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsReconnect);
-      }
-      if (WeaponEntityId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WeaponEntityId);
-      }
-      if (avatarInfo_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(AvatarInfo);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(EntityId);
-      }
-      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
-      if (weaponAbilityInfo_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(WeaponAbilityInfo);
-      }
-      if (sceneEntityInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(SceneEntityInfo);
-      }
-      if (IsPlayerCurAvatar != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPlayerCurAvatar);
-      }
-      if (PlayerUid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(PlayerUid);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt64(AvatarGuid);
       }
+      if (weaponAbilityInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(WeaponAbilityInfo);
+      }
+      if (WeaponEntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WeaponEntityId);
+      }
+      if (avatarAbilityInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(AvatarAbilityInfo);
+      }
+      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
+      if (IsPlayerCurAvatar != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPlayerCurAvatar);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SceneId);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
+      }
+      if (sceneEntityInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SceneEntityInfo);
+      }
+      if (WeaponGuid != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(WeaponGuid);
+      }
       if (IsOnScene != false) {
-        output.WriteRawTag(192, 9);
+        output.WriteRawTag(104);
         output.WriteBool(IsOnScene);
+      }
+      if (sceneAvatarInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SceneAvatarInfo);
+      }
+      if (avatarInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(AvatarInfo);
+      }
+      if (IsReconnect != false) {
+        output.WriteRawTag(136, 39);
+        output.WriteBool(IsReconnect);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -444,66 +461,66 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneId != 0) {
+      if (PlayerUid != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
+        output.WriteUInt32(PlayerUid);
       }
       if (abilityControlBlock_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(AbilityControlBlock);
       }
-      if (sceneAvatarInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(SceneAvatarInfo);
-      }
-      if (WeaponGuid != 0UL) {
-        output.WriteRawTag(32);
-        output.WriteUInt64(WeaponGuid);
-      }
-      if (avatarAbilityInfo_ != null) {
-        output.WriteRawTag(42);
-        output.WriteMessage(AvatarAbilityInfo);
-      }
-      if (IsReconnect != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsReconnect);
-      }
-      if (WeaponEntityId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WeaponEntityId);
-      }
-      if (avatarInfo_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(AvatarInfo);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(EntityId);
-      }
-      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
-      if (weaponAbilityInfo_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(WeaponAbilityInfo);
-      }
-      if (sceneEntityInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(SceneEntityInfo);
-      }
-      if (IsPlayerCurAvatar != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPlayerCurAvatar);
-      }
-      if (PlayerUid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(PlayerUid);
-      }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt64(AvatarGuid);
       }
+      if (weaponAbilityInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(WeaponAbilityInfo);
+      }
+      if (WeaponEntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WeaponEntityId);
+      }
+      if (avatarAbilityInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(AvatarAbilityInfo);
+      }
+      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
+      if (IsPlayerCurAvatar != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPlayerCurAvatar);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SceneId);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
+      }
+      if (sceneEntityInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SceneEntityInfo);
+      }
+      if (WeaponGuid != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(WeaponGuid);
+      }
       if (IsOnScene != false) {
-        output.WriteRawTag(192, 9);
+        output.WriteRawTag(104);
         output.WriteBool(IsOnScene);
+      }
+      if (sceneAvatarInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SceneAvatarInfo);
+      }
+      if (avatarInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(AvatarInfo);
+      }
+      if (IsReconnect != false) {
+        output.WriteRawTag(136, 39);
+        output.WriteBool(IsReconnect);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -515,49 +532,49 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (avatarAbilityInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarAbilityInfo);
+      if (sceneAvatarInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneAvatarInfo);
       }
       if (avatarInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarInfo);
       }
-      if (IsOnScene != false) {
-        size += 2 + 1;
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (AvatarGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
-      }
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
-      if (WeaponEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEntityId);
-      }
-      if (sceneAvatarInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneAvatarInfo);
-      }
-      if (WeaponGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(WeaponGuid);
-      }
-      if (weaponAbilityInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeaponAbilityInfo);
-      }
-      if (sceneEntityInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneEntityInfo);
-      }
-      if (PlayerUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
-      }
-      if (IsReconnect != false) {
-        size += 1 + 1;
+      if (avatarAbilityInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarAbilityInfo);
       }
       if (abilityControlBlock_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AbilityControlBlock);
       }
       if (IsPlayerCurAvatar != false) {
+        size += 1 + 1;
+      }
+      if (weaponAbilityInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeaponAbilityInfo);
+      }
+      if (WeaponGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(WeaponGuid);
+      }
+      if (PlayerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
+      }
+      if (sceneEntityInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneEntityInfo);
+      }
+      if (WeaponEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEntityId);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (IsReconnect != false) {
+        size += 2 + 1;
+      }
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
+      if (IsOnScene != false) {
         size += 1 + 1;
       }
       size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
@@ -573,11 +590,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.avatarAbilityInfo_ != null) {
-        if (avatarAbilityInfo_ == null) {
-          AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+      if (other.sceneAvatarInfo_ != null) {
+        if (sceneAvatarInfo_ == null) {
+          SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
         }
-        AvatarAbilityInfo.MergeFrom(other.AvatarAbilityInfo);
+        SceneAvatarInfo.MergeFrom(other.SceneAvatarInfo);
       }
       if (other.avatarInfo_ != null) {
         if (avatarInfo_ == null) {
@@ -585,47 +602,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         AvatarInfo.MergeFrom(other.AvatarInfo);
       }
-      if (other.IsOnScene != false) {
-        IsOnScene = other.IsOnScene;
-      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.AvatarGuid != 0UL) {
-        AvatarGuid = other.AvatarGuid;
-      }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
-      if (other.WeaponEntityId != 0) {
-        WeaponEntityId = other.WeaponEntityId;
-      }
-      if (other.sceneAvatarInfo_ != null) {
-        if (sceneAvatarInfo_ == null) {
-          SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
+      if (other.avatarAbilityInfo_ != null) {
+        if (avatarAbilityInfo_ == null) {
+          AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
         }
-        SceneAvatarInfo.MergeFrom(other.SceneAvatarInfo);
-      }
-      if (other.WeaponGuid != 0UL) {
-        WeaponGuid = other.WeaponGuid;
-      }
-      if (other.weaponAbilityInfo_ != null) {
-        if (weaponAbilityInfo_ == null) {
-          WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-        }
-        WeaponAbilityInfo.MergeFrom(other.WeaponAbilityInfo);
-      }
-      if (other.sceneEntityInfo_ != null) {
-        if (sceneEntityInfo_ == null) {
-          SceneEntityInfo = new global::Weedwacker.Shared.Network.Proto.SceneEntityInfo();
-        }
-        SceneEntityInfo.MergeFrom(other.SceneEntityInfo);
-      }
-      if (other.PlayerUid != 0) {
-        PlayerUid = other.PlayerUid;
-      }
-      if (other.IsReconnect != false) {
-        IsReconnect = other.IsReconnect;
+        AvatarAbilityInfo.MergeFrom(other.AvatarAbilityInfo);
       }
       if (other.abilityControlBlock_ != null) {
         if (abilityControlBlock_ == null) {
@@ -635,6 +619,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.IsPlayerCurAvatar != false) {
         IsPlayerCurAvatar = other.IsPlayerCurAvatar;
+      }
+      if (other.weaponAbilityInfo_ != null) {
+        if (weaponAbilityInfo_ == null) {
+          WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+        }
+        WeaponAbilityInfo.MergeFrom(other.WeaponAbilityInfo);
+      }
+      if (other.WeaponGuid != 0UL) {
+        WeaponGuid = other.WeaponGuid;
+      }
+      if (other.PlayerUid != 0) {
+        PlayerUid = other.PlayerUid;
+      }
+      if (other.sceneEntityInfo_ != null) {
+        if (sceneEntityInfo_ == null) {
+          SceneEntityInfo = new global::Weedwacker.Shared.Network.Proto.SceneEntityInfo();
+        }
+        SceneEntityInfo.MergeFrom(other.SceneEntityInfo);
+      }
+      if (other.WeaponEntityId != 0) {
+        WeaponEntityId = other.WeaponEntityId;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.IsReconnect != false) {
+        IsReconnect = other.IsReconnect;
+      }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
+      }
+      if (other.IsOnScene != false) {
+        IsOnScene = other.IsOnScene;
       }
       serverBuffList_.Add(other.serverBuffList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -653,7 +670,7 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            SceneId = input.ReadUInt32();
+            PlayerUid = input.ReadUInt32();
             break;
           }
           case 18: {
@@ -663,75 +680,75 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(AbilityControlBlock);
             break;
           }
-          case 26: {
-            if (sceneAvatarInfo_ == null) {
-              SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
-            }
-            input.ReadMessage(SceneAvatarInfo);
+          case 24: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 32: {
-            WeaponGuid = input.ReadUInt64();
-            break;
-          }
-          case 42: {
-            if (avatarAbilityInfo_ == null) {
-              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-            }
-            input.ReadMessage(AvatarAbilityInfo);
-            break;
-          }
-          case 48: {
-            IsReconnect = input.ReadBool();
-            break;
-          }
-          case 56: {
-            WeaponEntityId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (avatarInfo_ == null) {
-              AvatarInfo = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
-            }
-            input.ReadMessage(AvatarInfo);
-            break;
-          }
-          case 72: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
-            break;
-          }
-          case 90: {
+          case 34: {
             if (weaponAbilityInfo_ == null) {
               WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(WeaponAbilityInfo);
             break;
           }
-          case 98: {
+          case 40: {
+            WeaponEntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (avatarAbilityInfo_ == null) {
+              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+            }
+            input.ReadMessage(AvatarAbilityInfo);
+            break;
+          }
+          case 58: {
+            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 64: {
+            IsPlayerCurAvatar = input.ReadBool();
+            break;
+          }
+          case 72: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (sceneEntityInfo_ == null) {
               SceneEntityInfo = new global::Weedwacker.Shared.Network.Proto.SceneEntityInfo();
             }
             input.ReadMessage(SceneEntityInfo);
             break;
           }
+          case 96: {
+            WeaponGuid = input.ReadUInt64();
+            break;
+          }
           case 104: {
-            IsPlayerCurAvatar = input.ReadBool();
-            break;
-          }
-          case 112: {
-            PlayerUid = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 1216: {
             IsOnScene = input.ReadBool();
+            break;
+          }
+          case 114: {
+            if (sceneAvatarInfo_ == null) {
+              SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
+            }
+            input.ReadMessage(SceneAvatarInfo);
+            break;
+          }
+          case 122: {
+            if (avatarInfo_ == null) {
+              AvatarInfo = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
+            }
+            input.ReadMessage(AvatarInfo);
+            break;
+          }
+          case 5000: {
+            IsReconnect = input.ReadBool();
             break;
           }
         }
@@ -750,7 +767,7 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            SceneId = input.ReadUInt32();
+            PlayerUid = input.ReadUInt32();
             break;
           }
           case 18: {
@@ -760,75 +777,75 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(AbilityControlBlock);
             break;
           }
-          case 26: {
-            if (sceneAvatarInfo_ == null) {
-              SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
-            }
-            input.ReadMessage(SceneAvatarInfo);
+          case 24: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 32: {
-            WeaponGuid = input.ReadUInt64();
-            break;
-          }
-          case 42: {
-            if (avatarAbilityInfo_ == null) {
-              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-            }
-            input.ReadMessage(AvatarAbilityInfo);
-            break;
-          }
-          case 48: {
-            IsReconnect = input.ReadBool();
-            break;
-          }
-          case 56: {
-            WeaponEntityId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (avatarInfo_ == null) {
-              AvatarInfo = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
-            }
-            input.ReadMessage(AvatarInfo);
-            break;
-          }
-          case 72: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
-            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
-            break;
-          }
-          case 90: {
+          case 34: {
             if (weaponAbilityInfo_ == null) {
               WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(WeaponAbilityInfo);
             break;
           }
-          case 98: {
+          case 40: {
+            WeaponEntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (avatarAbilityInfo_ == null) {
+              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+            }
+            input.ReadMessage(AvatarAbilityInfo);
+            break;
+          }
+          case 58: {
+            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 64: {
+            IsPlayerCurAvatar = input.ReadBool();
+            break;
+          }
+          case 72: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (sceneEntityInfo_ == null) {
               SceneEntityInfo = new global::Weedwacker.Shared.Network.Proto.SceneEntityInfo();
             }
             input.ReadMessage(SceneEntityInfo);
             break;
           }
+          case 96: {
+            WeaponGuid = input.ReadUInt64();
+            break;
+          }
           case 104: {
-            IsPlayerCurAvatar = input.ReadBool();
-            break;
-          }
-          case 112: {
-            PlayerUid = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 1216: {
             IsOnScene = input.ReadBool();
+            break;
+          }
+          case 114: {
+            if (sceneAvatarInfo_ == null) {
+              SceneAvatarInfo = new global::Weedwacker.Shared.Network.Proto.SceneAvatarInfo();
+            }
+            input.ReadMessage(SceneAvatarInfo);
+            break;
+          }
+          case 122: {
+            if (avatarInfo_ == null) {
+              AvatarInfo = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
+            }
+            input.ReadMessage(AvatarInfo);
+            break;
+          }
+          case 5000: {
+            IsReconnect = input.ReadBool();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairMusicRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpGbGV1ckZhaXJNdXNpY1JlY29yZC5wcm90byJPChRGbGV1ckZhaXJNdXNp",
-            "Y1JlY29yZBIRCgltYXhfY29tYm8YASABKA0SEQoJbWF4X3Njb3JlGAsgASgN",
-            "EhEKCWlzX3VubG9jaxgMIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpGbGV1ckZhaXJNdXNpY1JlY29yZC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJPChRGbGV1ckZhaXJNdXNpY1JlY29yZBIRCglt",
+            "YXhfc2NvcmUYCyABKA0SEQoJaXNfdW5sb2NrGAogASgIEhEKCW1heF9jb21i",
+            "bxgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord), global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord.Parser, new[]{ "MaxCombo", "MaxScore", "IsUnlock" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord), global::Weedwacker.Shared.Network.Proto.FleurFairMusicRecord.Parser, new[]{ "MaxScore", "IsUnlock", "MaxCombo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairMusicRecord(FleurFairMusicRecord other) : this() {
-      maxCombo_ = other.maxCombo_;
       maxScore_ = other.maxScore_;
       isUnlock_ = other.isUnlock_;
+      maxCombo_ = other.maxCombo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,18 +82,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairMusicRecord Clone() {
       return new FleurFairMusicRecord(this);
-    }
-
-    /// <summary>Field number for the "max_combo" field.</summary>
-    public const int MaxComboFieldNumber = 1;
-    private uint maxCombo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxCombo {
-      get { return maxCombo_; }
-      set {
-        maxCombo_ = value;
-      }
     }
 
     /// <summary>Field number for the "max_score" field.</summary>
@@ -109,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_unlock" field.</summary>
-    public const int IsUnlockFieldNumber = 12;
+    public const int IsUnlockFieldNumber = 10;
     private bool isUnlock_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isUnlock_; }
       set {
         isUnlock_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_combo" field.</summary>
+    public const int MaxComboFieldNumber = 6;
+    private uint maxCombo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxCombo {
+      get { return maxCombo_; }
+      set {
+        maxCombo_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MaxCombo != other.MaxCombo) return false;
       if (MaxScore != other.MaxScore) return false;
       if (IsUnlock != other.IsUnlock) return false;
+      if (MaxCombo != other.MaxCombo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (IsUnlock != false) hash ^= IsUnlock.GetHashCode();
+      if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,16 +167,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MaxCombo != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteUInt32(MaxCombo);
+      }
+      if (IsUnlock != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsUnlock);
       }
       if (MaxScore != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(MaxScore);
-      }
-      if (IsUnlock != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,16 +189,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MaxCombo != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteUInt32(MaxCombo);
+      }
+      if (IsUnlock != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsUnlock);
       }
       if (MaxScore != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(MaxScore);
-      }
-      if (IsUnlock != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MaxCombo != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
-      }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
       }
       if (IsUnlock != false) {
         size += 1 + 1;
+      }
+      if (MaxCombo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MaxCombo != 0) {
-        MaxCombo = other.MaxCombo;
-      }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
       }
       if (other.IsUnlock != false) {
         IsUnlock = other.IsUnlock;
+      }
+      if (other.MaxCombo != 0) {
+        MaxCombo = other.MaxCombo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 48: {
             MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsUnlock = input.ReadBool();
             break;
           }
           case 88: {
             MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            IsUnlock = input.ReadBool();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 48: {
             MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsUnlock = input.ReadBool();
             break;
           }
           case 88: {
             MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            IsUnlock = input.ReadBool();
             break;
           }
         }

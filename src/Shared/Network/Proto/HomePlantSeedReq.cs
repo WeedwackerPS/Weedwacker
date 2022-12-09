@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePlantSeedReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZIb21lUGxhbnRTZWVkUmVxLnByb3RvIksKEEhvbWVQbGFudFNlZWRSZXES",
-            "DQoFaW5kZXgYBCABKA0SEgoKZmllbGRfZ3VpZBgOIAEoDRIUCgxzZWVkX2lk",
-            "X2xpc3QYDSADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChZIb21lUGxhbnRTZWVkUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIksKEEhvbWVQbGFudFNlZWRSZXESFAoMc2VlZF9pZF9s",
+            "aXN0GAcgAygNEhIKCmZpZWxkX2d1aWQYASABKA0SDQoFaW5kZXgYCSABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantSeedReq), global::Weedwacker.Shared.Network.Proto.HomePlantSeedReq.Parser, new[]{ "Index", "FieldGuid", "SeedIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantSeedReq), global::Weedwacker.Shared.Network.Proto.HomePlantSeedReq.Parser, new[]{ "SeedIdList", "FieldGuid", "Index" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4804
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4768;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePlantSeedReq : pb::IMessage<HomePlantSeedReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomePlantSeedReq(HomePlantSeedReq other) : this() {
-      index_ = other.index_;
-      fieldGuid_ = other.fieldGuid_;
       seedIdList_ = other.seedIdList_.Clone();
+      fieldGuid_ = other.fieldGuid_;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomePlantSeedReq(this);
     }
 
-    /// <summary>Field number for the "index" field.</summary>
-    public const int IndexFieldNumber = 4;
-    private uint index_;
+    /// <summary>Field number for the "seed_id_list" field.</summary>
+    public const int SeedIdListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_seedIdList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> seedIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Index {
-      get { return index_; }
-      set {
-        index_ = value;
-      }
+    public pbc::RepeatedField<uint> SeedIdList {
+      get { return seedIdList_; }
     }
 
     /// <summary>Field number for the "field_guid" field.</summary>
-    public const int FieldGuidFieldNumber = 14;
+    public const int FieldGuidFieldNumber = 1;
     private uint fieldGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,15 +117,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "seed_id_list" field.</summary>
-    public const int SeedIdListFieldNumber = 13;
-    private static readonly pb::FieldCodec<uint> _repeated_seedIdList_codec
-        = pb::FieldCodec.ForUInt32(106);
-    private readonly pbc::RepeatedField<uint> seedIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 9;
+    private uint index_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SeedIdList {
-      get { return seedIdList_; }
+    public uint Index {
+      get { return index_; }
+      set {
+        index_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Index != other.Index) return false;
-      if (FieldGuid != other.FieldGuid) return false;
       if(!seedIdList_.Equals(other.seedIdList_)) return false;
+      if (FieldGuid != other.FieldGuid) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Index != 0) hash ^= Index.GetHashCode();
-      if (FieldGuid != 0) hash ^= FieldGuid.GetHashCode();
       hash ^= seedIdList_.GetHashCode();
+      if (FieldGuid != 0) hash ^= FieldGuid.GetHashCode();
+      if (Index != 0) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,14 +175,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Index != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Index);
+      if (FieldGuid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(FieldGuid);
       }
       seedIdList_.WriteTo(output, _repeated_seedIdList_codec);
-      if (FieldGuid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(FieldGuid);
+      if (Index != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Index);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -190,14 +194,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Index != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Index);
+      if (FieldGuid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(FieldGuid);
       }
       seedIdList_.WriteTo(ref output, _repeated_seedIdList_codec);
-      if (FieldGuid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(FieldGuid);
+      if (Index != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Index);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,13 +213,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Index != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
-      }
+      size += seedIdList_.CalculateSize(_repeated_seedIdList_codec);
       if (FieldGuid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FieldGuid);
       }
-      size += seedIdList_.CalculateSize(_repeated_seedIdList_codec);
+      if (Index != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +232,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Index != 0) {
-        Index = other.Index;
-      }
+      seedIdList_.Add(other.seedIdList_);
       if (other.FieldGuid != 0) {
         FieldGuid = other.FieldGuid;
       }
-      seedIdList_.Add(other.seedIdList_);
+      if (other.Index != 0) {
+        Index = other.Index;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,17 +254,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Index = input.ReadUInt32();
+          case 8: {
+            FieldGuid = input.ReadUInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 58:
+          case 56: {
             seedIdList_.AddEntriesFrom(input, _repeated_seedIdList_codec);
             break;
           }
-          case 112: {
-            FieldGuid = input.ReadUInt32();
+          case 72: {
+            Index = input.ReadUInt32();
             break;
           }
         }
@@ -278,17 +282,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Index = input.ReadUInt32();
+          case 8: {
+            FieldGuid = input.ReadUInt32();
             break;
           }
-          case 106:
-          case 104: {
+          case 58:
+          case 56: {
             seedIdList_.AddEntriesFrom(ref input, _repeated_seedIdList_codec);
             break;
           }
-          case 112: {
-            FieldGuid = input.ReadUInt32();
+          case 72: {
+            Index = input.ReadUInt32();
             break;
           }
         }

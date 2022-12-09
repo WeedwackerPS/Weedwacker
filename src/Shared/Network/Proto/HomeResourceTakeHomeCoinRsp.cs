@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeResourceTakeHomeCoinRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFIb21lUmVzb3VyY2VUYWtlSG9tZUNvaW5Sc3AucHJvdG8aEkhvbWVSZXNv",
-            "dXJjZS5wcm90byJQChtIb21lUmVzb3VyY2VUYWtlSG9tZUNvaW5Sc3ASIAoJ",
-            "aG9tZV9jb2luGAcgASgLMg0uSG9tZVJlc291cmNlEg8KB3JldGNvZGUYCiAB",
-            "KAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiFIb21lUmVzb3VyY2VUYWtlSG9tZUNvaW5Sc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aEkhvbWVSZXNvdXJjZS5wcm90byJw",
+            "ChtIb21lUmVzb3VyY2VUYWtlSG9tZUNvaW5Sc3ASDwoHcmV0Y29kZRgEIAEo",
+            "BRJACglob21lX2NvaW4YDCABKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkhvbWVSZXNvdXJjZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeResourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeResourceTakeHomeCoinRsp), global::Weedwacker.Shared.Network.Proto.HomeResourceTakeHomeCoinRsp.Parser, new[]{ "HomeCoin", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeResourceTakeHomeCoinRsp), global::Weedwacker.Shared.Network.Proto.HomeResourceTakeHomeCoinRsp.Parser, new[]{ "Retcode", "HomeCoin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4541
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4779;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeResourceTakeHomeCoinRsp : pb::IMessage<HomeResourceTakeHomeCoinRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeResourceTakeHomeCoinRsp(HomeResourceTakeHomeCoinRsp other) : this() {
-      homeCoin_ = other.homeCoin_ != null ? other.homeCoin_.Clone() : null;
       retcode_ = other.retcode_;
+      homeCoin_ = other.homeCoin_ != null ? other.homeCoin_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeResourceTakeHomeCoinRsp(this);
     }
 
-    /// <summary>Field number for the "home_coin" field.</summary>
-    public const int HomeCoinFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.HomeResource homeCoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeResource HomeCoin {
-      get { return homeCoin_; }
-      set {
-        homeCoin_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "home_coin" field.</summary>
+    public const int HomeCoinFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.HomeResource homeCoin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HomeResource HomeCoin {
+      get { return homeCoin_; }
+      set {
+        homeCoin_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(HomeCoin, other.HomeCoin)) return false;
       if (Retcode != other.Retcode) return false;
+      if (!object.Equals(HomeCoin, other.HomeCoin)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (homeCoin_ != null) hash ^= HomeCoin.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (homeCoin_ != null) hash ^= HomeCoin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (homeCoin_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(HomeCoin);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (homeCoin_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(HomeCoin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (homeCoin_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(HomeCoin);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (homeCoin_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(HomeCoin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (homeCoin_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HomeCoin);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (homeCoin_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HomeCoin);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.homeCoin_ != null) {
         if (homeCoin_ == null) {
           HomeCoin = new global::Weedwacker.Shared.Network.Proto.HomeResource();
         }
         HomeCoin.MergeFrom(other.HomeCoin);
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (homeCoin_ == null) {
               HomeCoin = new global::Weedwacker.Shared.Network.Proto.HomeResource();
             }
             input.ReadMessage(HomeCoin);
-            break;
-          }
-          case 80: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (homeCoin_ == null) {
               HomeCoin = new global::Weedwacker.Shared.Network.Proto.HomeResource();
             }
             input.ReadMessage(HomeCoin);
-            break;
-          }
-          case 80: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

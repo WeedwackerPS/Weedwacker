@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static StartBuoyantCombatGalleryRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJTdGFydEJ1b3lhbnRDb21iYXRHYWxsZXJ5UnNwLnByb3RvIloKHFN0YXJ0",
-            "QnVveWFudENvbWJhdEdhbGxlcnlSc3ASFQoNZ2FsbGVyeV9sZXZlbBgMIAEo",
-            "DRIPCgdyZXRjb2RlGAUgASgFEhIKCmdhbGxlcnlfaWQYCCABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJTdGFydEJ1b3lhbnRDb21iYXRHYWxsZXJ5UnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIloKHFN0YXJ0QnVveWFudENvbWJh",
+            "dEdhbGxlcnlSc3ASFQoNZ2FsbGVyeV9sZXZlbBgGIAEoDRIPCgdyZXRjb2Rl",
+            "GAUgASgFEhIKCmdhbGxlcnlfaWQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8680
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8969;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class StartBuoyantCombatGalleryRsp : pb::IMessage<StartBuoyantCombatGalleryRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_level" field.</summary>
-    public const int GalleryLevelFieldNumber = 12;
+    public const int GalleryLevelFieldNumber = 6;
     private uint galleryLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 8;
+    public const int GalleryIdFieldNumber = 12;
     private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
-      if (GalleryId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(GalleryId);
-      }
       if (GalleryLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(GalleryLevel);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(GalleryId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,13 +201,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
-      if (GalleryId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(GalleryId);
-      }
       if (GalleryLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(GalleryLevel);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(GalleryId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,12 +268,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
-            GalleryId = input.ReadUInt32();
+          case 48: {
+            GalleryLevel = input.ReadUInt32();
             break;
           }
           case 96: {
-            GalleryLevel = input.ReadUInt32();
+            GalleryId = input.ReadUInt32();
             break;
           }
         }
@@ -291,12 +295,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
-            GalleryId = input.ReadUInt32();
+          case 48: {
+            GalleryLevel = input.ReadUInt32();
             break;
           }
           case 96: {
-            GalleryLevel = input.ReadUInt32();
+            GalleryId = input.ReadUInt32();
             break;
           }
         }

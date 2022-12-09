@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static OpActivityStateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtPcEFjdGl2aXR5U3RhdGVOb3RpZnkucHJvdG8aHE9wQWN0aXZpdHlUYWdC",
-            "cmllZkluZm8ucHJvdG8ifwoVT3BBY3Rpdml0eVN0YXRlTm90aWZ5EicKH2Zp",
-            "bmlzaGVkX2JvbnVzX2FjdGl2aXR5X2lkX2xpc3QYDiADKA0SPQocb3BlbmVk",
-            "X29wX2FjdGl2aXR5X2luZm9fbGlzdBgNIAMoCzIXLk9wQWN0aXZpdHlUYWdC",
-            "cmllZkluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChtPcEFjdGl2aXR5U3RhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aHE9wQWN0aXZpdHlUYWdCcmllZkluZm8ucHJv",
+            "dG8inwEKFU9wQWN0aXZpdHlTdGF0ZU5vdGlmeRInCh9maW5pc2hlZF9ib251",
+            "c19hY3Rpdml0eV9pZF9saXN0GAYgAygNEl0KHG9wZW5lZF9vcF9hY3Rpdml0",
+            "eV9pbmZvX2xpc3QYCCADKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLk9wQWN0aXZpdHlUYWdCcmllZkluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2572
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2579;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class OpActivityStateNotify : pb::IMessage<OpActivityStateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_bonus_activity_id_list" field.</summary>
-    public const int FinishedBonusActivityIdListFieldNumber = 14;
+    public const int FinishedBonusActivityIdListFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_finishedBonusActivityIdList_codec
-        = pb::FieldCodec.ForUInt32(114);
+        = pb::FieldCodec.ForUInt32(50);
     private readonly pbc::RepeatedField<uint> finishedBonusActivityIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "opened_op_activity_info_list" field.</summary>
-    public const int OpenedOpActivityInfoListFieldNumber = 13;
+    public const int OpenedOpActivityInfoListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo> _repeated_openedOpActivityInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo> openedOpActivityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      openedOpActivityInfoList_.WriteTo(output, _repeated_openedOpActivityInfoList_codec);
       finishedBonusActivityIdList_.WriteTo(output, _repeated_finishedBonusActivityIdList_codec);
+      openedOpActivityInfoList_.WriteTo(output, _repeated_openedOpActivityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -168,8 +172,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      openedOpActivityInfoList_.WriteTo(ref output, _repeated_openedOpActivityInfoList_codec);
       finishedBonusActivityIdList_.WriteTo(ref output, _repeated_finishedBonusActivityIdList_codec);
+      openedOpActivityInfoList_.WriteTo(ref output, _repeated_openedOpActivityInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -211,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
-            openedOpActivityInfoList_.AddEntriesFrom(input, _repeated_openedOpActivityInfoList_codec);
+          case 50:
+          case 48: {
+            finishedBonusActivityIdList_.AddEntriesFrom(input, _repeated_finishedBonusActivityIdList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            finishedBonusActivityIdList_.AddEntriesFrom(input, _repeated_finishedBonusActivityIdList_codec);
+          case 66: {
+            openedOpActivityInfoList_.AddEntriesFrom(input, _repeated_openedOpActivityInfoList_codec);
             break;
           }
         }
@@ -235,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
-            openedOpActivityInfoList_.AddEntriesFrom(ref input, _repeated_openedOpActivityInfoList_codec);
+          case 50:
+          case 48: {
+            finishedBonusActivityIdList_.AddEntriesFrom(ref input, _repeated_finishedBonusActivityIdList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            finishedBonusActivityIdList_.AddEntriesFrom(ref input, _repeated_finishedBonusActivityIdList_codec);
+          case 66: {
+            openedOpActivityInfoList_.AddEntriesFrom(ref input, _repeated_openedOpActivityInfoList_codec);
             break;
           }
         }

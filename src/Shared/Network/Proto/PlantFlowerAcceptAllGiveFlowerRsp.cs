@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlantFlowerAcceptAllGiveFlowerRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidQbGFudEZsb3dlckFjY2VwdEFsbEdpdmVGbG93ZXJSc3AucHJvdG8aJ1Bs",
-            "YW50Rmxvd2VyQWNjZXB0Rmxvd2VyUmVzdWx0SW5mby5wcm90byKVAQohUGxh",
-            "bnRGbG93ZXJBY2NlcHRBbGxHaXZlRmxvd2VyUnNwEhMKC3NjaGVkdWxlX2lk",
-            "GAogASgNEg8KB3JldGNvZGUYCyABKAUSSgoeYWNjZXB0X2Zsb3dlcl9yZXN1",
-            "bHRfaW5mb19saXN0GA0gAygLMiIuUGxhbnRGbG93ZXJBY2NlcHRGbG93ZXJS",
-            "ZXN1bHRJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CidQbGFudEZsb3dlckFjY2VwdEFsbEdpdmVGbG93ZXJSc3AucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aJ1BsYW50Rmxvd2VyQWNj",
+            "ZXB0Rmxvd2VyUmVzdWx0SW5mby5wcm90byK1AQohUGxhbnRGbG93ZXJBY2Nl",
+            "cHRBbGxHaXZlRmxvd2VyUnNwEhMKC3NjaGVkdWxlX2lkGAwgASgNEg8KB3Jl",
+            "dGNvZGUYBiABKAUSagoeYWNjZXB0X2Zsb3dlcl9yZXN1bHRfaW5mb19saXN0",
+            "GA0gAygLMkIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGFu",
+            "dEZsb3dlckFjY2VwdEZsb3dlclJlc3VsdEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlantFlowerAcceptFlowerResultInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8888
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8313;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlantFlowerAcceptAllGiveFlowerRsp : pb::IMessage<PlantFlowerAcceptAllGiveFlowerRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 10;
+    public const int ScheduleIdFieldNumber = 12;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -173,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ScheduleId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ScheduleId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ScheduleId);
       }
       acceptFlowerResultInfoList_.WriteTo(output, _repeated_acceptFlowerResultInfoList_codec);
       if (_unknownFields != null) {
@@ -192,13 +196,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ScheduleId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ScheduleId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ScheduleId);
       }
       acceptFlowerResultInfoList_.WriteTo(ref output, _repeated_acceptFlowerResultInfoList_codec);
       if (_unknownFields != null) {
@@ -252,12 +256,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            ScheduleId = input.ReadUInt32();
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
           case 106: {
@@ -279,12 +283,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            ScheduleId = input.ReadUInt32();
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
           case 106: {

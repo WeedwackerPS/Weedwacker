@@ -24,19 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Jcm9kb3JpQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhZJcm9kb3JpQ2hl",
-            "c3NEYXRhLnByb3RvGhdJcm9kb3JpRmxvd2VyRGF0YS5wcm90bxocSXJvZG9y",
-            "aU1hc3RlckxldmVsSW5mby5wcm90bxoXSXJvZG9yaVBvZXRyeURhdGEucHJv",
-            "dG8iyAEKGUlyb2RvcmlBY3Rpdml0eURldGFpbEluZm8SMgoRbWFzdGVyX2xl",
-            "dmVsX2xpc3QYCyADKAsyFy5Jcm9kb3JpTWFzdGVyTGV2ZWxJbmZvEicKC2Zs",
-            "b3dlcl9kYXRhGAYgASgLMhIuSXJvZG9yaUZsb3dlckRhdGESJwoLcG9ldHJ5",
-            "X2RhdGEYCCABKAsyEi5Jcm9kb3JpUG9ldHJ5RGF0YRIlCgpjaGVzc19kYXRh",
-            "GA4gASgLMhEuSXJvZG9yaUNoZXNzRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Jcm9kb3JpQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhZJcm9kb3JpQ2hlc3NEYXRhLnByb3Rv",
+            "GhdJcm9kb3JpRmxvd2VyRGF0YS5wcm90bxocSXJvZG9yaU1hc3RlckxldmVs",
+            "SW5mby5wcm90bxoXSXJvZG9yaVBvZXRyeURhdGEucHJvdG8iyAIKGUlyb2Rv",
+            "cmlBY3Rpdml0eURldGFpbEluZm8SRQoKY2hlc3NfZGF0YRgFIAEoCzIxLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXJvZG9yaUNoZXNzRGF0",
+            "YRJHCgtmbG93ZXJfZGF0YRgDIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uSXJvZG9yaUZsb3dlckRhdGESRwoLcG9ldHJ5X2RhdGEY",
+            "BiABKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLklyb2Rv",
+            "cmlQb2V0cnlEYXRhElIKEW1hc3Rlcl9sZXZlbF9saXN0GAEgAygLMjcuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Jcm9kb3JpTWFzdGVyTGV2",
+            "ZWxJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IrodoriChessDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriFlowerDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriPoetryDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo.Parser, new[]{ "MasterLevelList", "FlowerData", "PoetryData", "ChessData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo.Parser, new[]{ "ChessData", "FlowerData", "PoetryData", "MasterLevelList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,10 +80,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriActivityDetailInfo(IrodoriActivityDetailInfo other) : this() {
-      masterLevelList_ = other.masterLevelList_.Clone();
+      chessData_ = other.chessData_ != null ? other.chessData_.Clone() : null;
       flowerData_ = other.flowerData_ != null ? other.flowerData_.Clone() : null;
       poetryData_ = other.poetryData_ != null ? other.poetryData_.Clone() : null;
-      chessData_ = other.chessData_ != null ? other.chessData_.Clone() : null;
+      masterLevelList_ = other.masterLevelList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,19 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IrodoriActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "master_level_list" field.</summary>
-    public const int MasterLevelListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> _repeated_masterLevelList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> masterLevelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo>();
+    /// <summary>Field number for the "chess_data" field.</summary>
+    public const int ChessDataFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.IrodoriChessData chessData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> MasterLevelList {
-      get { return masterLevelList_; }
+    public global::Weedwacker.Shared.Network.Proto.IrodoriChessData ChessData {
+      get { return chessData_; }
+      set {
+        chessData_ = value;
+      }
     }
 
     /// <summary>Field number for the "flower_data" field.</summary>
-    public const int FlowerDataFieldNumber = 6;
+    public const int FlowerDataFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.IrodoriFlowerData flowerData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "poetry_data" field.</summary>
-    public const int PoetryDataFieldNumber = 8;
+    public const int PoetryDataFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.IrodoriPoetryData poetryData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,16 +129,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "chess_data" field.</summary>
-    public const int ChessDataFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.IrodoriChessData chessData_;
+    /// <summary>Field number for the "master_level_list" field.</summary>
+    public const int MasterLevelListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> _repeated_masterLevelList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> masterLevelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.IrodoriChessData ChessData {
-      get { return chessData_; }
-      set {
-        chessData_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriMasterLevelInfo> MasterLevelList {
+      get { return masterLevelList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,10 +155,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!masterLevelList_.Equals(other.masterLevelList_)) return false;
+      if (!object.Equals(ChessData, other.ChessData)) return false;
       if (!object.Equals(FlowerData, other.FlowerData)) return false;
       if (!object.Equals(PoetryData, other.PoetryData)) return false;
-      if (!object.Equals(ChessData, other.ChessData)) return false;
+      if(!masterLevelList_.Equals(other.masterLevelList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,10 +166,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= masterLevelList_.GetHashCode();
+      if (chessData_ != null) hash ^= ChessData.GetHashCode();
       if (flowerData_ != null) hash ^= FlowerData.GetHashCode();
       if (poetryData_ != null) hash ^= PoetryData.GetHashCode();
-      if (chessData_ != null) hash ^= ChessData.GetHashCode();
+      hash ^= masterLevelList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,18 +188,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      masterLevelList_.WriteTo(output, _repeated_masterLevelList_codec);
       if (flowerData_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(26);
         output.WriteMessage(FlowerData);
       }
-      if (poetryData_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(PoetryData);
-      }
-      masterLevelList_.WriteTo(output, _repeated_masterLevelList_codec);
       if (chessData_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(42);
         output.WriteMessage(ChessData);
+      }
+      if (poetryData_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PoetryData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,18 +211,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      masterLevelList_.WriteTo(ref output, _repeated_masterLevelList_codec);
       if (flowerData_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(26);
         output.WriteMessage(FlowerData);
       }
-      if (poetryData_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(PoetryData);
-      }
-      masterLevelList_.WriteTo(ref output, _repeated_masterLevelList_codec);
       if (chessData_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(42);
         output.WriteMessage(ChessData);
+      }
+      if (poetryData_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PoetryData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,16 +234,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += masterLevelList_.CalculateSize(_repeated_masterLevelList_codec);
+      if (chessData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChessData);
+      }
       if (flowerData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerData);
       }
       if (poetryData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PoetryData);
       }
-      if (chessData_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChessData);
-      }
+      size += masterLevelList_.CalculateSize(_repeated_masterLevelList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -253,7 +256,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      masterLevelList_.Add(other.masterLevelList_);
+      if (other.chessData_ != null) {
+        if (chessData_ == null) {
+          ChessData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessData();
+        }
+        ChessData.MergeFrom(other.ChessData);
+      }
       if (other.flowerData_ != null) {
         if (flowerData_ == null) {
           FlowerData = new global::Weedwacker.Shared.Network.Proto.IrodoriFlowerData();
@@ -266,12 +274,7 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         PoetryData.MergeFrom(other.PoetryData);
       }
-      if (other.chessData_ != null) {
-        if (chessData_ == null) {
-          ChessData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessData();
-        }
-        ChessData.MergeFrom(other.ChessData);
-      }
+      masterLevelList_.Add(other.masterLevelList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -287,29 +290,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 10: {
+            masterLevelList_.AddEntriesFrom(input, _repeated_masterLevelList_codec);
+            break;
+          }
+          case 26: {
             if (flowerData_ == null) {
               FlowerData = new global::Weedwacker.Shared.Network.Proto.IrodoriFlowerData();
             }
             input.ReadMessage(FlowerData);
             break;
           }
-          case 66: {
-            if (poetryData_ == null) {
-              PoetryData = new global::Weedwacker.Shared.Network.Proto.IrodoriPoetryData();
-            }
-            input.ReadMessage(PoetryData);
-            break;
-          }
-          case 90: {
-            masterLevelList_.AddEntriesFrom(input, _repeated_masterLevelList_codec);
-            break;
-          }
-          case 114: {
+          case 42: {
             if (chessData_ == null) {
               ChessData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessData();
             }
             input.ReadMessage(ChessData);
+            break;
+          }
+          case 50: {
+            if (poetryData_ == null) {
+              PoetryData = new global::Weedwacker.Shared.Network.Proto.IrodoriPoetryData();
+            }
+            input.ReadMessage(PoetryData);
             break;
           }
         }
@@ -327,29 +330,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 10: {
+            masterLevelList_.AddEntriesFrom(ref input, _repeated_masterLevelList_codec);
+            break;
+          }
+          case 26: {
             if (flowerData_ == null) {
               FlowerData = new global::Weedwacker.Shared.Network.Proto.IrodoriFlowerData();
             }
             input.ReadMessage(FlowerData);
             break;
           }
-          case 66: {
-            if (poetryData_ == null) {
-              PoetryData = new global::Weedwacker.Shared.Network.Proto.IrodoriPoetryData();
-            }
-            input.ReadMessage(PoetryData);
-            break;
-          }
-          case 90: {
-            masterLevelList_.AddEntriesFrom(ref input, _repeated_masterLevelList_codec);
-            break;
-          }
-          case 114: {
+          case 42: {
             if (chessData_ == null) {
               ChessData = new global::Weedwacker.Shared.Network.Proto.IrodoriChessData();
             }
             input.ReadMessage(ChessData);
+            break;
+          }
+          case 50: {
+            if (poetryData_ == null) {
+              PoetryData = new global::Weedwacker.Shared.Network.Proto.IrodoriPoetryData();
+            }
+            input.ReadMessage(PoetryData);
             break;
           }
         }

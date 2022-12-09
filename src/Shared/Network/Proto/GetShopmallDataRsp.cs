@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetShopmallDataRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHZXRTaG9wbWFsbERhdGFSc3AucHJvdG8iPQoSR2V0U2hvcG1hbGxEYXRh",
-            "UnNwEhYKDnNob3BfdHlwZV9saXN0GA8gAygNEg8KB3JldGNvZGUYAyABKAVC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhHZXRTaG9wbWFsbERhdGFSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iPQoSR2V0U2hvcG1hbGxEYXRhUnNwEg8KB3JldGNv",
+            "ZGUYAiABKAUSFgoOc2hvcF90eXBlX2xpc3QYByADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetShopmallDataRsp), global::Weedwacker.Shared.Network.Proto.GetShopmallDataRsp.Parser, new[]{ "ShopTypeList", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetShopmallDataRsp), global::Weedwacker.Shared.Network.Proto.GetShopmallDataRsp.Parser, new[]{ "Retcode", "ShopTypeList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 721
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 743;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetShopmallDataRsp : pb::IMessage<GetShopmallDataRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetShopmallDataRsp(GetShopmallDataRsp other) : this() {
-      shopTypeList_ = other.shopTypeList_.Clone();
       retcode_ = other.retcode_;
+      shopTypeList_ = other.shopTypeList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,19 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetShopmallDataRsp(this);
     }
 
-    /// <summary>Field number for the "shop_type_list" field.</summary>
-    public const int ShopTypeListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_shopTypeList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> shopTypeList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ShopTypeList {
-      get { return shopTypeList_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,6 +101,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "shop_type_list" field.</summary>
+    public const int ShopTypeListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_shopTypeList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> shopTypeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ShopTypeList {
+      get { return shopTypeList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!shopTypeList_.Equals(other.shopTypeList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if(!shopTypeList_.Equals(other.shopTypeList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,8 +138,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= shopTypeList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= shopTypeList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       shopTypeList_.WriteTo(output, _repeated_shopTypeList_codec);
@@ -170,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       shopTypeList_.WriteTo(ref output, _repeated_shopTypeList_codec);
@@ -184,10 +188,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += shopTypeList_.CalculateSize(_repeated_shopTypeList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += shopTypeList_.CalculateSize(_repeated_shopTypeList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -200,10 +204,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      shopTypeList_.Add(other.shopTypeList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      shopTypeList_.Add(other.shopTypeList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -219,12 +223,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 58:
+          case 56: {
             shopTypeList_.AddEntriesFrom(input, _repeated_shopTypeList_codec);
             break;
           }
@@ -243,12 +247,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 58:
+          case 56: {
             shopTypeList_.AddEntriesFrom(ref input, _repeated_shopTypeList_codec);
             break;
           }

@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AnnounceDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJBbm5vdW5jZURhdGEucHJvdG8iiAIKDEFubm91bmNlRGF0YRIXCg9jb3Vu",
-            "dF9kb3duX3RleHQYCSABKAkSGgoSY2VudGVyX3N5c3RlbV90ZXh0GAggASgJ",
-            "EhwKFGNvdW50X2Rvd25fZnJlcXVlbmN5GAEgASgNEhEKCWNvbmZpZ19pZBgH",
-            "IAEoDRISCgpiZWdpbl90aW1lGAQgASgNEh8KF2NlbnRlcl9zeXN0ZW1fZnJl",
-            "cXVlbmN5GAsgASgNEhwKFGR1bmdlb25fY29uZmlybV90ZXh0GAIgASgJEi0K",
-            "JWlzX2NlbnRlcl9zeXN0ZW1fbGFzdF81X2V2ZXJ5X21pbnV0ZXMYDiABKAgS",
-            "EAoIZW5kX3RpbWUYCiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJBbm5vdW5jZURhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iiAIKDEFubm91bmNlRGF0YRISCgpiZWdpbl90aW1lGAogASgN",
+            "Ei0KJWlzX2NlbnRlcl9zeXN0ZW1fbGFzdF81X2V2ZXJ5X21pbnV0ZXMYAyAB",
+            "KAgSEAoIZW5kX3RpbWUYASABKA0SEQoJY29uZmlnX2lkGAIgASgNEhoKEmNl",
+            "bnRlcl9zeXN0ZW1fdGV4dBgLIAEoCRIcChRjb3VudF9kb3duX2ZyZXF1ZW5j",
+            "eRgFIAEoDRIfChdjZW50ZXJfc3lzdGVtX2ZyZXF1ZW5jeRgNIAEoDRIcChRk",
+            "dW5nZW9uX2NvbmZpcm1fdGV4dBgEIAEoCRIXCg9jb3VudF9kb3duX3RleHQY",
+            "BiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnnounceData), global::Weedwacker.Shared.Network.Proto.AnnounceData.Parser, new[]{ "CountDownText", "CenterSystemText", "CountDownFrequency", "ConfigId", "BeginTime", "CenterSystemFrequency", "DungeonConfirmText", "IsCenterSystemLast5EveryMinutes", "EndTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnnounceData), global::Weedwacker.Shared.Network.Proto.AnnounceData.Parser, new[]{ "BeginTime", "IsCenterSystemLast5EveryMinutes", "EndTime", "ConfigId", "CenterSystemText", "CountDownFrequency", "CenterSystemFrequency", "DungeonConfirmText", "CountDownText" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,15 +76,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnnounceData(AnnounceData other) : this() {
-      countDownText_ = other.countDownText_;
-      centerSystemText_ = other.centerSystemText_;
-      countDownFrequency_ = other.countDownFrequency_;
-      configId_ = other.configId_;
       beginTime_ = other.beginTime_;
-      centerSystemFrequency_ = other.centerSystemFrequency_;
-      dungeonConfirmText_ = other.dungeonConfirmText_;
       isCenterSystemLast5EveryMinutes_ = other.isCenterSystemLast5EveryMinutes_;
       endTime_ = other.endTime_;
+      configId_ = other.configId_;
+      centerSystemText_ = other.centerSystemText_;
+      countDownFrequency_ = other.countDownFrequency_;
+      centerSystemFrequency_ = other.centerSystemFrequency_;
+      dungeonConfirmText_ = other.dungeonConfirmText_;
+      countDownText_ = other.countDownText_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,56 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AnnounceData(this);
     }
 
-    /// <summary>Field number for the "count_down_text" field.</summary>
-    public const int CountDownTextFieldNumber = 9;
-    private string countDownText_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CountDownText {
-      get { return countDownText_; }
-      set {
-        countDownText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "center_system_text" field.</summary>
-    public const int CenterSystemTextFieldNumber = 8;
-    private string centerSystemText_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CenterSystemText {
-      get { return centerSystemText_; }
-      set {
-        centerSystemText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "count_down_frequency" field.</summary>
-    public const int CountDownFrequencyFieldNumber = 1;
-    private uint countDownFrequency_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CountDownFrequency {
-      get { return countDownFrequency_; }
-      set {
-        countDownFrequency_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 7;
-    private uint configId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConfigId {
-      get { return configId_; }
-      set {
-        configId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 4;
+    public const int BeginTimeFieldNumber = 10;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,32 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "center_system_frequency" field.</summary>
-    public const int CenterSystemFrequencyFieldNumber = 11;
-    private uint centerSystemFrequency_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CenterSystemFrequency {
-      get { return centerSystemFrequency_; }
-      set {
-        centerSystemFrequency_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_confirm_text" field.</summary>
-    public const int DungeonConfirmTextFieldNumber = 2;
-    private string dungeonConfirmText_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DungeonConfirmText {
-      get { return dungeonConfirmText_; }
-      set {
-        dungeonConfirmText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "is_center_system_last_5_every_minutes" field.</summary>
-    public const int IsCenterSystemLast5EveryMinutesFieldNumber = 14;
+    public const int IsCenterSystemLast5EveryMinutesFieldNumber = 3;
     private bool isCenterSystemLast5EveryMinutes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 10;
+    public const int EndTimeFieldNumber = 1;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -199,6 +127,78 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return endTime_; }
       set {
         endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "config_id" field.</summary>
+    public const int ConfigIdFieldNumber = 2;
+    private uint configId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfigId {
+      get { return configId_; }
+      set {
+        configId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "center_system_text" field.</summary>
+    public const int CenterSystemTextFieldNumber = 11;
+    private string centerSystemText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CenterSystemText {
+      get { return centerSystemText_; }
+      set {
+        centerSystemText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "count_down_frequency" field.</summary>
+    public const int CountDownFrequencyFieldNumber = 5;
+    private uint countDownFrequency_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CountDownFrequency {
+      get { return countDownFrequency_; }
+      set {
+        countDownFrequency_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "center_system_frequency" field.</summary>
+    public const int CenterSystemFrequencyFieldNumber = 13;
+    private uint centerSystemFrequency_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CenterSystemFrequency {
+      get { return centerSystemFrequency_; }
+      set {
+        centerSystemFrequency_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_confirm_text" field.</summary>
+    public const int DungeonConfirmTextFieldNumber = 4;
+    private string dungeonConfirmText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DungeonConfirmText {
+      get { return dungeonConfirmText_; }
+      set {
+        dungeonConfirmText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "count_down_text" field.</summary>
+    public const int CountDownTextFieldNumber = 6;
+    private string countDownText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CountDownText {
+      get { return countDownText_; }
+      set {
+        countDownText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -217,15 +217,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CountDownText != other.CountDownText) return false;
-      if (CenterSystemText != other.CenterSystemText) return false;
-      if (CountDownFrequency != other.CountDownFrequency) return false;
-      if (ConfigId != other.ConfigId) return false;
       if (BeginTime != other.BeginTime) return false;
-      if (CenterSystemFrequency != other.CenterSystemFrequency) return false;
-      if (DungeonConfirmText != other.DungeonConfirmText) return false;
       if (IsCenterSystemLast5EveryMinutes != other.IsCenterSystemLast5EveryMinutes) return false;
       if (EndTime != other.EndTime) return false;
+      if (ConfigId != other.ConfigId) return false;
+      if (CenterSystemText != other.CenterSystemText) return false;
+      if (CountDownFrequency != other.CountDownFrequency) return false;
+      if (CenterSystemFrequency != other.CenterSystemFrequency) return false;
+      if (DungeonConfirmText != other.DungeonConfirmText) return false;
+      if (CountDownText != other.CountDownText) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -233,15 +233,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CountDownText.Length != 0) hash ^= CountDownText.GetHashCode();
-      if (CenterSystemText.Length != 0) hash ^= CenterSystemText.GetHashCode();
-      if (CountDownFrequency != 0) hash ^= CountDownFrequency.GetHashCode();
-      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-      if (CenterSystemFrequency != 0) hash ^= CenterSystemFrequency.GetHashCode();
-      if (DungeonConfirmText.Length != 0) hash ^= DungeonConfirmText.GetHashCode();
       if (IsCenterSystemLast5EveryMinutes != false) hash ^= IsCenterSystemLast5EveryMinutes.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      if (CenterSystemText.Length != 0) hash ^= CenterSystemText.GetHashCode();
+      if (CountDownFrequency != 0) hash ^= CountDownFrequency.GetHashCode();
+      if (CenterSystemFrequency != 0) hash ^= CenterSystemFrequency.GetHashCode();
+      if (DungeonConfirmText.Length != 0) hash ^= DungeonConfirmText.GetHashCode();
+      if (CountDownText.Length != 0) hash ^= CountDownText.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -260,41 +260,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CountDownFrequency != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CountDownFrequency);
-      }
-      if (DungeonConfirmText.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(DungeonConfirmText);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BeginTime);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
-      }
-      if (CenterSystemText.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(CenterSystemText);
-      }
-      if (CountDownText.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(CountDownText);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteUInt32(EndTime);
       }
-      if (CenterSystemFrequency != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CenterSystemFrequency);
+      if (ConfigId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ConfigId);
       }
       if (IsCenterSystemLast5EveryMinutes != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteBool(IsCenterSystemLast5EveryMinutes);
+      }
+      if (DungeonConfirmText.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DungeonConfirmText);
+      }
+      if (CountDownFrequency != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CountDownFrequency);
+      }
+      if (CountDownText.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(CountDownText);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(BeginTime);
+      }
+      if (CenterSystemText.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(CenterSystemText);
+      }
+      if (CenterSystemFrequency != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CenterSystemFrequency);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -306,41 +306,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CountDownFrequency != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(CountDownFrequency);
-      }
-      if (DungeonConfirmText.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(DungeonConfirmText);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BeginTime);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
-      }
-      if (CenterSystemText.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(CenterSystemText);
-      }
-      if (CountDownText.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(CountDownText);
-      }
       if (EndTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteUInt32(EndTime);
       }
-      if (CenterSystemFrequency != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CenterSystemFrequency);
+      if (ConfigId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ConfigId);
       }
       if (IsCenterSystemLast5EveryMinutes != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteBool(IsCenterSystemLast5EveryMinutes);
+      }
+      if (DungeonConfirmText.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DungeonConfirmText);
+      }
+      if (CountDownFrequency != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CountDownFrequency);
+      }
+      if (CountDownText.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(CountDownText);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(BeginTime);
+      }
+      if (CenterSystemText.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(CenterSystemText);
+      }
+      if (CenterSystemFrequency != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CenterSystemFrequency);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -352,8 +352,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CountDownText.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CountDownText);
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (IsCenterSystemLast5EveryMinutes != false) {
+        size += 1 + 1;
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
       }
       if (CenterSystemText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CenterSystemText);
@@ -361,23 +370,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CountDownFrequency != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CountDownFrequency);
       }
-      if (ConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
-      }
-      if (BeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-      }
       if (CenterSystemFrequency != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CenterSystemFrequency);
       }
       if (DungeonConfirmText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DungeonConfirmText);
       }
-      if (IsCenterSystemLast5EveryMinutes != false) {
-        size += 1 + 1;
-      }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      if (CountDownText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CountDownText);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -391,8 +391,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CountDownText.Length != 0) {
-        CountDownText = other.CountDownText;
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.IsCenterSystemLast5EveryMinutes != false) {
+        IsCenterSystemLast5EveryMinutes = other.IsCenterSystemLast5EveryMinutes;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
       }
       if (other.CenterSystemText.Length != 0) {
         CenterSystemText = other.CenterSystemText;
@@ -400,23 +409,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CountDownFrequency != 0) {
         CountDownFrequency = other.CountDownFrequency;
       }
-      if (other.ConfigId != 0) {
-        ConfigId = other.ConfigId;
-      }
-      if (other.BeginTime != 0) {
-        BeginTime = other.BeginTime;
-      }
       if (other.CenterSystemFrequency != 0) {
         CenterSystemFrequency = other.CenterSystemFrequency;
       }
       if (other.DungeonConfirmText.Length != 0) {
         DungeonConfirmText = other.DungeonConfirmText;
       }
-      if (other.IsCenterSystemLast5EveryMinutes != false) {
-        IsCenterSystemLast5EveryMinutes = other.IsCenterSystemLast5EveryMinutes;
-      }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
+      if (other.CountDownText.Length != 0) {
+        CountDownText = other.CountDownText;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -434,39 +434,39 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            CountDownFrequency = input.ReadUInt32();
+            EndTime = input.ReadUInt32();
             break;
           }
-          case 18: {
-            DungeonConfirmText = input.ReadString();
-            break;
-          }
-          case 32: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 66: {
-            CenterSystemText = input.ReadString();
+          case 24: {
+            IsCenterSystemLast5EveryMinutes = input.ReadBool();
             break;
           }
-          case 74: {
+          case 34: {
+            DungeonConfirmText = input.ReadString();
+            break;
+          }
+          case 40: {
+            CountDownFrequency = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             CountDownText = input.ReadString();
             break;
           }
           case 80: {
-            EndTime = input.ReadUInt32();
+            BeginTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 90: {
+            CenterSystemText = input.ReadString();
+            break;
+          }
+          case 104: {
             CenterSystemFrequency = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            IsCenterSystemLast5EveryMinutes = input.ReadBool();
             break;
           }
         }
@@ -485,39 +485,39 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            CountDownFrequency = input.ReadUInt32();
+            EndTime = input.ReadUInt32();
             break;
           }
-          case 18: {
-            DungeonConfirmText = input.ReadString();
-            break;
-          }
-          case 32: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 66: {
-            CenterSystemText = input.ReadString();
+          case 24: {
+            IsCenterSystemLast5EveryMinutes = input.ReadBool();
             break;
           }
-          case 74: {
+          case 34: {
+            DungeonConfirmText = input.ReadString();
+            break;
+          }
+          case 40: {
+            CountDownFrequency = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             CountDownText = input.ReadString();
             break;
           }
           case 80: {
-            EndTime = input.ReadUInt32();
+            BeginTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 90: {
+            CenterSystemText = input.ReadString();
+            break;
+          }
+          case 104: {
             CenterSystemFrequency = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            IsCenterSystemLast5EveryMinutes = input.ReadBool();
             break;
           }
         }

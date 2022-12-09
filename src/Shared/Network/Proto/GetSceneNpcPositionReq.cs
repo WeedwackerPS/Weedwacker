@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetSceneNpcPositionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRTY2VuZU5wY1Bvc2l0aW9uUmVxLnByb3RvIj8KFkdldFNjZW5lTnBj",
-            "UG9zaXRpb25SZXESEwoLbnBjX2lkX2xpc3QYBiADKA0SEAoIc2NlbmVfaWQY",
-            "CCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChxHZXRTY2VuZU5wY1Bvc2l0aW9uUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIj8KFkdldFNjZW5lTnBjUG9zaXRpb25SZXES",
+            "EAoIc2NlbmVfaWQYByABKA0SEwoLbnBjX2lkX2xpc3QYDSADKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSceneNpcPositionReq), global::Weedwacker.Shared.Network.Proto.GetSceneNpcPositionReq.Parser, new[]{ "NpcIdList", "SceneId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSceneNpcPositionReq), global::Weedwacker.Shared.Network.Proto.GetSceneNpcPositionReq.Parser, new[]{ "SceneId", "NpcIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 535
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 519;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetSceneNpcPositionReq : pb::IMessage<GetSceneNpcPositionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetSceneNpcPositionReq(GetSceneNpcPositionReq other) : this() {
-      npcIdList_ = other.npcIdList_.Clone();
       sceneId_ = other.sceneId_;
+      npcIdList_ = other.npcIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetSceneNpcPositionReq(this);
     }
 
-    /// <summary>Field number for the "npc_id_list" field.</summary>
-    public const int NpcIdListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_npcIdList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> npcIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> NpcIdList {
-      get { return npcIdList_; }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 8;
+    public const int SceneIdFieldNumber = 7;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         sceneId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "npc_id_list" field.</summary>
+    public const int NpcIdListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_npcIdList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> npcIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> NpcIdList {
+      get { return npcIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!npcIdList_.Equals(other.npcIdList_)) return false;
       if (SceneId != other.SceneId) return false;
+      if(!npcIdList_.Equals(other.npcIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= npcIdList_.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      hash ^= npcIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      npcIdList_.WriteTo(output, _repeated_npcIdList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
+      npcIdList_.WriteTo(output, _repeated_npcIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      npcIdList_.WriteTo(ref output, _repeated_npcIdList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(SceneId);
       }
+      npcIdList_.WriteTo(ref output, _repeated_npcIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += npcIdList_.CalculateSize(_repeated_npcIdList_codec);
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
+      size += npcIdList_.CalculateSize(_repeated_npcIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      npcIdList_.Add(other.npcIdList_);
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
+      npcIdList_.Add(other.npcIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
-            npcIdList_.AddEntriesFrom(input, _repeated_npcIdList_codec);
+          case 56: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SceneId = input.ReadUInt32();
+          case 106:
+          case 104: {
+            npcIdList_.AddEntriesFrom(input, _repeated_npcIdList_codec);
             break;
           }
         }
@@ -245,13 +249,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
-            npcIdList_.AddEntriesFrom(ref input, _repeated_npcIdList_codec);
+          case 56: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SceneId = input.ReadUInt32();
+          case 106:
+          case 104: {
+            npcIdList_.AddEntriesFrom(ref input, _repeated_npcIdList_codec);
             break;
           }
         }

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGGrowthLevelNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHQ0dHcm93dGhMZXZlbE5vdGlmeS5wcm90byIyChRHQ0dHcm93dGhMZXZl",
-            "bE5vdGlmeRILCgNleHAYByABKA0SDQoFbGV2ZWwYCyABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpHQ0dHcm93dGhMZXZlbE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byIyChRHQ0dHcm93dGhMZXZlbE5vdGlmeRINCgVs",
+            "ZXZlbBgKIAEoDRILCgNleHAYAiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGrowthLevelNotify), global::Weedwacker.Shared.Network.Proto.GCGGrowthLevelNotify.Parser, new[]{ "Exp", "Level" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGrowthLevelNotify), global::Weedwacker.Shared.Network.Proto.GCGGrowthLevelNotify.Parser, new[]{ "Level", "Exp" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7736
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7343;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGGrowthLevelNotify : pb::IMessage<GCGGrowthLevelNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGGrowthLevelNotify(GCGGrowthLevelNotify other) : this() {
-      exp_ = other.exp_;
       level_ = other.level_;
+      exp_ = other.exp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGGrowthLevelNotify(this);
     }
 
-    /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 7;
-    private uint exp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Exp {
-      get { return exp_; }
-      set {
-        exp_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 11;
+    public const int LevelFieldNumber = 10;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,6 +100,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return level_; }
       set {
         level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 2;
+    private uint exp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Exp {
+      get { return exp_; }
+      set {
+        exp_ = value;
       }
     }
 
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Exp != other.Exp) return false;
       if (Level != other.Level) return false;
+      if (Exp != other.Exp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Exp != 0) hash ^= Exp.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
+      if (Exp != 0) hash ^= Exp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Exp != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(Exp);
       }
       if (Level != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
       }
       if (_unknownFields != null) {
@@ -174,11 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Exp != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(Exp);
       }
       if (Level != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
       }
       if (_unknownFields != null) {
@@ -191,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Exp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
-      }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (Exp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -209,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Exp != 0) {
-        Exp = other.Exp;
-      }
       if (other.Level != 0) {
         Level = other.Level;
+      }
+      if (other.Exp != 0) {
+        Exp = other.Exp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 16: {
             Exp = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             Level = input.ReadUInt32();
             break;
           }
@@ -253,11 +257,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 16: {
             Exp = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             Level = input.ReadUInt32();
             break;
           }

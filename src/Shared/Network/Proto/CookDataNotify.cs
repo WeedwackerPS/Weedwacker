@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static CookDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRDb29rRGF0YU5vdGlmeS5wcm90bxoUQ29va1JlY2lwZURhdGEucHJvdG8i",
-            "SgoOQ29va0RhdGFOb3RpZnkSKQoQcmVjaXBlX2RhdGFfbGlzdBgCIAMoCzIP",
-            "LkNvb2tSZWNpcGVEYXRhEg0KBWdyYWRlGAsgASgNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRDb29rRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoUQ29va1JlY2lwZURhdGEucHJvdG8iagoOQ29va0RhdGFO",
+            "b3RpZnkSSQoQcmVjaXBlX2RhdGFfbGlzdBgPIAMoCzIvLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uQ29va1JlY2lwZURhdGESDQoFZ3JhZGUY",
+            "CSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CookRecipeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 195
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 133;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CookDataNotify : pb::IMessage<CookDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "recipe_data_list" field.</summary>
-    public const int RecipeDataListFieldNumber = 2;
+    public const int RecipeDataListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CookRecipeData> _repeated_recipeDataList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.CookRecipeData.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.CookRecipeData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CookRecipeData> recipeDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CookRecipeData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "grade" field.</summary>
-    public const int GradeFieldNumber = 11;
+    public const int GradeFieldNumber = 9;
     private uint grade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      recipeDataList_.WriteTo(output, _repeated_recipeDataList_codec);
       if (Grade != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(Grade);
       }
+      recipeDataList_.WriteTo(output, _repeated_recipeDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      recipeDataList_.WriteTo(ref output, _repeated_recipeDataList_codec);
       if (Grade != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(Grade);
       }
+      recipeDataList_.WriteTo(ref output, _repeated_recipeDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            recipeDataList_.AddEntriesFrom(input, _repeated_recipeDataList_codec);
+          case 72: {
+            Grade = input.ReadUInt32();
             break;
           }
-          case 88: {
-            Grade = input.ReadUInt32();
+          case 122: {
+            recipeDataList_.AddEntriesFrom(input, _repeated_recipeDataList_codec);
             break;
           }
         }
@@ -243,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            recipeDataList_.AddEntriesFrom(ref input, _repeated_recipeDataList_codec);
+          case 72: {
+            Grade = input.ReadUInt32();
             break;
           }
-          case 88: {
-            Grade = input.ReadUInt32();
+          case 122: {
+            recipeDataList_.AddEntriesFrom(ref input, _repeated_recipeDataList_codec);
             break;
           }
         }

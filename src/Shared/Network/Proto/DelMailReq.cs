@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static DelMailReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBEZWxNYWlsUmVxLnByb3RvIiIKCkRlbE1haWxSZXESFAoMbWFpbF9pZF9s",
-            "aXN0GAwgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChBEZWxNYWlsUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIiIKCkRlbE1haWxSZXESFAoMbWFpbF9pZF9saXN0GAIgAygNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1421
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1443;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DelMailReq : pb::IMessage<DelMailReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mail_id_list" field.</summary>
-    public const int MailIdListFieldNumber = 12;
+    public const int MailIdListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_mailIdList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> mailIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,8 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98:
-          case 96: {
+          case 18:
+          case 16: {
             mailIdList_.AddEntriesFrom(input, _repeated_mailIdList_codec);
             break;
           }
@@ -211,8 +215,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98:
-          case 96: {
+          case 18:
+          case 16: {
             mailIdList_.AddEntriesFrom(ref input, _repeated_mailIdList_codec);
             break;
           }

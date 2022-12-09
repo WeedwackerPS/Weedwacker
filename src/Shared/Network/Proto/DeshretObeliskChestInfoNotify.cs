@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DeshretObeliskChestInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNEZXNocmV0T2JlbGlza0NoZXN0SW5mb05vdGlmeS5wcm90bxodRGVzaHJl",
-            "dE9iZWxpc2tDaGVzdEluZm8ucHJvdG8iUgodRGVzaHJldE9iZWxpc2tDaGVz",
-            "dEluZm9Ob3RpZnkSMQoPY2hlc3RfaW5mb19saXN0GA4gAygLMhguRGVzaHJl",
-            "dE9iZWxpc2tDaGVzdEluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNEZXNocmV0T2JlbGlza0NoZXN0SW5mb05vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxodRGVzaHJldE9iZWxpc2tDaGVz",
+            "dEluZm8ucHJvdG8icgodRGVzaHJldE9iZWxpc2tDaGVzdEluZm9Ob3RpZnkS",
+            "UQoPY2hlc3RfaW5mb19saXN0GAYgAygLMjguV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5EZXNocmV0T2JlbGlza0NoZXN0SW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 841
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 867;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DeshretObeliskChestInfoNotify : pb::IMessage<DeshretObeliskChestInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chest_info_list" field.</summary>
-    public const int ChestInfoListFieldNumber = 14;
+    public const int ChestInfoListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfo> _repeated_chestInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfo> chestInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DeshretObeliskChestInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 50: {
             chestInfoList_.AddEntriesFrom(input, _repeated_chestInfoList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 50: {
             chestInfoList_.AddEntriesFrom(ref input, _repeated_chestInfoList_codec);
             break;
           }

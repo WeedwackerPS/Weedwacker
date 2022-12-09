@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarChangeCostumeReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBdmF0YXJDaGFuZ2VDb3N0dW1lUmVxLnByb3RvIkEKFkF2YXRhckNoYW5n",
-            "ZUNvc3R1bWVSZXESEgoKY29zdHVtZV9pZBgEIAEoDRITCgthdmF0YXJfZ3Vp",
-            "ZBgCIAEoBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "ChxBdmF0YXJDaGFuZ2VDb3N0dW1lUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkEKFkF2YXRhckNoYW5nZUNvc3R1bWVSZXES",
+            "EwoLYXZhdGFyX2d1aWQYBiABKAQSEgoKY29zdHVtZV9pZBgBIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarChangeCostumeReq), global::Weedwacker.Shared.Network.Proto.AvatarChangeCostumeReq.Parser, new[]{ "CostumeId", "AvatarGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarChangeCostumeReq), global::Weedwacker.Shared.Network.Proto.AvatarChangeCostumeReq.Parser, new[]{ "AvatarGuid", "CostumeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1778
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1707;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarChangeCostumeReq : pb::IMessage<AvatarChangeCostumeReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarChangeCostumeReq(AvatarChangeCostumeReq other) : this() {
-      costumeId_ = other.costumeId_;
       avatarGuid_ = other.avatarGuid_;
+      costumeId_ = other.costumeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarChangeCostumeReq(this);
     }
 
-    /// <summary>Field number for the "costume_id" field.</summary>
-    public const int CostumeIdFieldNumber = 4;
-    private uint costumeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostumeId {
-      get { return costumeId_; }
-      set {
-        costumeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 2;
+    public const int AvatarGuidFieldNumber = 6;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarGuid_; }
       set {
         avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "costume_id" field.</summary>
+    public const int CostumeIdFieldNumber = 1;
+    private uint costumeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostumeId {
+      get { return costumeId_; }
+      set {
+        costumeId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CostumeId != other.CostumeId) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
+      if (CostumeId != other.CostumeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (CostumeId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(CostumeId);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (CostumeId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(CostumeId);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CostumeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
-      }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
+      if (CostumeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CostumeId != 0) {
-        CostumeId = other.CostumeId;
-      }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
+      }
+      if (other.CostumeId != 0) {
+        CostumeId = other.CostumeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            AvatarGuid = input.ReadUInt64();
+          case 8: {
+            CostumeId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CostumeId = input.ReadUInt32();
+          case 48: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            AvatarGuid = input.ReadUInt64();
+          case 8: {
+            CostumeId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CostumeId = input.ReadUInt32();
+          case 48: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
         }

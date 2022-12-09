@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureMapDetectorDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1UcmVhc3VyZU1hcERldGVjdG9yRGF0YS5wcm90bxoMVmVjdG9yLnByb3Rv",
-            "IpEBChdUcmVhc3VyZU1hcERldGVjdG9yRGF0YRIRCglyZWdpb25faWQYBCAB",
-            "KA0SGwoKY2VudGVyX3BvcxgHIAEoCzIHLlZlY3RvchIaChJpc19yZWdpb25f",
-            "ZGV0ZWN0ZWQYBiABKAgSGgoJc3BvdF9saXN0GAogAygLMgcuVmVjdG9yEg4K",
-            "BnJhZGl1cxgOIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "Ch1UcmVhc3VyZU1hcERldGVjdG9yRGF0YS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoMVmVjdG9yLnByb3RvItEBChdUcmVhc3Vy",
+            "ZU1hcERldGVjdG9yRGF0YRIRCglyZWdpb25faWQYASABKA0SGgoSaXNfcmVn",
+            "aW9uX2RldGVjdGVkGAsgASgIEg4KBnJhZGl1cxgCIAEoDRI6CglzcG90X2xp",
+            "c3QYByADKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZl",
+            "Y3RvchI7CgpjZW50ZXJfcG9zGAwgASgLMicuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5WZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureMapDetectorData), global::Weedwacker.Shared.Network.Proto.TreasureMapDetectorData.Parser, new[]{ "RegionId", "CenterPos", "IsRegionDetected", "SpotList", "Radius" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TreasureMapDetectorData), global::Weedwacker.Shared.Network.Proto.TreasureMapDetectorData.Parser, new[]{ "RegionId", "IsRegionDetected", "Radius", "SpotList", "CenterPos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TreasureMapDetectorData(TreasureMapDetectorData other) : this() {
       regionId_ = other.regionId_;
-      centerPos_ = other.centerPos_ != null ? other.centerPos_.Clone() : null;
       isRegionDetected_ = other.isRegionDetected_;
-      spotList_ = other.spotList_.Clone();
       radius_ = other.radius_;
+      spotList_ = other.spotList_.Clone();
+      centerPos_ = other.centerPos_ != null ? other.centerPos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,7 +90,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_id" field.</summary>
-    public const int RegionIdFieldNumber = 4;
+    public const int RegionIdFieldNumber = 1;
     private uint regionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,20 +101,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "center_pos" field.</summary>
-    public const int CenterPosFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.Vector centerPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector CenterPos {
-      get { return centerPos_; }
-      set {
-        centerPos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_region_detected" field.</summary>
-    public const int IsRegionDetectedFieldNumber = 6;
+    public const int IsRegionDetectedFieldNumber = 11;
     private bool isRegionDetected_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,19 +113,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "spot_list" field.</summary>
-    public const int SpotListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_spotList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> spotList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> SpotList {
-      get { return spotList_; }
-    }
-
     /// <summary>Field number for the "radius" field.</summary>
-    public const int RadiusFieldNumber = 14;
+    public const int RadiusFieldNumber = 2;
     private uint radius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +122,29 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return radius_; }
       set {
         radius_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "spot_list" field.</summary>
+    public const int SpotListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_spotList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> spotList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> SpotList {
+      get { return spotList_; }
+    }
+
+    /// <summary>Field number for the "center_pos" field.</summary>
+    public const int CenterPosFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.Vector centerPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector CenterPos {
+      get { return centerPos_; }
+      set {
+        centerPos_ = value;
       }
     }
 
@@ -163,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (RegionId != other.RegionId) return false;
-      if (!object.Equals(CenterPos, other.CenterPos)) return false;
       if (IsRegionDetected != other.IsRegionDetected) return false;
-      if(!spotList_.Equals(other.spotList_)) return false;
       if (Radius != other.Radius) return false;
+      if(!spotList_.Equals(other.spotList_)) return false;
+      if (!object.Equals(CenterPos, other.CenterPos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,10 +176,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (RegionId != 0) hash ^= RegionId.GetHashCode();
-      if (centerPos_ != null) hash ^= CenterPos.GetHashCode();
       if (IsRegionDetected != false) hash ^= IsRegionDetected.GetHashCode();
-      hash ^= spotList_.GetHashCode();
       if (Radius != 0) hash ^= Radius.GetHashCode();
+      hash ^= spotList_.GetHashCode();
+      if (centerPos_ != null) hash ^= CenterPos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,21 +199,21 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (RegionId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(RegionId);
       }
+      if (Radius != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Radius);
+      }
+      spotList_.WriteTo(output, _repeated_spotList_codec);
       if (IsRegionDetected != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteBool(IsRegionDetected);
       }
       if (centerPos_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(98);
         output.WriteMessage(CenterPos);
-      }
-      spotList_.WriteTo(output, _repeated_spotList_codec);
-      if (Radius != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Radius);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -225,21 +226,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RegionId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(RegionId);
       }
+      if (Radius != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Radius);
+      }
+      spotList_.WriteTo(ref output, _repeated_spotList_codec);
       if (IsRegionDetected != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteBool(IsRegionDetected);
       }
       if (centerPos_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(98);
         output.WriteMessage(CenterPos);
-      }
-      spotList_.WriteTo(ref output, _repeated_spotList_codec);
-      if (Radius != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Radius);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -254,15 +255,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (RegionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionId);
       }
-      if (centerPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CenterPos);
-      }
       if (IsRegionDetected != false) {
         size += 1 + 1;
       }
-      size += spotList_.CalculateSize(_repeated_spotList_codec);
       if (Radius != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Radius);
+      }
+      size += spotList_.CalculateSize(_repeated_spotList_codec);
+      if (centerPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CenterPos);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -279,18 +280,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.RegionId != 0) {
         RegionId = other.RegionId;
       }
+      if (other.IsRegionDetected != false) {
+        IsRegionDetected = other.IsRegionDetected;
+      }
+      if (other.Radius != 0) {
+        Radius = other.Radius;
+      }
+      spotList_.Add(other.spotList_);
       if (other.centerPos_ != null) {
         if (centerPos_ == null) {
           CenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         CenterPos.MergeFrom(other.CenterPos);
-      }
-      if (other.IsRegionDetected != false) {
-        IsRegionDetected = other.IsRegionDetected;
-      }
-      spotList_.Add(other.spotList_);
-      if (other.Radius != 0) {
-        Radius = other.Radius;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -307,27 +308,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 8: {
             RegionId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            IsRegionDetected = input.ReadBool();
+          case 16: {
+            Radius = input.ReadUInt32();
             break;
           }
           case 58: {
+            spotList_.AddEntriesFrom(input, _repeated_spotList_codec);
+            break;
+          }
+          case 88: {
+            IsRegionDetected = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (centerPos_ == null) {
               CenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(CenterPos);
-            break;
-          }
-          case 82: {
-            spotList_.AddEntriesFrom(input, _repeated_spotList_codec);
-            break;
-          }
-          case 112: {
-            Radius = input.ReadUInt32();
             break;
           }
         }
@@ -345,27 +346,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 8: {
             RegionId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            IsRegionDetected = input.ReadBool();
+          case 16: {
+            Radius = input.ReadUInt32();
             break;
           }
           case 58: {
+            spotList_.AddEntriesFrom(ref input, _repeated_spotList_codec);
+            break;
+          }
+          case 88: {
+            IsRegionDetected = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (centerPos_ == null) {
               CenterPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(CenterPos);
-            break;
-          }
-          case 82: {
-            spotList_.AddEntriesFrom(ref input, _repeated_spotList_codec);
-            break;
-          }
-          case 112: {
-            Radius = input.ReadUInt32();
             break;
           }
         }

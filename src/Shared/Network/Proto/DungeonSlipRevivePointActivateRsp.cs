@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonSlipRevivePointActivateRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidEdW5nZW9uU2xpcFJldml2ZVBvaW50QWN0aXZhdGVSc3AucHJvdG8iUgoh",
-            "RHVuZ2VvblNsaXBSZXZpdmVQb2ludEFjdGl2YXRlUnNwEhwKFHNsaXBfcmV2",
-            "aXZlX3BvaW50X2lkGA4gASgNEg8KB3JldGNvZGUYBCABKAVCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CidEdW5nZW9uU2xpcFJldml2ZVBvaW50QWN0aXZhdGVSc3AucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iUgohRHVuZ2VvblNsaXBS",
+            "ZXZpdmVQb2ludEFjdGl2YXRlUnNwEg8KB3JldGNvZGUYDyABKAUSHAoUc2xp",
+            "cF9yZXZpdmVfcG9pbnRfaWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonSlipRevivePointActivateRsp), global::Weedwacker.Shared.Network.Proto.DungeonSlipRevivePointActivateRsp.Parser, new[]{ "SlipRevivePointId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonSlipRevivePointActivateRsp), global::Weedwacker.Shared.Network.Proto.DungeonSlipRevivePointActivateRsp.Parser, new[]{ "Retcode", "SlipRevivePointId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 970
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 949;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonSlipRevivePointActivateRsp : pb::IMessage<DungeonSlipRevivePointActivateRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonSlipRevivePointActivateRsp(DungeonSlipRevivePointActivateRsp other) : this() {
-      slipRevivePointId_ = other.slipRevivePointId_;
       retcode_ = other.retcode_;
+      slipRevivePointId_ = other.slipRevivePointId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonSlipRevivePointActivateRsp(this);
     }
 
-    /// <summary>Field number for the "slip_revive_point_id" field.</summary>
-    public const int SlipRevivePointIdFieldNumber = 14;
-    private uint slipRevivePointId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SlipRevivePointId {
-      get { return slipRevivePointId_; }
-      set {
-        slipRevivePointId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 15;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "slip_revive_point_id" field.</summary>
+    public const int SlipRevivePointIdFieldNumber = 13;
+    private uint slipRevivePointId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SlipRevivePointId {
+      get { return slipRevivePointId_; }
+      set {
+        slipRevivePointId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SlipRevivePointId != other.SlipRevivePointId) return false;
       if (Retcode != other.Retcode) return false;
+      if (SlipRevivePointId != other.SlipRevivePointId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SlipRevivePointId != 0) hash ^= SlipRevivePointId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (SlipRevivePointId != 0) hash ^= SlipRevivePointId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (SlipRevivePointId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(SlipRevivePointId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (SlipRevivePointId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(SlipRevivePointId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SlipRevivePointId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlipRevivePointId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (SlipRevivePointId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlipRevivePointId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SlipRevivePointId != 0) {
-        SlipRevivePointId = other.SlipRevivePointId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.SlipRevivePointId != 0) {
+        SlipRevivePointId = other.SlipRevivePointId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
+          case 104: {
+            SlipRevivePointId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            SlipRevivePointId = input.ReadUInt32();
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
+          case 104: {
+            SlipRevivePointId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            SlipRevivePointId = input.ReadUInt32();
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

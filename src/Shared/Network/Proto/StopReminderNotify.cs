@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static StopReminderNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhTdG9wUmVtaW5kZXJOb3RpZnkucHJvdG8iKQoSU3RvcFJlbWluZGVyTm90",
-            "aWZ5EhMKC3JlbWluZGVyX2lkGA8gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhTdG9wUmVtaW5kZXJOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iKQoSU3RvcFJlbWluZGVyTm90aWZ5EhMKC3JlbWlu",
+            "ZGVyX2lkGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3004
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3119;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class StopReminderNotify : pb::IMessage<StopReminderNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reminder_id" field.</summary>
-    public const int ReminderIdFieldNumber = 15;
+    public const int ReminderIdFieldNumber = 3;
     private uint reminderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ReminderId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(ReminderId);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ReminderId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(ReminderId);
       }
       if (_unknownFields != null) {
@@ -202,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 120: {
+          case 24: {
             ReminderId = input.ReadUInt32();
             break;
           }
@@ -221,7 +225,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 120: {
+          case 24: {
             ReminderId = input.ReadUInt32();
             break;
           }

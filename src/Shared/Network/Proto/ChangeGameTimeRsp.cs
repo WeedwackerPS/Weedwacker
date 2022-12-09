@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChangeGameTimeRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDaGFuZ2VHYW1lVGltZVJzcC5wcm90byJPChFDaGFuZ2VHYW1lVGltZVJz",
-            "cBIPCgdyZXRjb2RlGAggASgFEhIKCmV4dHJhX2RheXMYBSABKA0SFQoNY3Vy",
-            "X2dhbWVfdGltZRgOIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChdDaGFuZ2VHYW1lVGltZVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJPChFDaGFuZ2VHYW1lVGltZVJzcBIPCgdyZXRjb2Rl",
+            "GAogASgFEhIKCmV4dHJhX2RheXMYAiABKA0SFQoNY3VyX2dhbWVfdGltZRgI",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 199
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 157;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ChangeGameTimeRsp : pb::IMessage<ChangeGameTimeRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "extra_days" field.</summary>
-    public const int ExtraDaysFieldNumber = 5;
+    public const int ExtraDaysFieldNumber = 2;
     private uint extraDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_game_time" field.</summary>
-    public const int CurGameTimeFieldNumber = 14;
+    public const int CurGameTimeFieldNumber = 8;
     private uint curGameTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ExtraDays != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(ExtraDays);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
-      }
       if (CurGameTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(CurGameTime);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ExtraDays != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(ExtraDays);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
-      }
       if (CurGameTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(CurGameTime);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 16: {
             ExtraDays = input.ReadUInt32();
             break;
           }
           case 64: {
-            Retcode = input.ReadInt32();
+            CurGameTime = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CurGameTime = input.ReadUInt32();
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 16: {
             ExtraDays = input.ReadUInt32();
             break;
           }
           case 64: {
-            Retcode = input.ReadInt32();
+            CurGameTime = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CurGameTime = input.ReadUInt32();
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

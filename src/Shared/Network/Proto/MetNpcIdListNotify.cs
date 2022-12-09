@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static MetNpcIdListNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhNZXROcGNJZExpc3ROb3RpZnkucHJvdG8iMwoSTWV0TnBjSWRMaXN0Tm90",
-            "aWZ5Eh0KFW5wY19maXJzdF9tZXRfaWRfbGlzdBgJIAMoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhNZXROcGNJZExpc3ROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iMwoSTWV0TnBjSWRMaXN0Tm90aWZ5Eh0KFW5wY19m",
+            "aXJzdF9tZXRfaWRfbGlzdBgEIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 521
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 543;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MetNpcIdListNotify : pb::IMessage<MetNpcIdListNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,9 +91,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "npc_first_met_id_list" field.</summary>
-    public const int NpcFirstMetIdListFieldNumber = 9;
+    public const int NpcFirstMetIdListFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_npcFirstMetIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
+        = pb::FieldCodec.ForUInt32(34);
     private readonly pbc::RepeatedField<uint> npcFirstMetIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -190,8 +194,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74:
-          case 72: {
+          case 34:
+          case 32: {
             npcFirstMetIdList_.AddEntriesFrom(input, _repeated_npcFirstMetIdList_codec);
             break;
           }
@@ -210,8 +214,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74:
-          case 72: {
+          case 34:
+          case 32: {
             npcFirstMetIdList_.AddEntriesFrom(ref input, _repeated_npcFirstMetIdList_codec);
             break;
           }

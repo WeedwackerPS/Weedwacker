@@ -24,14 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static UseMiracleRingRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdVc2VNaXJhY2xlUmluZ1JzcC5wcm90byJCChFVc2VNaXJhY2xlUmluZ1Jz",
-            "cBIPCgdyZXRjb2RlGAsgASgFEhwKFG1pcmFjbGVfcmluZ19vcF90eXBlGAcg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChdVc2VNaXJhY2xlUmluZ1JzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJCChFVc2VNaXJhY2xlUmluZ1JzcBIcChRtaXJhY2xl",
+            "X3Jpbmdfb3BfdHlwZRgOIAEoDRIPCgdyZXRjb2RlGAogASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingRsp), global::Weedwacker.Shared.Network.Proto.UseMiracleRingRsp.Parser, new[]{ "Retcode", "MiracleRingOpType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingRsp), global::Weedwacker.Shared.Network.Proto.UseMiracleRingRsp.Parser, new[]{ "MiracleRingOpType", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5218
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5241;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UseMiracleRingRsp : pb::IMessage<UseMiracleRingRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UseMiracleRingRsp(UseMiracleRingRsp other) : this() {
-      retcode_ = other.retcode_;
       miracleRingOpType_ = other.miracleRingOpType_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UseMiracleRingRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "miracle_ring_op_type" field.</summary>
-    public const int MiracleRingOpTypeFieldNumber = 7;
+    public const int MiracleRingOpTypeFieldNumber = 14;
     private uint miracleRingOpType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +100,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return miracleRingOpType_; }
       set {
         miracleRingOpType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -127,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (MiracleRingOpType != other.MiracleRingOpType) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (MiracleRingOpType != 0) hash ^= MiracleRingOpType.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MiracleRingOpType != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(MiracleRingOpType);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
+      }
+      if (MiracleRingOpType != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(MiracleRingOpType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MiracleRingOpType != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(MiracleRingOpType);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
+      }
+      if (MiracleRingOpType != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(MiracleRingOpType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (MiracleRingOpType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MiracleRingOpType);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.MiracleRingOpType != 0) {
         MiracleRingOpType = other.MiracleRingOpType;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            MiracleRingOpType = input.ReadUInt32();
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 112: {
+            MiracleRingOpType = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            MiracleRingOpType = input.ReadUInt32();
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 88: {
-            Retcode = input.ReadInt32();
+          case 112: {
+            MiracleRingOpType = input.ReadUInt32();
             break;
           }
         }

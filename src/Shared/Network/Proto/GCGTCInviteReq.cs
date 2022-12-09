@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTCInviteReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHQ0dUQ0ludml0ZVJlcS5wcm90byI4Cg5HQ0dUQ0ludml0ZVJlcRIQCghs",
-            "ZXZlbF9pZBgDIAEoDRIUCgxjaGFyYWN0ZXJfaWQYBiABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRHQ0dUQ0ludml0ZVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byI4Cg5HQ0dUQ0ludml0ZVJlcRIUCgxjaGFyYWN0ZXJfaWQY",
+            "CCABKA0SEAoIbGV2ZWxfaWQYCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTCInviteReq), global::Weedwacker.Shared.Network.Proto.GCGTCInviteReq.Parser, new[]{ "LevelId", "CharacterId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTCInviteReq), global::Weedwacker.Shared.Network.Proto.GCGTCInviteReq.Parser, new[]{ "CharacterId", "LevelId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7922
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7341;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGTCInviteReq : pb::IMessage<GCGTCInviteReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGTCInviteReq(GCGTCInviteReq other) : this() {
-      levelId_ = other.levelId_;
       characterId_ = other.characterId_;
+      levelId_ = other.levelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGTCInviteReq(this);
     }
 
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 3;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "character_id" field.</summary>
-    public const int CharacterIdFieldNumber = 6;
+    public const int CharacterIdFieldNumber = 8;
     private uint characterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return characterId_; }
       set {
         characterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 11;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LevelId != other.LevelId) return false;
       if (CharacterId != other.CharacterId) return false;
+      if (LevelId != other.LevelId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (CharacterId != 0) hash ^= CharacterId.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LevelId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(LevelId);
-      }
       if (CharacterId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(CharacterId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LevelId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(LevelId);
-      }
       if (CharacterId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(CharacterId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LevelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-      }
       if (CharacterId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CharacterId);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LevelId != 0) {
-        LevelId = other.LevelId;
-      }
       if (other.CharacterId != 0) {
         CharacterId = other.CharacterId;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            CharacterId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CharacterId = input.ReadUInt32();
+          case 88: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            CharacterId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CharacterId = input.ReadUInt32();
+          case 88: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }

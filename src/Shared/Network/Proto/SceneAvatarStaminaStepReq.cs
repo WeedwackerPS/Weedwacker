@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneAvatarStaminaStepReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9TY2VuZUF2YXRhclN0YW1pbmFTdGVwUmVxLnByb3RvGgxWZWN0b3IucHJv",
-            "dG8iSQoZU2NlbmVBdmF0YXJTdGFtaW5hU3RlcFJlcRIWCg51c2VfY2xpZW50",
-            "X3JvdBgPIAEoCBIUCgNyb3QYByABKAsyBy5WZWN0b3JCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch9TY2VuZUF2YXRhclN0YW1pbmFTdGVwUmVxLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8iaQoZU2NlbmVB",
+            "dmF0YXJTdGFtaW5hU3RlcFJlcRIWCg51c2VfY2xpZW50X3JvdBgJIAEoCBI0",
+            "CgNyb3QYDCABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 299
-  /// EnetChannelId: 1
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 257;
+  ///   ENET_CHANNEL_ID = 1;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneAvatarStaminaStepReq : pb::IMessage<SceneAvatarStaminaStepReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "use_client_rot" field.</summary>
-    public const int UseClientRotFieldNumber = 15;
+    public const int UseClientRotFieldNumber = 9;
     private bool useClientRot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 7;
+    public const int RotFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rot_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Rot);
-      }
       if (UseClientRot != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteBool(UseClientRot);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rot_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Rot);
-      }
       if (UseClientRot != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteBool(UseClientRot);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 72: {
+            UseClientRot = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 120: {
-            UseClientRot = input.ReadBool();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 72: {
+            UseClientRot = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 120: {
-            UseClientRot = input.ReadBool();
             break;
           }
         }

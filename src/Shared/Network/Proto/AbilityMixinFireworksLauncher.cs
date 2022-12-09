@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinFireworksLauncherReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNBYmlsaXR5TWl4aW5GaXJld29ya3NMYXVuY2hlci5wcm90byKsAQodQWJp",
-            "bGl0eU1peGluRmlyZXdvcmtzTGF1bmNoZXISEwoLaW52b2tlX3R5cGUYAiAB",
-            "KA0SHQoVc3RhcnRfY291bnRfZG93bl90aW1lGAMgASgNEhoKEmZpcmVkX2J1",
-            "bGxldF9jb3VudBgBIAEoDRINCgVwaGFzZRgGIAEoDRIYChBmaXJld29ya3Nf",
-            "Y29uZmlnGAQgAygNEhIKCnR1cm5faW5kZXgYByABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNBYmlsaXR5TWl4aW5GaXJld29ya3NMYXVuY2hlci5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byK8AQodQWJpbGl0eU1peGluRmly",
+            "ZXdvcmtzTGF1bmNoZXISGwoTVW5rMzMwMF9GSEdMRUpOSklISxgFIAEoDRIb",
+            "ChNVbmszMzAwX0JGSkJESkxBT0pMGAQgASgNEhsKE1VuazMzMDBfTFBQS09G",
+            "SEtDUEgYByABKA0SGwoTVW5rMzMwMF9CREdDR0xHTkFJQhgDIAEoDRIYChBm",
+            "aXJld29ya3NfY29uZmlnGAwgAygNEg0KBXBoYXNlGAEgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinFireworksLauncher), global::Weedwacker.Shared.Network.Proto.AbilityMixinFireworksLauncher.Parser, new[]{ "InvokeType", "StartCountDownTime", "FiredBulletCount", "Phase", "FireworksConfig", "TurnIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinFireworksLauncher), global::Weedwacker.Shared.Network.Proto.AbilityMixinFireworksLauncher.Parser, new[]{ "Unk3300FHGLEJNJIHK", "Unk3300BFJBDJLAOJL", "Unk3300LPPKOFHKCPH", "Unk3300BDGCGLGNAIB", "FireworksConfig", "Phase" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMixinFireworksLauncher(AbilityMixinFireworksLauncher other) : this() {
-      invokeType_ = other.invokeType_;
-      startCountDownTime_ = other.startCountDownTime_;
-      firedBulletCount_ = other.firedBulletCount_;
-      phase_ = other.phase_;
+      unk3300FHGLEJNJIHK_ = other.unk3300FHGLEJNJIHK_;
+      unk3300BFJBDJLAOJL_ = other.unk3300BFJBDJLAOJL_;
+      unk3300LPPKOFHKCPH_ = other.unk3300LPPKOFHKCPH_;
+      unk3300BDGCGLGNAIB_ = other.unk3300BDGCGLGNAIB_;
       fireworksConfig_ = other.fireworksConfig_.Clone();
-      turnIndex_ = other.turnIndex_;
+      phase_ = other.phase_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,58 +89,58 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityMixinFireworksLauncher(this);
     }
 
-    /// <summary>Field number for the "invoke_type" field.</summary>
-    public const int InvokeTypeFieldNumber = 2;
-    private uint invokeType_;
+    /// <summary>Field number for the "Unk3300_FHGLEJNJIHK" field.</summary>
+    public const int Unk3300FHGLEJNJIHKFieldNumber = 5;
+    private uint unk3300FHGLEJNJIHK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint InvokeType {
-      get { return invokeType_; }
+    public uint Unk3300FHGLEJNJIHK {
+      get { return unk3300FHGLEJNJIHK_; }
       set {
-        invokeType_ = value;
+        unk3300FHGLEJNJIHK_ = value;
       }
     }
 
-    /// <summary>Field number for the "start_count_down_time" field.</summary>
-    public const int StartCountDownTimeFieldNumber = 3;
-    private uint startCountDownTime_;
+    /// <summary>Field number for the "Unk3300_BFJBDJLAOJL" field.</summary>
+    public const int Unk3300BFJBDJLAOJLFieldNumber = 4;
+    private uint unk3300BFJBDJLAOJL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StartCountDownTime {
-      get { return startCountDownTime_; }
+    public uint Unk3300BFJBDJLAOJL {
+      get { return unk3300BFJBDJLAOJL_; }
       set {
-        startCountDownTime_ = value;
+        unk3300BFJBDJLAOJL_ = value;
       }
     }
 
-    /// <summary>Field number for the "fired_bullet_count" field.</summary>
-    public const int FiredBulletCountFieldNumber = 1;
-    private uint firedBulletCount_;
+    /// <summary>Field number for the "Unk3300_LPPKOFHKCPH" field.</summary>
+    public const int Unk3300LPPKOFHKCPHFieldNumber = 7;
+    private uint unk3300LPPKOFHKCPH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FiredBulletCount {
-      get { return firedBulletCount_; }
+    public uint Unk3300LPPKOFHKCPH {
+      get { return unk3300LPPKOFHKCPH_; }
       set {
-        firedBulletCount_ = value;
+        unk3300LPPKOFHKCPH_ = value;
       }
     }
 
-    /// <summary>Field number for the "phase" field.</summary>
-    public const int PhaseFieldNumber = 6;
-    private uint phase_;
+    /// <summary>Field number for the "Unk3300_BDGCGLGNAIB" field.</summary>
+    public const int Unk3300BDGCGLGNAIBFieldNumber = 3;
+    private uint unk3300BDGCGLGNAIB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Phase {
-      get { return phase_; }
+    public uint Unk3300BDGCGLGNAIB {
+      get { return unk3300BDGCGLGNAIB_; }
       set {
-        phase_ = value;
+        unk3300BDGCGLGNAIB_ = value;
       }
     }
 
     /// <summary>Field number for the "fireworks_config" field.</summary>
-    public const int FireworksConfigFieldNumber = 4;
+    public const int FireworksConfigFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_fireworksConfig_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(98);
     private readonly pbc::RepeatedField<uint> fireworksConfig_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,15 +148,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return fireworksConfig_; }
     }
 
-    /// <summary>Field number for the "turn_index" field.</summary>
-    public const int TurnIndexFieldNumber = 7;
-    private uint turnIndex_;
+    /// <summary>Field number for the "phase" field.</summary>
+    public const int PhaseFieldNumber = 1;
+    private uint phase_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TurnIndex {
-      get { return turnIndex_; }
+    public uint Phase {
+      get { return phase_; }
       set {
-        turnIndex_ = value;
+        phase_ = value;
       }
     }
 
@@ -175,12 +175,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (InvokeType != other.InvokeType) return false;
-      if (StartCountDownTime != other.StartCountDownTime) return false;
-      if (FiredBulletCount != other.FiredBulletCount) return false;
-      if (Phase != other.Phase) return false;
+      if (Unk3300FHGLEJNJIHK != other.Unk3300FHGLEJNJIHK) return false;
+      if (Unk3300BFJBDJLAOJL != other.Unk3300BFJBDJLAOJL) return false;
+      if (Unk3300LPPKOFHKCPH != other.Unk3300LPPKOFHKCPH) return false;
+      if (Unk3300BDGCGLGNAIB != other.Unk3300BDGCGLGNAIB) return false;
       if(!fireworksConfig_.Equals(other.fireworksConfig_)) return false;
-      if (TurnIndex != other.TurnIndex) return false;
+      if (Phase != other.Phase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -188,12 +188,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (InvokeType != 0) hash ^= InvokeType.GetHashCode();
-      if (StartCountDownTime != 0) hash ^= StartCountDownTime.GetHashCode();
-      if (FiredBulletCount != 0) hash ^= FiredBulletCount.GetHashCode();
-      if (Phase != 0) hash ^= Phase.GetHashCode();
+      if (Unk3300FHGLEJNJIHK != 0) hash ^= Unk3300FHGLEJNJIHK.GetHashCode();
+      if (Unk3300BFJBDJLAOJL != 0) hash ^= Unk3300BFJBDJLAOJL.GetHashCode();
+      if (Unk3300LPPKOFHKCPH != 0) hash ^= Unk3300LPPKOFHKCPH.GetHashCode();
+      if (Unk3300BDGCGLGNAIB != 0) hash ^= Unk3300BDGCGLGNAIB.GetHashCode();
       hash ^= fireworksConfig_.GetHashCode();
-      if (TurnIndex != 0) hash ^= TurnIndex.GetHashCode();
+      if (Phase != 0) hash ^= Phase.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -212,27 +212,27 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FiredBulletCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FiredBulletCount);
-      }
-      if (InvokeType != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(InvokeType);
-      }
-      if (StartCountDownTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StartCountDownTime);
-      }
-      fireworksConfig_.WriteTo(output, _repeated_fireworksConfig_codec);
       if (Phase != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(Phase);
       }
-      if (TurnIndex != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(TurnIndex);
+      if (Unk3300BDGCGLGNAIB != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300BDGCGLGNAIB);
       }
+      if (Unk3300BFJBDJLAOJL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300BFJBDJLAOJL);
+      }
+      if (Unk3300FHGLEJNJIHK != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300FHGLEJNJIHK);
+      }
+      if (Unk3300LPPKOFHKCPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300LPPKOFHKCPH);
+      }
+      fireworksConfig_.WriteTo(output, _repeated_fireworksConfig_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -243,27 +243,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FiredBulletCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FiredBulletCount);
-      }
-      if (InvokeType != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(InvokeType);
-      }
-      if (StartCountDownTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StartCountDownTime);
-      }
-      fireworksConfig_.WriteTo(ref output, _repeated_fireworksConfig_codec);
       if (Phase != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(Phase);
       }
-      if (TurnIndex != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(TurnIndex);
+      if (Unk3300BDGCGLGNAIB != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300BDGCGLGNAIB);
       }
+      if (Unk3300BFJBDJLAOJL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300BFJBDJLAOJL);
+      }
+      if (Unk3300FHGLEJNJIHK != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300FHGLEJNJIHK);
+      }
+      if (Unk3300LPPKOFHKCPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300LPPKOFHKCPH);
+      }
+      fireworksConfig_.WriteTo(ref output, _repeated_fireworksConfig_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -274,21 +274,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (InvokeType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InvokeType);
+      if (Unk3300FHGLEJNJIHK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FHGLEJNJIHK);
       }
-      if (StartCountDownTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartCountDownTime);
+      if (Unk3300BFJBDJLAOJL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BFJBDJLAOJL);
       }
-      if (FiredBulletCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FiredBulletCount);
+      if (Unk3300LPPKOFHKCPH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPPKOFHKCPH);
       }
-      if (Phase != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Phase);
+      if (Unk3300BDGCGLGNAIB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BDGCGLGNAIB);
       }
       size += fireworksConfig_.CalculateSize(_repeated_fireworksConfig_codec);
-      if (TurnIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TurnIndex);
+      if (Phase != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Phase);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -302,21 +302,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.InvokeType != 0) {
-        InvokeType = other.InvokeType;
+      if (other.Unk3300FHGLEJNJIHK != 0) {
+        Unk3300FHGLEJNJIHK = other.Unk3300FHGLEJNJIHK;
       }
-      if (other.StartCountDownTime != 0) {
-        StartCountDownTime = other.StartCountDownTime;
+      if (other.Unk3300BFJBDJLAOJL != 0) {
+        Unk3300BFJBDJLAOJL = other.Unk3300BFJBDJLAOJL;
       }
-      if (other.FiredBulletCount != 0) {
-        FiredBulletCount = other.FiredBulletCount;
+      if (other.Unk3300LPPKOFHKCPH != 0) {
+        Unk3300LPPKOFHKCPH = other.Unk3300LPPKOFHKCPH;
       }
-      if (other.Phase != 0) {
-        Phase = other.Phase;
+      if (other.Unk3300BDGCGLGNAIB != 0) {
+        Unk3300BDGCGLGNAIB = other.Unk3300BDGCGLGNAIB;
       }
       fireworksConfig_.Add(other.fireworksConfig_);
-      if (other.TurnIndex != 0) {
-        TurnIndex = other.TurnIndex;
+      if (other.Phase != 0) {
+        Phase = other.Phase;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -334,28 +334,28 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            FiredBulletCount = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            InvokeType = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            StartCountDownTime = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            fireworksConfig_.AddEntriesFrom(input, _repeated_fireworksConfig_codec);
-            break;
-          }
-          case 48: {
             Phase = input.ReadUInt32();
             break;
           }
+          case 24: {
+            Unk3300BDGCGLGNAIB = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300BFJBDJLAOJL = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300FHGLEJNJIHK = input.ReadUInt32();
+            break;
+          }
           case 56: {
-            TurnIndex = input.ReadUInt32();
+            Unk3300LPPKOFHKCPH = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksConfig_.AddEntriesFrom(input, _repeated_fireworksConfig_codec);
             break;
           }
         }
@@ -374,28 +374,28 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            FiredBulletCount = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            InvokeType = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            StartCountDownTime = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            fireworksConfig_.AddEntriesFrom(ref input, _repeated_fireworksConfig_codec);
-            break;
-          }
-          case 48: {
             Phase = input.ReadUInt32();
             break;
           }
+          case 24: {
+            Unk3300BDGCGLGNAIB = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300BFJBDJLAOJL = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300FHGLEJNJIHK = input.ReadUInt32();
+            break;
+          }
           case 56: {
-            TurnIndex = input.ReadUInt32();
+            Unk3300LPPKOFHKCPH = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksConfig_.AddEntriesFrom(ref input, _repeated_fireworksConfig_codec);
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationRebootReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dPcGVyYXRpb25SZWJvb3QucHJvdG8iSgoSR0NHT3BlcmF0aW9uUmVi",
-            "b290EhsKE2Nvc3RfY2FyZF9ndWlkX2xpc3QYByADKA0SFwoPZGljZV9pbmRl",
-            "eF9saXN0GAYgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChhHQ0dPcGVyYXRpb25SZWJvb3QucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iSgoSR0NHT3BlcmF0aW9uUmVib290EhcKD2RpY2Vf",
+            "aW5kZXhfbGlzdBgCIAMoDRIbChNjb3N0X2NhcmRfZ3VpZF9saXN0GA4gAygN",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationReboot), global::Weedwacker.Shared.Network.Proto.GCGOperationReboot.Parser, new[]{ "CostCardGuidList", "DiceIndexList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationReboot), global::Weedwacker.Shared.Network.Proto.GCGOperationReboot.Parser, new[]{ "DiceIndexList", "CostCardGuidList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGOperationReboot(GCGOperationReboot other) : this() {
-      costCardGuidList_ = other.costCardGuidList_.Clone();
       diceIndexList_ = other.diceIndexList_.Clone();
+      costCardGuidList_ = other.costCardGuidList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,26 +83,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGOperationReboot(this);
     }
 
-    /// <summary>Field number for the "cost_card_guid_list" field.</summary>
-    public const int CostCardGuidListFieldNumber = 7;
-    private static readonly pb::FieldCodec<uint> _repeated_costCardGuidList_codec
-        = pb::FieldCodec.ForUInt32(58);
-    private readonly pbc::RepeatedField<uint> costCardGuidList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CostCardGuidList {
-      get { return costCardGuidList_; }
-    }
-
     /// <summary>Field number for the "dice_index_list" field.</summary>
-    public const int DiceIndexListFieldNumber = 6;
+    public const int DiceIndexListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_diceIndexList_codec
-        = pb::FieldCodec.ForUInt32(50);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> diceIndexList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> DiceIndexList {
       get { return diceIndexList_; }
+    }
+
+    /// <summary>Field number for the "cost_card_guid_list" field.</summary>
+    public const int CostCardGuidListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_costCardGuidList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> costCardGuidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CostCardGuidList {
+      get { return costCardGuidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,8 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!costCardGuidList_.Equals(other.costCardGuidList_)) return false;
       if(!diceIndexList_.Equals(other.diceIndexList_)) return false;
+      if(!costCardGuidList_.Equals(other.costCardGuidList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -129,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= costCardGuidList_.GetHashCode();
       hash ^= diceIndexList_.GetHashCode();
+      hash ^= costCardGuidList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,8 +173,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += costCardGuidList_.CalculateSize(_repeated_costCardGuidList_codec);
       size += diceIndexList_.CalculateSize(_repeated_diceIndexList_codec);
+      size += costCardGuidList_.CalculateSize(_repeated_costCardGuidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -187,8 +187,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      costCardGuidList_.Add(other.costCardGuidList_);
       diceIndexList_.Add(other.diceIndexList_);
+      costCardGuidList_.Add(other.costCardGuidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
+          case 18:
+          case 16: {
             diceIndexList_.AddEntriesFrom(input, _repeated_diceIndexList_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 114:
+          case 112: {
             costCardGuidList_.AddEntriesFrom(input, _repeated_costCardGuidList_codec);
             break;
           }
@@ -229,13 +229,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
+          case 18:
+          case 16: {
             diceIndexList_.AddEntriesFrom(ref input, _repeated_diceIndexList_codec);
             break;
           }
-          case 58:
-          case 56: {
+          case 114:
+          case 112: {
             costCardGuidList_.AddEntriesFrom(ref input, _repeated_costCardGuidList_codec);
             break;
           }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabBuffSchemeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8ucHJvdG8itQEKG0NoYW5u",
-            "ZWxlclNsYWJCdWZmU2NoZW1lSW5mbxI7CghzbG90X21hcBgJIAMoCzIpLkNo",
-            "YW5uZWxlclNsYWJCdWZmU2NoZW1lSW5mby5TbG90TWFwRW50cnkSFAoMdG90",
-            "YWxfZW5lcmd5GA0gASgNEhMKC3NlbGZfZW5lcmd5GA8gASgNGi4KDFNsb3RN",
-            "YXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8i5AEKG0NoYW5uZWxlclNsYWJCdWZm",
+            "U2NoZW1lSW5mbxIbChNVbmszMzAwX05DTUREQUZORU5PGAkgASgNElsKCHNs",
+            "b3RfbWFwGAsgAygLMkkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5DaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8uU2xvdE1hcEVudHJ5EhsK",
+            "E1VuazMzMDBfQ0tNTkZPQ05NR0wYBSABKA0aLgoMU2xvdE1hcEVudHJ5EgsK",
+            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo.Parser, new[]{ "SlotMap", "TotalEnergy", "SelfEnergy" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo.Parser, new[]{ "Unk3300NCMDDAFNENO", "SlotMap", "Unk3300CKMNFOCNMGL" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabBuffSchemeInfo(ChannelerSlabBuffSchemeInfo other) : this() {
+      unk3300NCMDDAFNENO_ = other.unk3300NCMDDAFNENO_;
       slotMap_ = other.slotMap_.Clone();
-      totalEnergy_ = other.totalEnergy_;
-      selfEnergy_ = other.selfEnergy_;
+      unk3300CKMNFOCNMGL_ = other.unk3300CKMNFOCNMGL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,10 +87,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabBuffSchemeInfo(this);
     }
 
+    /// <summary>Field number for the "Unk3300_NCMDDAFNENO" field.</summary>
+    public const int Unk3300NCMDDAFNENOFieldNumber = 9;
+    private uint unk3300NCMDDAFNENO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NCMDDAFNENO {
+      get { return unk3300NCMDDAFNENO_; }
+      set {
+        unk3300NCMDDAFNENO_ = value;
+      }
+    }
+
     /// <summary>Field number for the "slot_map" field.</summary>
-    public const int SlotMapFieldNumber = 9;
+    public const int SlotMapFieldNumber = 11;
     private static readonly pbc::MapField<uint, uint>.Codec _map_slotMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 74);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 90);
     private readonly pbc::MapField<uint, uint> slotMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,27 +110,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return slotMap_; }
     }
 
-    /// <summary>Field number for the "total_energy" field.</summary>
-    public const int TotalEnergyFieldNumber = 13;
-    private uint totalEnergy_;
+    /// <summary>Field number for the "Unk3300_CKMNFOCNMGL" field.</summary>
+    public const int Unk3300CKMNFOCNMGLFieldNumber = 5;
+    private uint unk3300CKMNFOCNMGL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalEnergy {
-      get { return totalEnergy_; }
+    public uint Unk3300CKMNFOCNMGL {
+      get { return unk3300CKMNFOCNMGL_; }
       set {
-        totalEnergy_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "self_energy" field.</summary>
-    public const int SelfEnergyFieldNumber = 15;
-    private uint selfEnergy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SelfEnergy {
-      get { return selfEnergy_; }
-      set {
-        selfEnergy_ = value;
+        unk3300CKMNFOCNMGL_ = value;
       }
     }
 
@@ -136,9 +137,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300NCMDDAFNENO != other.Unk3300NCMDDAFNENO) return false;
       if (!SlotMap.Equals(other.SlotMap)) return false;
-      if (TotalEnergy != other.TotalEnergy) return false;
-      if (SelfEnergy != other.SelfEnergy) return false;
+      if (Unk3300CKMNFOCNMGL != other.Unk3300CKMNFOCNMGL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300NCMDDAFNENO != 0) hash ^= Unk3300NCMDDAFNENO.GetHashCode();
       hash ^= SlotMap.GetHashCode();
-      if (TotalEnergy != 0) hash ^= TotalEnergy.GetHashCode();
-      if (SelfEnergy != 0) hash ^= SelfEnergy.GetHashCode();
+      if (Unk3300CKMNFOCNMGL != 0) hash ^= Unk3300CKMNFOCNMGL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,15 +168,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300CKMNFOCNMGL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300CKMNFOCNMGL);
+      }
+      if (Unk3300NCMDDAFNENO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NCMDDAFNENO);
+      }
       slotMap_.WriteTo(output, _map_slotMap_codec);
-      if (TotalEnergy != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(TotalEnergy);
-      }
-      if (SelfEnergy != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SelfEnergy);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -186,15 +187,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300CKMNFOCNMGL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300CKMNFOCNMGL);
+      }
+      if (Unk3300NCMDDAFNENO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NCMDDAFNENO);
+      }
       slotMap_.WriteTo(ref output, _map_slotMap_codec);
-      if (TotalEnergy != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(TotalEnergy);
-      }
-      if (SelfEnergy != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SelfEnergy);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -205,12 +206,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += slotMap_.CalculateSize(_map_slotMap_codec);
-      if (TotalEnergy != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalEnergy);
+      if (Unk3300NCMDDAFNENO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NCMDDAFNENO);
       }
-      if (SelfEnergy != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfEnergy);
+      size += slotMap_.CalculateSize(_map_slotMap_codec);
+      if (Unk3300CKMNFOCNMGL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CKMNFOCNMGL);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -224,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      slotMap_.Add(other.slotMap_);
-      if (other.TotalEnergy != 0) {
-        TotalEnergy = other.TotalEnergy;
+      if (other.Unk3300NCMDDAFNENO != 0) {
+        Unk3300NCMDDAFNENO = other.Unk3300NCMDDAFNENO;
       }
-      if (other.SelfEnergy != 0) {
-        SelfEnergy = other.SelfEnergy;
+      slotMap_.Add(other.slotMap_);
+      if (other.Unk3300CKMNFOCNMGL != 0) {
+        Unk3300CKMNFOCNMGL = other.Unk3300CKMNFOCNMGL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -246,16 +247,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 40: {
+            Unk3300CKMNFOCNMGL = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300NCMDDAFNENO = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             slotMap_.AddEntriesFrom(input, _map_slotMap_codec);
-            break;
-          }
-          case 104: {
-            TotalEnergy = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            SelfEnergy = input.ReadUInt32();
             break;
           }
         }
@@ -273,16 +274,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 40: {
+            Unk3300CKMNFOCNMGL = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300NCMDDAFNENO = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             slotMap_.AddEntriesFrom(ref input, _map_slotMap_codec);
-            break;
-          }
-          case 104: {
-            TotalEnergy = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            SelfEnergy = input.ReadUInt32();
             break;
           }
         }

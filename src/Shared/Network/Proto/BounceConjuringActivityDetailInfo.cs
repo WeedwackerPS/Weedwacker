@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static BounceConjuringActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidCb3VuY2VDb25qdXJpbmdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aIEJv",
-            "dW5jZUNvbmp1cmluZ0NoYXB0ZXJJbmZvLnByb3RvIpIBCiFCb3VuY2VDb25q",
-            "dXJpbmdBY3Rpdml0eURldGFpbEluZm8SNgoRY2hhcHRlcl9pbmZvX2xpc3QY",
-            "CCADKAsyGy5Cb3VuY2VDb25qdXJpbmdDaGFwdGVySW5mbxIZChFpc19jb250",
-            "ZW50X2Nsb3NlZBgMIAEoCBIaChJjb250ZW50X2Nsb3NlX3RpbWUYByABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CidCb3VuY2VDb25qdXJpbmdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aIEJvdW5jZUNvbmp1cmlu",
+            "Z0NoYXB0ZXJJbmZvLnByb3RvIrIBCiFCb3VuY2VDb25qdXJpbmdBY3Rpdml0",
+            "eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYCCABKAgSVgoRY2hh",
+            "cHRlcl9pbmZvX2xpc3QYDyADKAsyOy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkJvdW5jZUNvbmp1cmluZ0NoYXB0ZXJJbmZvEhoKEmNvbnRl",
+            "bnRfY2xvc2VfdGltZRgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo.Parser, new[]{ "ChapterInfoList", "IsContentClosed", "ContentCloseTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo.Parser, new[]{ "IsContentClosed", "ChapterInfoList", "ContentCloseTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BounceConjuringActivityDetailInfo(BounceConjuringActivityDetailInfo other) : this() {
-      chapterInfoList_ = other.chapterInfoList_.Clone();
       isContentClosed_ = other.isContentClosed_;
+      chapterInfoList_ = other.chapterInfoList_.Clone();
       contentCloseTime_ = other.contentCloseTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,19 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BounceConjuringActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "chapter_info_list" field.</summary>
-    public const int ChapterInfoListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> _repeated_chapterInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> chapterInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> ChapterInfoList {
-      get { return chapterInfoList_; }
-    }
-
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 12;
+    public const int IsContentClosedFieldNumber = 8;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,8 +99,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "chapter_info_list" field.</summary>
+    public const int ChapterInfoListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> _repeated_chapterInfoList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> chapterInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BounceConjuringChapterInfo> ChapterInfoList {
+      get { return chapterInfoList_; }
+    }
+
     /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 7;
+    public const int ContentCloseTimeFieldNumber = 2;
     private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,8 +137,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!chapterInfoList_.Equals(other.chapterInfoList_)) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
+      if(!chapterInfoList_.Equals(other.chapterInfoList_)) return false;
       if (ContentCloseTime != other.ContentCloseTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -146,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= chapterInfoList_.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= chapterInfoList_.GetHashCode();
       if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -168,14 +169,14 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(ContentCloseTime);
       }
-      chapterInfoList_.WriteTo(output, _repeated_chapterInfoList_codec);
       if (IsContentClosed != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsContentClosed);
       }
+      chapterInfoList_.WriteTo(output, _repeated_chapterInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,14 +188,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ContentCloseTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(ContentCloseTime);
       }
-      chapterInfoList_.WriteTo(ref output, _repeated_chapterInfoList_codec);
       if (IsContentClosed != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsContentClosed);
       }
+      chapterInfoList_.WriteTo(ref output, _repeated_chapterInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -205,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += chapterInfoList_.CalculateSize(_repeated_chapterInfoList_codec);
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
+      size += chapterInfoList_.CalculateSize(_repeated_chapterInfoList_codec);
       if (ContentCloseTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
       }
@@ -224,10 +225,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      chapterInfoList_.Add(other.chapterInfoList_);
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
+      chapterInfoList_.Add(other.chapterInfoList_);
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }
@@ -246,16 +247,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 16: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }
-          case 66: {
-            chapterInfoList_.AddEntriesFrom(input, _repeated_chapterInfoList_codec);
+          case 64: {
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 96: {
-            IsContentClosed = input.ReadBool();
+          case 122: {
+            chapterInfoList_.AddEntriesFrom(input, _repeated_chapterInfoList_codec);
             break;
           }
         }
@@ -273,16 +274,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 16: {
             ContentCloseTime = input.ReadUInt32();
             break;
           }
-          case 66: {
-            chapterInfoList_.AddEntriesFrom(ref input, _repeated_chapterInfoList_codec);
+          case 64: {
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 96: {
-            IsContentClosed = input.ReadBool();
+          case 122: {
+            chapterInfoList_.AddEntriesFrom(ref input, _repeated_chapterInfoList_codec);
             break;
           }
         }

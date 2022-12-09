@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SealBattleTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRTZWFsQmF0dGxlVHlwZS5wcm90byp4Cg5TZWFsQmF0dGxlVHlwZRIfChtT",
-            "RUFMX0JBVFRMRV9UWVBFX0tFRVBfQUxJVkUQABIhCh1TRUFMX0JBVFRMRV9U",
-            "WVBFX0tJTExfTU9OU1RFUhABEiIKHlNFQUxfQkFUVExFX1RZUEVfRU5FUkdZ",
-            "X0NIQVJHRRACQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChRTZWFsQmF0dGxlVHlwZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byp4Cg5TZWFsQmF0dGxlVHlwZRIfChtTRUFMX0JBVFRMRV9U",
+            "WVBFX0tFRVBfQUxJVkUQABIhCh1TRUFMX0JBVFRMRV9UWVBFX0tJTExfTU9O",
+            "U1RFUhABEiIKHlNFQUxfQkFUVExFX1RZUEVfRU5FUkdZX0NIQVJHRRACYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.SealBattleType), }, null, null));

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusLeftMonsterNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilJbkJhdHRsZU1lY2hhbmljdXNMZWZ0TW9uc3Rlck5vdGlmeS5wcm90byI7",
-            "CiNJbkJhdHRsZU1lY2hhbmljdXNMZWZ0TW9uc3Rlck5vdGlmeRIUCgxsZWZ0",
-            "X21vbnN0ZXIYDiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "CilJbkJhdHRsZU1lY2hhbmljdXNMZWZ0TW9uc3Rlck5vdGlmeS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byI/CiNJbkJhdHRsZU1l",
+            "Y2hhbmljdXNMZWZ0TW9uc3Rlck5vdGlmeRIYChBsZWZ0X21vbnN0ZXJfbnVt",
+            "GAUgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusLeftMonsterNotify), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusLeftMonsterNotify.Parser, new[]{ "LeftMonster" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusLeftMonsterNotify), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusLeftMonsterNotify.Parser, new[]{ "LeftMonsterNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5321
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5343;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class InBattleMechanicusLeftMonsterNotify : pb::IMessage<InBattleMechanicusLeftMonsterNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,7 +81,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusLeftMonsterNotify(InBattleMechanicusLeftMonsterNotify other) : this() {
-      leftMonster_ = other.leftMonster_;
+      leftMonsterNum_ = other.leftMonsterNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,15 +91,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleMechanicusLeftMonsterNotify(this);
     }
 
-    /// <summary>Field number for the "left_monster" field.</summary>
-    public const int LeftMonsterFieldNumber = 14;
-    private uint leftMonster_;
+    /// <summary>Field number for the "left_monster_num" field.</summary>
+    public const int LeftMonsterNumFieldNumber = 5;
+    private uint leftMonsterNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftMonster {
-      get { return leftMonster_; }
+    public uint LeftMonsterNum {
+      get { return leftMonsterNum_; }
       set {
-        leftMonster_ = value;
+        leftMonsterNum_ = value;
       }
     }
 
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LeftMonster != other.LeftMonster) return false;
+      if (LeftMonsterNum != other.LeftMonsterNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -122,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LeftMonster != 0) hash ^= LeftMonster.GetHashCode();
+      if (LeftMonsterNum != 0) hash ^= LeftMonsterNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LeftMonster != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LeftMonster);
+      if (LeftMonsterNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftMonsterNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -155,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LeftMonster != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LeftMonster);
+      if (LeftMonsterNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftMonsterNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -169,8 +173,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LeftMonster != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftMonster);
+      if (LeftMonsterNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftMonsterNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -184,8 +188,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LeftMonster != 0) {
-        LeftMonster = other.LeftMonster;
+      if (other.LeftMonsterNum != 0) {
+        LeftMonsterNum = other.LeftMonsterNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -202,8 +206,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
-            LeftMonster = input.ReadUInt32();
+          case 40: {
+            LeftMonsterNum = input.ReadUInt32();
             break;
           }
         }
@@ -221,8 +225,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
-            LeftMonster = input.ReadUInt32();
+          case 40: {
+            LeftMonsterNum = input.ReadUInt32();
             break;
           }
         }

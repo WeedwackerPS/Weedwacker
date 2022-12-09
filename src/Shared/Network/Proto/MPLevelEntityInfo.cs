@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static MPLevelEntityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdNUExldmVsRW50aXR5SW5mby5wcm90bxoaQWJpbGl0eVN5bmNTdGF0ZUlu",
-            "Zm8ucHJvdG8ibgoRTVBMZXZlbEVudGl0eUluZm8SKwoMYWJpbGl0eV9pbmZv",
-            "GAIgASgLMhUuQWJpbGl0eVN5bmNTdGF0ZUluZm8SEQoJZW50aXR5X2lkGAsg",
-            "ASgNEhkKEWF1dGhvcml0eV9wZWVyX2lkGAMgASgNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdNUExldmVsRW50aXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoaQWJpbGl0eVN5bmNTdGF0ZUluZm8ucHJvdG8ijgEK",
+            "EU1QTGV2ZWxFbnRpdHlJbmZvEksKDGFiaWxpdHlfaW5mbxgPIAEoCzI1Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWJpbGl0eVN5bmNTdGF0",
+            "ZUluZm8SEQoJZW50aXR5X2lkGAogASgNEhkKEWF1dGhvcml0eV9wZWVyX2lk",
+            "GAUgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ability_info" field.</summary>
-    public const int AbilityInfoFieldNumber = 2;
+    public const int AbilityInfoFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo abilityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 11;
+    public const int EntityIdFieldNumber = 10;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "authority_peer_id" field.</summary>
-    public const int AuthorityPeerIdFieldNumber = 3;
+    public const int AuthorityPeerIdFieldNumber = 5;
     private uint authorityPeerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (abilityInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(AbilityInfo);
-      }
       if (AuthorityPeerId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(AuthorityPeerId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(EntityId);
+      }
+      if (abilityInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(AbilityInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (abilityInfo_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(AbilityInfo);
-      }
       if (AuthorityPeerId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(AuthorityPeerId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(EntityId);
+      }
+      if (abilityInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(AbilityInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -259,19 +260,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 40: {
+            AuthorityPeerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (abilityInfo_ == null) {
               AbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(AbilityInfo);
-            break;
-          }
-          case 24: {
-            AuthorityPeerId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -289,19 +290,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 40: {
+            AuthorityPeerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (abilityInfo_ == null) {
               AbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(AbilityInfo);
-            break;
-          }
-          case 24: {
-            AuthorityPeerId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

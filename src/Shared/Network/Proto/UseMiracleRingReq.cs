@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static UseMiracleRingReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdVc2VNaXJhY2xlUmluZ1JlcS5wcm90bxoMVmVjdG9yLnByb3RvItMBChFV",
-            "c2VNaXJhY2xlUmluZ1JlcRIcChRtaXJhY2xlX3Jpbmdfb3BfdHlwZRgNIAEo",
-            "DRIUCgNwb3MYCCABKAsyBy5WZWN0b3ISFAoDcm90GAcgASgLMgcuVmVjdG9y",
-            "InQKEU1pcmFjbGVSaW5nT3BUeXBlEh0KGU1JUkFDTEVfUklOR19PUF9UWVBF",
-            "X05PTkUQABIeChpNSVJBQ0xFX1JJTkdfT1BfVFlQRV9QTEFDRRABEiAKHE1J",
-            "UkFDTEVfUklOR19PUF9UWVBFX1JFVFJBQ1QQAkIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdVc2VNaXJhY2xlUmluZ1JlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoMVmVjdG9yLnByb3RvIpMCChFVc2VNaXJhY2xlUmlu",
+            "Z1JlcRI0CgNyb3QYDiABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlZlY3RvchI0CgNwb3MYDSABKAsyJy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLlZlY3RvchIcChRtaXJhY2xlX3Jpbmdfb3BfdHlw",
+            "ZRgFIAEoDSJ0ChFNaXJhY2xlUmluZ09wVHlwZRIdChlNSVJBQ0xFX1JJTkdf",
+            "T1BfVFlQRV9OT05FEAASHgoaTUlSQUNMRV9SSU5HX09QX1RZUEVfUExBQ0UQ",
+            "ARIgChxNSVJBQ0xFX1JJTkdfT1BfVFlQRV9SRVRSQUNUEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq), global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq.Parser, new[]{ "MiracleRingOpType", "Pos", "Rot" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq.Types.MiracleRingOpType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq), global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq.Parser, new[]{ "Rot", "Pos", "MiracleRingOpType" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.UseMiracleRingReq.Types.MiracleRingOpType) }, null, null)
           }));
     }
     #endregion
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5226
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5242;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class UseMiracleRingReq : pb::IMessage<UseMiracleRingReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UseMiracleRingReq(UseMiracleRingReq other) : this() {
-      miracleRingOpType_ = other.miracleRingOpType_;
-      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
       rot_ = other.rot_ != null ? other.rot_.Clone() : null;
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      miracleRingOpType_ = other.miracleRingOpType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UseMiracleRingReq(this);
     }
 
-    /// <summary>Field number for the "miracle_ring_op_type" field.</summary>
-    public const int MiracleRingOpTypeFieldNumber = 13;
-    private uint miracleRingOpType_;
+    /// <summary>Field number for the "rot" field.</summary>
+    public const int RotFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MiracleRingOpType {
-      get { return miracleRingOpType_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
+      get { return rot_; }
       set {
-        miracleRingOpType_ = value;
+        rot_ = value;
       }
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 8;
+    public const int PosFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,15 +122,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
+    /// <summary>Field number for the "miracle_ring_op_type" field.</summary>
+    public const int MiracleRingOpTypeFieldNumber = 5;
+    private uint miracleRingOpType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
-      get { return rot_; }
+    public uint MiracleRingOpType {
+      get { return miracleRingOpType_; }
       set {
-        rot_ = value;
+        miracleRingOpType_ = value;
       }
     }
 
@@ -144,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MiracleRingOpType != other.MiracleRingOpType) return false;
-      if (!object.Equals(Pos, other.Pos)) return false;
       if (!object.Equals(Rot, other.Rot)) return false;
+      if (!object.Equals(Pos, other.Pos)) return false;
+      if (MiracleRingOpType != other.MiracleRingOpType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MiracleRingOpType != 0) hash ^= MiracleRingOpType.GetHashCode();
-      if (pos_ != null) hash ^= Pos.GetHashCode();
       if (rot_ != null) hash ^= Rot.GetHashCode();
+      if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (MiracleRingOpType != 0) hash ^= MiracleRingOpType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,17 +180,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rot_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Rot);
+      if (MiracleRingOpType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MiracleRingOpType);
       }
       if (pos_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(106);
         output.WriteMessage(Pos);
       }
-      if (MiracleRingOpType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(MiracleRingOpType);
+      if (rot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,17 +202,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rot_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Rot);
+      if (MiracleRingOpType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MiracleRingOpType);
       }
       if (pos_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(106);
         output.WriteMessage(Pos);
       }
-      if (MiracleRingOpType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(MiracleRingOpType);
+      if (rot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,14 +224,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MiracleRingOpType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MiracleRingOpType);
+      if (rot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
       }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
-      if (rot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
+      if (MiracleRingOpType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MiracleRingOpType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,8 +245,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MiracleRingOpType != 0) {
-        MiracleRingOpType = other.MiracleRingOpType;
+      if (other.rot_ != null) {
+        if (rot_ == null) {
+          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Rot.MergeFrom(other.Rot);
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
@@ -249,11 +257,8 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Pos.MergeFrom(other.Pos);
       }
-      if (other.rot_ != null) {
-        if (rot_ == null) {
-          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Rot.MergeFrom(other.Rot);
+      if (other.MiracleRingOpType != 0) {
+        MiracleRingOpType = other.MiracleRingOpType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -270,22 +275,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
+          case 40: {
+            MiracleRingOpType = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 106: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 104: {
-            MiracleRingOpType = input.ReadUInt32();
+          case 114: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }
@@ -303,22 +308,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
+          case 40: {
+            MiracleRingOpType = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 106: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 104: {
-            MiracleRingOpType = input.ReadUInt32();
+          case 114: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessPlayerInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJJcm9kb3JpQ2hlc3NQbGF5ZXJJbmZvTm90aWZ5LnByb3RvGhxJcm9kb3Jp",
-            "Q2hlc3NQbGF5ZXJJbmZvLnByb3RvIkwKHElyb2RvcmlDaGVzc1BsYXllcklu",
-            "Zm9Ob3RpZnkSLAoLcGxheWVyX2luZm8YBiABKAsyFy5Jcm9kb3JpQ2hlc3NQ",
-            "bGF5ZXJJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiJJcm9kb3JpQ2hlc3NQbGF5ZXJJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhxJcm9kb3JpQ2hlc3NQbGF5ZXJJ",
+            "bmZvLnByb3RvImwKHElyb2RvcmlDaGVzc1BsYXllckluZm9Ob3RpZnkSTAoL",
+            "cGxheWVyX2luZm8YCiABKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLklyb2RvcmlDaGVzc1BsYXllckluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5364
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5312;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IrodoriChessPlayerInfoNotify : pb::IMessage<IrodoriChessPlayerInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_info" field.</summary>
-    public const int PlayerInfoFieldNumber = 6;
+    public const int PlayerInfoFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo playerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (playerInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(82);
         output.WriteMessage(PlayerInfo);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (playerInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(82);
         output.WriteMessage(PlayerInfo);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 82: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 82: {
             if (playerInfo_ == null) {
               PlayerInfo = new global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo();
             }

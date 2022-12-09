@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static UpgradeRoguelikeShikigamiRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJVcGdyYWRlUm9ndWVsaWtlU2hpa2lnYW1pUnNwLnByb3RvIl4KHFVwZ3Jh",
-            "ZGVSb2d1ZWxpa2VTaGlraWdhbWlSc3ASDwoHcmV0Y29kZRgKIAEoBRIaChJz",
-            "aGlraWdhbWlfZ3JvdXBfaWQYDiABKA0SEQoJY3VyX2xldmVsGAQgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJVcGdyYWRlUm9ndWVsaWtlU2hpa2lnYW1pUnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIl4KHFVwZ3JhZGVSb2d1ZWxpa2VT",
+            "aGlraWdhbWlSc3ASGgoSc2hpa2lnYW1pX2dyb3VwX2lkGAggASgNEg8KB3Jl",
+            "dGNvZGUYCiABKAUSEQoJY3VyX2xldmVsGAUgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiRsp), global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiRsp.Parser, new[]{ "Retcode", "ShikigamiGroupId", "CurLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiRsp), global::Weedwacker.Shared.Network.Proto.UpgradeRoguelikeShikigamiRsp.Parser, new[]{ "ShikigamiGroupId", "Retcode", "CurLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8966
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8314;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UpgradeRoguelikeShikigamiRsp : pb::IMessage<UpgradeRoguelikeShikigamiRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpgradeRoguelikeShikigamiRsp(UpgradeRoguelikeShikigamiRsp other) : this() {
-      retcode_ = other.retcode_;
       shikigamiGroupId_ = other.shikigamiGroupId_;
+      retcode_ = other.retcode_;
       curLevel_ = other.curLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpgradeRoguelikeShikigamiRsp Clone() {
       return new UpgradeRoguelikeShikigamiRsp(this);
+    }
+
+    /// <summary>Field number for the "shikigami_group_id" field.</summary>
+    public const int ShikigamiGroupIdFieldNumber = 8;
+    private uint shikigamiGroupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ShikigamiGroupId {
+      get { return shikigamiGroupId_; }
+      set {
+        shikigamiGroupId_ = value;
+      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -101,20 +117,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "shikigami_group_id" field.</summary>
-    public const int ShikigamiGroupIdFieldNumber = 14;
-    private uint shikigamiGroupId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShikigamiGroupId {
-      get { return shikigamiGroupId_; }
-      set {
-        shikigamiGroupId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_level" field.</summary>
-    public const int CurLevelFieldNumber = 4;
+    public const int CurLevelFieldNumber = 5;
     private uint curLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (ShikigamiGroupId != other.ShikigamiGroupId) return false;
+      if (Retcode != other.Retcode) return false;
       if (CurLevel != other.CurLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -150,8 +154,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ShikigamiGroupId != 0) hash ^= ShikigamiGroupId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CurLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(CurLevel);
+      }
+      if (ShikigamiGroupId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ShikigamiGroupId);
       }
       if (Retcode != 0) {
         output.WriteRawTag(80);
         output.WriteInt32(Retcode);
-      }
-      if (ShikigamiGroupId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ShikigamiGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CurLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(CurLevel);
+      }
+      if (ShikigamiGroupId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ShikigamiGroupId);
       }
       if (Retcode != 0) {
         output.WriteRawTag(80);
         output.WriteInt32(Retcode);
-      }
-      if (ShikigamiGroupId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ShikigamiGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,11 +219,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (ShikigamiGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShikigamiGroupId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (CurLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
@@ -236,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.ShikigamiGroupId != 0) {
         ShikigamiGroupId = other.ShikigamiGroupId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       if (other.CurLevel != 0) {
         CurLevel = other.CurLevel;
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 40: {
             CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ShikigamiGroupId = input.ReadUInt32();
             break;
           }
           case 80: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            ShikigamiGroupId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 40: {
             CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ShikigamiGroupId = input.ReadUInt32();
             break;
           }
           case 80: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            ShikigamiGroupId = input.ReadUInt32();
             break;
           }
         }

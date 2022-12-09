@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static CompoundUnlockNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpDb21wb3VuZFVubG9ja05vdGlmeS5wcm90byIrChRDb21wb3VuZFVubG9j",
-            "a05vdGlmeRITCgtjb21wb3VuZF9pZBgDIAEoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpDb21wb3VuZFVubG9ja05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byIrChRDb21wb3VuZFVubG9ja05vdGlmeRITCgtj",
+            "b21wb3VuZF9pZBgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 128
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 106;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CompoundUnlockNotify : pb::IMessage<CompoundUnlockNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,7 +91,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "compound_id" field.</summary>
-    public const int CompoundIdFieldNumber = 3;
+    public const int CompoundIdFieldNumber = 7;
     private uint compoundId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,7 +145,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CompoundId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(CompoundId);
       }
       if (_unknownFields != null) {
@@ -155,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CompoundId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(CompoundId);
       }
       if (_unknownFields != null) {
@@ -201,7 +205,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 56: {
             CompoundId = input.ReadUInt32();
             break;
           }
@@ -220,7 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 56: {
             CompoundId = input.ReadUInt32();
             break;
           }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePlantWeedReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZIb21lUGxhbnRXZWVkUmVxLnByb3RvIjUKEEhvbWVQbGFudFdlZWRSZXES",
-            "EgoKZmllbGRfZ3VpZBgJIAEoDRINCgVpbmRleBgDIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZIb21lUGxhbnRXZWVkUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIjUKEEhvbWVQbGFudFdlZWRSZXESEgoKZmllbGRfZ3Vp",
+            "ZBgNIAEoDRINCgVpbmRleBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4640
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4866;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePlantWeedReq : pb::IMessage<HomePlantWeedReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "field_guid" field.</summary>
-    public const int FieldGuidFieldNumber = 9;
+    public const int FieldGuidFieldNumber = 13;
     private uint fieldGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Index);
       }
       if (FieldGuid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteUInt32(FieldGuid);
       }
       if (_unknownFields != null) {
@@ -179,7 +183,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Index);
       }
       if (FieldGuid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteUInt32(FieldGuid);
       }
       if (_unknownFields != null) {
@@ -235,7 +239,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Index = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 104: {
             FieldGuid = input.ReadUInt32();
             break;
           }
@@ -258,7 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Index = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 104: {
             FieldGuid = input.ReadUInt32();
             break;
           }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeCreateBlueprintReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxIb21lQ3JlYXRlQmx1ZXByaW50UmVxLnByb3RvGh5Ib21lU2NlbmVBcnJh",
-            "bmdlbWVudEluZm8ucHJvdG8inQEKFkhvbWVDcmVhdGVCbHVlcHJpbnRSZXES",
-            "OQoWc2NlbmVfYXJyYW5nZW1lbnRfaW5mbxgCIAEoCzIZLkhvbWVTY2VuZUFy",
-            "cmFuZ2VtZW50SW5mbxIPCgdzbG90X2lkGA0gASgNEhkKEXNlcnZlcl9zaGFy",
-            "ZV9jb2RlGAYgASgJEhwKFGdlbl9zaGFyZV9jb2RlX2NvdW50GAQgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxIb21lQ3JlYXRlQmx1ZXByaW50UmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGh5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8u",
+            "cHJvdG8ivQEKFkhvbWVDcmVhdGVCbHVlcHJpbnRSZXESWQoWc2NlbmVfYXJy",
+            "YW5nZW1lbnRfaW5mbxgEIAEoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uSG9tZVNjZW5lQXJyYW5nZW1lbnRJbmZvEhwKFGdlbl9zaGFy",
+            "ZV9jb2RlX2NvdW50GAkgASgNEhkKEXNlcnZlcl9zaGFyZV9jb2RlGAUgASgJ",
+            "Eg8KB3Nsb3RfaWQYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintReq), global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintReq.Parser, new[]{ "SceneArrangementInfo", "SlotId", "ServerShareCode", "GenShareCodeCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintReq), global::Weedwacker.Shared.Network.Proto.HomeCreateBlueprintReq.Parser, new[]{ "SceneArrangementInfo", "GenShareCodeCount", "ServerShareCode", "SlotId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4619
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4539;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeCreateBlueprintReq : pb::IMessage<HomeCreateBlueprintReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeCreateBlueprintReq(HomeCreateBlueprintReq other) : this() {
       sceneArrangementInfo_ = other.sceneArrangementInfo_ != null ? other.sceneArrangementInfo_.Clone() : null;
-      slotId_ = other.slotId_;
-      serverShareCode_ = other.serverShareCode_;
       genShareCodeCount_ = other.genShareCodeCount_;
+      serverShareCode_ = other.serverShareCode_;
+      slotId_ = other.slotId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_arrangement_info" field.</summary>
-    public const int SceneArrangementInfoFieldNumber = 2;
+    public const int SceneArrangementInfoFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo sceneArrangementInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,20 +110,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "slot_id" field.</summary>
-    public const int SlotIdFieldNumber = 13;
-    private uint slotId_;
+    /// <summary>Field number for the "gen_share_code_count" field.</summary>
+    public const int GenShareCodeCountFieldNumber = 9;
+    private uint genShareCodeCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SlotId {
-      get { return slotId_; }
+    public uint GenShareCodeCount {
+      get { return genShareCodeCount_; }
       set {
-        slotId_ = value;
+        genShareCodeCount_ = value;
       }
     }
 
     /// <summary>Field number for the "server_share_code" field.</summary>
-    public const int ServerShareCodeFieldNumber = 6;
+    public const int ServerShareCodeFieldNumber = 5;
     private string serverShareCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,15 +134,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gen_share_code_count" field.</summary>
-    public const int GenShareCodeCountFieldNumber = 4;
-    private uint genShareCodeCount_;
+    /// <summary>Field number for the "slot_id" field.</summary>
+    public const int SlotIdFieldNumber = 15;
+    private uint slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GenShareCodeCount {
-      get { return genShareCodeCount_; }
+    public uint SlotId {
+      get { return slotId_; }
       set {
-        genShareCodeCount_ = value;
+        slotId_ = value;
       }
     }
 
@@ -157,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(SceneArrangementInfo, other.SceneArrangementInfo)) return false;
-      if (SlotId != other.SlotId) return false;
-      if (ServerShareCode != other.ServerShareCode) return false;
       if (GenShareCodeCount != other.GenShareCodeCount) return false;
+      if (ServerShareCode != other.ServerShareCode) return false;
+      if (SlotId != other.SlotId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -168,9 +173,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (sceneArrangementInfo_ != null) hash ^= SceneArrangementInfo.GetHashCode();
-      if (SlotId != 0) hash ^= SlotId.GetHashCode();
-      if (ServerShareCode.Length != 0) hash ^= ServerShareCode.GetHashCode();
       if (GenShareCodeCount != 0) hash ^= GenShareCodeCount.GetHashCode();
+      if (ServerShareCode.Length != 0) hash ^= ServerShareCode.GetHashCode();
+      if (SlotId != 0) hash ^= SlotId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -190,19 +195,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (sceneArrangementInfo_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteMessage(SceneArrangementInfo);
       }
-      if (GenShareCodeCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GenShareCodeCount);
-      }
       if (ServerShareCode.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(ServerShareCode);
       }
+      if (GenShareCodeCount != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(GenShareCodeCount);
+      }
       if (SlotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(SlotId);
       }
       if (_unknownFields != null) {
@@ -216,19 +221,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (sceneArrangementInfo_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteMessage(SceneArrangementInfo);
       }
-      if (GenShareCodeCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GenShareCodeCount);
-      }
       if (ServerShareCode.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(ServerShareCode);
       }
+      if (GenShareCodeCount != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(GenShareCodeCount);
+      }
       if (SlotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(SlotId);
       }
       if (_unknownFields != null) {
@@ -244,14 +249,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (sceneArrangementInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneArrangementInfo);
       }
-      if (SlotId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotId);
+      if (GenShareCodeCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GenShareCodeCount);
       }
       if (ServerShareCode.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerShareCode);
       }
-      if (GenShareCodeCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GenShareCodeCount);
+      if (SlotId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -271,14 +276,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         SceneArrangementInfo.MergeFrom(other.SceneArrangementInfo);
       }
-      if (other.SlotId != 0) {
-        SlotId = other.SlotId;
+      if (other.GenShareCodeCount != 0) {
+        GenShareCodeCount = other.GenShareCodeCount;
       }
       if (other.ServerShareCode.Length != 0) {
         ServerShareCode = other.ServerShareCode;
       }
-      if (other.GenShareCodeCount != 0) {
-        GenShareCodeCount = other.GenShareCodeCount;
+      if (other.SlotId != 0) {
+        SlotId = other.SlotId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -295,22 +300,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 34: {
             if (sceneArrangementInfo_ == null) {
               SceneArrangementInfo = new global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo();
             }
             input.ReadMessage(SceneArrangementInfo);
             break;
           }
-          case 32: {
-            GenShareCodeCount = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 42: {
             ServerShareCode = input.ReadString();
             break;
           }
-          case 104: {
+          case 72: {
+            GenShareCodeCount = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             SlotId = input.ReadUInt32();
             break;
           }
@@ -329,22 +334,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 34: {
             if (sceneArrangementInfo_ == null) {
               SceneArrangementInfo = new global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo();
             }
             input.ReadMessage(SceneArrangementInfo);
             break;
           }
-          case 32: {
-            GenShareCodeCount = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 42: {
             ServerShareCode = input.ReadString();
             break;
           }
-          case 104: {
+          case 72: {
+            GenShareCodeCount = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             SlotId = input.ReadUInt32();
             break;
           }

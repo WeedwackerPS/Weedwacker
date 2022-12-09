@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AttackHitEffectResultReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8isgEKFUF0dGFja0hpdEVm",
-            "ZmVjdFJlc3VsdBIbChNoaXRfaGFsdF90aW1lX3NjYWxlGAggASgCEh4KFm9y",
-            "aWdpbmFsX2hpdF9lZmZfbGV2ZWwYDCABKA0SFAoMYWlyX3N0cmVuZ3RoGA8g",
-            "ASgCEhUKDWhpdF9lZmZfbGV2ZWwYAiABKA0SFQoNaGl0X2hhbHRfdGltZRgN",
-            "IAEoAhIYChByZXRyZWF0X3N0cmVuZ3RoGAcgASgCQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8ixQEKFUF0dGFja0hpdEVmZmVjdFJlc3VsdBIb",
+            "ChNVbmszMzAwX0RBQkdER0xBSUtMGA0gASgCEhsKE1VuazMzMDBfSkRFRkhN",
+            "S0lDUEYYCiABKAISGwoTVW5rMzMwMF9FQ0hPRkJMR0lJTxgJIAEoAhIbChNV",
+            "bmszMzAwX0xDS0VDSkNLS0pLGAggASgNEhsKE1VuazMzMDBfS0xOR0RBTU1G",
+            "SUYYASABKA0SGwoTVW5rMzMwMF9NTkdDT0FJR0dBTBgDIAEoAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AttackHitEffectResult), global::Weedwacker.Shared.Network.Proto.AttackHitEffectResult.Parser, new[]{ "HitHaltTimeScale", "OriginalHitEffLevel", "AirStrength", "HitEffLevel", "HitHaltTime", "RetreatStrength" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AttackHitEffectResult), global::Weedwacker.Shared.Network.Proto.AttackHitEffectResult.Parser, new[]{ "Unk3300DABGDGLAIKL", "Unk3300JDEFHMKICPF", "Unk3300ECHOFBLGIIO", "Unk3300LCKECJCKKJK", "Unk3300KLNGDAMMFIF", "Unk3300MNGCOAIGGAL" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +74,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttackHitEffectResult(AttackHitEffectResult other) : this() {
-      hitHaltTimeScale_ = other.hitHaltTimeScale_;
-      originalHitEffLevel_ = other.originalHitEffLevel_;
-      airStrength_ = other.airStrength_;
-      hitEffLevel_ = other.hitEffLevel_;
-      hitHaltTime_ = other.hitHaltTime_;
-      retreatStrength_ = other.retreatStrength_;
+      unk3300DABGDGLAIKL_ = other.unk3300DABGDGLAIKL_;
+      unk3300JDEFHMKICPF_ = other.unk3300JDEFHMKICPF_;
+      unk3300ECHOFBLGIIO_ = other.unk3300ECHOFBLGIIO_;
+      unk3300LCKECJCKKJK_ = other.unk3300LCKECJCKKJK_;
+      unk3300KLNGDAMMFIF_ = other.unk3300KLNGDAMMFIF_;
+      unk3300MNGCOAIGGAL_ = other.unk3300MNGCOAIGGAL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,75 +89,75 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AttackHitEffectResult(this);
     }
 
-    /// <summary>Field number for the "hit_halt_time_scale" field.</summary>
-    public const int HitHaltTimeScaleFieldNumber = 8;
-    private float hitHaltTimeScale_;
+    /// <summary>Field number for the "Unk3300_DABGDGLAIKL" field.</summary>
+    public const int Unk3300DABGDGLAIKLFieldNumber = 13;
+    private float unk3300DABGDGLAIKL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float HitHaltTimeScale {
-      get { return hitHaltTimeScale_; }
+    public float Unk3300DABGDGLAIKL {
+      get { return unk3300DABGDGLAIKL_; }
       set {
-        hitHaltTimeScale_ = value;
+        unk3300DABGDGLAIKL_ = value;
       }
     }
 
-    /// <summary>Field number for the "original_hit_eff_level" field.</summary>
-    public const int OriginalHitEffLevelFieldNumber = 12;
-    private uint originalHitEffLevel_;
+    /// <summary>Field number for the "Unk3300_JDEFHMKICPF" field.</summary>
+    public const int Unk3300JDEFHMKICPFFieldNumber = 10;
+    private float unk3300JDEFHMKICPF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OriginalHitEffLevel {
-      get { return originalHitEffLevel_; }
+    public float Unk3300JDEFHMKICPF {
+      get { return unk3300JDEFHMKICPF_; }
       set {
-        originalHitEffLevel_ = value;
+        unk3300JDEFHMKICPF_ = value;
       }
     }
 
-    /// <summary>Field number for the "air_strength" field.</summary>
-    public const int AirStrengthFieldNumber = 15;
-    private float airStrength_;
+    /// <summary>Field number for the "Unk3300_ECHOFBLGIIO" field.</summary>
+    public const int Unk3300ECHOFBLGIIOFieldNumber = 9;
+    private float unk3300ECHOFBLGIIO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float AirStrength {
-      get { return airStrength_; }
+    public float Unk3300ECHOFBLGIIO {
+      get { return unk3300ECHOFBLGIIO_; }
       set {
-        airStrength_ = value;
+        unk3300ECHOFBLGIIO_ = value;
       }
     }
 
-    /// <summary>Field number for the "hit_eff_level" field.</summary>
-    public const int HitEffLevelFieldNumber = 2;
-    private uint hitEffLevel_;
+    /// <summary>Field number for the "Unk3300_LCKECJCKKJK" field.</summary>
+    public const int Unk3300LCKECJCKKJKFieldNumber = 8;
+    private uint unk3300LCKECJCKKJK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HitEffLevel {
-      get { return hitEffLevel_; }
+    public uint Unk3300LCKECJCKKJK {
+      get { return unk3300LCKECJCKKJK_; }
       set {
-        hitEffLevel_ = value;
+        unk3300LCKECJCKKJK_ = value;
       }
     }
 
-    /// <summary>Field number for the "hit_halt_time" field.</summary>
-    public const int HitHaltTimeFieldNumber = 13;
-    private float hitHaltTime_;
+    /// <summary>Field number for the "Unk3300_KLNGDAMMFIF" field.</summary>
+    public const int Unk3300KLNGDAMMFIFFieldNumber = 1;
+    private uint unk3300KLNGDAMMFIF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float HitHaltTime {
-      get { return hitHaltTime_; }
+    public uint Unk3300KLNGDAMMFIF {
+      get { return unk3300KLNGDAMMFIF_; }
       set {
-        hitHaltTime_ = value;
+        unk3300KLNGDAMMFIF_ = value;
       }
     }
 
-    /// <summary>Field number for the "retreat_strength" field.</summary>
-    public const int RetreatStrengthFieldNumber = 7;
-    private float retreatStrength_;
+    /// <summary>Field number for the "Unk3300_MNGCOAIGGAL" field.</summary>
+    public const int Unk3300MNGCOAIGGALFieldNumber = 3;
+    private float unk3300MNGCOAIGGAL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float RetreatStrength {
-      get { return retreatStrength_; }
+    public float Unk3300MNGCOAIGGAL {
+      get { return unk3300MNGCOAIGGAL_; }
       set {
-        retreatStrength_ = value;
+        unk3300MNGCOAIGGAL_ = value;
       }
     }
 
@@ -176,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTimeScale, other.HitHaltTimeScale)) return false;
-      if (OriginalHitEffLevel != other.OriginalHitEffLevel) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AirStrength, other.AirStrength)) return false;
-      if (HitEffLevel != other.HitEffLevel) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTime, other.HitHaltTime)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RetreatStrength, other.RetreatStrength)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300DABGDGLAIKL, other.Unk3300DABGDGLAIKL)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300JDEFHMKICPF, other.Unk3300JDEFHMKICPF)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300ECHOFBLGIIO, other.Unk3300ECHOFBLGIIO)) return false;
+      if (Unk3300LCKECJCKKJK != other.Unk3300LCKECJCKKJK) return false;
+      if (Unk3300KLNGDAMMFIF != other.Unk3300KLNGDAMMFIF) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300MNGCOAIGGAL, other.Unk3300MNGCOAIGGAL)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HitHaltTimeScale != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTimeScale);
-      if (OriginalHitEffLevel != 0) hash ^= OriginalHitEffLevel.GetHashCode();
-      if (AirStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AirStrength);
-      if (HitEffLevel != 0) hash ^= HitEffLevel.GetHashCode();
-      if (HitHaltTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTime);
-      if (RetreatStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RetreatStrength);
+      if (Unk3300DABGDGLAIKL != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300DABGDGLAIKL);
+      if (Unk3300JDEFHMKICPF != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300JDEFHMKICPF);
+      if (Unk3300ECHOFBLGIIO != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300ECHOFBLGIIO);
+      if (Unk3300LCKECJCKKJK != 0) hash ^= Unk3300LCKECJCKKJK.GetHashCode();
+      if (Unk3300KLNGDAMMFIF != 0) hash ^= Unk3300KLNGDAMMFIF.GetHashCode();
+      if (Unk3300MNGCOAIGGAL != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300MNGCOAIGGAL);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,29 +213,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HitEffLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(HitEffLevel);
+      if (Unk3300KLNGDAMMFIF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300KLNGDAMMFIF);
       }
-      if (RetreatStrength != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(RetreatStrength);
+      if (Unk3300MNGCOAIGGAL != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Unk3300MNGCOAIGGAL);
       }
-      if (HitHaltTimeScale != 0F) {
-        output.WriteRawTag(69);
-        output.WriteFloat(HitHaltTimeScale);
+      if (Unk3300LCKECJCKKJK != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LCKECJCKKJK);
       }
-      if (OriginalHitEffLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(OriginalHitEffLevel);
+      if (Unk3300ECHOFBLGIIO != 0F) {
+        output.WriteRawTag(77);
+        output.WriteFloat(Unk3300ECHOFBLGIIO);
       }
-      if (HitHaltTime != 0F) {
+      if (Unk3300JDEFHMKICPF != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Unk3300JDEFHMKICPF);
+      }
+      if (Unk3300DABGDGLAIKL != 0F) {
         output.WriteRawTag(109);
-        output.WriteFloat(HitHaltTime);
-      }
-      if (AirStrength != 0F) {
-        output.WriteRawTag(125);
-        output.WriteFloat(AirStrength);
+        output.WriteFloat(Unk3300DABGDGLAIKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,29 +247,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HitEffLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(HitEffLevel);
+      if (Unk3300KLNGDAMMFIF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300KLNGDAMMFIF);
       }
-      if (RetreatStrength != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(RetreatStrength);
+      if (Unk3300MNGCOAIGGAL != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Unk3300MNGCOAIGGAL);
       }
-      if (HitHaltTimeScale != 0F) {
-        output.WriteRawTag(69);
-        output.WriteFloat(HitHaltTimeScale);
+      if (Unk3300LCKECJCKKJK != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LCKECJCKKJK);
       }
-      if (OriginalHitEffLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(OriginalHitEffLevel);
+      if (Unk3300ECHOFBLGIIO != 0F) {
+        output.WriteRawTag(77);
+        output.WriteFloat(Unk3300ECHOFBLGIIO);
       }
-      if (HitHaltTime != 0F) {
+      if (Unk3300JDEFHMKICPF != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Unk3300JDEFHMKICPF);
+      }
+      if (Unk3300DABGDGLAIKL != 0F) {
         output.WriteRawTag(109);
-        output.WriteFloat(HitHaltTime);
-      }
-      if (AirStrength != 0F) {
-        output.WriteRawTag(125);
-        output.WriteFloat(AirStrength);
+        output.WriteFloat(Unk3300DABGDGLAIKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -281,22 +281,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HitHaltTimeScale != 0F) {
+      if (Unk3300DABGDGLAIKL != 0F) {
         size += 1 + 4;
       }
-      if (OriginalHitEffLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OriginalHitEffLevel);
-      }
-      if (AirStrength != 0F) {
+      if (Unk3300JDEFHMKICPF != 0F) {
         size += 1 + 4;
       }
-      if (HitEffLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEffLevel);
-      }
-      if (HitHaltTime != 0F) {
+      if (Unk3300ECHOFBLGIIO != 0F) {
         size += 1 + 4;
       }
-      if (RetreatStrength != 0F) {
+      if (Unk3300LCKECJCKKJK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LCKECJCKKJK);
+      }
+      if (Unk3300KLNGDAMMFIF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KLNGDAMMFIF);
+      }
+      if (Unk3300MNGCOAIGGAL != 0F) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -311,23 +311,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.HitHaltTimeScale != 0F) {
-        HitHaltTimeScale = other.HitHaltTimeScale;
+      if (other.Unk3300DABGDGLAIKL != 0F) {
+        Unk3300DABGDGLAIKL = other.Unk3300DABGDGLAIKL;
       }
-      if (other.OriginalHitEffLevel != 0) {
-        OriginalHitEffLevel = other.OriginalHitEffLevel;
+      if (other.Unk3300JDEFHMKICPF != 0F) {
+        Unk3300JDEFHMKICPF = other.Unk3300JDEFHMKICPF;
       }
-      if (other.AirStrength != 0F) {
-        AirStrength = other.AirStrength;
+      if (other.Unk3300ECHOFBLGIIO != 0F) {
+        Unk3300ECHOFBLGIIO = other.Unk3300ECHOFBLGIIO;
       }
-      if (other.HitEffLevel != 0) {
-        HitEffLevel = other.HitEffLevel;
+      if (other.Unk3300LCKECJCKKJK != 0) {
+        Unk3300LCKECJCKKJK = other.Unk3300LCKECJCKKJK;
       }
-      if (other.HitHaltTime != 0F) {
-        HitHaltTime = other.HitHaltTime;
+      if (other.Unk3300KLNGDAMMFIF != 0) {
+        Unk3300KLNGDAMMFIF = other.Unk3300KLNGDAMMFIF;
       }
-      if (other.RetreatStrength != 0F) {
-        RetreatStrength = other.RetreatStrength;
+      if (other.Unk3300MNGCOAIGGAL != 0F) {
+        Unk3300MNGCOAIGGAL = other.Unk3300MNGCOAIGGAL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -344,28 +344,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            HitEffLevel = input.ReadUInt32();
+          case 8: {
+            Unk3300KLNGDAMMFIF = input.ReadUInt32();
             break;
           }
-          case 61: {
-            RetreatStrength = input.ReadFloat();
+          case 29: {
+            Unk3300MNGCOAIGGAL = input.ReadFloat();
             break;
           }
-          case 69: {
-            HitHaltTimeScale = input.ReadFloat();
+          case 64: {
+            Unk3300LCKECJCKKJK = input.ReadUInt32();
             break;
           }
-          case 96: {
-            OriginalHitEffLevel = input.ReadUInt32();
+          case 77: {
+            Unk3300ECHOFBLGIIO = input.ReadFloat();
+            break;
+          }
+          case 85: {
+            Unk3300JDEFHMKICPF = input.ReadFloat();
             break;
           }
           case 109: {
-            HitHaltTime = input.ReadFloat();
-            break;
-          }
-          case 125: {
-            AirStrength = input.ReadFloat();
+            Unk3300DABGDGLAIKL = input.ReadFloat();
             break;
           }
         }
@@ -383,28 +383,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            HitEffLevel = input.ReadUInt32();
+          case 8: {
+            Unk3300KLNGDAMMFIF = input.ReadUInt32();
             break;
           }
-          case 61: {
-            RetreatStrength = input.ReadFloat();
+          case 29: {
+            Unk3300MNGCOAIGGAL = input.ReadFloat();
             break;
           }
-          case 69: {
-            HitHaltTimeScale = input.ReadFloat();
+          case 64: {
+            Unk3300LCKECJCKKJK = input.ReadUInt32();
             break;
           }
-          case 96: {
-            OriginalHitEffLevel = input.ReadUInt32();
+          case 77: {
+            Unk3300ECHOFBLGIIO = input.ReadFloat();
+            break;
+          }
+          case 85: {
+            Unk3300JDEFHMKICPF = input.ReadFloat();
             break;
           }
           case 109: {
-            HitHaltTime = input.ReadFloat();
-            break;
-          }
-          case 125: {
-            AirStrength = input.ReadFloat();
+            Unk3300DABGDGLAIKL = input.ReadFloat();
             break;
           }
         }

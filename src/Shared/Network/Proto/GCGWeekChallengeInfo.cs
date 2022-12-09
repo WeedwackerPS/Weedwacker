@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGWeekChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHQ0dXZWVrQ2hhbGxlbmdlSW5mby5wcm90byJQChRHQ0dXZWVrQ2hhbGxl",
-            "bmdlSW5mbxIOCgZucGNfaWQYBCABKA0SEwoLaXNfZmluaXNoZWQYByABKAgS",
-            "EwoLdW5sb2NrX3RpbWUYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpHQ0dXZWVrQ2hhbGxlbmdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJQChRHQ0dXZWVrQ2hhbGxlbmdlSW5mbxIOCgZu",
+            "cGNfaWQYCSABKA0SEwoLdW5sb2NrX3RpbWUYCCABKA0SEwoLaXNfZmluaXNo",
+            "ZWQYDCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo), global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo.Parser, new[]{ "NpcId", "IsFinished", "UnlockTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo), global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo.Parser, new[]{ "NpcId", "UnlockTime", "IsFinished" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGWeekChallengeInfo(GCGWeekChallengeInfo other) : this() {
       npcId_ = other.npcId_;
-      isFinished_ = other.isFinished_;
       unlockTime_ = other.unlockTime_;
+      isFinished_ = other.isFinished_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "npc_id" field.</summary>
-    public const int NpcIdFieldNumber = 4;
+    public const int NpcIdFieldNumber = 9;
     private uint npcId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 7;
-    private bool isFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
-    }
-
     /// <summary>Field number for the "unlock_time" field.</summary>
-    public const int UnlockTimeFieldNumber = 1;
+    public const int UnlockTimeFieldNumber = 8;
     private uint unlockTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return unlockTime_; }
       set {
         unlockTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 12;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
       }
     }
 
@@ -136,8 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (NpcId != other.NpcId) return false;
-      if (IsFinished != other.IsFinished) return false;
       if (UnlockTime != other.UnlockTime) return false;
+      if (IsFinished != other.IsFinished) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (NpcId != 0) hash ^= NpcId.GetHashCode();
-      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (UnlockTime != 0) hash ^= UnlockTime.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,15 +167,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (UnlockTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(64);
         output.WriteUInt32(UnlockTime);
       }
       if (NpcId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(NpcId);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -189,15 +189,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (UnlockTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(64);
         output.WriteUInt32(UnlockTime);
       }
       if (NpcId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(NpcId);
       }
       if (IsFinished != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -213,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (NpcId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NpcId);
       }
-      if (IsFinished != false) {
-        size += 1 + 1;
-      }
       if (UnlockTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UnlockTime);
+      }
+      if (IsFinished != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -234,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.NpcId != 0) {
         NpcId = other.NpcId;
       }
-      if (other.IsFinished != false) {
-        IsFinished = other.IsFinished;
-      }
       if (other.UnlockTime != 0) {
         UnlockTime = other.UnlockTime;
+      }
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,15 +255,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 64: {
             UnlockTime = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 72: {
             NpcId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 96: {
             IsFinished = input.ReadBool();
             break;
           }
@@ -282,15 +282,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 64: {
             UnlockTime = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 72: {
             NpcId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 96: {
             IsFinished = input.ReadBool();
             break;
           }

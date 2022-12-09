@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgCharDieReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNHQ0dNc2dDaGFyRGllLnByb3RvIjkKDUdDR01zZ0NoYXJEaWUSFQoNY29u",
-            "dHJvbGxlcl9pZBgFIAEoDRIRCgljYXJkX2d1aWQYCyABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChNHQ0dNc2dDaGFyRGllLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvIjkKDUdDR01zZ0NoYXJEaWUSFQoNY29udHJvbGxlcl9pZBgN",
+            "IAEoDRIRCgljYXJkX2d1aWQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 5;
+    public const int ControllerIdFieldNumber = 13;
     private uint controllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_guid" field.</summary>
-    public const int CardGuidFieldNumber = 11;
+    public const int CardGuidFieldNumber = 7;
     private uint cardGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ControllerId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ControllerId);
-      }
       if (CardGuid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(CardGuid);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ControllerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ControllerId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ControllerId);
-      }
       if (CardGuid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(CardGuid);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ControllerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            ControllerId = input.ReadUInt32();
+          case 56: {
+            CardGuid = input.ReadUInt32();
             break;
           }
-          case 88: {
-            CardGuid = input.ReadUInt32();
+          case 104: {
+            ControllerId = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            ControllerId = input.ReadUInt32();
+          case 56: {
+            CardGuid = input.ReadUInt32();
             break;
           }
-          case 88: {
-            CardGuid = input.ReadUInt32();
+          case 104: {
+            ControllerId = input.ReadUInt32();
             break;
           }
         }

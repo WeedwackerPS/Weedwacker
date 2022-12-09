@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampRaceStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1XaW50ZXJDYW1wUmFjZVN0YWdlSW5mby5wcm90bxoMVmVjdG9yLnByb3Rv",
-            "ImEKF1dpbnRlckNhbXBSYWNlU3RhZ2VJbmZvEhEKCW9wZW5fdGltZRgFIAEo",
-            "DRIKCgJpZBgBIAEoDRIUCgNwb3MYDiABKAsyBy5WZWN0b3ISEQoJbWF4X3Nj",
-            "b3JlGAIgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Ch1XaW50ZXJDYW1wUmFjZVN0YWdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoMVmVjdG9yLnByb3RvIoEBChdXaW50ZXJD",
+            "YW1wUmFjZVN0YWdlSW5mbxIKCgJpZBgCIAEoDRI0CgNwb3MYBiABKAsyJy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchIRCglvcGVu",
+            "X3RpbWUYBSABKA0SEQoJbWF4X3Njb3JlGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WinterCampRaceStageInfo), global::Weedwacker.Shared.Network.Proto.WinterCampRaceStageInfo.Parser, new[]{ "OpenTime", "Id", "Pos", "MaxScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WinterCampRaceStageInfo), global::Weedwacker.Shared.Network.Proto.WinterCampRaceStageInfo.Parser, new[]{ "Id", "Pos", "OpenTime", "MaxScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WinterCampRaceStageInfo(WinterCampRaceStageInfo other) : this() {
-      openTime_ = other.openTime_;
       id_ = other.id_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      openTime_ = other.openTime_;
       maxScore_ = other.maxScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,6 +84,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WinterCampRaceStageInfo Clone() {
       return new WinterCampRaceStageInfo(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
+      }
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
@@ -98,32 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private uint id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Id {
-      get { return id_; }
-      set {
-        id_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
-      get { return pos_; }
-      set {
-        pos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 2;
+    public const int MaxScoreFieldNumber = 4;
     private uint maxScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OpenTime != other.OpenTime) return false;
       if (Id != other.Id) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if (OpenTime != other.OpenTime) return false;
       if (MaxScore != other.MaxScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -160,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (Id != 0) hash ^= Id.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -183,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Id != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteUInt32(Id);
       }
       if (MaxScore != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(MaxScore);
       }
       if (OpenTime != 0) {
@@ -195,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(OpenTime);
       }
       if (pos_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(50);
         output.WriteMessage(Pos);
       }
       if (_unknownFields != null) {
@@ -209,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Id != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteUInt32(Id);
       }
       if (MaxScore != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(MaxScore);
       }
       if (OpenTime != 0) {
@@ -221,7 +221,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(OpenTime);
       }
       if (pos_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(50);
         output.WriteMessage(Pos);
       }
       if (_unknownFields != null) {
@@ -234,14 +234,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-      }
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
       }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      }
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
@@ -258,9 +258,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
-      }
       if (other.Id != 0) {
         Id = other.Id;
       }
@@ -269,6 +266,9 @@ namespace Weedwacker.Shared.Network.Proto {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
+      }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
       }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
@@ -288,11 +288,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             Id = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 32: {
             MaxScore = input.ReadUInt32();
             break;
           }
@@ -300,7 +300,7 @@ namespace Weedwacker.Shared.Network.Proto {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 50: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -322,11 +322,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             Id = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 32: {
             MaxScore = input.ReadUInt32();
             break;
           }
@@ -334,7 +334,7 @@ namespace Weedwacker.Shared.Network.Proto {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 50: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }

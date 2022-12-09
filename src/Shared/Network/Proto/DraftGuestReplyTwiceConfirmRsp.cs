@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static DraftGuestReplyTwiceConfirmRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiREcmFmdEd1ZXN0UmVwbHlUd2ljZUNvbmZpcm1Sc3AucHJvdG8iVQoeRHJh",
-            "ZnRHdWVzdFJlcGx5VHdpY2VDb25maXJtUnNwEhAKCGRyYWZ0X2lkGAUgASgN",
-            "EhAKCGlzX2FncmVlGA0gASgIEg8KB3JldGNvZGUYAyABKAVCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiREcmFmdEd1ZXN0UmVwbHlUd2ljZUNvbmZpcm1Sc3AucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iVQoeRHJhZnRHdWVzdFJlcGx5",
+            "VHdpY2VDb25maXJtUnNwEhAKCGRyYWZ0X2lkGAUgASgNEg8KB3JldGNvZGUY",
+            "CyABKAUSEAoIaXNfYWdyZWUYASABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftGuestReplyTwiceConfirmRsp), global::Weedwacker.Shared.Network.Proto.DraftGuestReplyTwiceConfirmRsp.Parser, new[]{ "DraftId", "IsAgree", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftGuestReplyTwiceConfirmRsp), global::Weedwacker.Shared.Network.Proto.DraftGuestReplyTwiceConfirmRsp.Parser, new[]{ "DraftId", "Retcode", "IsAgree" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5475
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5439;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DraftGuestReplyTwiceConfirmRsp : pb::IMessage<DraftGuestReplyTwiceConfirmRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DraftGuestReplyTwiceConfirmRsp(DraftGuestReplyTwiceConfirmRsp other) : this() {
       draftId_ = other.draftId_;
-      isAgree_ = other.isAgree_;
       retcode_ = other.retcode_;
+      isAgree_ = other.isAgree_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_agree" field.</summary>
-    public const int IsAgreeFieldNumber = 13;
-    private bool isAgree_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAgree {
-      get { return isAgree_; }
-      set {
-        isAgree_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_agree" field.</summary>
+    public const int IsAgreeFieldNumber = 1;
+    private bool isAgree_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAgree {
+      get { return isAgree_; }
+      set {
+        isAgree_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (DraftId != other.DraftId) return false;
-      if (IsAgree != other.IsAgree) return false;
       if (Retcode != other.Retcode) return false;
+      if (IsAgree != other.IsAgree) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (DraftId != 0) hash ^= DraftId.GetHashCode();
-      if (IsAgree != false) hash ^= IsAgree.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsAgree != false) hash ^= IsAgree.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
+      if (IsAgree != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsAgree);
       }
       if (DraftId != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(DraftId);
       }
-      if (IsAgree != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsAgree);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
+      if (IsAgree != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsAgree);
       }
       if (DraftId != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(DraftId);
       }
-      if (IsAgree != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsAgree);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (DraftId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
       }
-      if (IsAgree != false) {
-        size += 1 + 1;
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (IsAgree != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.DraftId != 0) {
         DraftId = other.DraftId;
       }
-      if (other.IsAgree != false) {
-        IsAgree = other.IsAgree;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.IsAgree != false) {
+        IsAgree = other.IsAgree;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 8: {
+            IsAgree = input.ReadBool();
             break;
           }
           case 40: {
             DraftId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsAgree = input.ReadBool();
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 8: {
+            IsAgree = input.ReadBool();
             break;
           }
           case 40: {
             DraftId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsAgree = input.ReadBool();
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

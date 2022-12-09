@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static NicknameAuditConfigNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9OaWNrbmFtZUF1ZGl0Q29uZmlnTm90aWZ5LnByb3RvIkIKGU5pY2tuYW1l",
-            "QXVkaXRDb25maWdOb3RpZnkSDwoHaXNfb3BlbhgIIAEoCBIUCgxzdWJtaXRf",
-            "bGltaXQYDCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Ch9OaWNrbmFtZUF1ZGl0Q29uZmlnTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkIKGU5pY2tuYW1lQXVkaXRDb25maWdO",
+            "b3RpZnkSFAoMc3VibWl0X2xpbWl0GAMgASgNEg8KB2lzX29wZW4YCCABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.NicknameAuditConfigNotify), global::Weedwacker.Shared.Network.Proto.NicknameAuditConfigNotify.Parser, new[]{ "IsOpen", "SubmitLimit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.NicknameAuditConfigNotify), global::Weedwacker.Shared.Network.Proto.NicknameAuditConfigNotify.Parser, new[]{ "SubmitLimit", "IsOpen" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 152
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 171;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class NicknameAuditConfigNotify : pb::IMessage<NicknameAuditConfigNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NicknameAuditConfigNotify(NicknameAuditConfigNotify other) : this() {
-      isOpen_ = other.isOpen_;
       submitLimit_ = other.submitLimit_;
+      isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,6 +90,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NicknameAuditConfigNotify Clone() {
       return new NicknameAuditConfigNotify(this);
+    }
+
+    /// <summary>Field number for the "submit_limit" field.</summary>
+    public const int SubmitLimitFieldNumber = 3;
+    private uint submitLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SubmitLimit {
+      get { return submitLimit_; }
+      set {
+        submitLimit_ = value;
+      }
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
@@ -97,18 +113,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isOpen_; }
       set {
         isOpen_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "submit_limit" field.</summary>
-    public const int SubmitLimitFieldNumber = 12;
-    private uint submitLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SubmitLimit {
-      get { return submitLimit_; }
-      set {
-        submitLimit_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsOpen != other.IsOpen) return false;
       if (SubmitLimit != other.SubmitLimit) return false;
+      if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (SubmitLimit != 0) hash ^= SubmitLimit.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (SubmitLimit != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SubmitLimit);
+      }
       if (IsOpen != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsOpen);
-      }
-      if (SubmitLimit != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SubmitLimit);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SubmitLimit != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(SubmitLimit);
+      }
       if (IsOpen != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsOpen);
-      }
-      if (SubmitLimit != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SubmitLimit);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsOpen != false) {
-        size += 1 + 1;
-      }
       if (SubmitLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SubmitLimit);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
-      }
       if (other.SubmitLimit != 0) {
         SubmitLimit = other.SubmitLimit;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            IsOpen = input.ReadBool();
+          case 24: {
+            SubmitLimit = input.ReadUInt32();
             break;
           }
-          case 96: {
-            SubmitLimit = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            IsOpen = input.ReadBool();
+          case 24: {
+            SubmitLimit = input.ReadUInt32();
             break;
           }
-          case 96: {
-            SubmitLimit = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
         }

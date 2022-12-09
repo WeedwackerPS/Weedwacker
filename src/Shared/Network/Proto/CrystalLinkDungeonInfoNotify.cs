@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkDungeonInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJDcnlzdGFsTGlua0R1bmdlb25JbmZvTm90aWZ5LnByb3RvGhlDcnlzdGFs",
-            "TGlua0J1ZmZJbmZvLnByb3RvGiJDcnlzdGFsTGlua0R1bmdlb25BdmF0YXJJ",
-            "bmZvLnByb3RvIuwBChxDcnlzdGFsTGlua0R1bmdlb25JbmZvTm90aWZ5EiwK",
-            "DmJ1ZmZfaW5mb19saXN0GAggAygLMhQuQ3J5c3RhbExpbmtCdWZmSW5mbxIQ",
-            "CghsZXZlbF9pZBgBIAEoDRIVCg1pc191cHBlcl9wYXJ0GA8gASgIEhUKDWRp",
-            "ZmZpY3VsdHlfaWQYCyABKA0SPwoYZHVuZ2Vvbl9hdmF0YXJfaW5mb19saXN0",
-            "GAMgAygLMh0uQ3J5c3RhbExpbmtEdW5nZW9uQXZhdGFySW5mbxIdChVpbml0",
-            "X2dhbGxlcnlfcHJvZ3Jlc3MYByABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJDcnlzdGFsTGlua0R1bmdlb25JbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhlDcnlzdGFsTGlua0J1ZmZJbmZv",
+            "LnByb3RvGiJDcnlzdGFsTGlua0R1bmdlb25BdmF0YXJJbmZvLnByb3RvIqwC",
+            "ChxDcnlzdGFsTGlua0R1bmdlb25JbmZvTm90aWZ5EkwKDmJ1ZmZfaW5mb19s",
+            "aXN0GAsgAygLMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5D",
+            "cnlzdGFsTGlua0J1ZmZJbmZvEhAKCGxldmVsX2lkGAUgASgNEhUKDWlzX3Vw",
+            "cGVyX3BhcnQYDSABKAgSFQoNZGlmZmljdWx0eV9pZBgOIAEoDRJfChhkdW5n",
+            "ZW9uX2F2YXRhcl9pbmZvX2xpc3QYDCADKAsyPS5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkNyeXN0YWxMaW5rRHVuZ2VvbkF2YXRhckluZm8S",
+            "HQoVaW5pdF9nYWxsZXJ5X3Byb2dyZXNzGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8858
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8408;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CrystalLinkDungeonInfoNotify : pb::IMessage<CrystalLinkDungeonInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -98,9 +103,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "buff_info_list" field.</summary>
-    public const int BuffInfoListFieldNumber = 8;
+    public const int BuffInfoListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> _repeated_buffInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> buffInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +114,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 1;
+    public const int LevelIdFieldNumber = 5;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_upper_part" field.</summary>
-    public const int IsUpperPartFieldNumber = 15;
+    public const int IsUpperPartFieldNumber = 13;
     private bool isUpperPart_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -133,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 11;
+    public const int DifficultyIdFieldNumber = 14;
     private uint difficultyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -145,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_avatar_info_list" field.</summary>
-    public const int DungeonAvatarInfoListFieldNumber = 3;
+    public const int DungeonAvatarInfoListFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo> _repeated_dungeonAvatarInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo> dungeonAvatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkDungeonAvatarInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "init_gallery_progress" field.</summary>
-    public const int InitGalleryProgressFieldNumber = 7;
+    public const int InitGalleryProgressFieldNumber = 4;
     private uint initGalleryProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -219,23 +224,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LevelId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(LevelId);
-      }
-      dungeonAvatarInfoList_.WriteTo(output, _repeated_dungeonAvatarInfoList_codec);
       if (InitGalleryProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(InitGalleryProgress);
       }
-      buffInfoList_.WriteTo(output, _repeated_buffInfoList_codec);
-      if (DifficultyId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(DifficultyId);
+      if (LevelId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LevelId);
       }
+      buffInfoList_.WriteTo(output, _repeated_buffInfoList_codec);
+      dungeonAvatarInfoList_.WriteTo(output, _repeated_dungeonAvatarInfoList_codec);
       if (IsUpperPart != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteBool(IsUpperPart);
+      }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,23 +252,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LevelId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(LevelId);
-      }
-      dungeonAvatarInfoList_.WriteTo(ref output, _repeated_dungeonAvatarInfoList_codec);
       if (InitGalleryProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(InitGalleryProgress);
       }
-      buffInfoList_.WriteTo(ref output, _repeated_buffInfoList_codec);
-      if (DifficultyId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(DifficultyId);
+      if (LevelId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LevelId);
       }
+      buffInfoList_.WriteTo(ref output, _repeated_buffInfoList_codec);
+      dungeonAvatarInfoList_.WriteTo(ref output, _repeated_dungeonAvatarInfoList_codec);
       if (IsUpperPart != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteBool(IsUpperPart);
+      }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -330,28 +335,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            dungeonAvatarInfoList_.AddEntriesFrom(input, _repeated_dungeonAvatarInfoList_codec);
-            break;
-          }
-          case 56: {
+          case 32: {
             InitGalleryProgress = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 40: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             buffInfoList_.AddEntriesFrom(input, _repeated_buffInfoList_codec);
             break;
           }
-          case 88: {
-            DifficultyId = input.ReadUInt32();
+          case 98: {
+            dungeonAvatarInfoList_.AddEntriesFrom(input, _repeated_dungeonAvatarInfoList_codec);
             break;
           }
-          case 120: {
+          case 104: {
             IsUpperPart = input.ReadBool();
+            break;
+          }
+          case 112: {
+            DifficultyId = input.ReadUInt32();
             break;
           }
         }
@@ -369,28 +374,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            dungeonAvatarInfoList_.AddEntriesFrom(ref input, _repeated_dungeonAvatarInfoList_codec);
-            break;
-          }
-          case 56: {
+          case 32: {
             InitGalleryProgress = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 40: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             buffInfoList_.AddEntriesFrom(ref input, _repeated_buffInfoList_codec);
             break;
           }
-          case 88: {
-            DifficultyId = input.ReadUInt32();
+          case 98: {
+            dungeonAvatarInfoList_.AddEntriesFrom(ref input, _repeated_dungeonAvatarInfoList_codec);
             break;
           }
-          case 120: {
+          case 104: {
             IsUpperPart = input.ReadBool();
+            break;
+          }
+          case 112: {
+            DifficultyId = input.ReadUInt32();
             break;
           }
         }

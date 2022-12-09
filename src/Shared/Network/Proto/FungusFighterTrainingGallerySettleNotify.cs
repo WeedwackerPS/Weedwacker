@@ -25,18 +25,19 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5GdW5ndXNGaWdodGVyVHJhaW5pbmdHYWxsZXJ5U2V0dGxlTm90aWZ5LnBy",
-            "b3RvGhdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90byL7AQooRnVuZ3VzRmlnaHRl",
-            "clRyYWluaW5nR2FsbGVyeVNldHRsZU5vdGlmeRIVCg1pc19uZXdfcmVjb3Jk",
-            "GA4gASgIEhcKD3RvdGFsX3VzZWRfdGltZRgEIAEoDRIiCgZyZWFzb24YBSAB",
-            "KA4yEi5HYWxsZXJ5U3RvcFJlYXNvbhIXCg9kZWFkX2Z1bmd1c19udW0YASAB",
-            "KA0SFAoMc2V0dGxlX3JvdW5kGA8gASgNEhcKD2lzX2ZpbmFsX3NldHRsZRgK",
-            "IAEoCBIeChZnYWRnZXRfbGlmZV9wZXJjZW50YWdlGAsgASgNEhMKC2ZpbmFs",
-            "X3Njb3JlGAkgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "b3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhdHYWxsZXJ5",
+            "U3RvcFJlYXNvbi5wcm90byKjAgooRnVuZ3VzRmlnaHRlclRyYWluaW5nR2Fs",
+            "bGVyeVNldHRsZU5vdGlmeRJCCgZyZWFzb24YAyABKA4yMi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdhbGxlcnlTdG9wUmVhc29uEhcKD2lz",
+            "X2ZpbmFsX3NldHRsZRgCIAEoCBIXCg90b3RhbF91c2VkX3RpbWUYDiABKA0S",
+            "FQoNaXNfbmV3X3JlY29yZBgLIAEoCBIbChNVbmszMzAwX0tLRkJNSExPTEZD",
+            "GAogASgNEhsKE1VuazMzMDBfQkhPTUhQSExPSEwYDSABKA0SGwoTVW5rMzMw",
+            "MF9QT0NERUdCSEpFQRgPIAEoDRITCgtmaW5hbF9zY29yZRgFIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusFighterTrainingGallerySettleNotify), global::Weedwacker.Shared.Network.Proto.FungusFighterTrainingGallerySettleNotify.Parser, new[]{ "IsNewRecord", "TotalUsedTime", "Reason", "DeadFungusNum", "SettleRound", "IsFinalSettle", "GadgetLifePercentage", "FinalScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusFighterTrainingGallerySettleNotify), global::Weedwacker.Shared.Network.Proto.FungusFighterTrainingGallerySettleNotify.Parser, new[]{ "Reason", "IsFinalSettle", "TotalUsedTime", "IsNewRecord", "Unk3300KKFBMHLOLFC", "Unk3300BHOMHPHLOHL", "Unk3300POCDEGBHJEA", "FinalScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23931
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23475;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FungusFighterTrainingGallerySettleNotify : pb::IMessage<FungusFighterTrainingGallerySettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,13 +87,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusFighterTrainingGallerySettleNotify(FungusFighterTrainingGallerySettleNotify other) : this() {
-      isNewRecord_ = other.isNewRecord_;
-      totalUsedTime_ = other.totalUsedTime_;
       reason_ = other.reason_;
-      deadFungusNum_ = other.deadFungusNum_;
-      settleRound_ = other.settleRound_;
       isFinalSettle_ = other.isFinalSettle_;
-      gadgetLifePercentage_ = other.gadgetLifePercentage_;
+      totalUsedTime_ = other.totalUsedTime_;
+      isNewRecord_ = other.isNewRecord_;
+      unk3300KKFBMHLOLFC_ = other.unk3300KKFBMHLOLFC_;
+      unk3300BHOMHPHLOHL_ = other.unk3300BHOMHPHLOHL_;
+      unk3300POCDEGBHJEA_ = other.unk3300POCDEGBHJEA_;
       finalScore_ = other.finalScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -99,32 +104,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusFighterTrainingGallerySettleNotify(this);
     }
 
-    /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 14;
-    private bool isNewRecord_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecord {
-      get { return isNewRecord_; }
-      set {
-        isNewRecord_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_used_time" field.</summary>
-    public const int TotalUsedTimeFieldNumber = 4;
-    private uint totalUsedTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalUsedTime {
-      get { return totalUsedTime_; }
-      set {
-        totalUsedTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 5;
+    public const int ReasonFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,32 +116,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dead_fungus_num" field.</summary>
-    public const int DeadFungusNumFieldNumber = 1;
-    private uint deadFungusNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DeadFungusNum {
-      get { return deadFungusNum_; }
-      set {
-        deadFungusNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "settle_round" field.</summary>
-    public const int SettleRoundFieldNumber = 15;
-    private uint settleRound_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SettleRound {
-      get { return settleRound_; }
-      set {
-        settleRound_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_final_settle" field.</summary>
-    public const int IsFinalSettleFieldNumber = 10;
+    public const int IsFinalSettleFieldNumber = 2;
     private bool isFinalSettle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,20 +128,68 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gadget_life_percentage" field.</summary>
-    public const int GadgetLifePercentageFieldNumber = 11;
-    private uint gadgetLifePercentage_;
+    /// <summary>Field number for the "total_used_time" field.</summary>
+    public const int TotalUsedTimeFieldNumber = 14;
+    private uint totalUsedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GadgetLifePercentage {
-      get { return gadgetLifePercentage_; }
+    public uint TotalUsedTime {
+      get { return totalUsedTime_; }
       set {
-        gadgetLifePercentage_ = value;
+        totalUsedTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 11;
+    private bool isNewRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
+      set {
+        isNewRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KKFBMHLOLFC" field.</summary>
+    public const int Unk3300KKFBMHLOLFCFieldNumber = 10;
+    private uint unk3300KKFBMHLOLFC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KKFBMHLOLFC {
+      get { return unk3300KKFBMHLOLFC_; }
+      set {
+        unk3300KKFBMHLOLFC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BHOMHPHLOHL" field.</summary>
+    public const int Unk3300BHOMHPHLOHLFieldNumber = 13;
+    private uint unk3300BHOMHPHLOHL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BHOMHPHLOHL {
+      get { return unk3300BHOMHPHLOHL_; }
+      set {
+        unk3300BHOMHPHLOHL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_POCDEGBHJEA" field.</summary>
+    public const int Unk3300POCDEGBHJEAFieldNumber = 15;
+    private uint unk3300POCDEGBHJEA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300POCDEGBHJEA {
+      get { return unk3300POCDEGBHJEA_; }
+      set {
+        unk3300POCDEGBHJEA_ = value;
       }
     }
 
     /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 9;
+    public const int FinalScoreFieldNumber = 5;
     private uint finalScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -210,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsNewRecord != other.IsNewRecord) return false;
-      if (TotalUsedTime != other.TotalUsedTime) return false;
       if (Reason != other.Reason) return false;
-      if (DeadFungusNum != other.DeadFungusNum) return false;
-      if (SettleRound != other.SettleRound) return false;
       if (IsFinalSettle != other.IsFinalSettle) return false;
-      if (GadgetLifePercentage != other.GadgetLifePercentage) return false;
+      if (TotalUsedTime != other.TotalUsedTime) return false;
+      if (IsNewRecord != other.IsNewRecord) return false;
+      if (Unk3300KKFBMHLOLFC != other.Unk3300KKFBMHLOLFC) return false;
+      if (Unk3300BHOMHPHLOHL != other.Unk3300BHOMHPHLOHL) return false;
+      if (Unk3300POCDEGBHJEA != other.Unk3300POCDEGBHJEA) return false;
       if (FinalScore != other.FinalScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -225,13 +230,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-      if (TotalUsedTime != 0) hash ^= TotalUsedTime.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
-      if (DeadFungusNum != 0) hash ^= DeadFungusNum.GetHashCode();
-      if (SettleRound != 0) hash ^= SettleRound.GetHashCode();
       if (IsFinalSettle != false) hash ^= IsFinalSettle.GetHashCode();
-      if (GadgetLifePercentage != 0) hash ^= GadgetLifePercentage.GetHashCode();
+      if (TotalUsedTime != 0) hash ^= TotalUsedTime.GetHashCode();
+      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (Unk3300KKFBMHLOLFC != 0) hash ^= Unk3300KKFBMHLOLFC.GetHashCode();
+      if (Unk3300BHOMHPHLOHL != 0) hash ^= Unk3300BHOMHPHLOHL.GetHashCode();
+      if (Unk3300POCDEGBHJEA != 0) hash ^= Unk3300POCDEGBHJEA.GetHashCode();
       if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -251,37 +256,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DeadFungusNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(DeadFungusNum);
-      }
-      if (TotalUsedTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalUsedTime);
+      if (IsFinalSettle != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsFinalSettle);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteEnum((int) Reason);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(FinalScore);
       }
-      if (IsFinalSettle != false) {
+      if (Unk3300KKFBMHLOLFC != 0) {
         output.WriteRawTag(80);
-        output.WriteBool(IsFinalSettle);
-      }
-      if (GadgetLifePercentage != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(GadgetLifePercentage);
+        output.WriteUInt32(Unk3300KKFBMHLOLFC);
       }
       if (IsNewRecord != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteBool(IsNewRecord);
       }
-      if (SettleRound != 0) {
+      if (Unk3300BHOMHPHLOHL != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300BHOMHPHLOHL);
+      }
+      if (TotalUsedTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TotalUsedTime);
+      }
+      if (Unk3300POCDEGBHJEA != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(SettleRound);
+        output.WriteUInt32(Unk3300POCDEGBHJEA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -293,37 +298,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DeadFungusNum != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(DeadFungusNum);
-      }
-      if (TotalUsedTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TotalUsedTime);
+      if (IsFinalSettle != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsFinalSettle);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteEnum((int) Reason);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(FinalScore);
       }
-      if (IsFinalSettle != false) {
+      if (Unk3300KKFBMHLOLFC != 0) {
         output.WriteRawTag(80);
-        output.WriteBool(IsFinalSettle);
-      }
-      if (GadgetLifePercentage != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(GadgetLifePercentage);
+        output.WriteUInt32(Unk3300KKFBMHLOLFC);
       }
       if (IsNewRecord != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteBool(IsNewRecord);
       }
-      if (SettleRound != 0) {
+      if (Unk3300BHOMHPHLOHL != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300BHOMHPHLOHL);
+      }
+      if (TotalUsedTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TotalUsedTime);
+      }
+      if (Unk3300POCDEGBHJEA != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(SettleRound);
+        output.WriteUInt32(Unk3300POCDEGBHJEA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -335,26 +340,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsNewRecord != false) {
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (IsFinalSettle != false) {
         size += 1 + 1;
       }
       if (TotalUsedTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalUsedTime);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
-      if (DeadFungusNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeadFungusNum);
-      }
-      if (SettleRound != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SettleRound);
-      }
-      if (IsFinalSettle != false) {
+      if (IsNewRecord != false) {
         size += 1 + 1;
       }
-      if (GadgetLifePercentage != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetLifePercentage);
+      if (Unk3300KKFBMHLOLFC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KKFBMHLOLFC);
+      }
+      if (Unk3300BHOMHPHLOHL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BHOMHPHLOHL);
+      }
+      if (Unk3300POCDEGBHJEA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300POCDEGBHJEA);
       }
       if (FinalScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
@@ -371,26 +376,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsNewRecord != false) {
-        IsNewRecord = other.IsNewRecord;
-      }
-      if (other.TotalUsedTime != 0) {
-        TotalUsedTime = other.TotalUsedTime;
-      }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
         Reason = other.Reason;
-      }
-      if (other.DeadFungusNum != 0) {
-        DeadFungusNum = other.DeadFungusNum;
-      }
-      if (other.SettleRound != 0) {
-        SettleRound = other.SettleRound;
       }
       if (other.IsFinalSettle != false) {
         IsFinalSettle = other.IsFinalSettle;
       }
-      if (other.GadgetLifePercentage != 0) {
-        GadgetLifePercentage = other.GadgetLifePercentage;
+      if (other.TotalUsedTime != 0) {
+        TotalUsedTime = other.TotalUsedTime;
+      }
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
+      }
+      if (other.Unk3300KKFBMHLOLFC != 0) {
+        Unk3300KKFBMHLOLFC = other.Unk3300KKFBMHLOLFC;
+      }
+      if (other.Unk3300BHOMHPHLOHL != 0) {
+        Unk3300BHOMHPHLOHL = other.Unk3300BHOMHPHLOHL;
+      }
+      if (other.Unk3300POCDEGBHJEA != 0) {
+        Unk3300POCDEGBHJEA = other.Unk3300POCDEGBHJEA;
       }
       if (other.FinalScore != 0) {
         FinalScore = other.FinalScore;
@@ -410,36 +415,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            DeadFungusNum = input.ReadUInt32();
+          case 16: {
+            IsFinalSettle = input.ReadBool();
             break;
           }
-          case 32: {
-            TotalUsedTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 24: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 40: {
             FinalScore = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsFinalSettle = input.ReadBool();
+            Unk3300KKFBMHLOLFC = input.ReadUInt32();
             break;
           }
           case 88: {
-            GadgetLifePercentage = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             IsNewRecord = input.ReadBool();
             break;
           }
+          case 104: {
+            Unk3300BHOMHPHLOHL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            TotalUsedTime = input.ReadUInt32();
+            break;
+          }
           case 120: {
-            SettleRound = input.ReadUInt32();
+            Unk3300POCDEGBHJEA = input.ReadUInt32();
             break;
           }
         }
@@ -457,36 +462,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            DeadFungusNum = input.ReadUInt32();
+          case 16: {
+            IsFinalSettle = input.ReadBool();
             break;
           }
-          case 32: {
-            TotalUsedTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 24: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 72: {
+          case 40: {
             FinalScore = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsFinalSettle = input.ReadBool();
+            Unk3300KKFBMHLOLFC = input.ReadUInt32();
             break;
           }
           case 88: {
-            GadgetLifePercentage = input.ReadUInt32();
-            break;
-          }
-          case 112: {
             IsNewRecord = input.ReadBool();
             break;
           }
+          case 104: {
+            Unk3300BHOMHPHLOHL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            TotalUsedTime = input.ReadUInt32();
+            break;
+          }
           case 120: {
-            SettleRound = input.ReadUInt32();
+            Unk3300POCDEGBHJEA = input.ReadUInt32();
             break;
           }
         }

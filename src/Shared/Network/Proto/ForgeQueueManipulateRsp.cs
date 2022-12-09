@@ -24,18 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeQueueManipulateRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJzcC5wcm90bxoeRm9yZ2VRdWV1ZU1h",
-            "bmlwdWxhdGVUeXBlLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8i1gEKF0Zvcmdl",
-            "UXVldWVNYW5pcHVsYXRlUnNwEjIKD21hbmlwdWxhdGVfdHlwZRgEIAEoDjIZ",
-            "LkZvcmdlUXVldWVNYW5pcHVsYXRlVHlwZRIqChZleHRyYV9vdXRwdXRfaXRl",
-            "bV9saXN0GA0gAygLMgouSXRlbVBhcmFtEiQKEHJldHVybl9pdGVtX2xpc3QY",
-            "CiADKAsyCi5JdGVtUGFyYW0SDwoHcmV0Y29kZRgBIAEoBRIkChBvdXRwdXRf",
-            "aXRlbV9saXN0GAkgAygLMgouSXRlbVBhcmFtQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoeRm9yZ2VRdWV1ZU1hbmlwdWxhdGVUeXBl",
+            "LnByb3RvGg9JdGVtUGFyYW0ucHJvdG8i3AIKF0ZvcmdlUXVldWVNYW5pcHVs",
+            "YXRlUnNwEkoKFmV4dHJhX291dHB1dF9pdGVtX2xpc3QYAyADKAsyKi5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJhbRJSCg9tYW5p",
+            "cHVsYXRlX3R5cGUYDCABKA4yOS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkZvcmdlUXVldWVNYW5pcHVsYXRlVHlwZRJHChNVbmszMzAwX0pE",
+            "SEZQQ0JPR0ZIGAQgAygLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5JdGVtUGFyYW0SRwoTVW5rMzMwMF9FT0xESkFNSERITRgOIAMoCzIq",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtEg8K",
+            "B3JldGNvZGUYCyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateRsp), global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateRsp.Parser, new[]{ "ManipulateType", "ExtraOutputItemList", "ReturnItemList", "Retcode", "OutputItemList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateRsp), global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateRsp.Parser, new[]{ "ExtraOutputItemList", "ManipulateType", "Unk3300JDHFPCBOGFH", "Unk3300EOLDJAMHDHM", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 656
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 682;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ForgeQueueManipulateRsp : pb::IMessage<ForgeQueueManipulateRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,11 +88,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ForgeQueueManipulateRsp(ForgeQueueManipulateRsp other) : this() {
-      manipulateType_ = other.manipulateType_;
       extraOutputItemList_ = other.extraOutputItemList_.Clone();
-      returnItemList_ = other.returnItemList_.Clone();
+      manipulateType_ = other.manipulateType_;
+      unk3300JDHFPCBOGFH_ = other.unk3300JDHFPCBOGFH_.Clone();
+      unk3300EOLDJAMHDHM_ = other.unk3300EOLDJAMHDHM_.Clone();
       retcode_ = other.retcode_;
-      outputItemList_ = other.outputItemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,8 +102,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ForgeQueueManipulateRsp(this);
     }
 
+    /// <summary>Field number for the "extra_output_item_list" field.</summary>
+    public const int ExtraOutputItemListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_extraOutputItemList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> extraOutputItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ExtraOutputItemList {
+      get { return extraOutputItemList_; }
+    }
+
     /// <summary>Field number for the "manipulate_type" field.</summary>
-    public const int ManipulateTypeFieldNumber = 4;
+    public const int ManipulateTypeFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType manipulateType_ = global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,30 +125,30 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "extra_output_item_list" field.</summary>
-    public const int ExtraOutputItemListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_extraOutputItemList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> extraOutputItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    /// <summary>Field number for the "Unk3300_JDHFPCBOGFH" field.</summary>
+    public const int Unk3300JDHFPCBOGFHFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_unk3300JDHFPCBOGFH_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> unk3300JDHFPCBOGFH_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ExtraOutputItemList {
-      get { return extraOutputItemList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> Unk3300JDHFPCBOGFH {
+      get { return unk3300JDHFPCBOGFH_; }
     }
 
-    /// <summary>Field number for the "return_item_list" field.</summary>
-    public const int ReturnItemListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_returnItemList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> returnItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    /// <summary>Field number for the "Unk3300_EOLDJAMHDHM" field.</summary>
+    public const int Unk3300EOLDJAMHDHMFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_unk3300EOLDJAMHDHM_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> unk3300EOLDJAMHDHM_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ReturnItemList {
-      get { return returnItemList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> Unk3300EOLDJAMHDHM {
+      get { return unk3300EOLDJAMHDHM_; }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -139,17 +157,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "output_item_list" field.</summary>
-    public const int OutputItemListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_outputItemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> outputItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> OutputItemList {
-      get { return outputItemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -167,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ManipulateType != other.ManipulateType) return false;
       if(!extraOutputItemList_.Equals(other.extraOutputItemList_)) return false;
-      if(!returnItemList_.Equals(other.returnItemList_)) return false;
+      if (ManipulateType != other.ManipulateType) return false;
+      if(!unk3300JDHFPCBOGFH_.Equals(other.unk3300JDHFPCBOGFH_)) return false;
+      if(!unk3300EOLDJAMHDHM_.Equals(other.unk3300EOLDJAMHDHM_)) return false;
       if (Retcode != other.Retcode) return false;
-      if(!outputItemList_.Equals(other.outputItemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) hash ^= ManipulateType.GetHashCode();
       hash ^= extraOutputItemList_.GetHashCode();
-      hash ^= returnItemList_.GetHashCode();
+      if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) hash ^= ManipulateType.GetHashCode();
+      hash ^= unk3300JDHFPCBOGFH_.GetHashCode();
+      hash ^= unk3300EOLDJAMHDHM_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= outputItemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,17 +209,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      extraOutputItemList_.WriteTo(output, _repeated_extraOutputItemList_codec);
+      unk3300JDHFPCBOGFH_.WriteTo(output, _repeated_unk3300JDHFPCBOGFH_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(96);
         output.WriteEnum((int) ManipulateType);
       }
-      outputItemList_.WriteTo(output, _repeated_outputItemList_codec);
-      returnItemList_.WriteTo(output, _repeated_returnItemList_codec);
-      extraOutputItemList_.WriteTo(output, _repeated_extraOutputItemList_codec);
+      unk3300EOLDJAMHDHM_.WriteTo(output, _repeated_unk3300EOLDJAMHDHM_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -223,17 +230,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      extraOutputItemList_.WriteTo(ref output, _repeated_extraOutputItemList_codec);
+      unk3300JDHFPCBOGFH_.WriteTo(ref output, _repeated_unk3300JDHFPCBOGFH_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(96);
         output.WriteEnum((int) ManipulateType);
       }
-      outputItemList_.WriteTo(ref output, _repeated_outputItemList_codec);
-      returnItemList_.WriteTo(ref output, _repeated_returnItemList_codec);
-      extraOutputItemList_.WriteTo(ref output, _repeated_extraOutputItemList_codec);
+      unk3300EOLDJAMHDHM_.WriteTo(ref output, _repeated_unk3300EOLDJAMHDHM_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -244,15 +251,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += extraOutputItemList_.CalculateSize(_repeated_extraOutputItemList_codec);
       if (ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ManipulateType);
       }
-      size += extraOutputItemList_.CalculateSize(_repeated_extraOutputItemList_codec);
-      size += returnItemList_.CalculateSize(_repeated_returnItemList_codec);
+      size += unk3300JDHFPCBOGFH_.CalculateSize(_repeated_unk3300JDHFPCBOGFH_codec);
+      size += unk3300EOLDJAMHDHM_.CalculateSize(_repeated_unk3300EOLDJAMHDHM_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += outputItemList_.CalculateSize(_repeated_outputItemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -265,15 +272,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      extraOutputItemList_.Add(other.extraOutputItemList_);
       if (other.ManipulateType != global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType.ReceiveOutput) {
         ManipulateType = other.ManipulateType;
       }
-      extraOutputItemList_.Add(other.extraOutputItemList_);
-      returnItemList_.Add(other.returnItemList_);
+      unk3300JDHFPCBOGFH_.Add(other.unk3300JDHFPCBOGFH_);
+      unk3300EOLDJAMHDHM_.Add(other.unk3300EOLDJAMHDHM_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      outputItemList_.Add(other.outputItemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -289,24 +296,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 26: {
+            extraOutputItemList_.AddEntriesFrom(input, _repeated_extraOutputItemList_codec);
+            break;
+          }
+          case 34: {
+            unk3300JDHFPCBOGFH_.AddEntriesFrom(input, _repeated_unk3300JDHFPCBOGFH_codec);
+            break;
+          }
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 96: {
             ManipulateType = (global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType) input.ReadEnum();
             break;
           }
-          case 74: {
-            outputItemList_.AddEntriesFrom(input, _repeated_outputItemList_codec);
-            break;
-          }
-          case 82: {
-            returnItemList_.AddEntriesFrom(input, _repeated_returnItemList_codec);
-            break;
-          }
-          case 106: {
-            extraOutputItemList_.AddEntriesFrom(input, _repeated_extraOutputItemList_codec);
+          case 114: {
+            unk3300EOLDJAMHDHM_.AddEntriesFrom(input, _repeated_unk3300EOLDJAMHDHM_codec);
             break;
           }
         }
@@ -324,24 +331,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 26: {
+            extraOutputItemList_.AddEntriesFrom(ref input, _repeated_extraOutputItemList_codec);
+            break;
+          }
+          case 34: {
+            unk3300JDHFPCBOGFH_.AddEntriesFrom(ref input, _repeated_unk3300JDHFPCBOGFH_codec);
+            break;
+          }
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 96: {
             ManipulateType = (global::Weedwacker.Shared.Network.Proto.ForgeQueueManipulateType) input.ReadEnum();
             break;
           }
-          case 74: {
-            outputItemList_.AddEntriesFrom(ref input, _repeated_outputItemList_codec);
-            break;
-          }
-          case 82: {
-            returnItemList_.AddEntriesFrom(ref input, _repeated_returnItemList_codec);
-            break;
-          }
-          case 106: {
-            extraOutputItemList_.AddEntriesFrom(ref input, _repeated_extraOutputItemList_codec);
+          case 114: {
+            unk3300EOLDJAMHDHM_.AddEntriesFrom(ref input, _repeated_unk3300EOLDJAMHDHM_codec);
             break;
           }
         }

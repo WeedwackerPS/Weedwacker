@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static SearchCustomDungeonRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTZWFyY2hDdXN0b21EdW5nZW9uUnNwLnByb3RvGh1PdGhlckN1c3RvbUR1",
-            "bmdlb25CcmllZi5wcm90byJhChZTZWFyY2hDdXN0b21EdW5nZW9uUnNwEg8K",
-            "B3JldGNvZGUYDyABKAUSNgoUY3VzdG9tX2R1bmdlb25fYnJpZWYYDiABKAsy",
-            "GC5PdGhlckN1c3RvbUR1bmdlb25CcmllZkIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxTZWFyY2hDdXN0b21EdW5nZW9uUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGh1PdGhlckN1c3RvbUR1bmdlb25CcmllZi5w",
+            "cm90byKBAQoWU2VhcmNoQ3VzdG9tRHVuZ2VvblJzcBIPCgdyZXRjb2RlGAIg",
+            "ASgFElYKFGN1c3RvbV9kdW5nZW9uX2JyaWVmGAggASgLMjguV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5PdGhlckN1c3RvbUR1bmdlb25Ccmll",
+            "ZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6215
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6239;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SearchCustomDungeonRsp : pb::IMessage<SearchCustomDungeonRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "custom_dungeon_brief" field.</summary>
-    public const int CustomDungeonBriefFieldNumber = 14;
+    public const int CustomDungeonBriefFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief customDungeonBrief_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (customDungeonBrief_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CustomDungeonBrief);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
+      }
+      if (customDungeonBrief_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(CustomDungeonBrief);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (customDungeonBrief_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CustomDungeonBrief);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
+      }
+      if (customDungeonBrief_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(CustomDungeonBrief);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 66: {
             if (customDungeonBrief_ == null) {
               CustomDungeonBrief = new global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief();
             }
             input.ReadMessage(CustomDungeonBrief);
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 66: {
             if (customDungeonBrief_ == null) {
               CustomDungeonBrief = new global::Weedwacker.Shared.Network.Proto.OtherCustomDungeonBrief();
             }
             input.ReadMessage(CustomDungeonBrief);
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

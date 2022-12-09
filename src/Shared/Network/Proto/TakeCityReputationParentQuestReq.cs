@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeCityReputationParentQuestReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZUYWtlQ2l0eVJlcHV0YXRpb25QYXJlbnRRdWVzdFJlcS5wcm90byJOCiBU",
-            "YWtlQ2l0eVJlcHV0YXRpb25QYXJlbnRRdWVzdFJlcRIPCgdjaXR5X2lkGAEg",
-            "ASgNEhkKEXBhcmVudF9xdWVzdF9saXN0GAYgAygNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiZUYWtlQ2l0eVJlcHV0YXRpb25QYXJlbnRRdWVzdFJlcS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJOCiBUYWtlQ2l0eVJlcHV0",
+            "YXRpb25QYXJlbnRRdWVzdFJlcRIPCgdjaXR5X2lkGAggASgNEhkKEXBhcmVu",
+            "dF9xdWVzdF9saXN0GAkgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2821
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2843;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeCityReputationParentQuestReq : pb::IMessage<TakeCityReputationParentQuestReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 1;
+    public const int CityIdFieldNumber = 8;
     private uint cityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_list" field.</summary>
-    public const int ParentQuestListFieldNumber = 6;
+    public const int ParentQuestListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_parentQuestList_codec
-        = pb::FieldCodec.ForUInt32(50);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> parentQuestList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CityId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(64);
         output.WriteUInt32(CityId);
       }
       parentQuestList_.WriteTo(output, _repeated_parentQuestList_codec);
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CityId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(64);
         output.WriteUInt32(CityId);
       }
       parentQuestList_.WriteTo(ref output, _repeated_parentQuestList_codec);
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 64: {
             CityId = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
+          case 74:
+          case 72: {
             parentQuestList_.AddEntriesFrom(input, _repeated_parentQuestList_codec);
             break;
           }
@@ -245,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 64: {
             CityId = input.ReadUInt32();
             break;
           }
-          case 50:
-          case 48: {
+          case 74:
+          case 72: {
             parentQuestList_.AddEntriesFrom(ref input, _repeated_parentQuestList_codec);
             break;
           }

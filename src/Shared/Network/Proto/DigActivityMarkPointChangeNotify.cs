@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DigActivityMarkPointChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZEaWdBY3Rpdml0eU1hcmtQb2ludENoYW5nZU5vdGlmeS5wcm90bxoSRGln",
-            "TWFya1BvaW50LnByb3RvIk4KIERpZ0FjdGl2aXR5TWFya1BvaW50Q2hhbmdl",
-            "Tm90aWZ5EioKE2RpZ19tYXJrX3BvaW50X2xpc3QYCyADKAsyDS5EaWdNYXJr",
-            "UG9pbnRCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiZEaWdBY3Rpdml0eU1hcmtQb2ludENoYW5nZU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoSRGlnTWFya1BvaW50LnBy",
+            "b3RvIm4KIERpZ0FjdGl2aXR5TWFya1BvaW50Q2hhbmdlTm90aWZ5EkoKE2Rp",
+            "Z19tYXJrX3BvaW50X2xpc3QYASADKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkRpZ01hcmtQb2ludGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DigMarkPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8109
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8871;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DigActivityMarkPointChangeNotify : pb::IMessage<DigActivityMarkPointChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dig_mark_point_list" field.</summary>
-    public const int DigMarkPointListFieldNumber = 11;
+    public const int DigMarkPointListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> _repeated_digMarkPointList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.DigMarkPoint.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.DigMarkPoint.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint> digMarkPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DigMarkPoint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 10: {
             digMarkPointList_.AddEntriesFrom(input, _repeated_digMarkPointList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 10: {
             digMarkPointList_.AddEntriesFrom(ref input, _repeated_digMarkPointList_codec);
             break;
           }

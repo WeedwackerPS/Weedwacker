@@ -24,8 +24,8 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGInitFinishReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHQ0dJbml0RmluaXNoUmVxLnByb3RvIhIKEEdDR0luaXRGaW5pc2hSZXFC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZHQ0dJbml0RmluaXNoUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIhIKEEdDR0luaXRGaW5pc2hSZXFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -37,10 +37,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7684
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7348;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGInitFinishReq : pb::IMessage<GCGInitFinishReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

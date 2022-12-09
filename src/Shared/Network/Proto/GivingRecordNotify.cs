@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GivingRecordNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHaXZpbmdSZWNvcmROb3RpZnkucHJvdG8aEkdpdmluZ1JlY29yZC5wcm90",
-            "byI/ChJHaXZpbmdSZWNvcmROb3RpZnkSKQoSZ2l2aW5nX3JlY29yZF9saXN0",
-            "GA4gAygLMg0uR2l2aW5nUmVjb3JkQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhHaXZpbmdSZWNvcmROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEkdpdmluZ1JlY29yZC5wcm90byJfChJHaXZpbmdS",
+            "ZWNvcmROb3RpZnkSSQoSZ2l2aW5nX3JlY29yZF9saXN0GA0gAygLMi0uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HaXZpbmdSZWNvcmRiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GivingRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 116
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 123;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GivingRecordNotify : pb::IMessage<GivingRecordNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "giving_record_list" field.</summary>
-    public const int GivingRecordListFieldNumber = 14;
+    public const int GivingRecordListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GivingRecord> _repeated_givingRecordList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.GivingRecord.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.GivingRecord.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GivingRecord> givingRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GivingRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 106: {
             givingRecordList_.AddEntriesFrom(input, _repeated_givingRecordList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 106: {
             givingRecordList_.AddEntriesFrom(ref input, _repeated_givingRecordList_codec);
             break;
           }

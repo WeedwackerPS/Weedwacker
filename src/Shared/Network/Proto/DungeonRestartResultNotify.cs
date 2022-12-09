@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonRestartResultNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBEdW5nZW9uUmVzdGFydFJlc3VsdE5vdGlmeS5wcm90byIzChpEdW5nZW9u",
-            "UmVzdGFydFJlc3VsdE5vdGlmeRIVCg1pc19hZGRfYWNjcGV0GAkgASgIQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBEdW5nZW9uUmVzdGFydFJlc3VsdE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byIzChpEdW5nZW9uUmVzdGFydFJlc3Vs",
+            "dE5vdGlmeRIVCg1pc19hZGRfYWNjZXB0GAkgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonRestartResultNotify), global::Weedwacker.Shared.Network.Proto.DungeonRestartResultNotify.Parser, new[]{ "IsAddAccpet" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonRestartResultNotify), global::Weedwacker.Shared.Network.Proto.DungeonRestartResultNotify.Parser, new[]{ "IsAddAccept" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 940
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 985;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonRestartResultNotify : pb::IMessage<DungeonRestartResultNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,7 +81,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonRestartResultNotify(DungeonRestartResultNotify other) : this() {
-      isAddAccpet_ = other.isAddAccpet_;
+      isAddAccept_ = other.isAddAccept_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,15 +91,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonRestartResultNotify(this);
     }
 
-    /// <summary>Field number for the "is_add_accpet" field.</summary>
-    public const int IsAddAccpetFieldNumber = 9;
-    private bool isAddAccpet_;
+    /// <summary>Field number for the "is_add_accept" field.</summary>
+    public const int IsAddAcceptFieldNumber = 9;
+    private bool isAddAccept_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAddAccpet {
-      get { return isAddAccpet_; }
+    public bool IsAddAccept {
+      get { return isAddAccept_; }
       set {
-        isAddAccpet_ = value;
+        isAddAccept_ = value;
       }
     }
 
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsAddAccpet != other.IsAddAccpet) return false;
+      if (IsAddAccept != other.IsAddAccept) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -122,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsAddAccpet != false) hash ^= IsAddAccpet.GetHashCode();
+      if (IsAddAccept != false) hash ^= IsAddAccept.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsAddAccpet != false) {
+      if (IsAddAccept != false) {
         output.WriteRawTag(72);
-        output.WriteBool(IsAddAccpet);
+        output.WriteBool(IsAddAccept);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -155,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsAddAccpet != false) {
+      if (IsAddAccept != false) {
         output.WriteRawTag(72);
-        output.WriteBool(IsAddAccpet);
+        output.WriteBool(IsAddAccept);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -169,7 +173,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsAddAccpet != false) {
+      if (IsAddAccept != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -184,8 +188,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsAddAccpet != false) {
-        IsAddAccpet = other.IsAddAccpet;
+      if (other.IsAddAccept != false) {
+        IsAddAccept = other.IsAddAccept;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -203,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 72: {
-            IsAddAccpet = input.ReadBool();
+            IsAddAccept = input.ReadBool();
             break;
           }
         }
@@ -222,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 72: {
-            IsAddAccpet = input.ReadBool();
+            IsAddAccept = input.ReadBool();
             break;
           }
         }

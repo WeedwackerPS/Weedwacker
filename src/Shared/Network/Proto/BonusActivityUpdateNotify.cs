@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static BonusActivityUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Cb251c0FjdGl2aXR5VXBkYXRlTm90aWZ5LnByb3RvGhdCb251c0FjdGl2",
-            "aXR5SW5mby5wcm90byJRChlCb251c0FjdGl2aXR5VXBkYXRlTm90aWZ5EjQK",
-            "GGJvbnVzX2FjdGl2aXR5X2luZm9fbGlzdBgIIAMoCzISLkJvbnVzQWN0aXZp",
-            "dHlJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch9Cb251c0FjdGl2aXR5VXBkYXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhdCb251c0FjdGl2aXR5SW5mby5wcm90",
+            "byJxChlCb251c0FjdGl2aXR5VXBkYXRlTm90aWZ5ElQKGGJvbnVzX2FjdGl2",
+            "aXR5X2luZm9fbGlzdBgHIAMoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQm9udXNBY3Rpdml0eUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BonusActivityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2575
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2539;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BonusActivityUpdateNotify : pb::IMessage<BonusActivityUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bonus_activity_info_list" field.</summary>
-    public const int BonusActivityInfoListFieldNumber = 8;
+    public const int BonusActivityInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BonusActivityInfo> _repeated_bonusActivityInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.BonusActivityInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.BonusActivityInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BonusActivityInfo> bonusActivityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BonusActivityInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 58: {
             bonusActivityInfoList_.AddEntriesFrom(input, _repeated_bonusActivityInfoList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 58: {
             bonusActivityInfoList_.AddEntriesFrom(ref input, _repeated_bonusActivityInfoList_codec);
             break;
           }

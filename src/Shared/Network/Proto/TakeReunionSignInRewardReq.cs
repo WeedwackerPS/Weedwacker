@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeReunionSignInRewardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBUYWtlUmV1bmlvblNpZ25JblJld2FyZFJlcS5wcm90byJDChpUYWtlUmV1",
-            "bmlvblNpZ25JblJld2FyZFJlcRISCgpyZXdhcmRfZGF5GAwgASgNEhEKCWNv",
-            "bmZpZ19pZBgOIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiBUYWtlUmV1bmlvblNpZ25JblJld2FyZFJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJDChpUYWtlUmV1bmlvblNpZ25JblJl",
+            "d2FyZFJlcRISCgpyZXdhcmRfZGF5GAEgASgNEhEKCWNvbmZpZ19pZBgLIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5079
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5094;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeReunionSignInRewardReq : pb::IMessage<TakeReunionSignInRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reward_day" field.</summary>
-    public const int RewardDayFieldNumber = 12;
+    public const int RewardDayFieldNumber = 1;
     private uint rewardDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 14;
+    public const int ConfigIdFieldNumber = 11;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (RewardDay != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(RewardDay);
       }
       if (ConfigId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RewardDay != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(RewardDay);
       }
       if (ConfigId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
+          case 8: {
             RewardDay = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 88: {
             ConfigId = input.ReadUInt32();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
+          case 8: {
             RewardDay = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 88: {
             ConfigId = input.ReadUInt32();
             break;
           }

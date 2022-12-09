@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static UpdateRedPointNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpVcGRhdGVSZWRQb2ludE5vdGlmeS5wcm90bxoSUmVkUG9pbnREYXRhLnBy",
-            "b3RvIj0KFFVwZGF0ZVJlZFBvaW50Tm90aWZ5EiUKDnJlZF9wb2ludF9saXN0",
-            "GAwgAygLMg0uUmVkUG9pbnREYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpVcGRhdGVSZWRQb2ludE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoSUmVkUG9pbnREYXRhLnByb3RvIl0KFFVwZGF0",
+            "ZVJlZFBvaW50Tm90aWZ5EkUKDnJlZF9wb2ludF9saXN0GAogAygLMi0uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5SZWRQb2ludERhdGFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RedPointDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 93
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UpdateRedPointNotify : pb::IMessage<UpdateRedPointNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "red_point_list" field.</summary>
-    public const int RedPointListFieldNumber = 12;
+    public const int RedPointListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RedPointData> _repeated_redPointList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.RedPointData.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.RedPointData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RedPointData> redPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RedPointData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 82: {
             redPointList_.AddEntriesFrom(input, _repeated_redPointList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 82: {
             redPointList_.AddEntriesFrom(ref input, _repeated_redPointList_codec);
             break;
           }

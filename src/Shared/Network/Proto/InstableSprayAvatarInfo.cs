@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static InstableSprayAvatarInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1JbnN0YWJsZVNwcmF5QXZhdGFySW5mby5wcm90byI+ChdJbnN0YWJsZVNw",
-            "cmF5QXZhdGFySW5mbxIQCghpc190cmlhbBgIIAEoCBIRCglhdmF0YXJfaWQY",
-            "AiABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "Ch1JbnN0YWJsZVNwcmF5QXZhdGFySW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byI+ChdJbnN0YWJsZVNwcmF5QXZhdGFySW5m",
+            "bxIRCglhdmF0YXJfaWQYCiABKAQSEAoIaXNfdHJpYWwYDCABKAhiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo), global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser, new[]{ "IsTrial", "AvatarId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo), global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser, new[]{ "AvatarId", "IsTrial" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstableSprayAvatarInfo(InstableSprayAvatarInfo other) : this() {
-      isTrial_ = other.isTrial_;
       avatarId_ = other.avatarId_;
+      isTrial_ = other.isTrial_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InstableSprayAvatarInfo(this);
     }
 
-    /// <summary>Field number for the "is_trial" field.</summary>
-    public const int IsTrialFieldNumber = 8;
-    private bool isTrial_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTrial {
-      get { return isTrial_; }
-      set {
-        isTrial_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 2;
+    public const int AvatarIdFieldNumber = 10;
     private ulong avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarId_; }
       set {
         avatarId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_trial" field.</summary>
+    public const int IsTrialFieldNumber = 12;
+    private bool isTrial_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTrial {
+      get { return isTrial_; }
+      set {
+        isTrial_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsTrial != other.IsTrial) return false;
       if (AvatarId != other.AvatarId) return false;
+      if (IsTrial != other.IsTrial) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsTrial != false) hash ^= IsTrial.GetHashCode();
       if (AvatarId != 0UL) hash ^= AvatarId.GetHashCode();
+      if (IsTrial != false) hash ^= IsTrial.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +152,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AvatarId != 0UL) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt64(AvatarId);
       }
       if (IsTrial != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteBool(IsTrial);
       }
       if (_unknownFields != null) {
@@ -170,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AvatarId != 0UL) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteUInt64(AvatarId);
       }
       if (IsTrial != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteBool(IsTrial);
       }
       if (_unknownFields != null) {
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsTrial != false) {
-        size += 1 + 1;
-      }
       if (AvatarId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarId);
+      }
+      if (IsTrial != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsTrial != false) {
-        IsTrial = other.IsTrial;
-      }
       if (other.AvatarId != 0UL) {
         AvatarId = other.AvatarId;
+      }
+      if (other.IsTrial != false) {
+        IsTrial = other.IsTrial;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 80: {
             AvatarId = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 96: {
             IsTrial = input.ReadBool();
             break;
           }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 80: {
             AvatarId = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 96: {
             IsTrial = input.ReadBool();
             break;
           }

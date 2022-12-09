@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClearRoguelikeCurseNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9DbGVhclJvZ3VlbGlrZUN1cnNlTm90aWZ5LnByb3RvItwBChlDbGVhclJv",
-            "Z3VlbGlrZUN1cnNlTm90aWZ5EkYKD2NsZWFyX2N1cnNlX21hcBgKIAMoCzIt",
-            "LkNsZWFyUm9ndWVsaWtlQ3Vyc2VOb3RpZnkuQ2xlYXJDdXJzZU1hcEVudHJ5",
-            "EhQKDGlzX2NsZWFyX2FsbBgLIAEoCBIPCgdjYXJkX2lkGAggASgNEhoKEmlz",
-            "X2N1cnNlX2FsbF9jbGVhchgBIAEoCBo0ChJDbGVhckN1cnNlTWFwRW50cnkS",
-            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9DbGVhclJvZ3VlbGlrZUN1cnNlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIvwBChlDbGVhclJvZ3VlbGlrZUN1cnNl",
+            "Tm90aWZ5EhQKDGlzX2NsZWFyX2FsbBgLIAEoCBJmCg9jbGVhcl9jdXJzZV9t",
+            "YXAYBSADKAsyTS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNs",
+            "ZWFyUm9ndWVsaWtlQ3Vyc2VOb3RpZnkuQ2xlYXJDdXJzZU1hcEVudHJ5Eg8K",
+            "B2NhcmRfaWQYCSABKA0SGgoSaXNfY3Vyc2VfYWxsX2NsZWFyGAQgASgIGjQK",
+            "EkNsZWFyQ3Vyc2VNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiAB",
+            "KA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ClearRoguelikeCurseNotify), global::Weedwacker.Shared.Network.Proto.ClearRoguelikeCurseNotify.Parser, new[]{ "ClearCurseMap", "IsClearAll", "CardId", "IsCurseAllClear" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ClearRoguelikeCurseNotify), global::Weedwacker.Shared.Network.Proto.ClearRoguelikeCurseNotify.Parser, new[]{ "IsClearAll", "ClearCurseMap", "CardId", "IsCurseAllClear" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8207
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8038;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ClearRoguelikeCurseNotify : pb::IMessage<ClearRoguelikeCurseNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ClearRoguelikeCurseNotify(ClearRoguelikeCurseNotify other) : this() {
-      clearCurseMap_ = other.clearCurseMap_.Clone();
       isClearAll_ = other.isClearAll_;
+      clearCurseMap_ = other.clearCurseMap_.Clone();
       cardId_ = other.cardId_;
       isCurseAllClear_ = other.isCurseAllClear_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -91,17 +96,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ClearRoguelikeCurseNotify Clone() {
       return new ClearRoguelikeCurseNotify(this);
-    }
-
-    /// <summary>Field number for the "clear_curse_map" field.</summary>
-    public const int ClearCurseMapFieldNumber = 10;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_clearCurseMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
-    private readonly pbc::MapField<uint, uint> clearCurseMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> ClearCurseMap {
-      get { return clearCurseMap_; }
     }
 
     /// <summary>Field number for the "is_clear_all" field.</summary>
@@ -116,8 +110,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "clear_curse_map" field.</summary>
+    public const int ClearCurseMapFieldNumber = 5;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_clearCurseMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+    private readonly pbc::MapField<uint, uint> clearCurseMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> ClearCurseMap {
+      get { return clearCurseMap_; }
+    }
+
     /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 8;
+    public const int CardIdFieldNumber = 9;
     private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,7 +134,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_curse_all_clear" field.</summary>
-    public const int IsCurseAllClearFieldNumber = 1;
+    public const int IsCurseAllClearFieldNumber = 4;
     private bool isCurseAllClear_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ClearCurseMap.Equals(other.ClearCurseMap)) return false;
       if (IsClearAll != other.IsClearAll) return false;
+      if (!ClearCurseMap.Equals(other.ClearCurseMap)) return false;
       if (CardId != other.CardId) return false;
       if (IsCurseAllClear != other.IsCurseAllClear) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -166,8 +171,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ClearCurseMap.GetHashCode();
       if (IsClearAll != false) hash ^= IsClearAll.GetHashCode();
+      hash ^= ClearCurseMap.GetHashCode();
       if (CardId != 0) hash ^= CardId.GetHashCode();
       if (IsCurseAllClear != false) hash ^= IsCurseAllClear.GetHashCode();
       if (_unknownFields != null) {
@@ -189,14 +194,14 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsCurseAllClear != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteBool(IsCurseAllClear);
       }
+      clearCurseMap_.WriteTo(output, _map_clearCurseMap_codec);
       if (CardId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(CardId);
       }
-      clearCurseMap_.WriteTo(output, _map_clearCurseMap_codec);
       if (IsClearAll != false) {
         output.WriteRawTag(88);
         output.WriteBool(IsClearAll);
@@ -212,14 +217,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsCurseAllClear != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteBool(IsCurseAllClear);
       }
+      clearCurseMap_.WriteTo(ref output, _map_clearCurseMap_codec);
       if (CardId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(CardId);
       }
-      clearCurseMap_.WriteTo(ref output, _map_clearCurseMap_codec);
       if (IsClearAll != false) {
         output.WriteRawTag(88);
         output.WriteBool(IsClearAll);
@@ -234,10 +239,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += clearCurseMap_.CalculateSize(_map_clearCurseMap_codec);
       if (IsClearAll != false) {
         size += 1 + 1;
       }
+      size += clearCurseMap_.CalculateSize(_map_clearCurseMap_codec);
       if (CardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
@@ -256,10 +261,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      clearCurseMap_.Add(other.clearCurseMap_);
       if (other.IsClearAll != false) {
         IsClearAll = other.IsClearAll;
       }
+      clearCurseMap_.Add(other.clearCurseMap_);
       if (other.CardId != 0) {
         CardId = other.CardId;
       }
@@ -281,16 +286,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 32: {
             IsCurseAllClear = input.ReadBool();
             break;
           }
-          case 64: {
-            CardId = input.ReadUInt32();
+          case 42: {
+            clearCurseMap_.AddEntriesFrom(input, _map_clearCurseMap_codec);
             break;
           }
-          case 82: {
-            clearCurseMap_.AddEntriesFrom(input, _map_clearCurseMap_codec);
+          case 72: {
+            CardId = input.ReadUInt32();
             break;
           }
           case 88: {
@@ -312,16 +317,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 32: {
             IsCurseAllClear = input.ReadBool();
             break;
           }
-          case 64: {
-            CardId = input.ReadUInt32();
+          case 42: {
+            clearCurseMap_.AddEntriesFrom(ref input, _map_clearCurseMap_codec);
             break;
           }
-          case 82: {
-            clearCurseMap_.AddEntriesFrom(ref input, _map_clearCurseMap_codec);
+          case 72: {
+            CardId = input.ReadUInt32();
             break;
           }
           case 88: {

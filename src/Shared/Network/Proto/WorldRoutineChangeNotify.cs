@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldRoutineChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Xb3JsZFJvdXRpbmVDaGFuZ2VOb3RpZnkucHJvdG8aFldvcmxkUm91dGlu",
-            "ZUluZm8ucHJvdG8iWQoYV29ybGRSb3V0aW5lQ2hhbmdlTm90aWZ5EicKDHJv",
-            "dXRpbmVfaW5mbxgDIAEoCzIRLldvcmxkUm91dGluZUluZm8SFAoMcm91dGlu",
-            "ZV90eXBlGAsgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "Ch5Xb3JsZFJvdXRpbmVDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFldvcmxkUm91dGluZUluZm8ucHJvdG8i",
+            "eQoYV29ybGRSb3V0aW5lQ2hhbmdlTm90aWZ5EkcKDHJvdXRpbmVfaW5mbxgO",
+            "IAEoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uV29ybGRS",
+            "b3V0aW5lSW5mbxIUCgxyb3V0aW5lX3R5cGUYCiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WorldRoutineInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3507
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3535;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldRoutineChangeNotify : pb::IMessage<WorldRoutineChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "routine_info" field.</summary>
-    public const int RoutineInfoFieldNumber = 3;
+    public const int RoutineInfoFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo routineInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "routine_type" field.</summary>
-    public const int RoutineTypeFieldNumber = 11;
+    public const int RoutineTypeFieldNumber = 10;
     private uint routineType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (routineInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(RoutineInfo);
-      }
       if (RoutineType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(RoutineType);
+      }
+      if (routineInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RoutineInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (routineInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(RoutineInfo);
-      }
       if (RoutineType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(RoutineType);
+      }
+      if (routineInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RoutineInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -235,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 80: {
+            RoutineType = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (routineInfo_ == null) {
               RoutineInfo = new global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo();
             }
             input.ReadMessage(RoutineInfo);
-            break;
-          }
-          case 88: {
-            RoutineType = input.ReadUInt32();
             break;
           }
         }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 80: {
+            RoutineType = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             if (routineInfo_ == null) {
               RoutineInfo = new global::Weedwacker.Shared.Network.Proto.WorldRoutineInfo();
             }
             input.ReadMessage(RoutineInfo);
-            break;
-          }
-          case 88: {
-            RoutineType = input.ReadUInt32();
             break;
           }
         }

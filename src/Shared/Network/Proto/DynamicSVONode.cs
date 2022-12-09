@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DynamicSVONodeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChREeW5hbWljU1ZPTm9kZS5wcm90bxoMVmVjdG9yLnByb3RvIkkKDkR5bmFt",
-            "aWNTVk9Ob2RlEg0KBWluZGV4GAggASgDEgwKBGFyZWEYBSABKAUSGgoJcmVm",
-            "ZXJfcG9zGAEgASgLMgcuVmVjdG9yQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChREeW5hbWljU1ZPTm9kZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoMVmVjdG9yLnByb3RvImkKDkR5bmFtaWNTVk9Ob2RlEgwK",
+            "BGFyZWEYAyABKAUSOgoJcmVmZXJfcG9zGA8gASgLMicuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISDQoFaW5kZXgYAiABKANiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DynamicSVONode), global::Weedwacker.Shared.Network.Proto.DynamicSVONode.Parser, new[]{ "Index", "Area", "ReferPos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DynamicSVONode), global::Weedwacker.Shared.Network.Proto.DynamicSVONode.Parser, new[]{ "Area", "ReferPos", "Index" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DynamicSVONode(DynamicSVONode other) : this() {
-      index_ = other.index_;
       area_ = other.area_;
       referPos_ = other.referPos_ != null ? other.referPos_.Clone() : null;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DynamicSVONode(this);
     }
 
-    /// <summary>Field number for the "index" field.</summary>
-    public const int IndexFieldNumber = 8;
-    private long index_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Index {
-      get { return index_; }
-      set {
-        index_ = value;
-      }
-    }
-
     /// <summary>Field number for the "area" field.</summary>
-    public const int AreaFieldNumber = 5;
+    public const int AreaFieldNumber = 3;
     private int area_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "refer_pos" field.</summary>
-    public const int ReferPosFieldNumber = 1;
+    public const int ReferPosFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.Vector referPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +106,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return referPos_; }
       set {
         referPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 2;
+    private long index_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long Index {
+      get { return index_; }
+      set {
+        index_ = value;
       }
     }
 
@@ -135,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Index != other.Index) return false;
       if (Area != other.Area) return false;
       if (!object.Equals(ReferPos, other.ReferPos)) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Index != 0L) hash ^= Index.GetHashCode();
       if (Area != 0) hash ^= Area.GetHashCode();
       if (referPos_ != null) hash ^= ReferPos.GetHashCode();
+      if (Index != 0L) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (referPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ReferPos);
+      if (Index != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Index);
       }
       if (Area != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteInt32(Area);
       }
-      if (Index != 0L) {
-        output.WriteRawTag(64);
-        output.WriteInt64(Index);
+      if (referPos_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(ReferPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (referPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(ReferPos);
+      if (Index != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Index);
       }
       if (Area != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteInt32(Area);
       }
-      if (Index != 0L) {
-        output.WriteRawTag(64);
-        output.WriteInt64(Index);
+      if (referPos_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(ReferPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +211,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Index != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Index);
-      }
       if (Area != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Area);
       }
       if (referPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReferPos);
+      }
+      if (Index != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,9 +232,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Index != 0L) {
-        Index = other.Index;
-      }
       if (other.Area != 0) {
         Area = other.Area;
       }
@@ -242,6 +240,9 @@ namespace Weedwacker.Shared.Network.Proto {
           ReferPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         ReferPos.MergeFrom(other.ReferPos);
+      }
+      if (other.Index != 0L) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -258,19 +259,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 16: {
+            Index = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            Area = input.ReadInt32();
+            break;
+          }
+          case 122: {
             if (referPos_ == null) {
               ReferPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(ReferPos);
-            break;
-          }
-          case 40: {
-            Area = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            Index = input.ReadInt64();
             break;
           }
         }
@@ -288,19 +289,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 16: {
+            Index = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            Area = input.ReadInt32();
+            break;
+          }
+          case 122: {
             if (referPos_ == null) {
               ReferPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(ReferPos);
-            break;
-          }
-          case 40: {
-            Area = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            Index = input.ReadInt64();
             break;
           }
         }

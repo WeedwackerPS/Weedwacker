@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static OpenBlossomCircleCampGuideNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZPcGVuQmxvc3NvbUNpcmNsZUNhbXBHdWlkZU5vdGlmeS5wcm90byJTCiBP",
-            "cGVuQmxvc3NvbUNpcmNsZUNhbXBHdWlkZU5vdGlmeRISCgpyZWZyZXNoX2lk",
-            "GAcgASgNEhsKE2NpcmNsZV9jYW1wX2lkX2xpc3QYCyADKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiZPcGVuQmxvc3NvbUNpcmNsZUNhbXBHdWlkZU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJTCiBPcGVuQmxvc3NvbUNp",
+            "cmNsZUNhbXBHdWlkZU5vdGlmeRISCgpyZWZyZXNoX2lkGAggASgNEhsKE2Np",
+            "cmNsZV9jYW1wX2lkX2xpc3QYBiADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2703
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2761;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class OpenBlossomCircleCampGuideNotify : pb::IMessage<OpenBlossomCircleCampGuideNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "refresh_id" field.</summary>
-    public const int RefreshIdFieldNumber = 7;
+    public const int RefreshIdFieldNumber = 8;
     private uint refreshId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "circle_camp_id_list" field.</summary>
-    public const int CircleCampIdListFieldNumber = 11;
+    public const int CircleCampIdListFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_circleCampIdList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(50);
     private readonly pbc::RepeatedField<uint> circleCampIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      circleCampIdList_.WriteTo(output, _repeated_circleCampIdList_codec);
       if (RefreshId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(RefreshId);
       }
-      circleCampIdList_.WriteTo(output, _repeated_circleCampIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      circleCampIdList_.WriteTo(ref output, _repeated_circleCampIdList_codec);
       if (RefreshId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(RefreshId);
       }
-      circleCampIdList_.WriteTo(ref output, _repeated_circleCampIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            RefreshId = input.ReadUInt32();
+          case 50:
+          case 48: {
+            circleCampIdList_.AddEntriesFrom(input, _repeated_circleCampIdList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            circleCampIdList_.AddEntriesFrom(input, _repeated_circleCampIdList_codec);
+          case 64: {
+            RefreshId = input.ReadUInt32();
             break;
           }
         }
@@ -245,13 +249,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            RefreshId = input.ReadUInt32();
+          case 50:
+          case 48: {
+            circleCampIdList_.AddEntriesFrom(ref input, _repeated_circleCampIdList_codec);
             break;
           }
-          case 90:
-          case 88: {
-            circleCampIdList_.AddEntriesFrom(ref input, _repeated_circleCampIdList_codec);
+          case 64: {
+            RefreshId = input.ReadUInt32();
             break;
           }
         }

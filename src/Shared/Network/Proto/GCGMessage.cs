@@ -24,56 +24,90 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMessageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBHQ0dNZXNzYWdlLnByb3RvGhRHQ0dNc2dBZGRDYXJkcy5wcm90bxoTR0NH",
-            "TXNnQWRkRGljZS5wcm90bxoWR0NHTXNnQ2FyZFVwZGF0ZS5wcm90bxoTR0NH",
-            "TXNnQ2hhckRpZS5wcm90bxoZR0NHTXNnQ2xpZW50UGVyZm9ybS5wcm90bxoU",
-            "R0NHTXNnQ29zdERpY2UucHJvdG8aFkdDR01zZ0Nvc3RSZXZpc2UucHJvdG8a",
-            "FkdDR01zZ0RpY2VSZXJvbGwucHJvdG8aFEdDR01zZ0RpY2VSb2xsLnByb3Rv",
-            "GhpHQ0dNc2dEdWVsRGF0YUNoYW5nZS5wcm90bxoUR0NHTXNnR2FtZU92ZXIu",
-            "cHJvdG8aFUdDR01zZ01vZGlmeUFkZC5wcm90bxoYR0NHTXNnTW9kaWZ5UmVt",
-            "b3ZlLnByb3RvGhRHQ0dNc2dNb3ZlQ2FyZC5wcm90bxoTR0NHTXNnTmV3Q2Fy",
-            "ZC5wcm90bxoTR0NHTXNnT3BUaW1lci5wcm90bxoTR0NHTXNnUFZFRG9PcC5w",
-            "cm90bxoYR0NHTXNnUFZFR2VuQ2FyZE9wLnByb3RvGhBHQ0dNc2dQYXNzLnBy",
-            "b3RvGhdHQ0dNc2dQaGFzZUNoYW5nZS5wcm90bxoXR0NHTXNnUmVtb3ZlQ2Fy",
-            "ZHMucHJvdG8aGUdDR01zZ1NlbGVjdE9uU3RhZ2UucHJvdG8aIUdDR01zZ1Nl",
-            "bGVjdE9uU3RhZ2VCeUVmZmVjdC5wcm90bxoXR0NHTXNnU2tpbGxSZXN1bHQu",
-            "cHJvdG8aF0dDR01zZ1Rva2VuQ2hhbmdlLnByb3RvGhxHQ0dNc2dVcGRhdGVD",
-            "b250cm9sbGVyLnByb3RvGhRHQ0dNc2dVc2VTa2lsbC5wcm90bxoXR0NHTXNn",
-            "VXNlU2tpbGxFbmQucHJvdG8aHUdDR01zZ1dhaXRpbmdMaXN0Q2hhbmdlLnBy",
-            "b3RvIoMKCgpHQ0dNZXNzYWdlEioKDHRva2VuX2NoYW5nZRgMIAEoCzISLkdD",
-            "R01zZ1Rva2VuQ2hhbmdlSAASKgoMcGhhc2VfY2hhbmdlGA0gASgLMhIuR0NH",
-            "TXNnUGhhc2VDaGFuZ2VIABIkCglhZGRfY2FyZHMYCiABKAsyDy5HQ0dNc2dB",
-            "ZGRDYXJkc0gAEioKDHJlbW92ZV9jYXJkcxgOIAEoCzISLkdDR01zZ1JlbW92",
-            "ZUNhcmRzSAASLwoPc2VsZWN0X29uX3N0YWdlGAYgASgLMhQuR0NHTXNnU2Vs",
-            "ZWN0T25TdGFnZUgAEiQKCWRpY2Vfcm9sbBgJIAEoCzIPLkdDR01zZ0RpY2VS",
-            "b2xsSAASKAoLZGljZV9yZXJvbGwYCyABKAsyES5HQ0dNc2dEaWNlUmVyb2xs",
-            "SAASGwoEcGFzcxgFIAEoCzILLkdDR01zZ1Bhc3NIABIiCghjaGFyX2RpZRgC",
-            "IAEoCzIOLkdDR01zZ0NoYXJEaWVIABIqCgxza2lsbF9yZXN1bHQYASABKAsy",
-            "Ei5HQ0dNc2dTa2lsbFJlc3VsdEgAEiQKCWNvc3RfZGljZRgHIAEoCzIPLkdD",
-            "R01zZ0Nvc3REaWNlSAASIgoIYWRkX2RpY2UYAyABKAsyDi5HQ0dNc2dBZGRE",
-            "aWNlSAASJAoJbW92ZV9jYXJkGA8gASgLMg8uR0NHTXNnTW92ZUNhcmRIABIk",
-            "Cgl1c2Vfc2tpbGwYBCABKAsyDy5HQ0dNc2dVc2VTa2lsbEgAEiMKCG5ld19j",
-            "YXJkGLgOIAEoCzIOLkdDR01zZ05ld0NhcmRIABI1ChF1cGRhdGVfY29udHJv",
-            "bGxlchitAyABKAsyFy5HQ0dNc2dVcGRhdGVDb250cm9sbGVySAASJwoKbW9k",
-            "aWZ5X2FkZBi7DiABKAsyEC5HQ0dNc2dNb2RpZnlBZGRIABItCg1tb2RpZnlf",
-            "cmVtb3ZlGNcDIAEoCzITLkdDR01zZ01vZGlmeVJlbW92ZUgAEiwKDXVzZV9z",
-            "a2lsbF9lbmQYgwsgASgLMhIuR0NHTXNnVXNlU2tpbGxFbmRIABIvCg9wdmVf",
-            "Z2VuX2NhcmRfb3AYzQ0gASgLMhMuR0NHTXNnUFZFR2VuQ2FyZE9wSAASJAoJ",
-            "cHZlX2RvX29wGOYEIAEoCzIOLkdDR01zZ1BWRURvT3BIABIyChBkdWVsX2Rh",
-            "dGFfY2hhbmdlGPAHIAEoCzIVLkdDR01zZ0R1ZWxEYXRhQ2hhbmdlSAASLwoO",
-            "Y2xpZW50X3BlcmZvcm0YiwggASgLMhQuR0NHTXNnQ2xpZW50UGVyZm9ybUgA",
-            "EiUKCWdhbWVfb3ZlchjKBSABKAsyDy5HQ0dNc2dHYW1lT3ZlckgAEiMKCG9w",
-            "X3RpbWVyGMYOIAEoCzIOLkdDR01zZ09wVGltZXJIABI4ChN3YWl0aW5nX2xp",
-            "c3RfY2hhbmdlGI4NIAEoCzIYLkdDR01zZ1dhaXRpbmdMaXN0Q2hhbmdlSAAS",
-            "KQoLY2FyZF91cGRhdGUY1w4gASgLMhEuR0NHTXNnQ2FyZFVwZGF0ZUgAEkIK",
-            "GXNlbGVjdF9vbl9zdGFnZV9ieV9lZmZlY3QY+g8gASgLMhwuR0NHTXNnU2Vs",
-            "ZWN0T25TdGFnZUJ5RWZmZWN0SAASKQoLY29zdF9yZXZpc2UYxgogASgLMhEu",
-            "R0NHTXNnQ29zdFJldmlzZUgAQgkKB21lc3NhZ2VCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChBHQ0dNZXNzYWdlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGhRHQ0dNc2dBZGRDYXJkcy5wcm90bxoTR0NHTXNnQWRkRGljZS5w",
+            "cm90bxoWR0NHTXNnQ2FyZFVwZGF0ZS5wcm90bxoTR0NHTXNnQ2hhckRpZS5w",
+            "cm90bxoZR0NHTXNnQ2xpZW50UGVyZm9ybS5wcm90bxoUR0NHTXNnQ29zdERp",
+            "Y2UucHJvdG8aFkdDR01zZ0Nvc3RSZXZpc2UucHJvdG8aFkdDR01zZ0RpY2VS",
+            "ZXJvbGwucHJvdG8aFEdDR01zZ0RpY2VSb2xsLnByb3RvGhpHQ0dNc2dEdWVs",
+            "RGF0YUNoYW5nZS5wcm90bxoUR0NHTXNnR2FtZU92ZXIucHJvdG8aFUdDR01z",
+            "Z01vZGlmeUFkZC5wcm90bxoYR0NHTXNnTW9kaWZ5UmVtb3ZlLnByb3RvGhRH",
+            "Q0dNc2dNb3ZlQ2FyZC5wcm90bxoTR0NHTXNnTmV3Q2FyZC5wcm90bxofR0NH",
+            "TXNnTm9EYW1hZ2VTa2lsbFJlc3VsdC5wcm90bxoTR0NHTXNnT3BUaW1lci5w",
+            "cm90bxoeR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlLnByb3RvGhxHQ0dNc2dQ",
+            "VkVJbnRlbnRpb25JbmZvLnByb3RvGhBHQ0dNc2dQYXNzLnByb3RvGhdHQ0dN",
+            "c2dQaGFzZUNoYW5nZS5wcm90bxoZR0NHTXNnUGhhc2VDb250aW51ZS5wcm90",
+            "bxoZR0NHTXNnUmVhY3Rpb25CZWdpbi5wcm90bxoXR0NHTXNnUmVhY3Rpb25F",
+            "bmQucHJvdG8aF0dDR01zZ1JlbW92ZUNhcmRzLnByb3RvGhlHQ0dNc2dTZWxl",
+            "Y3RPblN0YWdlLnByb3RvGiFHQ0dNc2dTZWxlY3RPblN0YWdlQnlFZmZlY3Qu",
+            "cHJvdG8aHUdDR01zZ1NraWxsTGltaXRzQ2hhbmdlLnByb3RvGhdHQ0dNc2dT",
+            "a2lsbFJlc3VsdC5wcm90bxoXR0NHTXNnVG9rZW5DaGFuZ2UucHJvdG8aHEdD",
+            "R01zZ1VwZGF0ZUNvbnRyb2xsZXIucHJvdG8aFEdDR01zZ1VzZVNraWxsLnBy",
+            "b3RvGhdHQ0dNc2dVc2VTa2lsbEVuZC5wcm90bxodR0NHTXNnV2FpdGluZ0xp",
+            "c3RDaGFuZ2UucHJvdG8i6BQKCkdDR01lc3NhZ2USSgoMdG9rZW5fY2hhbmdl",
+            "GAIgASgLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dN",
+            "c2dUb2tlbkNoYW5nZUgAEkoKDHBoYXNlX2NoYW5nZRgKIAEoCzIyLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnUGhhc2VDaGFuZ2VI",
+            "ABJECglhZGRfY2FyZHMYBSABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkdDR01zZ0FkZENhcmRzSAASSgoMcmVtb3ZlX2NhcmRzGAwg",
+            "ASgLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dNc2dS",
+            "ZW1vdmVDYXJkc0gAEk8KD3NlbGVjdF9vbl9zdGFnZRgGIAEoCzI0LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnU2VsZWN0T25TdGFn",
+            "ZUgAEkQKCWRpY2Vfcm9sbBgOIAEoCzIvLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uR0NHTXNnRGljZVJvbGxIABJICgtkaWNlX3Jlcm9sbBgP",
+            "IAEoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNn",
+            "RGljZVJlcm9sbEgAEjsKBHBhc3MYCCABKAsyKy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkdDR01zZ1Bhc3NIABJCCghjaGFyX2RpZRgEIAEo",
+            "CzIuLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnQ2hh",
+            "ckRpZUgAEkoKDHNraWxsX3Jlc3VsdBgDIAEoCzIyLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnU2tpbGxSZXN1bHRIABJECgljb3N0",
+            "X2RpY2UYDSABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkdDR01zZ0Nvc3REaWNlSAASQgoIYWRkX2RpY2UYByABKAsyLi5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR01zZ0FkZERpY2VIABJECglt",
+            "b3ZlX2NhcmQYCyABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkdDR01zZ01vdmVDYXJkSAASRAoJdXNlX3NraWxsGAEgASgLMi8uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dNc2dVc2VTa2lsbEgA",
+            "EkMKCG5ld19jYXJkGKgCIAEoCzIuLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uR0NHTXNnTmV3Q2FyZEgAElUKEXVwZGF0ZV9jb250cm9sbGVy",
+            "GNcIIAEoCzI3LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NH",
+            "TXNnVXBkYXRlQ29udHJvbGxlckgAEkcKCm1vZGlmeV9hZGQYxQ0gASgLMjAu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dNc2dNb2RpZnlB",
+            "ZGRIABJNCg1tb2RpZnlfcmVtb3ZlGN4PIAEoCzIzLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnTW9kaWZ5UmVtb3ZlSAASTAoNdXNl",
+            "X3NraWxsX2VuZBjYCiABKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR01zZ1VzZVNraWxsRW5kSAASUgoQZHVlbF9kYXRhX2NoYW5n",
+            "ZRj/DSABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdD",
+            "R01zZ0R1ZWxEYXRhQ2hhbmdlSAASTwoOY2xpZW50X3BlcmZvcm0YjQ0gASgL",
+            "MjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dNc2dDbGll",
+            "bnRQZXJmb3JtSAASRQoJZ2FtZV9vdmVyGPgEIAEoCzIvLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnR2FtZU92ZXJIABJDCghvcF90",
+            "aW1lchiaASABKAsyLi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkdDR01zZ09wVGltZXJIABJYChN3YWl0aW5nX2xpc3RfY2hhbmdlGMcPIAEo",
+            "CzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnV2Fp",
+            "dGluZ0xpc3RDaGFuZ2VIABJJCgtjYXJkX3VwZGF0ZRimDSABKAsyMS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR01zZ0NhcmRVcGRhdGVI",
+            "ABJiChlzZWxlY3Rfb25fc3RhZ2VfYnlfZWZmZWN0GMkNIAEoCzI8LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHTXNnU2VsZWN0T25TdGFn",
+            "ZUJ5RWZmZWN0SAASSQoLY29zdF9yZXZpc2UY1AMgASgLMjEuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dNc2dDb3N0UmV2aXNlSAASTwoO",
+            "cGhhc2VfY29udGludWUYhQkgASgLMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5HQ0dNc2dQaGFzZUNvbnRpbnVlSAASVgoScHZlX2ludGVu",
+            "dGlvbl9pbmZvGNIGIAEoCzI3LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uR0NHTXNnUFZFSW50ZW50aW9uSW5mb0gAEloKFHB2ZV9pbnRlbnRp",
+            "b25fY2hhbmdlGPQJIAEoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlSAASWAoTc2tpbGxfbGlt",
+            "aXRzX2NoYW5nZRjGBSABKAsyOC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR01zZ1NraWxsTGltaXRzQ2hhbmdlSAASXQoWbm9fZGFtYWdl",
+            "X3NraWxsX3Jlc3VsdBiFBiABKAsyOi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkdDR01zZ05vRGFtYWdlU2tpbGxSZXN1bHRIABJPCg5yZWFj",
+            "dGlvbl9iZWdpbhjzASABKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR01zZ1JlYWN0aW9uQmVnaW5IABJLCgxyZWFjdGlvbl9lbmQY",
+            "lAkgASgLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dN",
+            "c2dSZWFjdGlvbkVuZEgAQgkKB21lc3NhZ2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGMsgAddCardsReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgAddDiceReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdateReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCharDieReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerformReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCostDiceReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCostReviseReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRerollReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRollReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgGameOverReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAddReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemoveReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCardReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgNewCardReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimerReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOpReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOpReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPassReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCardsReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffectReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResultReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateControllerReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEndReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChangeReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGMsgAddCardsReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgAddDiceReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdateReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCharDieReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerformReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCostDiceReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgCostReviseReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRerollReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRollReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgGameOverReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAddReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemoveReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCardReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgNewCardReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResultReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimerReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPassReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinueReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBeginReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEndReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCardsReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffectReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResultReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChangeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateControllerReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEndReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChangeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMessage), global::Weedwacker.Shared.Network.Proto.GCGMessage.Parser, new[]{ "TokenChange", "PhaseChange", "AddCards", "RemoveCards", "SelectOnStage", "DiceRoll", "DiceReroll", "Pass", "CharDie", "SkillResult", "CostDice", "AddDice", "MoveCard", "UseSkill", "NewCard", "UpdateController", "ModifyAdd", "ModifyRemove", "UseSkillEnd", "PveGenCardOp", "PveDoOp", "DuelDataChange", "ClientPerform", "GameOver", "OpTimer", "WaitingListChange", "CardUpdate", "SelectOnStageByEffect", "CostRevise" }, new[]{ "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMessage), global::Weedwacker.Shared.Network.Proto.GCGMessage.Parser, new[]{ "TokenChange", "PhaseChange", "AddCards", "RemoveCards", "SelectOnStage", "DiceRoll", "DiceReroll", "Pass", "CharDie", "SkillResult", "CostDice", "AddDice", "MoveCard", "UseSkill", "NewCard", "UpdateController", "ModifyAdd", "ModifyRemove", "UseSkillEnd", "DuelDataChange", "ClientPerform", "GameOver", "OpTimer", "WaitingListChange", "CardUpdate", "SelectOnStageByEffect", "CostRevise", "PhaseContinue", "PveIntentionInfo", "PveIntentionChange", "SkillLimitsChange", "NoDamageSkillResult", "ReactionBegin", "ReactionEnd" }, new[]{ "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -172,12 +206,6 @@ namespace Weedwacker.Shared.Network.Proto {
         case MessageOneofCase.UseSkillEnd:
           UseSkillEnd = other.UseSkillEnd.Clone();
           break;
-        case MessageOneofCase.PveGenCardOp:
-          PveGenCardOp = other.PveGenCardOp.Clone();
-          break;
-        case MessageOneofCase.PveDoOp:
-          PveDoOp = other.PveDoOp.Clone();
-          break;
         case MessageOneofCase.DuelDataChange:
           DuelDataChange = other.DuelDataChange.Clone();
           break;
@@ -202,6 +230,27 @@ namespace Weedwacker.Shared.Network.Proto {
         case MessageOneofCase.CostRevise:
           CostRevise = other.CostRevise.Clone();
           break;
+        case MessageOneofCase.PhaseContinue:
+          PhaseContinue = other.PhaseContinue.Clone();
+          break;
+        case MessageOneofCase.PveIntentionInfo:
+          PveIntentionInfo = other.PveIntentionInfo.Clone();
+          break;
+        case MessageOneofCase.PveIntentionChange:
+          PveIntentionChange = other.PveIntentionChange.Clone();
+          break;
+        case MessageOneofCase.SkillLimitsChange:
+          SkillLimitsChange = other.SkillLimitsChange.Clone();
+          break;
+        case MessageOneofCase.NoDamageSkillResult:
+          NoDamageSkillResult = other.NoDamageSkillResult.Clone();
+          break;
+        case MessageOneofCase.ReactionBegin:
+          ReactionBegin = other.ReactionBegin.Clone();
+          break;
+        case MessageOneofCase.ReactionEnd:
+          ReactionEnd = other.ReactionEnd.Clone();
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -214,7 +263,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "token_change" field.</summary>
-    public const int TokenChangeFieldNumber = 12;
+    public const int TokenChangeFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange TokenChange {
@@ -226,7 +275,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "phase_change" field.</summary>
-    public const int PhaseChangeFieldNumber = 13;
+    public const int PhaseChangeFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChange PhaseChange {
@@ -238,7 +287,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_cards" field.</summary>
-    public const int AddCardsFieldNumber = 10;
+    public const int AddCardsFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards AddCards {
@@ -250,7 +299,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "remove_cards" field.</summary>
-    public const int RemoveCardsFieldNumber = 14;
+    public const int RemoveCardsFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards RemoveCards {
@@ -274,7 +323,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dice_roll" field.</summary>
-    public const int DiceRollFieldNumber = 9;
+    public const int DiceRollFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll DiceRoll {
@@ -286,7 +335,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dice_reroll" field.</summary>
-    public const int DiceRerollFieldNumber = 11;
+    public const int DiceRerollFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll DiceReroll {
@@ -298,7 +347,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pass" field.</summary>
-    public const int PassFieldNumber = 5;
+    public const int PassFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgPass Pass {
@@ -310,7 +359,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "char_die" field.</summary>
-    public const int CharDieFieldNumber = 2;
+    public const int CharDieFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie CharDie {
@@ -322,7 +371,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "skill_result" field.</summary>
-    public const int SkillResultFieldNumber = 1;
+    public const int SkillResultFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult SkillResult {
@@ -334,7 +383,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cost_dice" field.</summary>
-    public const int CostDiceFieldNumber = 7;
+    public const int CostDiceFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice CostDice {
@@ -346,7 +395,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_dice" field.</summary>
-    public const int AddDiceFieldNumber = 3;
+    public const int AddDiceFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice AddDice {
@@ -358,7 +407,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "move_card" field.</summary>
-    public const int MoveCardFieldNumber = 15;
+    public const int MoveCardFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCard MoveCard {
@@ -370,7 +419,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "use_skill" field.</summary>
-    public const int UseSkillFieldNumber = 4;
+    public const int UseSkillFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkill UseSkill {
@@ -382,7 +431,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "new_card" field.</summary>
-    public const int NewCardFieldNumber = 1848;
+    public const int NewCardFieldNumber = 296;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard NewCard {
@@ -394,7 +443,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "update_controller" field.</summary>
-    public const int UpdateControllerFieldNumber = 429;
+    public const int UpdateControllerFieldNumber = 1111;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController UpdateController {
@@ -406,7 +455,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "modify_add" field.</summary>
-    public const int ModifyAddFieldNumber = 1851;
+    public const int ModifyAddFieldNumber = 1733;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd ModifyAdd {
@@ -418,7 +467,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "modify_remove" field.</summary>
-    public const int ModifyRemoveFieldNumber = 471;
+    public const int ModifyRemoveFieldNumber = 2014;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove ModifyRemove {
@@ -430,7 +479,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "use_skill_end" field.</summary>
-    public const int UseSkillEndFieldNumber = 1411;
+    public const int UseSkillEndFieldNumber = 1368;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd UseSkillEnd {
@@ -441,32 +490,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "pve_gen_card_op" field.</summary>
-    public const int PveGenCardOpFieldNumber = 1741;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp PveGenCardOp {
-      get { return messageCase_ == MessageOneofCase.PveGenCardOp ? (global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp) message_ : null; }
-      set {
-        message_ = value;
-        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveGenCardOp;
-      }
-    }
-
-    /// <summary>Field number for the "pve_do_op" field.</summary>
-    public const int PveDoOpFieldNumber = 614;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp PveDoOp {
-      get { return messageCase_ == MessageOneofCase.PveDoOp ? (global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp) message_ : null; }
-      set {
-        message_ = value;
-        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveDoOp;
-      }
-    }
-
     /// <summary>Field number for the "duel_data_change" field.</summary>
-    public const int DuelDataChangeFieldNumber = 1008;
+    public const int DuelDataChangeFieldNumber = 1791;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange DuelDataChange {
@@ -478,7 +503,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "client_perform" field.</summary>
-    public const int ClientPerformFieldNumber = 1035;
+    public const int ClientPerformFieldNumber = 1677;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform ClientPerform {
@@ -490,7 +515,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "game_over" field.</summary>
-    public const int GameOverFieldNumber = 714;
+    public const int GameOverFieldNumber = 632;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver GameOver {
@@ -502,7 +527,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_timer" field.</summary>
-    public const int OpTimerFieldNumber = 1862;
+    public const int OpTimerFieldNumber = 154;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer OpTimer {
@@ -514,7 +539,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "waiting_list_change" field.</summary>
-    public const int WaitingListChangeFieldNumber = 1678;
+    public const int WaitingListChangeFieldNumber = 1991;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange WaitingListChange {
@@ -526,7 +551,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_update" field.</summary>
-    public const int CardUpdateFieldNumber = 1879;
+    public const int CardUpdateFieldNumber = 1702;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdate CardUpdate {
@@ -538,7 +563,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "select_on_stage_by_effect" field.</summary>
-    public const int SelectOnStageByEffectFieldNumber = 2042;
+    public const int SelectOnStageByEffectFieldNumber = 1737;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffect SelectOnStageByEffect {
@@ -550,7 +575,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cost_revise" field.</summary>
-    public const int CostReviseFieldNumber = 1350;
+    public const int CostReviseFieldNumber = 468;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise CostRevise {
@@ -561,39 +586,128 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "phase_continue" field.</summary>
+    public const int PhaseContinueFieldNumber = 1157;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue PhaseContinue {
+      get { return messageCase_ == MessageOneofCase.PhaseContinue ? (global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PhaseContinue;
+      }
+    }
+
+    /// <summary>Field number for the "pve_intention_info" field.</summary>
+    public const int PveIntentionInfoFieldNumber = 850;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo PveIntentionInfo {
+      get { return messageCase_ == MessageOneofCase.PveIntentionInfo ? (global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "pve_intention_change" field.</summary>
+    public const int PveIntentionChangeFieldNumber = 1268;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange PveIntentionChange {
+      get { return messageCase_ == MessageOneofCase.PveIntentionChange ? (global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionChange;
+      }
+    }
+
+    /// <summary>Field number for the "skill_limits_change" field.</summary>
+    public const int SkillLimitsChangeFieldNumber = 710;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange SkillLimitsChange {
+      get { return messageCase_ == MessageOneofCase.SkillLimitsChange ? (global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SkillLimitsChange;
+      }
+    }
+
+    /// <summary>Field number for the "no_damage_skill_result" field.</summary>
+    public const int NoDamageSkillResultFieldNumber = 773;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult NoDamageSkillResult {
+      get { return messageCase_ == MessageOneofCase.NoDamageSkillResult ? (global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.NoDamageSkillResult;
+      }
+    }
+
+    /// <summary>Field number for the "reaction_begin" field.</summary>
+    public const int ReactionBeginFieldNumber = 243;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin ReactionBegin {
+      get { return messageCase_ == MessageOneofCase.ReactionBegin ? (global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionBegin;
+      }
+    }
+
+    /// <summary>Field number for the "reaction_end" field.</summary>
+    public const int ReactionEndFieldNumber = 1172;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd ReactionEnd {
+      get { return messageCase_ == MessageOneofCase.ReactionEnd ? (global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionEnd;
+      }
+    }
+
     private object message_;
     /// <summary>Enum of possible cases for the "message" oneof.</summary>
     public enum MessageOneofCase {
       None = 0,
-      TokenChange = 12,
-      PhaseChange = 13,
-      AddCards = 10,
-      RemoveCards = 14,
+      TokenChange = 2,
+      PhaseChange = 10,
+      AddCards = 5,
+      RemoveCards = 12,
       SelectOnStage = 6,
-      DiceRoll = 9,
-      DiceReroll = 11,
-      Pass = 5,
-      CharDie = 2,
-      SkillResult = 1,
-      CostDice = 7,
-      AddDice = 3,
-      MoveCard = 15,
-      UseSkill = 4,
-      NewCard = 1848,
-      UpdateController = 429,
-      ModifyAdd = 1851,
-      ModifyRemove = 471,
-      UseSkillEnd = 1411,
-      PveGenCardOp = 1741,
-      PveDoOp = 614,
-      DuelDataChange = 1008,
-      ClientPerform = 1035,
-      GameOver = 714,
-      OpTimer = 1862,
-      WaitingListChange = 1678,
-      CardUpdate = 1879,
-      SelectOnStageByEffect = 2042,
-      CostRevise = 1350,
+      DiceRoll = 14,
+      DiceReroll = 15,
+      Pass = 8,
+      CharDie = 4,
+      SkillResult = 3,
+      CostDice = 13,
+      AddDice = 7,
+      MoveCard = 11,
+      UseSkill = 1,
+      NewCard = 296,
+      UpdateController = 1111,
+      ModifyAdd = 1733,
+      ModifyRemove = 2014,
+      UseSkillEnd = 1368,
+      DuelDataChange = 1791,
+      ClientPerform = 1677,
+      GameOver = 632,
+      OpTimer = 154,
+      WaitingListChange = 1991,
+      CardUpdate = 1702,
+      SelectOnStageByEffect = 1737,
+      CostRevise = 468,
+      PhaseContinue = 1157,
+      PveIntentionInfo = 850,
+      PveIntentionChange = 1268,
+      SkillLimitsChange = 710,
+      NoDamageSkillResult = 773,
+      ReactionBegin = 243,
+      ReactionEnd = 1172,
     }
     private MessageOneofCase messageCase_ = MessageOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -643,8 +757,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (!object.Equals(ModifyAdd, other.ModifyAdd)) return false;
       if (!object.Equals(ModifyRemove, other.ModifyRemove)) return false;
       if (!object.Equals(UseSkillEnd, other.UseSkillEnd)) return false;
-      if (!object.Equals(PveGenCardOp, other.PveGenCardOp)) return false;
-      if (!object.Equals(PveDoOp, other.PveDoOp)) return false;
       if (!object.Equals(DuelDataChange, other.DuelDataChange)) return false;
       if (!object.Equals(ClientPerform, other.ClientPerform)) return false;
       if (!object.Equals(GameOver, other.GameOver)) return false;
@@ -653,6 +765,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (!object.Equals(CardUpdate, other.CardUpdate)) return false;
       if (!object.Equals(SelectOnStageByEffect, other.SelectOnStageByEffect)) return false;
       if (!object.Equals(CostRevise, other.CostRevise)) return false;
+      if (!object.Equals(PhaseContinue, other.PhaseContinue)) return false;
+      if (!object.Equals(PveIntentionInfo, other.PveIntentionInfo)) return false;
+      if (!object.Equals(PveIntentionChange, other.PveIntentionChange)) return false;
+      if (!object.Equals(SkillLimitsChange, other.SkillLimitsChange)) return false;
+      if (!object.Equals(NoDamageSkillResult, other.NoDamageSkillResult)) return false;
+      if (!object.Equals(ReactionBegin, other.ReactionBegin)) return false;
+      if (!object.Equals(ReactionEnd, other.ReactionEnd)) return false;
       if (MessageCase != other.MessageCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -680,8 +799,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (messageCase_ == MessageOneofCase.ModifyAdd) hash ^= ModifyAdd.GetHashCode();
       if (messageCase_ == MessageOneofCase.ModifyRemove) hash ^= ModifyRemove.GetHashCode();
       if (messageCase_ == MessageOneofCase.UseSkillEnd) hash ^= UseSkillEnd.GetHashCode();
-      if (messageCase_ == MessageOneofCase.PveGenCardOp) hash ^= PveGenCardOp.GetHashCode();
-      if (messageCase_ == MessageOneofCase.PveDoOp) hash ^= PveDoOp.GetHashCode();
       if (messageCase_ == MessageOneofCase.DuelDataChange) hash ^= DuelDataChange.GetHashCode();
       if (messageCase_ == MessageOneofCase.ClientPerform) hash ^= ClientPerform.GetHashCode();
       if (messageCase_ == MessageOneofCase.GameOver) hash ^= GameOver.GetHashCode();
@@ -690,6 +807,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (messageCase_ == MessageOneofCase.CardUpdate) hash ^= CardUpdate.GetHashCode();
       if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) hash ^= SelectOnStageByEffect.GetHashCode();
       if (messageCase_ == MessageOneofCase.CostRevise) hash ^= CostRevise.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PhaseContinue) hash ^= PhaseContinue.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) hash ^= PveIntentionInfo.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) hash ^= PveIntentionChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) hash ^= SkillLimitsChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) hash ^= NoDamageSkillResult.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ReactionBegin) hash ^= ReactionBegin.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ReactionEnd) hash ^= ReactionEnd.GetHashCode();
       hash ^= (int) messageCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -709,121 +833,141 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (messageCase_ == MessageOneofCase.SkillResult) {
+      if (messageCase_ == MessageOneofCase.UseSkill) {
         output.WriteRawTag(10);
+        output.WriteMessage(UseSkill);
+      }
+      if (messageCase_ == MessageOneofCase.TokenChange) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TokenChange);
+      }
+      if (messageCase_ == MessageOneofCase.SkillResult) {
+        output.WriteRawTag(26);
         output.WriteMessage(SkillResult);
       }
       if (messageCase_ == MessageOneofCase.CharDie) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteMessage(CharDie);
       }
-      if (messageCase_ == MessageOneofCase.AddDice) {
-        output.WriteRawTag(26);
-        output.WriteMessage(AddDice);
-      }
-      if (messageCase_ == MessageOneofCase.UseSkill) {
-        output.WriteRawTag(34);
-        output.WriteMessage(UseSkill);
-      }
-      if (messageCase_ == MessageOneofCase.Pass) {
+      if (messageCase_ == MessageOneofCase.AddCards) {
         output.WriteRawTag(42);
-        output.WriteMessage(Pass);
+        output.WriteMessage(AddCards);
       }
       if (messageCase_ == MessageOneofCase.SelectOnStage) {
         output.WriteRawTag(50);
         output.WriteMessage(SelectOnStage);
       }
-      if (messageCase_ == MessageOneofCase.CostDice) {
+      if (messageCase_ == MessageOneofCase.AddDice) {
         output.WriteRawTag(58);
+        output.WriteMessage(AddDice);
+      }
+      if (messageCase_ == MessageOneofCase.Pass) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Pass);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseChange) {
+        output.WriteRawTag(82);
+        output.WriteMessage(PhaseChange);
+      }
+      if (messageCase_ == MessageOneofCase.MoveCard) {
+        output.WriteRawTag(90);
+        output.WriteMessage(MoveCard);
+      }
+      if (messageCase_ == MessageOneofCase.RemoveCards) {
+        output.WriteRawTag(98);
+        output.WriteMessage(RemoveCards);
+      }
+      if (messageCase_ == MessageOneofCase.CostDice) {
+        output.WriteRawTag(106);
         output.WriteMessage(CostDice);
       }
       if (messageCase_ == MessageOneofCase.DiceRoll) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(114);
         output.WriteMessage(DiceRoll);
       }
-      if (messageCase_ == MessageOneofCase.AddCards) {
-        output.WriteRawTag(82);
-        output.WriteMessage(AddCards);
-      }
       if (messageCase_ == MessageOneofCase.DiceReroll) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(122);
         output.WriteMessage(DiceReroll);
       }
-      if (messageCase_ == MessageOneofCase.TokenChange) {
-        output.WriteRawTag(98);
-        output.WriteMessage(TokenChange);
-      }
-      if (messageCase_ == MessageOneofCase.PhaseChange) {
-        output.WriteRawTag(106);
-        output.WriteMessage(PhaseChange);
-      }
-      if (messageCase_ == MessageOneofCase.RemoveCards) {
-        output.WriteRawTag(114);
-        output.WriteMessage(RemoveCards);
-      }
-      if (messageCase_ == MessageOneofCase.MoveCard) {
-        output.WriteRawTag(122);
-        output.WriteMessage(MoveCard);
-      }
-      if (messageCase_ == MessageOneofCase.UpdateController) {
-        output.WriteRawTag(234, 26);
-        output.WriteMessage(UpdateController);
-      }
-      if (messageCase_ == MessageOneofCase.ModifyRemove) {
-        output.WriteRawTag(186, 29);
-        output.WriteMessage(ModifyRemove);
-      }
-      if (messageCase_ == MessageOneofCase.PveDoOp) {
-        output.WriteRawTag(178, 38);
-        output.WriteMessage(PveDoOp);
-      }
-      if (messageCase_ == MessageOneofCase.GameOver) {
-        output.WriteRawTag(210, 44);
-        output.WriteMessage(GameOver);
-      }
-      if (messageCase_ == MessageOneofCase.DuelDataChange) {
-        output.WriteRawTag(130, 63);
-        output.WriteMessage(DuelDataChange);
-      }
-      if (messageCase_ == MessageOneofCase.ClientPerform) {
-        output.WriteRawTag(218, 64);
-        output.WriteMessage(ClientPerform);
-      }
-      if (messageCase_ == MessageOneofCase.CostRevise) {
-        output.WriteRawTag(178, 84);
-        output.WriteMessage(CostRevise);
-      }
-      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-        output.WriteRawTag(154, 88);
-        output.WriteMessage(UseSkillEnd);
-      }
-      if (messageCase_ == MessageOneofCase.WaitingListChange) {
-        output.WriteRawTag(242, 104);
-        output.WriteMessage(WaitingListChange);
-      }
-      if (messageCase_ == MessageOneofCase.PveGenCardOp) {
-        output.WriteRawTag(234, 108);
-        output.WriteMessage(PveGenCardOp);
-      }
-      if (messageCase_ == MessageOneofCase.NewCard) {
-        output.WriteRawTag(194, 115);
-        output.WriteMessage(NewCard);
-      }
-      if (messageCase_ == MessageOneofCase.ModifyAdd) {
-        output.WriteRawTag(218, 115);
-        output.WriteMessage(ModifyAdd);
-      }
       if (messageCase_ == MessageOneofCase.OpTimer) {
-        output.WriteRawTag(178, 116);
+        output.WriteRawTag(210, 9);
         output.WriteMessage(OpTimer);
       }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        output.WriteRawTag(154, 15);
+        output.WriteMessage(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.NewCard) {
+        output.WriteRawTag(194, 18);
+        output.WriteMessage(NewCard);
+      }
+      if (messageCase_ == MessageOneofCase.CostRevise) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.GameOver) {
+        output.WriteRawTag(194, 39);
+        output.WriteMessage(GameOver);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        output.WriteRawTag(178, 44);
+        output.WriteMessage(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        output.WriteRawTag(170, 48);
+        output.WriteMessage(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        output.WriteRawTag(146, 53);
+        output.WriteMessage(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.UpdateController) {
+        output.WriteRawTag(186, 69);
+        output.WriteMessage(UpdateController);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        output.WriteRawTag(170, 72);
+        output.WriteMessage(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        output.WriteRawTag(162, 73);
+        output.WriteMessage(ReactionEnd);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        output.WriteRawTag(162, 79);
+        output.WriteMessage(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+        output.WriteRawTag(194, 85);
+        output.WriteMessage(UseSkillEnd);
+      }
+      if (messageCase_ == MessageOneofCase.ClientPerform) {
+        output.WriteRawTag(234, 104);
+        output.WriteMessage(ClientPerform);
+      }
       if (messageCase_ == MessageOneofCase.CardUpdate) {
-        output.WriteRawTag(186, 117);
+        output.WriteRawTag(178, 106);
         output.WriteMessage(CardUpdate);
       }
+      if (messageCase_ == MessageOneofCase.ModifyAdd) {
+        output.WriteRawTag(170, 108);
+        output.WriteMessage(ModifyAdd);
+      }
       if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-        output.WriteRawTag(210, 127);
+        output.WriteRawTag(202, 108);
         output.WriteMessage(SelectOnStageByEffect);
+      }
+      if (messageCase_ == MessageOneofCase.DuelDataChange) {
+        output.WriteRawTag(250, 111);
+        output.WriteMessage(DuelDataChange);
+      }
+      if (messageCase_ == MessageOneofCase.WaitingListChange) {
+        output.WriteRawTag(186, 124);
+        output.WriteMessage(WaitingListChange);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyRemove) {
+        output.WriteRawTag(242, 125);
+        output.WriteMessage(ModifyRemove);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -835,121 +979,141 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (messageCase_ == MessageOneofCase.SkillResult) {
+      if (messageCase_ == MessageOneofCase.UseSkill) {
         output.WriteRawTag(10);
+        output.WriteMessage(UseSkill);
+      }
+      if (messageCase_ == MessageOneofCase.TokenChange) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TokenChange);
+      }
+      if (messageCase_ == MessageOneofCase.SkillResult) {
+        output.WriteRawTag(26);
         output.WriteMessage(SkillResult);
       }
       if (messageCase_ == MessageOneofCase.CharDie) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(34);
         output.WriteMessage(CharDie);
       }
-      if (messageCase_ == MessageOneofCase.AddDice) {
-        output.WriteRawTag(26);
-        output.WriteMessage(AddDice);
-      }
-      if (messageCase_ == MessageOneofCase.UseSkill) {
-        output.WriteRawTag(34);
-        output.WriteMessage(UseSkill);
-      }
-      if (messageCase_ == MessageOneofCase.Pass) {
+      if (messageCase_ == MessageOneofCase.AddCards) {
         output.WriteRawTag(42);
-        output.WriteMessage(Pass);
+        output.WriteMessage(AddCards);
       }
       if (messageCase_ == MessageOneofCase.SelectOnStage) {
         output.WriteRawTag(50);
         output.WriteMessage(SelectOnStage);
       }
-      if (messageCase_ == MessageOneofCase.CostDice) {
+      if (messageCase_ == MessageOneofCase.AddDice) {
         output.WriteRawTag(58);
+        output.WriteMessage(AddDice);
+      }
+      if (messageCase_ == MessageOneofCase.Pass) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Pass);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseChange) {
+        output.WriteRawTag(82);
+        output.WriteMessage(PhaseChange);
+      }
+      if (messageCase_ == MessageOneofCase.MoveCard) {
+        output.WriteRawTag(90);
+        output.WriteMessage(MoveCard);
+      }
+      if (messageCase_ == MessageOneofCase.RemoveCards) {
+        output.WriteRawTag(98);
+        output.WriteMessage(RemoveCards);
+      }
+      if (messageCase_ == MessageOneofCase.CostDice) {
+        output.WriteRawTag(106);
         output.WriteMessage(CostDice);
       }
       if (messageCase_ == MessageOneofCase.DiceRoll) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(114);
         output.WriteMessage(DiceRoll);
       }
-      if (messageCase_ == MessageOneofCase.AddCards) {
-        output.WriteRawTag(82);
-        output.WriteMessage(AddCards);
-      }
       if (messageCase_ == MessageOneofCase.DiceReroll) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(122);
         output.WriteMessage(DiceReroll);
       }
-      if (messageCase_ == MessageOneofCase.TokenChange) {
-        output.WriteRawTag(98);
-        output.WriteMessage(TokenChange);
-      }
-      if (messageCase_ == MessageOneofCase.PhaseChange) {
-        output.WriteRawTag(106);
-        output.WriteMessage(PhaseChange);
-      }
-      if (messageCase_ == MessageOneofCase.RemoveCards) {
-        output.WriteRawTag(114);
-        output.WriteMessage(RemoveCards);
-      }
-      if (messageCase_ == MessageOneofCase.MoveCard) {
-        output.WriteRawTag(122);
-        output.WriteMessage(MoveCard);
-      }
-      if (messageCase_ == MessageOneofCase.UpdateController) {
-        output.WriteRawTag(234, 26);
-        output.WriteMessage(UpdateController);
-      }
-      if (messageCase_ == MessageOneofCase.ModifyRemove) {
-        output.WriteRawTag(186, 29);
-        output.WriteMessage(ModifyRemove);
-      }
-      if (messageCase_ == MessageOneofCase.PveDoOp) {
-        output.WriteRawTag(178, 38);
-        output.WriteMessage(PveDoOp);
-      }
-      if (messageCase_ == MessageOneofCase.GameOver) {
-        output.WriteRawTag(210, 44);
-        output.WriteMessage(GameOver);
-      }
-      if (messageCase_ == MessageOneofCase.DuelDataChange) {
-        output.WriteRawTag(130, 63);
-        output.WriteMessage(DuelDataChange);
-      }
-      if (messageCase_ == MessageOneofCase.ClientPerform) {
-        output.WriteRawTag(218, 64);
-        output.WriteMessage(ClientPerform);
-      }
-      if (messageCase_ == MessageOneofCase.CostRevise) {
-        output.WriteRawTag(178, 84);
-        output.WriteMessage(CostRevise);
-      }
-      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-        output.WriteRawTag(154, 88);
-        output.WriteMessage(UseSkillEnd);
-      }
-      if (messageCase_ == MessageOneofCase.WaitingListChange) {
-        output.WriteRawTag(242, 104);
-        output.WriteMessage(WaitingListChange);
-      }
-      if (messageCase_ == MessageOneofCase.PveGenCardOp) {
-        output.WriteRawTag(234, 108);
-        output.WriteMessage(PveGenCardOp);
-      }
-      if (messageCase_ == MessageOneofCase.NewCard) {
-        output.WriteRawTag(194, 115);
-        output.WriteMessage(NewCard);
-      }
-      if (messageCase_ == MessageOneofCase.ModifyAdd) {
-        output.WriteRawTag(218, 115);
-        output.WriteMessage(ModifyAdd);
-      }
       if (messageCase_ == MessageOneofCase.OpTimer) {
-        output.WriteRawTag(178, 116);
+        output.WriteRawTag(210, 9);
         output.WriteMessage(OpTimer);
       }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        output.WriteRawTag(154, 15);
+        output.WriteMessage(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.NewCard) {
+        output.WriteRawTag(194, 18);
+        output.WriteMessage(NewCard);
+      }
+      if (messageCase_ == MessageOneofCase.CostRevise) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.GameOver) {
+        output.WriteRawTag(194, 39);
+        output.WriteMessage(GameOver);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        output.WriteRawTag(178, 44);
+        output.WriteMessage(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        output.WriteRawTag(170, 48);
+        output.WriteMessage(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        output.WriteRawTag(146, 53);
+        output.WriteMessage(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.UpdateController) {
+        output.WriteRawTag(186, 69);
+        output.WriteMessage(UpdateController);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        output.WriteRawTag(170, 72);
+        output.WriteMessage(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        output.WriteRawTag(162, 73);
+        output.WriteMessage(ReactionEnd);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        output.WriteRawTag(162, 79);
+        output.WriteMessage(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+        output.WriteRawTag(194, 85);
+        output.WriteMessage(UseSkillEnd);
+      }
+      if (messageCase_ == MessageOneofCase.ClientPerform) {
+        output.WriteRawTag(234, 104);
+        output.WriteMessage(ClientPerform);
+      }
       if (messageCase_ == MessageOneofCase.CardUpdate) {
-        output.WriteRawTag(186, 117);
+        output.WriteRawTag(178, 106);
         output.WriteMessage(CardUpdate);
       }
+      if (messageCase_ == MessageOneofCase.ModifyAdd) {
+        output.WriteRawTag(170, 108);
+        output.WriteMessage(ModifyAdd);
+      }
       if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-        output.WriteRawTag(210, 127);
+        output.WriteRawTag(202, 108);
         output.WriteMessage(SelectOnStageByEffect);
+      }
+      if (messageCase_ == MessageOneofCase.DuelDataChange) {
+        output.WriteRawTag(250, 111);
+        output.WriteMessage(DuelDataChange);
+      }
+      if (messageCase_ == MessageOneofCase.WaitingListChange) {
+        output.WriteRawTag(186, 124);
+        output.WriteMessage(WaitingListChange);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyRemove) {
+        output.WriteRawTag(242, 125);
+        output.WriteMessage(ModifyRemove);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1018,12 +1182,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (messageCase_ == MessageOneofCase.UseSkillEnd) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(UseSkillEnd);
       }
-      if (messageCase_ == MessageOneofCase.PveGenCardOp) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveGenCardOp);
-      }
-      if (messageCase_ == MessageOneofCase.PveDoOp) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveDoOp);
-      }
       if (messageCase_ == MessageOneofCase.DuelDataChange) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(DuelDataChange);
       }
@@ -1047,6 +1205,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (messageCase_ == MessageOneofCase.CostRevise) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionEnd);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1175,18 +1354,6 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           UseSkillEnd.MergeFrom(other.UseSkillEnd);
           break;
-        case MessageOneofCase.PveGenCardOp:
-          if (PveGenCardOp == null) {
-            PveGenCardOp = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp();
-          }
-          PveGenCardOp.MergeFrom(other.PveGenCardOp);
-          break;
-        case MessageOneofCase.PveDoOp:
-          if (PveDoOp == null) {
-            PveDoOp = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp();
-          }
-          PveDoOp.MergeFrom(other.PveDoOp);
-          break;
         case MessageOneofCase.DuelDataChange:
           if (DuelDataChange == null) {
             DuelDataChange = new global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange();
@@ -1235,6 +1402,48 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           CostRevise.MergeFrom(other.CostRevise);
           break;
+        case MessageOneofCase.PhaseContinue:
+          if (PhaseContinue == null) {
+            PhaseContinue = new global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue();
+          }
+          PhaseContinue.MergeFrom(other.PhaseContinue);
+          break;
+        case MessageOneofCase.PveIntentionInfo:
+          if (PveIntentionInfo == null) {
+            PveIntentionInfo = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo();
+          }
+          PveIntentionInfo.MergeFrom(other.PveIntentionInfo);
+          break;
+        case MessageOneofCase.PveIntentionChange:
+          if (PveIntentionChange == null) {
+            PveIntentionChange = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange();
+          }
+          PveIntentionChange.MergeFrom(other.PveIntentionChange);
+          break;
+        case MessageOneofCase.SkillLimitsChange:
+          if (SkillLimitsChange == null) {
+            SkillLimitsChange = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange();
+          }
+          SkillLimitsChange.MergeFrom(other.SkillLimitsChange);
+          break;
+        case MessageOneofCase.NoDamageSkillResult:
+          if (NoDamageSkillResult == null) {
+            NoDamageSkillResult = new global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult();
+          }
+          NoDamageSkillResult.MergeFrom(other.NoDamageSkillResult);
+          break;
+        case MessageOneofCase.ReactionBegin:
+          if (ReactionBegin == null) {
+            ReactionBegin = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin();
+          }
+          ReactionBegin.MergeFrom(other.ReactionBegin);
+          break;
+        case MessageOneofCase.ReactionEnd:
+          if (ReactionEnd == null) {
+            ReactionEnd = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd();
+          }
+          ReactionEnd.MergeFrom(other.ReactionEnd);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1253,33 +1462,6 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult();
-            if (messageCase_ == MessageOneofCase.SkillResult) {
-              subBuilder.MergeFrom(SkillResult);
-            }
-            input.ReadMessage(subBuilder);
-            SkillResult = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie();
-            if (messageCase_ == MessageOneofCase.CharDie) {
-              subBuilder.MergeFrom(CharDie);
-            }
-            input.ReadMessage(subBuilder);
-            CharDie = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice();
-            if (messageCase_ == MessageOneofCase.AddDice) {
-              subBuilder.MergeFrom(AddDice);
-            }
-            input.ReadMessage(subBuilder);
-            AddDice = subBuilder;
-            break;
-          }
-          case 34: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkill subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkill();
             if (messageCase_ == MessageOneofCase.UseSkill) {
               subBuilder.MergeFrom(UseSkill);
@@ -1288,13 +1470,40 @@ namespace Weedwacker.Shared.Network.Proto {
             UseSkill = subBuilder;
             break;
           }
-          case 42: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPass();
-            if (messageCase_ == MessageOneofCase.Pass) {
-              subBuilder.MergeFrom(Pass);
+          case 18: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange();
+            if (messageCase_ == MessageOneofCase.TokenChange) {
+              subBuilder.MergeFrom(TokenChange);
             }
             input.ReadMessage(subBuilder);
-            Pass = subBuilder;
+            TokenChange = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult();
+            if (messageCase_ == MessageOneofCase.SkillResult) {
+              subBuilder.MergeFrom(SkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            SkillResult = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie();
+            if (messageCase_ == MessageOneofCase.CharDie) {
+              subBuilder.MergeFrom(CharDie);
+            }
+            input.ReadMessage(subBuilder);
+            CharDie = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards();
+            if (messageCase_ == MessageOneofCase.AddCards) {
+              subBuilder.MergeFrom(AddCards);
+            }
+            input.ReadMessage(subBuilder);
+            AddCards = subBuilder;
             break;
           }
           case 50: {
@@ -1307,51 +1516,24 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 58: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice();
-            if (messageCase_ == MessageOneofCase.CostDice) {
-              subBuilder.MergeFrom(CostDice);
+            global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice();
+            if (messageCase_ == MessageOneofCase.AddDice) {
+              subBuilder.MergeFrom(AddDice);
             }
             input.ReadMessage(subBuilder);
-            CostDice = subBuilder;
+            AddDice = subBuilder;
             break;
           }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll();
-            if (messageCase_ == MessageOneofCase.DiceRoll) {
-              subBuilder.MergeFrom(DiceRoll);
+          case 66: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPass();
+            if (messageCase_ == MessageOneofCase.Pass) {
+              subBuilder.MergeFrom(Pass);
             }
             input.ReadMessage(subBuilder);
-            DiceRoll = subBuilder;
+            Pass = subBuilder;
             break;
           }
           case 82: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards();
-            if (messageCase_ == MessageOneofCase.AddCards) {
-              subBuilder.MergeFrom(AddCards);
-            }
-            input.ReadMessage(subBuilder);
-            AddCards = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll();
-            if (messageCase_ == MessageOneofCase.DiceReroll) {
-              subBuilder.MergeFrom(DiceReroll);
-            }
-            input.ReadMessage(subBuilder);
-            DiceReroll = subBuilder;
-            break;
-          }
-          case 98: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange();
-            if (messageCase_ == MessageOneofCase.TokenChange) {
-              subBuilder.MergeFrom(TokenChange);
-            }
-            input.ReadMessage(subBuilder);
-            TokenChange = subBuilder;
-            break;
-          }
-          case 106: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChange();
             if (messageCase_ == MessageOneofCase.PhaseChange) {
               subBuilder.MergeFrom(PhaseChange);
@@ -1360,16 +1542,7 @@ namespace Weedwacker.Shared.Network.Proto {
             PhaseChange = subBuilder;
             break;
           }
-          case 114: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards();
-            if (messageCase_ == MessageOneofCase.RemoveCards) {
-              subBuilder.MergeFrom(RemoveCards);
-            }
-            input.ReadMessage(subBuilder);
-            RemoveCards = subBuilder;
-            break;
-          }
-          case 122: {
+          case 90: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCard();
             if (messageCase_ == MessageOneofCase.MoveCard) {
               subBuilder.MergeFrom(MoveCard);
@@ -1378,115 +1551,43 @@ namespace Weedwacker.Shared.Network.Proto {
             MoveCard = subBuilder;
             break;
           }
-          case 3434: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController();
-            if (messageCase_ == MessageOneofCase.UpdateController) {
-              subBuilder.MergeFrom(UpdateController);
+          case 98: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards();
+            if (messageCase_ == MessageOneofCase.RemoveCards) {
+              subBuilder.MergeFrom(RemoveCards);
             }
             input.ReadMessage(subBuilder);
-            UpdateController = subBuilder;
+            RemoveCards = subBuilder;
             break;
           }
-          case 3770: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove();
-            if (messageCase_ == MessageOneofCase.ModifyRemove) {
-              subBuilder.MergeFrom(ModifyRemove);
+          case 106: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice();
+            if (messageCase_ == MessageOneofCase.CostDice) {
+              subBuilder.MergeFrom(CostDice);
             }
             input.ReadMessage(subBuilder);
-            ModifyRemove = subBuilder;
+            CostDice = subBuilder;
             break;
           }
-          case 4914: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp();
-            if (messageCase_ == MessageOneofCase.PveDoOp) {
-              subBuilder.MergeFrom(PveDoOp);
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll();
+            if (messageCase_ == MessageOneofCase.DiceRoll) {
+              subBuilder.MergeFrom(DiceRoll);
             }
             input.ReadMessage(subBuilder);
-            PveDoOp = subBuilder;
+            DiceRoll = subBuilder;
             break;
           }
-          case 5714: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver();
-            if (messageCase_ == MessageOneofCase.GameOver) {
-              subBuilder.MergeFrom(GameOver);
+          case 122: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll();
+            if (messageCase_ == MessageOneofCase.DiceReroll) {
+              subBuilder.MergeFrom(DiceReroll);
             }
             input.ReadMessage(subBuilder);
-            GameOver = subBuilder;
+            DiceReroll = subBuilder;
             break;
           }
-          case 8066: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange();
-            if (messageCase_ == MessageOneofCase.DuelDataChange) {
-              subBuilder.MergeFrom(DuelDataChange);
-            }
-            input.ReadMessage(subBuilder);
-            DuelDataChange = subBuilder;
-            break;
-          }
-          case 8282: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform();
-            if (messageCase_ == MessageOneofCase.ClientPerform) {
-              subBuilder.MergeFrom(ClientPerform);
-            }
-            input.ReadMessage(subBuilder);
-            ClientPerform = subBuilder;
-            break;
-          }
-          case 10802: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise();
-            if (messageCase_ == MessageOneofCase.CostRevise) {
-              subBuilder.MergeFrom(CostRevise);
-            }
-            input.ReadMessage(subBuilder);
-            CostRevise = subBuilder;
-            break;
-          }
-          case 11290: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd();
-            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-              subBuilder.MergeFrom(UseSkillEnd);
-            }
-            input.ReadMessage(subBuilder);
-            UseSkillEnd = subBuilder;
-            break;
-          }
-          case 13426: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange();
-            if (messageCase_ == MessageOneofCase.WaitingListChange) {
-              subBuilder.MergeFrom(WaitingListChange);
-            }
-            input.ReadMessage(subBuilder);
-            WaitingListChange = subBuilder;
-            break;
-          }
-          case 13930: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp();
-            if (messageCase_ == MessageOneofCase.PveGenCardOp) {
-              subBuilder.MergeFrom(PveGenCardOp);
-            }
-            input.ReadMessage(subBuilder);
-            PveGenCardOp = subBuilder;
-            break;
-          }
-          case 14786: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard();
-            if (messageCase_ == MessageOneofCase.NewCard) {
-              subBuilder.MergeFrom(NewCard);
-            }
-            input.ReadMessage(subBuilder);
-            NewCard = subBuilder;
-            break;
-          }
-          case 14810: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd();
-            if (messageCase_ == MessageOneofCase.ModifyAdd) {
-              subBuilder.MergeFrom(ModifyAdd);
-            }
-            input.ReadMessage(subBuilder);
-            ModifyAdd = subBuilder;
-            break;
-          }
-          case 14898: {
+          case 1234: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer();
             if (messageCase_ == MessageOneofCase.OpTimer) {
               subBuilder.MergeFrom(OpTimer);
@@ -1495,7 +1596,124 @@ namespace Weedwacker.Shared.Network.Proto {
             OpTimer = subBuilder;
             break;
           }
-          case 15034: {
+          case 1946: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin();
+            if (messageCase_ == MessageOneofCase.ReactionBegin) {
+              subBuilder.MergeFrom(ReactionBegin);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionBegin = subBuilder;
+            break;
+          }
+          case 2370: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard();
+            if (messageCase_ == MessageOneofCase.NewCard) {
+              subBuilder.MergeFrom(NewCard);
+            }
+            input.ReadMessage(subBuilder);
+            NewCard = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise();
+            if (messageCase_ == MessageOneofCase.CostRevise) {
+              subBuilder.MergeFrom(CostRevise);
+            }
+            input.ReadMessage(subBuilder);
+            CostRevise = subBuilder;
+            break;
+          }
+          case 5058: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver();
+            if (messageCase_ == MessageOneofCase.GameOver) {
+              subBuilder.MergeFrom(GameOver);
+            }
+            input.ReadMessage(subBuilder);
+            GameOver = subBuilder;
+            break;
+          }
+          case 5682: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange();
+            if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+              subBuilder.MergeFrom(SkillLimitsChange);
+            }
+            input.ReadMessage(subBuilder);
+            SkillLimitsChange = subBuilder;
+            break;
+          }
+          case 6186: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult();
+            if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+              subBuilder.MergeFrom(NoDamageSkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            NoDamageSkillResult = subBuilder;
+            break;
+          }
+          case 6802: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo();
+            if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+              subBuilder.MergeFrom(PveIntentionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionInfo = subBuilder;
+            break;
+          }
+          case 8890: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController();
+            if (messageCase_ == MessageOneofCase.UpdateController) {
+              subBuilder.MergeFrom(UpdateController);
+            }
+            input.ReadMessage(subBuilder);
+            UpdateController = subBuilder;
+            break;
+          }
+          case 9258: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue();
+            if (messageCase_ == MessageOneofCase.PhaseContinue) {
+              subBuilder.MergeFrom(PhaseContinue);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseContinue = subBuilder;
+            break;
+          }
+          case 9378: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd();
+            if (messageCase_ == MessageOneofCase.ReactionEnd) {
+              subBuilder.MergeFrom(ReactionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionEnd = subBuilder;
+            break;
+          }
+          case 10146: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange();
+            if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+              subBuilder.MergeFrom(PveIntentionChange);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionChange = subBuilder;
+            break;
+          }
+          case 10946: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd();
+            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+              subBuilder.MergeFrom(UseSkillEnd);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkillEnd = subBuilder;
+            break;
+          }
+          case 13418: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform();
+            if (messageCase_ == MessageOneofCase.ClientPerform) {
+              subBuilder.MergeFrom(ClientPerform);
+            }
+            input.ReadMessage(subBuilder);
+            ClientPerform = subBuilder;
+            break;
+          }
+          case 13618: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdate subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdate();
             if (messageCase_ == MessageOneofCase.CardUpdate) {
               subBuilder.MergeFrom(CardUpdate);
@@ -1504,13 +1722,49 @@ namespace Weedwacker.Shared.Network.Proto {
             CardUpdate = subBuilder;
             break;
           }
-          case 16338: {
+          case 13866: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd();
+            if (messageCase_ == MessageOneofCase.ModifyAdd) {
+              subBuilder.MergeFrom(ModifyAdd);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyAdd = subBuilder;
+            break;
+          }
+          case 13898: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffect();
             if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
               subBuilder.MergeFrom(SelectOnStageByEffect);
             }
             input.ReadMessage(subBuilder);
             SelectOnStageByEffect = subBuilder;
+            break;
+          }
+          case 14330: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange();
+            if (messageCase_ == MessageOneofCase.DuelDataChange) {
+              subBuilder.MergeFrom(DuelDataChange);
+            }
+            input.ReadMessage(subBuilder);
+            DuelDataChange = subBuilder;
+            break;
+          }
+          case 15930: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange();
+            if (messageCase_ == MessageOneofCase.WaitingListChange) {
+              subBuilder.MergeFrom(WaitingListChange);
+            }
+            input.ReadMessage(subBuilder);
+            WaitingListChange = subBuilder;
+            break;
+          }
+          case 16114: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove();
+            if (messageCase_ == MessageOneofCase.ModifyRemove) {
+              subBuilder.MergeFrom(ModifyRemove);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyRemove = subBuilder;
             break;
           }
         }
@@ -1529,33 +1783,6 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult();
-            if (messageCase_ == MessageOneofCase.SkillResult) {
-              subBuilder.MergeFrom(SkillResult);
-            }
-            input.ReadMessage(subBuilder);
-            SkillResult = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie();
-            if (messageCase_ == MessageOneofCase.CharDie) {
-              subBuilder.MergeFrom(CharDie);
-            }
-            input.ReadMessage(subBuilder);
-            CharDie = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice();
-            if (messageCase_ == MessageOneofCase.AddDice) {
-              subBuilder.MergeFrom(AddDice);
-            }
-            input.ReadMessage(subBuilder);
-            AddDice = subBuilder;
-            break;
-          }
-          case 34: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkill subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkill();
             if (messageCase_ == MessageOneofCase.UseSkill) {
               subBuilder.MergeFrom(UseSkill);
@@ -1564,13 +1791,40 @@ namespace Weedwacker.Shared.Network.Proto {
             UseSkill = subBuilder;
             break;
           }
-          case 42: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPass();
-            if (messageCase_ == MessageOneofCase.Pass) {
-              subBuilder.MergeFrom(Pass);
+          case 18: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange();
+            if (messageCase_ == MessageOneofCase.TokenChange) {
+              subBuilder.MergeFrom(TokenChange);
             }
             input.ReadMessage(subBuilder);
-            Pass = subBuilder;
+            TokenChange = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult();
+            if (messageCase_ == MessageOneofCase.SkillResult) {
+              subBuilder.MergeFrom(SkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            SkillResult = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCharDie();
+            if (messageCase_ == MessageOneofCase.CharDie) {
+              subBuilder.MergeFrom(CharDie);
+            }
+            input.ReadMessage(subBuilder);
+            CharDie = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards();
+            if (messageCase_ == MessageOneofCase.AddCards) {
+              subBuilder.MergeFrom(AddCards);
+            }
+            input.ReadMessage(subBuilder);
+            AddCards = subBuilder;
             break;
           }
           case 50: {
@@ -1583,51 +1837,24 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 58: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice();
-            if (messageCase_ == MessageOneofCase.CostDice) {
-              subBuilder.MergeFrom(CostDice);
+            global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice();
+            if (messageCase_ == MessageOneofCase.AddDice) {
+              subBuilder.MergeFrom(AddDice);
             }
             input.ReadMessage(subBuilder);
-            CostDice = subBuilder;
+            AddDice = subBuilder;
             break;
           }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll();
-            if (messageCase_ == MessageOneofCase.DiceRoll) {
-              subBuilder.MergeFrom(DiceRoll);
+          case 66: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPass();
+            if (messageCase_ == MessageOneofCase.Pass) {
+              subBuilder.MergeFrom(Pass);
             }
             input.ReadMessage(subBuilder);
-            DiceRoll = subBuilder;
+            Pass = subBuilder;
             break;
           }
           case 82: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgAddCards();
-            if (messageCase_ == MessageOneofCase.AddCards) {
-              subBuilder.MergeFrom(AddCards);
-            }
-            input.ReadMessage(subBuilder);
-            AddCards = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll();
-            if (messageCase_ == MessageOneofCase.DiceReroll) {
-              subBuilder.MergeFrom(DiceReroll);
-            }
-            input.ReadMessage(subBuilder);
-            DiceReroll = subBuilder;
-            break;
-          }
-          case 98: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgTokenChange();
-            if (messageCase_ == MessageOneofCase.TokenChange) {
-              subBuilder.MergeFrom(TokenChange);
-            }
-            input.ReadMessage(subBuilder);
-            TokenChange = subBuilder;
-            break;
-          }
-          case 106: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseChange();
             if (messageCase_ == MessageOneofCase.PhaseChange) {
               subBuilder.MergeFrom(PhaseChange);
@@ -1636,16 +1863,7 @@ namespace Weedwacker.Shared.Network.Proto {
             PhaseChange = subBuilder;
             break;
           }
-          case 114: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards();
-            if (messageCase_ == MessageOneofCase.RemoveCards) {
-              subBuilder.MergeFrom(RemoveCards);
-            }
-            input.ReadMessage(subBuilder);
-            RemoveCards = subBuilder;
-            break;
-          }
-          case 122: {
+          case 90: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgMoveCard();
             if (messageCase_ == MessageOneofCase.MoveCard) {
               subBuilder.MergeFrom(MoveCard);
@@ -1654,115 +1872,43 @@ namespace Weedwacker.Shared.Network.Proto {
             MoveCard = subBuilder;
             break;
           }
-          case 3434: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController();
-            if (messageCase_ == MessageOneofCase.UpdateController) {
-              subBuilder.MergeFrom(UpdateController);
+          case 98: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgRemoveCards();
+            if (messageCase_ == MessageOneofCase.RemoveCards) {
+              subBuilder.MergeFrom(RemoveCards);
             }
             input.ReadMessage(subBuilder);
-            UpdateController = subBuilder;
+            RemoveCards = subBuilder;
             break;
           }
-          case 3770: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove();
-            if (messageCase_ == MessageOneofCase.ModifyRemove) {
-              subBuilder.MergeFrom(ModifyRemove);
+          case 106: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostDice();
+            if (messageCase_ == MessageOneofCase.CostDice) {
+              subBuilder.MergeFrom(CostDice);
             }
             input.ReadMessage(subBuilder);
-            ModifyRemove = subBuilder;
+            CostDice = subBuilder;
             break;
           }
-          case 4914: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEDoOp();
-            if (messageCase_ == MessageOneofCase.PveDoOp) {
-              subBuilder.MergeFrom(PveDoOp);
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll();
+            if (messageCase_ == MessageOneofCase.DiceRoll) {
+              subBuilder.MergeFrom(DiceRoll);
             }
             input.ReadMessage(subBuilder);
-            PveDoOp = subBuilder;
+            DiceRoll = subBuilder;
             break;
           }
-          case 5714: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver();
-            if (messageCase_ == MessageOneofCase.GameOver) {
-              subBuilder.MergeFrom(GameOver);
+          case 122: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDiceReroll();
+            if (messageCase_ == MessageOneofCase.DiceReroll) {
+              subBuilder.MergeFrom(DiceReroll);
             }
             input.ReadMessage(subBuilder);
-            GameOver = subBuilder;
+            DiceReroll = subBuilder;
             break;
           }
-          case 8066: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange();
-            if (messageCase_ == MessageOneofCase.DuelDataChange) {
-              subBuilder.MergeFrom(DuelDataChange);
-            }
-            input.ReadMessage(subBuilder);
-            DuelDataChange = subBuilder;
-            break;
-          }
-          case 8282: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform();
-            if (messageCase_ == MessageOneofCase.ClientPerform) {
-              subBuilder.MergeFrom(ClientPerform);
-            }
-            input.ReadMessage(subBuilder);
-            ClientPerform = subBuilder;
-            break;
-          }
-          case 10802: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise();
-            if (messageCase_ == MessageOneofCase.CostRevise) {
-              subBuilder.MergeFrom(CostRevise);
-            }
-            input.ReadMessage(subBuilder);
-            CostRevise = subBuilder;
-            break;
-          }
-          case 11290: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd();
-            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-              subBuilder.MergeFrom(UseSkillEnd);
-            }
-            input.ReadMessage(subBuilder);
-            UseSkillEnd = subBuilder;
-            break;
-          }
-          case 13426: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange();
-            if (messageCase_ == MessageOneofCase.WaitingListChange) {
-              subBuilder.MergeFrom(WaitingListChange);
-            }
-            input.ReadMessage(subBuilder);
-            WaitingListChange = subBuilder;
-            break;
-          }
-          case 13930: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEGenCardOp();
-            if (messageCase_ == MessageOneofCase.PveGenCardOp) {
-              subBuilder.MergeFrom(PveGenCardOp);
-            }
-            input.ReadMessage(subBuilder);
-            PveGenCardOp = subBuilder;
-            break;
-          }
-          case 14786: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard();
-            if (messageCase_ == MessageOneofCase.NewCard) {
-              subBuilder.MergeFrom(NewCard);
-            }
-            input.ReadMessage(subBuilder);
-            NewCard = subBuilder;
-            break;
-          }
-          case 14810: {
-            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd();
-            if (messageCase_ == MessageOneofCase.ModifyAdd) {
-              subBuilder.MergeFrom(ModifyAdd);
-            }
-            input.ReadMessage(subBuilder);
-            ModifyAdd = subBuilder;
-            break;
-          }
-          case 14898: {
+          case 1234: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer();
             if (messageCase_ == MessageOneofCase.OpTimer) {
               subBuilder.MergeFrom(OpTimer);
@@ -1771,7 +1917,124 @@ namespace Weedwacker.Shared.Network.Proto {
             OpTimer = subBuilder;
             break;
           }
-          case 15034: {
+          case 1946: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionBegin();
+            if (messageCase_ == MessageOneofCase.ReactionBegin) {
+              subBuilder.MergeFrom(ReactionBegin);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionBegin = subBuilder;
+            break;
+          }
+          case 2370: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNewCard();
+            if (messageCase_ == MessageOneofCase.NewCard) {
+              subBuilder.MergeFrom(NewCard);
+            }
+            input.ReadMessage(subBuilder);
+            NewCard = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise();
+            if (messageCase_ == MessageOneofCase.CostRevise) {
+              subBuilder.MergeFrom(CostRevise);
+            }
+            input.ReadMessage(subBuilder);
+            CostRevise = subBuilder;
+            break;
+          }
+          case 5058: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgGameOver();
+            if (messageCase_ == MessageOneofCase.GameOver) {
+              subBuilder.MergeFrom(GameOver);
+            }
+            input.ReadMessage(subBuilder);
+            GameOver = subBuilder;
+            break;
+          }
+          case 5682: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSkillLimitsChange();
+            if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+              subBuilder.MergeFrom(SkillLimitsChange);
+            }
+            input.ReadMessage(subBuilder);
+            SkillLimitsChange = subBuilder;
+            break;
+          }
+          case 6186: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgNoDamageSkillResult();
+            if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+              subBuilder.MergeFrom(NoDamageSkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            NoDamageSkillResult = subBuilder;
+            break;
+          }
+          case 6802: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionInfo();
+            if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+              subBuilder.MergeFrom(PveIntentionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionInfo = subBuilder;
+            break;
+          }
+          case 8890: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController();
+            if (messageCase_ == MessageOneofCase.UpdateController) {
+              subBuilder.MergeFrom(UpdateController);
+            }
+            input.ReadMessage(subBuilder);
+            UpdateController = subBuilder;
+            break;
+          }
+          case 9258: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPhaseContinue();
+            if (messageCase_ == MessageOneofCase.PhaseContinue) {
+              subBuilder.MergeFrom(PhaseContinue);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseContinue = subBuilder;
+            break;
+          }
+          case 9378: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgReactionEnd();
+            if (messageCase_ == MessageOneofCase.ReactionEnd) {
+              subBuilder.MergeFrom(ReactionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionEnd = subBuilder;
+            break;
+          }
+          case 10146: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgPVEIntentionChange();
+            if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+              subBuilder.MergeFrom(PveIntentionChange);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionChange = subBuilder;
+            break;
+          }
+          case 10946: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgUseSkillEnd();
+            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+              subBuilder.MergeFrom(UseSkillEnd);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkillEnd = subBuilder;
+            break;
+          }
+          case 13418: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgClientPerform();
+            if (messageCase_ == MessageOneofCase.ClientPerform) {
+              subBuilder.MergeFrom(ClientPerform);
+            }
+            input.ReadMessage(subBuilder);
+            ClientPerform = subBuilder;
+            break;
+          }
+          case 13618: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdate subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgCardUpdate();
             if (messageCase_ == MessageOneofCase.CardUpdate) {
               subBuilder.MergeFrom(CardUpdate);
@@ -1780,13 +2043,49 @@ namespace Weedwacker.Shared.Network.Proto {
             CardUpdate = subBuilder;
             break;
           }
-          case 16338: {
+          case 13866: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyAdd();
+            if (messageCase_ == MessageOneofCase.ModifyAdd) {
+              subBuilder.MergeFrom(ModifyAdd);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyAdd = subBuilder;
+            break;
+          }
+          case 13898: {
             global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgSelectOnStageByEffect();
             if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
               subBuilder.MergeFrom(SelectOnStageByEffect);
             }
             input.ReadMessage(subBuilder);
             SelectOnStageByEffect = subBuilder;
+            break;
+          }
+          case 14330: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgDuelDataChange();
+            if (messageCase_ == MessageOneofCase.DuelDataChange) {
+              subBuilder.MergeFrom(DuelDataChange);
+            }
+            input.ReadMessage(subBuilder);
+            DuelDataChange = subBuilder;
+            break;
+          }
+          case 15930: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgWaitingListChange();
+            if (messageCase_ == MessageOneofCase.WaitingListChange) {
+              subBuilder.MergeFrom(WaitingListChange);
+            }
+            input.ReadMessage(subBuilder);
+            WaitingListChange = subBuilder;
+            break;
+          }
+          case 16114: {
+            global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGMsgModifyRemove();
+            if (messageCase_ == MessageOneofCase.ModifyRemove) {
+              subBuilder.MergeFrom(ModifyRemove);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyRemove = subBuilder;
             break;
           }
         }

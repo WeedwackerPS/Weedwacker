@@ -3,6 +3,7 @@ using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
 using Weedwacker.Shared.Utils;
+using EnterReason = Weedwacker.GameServer.Enums.EnterReason;
 
 namespace Weedwacker.GameServer.Packet.Recv
 {

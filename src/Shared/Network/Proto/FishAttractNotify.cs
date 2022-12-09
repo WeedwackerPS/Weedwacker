@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishAttractNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGaXNoQXR0cmFjdE5vdGlmeS5wcm90bxoMVmVjdG9yLnByb3RvIkwKEUZp",
-            "c2hBdHRyYWN0Tm90aWZ5EhQKDGZpc2hfaWRfbGlzdBgDIAMoDRIUCgNwb3MY",
-            "CSABKAsyBy5WZWN0b3ISCwoDdWlkGAIgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdGaXNoQXR0cmFjdE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoMVmVjdG9yLnByb3RvImwKEUZpc2hBdHRyYWN0Tm90",
+            "aWZ5EjQKA3BvcxgCIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uVmVjdG9yEhQKDGZpc2hfaWRfbGlzdBgOIAMoDRILCgN1aWQYDSAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishAttractNotify), global::Weedwacker.Shared.Network.Proto.FishAttractNotify.Parser, new[]{ "FishIdList", "Pos", "Uid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishAttractNotify), global::Weedwacker.Shared.Network.Proto.FishAttractNotify.Parser, new[]{ "Pos", "FishIdList", "Uid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5837
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5809;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FishAttractNotify : pb::IMessage<FishAttractNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishAttractNotify(FishAttractNotify other) : this() {
-      fishIdList_ = other.fishIdList_.Clone();
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      fishIdList_ = other.fishIdList_.Clone();
       uid_ = other.uid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,19 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FishAttractNotify(this);
     }
 
-    /// <summary>Field number for the "fish_id_list" field.</summary>
-    public const int FishIdListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_fishIdList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> fishIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FishIdList {
-      get { return fishIdList_; }
-    }
-
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 9;
+    public const int PosFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,8 +106,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "fish_id_list" field.</summary>
+    public const int FishIdListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_fishIdList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> fishIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FishIdList {
+      get { return fishIdList_; }
+    }
+
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 2;
+    public const int UidFieldNumber = 13;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -139,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!fishIdList_.Equals(other.fishIdList_)) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if(!fishIdList_.Equals(other.fishIdList_)) return false;
       if (Uid != other.Uid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -149,8 +154,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= fishIdList_.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      hash ^= fishIdList_.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,15 +175,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (pos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Pos);
+      }
       if (Uid != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(104);
         output.WriteUInt32(Uid);
       }
       fishIdList_.WriteTo(output, _repeated_fishIdList_codec);
-      if (pos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Pos);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -189,15 +194,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (pos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Pos);
+      }
       if (Uid != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(104);
         output.WriteUInt32(Uid);
       }
       fishIdList_.WriteTo(ref output, _repeated_fishIdList_codec);
-      if (pos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Pos);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -208,10 +213,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += fishIdList_.CalculateSize(_repeated_fishIdList_codec);
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
+      size += fishIdList_.CalculateSize(_repeated_fishIdList_codec);
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
@@ -227,13 +232,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      fishIdList_.Add(other.fishIdList_);
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
       }
+      fishIdList_.Add(other.fishIdList_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
@@ -252,20 +257,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26:
-          case 24: {
-            fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
-            break;
-          }
-          case 74: {
+          case 18: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 104: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
             break;
           }
         }
@@ -283,20 +288,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26:
-          case 24: {
-            fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
-            break;
-          }
-          case 74: {
+          case 18: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 104: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
             break;
           }
         }

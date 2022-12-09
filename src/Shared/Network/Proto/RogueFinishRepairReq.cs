@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueFinishRepairReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpSb2d1ZUZpbmlzaFJlcGFpclJlcS5wcm90bxoWUm9ndWVEaWFyeUF2YXRh",
-            "ci5wcm90byJfChRSb2d1ZUZpbmlzaFJlcGFpclJlcRIYChBjaG9zZW5fY2Fy",
-            "ZF9saXN0GAEgAygNEi0KEmNob3Nlbl9hdmF0YXJfbGlzdBgIIAMoCzIRLlJv",
-            "Z3VlRGlhcnlBdmF0YXJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChpSb2d1ZUZpbmlzaFJlcGFpclJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoWUm9ndWVEaWFyeUF2YXRhci5wcm90byJ/ChRS",
+            "b2d1ZUZpbmlzaFJlcGFpclJlcRJNChJjaG9zZW5fYXZhdGFyX2xpc3QYDiAD",
+            "KAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3VlRGlh",
+            "cnlBdmF0YXISGAoQY2hvc2VuX2NhcmRfbGlzdBgPIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueFinishRepairReq), global::Weedwacker.Shared.Network.Proto.RogueFinishRepairReq.Parser, new[]{ "ChosenCardList", "ChosenAvatarList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueFinishRepairReq), global::Weedwacker.Shared.Network.Proto.RogueFinishRepairReq.Parser, new[]{ "ChosenAvatarList", "ChosenCardList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8363
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8483;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class RogueFinishRepairReq : pb::IMessage<RogueFinishRepairReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueFinishRepairReq(RogueFinishRepairReq other) : this() {
-      chosenCardList_ = other.chosenCardList_.Clone();
       chosenAvatarList_ = other.chosenAvatarList_.Clone();
+      chosenCardList_ = other.chosenCardList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,26 +94,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueFinishRepairReq(this);
     }
 
-    /// <summary>Field number for the "chosen_card_list" field.</summary>
-    public const int ChosenCardListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_chosenCardList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> chosenCardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ChosenCardList {
-      get { return chosenCardList_; }
-    }
-
     /// <summary>Field number for the "chosen_avatar_list" field.</summary>
-    public const int ChosenAvatarListFieldNumber = 8;
+    public const int ChosenAvatarListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> _repeated_chosenAvatarList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> chosenAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> ChosenAvatarList {
       get { return chosenAvatarList_; }
+    }
+
+    /// <summary>Field number for the "chosen_card_list" field.</summary>
+    public const int ChosenCardListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_chosenCardList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> chosenCardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ChosenCardList {
+      get { return chosenCardList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!chosenCardList_.Equals(other.chosenCardList_)) return false;
       if(!chosenAvatarList_.Equals(other.chosenAvatarList_)) return false;
+      if(!chosenCardList_.Equals(other.chosenCardList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= chosenCardList_.GetHashCode();
       hash ^= chosenAvatarList_.GetHashCode();
+      hash ^= chosenCardList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      chosenCardList_.WriteTo(output, _repeated_chosenCardList_codec);
       chosenAvatarList_.WriteTo(output, _repeated_chosenAvatarList_codec);
+      chosenCardList_.WriteTo(output, _repeated_chosenCardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -168,8 +172,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      chosenCardList_.WriteTo(ref output, _repeated_chosenCardList_codec);
       chosenAvatarList_.WriteTo(ref output, _repeated_chosenAvatarList_codec);
+      chosenCardList_.WriteTo(ref output, _repeated_chosenCardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,8 +184,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += chosenCardList_.CalculateSize(_repeated_chosenCardList_codec);
       size += chosenAvatarList_.CalculateSize(_repeated_chosenAvatarList_codec);
+      size += chosenCardList_.CalculateSize(_repeated_chosenCardList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -194,8 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      chosenCardList_.Add(other.chosenCardList_);
       chosenAvatarList_.Add(other.chosenAvatarList_);
+      chosenCardList_.Add(other.chosenCardList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -211,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            chosenCardList_.AddEntriesFrom(input, _repeated_chosenCardList_codec);
+          case 114: {
+            chosenAvatarList_.AddEntriesFrom(input, _repeated_chosenAvatarList_codec);
             break;
           }
-          case 66: {
-            chosenAvatarList_.AddEntriesFrom(input, _repeated_chosenAvatarList_codec);
+          case 122:
+          case 120: {
+            chosenCardList_.AddEntriesFrom(input, _repeated_chosenCardList_codec);
             break;
           }
         }
@@ -235,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            chosenCardList_.AddEntriesFrom(ref input, _repeated_chosenCardList_codec);
+          case 114: {
+            chosenAvatarList_.AddEntriesFrom(ref input, _repeated_chosenAvatarList_codec);
             break;
           }
-          case 66: {
-            chosenAvatarList_.AddEntriesFrom(ref input, _repeated_chosenAvatarList_codec);
+          case 122:
+          case 120: {
+            chosenCardList_.AddEntriesFrom(ref input, _repeated_chosenCardList_codec);
             break;
           }
         }

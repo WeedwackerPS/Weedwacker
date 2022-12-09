@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DeliveryActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBEZWxpdmVyeUFjdGl2aXR5RGV0YWlsSW5mby5wcm90byJvChpEZWxpdmVy",
-            "eUFjdGl2aXR5RGV0YWlsSW5mbxIRCglkYXlfaW5kZXgYDiABKA0SFwoPaXNf",
-            "dGFrZW5fcmV3YXJkGA0gASgIEiUKHWZpbmlzaGVkX2RlbGl2ZXJ5X3F1ZXN0",
-            "X2luZGV4GAQgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "CiBEZWxpdmVyeUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJvChpEZWxpdmVyeUFjdGl2aXR5RGV0",
+            "YWlsSW5mbxIRCglkYXlfaW5kZXgYASABKA0SFwoPaXNfdGFrZW5fcmV3YXJk",
+            "GAsgASgIEiUKHWZpbmlzaGVkX2RlbGl2ZXJ5X3F1ZXN0X2luZGV4GAQgAygN",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "day_index" field.</summary>
-    public const int DayIndexFieldNumber = 14;
+    public const int DayIndexFieldNumber = 1;
     private uint dayIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_taken_reward" field.</summary>
-    public const int IsTakenRewardFieldNumber = 13;
+    public const int IsTakenRewardFieldNumber = 11;
     private bool isTakenReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -166,14 +166,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (DayIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(DayIndex);
+      }
       finishedDeliveryQuestIndex_.WriteTo(output, _repeated_finishedDeliveryQuestIndex_codec);
       if (IsTakenReward != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteBool(IsTakenReward);
-      }
-      if (DayIndex != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -185,14 +185,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DayIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(DayIndex);
+      }
       finishedDeliveryQuestIndex_.WriteTo(ref output, _repeated_finishedDeliveryQuestIndex_codec);
       if (IsTakenReward != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteBool(IsTakenReward);
-      }
-      if (DayIndex != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -245,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            DayIndex = input.ReadUInt32();
+            break;
+          }
           case 34:
           case 32: {
             finishedDeliveryQuestIndex_.AddEntriesFrom(input, _repeated_finishedDeliveryQuestIndex_codec);
             break;
           }
-          case 104: {
+          case 88: {
             IsTakenReward = input.ReadBool();
-            break;
-          }
-          case 112: {
-            DayIndex = input.ReadUInt32();
             break;
           }
         }
@@ -273,17 +273,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            DayIndex = input.ReadUInt32();
+            break;
+          }
           case 34:
           case 32: {
             finishedDeliveryQuestIndex_.AddEntriesFrom(ref input, _repeated_finishedDeliveryQuestIndex_codec);
             break;
           }
-          case 104: {
+          case 88: {
             IsTakenReward = input.ReadBool();
-            break;
-          }
-          case 112: {
-            DayIndex = input.ReadUInt32();
             break;
           }
         }

@@ -25,9 +25,9 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjRDaGFubmVsZXJTbGFiTG9vcER1bmdlb25UYWtlRmlyc3RQYXNzUmV3YXJk",
-            "UmVxLnByb3RvIkcKLkNoYW5uZWxlclNsYWJMb29wRHVuZ2VvblRha2VGaXJz",
-            "dFBhc3NSZXdhcmRSZXESFQoNZHVuZ2Vvbl9pbmRleBgKIAEoDUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "UmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkcK",
+            "LkNoYW5uZWxlclNsYWJMb29wRHVuZ2VvblRha2VGaXJzdFBhc3NSZXdhcmRS",
+            "ZXESFQoNZHVuZ2Vvbl9pbmRleBgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8589
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8498;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChannelerSlabLoopDungeonTakeFirstPassRewardReq : pb::IMessage<ChannelerSlabLoopDungeonTakeFirstPassRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_index" field.</summary>
-    public const int DungeonIndexFieldNumber = 10;
+    public const int DungeonIndexFieldNumber = 7;
     private uint dungeonIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DungeonIndex != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt32(DungeonIndex);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DungeonIndex != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt32(DungeonIndex);
       }
       if (_unknownFields != null) {
@@ -203,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
+          case 56: {
             DungeonIndex = input.ReadUInt32();
             break;
           }
@@ -222,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
+          case 56: {
             DungeonIndex = input.ReadUInt32();
             break;
           }

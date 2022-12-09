@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static UnionCmdReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5VbmlvbkNtZC5wcm90byIsCghVbmlvbkNtZBIMCgRib2R5GA4gASgMEhIK",
-            "Cm1lc3NhZ2VfaWQYCCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "Cg5VbmlvbkNtZC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byIsCghVbmlvbkNtZBIMCgRib2R5GAMgASgMEhIKCm1lc3NhZ2VfaWQY",
+            "BCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "body" field.</summary>
-    public const int BodyFieldNumber = 14;
+    public const int BodyFieldNumber = 3;
     private pb::ByteString body_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "message_id" field.</summary>
-    public const int MessageIdFieldNumber = 8;
+    public const int MessageIdFieldNumber = 4;
     private uint messageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MessageId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MessageId);
-      }
       if (Body.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(26);
         output.WriteBytes(Body);
+      }
+      if (MessageId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MessageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MessageId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MessageId);
-      }
       if (Body.Length != 0) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(26);
         output.WriteBytes(Body);
+      }
+      if (MessageId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MessageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            MessageId = input.ReadUInt32();
+          case 26: {
+            Body = input.ReadBytes();
             break;
           }
-          case 114: {
-            Body = input.ReadBytes();
+          case 32: {
+            MessageId = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            MessageId = input.ReadUInt32();
+          case 26: {
+            Body = input.ReadBytes();
             break;
           }
-          case 114: {
-            Body = input.ReadBytes();
+          case 32: {
+            MessageId = input.ReadUInt32();
             break;
           }
         }

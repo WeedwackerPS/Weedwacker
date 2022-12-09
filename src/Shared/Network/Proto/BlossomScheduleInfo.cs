@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlossomScheduleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlCbG9zc29tU2NoZWR1bGVJbmZvLnByb3RvIooBChNCbG9zc29tU2NoZWR1",
-            "bGVJbmZvEhAKCHByb2dyZXNzGA0gASgNEg0KBXN0YXRlGAogASgNEg0KBXJv",
-            "dW5kGAQgASgNEhYKDmNpcmNsZV9jYW1wX2lkGA8gASgNEhIKCnJlZnJlc2hf",
-            "aWQYBiABKA0SFwoPZmluaXNoX3Byb2dyZXNzGA4gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlCbG9zc29tU2NoZWR1bGVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIooBChNCbG9zc29tU2NoZWR1bGVJbmZvEhAKCHBy",
+            "b2dyZXNzGAEgASgNEg0KBXN0YXRlGAUgASgNEhcKD2ZpbmlzaF9wcm9ncmVz",
+            "cxgKIAEoDRISCgpyZWZyZXNoX2lkGAwgASgNEhYKDmNpcmNsZV9jYW1wX2lk",
+            "GAIgASgNEg0KBXJvdW5kGA4gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo), global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo.Parser, new[]{ "Progress", "State", "Round", "CircleCampId", "RefreshId", "FinishProgress" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo), global::Weedwacker.Shared.Network.Proto.BlossomScheduleInfo.Parser, new[]{ "Progress", "State", "FinishProgress", "RefreshId", "CircleCampId", "Round" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public BlossomScheduleInfo(BlossomScheduleInfo other) : this() {
       progress_ = other.progress_;
       state_ = other.state_;
-      round_ = other.round_;
-      circleCampId_ = other.circleCampId_;
-      refreshId_ = other.refreshId_;
       finishProgress_ = other.finishProgress_;
+      refreshId_ = other.refreshId_;
+      circleCampId_ = other.circleCampId_;
+      round_ = other.round_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 13;
+    public const int ProgressFieldNumber = 1;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 10;
+    public const int StateFieldNumber = 5;
     private uint state_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,32 +112,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "round" field.</summary>
-    public const int RoundFieldNumber = 4;
-    private uint round_;
+    /// <summary>Field number for the "finish_progress" field.</summary>
+    public const int FinishProgressFieldNumber = 10;
+    private uint finishProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Round {
-      get { return round_; }
+    public uint FinishProgress {
+      get { return finishProgress_; }
       set {
-        round_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "circle_camp_id" field.</summary>
-    public const int CircleCampIdFieldNumber = 15;
-    private uint circleCampId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CircleCampId {
-      get { return circleCampId_; }
-      set {
-        circleCampId_ = value;
+        finishProgress_ = value;
       }
     }
 
     /// <summary>Field number for the "refresh_id" field.</summary>
-    public const int RefreshIdFieldNumber = 6;
+    public const int RefreshIdFieldNumber = 12;
     private uint refreshId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,15 +136,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "finish_progress" field.</summary>
-    public const int FinishProgressFieldNumber = 14;
-    private uint finishProgress_;
+    /// <summary>Field number for the "circle_camp_id" field.</summary>
+    public const int CircleCampIdFieldNumber = 2;
+    private uint circleCampId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishProgress {
-      get { return finishProgress_; }
+    public uint CircleCampId {
+      get { return circleCampId_; }
       set {
-        finishProgress_ = value;
+        circleCampId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "round" field.</summary>
+    public const int RoundFieldNumber = 14;
+    private uint round_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Round {
+      get { return round_; }
+      set {
+        round_ = value;
       }
     }
 
@@ -177,10 +177,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (Progress != other.Progress) return false;
       if (State != other.State) return false;
-      if (Round != other.Round) return false;
-      if (CircleCampId != other.CircleCampId) return false;
-      if (RefreshId != other.RefreshId) return false;
       if (FinishProgress != other.FinishProgress) return false;
+      if (RefreshId != other.RefreshId) return false;
+      if (CircleCampId != other.CircleCampId) return false;
+      if (Round != other.Round) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       if (Progress != 0) hash ^= Progress.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
-      if (Round != 0) hash ^= Round.GetHashCode();
-      if (CircleCampId != 0) hash ^= CircleCampId.GetHashCode();
-      if (RefreshId != 0) hash ^= RefreshId.GetHashCode();
       if (FinishProgress != 0) hash ^= FinishProgress.GetHashCode();
+      if (RefreshId != 0) hash ^= RefreshId.GetHashCode();
+      if (CircleCampId != 0) hash ^= CircleCampId.GetHashCode();
+      if (Round != 0) hash ^= Round.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -212,29 +212,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Round != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Round);
-      }
-      if (RefreshId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(RefreshId);
-      }
-      if (State != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(State);
-      }
       if (Progress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(Progress);
       }
+      if (CircleCampId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CircleCampId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(State);
+      }
       if (FinishProgress != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(FinishProgress);
       }
-      if (CircleCampId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CircleCampId);
+      if (RefreshId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(RefreshId);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Round);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -246,29 +246,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Round != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Round);
-      }
-      if (RefreshId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(RefreshId);
-      }
-      if (State != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(State);
-      }
       if (Progress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(Progress);
       }
+      if (CircleCampId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CircleCampId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(State);
+      }
       if (FinishProgress != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(FinishProgress);
       }
-      if (CircleCampId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CircleCampId);
+      if (RefreshId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(RefreshId);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Round);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -286,17 +286,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(State);
       }
-      if (Round != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
-      }
-      if (CircleCampId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CircleCampId);
+      if (FinishProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishProgress);
       }
       if (RefreshId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshId);
       }
-      if (FinishProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishProgress);
+      if (CircleCampId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CircleCampId);
+      }
+      if (Round != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -316,17 +316,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.State != 0) {
         State = other.State;
       }
-      if (other.Round != 0) {
-        Round = other.Round;
-      }
-      if (other.CircleCampId != 0) {
-        CircleCampId = other.CircleCampId;
+      if (other.FinishProgress != 0) {
+        FinishProgress = other.FinishProgress;
       }
       if (other.RefreshId != 0) {
         RefreshId = other.RefreshId;
       }
-      if (other.FinishProgress != 0) {
-        FinishProgress = other.FinishProgress;
+      if (other.CircleCampId != 0) {
+        CircleCampId = other.CircleCampId;
+      }
+      if (other.Round != 0) {
+        Round = other.Round;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -343,28 +343,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Round = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            RefreshId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 16: {
+            CircleCampId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            State = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             FinishProgress = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CircleCampId = input.ReadUInt32();
+          case 96: {
+            RefreshId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Round = input.ReadUInt32();
             break;
           }
         }
@@ -382,28 +382,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Round = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            RefreshId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 16: {
+            CircleCampId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            State = input.ReadUInt32();
+            break;
+          }
+          case 80: {
             FinishProgress = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CircleCampId = input.ReadUInt32();
+          case 96: {
+            RefreshId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Round = input.ReadUInt32();
             break;
           }
         }

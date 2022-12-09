@@ -24,26 +24,29 @@ namespace Weedwacker.Shared.Network.Proto {
     static SocialDetailReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJTb2NpYWxEZXRhaWwucHJvdG8aDkJpcnRoZGF5LnByb3RvGhtGcmllbmRF",
-            "bnRlckhvbWVPcHRpb24ucHJvdG8aF0ZyaWVuZE9ubGluZVN0YXRlLnByb3Rv",
-            "GhRQcm9maWxlUGljdHVyZS5wcm90bxoaU29jaWFsU2hvd0F2YXRhckluZm8u",
-            "cHJvdG8isAUKDFNvY2lhbERldGFpbBILCgN1aWQYASABKA0SEAoIbmlja25h",
-            "bWUYAiABKAkSDQoFbGV2ZWwYAyABKA0SEQoJYXZhdGFyX2lkGAQgASgNEhEK",
-            "CXNpZ25hdHVyZRgFIAEoCRIbCghiaXJ0aGRheRgGIAEoCzIJLkJpcnRoZGF5",
-            "EhMKC3dvcmxkX2xldmVsGAcgASgNEhUKDXJlc2VydmVkX2xpc3QYCCADKA0S",
-            "KAoMb25saW5lX3N0YXRlGAkgASgOMhIuRnJpZW5kT25saW5lU3RhdGUSDQoF",
-            "cGFyYW0YCiABKA0SEQoJaXNfZnJpZW5kGAsgASgIEhwKFGlzX21wX21vZGVf",
-            "YXZhaWxhYmxlGAwgASgIEhEKCW9ubGluZV9pZBgNIAEoCRIUCgxuYW1lX2Nh",
-            "cmRfaWQYDiABKA0SFwoPaXNfaW5fYmxhY2tsaXN0GA8gASgIEhoKEmlzX2No",
-            "YXRfbm9fZGlzdHVyYhgQIAEoCBITCgtyZW1hcmtfbmFtZRgRIAEoCRIeChZm",
-            "aW5pc2hfYWNoaWV2ZW1lbnRfbnVtGBIgASgNEhkKEXRvd2VyX2Zsb29yX2lu",
-            "ZGV4GBMgASgNEhkKEXRvd2VyX2xldmVsX2luZGV4GBQgASgNEhYKDmlzX3No",
-            "b3dfYXZhdGFyGBUgASgIEjQKFXNob3dfYXZhdGFyX2luZm9fbGlzdBgWIAMo",
-            "CzIVLlNvY2lhbFNob3dBdmF0YXJJbmZvEh4KFnNob3dfbmFtZV9jYXJkX2lk",
-            "X2xpc3QYFyADKA0SOAoYZnJpZW5kX2VudGVyX2hvbWVfb3B0aW9uGBggASgO",
-            "MhYuRnJpZW5kRW50ZXJIb21lT3B0aW9uEigKD3Byb2ZpbGVfcGljdHVyZRgZ",
-            "IAEoCzIPLlByb2ZpbGVQaWN0dXJlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChJTb2NpYWxEZXRhaWwucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aDkJpcnRoZGF5LnByb3RvGhtGcmllbmRFbnRlckhvbWVPcHRp",
+            "b24ucHJvdG8aF0ZyaWVuZE9ubGluZVN0YXRlLnByb3RvGhRQcm9maWxlUGlj",
+            "dHVyZS5wcm90bxoaU29jaWFsU2hvd0F2YXRhckluZm8ucHJvdG8i0AYKDFNv",
+            "Y2lhbERldGFpbBILCgN1aWQYASABKA0SEAoIbmlja25hbWUYAiABKAkSDQoF",
+            "bGV2ZWwYAyABKA0SEQoJYXZhdGFyX2lkGAQgASgNEhEKCXNpZ25hdHVyZRgF",
+            "IAEoCRI7CghiaXJ0aGRheRgGIAEoCzIpLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQmlydGhkYXkSEwoLd29ybGRfbGV2ZWwYByABKA0SFQoN",
+            "cmVzZXJ2ZWRfbGlzdBgIIAMoDRJICgxvbmxpbmVfc3RhdGUYCSABKA4yMi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZyaWVuZE9ubGluZVN0",
+            "YXRlEg0KBXBhcmFtGAogASgNEhEKCWlzX2ZyaWVuZBgLIAEoCBIcChRpc19t",
+            "cF9tb2RlX2F2YWlsYWJsZRgMIAEoCBIRCglvbmxpbmVfaWQYDSABKAkSFAoM",
+            "bmFtZV9jYXJkX2lkGA4gASgNEhcKD2lzX2luX2JsYWNrbGlzdBgPIAEoCBIa",
+            "ChJpc19jaGF0X25vX2Rpc3R1cmIYECABKAgSEwoLcmVtYXJrX25hbWUYESAB",
+            "KAkSHgoWZmluaXNoX2FjaGlldmVtZW50X251bRgSIAEoDRIZChF0b3dlcl9m",
+            "bG9vcl9pbmRleBgTIAEoDRIZChF0b3dlcl9sZXZlbF9pbmRleBgUIAEoDRIW",
+            "Cg5pc19zaG93X2F2YXRhchgVIAEoCBJUChVzaG93X2F2YXRhcl9pbmZvX2xp",
+            "c3QYFiADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNv",
+            "Y2lhbFNob3dBdmF0YXJJbmZvEh4KFnNob3dfbmFtZV9jYXJkX2lkX2xpc3QY",
+            "FyADKA0SWAoYZnJpZW5kX2VudGVyX2hvbWVfb3B0aW9uGBggASgOMjYuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GcmllbmRFbnRlckhvbWVP",
+            "cHRpb24SSAoPcHJvZmlsZV9waWN0dXJlGBkgASgLMi8uV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5Qcm9maWxlUGljdHVyZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BirthdayReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOptionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FriendOnlineStateReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ProfilePictureReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SocialShowAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -219,7 +222,7 @@ namespace Weedwacker.Shared.Network.Proto {
 
     /// <summary>Field number for the "online_state" field.</summary>
     public const int OnlineStateFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.FriendOnlineState onlineState_ = global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect;
+    private global::Weedwacker.Shared.Network.Proto.FriendOnlineState onlineState_ = global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FriendOnlineState OnlineState {
@@ -474,7 +477,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (birthday_ != null) hash ^= Birthday.GetHashCode();
       if (WorldLevel != 0) hash ^= WorldLevel.GetHashCode();
       hash ^= reservedList_.GetHashCode();
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) hash ^= OnlineState.GetHashCode();
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) hash ^= OnlineState.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
       if (IsFriend != false) hash ^= IsFriend.GetHashCode();
       if (IsMpModeAvailable != false) hash ^= IsMpModeAvailable.GetHashCode();
@@ -538,7 +541,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(WorldLevel);
       }
       reservedList_.WriteTo(output, _repeated_reservedList_codec);
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         output.WriteRawTag(72);
         output.WriteEnum((int) OnlineState);
       }
@@ -639,7 +642,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(WorldLevel);
       }
       reservedList_.WriteTo(ref output, _repeated_reservedList_codec);
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         output.WriteRawTag(72);
         output.WriteEnum((int) OnlineState);
       }
@@ -733,7 +736,7 @@ namespace Weedwacker.Shared.Network.Proto {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WorldLevel);
       }
       size += reservedList_.CalculateSize(_repeated_reservedList_codec);
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OnlineState);
       }
       if (Param != 0) {
@@ -817,7 +820,7 @@ namespace Weedwacker.Shared.Network.Proto {
         WorldLevel = other.WorldLevel;
       }
       reservedList_.Add(other.reservedList_);
-      if (other.OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (other.OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         OnlineState = other.OnlineState;
       }
       if (other.Param != 0) {

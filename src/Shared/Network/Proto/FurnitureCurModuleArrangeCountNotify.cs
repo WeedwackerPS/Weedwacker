@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static FurnitureCurModuleArrangeCountNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipGdXJuaXR1cmVDdXJNb2R1bGVBcnJhbmdlQ291bnROb3RpZnkucHJvdG8a",
-            "EFVpbnQzMlBhaXIucHJvdG8iWQokRnVybml0dXJlQ3VyTW9kdWxlQXJyYW5n",
-            "ZUNvdW50Tm90aWZ5EjEKHGZ1cm5pdHVyZV9hcnJhbmdlX2NvdW50X2xpc3QY",
-            "DSADKAsyCy5VaW50MzJQYWlyQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CipGdXJuaXR1cmVDdXJNb2R1bGVBcnJhbmdlQ291bnROb3RpZnkucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aEFVpbnQzMlBhaXIu",
+            "cHJvdG8ieQokRnVybml0dXJlQ3VyTW9kdWxlQXJyYW5nZUNvdW50Tm90aWZ5",
+            "ElEKHGZ1cm5pdHVyZV9hcnJhbmdlX2NvdW50X2xpc3QYAyADKAsyKy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlVpbnQzMlBhaXJiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4498
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4538;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FurnitureCurModuleArrangeCountNotify : pb::IMessage<FurnitureCurModuleArrangeCountNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "furniture_arrange_count_list" field.</summary>
-    public const int FurnitureArrangeCountListFieldNumber = 13;
+    public const int FurnitureArrangeCountListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_furnitureArrangeCountList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> furnitureArrangeCountList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 26: {
             furnitureArrangeCountList_.AddEntriesFrom(input, _repeated_furnitureArrangeCountList_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 26: {
             furnitureArrangeCountList_.AddEntriesFrom(ref input, _repeated_furnitureArrangeCountList_codec);
             break;
           }

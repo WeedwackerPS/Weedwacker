@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinEliteShieldReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BYmlsaXR5TWl4aW5FbGl0ZVNoaWVsZC5wcm90byItChdBYmlsaXR5TWl4",
-            "aW5FbGl0ZVNoaWVsZBISCgpzdWJfc2hpZWxkGAIgASgCQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1BYmlsaXR5TWl4aW5FbGl0ZVNoaWVsZC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byItChdBYmlsaXR5TWl4aW5FbGl0ZVNoaWVs",
+            "ZBISCgpzdWJfc2hpZWxkGAkgASgCYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "sub_shield" field.</summary>
-    public const int SubShieldFieldNumber = 2;
+    public const int SubShieldFieldNumber = 9;
     private float subShield_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (SubShield != 0F) {
-        output.WriteRawTag(21);
+        output.WriteRawTag(77);
         output.WriteFloat(SubShield);
       }
       if (_unknownFields != null) {
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (SubShield != 0F) {
-        output.WriteRawTag(21);
+        output.WriteRawTag(77);
         output.WriteFloat(SubShield);
       }
       if (_unknownFields != null) {
@@ -196,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 21: {
+          case 77: {
             SubShield = input.ReadFloat();
             break;
           }
@@ -215,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 21: {
+          case 77: {
             SubShield = input.ReadFloat();
             break;
           }

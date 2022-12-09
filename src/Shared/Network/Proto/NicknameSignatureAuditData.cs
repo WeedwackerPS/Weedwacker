@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static NicknameSignatureAuditDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBOaWNrbmFtZVNpZ25hdHVyZUF1ZGl0RGF0YS5wcm90bxogQ29udGVudEF1",
-            "ZGl0QXV4aWxpYXJ5RmllbGQucHJvdG8aF0NvbnRlbnRBdWRpdEZpZWxkLnBy",
-            "b3RvIt0BChpOaWNrbmFtZVNpZ25hdHVyZUF1ZGl0RGF0YRILCgNhaWQYASAB",
-            "KAkSEQoJZW50aXR5X2lkGAIgASgJEgwKBGxhbmcYAyABKAkSEQoJcXVldWVf",
-            "a2V5GAQgASgJEg4KBnJlZ2lvbhgFIAEoCRILCgN1aWQYBiABKA0SLAoQYXVk",
-            "aXRfZmllbGRfbGlzdBgHIAMoCzISLkNvbnRlbnRBdWRpdEZpZWxkEjMKDmF1",
-            "eF9maWVsZF9saXN0GAggAygLMhsuQ29udGVudEF1ZGl0QXV4aWxpYXJ5Rmll",
-            "bGRCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiBOaWNrbmFtZVNpZ25hdHVyZUF1ZGl0RGF0YS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxogQ29udGVudEF1ZGl0QXV4aWxpYXJ5",
+            "RmllbGQucHJvdG8aF0NvbnRlbnRBdWRpdEZpZWxkLnByb3RvIp0CChpOaWNr",
+            "bmFtZVNpZ25hdHVyZUF1ZGl0RGF0YRILCgNhaWQYASABKAkSEQoJZW50aXR5",
+            "X2lkGAIgASgJEgwKBGxhbmcYAyABKAkSEQoJcXVldWVfa2V5GAQgASgJEg4K",
+            "BnJlZ2lvbhgFIAEoCRILCgN1aWQYBiABKA0STAoQYXVkaXRfZmllbGRfbGlz",
+            "dBgHIAMoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ29u",
+            "dGVudEF1ZGl0RmllbGQSUwoOYXV4X2ZpZWxkX2xpc3QYCCADKAsyOy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNvbnRlbnRBdWRpdEF1eGls",
+            "aWFyeUZpZWxkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ContentAuditAuxiliaryFieldReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ContentAuditFieldReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

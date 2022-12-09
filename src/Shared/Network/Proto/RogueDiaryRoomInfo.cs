@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryRoomInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSb2d1ZURpYXJ5Um9vbUluZm8ucHJvdG8aEFVpbnQzMlBhaXIucHJvdG8i",
-            "WwoSUm9ndWVEaWFyeVJvb21JbmZvEiEKDG1vbnN0ZXJfbGlzdBgBIAMoCzIL",
-            "LlVpbnQzMlBhaXISDwoHaXNfYm9zcxgDIAEoCBIRCgljb25maWdfaWQYByAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChhSb2d1ZURpYXJ5Um9vbUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEFVpbnQzMlBhaXIucHJvdG8iewoSUm9ndWVEaWFy",
+            "eVJvb21JbmZvEg8KB2lzX2Jvc3MYBiABKAgSEQoJY29uZmlnX2lkGAMgASgN",
+            "EkEKDG1vbnN0ZXJfbGlzdBgEIAMoCzIrLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uVWludDMyUGFpcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo), global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo.Parser, new[]{ "MonsterList", "IsBoss", "ConfigId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo), global::Weedwacker.Shared.Network.Proto.RogueDiaryRoomInfo.Parser, new[]{ "IsBoss", "ConfigId", "MonsterList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryRoomInfo(RogueDiaryRoomInfo other) : this() {
-      monsterList_ = other.monsterList_.Clone();
       isBoss_ = other.isBoss_;
       configId_ = other.configId_;
+      monsterList_ = other.monsterList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,19 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueDiaryRoomInfo(this);
     }
 
-    /// <summary>Field number for the "monster_list" field.</summary>
-    public const int MonsterListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_monsterList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> monsterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> MonsterList {
-      get { return monsterList_; }
-    }
-
     /// <summary>Field number for the "is_boss" field.</summary>
-    public const int IsBossFieldNumber = 3;
+    public const int IsBossFieldNumber = 6;
     private bool isBoss_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 7;
+    public const int ConfigIdFieldNumber = 3;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,6 +107,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         configId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "monster_list" field.</summary>
+    public const int MonsterListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_monsterList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> monsterList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> MonsterList {
+      get { return monsterList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!monsterList_.Equals(other.monsterList_)) return false;
       if (IsBoss != other.IsBoss) return false;
       if (ConfigId != other.ConfigId) return false;
+      if(!monsterList_.Equals(other.monsterList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= monsterList_.GetHashCode();
       if (IsBoss != false) hash ^= IsBoss.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      hash ^= monsterList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,14 +166,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ConfigId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConfigId);
+      }
       monsterList_.WriteTo(output, _repeated_monsterList_codec);
       if (IsBoss != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteBool(IsBoss);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -185,14 +185,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ConfigId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConfigId);
+      }
       monsterList_.WriteTo(ref output, _repeated_monsterList_codec);
       if (IsBoss != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteBool(IsBoss);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += monsterList_.CalculateSize(_repeated_monsterList_codec);
       if (IsBoss != false) {
         size += 1 + 1;
       }
       if (ConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
       }
+      size += monsterList_.CalculateSize(_repeated_monsterList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -223,13 +223,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      monsterList_.Add(other.monsterList_);
       if (other.IsBoss != false) {
         IsBoss = other.IsBoss;
       }
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
       }
+      monsterList_.Add(other.monsterList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -245,16 +245,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 24: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             monsterList_.AddEntriesFrom(input, _repeated_monsterList_codec);
             break;
           }
-          case 24: {
+          case 48: {
             IsBoss = input.ReadBool();
-            break;
-          }
-          case 56: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }
@@ -272,16 +272,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 24: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             monsterList_.AddEntriesFrom(ref input, _repeated_monsterList_codec);
             break;
           }
-          case 24: {
+          case 48: {
             IsBoss = input.ReadBool();
-            break;
-          }
-          case 56: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }

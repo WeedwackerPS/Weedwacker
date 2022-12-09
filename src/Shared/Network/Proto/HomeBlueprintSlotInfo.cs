@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBlueprintSlotInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtIb21lQmx1ZXByaW50U2xvdEluZm8ucHJvdG8inwEKFUhvbWVCbHVlcHJp",
-            "bnRTbG90SW5mbxIRCgltb2R1bGVfaWQYDCABKA0SEAoIYmxvY2tfaWQYDiAB",
-            "KA0SEAoIc2NlbmVfaWQYBCABKA0SDwoHc2xvdF9pZBgFIAEoDRISCgpzaGFy",
-            "ZV9jb2RlGAsgASgJEhUKDWlzX2FsbG93X2NvcHkYAyABKAgSEwoLY3JlYXRl",
-            "X3RpbWUYBiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChtIb21lQmx1ZXByaW50U2xvdEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8inwEKFUhvbWVCbHVlcHJpbnRTbG90SW5mbxIT",
+            "CgtjcmVhdGVfdGltZRgMIAEoDRIQCghzY2VuZV9pZBgKIAEoDRISCgpzaGFy",
+            "ZV9jb2RlGAkgASgJEhEKCW1vZHVsZV9pZBgDIAEoDRIQCghibG9ja19pZBgC",
+            "IAEoDRIPCgdzbG90X2lkGAggASgNEhUKDWlzX2FsbG93X2NvcHkYBiABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo), global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo.Parser, new[]{ "ModuleId", "BlockId", "SceneId", "SlotId", "ShareCode", "IsAllowCopy", "CreateTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo), global::Weedwacker.Shared.Network.Proto.HomeBlueprintSlotInfo.Parser, new[]{ "CreateTime", "SceneId", "ShareCode", "ModuleId", "BlockId", "SlotId", "IsAllowCopy" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,13 +74,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBlueprintSlotInfo(HomeBlueprintSlotInfo other) : this() {
+      createTime_ = other.createTime_;
+      sceneId_ = other.sceneId_;
+      shareCode_ = other.shareCode_;
       moduleId_ = other.moduleId_;
       blockId_ = other.blockId_;
-      sceneId_ = other.sceneId_;
       slotId_ = other.slotId_;
-      shareCode_ = other.shareCode_;
       isAllowCopy_ = other.isAllowCopy_;
-      createTime_ = other.createTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +90,44 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeBlueprintSlotInfo(this);
     }
 
+    /// <summary>Field number for the "create_time" field.</summary>
+    public const int CreateTimeFieldNumber = 12;
+    private uint createTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreateTime {
+      get { return createTime_; }
+      set {
+        createTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 10;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "share_code" field.</summary>
+    public const int ShareCodeFieldNumber = 9;
+    private string shareCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ShareCode {
+      get { return shareCode_; }
+      set {
+        shareCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "module_id" field.</summary>
-    public const int ModuleIdFieldNumber = 12;
+    public const int ModuleIdFieldNumber = 3;
     private uint moduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "block_id" field.</summary>
-    public const int BlockIdFieldNumber = 14;
+    public const int BlockIdFieldNumber = 2;
     private uint blockId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,20 +150,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 4;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "slot_id" field.</summary>
-    public const int SlotIdFieldNumber = 5;
+    public const int SlotIdFieldNumber = 8;
     private uint slotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,20 +162,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "share_code" field.</summary>
-    public const int ShareCodeFieldNumber = 11;
-    private string shareCode_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ShareCode {
-      get { return shareCode_; }
-      set {
-        shareCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "is_allow_copy" field.</summary>
-    public const int IsAllowCopyFieldNumber = 3;
+    public const int IsAllowCopyFieldNumber = 6;
     private bool isAllowCopy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,18 +171,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isAllowCopy_; }
       set {
         isAllowCopy_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "create_time" field.</summary>
-    public const int CreateTimeFieldNumber = 6;
-    private uint createTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CreateTime {
-      get { return createTime_; }
-      set {
-        createTime_ = value;
       }
     }
 
@@ -189,13 +189,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (CreateTime != other.CreateTime) return false;
+      if (SceneId != other.SceneId) return false;
+      if (ShareCode != other.ShareCode) return false;
       if (ModuleId != other.ModuleId) return false;
       if (BlockId != other.BlockId) return false;
-      if (SceneId != other.SceneId) return false;
       if (SlotId != other.SlotId) return false;
-      if (ShareCode != other.ShareCode) return false;
       if (IsAllowCopy != other.IsAllowCopy) return false;
-      if (CreateTime != other.CreateTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,13 +203,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
       if (ModuleId != 0) hash ^= ModuleId.GetHashCode();
       if (BlockId != 0) hash ^= BlockId.GetHashCode();
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (SlotId != 0) hash ^= SlotId.GetHashCode();
-      if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
       if (IsAllowCopy != false) hash ^= IsAllowCopy.GetHashCode();
-      if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -228,33 +228,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsAllowCopy != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAllowCopy);
-      }
-      if (SceneId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(SceneId);
-      }
-      if (SlotId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(SlotId);
-      }
-      if (CreateTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CreateTime);
-      }
-      if (ShareCode.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(ShareCode);
+      if (BlockId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(BlockId);
       }
       if (ModuleId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ModuleId);
       }
-      if (BlockId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(BlockId);
+      if (IsAllowCopy != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsAllowCopy);
+      }
+      if (SlotId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SlotId);
+      }
+      if (ShareCode.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(ShareCode);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (CreateTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CreateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -266,33 +266,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsAllowCopy != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAllowCopy);
-      }
-      if (SceneId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(SceneId);
-      }
-      if (SlotId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(SlotId);
-      }
-      if (CreateTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CreateTime);
-      }
-      if (ShareCode.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(ShareCode);
+      if (BlockId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(BlockId);
       }
       if (ModuleId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ModuleId);
       }
-      if (BlockId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(BlockId);
+      if (IsAllowCopy != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsAllowCopy);
+      }
+      if (SlotId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SlotId);
+      }
+      if (ShareCode.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(ShareCode);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (CreateTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CreateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -304,26 +304,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (CreateTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateTime);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (ShareCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
+      }
       if (ModuleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModuleId);
       }
       if (BlockId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlockId);
       }
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
       if (SlotId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotId);
       }
-      if (ShareCode.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
-      }
       if (IsAllowCopy != false) {
         size += 1 + 1;
-      }
-      if (CreateTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -337,26 +337,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.CreateTime != 0) {
+        CreateTime = other.CreateTime;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.ShareCode.Length != 0) {
+        ShareCode = other.ShareCode;
+      }
       if (other.ModuleId != 0) {
         ModuleId = other.ModuleId;
       }
       if (other.BlockId != 0) {
         BlockId = other.BlockId;
       }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
       if (other.SlotId != 0) {
         SlotId = other.SlotId;
       }
-      if (other.ShareCode.Length != 0) {
-        ShareCode = other.ShareCode;
-      }
       if (other.IsAllowCopy != false) {
         IsAllowCopy = other.IsAllowCopy;
-      }
-      if (other.CreateTime != 0) {
-        CreateTime = other.CreateTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -373,32 +373,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 16: {
+            BlockId = input.ReadUInt32();
+            break;
+          }
           case 24: {
-            IsAllowCopy = input.ReadBool();
-            break;
-          }
-          case 32: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            SlotId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            CreateTime = input.ReadUInt32();
-            break;
-          }
-          case 90: {
-            ShareCode = input.ReadString();
-            break;
-          }
-          case 96: {
             ModuleId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            BlockId = input.ReadUInt32();
+          case 48: {
+            IsAllowCopy = input.ReadBool();
+            break;
+          }
+          case 64: {
+            SlotId = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            ShareCode = input.ReadString();
+            break;
+          }
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CreateTime = input.ReadUInt32();
             break;
           }
         }
@@ -416,32 +416,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 16: {
+            BlockId = input.ReadUInt32();
+            break;
+          }
           case 24: {
-            IsAllowCopy = input.ReadBool();
-            break;
-          }
-          case 32: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            SlotId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            CreateTime = input.ReadUInt32();
-            break;
-          }
-          case 90: {
-            ShareCode = input.ReadString();
-            break;
-          }
-          case 96: {
             ModuleId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            BlockId = input.ReadUInt32();
+          case 48: {
+            IsAllowCopy = input.ReadBool();
+            break;
+          }
+          case 64: {
+            SlotId = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            ShareCode = input.ReadString();
+            break;
+          }
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CreateTime = input.ReadUInt32();
             break;
           }
         }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityActionBlinkReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhBYmlsaXR5QWN0aW9uQmxpbmsucHJvdG8aDFZlY3Rvci5wcm90byJAChJB",
-            "YmlsaXR5QWN0aW9uQmxpbmsSFAoDcm90GAsgASgLMgcuVmVjdG9yEhQKA3Bv",
-            "cxgKIAEoCzIHLlZlY3RvckIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChhBYmlsaXR5QWN0aW9uQmxpbmsucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byKAAQoSQWJpbGl0eUFjdGlv",
+            "bkJsaW5rEjQKA3JvdBgIIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVmVjdG9yEjQKA3BvcxgDIAEoCzInLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 11;
+    public const int RotFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 10;
+    public const int PosFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(26);
         output.WriteMessage(Pos);
       }
       if (rot_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(66);
         output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
@@ -170,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(26);
         output.WriteMessage(Pos);
       }
       if (rot_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(66);
         output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
@@ -232,14 +233,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 26: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 90: {
+          case 66: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -261,14 +262,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 26: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 90: {
+          case 66: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }

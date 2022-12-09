@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueAvatarInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVSb2d1ZUF2YXRhckluZm8ucHJvdG8iSgoPUm9ndWVBdmF0YXJJbmZvEhIK",
-            "CmlzX29uc3RhZ2UYBSABKAgSEAoIaXNfYWxpdmUYAyABKAgSEQoJYXZhdGFy",
-            "X2lkGA4gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChVSb2d1ZUF2YXRhckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iSgoPUm9ndWVBdmF0YXJJbmZvEhIKCmlzX29uc3RhZ2UY",
+            "AiABKAgSEAoIaXNfYWxpdmUYCCABKAgSEQoJYXZhdGFyX2lkGAUgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_onstage" field.</summary>
-    public const int IsOnstageFieldNumber = 5;
+    public const int IsOnstageFieldNumber = 2;
     private bool isOnstage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_alive" field.</summary>
-    public const int IsAliveFieldNumber = 3;
+    public const int IsAliveFieldNumber = 8;
     private bool isAlive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 14;
+    public const int AvatarIdFieldNumber = 5;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsAlive != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAlive);
-      }
       if (IsOnstage != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteBool(IsOnstage);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(AvatarId);
+      }
+      if (IsAlive != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsAlive);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsAlive != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAlive);
-      }
       if (IsOnstage != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteBool(IsOnstage);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(AvatarId);
+      }
+      if (IsAlive != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsAlive);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            IsAlive = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 16: {
             IsOnstage = input.ReadBool();
             break;
           }
-          case 112: {
+          case 40: {
             AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsAlive = input.ReadBool();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            IsAlive = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 16: {
             IsOnstage = input.ReadBool();
             break;
           }
-          case 112: {
+          case 40: {
             AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsAlive = input.ReadBool();
             break;
           }
         }

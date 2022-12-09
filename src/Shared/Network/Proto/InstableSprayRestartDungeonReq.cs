@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static InstableSprayRestartDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRJbnN0YWJsZVNwcmF5UmVzdGFydER1bmdlb25SZXEucHJvdG8aHUluc3Rh",
-            "YmxlU3ByYXlBdmF0YXJJbmZvLnByb3RvIlQKHkluc3RhYmxlU3ByYXlSZXN0",
-            "YXJ0RHVuZ2VvblJlcRIyChBhdmF0YXJfaW5mb19saXN0GAYgAygLMhguSW5z",
-            "dGFibGVTcHJheUF2YXRhckluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRJbnN0YWJsZVNwcmF5UmVzdGFydER1bmdlb25SZXEucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHUluc3RhYmxlU3ByYXlBdmF0",
+            "YXJJbmZvLnByb3RvInQKHkluc3RhYmxlU3ByYXlSZXN0YXJ0RHVuZ2VvblJl",
+            "cRJSChBhdmF0YXJfaW5mb19saXN0GA8gAygLMjguV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5JbnN0YWJsZVNwcmF5QXZhdGFySW5mb2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23678
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 22725;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class InstableSprayRestartDungeonReq : pb::IMessage<InstableSprayRestartDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_info_list" field.</summary>
-    public const int AvatarInfoListFieldNumber = 6;
+    public const int AvatarInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> _repeated_avatarInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 122: {
             avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
             break;
           }
@@ -212,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 122: {
             avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
             break;
           }

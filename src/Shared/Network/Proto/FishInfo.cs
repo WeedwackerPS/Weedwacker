@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5GaXNoSW5mby5wcm90byI2CghGaXNoSW5mbxISCgpmcmVlX2NvdW50GAsg",
-            "ASgNEhYKDmludG9fYmFnX2NvdW50GAwgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Cg5GaXNoSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byJECghGaXNoSW5mbxIbChNVbmszMzAwX0FLRkJGRURDRUxOGA4gASgN",
+            "EhsKE1VuazMzMDBfRklJQ0xCRUZITEwYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishInfo), global::Weedwacker.Shared.Network.Proto.FishInfo.Parser, new[]{ "FreeCount", "IntoBagCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishInfo), global::Weedwacker.Shared.Network.Proto.FishInfo.Parser, new[]{ "Unk3300AKFBFEDCELN", "Unk3300FIICLBEFHLL" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishInfo(FishInfo other) : this() {
-      freeCount_ = other.freeCount_;
-      intoBagCount_ = other.intoBagCount_;
+      unk3300AKFBFEDCELN_ = other.unk3300AKFBFEDCELN_;
+      unk3300FIICLBEFHLL_ = other.unk3300FIICLBEFHLL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,27 +82,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FishInfo(this);
     }
 
-    /// <summary>Field number for the "free_count" field.</summary>
-    public const int FreeCountFieldNumber = 11;
-    private uint freeCount_;
+    /// <summary>Field number for the "Unk3300_AKFBFEDCELN" field.</summary>
+    public const int Unk3300AKFBFEDCELNFieldNumber = 14;
+    private uint unk3300AKFBFEDCELN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FreeCount {
-      get { return freeCount_; }
+    public uint Unk3300AKFBFEDCELN {
+      get { return unk3300AKFBFEDCELN_; }
       set {
-        freeCount_ = value;
+        unk3300AKFBFEDCELN_ = value;
       }
     }
 
-    /// <summary>Field number for the "into_bag_count" field.</summary>
-    public const int IntoBagCountFieldNumber = 12;
-    private uint intoBagCount_;
+    /// <summary>Field number for the "Unk3300_FIICLBEFHLL" field.</summary>
+    public const int Unk3300FIICLBEFHLLFieldNumber = 7;
+    private uint unk3300FIICLBEFHLL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint IntoBagCount {
-      get { return intoBagCount_; }
+    public uint Unk3300FIICLBEFHLL {
+      get { return unk3300FIICLBEFHLL_; }
       set {
-        intoBagCount_ = value;
+        unk3300FIICLBEFHLL_ = value;
       }
     }
 
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FreeCount != other.FreeCount) return false;
-      if (IntoBagCount != other.IntoBagCount) return false;
+      if (Unk3300AKFBFEDCELN != other.Unk3300AKFBFEDCELN) return false;
+      if (Unk3300FIICLBEFHLL != other.Unk3300FIICLBEFHLL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FreeCount != 0) hash ^= FreeCount.GetHashCode();
-      if (IntoBagCount != 0) hash ^= IntoBagCount.GetHashCode();
+      if (Unk3300AKFBFEDCELN != 0) hash ^= Unk3300AKFBFEDCELN.GetHashCode();
+      if (Unk3300FIICLBEFHLL != 0) hash ^= Unk3300FIICLBEFHLL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FreeCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(FreeCount);
+      if (Unk3300FIICLBEFHLL != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FIICLBEFHLL);
       }
-      if (IntoBagCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(IntoBagCount);
+      if (Unk3300AKFBFEDCELN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AKFBFEDCELN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FreeCount != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(FreeCount);
+      if (Unk3300FIICLBEFHLL != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FIICLBEFHLL);
       }
-      if (IntoBagCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(IntoBagCount);
+      if (Unk3300AKFBFEDCELN != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AKFBFEDCELN);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -186,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FreeCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeCount);
+      if (Unk3300AKFBFEDCELN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AKFBFEDCELN);
       }
-      if (IntoBagCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IntoBagCount);
+      if (Unk3300FIICLBEFHLL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FIICLBEFHLL);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -204,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FreeCount != 0) {
-        FreeCount = other.FreeCount;
+      if (other.Unk3300AKFBFEDCELN != 0) {
+        Unk3300AKFBFEDCELN = other.Unk3300AKFBFEDCELN;
       }
-      if (other.IntoBagCount != 0) {
-        IntoBagCount = other.IntoBagCount;
+      if (other.Unk3300FIICLBEFHLL != 0) {
+        Unk3300FIICLBEFHLL = other.Unk3300FIICLBEFHLL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            FreeCount = input.ReadUInt32();
+          case 56: {
+            Unk3300FIICLBEFHLL = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IntoBagCount = input.ReadUInt32();
+          case 112: {
+            Unk3300AKFBFEDCELN = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            FreeCount = input.ReadUInt32();
+          case 56: {
+            Unk3300FIICLBEFHLL = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IntoBagCount = input.ReadUInt32();
+          case 112: {
+            Unk3300AKFBFEDCELN = input.ReadUInt32();
             break;
           }
         }

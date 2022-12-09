@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static DraftOwnerTwiceConfirmNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJEcmFmdE93bmVyVHdpY2VDb25maXJtTm90aWZ5LnByb3RvIlUKHERyYWZ0",
-            "T3duZXJUd2ljZUNvbmZpcm1Ob3RpZnkSIwobdHdpY2VfY29uZmlybV9kZWFk",
-            "bGluZV90aW1lGA8gASgNEhAKCGRyYWZ0X2lkGA4gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJEcmFmdE93bmVyVHdpY2VDb25maXJtTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlUKHERyYWZ0T3duZXJUd2ljZUNv",
+            "bmZpcm1Ob3RpZnkSEAoIZHJhZnRfaWQYBiABKA0SIwobdHdpY2VfY29uZmly",
+            "bV9kZWFkbGluZV90aW1lGAUgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerTwiceConfirmNotify), global::Weedwacker.Shared.Network.Proto.DraftOwnerTwiceConfirmNotify.Parser, new[]{ "TwiceConfirmDeadlineTime", "DraftId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerTwiceConfirmNotify), global::Weedwacker.Shared.Network.Proto.DraftOwnerTwiceConfirmNotify.Parser, new[]{ "DraftId", "TwiceConfirmDeadlineTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5499
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5457;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DraftOwnerTwiceConfirmNotify : pb::IMessage<DraftOwnerTwiceConfirmNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DraftOwnerTwiceConfirmNotify(DraftOwnerTwiceConfirmNotify other) : this() {
-      twiceConfirmDeadlineTime_ = other.twiceConfirmDeadlineTime_;
       draftId_ = other.draftId_;
+      twiceConfirmDeadlineTime_ = other.twiceConfirmDeadlineTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DraftOwnerTwiceConfirmNotify(this);
     }
 
-    /// <summary>Field number for the "twice_confirm_deadline_time" field.</summary>
-    public const int TwiceConfirmDeadlineTimeFieldNumber = 15;
-    private uint twiceConfirmDeadlineTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TwiceConfirmDeadlineTime {
-      get { return twiceConfirmDeadlineTime_; }
-      set {
-        twiceConfirmDeadlineTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "draft_id" field.</summary>
-    public const int DraftIdFieldNumber = 14;
+    public const int DraftIdFieldNumber = 6;
     private uint draftId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return draftId_; }
       set {
         draftId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "twice_confirm_deadline_time" field.</summary>
+    public const int TwiceConfirmDeadlineTimeFieldNumber = 5;
+    private uint twiceConfirmDeadlineTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TwiceConfirmDeadlineTime {
+      get { return twiceConfirmDeadlineTime_; }
+      set {
+        twiceConfirmDeadlineTime_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TwiceConfirmDeadlineTime != other.TwiceConfirmDeadlineTime) return false;
       if (DraftId != other.DraftId) return false;
+      if (TwiceConfirmDeadlineTime != other.TwiceConfirmDeadlineTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TwiceConfirmDeadlineTime != 0) hash ^= TwiceConfirmDeadlineTime.GetHashCode();
       if (DraftId != 0) hash ^= DraftId.GetHashCode();
+      if (TwiceConfirmDeadlineTime != 0) hash ^= TwiceConfirmDeadlineTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DraftId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DraftId);
-      }
       if (TwiceConfirmDeadlineTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(TwiceConfirmDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DraftId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DraftId);
-      }
       if (TwiceConfirmDeadlineTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(TwiceConfirmDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TwiceConfirmDeadlineTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TwiceConfirmDeadlineTime);
-      }
       if (DraftId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
+      }
+      if (TwiceConfirmDeadlineTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TwiceConfirmDeadlineTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TwiceConfirmDeadlineTime != 0) {
-        TwiceConfirmDeadlineTime = other.TwiceConfirmDeadlineTime;
-      }
       if (other.DraftId != 0) {
         DraftId = other.DraftId;
+      }
+      if (other.TwiceConfirmDeadlineTime != 0) {
+        TwiceConfirmDeadlineTime = other.TwiceConfirmDeadlineTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
-            DraftId = input.ReadUInt32();
+          case 40: {
+            TwiceConfirmDeadlineTime = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TwiceConfirmDeadlineTime = input.ReadUInt32();
+          case 48: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
-            DraftId = input.ReadUInt32();
+          case 40: {
+            TwiceConfirmDeadlineTime = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TwiceConfirmDeadlineTime = input.ReadUInt32();
+          case 48: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }

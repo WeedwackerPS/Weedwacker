@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static MistTrialGetChallengeMissionRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVNaXN0VHJpYWxHZXRDaGFsbGVuZ2VNaXNzaW9uUnNwLnByb3RvGhpNaXN0",
-            "VHJpYWxNaXNzaW9uSW5mby5wcm90byJ2Ch9NaXN0VHJpYWxHZXRDaGFsbGVu",
-            "Z2VNaXNzaW9uUnNwEhAKCHRyaWFsX2lkGAEgASgNEjAKEW1pc3Npb25faW5m",
-            "b19saXN0GA8gAygLMhUuTWlzdFRyaWFsTWlzc2lvbkluZm8SDwoHcmV0Y29k",
-            "ZRgLIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiVNaXN0VHJpYWxHZXRDaGFsbGVuZ2VNaXNzaW9uUnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhpNaXN0VHJpYWxNaXNzaW9u",
+            "SW5mby5wcm90byKWAQofTWlzdFRyaWFsR2V0Q2hhbGxlbmdlTWlzc2lvblJz",
+            "cBIQCgh0cmlhbF9pZBgGIAEoDRJQChFtaXNzaW9uX2luZm9fbGlzdBgDIAMo",
+            "CzI1LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWlzdFRyaWFs",
+            "TWlzc2lvbkluZm8SDwoHcmV0Y29kZRgHIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8508
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8193;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MistTrialGetChallengeMissionRsp : pb::IMessage<MistTrialGetChallengeMissionRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trial_id" field.</summary>
-    public const int TrialIdFieldNumber = 1;
+    public const int TrialIdFieldNumber = 6;
     private uint trialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mission_info_list" field.</summary>
-    public const int MissionInfoListFieldNumber = 15;
+    public const int MissionInfoListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfo> _repeated_missionInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfo.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfo> missionInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialMissionInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 7;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      missionInfoList_.WriteTo(output, _repeated_missionInfoList_codec);
       if (TrialId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteUInt32(TrialId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
-      missionInfoList_.WriteTo(output, _repeated_missionInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +195,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      missionInfoList_.WriteTo(ref output, _repeated_missionInfoList_codec);
       if (TrialId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteUInt32(TrialId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
-      missionInfoList_.WriteTo(ref output, _repeated_missionInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -251,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 26: {
+            missionInfoList_.AddEntriesFrom(input, _repeated_missionInfoList_codec);
+            break;
+          }
+          case 48: {
             TrialId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 56: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 122: {
-            missionInfoList_.AddEntriesFrom(input, _repeated_missionInfoList_codec);
             break;
           }
         }
@@ -278,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 26: {
+            missionInfoList_.AddEntriesFrom(ref input, _repeated_missionInfoList_codec);
+            break;
+          }
+          case 48: {
             TrialId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 56: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 122: {
-            missionInfoList_.AddEntriesFrom(ref input, _repeated_missionInfoList_codec);
             break;
           }
         }

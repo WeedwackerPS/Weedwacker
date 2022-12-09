@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChangeGameTimeReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDaGFuZ2VHYW1lVGltZVJlcS5wcm90byJQChFDaGFuZ2VHYW1lVGltZVJl",
-            "cRIRCglnYW1lX3RpbWUYBiABKA0SFAoMaXNfZm9yY2Vfc2V0GAsgASgIEhIK",
-            "CmV4dHJhX2RheXMYDCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdDaGFuZ2VHYW1lVGltZVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJQChFDaGFuZ2VHYW1lVGltZVJlcRISCgpleHRyYV9k",
+            "YXlzGAMgASgNEhEKCWdhbWVfdGltZRgIIAEoDRIUCgxpc19mb3JjZV9zZXQY",
+            "AiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChangeGameTimeReq), global::Weedwacker.Shared.Network.Proto.ChangeGameTimeReq.Parser, new[]{ "GameTime", "IsForceSet", "ExtraDays" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChangeGameTimeReq), global::Weedwacker.Shared.Network.Proto.ChangeGameTimeReq.Parser, new[]{ "ExtraDays", "GameTime", "IsForceSet" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 173
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 178;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChangeGameTimeReq : pb::IMessage<ChangeGameTimeReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChangeGameTimeReq(ChangeGameTimeReq other) : this() {
+      extraDays_ = other.extraDays_;
       gameTime_ = other.gameTime_;
       isForceSet_ = other.isForceSet_;
-      extraDays_ = other.extraDays_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChangeGameTimeReq(this);
     }
 
+    /// <summary>Field number for the "extra_days" field.</summary>
+    public const int ExtraDaysFieldNumber = 3;
+    private uint extraDays_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ExtraDays {
+      get { return extraDays_; }
+      set {
+        extraDays_ = value;
+      }
+    }
+
     /// <summary>Field number for the "game_time" field.</summary>
-    public const int GameTimeFieldNumber = 6;
+    public const int GameTimeFieldNumber = 8;
     private uint gameTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_force_set" field.</summary>
-    public const int IsForceSetFieldNumber = 11;
+    public const int IsForceSetFieldNumber = 2;
     private bool isForceSet_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isForceSet_; }
       set {
         isForceSet_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "extra_days" field.</summary>
-    public const int ExtraDaysFieldNumber = 12;
-    private uint extraDays_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExtraDays {
-      get { return extraDays_; }
-      set {
-        extraDays_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ExtraDays != other.ExtraDays) return false;
       if (GameTime != other.GameTime) return false;
       if (IsForceSet != other.IsForceSet) return false;
-      if (ExtraDays != other.ExtraDays) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ExtraDays != 0) hash ^= ExtraDays.GetHashCode();
       if (GameTime != 0) hash ^= GameTime.GetHashCode();
       if (IsForceSet != false) hash ^= IsForceSet.GetHashCode();
-      if (ExtraDays != 0) hash ^= ExtraDays.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GameTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(GameTime);
-      }
       if (IsForceSet != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteBool(IsForceSet);
       }
       if (ExtraDays != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ExtraDays);
+      }
+      if (GameTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GameTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GameTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(GameTime);
-      }
       if (IsForceSet != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteBool(IsForceSet);
       }
       if (ExtraDays != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ExtraDays);
+      }
+      if (GameTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GameTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ExtraDays != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExtraDays);
+      }
       if (GameTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameTime);
       }
       if (IsForceSet != false) {
         size += 1 + 1;
-      }
-      if (ExtraDays != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExtraDays);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ExtraDays != 0) {
+        ExtraDays = other.ExtraDays;
+      }
       if (other.GameTime != 0) {
         GameTime = other.GameTime;
       }
       if (other.IsForceSet != false) {
         IsForceSet = other.IsForceSet;
-      }
-      if (other.ExtraDays != 0) {
-        ExtraDays = other.ExtraDays;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            GameTime = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 16: {
             IsForceSet = input.ReadBool();
             break;
           }
-          case 96: {
+          case 24: {
             ExtraDays = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            GameTime = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            GameTime = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 16: {
             IsForceSet = input.ReadBool();
             break;
           }
-          case 96: {
+          case 24: {
             ExtraDays = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            GameTime = input.ReadUInt32();
             break;
           }
         }

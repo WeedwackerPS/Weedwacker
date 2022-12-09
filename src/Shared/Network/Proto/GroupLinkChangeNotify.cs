@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GroupLinkChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtHcm91cExpbmtDaGFuZ2VOb3RpZnkucHJvdG8aFUdyb3VwTGlua0J1bmRs",
-            "ZS5wcm90byI5ChVHcm91cExpbmtDaGFuZ2VOb3RpZnkSIAoGYnVuZGxlGAgg",
-            "ASgLMhAuR3JvdXBMaW5rQnVuZGxlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtHcm91cExpbmtDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFUdyb3VwTGlua0J1bmRsZS5wcm90byJZChVH",
+            "cm91cExpbmtDaGFuZ2VOb3RpZnkSQAoGYnVuZGxlGAUgASgLMjAuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Hcm91cExpbmtCdW5kbGViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GroupLinkBundleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5768
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5791;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GroupLinkChangeNotify : pb::IMessage<GroupLinkChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bundle" field.</summary>
-    public const int BundleFieldNumber = 8;
+    public const int BundleFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.GroupLinkBundle bundle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (bundle_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(42);
         output.WriteMessage(Bundle);
       }
       if (_unknownFields != null) {
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (bundle_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(42);
         output.WriteMessage(Bundle);
       }
       if (_unknownFields != null) {
@@ -205,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 42: {
             if (bundle_ == null) {
               Bundle = new global::Weedwacker.Shared.Network.Proto.GroupLinkBundle();
             }
@@ -227,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 42: {
             if (bundle_ == null) {
               Bundle = new global::Weedwacker.Shared.Network.Proto.GroupLinkBundle();
             }

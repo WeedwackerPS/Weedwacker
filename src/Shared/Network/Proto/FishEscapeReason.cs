@@ -24,11 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishEscapeReasonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZGaXNoRXNjYXBlUmVhc29uLnByb3RvKnoKEEZpc2hFc2NhcGVSZWFzb24S",
-            "JwojRklTSF9FU0NBUEVfUkVBU09OX0ZJU05fRVNDQVBFX05PTkUQABIeChpG",
-            "SVNIX0VTQ0FQRV9SRUFTT05fU0hPQ0tFRBABEh0KGUZJU0hfRVNDQVBFX1JF",
-            "QVNPTl9VTkhPT0sQAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChZGaXNoRXNjYXBlUmVhc29uLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvKm4KEEZpc2hFc2NhcGVSZWFzb24SGwoXRklTSF9FU0NB",
+            "UEVfUkVBU09OX05PTkUQABIeChpGSVNIX0VTQ0FQRV9SRUFTT05fU0hPQ0tF",
+            "RBABEh0KGUZJU0hfRVNDQVBFX1JFQVNPTl9VTkhPT0sQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.FishEscapeReason), }, null, null));
@@ -38,7 +37,7 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Enums
   public enum FishEscapeReason {
-    [pbr::OriginalName("FISH_ESCAPE_REASON_FISN_ESCAPE_NONE")] FisnEscapeNone = 0,
+    [pbr::OriginalName("FISH_ESCAPE_REASON_NONE")] None = 0,
     [pbr::OriginalName("FISH_ESCAPE_REASON_SHOCKED")] Shocked = 1,
     [pbr::OriginalName("FISH_ESCAPE_REASON_UNHOOK")] Unhook = 2,
   }

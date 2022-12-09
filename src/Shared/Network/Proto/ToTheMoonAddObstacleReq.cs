@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ToTheMoonAddObstacleReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Ub1RoZU1vb25BZGRPYnN0YWNsZVJlcS5wcm90bxobVG9UaGVNb29uT2Jz",
-            "dGFjbGVJbmZvLnByb3RvInkKF1RvVGhlTW9vbkFkZE9ic3RhY2xlUmVxEhAK",
-            "CHVzZV9lZGdlGAwgASgIEigKCG9ic3RhY2xlGA0gASgLMhYuVG9UaGVNb29u",
-            "T2JzdGFjbGVJbmZvEhAKCHF1ZXJ5X2lkGAkgASgFEhAKCHNjZW5lX2lkGAMg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "Ch1Ub1RoZU1vb25BZGRPYnN0YWNsZVJlcS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxobVG9UaGVNb29uT2JzdGFjbGVJbmZvLnBy",
+            "b3RvIpkBChdUb1RoZU1vb25BZGRPYnN0YWNsZVJlcRIQCgh1c2VfZWRnZRgH",
+            "IAEoCBJICghvYnN0YWNsZRgIIAEoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uVG9UaGVNb29uT2JzdGFjbGVJbmZvEhAKCHNjZW5lX2lk",
+            "GA0gASgNEhAKCHF1ZXJ5X2lkGAUgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ToTheMoonObstacleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ToTheMoonAddObstacleReq), global::Weedwacker.Shared.Network.Proto.ToTheMoonAddObstacleReq.Parser, new[]{ "UseEdge", "Obstacle", "QueryId", "SceneId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ToTheMoonAddObstacleReq), global::Weedwacker.Shared.Network.Proto.ToTheMoonAddObstacleReq.Parser, new[]{ "UseEdge", "Obstacle", "SceneId", "QueryId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6121
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6143;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ToTheMoonAddObstacleReq : pb::IMessage<ToTheMoonAddObstacleReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,8 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public ToTheMoonAddObstacleReq(ToTheMoonAddObstacleReq other) : this() {
       useEdge_ = other.useEdge_;
       obstacle_ = other.obstacle_ != null ? other.obstacle_.Clone() : null;
-      queryId_ = other.queryId_;
       sceneId_ = other.sceneId_;
+      queryId_ = other.queryId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "use_edge" field.</summary>
-    public const int UseEdgeFieldNumber = 12;
+    public const int UseEdgeFieldNumber = 7;
     private bool useEdge_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "obstacle" field.</summary>
-    public const int ObstacleFieldNumber = 13;
+    public const int ObstacleFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.ToTheMoonObstacleInfo obstacle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,20 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "query_id" field.</summary>
-    public const int QueryIdFieldNumber = 9;
-    private int queryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int QueryId {
-      get { return queryId_; }
-      set {
-        queryId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 3;
+    public const int SceneIdFieldNumber = 13;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +130,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sceneId_; }
       set {
         sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 5;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
       }
     }
 
@@ -158,8 +162,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (UseEdge != other.UseEdge) return false;
       if (!object.Equals(Obstacle, other.Obstacle)) return false;
-      if (QueryId != other.QueryId) return false;
       if (SceneId != other.SceneId) return false;
+      if (QueryId != other.QueryId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -169,8 +173,8 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       if (UseEdge != false) hash ^= UseEdge.GetHashCode();
       if (obstacle_ != null) hash ^= Obstacle.GetHashCode();
-      if (QueryId != 0) hash ^= QueryId.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -189,21 +193,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SceneId);
-      }
       if (QueryId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteInt32(QueryId);
       }
       if (UseEdge != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteBool(UseEdge);
       }
       if (obstacle_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(Obstacle);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -215,21 +219,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SceneId);
-      }
       if (QueryId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteInt32(QueryId);
       }
       if (UseEdge != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteBool(UseEdge);
       }
       if (obstacle_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(Obstacle);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -247,11 +251,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (obstacle_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Obstacle);
       }
-      if (QueryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
-      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -274,11 +278,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Obstacle.MergeFrom(other.Obstacle);
       }
-      if (other.QueryId != 0) {
-        QueryId = other.QueryId;
-      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -295,23 +299,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 56: {
             UseEdge = input.ReadBool();
             break;
           }
-          case 106: {
+          case 66: {
             if (obstacle_ == null) {
               Obstacle = new global::Weedwacker.Shared.Network.Proto.ToTheMoonObstacleInfo();
             }
             input.ReadMessage(Obstacle);
+            break;
+          }
+          case 104: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }
@@ -329,23 +333,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 56: {
             UseEdge = input.ReadBool();
             break;
           }
-          case 106: {
+          case 66: {
             if (obstacle_ == null) {
               Obstacle = new global::Weedwacker.Shared.Network.Proto.ToTheMoonObstacleInfo();
             }
             input.ReadMessage(Obstacle);
+            break;
+          }
+          case 104: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }

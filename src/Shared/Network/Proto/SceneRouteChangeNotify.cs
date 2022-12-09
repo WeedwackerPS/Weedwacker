@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneRouteChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTY2VuZVJvdXRlQ2hhbmdlTm90aWZ5LnByb3RvGhpTY2VuZVJvdXRlQ2hh",
-            "bmdlSW5mby5wcm90byJpChZTY2VuZVJvdXRlQ2hhbmdlTm90aWZ5EhAKCHNj",
-            "ZW5lX2lkGAwgASgNEhIKCnNjZW5lX3RpbWUYCyABKA0SKQoKcm91dGVfbGlz",
-            "dBgCIAMoCzIVLlNjZW5lUm91dGVDaGFuZ2VJbmZvQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxTY2VuZVJvdXRlQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhpTY2VuZVJvdXRlQ2hhbmdlSW5mby5wcm90",
+            "byKJAQoWU2NlbmVSb3V0ZUNoYW5nZU5vdGlmeRISCgpzY2VuZV90aW1lGAMg",
+            "ASgNEkkKCnJvdXRlX2xpc3QYBCADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlNjZW5lUm91dGVDaGFuZ2VJbmZvEhAKCHNjZW5lX2lk",
+            "GAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneRouteChangeNotify), global::Weedwacker.Shared.Network.Proto.SceneRouteChangeNotify.Parser, new[]{ "SceneId", "SceneTime", "RouteList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneRouteChangeNotify), global::Weedwacker.Shared.Network.Proto.SceneRouteChangeNotify.Parser, new[]{ "SceneTime", "RouteList", "SceneId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 240
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 285;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneRouteChangeNotify : pb::IMessage<SceneRouteChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneRouteChangeNotify(SceneRouteChangeNotify other) : this() {
-      sceneId_ = other.sceneId_;
       sceneTime_ = other.sceneTime_;
       routeList_ = other.routeList_.Clone();
+      sceneId_ = other.sceneId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneRouteChangeNotify(this);
     }
 
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 12;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 11;
+    public const int SceneTimeFieldNumber = 3;
     private uint sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,14 +108,26 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "route_list" field.</summary>
-    public const int RouteListFieldNumber = 2;
+    public const int RouteListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo> _repeated_routeList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo> routeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo> RouteList {
       get { return routeList_; }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 11;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SceneId != other.SceneId) return false;
       if (SceneTime != other.SceneTime) return false;
       if(!routeList_.Equals(other.routeList_)) return false;
+      if (SceneId != other.SceneId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
       hash ^= routeList_.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,13 +176,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      routeList_.WriteTo(output, _repeated_routeList_codec);
       if (SceneTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteUInt32(SceneTime);
       }
+      routeList_.WriteTo(output, _repeated_routeList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
@@ -190,13 +195,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      routeList_.WriteTo(ref output, _repeated_routeList_codec);
       if (SceneTime != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(24);
         output.WriteUInt32(SceneTime);
       }
+      routeList_.WriteTo(ref output, _repeated_routeList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
       if (SceneTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
       }
       size += routeList_.CalculateSize(_repeated_routeList_codec);
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +233,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
       if (other.SceneTime != 0) {
         SceneTime = other.SceneTime;
       }
       routeList_.Add(other.routeList_);
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,15 +255,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 24: {
+            SceneTime = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             routeList_.AddEntriesFrom(input, _repeated_routeList_codec);
             break;
           }
           case 88: {
-            SceneTime = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             SceneId = input.ReadUInt32();
             break;
           }
@@ -277,15 +282,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 24: {
+            SceneTime = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             routeList_.AddEntriesFrom(ref input, _repeated_routeList_codec);
             break;
           }
           case 88: {
-            SceneTime = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             SceneId = input.ReadUInt32();
             break;
           }

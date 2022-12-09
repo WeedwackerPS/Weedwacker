@@ -24,21 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static MistTrialSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtNaXN0VHJpYWxTZXR0bGVOb3RpZnkucHJvdG8i/QIKFU1pc3RUcmlhbFNl",
-            "dHRsZU5vdGlmeRJgCh9leGhpYml0aW9uX2xpc3RfZGF0YV9yZWNvcmRfbWFw",
-            "GA8gAygLMjcuTWlzdFRyaWFsU2V0dGxlTm90aWZ5LkV4aGliaXRpb25MaXN0",
-            "RGF0YVJlY29yZE1hcEVudHJ5EmAKH2V4aGliaXRpb25fbGlzdF9kYXRhX3Jl",
-            "c3VsdF9tYXAYDiADKAsyNy5NaXN0VHJpYWxTZXR0bGVOb3RpZnkuRXhoaWJp",
-            "dGlvbkxpc3REYXRhUmVzdWx0TWFwRW50cnkSGAoQZHVuZ2Vvbl9zY2VuZV9p",
-            "ZBgFIAEoDRpCCiBFeGhpYml0aW9uTGlzdERhdGFSZWNvcmRNYXBFbnRyeRIL",
-            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGkIKIEV4aGliaXRpb25M",
-            "aXN0RGF0YVJlc3VsdE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
-            "IAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChtNaXN0VHJpYWxTZXR0bGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGU1pc3RUcmlhbEJlc3RBdmF0YXIucHJvdG8i",
+            "uQQKFU1pc3RUcmlhbFNldHRsZU5vdGlmeRJrChNVbmszMzAwX0tGS0hBQUNE",
+            "SkRKGAUgAygLMk4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5N",
+            "aXN0VHJpYWxTZXR0bGVOb3RpZnkuVW5rMzMwMEtGS0hBQUNESkRKRW50cnkS",
+            "awoTVW5rMzMwMF9HTVBFRUxMQU5MSRgCIAMoCzJOLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uTWlzdFRyaWFsU2V0dGxlTm90aWZ5LlVuazMz",
+            "MDBHTVBFRUxMQU5MSUVudHJ5EhgKEGR1bmdlb25fc2NlbmVfaWQYDCABKA0S",
+            "FwoPZmlyc3RfcGFzc190aW1lGAggASgNEk0KD2Jlc3RfaGl0X2F2YXRhchgD",
+            "IAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWlzdFRy",
+            "aWFsQmVzdEF2YXRhchJOChBiZXN0X2F2YXRhcl9saXN0GAkgAygLMjQuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NaXN0VHJpYWxCZXN0QXZh",
+            "dGFyGjkKF1VuazMzMDBLRktIQUFDREpESkVudHJ5EgsKA2tleRgBIAEoDRIN",
+            "CgV2YWx1ZRgCIAEoDToCOAEaOQoXVW5rMzMwMEdNUEVFTExBTkxJRW50cnkS",
+            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MistTrialSettleNotify), global::Weedwacker.Shared.Network.Proto.MistTrialSettleNotify.Parser, new[]{ "ExhibitionListDataRecordMap", "ExhibitionListDataResultMap", "DungeonSceneId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MistTrialSettleNotify), global::Weedwacker.Shared.Network.Proto.MistTrialSettleNotify.Parser, new[]{ "Unk3300KFKHAACDJDJ", "Unk3300GMPEELLANLI", "DungeonSceneId", "FirstPassTime", "BestHitAvatar", "BestAvatarList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -46,10 +50,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8373
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8116;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MistTrialSettleNotify : pb::IMessage<MistTrialSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,9 +93,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MistTrialSettleNotify(MistTrialSettleNotify other) : this() {
-      exhibitionListDataRecordMap_ = other.exhibitionListDataRecordMap_.Clone();
-      exhibitionListDataResultMap_ = other.exhibitionListDataResultMap_.Clone();
+      unk3300KFKHAACDJDJ_ = other.unk3300KFKHAACDJDJ_.Clone();
+      unk3300GMPEELLANLI_ = other.unk3300GMPEELLANLI_.Clone();
       dungeonSceneId_ = other.dungeonSceneId_;
+      firstPassTime_ = other.firstPassTime_;
+      bestHitAvatar_ = other.bestHitAvatar_ != null ? other.bestHitAvatar_.Clone() : null;
+      bestAvatarList_ = other.bestAvatarList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,30 +108,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MistTrialSettleNotify(this);
     }
 
-    /// <summary>Field number for the "exhibition_list_data_record_map" field.</summary>
-    public const int ExhibitionListDataRecordMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_exhibitionListDataRecordMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<uint, uint> exhibitionListDataRecordMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "Unk3300_KFKHAACDJDJ" field.</summary>
+    public const int Unk3300KFKHAACDJDJFieldNumber = 5;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300KFKHAACDJDJ_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+    private readonly pbc::MapField<uint, uint> unk3300KFKHAACDJDJ_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> ExhibitionListDataRecordMap {
-      get { return exhibitionListDataRecordMap_; }
+    public pbc::MapField<uint, uint> Unk3300KFKHAACDJDJ {
+      get { return unk3300KFKHAACDJDJ_; }
     }
 
-    /// <summary>Field number for the "exhibition_list_data_result_map" field.</summary>
-    public const int ExhibitionListDataResultMapFieldNumber = 14;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_exhibitionListDataResultMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 114);
-    private readonly pbc::MapField<uint, uint> exhibitionListDataResultMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "Unk3300_GMPEELLANLI" field.</summary>
+    public const int Unk3300GMPEELLANLIFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300GMPEELLANLI_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> unk3300GMPEELLANLI_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> ExhibitionListDataResultMap {
-      get { return exhibitionListDataResultMap_; }
+    public pbc::MapField<uint, uint> Unk3300GMPEELLANLI {
+      get { return unk3300GMPEELLANLI_; }
     }
 
     /// <summary>Field number for the "dungeon_scene_id" field.</summary>
-    public const int DungeonSceneIdFieldNumber = 5;
+    public const int DungeonSceneIdFieldNumber = 12;
     private uint dungeonSceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,6 +140,41 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         dungeonSceneId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "first_pass_time" field.</summary>
+    public const int FirstPassTimeFieldNumber = 8;
+    private uint firstPassTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstPassTime {
+      get { return firstPassTime_; }
+      set {
+        firstPassTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "best_hit_avatar" field.</summary>
+    public const int BestHitAvatarFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar bestHitAvatar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar BestHitAvatar {
+      get { return bestHitAvatar_; }
+      set {
+        bestHitAvatar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "best_avatar_list" field.</summary>
+    public const int BestAvatarListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar> _repeated_bestAvatarList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar> bestAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar> BestAvatarList {
+      get { return bestAvatarList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -146,9 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ExhibitionListDataRecordMap.Equals(other.ExhibitionListDataRecordMap)) return false;
-      if (!ExhibitionListDataResultMap.Equals(other.ExhibitionListDataResultMap)) return false;
+      if (!Unk3300KFKHAACDJDJ.Equals(other.Unk3300KFKHAACDJDJ)) return false;
+      if (!Unk3300GMPEELLANLI.Equals(other.Unk3300GMPEELLANLI)) return false;
       if (DungeonSceneId != other.DungeonSceneId) return false;
+      if (FirstPassTime != other.FirstPassTime) return false;
+      if (!object.Equals(BestHitAvatar, other.BestHitAvatar)) return false;
+      if(!bestAvatarList_.Equals(other.bestAvatarList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -156,9 +205,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ExhibitionListDataRecordMap.GetHashCode();
-      hash ^= ExhibitionListDataResultMap.GetHashCode();
+      hash ^= Unk3300KFKHAACDJDJ.GetHashCode();
+      hash ^= Unk3300GMPEELLANLI.GetHashCode();
       if (DungeonSceneId != 0) hash ^= DungeonSceneId.GetHashCode();
+      if (FirstPassTime != 0) hash ^= FirstPassTime.GetHashCode();
+      if (bestHitAvatar_ != null) hash ^= BestHitAvatar.GetHashCode();
+      hash ^= bestAvatarList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -177,12 +229,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unk3300GMPEELLANLI_.WriteTo(output, _map_unk3300GMPEELLANLI_codec);
+      if (bestHitAvatar_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(BestHitAvatar);
+      }
+      unk3300KFKHAACDJDJ_.WriteTo(output, _map_unk3300KFKHAACDJDJ_codec);
+      if (FirstPassTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FirstPassTime);
+      }
+      bestAvatarList_.WriteTo(output, _repeated_bestAvatarList_codec);
       if (DungeonSceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(DungeonSceneId);
       }
-      exhibitionListDataResultMap_.WriteTo(output, _map_exhibitionListDataResultMap_codec);
-      exhibitionListDataRecordMap_.WriteTo(output, _map_exhibitionListDataRecordMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -193,12 +254,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300GMPEELLANLI_.WriteTo(ref output, _map_unk3300GMPEELLANLI_codec);
+      if (bestHitAvatar_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(BestHitAvatar);
+      }
+      unk3300KFKHAACDJDJ_.WriteTo(ref output, _map_unk3300KFKHAACDJDJ_codec);
+      if (FirstPassTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FirstPassTime);
+      }
+      bestAvatarList_.WriteTo(ref output, _repeated_bestAvatarList_codec);
       if (DungeonSceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(96);
         output.WriteUInt32(DungeonSceneId);
       }
-      exhibitionListDataResultMap_.WriteTo(ref output, _map_exhibitionListDataResultMap_codec);
-      exhibitionListDataRecordMap_.WriteTo(ref output, _map_exhibitionListDataRecordMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,11 +279,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += exhibitionListDataRecordMap_.CalculateSize(_map_exhibitionListDataRecordMap_codec);
-      size += exhibitionListDataResultMap_.CalculateSize(_map_exhibitionListDataResultMap_codec);
+      size += unk3300KFKHAACDJDJ_.CalculateSize(_map_unk3300KFKHAACDJDJ_codec);
+      size += unk3300GMPEELLANLI_.CalculateSize(_map_unk3300GMPEELLANLI_codec);
       if (DungeonSceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonSceneId);
       }
+      if (FirstPassTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstPassTime);
+      }
+      if (bestHitAvatar_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BestHitAvatar);
+      }
+      size += bestAvatarList_.CalculateSize(_repeated_bestAvatarList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -226,11 +303,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      exhibitionListDataRecordMap_.Add(other.exhibitionListDataRecordMap_);
-      exhibitionListDataResultMap_.Add(other.exhibitionListDataResultMap_);
+      unk3300KFKHAACDJDJ_.Add(other.unk3300KFKHAACDJDJ_);
+      unk3300GMPEELLANLI_.Add(other.unk3300GMPEELLANLI_);
       if (other.DungeonSceneId != 0) {
         DungeonSceneId = other.DungeonSceneId;
       }
+      if (other.FirstPassTime != 0) {
+        FirstPassTime = other.FirstPassTime;
+      }
+      if (other.bestHitAvatar_ != null) {
+        if (bestHitAvatar_ == null) {
+          BestHitAvatar = new global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar();
+        }
+        BestHitAvatar.MergeFrom(other.BestHitAvatar);
+      }
+      bestAvatarList_.Add(other.bestAvatarList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -246,16 +333,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 18: {
+            unk3300GMPEELLANLI_.AddEntriesFrom(input, _map_unk3300GMPEELLANLI_codec);
+            break;
+          }
+          case 26: {
+            if (bestHitAvatar_ == null) {
+              BestHitAvatar = new global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar();
+            }
+            input.ReadMessage(BestHitAvatar);
+            break;
+          }
+          case 42: {
+            unk3300KFKHAACDJDJ_.AddEntriesFrom(input, _map_unk3300KFKHAACDJDJ_codec);
+            break;
+          }
+          case 64: {
+            FirstPassTime = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            bestAvatarList_.AddEntriesFrom(input, _repeated_bestAvatarList_codec);
+            break;
+          }
+          case 96: {
             DungeonSceneId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            exhibitionListDataResultMap_.AddEntriesFrom(input, _map_exhibitionListDataResultMap_codec);
-            break;
-          }
-          case 122: {
-            exhibitionListDataRecordMap_.AddEntriesFrom(input, _map_exhibitionListDataRecordMap_codec);
             break;
           }
         }
@@ -273,16 +375,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 18: {
+            unk3300GMPEELLANLI_.AddEntriesFrom(ref input, _map_unk3300GMPEELLANLI_codec);
+            break;
+          }
+          case 26: {
+            if (bestHitAvatar_ == null) {
+              BestHitAvatar = new global::Weedwacker.Shared.Network.Proto.MistTrialBestAvatar();
+            }
+            input.ReadMessage(BestHitAvatar);
+            break;
+          }
+          case 42: {
+            unk3300KFKHAACDJDJ_.AddEntriesFrom(ref input, _map_unk3300KFKHAACDJDJ_codec);
+            break;
+          }
+          case 64: {
+            FirstPassTime = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            bestAvatarList_.AddEntriesFrom(ref input, _repeated_bestAvatarList_codec);
+            break;
+          }
+          case 96: {
             DungeonSceneId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
-            exhibitionListDataResultMap_.AddEntriesFrom(ref input, _map_exhibitionListDataResultMap_codec);
-            break;
-          }
-          case 122: {
-            exhibitionListDataRecordMap_.AddEntriesFrom(ref input, _map_exhibitionListDataRecordMap_codec);
             break;
           }
         }

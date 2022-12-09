@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteFireworksInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5MYW50ZXJuUml0ZUZpcmV3b3Jrc0luZm8ucHJvdG8aI0xhbnRlcm5SaXRl",
-            "RmlyZXdvcmtzU3RhZ2VJbmZvLnByb3RvIlMKGExhbnRlcm5SaXRlRmlyZXdv",
-            "cmtzSW5mbxI3Cg9zdGFnZV9pbmZvX2xpc3QYBiADKAsyHi5MYW50ZXJuUml0",
-            "ZUZpcmV3b3Jrc1N0YWdlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5MYW50ZXJuUml0ZUZpcmV3b3Jrc0luZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aI0xhbnRlcm5SaXRlRmlyZXdvcmtzU3Rh",
+            "Z2VJbmZvLnByb3RvInMKGExhbnRlcm5SaXRlRmlyZXdvcmtzSW5mbxJXCg9z",
+            "dGFnZV9pbmZvX2xpc3QYAiADKAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkxhbnRlcm5SaXRlRmlyZXdvcmtzU3RhZ2VJbmZvYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_info_list" field.</summary>
-    public const int StageInfoListFieldNumber = 6;
+    public const int StageInfoListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo> _repeated_stageInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo> stageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 18: {
             stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 18: {
             stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
             break;
           }

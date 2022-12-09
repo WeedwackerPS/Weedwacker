@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EnterFungusFighterPlotDungeonRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZFbnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJzcC5wcm90byJfCiBF",
-            "bnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJzcBIPCgdyZXRjb2RlGAog",
-            "ASgFEhIKCmR1bmdlb25faWQYDyABKA0SFgoOZnVuZ3VzX2lkX2xpc3QYAiAD",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiZFbnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJzcC5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJfCiBFbnRlckZ1bmd1c0Zp",
+            "Z2h0ZXJQbG90RHVuZ2VvblJzcBIWCg5mdW5ndXNfaWRfbGlzdBgOIAMoDRIS",
+            "CgpkdW5nZW9uX2lkGAggASgNEg8KB3JldGNvZGUYBCABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonRsp), global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonRsp.Parser, new[]{ "Retcode", "DungeonId", "FungusIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonRsp), global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonRsp.Parser, new[]{ "FungusIdList", "DungeonId", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21008
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20791;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EnterFungusFighterPlotDungeonRsp : pb::IMessage<EnterFungusFighterPlotDungeonRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterFungusFighterPlotDungeonRsp(EnterFungusFighterPlotDungeonRsp other) : this() {
-      retcode_ = other.retcode_;
-      dungeonId_ = other.dungeonId_;
       fungusIdList_ = other.fungusIdList_.Clone();
+      dungeonId_ = other.dungeonId_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EnterFungusFighterPlotDungeonRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
-    private int retcode_;
+    /// <summary>Field number for the "fungus_id_list" field.</summary>
+    public const int FungusIdListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_fungusIdList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> fungusIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
+    public pbc::RepeatedField<uint> FungusIdList {
+      get { return fungusIdList_; }
     }
 
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 15;
+    public const int DungeonIdFieldNumber = 8;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,15 +116,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "fungus_id_list" field.</summary>
-    public const int FungusIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_fungusIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> fungusIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 4;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FungusIdList {
-      get { return fungusIdList_; }
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +143,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if (DungeonId != other.DungeonId) return false;
       if(!fungusIdList_.Equals(other.fungusIdList_)) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +153,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       hash ^= fungusIdList_.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,15 +174,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      fungusIdList_.WriteTo(output, _repeated_fungusIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (DungeonId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(DungeonId);
       }
+      fungusIdList_.WriteTo(output, _repeated_fungusIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -190,15 +193,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      fungusIdList_.WriteTo(ref output, _repeated_fungusIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (DungeonId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(DungeonId);
       }
+      fungusIdList_.WriteTo(ref output, _repeated_fungusIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,13 +212,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
+      size += fungusIdList_.CalculateSize(_repeated_fungusIdList_codec);
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
-      size += fungusIdList_.CalculateSize(_repeated_fungusIdList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +231,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
+      fungusIdList_.Add(other.fungusIdList_);
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
-      fungusIdList_.Add(other.fungusIdList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,17 +253,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            fungusIdList_.AddEntriesFrom(input, _repeated_fungusIdList_codec);
-            break;
-          }
-          case 80: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 64: {
             DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            fungusIdList_.AddEntriesFrom(input, _repeated_fungusIdList_codec);
             break;
           }
         }
@@ -278,17 +281,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            fungusIdList_.AddEntriesFrom(ref input, _repeated_fungusIdList_codec);
-            break;
-          }
-          case 80: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 64: {
             DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            fungusIdList_.AddEntriesFrom(ref input, _repeated_fungusIdList_codec);
             break;
           }
         }

@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ProjectorOptionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQcm9qZWN0b3JPcHRpb25SZXEucHJvdG8ipAEKElByb2plY3Rvck9wdGlv",
-            "blJlcRIPCgdvcF90eXBlGAcgASgNEhEKCWVudGl0eV9pZBgKIAEoDSJqCg9Q",
-            "cm9qZWN0b3JPcFR5cGUSGgoWUFJPSkVDVE9SX09QX1RZUEVfTk9ORRAAEhwK",
-            "GFBST0pFQ1RPUl9PUF9UWVBFX0NSRUFURRABEh0KGVBST0pFQ1RPUl9PUF9U",
-            "WVBFX0RFU1RST1kQAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChhQcm9qZWN0b3JPcHRpb25SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8ipAEKElByb2plY3Rvck9wdGlvblJlcRIPCgdvcF90",
+            "eXBlGAIgASgNEhEKCWVudGl0eV9pZBgIIAEoDSJqCg9Qcm9qZWN0b3JPcFR5",
+            "cGUSGgoWUFJPSkVDVE9SX09QX1RZUEVfTk9ORRAAEhwKGFBST0pFQ1RPUl9P",
+            "UF9UWVBFX0NSRUFURRABEh0KGVBST0pFQ1RPUl9PUF9UWVBFX0RFU1RST1kQ",
+            "AmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 863
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 803;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ProjectorOptionReq : pb::IMessage<ProjectorOptionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_type" field.</summary>
-    public const int OpTypeFieldNumber = 7;
+    public const int OpTypeFieldNumber = 2;
     private uint opType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 10;
+    public const int EntityIdFieldNumber = 8;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (OpType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(OpType);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -178,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OpType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(OpType);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -234,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 16: {
             OpType = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -257,11 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 16: {
             OpType = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }

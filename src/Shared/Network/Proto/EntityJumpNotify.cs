@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityJumpNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZFbnRpdHlKdW1wTm90aWZ5LnByb3RvGgxWZWN0b3IucHJvdG8itgEKEEVu",
-            "dGl0eUp1bXBOb3RpZnkSKQoJanVtcF90eXBlGAkgASgOMhYuRW50aXR5SnVt",
-            "cE5vdGlmeS5UeXBlEhQKA3JvdBgIIAEoCzIHLlZlY3RvchIUCgNwb3MYCiAB",
-            "KAsyBy5WZWN0b3ISEQoJZW50aXR5X2lkGAwgASgNIjgKBFR5cGUSDQoJVFlQ",
-            "RV9OVUxMEAASDwoLVFlQRV9BQ1RJVkUQARIQCgxUWVBFX1BBU1NJVkUQAkIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZFbnRpdHlKdW1wTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8ilgIKEEVudGl0eUp1bXBOb3Rp",
+            "ZnkSNAoDcG9zGAYgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5WZWN0b3ISSQoJanVtcF90eXBlGAIgASgOMjYuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5FbnRpdHlKdW1wTm90aWZ5LlR5cGUSEQoJ",
+            "ZW50aXR5X2lkGAQgASgNEjQKA3JvdBgJIAEoCzInLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yIjgKBFR5cGUSDQoJVFlQRV9OVUxM",
+            "EAASDwoLVFlQRV9BQ1RJVkUQARIQCgxUWVBFX1BBU1NJVkUQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityJumpNotify), global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Parser, new[]{ "JumpType", "Rot", "Pos", "EntityId" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityJumpNotify), global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Parser, new[]{ "Pos", "JumpType", "EntityId", "Rot" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type) }, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 222
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 237;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityJumpNotify : pb::IMessage<EntityJumpNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityJumpNotify(EntityJumpNotify other) : this() {
-      jumpType_ = other.jumpType_;
-      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      jumpType_ = other.jumpType_;
       entityId_ = other.entityId_;
+      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,32 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityJumpNotify(this);
     }
 
-    /// <summary>Field number for the "jump_type" field.</summary>
-    public const int JumpTypeFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type jumpType_ = global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type JumpType {
-      get { return jumpType_; }
-      set {
-        jumpType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
-      get { return rot_; }
-      set {
-        rot_ = value;
-      }
-    }
-
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 10;
+    public const int PosFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,8 +110,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "jump_type" field.</summary>
+    public const int JumpTypeFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type jumpType_ = global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type JumpType {
+      get { return jumpType_; }
+      set {
+        jumpType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 12;
+    public const int EntityIdFieldNumber = 4;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,6 +131,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityId_; }
       set {
         entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rot" field.</summary>
+    public const int RotFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
+      get { return rot_; }
+      set {
+        rot_ = value;
       }
     }
 
@@ -155,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (JumpType != other.JumpType) return false;
-      if (!object.Equals(Rot, other.Rot)) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if (JumpType != other.JumpType) return false;
       if (EntityId != other.EntityId) return false;
+      if (!object.Equals(Rot, other.Rot)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) hash ^= JumpType.GetHashCode();
-      if (rot_ != null) hash ^= Rot.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) hash ^= JumpType.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (rot_ != null) hash ^= Rot.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,21 +194,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rot_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Rot);
-      }
       if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteEnum((int) JumpType);
       }
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(Pos);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EntityId);
+      if (rot_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,21 +220,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rot_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Rot);
-      }
       if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteEnum((int) JumpType);
       }
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(Pos);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EntityId);
+      if (rot_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -240,17 +246,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) JumpType);
-      }
-      if (rot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
-      }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
+      if (JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) JumpType);
+      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (rot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -264,23 +270,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
-        JumpType = other.JumpType;
-      }
-      if (other.rot_ != null) {
-        if (rot_ == null) {
-          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Rot.MergeFrom(other.Rot);
-      }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
       }
+      if (other.JumpType != global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type.Null) {
+        JumpType = other.JumpType;
+      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
+      }
+      if (other.rot_ != null) {
+        if (rot_ == null) {
+          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Rot.MergeFrom(other.Rot);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -297,26 +303,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
-            break;
-          }
-          case 72: {
+          case 16: {
             JumpType = (global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type) input.ReadEnum();
             break;
           }
-          case 82: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 96: {
-            EntityId = input.ReadUInt32();
+          case 74: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }
@@ -334,26 +340,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
-            break;
-          }
-          case 72: {
+          case 16: {
             JumpType = (global::Weedwacker.Shared.Network.Proto.EntityJumpNotify.Types.Type) input.ReadEnum();
             break;
           }
-          case 82: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 96: {
-            EntityId = input.ReadUInt32();
+          case 74: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }

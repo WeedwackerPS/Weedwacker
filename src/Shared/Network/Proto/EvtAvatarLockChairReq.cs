@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtAvatarLockChairReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtFdnRBdmF0YXJMb2NrQ2hhaXJSZXEucHJvdG8aDFZlY3Rvci5wcm90byJE",
-            "ChVFdnRBdmF0YXJMb2NrQ2hhaXJSZXESEAoIY2hhaXJfaWQYBSABKAQSGQoI",
-            "cG9zaXRpb24YCCABKAsyBy5WZWN0b3JCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtFdnRBdmF0YXJMb2NrQ2hhaXJSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byJkChVFdnRBdmF0YXJM",
+            "b2NrQ2hhaXJSZXESOQoIcG9zaXRpb24YAiABKAsyJy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchIQCghjaGFpcl9pZBgFIAEoBGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAvatarLockChairReq), global::Weedwacker.Shared.Network.Proto.EvtAvatarLockChairReq.Parser, new[]{ "ChairId", "Position" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAvatarLockChairReq), global::Weedwacker.Shared.Network.Proto.EvtAvatarLockChairReq.Parser, new[]{ "Position", "ChairId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 318
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 308;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtAvatarLockChairReq : pb::IMessage<EvtAvatarLockChairReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtAvatarLockChairReq(EvtAvatarLockChairReq other) : this() {
-      chairId_ = other.chairId_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
+      chairId_ = other.chairId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtAvatarLockChairReq Clone() {
       return new EvtAvatarLockChairReq(this);
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.Vector position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
     }
 
     /// <summary>Field number for the "chair_id" field.</summary>
@@ -98,18 +115,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return chairId_; }
       set {
         chairId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "position" field.</summary>
-    public const int PositionFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector position_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Position {
-      get { return position_; }
-      set {
-        position_ = value;
       }
     }
 
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ChairId != other.ChairId) return false;
       if (!object.Equals(Position, other.Position)) return false;
+      if (ChairId != other.ChairId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ChairId != 0UL) hash ^= ChairId.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
+      if (ChairId != 0UL) hash ^= ChairId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (position_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Position);
+      }
       if (ChairId != 0UL) {
         output.WriteRawTag(40);
         output.WriteUInt64(ChairId);
-      }
-      if (position_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Position);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (position_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Position);
+      }
       if (ChairId != 0UL) {
         output.WriteRawTag(40);
         output.WriteUInt64(ChairId);
-      }
-      if (position_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Position);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ChairId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ChairId);
-      }
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (ChairId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ChairId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ChairId != 0UL) {
-        ChairId = other.ChairId;
-      }
       if (other.position_ != null) {
         if (position_ == null) {
           Position = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Position.MergeFrom(other.Position);
+      }
+      if (other.ChairId != 0UL) {
+        ChairId = other.ChairId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            ChairId = input.ReadUInt64();
-            break;
-          }
-          case 66: {
+          case 18: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
+            break;
+          }
+          case 40: {
+            ChairId = input.ReadUInt64();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            ChairId = input.ReadUInt64();
-            break;
-          }
-          case 66: {
+          case 18: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
+            break;
+          }
+          case 40: {
+            ChairId = input.ReadUInt64();
             break;
           }
         }

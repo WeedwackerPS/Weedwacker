@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketStoreChooseStrategyRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilWaW50YWdlTWFya2V0U3RvcmVDaG9vc2VTdHJhdGVneVJzcC5wcm90byJf",
-            "CiNWaW50YWdlTWFya2V0U3RvcmVDaG9vc2VTdHJhdGVneVJzcBIQCghzdG9y",
-            "ZV9pZBgPIAEoDRIPCgdyZXRjb2RlGAkgASgFEhUKDXN0cmF0ZWd5X2xpc3QY",
-            "AiADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CilWaW50YWdlTWFya2V0U3RvcmVDaG9vc2VTdHJhdGVneVJzcC5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJfCiNWaW50YWdlTWFy",
+            "a2V0U3RvcmVDaG9vc2VTdHJhdGVneVJzcBIPCgdyZXRjb2RlGA4gASgFEhAK",
+            "CHN0b3JlX2lkGAsgASgNEhUKDXN0cmF0ZWd5X2xpc3QYAyADKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreChooseStrategyRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreChooseStrategyRsp.Parser, new[]{ "StoreId", "Retcode", "StrategyList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreChooseStrategyRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreChooseStrategyRsp.Parser, new[]{ "Retcode", "StoreId", "StrategyList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 24860
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 21298;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketStoreChooseStrategyRsp : pb::IMessage<VintageMarketStoreChooseStrategyRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketStoreChooseStrategyRsp(VintageMarketStoreChooseStrategyRsp other) : this() {
-      storeId_ = other.storeId_;
       retcode_ = other.retcode_;
+      storeId_ = other.storeId_;
       strategyList_ = other.strategyList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketStoreChooseStrategyRsp(this);
     }
 
-    /// <summary>Field number for the "store_id" field.</summary>
-    public const int StoreIdFieldNumber = 15;
-    private uint storeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StoreId {
-      get { return storeId_; }
-      set {
-        storeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 14;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,10 +106,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "store_id" field.</summary>
+    public const int StoreIdFieldNumber = 11;
+    private uint storeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StoreId {
+      get { return storeId_; }
+      set {
+        storeId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "strategy_list" field.</summary>
-    public const int StrategyListFieldNumber = 2;
+    public const int StrategyListFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_strategyList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(26);
     private readonly pbc::RepeatedField<uint> strategyList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (StoreId != other.StoreId) return false;
       if (Retcode != other.Retcode) return false;
+      if (StoreId != other.StoreId) return false;
       if(!strategyList_.Equals(other.strategyList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -150,8 +154,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (StoreId != 0) hash ^= StoreId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (StoreId != 0) hash ^= StoreId.GetHashCode();
       hash ^= strategyList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,13 +176,13 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       strategyList_.WriteTo(output, _repeated_strategyList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(Retcode);
-      }
       if (StoreId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(StoreId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,13 +195,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       strategyList_.WriteTo(ref output, _repeated_strategyList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(Retcode);
-      }
       if (StoreId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(StoreId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (StoreId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (StoreId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreId);
       }
       size += strategyList_.CalculateSize(_repeated_strategyList_codec);
       if (_unknownFields != null) {
@@ -228,11 +232,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.StoreId != 0) {
-        StoreId = other.StoreId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.StoreId != 0) {
+        StoreId = other.StoreId;
       }
       strategyList_.Add(other.strategyList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -250,17 +254,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 26:
+          case 24: {
             strategyList_.AddEntriesFrom(input, _repeated_strategyList_codec);
             break;
           }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 88: {
+            StoreId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            StoreId = input.ReadUInt32();
+          case 112: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -278,17 +282,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 26:
+          case 24: {
             strategyList_.AddEntriesFrom(ref input, _repeated_strategyList_codec);
             break;
           }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 88: {
+            StoreId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            StoreId = input.ReadUInt32();
+          case 112: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishingScoreReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJGaXNoaW5nU2NvcmUucHJvdG8iPAoMRmlzaGluZ1Njb3JlEhUKDWZpc2hp",
-            "bmdfc2NvcmUYAiABKA0SFQoNaXNfbmV3X3JlY29yZBgEIAEoCEIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJGaXNoaW5nU2NvcmUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iPAoMRmlzaGluZ1Njb3JlEhUKDWZpc2hpbmdfc2NvcmUYCyAB",
+            "KA0SFQoNaXNfbmV3X3JlY29yZBgKIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fishing_score" field.</summary>
-    public const int FishingScore_FieldNumber = 2;
+    public const int FishingScore_FieldNumber = 11;
     private uint fishingScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 4;
+    public const int IsNewRecordFieldNumber = 10;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FishingScore_ != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(FishingScore_);
-      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteBool(IsNewRecord);
+      }
+      if (FishingScore_ != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FishingScore_);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FishingScore_ != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(FishingScore_);
-      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteBool(IsNewRecord);
+      }
+      if (FishingScore_ != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FishingScore_);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            FishingScore_ = input.ReadUInt32();
+          case 80: {
+            IsNewRecord = input.ReadBool();
             break;
           }
-          case 32: {
-            IsNewRecord = input.ReadBool();
+          case 88: {
+            FishingScore_ = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            FishingScore_ = input.ReadUInt32();
+          case 80: {
+            IsNewRecord = input.ReadBool();
             break;
           }
-          case 32: {
-            IsNewRecord = input.ReadBool();
+          case 88: {
+            FishingScore_ = input.ReadUInt32();
             break;
           }
         }

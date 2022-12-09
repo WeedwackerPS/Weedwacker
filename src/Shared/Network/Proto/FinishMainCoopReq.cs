@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FinishMainCoopReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGaW5pc2hNYWluQ29vcFJlcS5wcm90byI9ChFGaW5pc2hNYWluQ29vcFJl",
-            "cRIKCgJpZBgKIAEoDRIcChRlbmRpbmdfc2F2ZV9wb2ludF9pZBgBIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdGaW5pc2hNYWluQ29vcFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byI9ChFGaW5pc2hNYWluQ29vcFJlcRIKCgJpZBgOIAEo",
+            "DRIcChRlbmRpbmdfc2F2ZV9wb2ludF9pZBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1952
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1977;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FinishMainCoopReq : pb::IMessage<FinishMainCoopReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 10;
+    public const int IdFieldNumber = 14;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ending_save_point_id" field.</summary>
-    public const int EndingSavePointIdFieldNumber = 1;
+    public const int EndingSavePointIdFieldNumber = 3;
     private uint endingSavePointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (EndingSavePointId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteUInt32(EndingSavePointId);
       }
       if (Id != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EndingSavePointId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteUInt32(EndingSavePointId);
       }
       if (Id != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 24: {
             EndingSavePointId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 112: {
             Id = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 24: {
             EndingSavePointId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 112: {
             Id = input.ReadUInt32();
             break;
           }

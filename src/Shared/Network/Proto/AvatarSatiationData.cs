@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarSatiationDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlBdmF0YXJTYXRpYXRpb25EYXRhLnByb3RvIlwKE0F2YXRhclNhdGlhdGlv",
-            "bkRhdGESEwoLZmluaXNoX3RpbWUYDiABKAISEwoLYXZhdGFyX2d1aWQYDSAB",
-            "KAQSGwoTcGVuYWx0eV9maW5pc2hfdGltZRgMIAEoAkIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlBdmF0YXJTYXRpYXRpb25EYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIlwKE0F2YXRhclNhdGlhdGlvbkRhdGESEwoLYXZh",
+            "dGFyX2d1aWQYDyABKAQSGwoTcGVuYWx0eV9maW5pc2hfdGltZRgGIAEoAhIT",
+            "CgtmaW5pc2hfdGltZRgHIAEoAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSatiationData), global::Weedwacker.Shared.Network.Proto.AvatarSatiationData.Parser, new[]{ "FinishTime", "AvatarGuid", "PenaltyFinishTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSatiationData), global::Weedwacker.Shared.Network.Proto.AvatarSatiationData.Parser, new[]{ "AvatarGuid", "PenaltyFinishTime", "FinishTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarSatiationData(AvatarSatiationData other) : this() {
-      finishTime_ = other.finishTime_;
       avatarGuid_ = other.avatarGuid_;
       penaltyFinishTime_ = other.penaltyFinishTime_;
+      finishTime_ = other.finishTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarSatiationData(this);
     }
 
-    /// <summary>Field number for the "finish_time" field.</summary>
-    public const int FinishTimeFieldNumber = 14;
-    private float finishTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float FinishTime {
-      get { return finishTime_; }
-      set {
-        finishTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 13;
+    public const int AvatarGuidFieldNumber = 15;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "penalty_finish_time" field.</summary>
-    public const int PenaltyFinishTimeFieldNumber = 12;
+    public const int PenaltyFinishTimeFieldNumber = 6;
     private float penaltyFinishTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return penaltyFinishTime_; }
       set {
         penaltyFinishTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "finish_time" field.</summary>
+    public const int FinishTimeFieldNumber = 7;
+    private float finishTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float FinishTime {
+      get { return finishTime_; }
+      set {
+        finishTime_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FinishTime, other.FinishTime)) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PenaltyFinishTime, other.PenaltyFinishTime)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FinishTime, other.FinishTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FinishTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FinishTime);
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (PenaltyFinishTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PenaltyFinishTime);
+      if (FinishTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FinishTime);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,16 +167,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (PenaltyFinishTime != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(53);
         output.WriteFloat(PenaltyFinishTime);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(104);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (FinishTime != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(61);
         output.WriteFloat(FinishTime);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(120);
+        output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,16 +189,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PenaltyFinishTime != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(53);
         output.WriteFloat(PenaltyFinishTime);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(104);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (FinishTime != 0F) {
-        output.WriteRawTag(117);
+        output.WriteRawTag(61);
         output.WriteFloat(FinishTime);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(120);
+        output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,13 +210,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FinishTime != 0F) {
-        size += 1 + 4;
-      }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
       if (PenaltyFinishTime != 0F) {
+        size += 1 + 4;
+      }
+      if (FinishTime != 0F) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FinishTime != 0F) {
-        FinishTime = other.FinishTime;
-      }
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
       if (other.PenaltyFinishTime != 0F) {
         PenaltyFinishTime = other.PenaltyFinishTime;
+      }
+      if (other.FinishTime != 0F) {
+        FinishTime = other.FinishTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 101: {
+          case 53: {
             PenaltyFinishTime = input.ReadFloat();
             break;
           }
-          case 104: {
-            AvatarGuid = input.ReadUInt64();
+          case 61: {
+            FinishTime = input.ReadFloat();
             break;
           }
-          case 117: {
-            FinishTime = input.ReadFloat();
+          case 120: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 101: {
+          case 53: {
             PenaltyFinishTime = input.ReadFloat();
             break;
           }
-          case 104: {
-            AvatarGuid = input.ReadUInt64();
+          case 61: {
+            FinishTime = input.ReadFloat();
             break;
           }
-          case 117: {
-            FinishTime = input.ReadFloat();
+          case 120: {
+            AvatarGuid = input.ReadUInt64();
             break;
           }
         }

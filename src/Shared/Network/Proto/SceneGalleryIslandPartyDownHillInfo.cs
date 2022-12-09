@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryIslandPartyDownHillInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eURvd25IaWxsSW5mby5wcm90bxoY",
-            "R2FsbGVyeVN0YXJ0U291cmNlLnByb3RvIqABCiNTY2VuZUdhbGxlcnlJc2xh",
-            "bmRQYXJ0eURvd25IaWxsSW5mbxIgChh0b3RhbF9raWxsX21vbnN0ZXJfY291",
-            "bnQYDiABKA0SKQoMc3RhcnRfc291cmNlGA8gASgOMhMuR2FsbGVyeVN0YXJ0",
-            "U291cmNlEh4KFm1heF9raWxsX21vbnN0ZXJfY291bnQYBSABKA0SDAoEY29p",
-            "bhgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CilTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eURvd25IaWxsSW5mby5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoYR2FsbGVyeVN0YXJ0",
+            "U291cmNlLnByb3RvIsABCiNTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eURvd25I",
+            "aWxsSW5mbxIeChZtYXhfa2lsbF9tb25zdGVyX2NvdW50GAogASgNEkkKDHN0",
+            "YXJ0X3NvdXJjZRgCIAEoDjIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uR2FsbGVyeVN0YXJ0U291cmNlEiAKGHRvdGFsX2tpbGxfbW9uc3Rl",
+            "cl9jb3VudBgMIAEoDRIMCgRjb2luGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStartSourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryIslandPartyDownHillInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryIslandPartyDownHillInfo.Parser, new[]{ "TotalKillMonsterCount", "StartSource", "MaxKillMonsterCount", "Coin" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryIslandPartyDownHillInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryIslandPartyDownHillInfo.Parser, new[]{ "MaxKillMonsterCount", "StartSource", "TotalKillMonsterCount", "Coin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryIslandPartyDownHillInfo(SceneGalleryIslandPartyDownHillInfo other) : this() {
-      totalKillMonsterCount_ = other.totalKillMonsterCount_;
-      startSource_ = other.startSource_;
       maxKillMonsterCount_ = other.maxKillMonsterCount_;
+      startSource_ = other.startSource_;
+      totalKillMonsterCount_ = other.totalKillMonsterCount_;
       coin_ = other.coin_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -88,32 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryIslandPartyDownHillInfo(this);
     }
 
-    /// <summary>Field number for the "total_kill_monster_count" field.</summary>
-    public const int TotalKillMonsterCountFieldNumber = 14;
-    private uint totalKillMonsterCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalKillMonsterCount {
-      get { return totalKillMonsterCount_; }
-      set {
-        totalKillMonsterCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "start_source" field.</summary>
-    public const int StartSourceFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.GalleryStartSource startSource_ = global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GalleryStartSource StartSource {
-      get { return startSource_; }
-      set {
-        startSource_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max_kill_monster_count" field.</summary>
-    public const int MaxKillMonsterCountFieldNumber = 5;
+    public const int MaxKillMonsterCountFieldNumber = 10;
     private uint maxKillMonsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,8 +100,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "start_source" field.</summary>
+    public const int StartSourceFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.GalleryStartSource startSource_ = global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GalleryStartSource StartSource {
+      get { return startSource_; }
+      set {
+        startSource_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_kill_monster_count" field.</summary>
+    public const int TotalKillMonsterCountFieldNumber = 12;
+    private uint totalKillMonsterCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalKillMonsterCount {
+      get { return totalKillMonsterCount_; }
+      set {
+        totalKillMonsterCount_ = value;
+      }
+    }
+
     /// <summary>Field number for the "coin" field.</summary>
-    public const int CoinFieldNumber = 13;
+    public const int CoinFieldNumber = 4;
     private uint coin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TotalKillMonsterCount != other.TotalKillMonsterCount) return false;
-      if (StartSource != other.StartSource) return false;
       if (MaxKillMonsterCount != other.MaxKillMonsterCount) return false;
+      if (StartSource != other.StartSource) return false;
+      if (TotalKillMonsterCount != other.TotalKillMonsterCount) return false;
       if (Coin != other.Coin) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -162,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TotalKillMonsterCount != 0) hash ^= TotalKillMonsterCount.GetHashCode();
-      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) hash ^= StartSource.GetHashCode();
       if (MaxKillMonsterCount != 0) hash ^= MaxKillMonsterCount.GetHashCode();
+      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) hash ^= StartSource.GetHashCode();
+      if (TotalKillMonsterCount != 0) hash ^= TotalKillMonsterCount.GetHashCode();
       if (Coin != 0) hash ^= Coin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -184,21 +184,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxKillMonsterCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(MaxKillMonsterCount);
+      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) StartSource);
       }
       if (Coin != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(Coin);
       }
-      if (TotalKillMonsterCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TotalKillMonsterCount);
+      if (MaxKillMonsterCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(MaxKillMonsterCount);
       }
-      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) StartSource);
+      if (TotalKillMonsterCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalKillMonsterCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -210,21 +210,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxKillMonsterCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(MaxKillMonsterCount);
+      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) StartSource);
       }
       if (Coin != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(Coin);
       }
-      if (TotalKillMonsterCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TotalKillMonsterCount);
+      if (MaxKillMonsterCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(MaxKillMonsterCount);
       }
-      if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) StartSource);
+      if (TotalKillMonsterCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalKillMonsterCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -236,14 +236,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TotalKillMonsterCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalKillMonsterCount);
+      if (MaxKillMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxKillMonsterCount);
       }
       if (StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StartSource);
       }
-      if (MaxKillMonsterCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxKillMonsterCount);
+      if (TotalKillMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalKillMonsterCount);
       }
       if (Coin != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
@@ -260,14 +260,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TotalKillMonsterCount != 0) {
-        TotalKillMonsterCount = other.TotalKillMonsterCount;
+      if (other.MaxKillMonsterCount != 0) {
+        MaxKillMonsterCount = other.MaxKillMonsterCount;
       }
       if (other.StartSource != global::Weedwacker.Shared.Network.Proto.GalleryStartSource.ByNone) {
         StartSource = other.StartSource;
       }
-      if (other.MaxKillMonsterCount != 0) {
-        MaxKillMonsterCount = other.MaxKillMonsterCount;
+      if (other.TotalKillMonsterCount != 0) {
+        TotalKillMonsterCount = other.TotalKillMonsterCount;
       }
       if (other.Coin != 0) {
         Coin = other.Coin;
@@ -287,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            MaxKillMonsterCount = input.ReadUInt32();
+          case 16: {
+            StartSource = (global::Weedwacker.Shared.Network.Proto.GalleryStartSource) input.ReadEnum();
             break;
           }
-          case 104: {
+          case 32: {
             Coin = input.ReadUInt32();
             break;
           }
-          case 112: {
-            TotalKillMonsterCount = input.ReadUInt32();
+          case 80: {
+            MaxKillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 120: {
-            StartSource = (global::Weedwacker.Shared.Network.Proto.GalleryStartSource) input.ReadEnum();
+          case 96: {
+            TotalKillMonsterCount = input.ReadUInt32();
             break;
           }
         }
@@ -318,20 +318,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            MaxKillMonsterCount = input.ReadUInt32();
+          case 16: {
+            StartSource = (global::Weedwacker.Shared.Network.Proto.GalleryStartSource) input.ReadEnum();
             break;
           }
-          case 104: {
+          case 32: {
             Coin = input.ReadUInt32();
             break;
           }
-          case 112: {
-            TotalKillMonsterCount = input.ReadUInt32();
+          case 80: {
+            MaxKillMonsterCount = input.ReadUInt32();
             break;
           }
-          case 120: {
-            StartSource = (global::Weedwacker.Shared.Network.Proto.GalleryStartSource) input.ReadEnum();
+          case 96: {
+            TotalKillMonsterCount = input.ReadUInt32();
             break;
           }
         }

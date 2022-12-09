@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DragonSpineCoinChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFEcmFnb25TcGluZUNvaW5DaGFuZ2VOb3RpZnkucHJvdG8ifgobRHJhZ29u",
-            "U3BpbmVDb2luQ2hhbmdlTm90aWZ5EhoKEnNoaW1tZXJpbmdfZXNzZW5jZRgE",
-            "IAEoDRIUCgx3YXJtX2Vzc2VuY2UYDSABKA0SEwoLc2NoZWR1bGVfaWQYDCAB",
-            "KA0SGAoQd29uZHJvdXNfZXNzZW5jZRgLIAEoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFEcmFnb25TcGluZUNvaW5DaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iiQEKG0RyYWdvblNwaW5lQ29pbkNo",
+            "YW5nZU5vdGlmeRIbChNVbmszMzAwX0lNTEtJSkFPQURGGAsgASgNEhMKC3Nj",
+            "aGVkdWxlX2lkGA8gASgNEhsKE1VuazMzMDBfRk9ISkRHQ0FLRUsYAyABKA0S",
+            "GwoTVW5rMzMwMF9ORU9DTUdKQ0VPShgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineCoinChangeNotify), global::Weedwacker.Shared.Network.Proto.DragonSpineCoinChangeNotify.Parser, new[]{ "ShimmeringEssence", "WarmEssence", "ScheduleId", "WondrousEssence" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineCoinChangeNotify), global::Weedwacker.Shared.Network.Proto.DragonSpineCoinChangeNotify.Parser, new[]{ "Unk3300IMLKIJAOADF", "ScheduleId", "Unk3300FOHJDGCAKEK", "Unk3300NEOCMGJCEOJ" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2088
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2086;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DragonSpineCoinChangeNotify : pb::IMessage<DragonSpineCoinChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DragonSpineCoinChangeNotify(DragonSpineCoinChangeNotify other) : this() {
-      shimmeringEssence_ = other.shimmeringEssence_;
-      warmEssence_ = other.warmEssence_;
+      unk3300IMLKIJAOADF_ = other.unk3300IMLKIJAOADF_;
       scheduleId_ = other.scheduleId_;
-      wondrousEssence_ = other.wondrousEssence_;
+      unk3300FOHJDGCAKEK_ = other.unk3300FOHJDGCAKEK_;
+      unk3300NEOCMGJCEOJ_ = other.unk3300NEOCMGJCEOJ_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,32 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DragonSpineCoinChangeNotify(this);
     }
 
-    /// <summary>Field number for the "shimmering_essence" field.</summary>
-    public const int ShimmeringEssenceFieldNumber = 4;
-    private uint shimmeringEssence_;
+    /// <summary>Field number for the "Unk3300_IMLKIJAOADF" field.</summary>
+    public const int Unk3300IMLKIJAOADFFieldNumber = 11;
+    private uint unk3300IMLKIJAOADF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShimmeringEssence {
-      get { return shimmeringEssence_; }
+    public uint Unk3300IMLKIJAOADF {
+      get { return unk3300IMLKIJAOADF_; }
       set {
-        shimmeringEssence_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "warm_essence" field.</summary>
-    public const int WarmEssenceFieldNumber = 13;
-    private uint warmEssence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WarmEssence {
-      get { return warmEssence_; }
-      set {
-        warmEssence_ = value;
+        unk3300IMLKIJAOADF_ = value;
       }
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 12;
+    public const int ScheduleIdFieldNumber = 15;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,15 +119,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "wondrous_essence" field.</summary>
-    public const int WondrousEssenceFieldNumber = 11;
-    private uint wondrousEssence_;
+    /// <summary>Field number for the "Unk3300_FOHJDGCAKEK" field.</summary>
+    public const int Unk3300FOHJDGCAKEKFieldNumber = 3;
+    private uint unk3300FOHJDGCAKEK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WondrousEssence {
-      get { return wondrousEssence_; }
+    public uint Unk3300FOHJDGCAKEK {
+      get { return unk3300FOHJDGCAKEK_; }
       set {
-        wondrousEssence_ = value;
+        unk3300FOHJDGCAKEK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NEOCMGJCEOJ" field.</summary>
+    public const int Unk3300NEOCMGJCEOJFieldNumber = 2;
+    private uint unk3300NEOCMGJCEOJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NEOCMGJCEOJ {
+      get { return unk3300NEOCMGJCEOJ_; }
+      set {
+        unk3300NEOCMGJCEOJ_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ShimmeringEssence != other.ShimmeringEssence) return false;
-      if (WarmEssence != other.WarmEssence) return false;
+      if (Unk3300IMLKIJAOADF != other.Unk3300IMLKIJAOADF) return false;
       if (ScheduleId != other.ScheduleId) return false;
-      if (WondrousEssence != other.WondrousEssence) return false;
+      if (Unk3300FOHJDGCAKEK != other.Unk3300FOHJDGCAKEK) return false;
+      if (Unk3300NEOCMGJCEOJ != other.Unk3300NEOCMGJCEOJ) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ShimmeringEssence != 0) hash ^= ShimmeringEssence.GetHashCode();
-      if (WarmEssence != 0) hash ^= WarmEssence.GetHashCode();
+      if (Unk3300IMLKIJAOADF != 0) hash ^= Unk3300IMLKIJAOADF.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      if (WondrousEssence != 0) hash ^= WondrousEssence.GetHashCode();
+      if (Unk3300FOHJDGCAKEK != 0) hash ^= Unk3300FOHJDGCAKEK.GetHashCode();
+      if (Unk3300NEOCMGJCEOJ != 0) hash ^= Unk3300NEOCMGJCEOJ.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,21 +191,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ShimmeringEssence != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ShimmeringEssence);
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
       }
-      if (WondrousEssence != 0) {
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(WondrousEssence);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
       }
       if (ScheduleId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(ScheduleId);
-      }
-      if (WarmEssence != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(WarmEssence);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +217,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ShimmeringEssence != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ShimmeringEssence);
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
       }
-      if (WondrousEssence != 0) {
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(WondrousEssence);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
       }
       if (ScheduleId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(ScheduleId);
-      }
-      if (WarmEssence != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(WarmEssence);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ShimmeringEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShimmeringEssence);
-      }
-      if (WarmEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WarmEssence);
+      if (Unk3300IMLKIJAOADF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IMLKIJAOADF);
       }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
-      if (WondrousEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WondrousEssence);
+      if (Unk3300FOHJDGCAKEK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NEOCMGJCEOJ);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ShimmeringEssence != 0) {
-        ShimmeringEssence = other.ShimmeringEssence;
-      }
-      if (other.WarmEssence != 0) {
-        WarmEssence = other.WarmEssence;
+      if (other.Unk3300IMLKIJAOADF != 0) {
+        Unk3300IMLKIJAOADF = other.Unk3300IMLKIJAOADF;
       }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      if (other.WondrousEssence != 0) {
-        WondrousEssence = other.WondrousEssence;
+      if (other.Unk3300FOHJDGCAKEK != 0) {
+        Unk3300FOHJDGCAKEK = other.Unk3300FOHJDGCAKEK;
+      }
+      if (other.Unk3300NEOCMGJCEOJ != 0) {
+        Unk3300NEOCMGJCEOJ = other.Unk3300NEOCMGJCEOJ;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            ShimmeringEssence = input.ReadUInt32();
+          case 16: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
             break;
           }
           case 88: {
-            WondrousEssence = input.ReadUInt32();
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 120: {
             ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            WarmEssence = input.ReadUInt32();
             break;
           }
         }
@@ -321,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            ShimmeringEssence = input.ReadUInt32();
+          case 16: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
             break;
           }
           case 88: {
-            WondrousEssence = input.ReadUInt32();
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 120: {
             ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            WarmEssence = input.ReadUInt32();
             break;
           }
         }

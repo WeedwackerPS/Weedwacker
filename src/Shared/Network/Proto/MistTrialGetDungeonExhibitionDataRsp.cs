@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MistTrialGetDungeonExhibitionDataRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipNaXN0VHJpYWxHZXREdW5nZW9uRXhoaWJpdGlvbkRhdGFSc3AucHJvdG8i",
-            "SQokTWlzdFRyaWFsR2V0RHVuZ2VvbkV4aGliaXRpb25EYXRhUnNwEhAKCHRy",
-            "aWFsX2lkGAwgASgNEg8KB3JldGNvZGUYBCABKAVCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CipNaXN0VHJpYWxHZXREdW5nZW9uRXhoaWJpdGlvbkRhdGFSc3AucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iSQokTWlzdFRyaWFs",
+            "R2V0RHVuZ2VvbkV4aGliaXRpb25EYXRhUnNwEhAKCHRyaWFsX2lkGAogASgN",
+            "Eg8KB3JldGNvZGUYAiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8066
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8903;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MistTrialGetDungeonExhibitionDataRsp : pb::IMessage<MistTrialGetDungeonExhibitionDataRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trial_id" field.</summary>
-    public const int TrialIdFieldNumber = 12;
+    public const int TrialIdFieldNumber = 10;
     private uint trialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       if (TrialId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(TrialId);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       if (TrialId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(TrialId);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 80: {
             TrialId = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 80: {
             TrialId = input.ReadUInt32();
             break;
           }

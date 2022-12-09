@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetFriendShowNameCardInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHZXRGcmllbmRTaG93TmFtZUNhcmRJbmZvUnNwLnByb3RvIlwKHEdldEZy",
-            "aWVuZFNob3dOYW1lQ2FyZEluZm9Sc3ASDwoHcmV0Y29kZRgPIAEoBRILCgN1",
-            "aWQYByABKA0SHgoWc2hvd19uYW1lX2NhcmRfaWRfbGlzdBgKIAMoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJHZXRGcmllbmRTaG93TmFtZUNhcmRJbmZvUnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlwKHEdldEZyaWVuZFNob3dOYW1l",
+            "Q2FyZEluZm9Sc3ASHgoWc2hvd19uYW1lX2NhcmRfaWRfbGlzdBgFIAMoDRIL",
+            "CgN1aWQYCSABKA0SDwoHcmV0Y29kZRgDIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetFriendShowNameCardInfoRsp), global::Weedwacker.Shared.Network.Proto.GetFriendShowNameCardInfoRsp.Parser, new[]{ "Retcode", "Uid", "ShowNameCardIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetFriendShowNameCardInfoRsp), global::Weedwacker.Shared.Network.Proto.GetFriendShowNameCardInfoRsp.Parser, new[]{ "ShowNameCardIdList", "Uid", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4029
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4020;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetFriendShowNameCardInfoRsp : pb::IMessage<GetFriendShowNameCardInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetFriendShowNameCardInfoRsp(GetFriendShowNameCardInfoRsp other) : this() {
-      retcode_ = other.retcode_;
-      uid_ = other.uid_;
       showNameCardIdList_ = other.showNameCardIdList_.Clone();
+      uid_ = other.uid_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetFriendShowNameCardInfoRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
-    private int retcode_;
+    /// <summary>Field number for the "show_name_card_id_list" field.</summary>
+    public const int ShowNameCardIdListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_showNameCardIdList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> showNameCardIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
+    public pbc::RepeatedField<uint> ShowNameCardIdList {
+      get { return showNameCardIdList_; }
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 7;
+    public const int UidFieldNumber = 9;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,15 +116,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "show_name_card_id_list" field.</summary>
-    public const int ShowNameCardIdListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_showNameCardIdList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> showNameCardIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 3;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ShowNameCardIdList {
-      get { return showNameCardIdList_; }
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,9 +143,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if (Uid != other.Uid) return false;
       if(!showNameCardIdList_.Equals(other.showNameCardIdList_)) return false;
+      if (Uid != other.Uid) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,9 +153,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       hash ^= showNameCardIdList_.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -170,14 +174,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Uid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Uid);
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
       }
       showNameCardIdList_.WriteTo(output, _repeated_showNameCardIdList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,14 +193,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Uid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Uid);
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
       }
       showNameCardIdList_.WriteTo(ref output, _repeated_showNameCardIdList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -208,13 +212,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
+      size += showNameCardIdList_.CalculateSize(_repeated_showNameCardIdList_codec);
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      size += showNameCardIdList_.CalculateSize(_repeated_showNameCardIdList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -227,13 +231,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
+      showNameCardIdList_.Add(other.showNameCardIdList_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      showNameCardIdList_.Add(other.showNameCardIdList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -249,17 +253,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            Uid = input.ReadUInt32();
+          case 24: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 42:
+          case 40: {
             showNameCardIdList_.AddEntriesFrom(input, _repeated_showNameCardIdList_codec);
             break;
           }
-          case 120: {
-            Retcode = input.ReadInt32();
+          case 72: {
+            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -277,17 +281,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            Uid = input.ReadUInt32();
+          case 24: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 42:
+          case 40: {
             showNameCardIdList_.AddEntriesFrom(ref input, _repeated_showNameCardIdList_codec);
             break;
           }
-          case 120: {
-            Retcode = input.ReadInt32();
+          case 72: {
+            Uid = input.ReadUInt32();
             break;
           }
         }

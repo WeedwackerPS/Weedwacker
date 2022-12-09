@@ -24,16 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuickUseWidgetReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdRdWlja1VzZVdpZGdldFJlcS5wcm90bxoWV2lkZ2V0Q2FtZXJhSW5mby5w",
-            "cm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvLnByb3RvGhdXaWRnZXRD",
-            "cmVhdG9ySW5mby5wcm90bxoiV2lkZ2V0VGh1bmRlckJpcmRGZWF0aGVySW5m",
-            "by5wcm90byLuAQoRUXVpY2tVc2VXaWRnZXRSZXESMwoNbG9jYXRpb25faW5m",
-            "bxikBSABKAsyGS5XaWRnZXRDcmVhdGVMb2NhdGlvbkluZm9IABIpCgtjYW1l",
-            "cmFfaW5mbxjeAyABKAsyES5XaWRnZXRDYW1lcmFJbmZvSAASKwoMY3JlYXRv",
-            "cl9pbmZvGKwGIAEoCzISLldpZGdldENyZWF0b3JJbmZvSAASQwoZdGh1bmRl",
-            "cl9iaXJkX2ZlYXRoZXJfaW5mbxjDDiABKAsyHS5XaWRnZXRUaHVuZGVyQmly",
-            "ZEZlYXRoZXJJbmZvSABCBwoFcGFyYW1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdRdWlja1VzZVdpZGdldFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoWV2lkZ2V0Q2FtZXJhSW5mby5wcm90bxoeV2lkZ2V0",
+            "Q3JlYXRlTG9jYXRpb25JbmZvLnByb3RvGhdXaWRnZXRDcmVhdG9ySW5mby5w",
+            "cm90bxoiV2lkZ2V0VGh1bmRlckJpcmRGZWF0aGVySW5mby5wcm90byLtAgoR",
+            "UXVpY2tVc2VXaWRnZXRSZXESUwoNbG9jYXRpb25faW5mbxjQDiABKAsyOS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldpZGdldENyZWF0ZUxv",
+            "Y2F0aW9uSW5mb0gAEkkKC2NhbWVyYV9pbmZvGKsOIAEoCzIxLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uV2lkZ2V0Q2FtZXJhSW5mb0gAEkoK",
+            "DGNyZWF0b3JfaW5mbxhIIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uV2lkZ2V0Q3JlYXRvckluZm9IABJjChl0aHVuZGVyX2JpcmRf",
+            "ZmVhdGhlcl9pbmZvGOsDIAEoCzI9LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uV2lkZ2V0VGh1bmRlckJpcmRGZWF0aGVySW5mb0gAQgcKBXBh",
+            "cmFtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetCameraInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -44,12 +47,6 @@ namespace Weedwacker.Shared.Network.Proto {
 
   }
   #region Messages
-  /// <summary>
-  /// CmdId: 4299
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
-  /// </summary>
   public sealed partial class QuickUseWidgetReq : pb::IMessage<QuickUseWidgetReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -109,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "location_info" field.</summary>
-    public const int LocationInfoFieldNumber = 676;
+    public const int LocationInfoFieldNumber = 1872;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo LocationInfo {
@@ -121,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "camera_info" field.</summary>
-    public const int CameraInfoFieldNumber = 478;
+    public const int CameraInfoFieldNumber = 1835;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo CameraInfo {
@@ -133,7 +130,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "creator_info" field.</summary>
-    public const int CreatorInfoFieldNumber = 812;
+    public const int CreatorInfoFieldNumber = 72;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo CreatorInfo {
@@ -145,7 +142,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "thunder_bird_feather_info" field.</summary>
-    public const int ThunderBirdFeatherInfoFieldNumber = 1859;
+    public const int ThunderBirdFeatherInfoFieldNumber = 491;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfo ThunderBirdFeatherInfo {
@@ -160,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "param" oneof.</summary>
     public enum ParamOneofCase {
       None = 0,
-      LocationInfo = 676,
-      CameraInfo = 478,
-      CreatorInfo = 812,
-      ThunderBirdFeatherInfo = 1859,
+      LocationInfo = 1872,
+      CameraInfo = 1835,
+      CreatorInfo = 72,
+      ThunderBirdFeatherInfo = 491,
     }
     private ParamOneofCase paramCase_ = ParamOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -229,21 +226,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (paramCase_ == ParamOneofCase.CameraInfo) {
-        output.WriteRawTag(242, 29);
-        output.WriteMessage(CameraInfo);
-      }
-      if (paramCase_ == ParamOneofCase.LocationInfo) {
-        output.WriteRawTag(162, 42);
-        output.WriteMessage(LocationInfo);
-      }
       if (paramCase_ == ParamOneofCase.CreatorInfo) {
-        output.WriteRawTag(226, 50);
+        output.WriteRawTag(194, 4);
         output.WriteMessage(CreatorInfo);
       }
       if (paramCase_ == ParamOneofCase.ThunderBirdFeatherInfo) {
-        output.WriteRawTag(154, 116);
+        output.WriteRawTag(218, 30);
         output.WriteMessage(ThunderBirdFeatherInfo);
+      }
+      if (paramCase_ == ParamOneofCase.CameraInfo) {
+        output.WriteRawTag(218, 114);
+        output.WriteMessage(CameraInfo);
+      }
+      if (paramCase_ == ParamOneofCase.LocationInfo) {
+        output.WriteRawTag(130, 117);
+        output.WriteMessage(LocationInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -255,21 +252,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (paramCase_ == ParamOneofCase.CameraInfo) {
-        output.WriteRawTag(242, 29);
-        output.WriteMessage(CameraInfo);
-      }
-      if (paramCase_ == ParamOneofCase.LocationInfo) {
-        output.WriteRawTag(162, 42);
-        output.WriteMessage(LocationInfo);
-      }
       if (paramCase_ == ParamOneofCase.CreatorInfo) {
-        output.WriteRawTag(226, 50);
+        output.WriteRawTag(194, 4);
         output.WriteMessage(CreatorInfo);
       }
       if (paramCase_ == ParamOneofCase.ThunderBirdFeatherInfo) {
-        output.WriteRawTag(154, 116);
+        output.WriteRawTag(218, 30);
         output.WriteMessage(ThunderBirdFeatherInfo);
+      }
+      if (paramCase_ == ParamOneofCase.CameraInfo) {
+        output.WriteRawTag(218, 114);
+        output.WriteMessage(CameraInfo);
+      }
+      if (paramCase_ == ParamOneofCase.LocationInfo) {
+        output.WriteRawTag(130, 117);
+        output.WriteMessage(LocationInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -347,25 +344,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 3826: {
-            global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo();
-            if (paramCase_ == ParamOneofCase.CameraInfo) {
-              subBuilder.MergeFrom(CameraInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CameraInfo = subBuilder;
-            break;
-          }
-          case 5410: {
-            global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
-            if (paramCase_ == ParamOneofCase.LocationInfo) {
-              subBuilder.MergeFrom(LocationInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LocationInfo = subBuilder;
-            break;
-          }
-          case 6498: {
+          case 578: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo();
             if (paramCase_ == ParamOneofCase.CreatorInfo) {
               subBuilder.MergeFrom(CreatorInfo);
@@ -374,13 +353,31 @@ namespace Weedwacker.Shared.Network.Proto {
             CreatorInfo = subBuilder;
             break;
           }
-          case 14874: {
+          case 3930: {
             global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfo();
             if (paramCase_ == ParamOneofCase.ThunderBirdFeatherInfo) {
               subBuilder.MergeFrom(ThunderBirdFeatherInfo);
             }
             input.ReadMessage(subBuilder);
             ThunderBirdFeatherInfo = subBuilder;
+            break;
+          }
+          case 14682: {
+            global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo();
+            if (paramCase_ == ParamOneofCase.CameraInfo) {
+              subBuilder.MergeFrom(CameraInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CameraInfo = subBuilder;
+            break;
+          }
+          case 14978: {
+            global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
+            if (paramCase_ == ParamOneofCase.LocationInfo) {
+              subBuilder.MergeFrom(LocationInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LocationInfo = subBuilder;
             break;
           }
         }
@@ -398,25 +395,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 3826: {
-            global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo();
-            if (paramCase_ == ParamOneofCase.CameraInfo) {
-              subBuilder.MergeFrom(CameraInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CameraInfo = subBuilder;
-            break;
-          }
-          case 5410: {
-            global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
-            if (paramCase_ == ParamOneofCase.LocationInfo) {
-              subBuilder.MergeFrom(LocationInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LocationInfo = subBuilder;
-            break;
-          }
-          case 6498: {
+          case 578: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo();
             if (paramCase_ == ParamOneofCase.CreatorInfo) {
               subBuilder.MergeFrom(CreatorInfo);
@@ -425,13 +404,31 @@ namespace Weedwacker.Shared.Network.Proto {
             CreatorInfo = subBuilder;
             break;
           }
-          case 14874: {
+          case 3930: {
             global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetThunderBirdFeatherInfo();
             if (paramCase_ == ParamOneofCase.ThunderBirdFeatherInfo) {
               subBuilder.MergeFrom(ThunderBirdFeatherInfo);
             }
             input.ReadMessage(subBuilder);
             ThunderBirdFeatherInfo = subBuilder;
+            break;
+          }
+          case 14682: {
+            global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCameraInfo();
+            if (paramCase_ == ParamOneofCase.CameraInfo) {
+              subBuilder.MergeFrom(CameraInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CameraInfo = subBuilder;
+            break;
+          }
+          case 14978: {
+            global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
+            if (paramCase_ == ParamOneofCase.LocationInfo) {
+              subBuilder.MergeFrom(LocationInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LocationInfo = subBuilder;
             break;
           }
         }

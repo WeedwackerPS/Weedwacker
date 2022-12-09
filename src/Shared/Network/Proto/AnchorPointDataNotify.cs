@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static AnchorPointDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBbmNob3JQb2ludERhdGFOb3RpZnkucHJvdG8aFUFuY2hvclBvaW50RGF0",
-            "YS5wcm90byJeChVBbmNob3JQb2ludERhdGFOb3RpZnkSKwoRYW5jaG9yX3Bv",
-            "aW50X2xpc3QYCiADKAsyEC5BbmNob3JQb2ludERhdGESGAoQbmV4dF91c2Fi",
-            "bGVfdGltZRgOIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChtBbmNob3JQb2ludERhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFUFuY2hvclBvaW50RGF0YS5wcm90byJ+ChVB",
+            "bmNob3JQb2ludERhdGFOb3RpZnkSGAoQbmV4dF91c2FibGVfdGltZRgBIAEo",
+            "DRJLChFhbmNob3JfcG9pbnRfbGlzdBgLIAMoCzIwLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uQW5jaG9yUG9pbnREYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AnchorPointDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnchorPointDataNotify), global::Weedwacker.Shared.Network.Proto.AnchorPointDataNotify.Parser, new[]{ "AnchorPointList", "NextUsableTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnchorPointDataNotify), global::Weedwacker.Shared.Network.Proto.AnchorPointDataNotify.Parser, new[]{ "NextUsableTime", "AnchorPointList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4276
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4292;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AnchorPointDataNotify : pb::IMessage<AnchorPointDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnchorPointDataNotify(AnchorPointDataNotify other) : this() {
-      anchorPointList_ = other.anchorPointList_.Clone();
       nextUsableTime_ = other.nextUsableTime_;
+      anchorPointList_ = other.anchorPointList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AnchorPointDataNotify(this);
     }
 
-    /// <summary>Field number for the "anchor_point_list" field.</summary>
-    public const int AnchorPointListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AnchorPointData> _repeated_anchorPointList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> AnchorPointList {
-      get { return anchorPointList_; }
-    }
-
     /// <summary>Field number for the "next_usable_time" field.</summary>
-    public const int NextUsableTimeFieldNumber = 14;
+    public const int NextUsableTimeFieldNumber = 1;
     private uint nextUsableTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         nextUsableTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "anchor_point_list" field.</summary>
+    public const int AnchorPointListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AnchorPointData> _repeated_anchorPointList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> AnchorPointList {
+      get { return anchorPointList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
       if (NextUsableTime != other.NextUsableTime) return false;
+      if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= anchorPointList_.GetHashCode();
       if (NextUsableTime != 0) hash ^= NextUsableTime.GetHashCode();
+      hash ^= anchorPointList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
       if (NextUsableTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(NextUsableTime);
       }
+      anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
       if (NextUsableTime != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(NextUsableTime);
       }
+      anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
       if (NextUsableTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextUsableTime);
       }
+      size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      anchorPointList_.Add(other.anchorPointList_);
       if (other.NextUsableTime != 0) {
         NextUsableTime = other.NextUsableTime;
       }
+      anchorPointList_.Add(other.anchorPointList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
-            anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
+          case 8: {
+            NextUsableTime = input.ReadUInt32();
             break;
           }
-          case 112: {
-            NextUsableTime = input.ReadUInt32();
+          case 90: {
+            anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
             break;
           }
         }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
-            anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
+          case 8: {
+            NextUsableTime = input.ReadUInt32();
             break;
           }
-          case 112: {
-            NextUsableTime = input.ReadUInt32();
+          case 90: {
+            anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
             break;
           }
         }

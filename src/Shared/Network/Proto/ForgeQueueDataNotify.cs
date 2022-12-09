@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeQueueDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpGb3JnZVF1ZXVlRGF0YU5vdGlmeS5wcm90bxoURm9yZ2VRdWV1ZURhdGEu",
-            "cHJvdG8iwgEKFEZvcmdlUXVldWVEYXRhTm90aWZ5EkEKD2ZvcmdlX3F1ZXVl",
-            "X21hcBgHIAMoCzIoLkZvcmdlUXVldWVEYXRhTm90aWZ5LkZvcmdlUXVldWVN",
-            "YXBFbnRyeRIgChhyZW1vdmVkX2ZvcmdlX3F1ZXVlX2xpc3QYBiADKA0aRQoS",
-            "Rm9yZ2VRdWV1ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIeCgV2YWx1ZRgCIAEo",
-            "CzIPLkZvcmdlUXVldWVEYXRhOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpGb3JnZVF1ZXVlRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoURm9yZ2VRdWV1ZURhdGEucHJvdG8iggIKFEZv",
+            "cmdlUXVldWVEYXRhTm90aWZ5EmEKD2ZvcmdlX3F1ZXVlX21hcBgBIAMoCzJI",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRm9yZ2VRdWV1ZURh",
+            "dGFOb3RpZnkuRm9yZ2VRdWV1ZU1hcEVudHJ5EiAKGHJlbW92ZWRfZm9yZ2Vf",
+            "cXVldWVfbGlzdBgPIAMoDRplChJGb3JnZVF1ZXVlTWFwRW50cnkSCwoDa2V5",
+            "GAEgASgNEj4KBXZhbHVlGAIgASgLMi8uV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Gb3JnZVF1ZXVlRGF0YToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForgeQueueDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 676
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 695;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ForgeQueueDataNotify : pb::IMessage<ForgeQueueDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "forge_queue_map" field.</summary>
-    public const int ForgeQueueMapFieldNumber = 7;
+    public const int ForgeQueueMapFieldNumber = 1;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec _map_forgeQueueMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser), 58);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser), 10);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData> forgeQueueMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ForgeQueueData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +109,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "removed_forge_queue_list" field.</summary>
-    public const int RemovedForgeQueueListFieldNumber = 6;
+    public const int RemovedForgeQueueListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_removedForgeQueueList_codec
-        = pb::FieldCodec.ForUInt32(50);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> removedForgeQueueList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,8 +163,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      removedForgeQueueList_.WriteTo(output, _repeated_removedForgeQueueList_codec);
       forgeQueueMap_.WriteTo(output, _map_forgeQueueMap_codec);
+      removedForgeQueueList_.WriteTo(output, _repeated_removedForgeQueueList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,8 +175,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      removedForgeQueueList_.WriteTo(ref output, _repeated_removedForgeQueueList_codec);
       forgeQueueMap_.WriteTo(ref output, _map_forgeQueueMap_codec);
+      removedForgeQueueList_.WriteTo(ref output, _repeated_removedForgeQueueList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -213,13 +218,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
-            removedForgeQueueList_.AddEntriesFrom(input, _repeated_removedForgeQueueList_codec);
+          case 10: {
+            forgeQueueMap_.AddEntriesFrom(input, _map_forgeQueueMap_codec);
             break;
           }
-          case 58: {
-            forgeQueueMap_.AddEntriesFrom(input, _map_forgeQueueMap_codec);
+          case 122:
+          case 120: {
+            removedForgeQueueList_.AddEntriesFrom(input, _repeated_removedForgeQueueList_codec);
             break;
           }
         }
@@ -237,13 +242,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
-            removedForgeQueueList_.AddEntriesFrom(ref input, _repeated_removedForgeQueueList_codec);
+          case 10: {
+            forgeQueueMap_.AddEntriesFrom(ref input, _map_forgeQueueMap_codec);
             break;
           }
-          case 58: {
-            forgeQueueMap_.AddEntriesFrom(ref input, _map_forgeQueueMap_codec);
+          case 122:
+          case 120: {
+            removedForgeQueueList_.AddEntriesFrom(ref input, _repeated_removedForgeQueueList_codec);
             break;
           }
         }

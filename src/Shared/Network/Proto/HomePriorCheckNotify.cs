@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePriorCheckNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpIb21lUHJpb3JDaGVja05vdGlmeS5wcm90byIoChRIb21lUHJpb3JDaGVj",
-            "a05vdGlmeRIQCghlbmRfdGltZRgHIAEoB0IiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpIb21lUHJpb3JDaGVja05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byIoChRIb21lUHJpb3JDaGVja05vdGlmeRIQCghl",
+            "bmRfdGltZRgDIAEoB2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4599
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4557;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePriorCheckNotify : pb::IMessage<HomePriorCheckNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,7 +91,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 7;
+    public const int EndTimeFieldNumber = 3;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,7 +145,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (EndTime != 0) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(29);
         output.WriteFixed32(EndTime);
       }
       if (_unknownFields != null) {
@@ -155,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (EndTime != 0) {
-        output.WriteRawTag(61);
+        output.WriteRawTag(29);
         output.WriteFixed32(EndTime);
       }
       if (_unknownFields != null) {
@@ -201,7 +205,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 61: {
+          case 29: {
             EndTime = input.ReadFixed32();
             break;
           }
@@ -220,7 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 61: {
+          case 29: {
             EndTime = input.ReadFixed32();
             break;
           }

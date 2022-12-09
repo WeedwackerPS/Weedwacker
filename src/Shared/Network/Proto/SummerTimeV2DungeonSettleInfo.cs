@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeV2DungeonSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTdW1tZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mby5wcm90byJxCh1TdW1t",
-            "ZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mbxISCgppc19zdWNjZXNzGAUgASgI",
-            "EhoKEnRha2VuX3Jld2FyZF9jb3VudBgCIAEoDRIgChhjdXJfZHVuZ2Vvbl9y",
-            "ZXdhcmRfbGltaXQYCyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNTdW1tZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJtCh1TdW1tZXJUaW1lVjJEdW5n",
+            "ZW9uU2V0dGxlSW5mbxIbChNVbmszMzAwX0pIQkNIRkhBR0ZPGAogASgNEhIK",
+            "CmlzX3N1Y2Nlc3MYASABKAgSGwoTVW5rMzMwMF9CTk5NTkNLRUhITxgLIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonSettleInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonSettleInfo.Parser, new[]{ "IsSuccess", "TakenRewardCount", "CurDungeonRewardLimit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonSettleInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonSettleInfo.Parser, new[]{ "Unk3300JHBCHFHAGFO", "IsSuccess", "Unk3300BNNMNCKEHHO" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeV2DungeonSettleInfo(SummerTimeV2DungeonSettleInfo other) : this() {
+      unk3300JHBCHFHAGFO_ = other.unk3300JHBCHFHAGFO_;
       isSuccess_ = other.isSuccess_;
-      takenRewardCount_ = other.takenRewardCount_;
-      curDungeonRewardLimit_ = other.curDungeonRewardLimit_;
+      unk3300BNNMNCKEHHO_ = other.unk3300BNNMNCKEHHO_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,8 +85,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SummerTimeV2DungeonSettleInfo(this);
     }
 
+    /// <summary>Field number for the "Unk3300_JHBCHFHAGFO" field.</summary>
+    public const int Unk3300JHBCHFHAGFOFieldNumber = 10;
+    private uint unk3300JHBCHFHAGFO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JHBCHFHAGFO {
+      get { return unk3300JHBCHFHAGFO_; }
+      set {
+        unk3300JHBCHFHAGFO_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 5;
+    public const int IsSuccessFieldNumber = 1;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,27 +109,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "taken_reward_count" field.</summary>
-    public const int TakenRewardCountFieldNumber = 2;
-    private uint takenRewardCount_;
+    /// <summary>Field number for the "Unk3300_BNNMNCKEHHO" field.</summary>
+    public const int Unk3300BNNMNCKEHHOFieldNumber = 11;
+    private uint unk3300BNNMNCKEHHO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TakenRewardCount {
-      get { return takenRewardCount_; }
+    public uint Unk3300BNNMNCKEHHO {
+      get { return unk3300BNNMNCKEHHO_; }
       set {
-        takenRewardCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_dungeon_reward_limit" field.</summary>
-    public const int CurDungeonRewardLimitFieldNumber = 11;
-    private uint curDungeonRewardLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurDungeonRewardLimit {
-      get { return curDungeonRewardLimit_; }
-      set {
-        curDungeonRewardLimit_ = value;
+        unk3300BNNMNCKEHHO_ = value;
       }
     }
 
@@ -136,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300JHBCHFHAGFO != other.Unk3300JHBCHFHAGFO) return false;
       if (IsSuccess != other.IsSuccess) return false;
-      if (TakenRewardCount != other.TakenRewardCount) return false;
-      if (CurDungeonRewardLimit != other.CurDungeonRewardLimit) return false;
+      if (Unk3300BNNMNCKEHHO != other.Unk3300BNNMNCKEHHO) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300JHBCHFHAGFO != 0) hash ^= Unk3300JHBCHFHAGFO.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (TakenRewardCount != 0) hash ^= TakenRewardCount.GetHashCode();
-      if (CurDungeonRewardLimit != 0) hash ^= CurDungeonRewardLimit.GetHashCode();
+      if (Unk3300BNNMNCKEHHO != 0) hash ^= Unk3300BNNMNCKEHHO.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TakenRewardCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TakenRewardCount);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
-      if (CurDungeonRewardLimit != 0) {
+      if (Unk3300JHBCHFHAGFO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300JHBCHFHAGFO);
+      }
+      if (Unk3300BNNMNCKEHHO != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(CurDungeonRewardLimit);
+        output.WriteUInt32(Unk3300BNNMNCKEHHO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TakenRewardCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TakenRewardCount);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
-      if (CurDungeonRewardLimit != 0) {
+      if (Unk3300JHBCHFHAGFO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300JHBCHFHAGFO);
+      }
+      if (Unk3300BNNMNCKEHHO != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(CurDungeonRewardLimit);
+        output.WriteUInt32(Unk3300BNNMNCKEHHO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -211,14 +211,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300JHBCHFHAGFO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JHBCHFHAGFO);
+      }
       if (IsSuccess != false) {
         size += 1 + 1;
       }
-      if (TakenRewardCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenRewardCount);
-      }
-      if (CurDungeonRewardLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDungeonRewardLimit);
+      if (Unk3300BNNMNCKEHHO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNNMNCKEHHO);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -232,14 +232,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300JHBCHFHAGFO != 0) {
+        Unk3300JHBCHFHAGFO = other.Unk3300JHBCHFHAGFO;
+      }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      if (other.TakenRewardCount != 0) {
-        TakenRewardCount = other.TakenRewardCount;
-      }
-      if (other.CurDungeonRewardLimit != 0) {
-        CurDungeonRewardLimit = other.CurDungeonRewardLimit;
+      if (other.Unk3300BNNMNCKEHHO != 0) {
+        Unk3300BNNMNCKEHHO = other.Unk3300BNNMNCKEHHO;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -256,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            TakenRewardCount = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 8: {
             IsSuccess = input.ReadBool();
             break;
           }
+          case 80: {
+            Unk3300JHBCHFHAGFO = input.ReadUInt32();
+            break;
+          }
           case 88: {
-            CurDungeonRewardLimit = input.ReadUInt32();
+            Unk3300BNNMNCKEHHO = input.ReadUInt32();
             break;
           }
         }
@@ -283,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            TakenRewardCount = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 8: {
             IsSuccess = input.ReadBool();
             break;
           }
+          case 80: {
+            Unk3300JHBCHFHAGFO = input.ReadUInt32();
+            break;
+          }
           case 88: {
-            CurDungeonRewardLimit = input.ReadUInt32();
+            Unk3300BNNMNCKEHHO = input.ReadUInt32();
             break;
           }
         }

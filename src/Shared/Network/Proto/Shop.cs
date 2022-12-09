@@ -24,20 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShopReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpTaG9wLnByb3RvGhVTaG9wQ2FyZFByb2R1Y3QucHJvdG8aGFNob3BDb25j",
-            "ZXJ0UHJvZHVjdC5wcm90bxoPU2hvcEdvb2RzLnByb3RvGhZTaG9wTWNvaW5Q",
-            "cm9kdWN0LnByb3RvIpMCCgRTaG9wEjEKFGNvbmNlcnRfcHJvZHVjdF9saXN0",
-            "GAMgAygLMhMuU2hvcENvbmNlcnRQcm9kdWN0Eh4KCmdvb2RzX2xpc3QYDyAD",
-            "KAsyCi5TaG9wR29vZHMSHQoVY2l0eV9yZXB1dGF0aW9uX2xldmVsGAIgASgN",
-            "EisKEWNhcmRfcHJvZHVjdF9saXN0GA4gAygLMhAuU2hvcENhcmRQcm9kdWN0",
-            "Ei0KEm1jb2luX3Byb2R1Y3RfbGlzdBgHIAMoCzIRLlNob3BNY29pblByb2R1",
-            "Y3QSGQoRbmV4dF9yZWZyZXNoX3RpbWUYCyABKA0SDwoHY2l0eV9pZBgKIAEo",
-            "DRIRCglzaG9wX3R5cGUYDSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CgpTaG9wLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "GhVTaG9wQ2FyZFByb2R1Y3QucHJvdG8aGFNob3BDb25jZXJ0UHJvZHVjdC5w",
+            "cm90bxoPU2hvcEdvb2RzLnByb3RvGhZTaG9wTWNvaW5Qcm9kdWN0LnByb3Rv",
+            "IpMDCgRTaG9wEhEKCXNob3BfdHlwZRgBIAEoDRIZChFuZXh0X3JlZnJlc2hf",
+            "dGltZRgFIAEoDRIPCgdjaXR5X2lkGAwgASgNEh0KFWNpdHlfcmVwdXRhdGlv",
+            "bl9sZXZlbBgIIAEoDRI+Cgpnb29kc19saXN0GAMgAygLMiouV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5TaG9wR29vZHMSSwoRY2FyZF9wcm9k",
+            "dWN0X2xpc3QYCyADKAsyMC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlNob3BDYXJkUHJvZHVjdBJRChRjb25jZXJ0X3Byb2R1Y3RfbGlzdBgJ",
+            "IAMoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2hvcENv",
+            "bmNlcnRQcm9kdWN0Ek0KEm1jb2luX3Byb2R1Y3RfbGlzdBgHIAMoCzIxLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2hvcE1jb2luUHJvZHVj",
+            "dGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ShopCardProductReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ShopConcertProductReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ShopGoodsReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ShopMcoinProductReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.Shop), global::Weedwacker.Shared.Network.Proto.Shop.Parser, new[]{ "ConcertProductList", "GoodsList", "CityReputationLevel", "CardProductList", "McoinProductList", "NextRefreshTime", "CityId", "ShopType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.Shop), global::Weedwacker.Shared.Network.Proto.Shop.Parser, new[]{ "ShopType", "NextRefreshTime", "CityId", "CityReputationLevel", "GoodsList", "CardProductList", "ConcertProductList", "McoinProductList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,14 +81,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Shop(Shop other) : this() {
-      concertProductList_ = other.concertProductList_.Clone();
-      goodsList_ = other.goodsList_.Clone();
-      cityReputationLevel_ = other.cityReputationLevel_;
-      cardProductList_ = other.cardProductList_.Clone();
-      mcoinProductList_ = other.mcoinProductList_.Clone();
+      shopType_ = other.shopType_;
       nextRefreshTime_ = other.nextRefreshTime_;
       cityId_ = other.cityId_;
-      shopType_ = other.shopType_;
+      cityReputationLevel_ = other.cityReputationLevel_;
+      goodsList_ = other.goodsList_.Clone();
+      cardProductList_ = other.cardProductList_.Clone();
+      concertProductList_ = other.concertProductList_.Clone();
+      mcoinProductList_ = other.mcoinProductList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,64 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new Shop(this);
     }
 
-    /// <summary>Field number for the "concert_product_list" field.</summary>
-    public const int ConcertProductListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> _repeated_concertProductList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ShopConcertProduct.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> concertProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct>();
+    /// <summary>Field number for the "shop_type" field.</summary>
+    public const int ShopTypeFieldNumber = 1;
+    private uint shopType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> ConcertProductList {
-      get { return concertProductList_; }
-    }
-
-    /// <summary>Field number for the "goods_list" field.</summary>
-    public const int GoodsListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopGoods> _repeated_goodsList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ShopGoods.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods> goodsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods> GoodsList {
-      get { return goodsList_; }
-    }
-
-    /// <summary>Field number for the "city_reputation_level" field.</summary>
-    public const int CityReputationLevelFieldNumber = 2;
-    private uint cityReputationLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CityReputationLevel {
-      get { return cityReputationLevel_; }
+    public uint ShopType {
+      get { return shopType_; }
       set {
-        cityReputationLevel_ = value;
+        shopType_ = value;
       }
     }
 
-    /// <summary>Field number for the "card_product_list" field.</summary>
-    public const int CardProductListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> _repeated_cardProductList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ShopCardProduct.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> cardProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> CardProductList {
-      get { return cardProductList_; }
-    }
-
-    /// <summary>Field number for the "mcoin_product_list" field.</summary>
-    public const int McoinProductListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> _repeated_mcoinProductList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> mcoinProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> McoinProductList {
-      get { return mcoinProductList_; }
-    }
-
     /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 11;
+    public const int NextRefreshTimeFieldNumber = 5;
     private uint nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 10;
+    public const int CityIdFieldNumber = 12;
     private uint cityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,16 +134,60 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "shop_type" field.</summary>
-    public const int ShopTypeFieldNumber = 13;
-    private uint shopType_;
+    /// <summary>Field number for the "city_reputation_level" field.</summary>
+    public const int CityReputationLevelFieldNumber = 8;
+    private uint cityReputationLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShopType {
-      get { return shopType_; }
+    public uint CityReputationLevel {
+      get { return cityReputationLevel_; }
       set {
-        shopType_ = value;
+        cityReputationLevel_ = value;
       }
+    }
+
+    /// <summary>Field number for the "goods_list" field.</summary>
+    public const int GoodsListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopGoods> _repeated_goodsList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ShopGoods.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods> goodsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopGoods> GoodsList {
+      get { return goodsList_; }
+    }
+
+    /// <summary>Field number for the "card_product_list" field.</summary>
+    public const int CardProductListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> _repeated_cardProductList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ShopCardProduct.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> cardProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopCardProduct> CardProductList {
+      get { return cardProductList_; }
+    }
+
+    /// <summary>Field number for the "concert_product_list" field.</summary>
+    public const int ConcertProductListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> _repeated_concertProductList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ShopConcertProduct.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> concertProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopConcertProduct> ConcertProductList {
+      get { return concertProductList_; }
+    }
+
+    /// <summary>Field number for the "mcoin_product_list" field.</summary>
+    public const int McoinProductListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> _repeated_mcoinProductList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> mcoinProductList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ShopMcoinProduct> McoinProductList {
+      get { return mcoinProductList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -202,14 +205,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!concertProductList_.Equals(other.concertProductList_)) return false;
-      if(!goodsList_.Equals(other.goodsList_)) return false;
-      if (CityReputationLevel != other.CityReputationLevel) return false;
-      if(!cardProductList_.Equals(other.cardProductList_)) return false;
-      if(!mcoinProductList_.Equals(other.mcoinProductList_)) return false;
+      if (ShopType != other.ShopType) return false;
       if (NextRefreshTime != other.NextRefreshTime) return false;
       if (CityId != other.CityId) return false;
-      if (ShopType != other.ShopType) return false;
+      if (CityReputationLevel != other.CityReputationLevel) return false;
+      if(!goodsList_.Equals(other.goodsList_)) return false;
+      if(!cardProductList_.Equals(other.cardProductList_)) return false;
+      if(!concertProductList_.Equals(other.concertProductList_)) return false;
+      if(!mcoinProductList_.Equals(other.mcoinProductList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -217,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= concertProductList_.GetHashCode();
-      hash ^= goodsList_.GetHashCode();
-      if (CityReputationLevel != 0) hash ^= CityReputationLevel.GetHashCode();
-      hash ^= cardProductList_.GetHashCode();
-      hash ^= mcoinProductList_.GetHashCode();
+      if (ShopType != 0) hash ^= ShopType.GetHashCode();
       if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       if (CityId != 0) hash ^= CityId.GetHashCode();
-      if (ShopType != 0) hash ^= ShopType.GetHashCode();
+      if (CityReputationLevel != 0) hash ^= CityReputationLevel.GetHashCode();
+      hash ^= goodsList_.GetHashCode();
+      hash ^= cardProductList_.GetHashCode();
+      hash ^= concertProductList_.GetHashCode();
+      hash ^= mcoinProductList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -243,26 +246,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ShopType != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ShopType);
+      }
+      goodsList_.WriteTo(output, _repeated_goodsList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      mcoinProductList_.WriteTo(output, _repeated_mcoinProductList_codec);
       if (CityReputationLevel != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(CityReputationLevel);
       }
       concertProductList_.WriteTo(output, _repeated_concertProductList_codec);
-      mcoinProductList_.WriteTo(output, _repeated_mcoinProductList_codec);
+      cardProductList_.WriteTo(output, _repeated_cardProductList_codec);
       if (CityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(CityId);
       }
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (ShopType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ShopType);
-      }
-      cardProductList_.WriteTo(output, _repeated_cardProductList_codec);
-      goodsList_.WriteTo(output, _repeated_goodsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -273,26 +276,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ShopType != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ShopType);
+      }
+      goodsList_.WriteTo(ref output, _repeated_goodsList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      mcoinProductList_.WriteTo(ref output, _repeated_mcoinProductList_codec);
       if (CityReputationLevel != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(CityReputationLevel);
       }
       concertProductList_.WriteTo(ref output, _repeated_concertProductList_codec);
-      mcoinProductList_.WriteTo(ref output, _repeated_mcoinProductList_codec);
+      cardProductList_.WriteTo(ref output, _repeated_cardProductList_codec);
       if (CityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(CityId);
       }
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (ShopType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ShopType);
-      }
-      cardProductList_.WriteTo(ref output, _repeated_cardProductList_codec);
-      goodsList_.WriteTo(ref output, _repeated_goodsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -303,22 +306,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += concertProductList_.CalculateSize(_repeated_concertProductList_codec);
-      size += goodsList_.CalculateSize(_repeated_goodsList_codec);
-      if (CityReputationLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityReputationLevel);
+      if (ShopType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShopType);
       }
-      size += cardProductList_.CalculateSize(_repeated_cardProductList_codec);
-      size += mcoinProductList_.CalculateSize(_repeated_mcoinProductList_codec);
       if (NextRefreshTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
       }
       if (CityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
-      if (ShopType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShopType);
+      if (CityReputationLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityReputationLevel);
       }
+      size += goodsList_.CalculateSize(_repeated_goodsList_codec);
+      size += cardProductList_.CalculateSize(_repeated_cardProductList_codec);
+      size += concertProductList_.CalculateSize(_repeated_concertProductList_codec);
+      size += mcoinProductList_.CalculateSize(_repeated_mcoinProductList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -331,22 +334,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      concertProductList_.Add(other.concertProductList_);
-      goodsList_.Add(other.goodsList_);
-      if (other.CityReputationLevel != 0) {
-        CityReputationLevel = other.CityReputationLevel;
+      if (other.ShopType != 0) {
+        ShopType = other.ShopType;
       }
-      cardProductList_.Add(other.cardProductList_);
-      mcoinProductList_.Add(other.mcoinProductList_);
       if (other.NextRefreshTime != 0) {
         NextRefreshTime = other.NextRefreshTime;
       }
       if (other.CityId != 0) {
         CityId = other.CityId;
       }
-      if (other.ShopType != 0) {
-        ShopType = other.ShopType;
+      if (other.CityReputationLevel != 0) {
+        CityReputationLevel = other.CityReputationLevel;
       }
+      goodsList_.Add(other.goodsList_);
+      cardProductList_.Add(other.cardProductList_);
+      concertProductList_.Add(other.concertProductList_);
+      mcoinProductList_.Add(other.mcoinProductList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -362,36 +365,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            CityReputationLevel = input.ReadUInt32();
+          case 8: {
+            ShopType = input.ReadUInt32();
             break;
           }
           case 26: {
-            concertProductList_.AddEntriesFrom(input, _repeated_concertProductList_codec);
+            goodsList_.AddEntriesFrom(input, _repeated_goodsList_codec);
+            break;
+          }
+          case 40: {
+            NextRefreshTime = input.ReadUInt32();
             break;
           }
           case 58: {
             mcoinProductList_.AddEntriesFrom(input, _repeated_mcoinProductList_codec);
             break;
           }
-          case 80: {
-            CityId = input.ReadUInt32();
+          case 64: {
+            CityReputationLevel = input.ReadUInt32();
             break;
           }
-          case 88: {
-            NextRefreshTime = input.ReadUInt32();
+          case 74: {
+            concertProductList_.AddEntriesFrom(input, _repeated_concertProductList_codec);
             break;
           }
-          case 104: {
-            ShopType = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 90: {
             cardProductList_.AddEntriesFrom(input, _repeated_cardProductList_codec);
             break;
           }
-          case 122: {
-            goodsList_.AddEntriesFrom(input, _repeated_goodsList_codec);
+          case 96: {
+            CityId = input.ReadUInt32();
             break;
           }
         }
@@ -409,36 +412,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            CityReputationLevel = input.ReadUInt32();
+          case 8: {
+            ShopType = input.ReadUInt32();
             break;
           }
           case 26: {
-            concertProductList_.AddEntriesFrom(ref input, _repeated_concertProductList_codec);
+            goodsList_.AddEntriesFrom(ref input, _repeated_goodsList_codec);
+            break;
+          }
+          case 40: {
+            NextRefreshTime = input.ReadUInt32();
             break;
           }
           case 58: {
             mcoinProductList_.AddEntriesFrom(ref input, _repeated_mcoinProductList_codec);
             break;
           }
-          case 80: {
-            CityId = input.ReadUInt32();
+          case 64: {
+            CityReputationLevel = input.ReadUInt32();
             break;
           }
-          case 88: {
-            NextRefreshTime = input.ReadUInt32();
+          case 74: {
+            concertProductList_.AddEntriesFrom(ref input, _repeated_concertProductList_codec);
             break;
           }
-          case 104: {
-            ShopType = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 90: {
             cardProductList_.AddEntriesFrom(ref input, _repeated_cardProductList_codec);
             break;
           }
-          case 122: {
-            goodsList_.AddEntriesFrom(ref input, _repeated_goodsList_codec);
+          case 96: {
+            CityId = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AchievementAllDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BY2hpZXZlbWVudEFsbERhdGFOb3RpZnkucHJvdG8aEUFjaGlldmVtZW50",
-            "LnByb3RvImUKGEFjaGlldmVtZW50QWxsRGF0YU5vdGlmeRImChBhY2hpZXZl",
-            "bWVudF9saXN0GAQgAygLMgwuQWNoaWV2ZW1lbnQSIQoZcmV3YXJkX3Rha2Vu",
-            "X2dvYWxfaWRfbGlzdBgCIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5BY2hpZXZlbWVudEFsbERhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aEUFjaGlldmVtZW50LnByb3RvIoUBChhB",
+            "Y2hpZXZlbWVudEFsbERhdGFOb3RpZnkSIQoZcmV3YXJkX3Rha2VuX2dvYWxf",
+            "aWRfbGlzdBgNIAMoDRJGChBhY2hpZXZlbWVudF9saXN0GAggAygLMiwuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BY2hpZXZlbWVudGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AchievementReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AchievementAllDataNotify), global::Weedwacker.Shared.Network.Proto.AchievementAllDataNotify.Parser, new[]{ "AchievementList", "RewardTakenGoalIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AchievementAllDataNotify), global::Weedwacker.Shared.Network.Proto.AchievementAllDataNotify.Parser, new[]{ "RewardTakenGoalIdList", "AchievementList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2676
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2692;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AchievementAllDataNotify : pb::IMessage<AchievementAllDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AchievementAllDataNotify(AchievementAllDataNotify other) : this() {
-      achievementList_ = other.achievementList_.Clone();
       rewardTakenGoalIdList_ = other.rewardTakenGoalIdList_.Clone();
+      achievementList_ = other.achievementList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,26 +94,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AchievementAllDataNotify(this);
     }
 
-    /// <summary>Field number for the "achievement_list" field.</summary>
-    public const int AchievementListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Achievement> _repeated_achievementList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.Achievement.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement> achievementList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement> AchievementList {
-      get { return achievementList_; }
-    }
-
     /// <summary>Field number for the "reward_taken_goal_id_list" field.</summary>
-    public const int RewardTakenGoalIdListFieldNumber = 2;
+    public const int RewardTakenGoalIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_rewardTakenGoalIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> rewardTakenGoalIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> RewardTakenGoalIdList {
       get { return rewardTakenGoalIdList_; }
+    }
+
+    /// <summary>Field number for the "achievement_list" field.</summary>
+    public const int AchievementListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Achievement> _repeated_achievementList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.Achievement.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement> achievementList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Achievement> AchievementList {
+      get { return achievementList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!achievementList_.Equals(other.achievementList_)) return false;
       if(!rewardTakenGoalIdList_.Equals(other.rewardTakenGoalIdList_)) return false;
+      if(!achievementList_.Equals(other.achievementList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= achievementList_.GetHashCode();
       hash ^= rewardTakenGoalIdList_.GetHashCode();
+      hash ^= achievementList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      rewardTakenGoalIdList_.WriteTo(output, _repeated_rewardTakenGoalIdList_codec);
       achievementList_.WriteTo(output, _repeated_achievementList_codec);
+      rewardTakenGoalIdList_.WriteTo(output, _repeated_rewardTakenGoalIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,8 +172,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      rewardTakenGoalIdList_.WriteTo(ref output, _repeated_rewardTakenGoalIdList_codec);
       achievementList_.WriteTo(ref output, _repeated_achievementList_codec);
+      rewardTakenGoalIdList_.WriteTo(ref output, _repeated_rewardTakenGoalIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -179,8 +184,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += achievementList_.CalculateSize(_repeated_achievementList_codec);
       size += rewardTakenGoalIdList_.CalculateSize(_repeated_rewardTakenGoalIdList_codec);
+      size += achievementList_.CalculateSize(_repeated_achievementList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -193,8 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      achievementList_.Add(other.achievementList_);
       rewardTakenGoalIdList_.Add(other.rewardTakenGoalIdList_);
+      achievementList_.Add(other.achievementList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -210,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            rewardTakenGoalIdList_.AddEntriesFrom(input, _repeated_rewardTakenGoalIdList_codec);
+          case 66: {
+            achievementList_.AddEntriesFrom(input, _repeated_achievementList_codec);
             break;
           }
-          case 34: {
-            achievementList_.AddEntriesFrom(input, _repeated_achievementList_codec);
+          case 106:
+          case 104: {
+            rewardTakenGoalIdList_.AddEntriesFrom(input, _repeated_rewardTakenGoalIdList_codec);
             break;
           }
         }
@@ -234,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            rewardTakenGoalIdList_.AddEntriesFrom(ref input, _repeated_rewardTakenGoalIdList_codec);
+          case 66: {
+            achievementList_.AddEntriesFrom(ref input, _repeated_achievementList_codec);
             break;
           }
-          case 34: {
-            achievementList_.AddEntriesFrom(ref input, _repeated_achievementList_codec);
+          case 106:
+          case 104: {
+            rewardTakenGoalIdList_.AddEntriesFrom(ref input, _repeated_rewardTakenGoalIdList_codec);
             break;
           }
         }

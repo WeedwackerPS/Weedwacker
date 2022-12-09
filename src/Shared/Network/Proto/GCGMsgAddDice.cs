@@ -24,17 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgAddDiceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNHQ0dNc2dBZGREaWNlLnByb3RvGhVHQ0dEaWNlU2lkZVR5cGUucHJvdG8a",
-            "D0dDR1JlYXNvbi5wcm90byLJAQoNR0NHTXNnQWRkRGljZRIaCgZyZWFzb24Y",
-            "BCABKA4yCi5HQ0dSZWFzb24SFQoNY29udHJvbGxlcl9pZBgKIAEoDRIUCgxj",
-            "aGFuZ2VfY291bnQYASABKAUSLQoIZGljZV9tYXAYCCADKAsyGy5HQ0dNc2dB",
-            "ZGREaWNlLkRpY2VNYXBFbnRyeRpACgxEaWNlTWFwRW50cnkSCwoDa2V5GAEg",
-            "ASgNEh8KBXZhbHVlGAIgASgOMhAuR0NHRGljZVNpZGVUeXBlOgI4AUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChNHQ0dNc2dBZGREaWNlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhVHQ0dEaWNlU2lkZVR5cGUucHJvdG8aD0dDR1JlYXNvbi5w",
+            "cm90byKcBAoNR0NHTXNnQWRkRGljZRJjChNVbmszMzAwX0tGS09HT0tQSUZO",
+            "GA0gAygLMkYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dN",
+            "c2dBZGREaWNlLlVuazMzMDBLRktPR09LUElGTkVudHJ5EjoKBnJlYXNvbhgK",
+            "IAEoDjIqLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHUmVh",
+            "c29uEhQKDGNoYW5nZV9jb3VudBgGIAEoBRJjChNVbmszMzAwX1BDTVBDQ0xG",
+            "RUlNGAsgAygLMkYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5H",
+            "Q0dNc2dBZGREaWNlLlVuazMzMDBQQ01QQ0NMRkVJTUVudHJ5EhUKDWNvbnRy",
+            "b2xsZXJfaWQYBSABKA0aawoXVW5rMzMwMEtGS09HT0tQSUZORW50cnkSCwoD",
+            "a2V5GAEgASgNEj8KBXZhbHVlGAIgASgOMjAuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5HQ0dEaWNlU2lkZVR5cGU6AjgBGmsKF1VuazMzMDBQ",
+            "Q01QQ0NMRkVJTUVudHJ5EgsKA2tleRgBIAEoDRI/CgV2YWx1ZRgCIAEoDjIw",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHRGljZVNpZGVU",
+            "eXBlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGDiceSideTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice), global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice.Parser, new[]{ "Reason", "ControllerId", "ChangeCount", "DiceMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice), global::Weedwacker.Shared.Network.Proto.GCGMsgAddDice.Parser, new[]{ "Unk3300KFKOGOKPIFN", "Reason", "ChangeCount", "Unk3300PCMPCCLFEIM", "ControllerId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -75,10 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgAddDice(GCGMsgAddDice other) : this() {
+      unk3300KFKOGOKPIFN_ = other.unk3300KFKOGOKPIFN_.Clone();
       reason_ = other.reason_;
-      controllerId_ = other.controllerId_;
       changeCount_ = other.changeCount_;
-      diceMap_ = other.diceMap_.Clone();
+      unk3300PCMPCCLFEIM_ = other.unk3300PCMPCCLFEIM_.Clone();
+      controllerId_ = other.controllerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +97,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgAddDice(this);
     }
 
+    /// <summary>Field number for the "Unk3300_KFKOGOKPIFN" field.</summary>
+    public const int Unk3300KFKOGOKPIFNFieldNumber = 13;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec _map_unk3300KFKOGOKPIFN_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType.Invalid), 106);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> unk3300KFKOGOKPIFN_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> Unk3300KFKOGOKPIFN {
+      get { return unk3300KFKOGOKPIFN_; }
+    }
+
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 4;
+    public const int ReasonFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.GCGReason reason_ = global::Weedwacker.Shared.Network.Proto.GCGReason.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,20 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 10;
-    private uint controllerId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ControllerId {
-      get { return controllerId_; }
-      set {
-        controllerId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "change_count" field.</summary>
-    public const int ChangeCountFieldNumber = 1;
+    public const int ChangeCountFieldNumber = 6;
     private int changeCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,15 +132,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "dice_map" field.</summary>
-    public const int DiceMapFieldNumber = 8;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec _map_diceMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType.Invalid), 66);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> diceMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
+    /// <summary>Field number for the "Unk3300_PCMPCCLFEIM" field.</summary>
+    public const int Unk3300PCMPCCLFEIMFieldNumber = 11;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec _map_unk3300PCMPCCLFEIM_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType.Invalid), 90);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> unk3300PCMPCCLFEIM_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> DiceMap {
-      get { return diceMap_; }
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> Unk3300PCMPCCLFEIM {
+      get { return unk3300PCMPCCLFEIM_; }
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 5;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,10 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!Unk3300KFKOGOKPIFN.Equals(other.Unk3300KFKOGOKPIFN)) return false;
       if (Reason != other.Reason) return false;
-      if (ControllerId != other.ControllerId) return false;
       if (ChangeCount != other.ChangeCount) return false;
-      if (!DiceMap.Equals(other.DiceMap)) return false;
+      if (!Unk3300PCMPCCLFEIM.Equals(other.Unk3300PCMPCCLFEIM)) return false;
+      if (ControllerId != other.ControllerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= Unk3300KFKOGOKPIFN.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) hash ^= Reason.GetHashCode();
-      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (ChangeCount != 0) hash ^= ChangeCount.GetHashCode();
-      hash ^= DiceMap.GetHashCode();
+      hash ^= Unk3300PCMPCCLFEIM.GetHashCode();
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,19 +205,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ControllerId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ControllerId);
+      }
       if (ChangeCount != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteInt32(ChangeCount);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Reason);
       }
-      diceMap_.WriteTo(output, _map_diceMap_codec);
-      if (ControllerId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ControllerId);
-      }
+      unk3300PCMPCCLFEIM_.WriteTo(output, _map_unk3300PCMPCCLFEIM_codec);
+      unk3300KFKOGOKPIFN_.WriteTo(output, _map_unk3300KFKOGOKPIFN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -206,19 +229,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ControllerId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ControllerId);
+      }
       if (ChangeCount != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(48);
         output.WriteInt32(ChangeCount);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Reason);
       }
-      diceMap_.WriteTo(ref output, _map_diceMap_codec);
-      if (ControllerId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ControllerId);
-      }
+      unk3300PCMPCCLFEIM_.WriteTo(ref output, _map_unk3300PCMPCCLFEIM_codec);
+      unk3300KFKOGOKPIFN_.WriteTo(ref output, _map_unk3300KFKOGOKPIFN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -229,16 +253,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += unk3300KFKOGOKPIFN_.CalculateSize(_map_unk3300KFKOGOKPIFN_codec);
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
-      if (ControllerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
       if (ChangeCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ChangeCount);
       }
-      size += diceMap_.CalculateSize(_map_diceMap_codec);
+      size += unk3300PCMPCCLFEIM_.CalculateSize(_map_unk3300PCMPCCLFEIM_codec);
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -251,16 +276,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      unk3300KFKOGOKPIFN_.Add(other.unk3300KFKOGOKPIFN_);
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GCGReason.Default) {
         Reason = other.Reason;
-      }
-      if (other.ControllerId != 0) {
-        ControllerId = other.ControllerId;
       }
       if (other.ChangeCount != 0) {
         ChangeCount = other.ChangeCount;
       }
-      diceMap_.Add(other.diceMap_);
+      unk3300PCMPCCLFEIM_.Add(other.unk3300PCMPCCLFEIM_);
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -276,20 +302,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             ChangeCount = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 80: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GCGReason) input.ReadEnum();
             break;
           }
-          case 66: {
-            diceMap_.AddEntriesFrom(input, _map_diceMap_codec);
+          case 90: {
+            unk3300PCMPCCLFEIM_.AddEntriesFrom(input, _map_unk3300PCMPCCLFEIM_codec);
             break;
           }
-          case 80: {
-            ControllerId = input.ReadUInt32();
+          case 106: {
+            unk3300KFKOGOKPIFN_.AddEntriesFrom(input, _map_unk3300KFKOGOKPIFN_codec);
             break;
           }
         }
@@ -307,20 +337,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             ChangeCount = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 80: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GCGReason) input.ReadEnum();
             break;
           }
-          case 66: {
-            diceMap_.AddEntriesFrom(ref input, _map_diceMap_codec);
+          case 90: {
+            unk3300PCMPCCLFEIM_.AddEntriesFrom(ref input, _map_unk3300PCMPCCLFEIM_codec);
             break;
           }
-          case 80: {
-            ControllerId = input.ReadUInt32();
+          case 106: {
+            unk3300KFKOGOKPIFN_.AddEntriesFrom(ref input, _map_unk3300KFKOGOKPIFN_codec);
             break;
           }
         }

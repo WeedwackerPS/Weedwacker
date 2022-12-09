@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerWorldSceneInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpQbGF5ZXJXb3JsZFNjZW5lSW5mby5wcm90byJWChRQbGF5ZXJXb3JsZFNj",
-            "ZW5lSW5mbxIQCghzY2VuZV9pZBgLIAEoDRIZChFzY2VuZV90YWdfaWRfbGlz",
-            "dBgIIAMoDRIRCglpc19sb2NrZWQYDCABKAhCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpQbGF5ZXJXb3JsZFNjZW5lSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJWChRQbGF5ZXJXb3JsZFNjZW5lSW5mbxIRCglp",
+            "c19sb2NrZWQYAyABKAgSEAoIc2NlbmVfaWQYCCABKA0SGQoRc2NlbmVfdGFn",
+            "X2lkX2xpc3QYCyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerWorldSceneInfo), global::Weedwacker.Shared.Network.Proto.PlayerWorldSceneInfo.Parser, new[]{ "SceneId", "SceneTagIdList", "IsLocked" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerWorldSceneInfo), global::Weedwacker.Shared.Network.Proto.PlayerWorldSceneInfo.Parser, new[]{ "IsLocked", "SceneId", "SceneTagIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerWorldSceneInfo(PlayerWorldSceneInfo other) : this() {
+      isLocked_ = other.isLocked_;
       sceneId_ = other.sceneId_;
       sceneTagIdList_ = other.sceneTagIdList_.Clone();
-      isLocked_ = other.isLocked_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerWorldSceneInfo(this);
     }
 
+    /// <summary>Field number for the "is_locked" field.</summary>
+    public const int IsLockedFieldNumber = 3;
+    private bool isLocked_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLocked {
+      get { return isLocked_; }
+      set {
+        isLocked_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 11;
+    public const int SceneIdFieldNumber = 8;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,26 +109,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_tag_id_list" field.</summary>
-    public const int SceneTagIdListFieldNumber = 8;
+    public const int SceneTagIdListFieldNumber = 11;
     private static readonly pb::FieldCodec<uint> _repeated_sceneTagIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(90);
     private readonly pbc::RepeatedField<uint> sceneTagIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> SceneTagIdList {
       get { return sceneTagIdList_; }
-    }
-
-    /// <summary>Field number for the "is_locked" field.</summary>
-    public const int IsLockedFieldNumber = 12;
-    private bool isLocked_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsLocked {
-      get { return isLocked_; }
-      set {
-        isLocked_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -134,9 +134,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (IsLocked != other.IsLocked) return false;
       if (SceneId != other.SceneId) return false;
       if(!sceneTagIdList_.Equals(other.sceneTagIdList_)) return false;
-      if (IsLocked != other.IsLocked) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -144,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (IsLocked != false) hash ^= IsLocked.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       hash ^= sceneTagIdList_.GetHashCode();
-      if (IsLocked != false) hash ^= IsLocked.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -165,15 +165,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      sceneTagIdList_.WriteTo(output, _repeated_sceneTagIdList_codec);
-      if (SceneId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(SceneId);
-      }
       if (IsLocked != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsLocked);
       }
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      sceneTagIdList_.WriteTo(output, _repeated_sceneTagIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -184,15 +184,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      sceneTagIdList_.WriteTo(ref output, _repeated_sceneTagIdList_codec);
-      if (SceneId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(SceneId);
-      }
       if (IsLocked != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsLocked);
       }
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      sceneTagIdList_.WriteTo(ref output, _repeated_sceneTagIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -203,13 +203,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (IsLocked != false) {
+        size += 1 + 1;
+      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
       size += sceneTagIdList_.CalculateSize(_repeated_sceneTagIdList_codec);
-      if (IsLocked != false) {
-        size += 1 + 1;
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -222,13 +222,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsLocked != false) {
+        IsLocked = other.IsLocked;
+      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
       sceneTagIdList_.Add(other.sceneTagIdList_);
-      if (other.IsLocked != false) {
-        IsLocked = other.IsLocked;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -244,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
-            sceneTagIdList_.AddEntriesFrom(input, _repeated_sceneTagIdList_codec);
+          case 24: {
+            IsLocked = input.ReadBool();
             break;
           }
-          case 88: {
+          case 64: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IsLocked = input.ReadBool();
+          case 90:
+          case 88: {
+            sceneTagIdList_.AddEntriesFrom(input, _repeated_sceneTagIdList_codec);
             break;
           }
         }
@@ -272,17 +272,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
-            sceneTagIdList_.AddEntriesFrom(ref input, _repeated_sceneTagIdList_codec);
+          case 24: {
+            IsLocked = input.ReadBool();
             break;
           }
-          case 88: {
+          case 64: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            IsLocked = input.ReadBool();
+          case 90:
+          case 88: {
+            sceneTagIdList_.AddEntriesFrom(ref input, _repeated_sceneTagIdList_codec);
             break;
           }
         }

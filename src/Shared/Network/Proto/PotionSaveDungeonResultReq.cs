@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionSaveDungeonResultReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBQb3Rpb25TYXZlRHVuZ2VvblJlc3VsdFJlcS5wcm90byJAChpQb3Rpb25T",
-            "YXZlRHVuZ2VvblJlc3VsdFJlcRIQCghsZXZlbF9pZBgIIAEoDRIQCghzdGFn",
-            "ZV9pZBgHIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiBQb3Rpb25TYXZlRHVuZ2VvblJlc3VsdFJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJAChpQb3Rpb25TYXZlRHVuZ2VvblJl",
+            "c3VsdFJlcRIQCghsZXZlbF9pZBgOIAEoDRIQCghzdGFnZV9pZBgHIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8192
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8672;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PotionSaveDungeonResultReq : pb::IMessage<PotionSaveDungeonResultReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 8;
+    public const int LevelIdFieldNumber = 14;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,7 +166,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(StageId);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -180,7 +184,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(StageId);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -236,7 +240,7 @@ namespace Weedwacker.Shared.Network.Proto {
             StageId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }
@@ -259,7 +263,7 @@ namespace Weedwacker.Shared.Network.Proto {
             StageId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }

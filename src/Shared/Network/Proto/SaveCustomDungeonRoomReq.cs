@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static SaveCustomDungeonRoomReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5TYXZlQ3VzdG9tRHVuZ2VvblJvb21SZXEucHJvdG8aF0N1c3RvbUR1bmdl",
-            "b25Sb29tLnByb3RvGhpDdXN0b21EdW5nZW9uU2V0dGluZy5wcm90byKOAQoY",
-            "U2F2ZUN1c3RvbUR1bmdlb25Sb29tUmVxEi8KE2N1c3RvbV9kdW5nZW9uX3Jv",
-            "b20YBSABKAsyEi5DdXN0b21EdW5nZW9uUm9vbRIZChFpc191cGRhdGVfc2V0",
-            "dGluZxgHIAEoCBImCgdzZXR0aW5nGA0gASgLMhUuQ3VzdG9tRHVuZ2VvblNl",
-            "dHRpbmdCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "Ch5TYXZlQ3VzdG9tRHVuZ2VvblJvb21SZXEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aF0N1c3RvbUR1bmdlb25Sb29tLnByb3Rv",
+            "GhpDdXN0b21EdW5nZW9uU2V0dGluZy5wcm90byLOAQoYU2F2ZUN1c3RvbUR1",
+            "bmdlb25Sb29tUmVxEkYKB3NldHRpbmcYASABKAsyNS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25TZXR0aW5nEk8KE2N1",
+            "c3RvbV9kdW5nZW9uX3Jvb20YBCABKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25Sb29tEhkKEWlzX3VwZGF0ZV9z",
+            "ZXR0aW5nGAwgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonRoomReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonSettingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SaveCustomDungeonRoomReq), global::Weedwacker.Shared.Network.Proto.SaveCustomDungeonRoomReq.Parser, new[]{ "CustomDungeonRoom", "IsUpdateSetting", "Setting" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SaveCustomDungeonRoomReq), global::Weedwacker.Shared.Network.Proto.SaveCustomDungeonRoomReq.Parser, new[]{ "Setting", "CustomDungeonRoom", "IsUpdateSetting" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6225
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6222;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SaveCustomDungeonRoomReq : pb::IMessage<SaveCustomDungeonRoomReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SaveCustomDungeonRoomReq(SaveCustomDungeonRoomReq other) : this() {
+      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
       customDungeonRoom_ = other.customDungeonRoom_ != null ? other.customDungeonRoom_.Clone() : null;
       isUpdateSetting_ = other.isUpdateSetting_;
-      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,8 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SaveCustomDungeonRoomReq(this);
     }
 
+    /// <summary>Field number for the "setting" field.</summary>
+    public const int SettingFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
+      get { return setting_; }
+      set {
+        setting_ = value;
+      }
+    }
+
     /// <summary>Field number for the "custom_dungeon_room" field.</summary>
-    public const int CustomDungeonRoomFieldNumber = 5;
+    public const int CustomDungeonRoomFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom customDungeonRoom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_update_setting" field.</summary>
-    public const int IsUpdateSettingFieldNumber = 7;
+    public const int IsUpdateSettingFieldNumber = 12;
     private bool isUpdateSetting_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,18 +131,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isUpdateSetting_; }
       set {
         isUpdateSetting_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "setting" field.</summary>
-    public const int SettingFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting setting_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting Setting {
-      get { return setting_; }
-      set {
-        setting_ = value;
       }
     }
 
@@ -144,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Setting, other.Setting)) return false;
       if (!object.Equals(CustomDungeonRoom, other.CustomDungeonRoom)) return false;
       if (IsUpdateSetting != other.IsUpdateSetting) return false;
-      if (!object.Equals(Setting, other.Setting)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (setting_ != null) hash ^= Setting.GetHashCode();
       if (customDungeonRoom_ != null) hash ^= CustomDungeonRoom.GetHashCode();
       if (IsUpdateSetting != false) hash ^= IsUpdateSetting.GetHashCode();
-      if (setting_ != null) hash ^= Setting.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,17 +180,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (setting_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Setting);
+      }
       if (customDungeonRoom_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteMessage(CustomDungeonRoom);
       }
       if (IsUpdateSetting != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteBool(IsUpdateSetting);
-      }
-      if (setting_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Setting);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,17 +202,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (setting_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Setting);
+      }
       if (customDungeonRoom_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteMessage(CustomDungeonRoom);
       }
       if (IsUpdateSetting != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteBool(IsUpdateSetting);
-      }
-      if (setting_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Setting);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,14 +224,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (setting_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
+      }
       if (customDungeonRoom_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CustomDungeonRoom);
       }
       if (IsUpdateSetting != false) {
         size += 1 + 1;
-      }
-      if (setting_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,6 +245,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.setting_ != null) {
+        if (setting_ == null) {
+          Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
+        }
+        Setting.MergeFrom(other.Setting);
+      }
       if (other.customDungeonRoom_ != null) {
         if (customDungeonRoom_ == null) {
           CustomDungeonRoom = new global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom();
@@ -248,12 +259,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.IsUpdateSetting != false) {
         IsUpdateSetting = other.IsUpdateSetting;
-      }
-      if (other.setting_ != null) {
-        if (setting_ == null) {
-          Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
-        }
-        Setting.MergeFrom(other.Setting);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -270,22 +275,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 10: {
+            if (setting_ == null) {
+              Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
+            }
+            input.ReadMessage(Setting);
+            break;
+          }
+          case 34: {
             if (customDungeonRoom_ == null) {
               CustomDungeonRoom = new global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom();
             }
             input.ReadMessage(CustomDungeonRoom);
             break;
           }
-          case 56: {
+          case 96: {
             IsUpdateSetting = input.ReadBool();
-            break;
-          }
-          case 106: {
-            if (setting_ == null) {
-              Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
-            }
-            input.ReadMessage(Setting);
             break;
           }
         }
@@ -303,22 +308,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 10: {
+            if (setting_ == null) {
+              Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
+            }
+            input.ReadMessage(Setting);
+            break;
+          }
+          case 34: {
             if (customDungeonRoom_ == null) {
               CustomDungeonRoom = new global::Weedwacker.Shared.Network.Proto.CustomDungeonRoom();
             }
             input.ReadMessage(CustomDungeonRoom);
             break;
           }
-          case 56: {
+          case 96: {
             IsUpdateSetting = input.ReadBool();
-            break;
-          }
-          case 106: {
-            if (setting_ == null) {
-              Setting = new global::Weedwacker.Shared.Network.Proto.CustomDungeonSetting();
-            }
-            input.ReadMessage(Setting);
             break;
           }
         }

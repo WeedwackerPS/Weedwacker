@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetCoolDownDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhXaWRnZXRDb29sRG93bkRhdGEucHJvdG8iTAoSV2lkZ2V0Q29vbERvd25E",
-            "YXRhEhIKCmlzX3N1Y2Nlc3MYBSABKAgSFgoOY29vbF9kb3duX3RpbWUYBCAB",
-            "KAQSCgoCaWQYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChhXaWRnZXRDb29sRG93bkRhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iTAoSV2lkZ2V0Q29vbERvd25EYXRhEgoKAmlkGAIg",
+            "ASgNEhIKCmlzX3N1Y2Nlc3MYDSABKAgSFgoOY29vbF9kb3duX3RpbWUYByAB",
+            "KARiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData), global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser, new[]{ "IsSuccess", "CoolDownTime", "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData), global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser, new[]{ "Id", "IsSuccess", "CoolDownTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetCoolDownData(WidgetCoolDownData other) : this() {
+      id_ = other.id_;
       isSuccess_ = other.isSuccess_;
       coolDownTime_ = other.coolDownTime_;
-      id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WidgetCoolDownData(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 5;
+    public const int IsSuccessFieldNumber = 13;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cool_down_time" field.</summary>
-    public const int CoolDownTimeFieldNumber = 4;
+    public const int CoolDownTimeFieldNumber = 7;
     private ulong coolDownTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,18 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return coolDownTime_; }
       set {
         coolDownTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 15;
-    private uint id_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Id {
-      get { return id_; }
-      set {
-        id_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (IsSuccess != other.IsSuccess) return false;
       if (CoolDownTime != other.CoolDownTime) return false;
-      if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (CoolDownTime != 0UL) hash ^= CoolDownTime.GetHashCode();
-      if (Id != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Id != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Id);
+      }
       if (CoolDownTime != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt64(CoolDownTime);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteBool(IsSuccess);
-      }
-      if (Id != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Id);
+      }
       if (CoolDownTime != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt64(CoolDownTime);
       }
       if (IsSuccess != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteBool(IsSuccess);
-      }
-      if (Id != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
       if (IsSuccess != false) {
         size += 1 + 1;
       }
       if (CoolDownTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CoolDownTime);
-      }
-      if (Id != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
       if (other.CoolDownTime != 0UL) {
         CoolDownTime = other.CoolDownTime;
-      }
-      if (other.Id != 0) {
-        Id = other.Id;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 16: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             CoolDownTime = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 104: {
             IsSuccess = input.ReadBool();
-            break;
-          }
-          case 120: {
-            Id = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 16: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             CoolDownTime = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 104: {
             IsSuccess = input.ReadBool();
-            break;
-          }
-          case 120: {
-            Id = input.ReadUInt32();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AiSyncInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBBaVN5bmNJbmZvLnByb3RvIlQKCkFpU3luY0luZm8SEQoJZW50aXR5X2lk",
-            "GAkgASgNEhcKD2lzX3NlbGZfa2lsbGluZxgIIAEoCBIaChJoYXNfcGF0aF90",
-            "b190YXJnZXQYBCABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChBBaVN5bmNJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIlkKCkFpU3luY0luZm8SEQoJZW50aXR5X2lkGAIgASgNEhsKE1Vu",
+            "azMzMDBfTk9JUEFNSkpJREwYBCABKAgSGwoTVW5rMzMwMF9FQklDQ0xMR0lD",
+            "RxgOIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AiSyncInfo), global::Weedwacker.Shared.Network.Proto.AiSyncInfo.Parser, new[]{ "EntityId", "IsSelfKilling", "HasPathToTarget" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AiSyncInfo), global::Weedwacker.Shared.Network.Proto.AiSyncInfo.Parser, new[]{ "EntityId", "Unk3300NOIPAMJJIDL", "Unk3300EBICCLLGICG" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AiSyncInfo(AiSyncInfo other) : this() {
       entityId_ = other.entityId_;
-      isSelfKilling_ = other.isSelfKilling_;
-      hasPathToTarget_ = other.hasPathToTarget_;
+      unk3300NOIPAMJJIDL_ = other.unk3300NOIPAMJJIDL_;
+      unk3300EBICCLLGICG_ = other.unk3300EBICCLLGICG_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 9;
+    public const int EntityIdFieldNumber = 2;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,27 +96,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_self_killing" field.</summary>
-    public const int IsSelfKillingFieldNumber = 8;
-    private bool isSelfKilling_;
+    /// <summary>Field number for the "Unk3300_NOIPAMJJIDL" field.</summary>
+    public const int Unk3300NOIPAMJJIDLFieldNumber = 4;
+    private bool unk3300NOIPAMJJIDL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSelfKilling {
-      get { return isSelfKilling_; }
+    public bool Unk3300NOIPAMJJIDL {
+      get { return unk3300NOIPAMJJIDL_; }
       set {
-        isSelfKilling_ = value;
+        unk3300NOIPAMJJIDL_ = value;
       }
     }
 
-    /// <summary>Field number for the "has_path_to_target" field.</summary>
-    public const int HasPathToTargetFieldNumber = 4;
-    private bool hasPathToTarget_;
+    /// <summary>Field number for the "Unk3300_EBICCLLGICG" field.</summary>
+    public const int Unk3300EBICCLLGICGFieldNumber = 14;
+    private bool unk3300EBICCLLGICG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasPathToTarget {
-      get { return hasPathToTarget_; }
+    public bool Unk3300EBICCLLGICG {
+      get { return unk3300EBICCLLGICG_; }
       set {
-        hasPathToTarget_ = value;
+        unk3300EBICCLLGICG_ = value;
       }
     }
 
@@ -136,8 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (EntityId != other.EntityId) return false;
-      if (IsSelfKilling != other.IsSelfKilling) return false;
-      if (HasPathToTarget != other.HasPathToTarget) return false;
+      if (Unk3300NOIPAMJJIDL != other.Unk3300NOIPAMJJIDL) return false;
+      if (Unk3300EBICCLLGICG != other.Unk3300EBICCLLGICG) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (IsSelfKilling != false) hash ^= IsSelfKilling.GetHashCode();
-      if (HasPathToTarget != false) hash ^= HasPathToTarget.GetHashCode();
+      if (Unk3300NOIPAMJJIDL != false) hash ^= Unk3300NOIPAMJJIDL.GetHashCode();
+      if (Unk3300EBICCLLGICG != false) hash ^= Unk3300EBICCLLGICG.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasPathToTarget != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(HasPathToTarget);
-      }
-      if (IsSelfKilling != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsSelfKilling);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(EntityId);
+      }
+      if (Unk3300NOIPAMJJIDL != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300NOIPAMJJIDL);
+      }
+      if (Unk3300EBICCLLGICG != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300EBICCLLGICG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasPathToTarget != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(HasPathToTarget);
-      }
-      if (IsSelfKilling != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsSelfKilling);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(EntityId);
+      }
+      if (Unk3300NOIPAMJJIDL != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300NOIPAMJJIDL);
+      }
+      if (Unk3300EBICCLLGICG != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300EBICCLLGICG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -213,10 +213,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (IsSelfKilling != false) {
+      if (Unk3300NOIPAMJJIDL != false) {
         size += 1 + 1;
       }
-      if (HasPathToTarget != false) {
+      if (Unk3300EBICCLLGICG != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -234,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.IsSelfKilling != false) {
-        IsSelfKilling = other.IsSelfKilling;
+      if (other.Unk3300NOIPAMJJIDL != false) {
+        Unk3300NOIPAMJJIDL = other.Unk3300NOIPAMJJIDL;
       }
-      if (other.HasPathToTarget != false) {
-        HasPathToTarget = other.HasPathToTarget;
+      if (other.Unk3300EBICCLLGICG != false) {
+        Unk3300EBICCLLGICG = other.Unk3300EBICCLLGICG;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            HasPathToTarget = input.ReadBool();
-            break;
-          }
-          case 64: {
-            IsSelfKilling = input.ReadBool();
-            break;
-          }
-          case 72: {
+          case 16: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300NOIPAMJJIDL = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Unk3300EBICCLLGICG = input.ReadBool();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            HasPathToTarget = input.ReadBool();
-            break;
-          }
-          case 64: {
-            IsSelfKilling = input.ReadBool();
-            break;
-          }
-          case 72: {
+          case 16: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300NOIPAMJJIDL = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Unk3300EBICCLLGICG = input.ReadBool();
             break;
           }
         }

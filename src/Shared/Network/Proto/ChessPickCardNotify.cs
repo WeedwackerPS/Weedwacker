@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessPickCardNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDaGVzc1BpY2tDYXJkTm90aWZ5LnByb3RvGhlDaGVzc05vcm1hbENhcmRJ",
-            "bmZvLnByb3RvIlwKE0NoZXNzUGlja0NhcmROb3RpZnkSFQoNY3Vyc2VfY2Fy",
-            "ZF9pZBgNIAEoDRIuChBub3JtYWxfY2FyZF9pbmZvGAEgASgLMhQuQ2hlc3NO",
-            "b3JtYWxDYXJkSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChlDaGVzc1BpY2tDYXJkTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhlDaGVzc05vcm1hbENhcmRJbmZvLnByb3RvInwK",
+            "E0NoZXNzUGlja0NhcmROb3RpZnkSTgoQbm9ybWFsX2NhcmRfaW5mbxgIIAEo",
+            "CzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hlc3NOb3Jt",
+            "YWxDYXJkSW5mbxIVCg1jdXJzZV9jYXJkX2lkGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessPickCardNotify), global::Weedwacker.Shared.Network.Proto.ChessPickCardNotify.Parser, new[]{ "CurseCardId", "NormalCardInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessPickCardNotify), global::Weedwacker.Shared.Network.Proto.ChessPickCardNotify.Parser, new[]{ "NormalCardInfo", "CurseCardId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5380
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5374;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ChessPickCardNotify : pb::IMessage<ChessPickCardNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessPickCardNotify(ChessPickCardNotify other) : this() {
-      curseCardId_ = other.curseCardId_;
       normalCardInfo_ = other.normalCardInfo_ != null ? other.normalCardInfo_.Clone() : null;
+      curseCardId_ = other.curseCardId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChessPickCardNotify(this);
     }
 
-    /// <summary>Field number for the "curse_card_id" field.</summary>
-    public const int CurseCardIdFieldNumber = 13;
-    private uint curseCardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurseCardId {
-      get { return curseCardId_; }
-      set {
-        curseCardId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "normal_card_info" field.</summary>
-    public const int NormalCardInfoFieldNumber = 1;
+    public const int NormalCardInfoFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo normalCardInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return normalCardInfo_; }
       set {
         normalCardInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "curse_card_id" field.</summary>
+    public const int CurseCardIdFieldNumber = 6;
+    private uint curseCardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurseCardId {
+      get { return curseCardId_; }
+      set {
+        curseCardId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurseCardId != other.CurseCardId) return false;
       if (!object.Equals(NormalCardInfo, other.NormalCardInfo)) return false;
+      if (CurseCardId != other.CurseCardId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurseCardId != 0) hash ^= CurseCardId.GetHashCode();
       if (normalCardInfo_ != null) hash ^= NormalCardInfo.GetHashCode();
+      if (CurseCardId != 0) hash ^= CurseCardId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (normalCardInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(NormalCardInfo);
-      }
       if (CurseCardId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(CurseCardId);
+      }
+      if (normalCardInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(NormalCardInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (normalCardInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(NormalCardInfo);
-      }
       if (CurseCardId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(CurseCardId);
+      }
+      if (normalCardInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(NormalCardInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurseCardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurseCardId);
-      }
       if (normalCardInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(NormalCardInfo);
+      }
+      if (CurseCardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurseCardId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurseCardId != 0) {
-        CurseCardId = other.CurseCardId;
-      }
       if (other.normalCardInfo_ != null) {
         if (normalCardInfo_ == null) {
           NormalCardInfo = new global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo();
         }
         NormalCardInfo.MergeFrom(other.NormalCardInfo);
+      }
+      if (other.CurseCardId != 0) {
+        CurseCardId = other.CurseCardId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 48: {
+            CurseCardId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (normalCardInfo_ == null) {
               NormalCardInfo = new global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo();
             }
             input.ReadMessage(NormalCardInfo);
-            break;
-          }
-          case 104: {
-            CurseCardId = input.ReadUInt32();
             break;
           }
         }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 48: {
+            CurseCardId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (normalCardInfo_ == null) {
               NormalCardInfo = new global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo();
             }
             input.ReadMessage(NormalCardInfo);
-            break;
-          }
-          case 104: {
-            CurseCardId = input.ReadUInt32();
             break;
           }
         }

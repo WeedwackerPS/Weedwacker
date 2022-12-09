@@ -24,23 +24,28 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeSceneArrangementInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8ucHJvdG8aHkhvbWVCbG9ja0Fy",
-            "cmFuZ2VtZW50SW5mby5wcm90bxoXSG9tZUZ1cm5pdHVyZURhdGEucHJvdG8a",
-            "DFZlY3Rvci5wcm90byKKAwoYSG9tZVNjZW5lQXJyYW5nZW1lbnRJbmZvEhkK",
-            "CGJvcm5fcm90GAQgASgLMgcuVmVjdG9yEhkKCGJvcm5fcG9zGAEgASgLMgcu",
-            "VmVjdG9yEiYKCnN0YWlyX2xpc3QYCyADKAsyEi5Ib21lRnVybml0dXJlRGF0",
-            "YRIlCglkb29yX2xpc3QYDSADKAsyEi5Ib21lRnVybml0dXJlRGF0YRIXCg9p",
-            "c19zZXRfYm9ybl9wb3MYCiABKAgSPgobYmxvY2tfYXJyYW5nZW1lbnRfaW5m",
-            "b19saXN0GAggAygLMhkuSG9tZUJsb2NrQXJyYW5nZW1lbnRJbmZvEhAKCHNj",
-            "ZW5lX2lkGAIgASgNEg4KBmJnbV9pZBgMIAEoDRIaCglkamlubl9wb3MYCSAB",
-            "KAsyBy5WZWN0b3ISJgoKbWFpbl9ob3VzZRgOIAEoCzISLkhvbWVGdXJuaXR1",
-            "cmVEYXRhEhUKDWNvbWZvcnRfdmFsdWUYByABKA0SEwoLdG1wX3ZlcnNpb24Y",
-            "BSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "Ch5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aHkhvbWVCbG9ja0FycmFuZ2VtZW50SW5m",
+            "by5wcm90bxoXSG9tZUZ1cm5pdHVyZURhdGEucHJvdG8aDFZlY3Rvci5wcm90",
+            "byL9BAoYSG9tZVNjZW5lQXJyYW5nZW1lbnRJbmZvEhUKDWNvbWZvcnRfdmFs",
+            "dWUYBiABKA0SXgobYmxvY2tfYXJyYW5nZW1lbnRfaW5mb19saXN0GAEgAygL",
+            "MjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lQmxvY2tB",
+            "cnJhbmdlbWVudEluZm8SFwoPaXNfc2V0X2Jvcm5fcG9zGAQgASgIEjoKCWRq",
+            "aW5uX3BvcxgOIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uVmVjdG9yEjkKCGJvcm5fcm90GAogASgLMicuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5WZWN0b3ISDgoGYmdtX2lkGAUgASgNEjkKCGJv",
+            "cm5fcG9zGAsgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5WZWN0b3ISTwoTVW5rMzMwMF9HQ0hOQU1IQlBIRxgCIAMoCzIyLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZUZ1cm5pdHVyZURhdGES",
+            "RgoKbWFpbl9ob3VzZRgPIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uSG9tZUZ1cm5pdHVyZURhdGESEAoIc2NlbmVfaWQYCCABKA0S",
+            "TwoTVW5rMzMwMF9IUENIUE9ETkJQSBgJIAMoCzIyLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uSG9tZUZ1cm5pdHVyZURhdGESEwoLdG1wX3Zl",
+            "cnNpb24YAyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeFurnitureDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo), global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo.Parser, new[]{ "BornRot", "BornPos", "StairList", "DoorList", "IsSetBornPos", "BlockArrangementInfoList", "SceneId", "BgmId", "DjinnPos", "MainHouse", "ComfortValue", "TmpVersion" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo), global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo.Parser, new[]{ "ComfortValue", "BlockArrangementInfoList", "IsSetBornPos", "DjinnPos", "BornRot", "BgmId", "BornPos", "Unk3300GCHNAMHBPHG", "MainHouse", "SceneId", "Unk3300HPCHPODNBPH", "TmpVersion" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,17 +86,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeSceneArrangementInfo(HomeSceneArrangementInfo other) : this() {
-      bornRot_ = other.bornRot_ != null ? other.bornRot_.Clone() : null;
-      bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
-      stairList_ = other.stairList_.Clone();
-      doorList_ = other.doorList_.Clone();
-      isSetBornPos_ = other.isSetBornPos_;
-      blockArrangementInfoList_ = other.blockArrangementInfoList_.Clone();
-      sceneId_ = other.sceneId_;
-      bgmId_ = other.bgmId_;
-      djinnPos_ = other.djinnPos_ != null ? other.djinnPos_.Clone() : null;
-      mainHouse_ = other.mainHouse_ != null ? other.mainHouse_.Clone() : null;
       comfortValue_ = other.comfortValue_;
+      blockArrangementInfoList_ = other.blockArrangementInfoList_.Clone();
+      isSetBornPos_ = other.isSetBornPos_;
+      djinnPos_ = other.djinnPos_ != null ? other.djinnPos_.Clone() : null;
+      bornRot_ = other.bornRot_ != null ? other.bornRot_.Clone() : null;
+      bgmId_ = other.bgmId_;
+      bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
+      unk3300GCHNAMHBPHG_ = other.unk3300GCHNAMHBPHG_.Clone();
+      mainHouse_ = other.mainHouse_ != null ? other.mainHouse_.Clone() : null;
+      sceneId_ = other.sceneId_;
+      unk3300HPCHPODNBPH_ = other.unk3300HPCHPODNBPH_.Clone();
       tmpVersion_ = other.tmpVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -102,125 +107,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeSceneArrangementInfo(this);
     }
 
-    /// <summary>Field number for the "born_rot" field.</summary>
-    public const int BornRotFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.Vector bornRot_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector BornRot {
-      get { return bornRot_; }
-      set {
-        bornRot_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "born_pos" field.</summary>
-    public const int BornPosFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.Vector bornPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector BornPos {
-      get { return bornPos_; }
-      set {
-        bornPos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "stair_list" field.</summary>
-    public const int StairListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_stairList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> stairList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> StairList {
-      get { return stairList_; }
-    }
-
-    /// <summary>Field number for the "door_list" field.</summary>
-    public const int DoorListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_doorList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> doorList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> DoorList {
-      get { return doorList_; }
-    }
-
-    /// <summary>Field number for the "is_set_born_pos" field.</summary>
-    public const int IsSetBornPosFieldNumber = 10;
-    private bool isSetBornPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSetBornPos {
-      get { return isSetBornPos_; }
-      set {
-        isSetBornPos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "block_arrangement_info_list" field.</summary>
-    public const int BlockArrangementInfoListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> _repeated_blockArrangementInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> blockArrangementInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> BlockArrangementInfoList {
-      get { return blockArrangementInfoList_; }
-    }
-
-    /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 2;
-    private uint sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "bgm_id" field.</summary>
-    public const int BgmIdFieldNumber = 12;
-    private uint bgmId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BgmId {
-      get { return bgmId_; }
-      set {
-        bgmId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "djinn_pos" field.</summary>
-    public const int DjinnPosFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.Vector djinnPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector DjinnPos {
-      get { return djinnPos_; }
-      set {
-        djinnPos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "main_house" field.</summary>
-    public const int MainHouseFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.HomeFurnitureData mainHouse_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HomeFurnitureData MainHouse {
-      get { return mainHouse_; }
-      set {
-        mainHouse_ = value;
-      }
-    }
-
     /// <summary>Field number for the "comfort_value" field.</summary>
-    public const int ComfortValueFieldNumber = 7;
+    public const int ComfortValueFieldNumber = 6;
     private uint comfortValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -231,8 +119,125 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "block_arrangement_info_list" field.</summary>
+    public const int BlockArrangementInfoListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> _repeated_blockArrangementInfoList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> blockArrangementInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo> BlockArrangementInfoList {
+      get { return blockArrangementInfoList_; }
+    }
+
+    /// <summary>Field number for the "is_set_born_pos" field.</summary>
+    public const int IsSetBornPosFieldNumber = 4;
+    private bool isSetBornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSetBornPos {
+      get { return isSetBornPos_; }
+      set {
+        isSetBornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "djinn_pos" field.</summary>
+    public const int DjinnPosFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector djinnPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector DjinnPos {
+      get { return djinnPos_; }
+      set {
+        djinnPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "born_rot" field.</summary>
+    public const int BornRotFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.Vector bornRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector BornRot {
+      get { return bornRot_; }
+      set {
+        bornRot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bgm_id" field.</summary>
+    public const int BgmIdFieldNumber = 5;
+    private uint bgmId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BgmId {
+      get { return bgmId_; }
+      set {
+        bgmId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "born_pos" field.</summary>
+    public const int BornPosFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.Vector bornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector BornPos {
+      get { return bornPos_; }
+      set {
+        bornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCHNAMHBPHG" field.</summary>
+    public const int Unk3300GCHNAMHBPHGFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_unk3300GCHNAMHBPHG_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> unk3300GCHNAMHBPHG_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> Unk3300GCHNAMHBPHG {
+      get { return unk3300GCHNAMHBPHG_; }
+    }
+
+    /// <summary>Field number for the "main_house" field.</summary>
+    public const int MainHouseFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.HomeFurnitureData mainHouse_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HomeFurnitureData MainHouse {
+      get { return mainHouse_; }
+      set {
+        mainHouse_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 8;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HPCHPODNBPH" field.</summary>
+    public const int Unk3300HPCHPODNBPHFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_unk3300HPCHPODNBPH_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> unk3300HPCHPODNBPH_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> Unk3300HPCHPODNBPH {
+      get { return unk3300HPCHPODNBPH_; }
+    }
+
     /// <summary>Field number for the "tmp_version" field.</summary>
-    public const int TmpVersionFieldNumber = 5;
+    public const int TmpVersionFieldNumber = 3;
     private uint tmpVersion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -258,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(BornRot, other.BornRot)) return false;
-      if (!object.Equals(BornPos, other.BornPos)) return false;
-      if(!stairList_.Equals(other.stairList_)) return false;
-      if(!doorList_.Equals(other.doorList_)) return false;
-      if (IsSetBornPos != other.IsSetBornPos) return false;
-      if(!blockArrangementInfoList_.Equals(other.blockArrangementInfoList_)) return false;
-      if (SceneId != other.SceneId) return false;
-      if (BgmId != other.BgmId) return false;
-      if (!object.Equals(DjinnPos, other.DjinnPos)) return false;
-      if (!object.Equals(MainHouse, other.MainHouse)) return false;
       if (ComfortValue != other.ComfortValue) return false;
+      if(!blockArrangementInfoList_.Equals(other.blockArrangementInfoList_)) return false;
+      if (IsSetBornPos != other.IsSetBornPos) return false;
+      if (!object.Equals(DjinnPos, other.DjinnPos)) return false;
+      if (!object.Equals(BornRot, other.BornRot)) return false;
+      if (BgmId != other.BgmId) return false;
+      if (!object.Equals(BornPos, other.BornPos)) return false;
+      if(!unk3300GCHNAMHBPHG_.Equals(other.unk3300GCHNAMHBPHG_)) return false;
+      if (!object.Equals(MainHouse, other.MainHouse)) return false;
+      if (SceneId != other.SceneId) return false;
+      if(!unk3300HPCHPODNBPH_.Equals(other.unk3300HPCHPODNBPH_)) return false;
       if (TmpVersion != other.TmpVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -277,17 +282,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (bornRot_ != null) hash ^= BornRot.GetHashCode();
-      if (bornPos_ != null) hash ^= BornPos.GetHashCode();
-      hash ^= stairList_.GetHashCode();
-      hash ^= doorList_.GetHashCode();
-      if (IsSetBornPos != false) hash ^= IsSetBornPos.GetHashCode();
-      hash ^= blockArrangementInfoList_.GetHashCode();
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      if (BgmId != 0) hash ^= BgmId.GetHashCode();
-      if (djinnPos_ != null) hash ^= DjinnPos.GetHashCode();
-      if (mainHouse_ != null) hash ^= MainHouse.GetHashCode();
       if (ComfortValue != 0) hash ^= ComfortValue.GetHashCode();
+      hash ^= blockArrangementInfoList_.GetHashCode();
+      if (IsSetBornPos != false) hash ^= IsSetBornPos.GetHashCode();
+      if (djinnPos_ != null) hash ^= DjinnPos.GetHashCode();
+      if (bornRot_ != null) hash ^= BornRot.GetHashCode();
+      if (BgmId != 0) hash ^= BgmId.GetHashCode();
+      if (bornPos_ != null) hash ^= BornPos.GetHashCode();
+      hash ^= unk3300GCHNAMHBPHG_.GetHashCode();
+      if (mainHouse_ != null) hash ^= MainHouse.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      hash ^= unk3300HPCHPODNBPH_.GetHashCode();
       if (TmpVersion != 0) hash ^= TmpVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -307,43 +312,43 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (bornPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BornPos);
-      }
-      if (SceneId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SceneId);
-      }
-      if (bornRot_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(BornRot);
-      }
+      blockArrangementInfoList_.WriteTo(output, _repeated_blockArrangementInfoList_codec);
+      unk3300GCHNAMHBPHG_.WriteTo(output, _repeated_unk3300GCHNAMHBPHG_codec);
       if (TmpVersion != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(TmpVersion);
       }
-      if (ComfortValue != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ComfortValue);
-      }
-      blockArrangementInfoList_.WriteTo(output, _repeated_blockArrangementInfoList_codec);
-      if (djinnPos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(DjinnPos);
-      }
       if (IsSetBornPos != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsSetBornPos);
       }
-      stairList_.WriteTo(output, _repeated_stairList_codec);
       if (BgmId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(BgmId);
       }
-      doorList_.WriteTo(output, _repeated_doorList_codec);
-      if (mainHouse_ != null) {
+      if (ComfortValue != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ComfortValue);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      unk3300HPCHPODNBPH_.WriteTo(output, _repeated_unk3300HPCHPODNBPH_codec);
+      if (bornRot_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(BornRot);
+      }
+      if (bornPos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(BornPos);
+      }
+      if (djinnPos_ != null) {
         output.WriteRawTag(114);
+        output.WriteMessage(DjinnPos);
+      }
+      if (mainHouse_ != null) {
+        output.WriteRawTag(122);
         output.WriteMessage(MainHouse);
       }
       if (_unknownFields != null) {
@@ -356,43 +361,43 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (bornPos_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BornPos);
-      }
-      if (SceneId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SceneId);
-      }
-      if (bornRot_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(BornRot);
-      }
+      blockArrangementInfoList_.WriteTo(ref output, _repeated_blockArrangementInfoList_codec);
+      unk3300GCHNAMHBPHG_.WriteTo(ref output, _repeated_unk3300GCHNAMHBPHG_codec);
       if (TmpVersion != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(TmpVersion);
       }
-      if (ComfortValue != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ComfortValue);
-      }
-      blockArrangementInfoList_.WriteTo(ref output, _repeated_blockArrangementInfoList_codec);
-      if (djinnPos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(DjinnPos);
-      }
       if (IsSetBornPos != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteBool(IsSetBornPos);
       }
-      stairList_.WriteTo(ref output, _repeated_stairList_codec);
       if (BgmId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(BgmId);
       }
-      doorList_.WriteTo(ref output, _repeated_doorList_codec);
-      if (mainHouse_ != null) {
+      if (ComfortValue != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ComfortValue);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      unk3300HPCHPODNBPH_.WriteTo(ref output, _repeated_unk3300HPCHPODNBPH_codec);
+      if (bornRot_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(BornRot);
+      }
+      if (bornPos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(BornPos);
+      }
+      if (djinnPos_ != null) {
         output.WriteRawTag(114);
+        output.WriteMessage(DjinnPos);
+      }
+      if (mainHouse_ != null) {
+        output.WriteRawTag(122);
         output.WriteMessage(MainHouse);
       }
       if (_unknownFields != null) {
@@ -405,33 +410,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (bornRot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornRot);
-      }
-      if (bornPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
-      }
-      size += stairList_.CalculateSize(_repeated_stairList_codec);
-      size += doorList_.CalculateSize(_repeated_doorList_codec);
-      if (IsSetBornPos != false) {
-        size += 1 + 1;
+      if (ComfortValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
       }
       size += blockArrangementInfoList_.CalculateSize(_repeated_blockArrangementInfoList_codec);
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-      }
-      if (BgmId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BgmId);
+      if (IsSetBornPos != false) {
+        size += 1 + 1;
       }
       if (djinnPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DjinnPos);
       }
+      if (bornRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornRot);
+      }
+      if (BgmId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BgmId);
+      }
+      if (bornPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
+      }
+      size += unk3300GCHNAMHBPHG_.CalculateSize(_repeated_unk3300GCHNAMHBPHG_codec);
       if (mainHouse_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MainHouse);
       }
-      if (ComfortValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
+      size += unk3300HPCHPODNBPH_.CalculateSize(_repeated_unk3300HPCHPODNBPH_codec);
       if (TmpVersion != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TmpVersion);
       }
@@ -447,29 +452,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.bornRot_ != null) {
-        if (bornRot_ == null) {
-          BornRot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        BornRot.MergeFrom(other.BornRot);
-      }
-      if (other.bornPos_ != null) {
-        if (bornPos_ == null) {
-          BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        BornPos.MergeFrom(other.BornPos);
-      }
-      stairList_.Add(other.stairList_);
-      doorList_.Add(other.doorList_);
-      if (other.IsSetBornPos != false) {
-        IsSetBornPos = other.IsSetBornPos;
+      if (other.ComfortValue != 0) {
+        ComfortValue = other.ComfortValue;
       }
       blockArrangementInfoList_.Add(other.blockArrangementInfoList_);
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
-      if (other.BgmId != 0) {
-        BgmId = other.BgmId;
+      if (other.IsSetBornPos != false) {
+        IsSetBornPos = other.IsSetBornPos;
       }
       if (other.djinnPos_ != null) {
         if (djinnPos_ == null) {
@@ -477,15 +465,32 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         DjinnPos.MergeFrom(other.DjinnPos);
       }
+      if (other.bornRot_ != null) {
+        if (bornRot_ == null) {
+          BornRot = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        BornRot.MergeFrom(other.BornRot);
+      }
+      if (other.BgmId != 0) {
+        BgmId = other.BgmId;
+      }
+      if (other.bornPos_ != null) {
+        if (bornPos_ == null) {
+          BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        BornPos.MergeFrom(other.BornPos);
+      }
+      unk3300GCHNAMHBPHG_.Add(other.unk3300GCHNAMHBPHG_);
       if (other.mainHouse_ != null) {
         if (mainHouse_ == null) {
           MainHouse = new global::Weedwacker.Shared.Network.Proto.HomeFurnitureData();
         }
         MainHouse.MergeFrom(other.MainHouse);
       }
-      if (other.ComfortValue != 0) {
-        ComfortValue = other.ComfortValue;
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
       }
+      unk3300HPCHPODNBPH_.Add(other.unk3300HPCHPODNBPH_);
       if (other.TmpVersion != 0) {
         TmpVersion = other.TmpVersion;
       }
@@ -505,59 +510,59 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (bornPos_ == null) {
-              BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(BornPos);
+            blockArrangementInfoList_.AddEntriesFrom(input, _repeated_blockArrangementInfoList_codec);
             break;
           }
-          case 16: {
+          case 18: {
+            unk3300GCHNAMHBPHG_.AddEntriesFrom(input, _repeated_unk3300GCHNAMHBPHG_codec);
+            break;
+          }
+          case 24: {
+            TmpVersion = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsSetBornPos = input.ReadBool();
+            break;
+          }
+          case 40: {
+            BgmId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 74: {
+            unk3300HPCHPODNBPH_.AddEntriesFrom(input, _repeated_unk3300HPCHPODNBPH_codec);
+            break;
+          }
+          case 82: {
             if (bornRot_ == null) {
               BornRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(BornRot);
             break;
           }
-          case 40: {
-            TmpVersion = input.ReadUInt32();
+          case 90: {
+            if (bornPos_ == null) {
+              BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(BornPos);
             break;
           }
-          case 56: {
-            ComfortValue = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            blockArrangementInfoList_.AddEntriesFrom(input, _repeated_blockArrangementInfoList_codec);
-            break;
-          }
-          case 74: {
+          case 114: {
             if (djinnPos_ == null) {
               DjinnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DjinnPos);
             break;
           }
-          case 80: {
-            IsSetBornPos = input.ReadBool();
-            break;
-          }
-          case 90: {
-            stairList_.AddEntriesFrom(input, _repeated_stairList_codec);
-            break;
-          }
-          case 96: {
-            BgmId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
-            doorList_.AddEntriesFrom(input, _repeated_doorList_codec);
-            break;
-          }
-          case 114: {
+          case 122: {
             if (mainHouse_ == null) {
               MainHouse = new global::Weedwacker.Shared.Network.Proto.HomeFurnitureData();
             }
@@ -580,59 +585,59 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (bornPos_ == null) {
-              BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(BornPos);
+            blockArrangementInfoList_.AddEntriesFrom(ref input, _repeated_blockArrangementInfoList_codec);
             break;
           }
-          case 16: {
+          case 18: {
+            unk3300GCHNAMHBPHG_.AddEntriesFrom(ref input, _repeated_unk3300GCHNAMHBPHG_codec);
+            break;
+          }
+          case 24: {
+            TmpVersion = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsSetBornPos = input.ReadBool();
+            break;
+          }
+          case 40: {
+            BgmId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 74: {
+            unk3300HPCHPODNBPH_.AddEntriesFrom(ref input, _repeated_unk3300HPCHPODNBPH_codec);
+            break;
+          }
+          case 82: {
             if (bornRot_ == null) {
               BornRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(BornRot);
             break;
           }
-          case 40: {
-            TmpVersion = input.ReadUInt32();
+          case 90: {
+            if (bornPos_ == null) {
+              BornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(BornPos);
             break;
           }
-          case 56: {
-            ComfortValue = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            blockArrangementInfoList_.AddEntriesFrom(ref input, _repeated_blockArrangementInfoList_codec);
-            break;
-          }
-          case 74: {
+          case 114: {
             if (djinnPos_ == null) {
               DjinnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DjinnPos);
             break;
           }
-          case 80: {
-            IsSetBornPos = input.ReadBool();
-            break;
-          }
-          case 90: {
-            stairList_.AddEntriesFrom(ref input, _repeated_stairList_codec);
-            break;
-          }
-          case 96: {
-            BgmId = input.ReadUInt32();
-            break;
-          }
-          case 106: {
-            doorList_.AddEntriesFrom(ref input, _repeated_doorList_codec);
-            break;
-          }
-          case 114: {
+          case 122: {
             if (mainHouse_ == null) {
               MainHouse = new global::Weedwacker.Shared.Network.Proto.HomeFurnitureData();
             }

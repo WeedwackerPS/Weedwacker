@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketTraderInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1WaW50YWdlTWFya2V0VHJhZGVySW5mby5wcm90bxoPSXRlbVBhcmFtLnBy",
-            "b3RvIlUKF1ZpbnRhZ2VNYXJrZXRUcmFkZXJJbmZvEhEKCXRyYWRlcl9pZBgH",
-            "IAEoDRInChNhdmFpbGFibGVfaXRlbV9saXN0GAkgAygLMgouSXRlbVBhcmFt",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1WaW50YWdlTWFya2V0VHJhZGVySW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoPSXRlbVBhcmFtLnByb3RvInUKF1ZpbnRh",
+            "Z2VNYXJrZXRUcmFkZXJJbmZvEhEKCXRyYWRlcl9pZBgEIAEoDRJHChNhdmFp",
+            "bGFibGVfaXRlbV9saXN0GA8gAygLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5JdGVtUGFyYW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trader_id" field.</summary>
-    public const int TraderIdFieldNumber = 7;
+    public const int TraderIdFieldNumber = 4;
     private uint traderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "available_item_list" field.</summary>
-    public const int AvailableItemListFieldNumber = 9;
+    public const int AvailableItemListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_availableItemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> availableItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TraderId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(TraderId);
       }
       availableItemList_.WriteTo(output, _repeated_availableItemList_codec);
@@ -166,7 +167,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TraderId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(TraderId);
       }
       availableItemList_.WriteTo(ref output, _repeated_availableItemList_codec);
@@ -215,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 32: {
             TraderId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 122: {
             availableItemList_.AddEntriesFrom(input, _repeated_availableItemList_codec);
             break;
           }
@@ -238,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 32: {
             TraderId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 122: {
             availableItemList_.AddEntriesFrom(ref input, _repeated_availableItemList_codec);
             break;
           }

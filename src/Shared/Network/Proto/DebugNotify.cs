@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DebugNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFEZWJ1Z05vdGlmeS5wcm90byJ9CgtEZWJ1Z05vdGlmeRIKCgJpZBgBIAEo",
-            "DRIMCgRuYW1lGAIgASgJEiUKB3JldGNvZGUYAyABKA4yFC5EZWJ1Z05vdGlm",
-            "eS5SZXRjb2RlIi0KB1JldGNvZGUSEAoMUkVUQ09ERV9TVUNDEAASEAoMUkVU",
-            "Q09ERV9GQUlMEAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChFEZWJ1Z05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byKNAQoLRGVidWdOb3RpZnkSCgoCaWQYASABKA0SDAoEbmFtZRgC",
+            "IAEoCRJFCgdyZXRjb2RlGAMgASgOMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5EZWJ1Z05vdGlmeS5SZXRjb2RlIh0KB1JldGNvZGUSCAoE",
+            "U1VDQxAAEggKBEZBSUwQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 101
-  /// TargetService: 101
-  /// EnetChannelId: 2
-  /// EnetIsReliable: true
+  /// enum Enum {
+  ///   option allow_alias = true;
+  ///   ZREO = 0;
+  ///   CMD_ID = 101;
+  ///   TARGET_SERVICE = 101;
+  ///   ENET_CHANNEL_ID = 2;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DebugNotify : pb::IMessage<DebugNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -312,8 +316,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum Retcode {
-        [pbr::OriginalName("RETCODE_SUCC")] Succ = 0,
-        [pbr::OriginalName("RETCODE_FAIL")] Fail = 1,
+        [pbr::OriginalName("SUCC")] Succ = 0,
+        [pbr::OriginalName("FAIL")] Fail = 1,
       }
 
     }

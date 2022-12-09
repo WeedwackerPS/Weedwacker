@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryFallInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTY2VuZUdhbGxlcnlGYWxsSW5mby5wcm90bxoURmFsbFBsYXllckluZm8u",
-            "cHJvdG8izwEKFFNjZW5lR2FsbGVyeUZhbGxJbmZvElUKGnNjZW5lX3BsYXll",
-            "cl9mYWxsX2luZm9fbWFwGAwgAygLMjEuU2NlbmVHYWxsZXJ5RmFsbEluZm8u",
-            "U2NlbmVQbGF5ZXJGYWxsSW5mb01hcEVudHJ5EhAKCGVuZF90aW1lGAIgASgN",
-            "Gk4KG1NjZW5lUGxheWVyRmFsbEluZm9NYXBFbnRyeRILCgNrZXkYASABKA0S",
-            "HgoFdmFsdWUYAiABKAsyDy5GYWxsUGxheWVySW5mbzoCOAFCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpTY2VuZUdhbGxlcnlGYWxsSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoURmFsbFBsYXllckluZm8ucHJvdG8ijwIKFFNj",
+            "ZW5lR2FsbGVyeUZhbGxJbmZvEhAKCGVuZF90aW1lGAQgASgNEnUKGnNjZW5l",
+            "X3BsYXllcl9mYWxsX2luZm9fbWFwGAMgAygLMlEuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5TY2VuZUdhbGxlcnlGYWxsSW5mby5TY2VuZVBs",
+            "YXllckZhbGxJbmZvTWFwRW50cnkabgobU2NlbmVQbGF5ZXJGYWxsSW5mb01h",
+            "cEVudHJ5EgsKA2tleRgBIAEoDRI+CgV2YWx1ZRgCIAEoCzIvLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmFsbFBsYXllckluZm86AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FallPlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryFallInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryFallInfo.Parser, new[]{ "ScenePlayerFallInfoMap", "EndTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryFallInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryFallInfo.Parser, new[]{ "EndTime", "ScenePlayerFallInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,8 +77,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryFallInfo(SceneGalleryFallInfo other) : this() {
-      scenePlayerFallInfoMap_ = other.scenePlayerFallInfoMap_.Clone();
       endTime_ = other.endTime_;
+      scenePlayerFallInfoMap_ = other.scenePlayerFallInfoMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,19 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryFallInfo(this);
     }
 
-    /// <summary>Field number for the "scene_player_fall_info_map" field.</summary>
-    public const int ScenePlayerFallInfoMapFieldNumber = 12;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>.Codec _map_scenePlayerFallInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo.Parser), 98);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo> scenePlayerFallInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo> ScenePlayerFallInfoMap {
-      get { return scenePlayerFallInfoMap_; }
-    }
-
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 2;
+    public const int EndTimeFieldNumber = 4;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,6 +98,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         endTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "scene_player_fall_info_map" field.</summary>
+    public const int ScenePlayerFallInfoMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>.Codec _map_scenePlayerFallInfoMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo.Parser), 26);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo> scenePlayerFallInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FallPlayerInfo> ScenePlayerFallInfoMap {
+      get { return scenePlayerFallInfoMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,8 +126,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ScenePlayerFallInfoMap.Equals(other.ScenePlayerFallInfoMap)) return false;
       if (EndTime != other.EndTime) return false;
+      if (!ScenePlayerFallInfoMap.Equals(other.ScenePlayerFallInfoMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -133,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ScenePlayerFallInfoMap.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= ScenePlayerFallInfoMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,11 +155,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      scenePlayerFallInfoMap_.WriteTo(output, _map_scenePlayerFallInfoMap_codec);
       if (EndTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(EndTime);
       }
-      scenePlayerFallInfoMap_.WriteTo(output, _map_scenePlayerFallInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -168,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      scenePlayerFallInfoMap_.WriteTo(ref output, _map_scenePlayerFallInfoMap_codec);
       if (EndTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt32(EndTime);
       }
-      scenePlayerFallInfoMap_.WriteTo(ref output, _map_scenePlayerFallInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -183,10 +185,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += scenePlayerFallInfoMap_.CalculateSize(_map_scenePlayerFallInfoMap_codec);
       if (EndTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
+      size += scenePlayerFallInfoMap_.CalculateSize(_map_scenePlayerFallInfoMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -199,10 +201,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      scenePlayerFallInfoMap_.Add(other.scenePlayerFallInfoMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
+      scenePlayerFallInfoMap_.Add(other.scenePlayerFallInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -218,12 +220,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            EndTime = input.ReadUInt32();
+          case 26: {
+            scenePlayerFallInfoMap_.AddEntriesFrom(input, _map_scenePlayerFallInfoMap_codec);
             break;
           }
-          case 98: {
-            scenePlayerFallInfoMap_.AddEntriesFrom(input, _map_scenePlayerFallInfoMap_codec);
+          case 32: {
+            EndTime = input.ReadUInt32();
             break;
           }
         }
@@ -241,12 +243,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            EndTime = input.ReadUInt32();
+          case 26: {
+            scenePlayerFallInfoMap_.AddEntriesFrom(ref input, _map_scenePlayerFallInfoMap_codec);
             break;
           }
-          case 98: {
-            scenePlayerFallInfoMap_.AddEntriesFrom(ref input, _map_scenePlayerFallInfoMap_codec);
+          case 32: {
+            EndTime = input.ReadUInt32();
             break;
           }
         }

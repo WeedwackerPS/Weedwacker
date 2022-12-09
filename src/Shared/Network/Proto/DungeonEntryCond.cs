@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonEntryCondReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZEdW5nZW9uRW50cnlDb25kLnByb3RvGh1EdW5nZW9uRW50cnlCbG9ja1Jl",
-            "YXNvbi5wcm90byJRChBEdW5nZW9uRW50cnlDb25kEi0KC2NvbmRfcmVhc29u",
-            "GAcgASgOMhguRHVuZ2VvbkVudHJ5QmxvY2tSZWFzb24SDgoGcGFyYW0xGAgg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChZEdW5nZW9uRW50cnlDb25kLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGh1EdW5nZW9uRW50cnlCbG9ja1JlYXNvbi5wcm90byJx",
+            "ChBEdW5nZW9uRW50cnlDb25kEk0KC2NvbmRfcmVhc29uGAIgASgOMjguV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5EdW5nZW9uRW50cnlCbG9j",
+            "a1JlYXNvbhIOCgZwYXJhbTEYASABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cond_reason" field.</summary>
-    public const int CondReasonFieldNumber = 7;
+    public const int CondReasonFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason condReason_ = global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "param1" field.</summary>
-    public const int Param1FieldNumber = 8;
+    public const int Param1FieldNumber = 1;
     private uint param1_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CondReason != global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) CondReason);
-      }
       if (Param1 != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(Param1);
+      }
+      if (CondReason != global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) CondReason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CondReason != global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason.None) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) CondReason);
-      }
       if (Param1 != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(Param1);
+      }
+      if (CondReason != global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) CondReason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -227,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            CondReason = (global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason) input.ReadEnum();
+          case 8: {
+            Param1 = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Param1 = input.ReadUInt32();
+          case 16: {
+            CondReason = (global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason) input.ReadEnum();
             break;
           }
         }
@@ -250,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            CondReason = (global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason) input.ReadEnum();
+          case 8: {
+            Param1 = input.ReadUInt32();
             break;
           }
-          case 64: {
-            Param1 = input.ReadUInt32();
+          case 16: {
+            CondReason = (global::Weedwacker.Shared.Network.Proto.DungeonEntryBlockReason) input.ReadEnum();
             break;
           }
         }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static RacingGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1SYWNpbmdHYWxsZXJ5U2V0dGxlSW5mby5wcm90bxoXR2FsbGVyeVN0b3BS",
-            "ZWFzb24ucHJvdG8iYwoXUmFjaW5nR2FsbGVyeVNldHRsZUluZm8SEgoKd2lu",
-            "bmVyX3VpZBgGIAEoDRIiCgZyZWFzb24YBCABKA4yEi5HYWxsZXJ5U3RvcFJl",
-            "YXNvbhIQCgh1c2VfdGltZRgBIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1SYWNpbmdHYWxsZXJ5U2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoXR2FsbGVyeVN0b3BSZWFzb24ucHJvdG8i",
+            "gwEKF1JhY2luZ0dhbGxlcnlTZXR0bGVJbmZvEhIKCndpbm5lcl91aWQYCiAB",
+            "KA0SEAoIdXNlX3RpbWUYDyABKA0SQgoGcmVhc29uGAsgASgOMjIuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWxsZXJ5U3RvcFJlYXNvbmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RacingGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.RacingGallerySettleInfo.Parser, new[]{ "WinnerUid", "Reason", "UseTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RacingGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.RacingGallerySettleInfo.Parser, new[]{ "WinnerUid", "UseTime", "Reason" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RacingGallerySettleInfo(RacingGallerySettleInfo other) : this() {
       winnerUid_ = other.winnerUid_;
-      reason_ = other.reason_;
       useTime_ = other.useTime_;
+      reason_ = other.reason_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "winner_uid" field.</summary>
-    public const int WinnerUidFieldNumber = 6;
+    public const int WinnerUidFieldNumber = 10;
     private uint winnerUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,20 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GalleryStopReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
     /// <summary>Field number for the "use_time" field.</summary>
-    public const int UseTimeFieldNumber = 1;
+    public const int UseTimeFieldNumber = 15;
     private uint useTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,6 +107,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return useTime_; }
       set {
         useTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GalleryStopReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
       }
     }
 
@@ -137,8 +138,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (WinnerUid != other.WinnerUid) return false;
-      if (Reason != other.Reason) return false;
       if (UseTime != other.UseTime) return false;
+      if (Reason != other.Reason) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -147,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (WinnerUid != 0) hash ^= WinnerUid.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
       if (UseTime != 0) hash ^= UseTime.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UseTime != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(UseTime);
+      if (WinnerUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WinnerUid);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Reason);
       }
-      if (WinnerUid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(WinnerUid);
+      if (UseTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(UseTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UseTime != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(UseTime);
+      if (WinnerUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WinnerUid);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Reason);
       }
-      if (WinnerUid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(WinnerUid);
+      if (UseTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(UseTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (WinnerUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WinnerUid);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
       if (UseTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UseTime);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -235,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.WinnerUid != 0) {
         WinnerUid = other.WinnerUid;
       }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        Reason = other.Reason;
-      }
       if (other.UseTime != 0) {
         UseTime = other.UseTime;
+      }
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        Reason = other.Reason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -256,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            UseTime = input.ReadUInt32();
+          case 80: {
+            WinnerUid = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 88: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 48: {
-            WinnerUid = input.ReadUInt32();
+          case 120: {
+            UseTime = input.ReadUInt32();
             break;
           }
         }
@@ -283,16 +284,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            UseTime = input.ReadUInt32();
+          case 80: {
+            WinnerUid = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 88: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 48: {
-            WinnerUid = input.ReadUInt32();
+          case 120: {
+            UseTime = input.ReadUInt32();
             break;
           }
         }

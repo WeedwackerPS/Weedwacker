@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MultistagePlayFinishStageReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJNdWx0aXN0YWdlUGxheUZpbmlzaFN0YWdlUmVxLnByb3RvIkQKHE11bHRp",
-            "c3RhZ2VQbGF5RmluaXNoU3RhZ2VSZXESEAoIZ3JvdXBfaWQYDCABKA0SEgoK",
-            "cGxheV9pbmRleBgPIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "CiJNdWx0aXN0YWdlUGxheUZpbmlzaFN0YWdlUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkQKHE11bHRpc3RhZ2VQbGF5Rmlu",
+            "aXNoU3RhZ2VSZXESEAoIZ3JvdXBfaWQYDCABKA0SEgoKcGxheV9pbmRleBgH",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5398
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5330;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MultistagePlayFinishStageReq : pb::IMessage<MultistagePlayFinishStageReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "play_index" field.</summary>
-    public const int PlayIndexFieldNumber = 15;
+    public const int PlayIndexFieldNumber = 7;
     private uint playIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (PlayIndex != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(PlayIndex);
+      }
       if (GroupId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(GroupId);
-      }
-      if (PlayIndex != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(PlayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PlayIndex != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(PlayIndex);
+      }
       if (GroupId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(GroupId);
-      }
-      if (PlayIndex != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(PlayIndex);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            GroupId = input.ReadUInt32();
+          case 56: {
+            PlayIndex = input.ReadUInt32();
             break;
           }
-          case 120: {
-            PlayIndex = input.ReadUInt32();
+          case 96: {
+            GroupId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            GroupId = input.ReadUInt32();
+          case 56: {
+            PlayIndex = input.ReadUInt32();
             break;
           }
-          case 120: {
-            PlayIndex = input.ReadUInt32();
+          case 96: {
+            GroupId = input.ReadUInt32();
             break;
           }
         }

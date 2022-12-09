@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtCompensatePosDiffInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5FdnRDb21wZW5zYXRlUG9zRGlmZkluZm8ucHJvdG8aDFZlY3Rvci5wcm90",
-            "byKWAQoYRXZ0Q29tcGVuc2F0ZVBvc0RpZmZJbmZvEhgKB2N1cl9wb3MYDiAB",
-            "KAsyBy5WZWN0b3ISEQoJZW50aXR5X2lkGAsgASgNEhoKEmZhY2VfYW5nbGVf",
-            "Y29tcGFjdBgKIAEoBRIQCghjdXJfaGFzaBgEIAEoDRIfChdub3JtYWxpemVk",
-            "X3RpbWVfY29tcGFjdBgDIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5FdnRDb21wZW5zYXRlUG9zRGlmZkluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byK2AQoYRXZ0Q29t",
+            "cGVuc2F0ZVBvc0RpZmZJbmZvEhEKCWVudGl0eV9pZBgMIAEoDRIfChdub3Jt",
+            "YWxpemVkX3RpbWVfY29tcGFjdBgFIAEoDRIQCghjdXJfaGFzaBgHIAEoDRIa",
+            "ChJmYWNlX2FuZ2xlX2NvbXBhY3QYCyABKAUSOAoHY3VyX3BvcxgGIAEoCzIn",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtCompensatePosDiffInfo), global::Weedwacker.Shared.Network.Proto.EvtCompensatePosDiffInfo.Parser, new[]{ "CurPos", "EntityId", "FaceAngleCompact", "CurHash", "NormalizedTimeCompact" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtCompensatePosDiffInfo), global::Weedwacker.Shared.Network.Proto.EvtCompensatePosDiffInfo.Parser, new[]{ "EntityId", "NormalizedTimeCompact", "CurHash", "FaceAngleCompact", "CurPos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +75,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtCompensatePosDiffInfo(EvtCompensatePosDiffInfo other) : this() {
-      curPos_ = other.curPos_ != null ? other.curPos_.Clone() : null;
       entityId_ = other.entityId_;
-      faceAngleCompact_ = other.faceAngleCompact_;
-      curHash_ = other.curHash_;
       normalizedTimeCompact_ = other.normalizedTimeCompact_;
+      curHash_ = other.curHash_;
+      faceAngleCompact_ = other.faceAngleCompact_;
+      curPos_ = other.curPos_ != null ? other.curPos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtCompensatePosDiffInfo(this);
     }
 
-    /// <summary>Field number for the "cur_pos" field.</summary>
-    public const int CurPosFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.Vector curPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector CurPos {
-      get { return curPos_; }
-      set {
-        curPos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 11;
+    public const int EntityIdFieldNumber = 12;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,20 +101,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "face_angle_compact" field.</summary>
-    public const int FaceAngleCompactFieldNumber = 10;
-    private int faceAngleCompact_;
+    /// <summary>Field number for the "normalized_time_compact" field.</summary>
+    public const int NormalizedTimeCompactFieldNumber = 5;
+    private uint normalizedTimeCompact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FaceAngleCompact {
-      get { return faceAngleCompact_; }
+    public uint NormalizedTimeCompact {
+      get { return normalizedTimeCompact_; }
       set {
-        faceAngleCompact_ = value;
+        normalizedTimeCompact_ = value;
       }
     }
 
     /// <summary>Field number for the "cur_hash" field.</summary>
-    public const int CurHashFieldNumber = 4;
+    public const int CurHashFieldNumber = 7;
     private uint curHash_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,15 +125,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "normalized_time_compact" field.</summary>
-    public const int NormalizedTimeCompactFieldNumber = 3;
-    private uint normalizedTimeCompact_;
+    /// <summary>Field number for the "face_angle_compact" field.</summary>
+    public const int FaceAngleCompactFieldNumber = 11;
+    private int faceAngleCompact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NormalizedTimeCompact {
-      get { return normalizedTimeCompact_; }
+    public int FaceAngleCompact {
+      get { return faceAngleCompact_; }
       set {
-        normalizedTimeCompact_ = value;
+        faceAngleCompact_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_pos" field.</summary>
+    public const int CurPosFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.Vector curPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector CurPos {
+      get { return curPos_; }
+      set {
+        curPos_ = value;
       }
     }
 
@@ -163,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(CurPos, other.CurPos)) return false;
       if (EntityId != other.EntityId) return false;
-      if (FaceAngleCompact != other.FaceAngleCompact) return false;
-      if (CurHash != other.CurHash) return false;
       if (NormalizedTimeCompact != other.NormalizedTimeCompact) return false;
+      if (CurHash != other.CurHash) return false;
+      if (FaceAngleCompact != other.FaceAngleCompact) return false;
+      if (!object.Equals(CurPos, other.CurPos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (curPos_ != null) hash ^= CurPos.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (FaceAngleCompact != 0) hash ^= FaceAngleCompact.GetHashCode();
-      if (CurHash != 0) hash ^= CurHash.GetHashCode();
       if (NormalizedTimeCompact != 0) hash ^= NormalizedTimeCompact.GetHashCode();
+      if (CurHash != 0) hash ^= CurHash.GetHashCode();
+      if (FaceAngleCompact != 0) hash ^= FaceAngleCompact.GetHashCode();
+      if (curPos_ != null) hash ^= CurPos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -199,24 +200,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (NormalizedTimeCompact != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(NormalizedTimeCompact);
       }
+      if (curPos_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CurPos);
+      }
       if (CurHash != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(CurHash);
       }
       if (FaceAngleCompact != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteInt32(FaceAngleCompact);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntityId);
-      }
-      if (curPos_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CurPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -229,24 +230,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (NormalizedTimeCompact != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(NormalizedTimeCompact);
       }
+      if (curPos_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CurPos);
+      }
       if (CurHash != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(56);
         output.WriteUInt32(CurHash);
       }
       if (FaceAngleCompact != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteInt32(FaceAngleCompact);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(EntityId);
-      }
-      if (curPos_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CurPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -258,20 +259,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (curPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurPos);
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (FaceAngleCompact != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FaceAngleCompact);
+      if (NormalizedTimeCompact != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NormalizedTimeCompact);
       }
       if (CurHash != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurHash);
       }
-      if (NormalizedTimeCompact != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NormalizedTimeCompact);
+      if (FaceAngleCompact != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FaceAngleCompact);
+      }
+      if (curPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurPos);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -285,23 +286,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.NormalizedTimeCompact != 0) {
+        NormalizedTimeCompact = other.NormalizedTimeCompact;
+      }
+      if (other.CurHash != 0) {
+        CurHash = other.CurHash;
+      }
+      if (other.FaceAngleCompact != 0) {
+        FaceAngleCompact = other.FaceAngleCompact;
+      }
       if (other.curPos_ != null) {
         if (curPos_ == null) {
           CurPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         CurPos.MergeFrom(other.CurPos);
-      }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
-      }
-      if (other.FaceAngleCompact != 0) {
-        FaceAngleCompact = other.FaceAngleCompact;
-      }
-      if (other.CurHash != 0) {
-        CurHash = other.CurHash;
-      }
-      if (other.NormalizedTimeCompact != 0) {
-        NormalizedTimeCompact = other.NormalizedTimeCompact;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -318,27 +319,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 40: {
             NormalizedTimeCompact = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CurHash = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            FaceAngleCompact = input.ReadInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (curPos_ == null) {
               CurPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(CurPos);
+            break;
+          }
+          case 56: {
+            CurHash = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            FaceAngleCompact = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -356,27 +357,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 40: {
             NormalizedTimeCompact = input.ReadUInt32();
             break;
           }
-          case 32: {
-            CurHash = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            FaceAngleCompact = input.ReadInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (curPos_ == null) {
               CurPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(CurPos);
+            break;
+          }
+          case 56: {
+            CurHash = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            FaceAngleCompact = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

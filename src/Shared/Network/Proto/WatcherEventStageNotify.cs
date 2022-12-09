@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WatcherEventStageNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1XYXRjaGVyRXZlbnRTdGFnZU5vdGlmeS5wcm90byJSChdXYXRjaGVyRXZl",
-            "bnRTdGFnZU5vdGlmeRIUCgxhZGRfcHJvZ3Jlc3MYBCABKA0SDQoFc3RhZ2UY",
-            "AiABKA0SEgoKd2F0Y2hlcl9pZBgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1XYXRjaGVyRXZlbnRTdGFnZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJSChdXYXRjaGVyRXZlbnRTdGFnZU5vdGlm",
+            "eRIUCgxhZGRfcHJvZ3Jlc3MYAiABKA0SEgoKd2F0Y2hlcl9pZBgPIAEoDRIN",
+            "CgVzdGFnZRgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WatcherEventStageNotify), global::Weedwacker.Shared.Network.Proto.WatcherEventStageNotify.Parser, new[]{ "AddProgress", "Stage", "WatcherId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WatcherEventStageNotify), global::Weedwacker.Shared.Network.Proto.WatcherEventStageNotify.Parser, new[]{ "AddProgress", "WatcherId", "Stage" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2207
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2300;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WatcherEventStageNotify : pb::IMessage<WatcherEventStageNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WatcherEventStageNotify(WatcherEventStageNotify other) : this() {
       addProgress_ = other.addProgress_;
-      stage_ = other.stage_;
       watcherId_ = other.watcherId_;
+      stage_ = other.stage_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_progress" field.</summary>
-    public const int AddProgressFieldNumber = 4;
+    public const int AddProgressFieldNumber = 2;
     private uint addProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage" field.</summary>
-    public const int StageFieldNumber = 2;
-    private uint stage_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Stage {
-      get { return stage_; }
-      set {
-        stage_ = value;
-      }
-    }
-
     /// <summary>Field number for the "watcher_id" field.</summary>
-    public const int WatcherIdFieldNumber = 12;
+    public const int WatcherIdFieldNumber = 15;
     private uint watcherId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return watcherId_; }
       set {
         watcherId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage" field.</summary>
+    public const int StageFieldNumber = 11;
+    private uint stage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Stage {
+      get { return stage_; }
+      set {
+        stage_ = value;
       }
     }
 
@@ -142,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (AddProgress != other.AddProgress) return false;
-      if (Stage != other.Stage) return false;
       if (WatcherId != other.WatcherId) return false;
+      if (Stage != other.Stage) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (AddProgress != 0) hash ^= AddProgress.GetHashCode();
-      if (Stage != 0) hash ^= Stage.GetHashCode();
       if (WatcherId != 0) hash ^= WatcherId.GetHashCode();
+      if (Stage != 0) hash ^= Stage.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Stage != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Stage);
-      }
       if (AddProgress != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(AddProgress);
       }
+      if (Stage != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Stage);
+      }
       if (WatcherId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(WatcherId);
       }
       if (_unknownFields != null) {
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Stage != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Stage);
-      }
       if (AddProgress != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(AddProgress);
       }
+      if (Stage != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Stage);
+      }
       if (WatcherId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteUInt32(WatcherId);
       }
       if (_unknownFields != null) {
@@ -219,11 +223,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (AddProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AddProgress);
       }
-      if (Stage != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Stage);
-      }
       if (WatcherId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WatcherId);
+      }
+      if (Stage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Stage);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,11 +244,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.AddProgress != 0) {
         AddProgress = other.AddProgress;
       }
-      if (other.Stage != 0) {
-        Stage = other.Stage;
-      }
       if (other.WatcherId != 0) {
         WatcherId = other.WatcherId;
+      }
+      if (other.Stage != 0) {
+        Stage = other.Stage;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,14 +266,14 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            Stage = input.ReadUInt32();
-            break;
-          }
-          case 32: {
             AddProgress = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
+            Stage = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             WatcherId = input.ReadUInt32();
             break;
           }
@@ -289,14 +293,14 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            Stage = input.ReadUInt32();
-            break;
-          }
-          case 32: {
             AddProgress = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
+            Stage = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             WatcherId = input.ReadUInt32();
             break;
           }

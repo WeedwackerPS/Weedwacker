@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static InstableSprayEnterDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJJbnN0YWJsZVNwcmF5RW50ZXJEdW5nZW9uUmVxLnByb3RvGh1JbnN0YWJs",
-            "ZVNwcmF5QXZhdGFySW5mby5wcm90byJ4ChxJbnN0YWJsZVNwcmF5RW50ZXJE",
-            "dW5nZW9uUmVxEhAKCHN0YWdlX2lkGA0gASgNEhIKCmRpZmZpY3VsdHkYAiAB",
-            "KA0SMgoQYXZhdGFyX2luZm9fbGlzdBgHIAMoCzIYLkluc3RhYmxlU3ByYXlB",
-            "dmF0YXJJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiJJbnN0YWJsZVNwcmF5RW50ZXJEdW5nZW9uUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh1JbnN0YWJsZVNwcmF5QXZhdGFy",
+            "SW5mby5wcm90byKYAQocSW5zdGFibGVTcHJheUVudGVyRHVuZ2VvblJlcRIQ",
+            "CghzdGFnZV9pZBgFIAEoDRJSChBhdmF0YXJfaW5mb19saXN0GAIgAygLMjgu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JbnN0YWJsZVNwcmF5",
+            "QXZhdGFySW5mbxISCgpkaWZmaWN1bHR5GAEgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.InstableSprayEnterDungeonReq.Parser, new[]{ "StageId", "Difficulty", "AvatarInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.InstableSprayEnterDungeonReq.Parser, new[]{ "StageId", "AvatarInfoList", "Difficulty" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 24312
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 21889;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class InstableSprayEnterDungeonReq : pb::IMessage<InstableSprayEnterDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstableSprayEnterDungeonReq(InstableSprayEnterDungeonReq other) : this() {
       stageId_ = other.stageId_;
-      difficulty_ = other.difficulty_;
       avatarInfoList_ = other.avatarInfoList_.Clone();
+      difficulty_ = other.difficulty_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 13;
+    public const int StageIdFieldNumber = 5;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,8 +108,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "avatar_info_list" field.</summary>
+    public const int AvatarInfoListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> _repeated_avatarInfoList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> AvatarInfoList {
+      get { return avatarInfoList_; }
+    }
+
     /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 2;
+    public const int DifficultyFieldNumber = 1;
     private uint difficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,17 +129,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         difficulty_ = value;
       }
-    }
-
-    /// <summary>Field number for the "avatar_info_list" field.</summary>
-    public const int AvatarInfoListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> _repeated_avatarInfoList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayAvatarInfo> AvatarInfoList {
-      get { return avatarInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (StageId != other.StageId) return false;
-      if (Difficulty != other.Difficulty) return false;
       if(!avatarInfoList_.Equals(other.avatarInfoList_)) return false;
+      if (Difficulty != other.Difficulty) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
       hash ^= avatarInfoList_.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Difficulty != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(Difficulty);
       }
       avatarInfoList_.WriteTo(output, _repeated_avatarInfoList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
@@ -193,12 +197,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Difficulty != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(Difficulty);
       }
       avatarInfoList_.WriteTo(ref output, _repeated_avatarInfoList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
@@ -214,10 +218,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
+      size += avatarInfoList_.CalculateSize(_repeated_avatarInfoList_codec);
       if (Difficulty != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
       }
-      size += avatarInfoList_.CalculateSize(_repeated_avatarInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -233,10 +237,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
+      avatarInfoList_.Add(other.avatarInfoList_);
       if (other.Difficulty != 0) {
         Difficulty = other.Difficulty;
       }
-      avatarInfoList_.Add(other.avatarInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -252,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             Difficulty = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 18: {
             avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
             break;
           }
-          case 104: {
+          case 40: {
             StageId = input.ReadUInt32();
             break;
           }
@@ -279,15 +283,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             Difficulty = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 18: {
             avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
             break;
           }
-          case 104: {
+          case 40: {
             StageId = input.ReadUInt32();
             break;
           }

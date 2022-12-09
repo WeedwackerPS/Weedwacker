@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AISnapshotEntitySkillCycleReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBSVNuYXBzaG90RW50aXR5U2tpbGxDeWNsZS5wcm90byJ1ChpBSVNuYXBz",
-            "aG90RW50aXR5U2tpbGxDeWNsZRIOCgZmYWlsZWQYDCABKAgSEgoKdHJ5ZG9z",
-            "a2lsbBgIIAEoCBIPCgdzdWNjZXNzGAkgASgIEhAKCHNlbGVjdGVkGAEgASgI",
-            "EhAKCHNraWxsX2lkGAIgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBSVNuYXBzaG90RW50aXR5U2tpbGxDeWNsZS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKiAQoaQUlTbmFwc2hvdEVudGl0eVNr",
+            "aWxsQ3ljbGUSGwoTVW5rMzMwMF9JSU9JQkxFT0hFSxgOIAEoCBIQCghza2ls",
+            "bF9pZBgMIAEoDRIbChNVbmszMzAwX0FCS0ZOR0lERk1JGAcgASgIEhsKE1Vu",
+            "azMzMDBfSUZLRElNREpCREgYAiABKAgSGwoTVW5rMzMwMF9FR0lJTE1KRkVC",
+            "RRgBIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle), global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle.Parser, new[]{ "Failed", "Trydoskill", "Success", "Selected", "SkillId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle), global::Weedwacker.Shared.Network.Proto.AISnapshotEntitySkillCycle.Parser, new[]{ "Unk3300IIOIBLEOHEK", "SkillId", "Unk3300ABKFNGIDFMI", "Unk3300IFKDIMDJBDH", "Unk3300EGIILMJFEBE" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AISnapshotEntitySkillCycle(AISnapshotEntitySkillCycle other) : this() {
-      failed_ = other.failed_;
-      trydoskill_ = other.trydoskill_;
-      success_ = other.success_;
-      selected_ = other.selected_;
+      unk3300IIOIBLEOHEK_ = other.unk3300IIOIBLEOHEK_;
       skillId_ = other.skillId_;
+      unk3300ABKFNGIDFMI_ = other.unk3300ABKFNGIDFMI_;
+      unk3300IFKDIMDJBDH_ = other.unk3300IFKDIMDJBDH_;
+      unk3300EGIILMJFEBE_ = other.unk3300EGIILMJFEBE_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,56 +88,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AISnapshotEntitySkillCycle(this);
     }
 
-    /// <summary>Field number for the "failed" field.</summary>
-    public const int FailedFieldNumber = 12;
-    private bool failed_;
+    /// <summary>Field number for the "Unk3300_IIOIBLEOHEK" field.</summary>
+    public const int Unk3300IIOIBLEOHEKFieldNumber = 14;
+    private bool unk3300IIOIBLEOHEK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Failed {
-      get { return failed_; }
+    public bool Unk3300IIOIBLEOHEK {
+      get { return unk3300IIOIBLEOHEK_; }
       set {
-        failed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "trydoskill" field.</summary>
-    public const int TrydoskillFieldNumber = 8;
-    private bool trydoskill_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Trydoskill {
-      get { return trydoskill_; }
-      set {
-        trydoskill_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "success" field.</summary>
-    public const int SuccessFieldNumber = 9;
-    private bool success_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Success {
-      get { return success_; }
-      set {
-        success_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "selected" field.</summary>
-    public const int SelectedFieldNumber = 1;
-    private bool selected_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Selected {
-      get { return selected_; }
-      set {
-        selected_ = value;
+        unk3300IIOIBLEOHEK_ = value;
       }
     }
 
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 2;
+    public const int SkillIdFieldNumber = 12;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +109,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return skillId_; }
       set {
         skillId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ABKFNGIDFMI" field.</summary>
+    public const int Unk3300ABKFNGIDFMIFieldNumber = 7;
+    private bool unk3300ABKFNGIDFMI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ABKFNGIDFMI {
+      get { return unk3300ABKFNGIDFMI_; }
+      set {
+        unk3300ABKFNGIDFMI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IFKDIMDJBDH" field.</summary>
+    public const int Unk3300IFKDIMDJBDHFieldNumber = 2;
+    private bool unk3300IFKDIMDJBDH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300IFKDIMDJBDH {
+      get { return unk3300IFKDIMDJBDH_; }
+      set {
+        unk3300IFKDIMDJBDH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EGIILMJFEBE" field.</summary>
+    public const int Unk3300EGIILMJFEBEFieldNumber = 1;
+    private bool unk3300EGIILMJFEBE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300EGIILMJFEBE {
+      get { return unk3300EGIILMJFEBE_; }
+      set {
+        unk3300EGIILMJFEBE_ = value;
       }
     }
 
@@ -162,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Failed != other.Failed) return false;
-      if (Trydoskill != other.Trydoskill) return false;
-      if (Success != other.Success) return false;
-      if (Selected != other.Selected) return false;
+      if (Unk3300IIOIBLEOHEK != other.Unk3300IIOIBLEOHEK) return false;
       if (SkillId != other.SkillId) return false;
+      if (Unk3300ABKFNGIDFMI != other.Unk3300ABKFNGIDFMI) return false;
+      if (Unk3300IFKDIMDJBDH != other.Unk3300IFKDIMDJBDH) return false;
+      if (Unk3300EGIILMJFEBE != other.Unk3300EGIILMJFEBE) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Failed != false) hash ^= Failed.GetHashCode();
-      if (Trydoskill != false) hash ^= Trydoskill.GetHashCode();
-      if (Success != false) hash ^= Success.GetHashCode();
-      if (Selected != false) hash ^= Selected.GetHashCode();
+      if (Unk3300IIOIBLEOHEK != false) hash ^= Unk3300IIOIBLEOHEK.GetHashCode();
       if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (Unk3300ABKFNGIDFMI != false) hash ^= Unk3300ABKFNGIDFMI.GetHashCode();
+      if (Unk3300IFKDIMDJBDH != false) hash ^= Unk3300IFKDIMDJBDH.GetHashCode();
+      if (Unk3300EGIILMJFEBE != false) hash ^= Unk3300EGIILMJFEBE.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,25 +198,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Selected != false) {
+      if (Unk3300EGIILMJFEBE != false) {
         output.WriteRawTag(8);
-        output.WriteBool(Selected);
+        output.WriteBool(Unk3300EGIILMJFEBE);
+      }
+      if (Unk3300IFKDIMDJBDH != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300IFKDIMDJBDH);
+      }
+      if (Unk3300ABKFNGIDFMI != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Unk3300ABKFNGIDFMI);
       }
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(96);
         output.WriteUInt32(SkillId);
       }
-      if (Trydoskill != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(Trydoskill);
-      }
-      if (Success != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(Success);
-      }
-      if (Failed != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(Failed);
+      if (Unk3300IIOIBLEOHEK != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300IIOIBLEOHEK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,25 +228,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Selected != false) {
+      if (Unk3300EGIILMJFEBE != false) {
         output.WriteRawTag(8);
-        output.WriteBool(Selected);
+        output.WriteBool(Unk3300EGIILMJFEBE);
+      }
+      if (Unk3300IFKDIMDJBDH != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300IFKDIMDJBDH);
+      }
+      if (Unk3300ABKFNGIDFMI != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(Unk3300ABKFNGIDFMI);
       }
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(96);
         output.WriteUInt32(SkillId);
       }
-      if (Trydoskill != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(Trydoskill);
-      }
-      if (Success != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(Success);
-      }
-      if (Failed != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(Failed);
+      if (Unk3300IIOIBLEOHEK != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300IIOIBLEOHEK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -257,20 +258,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Failed != false) {
-        size += 1 + 1;
-      }
-      if (Trydoskill != false) {
-        size += 1 + 1;
-      }
-      if (Success != false) {
-        size += 1 + 1;
-      }
-      if (Selected != false) {
+      if (Unk3300IIOIBLEOHEK != false) {
         size += 1 + 1;
       }
       if (SkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (Unk3300ABKFNGIDFMI != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300IFKDIMDJBDH != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300EGIILMJFEBE != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Failed != false) {
-        Failed = other.Failed;
-      }
-      if (other.Trydoskill != false) {
-        Trydoskill = other.Trydoskill;
-      }
-      if (other.Success != false) {
-        Success = other.Success;
-      }
-      if (other.Selected != false) {
-        Selected = other.Selected;
+      if (other.Unk3300IIOIBLEOHEK != false) {
+        Unk3300IIOIBLEOHEK = other.Unk3300IIOIBLEOHEK;
       }
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
+      }
+      if (other.Unk3300ABKFNGIDFMI != false) {
+        Unk3300ABKFNGIDFMI = other.Unk3300ABKFNGIDFMI;
+      }
+      if (other.Unk3300IFKDIMDJBDH != false) {
+        Unk3300IFKDIMDJBDH = other.Unk3300IFKDIMDJBDH;
+      }
+      if (other.Unk3300EGIILMJFEBE != false) {
+        Unk3300EGIILMJFEBE = other.Unk3300EGIILMJFEBE;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -315,23 +316,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Selected = input.ReadBool();
+            Unk3300EGIILMJFEBE = input.ReadBool();
             break;
           }
           case 16: {
-            SkillId = input.ReadUInt32();
+            Unk3300IFKDIMDJBDH = input.ReadBool();
             break;
           }
-          case 64: {
-            Trydoskill = input.ReadBool();
-            break;
-          }
-          case 72: {
-            Success = input.ReadBool();
+          case 56: {
+            Unk3300ABKFNGIDFMI = input.ReadBool();
             break;
           }
           case 96: {
-            Failed = input.ReadBool();
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300IIOIBLEOHEK = input.ReadBool();
             break;
           }
         }
@@ -350,23 +351,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Selected = input.ReadBool();
+            Unk3300EGIILMJFEBE = input.ReadBool();
             break;
           }
           case 16: {
-            SkillId = input.ReadUInt32();
+            Unk3300IFKDIMDJBDH = input.ReadBool();
             break;
           }
-          case 64: {
-            Trydoskill = input.ReadBool();
-            break;
-          }
-          case 72: {
-            Success = input.ReadBool();
+          case 56: {
+            Unk3300ABKFNGIDFMI = input.ReadBool();
             break;
           }
           case 96: {
-            Failed = input.ReadBool();
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300IIOIBLEOHEK = input.ReadBool();
             break;
           }
         }

@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SpiceActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1TcGljZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoUU3BpY2VTdGFnZURh",
-            "dGEucHJvdG8ingEKF1NwaWNlQWN0aXZpdHlEZXRhaWxJbmZvEiwKJGN1cnJl",
-            "bnRfaW5jcmVhc2VfYXZhdGFyX2ZldHRlcl90aW1lcxgPIAEoDRIpChBzcGlj",
-            "ZV9zdGFnZV9saXN0GAcgAygLMg8uU3BpY2VTdGFnZURhdGESKgoiaW5jcmVh",
-            "c2VfYXZhdGFyX2ZldHRlcl9saW1pdF90aW1lcxgNIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1TcGljZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoUU3BpY2VTdGFnZURhdGEucHJvdG8iowEK",
+            "F1NwaWNlQWN0aXZpdHlEZXRhaWxJbmZvEhsKE1VuazMzMDBfQ0lISUFKRUdD",
+            "Qk8YDiABKA0SGwoTVW5rMzMwMF9MQUtQTU1JUEJNSRgIIAEoDRJOChVzcGlj",
+            "ZV9zdGFnZV9kYXRhX2xpc3QYBiADKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlNwaWNlU3RhZ2VEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SpiceStageDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo.Parser, new[]{ "CurrentIncreaseAvatarFetterTimes", "SpiceStageList", "IncreaseAvatarFetterLimitTimes" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo.Parser, new[]{ "Unk3300CIHIAJEGCBO", "Unk3300LAKPMMIPBMI", "SpiceStageDataList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SpiceActivityDetailInfo(SpiceActivityDetailInfo other) : this() {
-      currentIncreaseAvatarFetterTimes_ = other.currentIncreaseAvatarFetterTimes_;
-      spiceStageList_ = other.spiceStageList_.Clone();
-      increaseAvatarFetterLimitTimes_ = other.increaseAvatarFetterLimitTimes_;
+      unk3300CIHIAJEGCBO_ = other.unk3300CIHIAJEGCBO_;
+      unk3300LAKPMMIPBMI_ = other.unk3300LAKPMMIPBMI_;
+      spiceStageDataList_ = other.spiceStageDataList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,39 +86,39 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SpiceActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "current_increase_avatar_fetter_times" field.</summary>
-    public const int CurrentIncreaseAvatarFetterTimesFieldNumber = 15;
-    private uint currentIncreaseAvatarFetterTimes_;
+    /// <summary>Field number for the "Unk3300_CIHIAJEGCBO" field.</summary>
+    public const int Unk3300CIHIAJEGCBOFieldNumber = 14;
+    private uint unk3300CIHIAJEGCBO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurrentIncreaseAvatarFetterTimes {
-      get { return currentIncreaseAvatarFetterTimes_; }
+    public uint Unk3300CIHIAJEGCBO {
+      get { return unk3300CIHIAJEGCBO_; }
       set {
-        currentIncreaseAvatarFetterTimes_ = value;
+        unk3300CIHIAJEGCBO_ = value;
       }
     }
 
-    /// <summary>Field number for the "spice_stage_list" field.</summary>
-    public const int SpiceStageListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SpiceStageData> _repeated_spiceStageList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.SpiceStageData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData> spiceStageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData>();
+    /// <summary>Field number for the "Unk3300_LAKPMMIPBMI" field.</summary>
+    public const int Unk3300LAKPMMIPBMIFieldNumber = 8;
+    private uint unk3300LAKPMMIPBMI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData> SpiceStageList {
-      get { return spiceStageList_; }
+    public uint Unk3300LAKPMMIPBMI {
+      get { return unk3300LAKPMMIPBMI_; }
+      set {
+        unk3300LAKPMMIPBMI_ = value;
+      }
     }
 
-    /// <summary>Field number for the "increase_avatar_fetter_limit_times" field.</summary>
-    public const int IncreaseAvatarFetterLimitTimesFieldNumber = 13;
-    private uint increaseAvatarFetterLimitTimes_;
+    /// <summary>Field number for the "spice_stage_data_list" field.</summary>
+    public const int SpiceStageDataListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SpiceStageData> _repeated_spiceStageDataList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.SpiceStageData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData> spiceStageDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint IncreaseAvatarFetterLimitTimes {
-      get { return increaseAvatarFetterLimitTimes_; }
-      set {
-        increaseAvatarFetterLimitTimes_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SpiceStageData> SpiceStageDataList {
+      get { return spiceStageDataList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurrentIncreaseAvatarFetterTimes != other.CurrentIncreaseAvatarFetterTimes) return false;
-      if(!spiceStageList_.Equals(other.spiceStageList_)) return false;
-      if (IncreaseAvatarFetterLimitTimes != other.IncreaseAvatarFetterLimitTimes) return false;
+      if (Unk3300CIHIAJEGCBO != other.Unk3300CIHIAJEGCBO) return false;
+      if (Unk3300LAKPMMIPBMI != other.Unk3300LAKPMMIPBMI) return false;
+      if(!spiceStageDataList_.Equals(other.spiceStageDataList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurrentIncreaseAvatarFetterTimes != 0) hash ^= CurrentIncreaseAvatarFetterTimes.GetHashCode();
-      hash ^= spiceStageList_.GetHashCode();
-      if (IncreaseAvatarFetterLimitTimes != 0) hash ^= IncreaseAvatarFetterLimitTimes.GetHashCode();
+      if (Unk3300CIHIAJEGCBO != 0) hash ^= Unk3300CIHIAJEGCBO.GetHashCode();
+      if (Unk3300LAKPMMIPBMI != 0) hash ^= Unk3300LAKPMMIPBMI.GetHashCode();
+      hash ^= spiceStageDataList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,14 +167,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      spiceStageList_.WriteTo(output, _repeated_spiceStageList_codec);
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(IncreaseAvatarFetterLimitTimes);
+      spiceStageDataList_.WriteTo(output, _repeated_spiceStageDataList_codec);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LAKPMMIPBMI);
       }
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300CIHIAJEGCBO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -186,14 +186,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      spiceStageList_.WriteTo(ref output, _repeated_spiceStageList_codec);
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(IncreaseAvatarFetterLimitTimes);
+      spiceStageDataList_.WriteTo(ref output, _repeated_spiceStageDataList_codec);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LAKPMMIPBMI);
       }
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300CIHIAJEGCBO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -205,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CIHIAJEGCBO);
       }
-      size += spiceStageList_.CalculateSize(_repeated_spiceStageList_codec);
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IncreaseAvatarFetterLimitTimes);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LAKPMMIPBMI);
       }
+      size += spiceStageDataList_.CalculateSize(_repeated_spiceStageDataList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -224,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurrentIncreaseAvatarFetterTimes != 0) {
-        CurrentIncreaseAvatarFetterTimes = other.CurrentIncreaseAvatarFetterTimes;
+      if (other.Unk3300CIHIAJEGCBO != 0) {
+        Unk3300CIHIAJEGCBO = other.Unk3300CIHIAJEGCBO;
       }
-      spiceStageList_.Add(other.spiceStageList_);
-      if (other.IncreaseAvatarFetterLimitTimes != 0) {
-        IncreaseAvatarFetterLimitTimes = other.IncreaseAvatarFetterLimitTimes;
+      if (other.Unk3300LAKPMMIPBMI != 0) {
+        Unk3300LAKPMMIPBMI = other.Unk3300LAKPMMIPBMI;
       }
+      spiceStageDataList_.Add(other.spiceStageDataList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -246,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            spiceStageList_.AddEntriesFrom(input, _repeated_spiceStageList_codec);
+          case 50: {
+            spiceStageDataList_.AddEntriesFrom(input, _repeated_spiceStageDataList_codec);
             break;
           }
-          case 104: {
-            IncreaseAvatarFetterLimitTimes = input.ReadUInt32();
+          case 64: {
+            Unk3300LAKPMMIPBMI = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CurrentIncreaseAvatarFetterTimes = input.ReadUInt32();
+          case 112: {
+            Unk3300CIHIAJEGCBO = input.ReadUInt32();
             break;
           }
         }
@@ -273,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            spiceStageList_.AddEntriesFrom(ref input, _repeated_spiceStageList_codec);
+          case 50: {
+            spiceStageDataList_.AddEntriesFrom(ref input, _repeated_spiceStageDataList_codec);
             break;
           }
-          case 104: {
-            IncreaseAvatarFetterLimitTimes = input.ReadUInt32();
+          case 64: {
+            Unk3300LAKPMMIPBMI = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CurrentIncreaseAvatarFetterTimes = input.ReadUInt32();
+          case 112: {
+            Unk3300CIHIAJEGCBO = input.ReadUInt32();
             break;
           }
         }

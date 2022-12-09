@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestGlobalVarNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpRdWVzdEdsb2JhbFZhck5vdGlmeS5wcm90bxoUUXVlc3RHbG9iYWxWYXIu",
-            "cHJvdG8iOQoUUXVlc3RHbG9iYWxWYXJOb3RpZnkSIQoIdmFyX2xpc3QYASAD",
-            "KAsyDy5RdWVzdEdsb2JhbFZhckIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpRdWVzdEdsb2JhbFZhck5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoUUXVlc3RHbG9iYWxWYXIucHJvdG8iWQoUUXVl",
+            "c3RHbG9iYWxWYXJOb3RpZnkSQQoIdmFyX2xpc3QYCCADKAsyLy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlF1ZXN0R2xvYmFsVmFyYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.QuestGlobalVarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 434
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 480;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestGlobalVarNotify : pb::IMessage<QuestGlobalVarNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "var_list" field.</summary>
-    public const int VarListFieldNumber = 1;
+    public const int VarListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.QuestGlobalVar> _repeated_varList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.QuestGlobalVar.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.QuestGlobalVar.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.QuestGlobalVar> varList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.QuestGlobalVar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 66: {
             varList_.AddEntriesFrom(input, _repeated_varList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 66: {
             varList_.AddEntriesFrom(ref input, _repeated_varList_codec);
             break;
           }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneEntitiesMovesRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTY2VuZUVudGl0aWVzTW92ZXNSc3AucHJvdG8aGEVudGl0eU1vdmVGYWls",
-            "SW5mby5wcm90byJQChVTY2VuZUVudGl0aWVzTW92ZXNSc3ASNwoaZW50aXR5",
-            "X21vdmVfZmFpbF9pbmZvX2xpc3QYCyADKAsyEy5FbnRpdHlNb3ZlRmFpbElu",
-            "Zm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChtTY2VuZUVudGl0aWVzTW92ZXNSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGEVudGl0eU1vdmVGYWlsSW5mby5wcm90byJw",
+            "ChVTY2VuZUVudGl0aWVzTW92ZXNSc3ASVwoaZW50aXR5X21vdmVfZmFpbF9p",
+            "bmZvX2xpc3QYCiADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkVudGl0eU1vdmVGYWlsSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,12 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 255
-  /// EnetChannelId: 1
-  /// EnetIsReliable: false
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 245;
+  ///   ENET_CHANNEL_ID = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneEntitiesMovesRsp : pb::IMessage<SceneEntitiesMovesRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_move_fail_info_list" field.</summary>
-    public const int EntityMoveFailInfoListFieldNumber = 11;
+    public const int EntityMoveFailInfoListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfo> _repeated_entityMoveFailInfoList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfo.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfo> entityMoveFailInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EntityMoveFailInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 82: {
             entityMoveFailInfoList_.AddEntriesFrom(input, _repeated_entityMoveFailInfoList_codec);
             break;
           }
@@ -211,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 82: {
             entityMoveFailInfoList_.AddEntriesFrom(ref input, _repeated_entityMoveFailInfoList_codec);
             break;
           }

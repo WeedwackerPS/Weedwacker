@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MainCoopUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpNYWluQ29vcFVwZGF0ZU5vdGlmeS5wcm90bxoOTWFpbkNvb3AucHJvdG8i",
-            "OQoUTWFpbkNvb3BVcGRhdGVOb3RpZnkSIQoObWFpbl9jb29wX2xpc3QYBSAD",
-            "KAsyCS5NYWluQ29vcEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChpNYWluQ29vcFVwZGF0ZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoOTWFpbkNvb3AucHJvdG8iWQoUTWFpbkNvb3BV",
+            "cGRhdGVOb3RpZnkSQQoObWFpbl9jb29wX2xpc3QYCiADKAsyKS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1haW5Db29wYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MainCoopReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1968
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1991;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MainCoopUpdateNotify : pb::IMessage<MainCoopUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "main_coop_list" field.</summary>
-    public const int MainCoopListFieldNumber = 5;
+    public const int MainCoopListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MainCoop> _repeated_mainCoopList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.MainCoop.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.MainCoop.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MainCoop> mainCoopList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MainCoop>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 82: {
             mainCoopList_.AddEntriesFrom(input, _repeated_mainCoopList_codec);
             break;
           }
@@ -210,7 +214,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 82: {
             mainCoopList_.AddEntriesFrom(ref input, _repeated_mainCoopList_codec);
             break;
           }

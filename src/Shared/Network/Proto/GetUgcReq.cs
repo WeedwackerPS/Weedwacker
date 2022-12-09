@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetUgcReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9HZXRVZ2NSZXEucHJvdG8aEEdldFVnY1R5cGUucHJvdG8aEVJlY29yZFVz",
-            "YWdlLnByb3RvGg1VZ2NUeXBlLnByb3RvIp4BCglHZXRVZ2NSZXESGgoIdWdj",
-            "X3R5cGUYCCABKA4yCC5VZ2NUeXBlEhAKCHVnY19ndWlkGAUgASgEEiYKEHVn",
-            "Y19yZWNvcmRfdXNhZ2UYBiABKA4yDC5SZWNvcmRVc2FnZRIYChBpc19yZXF1",
-            "aXJlX2JyaWVmGAsgASgIEiEKDGdldF91Z2NfdHlwZRgNIAEoDjILLkdldFVn",
-            "Y1R5cGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "Cg9HZXRVZ2NSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8aEEdldFVnY1R5cGUucHJvdG8aEVJlY29yZFVzYWdlLnByb3RvGg1V",
+            "Z2NUeXBlLnByb3RvIv4BCglHZXRVZ2NSZXESEAoIdWdjX2d1aWQYBiABKAQS",
+            "OgoIdWdjX3R5cGUYAiABKA4yKC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlVnY1R5cGUSQQoMZ2V0X3VnY190eXBlGAwgASgOMisuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HZXRVZ2NUeXBlEkYKEHVnY19y",
+            "ZWNvcmRfdXNhZ2UYDSABKA4yLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlJlY29yZFVzYWdlEhgKEGlzX3JlcXVpcmVfYnJpZWYYByABKAhi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GetUgcTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RecordUsageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetUgcReq), global::Weedwacker.Shared.Network.Proto.GetUgcReq.Parser, new[]{ "UgcType", "UgcGuid", "UgcRecordUsage", "IsRequireBrief", "GetUgcType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetUgcReq), global::Weedwacker.Shared.Network.Proto.GetUgcReq.Parser, new[]{ "UgcGuid", "UgcType", "GetUgcType", "UgcRecordUsage", "IsRequireBrief" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6326
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6342;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetUgcReq : pb::IMessage<GetUgcReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,11 +87,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetUgcReq(GetUgcReq other) : this() {
-      ugcType_ = other.ugcType_;
       ugcGuid_ = other.ugcGuid_;
+      ugcType_ = other.ugcType_;
+      getUgcType_ = other.getUgcType_;
       ugcRecordUsage_ = other.ugcRecordUsage_;
       isRequireBrief_ = other.isRequireBrief_;
-      getUgcType_ = other.getUgcType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,20 +101,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetUgcReq(this);
     }
 
-    /// <summary>Field number for the "ugc_type" field.</summary>
-    public const int UgcTypeFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.UgcType ugcType_ = global::Weedwacker.Shared.Network.Proto.UgcType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.UgcType UgcType {
-      get { return ugcType_; }
-      set {
-        ugcType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 5;
+    public const int UgcGuidFieldNumber = 6;
     private ulong ugcGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,8 +113,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "ugc_type" field.</summary>
+    public const int UgcTypeFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.UgcType ugcType_ = global::Weedwacker.Shared.Network.Proto.UgcType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.UgcType UgcType {
+      get { return ugcType_; }
+      set {
+        ugcType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "get_ugc_type" field.</summary>
+    public const int GetUgcTypeFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.GetUgcType getUgcType_ = global::Weedwacker.Shared.Network.Proto.GetUgcType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GetUgcType GetUgcType {
+      get { return getUgcType_; }
+      set {
+        getUgcType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "ugc_record_usage" field.</summary>
-    public const int UgcRecordUsageFieldNumber = 6;
+    public const int UgcRecordUsageFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.RecordUsage ugcRecordUsage_ = global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_require_brief" field.</summary>
-    public const int IsRequireBriefFieldNumber = 11;
+    public const int IsRequireBriefFieldNumber = 7;
     private bool isRequireBrief_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,18 +158,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isRequireBrief_; }
       set {
         isRequireBrief_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "get_ugc_type" field.</summary>
-    public const int GetUgcTypeFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.GetUgcType getUgcType_ = global::Weedwacker.Shared.Network.Proto.GetUgcType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GetUgcType GetUgcType {
-      get { return getUgcType_; }
-      set {
-        getUgcType_ = value;
       }
     }
 
@@ -170,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UgcType != other.UgcType) return false;
       if (UgcGuid != other.UgcGuid) return false;
+      if (UgcType != other.UgcType) return false;
+      if (GetUgcType != other.GetUgcType) return false;
       if (UgcRecordUsage != other.UgcRecordUsage) return false;
       if (IsRequireBrief != other.IsRequireBrief) return false;
-      if (GetUgcType != other.GetUgcType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -182,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) hash ^= UgcType.GetHashCode();
       if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) hash ^= UgcType.GetHashCode();
+      if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) hash ^= GetUgcType.GetHashCode();
       if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) hash ^= UgcRecordUsage.GetHashCode();
       if (IsRequireBrief != false) hash ^= IsRequireBrief.GetHashCode();
-      if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) hash ^= GetUgcType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,25 +211,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(UgcGuid);
-      }
-      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) UgcRecordUsage);
-      }
       if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteEnum((int) UgcType);
       }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(UgcGuid);
+      }
       if (IsRequireBrief != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteBool(IsRequireBrief);
       }
       if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteEnum((int) GetUgcType);
+      }
+      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) UgcRecordUsage);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -235,25 +241,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UgcGuid != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(UgcGuid);
-      }
-      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) UgcRecordUsage);
-      }
       if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteEnum((int) UgcType);
       }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(UgcGuid);
+      }
       if (IsRequireBrief != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteBool(IsRequireBrief);
       }
       if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteEnum((int) GetUgcType);
+      }
+      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) UgcRecordUsage);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -265,20 +271,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      }
       if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcType);
       }
-      if (UgcGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GetUgcType);
       }
       if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcRecordUsage);
       }
       if (IsRequireBrief != false) {
         size += 1 + 1;
-      }
-      if (GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GetUgcType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -292,20 +298,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
+      }
       if (other.UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
         UgcType = other.UgcType;
       }
-      if (other.UgcGuid != 0UL) {
-        UgcGuid = other.UgcGuid;
+      if (other.GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
+        GetUgcType = other.GetUgcType;
       }
       if (other.UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
         UgcRecordUsage = other.UgcRecordUsage;
       }
       if (other.IsRequireBrief != false) {
         IsRequireBrief = other.IsRequireBrief;
-      }
-      if (other.GetUgcType != global::Weedwacker.Shared.Network.Proto.GetUgcType.None) {
-        GetUgcType = other.GetUgcType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -322,24 +328,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            UgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 48: {
-            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
-            break;
-          }
-          case 64: {
+          case 16: {
             UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
             break;
           }
-          case 88: {
+          case 48: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
             IsRequireBrief = input.ReadBool();
             break;
           }
-          case 104: {
+          case 96: {
             GetUgcType = (global::Weedwacker.Shared.Network.Proto.GetUgcType) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
             break;
           }
         }
@@ -357,24 +363,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            UgcGuid = input.ReadUInt64();
-            break;
-          }
-          case 48: {
-            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
-            break;
-          }
-          case 64: {
+          case 16: {
             UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
             break;
           }
-          case 88: {
+          case 48: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
             IsRequireBrief = input.ReadBool();
             break;
           }
-          case 104: {
+          case 96: {
             GetUgcType = (global::Weedwacker.Shared.Network.Proto.GetUgcType) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GearColumnInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHZWFyQ29sdW1uSW5mby5wcm90byJ8Cg5HZWFyQ29sdW1uSW5mbxIZChFn",
-            "ZWFyX2NvbHVtbl9pbmRleBgHIAEoDRITCgtpc19vdmVydHVybhgDIAEoCBIQ",
-            "CghoYXNfZ2VhchgCIAEoCBIPCgdnZWFyX2lkGAsgASgNEhcKD3BsYWNlbWVu",
-            "dF9sYXllchgGIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChRHZWFyQ29sdW1uSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byKVAQoOR2VhckNvbHVtbkluZm8SGwoTVW5rMzMwMF9HSElC",
+            "UE9JQUlHRhgGIAEoDRIbChNVbmszMzAwX0tFRUdMSE1CQUtNGAggASgIEhsK",
+            "E1VuazMzMDBfRURMTE1CR05ERUgYAiABKA0SDwoHZ2Vhcl9pZBgHIAEoDRIb",
+            "ChNVbmszMzAwX0hHSUtLRE9CQU5LGA8gASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearColumnInfo), global::Weedwacker.Shared.Network.Proto.GearColumnInfo.Parser, new[]{ "GearColumnIndex", "IsOverturn", "HasGear", "GearId", "PlacementLayer" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GearColumnInfo), global::Weedwacker.Shared.Network.Proto.GearColumnInfo.Parser, new[]{ "Unk3300GHIBPOIAIGF", "Unk3300KEEGLHMBAKM", "Unk3300EDLLMBGNDEH", "GearId", "Unk3300HGIKKDOBANK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GearColumnInfo(GearColumnInfo other) : this() {
-      gearColumnIndex_ = other.gearColumnIndex_;
-      isOverturn_ = other.isOverturn_;
-      hasGear_ = other.hasGear_;
+      unk3300GHIBPOIAIGF_ = other.unk3300GHIBPOIAIGF_;
+      unk3300KEEGLHMBAKM_ = other.unk3300KEEGLHMBAKM_;
+      unk3300EDLLMBGNDEH_ = other.unk3300EDLLMBGNDEH_;
       gearId_ = other.gearId_;
-      placementLayer_ = other.placementLayer_;
+      unk3300HGIKKDOBANK_ = other.unk3300HGIKKDOBANK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,44 +87,44 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GearColumnInfo(this);
     }
 
-    /// <summary>Field number for the "gear_column_index" field.</summary>
-    public const int GearColumnIndexFieldNumber = 7;
-    private uint gearColumnIndex_;
+    /// <summary>Field number for the "Unk3300_GHIBPOIAIGF" field.</summary>
+    public const int Unk3300GHIBPOIAIGFFieldNumber = 6;
+    private uint unk3300GHIBPOIAIGF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GearColumnIndex {
-      get { return gearColumnIndex_; }
+    public uint Unk3300GHIBPOIAIGF {
+      get { return unk3300GHIBPOIAIGF_; }
       set {
-        gearColumnIndex_ = value;
+        unk3300GHIBPOIAIGF_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_overturn" field.</summary>
-    public const int IsOverturnFieldNumber = 3;
-    private bool isOverturn_;
+    /// <summary>Field number for the "Unk3300_KEEGLHMBAKM" field.</summary>
+    public const int Unk3300KEEGLHMBAKMFieldNumber = 8;
+    private bool unk3300KEEGLHMBAKM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOverturn {
-      get { return isOverturn_; }
+    public bool Unk3300KEEGLHMBAKM {
+      get { return unk3300KEEGLHMBAKM_; }
       set {
-        isOverturn_ = value;
+        unk3300KEEGLHMBAKM_ = value;
       }
     }
 
-    /// <summary>Field number for the "has_gear" field.</summary>
-    public const int HasGearFieldNumber = 2;
-    private bool hasGear_;
+    /// <summary>Field number for the "Unk3300_EDLLMBGNDEH" field.</summary>
+    public const int Unk3300EDLLMBGNDEHFieldNumber = 2;
+    private uint unk3300EDLLMBGNDEH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasGear {
-      get { return hasGear_; }
+    public uint Unk3300EDLLMBGNDEH {
+      get { return unk3300EDLLMBGNDEH_; }
       set {
-        hasGear_ = value;
+        unk3300EDLLMBGNDEH_ = value;
       }
     }
 
     /// <summary>Field number for the "gear_id" field.</summary>
-    public const int GearIdFieldNumber = 11;
+    public const int GearIdFieldNumber = 7;
     private uint gearId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,15 +135,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "placement_layer" field.</summary>
-    public const int PlacementLayerFieldNumber = 6;
-    private uint placementLayer_;
+    /// <summary>Field number for the "Unk3300_HGIKKDOBANK" field.</summary>
+    public const int Unk3300HGIKKDOBANKFieldNumber = 15;
+    private bool unk3300HGIKKDOBANK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlacementLayer {
-      get { return placementLayer_; }
+    public bool Unk3300HGIKKDOBANK {
+      get { return unk3300HGIKKDOBANK_; }
       set {
-        placementLayer_ = value;
+        unk3300HGIKKDOBANK_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GearColumnIndex != other.GearColumnIndex) return false;
-      if (IsOverturn != other.IsOverturn) return false;
-      if (HasGear != other.HasGear) return false;
+      if (Unk3300GHIBPOIAIGF != other.Unk3300GHIBPOIAIGF) return false;
+      if (Unk3300KEEGLHMBAKM != other.Unk3300KEEGLHMBAKM) return false;
+      if (Unk3300EDLLMBGNDEH != other.Unk3300EDLLMBGNDEH) return false;
       if (GearId != other.GearId) return false;
-      if (PlacementLayer != other.PlacementLayer) return false;
+      if (Unk3300HGIKKDOBANK != other.Unk3300HGIKKDOBANK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GearColumnIndex != 0) hash ^= GearColumnIndex.GetHashCode();
-      if (IsOverturn != false) hash ^= IsOverturn.GetHashCode();
-      if (HasGear != false) hash ^= HasGear.GetHashCode();
+      if (Unk3300GHIBPOIAIGF != 0) hash ^= Unk3300GHIBPOIAIGF.GetHashCode();
+      if (Unk3300KEEGLHMBAKM != false) hash ^= Unk3300KEEGLHMBAKM.GetHashCode();
+      if (Unk3300EDLLMBGNDEH != 0) hash ^= Unk3300EDLLMBGNDEH.GetHashCode();
       if (GearId != 0) hash ^= GearId.GetHashCode();
-      if (PlacementLayer != 0) hash ^= PlacementLayer.GetHashCode();
+      if (Unk3300HGIKKDOBANK != false) hash ^= Unk3300HGIKKDOBANK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,25 +197,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasGear != false) {
+      if (Unk3300EDLLMBGNDEH != 0) {
         output.WriteRawTag(16);
-        output.WriteBool(HasGear);
+        output.WriteUInt32(Unk3300EDLLMBGNDEH);
       }
-      if (IsOverturn != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsOverturn);
-      }
-      if (PlacementLayer != 0) {
+      if (Unk3300GHIBPOIAIGF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(PlacementLayer);
-      }
-      if (GearColumnIndex != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GearColumnIndex);
+        output.WriteUInt32(Unk3300GHIBPOIAIGF);
       }
       if (GearId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(GearId);
+      }
+      if (Unk3300KEEGLHMBAKM != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300KEEGLHMBAKM);
+      }
+      if (Unk3300HGIKKDOBANK != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(Unk3300HGIKKDOBANK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,25 +227,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasGear != false) {
+      if (Unk3300EDLLMBGNDEH != 0) {
         output.WriteRawTag(16);
-        output.WriteBool(HasGear);
+        output.WriteUInt32(Unk3300EDLLMBGNDEH);
       }
-      if (IsOverturn != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsOverturn);
-      }
-      if (PlacementLayer != 0) {
+      if (Unk3300GHIBPOIAIGF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(PlacementLayer);
-      }
-      if (GearColumnIndex != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(GearColumnIndex);
+        output.WriteUInt32(Unk3300GHIBPOIAIGF);
       }
       if (GearId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(GearId);
+      }
+      if (Unk3300KEEGLHMBAKM != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300KEEGLHMBAKM);
+      }
+      if (Unk3300HGIKKDOBANK != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(Unk3300HGIKKDOBANK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -257,20 +257,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GearColumnIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GearColumnIndex);
+      if (Unk3300GHIBPOIAIGF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GHIBPOIAIGF);
       }
-      if (IsOverturn != false) {
+      if (Unk3300KEEGLHMBAKM != false) {
         size += 1 + 1;
       }
-      if (HasGear != false) {
-        size += 1 + 1;
+      if (Unk3300EDLLMBGNDEH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EDLLMBGNDEH);
       }
       if (GearId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GearId);
       }
-      if (PlacementLayer != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlacementLayer);
+      if (Unk3300HGIKKDOBANK != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GearColumnIndex != 0) {
-        GearColumnIndex = other.GearColumnIndex;
+      if (other.Unk3300GHIBPOIAIGF != 0) {
+        Unk3300GHIBPOIAIGF = other.Unk3300GHIBPOIAIGF;
       }
-      if (other.IsOverturn != false) {
-        IsOverturn = other.IsOverturn;
+      if (other.Unk3300KEEGLHMBAKM != false) {
+        Unk3300KEEGLHMBAKM = other.Unk3300KEEGLHMBAKM;
       }
-      if (other.HasGear != false) {
-        HasGear = other.HasGear;
+      if (other.Unk3300EDLLMBGNDEH != 0) {
+        Unk3300EDLLMBGNDEH = other.Unk3300EDLLMBGNDEH;
       }
       if (other.GearId != 0) {
         GearId = other.GearId;
       }
-      if (other.PlacementLayer != 0) {
-        PlacementLayer = other.PlacementLayer;
+      if (other.Unk3300HGIKKDOBANK != false) {
+        Unk3300HGIKKDOBANK = other.Unk3300HGIKKDOBANK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -315,23 +315,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            HasGear = input.ReadBool();
-            break;
-          }
-          case 24: {
-            IsOverturn = input.ReadBool();
+            Unk3300EDLLMBGNDEH = input.ReadUInt32();
             break;
           }
           case 48: {
-            PlacementLayer = input.ReadUInt32();
+            Unk3300GHIBPOIAIGF = input.ReadUInt32();
             break;
           }
           case 56: {
-            GearColumnIndex = input.ReadUInt32();
+            GearId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            GearId = input.ReadUInt32();
+          case 64: {
+            Unk3300KEEGLHMBAKM = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Unk3300HGIKKDOBANK = input.ReadBool();
             break;
           }
         }
@@ -350,23 +350,23 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            HasGear = input.ReadBool();
-            break;
-          }
-          case 24: {
-            IsOverturn = input.ReadBool();
+            Unk3300EDLLMBGNDEH = input.ReadUInt32();
             break;
           }
           case 48: {
-            PlacementLayer = input.ReadUInt32();
+            Unk3300GHIBPOIAIGF = input.ReadUInt32();
             break;
           }
           case 56: {
-            GearColumnIndex = input.ReadUInt32();
+            GearId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            GearId = input.ReadUInt32();
+          case 64: {
+            Unk3300KEEGLHMBAKM = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Unk3300HGIKKDOBANK = input.ReadBool();
             break;
           }
         }

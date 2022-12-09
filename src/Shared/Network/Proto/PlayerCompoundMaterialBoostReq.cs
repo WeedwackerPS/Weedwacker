@@ -24,16 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerCompoundMaterialBoostReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRQbGF5ZXJDb21wb3VuZE1hdGVyaWFsQm9vc3RSZXEucHJvdG8ilQEKHlBs",
-            "YXllckNvbXBvdW5kTWF0ZXJpYWxCb29zdFJlcRIUCgxpc19ib29zdF9hbGwY",
-            "CCABKAgSIAoYdGFyZ2V0X2NvbXBvdW5kX2dyb3VwX2lkGA4gASgNEhsKE2Nv",
-            "bnN1bWVfbWF0ZXJpYWxfaWQYCSABKA0SHgoWY29uc3VtZV9tYXRlcmlhbF9j",
-            "b3VudBgBIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiRQbGF5ZXJDb21wb3VuZE1hdGVyaWFsQm9vc3RSZXEucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ijQEKHlBsYXllckNvbXBvdW5k",
+            "TWF0ZXJpYWxCb29zdFJlcRIUCgxpc19ib29zdF9hbGwYDSABKAgSGwoTVW5r",
+            "MzMwMF9QUERETE9EQklLRxgIIAEoDRIbChNVbmszMzAwX0JHSEZCQ0xIQ0lH",
+            "GAUgASgNEhsKE1VuazMzMDBfRkVHUEhIRkxGTE0YCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerCompoundMaterialBoostReq), global::Weedwacker.Shared.Network.Proto.PlayerCompoundMaterialBoostReq.Parser, new[]{ "IsBoostAll", "TargetCompoundGroupId", "ConsumeMaterialId", "ConsumeMaterialCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerCompoundMaterialBoostReq), global::Weedwacker.Shared.Network.Proto.PlayerCompoundMaterialBoostReq.Parser, new[]{ "IsBoostAll", "Unk3300PPDDLODBIKG", "Unk3300BGHFBCLHCIG", "Unk3300FEGPHHFLFLM" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 185
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 159;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerCompoundMaterialBoostReq : pb::IMessage<PlayerCompoundMaterialBoostReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerCompoundMaterialBoostReq(PlayerCompoundMaterialBoostReq other) : this() {
       isBoostAll_ = other.isBoostAll_;
-      targetCompoundGroupId_ = other.targetCompoundGroupId_;
-      consumeMaterialId_ = other.consumeMaterialId_;
-      consumeMaterialCount_ = other.consumeMaterialCount_;
+      unk3300PPDDLODBIKG_ = other.unk3300PPDDLODBIKG_;
+      unk3300BGHFBCLHCIG_ = other.unk3300BGHFBCLHCIG_;
+      unk3300FEGPHHFLFLM_ = other.unk3300FEGPHHFLFLM_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_boost_all" field.</summary>
-    public const int IsBoostAllFieldNumber = 8;
+    public const int IsBoostAllFieldNumber = 13;
     private bool isBoostAll_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,39 +108,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "target_compound_group_id" field.</summary>
-    public const int TargetCompoundGroupIdFieldNumber = 14;
-    private uint targetCompoundGroupId_;
+    /// <summary>Field number for the "Unk3300_PPDDLODBIKG" field.</summary>
+    public const int Unk3300PPDDLODBIKGFieldNumber = 8;
+    private uint unk3300PPDDLODBIKG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetCompoundGroupId {
-      get { return targetCompoundGroupId_; }
+    public uint Unk3300PPDDLODBIKG {
+      get { return unk3300PPDDLODBIKG_; }
       set {
-        targetCompoundGroupId_ = value;
+        unk3300PPDDLODBIKG_ = value;
       }
     }
 
-    /// <summary>Field number for the "consume_material_id" field.</summary>
-    public const int ConsumeMaterialIdFieldNumber = 9;
-    private uint consumeMaterialId_;
+    /// <summary>Field number for the "Unk3300_BGHFBCLHCIG" field.</summary>
+    public const int Unk3300BGHFBCLHCIGFieldNumber = 5;
+    private uint unk3300BGHFBCLHCIG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConsumeMaterialId {
-      get { return consumeMaterialId_; }
+    public uint Unk3300BGHFBCLHCIG {
+      get { return unk3300BGHFBCLHCIG_; }
       set {
-        consumeMaterialId_ = value;
+        unk3300BGHFBCLHCIG_ = value;
       }
     }
 
-    /// <summary>Field number for the "consume_material_count" field.</summary>
-    public const int ConsumeMaterialCountFieldNumber = 1;
-    private uint consumeMaterialCount_;
+    /// <summary>Field number for the "Unk3300_FEGPHHFLFLM" field.</summary>
+    public const int Unk3300FEGPHHFLFLMFieldNumber = 11;
+    private uint unk3300FEGPHHFLFLM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConsumeMaterialCount {
-      get { return consumeMaterialCount_; }
+    public uint Unk3300FEGPHHFLFLM {
+      get { return unk3300FEGPHHFLFLM_; }
       set {
-        consumeMaterialCount_ = value;
+        unk3300FEGPHHFLFLM_ = value;
       }
     }
 
@@ -157,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsBoostAll != other.IsBoostAll) return false;
-      if (TargetCompoundGroupId != other.TargetCompoundGroupId) return false;
-      if (ConsumeMaterialId != other.ConsumeMaterialId) return false;
-      if (ConsumeMaterialCount != other.ConsumeMaterialCount) return false;
+      if (Unk3300PPDDLODBIKG != other.Unk3300PPDDLODBIKG) return false;
+      if (Unk3300BGHFBCLHCIG != other.Unk3300BGHFBCLHCIG) return false;
+      if (Unk3300FEGPHHFLFLM != other.Unk3300FEGPHHFLFLM) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -168,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsBoostAll != false) hash ^= IsBoostAll.GetHashCode();
-      if (TargetCompoundGroupId != 0) hash ^= TargetCompoundGroupId.GetHashCode();
-      if (ConsumeMaterialId != 0) hash ^= ConsumeMaterialId.GetHashCode();
-      if (ConsumeMaterialCount != 0) hash ^= ConsumeMaterialCount.GetHashCode();
+      if (Unk3300PPDDLODBIKG != 0) hash ^= Unk3300PPDDLODBIKG.GetHashCode();
+      if (Unk3300BGHFBCLHCIG != 0) hash ^= Unk3300BGHFBCLHCIG.GetHashCode();
+      if (Unk3300FEGPHHFLFLM != 0) hash ^= Unk3300FEGPHHFLFLM.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -189,21 +192,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ConsumeMaterialCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ConsumeMaterialCount);
+      if (Unk3300BGHFBCLHCIG != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BGHFBCLHCIG);
+      }
+      if (Unk3300PPDDLODBIKG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300PPDDLODBIKG);
+      }
+      if (Unk3300FEGPHHFLFLM != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300FEGPHHFLFLM);
       }
       if (IsBoostAll != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(104);
         output.WriteBool(IsBoostAll);
-      }
-      if (ConsumeMaterialId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ConsumeMaterialId);
-      }
-      if (TargetCompoundGroupId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TargetCompoundGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -215,21 +218,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ConsumeMaterialCount != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ConsumeMaterialCount);
+      if (Unk3300BGHFBCLHCIG != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BGHFBCLHCIG);
+      }
+      if (Unk3300PPDDLODBIKG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300PPDDLODBIKG);
+      }
+      if (Unk3300FEGPHHFLFLM != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300FEGPHHFLFLM);
       }
       if (IsBoostAll != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(104);
         output.WriteBool(IsBoostAll);
-      }
-      if (ConsumeMaterialId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ConsumeMaterialId);
-      }
-      if (TargetCompoundGroupId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TargetCompoundGroupId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -244,14 +247,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsBoostAll != false) {
         size += 1 + 1;
       }
-      if (TargetCompoundGroupId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCompoundGroupId);
+      if (Unk3300PPDDLODBIKG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPDDLODBIKG);
       }
-      if (ConsumeMaterialId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConsumeMaterialId);
+      if (Unk3300BGHFBCLHCIG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BGHFBCLHCIG);
       }
-      if (ConsumeMaterialCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConsumeMaterialCount);
+      if (Unk3300FEGPHHFLFLM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FEGPHHFLFLM);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -268,14 +271,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsBoostAll != false) {
         IsBoostAll = other.IsBoostAll;
       }
-      if (other.TargetCompoundGroupId != 0) {
-        TargetCompoundGroupId = other.TargetCompoundGroupId;
+      if (other.Unk3300PPDDLODBIKG != 0) {
+        Unk3300PPDDLODBIKG = other.Unk3300PPDDLODBIKG;
       }
-      if (other.ConsumeMaterialId != 0) {
-        ConsumeMaterialId = other.ConsumeMaterialId;
+      if (other.Unk3300BGHFBCLHCIG != 0) {
+        Unk3300BGHFBCLHCIG = other.Unk3300BGHFBCLHCIG;
       }
-      if (other.ConsumeMaterialCount != 0) {
-        ConsumeMaterialCount = other.ConsumeMaterialCount;
+      if (other.Unk3300FEGPHHFLFLM != 0) {
+        Unk3300FEGPHHFLFLM = other.Unk3300FEGPHHFLFLM;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -292,20 +295,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ConsumeMaterialCount = input.ReadUInt32();
+          case 40: {
+            Unk3300BGHFBCLHCIG = input.ReadUInt32();
             break;
           }
           case 64: {
+            Unk3300PPDDLODBIKG = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300FEGPHHFLFLM = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             IsBoostAll = input.ReadBool();
-            break;
-          }
-          case 72: {
-            ConsumeMaterialId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TargetCompoundGroupId = input.ReadUInt32();
             break;
           }
         }
@@ -323,20 +326,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ConsumeMaterialCount = input.ReadUInt32();
+          case 40: {
+            Unk3300BGHFBCLHCIG = input.ReadUInt32();
             break;
           }
           case 64: {
+            Unk3300PPDDLODBIKG = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300FEGPHHFLFLM = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             IsBoostAll = input.ReadBool();
-            break;
-          }
-          case 72: {
-            ConsumeMaterialId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TargetCompoundGroupId = input.ReadUInt32();
             break;
           }
         }

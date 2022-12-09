@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonWayPointNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtEdW5nZW9uV2F5UG9pbnROb3RpZnkucHJvdG8iRgoVRHVuZ2VvbldheVBv",
-            "aW50Tm90aWZ5Eg4KBmlzX2FkZBgJIAEoCBIdChVhY3RpdmVfd2F5X3BvaW50",
-            "X2xpc3QYBCADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChtEdW5nZW9uV2F5UG9pbnROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iRgoVRHVuZ2VvbldheVBvaW50Tm90aWZ5Eg4K",
+            "BmlzX2FkZBgMIAEoCBIdChVhY3RpdmVfd2F5X3BvaW50X2xpc3QYAiADKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 903
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 961;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonWayPointNotify : pb::IMessage<DungeonWayPointNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_add" field.</summary>
-    public const int IsAddFieldNumber = 9;
+    public const int IsAddFieldNumber = 12;
     private bool isAdd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,9 +105,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "active_way_point_list" field.</summary>
-    public const int ActiveWayPointListFieldNumber = 4;
+    public const int ActiveWayPointListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_activeWayPointList_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> activeWayPointList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       activeWayPointList_.WriteTo(output, _repeated_activeWayPointList_codec);
       if (IsAdd != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       activeWayPointList_.WriteTo(ref output, _repeated_activeWayPointList_codec);
       if (IsAdd != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
@@ -220,12 +224,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
+          case 18:
+          case 16: {
             activeWayPointList_.AddEntriesFrom(input, _repeated_activeWayPointList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             IsAdd = input.ReadBool();
             break;
           }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
+          case 18:
+          case 16: {
             activeWayPointList_.AddEntriesFrom(ref input, _repeated_activeWayPointList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             IsAdd = input.ReadBool();
             break;
           }

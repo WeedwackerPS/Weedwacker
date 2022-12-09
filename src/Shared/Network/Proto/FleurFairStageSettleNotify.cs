@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairStageSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBGbGV1ckZhaXJTdGFnZVNldHRsZU5vdGlmeS5wcm90bxodRmxldXJGYWly",
-            "Qm9zc1NldHRsZUluZm8ucHJvdG8aIEZsZXVyRmFpckdhbGxlcnlTZXR0bGVJ",
-            "bmZvLnByb3RvIqwBChpGbGV1ckZhaXJTdGFnZVNldHRsZU5vdGlmeRISCgpz",
-            "dGFnZV90eXBlGAogASgNEjoKE2dhbGxlcnlfc2V0dGxlX2luZm8YDSABKAsy",
-            "Gy5GbGV1ckZhaXJHYWxsZXJ5U2V0dGxlSW5mb0gAEjQKEGJvc3Nfc2V0dGxl",
-            "X2luZm8YDiABKAsyGC5GbGV1ckZhaXJCb3NzU2V0dGxlSW5mb0gAQggKBmRl",
-            "dGFpbEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiBGbGV1ckZhaXJTdGFnZVNldHRsZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxodRmxldXJGYWlyQm9zc1NldHRsZUlu",
+            "Zm8ucHJvdG8aIEZsZXVyRmFpckdhbGxlcnlTZXR0bGVJbmZvLnByb3RvIuwB",
+            "ChpGbGV1ckZhaXJTdGFnZVNldHRsZU5vdGlmeRISCgpzdGFnZV90eXBlGAcg",
+            "ASgNEloKE2dhbGxlcnlfc2V0dGxlX2luZm8YASABKAsyOy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkZsZXVyRmFpckdhbGxlcnlTZXR0bGVJ",
+            "bmZvSAASVAoQYm9zc19zZXR0bGVfaW5mbxgMIAEoCzI4LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uRmxldXJGYWlyQm9zc1NldHRsZUluZm9I",
+            "AEIICgZkZXRhaWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5356
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5382;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FleurFairStageSettleNotify : pb::IMessage<FleurFairStageSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_type" field.</summary>
-    public const int StageTypeFieldNumber = 10;
+    public const int StageTypeFieldNumber = 7;
     private uint stageType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_settle_info" field.</summary>
-    public const int GallerySettleInfoFieldNumber = 13;
+    public const int GallerySettleInfoFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfo GallerySettleInfo {
@@ -125,7 +130,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "boss_settle_info" field.</summary>
-    public const int BossSettleInfoFieldNumber = 14;
+    public const int BossSettleInfoFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo BossSettleInfo {
@@ -140,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      GallerySettleInfo = 13,
-      BossSettleInfo = 14,
+      GallerySettleInfo = 1,
+      BossSettleInfo = 12,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -205,16 +210,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StageType != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(StageType);
-      }
       if (detailCase_ == DetailOneofCase.GallerySettleInfo) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(GallerySettleInfo);
       }
+      if (StageType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageType);
+      }
       if (detailCase_ == DetailOneofCase.BossSettleInfo) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(98);
         output.WriteMessage(BossSettleInfo);
       }
       if (_unknownFields != null) {
@@ -227,16 +232,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StageType != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(StageType);
-      }
       if (detailCase_ == DetailOneofCase.GallerySettleInfo) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(GallerySettleInfo);
       }
+      if (StageType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageType);
+      }
       if (detailCase_ == DetailOneofCase.BossSettleInfo) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(98);
         output.WriteMessage(BossSettleInfo);
       }
       if (_unknownFields != null) {
@@ -303,11 +308,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            StageType = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 10: {
             global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfo();
             if (detailCase_ == DetailOneofCase.GallerySettleInfo) {
               subBuilder.MergeFrom(GallerySettleInfo);
@@ -316,7 +317,11 @@ namespace Weedwacker.Shared.Network.Proto {
             GallerySettleInfo = subBuilder;
             break;
           }
-          case 114: {
+          case 56: {
+            StageType = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo();
             if (detailCase_ == DetailOneofCase.BossSettleInfo) {
               subBuilder.MergeFrom(BossSettleInfo);
@@ -340,11 +345,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            StageType = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 10: {
             global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairGallerySettleInfo();
             if (detailCase_ == DetailOneofCase.GallerySettleInfo) {
               subBuilder.MergeFrom(GallerySettleInfo);
@@ -353,7 +354,11 @@ namespace Weedwacker.Shared.Network.Proto {
             GallerySettleInfo = subBuilder;
             break;
           }
-          case 114: {
+          case 56: {
+            StageType = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairBossSettleInfo();
             if (detailCase_ == DetailOneofCase.BossSettleInfo) {
               subBuilder.MergeFrom(BossSettleInfo);

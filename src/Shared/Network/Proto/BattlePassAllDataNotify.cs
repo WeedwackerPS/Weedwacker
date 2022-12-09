@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassAllDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1CYXR0bGVQYXNzQWxsRGF0YU5vdGlmeS5wcm90bxoXQmF0dGxlUGFzc01p",
-            "c3Npb24ucHJvdG8aGEJhdHRsZVBhc3NTY2hlZHVsZS5wcm90byKJAQoXQmF0",
-            "dGxlUGFzc0FsbERhdGFOb3RpZnkSGQoRaGF2ZV9jdXJfc2NoZWR1bGUYAiAB",
-            "KAgSKAoMbWlzc2lvbl9saXN0GAQgAygLMhIuQmF0dGxlUGFzc01pc3Npb24S",
-            "KQoMY3VyX3NjaGVkdWxlGAEgASgLMhMuQmF0dGxlUGFzc1NjaGVkdWxlQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1CYXR0bGVQYXNzQWxsRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoXQmF0dGxlUGFzc01pc3Npb24ucHJvdG8a",
+            "GEJhdHRsZVBhc3NTY2hlZHVsZS5wcm90byLJAQoXQmF0dGxlUGFzc0FsbERh",
+            "dGFOb3RpZnkSSAoMbWlzc2lvbl9saXN0GAEgAygLMjIuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5CYXR0bGVQYXNzTWlzc2lvbhJJCgxjdXJf",
+            "c2NoZWR1bGUYCiABKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkJhdHRsZVBhc3NTY2hlZHVsZRIZChFoYXZlX2N1cl9zY2hlZHVsZRgD",
+            "IAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassMissionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BattlePassScheduleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassAllDataNotify), global::Weedwacker.Shared.Network.Proto.BattlePassAllDataNotify.Parser, new[]{ "HaveCurSchedule", "MissionList", "CurSchedule" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassAllDataNotify), global::Weedwacker.Shared.Network.Proto.BattlePassAllDataNotify.Parser, new[]{ "MissionList", "CurSchedule", "HaveCurSchedule" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2626
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2642;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BattlePassAllDataNotify : pb::IMessage<BattlePassAllDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassAllDataNotify(BattlePassAllDataNotify other) : this() {
-      haveCurSchedule_ = other.haveCurSchedule_;
       missionList_ = other.missionList_.Clone();
       curSchedule_ = other.curSchedule_ != null ? other.curSchedule_.Clone() : null;
+      haveCurSchedule_ = other.haveCurSchedule_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,22 +97,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassAllDataNotify(this);
     }
 
-    /// <summary>Field number for the "have_cur_schedule" field.</summary>
-    public const int HaveCurScheduleFieldNumber = 2;
-    private bool haveCurSchedule_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HaveCurSchedule {
-      get { return haveCurSchedule_; }
-      set {
-        haveCurSchedule_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mission_list" field.</summary>
-    public const int MissionListFieldNumber = 4;
+    public const int MissionListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BattlePassMission> _repeated_missionList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.BattlePassMission.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.BattlePassMission.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassMission> missionList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassMission>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_schedule" field.</summary>
-    public const int CurScheduleFieldNumber = 1;
+    public const int CurScheduleFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.BattlePassSchedule curSchedule_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curSchedule_; }
       set {
         curSchedule_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "have_cur_schedule" field.</summary>
+    public const int HaveCurScheduleFieldNumber = 3;
+    private bool haveCurSchedule_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HaveCurSchedule {
+      get { return haveCurSchedule_; }
+      set {
+        haveCurSchedule_ = value;
       }
     }
 
@@ -141,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HaveCurSchedule != other.HaveCurSchedule) return false;
       if(!missionList_.Equals(other.missionList_)) return false;
       if (!object.Equals(CurSchedule, other.CurSchedule)) return false;
+      if (HaveCurSchedule != other.HaveCurSchedule) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
       hash ^= missionList_.GetHashCode();
       if (curSchedule_ != null) hash ^= CurSchedule.GetHashCode();
+      if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (curSchedule_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(CurSchedule);
-      }
+      missionList_.WriteTo(output, _repeated_missionList_codec);
       if (HaveCurSchedule != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteBool(HaveCurSchedule);
       }
-      missionList_.WriteTo(output, _repeated_missionList_codec);
+      if (curSchedule_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurSchedule);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +197,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (curSchedule_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(CurSchedule);
-      }
+      missionList_.WriteTo(ref output, _repeated_missionList_codec);
       if (HaveCurSchedule != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteBool(HaveCurSchedule);
       }
-      missionList_.WriteTo(ref output, _repeated_missionList_codec);
+      if (curSchedule_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurSchedule);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -210,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HaveCurSchedule != false) {
-        size += 1 + 1;
-      }
       size += missionList_.CalculateSize(_repeated_missionList_codec);
       if (curSchedule_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurSchedule);
+      }
+      if (HaveCurSchedule != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -229,15 +235,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.HaveCurSchedule != false) {
-        HaveCurSchedule = other.HaveCurSchedule;
-      }
       missionList_.Add(other.missionList_);
       if (other.curSchedule_ != null) {
         if (curSchedule_ == null) {
           CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
         }
         CurSchedule.MergeFrom(other.CurSchedule);
+      }
+      if (other.HaveCurSchedule != false) {
+        HaveCurSchedule = other.HaveCurSchedule;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,18 +261,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            missionList_.AddEntriesFrom(input, _repeated_missionList_codec);
+            break;
+          }
+          case 24: {
+            HaveCurSchedule = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (curSchedule_ == null) {
               CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
             }
             input.ReadMessage(CurSchedule);
-            break;
-          }
-          case 16: {
-            HaveCurSchedule = input.ReadBool();
-            break;
-          }
-          case 34: {
-            missionList_.AddEntriesFrom(input, _repeated_missionList_codec);
             break;
           }
         }
@@ -285,18 +291,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            missionList_.AddEntriesFrom(ref input, _repeated_missionList_codec);
+            break;
+          }
+          case 24: {
+            HaveCurSchedule = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (curSchedule_ == null) {
               CurSchedule = new global::Weedwacker.Shared.Network.Proto.BattlePassSchedule();
             }
             input.ReadMessage(CurSchedule);
-            break;
-          }
-          case 16: {
-            HaveCurSchedule = input.ReadBool();
-            break;
-          }
-          case 34: {
-            missionList_.AddEntriesFrom(ref input, _repeated_missionList_codec);
             break;
           }
         }

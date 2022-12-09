@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgSkillResultReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoVR0NHRGFtYWdlRGV0YWlsLnBy",
-            "b3RvIuMBChFHQ0dNc2dTa2lsbFJlc3VsdBIQCghza2lsbF9pZBgMIAEoDRIP",
-            "CgdsYXN0X2hwGA4gASgNEiUKC2RldGFpbF9saXN0GAIgAygLMhAuR0NHRGFt",
-            "YWdlRGV0YWlsEhgKEHRhcmdldF9jYXJkX2d1aWQYByABKA0SFgoOZWZmZWN0",
-            "X2VsZW1lbnQYBSABKA0SFwoPZnJvbV9yZXN1bHRfc2VxGA8gASgNEg4KBmRh",
-            "bWFnZRgGIAEoDRISCgpyZXN1bHRfc2VxGAQgASgNEhUKDXNyY19jYXJkX2d1",
-            "aWQYCCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoVR0NHRGFtYWdlRGV0YWlsLnByb3RvIqcCChFHQ0dN",
+            "c2dTa2lsbFJlc3VsdBIbChNVbmszMzAwX05JR0RDSUdMQUtFGAkgASgNEhgK",
+            "EHRhcmdldF9jYXJkX2d1aWQYDSABKA0SGwoTVW5rMzMwMF9QREJBR0pJTkZQ",
+            "RhgEIAEoDRJFCgtkZXRhaWxfbGlzdBgFIAMoCzIwLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR0NHRGFtYWdlRGV0YWlsEhAKCHNraWxsX2lk",
+            "GA4gASgNEg4KBmRhbWFnZRgHIAEoDRIbChNVbmszMzAwX0VQTkRDSUFKT0pQ",
+            "GAwgASgNEhsKE1VuazMzMDBfTk5KQU9FSE5QUEQYDyABKA0SGwoTVW5rMzMw",
+            "MF9MUEdMT0NERFBDTBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGDamageDetailReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult), global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult.Parser, new[]{ "SkillId", "LastHp", "DetailList", "TargetCardGuid", "EffectElement", "FromResultSeq", "Damage", "ResultSeq", "SrcCardGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult), global::Weedwacker.Shared.Network.Proto.GCGMsgSkillResult.Parser, new[]{ "Unk3300NIGDCIGLAKE", "TargetCardGuid", "Unk3300PDBAGJINFPF", "DetailList", "SkillId", "Damage", "Unk3300EPNDCIAJOJP", "Unk3300NNJAOEHNPPD", "Unk3300LPGLOCDDPCL" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,15 +77,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgSkillResult(GCGMsgSkillResult other) : this() {
-      skillId_ = other.skillId_;
-      lastHp_ = other.lastHp_;
-      detailList_ = other.detailList_.Clone();
+      unk3300NIGDCIGLAKE_ = other.unk3300NIGDCIGLAKE_;
       targetCardGuid_ = other.targetCardGuid_;
-      effectElement_ = other.effectElement_;
-      fromResultSeq_ = other.fromResultSeq_;
+      unk3300PDBAGJINFPF_ = other.unk3300PDBAGJINFPF_;
+      detailList_ = other.detailList_.Clone();
+      skillId_ = other.skillId_;
       damage_ = other.damage_;
-      resultSeq_ = other.resultSeq_;
-      srcCardGuid_ = other.srcCardGuid_;
+      unk3300EPNDCIAJOJP_ = other.unk3300EPNDCIAJOJP_;
+      unk3300NNJAOEHNPPD_ = other.unk3300NNJAOEHNPPD_;
+      unk3300LPGLOCDDPCL_ = other.unk3300LPGLOCDDPCL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,43 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgSkillResult(this);
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 12;
-    private uint skillId_;
+    /// <summary>Field number for the "Unk3300_NIGDCIGLAKE" field.</summary>
+    public const int Unk3300NIGDCIGLAKEFieldNumber = 9;
+    private uint unk3300NIGDCIGLAKE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillId {
-      get { return skillId_; }
+    public uint Unk3300NIGDCIGLAKE {
+      get { return unk3300NIGDCIGLAKE_; }
       set {
-        skillId_ = value;
+        unk3300NIGDCIGLAKE_ = value;
       }
-    }
-
-    /// <summary>Field number for the "last_hp" field.</summary>
-    public const int LastHpFieldNumber = 14;
-    private uint lastHp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastHp {
-      get { return lastHp_; }
-      set {
-        lastHp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "detail_list" field.</summary>
-    public const int DetailListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> _repeated_detailList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGDamageDetail.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> DetailList {
-      get { return detailList_; }
     }
 
     /// <summary>Field number for the "target_card_guid" field.</summary>
-    public const int TargetCardGuidFieldNumber = 7;
+    public const int TargetCardGuidFieldNumber = 13;
     private uint targetCardGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,32 +119,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "effect_element" field.</summary>
-    public const int EffectElementFieldNumber = 5;
-    private uint effectElement_;
+    /// <summary>Field number for the "Unk3300_PDBAGJINFPF" field.</summary>
+    public const int Unk3300PDBAGJINFPFFieldNumber = 4;
+    private uint unk3300PDBAGJINFPF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EffectElement {
-      get { return effectElement_; }
+    public uint Unk3300PDBAGJINFPF {
+      get { return unk3300PDBAGJINFPF_; }
       set {
-        effectElement_ = value;
+        unk3300PDBAGJINFPF_ = value;
       }
     }
 
-    /// <summary>Field number for the "from_result_seq" field.</summary>
-    public const int FromResultSeqFieldNumber = 15;
-    private uint fromResultSeq_;
+    /// <summary>Field number for the "detail_list" field.</summary>
+    public const int DetailListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> _repeated_detailList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.GCGDamageDetail.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FromResultSeq {
-      get { return fromResultSeq_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDamageDetail> DetailList {
+      get { return detailList_; }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 14;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
       set {
-        fromResultSeq_ = value;
+        skillId_ = value;
       }
     }
 
     /// <summary>Field number for the "damage" field.</summary>
-    public const int DamageFieldNumber = 6;
+    public const int DamageFieldNumber = 7;
     private uint damage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -177,27 +166,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "result_seq" field.</summary>
-    public const int ResultSeqFieldNumber = 4;
-    private uint resultSeq_;
+    /// <summary>Field number for the "Unk3300_EPNDCIAJOJP" field.</summary>
+    public const int Unk3300EPNDCIAJOJPFieldNumber = 12;
+    private uint unk3300EPNDCIAJOJP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ResultSeq {
-      get { return resultSeq_; }
+    public uint Unk3300EPNDCIAJOJP {
+      get { return unk3300EPNDCIAJOJP_; }
       set {
-        resultSeq_ = value;
+        unk3300EPNDCIAJOJP_ = value;
       }
     }
 
-    /// <summary>Field number for the "src_card_guid" field.</summary>
-    public const int SrcCardGuidFieldNumber = 8;
-    private uint srcCardGuid_;
+    /// <summary>Field number for the "Unk3300_NNJAOEHNPPD" field.</summary>
+    public const int Unk3300NNJAOEHNPPDFieldNumber = 15;
+    private uint unk3300NNJAOEHNPPD_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SrcCardGuid {
-      get { return srcCardGuid_; }
+    public uint Unk3300NNJAOEHNPPD {
+      get { return unk3300NNJAOEHNPPD_; }
       set {
-        srcCardGuid_ = value;
+        unk3300NNJAOEHNPPD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPGLOCDDPCL" field.</summary>
+    public const int Unk3300LPGLOCDDPCLFieldNumber = 10;
+    private uint unk3300LPGLOCDDPCL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPGLOCDDPCL {
+      get { return unk3300LPGLOCDDPCL_; }
+      set {
+        unk3300LPGLOCDDPCL_ = value;
       }
     }
 
@@ -216,15 +217,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SkillId != other.SkillId) return false;
-      if (LastHp != other.LastHp) return false;
-      if(!detailList_.Equals(other.detailList_)) return false;
+      if (Unk3300NIGDCIGLAKE != other.Unk3300NIGDCIGLAKE) return false;
       if (TargetCardGuid != other.TargetCardGuid) return false;
-      if (EffectElement != other.EffectElement) return false;
-      if (FromResultSeq != other.FromResultSeq) return false;
+      if (Unk3300PDBAGJINFPF != other.Unk3300PDBAGJINFPF) return false;
+      if(!detailList_.Equals(other.detailList_)) return false;
+      if (SkillId != other.SkillId) return false;
       if (Damage != other.Damage) return false;
-      if (ResultSeq != other.ResultSeq) return false;
-      if (SrcCardGuid != other.SrcCardGuid) return false;
+      if (Unk3300EPNDCIAJOJP != other.Unk3300EPNDCIAJOJP) return false;
+      if (Unk3300NNJAOEHNPPD != other.Unk3300NNJAOEHNPPD) return false;
+      if (Unk3300LPGLOCDDPCL != other.Unk3300LPGLOCDDPCL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -232,15 +233,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SkillId != 0) hash ^= SkillId.GetHashCode();
-      if (LastHp != 0) hash ^= LastHp.GetHashCode();
-      hash ^= detailList_.GetHashCode();
+      if (Unk3300NIGDCIGLAKE != 0) hash ^= Unk3300NIGDCIGLAKE.GetHashCode();
       if (TargetCardGuid != 0) hash ^= TargetCardGuid.GetHashCode();
-      if (EffectElement != 0) hash ^= EffectElement.GetHashCode();
-      if (FromResultSeq != 0) hash ^= FromResultSeq.GetHashCode();
+      if (Unk3300PDBAGJINFPF != 0) hash ^= Unk3300PDBAGJINFPF.GetHashCode();
+      hash ^= detailList_.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (Damage != 0) hash ^= Damage.GetHashCode();
-      if (ResultSeq != 0) hash ^= ResultSeq.GetHashCode();
-      if (SrcCardGuid != 0) hash ^= SrcCardGuid.GetHashCode();
+      if (Unk3300EPNDCIAJOJP != 0) hash ^= Unk3300EPNDCIAJOJP.GetHashCode();
+      if (Unk3300NNJAOEHNPPD != 0) hash ^= Unk3300NNJAOEHNPPD.GetHashCode();
+      if (Unk3300LPGLOCDDPCL != 0) hash ^= Unk3300LPGLOCDDPCL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -259,38 +260,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      detailList_.WriteTo(output, _repeated_detailList_codec);
-      if (ResultSeq != 0) {
+      if (Unk3300PDBAGJINFPF != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ResultSeq);
+        output.WriteUInt32(Unk3300PDBAGJINFPF);
       }
-      if (EffectElement != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EffectElement);
-      }
+      detailList_.WriteTo(output, _repeated_detailList_codec);
       if (Damage != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(Damage);
       }
+      if (Unk3300NIGDCIGLAKE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NIGDCIGLAKE);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LPGLOCDDPCL);
+      }
+      if (Unk3300EPNDCIAJOJP != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300EPNDCIAJOJP);
+      }
       if (TargetCardGuid != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt32(TargetCardGuid);
       }
-      if (SrcCardGuid != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SrcCardGuid);
-      }
       if (SkillId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(SkillId);
       }
-      if (LastHp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LastHp);
-      }
-      if (FromResultSeq != 0) {
+      if (Unk3300NNJAOEHNPPD != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(FromResultSeq);
+        output.WriteUInt32(Unk3300NNJAOEHNPPD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -302,38 +303,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      detailList_.WriteTo(ref output, _repeated_detailList_codec);
-      if (ResultSeq != 0) {
+      if (Unk3300PDBAGJINFPF != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(ResultSeq);
+        output.WriteUInt32(Unk3300PDBAGJINFPF);
       }
-      if (EffectElement != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EffectElement);
-      }
+      detailList_.WriteTo(ref output, _repeated_detailList_codec);
       if (Damage != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(Damage);
       }
+      if (Unk3300NIGDCIGLAKE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NIGDCIGLAKE);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LPGLOCDDPCL);
+      }
+      if (Unk3300EPNDCIAJOJP != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300EPNDCIAJOJP);
+      }
       if (TargetCardGuid != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt32(TargetCardGuid);
       }
-      if (SrcCardGuid != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SrcCardGuid);
-      }
       if (SkillId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(SkillId);
       }
-      if (LastHp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LastHp);
-      }
-      if (FromResultSeq != 0) {
+      if (Unk3300NNJAOEHNPPD != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(FromResultSeq);
+        output.WriteUInt32(Unk3300NNJAOEHNPPD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -345,30 +346,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SkillId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      if (Unk3300NIGDCIGLAKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NIGDCIGLAKE);
       }
-      if (LastHp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastHp);
-      }
-      size += detailList_.CalculateSize(_repeated_detailList_codec);
       if (TargetCardGuid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCardGuid);
       }
-      if (EffectElement != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EffectElement);
+      if (Unk3300PDBAGJINFPF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PDBAGJINFPF);
       }
-      if (FromResultSeq != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FromResultSeq);
+      size += detailList_.CalculateSize(_repeated_detailList_codec);
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
       if (Damage != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Damage);
       }
-      if (ResultSeq != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ResultSeq);
+      if (Unk3300EPNDCIAJOJP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EPNDCIAJOJP);
       }
-      if (SrcCardGuid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SrcCardGuid);
+      if (Unk3300NNJAOEHNPPD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NNJAOEHNPPD);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPGLOCDDPCL);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -382,30 +383,30 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SkillId != 0) {
-        SkillId = other.SkillId;
+      if (other.Unk3300NIGDCIGLAKE != 0) {
+        Unk3300NIGDCIGLAKE = other.Unk3300NIGDCIGLAKE;
       }
-      if (other.LastHp != 0) {
-        LastHp = other.LastHp;
-      }
-      detailList_.Add(other.detailList_);
       if (other.TargetCardGuid != 0) {
         TargetCardGuid = other.TargetCardGuid;
       }
-      if (other.EffectElement != 0) {
-        EffectElement = other.EffectElement;
+      if (other.Unk3300PDBAGJINFPF != 0) {
+        Unk3300PDBAGJINFPF = other.Unk3300PDBAGJINFPF;
       }
-      if (other.FromResultSeq != 0) {
-        FromResultSeq = other.FromResultSeq;
+      detailList_.Add(other.detailList_);
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
       }
       if (other.Damage != 0) {
         Damage = other.Damage;
       }
-      if (other.ResultSeq != 0) {
-        ResultSeq = other.ResultSeq;
+      if (other.Unk3300EPNDCIAJOJP != 0) {
+        Unk3300EPNDCIAJOJP = other.Unk3300EPNDCIAJOJP;
       }
-      if (other.SrcCardGuid != 0) {
-        SrcCardGuid = other.SrcCardGuid;
+      if (other.Unk3300NNJAOEHNPPD != 0) {
+        Unk3300NNJAOEHNPPD = other.Unk3300NNJAOEHNPPD;
+      }
+      if (other.Unk3300LPGLOCDDPCL != 0) {
+        Unk3300LPGLOCDDPCL = other.Unk3300LPGLOCDDPCL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -422,40 +423,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 32: {
+            Unk3300PDBAGJINFPF = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             detailList_.AddEntriesFrom(input, _repeated_detailList_codec);
             break;
           }
-          case 32: {
-            ResultSeq = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EffectElement = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             Damage = input.ReadUInt32();
             break;
           }
-          case 56: {
-            TargetCardGuid = input.ReadUInt32();
+          case 72: {
+            Unk3300NIGDCIGLAKE = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SrcCardGuid = input.ReadUInt32();
+          case 80: {
+            Unk3300LPGLOCDDPCL = input.ReadUInt32();
             break;
           }
           case 96: {
-            SkillId = input.ReadUInt32();
+            Unk3300EPNDCIAJOJP = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TargetCardGuid = input.ReadUInt32();
             break;
           }
           case 112: {
-            LastHp = input.ReadUInt32();
+            SkillId = input.ReadUInt32();
             break;
           }
           case 120: {
-            FromResultSeq = input.ReadUInt32();
+            Unk3300NNJAOEHNPPD = input.ReadUInt32();
             break;
           }
         }
@@ -473,40 +474,40 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 32: {
+            Unk3300PDBAGJINFPF = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             detailList_.AddEntriesFrom(ref input, _repeated_detailList_codec);
             break;
           }
-          case 32: {
-            ResultSeq = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EffectElement = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 56: {
             Damage = input.ReadUInt32();
             break;
           }
-          case 56: {
-            TargetCardGuid = input.ReadUInt32();
+          case 72: {
+            Unk3300NIGDCIGLAKE = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SrcCardGuid = input.ReadUInt32();
+          case 80: {
+            Unk3300LPGLOCDDPCL = input.ReadUInt32();
             break;
           }
           case 96: {
-            SkillId = input.ReadUInt32();
+            Unk3300EPNDCIAJOJP = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TargetCardGuid = input.ReadUInt32();
             break;
           }
           case 112: {
-            LastHp = input.ReadUInt32();
+            SkillId = input.ReadUInt32();
             break;
           }
           case 120: {
-            FromResultSeq = input.ReadUInt32();
+            Unk3300NNJAOEHNPPD = input.ReadUInt32();
             break;
           }
         }

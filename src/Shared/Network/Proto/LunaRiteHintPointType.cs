@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunaRiteHintPointTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtMdW5hUml0ZUhpbnRQb2ludFR5cGUucHJvdG8qhAEKFUx1bmFSaXRlSGlu",
-            "dFBvaW50VHlwZRIiCh5MVU5BX1JJVEVfSElOVF9QT0lOVF9UWVBFX05PTkUQ",
-            "ABIiCh5MVU5BX1JJVEVfSElOVF9QT0lOVF9UWVBFX1JVTkUQARIjCh9MVU5B",
-            "X1JJVEVfSElOVF9QT0lOVF9UWVBFX0NIRVNUEAJCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtMdW5hUml0ZUhpbnRQb2ludFR5cGUucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8qhAEKFUx1bmFSaXRlSGludFBvaW50VHlwZRIi",
+            "Ch5MVU5BX1JJVEVfSElOVF9QT0lOVF9UWVBFX05PTkUQABIiCh5MVU5BX1JJ",
+            "VEVfSElOVF9QT0lOVF9UWVBFX1JVTkUQARIjCh9MVU5BX1JJVEVfSElOVF9Q",
+            "T0lOVF9UWVBFX0NIRVNUEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointType), }, null, null));

@@ -24,31 +24,33 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdWaW50YWdlTWFya2V0SW5mby5wcm90bxobVmludGFnZU1hcmtldERlYWxJ",
-            "bmZvLnByb3RvGhxWaW50YWdlTWFya2V0U3RvcmVJbmZvLnByb3RvIpsGChFW",
-            "aW50YWdlTWFya2V0SW5mbxIcChNpc19oZWxwX21vZHVsZV9vcGVuGM0LIAEo",
-            "CBIiChppc19zdG9yZV9jb250ZW50X2ludGVycnVwdBgPIAEoCBIpCglkZWFs",
-            "X2luZm8YCyABKAsyFi5WaW50YWdlTWFya2V0RGVhbEluZm8SEwoLc3RvcmVf",
-            "cm91bmQYByABKA0SIAoXc3RvcmVfcm91bmRfaW5jb21lX2xpc3QYzwEgAygN",
-            "Eh8KF2lzX3N0b3JlX2NvbnRlbnRfZmluaXNoGAUgASgIEhoKEmN1cl9lbnZf",
-            "ZXZlbnRfbGlzdBgIIAMoDRIeChZpc19tYXJrZXRfY29udGVudF9vcGVuGAog",
-            "ASgIEiAKF25leHRfY2FuX3VzZV9oZWxwX3JvdW5kGIgOIAEoDRIgChhpc19t",
-            "YXJrZXRfY29udGVudF9maW5pc2gYAiABKAgSHAoUdmlld2VkX3N0cmF0ZWd5",
-            "X2xpc3QYDiADKA0SFwoPcHJldl9jb2luX2NfbnVtGAMgASgNEkAKEGJhcmdh",
-            "aW5faW5mb19tYXAYBiADKAsyJi5WaW50YWdlTWFya2V0SW5mby5CYXJnYWlu",
-            "SW5mb01hcEVudHJ5Eh4KFWRpdmlkZW5kX3Jld2FyZF9jb3VudBiGDiABKA0S",
-            "GgoSY3VyX25wY19ldmVudF9saXN0GAQgAygNEhYKDWlzX2hlbHBfaW5fY2QY",
-            "7gIgASgIEhcKD3ByZXZfY29pbl9iX251bRgBIAEoDRIwCg9vcGVuX3N0b3Jl",
-            "X2xpc3QYCSADKAsyFy5WaW50YWdlTWFya2V0U3RvcmVJbmZvEhYKDWhlbHBf",
-            "c2tpbGxfaWQY+AUgASgNEhoKEmlzX3JvdW5kX3RpcHNfdmlldxgMIAEoCBIg",
-            "Chdpc19zdHJhdGVneV9tb2R1bGVfb3BlbhjsBiABKAgSHAoUdW5sb2NrX3N0",
-            "cmF0ZWd5X2xpc3QYDSADKA0aNQoTQmFyZ2FpbkluZm9NYXBFbnRyeRILCgNr",
-            "ZXkYASABKA0SDQoFdmFsdWUYAiABKAg6AjgBQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdWaW50YWdlTWFya2V0SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxobVmludGFnZU1hcmtldERlYWxJbmZvLnByb3RvGhxW",
+            "aW50YWdlTWFya2V0U3RvcmVJbmZvLnByb3RvIuoGChFWaW50YWdlTWFya2V0",
+            "SW5mbxJgChBiYXJnYWluX2luZm9fbWFwGAkgAygLMkYuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5WaW50YWdlTWFya2V0SW5mby5CYXJnYWlu",
+            "SW5mb01hcEVudHJ5EhsKE1VuazMzMDBfRkpESU1DSkVBT0IYCCABKAgSHAoT",
+            "VW5rMzMwMF9DT0tCT0tBT0NOShjvByADKA0SFgoNaGVscF9za2lsbF9pZBj4",
+            "BSABKA0SGwoTVW5rMzMwMF9BQkhIQUNCRENGSRgHIAMoDRJQCg9vcGVuX3N0",
+            "b3JlX2xpc3QYAiADKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZpbnRhZ2VNYXJrZXRTdG9yZUluZm8SGwoTVW5rMzMwMF9FREJKTEJJ",
+            "Q0VKRhgKIAMoDRIbChNVbmszMzAwX1BBTUtQQU9DSkpKGAsgASgIEhwKE1Vu",
+            "azMzMDBfRk9QS0FJSUFNRk0Yog4gASgNEhwKE1VuazMzMDBfTkJOT0pKQk5K",
+            "UEIY1gMgASgIEkkKCWRlYWxfaW5mbxgMIAEoCzI2LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uVmludGFnZU1hcmtldERlYWxJbmZvEhMKC3N0",
+            "b3JlX3JvdW5kGAMgASgNEhwKFHVubG9ja19zdHJhdGVneV9saXN0GA0gAygN",
+            "EhsKE1VuazMzMDBfQUlBTUJCT0RMQk8YDiADKA0SGwoTVW5rMzMwMF9OREZI",
+            "QUdIQkNGThgGIAEoCBIbChNVbmszMzAwX0xNTkxISFBNQU1OGAEgASgNEhwK",
+            "E1VuazMzMDBfQUxITEVORUxJRU8YugwgASgIEhwKE1VuazMzMDBfQUNKTEFO",
+            "TEJDR0sY+gwgASgNEhsKE1VuazMzMDBfSEhLS0VERElHTEEYBSABKA0SGwoT",
+            "VW5rMzMwMF9LSkRFRklCS0JQRRgEIAEoCBIbChNVbmszMzAwX0lDSk9DREdM",
+            "RkZEGA8gASgIEhwKE1VuazMzMDBfTk1ISEdOUEtCRUwYuQ0gASgIGjUKE0Jh",
+            "cmdhaW5JbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgI",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketInfo), global::Weedwacker.Shared.Network.Proto.VintageMarketInfo.Parser, new[]{ "IsHelpModuleOpen", "IsStoreContentInterrupt", "DealInfo", "StoreRound", "StoreRoundIncomeList", "IsStoreContentFinish", "CurEnvEventList", "IsMarketContentOpen", "NextCanUseHelpRound", "IsMarketContentFinish", "ViewedStrategyList", "PrevCoinCNum", "BargainInfoMap", "DividendRewardCount", "CurNpcEventList", "IsHelpInCd", "PrevCoinBNum", "OpenStoreList", "HelpSkillId", "IsRoundTipsView", "IsStrategyModuleOpen", "UnlockStrategyList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketInfo), global::Weedwacker.Shared.Network.Proto.VintageMarketInfo.Parser, new[]{ "BargainInfoMap", "Unk3300FJDIMCJEAOB", "Unk3300COKBOKAOCNJ", "HelpSkillId", "Unk3300ABHHACBDCFI", "OpenStoreList", "Unk3300EDBJLBICEJF", "Unk3300PAMKPAOCJJJ", "Unk3300FOPKAIIAMFM", "Unk3300NBNOJJBNJPB", "DealInfo", "StoreRound", "UnlockStrategyList", "Unk3300AIAMBBODLBO", "Unk3300NDFHAGHBCFN", "Unk3300LMNLHHPMAMN", "Unk3300ALHLENELIEO", "Unk3300ACJLANLBCGK", "Unk3300HHKKEDDIGLA", "Unk3300KJDEFIBKBPE", "Unk3300ICJOCDGLFFD", "Unk3300NMHHGNPKBEL" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -89,28 +91,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketInfo(VintageMarketInfo other) : this() {
-      isHelpModuleOpen_ = other.isHelpModuleOpen_;
-      isStoreContentInterrupt_ = other.isStoreContentInterrupt_;
+      bargainInfoMap_ = other.bargainInfoMap_.Clone();
+      unk3300FJDIMCJEAOB_ = other.unk3300FJDIMCJEAOB_;
+      unk3300COKBOKAOCNJ_ = other.unk3300COKBOKAOCNJ_.Clone();
+      helpSkillId_ = other.helpSkillId_;
+      unk3300ABHHACBDCFI_ = other.unk3300ABHHACBDCFI_.Clone();
+      openStoreList_ = other.openStoreList_.Clone();
+      unk3300EDBJLBICEJF_ = other.unk3300EDBJLBICEJF_.Clone();
+      unk3300PAMKPAOCJJJ_ = other.unk3300PAMKPAOCJJJ_;
+      unk3300FOPKAIIAMFM_ = other.unk3300FOPKAIIAMFM_;
+      unk3300NBNOJJBNJPB_ = other.unk3300NBNOJJBNJPB_;
       dealInfo_ = other.dealInfo_ != null ? other.dealInfo_.Clone() : null;
       storeRound_ = other.storeRound_;
-      storeRoundIncomeList_ = other.storeRoundIncomeList_.Clone();
-      isStoreContentFinish_ = other.isStoreContentFinish_;
-      curEnvEventList_ = other.curEnvEventList_.Clone();
-      isMarketContentOpen_ = other.isMarketContentOpen_;
-      nextCanUseHelpRound_ = other.nextCanUseHelpRound_;
-      isMarketContentFinish_ = other.isMarketContentFinish_;
-      viewedStrategyList_ = other.viewedStrategyList_.Clone();
-      prevCoinCNum_ = other.prevCoinCNum_;
-      bargainInfoMap_ = other.bargainInfoMap_.Clone();
-      dividendRewardCount_ = other.dividendRewardCount_;
-      curNpcEventList_ = other.curNpcEventList_.Clone();
-      isHelpInCd_ = other.isHelpInCd_;
-      prevCoinBNum_ = other.prevCoinBNum_;
-      openStoreList_ = other.openStoreList_.Clone();
-      helpSkillId_ = other.helpSkillId_;
-      isRoundTipsView_ = other.isRoundTipsView_;
-      isStrategyModuleOpen_ = other.isStrategyModuleOpen_;
       unlockStrategyList_ = other.unlockStrategyList_.Clone();
+      unk3300AIAMBBODLBO_ = other.unk3300AIAMBBODLBO_.Clone();
+      unk3300NDFHAGHBCFN_ = other.unk3300NDFHAGHBCFN_;
+      unk3300LMNLHHPMAMN_ = other.unk3300LMNLHHPMAMN_;
+      unk3300ALHLENELIEO_ = other.unk3300ALHLENELIEO_;
+      unk3300ACJLANLBCGK_ = other.unk3300ACJLANLBCGK_;
+      unk3300HHKKEDDIGLA_ = other.unk3300HHKKEDDIGLA_;
+      unk3300KJDEFIBKBPE_ = other.unk3300KJDEFIBKBPE_;
+      unk3300ICJOCDGLFFD_ = other.unk3300ICJOCDGLFFD_;
+      unk3300NMHHGNPKBEL_ = other.unk3300NMHHGNPKBEL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -120,151 +122,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketInfo(this);
     }
 
-    /// <summary>Field number for the "is_help_module_open" field.</summary>
-    public const int IsHelpModuleOpenFieldNumber = 1485;
-    private bool isHelpModuleOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsHelpModuleOpen {
-      get { return isHelpModuleOpen_; }
-      set {
-        isHelpModuleOpen_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_store_content_interrupt" field.</summary>
-    public const int IsStoreContentInterruptFieldNumber = 15;
-    private bool isStoreContentInterrupt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStoreContentInterrupt {
-      get { return isStoreContentInterrupt_; }
-      set {
-        isStoreContentInterrupt_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "deal_info" field.</summary>
-    public const int DealInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo dealInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo DealInfo {
-      get { return dealInfo_; }
-      set {
-        dealInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "store_round" field.</summary>
-    public const int StoreRoundFieldNumber = 7;
-    private uint storeRound_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StoreRound {
-      get { return storeRound_; }
-      set {
-        storeRound_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "store_round_income_list" field.</summary>
-    public const int StoreRoundIncomeListFieldNumber = 207;
-    private static readonly pb::FieldCodec<uint> _repeated_storeRoundIncomeList_codec
-        = pb::FieldCodec.ForUInt32(1658);
-    private readonly pbc::RepeatedField<uint> storeRoundIncomeList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> StoreRoundIncomeList {
-      get { return storeRoundIncomeList_; }
-    }
-
-    /// <summary>Field number for the "is_store_content_finish" field.</summary>
-    public const int IsStoreContentFinishFieldNumber = 5;
-    private bool isStoreContentFinish_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStoreContentFinish {
-      get { return isStoreContentFinish_; }
-      set {
-        isStoreContentFinish_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_env_event_list" field.</summary>
-    public const int CurEnvEventListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_curEnvEventList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> curEnvEventList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CurEnvEventList {
-      get { return curEnvEventList_; }
-    }
-
-    /// <summary>Field number for the "is_market_content_open" field.</summary>
-    public const int IsMarketContentOpenFieldNumber = 10;
-    private bool isMarketContentOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsMarketContentOpen {
-      get { return isMarketContentOpen_; }
-      set {
-        isMarketContentOpen_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "next_can_use_help_round" field.</summary>
-    public const int NextCanUseHelpRoundFieldNumber = 1800;
-    private uint nextCanUseHelpRound_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextCanUseHelpRound {
-      get { return nextCanUseHelpRound_; }
-      set {
-        nextCanUseHelpRound_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_market_content_finish" field.</summary>
-    public const int IsMarketContentFinishFieldNumber = 2;
-    private bool isMarketContentFinish_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsMarketContentFinish {
-      get { return isMarketContentFinish_; }
-      set {
-        isMarketContentFinish_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "viewed_strategy_list" field.</summary>
-    public const int ViewedStrategyListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_viewedStrategyList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> viewedStrategyList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ViewedStrategyList {
-      get { return viewedStrategyList_; }
-    }
-
-    /// <summary>Field number for the "prev_coin_c_num" field.</summary>
-    public const int PrevCoinCNumFieldNumber = 3;
-    private uint prevCoinCNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PrevCoinCNum {
-      get { return prevCoinCNum_; }
-      set {
-        prevCoinCNum_ = value;
-      }
-    }
-
     /// <summary>Field number for the "bargain_info_map" field.</summary>
-    public const int BargainInfoMapFieldNumber = 6;
+    public const int BargainInfoMapFieldNumber = 9;
     private static readonly pbc::MapField<uint, bool>.Codec _map_bargainInfoMap_codec
-        = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 50);
+        = new pbc::MapField<uint, bool>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForBool(16, false), 74);
     private readonly pbc::MapField<uint, bool> bargainInfoMap_ = new pbc::MapField<uint, bool>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -272,62 +133,27 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return bargainInfoMap_; }
     }
 
-    /// <summary>Field number for the "dividend_reward_count" field.</summary>
-    public const int DividendRewardCountFieldNumber = 1798;
-    private uint dividendRewardCount_;
+    /// <summary>Field number for the "Unk3300_FJDIMCJEAOB" field.</summary>
+    public const int Unk3300FJDIMCJEAOBFieldNumber = 8;
+    private bool unk3300FJDIMCJEAOB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DividendRewardCount {
-      get { return dividendRewardCount_; }
+    public bool Unk3300FJDIMCJEAOB {
+      get { return unk3300FJDIMCJEAOB_; }
       set {
-        dividendRewardCount_ = value;
+        unk3300FJDIMCJEAOB_ = value;
       }
     }
 
-    /// <summary>Field number for the "cur_npc_event_list" field.</summary>
-    public const int CurNpcEventListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_curNpcEventList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> curNpcEventList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_COKBOKAOCNJ" field.</summary>
+    public const int Unk3300COKBOKAOCNJFieldNumber = 1007;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300COKBOKAOCNJ_codec
+        = pb::FieldCodec.ForUInt32(8058);
+    private readonly pbc::RepeatedField<uint> unk3300COKBOKAOCNJ_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CurNpcEventList {
-      get { return curNpcEventList_; }
-    }
-
-    /// <summary>Field number for the "is_help_in_cd" field.</summary>
-    public const int IsHelpInCdFieldNumber = 366;
-    private bool isHelpInCd_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsHelpInCd {
-      get { return isHelpInCd_; }
-      set {
-        isHelpInCd_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "prev_coin_b_num" field.</summary>
-    public const int PrevCoinBNumFieldNumber = 1;
-    private uint prevCoinBNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PrevCoinBNum {
-      get { return prevCoinBNum_; }
-      set {
-        prevCoinBNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "open_store_list" field.</summary>
-    public const int OpenStoreListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> _repeated_openStoreList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> openStoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> OpenStoreList {
-      get { return openStoreList_; }
+    public pbc::RepeatedField<uint> Unk3300COKBOKAOCNJ {
+      get { return unk3300COKBOKAOCNJ_; }
     }
 
     /// <summary>Field number for the "help_skill_id" field.</summary>
@@ -342,27 +168,96 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_round_tips_view" field.</summary>
-    public const int IsRoundTipsViewFieldNumber = 12;
-    private bool isRoundTipsView_;
+    /// <summary>Field number for the "Unk3300_ABHHACBDCFI" field.</summary>
+    public const int Unk3300ABHHACBDCFIFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300ABHHACBDCFI_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> unk3300ABHHACBDCFI_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsRoundTipsView {
-      get { return isRoundTipsView_; }
+    public pbc::RepeatedField<uint> Unk3300ABHHACBDCFI {
+      get { return unk3300ABHHACBDCFI_; }
+    }
+
+    /// <summary>Field number for the "open_store_list" field.</summary>
+    public const int OpenStoreListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> _repeated_openStoreList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> openStoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo> OpenStoreList {
+      get { return openStoreList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_EDBJLBICEJF" field.</summary>
+    public const int Unk3300EDBJLBICEJFFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300EDBJLBICEJF_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unk3300EDBJLBICEJF_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300EDBJLBICEJF {
+      get { return unk3300EDBJLBICEJF_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_PAMKPAOCJJJ" field.</summary>
+    public const int Unk3300PAMKPAOCJJJFieldNumber = 11;
+    private bool unk3300PAMKPAOCJJJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300PAMKPAOCJJJ {
+      get { return unk3300PAMKPAOCJJJ_; }
       set {
-        isRoundTipsView_ = value;
+        unk3300PAMKPAOCJJJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_strategy_module_open" field.</summary>
-    public const int IsStrategyModuleOpenFieldNumber = 876;
-    private bool isStrategyModuleOpen_;
+    /// <summary>Field number for the "Unk3300_FOPKAIIAMFM" field.</summary>
+    public const int Unk3300FOPKAIIAMFMFieldNumber = 1826;
+    private uint unk3300FOPKAIIAMFM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStrategyModuleOpen {
-      get { return isStrategyModuleOpen_; }
+    public uint Unk3300FOPKAIIAMFM {
+      get { return unk3300FOPKAIIAMFM_; }
       set {
-        isStrategyModuleOpen_ = value;
+        unk3300FOPKAIIAMFM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NBNOJJBNJPB" field.</summary>
+    public const int Unk3300NBNOJJBNJPBFieldNumber = 470;
+    private bool unk3300NBNOJJBNJPB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NBNOJJBNJPB {
+      get { return unk3300NBNOJJBNJPB_; }
+      set {
+        unk3300NBNOJJBNJPB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "deal_info" field.</summary>
+    public const int DealInfoFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo dealInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo DealInfo {
+      get { return dealInfo_; }
+      set {
+        dealInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "store_round" field.</summary>
+    public const int StoreRoundFieldNumber = 3;
+    private uint storeRound_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StoreRound {
+      get { return storeRound_; }
+      set {
+        storeRound_ = value;
       }
     }
 
@@ -375,6 +270,113 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> UnlockStrategyList {
       get { return unlockStrategyList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_AIAMBBODLBO" field.</summary>
+    public const int Unk3300AIAMBBODLBOFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300AIAMBBODLBO_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> unk3300AIAMBBODLBO_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300AIAMBBODLBO {
+      get { return unk3300AIAMBBODLBO_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NDFHAGHBCFN" field.</summary>
+    public const int Unk3300NDFHAGHBCFNFieldNumber = 6;
+    private bool unk3300NDFHAGHBCFN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NDFHAGHBCFN {
+      get { return unk3300NDFHAGHBCFN_; }
+      set {
+        unk3300NDFHAGHBCFN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LMNLHHPMAMN" field.</summary>
+    public const int Unk3300LMNLHHPMAMNFieldNumber = 1;
+    private uint unk3300LMNLHHPMAMN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LMNLHHPMAMN {
+      get { return unk3300LMNLHHPMAMN_; }
+      set {
+        unk3300LMNLHHPMAMN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ALHLENELIEO" field.</summary>
+    public const int Unk3300ALHLENELIEOFieldNumber = 1594;
+    private bool unk3300ALHLENELIEO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ALHLENELIEO {
+      get { return unk3300ALHLENELIEO_; }
+      set {
+        unk3300ALHLENELIEO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ACJLANLBCGK" field.</summary>
+    public const int Unk3300ACJLANLBCGKFieldNumber = 1658;
+    private uint unk3300ACJLANLBCGK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300ACJLANLBCGK {
+      get { return unk3300ACJLANLBCGK_; }
+      set {
+        unk3300ACJLANLBCGK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HHKKEDDIGLA" field.</summary>
+    public const int Unk3300HHKKEDDIGLAFieldNumber = 5;
+    private uint unk3300HHKKEDDIGLA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HHKKEDDIGLA {
+      get { return unk3300HHKKEDDIGLA_; }
+      set {
+        unk3300HHKKEDDIGLA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KJDEFIBKBPE" field.</summary>
+    public const int Unk3300KJDEFIBKBPEFieldNumber = 4;
+    private bool unk3300KJDEFIBKBPE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300KJDEFIBKBPE {
+      get { return unk3300KJDEFIBKBPE_; }
+      set {
+        unk3300KJDEFIBKBPE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ICJOCDGLFFD" field.</summary>
+    public const int Unk3300ICJOCDGLFFDFieldNumber = 15;
+    private bool unk3300ICJOCDGLFFD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ICJOCDGLFFD {
+      get { return unk3300ICJOCDGLFFD_; }
+      set {
+        unk3300ICJOCDGLFFD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NMHHGNPKBEL" field.</summary>
+    public const int Unk3300NMHHGNPKBELFieldNumber = 1721;
+    private bool unk3300NMHHGNPKBEL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NMHHGNPKBEL {
+      get { return unk3300NMHHGNPKBEL_; }
+      set {
+        unk3300NMHHGNPKBEL_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -392,28 +394,28 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsHelpModuleOpen != other.IsHelpModuleOpen) return false;
-      if (IsStoreContentInterrupt != other.IsStoreContentInterrupt) return false;
+      if (!BargainInfoMap.Equals(other.BargainInfoMap)) return false;
+      if (Unk3300FJDIMCJEAOB != other.Unk3300FJDIMCJEAOB) return false;
+      if(!unk3300COKBOKAOCNJ_.Equals(other.unk3300COKBOKAOCNJ_)) return false;
+      if (HelpSkillId != other.HelpSkillId) return false;
+      if(!unk3300ABHHACBDCFI_.Equals(other.unk3300ABHHACBDCFI_)) return false;
+      if(!openStoreList_.Equals(other.openStoreList_)) return false;
+      if(!unk3300EDBJLBICEJF_.Equals(other.unk3300EDBJLBICEJF_)) return false;
+      if (Unk3300PAMKPAOCJJJ != other.Unk3300PAMKPAOCJJJ) return false;
+      if (Unk3300FOPKAIIAMFM != other.Unk3300FOPKAIIAMFM) return false;
+      if (Unk3300NBNOJJBNJPB != other.Unk3300NBNOJJBNJPB) return false;
       if (!object.Equals(DealInfo, other.DealInfo)) return false;
       if (StoreRound != other.StoreRound) return false;
-      if(!storeRoundIncomeList_.Equals(other.storeRoundIncomeList_)) return false;
-      if (IsStoreContentFinish != other.IsStoreContentFinish) return false;
-      if(!curEnvEventList_.Equals(other.curEnvEventList_)) return false;
-      if (IsMarketContentOpen != other.IsMarketContentOpen) return false;
-      if (NextCanUseHelpRound != other.NextCanUseHelpRound) return false;
-      if (IsMarketContentFinish != other.IsMarketContentFinish) return false;
-      if(!viewedStrategyList_.Equals(other.viewedStrategyList_)) return false;
-      if (PrevCoinCNum != other.PrevCoinCNum) return false;
-      if (!BargainInfoMap.Equals(other.BargainInfoMap)) return false;
-      if (DividendRewardCount != other.DividendRewardCount) return false;
-      if(!curNpcEventList_.Equals(other.curNpcEventList_)) return false;
-      if (IsHelpInCd != other.IsHelpInCd) return false;
-      if (PrevCoinBNum != other.PrevCoinBNum) return false;
-      if(!openStoreList_.Equals(other.openStoreList_)) return false;
-      if (HelpSkillId != other.HelpSkillId) return false;
-      if (IsRoundTipsView != other.IsRoundTipsView) return false;
-      if (IsStrategyModuleOpen != other.IsStrategyModuleOpen) return false;
       if(!unlockStrategyList_.Equals(other.unlockStrategyList_)) return false;
+      if(!unk3300AIAMBBODLBO_.Equals(other.unk3300AIAMBBODLBO_)) return false;
+      if (Unk3300NDFHAGHBCFN != other.Unk3300NDFHAGHBCFN) return false;
+      if (Unk3300LMNLHHPMAMN != other.Unk3300LMNLHHPMAMN) return false;
+      if (Unk3300ALHLENELIEO != other.Unk3300ALHLENELIEO) return false;
+      if (Unk3300ACJLANLBCGK != other.Unk3300ACJLANLBCGK) return false;
+      if (Unk3300HHKKEDDIGLA != other.Unk3300HHKKEDDIGLA) return false;
+      if (Unk3300KJDEFIBKBPE != other.Unk3300KJDEFIBKBPE) return false;
+      if (Unk3300ICJOCDGLFFD != other.Unk3300ICJOCDGLFFD) return false;
+      if (Unk3300NMHHGNPKBEL != other.Unk3300NMHHGNPKBEL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -421,28 +423,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsHelpModuleOpen != false) hash ^= IsHelpModuleOpen.GetHashCode();
-      if (IsStoreContentInterrupt != false) hash ^= IsStoreContentInterrupt.GetHashCode();
+      hash ^= BargainInfoMap.GetHashCode();
+      if (Unk3300FJDIMCJEAOB != false) hash ^= Unk3300FJDIMCJEAOB.GetHashCode();
+      hash ^= unk3300COKBOKAOCNJ_.GetHashCode();
+      if (HelpSkillId != 0) hash ^= HelpSkillId.GetHashCode();
+      hash ^= unk3300ABHHACBDCFI_.GetHashCode();
+      hash ^= openStoreList_.GetHashCode();
+      hash ^= unk3300EDBJLBICEJF_.GetHashCode();
+      if (Unk3300PAMKPAOCJJJ != false) hash ^= Unk3300PAMKPAOCJJJ.GetHashCode();
+      if (Unk3300FOPKAIIAMFM != 0) hash ^= Unk3300FOPKAIIAMFM.GetHashCode();
+      if (Unk3300NBNOJJBNJPB != false) hash ^= Unk3300NBNOJJBNJPB.GetHashCode();
       if (dealInfo_ != null) hash ^= DealInfo.GetHashCode();
       if (StoreRound != 0) hash ^= StoreRound.GetHashCode();
-      hash ^= storeRoundIncomeList_.GetHashCode();
-      if (IsStoreContentFinish != false) hash ^= IsStoreContentFinish.GetHashCode();
-      hash ^= curEnvEventList_.GetHashCode();
-      if (IsMarketContentOpen != false) hash ^= IsMarketContentOpen.GetHashCode();
-      if (NextCanUseHelpRound != 0) hash ^= NextCanUseHelpRound.GetHashCode();
-      if (IsMarketContentFinish != false) hash ^= IsMarketContentFinish.GetHashCode();
-      hash ^= viewedStrategyList_.GetHashCode();
-      if (PrevCoinCNum != 0) hash ^= PrevCoinCNum.GetHashCode();
-      hash ^= BargainInfoMap.GetHashCode();
-      if (DividendRewardCount != 0) hash ^= DividendRewardCount.GetHashCode();
-      hash ^= curNpcEventList_.GetHashCode();
-      if (IsHelpInCd != false) hash ^= IsHelpInCd.GetHashCode();
-      if (PrevCoinBNum != 0) hash ^= PrevCoinBNum.GetHashCode();
-      hash ^= openStoreList_.GetHashCode();
-      if (HelpSkillId != 0) hash ^= HelpSkillId.GetHashCode();
-      if (IsRoundTipsView != false) hash ^= IsRoundTipsView.GetHashCode();
-      if (IsStrategyModuleOpen != false) hash ^= IsStrategyModuleOpen.GetHashCode();
       hash ^= unlockStrategyList_.GetHashCode();
+      hash ^= unk3300AIAMBBODLBO_.GetHashCode();
+      if (Unk3300NDFHAGHBCFN != false) hash ^= Unk3300NDFHAGHBCFN.GetHashCode();
+      if (Unk3300LMNLHHPMAMN != 0) hash ^= Unk3300LMNLHHPMAMN.GetHashCode();
+      if (Unk3300ALHLENELIEO != false) hash ^= Unk3300ALHLENELIEO.GetHashCode();
+      if (Unk3300ACJLANLBCGK != 0) hash ^= Unk3300ACJLANLBCGK.GetHashCode();
+      if (Unk3300HHKKEDDIGLA != 0) hash ^= Unk3300HHKKEDDIGLA.GetHashCode();
+      if (Unk3300KJDEFIBKBPE != false) hash ^= Unk3300KJDEFIBKBPE.GetHashCode();
+      if (Unk3300ICJOCDGLFFD != false) hash ^= Unk3300ICJOCDGLFFD.GetHashCode();
+      if (Unk3300NMHHGNPKBEL != false) hash ^= Unk3300NMHHGNPKBEL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -461,72 +463,72 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PrevCoinBNum != 0) {
+      if (Unk3300LMNLHHPMAMN != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(PrevCoinBNum);
+        output.WriteUInt32(Unk3300LMNLHHPMAMN);
       }
-      if (IsMarketContentFinish != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsMarketContentFinish);
-      }
-      if (PrevCoinCNum != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PrevCoinCNum);
-      }
-      curNpcEventList_.WriteTo(output, _repeated_curNpcEventList_codec);
-      if (IsStoreContentFinish != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsStoreContentFinish);
-      }
-      bargainInfoMap_.WriteTo(output, _map_bargainInfoMap_codec);
+      openStoreList_.WriteTo(output, _repeated_openStoreList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(StoreRound);
       }
-      curEnvEventList_.WriteTo(output, _repeated_curEnvEventList_codec);
-      openStoreList_.WriteTo(output, _repeated_openStoreList_codec);
-      if (IsMarketContentOpen != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsMarketContentOpen);
+      if (Unk3300KJDEFIBKBPE != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300KJDEFIBKBPE);
+      }
+      if (Unk3300HHKKEDDIGLA != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300HHKKEDDIGLA);
+      }
+      if (Unk3300NDFHAGHBCFN != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300NDFHAGHBCFN);
+      }
+      unk3300ABHHACBDCFI_.WriteTo(output, _repeated_unk3300ABHHACBDCFI_codec);
+      if (Unk3300FJDIMCJEAOB != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300FJDIMCJEAOB);
+      }
+      bargainInfoMap_.WriteTo(output, _map_bargainInfoMap_codec);
+      unk3300EDBJLBICEJF_.WriteTo(output, _repeated_unk3300EDBJLBICEJF_codec);
+      if (Unk3300PAMKPAOCJJJ != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300PAMKPAOCJJJ);
       }
       if (dealInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(98);
         output.WriteMessage(DealInfo);
       }
-      if (IsRoundTipsView != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsRoundTipsView);
-      }
       unlockStrategyList_.WriteTo(output, _repeated_unlockStrategyList_codec);
-      viewedStrategyList_.WriteTo(output, _repeated_viewedStrategyList_codec);
-      if (IsStoreContentInterrupt != false) {
+      unk3300AIAMBBODLBO_.WriteTo(output, _repeated_unk3300AIAMBBODLBO_codec);
+      if (Unk3300ICJOCDGLFFD != false) {
         output.WriteRawTag(120);
-        output.WriteBool(IsStoreContentInterrupt);
+        output.WriteBool(Unk3300ICJOCDGLFFD);
       }
-      storeRoundIncomeList_.WriteTo(output, _repeated_storeRoundIncomeList_codec);
-      if (IsHelpInCd != false) {
-        output.WriteRawTag(240, 22);
-        output.WriteBool(IsHelpInCd);
+      if (Unk3300NBNOJJBNJPB != false) {
+        output.WriteRawTag(176, 29);
+        output.WriteBool(Unk3300NBNOJJBNJPB);
       }
       if (HelpSkillId != 0) {
         output.WriteRawTag(192, 47);
         output.WriteUInt32(HelpSkillId);
       }
-      if (IsStrategyModuleOpen != false) {
-        output.WriteRawTag(224, 54);
-        output.WriteBool(IsStrategyModuleOpen);
+      unk3300COKBOKAOCNJ_.WriteTo(output, _repeated_unk3300COKBOKAOCNJ_codec);
+      if (Unk3300ALHLENELIEO != false) {
+        output.WriteRawTag(208, 99);
+        output.WriteBool(Unk3300ALHLENELIEO);
       }
-      if (IsHelpModuleOpen != false) {
-        output.WriteRawTag(232, 92);
-        output.WriteBool(IsHelpModuleOpen);
+      if (Unk3300ACJLANLBCGK != 0) {
+        output.WriteRawTag(208, 103);
+        output.WriteUInt32(Unk3300ACJLANLBCGK);
       }
-      if (DividendRewardCount != 0) {
-        output.WriteRawTag(176, 112);
-        output.WriteUInt32(DividendRewardCount);
+      if (Unk3300NMHHGNPKBEL != false) {
+        output.WriteRawTag(200, 107);
+        output.WriteBool(Unk3300NMHHGNPKBEL);
       }
-      if (NextCanUseHelpRound != 0) {
-        output.WriteRawTag(192, 112);
-        output.WriteUInt32(NextCanUseHelpRound);
+      if (Unk3300FOPKAIIAMFM != 0) {
+        output.WriteRawTag(144, 114);
+        output.WriteUInt32(Unk3300FOPKAIIAMFM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -538,72 +540,72 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PrevCoinBNum != 0) {
+      if (Unk3300LMNLHHPMAMN != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(PrevCoinBNum);
+        output.WriteUInt32(Unk3300LMNLHHPMAMN);
       }
-      if (IsMarketContentFinish != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsMarketContentFinish);
-      }
-      if (PrevCoinCNum != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PrevCoinCNum);
-      }
-      curNpcEventList_.WriteTo(ref output, _repeated_curNpcEventList_codec);
-      if (IsStoreContentFinish != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsStoreContentFinish);
-      }
-      bargainInfoMap_.WriteTo(ref output, _map_bargainInfoMap_codec);
+      openStoreList_.WriteTo(ref output, _repeated_openStoreList_codec);
       if (StoreRound != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(StoreRound);
       }
-      curEnvEventList_.WriteTo(ref output, _repeated_curEnvEventList_codec);
-      openStoreList_.WriteTo(ref output, _repeated_openStoreList_codec);
-      if (IsMarketContentOpen != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsMarketContentOpen);
+      if (Unk3300KJDEFIBKBPE != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300KJDEFIBKBPE);
+      }
+      if (Unk3300HHKKEDDIGLA != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300HHKKEDDIGLA);
+      }
+      if (Unk3300NDFHAGHBCFN != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300NDFHAGHBCFN);
+      }
+      unk3300ABHHACBDCFI_.WriteTo(ref output, _repeated_unk3300ABHHACBDCFI_codec);
+      if (Unk3300FJDIMCJEAOB != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300FJDIMCJEAOB);
+      }
+      bargainInfoMap_.WriteTo(ref output, _map_bargainInfoMap_codec);
+      unk3300EDBJLBICEJF_.WriteTo(ref output, _repeated_unk3300EDBJLBICEJF_codec);
+      if (Unk3300PAMKPAOCJJJ != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300PAMKPAOCJJJ);
       }
       if (dealInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(98);
         output.WriteMessage(DealInfo);
       }
-      if (IsRoundTipsView != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsRoundTipsView);
-      }
       unlockStrategyList_.WriteTo(ref output, _repeated_unlockStrategyList_codec);
-      viewedStrategyList_.WriteTo(ref output, _repeated_viewedStrategyList_codec);
-      if (IsStoreContentInterrupt != false) {
+      unk3300AIAMBBODLBO_.WriteTo(ref output, _repeated_unk3300AIAMBBODLBO_codec);
+      if (Unk3300ICJOCDGLFFD != false) {
         output.WriteRawTag(120);
-        output.WriteBool(IsStoreContentInterrupt);
+        output.WriteBool(Unk3300ICJOCDGLFFD);
       }
-      storeRoundIncomeList_.WriteTo(ref output, _repeated_storeRoundIncomeList_codec);
-      if (IsHelpInCd != false) {
-        output.WriteRawTag(240, 22);
-        output.WriteBool(IsHelpInCd);
+      if (Unk3300NBNOJJBNJPB != false) {
+        output.WriteRawTag(176, 29);
+        output.WriteBool(Unk3300NBNOJJBNJPB);
       }
       if (HelpSkillId != 0) {
         output.WriteRawTag(192, 47);
         output.WriteUInt32(HelpSkillId);
       }
-      if (IsStrategyModuleOpen != false) {
-        output.WriteRawTag(224, 54);
-        output.WriteBool(IsStrategyModuleOpen);
+      unk3300COKBOKAOCNJ_.WriteTo(ref output, _repeated_unk3300COKBOKAOCNJ_codec);
+      if (Unk3300ALHLENELIEO != false) {
+        output.WriteRawTag(208, 99);
+        output.WriteBool(Unk3300ALHLENELIEO);
       }
-      if (IsHelpModuleOpen != false) {
-        output.WriteRawTag(232, 92);
-        output.WriteBool(IsHelpModuleOpen);
+      if (Unk3300ACJLANLBCGK != 0) {
+        output.WriteRawTag(208, 103);
+        output.WriteUInt32(Unk3300ACJLANLBCGK);
       }
-      if (DividendRewardCount != 0) {
-        output.WriteRawTag(176, 112);
-        output.WriteUInt32(DividendRewardCount);
+      if (Unk3300NMHHGNPKBEL != false) {
+        output.WriteRawTag(200, 107);
+        output.WriteBool(Unk3300NMHHGNPKBEL);
       }
-      if (NextCanUseHelpRound != 0) {
-        output.WriteRawTag(192, 112);
-        output.WriteUInt32(NextCanUseHelpRound);
+      if (Unk3300FOPKAIIAMFM != 0) {
+        output.WriteRawTag(144, 114);
+        output.WriteUInt32(Unk3300FOPKAIIAMFM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -615,11 +617,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsHelpModuleOpen != false) {
-        size += 2 + 1;
-      }
-      if (IsStoreContentInterrupt != false) {
+      size += bargainInfoMap_.CalculateSize(_map_bargainInfoMap_codec);
+      if (Unk3300FJDIMCJEAOB != false) {
         size += 1 + 1;
+      }
+      size += unk3300COKBOKAOCNJ_.CalculateSize(_repeated_unk3300COKBOKAOCNJ_codec);
+      if (HelpSkillId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(HelpSkillId);
+      }
+      size += unk3300ABHHACBDCFI_.CalculateSize(_repeated_unk3300ABHHACBDCFI_codec);
+      size += openStoreList_.CalculateSize(_repeated_openStoreList_codec);
+      size += unk3300EDBJLBICEJF_.CalculateSize(_repeated_unk3300EDBJLBICEJF_codec);
+      if (Unk3300PAMKPAOCJJJ != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300FOPKAIIAMFM != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOPKAIIAMFM);
+      }
+      if (Unk3300NBNOJJBNJPB != false) {
+        size += 2 + 1;
       }
       if (dealInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DealInfo);
@@ -627,46 +643,32 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StoreRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreRound);
       }
-      size += storeRoundIncomeList_.CalculateSize(_repeated_storeRoundIncomeList_codec);
-      if (IsStoreContentFinish != false) {
-        size += 1 + 1;
-      }
-      size += curEnvEventList_.CalculateSize(_repeated_curEnvEventList_codec);
-      if (IsMarketContentOpen != false) {
-        size += 1 + 1;
-      }
-      if (NextCanUseHelpRound != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(NextCanUseHelpRound);
-      }
-      if (IsMarketContentFinish != false) {
-        size += 1 + 1;
-      }
-      size += viewedStrategyList_.CalculateSize(_repeated_viewedStrategyList_codec);
-      if (PrevCoinCNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrevCoinCNum);
-      }
-      size += bargainInfoMap_.CalculateSize(_map_bargainInfoMap_codec);
-      if (DividendRewardCount != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DividendRewardCount);
-      }
-      size += curNpcEventList_.CalculateSize(_repeated_curNpcEventList_codec);
-      if (IsHelpInCd != false) {
-        size += 2 + 1;
-      }
-      if (PrevCoinBNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrevCoinBNum);
-      }
-      size += openStoreList_.CalculateSize(_repeated_openStoreList_codec);
-      if (HelpSkillId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(HelpSkillId);
-      }
-      if (IsRoundTipsView != false) {
-        size += 1 + 1;
-      }
-      if (IsStrategyModuleOpen != false) {
-        size += 2 + 1;
-      }
       size += unlockStrategyList_.CalculateSize(_repeated_unlockStrategyList_codec);
+      size += unk3300AIAMBBODLBO_.CalculateSize(_repeated_unk3300AIAMBBODLBO_codec);
+      if (Unk3300NDFHAGHBCFN != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300LMNLHHPMAMN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LMNLHHPMAMN);
+      }
+      if (Unk3300ALHLENELIEO != false) {
+        size += 2 + 1;
+      }
+      if (Unk3300ACJLANLBCGK != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ACJLANLBCGK);
+      }
+      if (Unk3300HHKKEDDIGLA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HHKKEDDIGLA);
+      }
+      if (Unk3300KJDEFIBKBPE != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300ICJOCDGLFFD != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300NMHHGNPKBEL != false) {
+        size += 2 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -679,11 +681,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsHelpModuleOpen != false) {
-        IsHelpModuleOpen = other.IsHelpModuleOpen;
+      bargainInfoMap_.Add(other.bargainInfoMap_);
+      if (other.Unk3300FJDIMCJEAOB != false) {
+        Unk3300FJDIMCJEAOB = other.Unk3300FJDIMCJEAOB;
       }
-      if (other.IsStoreContentInterrupt != false) {
-        IsStoreContentInterrupt = other.IsStoreContentInterrupt;
+      unk3300COKBOKAOCNJ_.Add(other.unk3300COKBOKAOCNJ_);
+      if (other.HelpSkillId != 0) {
+        HelpSkillId = other.HelpSkillId;
+      }
+      unk3300ABHHACBDCFI_.Add(other.unk3300ABHHACBDCFI_);
+      openStoreList_.Add(other.openStoreList_);
+      unk3300EDBJLBICEJF_.Add(other.unk3300EDBJLBICEJF_);
+      if (other.Unk3300PAMKPAOCJJJ != false) {
+        Unk3300PAMKPAOCJJJ = other.Unk3300PAMKPAOCJJJ;
+      }
+      if (other.Unk3300FOPKAIIAMFM != 0) {
+        Unk3300FOPKAIIAMFM = other.Unk3300FOPKAIIAMFM;
+      }
+      if (other.Unk3300NBNOJJBNJPB != false) {
+        Unk3300NBNOJJBNJPB = other.Unk3300NBNOJJBNJPB;
       }
       if (other.dealInfo_ != null) {
         if (dealInfo_ == null) {
@@ -694,46 +710,32 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StoreRound != 0) {
         StoreRound = other.StoreRound;
       }
-      storeRoundIncomeList_.Add(other.storeRoundIncomeList_);
-      if (other.IsStoreContentFinish != false) {
-        IsStoreContentFinish = other.IsStoreContentFinish;
-      }
-      curEnvEventList_.Add(other.curEnvEventList_);
-      if (other.IsMarketContentOpen != false) {
-        IsMarketContentOpen = other.IsMarketContentOpen;
-      }
-      if (other.NextCanUseHelpRound != 0) {
-        NextCanUseHelpRound = other.NextCanUseHelpRound;
-      }
-      if (other.IsMarketContentFinish != false) {
-        IsMarketContentFinish = other.IsMarketContentFinish;
-      }
-      viewedStrategyList_.Add(other.viewedStrategyList_);
-      if (other.PrevCoinCNum != 0) {
-        PrevCoinCNum = other.PrevCoinCNum;
-      }
-      bargainInfoMap_.Add(other.bargainInfoMap_);
-      if (other.DividendRewardCount != 0) {
-        DividendRewardCount = other.DividendRewardCount;
-      }
-      curNpcEventList_.Add(other.curNpcEventList_);
-      if (other.IsHelpInCd != false) {
-        IsHelpInCd = other.IsHelpInCd;
-      }
-      if (other.PrevCoinBNum != 0) {
-        PrevCoinBNum = other.PrevCoinBNum;
-      }
-      openStoreList_.Add(other.openStoreList_);
-      if (other.HelpSkillId != 0) {
-        HelpSkillId = other.HelpSkillId;
-      }
-      if (other.IsRoundTipsView != false) {
-        IsRoundTipsView = other.IsRoundTipsView;
-      }
-      if (other.IsStrategyModuleOpen != false) {
-        IsStrategyModuleOpen = other.IsStrategyModuleOpen;
-      }
       unlockStrategyList_.Add(other.unlockStrategyList_);
+      unk3300AIAMBBODLBO_.Add(other.unk3300AIAMBBODLBO_);
+      if (other.Unk3300NDFHAGHBCFN != false) {
+        Unk3300NDFHAGHBCFN = other.Unk3300NDFHAGHBCFN;
+      }
+      if (other.Unk3300LMNLHHPMAMN != 0) {
+        Unk3300LMNLHHPMAMN = other.Unk3300LMNLHHPMAMN;
+      }
+      if (other.Unk3300ALHLENELIEO != false) {
+        Unk3300ALHLENELIEO = other.Unk3300ALHLENELIEO;
+      }
+      if (other.Unk3300ACJLANLBCGK != 0) {
+        Unk3300ACJLANLBCGK = other.Unk3300ACJLANLBCGK;
+      }
+      if (other.Unk3300HHKKEDDIGLA != 0) {
+        Unk3300HHKKEDDIGLA = other.Unk3300HHKKEDDIGLA;
+      }
+      if (other.Unk3300KJDEFIBKBPE != false) {
+        Unk3300KJDEFIBKBPE = other.Unk3300KJDEFIBKBPE;
+      }
+      if (other.Unk3300ICJOCDGLFFD != false) {
+        Unk3300ICJOCDGLFFD = other.Unk3300ICJOCDGLFFD;
+      }
+      if (other.Unk3300NMHHGNPKBEL != false) {
+        Unk3300NMHHGNPKBEL = other.Unk3300NMHHGNPKBEL;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -750,56 +752,56 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PrevCoinBNum = input.ReadUInt32();
+            Unk3300LMNLHHPMAMN = input.ReadUInt32();
             break;
           }
-          case 16: {
-            IsMarketContentFinish = input.ReadBool();
-            break;
-          }
-          case 24: {
-            PrevCoinCNum = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            curNpcEventList_.AddEntriesFrom(input, _repeated_curNpcEventList_codec);
-            break;
-          }
-          case 40: {
-            IsStoreContentFinish = input.ReadBool();
-            break;
-          }
-          case 50: {
-            bargainInfoMap_.AddEntriesFrom(input, _map_bargainInfoMap_codec);
-            break;
-          }
-          case 56: {
-            StoreRound = input.ReadUInt32();
-            break;
-          }
-          case 66:
-          case 64: {
-            curEnvEventList_.AddEntriesFrom(input, _repeated_curEnvEventList_codec);
-            break;
-          }
-          case 74: {
+          case 18: {
             openStoreList_.AddEntriesFrom(input, _repeated_openStoreList_codec);
             break;
           }
-          case 80: {
-            IsMarketContentOpen = input.ReadBool();
+          case 24: {
+            StoreRound = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 32: {
+            Unk3300KJDEFIBKBPE = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Unk3300HHKKEDDIGLA = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300NDFHAGHBCFN = input.ReadBool();
+            break;
+          }
+          case 58:
+          case 56: {
+            unk3300ABHHACBDCFI_.AddEntriesFrom(input, _repeated_unk3300ABHHACBDCFI_codec);
+            break;
+          }
+          case 64: {
+            Unk3300FJDIMCJEAOB = input.ReadBool();
+            break;
+          }
+          case 74: {
+            bargainInfoMap_.AddEntriesFrom(input, _map_bargainInfoMap_codec);
+            break;
+          }
+          case 82:
+          case 80: {
+            unk3300EDBJLBICEJF_.AddEntriesFrom(input, _repeated_unk3300EDBJLBICEJF_codec);
+            break;
+          }
+          case 88: {
+            Unk3300PAMKPAOCJJJ = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (dealInfo_ == null) {
               DealInfo = new global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo();
             }
             input.ReadMessage(DealInfo);
-            break;
-          }
-          case 96: {
-            IsRoundTipsView = input.ReadBool();
             break;
           }
           case 106:
@@ -809,40 +811,40 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 114:
           case 112: {
-            viewedStrategyList_.AddEntriesFrom(input, _repeated_viewedStrategyList_codec);
+            unk3300AIAMBBODLBO_.AddEntriesFrom(input, _repeated_unk3300AIAMBBODLBO_codec);
             break;
           }
           case 120: {
-            IsStoreContentInterrupt = input.ReadBool();
+            Unk3300ICJOCDGLFFD = input.ReadBool();
             break;
           }
-          case 1658:
-          case 1656: {
-            storeRoundIncomeList_.AddEntriesFrom(input, _repeated_storeRoundIncomeList_codec);
-            break;
-          }
-          case 2928: {
-            IsHelpInCd = input.ReadBool();
+          case 3760: {
+            Unk3300NBNOJJBNJPB = input.ReadBool();
             break;
           }
           case 6080: {
             HelpSkillId = input.ReadUInt32();
             break;
           }
-          case 7008: {
-            IsStrategyModuleOpen = input.ReadBool();
+          case 8058:
+          case 8056: {
+            unk3300COKBOKAOCNJ_.AddEntriesFrom(input, _repeated_unk3300COKBOKAOCNJ_codec);
             break;
           }
-          case 11880: {
-            IsHelpModuleOpen = input.ReadBool();
+          case 12752: {
+            Unk3300ALHLENELIEO = input.ReadBool();
             break;
           }
-          case 14384: {
-            DividendRewardCount = input.ReadUInt32();
+          case 13264: {
+            Unk3300ACJLANLBCGK = input.ReadUInt32();
             break;
           }
-          case 14400: {
-            NextCanUseHelpRound = input.ReadUInt32();
+          case 13768: {
+            Unk3300NMHHGNPKBEL = input.ReadBool();
+            break;
+          }
+          case 14608: {
+            Unk3300FOPKAIIAMFM = input.ReadUInt32();
             break;
           }
         }
@@ -861,56 +863,56 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PrevCoinBNum = input.ReadUInt32();
+            Unk3300LMNLHHPMAMN = input.ReadUInt32();
             break;
           }
-          case 16: {
-            IsMarketContentFinish = input.ReadBool();
-            break;
-          }
-          case 24: {
-            PrevCoinCNum = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            curNpcEventList_.AddEntriesFrom(ref input, _repeated_curNpcEventList_codec);
-            break;
-          }
-          case 40: {
-            IsStoreContentFinish = input.ReadBool();
-            break;
-          }
-          case 50: {
-            bargainInfoMap_.AddEntriesFrom(ref input, _map_bargainInfoMap_codec);
-            break;
-          }
-          case 56: {
-            StoreRound = input.ReadUInt32();
-            break;
-          }
-          case 66:
-          case 64: {
-            curEnvEventList_.AddEntriesFrom(ref input, _repeated_curEnvEventList_codec);
-            break;
-          }
-          case 74: {
+          case 18: {
             openStoreList_.AddEntriesFrom(ref input, _repeated_openStoreList_codec);
             break;
           }
-          case 80: {
-            IsMarketContentOpen = input.ReadBool();
+          case 24: {
+            StoreRound = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 32: {
+            Unk3300KJDEFIBKBPE = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Unk3300HHKKEDDIGLA = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300NDFHAGHBCFN = input.ReadBool();
+            break;
+          }
+          case 58:
+          case 56: {
+            unk3300ABHHACBDCFI_.AddEntriesFrom(ref input, _repeated_unk3300ABHHACBDCFI_codec);
+            break;
+          }
+          case 64: {
+            Unk3300FJDIMCJEAOB = input.ReadBool();
+            break;
+          }
+          case 74: {
+            bargainInfoMap_.AddEntriesFrom(ref input, _map_bargainInfoMap_codec);
+            break;
+          }
+          case 82:
+          case 80: {
+            unk3300EDBJLBICEJF_.AddEntriesFrom(ref input, _repeated_unk3300EDBJLBICEJF_codec);
+            break;
+          }
+          case 88: {
+            Unk3300PAMKPAOCJJJ = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (dealInfo_ == null) {
               DealInfo = new global::Weedwacker.Shared.Network.Proto.VintageMarketDealInfo();
             }
             input.ReadMessage(DealInfo);
-            break;
-          }
-          case 96: {
-            IsRoundTipsView = input.ReadBool();
             break;
           }
           case 106:
@@ -920,40 +922,40 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 114:
           case 112: {
-            viewedStrategyList_.AddEntriesFrom(ref input, _repeated_viewedStrategyList_codec);
+            unk3300AIAMBBODLBO_.AddEntriesFrom(ref input, _repeated_unk3300AIAMBBODLBO_codec);
             break;
           }
           case 120: {
-            IsStoreContentInterrupt = input.ReadBool();
+            Unk3300ICJOCDGLFFD = input.ReadBool();
             break;
           }
-          case 1658:
-          case 1656: {
-            storeRoundIncomeList_.AddEntriesFrom(ref input, _repeated_storeRoundIncomeList_codec);
-            break;
-          }
-          case 2928: {
-            IsHelpInCd = input.ReadBool();
+          case 3760: {
+            Unk3300NBNOJJBNJPB = input.ReadBool();
             break;
           }
           case 6080: {
             HelpSkillId = input.ReadUInt32();
             break;
           }
-          case 7008: {
-            IsStrategyModuleOpen = input.ReadBool();
+          case 8058:
+          case 8056: {
+            unk3300COKBOKAOCNJ_.AddEntriesFrom(ref input, _repeated_unk3300COKBOKAOCNJ_codec);
             break;
           }
-          case 11880: {
-            IsHelpModuleOpen = input.ReadBool();
+          case 12752: {
+            Unk3300ALHLENELIEO = input.ReadBool();
             break;
           }
-          case 14384: {
-            DividendRewardCount = input.ReadUInt32();
+          case 13264: {
+            Unk3300ACJLANLBCGK = input.ReadUInt32();
             break;
           }
-          case 14400: {
-            NextCanUseHelpRound = input.ReadUInt32();
+          case 13768: {
+            Unk3300NMHHGNPKBEL = input.ReadBool();
+            break;
+          }
+          case 14608: {
+            Unk3300FOPKAIIAMFM = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGWeekChallengeInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHQ0dXZWVrQ2hhbGxlbmdlSW5mb05vdGlmeS5wcm90bxoaR0NHV2Vla0No",
-            "YWxsZW5nZUluZm8ucHJvdG8iawoaR0NHV2Vla0NoYWxsZW5nZUluZm9Ob3Rp",
-            "ZnkSMgoTY2hhbGxlbmdlX2luZm9fbGlzdBgPIAMoCzIVLkdDR1dlZWtDaGFs",
-            "bGVuZ2VJbmZvEhkKEW5leHRfcmVmcmVzaF90aW1lGAcgASgNQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBHQ0dXZWVrQ2hhbGxlbmdlSW5mb05vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoaR0NHV2Vla0NoYWxsZW5nZUluZm8u",
+            "cHJvdG8iqQEKGkdDR1dlZWtDaGFsbGVuZ2VJbmZvTm90aWZ5ElIKE2NoYWxs",
+            "ZW5nZV9pbmZvX2xpc3QYAyADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkdDR1dlZWtDaGFsbGVuZ2VJbmZvEhkKEW5leHRfcmVmcmVz",
+            "aF90aW1lGAQgASgNEhwKFGlzX25vdGlmeV9ucGNfY2hhbmdlGAcgASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfoNotify.Parser, new[]{ "ChallengeInfoList", "NextRefreshTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfoNotify.Parser, new[]{ "ChallengeInfoList", "NextRefreshTime", "IsNotifyNpcChange" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7615
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7058;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGWeekChallengeInfoNotify : pb::IMessage<GCGWeekChallengeInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,6 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public GCGWeekChallengeInfoNotify(GCGWeekChallengeInfoNotify other) : this() {
       challengeInfoList_ = other.challengeInfoList_.Clone();
       nextRefreshTime_ = other.nextRefreshTime_;
+      isNotifyNpcChange_ = other.isNotifyNpcChange_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_info_list" field.</summary>
-    public const int ChallengeInfoListFieldNumber = 15;
+    public const int ChallengeInfoListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo> _repeated_challengeInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGWeekChallengeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 7;
+    public const int NextRefreshTimeFieldNumber = 4;
     private uint nextRefreshTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return nextRefreshTime_; }
       set {
         nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_notify_npc_change" field.</summary>
+    public const int IsNotifyNpcChangeFieldNumber = 7;
+    private bool isNotifyNpcChange_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNotifyNpcChange {
+      get { return isNotifyNpcChange_; }
+      set {
+        isNotifyNpcChange_ = value;
       }
     }
 
@@ -129,6 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
       if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (IsNotifyNpcChange != other.IsNotifyNpcChange) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,6 +158,7 @@ namespace Weedwacker.Shared.Network.Proto {
       int hash = 1;
       hash ^= challengeInfoList_.GetHashCode();
       if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (IsNotifyNpcChange != false) hash ^= IsNotifyNpcChange.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +177,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(NextRefreshTime);
       }
-      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
+      if (IsNotifyNpcChange != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsNotifyNpcChange);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +196,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(NextRefreshTime);
       }
-      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
+      if (IsNotifyNpcChange != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsNotifyNpcChange);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -189,6 +218,9 @@ namespace Weedwacker.Shared.Network.Proto {
       size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
       if (NextRefreshTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (IsNotifyNpcChange != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,6 +238,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.NextRefreshTime != 0) {
         NextRefreshTime = other.NextRefreshTime;
       }
+      if (other.IsNotifyNpcChange != false) {
+        IsNotifyNpcChange = other.IsNotifyNpcChange;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,12 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 26: {
+            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 32: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 122: {
-            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
+          case 56: {
+            IsNotifyNpcChange = input.ReadBool();
             break;
           }
         }
@@ -244,12 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 26: {
+            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 32: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 122: {
-            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
+          case 56: {
+            IsNotifyNpcChange = input.ReadBool();
             break;
           }
         }

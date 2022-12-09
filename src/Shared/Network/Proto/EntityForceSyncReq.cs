@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityForceSyncReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhFbnRpdHlGb3JjZVN5bmNSZXEucHJvdG8aEE1vdGlvbkluZm8ucHJvdG8i",
-            "bgoSRW50aXR5Rm9yY2VTeW5jUmVxEg8KB3Jvb21faWQYASABKA0SIAoLbW90",
-            "aW9uX2luZm8YCyABKAsyCy5Nb3Rpb25JbmZvEhEKCWVudGl0eV9pZBgNIAEo",
-            "DRISCgpzY2VuZV90aW1lGAwgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhFbnRpdHlGb3JjZVN5bmNSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEE1vdGlvbkluZm8ucHJvdG8ijgEKEkVudGl0eUZv",
+            "cmNlU3luY1JlcRISCgpzY2VuZV90aW1lGA0gASgNEkAKC21vdGlvbl9pbmZv",
+            "GAogASgLMisuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Nb3Rp",
+            "b25JbmZvEhEKCWVudGl0eV9pZBgFIAEoDRIPCgdyb29tX2lkGAsgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MotionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityForceSyncReq), global::Weedwacker.Shared.Network.Proto.EntityForceSyncReq.Parser, new[]{ "RoomId", "MotionInfo", "EntityId", "SceneTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityForceSyncReq), global::Weedwacker.Shared.Network.Proto.EntityForceSyncReq.Parser, new[]{ "SceneTime", "MotionInfo", "EntityId", "RoomId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 274
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 234;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityForceSyncReq : pb::IMessage<EntityForceSyncReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +84,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityForceSyncReq(EntityForceSyncReq other) : this() {
-      roomId_ = other.roomId_;
+      sceneTime_ = other.sceneTime_;
       motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
       entityId_ = other.entityId_;
-      sceneTime_ = other.sceneTime_;
+      roomId_ = other.roomId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityForceSyncReq(this);
     }
 
-    /// <summary>Field number for the "room_id" field.</summary>
-    public const int RoomIdFieldNumber = 1;
-    private uint roomId_;
+    /// <summary>Field number for the "scene_time" field.</summary>
+    public const int SceneTimeFieldNumber = 13;
+    private uint sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RoomId {
-      get { return roomId_; }
+    public uint SceneTime {
+      get { return sceneTime_; }
       set {
-        roomId_ = value;
+        sceneTime_ = value;
       }
     }
 
     /// <summary>Field number for the "motion_info" field.</summary>
-    public const int MotionInfoFieldNumber = 11;
+    public const int MotionInfoFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.MotionInfo motionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,7 +122,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 13;
+    public const int EntityIdFieldNumber = 5;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,15 +133,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 12;
-    private uint sceneTime_;
+    /// <summary>Field number for the "room_id" field.</summary>
+    public const int RoomIdFieldNumber = 11;
+    private uint roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneTime {
-      get { return sceneTime_; }
+    public uint RoomId {
+      get { return roomId_; }
       set {
-        sceneTime_ = value;
+        roomId_ = value;
       }
     }
 
@@ -155,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RoomId != other.RoomId) return false;
+      if (SceneTime != other.SceneTime) return false;
       if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
       if (EntityId != other.EntityId) return false;
-      if (SceneTime != other.SceneTime) return false;
+      if (RoomId != other.RoomId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +171,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RoomId != 0) hash ^= RoomId.GetHashCode();
+      if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
       if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
+      if (RoomId != 0) hash ^= RoomId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,21 +193,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RoomId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RoomId);
+      if (EntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EntityId);
       }
       if (motionInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(82);
         output.WriteMessage(MotionInfo);
       }
-      if (SceneTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SceneTime);
+      if (RoomId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(RoomId);
       }
-      if (EntityId != 0) {
+      if (SceneTime != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+        output.WriteUInt32(SceneTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,21 +219,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RoomId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RoomId);
+      if (EntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EntityId);
       }
       if (motionInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(82);
         output.WriteMessage(MotionInfo);
       }
-      if (SceneTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(SceneTime);
+      if (RoomId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(RoomId);
       }
-      if (EntityId != 0) {
+      if (SceneTime != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+        output.WriteUInt32(SceneTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -240,8 +245,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RoomId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoomId);
+      if (SceneTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
       }
       if (motionInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
@@ -249,8 +254,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (SceneTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
+      if (RoomId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoomId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -264,8 +269,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RoomId != 0) {
-        RoomId = other.RoomId;
+      if (other.SceneTime != 0) {
+        SceneTime = other.SceneTime;
       }
       if (other.motionInfo_ != null) {
         if (motionInfo_ == null) {
@@ -276,8 +281,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.SceneTime != 0) {
-        SceneTime = other.SceneTime;
+      if (other.RoomId != 0) {
+        RoomId = other.RoomId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -294,23 +299,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            RoomId = input.ReadUInt32();
+          case 40: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 82: {
             if (motionInfo_ == null) {
               MotionInfo = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(MotionInfo);
             break;
           }
-          case 96: {
-            SceneTime = input.ReadUInt32();
+          case 88: {
+            RoomId = input.ReadUInt32();
             break;
           }
           case 104: {
-            EntityId = input.ReadUInt32();
+            SceneTime = input.ReadUInt32();
             break;
           }
         }
@@ -328,23 +333,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            RoomId = input.ReadUInt32();
+          case 40: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 82: {
             if (motionInfo_ == null) {
               MotionInfo = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(MotionInfo);
             break;
           }
-          case 96: {
-            SceneTime = input.ReadUInt32();
+          case 88: {
+            RoomId = input.ReadUInt32();
             break;
           }
           case 104: {
-            EntityId = input.ReadUInt32();
+            SceneTime = input.ReadUInt32();
             break;
           }
         }

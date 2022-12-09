@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeV2ChooseSkillReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVFZmZpZ3lDaGFsbGVuZ2VWMkNob29zZVNraWxsUmVxLnByb3RvIlQKH0Vm",
-            "ZmlneUNoYWxsZW5nZVYyQ2hvb3NlU2tpbGxSZXESEAoIbGV2ZWxfaWQYBiAB",
-            "KA0SHwoXY2hhbGxlbmdlX21vZGVfc2tpbGxfbm8YByABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVFZmZpZ3lDaGFsbGVuZ2VWMkNob29zZVNraWxsUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlQKH0VmZmlneUNoYWxsZW5n",
+            "ZVYyQ2hvb3NlU2tpbGxSZXESHwoXY2hhbGxlbmdlX21vZGVfc2tpbGxfbm8Y",
+            "CiABKA0SEAoIbGV2ZWxfaWQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2ChooseSkillReq), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2ChooseSkillReq.Parser, new[]{ "LevelId", "ChallengeModeSkillNo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2ChooseSkillReq), global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2ChooseSkillReq.Parser, new[]{ "ChallengeModeSkillNo", "LevelId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21269
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23748;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EffigyChallengeV2ChooseSkillReq : pb::IMessage<EffigyChallengeV2ChooseSkillReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyChallengeV2ChooseSkillReq(EffigyChallengeV2ChooseSkillReq other) : this() {
-      levelId_ = other.levelId_;
       challengeModeSkillNo_ = other.challengeModeSkillNo_;
+      levelId_ = other.levelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EffigyChallengeV2ChooseSkillReq(this);
     }
 
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 6;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "challenge_mode_skill_no" field.</summary>
-    public const int ChallengeModeSkillNoFieldNumber = 7;
+    public const int ChallengeModeSkillNoFieldNumber = 10;
     private uint challengeModeSkillNo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return challengeModeSkillNo_; }
       set {
         challengeModeSkillNo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 7;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LevelId != other.LevelId) return false;
       if (ChallengeModeSkillNo != other.ChallengeModeSkillNo) return false;
+      if (LevelId != other.LevelId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (ChallengeModeSkillNo != 0) hash ^= ChallengeModeSkillNo.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (LevelId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(LevelId);
       }
       if (ChallengeModeSkillNo != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteUInt32(ChallengeModeSkillNo);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LevelId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(LevelId);
       }
       if (ChallengeModeSkillNo != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteUInt32(ChallengeModeSkillNo);
       }
       if (_unknownFields != null) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LevelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-      }
       if (ChallengeModeSkillNo != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeSkillNo);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LevelId != 0) {
-        LevelId = other.LevelId;
-      }
       if (other.ChallengeModeSkillNo != 0) {
         ChallengeModeSkillNo = other.ChallengeModeSkillNo;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 56: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 80: {
             ChallengeModeSkillNo = input.ReadUInt32();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 56: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 80: {
             ChallengeModeSkillNo = input.ReadUInt32();
             break;
           }

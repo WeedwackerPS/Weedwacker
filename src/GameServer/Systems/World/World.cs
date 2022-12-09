@@ -7,6 +7,7 @@ using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.GameServer.Systems.Ability;
 using Weedwacker.GameServer.Systems.Script.Scene;
 using Weedwacker.Shared.Network.Proto;
+using EnterReason = Weedwacker.GameServer.Enums.EnterReason;
 
 namespace Weedwacker.GameServer.Systems.World
 {

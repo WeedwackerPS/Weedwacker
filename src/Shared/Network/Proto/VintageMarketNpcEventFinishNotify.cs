@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketNpcEventFinishNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidWaW50YWdlTWFya2V0TnBjRXZlbnRGaW5pc2hOb3RpZnkucHJvdG8iYQoh",
-            "VmludGFnZU1hcmtldE5wY0V2ZW50RmluaXNoTm90aWZ5EhwKFHVubG9ja19z",
-            "dHJhdGVneV9saXN0GA8gAygNEg4KBmNvaW5fYxgMIAEoDRIOCgZjb2luX2EY",
-            "BCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CidWaW50YWdlTWFya2V0TnBjRXZlbnRGaW5pc2hOb3RpZnkucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iYQohVmludGFnZU1hcmtl",
+            "dE5wY0V2ZW50RmluaXNoTm90aWZ5Eg4KBmNvaW5fYRgDIAEoDRIOCgZjb2lu",
+            "X2MYCSABKA0SHAoUdW5sb2NrX3N0cmF0ZWd5X2xpc3QYDCADKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketNpcEventFinishNotify), global::Weedwacker.Shared.Network.Proto.VintageMarketNpcEventFinishNotify.Parser, new[]{ "UnlockStrategyList", "CoinC", "CoinA" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketNpcEventFinishNotify), global::Weedwacker.Shared.Network.Proto.VintageMarketNpcEventFinishNotify.Parser, new[]{ "CoinA", "CoinC", "UnlockStrategyList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 24201
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 24781;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketNpcEventFinishNotify : pb::IMessage<VintageMarketNpcEventFinishNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketNpcEventFinishNotify(VintageMarketNpcEventFinishNotify other) : this() {
-      unlockStrategyList_ = other.unlockStrategyList_.Clone();
-      coinC_ = other.coinC_;
       coinA_ = other.coinA_;
+      coinC_ = other.coinC_;
+      unlockStrategyList_ = other.unlockStrategyList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,19 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketNpcEventFinishNotify(this);
     }
 
-    /// <summary>Field number for the "unlock_strategy_list" field.</summary>
-    public const int UnlockStrategyListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockStrategyList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> unlockStrategyList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "coin_a" field.</summary>
+    public const int CoinAFieldNumber = 3;
+    private uint coinA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockStrategyList {
-      get { return unlockStrategyList_; }
+    public uint CoinA {
+      get { return coinA_; }
+      set {
+        coinA_ = value;
+      }
     }
 
     /// <summary>Field number for the "coin_c" field.</summary>
-    public const int CoinCFieldNumber = 12;
+    public const int CoinCFieldNumber = 9;
     private uint coinC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,16 +118,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "coin_a" field.</summary>
-    public const int CoinAFieldNumber = 4;
-    private uint coinA_;
+    /// <summary>Field number for the "unlock_strategy_list" field.</summary>
+    public const int UnlockStrategyListFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockStrategyList_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> unlockStrategyList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoinA {
-      get { return coinA_; }
-      set {
-        coinA_ = value;
-      }
+    public pbc::RepeatedField<uint> UnlockStrategyList {
+      get { return unlockStrategyList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!unlockStrategyList_.Equals(other.unlockStrategyList_)) return false;
-      if (CoinC != other.CoinC) return false;
       if (CoinA != other.CoinA) return false;
+      if (CoinC != other.CoinC) return false;
+      if(!unlockStrategyList_.Equals(other.unlockStrategyList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= unlockStrategyList_.GetHashCode();
-      if (CoinC != 0) hash ^= CoinC.GetHashCode();
       if (CoinA != 0) hash ^= CoinA.GetHashCode();
+      if (CoinC != 0) hash ^= CoinC.GetHashCode();
+      hash ^= unlockStrategyList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CoinA != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(CoinA);
       }
       if (CoinC != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(CoinC);
       }
       unlockStrategyList_.WriteTo(output, _repeated_unlockStrategyList_codec);
@@ -191,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CoinA != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(CoinA);
       }
       if (CoinC != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(CoinC);
       }
       unlockStrategyList_.WriteTo(ref output, _repeated_unlockStrategyList_codec);
@@ -209,13 +213,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += unlockStrategyList_.CalculateSize(_repeated_unlockStrategyList_codec);
-      if (CoinC != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinC);
-      }
       if (CoinA != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinA);
       }
+      if (CoinC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinC);
+      }
+      size += unlockStrategyList_.CalculateSize(_repeated_unlockStrategyList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +232,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      unlockStrategyList_.Add(other.unlockStrategyList_);
-      if (other.CoinC != 0) {
-        CoinC = other.CoinC;
-      }
       if (other.CoinA != 0) {
         CoinA = other.CoinA;
       }
+      if (other.CoinC != 0) {
+        CoinC = other.CoinC;
+      }
+      unlockStrategyList_.Add(other.unlockStrategyList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 24: {
             CoinA = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 72: {
             CoinC = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 98:
+          case 96: {
             unlockStrategyList_.AddEntriesFrom(input, _repeated_unlockStrategyList_codec);
             break;
           }
@@ -278,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 24: {
             CoinA = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 72: {
             CoinC = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 98:
+          case 96: {
             unlockStrategyList_.AddEntriesFrom(ref input, _repeated_unlockStrategyList_codec);
             break;
           }

@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static FlightActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5GbGlnaHRBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aF0ZsaWdodERhaWx5",
-            "UmVjb3JkLnByb3RvIoMBChhGbGlnaHRBY3Rpdml0eURldGFpbEluZm8SGQoR",
-            "cHJldmlld19yZXdhcmRfaWQYDyABKA0SHQoVbWluX29wZW5fcGxheWVyX2xl",
-            "dmVsGAsgASgNEi0KEWRhaWx5X3JlY29yZF9saXN0GAEgAygLMhIuRmxpZ2h0",
-            "RGFpbHlSZWNvcmRCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Ch5GbGlnaHRBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aF0ZsaWdodERhaWx5UmVjb3JkLnByb3Rv",
+            "IqMBChhGbGlnaHRBY3Rpdml0eURldGFpbEluZm8STQoRZGFpbHlfcmVjb3Jk",
+            "X2xpc3QYDCADKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkZsaWdodERhaWx5UmVjb3JkEhkKEXByZXZpZXdfcmV3YXJkX2lkGAEgASgN",
+            "Eh0KFW1pbl9vcGVuX3BsYXllcl9sZXZlbBgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FlightDailyRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo.Parser, new[]{ "PreviewRewardId", "MinOpenPlayerLevel", "DailyRecordList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo.Parser, new[]{ "DailyRecordList", "PreviewRewardId", "MinOpenPlayerLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FlightActivityDetailInfo(FlightActivityDetailInfo other) : this() {
+      dailyRecordList_ = other.dailyRecordList_.Clone();
       previewRewardId_ = other.previewRewardId_;
       minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
-      dailyRecordList_ = other.dailyRecordList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +86,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FlightActivityDetailInfo(this);
     }
 
+    /// <summary>Field number for the "daily_record_list" field.</summary>
+    public const int DailyRecordListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> _repeated_dailyRecordList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.FlightDailyRecord.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> dailyRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> DailyRecordList {
+      get { return dailyRecordList_; }
+    }
+
     /// <summary>Field number for the "preview_reward_id" field.</summary>
-    public const int PreviewRewardIdFieldNumber = 15;
+    public const int PreviewRewardIdFieldNumber = 1;
     private uint previewRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "min_open_player_level" field.</summary>
-    public const int MinOpenPlayerLevelFieldNumber = 11;
+    public const int MinOpenPlayerLevelFieldNumber = 4;
     private uint minOpenPlayerLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,17 +119,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         minOpenPlayerLevel_ = value;
       }
-    }
-
-    /// <summary>Field number for the "daily_record_list" field.</summary>
-    public const int DailyRecordListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> _repeated_dailyRecordList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.FlightDailyRecord.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> dailyRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FlightDailyRecord> DailyRecordList {
-      get { return dailyRecordList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!dailyRecordList_.Equals(other.dailyRecordList_)) return false;
       if (PreviewRewardId != other.PreviewRewardId) return false;
       if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
-      if(!dailyRecordList_.Equals(other.dailyRecordList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= dailyRecordList_.GetHashCode();
       if (PreviewRewardId != 0) hash ^= PreviewRewardId.GetHashCode();
       if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
-      hash ^= dailyRecordList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,15 +167,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      dailyRecordList_.WriteTo(output, _repeated_dailyRecordList_codec);
-      if (MinOpenPlayerLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MinOpenPlayerLevel);
-      }
       if (PreviewRewardId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(PreviewRewardId);
       }
+      if (MinOpenPlayerLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MinOpenPlayerLevel);
+      }
+      dailyRecordList_.WriteTo(output, _repeated_dailyRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -186,15 +186,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      dailyRecordList_.WriteTo(ref output, _repeated_dailyRecordList_codec);
-      if (MinOpenPlayerLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MinOpenPlayerLevel);
-      }
       if (PreviewRewardId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(PreviewRewardId);
       }
+      if (MinOpenPlayerLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MinOpenPlayerLevel);
+      }
+      dailyRecordList_.WriteTo(ref output, _repeated_dailyRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -205,13 +205,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += dailyRecordList_.CalculateSize(_repeated_dailyRecordList_codec);
       if (PreviewRewardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewRewardId);
       }
       if (MinOpenPlayerLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
       }
-      size += dailyRecordList_.CalculateSize(_repeated_dailyRecordList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -224,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      dailyRecordList_.Add(other.dailyRecordList_);
       if (other.PreviewRewardId != 0) {
         PreviewRewardId = other.PreviewRewardId;
       }
       if (other.MinOpenPlayerLevel != 0) {
         MinOpenPlayerLevel = other.MinOpenPlayerLevel;
       }
-      dailyRecordList_.Add(other.dailyRecordList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -246,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            dailyRecordList_.AddEntriesFrom(input, _repeated_dailyRecordList_codec);
+          case 8: {
+            PreviewRewardId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 32: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
-            PreviewRewardId = input.ReadUInt32();
+          case 98: {
+            dailyRecordList_.AddEntriesFrom(input, _repeated_dailyRecordList_codec);
             break;
           }
         }
@@ -273,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            dailyRecordList_.AddEntriesFrom(ref input, _repeated_dailyRecordList_codec);
+          case 8: {
+            PreviewRewardId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 32: {
             MinOpenPlayerLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
-            PreviewRewardId = input.ReadUInt32();
+          case 98: {
+            dailyRecordList_.AddEntriesFrom(ref input, _repeated_dailyRecordList_codec);
             break;
           }
         }

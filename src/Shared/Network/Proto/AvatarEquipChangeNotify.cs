@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarEquipChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BdmF0YXJFcXVpcENoYW5nZU5vdGlmeS5wcm90bxoYU2NlbmVSZWxpcXVh",
-            "cnlJbmZvLnByb3RvGhVTY2VuZVdlYXBvbkluZm8ucHJvdG8isQEKF0F2YXRh",
-            "ckVxdWlwQ2hhbmdlTm90aWZ5EhMKC2F2YXRhcl9ndWlkGAogASgEEhIKCmVx",
-            "dWlwX2d1aWQYDSABKAQSJgoJcmVsaXF1YXJ5GAEgASgLMhMuU2NlbmVSZWxp",
-            "cXVhcnlJbmZvEiAKBndlYXBvbhgPIAEoCzIQLlNjZW5lV2VhcG9uSW5mbxIP",
-            "CgdpdGVtX2lkGA4gASgNEhIKCmVxdWlwX3R5cGUYCCABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1BdmF0YXJFcXVpcENoYW5nZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoYU2NlbmVSZWxpcXVhcnlJbmZvLnByb3Rv",
+            "GhVTY2VuZVdlYXBvbkluZm8ucHJvdG8i8QEKF0F2YXRhckVxdWlwQ2hhbmdl",
+            "Tm90aWZ5EhMKC2F2YXRhcl9ndWlkGAcgASgEEhIKCmVxdWlwX3R5cGUYCiAB",
+            "KA0SEgoKZXF1aXBfZ3VpZBgFIAEoBBIPCgdpdGVtX2lkGAMgASgNEkYKCXJl",
+            "bGlxdWFyeRgEIAEoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uU2NlbmVSZWxpcXVhcnlJbmZvEkAKBndlYXBvbhgPIAEoCzIwLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2NlbmVXZWFwb25JbmZvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SceneReliquaryInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SceneWeaponInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarEquipChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarEquipChangeNotify.Parser, new[]{ "AvatarGuid", "EquipGuid", "Reliquary", "Weapon", "ItemId", "EquipType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarEquipChangeNotify), global::Weedwacker.Shared.Network.Proto.AvatarEquipChangeNotify.Parser, new[]{ "AvatarGuid", "EquipType", "EquipGuid", "ItemId", "Reliquary", "Weapon" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 647
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 676;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarEquipChangeNotify : pb::IMessage<AvatarEquipChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,11 +88,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarEquipChangeNotify(AvatarEquipChangeNotify other) : this() {
       avatarGuid_ = other.avatarGuid_;
+      equipType_ = other.equipType_;
       equipGuid_ = other.equipGuid_;
+      itemId_ = other.itemId_;
       reliquary_ = other.reliquary_ != null ? other.reliquary_.Clone() : null;
       weapon_ = other.weapon_ != null ? other.weapon_.Clone() : null;
-      itemId_ = other.itemId_;
-      equipType_ = other.equipType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,7 +103,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 10;
+    public const int AvatarGuidFieldNumber = 7;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +114,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "equip_type" field.</summary>
+    public const int EquipTypeFieldNumber = 10;
+    private uint equipType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EquipType {
+      get { return equipType_; }
+      set {
+        equipType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "equip_guid" field.</summary>
-    public const int EquipGuidFieldNumber = 13;
+    public const int EquipGuidFieldNumber = 5;
     private ulong equipGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,8 +138,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "item_id" field.</summary>
+    public const int ItemIdFieldNumber = 3;
+    private uint itemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ItemId {
+      get { return itemId_; }
+      set {
+        itemId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "reliquary" field.</summary>
-    public const int ReliquaryFieldNumber = 1;
+    public const int ReliquaryFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.SceneReliquaryInfo reliquary_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,30 +174,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "item_id" field.</summary>
-    public const int ItemIdFieldNumber = 14;
-    private uint itemId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ItemId {
-      get { return itemId_; }
-      set {
-        itemId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "equip_type" field.</summary>
-    public const int EquipTypeFieldNumber = 8;
-    private uint equipType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EquipType {
-      get { return equipType_; }
-      set {
-        equipType_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -184,11 +190,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (AvatarGuid != other.AvatarGuid) return false;
+      if (EquipType != other.EquipType) return false;
       if (EquipGuid != other.EquipGuid) return false;
+      if (ItemId != other.ItemId) return false;
       if (!object.Equals(Reliquary, other.Reliquary)) return false;
       if (!object.Equals(Weapon, other.Weapon)) return false;
-      if (ItemId != other.ItemId) return false;
-      if (EquipType != other.EquipType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -197,11 +203,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (EquipType != 0) hash ^= EquipType.GetHashCode();
       if (EquipGuid != 0UL) hash ^= EquipGuid.GetHashCode();
+      if (ItemId != 0) hash ^= ItemId.GetHashCode();
       if (reliquary_ != null) hash ^= Reliquary.GetHashCode();
       if (weapon_ != null) hash ^= Weapon.GetHashCode();
-      if (ItemId != 0) hash ^= ItemId.GetHashCode();
-      if (EquipType != 0) hash ^= EquipType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -220,25 +226,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ItemId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ItemId);
+      }
       if (reliquary_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(34);
         output.WriteMessage(Reliquary);
       }
-      if (EquipType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(EquipType);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(80);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (EquipGuid != 0UL) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt64(EquipGuid);
       }
-      if (ItemId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ItemId);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(56);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (EquipType != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EquipType);
       }
       if (weapon_ != null) {
         output.WriteRawTag(122);
@@ -254,25 +260,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ItemId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ItemId);
+      }
       if (reliquary_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(34);
         output.WriteMessage(Reliquary);
       }
-      if (EquipType != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(EquipType);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(80);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (EquipGuid != 0UL) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt64(EquipGuid);
       }
-      if (ItemId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ItemId);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(56);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (EquipType != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EquipType);
       }
       if (weapon_ != null) {
         output.WriteRawTag(122);
@@ -291,20 +297,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
+      if (EquipType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
+      }
       if (EquipGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(EquipGuid);
+      }
+      if (ItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
       }
       if (reliquary_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reliquary);
       }
       if (weapon_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Weapon);
-      }
-      if (ItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
-      }
-      if (EquipType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -321,8 +327,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
+      if (other.EquipType != 0) {
+        EquipType = other.EquipType;
+      }
       if (other.EquipGuid != 0UL) {
         EquipGuid = other.EquipGuid;
+      }
+      if (other.ItemId != 0) {
+        ItemId = other.ItemId;
       }
       if (other.reliquary_ != null) {
         if (reliquary_ == null) {
@@ -335,12 +347,6 @@ namespace Weedwacker.Shared.Network.Proto {
           Weapon = new global::Weedwacker.Shared.Network.Proto.SceneWeaponInfo();
         }
         Weapon.MergeFrom(other.Weapon);
-      }
-      if (other.ItemId != 0) {
-        ItemId = other.ItemId;
-      }
-      if (other.EquipType != 0) {
-        EquipType = other.EquipType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -357,27 +363,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 24: {
+            ItemId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             if (reliquary_ == null) {
               Reliquary = new global::Weedwacker.Shared.Network.Proto.SceneReliquaryInfo();
             }
             input.ReadMessage(Reliquary);
             break;
           }
-          case 64: {
-            EquipType = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 104: {
+          case 40: {
             EquipGuid = input.ReadUInt64();
             break;
           }
-          case 112: {
-            ItemId = input.ReadUInt32();
+          case 56: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            EquipType = input.ReadUInt32();
             break;
           }
           case 122: {
@@ -402,27 +408,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 24: {
+            ItemId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             if (reliquary_ == null) {
               Reliquary = new global::Weedwacker.Shared.Network.Proto.SceneReliquaryInfo();
             }
             input.ReadMessage(Reliquary);
             break;
           }
-          case 64: {
-            EquipType = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 104: {
+          case 40: {
             EquipGuid = input.ReadUInt64();
             break;
           }
-          case 112: {
-            ItemId = input.ReadUInt32();
+          case 56: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            EquipType = input.ReadUInt32();
             break;
           }
           case 122: {

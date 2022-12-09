@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static EnterRogueDiaryDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9FbnRlclJvZ3VlRGlhcnlEdW5nZW9uUmVxLnByb3RvGhZSb2d1ZURpYXJ5",
-            "QXZhdGFyLnByb3RvImQKGUVudGVyUm9ndWVEaWFyeUR1bmdlb25SZXESGAoQ",
-            "Y2hvc2VuX2NhcmRfbGlzdBgJIAMoDRItChJjaG9zZW5fYXZhdGFyX2xpc3QY",
-            "CyADKAsyES5Sb2d1ZURpYXJ5QXZhdGFyQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9FbnRlclJvZ3VlRGlhcnlEdW5nZW9uUmVxLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhZSb2d1ZURpYXJ5QXZhdGFyLnByb3Rv",
+            "IoQBChlFbnRlclJvZ3VlRGlhcnlEdW5nZW9uUmVxEhgKEGNob3Nlbl9jYXJk",
+            "X2xpc3QYBSADKA0STQoSY2hvc2VuX2F2YXRhcl9saXN0GAkgAygLMjEuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Sb2d1ZURpYXJ5QXZhdGFy",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8943
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8627;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EnterRogueDiaryDungeonReq : pb::IMessage<EnterRogueDiaryDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chosen_card_list" field.</summary>
-    public const int ChosenCardListFieldNumber = 9;
+    public const int ChosenCardListFieldNumber = 5;
     private static readonly pb::FieldCodec<uint> _repeated_chosenCardList_codec
-        = pb::FieldCodec.ForUInt32(74);
+        = pb::FieldCodec.ForUInt32(42);
     private readonly pbc::RepeatedField<uint> chosenCardList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chosen_avatar_list" field.</summary>
-    public const int ChosenAvatarListFieldNumber = 11;
+    public const int ChosenAvatarListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> _repeated_chosenAvatarList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> chosenAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74:
-          case 72: {
+          case 42:
+          case 40: {
             chosenCardList_.AddEntriesFrom(input, _repeated_chosenCardList_codec);
             break;
           }
-          case 90: {
+          case 74: {
             chosenAvatarList_.AddEntriesFrom(input, _repeated_chosenAvatarList_codec);
             break;
           }
@@ -235,12 +240,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74:
-          case 72: {
+          case 42:
+          case 40: {
             chosenCardList_.AddEntriesFrom(ref input, _repeated_chosenCardList_codec);
             break;
           }
-          case 90: {
+          case 74: {
             chosenAvatarList_.AddEntriesFrom(ref input, _repeated_chosenAvatarList_codec);
             break;
           }

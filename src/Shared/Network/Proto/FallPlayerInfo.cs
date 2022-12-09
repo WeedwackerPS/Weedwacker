@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FallPlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGYWxsUGxheWVySW5mby5wcm90byLWAQoORmFsbFBsYXllckluZm8SEQoJ",
-            "dGltZV9jb3N0GAsgASgNEgsKA3VpZBgJIAEoDRJEChRiYWxsX2NhdGNoX2Nv",
-            "dW50X21hcBgGIAMoCzImLkZhbGxQbGF5ZXJJbmZvLkJhbGxDYXRjaENvdW50",
-            "TWFwRW50cnkSEQoJY3VyX3Njb3JlGAcgASgNEhEKCWlzX2dyb3VuZBgPIAEo",
-            "CBo4ChZCYWxsQ2F0Y2hDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
-            "YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChRGYWxsUGxheWVySW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byL2AQoORmFsbFBsYXllckluZm8SEQoJY3VyX3Njb3JlGAMg",
+            "ASgNEhEKCWlzX2dyb3VuZBgLIAEoCBJkChRiYWxsX2NhdGNoX2NvdW50X21h",
+            "cBgBIAMoCzJGLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmFs",
+            "bFBsYXllckluZm8uQmFsbENhdGNoQ291bnRNYXBFbnRyeRILCgN1aWQYBSAB",
+            "KA0SEQoJdGltZV9jb3N0GAggASgNGjgKFkJhbGxDYXRjaENvdW50TWFwRW50",
+            "cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallPlayerInfo), global::Weedwacker.Shared.Network.Proto.FallPlayerInfo.Parser, new[]{ "TimeCost", "Uid", "BallCatchCountMap", "CurScore", "IsGround" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FallPlayerInfo), global::Weedwacker.Shared.Network.Proto.FallPlayerInfo.Parser, new[]{ "CurScore", "IsGround", "BallCatchCountMap", "Uid", "TimeCost" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,11 +75,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FallPlayerInfo(FallPlayerInfo other) : this() {
-      timeCost_ = other.timeCost_;
-      uid_ = other.uid_;
-      ballCatchCountMap_ = other.ballCatchCountMap_.Clone();
       curScore_ = other.curScore_;
       isGround_ = other.isGround_;
+      ballCatchCountMap_ = other.ballCatchCountMap_.Clone();
+      uid_ = other.uid_;
+      timeCost_ = other.timeCost_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,43 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FallPlayerInfo(this);
     }
 
-    /// <summary>Field number for the "time_cost" field.</summary>
-    public const int TimeCostFieldNumber = 11;
-    private uint timeCost_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeCost {
-      get { return timeCost_; }
-      set {
-        timeCost_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 9;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ball_catch_count_map" field.</summary>
-    public const int BallCatchCountMapFieldNumber = 6;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_ballCatchCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
-    private readonly pbc::MapField<uint, uint> ballCatchCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> BallCatchCountMap {
-      get { return ballCatchCountMap_; }
-    }
-
     /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 7;
+    public const int CurScoreFieldNumber = 3;
     private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +102,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_ground" field.</summary>
-    public const int IsGroundFieldNumber = 15;
+    public const int IsGroundFieldNumber = 11;
     private bool isGround_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -145,6 +110,41 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isGround_; }
       set {
         isGround_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ball_catch_count_map" field.</summary>
+    public const int BallCatchCountMapFieldNumber = 1;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_ballCatchCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
+    private readonly pbc::MapField<uint, uint> ballCatchCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> BallCatchCountMap {
+      get { return ballCatchCountMap_; }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 5;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "time_cost" field.</summary>
+    public const int TimeCostFieldNumber = 8;
+    private uint timeCost_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TimeCost {
+      get { return timeCost_; }
+      set {
+        timeCost_ = value;
       }
     }
 
@@ -163,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TimeCost != other.TimeCost) return false;
-      if (Uid != other.Uid) return false;
-      if (!BallCatchCountMap.Equals(other.BallCatchCountMap)) return false;
       if (CurScore != other.CurScore) return false;
       if (IsGround != other.IsGround) return false;
+      if (!BallCatchCountMap.Equals(other.BallCatchCountMap)) return false;
+      if (Uid != other.Uid) return false;
+      if (TimeCost != other.TimeCost) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      hash ^= BallCatchCountMap.GetHashCode();
       if (CurScore != 0) hash ^= CurScore.GetHashCode();
       if (IsGround != false) hash ^= IsGround.GetHashCode();
+      hash ^= BallCatchCountMap.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -200,19 +200,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       ballCatchCountMap_.WriteTo(output, _map_ballCatchCountMap_codec);
       if (CurScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(CurScore);
       }
       if (Uid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(Uid);
       }
       if (TimeCost != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(TimeCost);
       }
       if (IsGround != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteBool(IsGround);
       }
       if (_unknownFields != null) {
@@ -227,19 +227,19 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       ballCatchCountMap_.WriteTo(ref output, _map_ballCatchCountMap_codec);
       if (CurScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(CurScore);
       }
       if (Uid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(Uid);
       }
       if (TimeCost != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(TimeCost);
       }
       if (IsGround != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteBool(IsGround);
       }
       if (_unknownFields != null) {
@@ -252,18 +252,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TimeCost != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
-      }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
-      size += ballCatchCountMap_.CalculateSize(_map_ballCatchCountMap_codec);
       if (CurScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
       if (IsGround != false) {
         size += 1 + 1;
+      }
+      size += ballCatchCountMap_.CalculateSize(_map_ballCatchCountMap_codec);
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (TimeCost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -277,18 +277,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TimeCost != 0) {
-        TimeCost = other.TimeCost;
-      }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
-      ballCatchCountMap_.Add(other.ballCatchCountMap_);
       if (other.CurScore != 0) {
         CurScore = other.CurScore;
       }
       if (other.IsGround != false) {
         IsGround = other.IsGround;
+      }
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.TimeCost != 0) {
+        TimeCost = other.TimeCost;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -305,23 +305,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 10: {
             ballCatchCountMap_.AddEntriesFrom(input, _map_ballCatchCountMap_codec);
             break;
           }
-          case 56: {
+          case 24: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 40: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             TimeCost = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             IsGround = input.ReadBool();
             break;
           }
@@ -340,23 +340,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 10: {
             ballCatchCountMap_.AddEntriesFrom(ref input, _map_ballCatchCountMap_codec);
             break;
           }
-          case 56: {
+          case 24: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 40: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             TimeCost = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             IsGround = input.ReadBool();
             break;
           }

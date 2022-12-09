@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSkillPreviewOnstageChangeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZHQ0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90byJmCiBH",
-            "Q0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mbxIgChh0YXJnZXRfb25z",
-            "dGFnZV9jYXJkX2d1aWQYBiABKA0SIAoYc291cmNlX29uc3RhZ2VfY2FyZF9n",
-            "dWlkGA8gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiZHQ0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJcCiBHQ0dTa2lsbFByZXZp",
+            "ZXdPbnN0YWdlQ2hhbmdlSW5mbxIbChNVbmszMzAwX0VISERQUEZESUZCGAgg",
+            "ASgNEhsKE1VuazMzMDBfQkFMQURHRkFQS0wYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo), global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo.Parser, new[]{ "TargetOnstageCardGuid", "SourceOnstageCardGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo), global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewOnstageChangeInfo.Parser, new[]{ "Unk3300EHHDPPFDIFB", "Unk3300BALADGFAPKL" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGSkillPreviewOnstageChangeInfo(GCGSkillPreviewOnstageChangeInfo other) : this() {
-      targetOnstageCardGuid_ = other.targetOnstageCardGuid_;
-      sourceOnstageCardGuid_ = other.sourceOnstageCardGuid_;
+      unk3300EHHDPPFDIFB_ = other.unk3300EHHDPPFDIFB_;
+      unk3300BALADGFAPKL_ = other.unk3300BALADGFAPKL_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,27 +83,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGSkillPreviewOnstageChangeInfo(this);
     }
 
-    /// <summary>Field number for the "target_onstage_card_guid" field.</summary>
-    public const int TargetOnstageCardGuidFieldNumber = 6;
-    private uint targetOnstageCardGuid_;
+    /// <summary>Field number for the "Unk3300_EHHDPPFDIFB" field.</summary>
+    public const int Unk3300EHHDPPFDIFBFieldNumber = 8;
+    private uint unk3300EHHDPPFDIFB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetOnstageCardGuid {
-      get { return targetOnstageCardGuid_; }
+    public uint Unk3300EHHDPPFDIFB {
+      get { return unk3300EHHDPPFDIFB_; }
       set {
-        targetOnstageCardGuid_ = value;
+        unk3300EHHDPPFDIFB_ = value;
       }
     }
 
-    /// <summary>Field number for the "source_onstage_card_guid" field.</summary>
-    public const int SourceOnstageCardGuidFieldNumber = 15;
-    private uint sourceOnstageCardGuid_;
+    /// <summary>Field number for the "Unk3300_BALADGFAPKL" field.</summary>
+    public const int Unk3300BALADGFAPKLFieldNumber = 14;
+    private uint unk3300BALADGFAPKL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SourceOnstageCardGuid {
-      get { return sourceOnstageCardGuid_; }
+    public uint Unk3300BALADGFAPKL {
+      get { return unk3300BALADGFAPKL_; }
       set {
-        sourceOnstageCardGuid_ = value;
+        unk3300BALADGFAPKL_ = value;
       }
     }
 
@@ -123,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TargetOnstageCardGuid != other.TargetOnstageCardGuid) return false;
-      if (SourceOnstageCardGuid != other.SourceOnstageCardGuid) return false;
+      if (Unk3300EHHDPPFDIFB != other.Unk3300EHHDPPFDIFB) return false;
+      if (Unk3300BALADGFAPKL != other.Unk3300BALADGFAPKL) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TargetOnstageCardGuid != 0) hash ^= TargetOnstageCardGuid.GetHashCode();
-      if (SourceOnstageCardGuid != 0) hash ^= SourceOnstageCardGuid.GetHashCode();
+      if (Unk3300EHHDPPFDIFB != 0) hash ^= Unk3300EHHDPPFDIFB.GetHashCode();
+      if (Unk3300BALADGFAPKL != 0) hash ^= Unk3300BALADGFAPKL.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetOnstageCardGuid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TargetOnstageCardGuid);
+      if (Unk3300EHHDPPFDIFB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300EHHDPPFDIFB);
       }
-      if (SourceOnstageCardGuid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SourceOnstageCardGuid);
+      if (Unk3300BALADGFAPKL != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BALADGFAPKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetOnstageCardGuid != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TargetOnstageCardGuid);
+      if (Unk3300EHHDPPFDIFB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300EHHDPPFDIFB);
       }
-      if (SourceOnstageCardGuid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(SourceOnstageCardGuid);
+      if (Unk3300BALADGFAPKL != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BALADGFAPKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TargetOnstageCardGuid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetOnstageCardGuid);
+      if (Unk3300EHHDPPFDIFB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHHDPPFDIFB);
       }
-      if (SourceOnstageCardGuid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceOnstageCardGuid);
+      if (Unk3300BALADGFAPKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BALADGFAPKL);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TargetOnstageCardGuid != 0) {
-        TargetOnstageCardGuid = other.TargetOnstageCardGuid;
+      if (other.Unk3300EHHDPPFDIFB != 0) {
+        Unk3300EHHDPPFDIFB = other.Unk3300EHHDPPFDIFB;
       }
-      if (other.SourceOnstageCardGuid != 0) {
-        SourceOnstageCardGuid = other.SourceOnstageCardGuid;
+      if (other.Unk3300BALADGFAPKL != 0) {
+        Unk3300BALADGFAPKL = other.Unk3300BALADGFAPKL;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            TargetOnstageCardGuid = input.ReadUInt32();
+          case 64: {
+            Unk3300EHHDPPFDIFB = input.ReadUInt32();
             break;
           }
-          case 120: {
-            SourceOnstageCardGuid = input.ReadUInt32();
+          case 112: {
+            Unk3300BALADGFAPKL = input.ReadUInt32();
             break;
           }
         }
@@ -250,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            TargetOnstageCardGuid = input.ReadUInt32();
+          case 64: {
+            Unk3300EHHDPPFDIFB = input.ReadUInt32();
             break;
           }
-          case 120: {
-            SourceOnstageCardGuid = input.ReadUInt32();
+          case 112: {
+            Unk3300BALADGFAPKL = input.ReadUInt32();
             break;
           }
         }

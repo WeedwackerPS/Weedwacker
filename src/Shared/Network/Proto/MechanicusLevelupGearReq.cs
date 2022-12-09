@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MechanicusLevelupGearReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5NZWNoYW5pY3VzTGV2ZWx1cEdlYXJSZXEucHJvdG8iQgoYTWVjaGFuaWN1",
-            "c0xldmVsdXBHZWFyUmVxEg8KB2dlYXJfaWQYDiABKA0SFQoNbWVjaGFuaWN1",
-            "c19pZBgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "Ch5NZWNoYW5pY3VzTGV2ZWx1cEdlYXJSZXEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iQgoYTWVjaGFuaWN1c0xldmVsdXBHZWFy",
+            "UmVxEhUKDW1lY2hhbmljdXNfaWQYDiABKA0SDwoHZ2Vhcl9pZBgNIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusLevelupGearReq), global::Weedwacker.Shared.Network.Proto.MechanicusLevelupGearReq.Parser, new[]{ "GearId", "MechanicusId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusLevelupGearReq), global::Weedwacker.Shared.Network.Proto.MechanicusLevelupGearReq.Parser, new[]{ "MechanicusId", "GearId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3973
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3978;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MechanicusLevelupGearReq : pb::IMessage<MechanicusLevelupGearReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MechanicusLevelupGearReq(MechanicusLevelupGearReq other) : this() {
-      gearId_ = other.gearId_;
       mechanicusId_ = other.mechanicusId_;
+      gearId_ = other.gearId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MechanicusLevelupGearReq(this);
     }
 
-    /// <summary>Field number for the "gear_id" field.</summary>
-    public const int GearIdFieldNumber = 14;
-    private uint gearId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GearId {
-      get { return gearId_; }
-      set {
-        gearId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "mechanicus_id" field.</summary>
-    public const int MechanicusIdFieldNumber = 12;
+    public const int MechanicusIdFieldNumber = 14;
     private uint mechanicusId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return mechanicusId_; }
       set {
         mechanicusId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gear_id" field.</summary>
+    public const int GearIdFieldNumber = 13;
+    private uint gearId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GearId {
+      get { return gearId_; }
+      set {
+        gearId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GearId != other.GearId) return false;
       if (MechanicusId != other.MechanicusId) return false;
+      if (GearId != other.GearId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GearId != 0) hash ^= GearId.GetHashCode();
       if (MechanicusId != 0) hash ^= MechanicusId.GetHashCode();
+      if (GearId != 0) hash ^= GearId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MechanicusId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MechanicusId);
-      }
       if (GearId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(GearId);
+      }
+      if (MechanicusId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(MechanicusId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MechanicusId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(MechanicusId);
-      }
       if (GearId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(GearId);
+      }
+      if (MechanicusId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(MechanicusId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GearId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GearId);
-      }
       if (MechanicusId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusId);
+      }
+      if (GearId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GearId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GearId != 0) {
-        GearId = other.GearId;
-      }
       if (other.MechanicusId != 0) {
         MechanicusId = other.MechanicusId;
+      }
+      if (other.GearId != 0) {
+        GearId = other.GearId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            MechanicusId = input.ReadUInt32();
+          case 104: {
+            GearId = input.ReadUInt32();
             break;
           }
           case 112: {
-            GearId = input.ReadUInt32();
+            MechanicusId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            MechanicusId = input.ReadUInt32();
+          case 104: {
+            GearId = input.ReadUInt32();
             break;
           }
           case 112: {
-            GearId = input.ReadUInt32();
+            MechanicusId = input.ReadUInt32();
             break;
           }
         }

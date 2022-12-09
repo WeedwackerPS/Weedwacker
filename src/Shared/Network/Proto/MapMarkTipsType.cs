@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static MapMarkTipsTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVNYXBNYXJrVGlwc1R5cGUucHJvdG8qPwoPTWFwTWFya1RpcHNUeXBlEiwK",
-            "KE1BUF9NQVJLX1RJUFNfVFlQRV9EVU5HRU9OX0VMRU1FTlRfVFJJQUwQAEIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVNYXBNYXJrVGlwc1R5cGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8qPwoPTWFwTWFya1RpcHNUeXBlEiwKKE1BUF9NQVJLX1RJ",
+            "UFNfVFlQRV9EVU5HRU9OX0VMRU1FTlRfVFJJQUwQAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.MapMarkTipsType), }, null, null));

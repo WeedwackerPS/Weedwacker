@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgDiceRollReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRHQ0dNc2dEaWNlUm9sbC5wcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3Rv",
-            "ImMKDkdDR01zZ0RpY2VSb2xsEigKDmRpY2Vfc2lkZV9saXN0GAogAygOMhAu",
-            "R0NHRGljZVNpZGVUeXBlEhAKCGRpY2VfbnVtGA8gASgNEhUKDWNvbnRyb2xs",
-            "ZXJfaWQYBSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChRHQ0dNc2dEaWNlUm9sbC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3RvIoMBCg5HQ0dNc2dE",
+            "aWNlUm9sbBIVCg1jb250cm9sbGVyX2lkGAkgASgNEhAKCGRpY2VfbnVtGAMg",
+            "ASgNEkgKDmRpY2Vfc2lkZV9saXN0GA4gAygOMjAuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5HQ0dEaWNlU2lkZVR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGDiceSideTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll), global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll.Parser, new[]{ "DiceSideList", "DiceNum", "ControllerId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll), global::Weedwacker.Shared.Network.Proto.GCGMsgDiceRoll.Parser, new[]{ "ControllerId", "DiceNum", "DiceSideList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgDiceRoll(GCGMsgDiceRoll other) : this() {
-      diceSideList_ = other.diceSideList_.Clone();
-      diceNum_ = other.diceNum_;
       controllerId_ = other.controllerId_;
+      diceNum_ = other.diceNum_;
+      diceSideList_ = other.diceSideList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,19 +85,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgDiceRoll(this);
     }
 
-    /// <summary>Field number for the "dice_side_list" field.</summary>
-    public const int DiceSideListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> _repeated_diceSideList_codec
-        = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 9;
+    private uint controllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> DiceSideList {
-      get { return diceSideList_; }
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
     }
 
     /// <summary>Field number for the "dice_num" field.</summary>
-    public const int DiceNumFieldNumber = 15;
+    public const int DiceNumFieldNumber = 3;
     private uint diceNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,16 +109,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 5;
-    private uint controllerId_;
+    /// <summary>Field number for the "dice_side_list" field.</summary>
+    public const int DiceSideListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> _repeated_diceSideList_codec
+        = pb::FieldCodec.ForEnum(114, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.GCGDiceSideType) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ControllerId {
-      get { return controllerId_; }
-      set {
-        controllerId_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGDiceSideType> DiceSideList {
+      get { return diceSideList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!diceSideList_.Equals(other.diceSideList_)) return false;
-      if (DiceNum != other.DiceNum) return false;
       if (ControllerId != other.ControllerId) return false;
+      if (DiceNum != other.DiceNum) return false;
+      if(!diceSideList_.Equals(other.diceSideList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= diceSideList_.GetHashCode();
-      if (DiceNum != 0) hash ^= DiceNum.GetHashCode();
       if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (DiceNum != 0) hash ^= DiceNum.GetHashCode();
+      hash ^= diceSideList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,15 +166,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (DiceNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DiceNum);
+      }
       if (ControllerId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(ControllerId);
       }
       diceSideList_.WriteTo(output, _repeated_diceSideList_codec);
-      if (DiceNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(DiceNum);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -185,15 +185,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DiceNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DiceNum);
+      }
       if (ControllerId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(ControllerId);
       }
       diceSideList_.WriteTo(ref output, _repeated_diceSideList_codec);
-      if (DiceNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(DiceNum);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
-      if (DiceNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DiceNum);
-      }
       if (ControllerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
+      if (DiceNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DiceNum);
+      }
+      size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -223,13 +223,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      diceSideList_.Add(other.diceSideList_);
-      if (other.DiceNum != 0) {
-        DiceNum = other.DiceNum;
-      }
       if (other.ControllerId != 0) {
         ControllerId = other.ControllerId;
       }
+      if (other.DiceNum != 0) {
+        DiceNum = other.DiceNum;
+      }
+      diceSideList_.Add(other.diceSideList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -245,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 24: {
+            DiceNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 114:
+          case 112: {
             diceSideList_.AddEntriesFrom(input, _repeated_diceSideList_codec);
-            break;
-          }
-          case 120: {
-            DiceNum = input.ReadUInt32();
             break;
           }
         }
@@ -273,17 +273,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 24: {
+            DiceNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 82:
-          case 80: {
+          case 114:
+          case 112: {
             diceSideList_.AddEntriesFrom(ref input, _repeated_diceSideList_codec);
-            break;
-          }
-          case 120: {
-            DiceNum = input.ReadUInt32();
             break;
           }
         }

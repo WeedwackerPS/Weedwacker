@@ -24,16 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgUpdateControllerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHQ0dNc2dVcGRhdGVDb250cm9sbGVyLnByb3RvIqIBChZHQ0dNc2dVcGRh",
-            "dGVDb250cm9sbGVyEk0KFGFsbG93X2NvbnRyb2xsZXJfbWFwGAcgAygLMi8u",
-            "R0NHTXNnVXBkYXRlQ29udHJvbGxlci5BbGxvd0NvbnRyb2xsZXJNYXBFbnRy",
-            "eRo5ChdBbGxvd0NvbnRyb2xsZXJNYXBFbnRyeRILCgNrZXkYASABKA0SDQoF",
-            "dmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChxHQ0dNc2dVcGRhdGVDb250cm9sbGVyLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhBVaW50MzJQYWlyLnByb3RvImMKFkdDR01z",
+            "Z1VwZGF0ZUNvbnRyb2xsZXISSQoUYWxsb3dfY29udHJvbGxlcl9tYXAYCiAD",
+            "KAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlVpbnQzMlBh",
+            "aXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController), global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController.Parser, new[]{ "AllowControllerMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController), global::Weedwacker.Shared.Network.Proto.GCGMsgUpdateController.Parser, new[]{ "AllowControllerMap" }, null, null, null, null)
           }));
     }
     #endregion
@@ -85,13 +84,13 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "allow_controller_map" field.</summary>
-    public const int AllowControllerMapFieldNumber = 7;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_allowControllerMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
-    private readonly pbc::MapField<uint, uint> allowControllerMap_ = new pbc::MapField<uint, uint>();
+    public const int AllowControllerMapFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_allowControllerMap_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> allowControllerMap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> AllowControllerMap {
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> AllowControllerMap {
       get { return allowControllerMap_; }
     }
 
@@ -110,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!AllowControllerMap.Equals(other.AllowControllerMap)) return false;
+      if(!allowControllerMap_.Equals(other.allowControllerMap_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -118,7 +117,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= AllowControllerMap.GetHashCode();
+      hash ^= allowControllerMap_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -137,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      allowControllerMap_.WriteTo(output, _map_allowControllerMap_codec);
+      allowControllerMap_.WriteTo(output, _repeated_allowControllerMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -148,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      allowControllerMap_.WriteTo(ref output, _map_allowControllerMap_codec);
+      allowControllerMap_.WriteTo(ref output, _repeated_allowControllerMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -159,7 +158,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += allowControllerMap_.CalculateSize(_map_allowControllerMap_codec);
+      size += allowControllerMap_.CalculateSize(_repeated_allowControllerMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -188,8 +187,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            allowControllerMap_.AddEntriesFrom(input, _map_allowControllerMap_codec);
+          case 82: {
+            allowControllerMap_.AddEntriesFrom(input, _repeated_allowControllerMap_codec);
             break;
           }
         }
@@ -207,8 +206,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            allowControllerMap_.AddEntriesFrom(ref input, _map_allowControllerMap_codec);
+          case 82: {
+            allowControllerMap_.AddEntriesFrom(ref input, _repeated_allowControllerMap_codec);
             break;
           }
         }

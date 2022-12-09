@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureSeelieActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZUcmVhc3VyZVNlZWxpZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoeVHJl",
-            "YXN1cmVTZWVsaWVSZWdpb25EYXRhLnByb3RvIo8BCiBUcmVhc3VyZVNlZWxp",
-            "ZUFjdGl2aXR5RGV0YWlsSW5mbxIbChN0cmVhc3VyZV9jbG9zZV90aW1lGAog",
-            "ASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAggASgIEjMKEHJlZ2lvbl9kYXRh",
-            "X2xpc3QYDiADKAsyGS5UcmVhc3VyZVNlZWxpZVJlZ2lvbkRhdGFCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiZUcmVhc3VyZVNlZWxpZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoeVHJlYXN1cmVTZWVsaWVS",
+            "ZWdpb25EYXRhLnByb3RvIq8BCiBUcmVhc3VyZVNlZWxpZUFjdGl2aXR5RGV0",
+            "YWlsSW5mbxIbChN0cmVhc3VyZV9jbG9zZV90aW1lGA0gASgNEhkKEWlzX2Nv",
+            "bnRlbnRfY2xvc2VkGA8gASgIElMKEHJlZ2lvbl9kYXRhX2xpc3QYBiADKAsy",
+            "OS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRyZWFzdXJlU2Vl",
+            "bGllUmVnaW9uRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -87,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "treasure_close_time" field.</summary>
-    public const int TreasureCloseTimeFieldNumber = 10;
+    public const int TreasureCloseTimeFieldNumber = 13;
     private uint treasureCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,7 +100,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 8;
+    public const int IsContentClosedFieldNumber = 15;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,9 +112,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_data_list" field.</summary>
-    public const int RegionDataListFieldNumber = 14;
+    public const int RegionDataListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData> _repeated_regionDataList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData> regionDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TreasureSeelieRegionData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,15 +168,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsContentClosed != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsContentClosed);
-      }
+      regionDataList_.WriteTo(output, _repeated_regionDataList_codec);
       if (TreasureCloseTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(TreasureCloseTime);
       }
-      regionDataList_.WriteTo(output, _repeated_regionDataList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -186,15 +187,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsContentClosed != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsContentClosed);
-      }
+      regionDataList_.WriteTo(ref output, _repeated_regionDataList_codec);
       if (TreasureCloseTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(TreasureCloseTime);
       }
-      regionDataList_.WriteTo(ref output, _repeated_regionDataList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -246,16 +247,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            IsContentClosed = input.ReadBool();
+          case 50: {
+            regionDataList_.AddEntriesFrom(input, _repeated_regionDataList_codec);
             break;
           }
-          case 80: {
+          case 104: {
             TreasureCloseTime = input.ReadUInt32();
             break;
           }
-          case 114: {
-            regionDataList_.AddEntriesFrom(input, _repeated_regionDataList_codec);
+          case 120: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }
@@ -273,16 +274,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            IsContentClosed = input.ReadBool();
+          case 50: {
+            regionDataList_.AddEntriesFrom(ref input, _repeated_regionDataList_codec);
             break;
           }
-          case 80: {
+          case 104: {
             TreasureCloseTime = input.ReadUInt32();
             break;
           }
-          case 114: {
-            regionDataList_.AddEntriesFrom(ref input, _repeated_regionDataList_codec);
+          case 120: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }

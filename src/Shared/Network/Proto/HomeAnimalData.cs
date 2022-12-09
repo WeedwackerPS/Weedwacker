@@ -24,14 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAnimalDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRIb21lQW5pbWFsRGF0YS5wcm90bxoMVmVjdG9yLnByb3RvIl4KDkhvbWVB",
-            "bmltYWxEYXRhEhoKCXNwYXduX3JvdBgKIAEoCzIHLlZlY3RvchIUCgxmdXJu",
-            "aXR1cmVfaWQYBSABKA0SGgoJc3Bhd25fcG9zGAYgASgLMgcuVmVjdG9yQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRIb21lQW5pbWFsRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoMVmVjdG9yLnByb3RvIp4BCg5Ib21lQW5pbWFsRGF0YRIU",
+            "CgxmdXJuaXR1cmVfaWQYBiABKA0SOgoJc3Bhd25fcm90GA4gASgLMicuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISOgoJc3Bhd25f",
+            "cG9zGAsgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5W",
+            "ZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAnimalData), global::Weedwacker.Shared.Network.Proto.HomeAnimalData.Parser, new[]{ "SpawnRot", "FurnitureId", "SpawnPos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAnimalData), global::Weedwacker.Shared.Network.Proto.HomeAnimalData.Parser, new[]{ "FurnitureId", "SpawnRot", "SpawnPos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +74,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAnimalData(HomeAnimalData other) : this() {
-      spawnRot_ = other.spawnRot_ != null ? other.spawnRot_.Clone() : null;
       furnitureId_ = other.furnitureId_;
+      spawnRot_ = other.spawnRot_ != null ? other.spawnRot_.Clone() : null;
       spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeAnimalData(this);
     }
 
-    /// <summary>Field number for the "spawn_rot" field.</summary>
-    public const int SpawnRotFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.Vector spawnRot_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector SpawnRot {
-      get { return spawnRot_; }
-      set {
-        spawnRot_ = value;
-      }
-    }
-
     /// <summary>Field number for the "furniture_id" field.</summary>
-    public const int FurnitureIdFieldNumber = 5;
+    public const int FurnitureIdFieldNumber = 6;
     private uint furnitureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "spawn_rot" field.</summary>
+    public const int SpawnRotFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector spawnRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector SpawnRot {
+      get { return spawnRot_; }
+      set {
+        spawnRot_ = value;
+      }
+    }
+
     /// <summary>Field number for the "spawn_pos" field.</summary>
-    public const int SpawnPosFieldNumber = 6;
+    public const int SpawnPosFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Vector spawnPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +137,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(SpawnRot, other.SpawnRot)) return false;
       if (FurnitureId != other.FurnitureId) return false;
+      if (!object.Equals(SpawnRot, other.SpawnRot)) return false;
       if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (spawnRot_ != null) hash ^= SpawnRot.GetHashCode();
       if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
+      if (spawnRot_ != null) hash ^= SpawnRot.GetHashCode();
       if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -167,15 +169,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (FurnitureId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(FurnitureId);
       }
       if (spawnPos_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(90);
         output.WriteMessage(SpawnPos);
       }
       if (spawnRot_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(114);
         output.WriteMessage(SpawnRot);
       }
       if (_unknownFields != null) {
@@ -189,15 +191,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (FurnitureId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(FurnitureId);
       }
       if (spawnPos_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(90);
         output.WriteMessage(SpawnPos);
       }
       if (spawnRot_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(114);
         output.WriteMessage(SpawnRot);
       }
       if (_unknownFields != null) {
@@ -210,11 +212,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (spawnRot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnRot);
-      }
       if (FurnitureId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
+      }
+      if (spawnRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnRot);
       }
       if (spawnPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
@@ -231,14 +233,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.FurnitureId != 0) {
+        FurnitureId = other.FurnitureId;
+      }
       if (other.spawnRot_ != null) {
         if (spawnRot_ == null) {
           SpawnRot = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         SpawnRot.MergeFrom(other.SpawnRot);
-      }
-      if (other.FurnitureId != 0) {
-        FurnitureId = other.FurnitureId;
       }
       if (other.spawnPos_ != null) {
         if (spawnPos_ == null) {
@@ -261,18 +263,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 48: {
             FurnitureId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 90: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 82: {
+          case 114: {
             if (spawnRot_ == null) {
               SpawnRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -294,18 +296,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 48: {
             FurnitureId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 90: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 82: {
+          case 114: {
             if (spawnRot_ == null) {
               SpawnRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }

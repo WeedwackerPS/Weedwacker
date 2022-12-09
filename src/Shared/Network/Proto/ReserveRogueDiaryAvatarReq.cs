@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReserveRogueDiaryAvatarReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBSZXNlcnZlUm9ndWVEaWFyeUF2YXRhclJlcS5wcm90bxoWUm9ndWVEaWFy",
-            "eUF2YXRhci5wcm90byJMChpSZXNlcnZlUm9ndWVEaWFyeUF2YXRhclJlcRIu",
-            "ChNyZXNlcnZlX2F2YXRhcl9saXN0GAYgAygLMhEuUm9ndWVEaWFyeUF2YXRh",
-            "ckIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBSZXNlcnZlUm9ndWVEaWFyeUF2YXRhclJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoWUm9ndWVEaWFyeUF2YXRhci5wcm90",
+            "byJsChpSZXNlcnZlUm9ndWVEaWFyeUF2YXRhclJlcRJOChNyZXNlcnZlX2F2",
+            "YXRhcl9saXN0GAMgAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5Sb2d1ZURpYXJ5QXZhdGFyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8748
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8311;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ReserveRogueDiaryAvatarReq : pb::IMessage<ReserveRogueDiaryAvatarReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reserve_avatar_list" field.</summary>
-    public const int ReserveAvatarListFieldNumber = 6;
+    public const int ReserveAvatarListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> _repeated_reserveAvatarList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar> reserveAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueDiaryAvatar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 26: {
             reserveAvatarList_.AddEntriesFrom(input, _repeated_reserveAvatarList_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 26: {
             reserveAvatarList_.AddEntriesFrom(ref input, _repeated_reserveAvatarList_codec);
             break;
           }

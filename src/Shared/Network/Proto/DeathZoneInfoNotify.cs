@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DeathZoneInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEZWF0aFpvbmVJbmZvTm90aWZ5LnByb3RvGhNEZWF0aFpvbmVJbmZvLnBy",
-            "b3RvIkMKE0RlYXRoWm9uZUluZm9Ob3RpZnkSLAoUZGVhdGhfem9uZV9pbmZv",
-            "X2xpc3QYCCADKAsyDi5EZWF0aFpvbmVJbmZvQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlEZWF0aFpvbmVJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhNEZWF0aFpvbmVJbmZvLnByb3RvImMKE0RlYXRo",
+            "Wm9uZUluZm9Ob3RpZnkSTAoUZGVhdGhfem9uZV9pbmZvX2xpc3QYDyADKAsy",
+            "Li5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkRlYXRoWm9uZUlu",
+            "Zm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DeathZoneInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6268
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6291;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DeathZoneInfoNotify : pb::IMessage<DeathZoneInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "death_zone_info_list" field.</summary>
-    public const int DeathZoneInfoListFieldNumber = 8;
+    public const int DeathZoneInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DeathZoneInfo> _repeated_deathZoneInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.DeathZoneInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.DeathZoneInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DeathZoneInfo> deathZoneInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DeathZoneInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 122: {
             deathZoneInfoList_.AddEntriesFrom(input, _repeated_deathZoneInfoList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 122: {
             deathZoneInfoList_.AddEntriesFrom(ref input, _repeated_deathZoneInfoList_codec);
             break;
           }

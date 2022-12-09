@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetSceneWeatherAreaReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTZXRTY2VuZVdlYXRoZXJBcmVhUmVxLnByb3RvIrQBChZTZXRTY2VuZVdl",
-            "YXRoZXJBcmVhUmVxEhkKEXdlYXRoZXJfZ2FkZ2V0X2lkGA0gASgNEkcKEXdl",
-            "YXRoZXJfdmFsdWVfbWFwGAQgAygLMiwuU2V0U2NlbmVXZWF0aGVyQXJlYVJl",
-            "cS5XZWF0aGVyVmFsdWVNYXBFbnRyeRo2ChRXZWF0aGVyVmFsdWVNYXBFbnRy",
-            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAk6AjgBQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxTZXRTY2VuZVdlYXRoZXJBcmVhUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvItQBChZTZXRTY2VuZVdlYXRoZXJBcmVhUmVx",
+            "EmcKEXdlYXRoZXJfdmFsdWVfbWFwGAggAygLMkwuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5TZXRTY2VuZVdlYXRoZXJBcmVhUmVxLldlYXRo",
+            "ZXJWYWx1ZU1hcEVudHJ5EhkKEXdlYXRoZXJfZ2FkZ2V0X2lkGAwgASgNGjYK",
+            "FFdlYXRoZXJWYWx1ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoCToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetSceneWeatherAreaReq), global::Weedwacker.Shared.Network.Proto.SetSceneWeatherAreaReq.Parser, new[]{ "WeatherGadgetId", "WeatherValueMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetSceneWeatherAreaReq), global::Weedwacker.Shared.Network.Proto.SetSceneWeatherAreaReq.Parser, new[]{ "WeatherValueMap", "WeatherGadgetId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 254
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 214;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetSceneWeatherAreaReq : pb::IMessage<SetSceneWeatherAreaReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetSceneWeatherAreaReq(SetSceneWeatherAreaReq other) : this() {
-      weatherGadgetId_ = other.weatherGadgetId_;
       weatherValueMap_ = other.weatherValueMap_.Clone();
+      weatherGadgetId_ = other.weatherGadgetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,8 +96,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SetSceneWeatherAreaReq(this);
     }
 
+    /// <summary>Field number for the "weather_value_map" field.</summary>
+    public const int WeatherValueMapFieldNumber = 8;
+    private static readonly pbc::MapField<uint, string>.Codec _map_weatherValueMap_codec
+        = new pbc::MapField<uint, string>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForString(18, ""), 66);
+    private readonly pbc::MapField<uint, string> weatherValueMap_ = new pbc::MapField<uint, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, string> WeatherValueMap {
+      get { return weatherValueMap_; }
+    }
+
     /// <summary>Field number for the "weather_gadget_id" field.</summary>
-    public const int WeatherGadgetIdFieldNumber = 13;
+    public const int WeatherGadgetIdFieldNumber = 12;
     private uint weatherGadgetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,17 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         weatherGadgetId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "weather_value_map" field.</summary>
-    public const int WeatherValueMapFieldNumber = 4;
-    private static readonly pbc::MapField<uint, string>.Codec _map_weatherValueMap_codec
-        = new pbc::MapField<uint, string>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForString(18, ""), 34);
-    private readonly pbc::MapField<uint, string> weatherValueMap_ = new pbc::MapField<uint, string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, string> WeatherValueMap {
-      get { return weatherValueMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (WeatherGadgetId != other.WeatherGadgetId) return false;
       if (!WeatherValueMap.Equals(other.WeatherValueMap)) return false;
+      if (WeatherGadgetId != other.WeatherGadgetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,8 +143,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (WeatherGadgetId != 0) hash ^= WeatherGadgetId.GetHashCode();
       hash ^= WeatherValueMap.GetHashCode();
+      if (WeatherGadgetId != 0) hash ^= WeatherGadgetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -160,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       weatherValueMap_.WriteTo(output, _map_weatherValueMap_codec);
       if (WeatherGadgetId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(WeatherGadgetId);
       }
       if (_unknownFields != null) {
@@ -175,7 +180,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       weatherValueMap_.WriteTo(ref output, _map_weatherValueMap_codec);
       if (WeatherGadgetId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(WeatherGadgetId);
       }
       if (_unknownFields != null) {
@@ -188,10 +193,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += weatherValueMap_.CalculateSize(_map_weatherValueMap_codec);
       if (WeatherGadgetId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeatherGadgetId);
       }
-      size += weatherValueMap_.CalculateSize(_map_weatherValueMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -204,10 +209,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      weatherValueMap_.Add(other.weatherValueMap_);
       if (other.WeatherGadgetId != 0) {
         WeatherGadgetId = other.WeatherGadgetId;
       }
-      weatherValueMap_.Add(other.weatherValueMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -223,11 +228,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 66: {
             weatherValueMap_.AddEntriesFrom(input, _map_weatherValueMap_codec);
             break;
           }
-          case 104: {
+          case 96: {
             WeatherGadgetId = input.ReadUInt32();
             break;
           }
@@ -246,11 +251,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 66: {
             weatherValueMap_.AddEntriesFrom(ref input, _map_weatherValueMap_codec);
             break;
           }
-          case 104: {
+          case 96: {
             WeatherGadgetId = input.ReadUInt32();
             break;
           }

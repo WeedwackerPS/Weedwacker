@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusCultivateRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhGdW5ndXNDdWx0aXZhdGVSc3AucHJvdG8iUgoSRnVuZ3VzQ3VsdGl2YXRl",
-            "UnNwEhQKDGN1bHRpdmF0ZV9pZBgEIAEoDRIVCg1pc19uZXdfcmVjb3JkGA0g",
-            "ASgIEg8KB3JldGNvZGUYCiABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhGdW5ndXNDdWx0aXZhdGVSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iUgoSRnVuZ3VzQ3VsdGl2YXRlUnNwEg8KB3JldGNv",
+            "ZGUYCCABKAUSFAoMY3VsdGl2YXRlX2lkGAwgASgNEhUKDWlzX25ld19yZWNv",
+            "cmQYDSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusCultivateRsp), global::Weedwacker.Shared.Network.Proto.FungusCultivateRsp.Parser, new[]{ "CultivateId", "IsNewRecord", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusCultivateRsp), global::Weedwacker.Shared.Network.Proto.FungusCultivateRsp.Parser, new[]{ "Retcode", "CultivateId", "IsNewRecord" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23532
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20883;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FungusCultivateRsp : pb::IMessage<FungusCultivateRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusCultivateRsp(FungusCultivateRsp other) : this() {
+      retcode_ = other.retcode_;
       cultivateId_ = other.cultivateId_;
       isNewRecord_ = other.isNewRecord_;
-      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusCultivateRsp(this);
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 8;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "cultivate_id" field.</summary>
-    public const int CultivateIdFieldNumber = 4;
+    public const int CultivateIdFieldNumber = 12;
     private uint cultivateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,18 +129,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Retcode != other.Retcode) return false;
       if (CultivateId != other.CultivateId) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
-      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CultivateId != 0) hash ^= CultivateId.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,13 +175,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CultivateId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CultivateId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
+      }
+      if (CultivateId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CultivateId);
       }
       if (IsNewRecord != false) {
         output.WriteRawTag(104);
@@ -193,13 +197,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CultivateId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CultivateId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
+      }
+      if (CultivateId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CultivateId);
       }
       if (IsNewRecord != false) {
         output.WriteRawTag(104);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
       if (CultivateId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CultivateId);
       }
       if (IsNewRecord != false) {
         size += 1 + 1;
-      }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.CultivateId != 0) {
         CultivateId = other.CultivateId;
       }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,12 +264,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            CultivateId = input.ReadUInt32();
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            CultivateId = input.ReadUInt32();
             break;
           }
           case 104: {
@@ -287,12 +291,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            CultivateId = input.ReadUInt32();
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 96: {
+            CultivateId = input.ReadUInt32();
             break;
           }
           case 104: {

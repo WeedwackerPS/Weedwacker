@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVDaGFubmVsZXJTbGFiQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhtDaGFu",
-            "bmVsZXJTbGFiQnVmZkluZm8ucHJvdG8aIUNoYW5uZWxlclNsYWJDaGFsbGVu",
-            "Z2VTdGFnZS5wcm90bxonQ2hhbm5lbGVyU2xhYkxvb3BEdW5nZW9uU3RhZ2VJ",
-            "bmZvLnByb3RvItoBCh9DaGFubmVsZXJTbGFiQWN0aXZpdHlEZXRhaWxJbmZv",
-            "EikKCWJ1ZmZfaW5mbxgBIAEoCzIWLkNoYW5uZWxlclNsYWJCdWZmSW5mbxJD",
-            "Chdsb29wX2R1bmdlb25fc3RhZ2VfaW5mbxgHIAEoCzIiLkNoYW5uZWxlclNs",
-            "YWJMb29wRHVuZ2VvblN0YWdlSW5mbxIwCgpzdGFnZV9saXN0GA8gAygLMhwu",
-            "Q2hhbm5lbGVyU2xhYkNoYWxsZW5nZVN0YWdlEhUKDXBsYXlfZW5kX3RpbWUY",
-            "AyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiVDaGFubmVsZXJTbGFiQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhtDaGFubmVsZXJTbGFiQnVm",
+            "ZkluZm8ucHJvdG8aIUNoYW5uZWxlclNsYWJDaGFsbGVuZ2VTdGFnZS5wcm90",
+            "bxonQ2hhbm5lbGVyU2xhYkxvb3BEdW5nZW9uU3RhZ2VJbmZvLnByb3RvIroC",
+            "Ch9DaGFubmVsZXJTbGFiQWN0aXZpdHlEZXRhaWxJbmZvEmMKF2xvb3BfZHVu",
+            "Z2Vvbl9zdGFnZV9pbmZvGAIgASgLMkIuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5DaGFubmVsZXJTbGFiTG9vcER1bmdlb25TdGFnZUluZm8S",
+            "SQoJYnVmZl9pbmZvGAkgASgLMjYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5DaGFubmVsZXJTbGFiQnVmZkluZm8SUAoKc3RhZ2VfbGlzdBgI",
+            "IAMoCzI8LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hhbm5l",
+            "bGVyU2xhYkNoYWxsZW5nZVN0YWdlEhUKDXBsYXlfZW5kX3RpbWUYDiABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo.Parser, new[]{ "BuffInfo", "LoopDungeonStageInfo", "StageList", "PlayEndTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo.Parser, new[]{ "LoopDungeonStageInfo", "BuffInfo", "StageList", "PlayEndTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabActivityDetailInfo(ChannelerSlabActivityDetailInfo other) : this() {
-      buffInfo_ = other.buffInfo_ != null ? other.buffInfo_.Clone() : null;
       loopDungeonStageInfo_ = other.loopDungeonStageInfo_ != null ? other.loopDungeonStageInfo_.Clone() : null;
+      buffInfo_ = other.buffInfo_ != null ? other.buffInfo_.Clone() : null;
       stageList_ = other.stageList_.Clone();
       playEndTime_ = other.playEndTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -91,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "buff_info" field.</summary>
-    public const int BuffInfoFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo buffInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo BuffInfo {
-      get { return buffInfo_; }
-      set {
-        buffInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "loop_dungeon_stage_info" field.</summary>
-    public const int LoopDungeonStageInfoFieldNumber = 7;
+    public const int LoopDungeonStageInfoFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonStageInfo loopDungeonStageInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,10 +105,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "buff_info" field.</summary>
+    public const int BuffInfoFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo buffInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo BuffInfo {
+      get { return buffInfo_; }
+      set {
+        buffInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "stage_list" field.</summary>
-    public const int StageListFieldNumber = 15;
+    public const int StageListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage> _repeated_stageList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage> stageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabChallengeStage>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +129,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "play_end_time" field.</summary>
-    public const int PlayEndTimeFieldNumber = 3;
+    public const int PlayEndTimeFieldNumber = 14;
     private uint playEndTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(BuffInfo, other.BuffInfo)) return false;
       if (!object.Equals(LoopDungeonStageInfo, other.LoopDungeonStageInfo)) return false;
+      if (!object.Equals(BuffInfo, other.BuffInfo)) return false;
       if(!stageList_.Equals(other.stageList_)) return false;
       if (PlayEndTime != other.PlayEndTime) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -164,8 +166,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (buffInfo_ != null) hash ^= BuffInfo.GetHashCode();
       if (loopDungeonStageInfo_ != null) hash ^= LoopDungeonStageInfo.GetHashCode();
+      if (buffInfo_ != null) hash ^= BuffInfo.GetHashCode();
       hash ^= stageList_.GetHashCode();
       if (PlayEndTime != 0) hash ^= PlayEndTime.GetHashCode();
       if (_unknownFields != null) {
@@ -186,19 +188,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (buffInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BuffInfo);
-      }
-      if (PlayEndTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PlayEndTime);
-      }
       if (loopDungeonStageInfo_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(18);
         output.WriteMessage(LoopDungeonStageInfo);
       }
       stageList_.WriteTo(output, _repeated_stageList_codec);
+      if (buffInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BuffInfo);
+      }
+      if (PlayEndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayEndTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -209,19 +211,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (buffInfo_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BuffInfo);
-      }
-      if (PlayEndTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PlayEndTime);
-      }
       if (loopDungeonStageInfo_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(18);
         output.WriteMessage(LoopDungeonStageInfo);
       }
       stageList_.WriteTo(ref output, _repeated_stageList_codec);
+      if (buffInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BuffInfo);
+      }
+      if (PlayEndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayEndTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -232,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (buffInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BuffInfo);
-      }
       if (loopDungeonStageInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LoopDungeonStageInfo);
+      }
+      if (buffInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BuffInfo);
       }
       size += stageList_.CalculateSize(_repeated_stageList_codec);
       if (PlayEndTime != 0) {
@@ -254,17 +256,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.buffInfo_ != null) {
-        if (buffInfo_ == null) {
-          BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
-        }
-        BuffInfo.MergeFrom(other.BuffInfo);
-      }
       if (other.loopDungeonStageInfo_ != null) {
         if (loopDungeonStageInfo_ == null) {
           LoopDungeonStageInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonStageInfo();
         }
         LoopDungeonStageInfo.MergeFrom(other.LoopDungeonStageInfo);
+      }
+      if (other.buffInfo_ != null) {
+        if (buffInfo_ == null) {
+          BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
+        }
+        BuffInfo.MergeFrom(other.BuffInfo);
       }
       stageList_.Add(other.stageList_);
       if (other.PlayEndTime != 0) {
@@ -285,26 +287,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (buffInfo_ == null) {
-              BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
-            }
-            input.ReadMessage(BuffInfo);
-            break;
-          }
-          case 24: {
-            PlayEndTime = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 18: {
             if (loopDungeonStageInfo_ == null) {
               LoopDungeonStageInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonStageInfo();
             }
             input.ReadMessage(LoopDungeonStageInfo);
             break;
           }
-          case 122: {
+          case 66: {
             stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
+            break;
+          }
+          case 74: {
+            if (buffInfo_ == null) {
+              BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
+            }
+            input.ReadMessage(BuffInfo);
+            break;
+          }
+          case 112: {
+            PlayEndTime = input.ReadUInt32();
             break;
           }
         }
@@ -322,26 +324,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            if (buffInfo_ == null) {
-              BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
-            }
-            input.ReadMessage(BuffInfo);
-            break;
-          }
-          case 24: {
-            PlayEndTime = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 18: {
             if (loopDungeonStageInfo_ == null) {
               LoopDungeonStageInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonStageInfo();
             }
             input.ReadMessage(LoopDungeonStageInfo);
             break;
           }
-          case 122: {
+          case 66: {
             stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
+            break;
+          }
+          case 74: {
+            if (buffInfo_ == null) {
+              BuffInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo();
+            }
+            input.ReadMessage(BuffInfo);
+            break;
+          }
+          case 112: {
+            PlayEndTime = input.ReadUInt32();
             break;
           }
         }

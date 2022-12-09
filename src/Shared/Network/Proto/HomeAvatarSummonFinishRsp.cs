@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeAvatarSummonFinishRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Ib21lQXZhdGFyU3VtbW9uRmluaXNoUnNwLnByb3RvIj4KGUhvbWVBdmF0",
-            "YXJTdW1tb25GaW5pc2hSc3ASEAoIZXZlbnRfaWQYCCABKA0SDwoHcmV0Y29k",
-            "ZRgDIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "Ch9Ib21lQXZhdGFyU3VtbW9uRmluaXNoUnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIj4KGUhvbWVBdmF0YXJTdW1tb25GaW5p",
+            "c2hSc3ASDwoHcmV0Y29kZRgDIAEoBRIQCghldmVudF9pZBgMIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonFinishRsp), global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonFinishRsp.Parser, new[]{ "EventId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonFinishRsp), global::Weedwacker.Shared.Network.Proto.HomeAvatarSummonFinishRsp.Parser, new[]{ "Retcode", "EventId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4696
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4814;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeAvatarSummonFinishRsp : pb::IMessage<HomeAvatarSummonFinishRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarSummonFinishRsp(HomeAvatarSummonFinishRsp other) : this() {
-      eventId_ = other.eventId_;
       retcode_ = other.retcode_;
+      eventId_ = other.eventId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,18 +90,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeAvatarSummonFinishRsp Clone() {
       return new HomeAvatarSummonFinishRsp(this);
-    }
-
-    /// <summary>Field number for the "event_id" field.</summary>
-    public const int EventIdFieldNumber = 8;
-    private uint eventId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EventId {
-      get { return eventId_; }
-      set {
-        eventId_ = value;
-      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 12;
+    private uint eventId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EventId {
+      get { return eventId_; }
+      set {
+        eventId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EventId != other.EventId) return false;
       if (Retcode != other.Retcode) return false;
+      if (EventId != other.EventId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -161,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (EventId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(EventId);
       }
       if (_unknownFields != null) {
@@ -179,7 +183,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (EventId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(EventId);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EventId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (EventId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EventId != 0) {
-        EventId = other.EventId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.EventId != 0) {
+        EventId = other.EventId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,7 +239,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 96: {
             EventId = input.ReadUInt32();
             break;
           }
@@ -258,7 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 96: {
             EventId = input.ReadUInt32();
             break;
           }

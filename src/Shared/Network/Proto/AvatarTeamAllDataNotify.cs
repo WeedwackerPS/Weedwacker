@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarTeamAllDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BdmF0YXJUZWFtQWxsRGF0YU5vdGlmeS5wcm90bxoQQXZhdGFyVGVhbS5w",
-            "cm90byLoAQoXQXZhdGFyVGVhbUFsbERhdGFOb3RpZnkSHQoVdGVtcF9hdmF0",
-            "YXJfZ3VpZF9saXN0GAYgAygEEkQKD2F2YXRhcl90ZWFtX21hcBgDIAMoCzIr",
-            "LkF2YXRhclRlYW1BbGxEYXRhTm90aWZ5LkF2YXRhclRlYW1NYXBFbnRyeRIl",
-            "Ch1iYWNrdXBfYXZhdGFyX3RlYW1fb3JkZXJfbGlzdBgBIAMoDRpBChJBdmF0",
-            "YXJUZWFtTWFwRW50cnkSCwoDa2V5GAEgASgNEhoKBXZhbHVlGAIgASgLMgsu",
-            "QXZhdGFyVGVhbToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "Ch1BdmF0YXJUZWFtQWxsRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoQQXZhdGFyVGVhbS5wcm90byKoAgoXQXZh",
+            "dGFyVGVhbUFsbERhdGFOb3RpZnkSHQoVdGVtcF9hdmF0YXJfZ3VpZF9saXN0",
+            "GAIgAygEEiUKHWJhY2t1cF9hdmF0YXJfdGVhbV9vcmRlcl9saXN0GAogAygN",
+            "EmQKD2F2YXRhcl90ZWFtX21hcBgFIAMoCzJLLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQXZhdGFyVGVhbUFsbERhdGFOb3RpZnkuQXZhdGFy",
+            "VGVhbU1hcEVudHJ5GmEKEkF2YXRhclRlYW1NYXBFbnRyeRILCgNrZXkYASAB",
+            "KA0SOgoFdmFsdWUYAiABKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkF2YXRhclRlYW06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarTeamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarTeamAllDataNotify), global::Weedwacker.Shared.Network.Proto.AvatarTeamAllDataNotify.Parser, new[]{ "TempAvatarGuidList", "AvatarTeamMap", "BackupAvatarTeamOrderList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarTeamAllDataNotify), global::Weedwacker.Shared.Network.Proto.AvatarTeamAllDataNotify.Parser, new[]{ "TempAvatarGuidList", "BackupAvatarTeamOrderList", "AvatarTeamMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1749
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1615;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarTeamAllDataNotify : pb::IMessage<AvatarTeamAllDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,8 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarTeamAllDataNotify(AvatarTeamAllDataNotify other) : this() {
       tempAvatarGuidList_ = other.tempAvatarGuidList_.Clone();
-      avatarTeamMap_ = other.avatarTeamMap_.Clone();
       backupAvatarTeamOrderList_ = other.backupAvatarTeamOrderList_.Clone();
+      avatarTeamMap_ = other.avatarTeamMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,9 +99,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "temp_avatar_guid_list" field.</summary>
-    public const int TempAvatarGuidListFieldNumber = 6;
+    public const int TempAvatarGuidListFieldNumber = 2;
     private static readonly pb::FieldCodec<ulong> _repeated_tempAvatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(50);
+        = pb::FieldCodec.ForUInt64(18);
     private readonly pbc::RepeatedField<ulong> tempAvatarGuidList_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,26 +109,26 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return tempAvatarGuidList_; }
     }
 
-    /// <summary>Field number for the "avatar_team_map" field.</summary>
-    public const int AvatarTeamMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>.Codec _map_avatarTeamMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarTeam.Parser), 26);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam> avatarTeamMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam> AvatarTeamMap {
-      get { return avatarTeamMap_; }
-    }
-
     /// <summary>Field number for the "backup_avatar_team_order_list" field.</summary>
-    public const int BackupAvatarTeamOrderListFieldNumber = 1;
+    public const int BackupAvatarTeamOrderListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_backupAvatarTeamOrderList_codec
-        = pb::FieldCodec.ForUInt32(10);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> backupAvatarTeamOrderList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> BackupAvatarTeamOrderList {
       get { return backupAvatarTeamOrderList_; }
+    }
+
+    /// <summary>Field number for the "avatar_team_map" field.</summary>
+    public const int AvatarTeamMapFieldNumber = 5;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>.Codec _map_avatarTeamMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarTeam.Parser), 42);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam> avatarTeamMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AvatarTeam> AvatarTeamMap {
+      get { return avatarTeamMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -142,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!tempAvatarGuidList_.Equals(other.tempAvatarGuidList_)) return false;
-      if (!AvatarTeamMap.Equals(other.AvatarTeamMap)) return false;
       if(!backupAvatarTeamOrderList_.Equals(other.backupAvatarTeamOrderList_)) return false;
+      if (!AvatarTeamMap.Equals(other.AvatarTeamMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= tempAvatarGuidList_.GetHashCode();
-      hash ^= AvatarTeamMap.GetHashCode();
       hash ^= backupAvatarTeamOrderList_.GetHashCode();
+      hash ^= AvatarTeamMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,9 +177,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      backupAvatarTeamOrderList_.WriteTo(output, _repeated_backupAvatarTeamOrderList_codec);
-      avatarTeamMap_.WriteTo(output, _map_avatarTeamMap_codec);
       tempAvatarGuidList_.WriteTo(output, _repeated_tempAvatarGuidList_codec);
+      avatarTeamMap_.WriteTo(output, _map_avatarTeamMap_codec);
+      backupAvatarTeamOrderList_.WriteTo(output, _repeated_backupAvatarTeamOrderList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -185,9 +190,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      backupAvatarTeamOrderList_.WriteTo(ref output, _repeated_backupAvatarTeamOrderList_codec);
-      avatarTeamMap_.WriteTo(ref output, _map_avatarTeamMap_codec);
       tempAvatarGuidList_.WriteTo(ref output, _repeated_tempAvatarGuidList_codec);
+      avatarTeamMap_.WriteTo(ref output, _map_avatarTeamMap_codec);
+      backupAvatarTeamOrderList_.WriteTo(ref output, _repeated_backupAvatarTeamOrderList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -199,8 +204,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += tempAvatarGuidList_.CalculateSize(_repeated_tempAvatarGuidList_codec);
-      size += avatarTeamMap_.CalculateSize(_map_avatarTeamMap_codec);
       size += backupAvatarTeamOrderList_.CalculateSize(_repeated_backupAvatarTeamOrderList_codec);
+      size += avatarTeamMap_.CalculateSize(_map_avatarTeamMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -214,8 +219,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       tempAvatarGuidList_.Add(other.tempAvatarGuidList_);
-      avatarTeamMap_.Add(other.avatarTeamMap_);
       backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
+      avatarTeamMap_.Add(other.avatarTeamMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -231,18 +236,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            backupAvatarTeamOrderList_.AddEntriesFrom(input, _repeated_backupAvatarTeamOrderList_codec);
+          case 18:
+          case 16: {
+            tempAvatarGuidList_.AddEntriesFrom(input, _repeated_tempAvatarGuidList_codec);
             break;
           }
-          case 26: {
+          case 42: {
             avatarTeamMap_.AddEntriesFrom(input, _map_avatarTeamMap_codec);
             break;
           }
-          case 50:
-          case 48: {
-            tempAvatarGuidList_.AddEntriesFrom(input, _repeated_tempAvatarGuidList_codec);
+          case 82:
+          case 80: {
+            backupAvatarTeamOrderList_.AddEntriesFrom(input, _repeated_backupAvatarTeamOrderList_codec);
             break;
           }
         }
@@ -260,18 +265,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            backupAvatarTeamOrderList_.AddEntriesFrom(ref input, _repeated_backupAvatarTeamOrderList_codec);
+          case 18:
+          case 16: {
+            tempAvatarGuidList_.AddEntriesFrom(ref input, _repeated_tempAvatarGuidList_codec);
             break;
           }
-          case 26: {
+          case 42: {
             avatarTeamMap_.AddEntriesFrom(ref input, _map_avatarTeamMap_codec);
             break;
           }
-          case 50:
-          case 48: {
-            tempAvatarGuidList_.AddEntriesFrom(ref input, _repeated_tempAvatarGuidList_codec);
+          case 82:
+          case 80: {
+            backupAvatarTeamOrderList_.AddEntriesFrom(ref input, _repeated_backupAvatarTeamOrderList_codec);
             break;
           }
         }

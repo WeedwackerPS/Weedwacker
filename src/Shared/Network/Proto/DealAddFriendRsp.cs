@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static DealAddFriendRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZEZWFsQWRkRnJpZW5kUnNwLnByb3RvGh1EZWFsQWRkRnJpZW5kUmVzdWx0",
-            "VHlwZS5wcm90byJxChBEZWFsQWRkRnJpZW5kUnNwEg8KB3JldGNvZGUYASAB",
-            "KAUSEgoKdGFyZ2V0X3VpZBgFIAEoDRI4ChZkZWFsX2FkZF9mcmllbmRfcmVz",
-            "dWx0GAYgASgOMhguRGVhbEFkZEZyaWVuZFJlc3VsdFR5cGVCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZEZWFsQWRkRnJpZW5kUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGh1EZWFsQWRkRnJpZW5kUmVzdWx0VHlwZS5wcm90byKR",
+            "AQoQRGVhbEFkZEZyaWVuZFJzcBISCgp0YXJnZXRfdWlkGA8gASgNElgKFmRl",
+            "YWxfYWRkX2ZyaWVuZF9yZXN1bHQYBCABKA4yOC5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkRlYWxBZGRGcmllbmRSZXN1bHRUeXBlEg8KB3Jl",
+            "dGNvZGUYCyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DealAddFriendResultTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DealAddFriendRsp), global::Weedwacker.Shared.Network.Proto.DealAddFriendRsp.Parser, new[]{ "Retcode", "TargetUid", "DealAddFriendResult" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DealAddFriendRsp), global::Weedwacker.Shared.Network.Proto.DealAddFriendRsp.Parser, new[]{ "TargetUid", "DealAddFriendResult", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4090
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4047;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DealAddFriendRsp : pb::IMessage<DealAddFriendRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DealAddFriendRsp(DealAddFriendRsp other) : this() {
-      retcode_ = other.retcode_;
       targetUid_ = other.targetUid_;
       dealAddFriendResult_ = other.dealAddFriendResult_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DealAddFriendRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 5;
+    public const int TargetUidFieldNumber = 15;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "deal_add_friend_result" field.</summary>
-    public const int DealAddFriendResultFieldNumber = 6;
+    public const int DealAddFriendResultFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType dealAddFriendResult_ = global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dealAddFriendResult_; }
       set {
         dealAddFriendResult_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 11;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -142,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (TargetUid != other.TargetUid) return false;
       if (DealAddFriendResult != other.DealAddFriendResult) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) hash ^= DealAddFriendResult.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,17 +178,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) DealAddFriendResult);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(120);
         output.WriteUInt32(TargetUid);
-      }
-      if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DealAddFriendResult);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,17 +200,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) DealAddFriendResult);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(120);
         output.WriteUInt32(TargetUid);
-      }
-      if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) DealAddFriendResult);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
       if (DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DealAddFriendResult);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -238,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.TargetUid != 0) {
         TargetUid = other.TargetUid;
       }
       if (other.DealAddFriendResult != global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType.Reject) {
         DealAddFriendResult = other.DealAddFriendResult;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,16 +267,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 32: {
+            DealAddFriendResult = (global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType) input.ReadEnum();
+            break;
+          }
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 120: {
             TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            DealAddFriendResult = (global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType) input.ReadEnum();
             break;
           }
         }
@@ -289,16 +294,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 32: {
+            DealAddFriendResult = (global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType) input.ReadEnum();
+            break;
+          }
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 120: {
             TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            DealAddFriendResult = (global::Weedwacker.Shared.Network.Proto.DealAddFriendResultType) input.ReadEnum();
             break;
           }
         }

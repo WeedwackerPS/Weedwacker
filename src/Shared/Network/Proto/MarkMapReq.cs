@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static MarkMapReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBNYXJrTWFwUmVxLnByb3RvGhJNYXBNYXJrUG9pbnQucHJvdG8iwQEKCk1h",
-            "cmtNYXBSZXESGwoEbWFyaxgIIAEoCzINLk1hcE1hcmtQb2ludBIaCgNvbGQY",
-            "BiABKAsyDS5NYXBNYXJrUG9pbnQSIQoCb3AYCSABKA4yFS5NYXJrTWFwUmVx",
-            "Lk9wZXJhdGlvbiJXCglPcGVyYXRpb24SEQoNT1BFUkFUSU9OX0FERBAAEhEK",
-            "DU9QRVJBVElPTl9NT0QQARIRCg1PUEVSQVRJT05fREVMEAISEQoNT1BFUkFU",
-            "SU9OX0dFVBADQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChBNYXJrTWFwUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGhJNYXBNYXJrUG9pbnQucHJvdG8ioQIKCk1hcmtNYXBSZXESQQoC",
+            "b3AYAyABKA4yNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1h",
+            "cmtNYXBSZXEuT3BlcmF0aW9uEjoKA29sZBgGIAEoCzItLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uTWFwTWFya1BvaW50EjsKBG1hcmsYDSAB",
+            "KAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1hcE1hcmtQ",
+            "b2ludCJXCglPcGVyYXRpb24SEQoNT1BFUkFUSU9OX0FERBAAEhEKDU9QRVJB",
+            "VElPTl9NT0QQARIRCg1PUEVSQVRJT05fREVMEAISEQoNT1BFUkFUSU9OX0dF",
+            "VBADYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MapMarkPointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MarkMapReq), global::Weedwacker.Shared.Network.Proto.MarkMapReq.Parser, new[]{ "Mark", "Old", "Op" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MarkMapReq), global::Weedwacker.Shared.Network.Proto.MarkMapReq.Parser, new[]{ "Op", "Old", "Mark" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) }, null, null)
           }));
     }
     #endregion
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3466
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3282;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MarkMapReq : pb::IMessage<MarkMapReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MarkMapReq(MarkMapReq other) : this() {
-      mark_ = other.mark_ != null ? other.mark_.Clone() : null;
-      old_ = other.old_ != null ? other.old_.Clone() : null;
       op_ = other.op_;
+      old_ = other.old_ != null ? other.old_.Clone() : null;
+      mark_ = other.mark_ != null ? other.mark_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,15 +99,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MarkMapReq(this);
     }
 
-    /// <summary>Field number for the "mark" field.</summary>
-    public const int MarkFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.MapMarkPoint mark_;
+    /// <summary>Field number for the "op" field.</summary>
+    public const int OpFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation op_ = global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.MapMarkPoint Mark {
-      get { return mark_; }
+    public global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation Op {
+      get { return op_; }
       set {
-        mark_ = value;
+        op_ = value;
       }
     }
 
@@ -117,15 +123,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "op" field.</summary>
-    public const int OpFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation op_ = global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add;
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 13;
+    private global::Weedwacker.Shared.Network.Proto.MapMarkPoint mark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation Op {
-      get { return op_; }
+    public global::Weedwacker.Shared.Network.Proto.MapMarkPoint Mark {
+      get { return mark_; }
       set {
-        op_ = value;
+        mark_ = value;
       }
     }
 
@@ -144,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Mark, other.Mark)) return false;
-      if (!object.Equals(Old, other.Old)) return false;
       if (Op != other.Op) return false;
+      if (!object.Equals(Old, other.Old)) return false;
+      if (!object.Equals(Mark, other.Mark)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (mark_ != null) hash ^= Mark.GetHashCode();
-      if (old_ != null) hash ^= Old.GetHashCode();
       if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) hash ^= Op.GetHashCode();
+      if (old_ != null) hash ^= Old.GetHashCode();
+      if (mark_ != null) hash ^= Mark.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,17 +181,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Op);
+      }
       if (old_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(Old);
       }
       if (mark_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(106);
         output.WriteMessage(Mark);
-      }
-      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
-        output.WriteRawTag(72);
-        output.WriteEnum((int) Op);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,17 +203,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Op);
+      }
       if (old_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(Old);
       }
       if (mark_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(106);
         output.WriteMessage(Mark);
-      }
-      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
-        output.WriteRawTag(72);
-        output.WriteEnum((int) Op);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,14 +225,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (mark_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mark);
+      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
       }
       if (old_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Old);
       }
-      if (Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
+      if (mark_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mark);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,11 +246,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.mark_ != null) {
-        if (mark_ == null) {
-          Mark = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
-        }
-        Mark.MergeFrom(other.Mark);
+      if (other.Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
+        Op = other.Op;
       }
       if (other.old_ != null) {
         if (old_ == null) {
@@ -252,8 +255,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Old.MergeFrom(other.Old);
       }
-      if (other.Op != global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation.Add) {
-        Op = other.Op;
+      if (other.mark_ != null) {
+        if (mark_ == null) {
+          Mark = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
+        }
+        Mark.MergeFrom(other.Mark);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -270,6 +276,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 24: {
+            Op = (global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) input.ReadEnum();
+            break;
+          }
           case 50: {
             if (old_ == null) {
               Old = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
@@ -277,15 +287,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Old);
             break;
           }
-          case 66: {
+          case 106: {
             if (mark_ == null) {
               Mark = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
             }
             input.ReadMessage(Mark);
-            break;
-          }
-          case 72: {
-            Op = (global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) input.ReadEnum();
             break;
           }
         }
@@ -303,6 +309,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 24: {
+            Op = (global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) input.ReadEnum();
+            break;
+          }
           case 50: {
             if (old_ == null) {
               Old = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
@@ -310,15 +320,11 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Old);
             break;
           }
-          case 66: {
+          case 106: {
             if (mark_ == null) {
               Mark = new global::Weedwacker.Shared.Network.Proto.MapMarkPoint();
             }
             input.ReadMessage(Mark);
-            break;
-          }
-          case 72: {
-            Op = (global::Weedwacker.Shared.Network.Proto.MarkMapReq.Types.Operation) input.ReadEnum();
             break;
           }
         }

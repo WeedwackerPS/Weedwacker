@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AttackResultCreateCountReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BdHRhY2tSZXN1bHRDcmVhdGVDb3VudC5wcm90byJXChdBdHRhY2tSZXN1",
-            "bHRDcmVhdGVDb3VudBIZChFjcmVhdGVfY291bnRfbGlzdBgKIAMoDRIhChlj",
-            "cmVhdGVfY291bnRfbm9fY29zdF9saXN0GAcgAygNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1BdHRhY2tSZXN1bHRDcmVhdGVDb3VudC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJTChdBdHRhY2tSZXN1bHRDcmVhdGVDb3Vu",
+            "dBIbChNVbmszMzAwX1BGRkZGSkJQS0dOGAggAygNEhsKE1VuazMzMDBfTURH",
+            "RkJGQkFIUEIYCiADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AttackResultCreateCount), global::Weedwacker.Shared.Network.Proto.AttackResultCreateCount.Parser, new[]{ "CreateCountList", "CreateCountNoCostList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AttackResultCreateCount), global::Weedwacker.Shared.Network.Proto.AttackResultCreateCount.Parser, new[]{ "Unk3300PFFFFJBPKGN", "Unk3300MDGFBFBAHPB" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AttackResultCreateCount(AttackResultCreateCount other) : this() {
-      createCountList_ = other.createCountList_.Clone();
-      createCountNoCostList_ = other.createCountNoCostList_.Clone();
+      unk3300PFFFFJBPKGN_ = other.unk3300PFFFFJBPKGN_.Clone();
+      unk3300MDGFBFBAHPB_ = other.unk3300MDGFBFBAHPB_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,26 +83,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AttackResultCreateCount(this);
     }
 
-    /// <summary>Field number for the "create_count_list" field.</summary>
-    public const int CreateCountListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_createCountList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> createCountList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_PFFFFJBPKGN" field.</summary>
+    public const int Unk3300PFFFFJBPKGNFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300PFFFFJBPKGN_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> unk3300PFFFFJBPKGN_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CreateCountList {
-      get { return createCountList_; }
+    public pbc::RepeatedField<uint> Unk3300PFFFFJBPKGN {
+      get { return unk3300PFFFFJBPKGN_; }
     }
 
-    /// <summary>Field number for the "create_count_no_cost_list" field.</summary>
-    public const int CreateCountNoCostListFieldNumber = 7;
-    private static readonly pb::FieldCodec<uint> _repeated_createCountNoCostList_codec
-        = pb::FieldCodec.ForUInt32(58);
-    private readonly pbc::RepeatedField<uint> createCountNoCostList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_MDGFBFBAHPB" field.</summary>
+    public const int Unk3300MDGFBFBAHPBFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300MDGFBFBAHPB_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unk3300MDGFBFBAHPB_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CreateCountNoCostList {
-      get { return createCountNoCostList_; }
+    public pbc::RepeatedField<uint> Unk3300MDGFBFBAHPB {
+      get { return unk3300MDGFBFBAHPB_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,8 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!createCountList_.Equals(other.createCountList_)) return false;
-      if(!createCountNoCostList_.Equals(other.createCountNoCostList_)) return false;
+      if(!unk3300PFFFFJBPKGN_.Equals(other.unk3300PFFFFJBPKGN_)) return false;
+      if(!unk3300MDGFBFBAHPB_.Equals(other.unk3300MDGFBFBAHPB_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -129,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= createCountList_.GetHashCode();
-      hash ^= createCountNoCostList_.GetHashCode();
+      hash ^= unk3300PFFFFJBPKGN_.GetHashCode();
+      hash ^= unk3300MDGFBFBAHPB_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -149,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      createCountNoCostList_.WriteTo(output, _repeated_createCountNoCostList_codec);
-      createCountList_.WriteTo(output, _repeated_createCountList_codec);
+      unk3300PFFFFJBPKGN_.WriteTo(output, _repeated_unk3300PFFFFJBPKGN_codec);
+      unk3300MDGFBFBAHPB_.WriteTo(output, _repeated_unk3300MDGFBFBAHPB_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -161,8 +161,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      createCountNoCostList_.WriteTo(ref output, _repeated_createCountNoCostList_codec);
-      createCountList_.WriteTo(ref output, _repeated_createCountList_codec);
+      unk3300PFFFFJBPKGN_.WriteTo(ref output, _repeated_unk3300PFFFFJBPKGN_codec);
+      unk3300MDGFBFBAHPB_.WriteTo(ref output, _repeated_unk3300MDGFBFBAHPB_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -173,8 +173,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += createCountList_.CalculateSize(_repeated_createCountList_codec);
-      size += createCountNoCostList_.CalculateSize(_repeated_createCountNoCostList_codec);
+      size += unk3300PFFFFJBPKGN_.CalculateSize(_repeated_unk3300PFFFFJBPKGN_codec);
+      size += unk3300MDGFBFBAHPB_.CalculateSize(_repeated_unk3300MDGFBFBAHPB_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -187,8 +187,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      createCountList_.Add(other.createCountList_);
-      createCountNoCostList_.Add(other.createCountNoCostList_);
+      unk3300PFFFFJBPKGN_.Add(other.unk3300PFFFFJBPKGN_);
+      unk3300MDGFBFBAHPB_.Add(other.unk3300MDGFBFBAHPB_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -204,14 +204,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58:
-          case 56: {
-            createCountNoCostList_.AddEntriesFrom(input, _repeated_createCountNoCostList_codec);
+          case 66:
+          case 64: {
+            unk3300PFFFFJBPKGN_.AddEntriesFrom(input, _repeated_unk3300PFFFFJBPKGN_codec);
             break;
           }
           case 82:
           case 80: {
-            createCountList_.AddEntriesFrom(input, _repeated_createCountList_codec);
+            unk3300MDGFBFBAHPB_.AddEntriesFrom(input, _repeated_unk3300MDGFBFBAHPB_codec);
             break;
           }
         }
@@ -229,14 +229,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58:
-          case 56: {
-            createCountNoCostList_.AddEntriesFrom(ref input, _repeated_createCountNoCostList_codec);
+          case 66:
+          case 64: {
+            unk3300PFFFFJBPKGN_.AddEntriesFrom(ref input, _repeated_unk3300PFFFFJBPKGN_codec);
             break;
           }
           case 82:
           case 80: {
-            createCountList_.AddEntriesFrom(ref input, _repeated_createCountList_codec);
+            unk3300MDGFBFBAHPB_.AddEntriesFrom(ref input, _repeated_unk3300MDGFBFBAHPB_codec);
             break;
           }
         }

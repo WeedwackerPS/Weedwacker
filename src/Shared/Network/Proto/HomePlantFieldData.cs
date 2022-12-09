@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePlantFieldDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhIb21lUGxhbnRGaWVsZERhdGEucHJvdG8aG0hvbWVQbGFudFN1YkZpZWxk",
-            "RGF0YS5wcm90bxoMVmVjdG9yLnByb3RvIpwBChJIb21lUGxhbnRGaWVsZERh",
-            "dGESLgoOc3ViX2ZpZWxkX2xpc3QYDSADKAsyFi5Ib21lUGxhbnRTdWJGaWVs",
-            "ZERhdGESFAoMZnVybml0dXJlX2lkGAkgASgNEhAKCHNjZW5lX2lkGAEgASgN",
-            "EhIKCmZpZWxkX2d1aWQYCiABKA0SGgoJc3Bhd25fcG9zGAwgASgLMgcuVmVj",
-            "dG9yQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChhIb21lUGxhbnRGaWVsZERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0hvbWVQbGFudFN1YkZpZWxkRGF0YS5wcm90bxoM",
+            "VmVjdG9yLnByb3RvItwBChJIb21lUGxhbnRGaWVsZERhdGESEAoIc2NlbmVf",
+            "aWQYDyABKA0SEgoKZmllbGRfZ3VpZBgFIAEoDRJOCg5zdWJfZmllbGRfbGlz",
+            "dBgDIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9t",
+            "ZVBsYW50U3ViRmllbGREYXRhEhQKDGZ1cm5pdHVyZV9pZBgBIAEoDRI6Cglz",
+            "cGF3bl9wb3MYCSABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantFieldData), global::Weedwacker.Shared.Network.Proto.HomePlantFieldData.Parser, new[]{ "SubFieldList", "FurnitureId", "SceneId", "FieldGuid", "SpawnPos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantFieldData), global::Weedwacker.Shared.Network.Proto.HomePlantFieldData.Parser, new[]{ "SceneId", "FieldGuid", "SubFieldList", "FurnitureId", "SpawnPos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomePlantFieldData(HomePlantFieldData other) : this() {
-      subFieldList_ = other.subFieldList_.Clone();
-      furnitureId_ = other.furnitureId_;
       sceneId_ = other.sceneId_;
       fieldGuid_ = other.fieldGuid_;
+      subFieldList_ = other.subFieldList_.Clone();
+      furnitureId_ = other.furnitureId_;
       spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -89,31 +90,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomePlantFieldData(this);
     }
 
-    /// <summary>Field number for the "sub_field_list" field.</summary>
-    public const int SubFieldListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> _repeated_subFieldList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> subFieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> SubFieldList {
-      get { return subFieldList_; }
-    }
-
-    /// <summary>Field number for the "furniture_id" field.</summary>
-    public const int FurnitureIdFieldNumber = 9;
-    private uint furnitureId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FurnitureId {
-      get { return furnitureId_; }
-      set {
-        furnitureId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 1;
+    public const int SceneIdFieldNumber = 15;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,7 +103,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "field_guid" field.</summary>
-    public const int FieldGuidFieldNumber = 10;
+    public const int FieldGuidFieldNumber = 5;
     private uint fieldGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,8 +114,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "sub_field_list" field.</summary>
+    public const int SubFieldListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> _repeated_subFieldList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> subFieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData> SubFieldList {
+      get { return subFieldList_; }
+    }
+
+    /// <summary>Field number for the "furniture_id" field.</summary>
+    public const int FurnitureIdFieldNumber = 1;
+    private uint furnitureId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FurnitureId {
+      get { return furnitureId_; }
+      set {
+        furnitureId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "spawn_pos" field.</summary>
-    public const int SpawnPosFieldNumber = 12;
+    public const int SpawnPosFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.Vector spawnPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -163,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!subFieldList_.Equals(other.subFieldList_)) return false;
-      if (FurnitureId != other.FurnitureId) return false;
       if (SceneId != other.SceneId) return false;
       if (FieldGuid != other.FieldGuid) return false;
+      if(!subFieldList_.Equals(other.subFieldList_)) return false;
+      if (FurnitureId != other.FurnitureId) return false;
       if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -175,10 +176,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= subFieldList_.GetHashCode();
-      if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (FieldGuid != 0) hash ^= FieldGuid.GetHashCode();
+      hash ^= subFieldList_.GetHashCode();
+      if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
       if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -198,23 +199,23 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
-      }
       if (FurnitureId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(FurnitureId);
       }
+      subFieldList_.WriteTo(output, _repeated_subFieldList_codec);
       if (FieldGuid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(FieldGuid);
       }
       if (spawnPos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(SpawnPos);
       }
-      subFieldList_.WriteTo(output, _repeated_subFieldList_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SceneId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -225,23 +226,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(SceneId);
-      }
       if (FurnitureId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(8);
         output.WriteUInt32(FurnitureId);
       }
+      subFieldList_.WriteTo(ref output, _repeated_subFieldList_codec);
       if (FieldGuid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteUInt32(FieldGuid);
       }
       if (spawnPos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(SpawnPos);
       }
-      subFieldList_.WriteTo(ref output, _repeated_subFieldList_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SceneId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -252,15 +253,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += subFieldList_.CalculateSize(_repeated_subFieldList_codec);
-      if (FurnitureId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
-      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
       if (FieldGuid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FieldGuid);
+      }
+      size += subFieldList_.CalculateSize(_repeated_subFieldList_codec);
+      if (FurnitureId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
       }
       if (spawnPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
@@ -277,15 +278,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      subFieldList_.Add(other.subFieldList_);
-      if (other.FurnitureId != 0) {
-        FurnitureId = other.FurnitureId;
-      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
       if (other.FieldGuid != 0) {
         FieldGuid = other.FieldGuid;
+      }
+      subFieldList_.Add(other.subFieldList_);
+      if (other.FurnitureId != 0) {
+        FurnitureId = other.FurnitureId;
       }
       if (other.spawnPos_ != null) {
         if (spawnPos_ == null) {
@@ -309,26 +310,26 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             FurnitureId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 26: {
+            subFieldList_.AddEntriesFrom(input, _repeated_subFieldList_codec);
+            break;
+          }
+          case 40: {
             FieldGuid = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 74: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 106: {
-            subFieldList_.AddEntriesFrom(input, _repeated_subFieldList_codec);
+          case 120: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }
@@ -347,26 +348,26 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             FurnitureId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 26: {
+            subFieldList_.AddEntriesFrom(ref input, _repeated_subFieldList_codec);
+            break;
+          }
+          case 40: {
             FieldGuid = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 74: {
             if (spawnPos_ == null) {
               SpawnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(SpawnPos);
             break;
           }
-          case 106: {
-            subFieldList_.AddEntriesFrom(ref input, _repeated_subFieldList_codec);
+          case 120: {
+            SceneId = input.ReadUInt32();
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonBanTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpDdXN0b21EdW5nZW9uQmFuVHlwZS5wcm90bypcChRDdXN0b21EdW5nZW9u",
-            "QmFuVHlwZRIgChxDVVNUT01fRFVOR0VPTl9CQU5fVFlQRV9OT05FEAASIgoe",
-            "Q1VTVE9NX0RVTkdFT05fQkFOX1RZUEVfTEFZT1VUEAFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpDdXN0b21EdW5nZW9uQmFuVHlwZS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bypcChRDdXN0b21EdW5nZW9uQmFuVHlwZRIgChxD",
+            "VVNUT01fRFVOR0VPTl9CQU5fVFlQRV9OT05FEAASIgoeQ1VTVE9NX0RVTkdF",
+            "T05fQkFOX1RZUEVfTEFZT1VUEAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonBanType), }, null, null));

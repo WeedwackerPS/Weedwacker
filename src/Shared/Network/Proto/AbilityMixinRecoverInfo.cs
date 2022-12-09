@@ -24,18 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinRecoverInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1BYmlsaXR5TWl4aW5SZWNvdmVySW5mby5wcm90bxoZTWFzc2l2ZVByb3BT",
-            "eW5jSW5mby5wcm90byLaAQoXQWJpbGl0eU1peGluUmVjb3ZlckluZm8SEAoI",
-            "bG9jYWxfaWQYAyABKA0SEQoJZGF0YV9saXN0GAQgAygNEh4KFmlzX3NlcnZl",
-            "cmJ1ZmZfbW9kaWZpZXIYBSABKAgSLwoRbWFzc2l2ZV9wcm9wX2xpc3QYBiAD",
-            "KAsyFC5NYXNzaXZlUHJvcFN5bmNJbmZvEh4KFGluc3RhbmNlZF9hYmlsaXR5",
-            "X2lkGAEgASgNSAASHwoVaW5zdGFuY2VkX21vZGlmaWVyX2lkGAIgASgNSABC",
-            "CAoGc291cmNlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Ch1BYmlsaXR5TWl4aW5SZWNvdmVySW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoWQnJlYWtvdXRTbmFwU2hvdC5wcm90bxoZ",
+            "TWFzc2l2ZVByb3BTeW5jSW5mby5wcm90byLJAgoXQWJpbGl0eU1peGluUmVj",
+            "b3ZlckluZm8SEAoIbG9jYWxfaWQYAyABKA0SEQoJZGF0YV9saXN0GAQgAygN",
+            "Eh4KFmlzX3NlcnZlcmJ1ZmZfbW9kaWZpZXIYBSABKAgSTwoRbWFzc2l2ZV9w",
+            "cm9wX2xpc3QYBiADKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLk1hc3NpdmVQcm9wU3luY0luZm8STQoSYnJlYWtvdXRfc25hcF9zaG90",
+            "GAcgASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CcmVh",
+            "a291dFNuYXBTaG90Eh4KFGluc3RhbmNlZF9hYmlsaXR5X2lkGAEgASgNSAAS",
+            "HwoVaW5zdGFuY2VkX21vZGlmaWVyX2lkGAIgASgNSABCCAoGc291cmNlYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MassivePropSyncInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BreakoutSnapShotReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MassivePropSyncInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinRecoverInfo), global::Weedwacker.Shared.Network.Proto.AbilityMixinRecoverInfo.Parser, new[]{ "LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "InstancedAbilityId", "InstancedModifierId" }, new[]{ "Source" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinRecoverInfo), global::Weedwacker.Shared.Network.Proto.AbilityMixinRecoverInfo.Parser, new[]{ "LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "BreakoutSnapShot", "InstancedAbilityId", "InstancedModifierId" }, new[]{ "Source" }, null, null, null)
           }));
     }
     #endregion
@@ -80,6 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
       dataList_ = other.dataList_.Clone();
       isServerbuffModifier_ = other.isServerbuffModifier_;
       massivePropList_ = other.massivePropList_.Clone();
+      breakoutSnapShot_ = other.breakoutSnapShot_ != null ? other.breakoutSnapShot_.Clone() : null;
       switch (other.SourceCase) {
         case SourceOneofCase.InstancedAbilityId:
           InstancedAbilityId = other.InstancedAbilityId;
@@ -142,6 +146,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MassivePropSyncInfo> MassivePropList {
       get { return massivePropList_; }
+    }
+
+    /// <summary>Field number for the "breakout_snap_shot" field.</summary>
+    public const int BreakoutSnapShotFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.BreakoutSnapShot breakoutSnapShot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.BreakoutSnapShot BreakoutSnapShot {
+      get { return breakoutSnapShot_; }
+      set {
+        breakoutSnapShot_ = value;
+      }
     }
 
     /// <summary>Field number for the "instanced_ability_id" field.</summary>
@@ -208,6 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if(!dataList_.Equals(other.dataList_)) return false;
       if (IsServerbuffModifier != other.IsServerbuffModifier) return false;
       if(!massivePropList_.Equals(other.massivePropList_)) return false;
+      if (!object.Equals(BreakoutSnapShot, other.BreakoutSnapShot)) return false;
       if (InstancedAbilityId != other.InstancedAbilityId) return false;
       if (InstancedModifierId != other.InstancedModifierId) return false;
       if (SourceCase != other.SourceCase) return false;
@@ -222,6 +239,7 @@ namespace Weedwacker.Shared.Network.Proto {
       hash ^= dataList_.GetHashCode();
       if (IsServerbuffModifier != false) hash ^= IsServerbuffModifier.GetHashCode();
       hash ^= massivePropList_.GetHashCode();
+      if (breakoutSnapShot_ != null) hash ^= BreakoutSnapShot.GetHashCode();
       if (sourceCase_ == SourceOneofCase.InstancedAbilityId) hash ^= InstancedAbilityId.GetHashCode();
       if (sourceCase_ == SourceOneofCase.InstancedModifierId) hash ^= InstancedModifierId.GetHashCode();
       hash ^= (int) sourceCase_;
@@ -261,6 +279,10 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsServerbuffModifier);
       }
       massivePropList_.WriteTo(output, _repeated_massivePropList_codec);
+      if (breakoutSnapShot_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(BreakoutSnapShot);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -289,6 +311,10 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsServerbuffModifier);
       }
       massivePropList_.WriteTo(ref output, _repeated_massivePropList_codec);
+      if (breakoutSnapShot_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(BreakoutSnapShot);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -307,6 +333,9 @@ namespace Weedwacker.Shared.Network.Proto {
         size += 1 + 1;
       }
       size += massivePropList_.CalculateSize(_repeated_massivePropList_codec);
+      if (breakoutSnapShot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BreakoutSnapShot);
+      }
       if (sourceCase_ == SourceOneofCase.InstancedAbilityId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
       }
@@ -333,6 +362,12 @@ namespace Weedwacker.Shared.Network.Proto {
         IsServerbuffModifier = other.IsServerbuffModifier;
       }
       massivePropList_.Add(other.massivePropList_);
+      if (other.breakoutSnapShot_ != null) {
+        if (breakoutSnapShot_ == null) {
+          BreakoutSnapShot = new global::Weedwacker.Shared.Network.Proto.BreakoutSnapShot();
+        }
+        BreakoutSnapShot.MergeFrom(other.BreakoutSnapShot);
+      }
       switch (other.SourceCase) {
         case SourceOneofCase.InstancedAbilityId:
           InstancedAbilityId = other.InstancedAbilityId;
@@ -382,6 +417,13 @@ namespace Weedwacker.Shared.Network.Proto {
             massivePropList_.AddEntriesFrom(input, _repeated_massivePropList_codec);
             break;
           }
+          case 58: {
+            if (breakoutSnapShot_ == null) {
+              BreakoutSnapShot = new global::Weedwacker.Shared.Network.Proto.BreakoutSnapShot();
+            }
+            input.ReadMessage(BreakoutSnapShot);
+            break;
+          }
         }
       }
     #endif
@@ -420,6 +462,13 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           case 50: {
             massivePropList_.AddEntriesFrom(ref input, _repeated_massivePropList_codec);
+            break;
+          }
+          case 58: {
+            if (breakoutSnapShot_ == null) {
+              BreakoutSnapShot = new global::Weedwacker.Shared.Network.Proto.BreakoutSnapShot();
+            }
+            input.ReadMessage(BreakoutSnapShot);
             break;
           }
         }

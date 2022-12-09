@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AnchorPointDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVBbmNob3JQb2ludERhdGEucHJvdG8aDFZlY3Rvci5wcm90byJ6Cg9BbmNo",
-            "b3JQb2ludERhdGESEAoIc2NlbmVfaWQYBSABKA0SFwoPYW5jaG9yX3BvaW50",
-            "X2lkGAkgASgNEhAKCGVuZF90aW1lGAggASgNEhQKA3BvcxgPIAEoCzIHLlZl",
-            "Y3RvchIUCgNyb3QYAiABKAsyBy5WZWN0b3JCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVBbmNob3JQb2ludERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byK6AQoPQW5jaG9yUG9pbnREYXRh",
+            "EhAKCHNjZW5lX2lkGAMgASgNEjQKA3JvdBgEIAEoCzInLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yEhAKCGVuZF90aW1lGAggASgN",
+            "EjQKA3BvcxgLIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uVmVjdG9yEhcKD2FuY2hvcl9wb2ludF9pZBgJIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnchorPointData), global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser, new[]{ "SceneId", "AnchorPointId", "EndTime", "Pos", "Rot" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AnchorPointData), global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser, new[]{ "SceneId", "Rot", "EndTime", "Pos", "AnchorPointId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnchorPointData(AnchorPointData other) : this() {
       sceneId_ = other.sceneId_;
-      anchorPointId_ = other.anchorPointId_;
+      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
       endTime_ = other.endTime_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
+      anchorPointId_ = other.anchorPointId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,7 +89,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 5;
+    public const int SceneIdFieldNumber = 3;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,15 +100,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "anchor_point_id" field.</summary>
-    public const int AnchorPointIdFieldNumber = 9;
-    private uint anchorPointId_;
+    /// <summary>Field number for the "rot" field.</summary>
+    public const int RotFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AnchorPointId {
-      get { return anchorPointId_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
+      get { return rot_; }
       set {
-        anchorPointId_ = value;
+        rot_ = value;
       }
     }
 
@@ -124,7 +125,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 15;
+    public const int PosFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,15 +136,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
+    /// <summary>Field number for the "anchor_point_id" field.</summary>
+    public const int AnchorPointIdFieldNumber = 9;
+    private uint anchorPointId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
-      get { return rot_; }
+    public uint AnchorPointId {
+      get { return anchorPointId_; }
       set {
-        rot_ = value;
+        anchorPointId_ = value;
       }
     }
 
@@ -163,10 +164,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (SceneId != other.SceneId) return false;
-      if (AnchorPointId != other.AnchorPointId) return false;
+      if (!object.Equals(Rot, other.Rot)) return false;
       if (EndTime != other.EndTime) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
-      if (!object.Equals(Rot, other.Rot)) return false;
+      if (AnchorPointId != other.AnchorPointId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,10 +176,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      if (AnchorPointId != 0) hash ^= AnchorPointId.GetHashCode();
+      if (rot_ != null) hash ^= Rot.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
-      if (rot_ != null) hash ^= Rot.GetHashCode();
+      if (AnchorPointId != 0) hash ^= AnchorPointId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,13 +198,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rot_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Rot);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(SceneId);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Rot);
       }
       if (EndTime != 0) {
         output.WriteRawTag(64);
@@ -214,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(AnchorPointId);
       }
       if (pos_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
       if (_unknownFields != null) {
@@ -227,13 +228,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rot_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Rot);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(SceneId);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Rot);
       }
       if (EndTime != 0) {
         output.WriteRawTag(64);
@@ -244,7 +245,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(AnchorPointId);
       }
       if (pos_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
       if (_unknownFields != null) {
@@ -260,8 +261,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
-      if (AnchorPointId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AnchorPointId);
+      if (rot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
       }
       if (EndTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
@@ -269,8 +270,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
-      if (rot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
+      if (AnchorPointId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AnchorPointId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -287,8 +288,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
-      if (other.AnchorPointId != 0) {
-        AnchorPointId = other.AnchorPointId;
+      if (other.rot_ != null) {
+        if (rot_ == null) {
+          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Rot.MergeFrom(other.Rot);
       }
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
@@ -299,11 +303,8 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Pos.MergeFrom(other.Pos);
       }
-      if (other.rot_ != null) {
-        if (rot_ == null) {
-          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Rot.MergeFrom(other.Rot);
+      if (other.AnchorPointId != 0) {
+        AnchorPointId = other.AnchorPointId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -320,15 +321,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 24: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 40: {
-            SceneId = input.ReadUInt32();
             break;
           }
           case 64: {
@@ -339,7 +340,7 @@ namespace Weedwacker.Shared.Network.Proto {
             AnchorPointId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
@@ -361,15 +362,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 24: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 40: {
-            SceneId = input.ReadUInt32();
             break;
           }
           case 64: {
@@ -380,7 +381,7 @@ namespace Weedwacker.Shared.Network.Proto {
             AnchorPointId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }

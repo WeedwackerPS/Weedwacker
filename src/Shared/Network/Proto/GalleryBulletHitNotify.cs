@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GalleryBulletHitNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHYWxsZXJ5QnVsbGV0SGl0Tm90aWZ5LnByb3RvIj8KFkdhbGxlcnlCdWxs",
-            "ZXRIaXROb3RpZnkSEQoJaGl0X2NvdW50GA4gASgNEhIKCmdhbGxlcnlfaWQY",
-            "DCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChxHYWxsZXJ5QnVsbGV0SGl0Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIj8KFkdhbGxlcnlCdWxsZXRIaXROb3RpZnkS",
+            "EgoKZ2FsbGVyeV9pZBgDIAEoDRIRCgloaXRfY291bnQYByABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBulletHitNotify), global::Weedwacker.Shared.Network.Proto.GalleryBulletHitNotify.Parser, new[]{ "HitCount", "GalleryId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBulletHitNotify), global::Weedwacker.Shared.Network.Proto.GalleryBulletHitNotify.Parser, new[]{ "GalleryId", "HitCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5531
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5527;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GalleryBulletHitNotify : pb::IMessage<GalleryBulletHitNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GalleryBulletHitNotify(GalleryBulletHitNotify other) : this() {
-      hitCount_ = other.hitCount_;
       galleryId_ = other.galleryId_;
+      hitCount_ = other.hitCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GalleryBulletHitNotify(this);
     }
 
-    /// <summary>Field number for the "hit_count" field.</summary>
-    public const int HitCountFieldNumber = 14;
-    private uint hitCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HitCount {
-      get { return hitCount_; }
-      set {
-        hitCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 12;
+    public const int GalleryIdFieldNumber = 3;
     private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return galleryId_; }
       set {
         galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_count" field.</summary>
+    public const int HitCountFieldNumber = 7;
+    private uint hitCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HitCount {
+      get { return hitCount_; }
+      set {
+        hitCount_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HitCount != other.HitCount) return false;
       if (GalleryId != other.GalleryId) return false;
+      if (HitCount != other.HitCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HitCount != 0) hash ^= HitCount.GetHashCode();
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (HitCount != 0) hash ^= HitCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GalleryId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(GalleryId);
       }
       if (HitCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(HitCount);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GalleryId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(GalleryId);
       }
       if (HitCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(HitCount);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HitCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitCount);
-      }
       if (GalleryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (HitCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.HitCount != 0) {
-        HitCount = other.HitCount;
-      }
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
+      }
+      if (other.HitCount != 0) {
+        HitCount = other.HitCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
+          case 24: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             HitCount = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
+          case 24: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             HitCount = input.ReadUInt32();
             break;
           }

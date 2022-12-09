@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static OpActivityTagBriefInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxPcEFjdGl2aXR5VGFnQnJpZWZJbmZvLnByb3RvIlkKFk9wQWN0aXZpdHlU",
-            "YWdCcmllZkluZm8SEQoJY29uZmlnX2lkGAIgASgNEhIKCmhhc19yZXdhcmQY",
-            "AyABKAgSGAoQb3BfYWN0aXZpdHlfdHlwZRgLIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxPcEFjdGl2aXR5VGFnQnJpZWZJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlkKFk9wQWN0aXZpdHlUYWdCcmllZkluZm8S",
+            "EgoKaGFzX3Jld2FyZBgOIAEoCBIYChBvcF9hY3Rpdml0eV90eXBlGAIgASgN",
+            "EhEKCWNvbmZpZ19pZBgNIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo), global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo.Parser, new[]{ "ConfigId", "HasReward", "OpActivityType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo), global::Weedwacker.Shared.Network.Proto.OpActivityTagBriefInfo.Parser, new[]{ "HasReward", "OpActivityType", "ConfigId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpActivityTagBriefInfo(OpActivityTagBriefInfo other) : this() {
-      configId_ = other.configId_;
       hasReward_ = other.hasReward_;
       opActivityType_ = other.opActivityType_;
+      configId_ = other.configId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new OpActivityTagBriefInfo(this);
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 2;
-    private uint configId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConfigId {
-      get { return configId_; }
-      set {
-        configId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "has_reward" field.</summary>
-    public const int HasRewardFieldNumber = 3;
+    public const int HasRewardFieldNumber = 14;
     private bool hasReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_activity_type" field.</summary>
-    public const int OpActivityTypeFieldNumber = 11;
+    public const int OpActivityTypeFieldNumber = 2;
     private uint opActivityType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return opActivityType_; }
       set {
         opActivityType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "config_id" field.</summary>
+    public const int ConfigIdFieldNumber = 13;
+    private uint configId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfigId {
+      get { return configId_; }
+      set {
+        configId_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ConfigId != other.ConfigId) return false;
       if (HasReward != other.HasReward) return false;
       if (OpActivityType != other.OpActivityType) return false;
+      if (ConfigId != other.ConfigId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (HasReward != false) hash ^= HasReward.GetHashCode();
       if (OpActivityType != 0) hash ^= OpActivityType.GetHashCode();
+      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ConfigId != 0) {
+      if (OpActivityType != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(OpActivityType);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(104);
         output.WriteUInt32(ConfigId);
       }
       if (HasReward != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteBool(HasReward);
-      }
-      if (OpActivityType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OpActivityType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ConfigId != 0) {
+      if (OpActivityType != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(OpActivityType);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(104);
         output.WriteUInt32(ConfigId);
       }
       if (HasReward != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteBool(HasReward);
-      }
-      if (OpActivityType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OpActivityType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
-      }
       if (HasReward != false) {
         size += 1 + 1;
       }
       if (OpActivityType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpActivityType);
+      }
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ConfigId != 0) {
-        ConfigId = other.ConfigId;
-      }
       if (other.HasReward != false) {
         HasReward = other.HasReward;
       }
       if (other.OpActivityType != 0) {
         OpActivityType = other.OpActivityType;
+      }
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -256,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
+            OpActivityType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 24: {
+          case 112: {
             HasReward = input.ReadBool();
-            break;
-          }
-          case 88: {
-            OpActivityType = input.ReadUInt32();
             break;
           }
         }
@@ -283,15 +283,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
+            OpActivityType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 24: {
+          case 112: {
             HasReward = input.ReadBool();
-            break;
-          }
-          case 88: {
-            OpActivityType = input.ReadUInt32();
             break;
           }
         }

@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExpeditionActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1FeHBlZGl0",
-            "aW9uQ2hhbGxlbmdlSW5mby5wcm90bxoYRXhwZWRpdGlvblBhdGhJbmZvLnBy",
-            "b3RvIu0BChxFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvEhgKEGN1cl9j",
-            "aGFsbGVuZ2VfaWQYBSABKA0SNQoTY2hhbGxlbmdlX2luZm9fbGlzdBgKIAMo",
-            "CzIYLkV4cGVkaXRpb25DaGFsbGVuZ2VJbmZvEhgKEGV4cGVkaXRpb25fY291",
-            "bnQYAiABKA0SGgoSY29udGVudF9jbG9zZV90aW1lGAQgASgNEhkKEWlzX2Nv",
-            "bnRlbnRfY2xvc2VkGAggASgIEisKDnBhdGhfaW5mb19saXN0GA8gAygLMhMu",
-            "RXhwZWRpdGlvblBhdGhJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGh1FeHBlZGl0aW9uQ2hhbGxlbmdl",
+            "SW5mby5wcm90bxoYRXhwZWRpdGlvblBhdGhJbmZvLnByb3RvIrMCChxFeHBl",
+            "ZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvEhsKE1VuazMzMDBfR0pMQ0FKT0ZD",
+            "S0wYCSABKA0SVQoTY2hhbGxlbmdlX2luZm9fbGlzdBgPIAMoCzI4LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRXhwZWRpdGlvbkNoYWxsZW5n",
+            "ZUluZm8SGwoTVW5rMzMwMF9NTlBCQ05FREtBShgDIAEoDRJLCg5wYXRoX2lu",
+            "Zm9fbGlzdBgLIAMoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uRXhwZWRpdGlvblBhdGhJbmZvEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAQg",
+            "ASgIEhoKEmNvbnRlbnRfY2xvc2VfdGltZRgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo.Parser, new[]{ "CurChallengeId", "ChallengeInfoList", "ExpeditionCount", "ContentCloseTime", "IsContentClosed", "PathInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo.Parser, new[]{ "Unk3300GJLCAJOFCKL", "ChallengeInfoList", "Unk3300MNPBCNEDKAJ", "PathInfoList", "IsContentClosed", "ContentCloseTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,12 +78,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExpeditionActivityDetailInfo(ExpeditionActivityDetailInfo other) : this() {
-      curChallengeId_ = other.curChallengeId_;
+      unk3300GJLCAJOFCKL_ = other.unk3300GJLCAJOFCKL_;
       challengeInfoList_ = other.challengeInfoList_.Clone();
-      expeditionCount_ = other.expeditionCount_;
-      contentCloseTime_ = other.contentCloseTime_;
-      isContentClosed_ = other.isContentClosed_;
+      unk3300MNPBCNEDKAJ_ = other.unk3300MNPBCNEDKAJ_;
       pathInfoList_ = other.pathInfoList_.Clone();
+      isContentClosed_ = other.isContentClosed_;
+      contentCloseTime_ = other.contentCloseTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,22 +93,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ExpeditionActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "cur_challenge_id" field.</summary>
-    public const int CurChallengeIdFieldNumber = 5;
-    private uint curChallengeId_;
+    /// <summary>Field number for the "Unk3300_GJLCAJOFCKL" field.</summary>
+    public const int Unk3300GJLCAJOFCKLFieldNumber = 9;
+    private uint unk3300GJLCAJOFCKL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurChallengeId {
-      get { return curChallengeId_; }
+    public uint Unk3300GJLCAJOFCKL {
+      get { return unk3300GJLCAJOFCKL_; }
       set {
-        curChallengeId_ = value;
+        unk3300GJLCAJOFCKL_ = value;
       }
     }
 
     /// <summary>Field number for the "challenge_info_list" field.</summary>
-    public const int ChallengeInfoListFieldNumber = 10;
+    public const int ChallengeInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo> _repeated_challengeInfoList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,32 +116,31 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return challengeInfoList_; }
     }
 
-    /// <summary>Field number for the "expedition_count" field.</summary>
-    public const int ExpeditionCountFieldNumber = 2;
-    private uint expeditionCount_;
+    /// <summary>Field number for the "Unk3300_MNPBCNEDKAJ" field.</summary>
+    public const int Unk3300MNPBCNEDKAJFieldNumber = 3;
+    private uint unk3300MNPBCNEDKAJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExpeditionCount {
-      get { return expeditionCount_; }
+    public uint Unk3300MNPBCNEDKAJ {
+      get { return unk3300MNPBCNEDKAJ_; }
       set {
-        expeditionCount_ = value;
+        unk3300MNPBCNEDKAJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 4;
-    private uint contentCloseTime_;
+    /// <summary>Field number for the "path_info_list" field.</summary>
+    public const int PathInfoListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> _repeated_pathInfoList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> pathInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentCloseTime {
-      get { return contentCloseTime_; }
-      set {
-        contentCloseTime_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> PathInfoList {
+      get { return pathInfoList_; }
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 8;
+    public const int IsContentClosedFieldNumber = 4;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,15 +151,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "path_info_list" field.</summary>
-    public const int PathInfoListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> _repeated_pathInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> pathInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo>();
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 6;
+    private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExpeditionPathInfo> PathInfoList {
-      get { return pathInfoList_; }
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -177,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurChallengeId != other.CurChallengeId) return false;
+      if (Unk3300GJLCAJOFCKL != other.Unk3300GJLCAJOFCKL) return false;
       if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
-      if (ExpeditionCount != other.ExpeditionCount) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
+      if (Unk3300MNPBCNEDKAJ != other.Unk3300MNPBCNEDKAJ) return false;
       if(!pathInfoList_.Equals(other.pathInfoList_)) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurChallengeId != 0) hash ^= CurChallengeId.GetHashCode();
+      if (Unk3300GJLCAJOFCKL != 0) hash ^= Unk3300GJLCAJOFCKL.GetHashCode();
       hash ^= challengeInfoList_.GetHashCode();
-      if (ExpeditionCount != 0) hash ^= ExpeditionCount.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (Unk3300MNPBCNEDKAJ != 0) hash ^= Unk3300MNPBCNEDKAJ.GetHashCode();
       hash ^= pathInfoList_.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -214,24 +215,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ExpeditionCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ExpeditionCount);
-      }
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (CurChallengeId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurChallengeId);
+      if (Unk3300MNPBCNEDKAJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300MNPBCNEDKAJ);
       }
       if (IsContentClosed != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteBool(IsContentClosed);
       }
-      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (Unk3300GJLCAJOFCKL != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GJLCAJOFCKL);
+      }
       pathInfoList_.WriteTo(output, _repeated_pathInfoList_codec);
+      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -242,24 +243,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ExpeditionCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ExpeditionCount);
-      }
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      if (CurChallengeId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurChallengeId);
+      if (Unk3300MNPBCNEDKAJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300MNPBCNEDKAJ);
       }
       if (IsContentClosed != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteBool(IsContentClosed);
       }
-      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (Unk3300GJLCAJOFCKL != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GJLCAJOFCKL);
+      }
       pathInfoList_.WriteTo(ref output, _repeated_pathInfoList_codec);
+      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -270,20 +271,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurChallengeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurChallengeId);
+      if (Unk3300GJLCAJOFCKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GJLCAJOFCKL);
       }
       size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
-      if (ExpeditionCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpeditionCount);
+      if (Unk3300MNPBCNEDKAJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MNPBCNEDKAJ);
+      }
+      size += pathInfoList_.CalculateSize(_repeated_pathInfoList_codec);
+      if (IsContentClosed != false) {
+        size += 1 + 1;
       }
       if (ContentCloseTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
       }
-      if (IsContentClosed != false) {
-        size += 1 + 1;
-      }
-      size += pathInfoList_.CalculateSize(_repeated_pathInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -296,20 +297,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurChallengeId != 0) {
-        CurChallengeId = other.CurChallengeId;
+      if (other.Unk3300GJLCAJOFCKL != 0) {
+        Unk3300GJLCAJOFCKL = other.Unk3300GJLCAJOFCKL;
       }
       challengeInfoList_.Add(other.challengeInfoList_);
-      if (other.ExpeditionCount != 0) {
-        ExpeditionCount = other.ExpeditionCount;
+      if (other.Unk3300MNPBCNEDKAJ != 0) {
+        Unk3300MNPBCNEDKAJ = other.Unk3300MNPBCNEDKAJ;
+      }
+      pathInfoList_.Add(other.pathInfoList_);
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
       }
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
-      }
-      pathInfoList_.Add(other.pathInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -325,28 +326,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            ExpeditionCount = input.ReadUInt32();
+          case 24: {
+            Unk3300MNPBCNEDKAJ = input.ReadUInt32();
             break;
           }
           case 32: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            CurChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 82: {
-            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
+          case 48: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GJLCAJOFCKL = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            pathInfoList_.AddEntriesFrom(input, _repeated_pathInfoList_codec);
             break;
           }
           case 122: {
-            pathInfoList_.AddEntriesFrom(input, _repeated_pathInfoList_codec);
+            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
             break;
           }
         }
@@ -364,28 +365,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            ExpeditionCount = input.ReadUInt32();
+          case 24: {
+            Unk3300MNPBCNEDKAJ = input.ReadUInt32();
             break;
           }
           case 32: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            CurChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 82: {
-            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
+          case 48: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GJLCAJOFCKL = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            pathInfoList_.AddEntriesFrom(ref input, _repeated_pathInfoList_codec);
             break;
           }
           case 122: {
-            pathInfoList_.AddEntriesFrom(ref input, _repeated_pathInfoList_codec);
+            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
             break;
           }
         }

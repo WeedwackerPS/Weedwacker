@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AsterMiscInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlBc3Rlck1pc2NJbmZvTm90aWZ5LnByb3RvIkAKE0FzdGVyTWlzY0luZm9O",
-            "b3RpZnkSEwoLYXN0ZXJfdG9rZW4YAiABKA0SFAoMYXN0ZXJfY3JlZGl0GA8g",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChlBc3Rlck1pc2NJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIk8KE0FzdGVyTWlzY0luZm9Ob3RpZnkSGwoTVW5r",
+            "MzMwMF9EQ0hCRkVKTkJIUBgEIAEoDRIbChNVbmszMzAwX0tGREdGRlBKR0pD",
+            "GAUgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterMiscInfoNotify), global::Weedwacker.Shared.Network.Proto.AsterMiscInfoNotify.Parser, new[]{ "AsterToken", "AsterCredit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterMiscInfoNotify), global::Weedwacker.Shared.Network.Proto.AsterMiscInfoNotify.Parser, new[]{ "Unk3300DCHBFEJNBHP", "Unk3300KFDGFFPJGJC" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2036
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2140;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AsterMiscInfoNotify : pb::IMessage<AsterMiscInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AsterMiscInfoNotify(AsterMiscInfoNotify other) : this() {
-      asterToken_ = other.asterToken_;
-      asterCredit_ = other.asterCredit_;
+      unk3300DCHBFEJNBHP_ = other.unk3300DCHBFEJNBHP_;
+      unk3300KFDGFFPJGJC_ = other.unk3300KFDGFFPJGJC_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,27 +92,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AsterMiscInfoNotify(this);
     }
 
-    /// <summary>Field number for the "aster_token" field.</summary>
-    public const int AsterTokenFieldNumber = 2;
-    private uint asterToken_;
+    /// <summary>Field number for the "Unk3300_DCHBFEJNBHP" field.</summary>
+    public const int Unk3300DCHBFEJNBHPFieldNumber = 4;
+    private uint unk3300DCHBFEJNBHP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AsterToken {
-      get { return asterToken_; }
+    public uint Unk3300DCHBFEJNBHP {
+      get { return unk3300DCHBFEJNBHP_; }
       set {
-        asterToken_ = value;
+        unk3300DCHBFEJNBHP_ = value;
       }
     }
 
-    /// <summary>Field number for the "aster_credit" field.</summary>
-    public const int AsterCreditFieldNumber = 15;
-    private uint asterCredit_;
+    /// <summary>Field number for the "Unk3300_KFDGFFPJGJC" field.</summary>
+    public const int Unk3300KFDGFFPJGJCFieldNumber = 5;
+    private uint unk3300KFDGFFPJGJC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AsterCredit {
-      get { return asterCredit_; }
+    public uint Unk3300KFDGFFPJGJC {
+      get { return unk3300KFDGFFPJGJC_; }
       set {
-        asterCredit_ = value;
+        unk3300KFDGFFPJGJC_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AsterToken != other.AsterToken) return false;
-      if (AsterCredit != other.AsterCredit) return false;
+      if (Unk3300DCHBFEJNBHP != other.Unk3300DCHBFEJNBHP) return false;
+      if (Unk3300KFDGFFPJGJC != other.Unk3300KFDGFFPJGJC) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AsterToken != 0) hash ^= AsterToken.GetHashCode();
-      if (AsterCredit != 0) hash ^= AsterCredit.GetHashCode();
+      if (Unk3300DCHBFEJNBHP != 0) hash ^= Unk3300DCHBFEJNBHP.GetHashCode();
+      if (Unk3300KFDGFFPJGJC != 0) hash ^= Unk3300KFDGFFPJGJC.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AsterToken != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AsterToken);
+      if (Unk3300DCHBFEJNBHP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300DCHBFEJNBHP);
       }
-      if (AsterCredit != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(AsterCredit);
+      if (Unk3300KFDGFFPJGJC != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300KFDGFFPJGJC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AsterToken != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AsterToken);
+      if (Unk3300DCHBFEJNBHP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300DCHBFEJNBHP);
       }
-      if (AsterCredit != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(AsterCredit);
+      if (Unk3300KFDGFFPJGJC != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300KFDGFFPJGJC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AsterToken != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AsterToken);
+      if (Unk3300DCHBFEJNBHP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DCHBFEJNBHP);
       }
-      if (AsterCredit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AsterCredit);
+      if (Unk3300KFDGFFPJGJC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KFDGFFPJGJC);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AsterToken != 0) {
-        AsterToken = other.AsterToken;
+      if (other.Unk3300DCHBFEJNBHP != 0) {
+        Unk3300DCHBFEJNBHP = other.Unk3300DCHBFEJNBHP;
       }
-      if (other.AsterCredit != 0) {
-        AsterCredit = other.AsterCredit;
+      if (other.Unk3300KFDGFFPJGJC != 0) {
+        Unk3300KFDGFFPJGJC = other.Unk3300KFDGFFPJGJC;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            AsterToken = input.ReadUInt32();
+          case 32: {
+            Unk3300DCHBFEJNBHP = input.ReadUInt32();
             break;
           }
-          case 120: {
-            AsterCredit = input.ReadUInt32();
+          case 40: {
+            Unk3300KFDGFFPJGJC = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            AsterToken = input.ReadUInt32();
+          case 32: {
+            Unk3300DCHBFEJNBHP = input.ReadUInt32();
             break;
           }
-          case 120: {
-            AsterCredit = input.ReadUInt32();
+          case 40: {
+            Unk3300KFDGFFPJGJC = input.ReadUInt32();
             break;
           }
         }

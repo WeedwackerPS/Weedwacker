@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static DraftGuestReplyTwiceConfirmReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiREcmFmdEd1ZXN0UmVwbHlUd2ljZUNvbmZpcm1SZXEucHJvdG8iRAoeRHJh",
-            "ZnRHdWVzdFJlcGx5VHdpY2VDb25maXJtUmVxEhAKCGlzX2FncmVlGA8gASgI",
-            "EhAKCGRyYWZ0X2lkGA4gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CiREcmFmdEd1ZXN0UmVwbHlUd2ljZUNvbmZpcm1SZXEucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iRAoeRHJhZnRHdWVzdFJlcGx5",
+            "VHdpY2VDb25maXJtUmVxEhAKCGlzX2FncmVlGAggASgIEhAKCGRyYWZ0X2lk",
+            "GA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5431
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5427;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DraftGuestReplyTwiceConfirmReq : pb::IMessage<DraftGuestReplyTwiceConfirmReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_agree" field.</summary>
-    public const int IsAgreeFieldNumber = 15;
+    public const int IsAgreeFieldNumber = 8;
     private bool isAgree_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "draft_id" field.</summary>
-    public const int DraftIdFieldNumber = 14;
+    public const int DraftIdFieldNumber = 13;
     private uint draftId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DraftId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DraftId);
-      }
       if (IsAgree != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsAgree);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DraftId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DraftId);
-      }
       if (IsAgree != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsAgree);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(DraftId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
-            DraftId = input.ReadUInt32();
+          case 64: {
+            IsAgree = input.ReadBool();
             break;
           }
-          case 120: {
-            IsAgree = input.ReadBool();
+          case 104: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
-            DraftId = input.ReadUInt32();
+          case 64: {
+            IsAgree = input.ReadBool();
             break;
           }
-          case 120: {
-            IsAgree = input.ReadBool();
+          case 104: {
+            DraftId = input.ReadUInt32();
             break;
           }
         }

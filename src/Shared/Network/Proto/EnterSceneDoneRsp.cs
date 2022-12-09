@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static EnterSceneDoneRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdFbnRlclNjZW5lRG9uZVJzcC5wcm90byI/ChFFbnRlclNjZW5lRG9uZVJz",
-            "cBIZChFlbnRlcl9zY2VuZV90b2tlbhgPIAEoDRIPCgdyZXRjb2RlGAcgASgF",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdFbnRlclNjZW5lRG9uZVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byI/ChFFbnRlclNjZW5lRG9uZVJzcBIZChFlbnRlcl9z",
+            "Y2VuZV90b2tlbhgBIAEoDRIPCgdyZXRjb2RlGA0gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 237
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 268;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EnterSceneDoneRsp : pb::IMessage<EnterSceneDoneRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "enter_scene_token" field.</summary>
-    public const int EnterSceneTokenFieldNumber = 15;
+    public const int EnterSceneTokenFieldNumber = 1;
     private uint enterSceneToken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(Retcode);
-      }
       if (EnterSceneToken != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(EnterSceneToken);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(Retcode);
-      }
       if (EnterSceneToken != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(EnterSceneToken);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -230,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 8: {
+            EnterSceneToken = input.ReadUInt32();
             break;
           }
-          case 120: {
-            EnterSceneToken = input.ReadUInt32();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -253,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            Retcode = input.ReadInt32();
+          case 8: {
+            EnterSceneToken = input.ReadUInt32();
             break;
           }
-          case 120: {
-            EnterSceneToken = input.ReadUInt32();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static BartenderCompleteOrderRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9CYXJ0ZW5kZXJDb21wbGV0ZU9yZGVyUnNwLnByb3RvIo8BChlCYXJ0ZW5k",
-            "ZXJDb21wbGV0ZU9yZGVyUnNwEg4KBmlzX25ldxgKIAEoCBIXCg9maW5pc2hf",
-            "b3JkZXJfaWQYAyABKA0SDwoHcmV0Y29kZRgEIAEoBRISCgpmb3JtdWxhX2lk",
-            "GAYgASgNEhAKCHF1ZXN0X2lkGA8gASgNEhIKCmFmZml4X2xpc3QYAiADKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch9CYXJ0ZW5kZXJDb21wbGV0ZU9yZGVyUnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIo8BChlCYXJ0ZW5kZXJDb21wbGV0ZU9y",
+            "ZGVyUnNwEhIKCmZvcm11bGFfaWQYCSABKA0SEAoIcXVlc3RfaWQYByABKA0S",
+            "FwoPZmluaXNoX29yZGVyX2lkGAYgASgNEg8KB3JldGNvZGUYCiABKAUSDgoG",
+            "aXNfbmV3GAggASgIEhIKCmFmZml4X2xpc3QYASADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderRsp), global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderRsp.Parser, new[]{ "IsNew", "FinishOrderId", "Retcode", "FormulaId", "QuestId", "AffixList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderRsp), global::Weedwacker.Shared.Network.Proto.BartenderCompleteOrderRsp.Parser, new[]{ "FormulaId", "QuestId", "FinishOrderId", "Retcode", "IsNew", "AffixList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8125
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8870;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BartenderCompleteOrderRsp : pb::IMessage<BartenderCompleteOrderRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +82,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BartenderCompleteOrderRsp(BartenderCompleteOrderRsp other) : this() {
-      isNew_ = other.isNew_;
-      finishOrderId_ = other.finishOrderId_;
-      retcode_ = other.retcode_;
       formulaId_ = other.formulaId_;
       questId_ = other.questId_;
+      finishOrderId_ = other.finishOrderId_;
+      retcode_ = other.retcode_;
+      isNew_ = other.isNew_;
       affixList_ = other.affixList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -93,44 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BartenderCompleteOrderRsp(this);
     }
 
-    /// <summary>Field number for the "is_new" field.</summary>
-    public const int IsNewFieldNumber = 10;
-    private bool isNew_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNew {
-      get { return isNew_; }
-      set {
-        isNew_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "finish_order_id" field.</summary>
-    public const int FinishOrderIdFieldNumber = 3;
-    private uint finishOrderId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishOrderId {
-      get { return finishOrderId_; }
-      set {
-        finishOrderId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "formula_id" field.</summary>
-    public const int FormulaIdFieldNumber = 6;
+    public const int FormulaIdFieldNumber = 9;
     private uint formulaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 15;
+    public const int QuestIdFieldNumber = 7;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,10 +121,46 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "finish_order_id" field.</summary>
+    public const int FinishOrderIdFieldNumber = 6;
+    private uint finishOrderId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinishOrderId {
+      get { return finishOrderId_; }
+      set {
+        finishOrderId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new" field.</summary>
+    public const int IsNewFieldNumber = 8;
+    private bool isNew_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNew {
+      get { return isNew_; }
+      set {
+        isNew_ = value;
+      }
+    }
+
     /// <summary>Field number for the "affix_list" field.</summary>
-    public const int AffixListFieldNumber = 2;
+    public const int AffixListFieldNumber = 1;
     private static readonly pb::FieldCodec<uint> _repeated_affixList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(10);
     private readonly pbc::RepeatedField<uint> affixList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsNew != other.IsNew) return false;
-      if (FinishOrderId != other.FinishOrderId) return false;
-      if (Retcode != other.Retcode) return false;
       if (FormulaId != other.FormulaId) return false;
       if (QuestId != other.QuestId) return false;
+      if (FinishOrderId != other.FinishOrderId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (IsNew != other.IsNew) return false;
       if(!affixList_.Equals(other.affixList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsNew != false) hash ^= IsNew.GetHashCode();
-      if (FinishOrderId != 0) hash ^= FinishOrderId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (FormulaId != 0) hash ^= FormulaId.GetHashCode();
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
+      if (FinishOrderId != 0) hash ^= FinishOrderId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsNew != false) hash ^= IsNew.GetHashCode();
       hash ^= affixList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -218,24 +222,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       affixList_.WriteTo(output, _repeated_affixList_codec);
       if (FinishOrderId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(FinishOrderId);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
-      if (FormulaId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FormulaId);
+      if (QuestId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(QuestId);
       }
       if (IsNew != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
       }
-      if (QuestId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(QuestId);
+      if (FormulaId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(FormulaId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -249,24 +253,24 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       affixList_.WriteTo(ref output, _repeated_affixList_codec);
       if (FinishOrderId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(FinishOrderId);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
-      if (FormulaId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FormulaId);
+      if (QuestId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(QuestId);
       }
       if (IsNew != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
       }
-      if (QuestId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(QuestId);
+      if (FormulaId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(FormulaId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -278,8 +282,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsNew != false) {
-        size += 1 + 1;
+      if (FormulaId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FormulaId);
+      }
+      if (QuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
       if (FinishOrderId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishOrderId);
@@ -287,11 +294,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (FormulaId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FormulaId);
-      }
-      if (QuestId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
+      if (IsNew != false) {
+        size += 1 + 1;
       }
       size += affixList_.CalculateSize(_repeated_affixList_codec);
       if (_unknownFields != null) {
@@ -306,8 +310,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsNew != false) {
-        IsNew = other.IsNew;
+      if (other.FormulaId != 0) {
+        FormulaId = other.FormulaId;
+      }
+      if (other.QuestId != 0) {
+        QuestId = other.QuestId;
       }
       if (other.FinishOrderId != 0) {
         FinishOrderId = other.FinishOrderId;
@@ -315,11 +322,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.FormulaId != 0) {
-        FormulaId = other.FormulaId;
-      }
-      if (other.QuestId != 0) {
-        QuestId = other.QuestId;
+      if (other.IsNew != false) {
+        IsNew = other.IsNew;
       }
       affixList_.Add(other.affixList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -337,29 +341,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 10:
+          case 8: {
             affixList_.AddEntriesFrom(input, _repeated_affixList_codec);
             break;
           }
-          case 24: {
+          case 48: {
             FinishOrderId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            Retcode = input.ReadInt32();
+          case 56: {
+            QuestId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
+            IsNew = input.ReadBool();
+            break;
+          }
+          case 72: {
             FormulaId = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsNew = input.ReadBool();
-            break;
-          }
-          case 120: {
-            QuestId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -377,29 +381,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 10:
+          case 8: {
             affixList_.AddEntriesFrom(ref input, _repeated_affixList_codec);
             break;
           }
-          case 24: {
+          case 48: {
             FinishOrderId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            Retcode = input.ReadInt32();
+          case 56: {
+            QuestId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
+            IsNew = input.ReadBool();
+            break;
+          }
+          case 72: {
             FormulaId = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsNew = input.ReadBool();
-            break;
-          }
-          case 120: {
-            QuestId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
         }

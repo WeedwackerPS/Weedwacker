@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldPlayerRTTNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpXb3JsZFBsYXllclJUVE5vdGlmeS5wcm90bxoTUGxheWVyUlRUSW5mby5w",
-            "cm90byI/ChRXb3JsZFBsYXllclJUVE5vdGlmeRInCg9wbGF5ZXJfcnR0X2xp",
-            "c3QYASADKAsyDi5QbGF5ZXJSVFRJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpXb3JsZFBsYXllclJUVE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoTUGxheWVyUlRUSW5mby5wcm90byJfChRXb3Js",
+            "ZFBsYXllclJUVE5vdGlmeRJHCg9wbGF5ZXJfcnR0X2xpc3QYBiADKAsyLi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllclJUVEluZm9i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerRTTInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 22
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 37;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldPlayerRTTNotify : pb::IMessage<WorldPlayerRTTNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_rtt_list" field.</summary>
-    public const int PlayerRttListFieldNumber = 1;
+    public const int PlayerRttListFieldNumber = 6;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerRTTInfo> _repeated_playerRttList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.PlayerRTTInfo.Parser);
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.PlayerRTTInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerRTTInfo> playerRttList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerRTTInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 50: {
             playerRttList_.AddEntriesFrom(input, _repeated_playerRttList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 50: {
             playerRttList_.AddEntriesFrom(ref input, _repeated_playerRttList_codec);
             break;
           }

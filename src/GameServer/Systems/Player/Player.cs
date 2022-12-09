@@ -10,6 +10,7 @@ using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.GameServer.Systems.Shop;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
+using EnterReason = Weedwacker.GameServer.Enums.EnterReason;
 
 namespace Weedwacker.GameServer.Systems.Player
 {

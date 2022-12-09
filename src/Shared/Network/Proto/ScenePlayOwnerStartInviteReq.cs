@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayOwnerStartInviteReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJTY2VuZVBsYXlPd25lclN0YXJ0SW52aXRlUmVxLnByb3RvIkYKHFNjZW5l",
-            "UGxheU93bmVyU3RhcnRJbnZpdGVSZXESFQoNaXNfc2tpcF9tYXRjaBgIIAEo",
-            "CBIPCgdwbGF5X2lkGA0gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJTY2VuZVBsYXlPd25lclN0YXJ0SW52aXRlUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkYKHFNjZW5lUGxheU93bmVyU3Rh",
+            "cnRJbnZpdGVSZXESFQoNaXNfc2tpcF9tYXRjaBgEIAEoCBIPCgdwbGF5X2lk",
+            "GAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4385
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4369;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayOwnerStartInviteReq : pb::IMessage<ScenePlayOwnerStartInviteReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_skip_match" field.</summary>
-    public const int IsSkipMatchFieldNumber = 8;
+    public const int IsSkipMatchFieldNumber = 4;
     private bool isSkipMatch_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "play_id" field.</summary>
-    public const int PlayIdFieldNumber = 13;
+    public const int PlayIdFieldNumber = 7;
     private uint playId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsSkipMatch != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteBool(IsSkipMatch);
       }
       if (PlayId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(PlayId);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsSkipMatch != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteBool(IsSkipMatch);
       }
       if (PlayId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(56);
         output.WriteUInt32(PlayId);
       }
       if (_unknownFields != null) {
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 32: {
             IsSkipMatch = input.ReadBool();
             break;
           }
-          case 104: {
+          case 56: {
             PlayId = input.ReadUInt32();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 32: {
             IsSkipMatch = input.ReadBool();
             break;
           }
-          case 104: {
+          case 56: {
             PlayId = input.ReadUInt32();
             break;
           }

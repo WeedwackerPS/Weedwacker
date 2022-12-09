@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampRecvItemNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5XaW50ZXJDYW1wUmVjdkl0ZW1Ob3RpZnkucHJvdG8aHFdpbnRlckNhbXBS",
-            "ZWN2SXRlbURhdGEucHJvdG8iSwoYV2ludGVyQ2FtcFJlY3ZJdGVtTm90aWZ5",
-            "Ei8KDnJlY3ZfaXRlbV9kYXRhGA4gASgLMhcuV2ludGVyQ2FtcFJlY3ZJdGVt",
-            "RGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "Ch5XaW50ZXJDYW1wUmVjdkl0ZW1Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aHFdpbnRlckNhbXBSZWN2SXRlbURhdGEu",
+            "cHJvdG8iawoYV2ludGVyQ2FtcFJlY3ZJdGVtTm90aWZ5Ek8KDnJlY3ZfaXRl",
+            "bV9kYXRhGAsgASgLMjcuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5XaW50ZXJDYW1wUmVjdkl0ZW1EYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8580
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8952;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WinterCampRecvItemNotify : pb::IMessage<WinterCampRecvItemNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "recv_item_data" field.</summary>
-    public const int RecvItemDataFieldNumber = 14;
+    public const int RecvItemDataFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData recvItemData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (recvItemData_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(90);
         output.WriteMessage(RecvItemData);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (recvItemData_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(90);
         output.WriteMessage(RecvItemData);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 90: {
             if (recvItemData_ == null) {
               RecvItemData = new global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 90: {
             if (recvItemData_ == null) {
               RecvItemData = new global::Weedwacker.Shared.Network.Proto.WinterCampRecvItemData();
             }

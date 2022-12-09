@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetSlotDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRXaWRnZXRTbG90RGF0YS5wcm90bxoTV2lkZ2V0U2xvdFRhZy5wcm90byJr",
-            "Cg5XaWRnZXRTbG90RGF0YRIUCgxjZF9vdmVyX3RpbWUYCSABKA0SGwoDdGFn",
-            "GA4gASgOMg4uV2lkZ2V0U2xvdFRhZxITCgttYXRlcmlhbF9pZBgLIAEoDRIR",
-            "Cglpc19hY3RpdmUYDCABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRXaWRnZXRTbG90RGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoTV2lkZ2V0U2xvdFRhZy5wcm90byKLAQoOV2lkZ2V0U2xv",
+            "dERhdGESFAoMY2Rfb3Zlcl90aW1lGA8gASgNEhEKCWlzX2FjdGl2ZRgDIAEo",
+            "CBITCgttYXRlcmlhbF9pZBgIIAEoDRI7CgN0YWcYCyABKA4yLi5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldpZGdldFNsb3RUYWdiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetSlotTagReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetSlotData), global::Weedwacker.Shared.Network.Proto.WidgetSlotData.Parser, new[]{ "CdOverTime", "Tag", "MaterialId", "IsActive" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetSlotData), global::Weedwacker.Shared.Network.Proto.WidgetSlotData.Parser, new[]{ "CdOverTime", "IsActive", "MaterialId", "Tag" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetSlotData(WidgetSlotData other) : this() {
       cdOverTime_ = other.cdOverTime_;
-      tag_ = other.tag_;
-      materialId_ = other.materialId_;
       isActive_ = other.isActive_;
+      materialId_ = other.materialId_;
+      tag_ = other.tag_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cd_over_time" field.</summary>
-    public const int CdOverTimeFieldNumber = 9;
+    public const int CdOverTimeFieldNumber = 15;
     private uint cdOverTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,20 +99,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.WidgetSlotTag tag_ = global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse;
+    /// <summary>Field number for the "is_active" field.</summary>
+    public const int IsActiveFieldNumber = 3;
+    private bool isActive_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.WidgetSlotTag Tag {
-      get { return tag_; }
+    public bool IsActive {
+      get { return isActive_; }
       set {
-        tag_ = value;
+        isActive_ = value;
       }
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 11;
+    public const int MaterialIdFieldNumber = 8;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,15 +123,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_active" field.</summary>
-    public const int IsActiveFieldNumber = 12;
-    private bool isActive_;
+    /// <summary>Field number for the "tag" field.</summary>
+    public const int TagFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.WidgetSlotTag tag_ = global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsActive {
-      get { return isActive_; }
+    public global::Weedwacker.Shared.Network.Proto.WidgetSlotTag Tag {
+      get { return tag_; }
       set {
-        isActive_ = value;
+        tag_ = value;
       }
     }
 
@@ -150,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (CdOverTime != other.CdOverTime) return false;
-      if (Tag != other.Tag) return false;
-      if (MaterialId != other.MaterialId) return false;
       if (IsActive != other.IsActive) return false;
+      if (MaterialId != other.MaterialId) return false;
+      if (Tag != other.Tag) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (CdOverTime != 0) hash ^= CdOverTime.GetHashCode();
-      if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) hash ^= Tag.GetHashCode();
-      if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
       if (IsActive != false) hash ^= IsActive.GetHashCode();
+      if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
+      if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) hash ^= Tag.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +183,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CdOverTime != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CdOverTime);
-      }
-      if (MaterialId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MaterialId);
-      }
       if (IsActive != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsActive);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MaterialId);
+      }
       if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Tag);
+      }
+      if (CdOverTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CdOverTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +209,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CdOverTime != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CdOverTime);
-      }
-      if (MaterialId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MaterialId);
-      }
       if (IsActive != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsActive);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MaterialId);
+      }
       if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Tag);
+      }
+      if (CdOverTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CdOverTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,14 +238,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CdOverTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CdOverTime);
       }
-      if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Tag);
+      if (IsActive != false) {
+        size += 1 + 1;
       }
       if (MaterialId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
       }
-      if (IsActive != false) {
-        size += 1 + 1;
+      if (Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Tag);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,14 +262,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CdOverTime != 0) {
         CdOverTime = other.CdOverTime;
       }
-      if (other.Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
-        Tag = other.Tag;
+      if (other.IsActive != false) {
+        IsActive = other.IsActive;
       }
       if (other.MaterialId != 0) {
         MaterialId = other.MaterialId;
       }
-      if (other.IsActive != false) {
-        IsActive = other.IsActive;
+      if (other.Tag != global::Weedwacker.Shared.Network.Proto.WidgetSlotTag.QuickUse) {
+        Tag = other.Tag;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +286,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            CdOverTime = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             IsActive = input.ReadBool();
             break;
           }
-          case 112: {
+          case 64: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             Tag = (global::Weedwacker.Shared.Network.Proto.WidgetSlotTag) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            CdOverTime = input.ReadUInt32();
             break;
           }
         }
@@ -316,20 +317,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            CdOverTime = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             IsActive = input.ReadBool();
             break;
           }
-          case 112: {
+          case 64: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             Tag = (global::Weedwacker.Shared.Network.Proto.WidgetSlotTag) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            CdOverTime = input.ReadUInt32();
             break;
           }
         }

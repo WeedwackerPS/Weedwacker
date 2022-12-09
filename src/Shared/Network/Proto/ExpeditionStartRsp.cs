@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExpeditionStartRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhFeHBlZGl0aW9uU3RhcnRSc3AucHJvdG8ifAoSRXhwZWRpdGlvblN0YXJ0",
-            "UnNwEhIKCmFzc2lzdF91aWQYASABKA0SDwoHcGF0aF9pZBgHIAEoDRIWCg5h",
-            "dmF0YXJfaWRfbGlzdBgEIAMoDRIPCgdyZXRjb2RlGAwgASgFEhgKEGFzc2lz",
-            "dF9hdmF0YXJfaWQYAiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhFeHBlZGl0aW9uU3RhcnRSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iiAEKEkV4cGVkaXRpb25TdGFydFJzcBIbChNVbmsz",
+            "MzAwX0FJRUpLQURGTEtHGAUgASgNEg8KB3BhdGhfaWQYAyABKA0SDwoHcmV0",
+            "Y29kZRgGIAEoBRIWCg5hdmF0YXJfaWRfbGlzdBgEIAMoDRIbChNVbmszMzAw",
+            "X0FGR1BHSUlHQUtBGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionStartRsp), global::Weedwacker.Shared.Network.Proto.ExpeditionStartRsp.Parser, new[]{ "AssistUid", "PathId", "AvatarIdList", "Retcode", "AssistAvatarId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionStartRsp), global::Weedwacker.Shared.Network.Proto.ExpeditionStartRsp.Parser, new[]{ "Unk3300AIEJKADFLKG", "PathId", "Retcode", "AvatarIdList", "Unk3300AFGPGIIGAKA" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2135
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2182;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ExpeditionStartRsp : pb::IMessage<ExpeditionStartRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +82,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExpeditionStartRsp(ExpeditionStartRsp other) : this() {
-      assistUid_ = other.assistUid_;
+      unk3300AIEJKADFLKG_ = other.unk3300AIEJKADFLKG_;
       pathId_ = other.pathId_;
-      avatarIdList_ = other.avatarIdList_.Clone();
       retcode_ = other.retcode_;
-      assistAvatarId_ = other.assistAvatarId_;
+      avatarIdList_ = other.avatarIdList_.Clone();
+      unk3300AFGPGIIGAKA_ = other.unk3300AFGPGIIGAKA_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ExpeditionStartRsp(this);
     }
 
-    /// <summary>Field number for the "assist_uid" field.</summary>
-    public const int AssistUidFieldNumber = 1;
-    private uint assistUid_;
+    /// <summary>Field number for the "Unk3300_AIEJKADFLKG" field.</summary>
+    public const int Unk3300AIEJKADFLKGFieldNumber = 5;
+    private uint unk3300AIEJKADFLKG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AssistUid {
-      get { return assistUid_; }
+    public uint Unk3300AIEJKADFLKG {
+      get { return unk3300AIEJKADFLKG_; }
       set {
-        assistUid_ = value;
+        unk3300AIEJKADFLKG_ = value;
       }
     }
 
     /// <summary>Field number for the "path_id" field.</summary>
-    public const int PathIdFieldNumber = 7;
+    public const int PathIdFieldNumber = 3;
     private uint pathId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pathId_; }
       set {
         pathId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 6;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -127,27 +143,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarIdList_; }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
-    private int retcode_;
+    /// <summary>Field number for the "Unk3300_AFGPGIIGAKA" field.</summary>
+    public const int Unk3300AFGPGIIGAKAFieldNumber = 10;
+    private uint unk3300AFGPGIIGAKA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
+    public uint Unk3300AFGPGIIGAKA {
+      get { return unk3300AFGPGIIGAKA_; }
       set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "assist_avatar_id" field.</summary>
-    public const int AssistAvatarIdFieldNumber = 2;
-    private uint assistAvatarId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AssistAvatarId {
-      get { return assistAvatarId_; }
-      set {
-        assistAvatarId_ = value;
+        unk3300AFGPGIIGAKA_ = value;
       }
     }
 
@@ -166,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AssistUid != other.AssistUid) return false;
+      if (Unk3300AIEJKADFLKG != other.Unk3300AIEJKADFLKG) return false;
       if (PathId != other.PathId) return false;
-      if(!avatarIdList_.Equals(other.avatarIdList_)) return false;
       if (Retcode != other.Retcode) return false;
-      if (AssistAvatarId != other.AssistAvatarId) return false;
+      if(!avatarIdList_.Equals(other.avatarIdList_)) return false;
+      if (Unk3300AFGPGIIGAKA != other.Unk3300AFGPGIIGAKA) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -178,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AssistUid != 0) hash ^= AssistUid.GetHashCode();
+      if (Unk3300AIEJKADFLKG != 0) hash ^= Unk3300AIEJKADFLKG.GetHashCode();
       if (PathId != 0) hash ^= PathId.GetHashCode();
-      hash ^= avatarIdList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (AssistAvatarId != 0) hash ^= AssistAvatarId.GetHashCode();
+      hash ^= avatarIdList_.GetHashCode();
+      if (Unk3300AFGPGIIGAKA != 0) hash ^= Unk3300AFGPGIIGAKA.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -201,22 +205,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AssistUid != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AssistUid);
-      }
-      if (AssistAvatarId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AssistAvatarId);
-      }
-      avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
       if (PathId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(PathId);
       }
+      avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
+      if (Unk3300AIEJKADFLKG != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300AIEJKADFLKG);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (Unk3300AFGPGIIGAKA != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300AFGPGIIGAKA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,22 +232,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AssistUid != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AssistUid);
-      }
-      if (AssistAvatarId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AssistAvatarId);
-      }
-      avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
       if (PathId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(PathId);
       }
+      avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
+      if (Unk3300AIEJKADFLKG != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300AIEJKADFLKG);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
+      }
+      if (Unk3300AFGPGIIGAKA != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300AFGPGIIGAKA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -255,18 +259,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AssistUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AssistUid);
+      if (Unk3300AIEJKADFLKG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AIEJKADFLKG);
       }
       if (PathId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PathId);
       }
-      size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (AssistAvatarId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AssistAvatarId);
+      size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
+      if (Unk3300AFGPGIIGAKA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AFGPGIIGAKA);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -280,18 +284,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AssistUid != 0) {
-        AssistUid = other.AssistUid;
+      if (other.Unk3300AIEJKADFLKG != 0) {
+        Unk3300AIEJKADFLKG = other.Unk3300AIEJKADFLKG;
       }
       if (other.PathId != 0) {
         PathId = other.PathId;
       }
-      avatarIdList_.Add(other.avatarIdList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.AssistAvatarId != 0) {
-        AssistAvatarId = other.AssistAvatarId;
+      avatarIdList_.Add(other.avatarIdList_);
+      if (other.Unk3300AFGPGIIGAKA != 0) {
+        Unk3300AFGPGIIGAKA = other.Unk3300AFGPGIIGAKA;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -308,12 +312,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            AssistUid = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            AssistAvatarId = input.ReadUInt32();
+          case 24: {
+            PathId = input.ReadUInt32();
             break;
           }
           case 34:
@@ -321,12 +321,16 @@ namespace Weedwacker.Shared.Network.Proto {
             avatarIdList_.AddEntriesFrom(input, _repeated_avatarIdList_codec);
             break;
           }
-          case 56: {
-            PathId = input.ReadUInt32();
+          case 40: {
+            Unk3300AIEJKADFLKG = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 48: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Unk3300AFGPGIIGAKA = input.ReadUInt32();
             break;
           }
         }
@@ -344,12 +348,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            AssistUid = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            AssistAvatarId = input.ReadUInt32();
+          case 24: {
+            PathId = input.ReadUInt32();
             break;
           }
           case 34:
@@ -357,12 +357,16 @@ namespace Weedwacker.Shared.Network.Proto {
             avatarIdList_.AddEntriesFrom(ref input, _repeated_avatarIdList_codec);
             break;
           }
-          case 56: {
-            PathId = input.ReadUInt32();
+          case 40: {
+            Unk3300AIEJKADFLKG = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 48: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Unk3300AFGPGIIGAKA = input.ReadUInt32();
             break;
           }
         }

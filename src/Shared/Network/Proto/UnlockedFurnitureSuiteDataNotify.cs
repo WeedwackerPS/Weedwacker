@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static UnlockedFurnitureSuiteDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZVbmxvY2tlZEZ1cm5pdHVyZVN1aXRlRGF0YU5vdGlmeS5wcm90byJTCiBV",
-            "bmxvY2tlZEZ1cm5pdHVyZVN1aXRlRGF0YU5vdGlmeRIOCgZpc19hbGwYCiAB",
-            "KAgSHwoXZnVybml0dXJlX3N1aXRlX2lkX2xpc3QYBSADKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiZVbmxvY2tlZEZ1cm5pdHVyZVN1aXRlRGF0YU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJTCiBVbmxvY2tlZEZ1cm5p",
+            "dHVyZVN1aXRlRGF0YU5vdGlmeRIOCgZpc19hbGwYASABKAgSHwoXZnVybml0",
+            "dXJlX3N1aXRlX2lkX2xpc3QYAyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4454
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4532;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UnlockedFurnitureSuiteDataNotify : pb::IMessage<UnlockedFurnitureSuiteDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_all" field.</summary>
-    public const int IsAllFieldNumber = 10;
+    public const int IsAllFieldNumber = 1;
     private bool isAll_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,9 +105,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "furniture_suite_id_list" field.</summary>
-    public const int FurnitureSuiteIdListFieldNumber = 5;
+    public const int FurnitureSuiteIdListFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_furnitureSuiteIdList_codec
-        = pb::FieldCodec.ForUInt32(42);
+        = pb::FieldCodec.ForUInt32(26);
     private readonly pbc::RepeatedField<uint> furnitureSuiteIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      furnitureSuiteIdList_.WriteTo(output, _repeated_furnitureSuiteIdList_codec);
       if (IsAll != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteBool(IsAll);
       }
+      furnitureSuiteIdList_.WriteTo(output, _repeated_furnitureSuiteIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      furnitureSuiteIdList_.WriteTo(ref output, _repeated_furnitureSuiteIdList_codec);
       if (IsAll != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteBool(IsAll);
       }
+      furnitureSuiteIdList_.WriteTo(ref output, _repeated_furnitureSuiteIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42:
-          case 40: {
-            furnitureSuiteIdList_.AddEntriesFrom(input, _repeated_furnitureSuiteIdList_codec);
+          case 8: {
+            IsAll = input.ReadBool();
             break;
           }
-          case 80: {
-            IsAll = input.ReadBool();
+          case 26:
+          case 24: {
+            furnitureSuiteIdList_.AddEntriesFrom(input, _repeated_furnitureSuiteIdList_codec);
             break;
           }
         }
@@ -244,13 +248,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42:
-          case 40: {
-            furnitureSuiteIdList_.AddEntriesFrom(ref input, _repeated_furnitureSuiteIdList_codec);
+          case 8: {
+            IsAll = input.ReadBool();
             break;
           }
-          case 80: {
-            IsAll = input.ReadBool();
+          case 26:
+          case 24: {
+            furnitureSuiteIdList_.AddEntriesFrom(ref input, _repeated_furnitureSuiteIdList_codec);
             break;
           }
         }

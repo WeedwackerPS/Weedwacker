@@ -24,10 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGClientPerformTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHQ0dDbGllbnRQZXJmb3JtVHlwZS5wcm90bypmChRHQ0dDbGllbnRQZXJm",
-            "b3JtVHlwZRIjCh9HQ0dfQ0xJRU5UX1BFUkZPUk1fVFlQRV9JTlZBTElEEAAS",
-            "KQolR0NHX0NMSUVOVF9QRVJGT1JNX1RZUEVfQ0FSRF9FWENIQU5HRRABQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpHQ0dDbGllbnRQZXJmb3JtVHlwZS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byqyAQoUR0NHQ2xpZW50UGVyZm9ybVR5cGUSIwof",
+            "R0NHX0NMSUVOVF9QRVJGT1JNX1RZUEVfSU5WQUxJRBAAEikKJUdDR19DTElF",
+            "TlRfUEVSRk9STV9UWVBFX0NBUkRfRVhDSEFOR0UQARImCiJHQ0dfQ0xJRU5U",
+            "X1BFUkZPUk1fVFlQRV9GSVJTVF9IQU5EEAISIgoeR0NHX0NMSUVOVF9QRVJG",
+            "T1JNX1RZUEVfUkVST0xMEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.GCGClientPerformType), }, null, null));
@@ -39,6 +41,8 @@ namespace Weedwacker.Shared.Network.Proto {
   public enum GCGClientPerformType {
     [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_INVALID")] Invalid = 0,
     [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_CARD_EXCHANGE")] CardExchange = 1,
+    [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_FIRST_HAND")] FirstHand = 2,
+    [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_REROLL")] Reroll = 3,
   }
 
   #endregion

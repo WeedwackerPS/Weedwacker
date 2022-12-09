@@ -24,23 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static ParentQuestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFQYXJlbnRRdWVzdC5wcm90bxoQQ2hpbGRRdWVzdC5wcm90bxoXSW5mZXJl",
-            "bmNlUGFnZUluZm8ucHJvdG8aG1BhcmVudFF1ZXN0UmFuZG9tSW5mby5wcm90",
-            "byKTAwoLUGFyZW50UXVlc3QSEQoJcXVlc3RfdmFyGA4gAygFEjIKDHRpbWVf",
-            "dmFyX21hcBgIIAMoCzIcLlBhcmVudFF1ZXN0LlRpbWVWYXJNYXBFbnRyeRIa",
-            "ChJwYXJlbnRfcXVlc3Rfc3RhdGUYASABKA0SEwoLaXNfZmluaXNoZWQYByAB",
-            "KAgSLwoTaW5mZXJlbmNlX3BhZ2VfbGlzdBgPIAMoCzISLkluZmVyZW5jZVBh",
-            "Z2VJbmZvEisKC3JhbmRvbV9pbmZvGAwgASgLMhYuUGFyZW50UXVlc3RSYW5k",
-            "b21JbmZvEhcKD3BhcmVudF9xdWVzdF9pZBgDIAEoDRIRCglpc19yYW5kb20Y",
-            "DSABKAgSEQoJdmlkZW9fa2V5GAYgASgEEhUKDXF1ZXN0X3Zhcl9zZXEYCyAB",
-            "KA0SJQoQY2hpbGRfcXVlc3RfbGlzdBgJIAMoCzILLkNoaWxkUXVlc3QaMQoP",
-            "VGltZVZhck1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToC",
-            "OAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChFQYXJlbnRRdWVzdC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90bxoQQ2hpbGRRdWVzdC5wcm90bxoXSW5mZXJlbmNlUGFnZUluZm8u",
+            "cHJvdG8aG1BhcmVudFF1ZXN0UmFuZG9tSW5mby5wcm90byKaBAoLUGFyZW50",
+            "UXVlc3QSTwoTaW5mZXJlbmNlX3BhZ2VfbGlzdBgFIAMoCzIyLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSW5mZXJlbmNlUGFnZUluZm8SEQoJ",
+            "cXVlc3RfdmFyGAcgAygFEhEKCXZpZGVvX2tleRgLIAEoBBIbChNVbmszMzAw",
+            "X0JPTU9IS0RITU5IGA8gASgNEksKC3JhbmRvbV9pbmZvGAkgASgLMjYuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QYXJlbnRRdWVzdFJhbmRv",
+            "bUluZm8SFwoPcGFyZW50X3F1ZXN0X2lkGAMgASgNEhEKCWlzX3JhbmRvbRgM",
+            "IAEoCBJFChBjaGlsZF9xdWVzdF9saXN0GAggAygLMisuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5DaGlsZFF1ZXN0EhMKC2lzX2ZpbmlzaGVk",
+            "GAEgASgIElIKDHRpbWVfdmFyX21hcBgCIAMoCzI8LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uUGFyZW50UXVlc3QuVGltZVZhck1hcEVudHJ5",
+            "EhsKE1VuazMzMDBfUENJSEpMUFBITkoYDiABKA0aMQoPVGltZVZhck1hcEVu",
+            "dHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChildQuestReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InferencePageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ParentQuest), global::Weedwacker.Shared.Network.Proto.ParentQuest.Parser, new[]{ "QuestVar", "TimeVarMap", "ParentQuestState", "IsFinished", "InferencePageList", "RandomInfo", "ParentQuestId", "IsRandom", "VideoKey", "QuestVarSeq", "ChildQuestList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ParentQuest), global::Weedwacker.Shared.Network.Proto.ParentQuest.Parser, new[]{ "InferencePageList", "QuestVar", "VideoKey", "Unk3300BOMOHKDHMNH", "RandomInfo", "ParentQuestId", "IsRandom", "ChildQuestList", "IsFinished", "TimeVarMap", "Unk3300PCIHJLPPHNJ" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -81,17 +83,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ParentQuest(ParentQuest other) : this() {
-      questVar_ = other.questVar_.Clone();
-      timeVarMap_ = other.timeVarMap_.Clone();
-      parentQuestState_ = other.parentQuestState_;
-      isFinished_ = other.isFinished_;
       inferencePageList_ = other.inferencePageList_.Clone();
+      questVar_ = other.questVar_.Clone();
+      videoKey_ = other.videoKey_;
+      unk3300BOMOHKDHMNH_ = other.unk3300BOMOHKDHMNH_;
       randomInfo_ = other.randomInfo_ != null ? other.randomInfo_.Clone() : null;
       parentQuestId_ = other.parentQuestId_;
       isRandom_ = other.isRandom_;
-      videoKey_ = other.videoKey_;
-      questVarSeq_ = other.questVarSeq_;
       childQuestList_ = other.childQuestList_.Clone();
+      isFinished_ = other.isFinished_;
+      timeVarMap_ = other.timeVarMap_.Clone();
+      unk3300PCIHJLPPHNJ_ = other.unk3300PCIHJLPPHNJ_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -101,56 +103,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ParentQuest(this);
     }
 
-    /// <summary>Field number for the "quest_var" field.</summary>
-    public const int QuestVarFieldNumber = 14;
-    private static readonly pb::FieldCodec<int> _repeated_questVar_codec
-        = pb::FieldCodec.ForInt32(114);
-    private readonly pbc::RepeatedField<int> questVar_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<int> QuestVar {
-      get { return questVar_; }
-    }
-
-    /// <summary>Field number for the "time_var_map" field.</summary>
-    public const int TimeVarMapFieldNumber = 8;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_timeVarMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
-    private readonly pbc::MapField<uint, uint> timeVarMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> TimeVarMap {
-      get { return timeVarMap_; }
-    }
-
-    /// <summary>Field number for the "parent_quest_state" field.</summary>
-    public const int ParentQuestStateFieldNumber = 1;
-    private uint parentQuestState_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ParentQuestState {
-      get { return parentQuestState_; }
-      set {
-        parentQuestState_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 7;
-    private bool isFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
-    }
-
     /// <summary>Field number for the "inference_page_list" field.</summary>
-    public const int InferencePageListFieldNumber = 15;
+    public const int InferencePageListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InferencePageInfo> _repeated_inferencePageList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferencePageInfo> inferencePageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferencePageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,8 +114,43 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return inferencePageList_; }
     }
 
+    /// <summary>Field number for the "quest_var" field.</summary>
+    public const int QuestVarFieldNumber = 7;
+    private static readonly pb::FieldCodec<int> _repeated_questVar_codec
+        = pb::FieldCodec.ForInt32(58);
+    private readonly pbc::RepeatedField<int> questVar_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> QuestVar {
+      get { return questVar_; }
+    }
+
+    /// <summary>Field number for the "video_key" field.</summary>
+    public const int VideoKeyFieldNumber = 11;
+    private ulong videoKey_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong VideoKey {
+      get { return videoKey_; }
+      set {
+        videoKey_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BOMOHKDHMNH" field.</summary>
+    public const int Unk3300BOMOHKDHMNHFieldNumber = 15;
+    private uint unk3300BOMOHKDHMNH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BOMOHKDHMNH {
+      get { return unk3300BOMOHKDHMNH_; }
+      set {
+        unk3300BOMOHKDHMNH_ = value;
+      }
+    }
+
     /// <summary>Field number for the "random_info" field.</summary>
-    public const int RandomInfoFieldNumber = 12;
+    public const int RandomInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo randomInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -183,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_random" field.</summary>
-    public const int IsRandomFieldNumber = 13;
+    public const int IsRandomFieldNumber = 12;
     private bool isRandom_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,39 +185,50 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "video_key" field.</summary>
-    public const int VideoKeyFieldNumber = 6;
-    private ulong videoKey_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong VideoKey {
-      get { return videoKey_; }
-      set {
-        videoKey_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "quest_var_seq" field.</summary>
-    public const int QuestVarSeqFieldNumber = 11;
-    private uint questVarSeq_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QuestVarSeq {
-      get { return questVarSeq_; }
-      set {
-        questVarSeq_ = value;
-      }
-    }
-
     /// <summary>Field number for the "child_quest_list" field.</summary>
-    public const int ChildQuestListFieldNumber = 9;
+    public const int ChildQuestListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChildQuest> _repeated_childQuestList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ChildQuest.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ChildQuest.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChildQuest> childQuestList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChildQuest>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChildQuest> ChildQuestList {
       get { return childQuestList_; }
+    }
+
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 1;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "time_var_map" field.</summary>
+    public const int TimeVarMapFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_timeVarMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> timeVarMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> TimeVarMap {
+      get { return timeVarMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_PCIHJLPPHNJ" field.</summary>
+    public const int Unk3300PCIHJLPPHNJFieldNumber = 14;
+    private uint unk3300PCIHJLPPHNJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PCIHJLPPHNJ {
+      get { return unk3300PCIHJLPPHNJ_; }
+      set {
+        unk3300PCIHJLPPHNJ_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,17 +246,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!questVar_.Equals(other.questVar_)) return false;
-      if (!TimeVarMap.Equals(other.TimeVarMap)) return false;
-      if (ParentQuestState != other.ParentQuestState) return false;
-      if (IsFinished != other.IsFinished) return false;
       if(!inferencePageList_.Equals(other.inferencePageList_)) return false;
+      if(!questVar_.Equals(other.questVar_)) return false;
+      if (VideoKey != other.VideoKey) return false;
+      if (Unk3300BOMOHKDHMNH != other.Unk3300BOMOHKDHMNH) return false;
       if (!object.Equals(RandomInfo, other.RandomInfo)) return false;
       if (ParentQuestId != other.ParentQuestId) return false;
       if (IsRandom != other.IsRandom) return false;
-      if (VideoKey != other.VideoKey) return false;
-      if (QuestVarSeq != other.QuestVarSeq) return false;
       if(!childQuestList_.Equals(other.childQuestList_)) return false;
+      if (IsFinished != other.IsFinished) return false;
+      if (!TimeVarMap.Equals(other.TimeVarMap)) return false;
+      if (Unk3300PCIHJLPPHNJ != other.Unk3300PCIHJLPPHNJ) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -262,17 +264,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= questVar_.GetHashCode();
-      hash ^= TimeVarMap.GetHashCode();
-      if (ParentQuestState != 0) hash ^= ParentQuestState.GetHashCode();
-      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       hash ^= inferencePageList_.GetHashCode();
+      hash ^= questVar_.GetHashCode();
+      if (VideoKey != 0UL) hash ^= VideoKey.GetHashCode();
+      if (Unk3300BOMOHKDHMNH != 0) hash ^= Unk3300BOMOHKDHMNH.GetHashCode();
       if (randomInfo_ != null) hash ^= RandomInfo.GetHashCode();
       if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
       if (IsRandom != false) hash ^= IsRandom.GetHashCode();
-      if (VideoKey != 0UL) hash ^= VideoKey.GetHashCode();
-      if (QuestVarSeq != 0) hash ^= QuestVarSeq.GetHashCode();
       hash ^= childQuestList_.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
+      hash ^= TimeVarMap.GetHashCode();
+      if (Unk3300PCIHJLPPHNJ != 0) hash ^= Unk3300PCIHJLPPHNJ.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -291,38 +293,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ParentQuestState != 0) {
+      if (IsFinished != false) {
         output.WriteRawTag(8);
-        output.WriteUInt32(ParentQuestState);
+        output.WriteBool(IsFinished);
       }
+      timeVarMap_.WriteTo(output, _map_timeVarMap_codec);
       if (ParentQuestId != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(ParentQuestId);
       }
-      if (VideoKey != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(VideoKey);
-      }
-      if (IsFinished != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsFinished);
-      }
-      timeVarMap_.WriteTo(output, _map_timeVarMap_codec);
+      inferencePageList_.WriteTo(output, _repeated_inferencePageList_codec);
+      questVar_.WriteTo(output, _repeated_questVar_codec);
       childQuestList_.WriteTo(output, _repeated_childQuestList_codec);
-      if (QuestVarSeq != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(QuestVarSeq);
-      }
       if (randomInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(RandomInfo);
       }
+      if (VideoKey != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(VideoKey);
+      }
       if (IsRandom != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteBool(IsRandom);
       }
-      questVar_.WriteTo(output, _repeated_questVar_codec);
-      inferencePageList_.WriteTo(output, _repeated_inferencePageList_codec);
+      if (Unk3300PCIHJLPPHNJ != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300PCIHJLPPHNJ);
+      }
+      if (Unk3300BOMOHKDHMNH != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300BOMOHKDHMNH);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -333,38 +335,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ParentQuestState != 0) {
+      if (IsFinished != false) {
         output.WriteRawTag(8);
-        output.WriteUInt32(ParentQuestState);
+        output.WriteBool(IsFinished);
       }
+      timeVarMap_.WriteTo(ref output, _map_timeVarMap_codec);
       if (ParentQuestId != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(ParentQuestId);
       }
-      if (VideoKey != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(VideoKey);
-      }
-      if (IsFinished != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsFinished);
-      }
-      timeVarMap_.WriteTo(ref output, _map_timeVarMap_codec);
+      inferencePageList_.WriteTo(ref output, _repeated_inferencePageList_codec);
+      questVar_.WriteTo(ref output, _repeated_questVar_codec);
       childQuestList_.WriteTo(ref output, _repeated_childQuestList_codec);
-      if (QuestVarSeq != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(QuestVarSeq);
-      }
       if (randomInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(74);
         output.WriteMessage(RandomInfo);
       }
+      if (VideoKey != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(VideoKey);
+      }
       if (IsRandom != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteBool(IsRandom);
       }
-      questVar_.WriteTo(ref output, _repeated_questVar_codec);
-      inferencePageList_.WriteTo(ref output, _repeated_inferencePageList_codec);
+      if (Unk3300PCIHJLPPHNJ != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300PCIHJLPPHNJ);
+      }
+      if (Unk3300BOMOHKDHMNH != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300BOMOHKDHMNH);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -375,15 +377,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += questVar_.CalculateSize(_repeated_questVar_codec);
-      size += timeVarMap_.CalculateSize(_map_timeVarMap_codec);
-      if (ParentQuestState != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestState);
-      }
-      if (IsFinished != false) {
-        size += 1 + 1;
-      }
       size += inferencePageList_.CalculateSize(_repeated_inferencePageList_codec);
+      size += questVar_.CalculateSize(_repeated_questVar_codec);
+      if (VideoKey != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VideoKey);
+      }
+      if (Unk3300BOMOHKDHMNH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BOMOHKDHMNH);
+      }
       if (randomInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RandomInfo);
       }
@@ -393,13 +394,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsRandom != false) {
         size += 1 + 1;
       }
-      if (VideoKey != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VideoKey);
-      }
-      if (QuestVarSeq != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestVarSeq);
-      }
       size += childQuestList_.CalculateSize(_repeated_childQuestList_codec);
+      if (IsFinished != false) {
+        size += 1 + 1;
+      }
+      size += timeVarMap_.CalculateSize(_map_timeVarMap_codec);
+      if (Unk3300PCIHJLPPHNJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PCIHJLPPHNJ);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -412,15 +414,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      questVar_.Add(other.questVar_);
-      timeVarMap_.Add(other.timeVarMap_);
-      if (other.ParentQuestState != 0) {
-        ParentQuestState = other.ParentQuestState;
-      }
-      if (other.IsFinished != false) {
-        IsFinished = other.IsFinished;
-      }
       inferencePageList_.Add(other.inferencePageList_);
+      questVar_.Add(other.questVar_);
+      if (other.VideoKey != 0UL) {
+        VideoKey = other.VideoKey;
+      }
+      if (other.Unk3300BOMOHKDHMNH != 0) {
+        Unk3300BOMOHKDHMNH = other.Unk3300BOMOHKDHMNH;
+      }
       if (other.randomInfo_ != null) {
         if (randomInfo_ == null) {
           RandomInfo = new global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo();
@@ -433,13 +434,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsRandom != false) {
         IsRandom = other.IsRandom;
       }
-      if (other.VideoKey != 0UL) {
-        VideoKey = other.VideoKey;
-      }
-      if (other.QuestVarSeq != 0) {
-        QuestVarSeq = other.QuestVarSeq;
-      }
       childQuestList_.Add(other.childQuestList_);
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
+      }
+      timeVarMap_.Add(other.timeVarMap_);
+      if (other.Unk3300PCIHJLPPHNJ != 0) {
+        Unk3300PCIHJLPPHNJ = other.Unk3300PCIHJLPPHNJ;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -456,51 +458,51 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            ParentQuestState = input.ReadUInt32();
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 18: {
+            timeVarMap_.AddEntriesFrom(input, _map_timeVarMap_codec);
             break;
           }
           case 24: {
             ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            VideoKey = input.ReadUInt64();
+          case 42: {
+            inferencePageList_.AddEntriesFrom(input, _repeated_inferencePageList_codec);
             break;
           }
+          case 58:
           case 56: {
-            IsFinished = input.ReadBool();
+            questVar_.AddEntriesFrom(input, _repeated_questVar_codec);
             break;
           }
           case 66: {
-            timeVarMap_.AddEntriesFrom(input, _map_timeVarMap_codec);
-            break;
-          }
-          case 74: {
             childQuestList_.AddEntriesFrom(input, _repeated_childQuestList_codec);
             break;
           }
-          case 88: {
-            QuestVarSeq = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (randomInfo_ == null) {
               RandomInfo = new global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo();
             }
             input.ReadMessage(RandomInfo);
             break;
           }
-          case 104: {
+          case 88: {
+            VideoKey = input.ReadUInt64();
+            break;
+          }
+          case 96: {
             IsRandom = input.ReadBool();
             break;
           }
-          case 114:
           case 112: {
-            questVar_.AddEntriesFrom(input, _repeated_questVar_codec);
+            Unk3300PCIHJLPPHNJ = input.ReadUInt32();
             break;
           }
-          case 122: {
-            inferencePageList_.AddEntriesFrom(input, _repeated_inferencePageList_codec);
+          case 120: {
+            Unk3300BOMOHKDHMNH = input.ReadUInt32();
             break;
           }
         }
@@ -519,51 +521,51 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            ParentQuestState = input.ReadUInt32();
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 18: {
+            timeVarMap_.AddEntriesFrom(ref input, _map_timeVarMap_codec);
             break;
           }
           case 24: {
             ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            VideoKey = input.ReadUInt64();
+          case 42: {
+            inferencePageList_.AddEntriesFrom(ref input, _repeated_inferencePageList_codec);
             break;
           }
+          case 58:
           case 56: {
-            IsFinished = input.ReadBool();
+            questVar_.AddEntriesFrom(ref input, _repeated_questVar_codec);
             break;
           }
           case 66: {
-            timeVarMap_.AddEntriesFrom(ref input, _map_timeVarMap_codec);
-            break;
-          }
-          case 74: {
             childQuestList_.AddEntriesFrom(ref input, _repeated_childQuestList_codec);
             break;
           }
-          case 88: {
-            QuestVarSeq = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 74: {
             if (randomInfo_ == null) {
               RandomInfo = new global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo();
             }
             input.ReadMessage(RandomInfo);
             break;
           }
-          case 104: {
+          case 88: {
+            VideoKey = input.ReadUInt64();
+            break;
+          }
+          case 96: {
             IsRandom = input.ReadBool();
             break;
           }
-          case 114:
           case 112: {
-            questVar_.AddEntriesFrom(ref input, _repeated_questVar_codec);
+            Unk3300PCIHJLPPHNJ = input.ReadUInt32();
             break;
           }
-          case 122: {
-            inferencePageList_.AddEntriesFrom(ref input, _repeated_inferencePageList_codec);
+          case 120: {
+            Unk3300BOMOHKDHMNH = input.ReadUInt32();
             break;
           }
         }

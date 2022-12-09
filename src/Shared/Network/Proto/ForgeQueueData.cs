@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForgeQueueDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGb3JnZVF1ZXVlRGF0YS5wcm90byK0AQoORm9yZ2VRdWV1ZURhdGESFAoM",
-            "ZmluaXNoX2NvdW50GA0gASgNEh4KFnRvdGFsX2ZpbmlzaF90aW1lc3RhbXAY",
-            "DiABKA0SEQoJYXZhdGFyX2lkGAcgASgNEhAKCHF1ZXVlX2lkGAEgASgNEhYK",
-            "DnVuZmluaXNoX2NvdW50GAogASgNEh0KFW5leHRfZmluaXNoX3RpbWVzdGFt",
-            "cBgLIAEoDRIQCghmb3JnZV9pZBgPIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRGb3JnZVF1ZXVlRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byLGAQoORm9yZ2VRdWV1ZURhdGESGwoTVW5rMzMwMF9LRElQ",
+            "TE5CSEdESBgBIAEoDRIQCghmb3JnZV9pZBgFIAEoDRIbChNVbmszMzAwX0dK",
+            "RUVDSEtERUJEGAcgASgNEhsKE1VuazMzMDBfT09PSk5BQkdIT00YBCABKA0S",
+            "GwoTVW5rMzMwMF9QSkNLRk5OSU1OTRgPIAEoDRIRCglhdmF0YXJfaWQYDCAB",
+            "KA0SGwoTVW5rMzMwMF9QSktIUENJTUFJRBgDIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeQueueData), global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser, new[]{ "FinishCount", "TotalFinishTimestamp", "AvatarId", "QueueId", "UnfinishCount", "NextFinishTimestamp", "ForgeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForgeQueueData), global::Weedwacker.Shared.Network.Proto.ForgeQueueData.Parser, new[]{ "Unk3300KDIPLNBHGDH", "ForgeId", "Unk3300GJEECHKDEBD", "Unk3300OOOJNABGHOM", "Unk3300PJCKFNNIMNM", "AvatarId", "Unk3300PJKHPCIMAID" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,13 +74,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ForgeQueueData(ForgeQueueData other) : this() {
-      finishCount_ = other.finishCount_;
-      totalFinishTimestamp_ = other.totalFinishTimestamp_;
-      avatarId_ = other.avatarId_;
-      queueId_ = other.queueId_;
-      unfinishCount_ = other.unfinishCount_;
-      nextFinishTimestamp_ = other.nextFinishTimestamp_;
+      unk3300KDIPLNBHGDH_ = other.unk3300KDIPLNBHGDH_;
       forgeId_ = other.forgeId_;
+      unk3300GJEECHKDEBD_ = other.unk3300GJEECHKDEBD_;
+      unk3300OOOJNABGHOM_ = other.unk3300OOOJNABGHOM_;
+      unk3300PJCKFNNIMNM_ = other.unk3300PJCKFNNIMNM_;
+      avatarId_ = other.avatarId_;
+      unk3300PJKHPCIMAID_ = other.unk3300PJKHPCIMAID_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,32 +90,68 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ForgeQueueData(this);
     }
 
-    /// <summary>Field number for the "finish_count" field.</summary>
-    public const int FinishCountFieldNumber = 13;
-    private uint finishCount_;
+    /// <summary>Field number for the "Unk3300_KDIPLNBHGDH" field.</summary>
+    public const int Unk3300KDIPLNBHGDHFieldNumber = 1;
+    private uint unk3300KDIPLNBHGDH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishCount {
-      get { return finishCount_; }
+    public uint Unk3300KDIPLNBHGDH {
+      get { return unk3300KDIPLNBHGDH_; }
       set {
-        finishCount_ = value;
+        unk3300KDIPLNBHGDH_ = value;
       }
     }
 
-    /// <summary>Field number for the "total_finish_timestamp" field.</summary>
-    public const int TotalFinishTimestampFieldNumber = 14;
-    private uint totalFinishTimestamp_;
+    /// <summary>Field number for the "forge_id" field.</summary>
+    public const int ForgeIdFieldNumber = 5;
+    private uint forgeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalFinishTimestamp {
-      get { return totalFinishTimestamp_; }
+    public uint ForgeId {
+      get { return forgeId_; }
       set {
-        totalFinishTimestamp_ = value;
+        forgeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GJEECHKDEBD" field.</summary>
+    public const int Unk3300GJEECHKDEBDFieldNumber = 7;
+    private uint unk3300GJEECHKDEBD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GJEECHKDEBD {
+      get { return unk3300GJEECHKDEBD_; }
+      set {
+        unk3300GJEECHKDEBD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OOOJNABGHOM" field.</summary>
+    public const int Unk3300OOOJNABGHOMFieldNumber = 4;
+    private uint unk3300OOOJNABGHOM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OOOJNABGHOM {
+      get { return unk3300OOOJNABGHOM_; }
+      set {
+        unk3300OOOJNABGHOM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PJCKFNNIMNM" field.</summary>
+    public const int Unk3300PJCKFNNIMNMFieldNumber = 15;
+    private uint unk3300PJCKFNNIMNM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PJCKFNNIMNM {
+      get { return unk3300PJCKFNNIMNM_; }
+      set {
+        unk3300PJCKFNNIMNM_ = value;
       }
     }
 
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 7;
+    public const int AvatarIdFieldNumber = 12;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,51 +162,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "queue_id" field.</summary>
-    public const int QueueIdFieldNumber = 1;
-    private uint queueId_;
+    /// <summary>Field number for the "Unk3300_PJKHPCIMAID" field.</summary>
+    public const int Unk3300PJKHPCIMAIDFieldNumber = 3;
+    private uint unk3300PJKHPCIMAID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QueueId {
-      get { return queueId_; }
+    public uint Unk3300PJKHPCIMAID {
+      get { return unk3300PJKHPCIMAID_; }
       set {
-        queueId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "unfinish_count" field.</summary>
-    public const int UnfinishCountFieldNumber = 10;
-    private uint unfinishCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint UnfinishCount {
-      get { return unfinishCount_; }
-      set {
-        unfinishCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "next_finish_timestamp" field.</summary>
-    public const int NextFinishTimestampFieldNumber = 11;
-    private uint nextFinishTimestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextFinishTimestamp {
-      get { return nextFinishTimestamp_; }
-      set {
-        nextFinishTimestamp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "forge_id" field.</summary>
-    public const int ForgeIdFieldNumber = 15;
-    private uint forgeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ForgeId {
-      get { return forgeId_; }
-      set {
-        forgeId_ = value;
+        unk3300PJKHPCIMAID_ = value;
       }
     }
 
@@ -189,13 +189,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FinishCount != other.FinishCount) return false;
-      if (TotalFinishTimestamp != other.TotalFinishTimestamp) return false;
-      if (AvatarId != other.AvatarId) return false;
-      if (QueueId != other.QueueId) return false;
-      if (UnfinishCount != other.UnfinishCount) return false;
-      if (NextFinishTimestamp != other.NextFinishTimestamp) return false;
+      if (Unk3300KDIPLNBHGDH != other.Unk3300KDIPLNBHGDH) return false;
       if (ForgeId != other.ForgeId) return false;
+      if (Unk3300GJEECHKDEBD != other.Unk3300GJEECHKDEBD) return false;
+      if (Unk3300OOOJNABGHOM != other.Unk3300OOOJNABGHOM) return false;
+      if (Unk3300PJCKFNNIMNM != other.Unk3300PJCKFNNIMNM) return false;
+      if (AvatarId != other.AvatarId) return false;
+      if (Unk3300PJKHPCIMAID != other.Unk3300PJKHPCIMAID) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,13 +203,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FinishCount != 0) hash ^= FinishCount.GetHashCode();
-      if (TotalFinishTimestamp != 0) hash ^= TotalFinishTimestamp.GetHashCode();
-      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
-      if (QueueId != 0) hash ^= QueueId.GetHashCode();
-      if (UnfinishCount != 0) hash ^= UnfinishCount.GetHashCode();
-      if (NextFinishTimestamp != 0) hash ^= NextFinishTimestamp.GetHashCode();
+      if (Unk3300KDIPLNBHGDH != 0) hash ^= Unk3300KDIPLNBHGDH.GetHashCode();
       if (ForgeId != 0) hash ^= ForgeId.GetHashCode();
+      if (Unk3300GJEECHKDEBD != 0) hash ^= Unk3300GJEECHKDEBD.GetHashCode();
+      if (Unk3300OOOJNABGHOM != 0) hash ^= Unk3300OOOJNABGHOM.GetHashCode();
+      if (Unk3300PJCKFNNIMNM != 0) hash ^= Unk3300PJCKFNNIMNM.GetHashCode();
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (Unk3300PJKHPCIMAID != 0) hash ^= Unk3300PJKHPCIMAID.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -228,33 +228,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (QueueId != 0) {
+      if (Unk3300KDIPLNBHGDH != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(QueueId);
+        output.WriteUInt32(Unk3300KDIPLNBHGDH);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(AvatarId);
+      if (Unk3300PJKHPCIMAID != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300PJKHPCIMAID);
       }
-      if (UnfinishCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(UnfinishCount);
-      }
-      if (NextFinishTimestamp != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NextFinishTimestamp);
-      }
-      if (FinishCount != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(FinishCount);
-      }
-      if (TotalFinishTimestamp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TotalFinishTimestamp);
+      if (Unk3300OOOJNABGHOM != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300OOOJNABGHOM);
       }
       if (ForgeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(ForgeId);
+      }
+      if (Unk3300GJEECHKDEBD != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300GJEECHKDEBD);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(AvatarId);
+      }
+      if (Unk3300PJCKFNNIMNM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PJCKFNNIMNM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -266,33 +266,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (QueueId != 0) {
+      if (Unk3300KDIPLNBHGDH != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(QueueId);
+        output.WriteUInt32(Unk3300KDIPLNBHGDH);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(AvatarId);
+      if (Unk3300PJKHPCIMAID != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300PJKHPCIMAID);
       }
-      if (UnfinishCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(UnfinishCount);
-      }
-      if (NextFinishTimestamp != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NextFinishTimestamp);
-      }
-      if (FinishCount != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(FinishCount);
-      }
-      if (TotalFinishTimestamp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TotalFinishTimestamp);
+      if (Unk3300OOOJNABGHOM != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300OOOJNABGHOM);
       }
       if (ForgeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(ForgeId);
+      }
+      if (Unk3300GJEECHKDEBD != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300GJEECHKDEBD);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(AvatarId);
+      }
+      if (Unk3300PJCKFNNIMNM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PJCKFNNIMNM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -304,26 +304,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FinishCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishCount);
+      if (Unk3300KDIPLNBHGDH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KDIPLNBHGDH);
       }
-      if (TotalFinishTimestamp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalFinishTimestamp);
+      if (ForgeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeId);
+      }
+      if (Unk3300GJEECHKDEBD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GJEECHKDEBD);
+      }
+      if (Unk3300OOOJNABGHOM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OOOJNABGHOM);
+      }
+      if (Unk3300PJCKFNNIMNM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PJCKFNNIMNM);
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
       }
-      if (QueueId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QueueId);
-      }
-      if (UnfinishCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UnfinishCount);
-      }
-      if (NextFinishTimestamp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextFinishTimestamp);
-      }
-      if (ForgeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeId);
+      if (Unk3300PJKHPCIMAID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PJKHPCIMAID);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -337,26 +337,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FinishCount != 0) {
-        FinishCount = other.FinishCount;
+      if (other.Unk3300KDIPLNBHGDH != 0) {
+        Unk3300KDIPLNBHGDH = other.Unk3300KDIPLNBHGDH;
       }
-      if (other.TotalFinishTimestamp != 0) {
-        TotalFinishTimestamp = other.TotalFinishTimestamp;
+      if (other.ForgeId != 0) {
+        ForgeId = other.ForgeId;
+      }
+      if (other.Unk3300GJEECHKDEBD != 0) {
+        Unk3300GJEECHKDEBD = other.Unk3300GJEECHKDEBD;
+      }
+      if (other.Unk3300OOOJNABGHOM != 0) {
+        Unk3300OOOJNABGHOM = other.Unk3300OOOJNABGHOM;
+      }
+      if (other.Unk3300PJCKFNNIMNM != 0) {
+        Unk3300PJCKFNNIMNM = other.Unk3300PJCKFNNIMNM;
       }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
       }
-      if (other.QueueId != 0) {
-        QueueId = other.QueueId;
-      }
-      if (other.UnfinishCount != 0) {
-        UnfinishCount = other.UnfinishCount;
-      }
-      if (other.NextFinishTimestamp != 0) {
-        NextFinishTimestamp = other.NextFinishTimestamp;
-      }
-      if (other.ForgeId != 0) {
-        ForgeId = other.ForgeId;
+      if (other.Unk3300PJKHPCIMAID != 0) {
+        Unk3300PJKHPCIMAID = other.Unk3300PJKHPCIMAID;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -374,31 +374,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            QueueId = input.ReadUInt32();
+            Unk3300KDIPLNBHGDH = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300PJKHPCIMAID = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300OOOJNABGHOM = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            ForgeId = input.ReadUInt32();
             break;
           }
           case 56: {
+            Unk3300GJEECHKDEBD = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            UnfinishCount = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            NextFinishTimestamp = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            FinishCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TotalFinishTimestamp = input.ReadUInt32();
-            break;
-          }
           case 120: {
-            ForgeId = input.ReadUInt32();
+            Unk3300PJCKFNNIMNM = input.ReadUInt32();
             break;
           }
         }
@@ -417,31 +417,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            QueueId = input.ReadUInt32();
+            Unk3300KDIPLNBHGDH = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300PJKHPCIMAID = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300OOOJNABGHOM = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            ForgeId = input.ReadUInt32();
             break;
           }
           case 56: {
+            Unk3300GJEECHKDEBD = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             AvatarId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            UnfinishCount = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            NextFinishTimestamp = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            FinishCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TotalFinishTimestamp = input.ReadUInt32();
-            break;
-          }
           case 120: {
-            ForgeId = input.ReadUInt32();
+            Unk3300PJCKFNNIMNM = input.ReadUInt32();
             break;
           }
         }

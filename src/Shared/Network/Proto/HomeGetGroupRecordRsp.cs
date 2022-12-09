@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeGetGroupRecordRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtIb21lR2V0R3JvdXBSZWNvcmRSc3AucHJvdG8aFUhvbWVHcm91cFJlY29y",
-            "ZC5wcm90byJlChVIb21lR2V0R3JvdXBSZWNvcmRSc3ASJgoMZ3JvdXBfcmVj",
-            "b3JkGAcgASgLMhAuSG9tZUdyb3VwUmVjb3JkEg8KB3JldGNvZGUYCyABKAUS",
-            "EwoLcmVjb3JkX3R5cGUYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtIb21lR2V0R3JvdXBSZWNvcmRSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFUhvbWVHcm91cFJlY29yZC5wcm90byKFAQoV",
+            "SG9tZUdldEdyb3VwUmVjb3JkUnNwEkYKDGdyb3VwX3JlY29yZBgGIAEoCzIw",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZUdyb3VwUmVj",
+            "b3JkEg8KB3JldGNvZGUYByABKAUSEwoLcmVjb3JkX3R5cGUYDyABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeGroupRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4538
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4824;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeGetGroupRecordRsp : pb::IMessage<HomeGetGroupRecordRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "group_record" field.</summary>
-    public const int GroupRecordFieldNumber = 7;
+    public const int GroupRecordFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.HomeGroupRecord groupRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 7;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "record_type" field.</summary>
-    public const int RecordTypeFieldNumber = 1;
+    public const int RecordTypeFieldNumber = 15;
     private uint recordType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RecordType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RecordType);
-      }
       if (groupRecord_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(GroupRecord);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
+      }
+      if (RecordType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(RecordType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RecordType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RecordType);
-      }
       if (groupRecord_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(GroupRecord);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
+      }
+      if (RecordType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(RecordType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            RecordType = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 50: {
             if (groupRecord_ == null) {
               GroupRecord = new global::Weedwacker.Shared.Network.Proto.HomeGroupRecord();
             }
             input.ReadMessage(GroupRecord);
             break;
           }
-          case 88: {
+          case 56: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            RecordType = input.ReadUInt32();
             break;
           }
         }
@@ -294,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            RecordType = input.ReadUInt32();
-            break;
-          }
-          case 58: {
+          case 50: {
             if (groupRecord_ == null) {
               GroupRecord = new global::Weedwacker.Shared.Network.Proto.HomeGroupRecord();
             }
             input.ReadMessage(GroupRecord);
             break;
           }
-          case 88: {
+          case 56: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            RecordType = input.ReadUInt32();
             break;
           }
         }

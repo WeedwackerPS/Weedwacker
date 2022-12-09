@@ -24,20 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static ServerBuffChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5LnByb3RvGhBTZXJ2ZXJCdWZmLnBy",
-            "b3RvIswCChZTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5Ek0KF3NlcnZlcl9idWZm",
-            "X2NoYW5nZV90eXBlGAcgASgOMiwuU2VydmVyQnVmZkNoYW5nZU5vdGlmeS5T",
-            "ZXJ2ZXJCdWZmQ2hhbmdlVHlwZRIYChBpc19jcmVhdHVyZV9idWZmGAogASgI",
-            "EhYKDmVudGl0eV9pZF9saXN0GAEgAygNEhgKEGF2YXRhcl9ndWlkX2xpc3QY",
-            "DCADKAQSJQoQc2VydmVyX2J1ZmZfbGlzdBgLIAMoCzILLlNlcnZlckJ1ZmYi",
-            "cAoUU2VydmVyQnVmZkNoYW5nZVR5cGUSKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
-            "X1RZUEVfQUREX1NFUlZFUl9CVUZGEAASKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
-            "X1RZUEVfREVMX1NFUlZFUl9CVUZGEAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhBTZXJ2ZXJCdWZmLnByb3RvIowDChZTZXJ2",
+            "ZXJCdWZmQ2hhbmdlTm90aWZ5EkUKEHNlcnZlcl9idWZmX2xpc3QYBCADKAsy",
+            "Ky5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNlcnZlckJ1ZmYS",
+            "GAoQaXNfY3JlYXR1cmVfYnVmZhgIIAEoCBIWCg5lbnRpdHlfaWRfbGlzdBgG",
+            "IAMoDRJtChdzZXJ2ZXJfYnVmZl9jaGFuZ2VfdHlwZRgJIAEoDjJMLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2VydmVyQnVmZkNoYW5nZU5v",
+            "dGlmeS5TZXJ2ZXJCdWZmQ2hhbmdlVHlwZRIYChBhdmF0YXJfZ3VpZF9saXN0",
+            "GAUgAygEInAKFFNlcnZlckJ1ZmZDaGFuZ2VUeXBlEisKJ1NFUlZFUl9CVUZG",
+            "X0NIQU5HRV9UWVBFX0FERF9TRVJWRVJfQlVGRhAAEisKJ1NFUlZFUl9CVUZG",
+            "X0NIQU5HRV9UWVBFX0RFTF9TRVJWRVJfQlVGRhABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ServerBuffReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify), global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Parser, new[]{ "ServerBuffChangeType", "IsCreatureBuff", "EntityIdList", "AvatarGuidList", "ServerBuffList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify), global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Parser, new[]{ "ServerBuffList", "IsCreatureBuff", "EntityIdList", "ServerBuffChangeType", "AvatarGuidList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) }, null, null)
           }));
     }
     #endregion
@@ -45,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 361
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 398;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ServerBuffChangeNotify : pb::IMessage<ServerBuffChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,11 +88,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ServerBuffChangeNotify(ServerBuffChangeNotify other) : this() {
-      serverBuffChangeType_ = other.serverBuffChangeType_;
+      serverBuffList_ = other.serverBuffList_.Clone();
       isCreatureBuff_ = other.isCreatureBuff_;
       entityIdList_ = other.entityIdList_.Clone();
+      serverBuffChangeType_ = other.serverBuffChangeType_;
       avatarGuidList_ = other.avatarGuidList_.Clone();
-      serverBuffList_ = other.serverBuffList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,20 +102,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ServerBuffChangeNotify(this);
     }
 
-    /// <summary>Field number for the "server_buff_change_type" field.</summary>
-    public const int ServerBuffChangeTypeFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType serverBuffChangeType_ = global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff;
+    /// <summary>Field number for the "server_buff_list" field.</summary>
+    public const int ServerBuffListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType ServerBuffChangeType {
-      get { return serverBuffChangeType_; }
-      set {
-        serverBuffChangeType_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
+      get { return serverBuffList_; }
     }
 
     /// <summary>Field number for the "is_creature_buff" field.</summary>
-    public const int IsCreatureBuffFieldNumber = 10;
+    public const int IsCreatureBuffFieldNumber = 8;
     private bool isCreatureBuff_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,9 +126,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id_list" field.</summary>
-    public const int EntityIdListFieldNumber = 1;
+    public const int EntityIdListFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
-        = pb::FieldCodec.ForUInt32(10);
+        = pb::FieldCodec.ForUInt32(50);
     private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,26 +136,27 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityIdList_; }
     }
 
+    /// <summary>Field number for the "server_buff_change_type" field.</summary>
+    public const int ServerBuffChangeTypeFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType serverBuffChangeType_ = global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType ServerBuffChangeType {
+      get { return serverBuffChangeType_; }
+      set {
+        serverBuffChangeType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "avatar_guid_list" field.</summary>
-    public const int AvatarGuidListFieldNumber = 12;
+    public const int AvatarGuidListFieldNumber = 5;
     private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(98);
+        = pb::FieldCodec.ForUInt64(42);
     private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<ulong> AvatarGuidList {
       get { return avatarGuidList_; }
-    }
-
-    /// <summary>Field number for the "server_buff_list" field.</summary>
-    public const int ServerBuffListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
-      get { return serverBuffList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -169,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ServerBuffChangeType != other.ServerBuffChangeType) return false;
+      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
       if (IsCreatureBuff != other.IsCreatureBuff) return false;
       if(!entityIdList_.Equals(other.entityIdList_)) return false;
+      if (ServerBuffChangeType != other.ServerBuffChangeType) return false;
       if(!avatarGuidList_.Equals(other.avatarGuidList_)) return false;
-      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) hash ^= ServerBuffChangeType.GetHashCode();
+      hash ^= serverBuffList_.GetHashCode();
       if (IsCreatureBuff != false) hash ^= IsCreatureBuff.GetHashCode();
       hash ^= entityIdList_.GetHashCode();
+      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) hash ^= ServerBuffChangeType.GetHashCode();
       hash ^= avatarGuidList_.GetHashCode();
-      hash ^= serverBuffList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,17 +209,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      entityIdList_.WriteTo(output, _repeated_entityIdList_codec);
-      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) ServerBuffChangeType);
-      }
-      if (IsCreatureBuff != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsCreatureBuff);
-      }
       serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
       avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
+      entityIdList_.WriteTo(output, _repeated_entityIdList_codec);
+      if (IsCreatureBuff != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsCreatureBuff);
+      }
+      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ServerBuffChangeType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -225,17 +230,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      entityIdList_.WriteTo(ref output, _repeated_entityIdList_codec);
-      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) ServerBuffChangeType);
-      }
-      if (IsCreatureBuff != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsCreatureBuff);
-      }
       serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
       avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
+      entityIdList_.WriteTo(ref output, _repeated_entityIdList_codec);
+      if (IsCreatureBuff != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsCreatureBuff);
+      }
+      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ServerBuffChangeType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -246,15 +251,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ServerBuffChangeType);
-      }
+      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
       if (IsCreatureBuff != false) {
         size += 1 + 1;
       }
       size += entityIdList_.CalculateSize(_repeated_entityIdList_codec);
+      if (ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ServerBuffChangeType);
+      }
       size += avatarGuidList_.CalculateSize(_repeated_avatarGuidList_codec);
-      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -267,15 +272,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-        ServerBuffChangeType = other.ServerBuffChangeType;
-      }
+      serverBuffList_.Add(other.serverBuffList_);
       if (other.IsCreatureBuff != false) {
         IsCreatureBuff = other.IsCreatureBuff;
       }
       entityIdList_.Add(other.entityIdList_);
+      if (other.ServerBuffChangeType != global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        ServerBuffChangeType = other.ServerBuffChangeType;
+      }
       avatarGuidList_.Add(other.avatarGuidList_);
-      serverBuffList_.Add(other.serverBuffList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -291,26 +296,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
-            break;
-          }
-          case 56: {
-            ServerBuffChangeType = (global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
-            break;
-          }
-          case 80: {
-            IsCreatureBuff = input.ReadBool();
-            break;
-          }
-          case 90: {
+          case 34: {
             serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
             break;
           }
-          case 98:
-          case 96: {
+          case 42:
+          case 40: {
             avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
+            break;
+          }
+          case 64: {
+            IsCreatureBuff = input.ReadBool();
+            break;
+          }
+          case 72: {
+            ServerBuffChangeType = (global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
             break;
           }
         }
@@ -328,26 +333,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
-            break;
-          }
-          case 56: {
-            ServerBuffChangeType = (global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
-            break;
-          }
-          case 80: {
-            IsCreatureBuff = input.ReadBool();
-            break;
-          }
-          case 90: {
+          case 34: {
             serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
             break;
           }
-          case 98:
-          case 96: {
+          case 42:
+          case 40: {
             avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
+            break;
+          }
+          case 64: {
+            IsCreatureBuff = input.ReadBool();
+            break;
+          }
+          case 72: {
+            ServerBuffChangeType = (global::Weedwacker.Shared.Network.Proto.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
             break;
           }
         }

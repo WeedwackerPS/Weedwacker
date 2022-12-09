@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonRestartInviteReplyRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJEdW5nZW9uUmVzdGFydEludml0ZVJlcGx5UnNwLnByb3RvIloKHER1bmdl",
-            "b25SZXN0YXJ0SW52aXRlUmVwbHlSc3ASEQoJaXNfYWNjZXB0GAogASgIEhYK",
-            "DmlzX3RyYW5zX3BvaW50GAEgASgIEg8KB3JldGNvZGUYCSABKAVCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJEdW5nZW9uUmVzdGFydEludml0ZVJlcGx5UnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIloKHER1bmdlb25SZXN0YXJ0SW52",
+            "aXRlUmVwbHlSc3ASFgoOaXNfdHJhbnNfcG9pbnQYDiABKAgSDwoHcmV0Y29k",
+            "ZRgKIAEoBRIRCglpc19hY2NlcHQYBiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonRestartInviteReplyRsp), global::Weedwacker.Shared.Network.Proto.DungeonRestartInviteReplyRsp.Parser, new[]{ "IsAccept", "IsTransPoint", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonRestartInviteReplyRsp), global::Weedwacker.Shared.Network.Proto.DungeonRestartInviteReplyRsp.Parser, new[]{ "IsTransPoint", "Retcode", "IsAccept" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 916
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 923;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonRestartInviteReplyRsp : pb::IMessage<DungeonRestartInviteReplyRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonRestartInviteReplyRsp(DungeonRestartInviteReplyRsp other) : this() {
-      isAccept_ = other.isAccept_;
       isTransPoint_ = other.isTransPoint_;
       retcode_ = other.retcode_;
+      isAccept_ = other.isAccept_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonRestartInviteReplyRsp(this);
     }
 
-    /// <summary>Field number for the "is_accept" field.</summary>
-    public const int IsAcceptFieldNumber = 10;
-    private bool isAccept_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAccept {
-      get { return isAccept_; }
-      set {
-        isAccept_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_trans_point" field.</summary>
-    public const int IsTransPointFieldNumber = 1;
+    public const int IsTransPointFieldNumber = 14;
     private bool isTransPoint_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_accept" field.</summary>
+    public const int IsAcceptFieldNumber = 6;
+    private bool isAccept_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAccept {
+      get { return isAccept_; }
+      set {
+        isAccept_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsAccept != other.IsAccept) return false;
       if (IsTransPoint != other.IsTransPoint) return false;
       if (Retcode != other.Retcode) return false;
+      if (IsAccept != other.IsAccept) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsAccept != false) hash ^= IsAccept.GetHashCode();
       if (IsTransPoint != false) hash ^= IsTransPoint.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsAccept != false) hash ^= IsAccept.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsTransPoint != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsTransPoint);
+      if (IsAccept != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsAccept);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
       }
-      if (IsAccept != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsAccept);
+      if (IsTransPoint != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsTransPoint);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsTransPoint != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsTransPoint);
+      if (IsAccept != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsAccept);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteInt32(Retcode);
       }
-      if (IsAccept != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsAccept);
+      if (IsTransPoint != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsTransPoint);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsAccept != false) {
-        size += 1 + 1;
-      }
       if (IsTransPoint != false) {
         size += 1 + 1;
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (IsAccept != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsAccept != false) {
-        IsAccept = other.IsAccept;
-      }
       if (other.IsTransPoint != false) {
         IsTransPoint = other.IsTransPoint;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.IsAccept != false) {
+        IsAccept = other.IsAccept;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsTransPoint = input.ReadBool();
-            break;
-          }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 48: {
+            IsAccept = input.ReadBool();
             break;
           }
           case 80: {
-            IsAccept = input.ReadBool();
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            IsTransPoint = input.ReadBool();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsTransPoint = input.ReadBool();
-            break;
-          }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 48: {
+            IsAccept = input.ReadBool();
             break;
           }
           case 80: {
-            IsAccept = input.ReadBool();
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            IsTransPoint = input.ReadBool();
             break;
           }
         }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static MistTrialActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFNaXN0VHJpYWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGE1pc3RUcmlh",
-            "bExldmVsRGF0YS5wcm90byJRChtNaXN0VHJpYWxBY3Rpdml0eURldGFpbElu",
-            "Zm8SMgoVdHJpYWxfbGV2ZWxfZGF0YV9saXN0GAUgAygLMhMuTWlzdFRyaWFs",
-            "TGV2ZWxEYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiFNaXN0VHJpYWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGE1pc3RUcmlhbExldmVsRGF0YS5w",
+            "cm90byJxChtNaXN0VHJpYWxBY3Rpdml0eURldGFpbEluZm8SUgoVdHJpYWxf",
+            "bGV2ZWxfZGF0YV9saXN0GAEgAygLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5NaXN0VHJpYWxMZXZlbERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MistTrialLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trial_level_data_list" field.</summary>
-    public const int TrialLevelDataListFieldNumber = 5;
+    public const int TrialLevelDataListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MistTrialLevelData> _repeated_trialLevelDataList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.MistTrialLevelData.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.MistTrialLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialLevelData> trialLevelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MistTrialLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 10: {
             trialLevelDataList_.AddEntriesFrom(input, _repeated_trialLevelDataList_codec);
             break;
           }
@@ -206,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 10: {
             trialLevelDataList_.AddEntriesFrom(ref input, _repeated_trialLevelDataList_codec);
             break;
           }

@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static GadgetInteractReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHYWRnZXRJbnRlcmFjdFJlcS5wcm90bxoRSW50ZXJPcFR5cGUucHJvdG8a",
-            "E1Jlc2luQ29zdFR5cGUucHJvdG8ivwEKEUdhZGdldEludGVyYWN0UmVxEhEK",
-            "CWdhZGdldF9pZBgIIAEoDRIdChVpc191c2VfY29uZGVuc2VfcmVzaW4YDyAB",
-            "KAgSHQoHb3BfdHlwZRgFIAEoDjIMLkludGVyT3BUeXBlEicKD3Jlc2luX2Nv",
-            "c3RfdHlwZRgBIAEoDjIOLlJlc2luQ29zdFR5cGUSFgoOdWlfaW50ZXJhY3Rf",
-            "aWQYAiABKA0SGAoQZ2FkZ2V0X2VudGl0eV9pZBgEIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdHYWRnZXRJbnRlcmFjdFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoRSW50ZXJPcFR5cGUucHJvdG8aE1Jlc2luQ29zdFR5",
+            "cGUucHJvdG8i/wEKEUdhZGdldEludGVyYWN0UmVxEhEKCWdhZGdldF9pZBgB",
+            "IAEoDRJHCg9yZXNpbl9jb3N0X3R5cGUYDSABKA4yLi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlJlc2luQ29zdFR5cGUSGAoQZ2FkZ2V0X2Vu",
+            "dGl0eV9pZBgIIAEoDRI9CgdvcF90eXBlGAIgASgOMiwuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5JbnRlck9wVHlwZRIWCg51aV9pbnRlcmFj",
+            "dF9pZBgLIAEoDRIdChVpc191c2VfY29uZGVuc2VfcmVzaW4YBiABKAhiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InterOpTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ResinCostTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetInteractReq), global::Weedwacker.Shared.Network.Proto.GadgetInteractReq.Parser, new[]{ "GadgetId", "IsUseCondenseResin", "OpType", "ResinCostType", "UiInteractId", "GadgetEntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetInteractReq), global::Weedwacker.Shared.Network.Proto.GadgetInteractReq.Parser, new[]{ "GadgetId", "ResinCostType", "GadgetEntityId", "OpType", "UiInteractId", "IsUseCondenseResin" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 872
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 879;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GadgetInteractReq : pb::IMessage<GadgetInteractReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,11 +88,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GadgetInteractReq(GadgetInteractReq other) : this() {
       gadgetId_ = other.gadgetId_;
-      isUseCondenseResin_ = other.isUseCondenseResin_;
-      opType_ = other.opType_;
       resinCostType_ = other.resinCostType_;
-      uiInteractId_ = other.uiInteractId_;
       gadgetEntityId_ = other.gadgetEntityId_;
+      opType_ = other.opType_;
+      uiInteractId_ = other.uiInteractId_;
+      isUseCondenseResin_ = other.isUseCondenseResin_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,7 +103,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gadget_id" field.</summary>
-    public const int GadgetIdFieldNumber = 8;
+    public const int GadgetIdFieldNumber = 1;
     private uint gadgetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,32 +114,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_use_condense_resin" field.</summary>
-    public const int IsUseCondenseResinFieldNumber = 15;
-    private bool isUseCondenseResin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUseCondenseResin {
-      get { return isUseCondenseResin_; }
-      set {
-        isUseCondenseResin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "op_type" field.</summary>
-    public const int OpTypeFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.InterOpType opType_ = global::Weedwacker.Shared.Network.Proto.InterOpType.Finish;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.InterOpType OpType {
-      get { return opType_; }
-      set {
-        opType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "resin_cost_type" field.</summary>
-    public const int ResinCostTypeFieldNumber = 1;
+    public const int ResinCostTypeFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.ResinCostType resinCostType_ = global::Weedwacker.Shared.Network.Proto.ResinCostType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,8 +126,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "gadget_entity_id" field.</summary>
+    public const int GadgetEntityIdFieldNumber = 8;
+    private uint gadgetEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetEntityId {
+      get { return gadgetEntityId_; }
+      set {
+        gadgetEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "op_type" field.</summary>
+    public const int OpTypeFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.InterOpType opType_ = global::Weedwacker.Shared.Network.Proto.InterOpType.Finish;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.InterOpType OpType {
+      get { return opType_; }
+      set {
+        opType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "ui_interact_id" field.</summary>
-    public const int UiInteractIdFieldNumber = 2;
+    public const int UiInteractIdFieldNumber = 11;
     private uint uiInteractId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,15 +162,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gadget_entity_id" field.</summary>
-    public const int GadgetEntityIdFieldNumber = 4;
-    private uint gadgetEntityId_;
+    /// <summary>Field number for the "is_use_condense_resin" field.</summary>
+    public const int IsUseCondenseResinFieldNumber = 6;
+    private bool isUseCondenseResin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GadgetEntityId {
-      get { return gadgetEntityId_; }
+    public bool IsUseCondenseResin {
+      get { return isUseCondenseResin_; }
       set {
-        gadgetEntityId_ = value;
+        isUseCondenseResin_ = value;
       }
     }
 
@@ -184,11 +190,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (GadgetId != other.GadgetId) return false;
-      if (IsUseCondenseResin != other.IsUseCondenseResin) return false;
-      if (OpType != other.OpType) return false;
       if (ResinCostType != other.ResinCostType) return false;
-      if (UiInteractId != other.UiInteractId) return false;
       if (GadgetEntityId != other.GadgetEntityId) return false;
+      if (OpType != other.OpType) return false;
+      if (UiInteractId != other.UiInteractId) return false;
+      if (IsUseCondenseResin != other.IsUseCondenseResin) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -197,11 +203,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (GadgetId != 0) hash ^= GadgetId.GetHashCode();
-      if (IsUseCondenseResin != false) hash ^= IsUseCondenseResin.GetHashCode();
-      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) hash ^= OpType.GetHashCode();
       if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) hash ^= ResinCostType.GetHashCode();
-      if (UiInteractId != 0) hash ^= UiInteractId.GetHashCode();
       if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
+      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) hash ^= OpType.GetHashCode();
+      if (UiInteractId != 0) hash ^= UiInteractId.GetHashCode();
+      if (IsUseCondenseResin != false) hash ^= IsUseCondenseResin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -220,29 +226,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ResinCostType);
-      }
-      if (UiInteractId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(UiInteractId);
-      }
-      if (GadgetEntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GadgetEntityId);
-      }
-      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) OpType);
-      }
       if (GadgetId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(GadgetId);
       }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) OpType);
+      }
       if (IsUseCondenseResin != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsUseCondenseResin);
+      }
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (UiInteractId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(UiInteractId);
+      }
+      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ResinCostType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -254,29 +260,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ResinCostType);
-      }
-      if (UiInteractId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(UiInteractId);
-      }
-      if (GadgetEntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GadgetEntityId);
-      }
-      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) OpType);
-      }
       if (GadgetId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(GadgetId);
       }
+      if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) OpType);
+      }
       if (IsUseCondenseResin != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsUseCondenseResin);
+      }
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (UiInteractId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(UiInteractId);
+      }
+      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ResinCostType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -291,20 +297,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GadgetId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
       }
-      if (IsUseCondenseResin != false) {
-        size += 1 + 1;
+      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResinCostType);
+      }
+      if (GadgetEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
       }
       if (OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
       }
-      if (ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResinCostType);
-      }
       if (UiInteractId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UiInteractId);
       }
-      if (GadgetEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
+      if (IsUseCondenseResin != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -321,20 +327,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GadgetId != 0) {
         GadgetId = other.GadgetId;
       }
-      if (other.IsUseCondenseResin != false) {
-        IsUseCondenseResin = other.IsUseCondenseResin;
+      if (other.ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
+        ResinCostType = other.ResinCostType;
+      }
+      if (other.GadgetEntityId != 0) {
+        GadgetEntityId = other.GadgetEntityId;
       }
       if (other.OpType != global::Weedwacker.Shared.Network.Proto.InterOpType.Finish) {
         OpType = other.OpType;
       }
-      if (other.ResinCostType != global::Weedwacker.Shared.Network.Proto.ResinCostType.None) {
-        ResinCostType = other.ResinCostType;
-      }
       if (other.UiInteractId != 0) {
         UiInteractId = other.UiInteractId;
       }
-      if (other.GadgetEntityId != 0) {
-        GadgetEntityId = other.GadgetEntityId;
+      if (other.IsUseCondenseResin != false) {
+        IsUseCondenseResin = other.IsUseCondenseResin;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -352,27 +358,27 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            ResinCostType = (global::Weedwacker.Shared.Network.Proto.ResinCostType) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            UiInteractId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            GadgetEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.InterOpType) input.ReadEnum();
-            break;
-          }
-          case 64: {
             GadgetId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 16: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.InterOpType) input.ReadEnum();
+            break;
+          }
+          case 48: {
             IsUseCondenseResin = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            UiInteractId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ResinCostType = (global::Weedwacker.Shared.Network.Proto.ResinCostType) input.ReadEnum();
             break;
           }
         }
@@ -391,27 +397,27 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            ResinCostType = (global::Weedwacker.Shared.Network.Proto.ResinCostType) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            UiInteractId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            GadgetEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            OpType = (global::Weedwacker.Shared.Network.Proto.InterOpType) input.ReadEnum();
-            break;
-          }
-          case 64: {
             GadgetId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 16: {
+            OpType = (global::Weedwacker.Shared.Network.Proto.InterOpType) input.ReadEnum();
+            break;
+          }
+          case 48: {
             IsUseCondenseResin = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            UiInteractId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ResinCostType = (global::Weedwacker.Shared.Network.Proto.ResinCostType) input.ReadEnum();
             break;
           }
         }

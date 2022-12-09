@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static CylinderRegionSizeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDeWxpbmRlclJlZ2lvblNpemUucHJvdG8iNAoSQ3lsaW5kZXJSZWdpb25T",
-            "aXplEg4KBnJhZGl1cxgIIAEoAhIOCgZoZWlnaHQYByABKAJCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhDeWxpbmRlclJlZ2lvblNpemUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iNAoSQ3lsaW5kZXJSZWdpb25TaXplEg4KBnJhZGl1",
+            "cxgHIAEoAhIOCgZoZWlnaHQYDyABKAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "radius" field.</summary>
-    public const int RadiusFieldNumber = 8;
+    public const int RadiusFieldNumber = 7;
     private float radius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "height" field.</summary>
-    public const int HeightFieldNumber = 7;
+    public const int HeightFieldNumber = 15;
     private float height_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Height != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(Height);
-      }
       if (Radius != 0F) {
-        output.WriteRawTag(69);
+        output.WriteRawTag(61);
         output.WriteFloat(Radius);
+      }
+      if (Height != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Height);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Height != 0F) {
-        output.WriteRawTag(61);
-        output.WriteFloat(Height);
-      }
       if (Radius != 0F) {
-        output.WriteRawTag(69);
+        output.WriteRawTag(61);
         output.WriteFloat(Radius);
+      }
+      if (Height != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Height);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 61: {
-            Height = input.ReadFloat();
+            Radius = input.ReadFloat();
             break;
           }
-          case 69: {
-            Radius = input.ReadFloat();
+          case 125: {
+            Height = input.ReadFloat();
             break;
           }
         }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 61: {
-            Height = input.ReadFloat();
+            Radius = input.ReadFloat();
             break;
           }
-          case 69: {
-            Radius = input.ReadFloat();
+          case 125: {
+            Height = input.ReadFloat();
             break;
           }
         }

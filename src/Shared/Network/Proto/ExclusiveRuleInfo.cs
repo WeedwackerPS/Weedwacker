@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExclusiveRuleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdFeGNsdXNpdmVSdWxlSW5mby5wcm90byI+ChFFeGNsdXNpdmVSdWxlSW5m",
-            "bxIWCg5vYmplY3RfaWRfbGlzdBgBIAMoDRIRCglydWxlX3R5cGUYCiABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdFeGNsdXNpdmVSdWxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byI+ChFFeGNsdXNpdmVSdWxlSW5mbxIRCglydWxlX3R5",
+            "cGUYAiABKA0SFgoOb2JqZWN0X2lkX2xpc3QYDyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExclusiveRuleInfo), global::Weedwacker.Shared.Network.Proto.ExclusiveRuleInfo.Parser, new[]{ "ObjectIdList", "RuleType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExclusiveRuleInfo), global::Weedwacker.Shared.Network.Proto.ExclusiveRuleInfo.Parser, new[]{ "RuleType", "ObjectIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExclusiveRuleInfo(ExclusiveRuleInfo other) : this() {
-      objectIdList_ = other.objectIdList_.Clone();
       ruleType_ = other.ruleType_;
+      objectIdList_ = other.objectIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,19 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ExclusiveRuleInfo(this);
     }
 
-    /// <summary>Field number for the "object_id_list" field.</summary>
-    public const int ObjectIdListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_objectIdList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> objectIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ObjectIdList {
-      get { return objectIdList_; }
-    }
-
     /// <summary>Field number for the "rule_type" field.</summary>
-    public const int RuleTypeFieldNumber = 10;
+    public const int RuleTypeFieldNumber = 2;
     private uint ruleType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,6 +92,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         ruleType_ = value;
       }
+    }
+
+    /// <summary>Field number for the "object_id_list" field.</summary>
+    public const int ObjectIdListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_objectIdList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> objectIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ObjectIdList {
+      get { return objectIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,8 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!objectIdList_.Equals(other.objectIdList_)) return false;
       if (RuleType != other.RuleType) return false;
+      if(!objectIdList_.Equals(other.objectIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -129,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= objectIdList_.GetHashCode();
       if (RuleType != 0) hash ^= RuleType.GetHashCode();
+      hash ^= objectIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      objectIdList_.WriteTo(output, _repeated_objectIdList_codec);
       if (RuleType != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(RuleType);
       }
+      objectIdList_.WriteTo(output, _repeated_objectIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      objectIdList_.WriteTo(ref output, _repeated_objectIdList_codec);
       if (RuleType != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(RuleType);
       }
+      objectIdList_.WriteTo(ref output, _repeated_objectIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -179,10 +179,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += objectIdList_.CalculateSize(_repeated_objectIdList_codec);
       if (RuleType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RuleType);
       }
+      size += objectIdList_.CalculateSize(_repeated_objectIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -195,10 +195,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      objectIdList_.Add(other.objectIdList_);
       if (other.RuleType != 0) {
         RuleType = other.RuleType;
       }
+      objectIdList_.Add(other.objectIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            objectIdList_.AddEntriesFrom(input, _repeated_objectIdList_codec);
+          case 16: {
+            RuleType = input.ReadUInt32();
             break;
           }
-          case 80: {
-            RuleType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            objectIdList_.AddEntriesFrom(input, _repeated_objectIdList_codec);
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            objectIdList_.AddEntriesFrom(ref input, _repeated_objectIdList_codec);
+          case 16: {
+            RuleType = input.ReadUInt32();
             break;
           }
-          case 80: {
-            RuleType = input.ReadUInt32();
+          case 122:
+          case 120: {
+            objectIdList_.AddEntriesFrom(ref input, _repeated_objectIdList_codec);
             break;
           }
         }

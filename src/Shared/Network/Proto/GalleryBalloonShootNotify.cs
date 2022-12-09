@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GalleryBalloonShootNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9HYWxsZXJ5QmFsbG9vblNob290Tm90aWZ5LnByb3RvIpsBChlHYWxsZXJ5",
-            "QmFsbG9vblNob290Tm90aWZ5EhkKEXRyaWdnZXJfZW50aXR5X2lkGAwgASgN",
-            "EhIKCmdhbGxlcnlfaWQYBSABKA0SDQoFY29tYm8YDiABKA0SGgoSY29tYm9f",
-            "ZGlzYWJsZV90aW1lGAYgASgEEhEKCWFkZF9zY29yZRgLIAEoBRIRCgljdXJf",
-            "c2NvcmUYDSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Ch9HYWxsZXJ5QmFsbG9vblNob290Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIpsBChlHYWxsZXJ5QmFsbG9vblNob290",
+            "Tm90aWZ5EhkKEXRyaWdnZXJfZW50aXR5X2lkGAMgASgNEg0KBWNvbWJvGA8g",
+            "ASgNEhoKEmNvbWJvX2Rpc2FibGVfdGltZRgJIAEoBBIRCgljdXJfc2NvcmUY",
+            "ASABKA0SEQoJYWRkX3Njb3JlGAIgASgFEhIKCmdhbGxlcnlfaWQYCyABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBalloonShootNotify), global::Weedwacker.Shared.Network.Proto.GalleryBalloonShootNotify.Parser, new[]{ "TriggerEntityId", "GalleryId", "Combo", "ComboDisableTime", "AddScore", "CurScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBalloonShootNotify), global::Weedwacker.Shared.Network.Proto.GalleryBalloonShootNotify.Parser, new[]{ "TriggerEntityId", "Combo", "ComboDisableTime", "CurScore", "AddScore", "GalleryId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5598
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5530;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GalleryBalloonShootNotify : pb::IMessage<GalleryBalloonShootNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,11 +84,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GalleryBalloonShootNotify(GalleryBalloonShootNotify other) : this() {
       triggerEntityId_ = other.triggerEntityId_;
-      galleryId_ = other.galleryId_;
       combo_ = other.combo_;
       comboDisableTime_ = other.comboDisableTime_;
-      addScore_ = other.addScore_;
       curScore_ = other.curScore_;
+      addScore_ = other.addScore_;
+      galleryId_ = other.galleryId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trigger_entity_id" field.</summary>
-    public const int TriggerEntityIdFieldNumber = 12;
+    public const int TriggerEntityIdFieldNumber = 3;
     private uint triggerEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,20 +110,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 5;
-    private uint galleryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
-      set {
-        galleryId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "combo" field.</summary>
-    public const int ComboFieldNumber = 14;
+    public const int ComboFieldNumber = 15;
     private uint combo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "combo_disable_time" field.</summary>
-    public const int ComboDisableTimeFieldNumber = 6;
+    public const int ComboDisableTimeFieldNumber = 9;
     private ulong comboDisableTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +134,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 1;
+    private uint curScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurScore {
+      get { return curScore_; }
+      set {
+        curScore_ = value;
+      }
+    }
+
     /// <summary>Field number for the "add_score" field.</summary>
-    public const int AddScoreFieldNumber = 11;
+    public const int AddScoreFieldNumber = 2;
     private int addScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,15 +158,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 13;
-    private uint curScore_;
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 11;
+    private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurScore {
-      get { return curScore_; }
+    public uint GalleryId {
+      get { return galleryId_; }
       set {
-        curScore_ = value;
+        galleryId_ = value;
       }
     }
 
@@ -182,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (TriggerEntityId != other.TriggerEntityId) return false;
-      if (GalleryId != other.GalleryId) return false;
       if (Combo != other.Combo) return false;
       if (ComboDisableTime != other.ComboDisableTime) return false;
-      if (AddScore != other.AddScore) return false;
       if (CurScore != other.CurScore) return false;
+      if (AddScore != other.AddScore) return false;
+      if (GalleryId != other.GalleryId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -195,11 +199,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (TriggerEntityId != 0) hash ^= TriggerEntityId.GetHashCode();
-      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       if (Combo != 0) hash ^= Combo.GetHashCode();
       if (ComboDisableTime != 0UL) hash ^= ComboDisableTime.GetHashCode();
-      if (AddScore != 0) hash ^= AddScore.GetHashCode();
       if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      if (AddScore != 0) hash ^= AddScore.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -218,28 +222,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GalleryId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GalleryId);
-      }
-      if (ComboDisableTime != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(ComboDisableTime);
+      if (CurScore != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurScore);
       }
       if (AddScore != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteInt32(AddScore);
       }
       if (TriggerEntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(TriggerEntityId);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CurScore);
+      if (ComboDisableTime != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(ComboDisableTime);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GalleryId);
       }
       if (Combo != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(Combo);
       }
       if (_unknownFields != null) {
@@ -252,28 +256,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GalleryId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GalleryId);
-      }
-      if (ComboDisableTime != 0UL) {
-        output.WriteRawTag(48);
-        output.WriteUInt64(ComboDisableTime);
+      if (CurScore != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurScore);
       }
       if (AddScore != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteInt32(AddScore);
       }
       if (TriggerEntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(TriggerEntityId);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CurScore);
+      if (ComboDisableTime != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(ComboDisableTime);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GalleryId);
       }
       if (Combo != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(Combo);
       }
       if (_unknownFields != null) {
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (TriggerEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TriggerEntityId);
       }
-      if (GalleryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-      }
       if (Combo != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
       }
       if (ComboDisableTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ComboDisableTime);
       }
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
       if (AddScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AddScore);
       }
-      if (CurScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -319,20 +323,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.TriggerEntityId != 0) {
         TriggerEntityId = other.TriggerEntityId;
       }
-      if (other.GalleryId != 0) {
-        GalleryId = other.GalleryId;
-      }
       if (other.Combo != 0) {
         Combo = other.Combo;
       }
       if (other.ComboDisableTime != 0UL) {
         ComboDisableTime = other.ComboDisableTime;
       }
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
       if (other.AddScore != 0) {
         AddScore = other.AddScore;
       }
-      if (other.CurScore != 0) {
-        CurScore = other.CurScore;
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -349,27 +353,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            GalleryId = input.ReadUInt32();
+          case 8: {
+            CurScore = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 16: {
+            AddScore = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TriggerEntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ComboDisableTime = input.ReadUInt64();
             break;
           }
           case 88: {
-            AddScore = input.ReadInt32();
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TriggerEntityId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CurScore = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 120: {
             Combo = input.ReadUInt32();
             break;
           }
@@ -388,27 +392,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            GalleryId = input.ReadUInt32();
+          case 8: {
+            CurScore = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 16: {
+            AddScore = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            TriggerEntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ComboDisableTime = input.ReadUInt64();
             break;
           }
           case 88: {
-            AddScore = input.ReadInt32();
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TriggerEntityId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CurScore = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 120: {
             Combo = input.ReadUInt32();
             break;
           }

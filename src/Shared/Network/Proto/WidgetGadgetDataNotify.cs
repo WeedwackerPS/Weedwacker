@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetGadgetDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXaWRnZXRHYWRnZXREYXRhTm90aWZ5LnByb3RvGhZXaWRnZXRHYWRnZXRE",
-            "YXRhLnByb3RvIkcKFldpZGdldEdhZGdldERhdGFOb3RpZnkSLQoSd2lkZ2V0",
-            "X2dhZGdldF9kYXRhGAwgASgLMhEuV2lkZ2V0R2FkZ2V0RGF0YUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxXaWRnZXRHYWRnZXREYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZXaWRnZXRHYWRnZXREYXRhLnByb3RvImcK",
+            "FldpZGdldEdhZGdldERhdGFOb3RpZnkSTQoSd2lkZ2V0X2dhZGdldF9kYXRh",
+            "GAMgASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5XaWRn",
+            "ZXRHYWRnZXREYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetGadgetDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4266
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4276;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetGadgetDataNotify : pb::IMessage<WidgetGadgetDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "widget_gadget_data" field.</summary>
-    public const int WidgetGadgetDataFieldNumber = 12;
+    public const int WidgetGadgetDataFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.WidgetGadgetData widgetGadgetData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (widgetGadgetData_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(26);
         output.WriteMessage(WidgetGadgetData);
       }
       if (_unknownFields != null) {
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (widgetGadgetData_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(26);
         output.WriteMessage(WidgetGadgetData);
       }
       if (_unknownFields != null) {
@@ -205,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 26: {
             if (widgetGadgetData_ == null) {
               WidgetGadgetData = new global::Weedwacker.Shared.Network.Proto.WidgetGadgetData();
             }
@@ -227,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 26: {
             if (widgetGadgetData_ == null) {
               WidgetGadgetData = new global::Weedwacker.Shared.Network.Proto.WidgetGadgetData();
             }

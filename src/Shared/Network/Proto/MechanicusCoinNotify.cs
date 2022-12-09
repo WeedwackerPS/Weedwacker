@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static MechanicusCoinNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpNZWNoYW5pY3VzQ29pbk5vdGlmeS5wcm90byI7ChRNZWNoYW5pY3VzQ29p",
-            "bk5vdGlmeRIVCg1tZWNoYW5pY3VzX2lkGAcgASgNEgwKBGNvaW4YBCABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpNZWNoYW5pY3VzQ29pbk5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byI7ChRNZWNoYW5pY3VzQ29pbk5vdGlmeRIMCgRj",
+            "b2luGAggASgNEhUKDW1lY2hhbmljdXNfaWQYBSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusCoinNotify), global::Weedwacker.Shared.Network.Proto.MechanicusCoinNotify.Parser, new[]{ "MechanicusId", "Coin" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MechanicusCoinNotify), global::Weedwacker.Shared.Network.Proto.MechanicusCoinNotify.Parser, new[]{ "Coin", "MechanicusId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3935
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3919;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MechanicusCoinNotify : pb::IMessage<MechanicusCoinNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MechanicusCoinNotify(MechanicusCoinNotify other) : this() {
-      mechanicusId_ = other.mechanicusId_;
       coin_ = other.coin_;
+      mechanicusId_ = other.mechanicusId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +91,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MechanicusCoinNotify(this);
     }
 
-    /// <summary>Field number for the "mechanicus_id" field.</summary>
-    public const int MechanicusIdFieldNumber = 7;
-    private uint mechanicusId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MechanicusId {
-      get { return mechanicusId_; }
-      set {
-        mechanicusId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "coin" field.</summary>
-    public const int CoinFieldNumber = 4;
+    public const int CoinFieldNumber = 8;
     private uint coin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,6 +100,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return coin_; }
       set {
         coin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mechanicus_id" field.</summary>
+    public const int MechanicusIdFieldNumber = 5;
+    private uint mechanicusId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MechanicusId {
+      get { return mechanicusId_; }
+      set {
+        mechanicusId_ = value;
       }
     }
 
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MechanicusId != other.MechanicusId) return false;
       if (Coin != other.Coin) return false;
+      if (MechanicusId != other.MechanicusId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MechanicusId != 0) hash ^= MechanicusId.GetHashCode();
       if (Coin != 0) hash ^= Coin.GetHashCode();
+      if (MechanicusId != 0) hash ^= MechanicusId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Coin != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Coin);
-      }
       if (MechanicusId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(MechanicusId);
+      }
+      if (Coin != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Coin != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Coin);
-      }
       if (MechanicusId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(MechanicusId);
+      }
+      if (Coin != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Coin);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -191,11 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MechanicusId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusId);
-      }
       if (Coin != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
+      }
+      if (MechanicusId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -209,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MechanicusId != 0) {
-        MechanicusId = other.MechanicusId;
-      }
       if (other.Coin != 0) {
         Coin = other.Coin;
+      }
+      if (other.MechanicusId != 0) {
+        MechanicusId = other.MechanicusId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Coin = input.ReadUInt32();
+          case 40: {
+            MechanicusId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            MechanicusId = input.ReadUInt32();
+          case 64: {
+            Coin = input.ReadUInt32();
             break;
           }
         }
@@ -253,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Coin = input.ReadUInt32();
+          case 40: {
+            MechanicusId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            MechanicusId = input.ReadUInt32();
+          case 64: {
+            Coin = input.ReadUInt32();
             break;
           }
         }

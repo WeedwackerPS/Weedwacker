@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static TeamEntityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRUZWFtRW50aXR5SW5mby5wcm90bxoaQWJpbGl0eVN5bmNTdGF0ZUluZm8u",
-            "cHJvdG8idQoOVGVhbUVudGl0eUluZm8SGQoRYXV0aG9yaXR5X3BlZXJfaWQY",
-            "CiABKA0SMAoRdGVhbV9hYmlsaXR5X2luZm8YCSABKAsyFS5BYmlsaXR5U3lu",
-            "Y1N0YXRlSW5mbxIWCg50ZWFtX2VudGl0eV9pZBgIIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRUZWFtRW50aXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoaQWJpbGl0eVN5bmNTdGF0ZUluZm8ucHJvdG8ilQEKDlRl",
+            "YW1FbnRpdHlJbmZvEhYKDnRlYW1fZW50aXR5X2lkGAMgASgNEhkKEWF1dGhv",
+            "cml0eV9wZWVyX2lkGAwgASgNElAKEXRlYW1fYWJpbGl0eV9pbmZvGAUgASgL",
+            "MjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BYmlsaXR5U3lu",
+            "Y1N0YXRlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TeamEntityInfo), global::Weedwacker.Shared.Network.Proto.TeamEntityInfo.Parser, new[]{ "AuthorityPeerId", "TeamAbilityInfo", "TeamEntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TeamEntityInfo), global::Weedwacker.Shared.Network.Proto.TeamEntityInfo.Parser, new[]{ "TeamEntityId", "AuthorityPeerId", "TeamAbilityInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TeamEntityInfo(TeamEntityInfo other) : this() {
+      teamEntityId_ = other.teamEntityId_;
       authorityPeerId_ = other.authorityPeerId_;
       teamAbilityInfo_ = other.teamAbilityInfo_ != null ? other.teamAbilityInfo_.Clone() : null;
-      teamEntityId_ = other.teamEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,8 +86,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TeamEntityInfo(this);
     }
 
+    /// <summary>Field number for the "team_entity_id" field.</summary>
+    public const int TeamEntityIdFieldNumber = 3;
+    private uint teamEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TeamEntityId {
+      get { return teamEntityId_; }
+      set {
+        teamEntityId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "authority_peer_id" field.</summary>
-    public const int AuthorityPeerIdFieldNumber = 10;
+    public const int AuthorityPeerIdFieldNumber = 12;
     private uint authorityPeerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_ability_info" field.</summary>
-    public const int TeamAbilityInfoFieldNumber = 9;
+    public const int TeamAbilityInfoFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo teamAbilityInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,18 +119,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return teamAbilityInfo_; }
       set {
         teamAbilityInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "team_entity_id" field.</summary>
-    public const int TeamEntityIdFieldNumber = 8;
-    private uint teamEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TeamEntityId {
-      get { return teamEntityId_; }
-      set {
-        teamEntityId_ = value;
       }
     }
 
@@ -136,9 +137,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (TeamEntityId != other.TeamEntityId) return false;
       if (AuthorityPeerId != other.AuthorityPeerId) return false;
       if (!object.Equals(TeamAbilityInfo, other.TeamAbilityInfo)) return false;
-      if (TeamEntityId != other.TeamEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (TeamEntityId != 0) hash ^= TeamEntityId.GetHashCode();
       if (AuthorityPeerId != 0) hash ^= AuthorityPeerId.GetHashCode();
       if (teamAbilityInfo_ != null) hash ^= TeamAbilityInfo.GetHashCode();
-      if (TeamEntityId != 0) hash ^= TeamEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -168,15 +169,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TeamEntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(TeamEntityId);
       }
       if (teamAbilityInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteMessage(TeamAbilityInfo);
       }
       if (AuthorityPeerId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(AuthorityPeerId);
       }
       if (_unknownFields != null) {
@@ -190,15 +191,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TeamEntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(TeamEntityId);
       }
       if (teamAbilityInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteMessage(TeamAbilityInfo);
       }
       if (AuthorityPeerId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteUInt32(AuthorityPeerId);
       }
       if (_unknownFields != null) {
@@ -211,14 +212,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (TeamEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TeamEntityId);
+      }
       if (AuthorityPeerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AuthorityPeerId);
       }
       if (teamAbilityInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TeamAbilityInfo);
-      }
-      if (TeamEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TeamEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -232,6 +233,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TeamEntityId != 0) {
+        TeamEntityId = other.TeamEntityId;
+      }
       if (other.AuthorityPeerId != 0) {
         AuthorityPeerId = other.AuthorityPeerId;
       }
@@ -240,9 +244,6 @@ namespace Weedwacker.Shared.Network.Proto {
           TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
         }
         TeamAbilityInfo.MergeFrom(other.TeamAbilityInfo);
-      }
-      if (other.TeamEntityId != 0) {
-        TeamEntityId = other.TeamEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -259,18 +260,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 24: {
             TeamEntityId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 42: {
             if (teamAbilityInfo_ == null) {
               TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(TeamAbilityInfo);
             break;
           }
-          case 80: {
+          case 96: {
             AuthorityPeerId = input.ReadUInt32();
             break;
           }
@@ -289,18 +290,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 24: {
             TeamEntityId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 42: {
             if (teamAbilityInfo_ == null) {
               TeamAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(TeamAbilityInfo);
             break;
           }
-          case 80: {
+          case 96: {
             AuthorityPeerId = input.ReadUInt32();
             break;
           }

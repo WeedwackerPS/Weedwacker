@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetChatEmojiCollectionRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9HZXRDaGF0RW1vamlDb2xsZWN0aW9uUnNwLnByb3RvGh1DaGF0RW1vamlD",
-            "b2xsZWN0aW9uRGF0YS5wcm90byJqChlHZXRDaGF0RW1vamlDb2xsZWN0aW9u",
-            "UnNwEg8KB3JldGNvZGUYDyABKAUSPAoaY2hhdF9lbW9qaV9jb2xsZWN0aW9u",
-            "X2RhdGEYCCABKAsyGC5DaGF0RW1vamlDb2xsZWN0aW9uRGF0YUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9HZXRDaGF0RW1vamlDb2xsZWN0aW9uUnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGh1DaGF0RW1vamlDb2xsZWN0aW9uRGF0",
+            "YS5wcm90byKKAQoZR2V0Q2hhdEVtb2ppQ29sbGVjdGlvblJzcBJcChpjaGF0",
+            "X2Vtb2ppX2NvbGxlY3Rpb25fZGF0YRgPIAEoCzI4LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uQ2hhdEVtb2ppQ29sbGVjdGlvbkRhdGESDwoH",
+            "cmV0Y29kZRgFIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChatEmojiCollectionDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetChatEmojiCollectionRsp), global::Weedwacker.Shared.Network.Proto.GetChatEmojiCollectionRsp.Parser, new[]{ "Retcode", "ChatEmojiCollectionData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetChatEmojiCollectionRsp), global::Weedwacker.Shared.Network.Proto.GetChatEmojiCollectionRsp.Parser, new[]{ "ChatEmojiCollectionData", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4033
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4066;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetChatEmojiCollectionRsp : pb::IMessage<GetChatEmojiCollectionRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetChatEmojiCollectionRsp(GetChatEmojiCollectionRsp other) : this() {
-      retcode_ = other.retcode_;
       chatEmojiCollectionData_ = other.chatEmojiCollectionData_ != null ? other.chatEmojiCollectionData_.Clone() : null;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetChatEmojiCollectionRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "chat_emoji_collection_data" field.</summary>
-    public const int ChatEmojiCollectionDataFieldNumber = 8;
+    public const int ChatEmojiCollectionDataFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.ChatEmojiCollectionData chatEmojiCollectionData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return chatEmojiCollectionData_; }
       set {
         chatEmojiCollectionData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 5;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (!object.Equals(ChatEmojiCollectionData, other.ChatEmojiCollectionData)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (chatEmojiCollectionData_ != null) hash ^= ChatEmojiCollectionData.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (chatEmojiCollectionData_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(ChatEmojiCollectionData);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
+      }
+      if (chatEmojiCollectionData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(ChatEmojiCollectionData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (chatEmojiCollectionData_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(ChatEmojiCollectionData);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
+      }
+      if (chatEmojiCollectionData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(ChatEmojiCollectionData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (chatEmojiCollectionData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChatEmojiCollectionData);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.chatEmojiCollectionData_ != null) {
         if (chatEmojiCollectionData_ == null) {
           ChatEmojiCollectionData = new global::Weedwacker.Shared.Network.Proto.ChatEmojiCollectionData();
         }
         ChatEmojiCollectionData.MergeFrom(other.ChatEmojiCollectionData);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 122: {
             if (chatEmojiCollectionData_ == null) {
               ChatEmojiCollectionData = new global::Weedwacker.Shared.Network.Proto.ChatEmojiCollectionData();
             }
             input.ReadMessage(ChatEmojiCollectionData);
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 122: {
             if (chatEmojiCollectionData_ == null) {
               ChatEmojiCollectionData = new global::Weedwacker.Shared.Network.Proto.ChatEmojiCollectionData();
             }
             input.ReadMessage(ChatEmojiCollectionData);
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketStoreInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxWaW50YWdlTWFya2V0U3RvcmVJbmZvLnByb3RvIogBChZWaW50YWdlTWFy",
-            "a2V0U3RvcmVJbmZvEhUKDWN1cl9hdHRyX2xpc3QYBSADKA0SGgoSbmV4dF9h",
-            "aW1fYXR0cl9saXN0GA4gAygNEhUKDXN0cmF0ZWd5X2xpc3QYAiADKA0SEgoK",
-            "c2xvdF9jb3VudBgDIAEoDRIQCghzdG9yZV9pZBgKIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxWaW50YWdlTWFya2V0U3RvcmVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIo8BChZWaW50YWdlTWFya2V0U3RvcmVJbmZv",
+            "EhAKCHN0b3JlX2lkGA0gASgNEhsKE1VuazMzMDBfSE5CR0hDQ0VOSUEYASAD",
+            "KA0SFQoNc3RyYXRlZ3lfbGlzdBgKIAMoDRIbChNVbmszMzAwX09ETExBTktP",
+            "RU5EGAcgAygNEhIKCnNsb3RfY291bnQYBSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo.Parser, new[]{ "CurAttrList", "NextAimAttrList", "StrategyList", "SlotCount", "StoreId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreInfo.Parser, new[]{ "StoreId", "Unk3300HNBGHCCENIA", "StrategyList", "Unk3300ODLLANKOEND", "SlotCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketStoreInfo(VintageMarketStoreInfo other) : this() {
-      curAttrList_ = other.curAttrList_.Clone();
-      nextAimAttrList_ = other.nextAimAttrList_.Clone();
-      strategyList_ = other.strategyList_.Clone();
-      slotCount_ = other.slotCount_;
       storeId_ = other.storeId_;
+      unk3300HNBGHCCENIA_ = other.unk3300HNBGHCCENIA_.Clone();
+      strategyList_ = other.strategyList_.Clone();
+      unk3300ODLLANKOEND_ = other.unk3300ODLLANKOEND_.Clone();
+      slotCount_ = other.slotCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,53 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageMarketStoreInfo(this);
     }
 
-    /// <summary>Field number for the "cur_attr_list" field.</summary>
-    public const int CurAttrListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_curAttrList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> curAttrList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CurAttrList {
-      get { return curAttrList_; }
-    }
-
-    /// <summary>Field number for the "next_aim_attr_list" field.</summary>
-    public const int NextAimAttrListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_nextAimAttrList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> nextAimAttrList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> NextAimAttrList {
-      get { return nextAimAttrList_; }
-    }
-
-    /// <summary>Field number for the "strategy_list" field.</summary>
-    public const int StrategyListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_strategyList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> strategyList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> StrategyList {
-      get { return strategyList_; }
-    }
-
-    /// <summary>Field number for the "slot_count" field.</summary>
-    public const int SlotCountFieldNumber = 3;
-    private uint slotCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SlotCount {
-      get { return slotCount_; }
-      set {
-        slotCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "store_id" field.</summary>
-    public const int StoreIdFieldNumber = 10;
+    public const int StoreIdFieldNumber = 13;
     private uint storeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,6 +96,51 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return storeId_; }
       set {
         storeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HNBGHCCENIA" field.</summary>
+    public const int Unk3300HNBGHCCENIAFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HNBGHCCENIA_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> unk3300HNBGHCCENIA_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300HNBGHCCENIA {
+      get { return unk3300HNBGHCCENIA_; }
+    }
+
+    /// <summary>Field number for the "strategy_list" field.</summary>
+    public const int StrategyListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_strategyList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> strategyList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> StrategyList {
+      get { return strategyList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_ODLLANKOEND" field.</summary>
+    public const int Unk3300ODLLANKOENDFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300ODLLANKOEND_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> unk3300ODLLANKOEND_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300ODLLANKOEND {
+      get { return unk3300ODLLANKOEND_; }
+    }
+
+    /// <summary>Field number for the "slot_count" field.</summary>
+    public const int SlotCountFieldNumber = 5;
+    private uint slotCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SlotCount {
+      get { return slotCount_; }
+      set {
+        slotCount_ = value;
       }
     }
 
@@ -159,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!curAttrList_.Equals(other.curAttrList_)) return false;
-      if(!nextAimAttrList_.Equals(other.nextAimAttrList_)) return false;
-      if(!strategyList_.Equals(other.strategyList_)) return false;
-      if (SlotCount != other.SlotCount) return false;
       if (StoreId != other.StoreId) return false;
+      if(!unk3300HNBGHCCENIA_.Equals(other.unk3300HNBGHCCENIA_)) return false;
+      if(!strategyList_.Equals(other.strategyList_)) return false;
+      if(!unk3300ODLLANKOEND_.Equals(other.unk3300ODLLANKOEND_)) return false;
+      if (SlotCount != other.SlotCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -171,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= curAttrList_.GetHashCode();
-      hash ^= nextAimAttrList_.GetHashCode();
-      hash ^= strategyList_.GetHashCode();
-      if (SlotCount != 0) hash ^= SlotCount.GetHashCode();
       if (StoreId != 0) hash ^= StoreId.GetHashCode();
+      hash ^= unk3300HNBGHCCENIA_.GetHashCode();
+      hash ^= strategyList_.GetHashCode();
+      hash ^= unk3300ODLLANKOEND_.GetHashCode();
+      if (SlotCount != 0) hash ^= SlotCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -194,17 +194,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      strategyList_.WriteTo(output, _repeated_strategyList_codec);
+      unk3300HNBGHCCENIA_.WriteTo(output, _repeated_unk3300HNBGHCCENIA_codec);
       if (SlotCount != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(SlotCount);
       }
-      curAttrList_.WriteTo(output, _repeated_curAttrList_codec);
+      unk3300ODLLANKOEND_.WriteTo(output, _repeated_unk3300ODLLANKOEND_codec);
+      strategyList_.WriteTo(output, _repeated_strategyList_codec);
       if (StoreId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(StoreId);
       }
-      nextAimAttrList_.WriteTo(output, _repeated_nextAimAttrList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -215,17 +215,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      strategyList_.WriteTo(ref output, _repeated_strategyList_codec);
+      unk3300HNBGHCCENIA_.WriteTo(ref output, _repeated_unk3300HNBGHCCENIA_codec);
       if (SlotCount != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(SlotCount);
       }
-      curAttrList_.WriteTo(ref output, _repeated_curAttrList_codec);
+      unk3300ODLLANKOEND_.WriteTo(ref output, _repeated_unk3300ODLLANKOEND_codec);
+      strategyList_.WriteTo(ref output, _repeated_strategyList_codec);
       if (StoreId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(StoreId);
       }
-      nextAimAttrList_.WriteTo(ref output, _repeated_nextAimAttrList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -236,14 +236,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += curAttrList_.CalculateSize(_repeated_curAttrList_codec);
-      size += nextAimAttrList_.CalculateSize(_repeated_nextAimAttrList_codec);
-      size += strategyList_.CalculateSize(_repeated_strategyList_codec);
-      if (SlotCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotCount);
-      }
       if (StoreId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreId);
+      }
+      size += unk3300HNBGHCCENIA_.CalculateSize(_repeated_unk3300HNBGHCCENIA_codec);
+      size += strategyList_.CalculateSize(_repeated_strategyList_codec);
+      size += unk3300ODLLANKOEND_.CalculateSize(_repeated_unk3300ODLLANKOEND_codec);
+      if (SlotCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,14 +257,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      curAttrList_.Add(other.curAttrList_);
-      nextAimAttrList_.Add(other.nextAimAttrList_);
-      strategyList_.Add(other.strategyList_);
-      if (other.SlotCount != 0) {
-        SlotCount = other.SlotCount;
-      }
       if (other.StoreId != 0) {
         StoreId = other.StoreId;
+      }
+      unk3300HNBGHCCENIA_.Add(other.unk3300HNBGHCCENIA_);
+      strategyList_.Add(other.strategyList_);
+      unk3300ODLLANKOEND_.Add(other.unk3300ODLLANKOEND_);
+      if (other.SlotCount != 0) {
+        SlotCount = other.SlotCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -281,27 +281,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            strategyList_.AddEntriesFrom(input, _repeated_strategyList_codec);
+          case 10:
+          case 8: {
+            unk3300HNBGHCCENIA_.AddEntriesFrom(input, _repeated_unk3300HNBGHCCENIA_codec);
             break;
           }
-          case 24: {
+          case 40: {
             SlotCount = input.ReadUInt32();
             break;
           }
-          case 42:
-          case 40: {
-            curAttrList_.AddEntriesFrom(input, _repeated_curAttrList_codec);
+          case 58:
+          case 56: {
+            unk3300ODLLANKOEND_.AddEntriesFrom(input, _repeated_unk3300ODLLANKOEND_codec);
             break;
           }
+          case 82:
           case 80: {
-            StoreId = input.ReadUInt32();
+            strategyList_.AddEntriesFrom(input, _repeated_strategyList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            nextAimAttrList_.AddEntriesFrom(input, _repeated_nextAimAttrList_codec);
+          case 104: {
+            StoreId = input.ReadUInt32();
             break;
           }
         }
@@ -319,27 +319,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            strategyList_.AddEntriesFrom(ref input, _repeated_strategyList_codec);
+          case 10:
+          case 8: {
+            unk3300HNBGHCCENIA_.AddEntriesFrom(ref input, _repeated_unk3300HNBGHCCENIA_codec);
             break;
           }
-          case 24: {
+          case 40: {
             SlotCount = input.ReadUInt32();
             break;
           }
-          case 42:
-          case 40: {
-            curAttrList_.AddEntriesFrom(ref input, _repeated_curAttrList_codec);
+          case 58:
+          case 56: {
+            unk3300ODLLANKOEND_.AddEntriesFrom(ref input, _repeated_unk3300ODLLANKOEND_codec);
             break;
           }
+          case 82:
           case 80: {
-            StoreId = input.ReadUInt32();
+            strategyList_.AddEntriesFrom(ref input, _repeated_strategyList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            nextAimAttrList_.AddEntriesFrom(ref input, _repeated_nextAimAttrList_codec);
+          case 104: {
+            StoreId = input.ReadUInt32();
             break;
           }
         }

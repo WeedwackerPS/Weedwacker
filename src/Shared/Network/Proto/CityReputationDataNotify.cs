@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static CityReputationDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5DaXR5UmVwdXRhdGlvbkRhdGFOb3RpZnkucHJvdG8aHkNpdHlSZXB1dGF0",
-            "aW9uU2ltcGxlSW5mby5wcm90byJPChhDaXR5UmVwdXRhdGlvbkRhdGFOb3Rp",
-            "ZnkSMwoQc2ltcGxlX2luZm9fbGlzdBgHIAMoCzIZLkNpdHlSZXB1dGF0aW9u",
-            "U2ltcGxlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "Ch5DaXR5UmVwdXRhdGlvbkRhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aHkNpdHlSZXB1dGF0aW9uU2ltcGxlSW5m",
+            "by5wcm90byJvChhDaXR5UmVwdXRhdGlvbkRhdGFOb3RpZnkSUwoQc2ltcGxl",
+            "X2luZm9fbGlzdBgNIAMoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQ2l0eVJlcHV0YXRpb25TaW1wbGVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2805
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2842;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CityReputationDataNotify : pb::IMessage<CityReputationDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "simple_info_list" field.</summary>
-    public const int SimpleInfoListFieldNumber = 7;
+    public const int SimpleInfoListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfo> _repeated_simpleInfoList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfo.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfo> simpleInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityReputationSimpleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 106: {
             simpleInfoList_.AddEntriesFrom(input, _repeated_simpleInfoList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 106: {
             simpleInfoList_.AddEntriesFrom(ref input, _repeated_simpleInfoList_codec);
             break;
           }

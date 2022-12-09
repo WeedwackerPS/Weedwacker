@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetSlotChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXaWRnZXRTbG90Q2hhbmdlTm90aWZ5LnByb3RvGhRXaWRnZXRTbG90RGF0",
-            "YS5wcm90bxoSV2lkZ2V0U2xvdE9wLnByb3RvIlIKFldpZGdldFNsb3RDaGFu",
-            "Z2VOb3RpZnkSGQoCb3AYCyABKA4yDS5XaWRnZXRTbG90T3ASHQoEc2xvdBgI",
-            "IAEoCzIPLldpZGdldFNsb3REYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxXaWRnZXRTbG90Q2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhRXaWRnZXRTbG90RGF0YS5wcm90bxoSV2lk",
+            "Z2V0U2xvdE9wLnByb3RvIpIBChZXaWRnZXRTbG90Q2hhbmdlTm90aWZ5EjkK",
+            "Am9wGAUgASgOMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5X",
+            "aWRnZXRTbG90T3ASPQoEc2xvdBgCIAEoCzIvLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uV2lkZ2V0U2xvdERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetSlotDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetSlotOpReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4267
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4278;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetSlotChangeNotify : pb::IMessage<WidgetSlotChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op" field.</summary>
-    public const int OpFieldNumber = 11;
+    public const int OpFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.WidgetSlotOp op_ = global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "slot" field.</summary>
-    public const int SlotFieldNumber = 8;
+    public const int SlotFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.WidgetSlotData slot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (slot_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(18);
         output.WriteMessage(Slot);
       }
       if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Op);
       }
       if (_unknownFields != null) {
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (slot_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(18);
         output.WriteMessage(Slot);
       }
       if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Op);
       }
       if (_unknownFields != null) {
@@ -235,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 18: {
             if (slot_ == null) {
               Slot = new global::Weedwacker.Shared.Network.Proto.WidgetSlotData();
             }
             input.ReadMessage(Slot);
             break;
           }
-          case 88: {
+          case 40: {
             Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
             break;
           }
@@ -261,14 +266,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 18: {
             if (slot_ == null) {
               Slot = new global::Weedwacker.Shared.Network.Proto.WidgetSlotData();
             }
             input.ReadMessage(Slot);
             break;
           }
-          case 88: {
+          case 40: {
             Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
             break;
           }

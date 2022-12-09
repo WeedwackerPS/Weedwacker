@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HachiActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1IYWNoaUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoUSGFjaGlTdGFnZURh",
-            "dGEucHJvdG8ilgEKF0hhY2hpQWN0aXZpdHlEZXRhaWxJbmZvEjkKCXN0YWdl",
-            "X21hcBgGIAMoCzImLkhhY2hpQWN0aXZpdHlEZXRhaWxJbmZvLlN0YWdlTWFw",
-            "RW50cnkaQAoNU3RhZ2VNYXBFbnRyeRILCgNrZXkYASABKA0SHgoFdmFsdWUY",
-            "AiABKAsyDy5IYWNoaVN0YWdlRGF0YToCOAFCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1IYWNoaUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoUSGFjaGlTdGFnZUluZm8ucHJvdG8i1gEK",
+            "F0hhY2hpQWN0aXZpdHlEZXRhaWxJbmZvElkKCXN0YWdlX21hcBgGIAMoCzJG",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSGFjaGlBY3Rpdml0",
+            "eURldGFpbEluZm8uU3RhZ2VNYXBFbnRyeRpgCg1TdGFnZU1hcEVudHJ5EgsK",
+            "A2tleRgBIAEoDRI+CgV2YWx1ZRgCIAEoCzIvLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uSGFjaGlTdGFnZUluZm86AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HachiStageDataReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HachiStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo.Parser, new[]{ "StageMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
@@ -86,12 +87,12 @@ namespace Weedwacker.Shared.Network.Proto {
 
     /// <summary>Field number for the "stage_map" field.</summary>
     public const int StageMapFieldNumber = 6;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageData>.Codec _map_stageMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HachiStageData.Parser), 50);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageData> stageMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageData>();
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageInfo>.Codec _map_stageMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HachiStageInfo.Parser), 50);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageInfo> stageMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageData> StageMap {
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.HachiStageInfo> StageMap {
       get { return stageMap_; }
     }
 

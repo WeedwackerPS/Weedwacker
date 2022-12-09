@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayGuestReplyInviteReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJTY2VuZVBsYXlHdWVzdFJlcGx5SW52aXRlUmVxLnByb3RvIkEKHFNjZW5l",
-            "UGxheUd1ZXN0UmVwbHlJbnZpdGVSZXESEAoIaXNfYWdyZWUYDyABKAgSDwoH",
-            "cGxheV9pZBgGIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiJTY2VuZVBsYXlHdWVzdFJlcGx5SW52aXRlUmVxLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkEKHFNjZW5lUGxheUd1ZXN0UmVw",
+            "bHlJbnZpdGVSZXESEAoIaXNfYWdyZWUYByABKAgSDwoHcGxheV9pZBgEIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4353
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4411;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayGuestReplyInviteReq : pb::IMessage<ScenePlayGuestReplyInviteReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_agree" field.</summary>
-    public const int IsAgreeFieldNumber = 15;
+    public const int IsAgreeFieldNumber = 7;
     private bool isAgree_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "play_id" field.</summary>
-    public const int PlayIdFieldNumber = 6;
+    public const int PlayIdFieldNumber = 4;
     private uint playId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (PlayId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(PlayId);
       }
       if (IsAgree != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteBool(IsAgree);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PlayId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(PlayId);
       }
       if (IsAgree != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteBool(IsAgree);
       }
       if (_unknownFields != null) {
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 32: {
             PlayId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 56: {
             IsAgree = input.ReadBool();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 32: {
             PlayId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 56: {
             IsAgree = input.ReadBool();
             break;
           }

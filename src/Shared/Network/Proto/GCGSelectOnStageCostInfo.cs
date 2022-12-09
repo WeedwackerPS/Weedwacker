@@ -24,16 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSelectOnStageCostInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HQ0dTZWxlY3RPblN0YWdlQ29zdEluZm8ucHJvdG8ilwEKGEdDR1NlbGVj",
-            "dE9uU3RhZ2VDb3N0SW5mbxI4Cghjb3N0X21hcBgIIAMoCzImLkdDR1NlbGVj",
-            "dE9uU3RhZ2VDb3N0SW5mby5Db3N0TWFwRW50cnkSEQoJY2FyZF9ndWlkGAkg",
-            "ASgNGi4KDENvc3RNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiAB",
-            "KA06AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch5HQ0dTZWxlY3RPblN0YWdlQ29zdEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aEFVpbnQzMlBhaXIucHJvdG8ibAoYR0NH",
+            "U2VsZWN0T25TdGFnZUNvc3RJbmZvEhEKCWNhcmRfZ3VpZBgDIAEoDRI9Cghj",
+            "b3N0X21hcBgBIAMoCzIrLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uVWludDMyUGFpcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo), global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo.Parser, new[]{ "CostMap", "CardGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo), global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo.Parser, new[]{ "CardGuid", "CostMap" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGSelectOnStageCostInfo(GCGSelectOnStageCostInfo other) : this() {
-      costMap_ = other.costMap_.Clone();
       cardGuid_ = other.cardGuid_;
+      costMap_ = other.costMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,19 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGSelectOnStageCostInfo(this);
     }
 
-    /// <summary>Field number for the "cost_map" field.</summary>
-    public const int CostMapFieldNumber = 8;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_costMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
-    private readonly pbc::MapField<uint, uint> costMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> CostMap {
-      get { return costMap_; }
-    }
-
     /// <summary>Field number for the "card_guid" field.</summary>
-    public const int CardGuidFieldNumber = 9;
+    public const int CardGuidFieldNumber = 3;
     private uint cardGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,6 +94,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         cardGuid_ = value;
       }
+    }
+
+    /// <summary>Field number for the "cost_map" field.</summary>
+    public const int CostMapFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_costMap_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> costMap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> CostMap {
+      get { return costMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!CostMap.Equals(other.CostMap)) return false;
       if (CardGuid != other.CardGuid) return false;
+      if(!costMap_.Equals(other.costMap_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= CostMap.GetHashCode();
       if (CardGuid != 0) hash ^= CardGuid.GetHashCode();
+      hash ^= costMap_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      costMap_.WriteTo(output, _map_costMap_codec);
+      costMap_.WriteTo(output, _repeated_costMap_codec);
       if (CardGuid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardGuid);
       }
       if (_unknownFields != null) {
@@ -167,9 +166,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      costMap_.WriteTo(ref output, _map_costMap_codec);
+      costMap_.WriteTo(ref output, _repeated_costMap_codec);
       if (CardGuid != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardGuid);
       }
       if (_unknownFields != null) {
@@ -182,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += costMap_.CalculateSize(_map_costMap_codec);
       if (CardGuid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardGuid);
       }
+      size += costMap_.CalculateSize(_repeated_costMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -198,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      costMap_.Add(other.costMap_);
       if (other.CardGuid != 0) {
         CardGuid = other.CardGuid;
       }
+      costMap_.Add(other.costMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -217,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
-            costMap_.AddEntriesFrom(input, _map_costMap_codec);
+          case 10: {
+            costMap_.AddEntriesFrom(input, _repeated_costMap_codec);
             break;
           }
-          case 72: {
+          case 24: {
             CardGuid = input.ReadUInt32();
             break;
           }
@@ -240,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
-            costMap_.AddEntriesFrom(ref input, _map_costMap_codec);
+          case 10: {
+            costMap_.AddEntriesFrom(ref input, _repeated_costMap_codec);
             break;
           }
-          case 72: {
+          case 24: {
             CardGuid = input.ReadUInt32();
             break;
           }

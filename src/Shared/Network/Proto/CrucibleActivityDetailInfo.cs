@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrucibleActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBDcnVjaWJsZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxobQ3J1Y2libGVC",
-            "YXR0bGVVaWRJbmZvLnByb3RvGgxWZWN0b3IucHJvdG8ikAEKGkNydWNpYmxl",
-            "QWN0aXZpdHlEZXRhaWxJbmZvEhEKCWNvc3RfdGltZRgFIAEoDRIaChJiYXR0",
-            "bGVfd29ybGRfbGV2ZWwYDCABKA0SLQoNdWlkX2luZm9fbGlzdBgDIAMoCzIW",
-            "LkNydWNpYmxlQmF0dGxlVWlkSW5mbxIUCgNwb3MYCSABKAsyBy5WZWN0b3JC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBDcnVjaWJsZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxobQ3J1Y2libGVCYXR0bGVVaWRJbmZv",
+            "LnByb3RvGgxWZWN0b3IucHJvdG8i0AEKGkNydWNpYmxlQWN0aXZpdHlEZXRh",
+            "aWxJbmZvEhoKEmJhdHRsZV93b3JsZF9sZXZlbBgFIAEoDRIRCgljb3N0X3Rp",
+            "bWUYByABKA0SNAoDcG9zGAkgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5WZWN0b3ISTQoNdWlkX2luZm9fbGlzdBgLIAMoCzI2Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ3J1Y2libGVCYXR0bGVV",
+            "aWRJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo.Parser, new[]{ "CostTime", "BattleWorldLevel", "UidInfoList", "Pos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo.Parser, new[]{ "BattleWorldLevel", "CostTime", "Pos", "UidInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +76,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CrucibleActivityDetailInfo(CrucibleActivityDetailInfo other) : this() {
-      costTime_ = other.costTime_;
       battleWorldLevel_ = other.battleWorldLevel_;
-      uidInfoList_ = other.uidInfoList_.Clone();
+      costTime_ = other.costTime_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      uidInfoList_ = other.uidInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CrucibleActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "cost_time" field.</summary>
-    public const int CostTimeFieldNumber = 5;
-    private uint costTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostTime {
-      get { return costTime_; }
-      set {
-        costTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "battle_world_level" field.</summary>
-    public const int BattleWorldLevelFieldNumber = 12;
+    public const int BattleWorldLevelFieldNumber = 5;
     private uint battleWorldLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,15 +101,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "uid_info_list" field.</summary>
-    public const int UidInfoListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> _repeated_uidInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> uidInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo>();
+    /// <summary>Field number for the "cost_time" field.</summary>
+    public const int CostTimeFieldNumber = 7;
+    private uint costTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> UidInfoList {
-      get { return uidInfoList_; }
+    public uint CostTime {
+      get { return costTime_; }
+      set {
+        costTime_ = value;
+      }
     }
 
     /// <summary>Field number for the "pos" field.</summary>
@@ -132,6 +123,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         pos_ = value;
       }
+    }
+
+    /// <summary>Field number for the "uid_info_list" field.</summary>
+    public const int UidInfoListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> _repeated_uidInfoList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> uidInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrucibleBattleUidInfo> UidInfoList {
+      get { return uidInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CostTime != other.CostTime) return false;
       if (BattleWorldLevel != other.BattleWorldLevel) return false;
-      if(!uidInfoList_.Equals(other.uidInfoList_)) return false;
+      if (CostTime != other.CostTime) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if(!uidInfoList_.Equals(other.uidInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CostTime != 0) hash ^= CostTime.GetHashCode();
       if (BattleWorldLevel != 0) hash ^= BattleWorldLevel.GetHashCode();
-      hash ^= uidInfoList_.GetHashCode();
+      if (CostTime != 0) hash ^= CostTime.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      hash ^= uidInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,19 +184,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      uidInfoList_.WriteTo(output, _repeated_uidInfoList_codec);
-      if (CostTime != 0) {
+      if (BattleWorldLevel != 0) {
         output.WriteRawTag(40);
+        output.WriteUInt32(BattleWorldLevel);
+      }
+      if (CostTime != 0) {
+        output.WriteRawTag(56);
         output.WriteUInt32(CostTime);
       }
       if (pos_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(Pos);
       }
-      if (BattleWorldLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BattleWorldLevel);
-      }
+      uidInfoList_.WriteTo(output, _repeated_uidInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -205,19 +207,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      uidInfoList_.WriteTo(ref output, _repeated_uidInfoList_codec);
-      if (CostTime != 0) {
+      if (BattleWorldLevel != 0) {
         output.WriteRawTag(40);
+        output.WriteUInt32(BattleWorldLevel);
+      }
+      if (CostTime != 0) {
+        output.WriteRawTag(56);
         output.WriteUInt32(CostTime);
       }
       if (pos_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(Pos);
       }
-      if (BattleWorldLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BattleWorldLevel);
-      }
+      uidInfoList_.WriteTo(ref output, _repeated_uidInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -228,16 +230,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
-      }
       if (BattleWorldLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BattleWorldLevel);
       }
-      size += uidInfoList_.CalculateSize(_repeated_uidInfoList_codec);
+      if (CostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
+      }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
+      size += uidInfoList_.CalculateSize(_repeated_uidInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -250,19 +252,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CostTime != 0) {
-        CostTime = other.CostTime;
-      }
       if (other.BattleWorldLevel != 0) {
         BattleWorldLevel = other.BattleWorldLevel;
       }
-      uidInfoList_.Add(other.uidInfoList_);
+      if (other.CostTime != 0) {
+        CostTime = other.CostTime;
+      }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
       }
+      uidInfoList_.Add(other.uidInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -278,11 +280,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            uidInfoList_.AddEntriesFrom(input, _repeated_uidInfoList_codec);
+          case 40: {
+            BattleWorldLevel = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 56: {
             CostTime = input.ReadUInt32();
             break;
           }
@@ -293,8 +295,8 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Pos);
             break;
           }
-          case 96: {
-            BattleWorldLevel = input.ReadUInt32();
+          case 90: {
+            uidInfoList_.AddEntriesFrom(input, _repeated_uidInfoList_codec);
             break;
           }
         }
@@ -312,11 +314,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            uidInfoList_.AddEntriesFrom(ref input, _repeated_uidInfoList_codec);
+          case 40: {
+            BattleWorldLevel = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 56: {
             CostTime = input.ReadUInt32();
             break;
           }
@@ -327,8 +329,8 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Pos);
             break;
           }
-          case 96: {
-            BattleWorldLevel = input.ReadUInt32();
+          case 90: {
+            uidInfoList_.AddEntriesFrom(ref input, _repeated_uidInfoList_codec);
             break;
           }
         }

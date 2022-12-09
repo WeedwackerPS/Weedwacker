@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeV2DetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTdW1tZXJUaW1lVjJEZXRhaWxJbmZvLnByb3RvGh9TdW1tZXJUaW1lVjJC",
-            "b2F0U3RhZ2VJbmZvLnByb3RvGiJTdW1tZXJUaW1lVjJEdW5nZW9uU3RhZ2VJ",
-            "bmZvLnByb3RvIusBChZTdW1tZXJUaW1lVjJEZXRhaWxJbmZvEj4KF2R1bmdl",
-            "b25fc3RhZ2VfaW5mb19saXN0GA0gAygLMh0uU3VtbWVyVGltZVYyRHVuZ2Vv",
-            "blN0YWdlSW5mbxIgChhjdXJfZHVuZ2Vvbl9yZXdhcmRfbGltaXQYCiABKA0S",
-            "GQoRaXNfY29udGVudF9jbG9zZWQYBCABKAgSGgoSdGFrZW5fcmV3YXJkX2Nv",
-            "dW50GAUgASgNEjgKFGJvYXRfc3RhZ2VfaW5mb19saXN0GA8gAygLMhouU3Vt",
-            "bWVyVGltZVYyQm9hdFN0YWdlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxTdW1tZXJUaW1lVjJEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGh9TdW1tZXJUaW1lVjJCb2F0U3RhZ2VJbmZv",
+            "LnByb3RvGiJTdW1tZXJUaW1lVjJEdW5nZW9uU3RhZ2VJbmZvLnByb3RvIqcC",
+            "ChZTdW1tZXJUaW1lVjJEZXRhaWxJbmZvEhkKEWlzX2NvbnRlbnRfY2xvc2Vk",
+            "GA4gASgIEhsKE1VuazMzMDBfQk5OTU5DS0VISE8YCSABKA0SXgoXZHVuZ2Vv",
+            "bl9zdGFnZV9pbmZvX2xpc3QYBSADKAsyPS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlN1bW1lclRpbWVWMkR1bmdlb25TdGFnZUluZm8SGwoT",
+            "VW5rMzMwMF9KSEJDSEZIQUdGTxgIIAEoDRJYChRib2F0X3N0YWdlX2luZm9f",
+            "bGlzdBgDIAMoCzI6LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "U3VtbWVyVGltZVYyQm9hdFN0YWdlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo.Parser, new[]{ "DungeonStageInfoList", "CurDungeonRewardLimit", "IsContentClosed", "TakenRewardCount", "BoatStageInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo.Parser, new[]{ "IsContentClosed", "Unk3300BNNMNCKEHHO", "DungeonStageInfoList", "Unk3300JHBCHFHAGFO", "BoatStageInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,10 +78,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeV2DetailInfo(SummerTimeV2DetailInfo other) : this() {
-      dungeonStageInfoList_ = other.dungeonStageInfoList_.Clone();
-      curDungeonRewardLimit_ = other.curDungeonRewardLimit_;
       isContentClosed_ = other.isContentClosed_;
-      takenRewardCount_ = other.takenRewardCount_;
+      unk3300BNNMNCKEHHO_ = other.unk3300BNNMNCKEHHO_;
+      dungeonStageInfoList_ = other.dungeonStageInfoList_.Clone();
+      unk3300JHBCHFHAGFO_ = other.unk3300JHBCHFHAGFO_;
       boatStageInfoList_ = other.boatStageInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,31 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SummerTimeV2DetailInfo(this);
     }
 
-    /// <summary>Field number for the "dungeon_stage_info_list" field.</summary>
-    public const int DungeonStageInfoListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> _repeated_dungeonStageInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> dungeonStageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> DungeonStageInfoList {
-      get { return dungeonStageInfoList_; }
-    }
-
-    /// <summary>Field number for the "cur_dungeon_reward_limit" field.</summary>
-    public const int CurDungeonRewardLimitFieldNumber = 10;
-    private uint curDungeonRewardLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurDungeonRewardLimit {
-      get { return curDungeonRewardLimit_; }
-      set {
-        curDungeonRewardLimit_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 4;
+    public const int IsContentClosedFieldNumber = 14;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,22 +104,45 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "taken_reward_count" field.</summary>
-    public const int TakenRewardCountFieldNumber = 5;
-    private uint takenRewardCount_;
+    /// <summary>Field number for the "Unk3300_BNNMNCKEHHO" field.</summary>
+    public const int Unk3300BNNMNCKEHHOFieldNumber = 9;
+    private uint unk3300BNNMNCKEHHO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TakenRewardCount {
-      get { return takenRewardCount_; }
+    public uint Unk3300BNNMNCKEHHO {
+      get { return unk3300BNNMNCKEHHO_; }
       set {
-        takenRewardCount_ = value;
+        unk3300BNNMNCKEHHO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_stage_info_list" field.</summary>
+    public const int DungeonStageInfoListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> _repeated_dungeonStageInfoList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> dungeonStageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2DungeonStageInfo> DungeonStageInfoList {
+      get { return dungeonStageInfoList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_JHBCHFHAGFO" field.</summary>
+    public const int Unk3300JHBCHFHAGFOFieldNumber = 8;
+    private uint unk3300JHBCHFHAGFO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JHBCHFHAGFO {
+      get { return unk3300JHBCHFHAGFO_; }
+      set {
+        unk3300JHBCHFHAGFO_ = value;
       }
     }
 
     /// <summary>Field number for the "boat_stage_info_list" field.</summary>
-    public const int BoatStageInfoListFieldNumber = 15;
+    public const int BoatStageInfoListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfo> _repeated_boatStageInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfo.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfo> boatStageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatStageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,10 +165,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!dungeonStageInfoList_.Equals(other.dungeonStageInfoList_)) return false;
-      if (CurDungeonRewardLimit != other.CurDungeonRewardLimit) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
-      if (TakenRewardCount != other.TakenRewardCount) return false;
+      if (Unk3300BNNMNCKEHHO != other.Unk3300BNNMNCKEHHO) return false;
+      if(!dungeonStageInfoList_.Equals(other.dungeonStageInfoList_)) return false;
+      if (Unk3300JHBCHFHAGFO != other.Unk3300JHBCHFHAGFO) return false;
       if(!boatStageInfoList_.Equals(other.boatStageInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -176,10 +177,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= dungeonStageInfoList_.GetHashCode();
-      if (CurDungeonRewardLimit != 0) hash ^= CurDungeonRewardLimit.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-      if (TakenRewardCount != 0) hash ^= TakenRewardCount.GetHashCode();
+      if (Unk3300BNNMNCKEHHO != 0) hash ^= Unk3300BNNMNCKEHHO.GetHashCode();
+      hash ^= dungeonStageInfoList_.GetHashCode();
+      if (Unk3300JHBCHFHAGFO != 0) hash ^= Unk3300JHBCHFHAGFO.GetHashCode();
       hash ^= boatStageInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -199,20 +200,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      boatStageInfoList_.WriteTo(output, _repeated_boatStageInfoList_codec);
+      dungeonStageInfoList_.WriteTo(output, _repeated_dungeonStageInfoList_codec);
+      if (Unk3300JHBCHFHAGFO != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300JHBCHFHAGFO);
+      }
+      if (Unk3300BNNMNCKEHHO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300BNNMNCKEHHO);
+      }
       if (IsContentClosed != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(112);
         output.WriteBool(IsContentClosed);
       }
-      if (TakenRewardCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TakenRewardCount);
-      }
-      if (CurDungeonRewardLimit != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CurDungeonRewardLimit);
-      }
-      dungeonStageInfoList_.WriteTo(output, _repeated_dungeonStageInfoList_codec);
-      boatStageInfoList_.WriteTo(output, _repeated_boatStageInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -223,20 +224,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      boatStageInfoList_.WriteTo(ref output, _repeated_boatStageInfoList_codec);
+      dungeonStageInfoList_.WriteTo(ref output, _repeated_dungeonStageInfoList_codec);
+      if (Unk3300JHBCHFHAGFO != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300JHBCHFHAGFO);
+      }
+      if (Unk3300BNNMNCKEHHO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300BNNMNCKEHHO);
+      }
       if (IsContentClosed != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(112);
         output.WriteBool(IsContentClosed);
       }
-      if (TakenRewardCount != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TakenRewardCount);
-      }
-      if (CurDungeonRewardLimit != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CurDungeonRewardLimit);
-      }
-      dungeonStageInfoList_.WriteTo(ref output, _repeated_dungeonStageInfoList_codec);
-      boatStageInfoList_.WriteTo(ref output, _repeated_boatStageInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -247,15 +248,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += dungeonStageInfoList_.CalculateSize(_repeated_dungeonStageInfoList_codec);
-      if (CurDungeonRewardLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDungeonRewardLimit);
-      }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
-      if (TakenRewardCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenRewardCount);
+      if (Unk3300BNNMNCKEHHO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNNMNCKEHHO);
+      }
+      size += dungeonStageInfoList_.CalculateSize(_repeated_dungeonStageInfoList_codec);
+      if (Unk3300JHBCHFHAGFO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JHBCHFHAGFO);
       }
       size += boatStageInfoList_.CalculateSize(_repeated_boatStageInfoList_codec);
       if (_unknownFields != null) {
@@ -270,15 +271,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      dungeonStageInfoList_.Add(other.dungeonStageInfoList_);
-      if (other.CurDungeonRewardLimit != 0) {
-        CurDungeonRewardLimit = other.CurDungeonRewardLimit;
-      }
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      if (other.TakenRewardCount != 0) {
-        TakenRewardCount = other.TakenRewardCount;
+      if (other.Unk3300BNNMNCKEHHO != 0) {
+        Unk3300BNNMNCKEHHO = other.Unk3300BNNMNCKEHHO;
+      }
+      dungeonStageInfoList_.Add(other.dungeonStageInfoList_);
+      if (other.Unk3300JHBCHFHAGFO != 0) {
+        Unk3300JHBCHFHAGFO = other.Unk3300JHBCHFHAGFO;
       }
       boatStageInfoList_.Add(other.boatStageInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -296,24 +297,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            IsContentClosed = input.ReadBool();
+          case 26: {
+            boatStageInfoList_.AddEntriesFrom(input, _repeated_boatStageInfoList_codec);
             break;
           }
-          case 40: {
-            TakenRewardCount = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CurDungeonRewardLimit = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 42: {
             dungeonStageInfoList_.AddEntriesFrom(input, _repeated_dungeonStageInfoList_codec);
             break;
           }
-          case 122: {
-            boatStageInfoList_.AddEntriesFrom(input, _repeated_boatStageInfoList_codec);
+          case 64: {
+            Unk3300JHBCHFHAGFO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300BNNMNCKEHHO = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }
@@ -331,24 +332,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            IsContentClosed = input.ReadBool();
+          case 26: {
+            boatStageInfoList_.AddEntriesFrom(ref input, _repeated_boatStageInfoList_codec);
             break;
           }
-          case 40: {
-            TakenRewardCount = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CurDungeonRewardLimit = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 42: {
             dungeonStageInfoList_.AddEntriesFrom(ref input, _repeated_dungeonStageInfoList_codec);
             break;
           }
-          case 122: {
-            boatStageInfoList_.AddEntriesFrom(ref input, _repeated_boatStageInfoList_codec);
+          case 64: {
+            Unk3300JHBCHFHAGFO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300BNNMNCKEHHO = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }

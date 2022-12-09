@@ -24,21 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonCandidateTeamInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiREdW5nZW9uQ2FuZGlkYXRlVGVhbUluZm9Ob3RpZnkucHJvdG8aIER1bmdl",
-            "b25DYW5kaWRhdGVUZWFtQXZhdGFyLnByb3RvGiVEdW5nZW9uQ2FuZGlkYXRl",
-            "VGVhbVBsYXllclN0YXRlLnByb3RvIrwCCh5EdW5nZW9uQ2FuZGlkYXRlVGVh",
-            "bUluZm9Ob3RpZnkSTQoQcGxheWVyX3N0YXRlX21hcBgKIAMoCzIzLkR1bmdl",
-            "b25DYW5kaWRhdGVUZWFtSW5mb05vdGlmeS5QbGF5ZXJTdGF0ZU1hcEVudHJ5",
-            "EhIKCmR1bmdlb25faWQYCSABKA0SGAoQcmVhZHlfcGxheWVyX3VpZBgNIAMo",
-            "DRISCgptYXRjaF90eXBlGAIgASgNEjAKC2F2YXRhcl9saXN0GAQgAygLMhsu",
-            "RHVuZ2VvbkNhbmRpZGF0ZVRlYW1BdmF0YXIaVwoTUGxheWVyU3RhdGVNYXBF",
-            "bnRyeRILCgNrZXkYASABKA0SLwoFdmFsdWUYAiABKA4yIC5EdW5nZW9uQ2Fu",
-            "ZGlkYXRlVGVhbVBsYXllclN0YXRlOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiREdW5nZW9uQ2FuZGlkYXRlVGVhbUluZm9Ob3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aIER1bmdlb25DYW5kaWRhdGVU",
+            "ZWFtQXZhdGFyLnByb3RvGiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0",
+            "YXRlLnByb3RvIpwDCh5EdW5nZW9uQ2FuZGlkYXRlVGVhbUluZm9Ob3RpZnkS",
+            "GAoQcmVhZHlfcGxheWVyX3VpZBgCIAMoDRISCgptYXRjaF90eXBlGAwgASgN",
+            "EhIKCmR1bmdlb25faWQYCCABKA0SUAoLYXZhdGFyX2xpc3QYASADKAsyOy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkR1bmdlb25DYW5kaWRh",
+            "dGVUZWFtQXZhdGFyEm0KEHBsYXllcl9zdGF0ZV9tYXAYCiADKAsyUy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkR1bmdlb25DYW5kaWRhdGVU",
+            "ZWFtSW5mb05vdGlmeS5QbGF5ZXJTdGF0ZU1hcEVudHJ5GncKE1BsYXllclN0",
+            "YXRlTWFwRW50cnkSCwoDa2V5GAEgASgNEk8KBXZhbHVlGAIgASgOMkAuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5EdW5nZW9uQ2FuZGlkYXRl",
+            "VGVhbVBsYXllclN0YXRlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatarReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInfoNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInfoNotify.Parser, new[]{ "PlayerStateMap", "DungeonId", "ReadyPlayerUid", "MatchType", "AvatarList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInfoNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInfoNotify.Parser, new[]{ "ReadyPlayerUid", "MatchType", "DungeonId", "AvatarList", "PlayerStateMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -46,9 +48,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 927
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 917;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonCandidateTeamInfoNotify : pb::IMessage<DungeonCandidateTeamInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -84,11 +90,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonCandidateTeamInfoNotify(DungeonCandidateTeamInfoNotify other) : this() {
-      playerStateMap_ = other.playerStateMap_.Clone();
-      dungeonId_ = other.dungeonId_;
       readyPlayerUid_ = other.readyPlayerUid_.Clone();
       matchType_ = other.matchType_;
+      dungeonId_ = other.dungeonId_;
       avatarList_ = other.avatarList_.Clone();
+      playerStateMap_ = other.playerStateMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,6 +102,52 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonCandidateTeamInfoNotify Clone() {
       return new DungeonCandidateTeamInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "ready_player_uid" field.</summary>
+    public const int ReadyPlayerUidFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_readyPlayerUid_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> readyPlayerUid_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ReadyPlayerUid {
+      get { return readyPlayerUid_; }
+    }
+
+    /// <summary>Field number for the "match_type" field.</summary>
+    public const int MatchTypeFieldNumber = 12;
+    private uint matchType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MatchType {
+      get { return matchType_; }
+      set {
+        matchType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 8;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_list" field.</summary>
+    public const int AvatarListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> _repeated_avatarList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> avatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> AvatarList {
+      get { return avatarList_; }
     }
 
     /// <summary>Field number for the "player_state_map" field.</summary>
@@ -107,52 +159,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamPlayerState> PlayerStateMap {
       get { return playerStateMap_; }
-    }
-
-    /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 9;
-    private uint dungeonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonId {
-      get { return dungeonId_; }
-      set {
-        dungeonId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ready_player_uid" field.</summary>
-    public const int ReadyPlayerUidFieldNumber = 13;
-    private static readonly pb::FieldCodec<uint> _repeated_readyPlayerUid_codec
-        = pb::FieldCodec.ForUInt32(106);
-    private readonly pbc::RepeatedField<uint> readyPlayerUid_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ReadyPlayerUid {
-      get { return readyPlayerUid_; }
-    }
-
-    /// <summary>Field number for the "match_type" field.</summary>
-    public const int MatchTypeFieldNumber = 2;
-    private uint matchType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MatchType {
-      get { return matchType_; }
-      set {
-        matchType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "avatar_list" field.</summary>
-    public const int AvatarListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> _repeated_avatarList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> avatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamAvatar> AvatarList {
-      get { return avatarList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -170,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!PlayerStateMap.Equals(other.PlayerStateMap)) return false;
-      if (DungeonId != other.DungeonId) return false;
       if(!readyPlayerUid_.Equals(other.readyPlayerUid_)) return false;
       if (MatchType != other.MatchType) return false;
+      if (DungeonId != other.DungeonId) return false;
       if(!avatarList_.Equals(other.avatarList_)) return false;
+      if (!PlayerStateMap.Equals(other.PlayerStateMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -182,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= PlayerStateMap.GetHashCode();
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       hash ^= readyPlayerUid_.GetHashCode();
       if (MatchType != 0) hash ^= MatchType.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       hash ^= avatarList_.GetHashCode();
+      hash ^= PlayerStateMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -205,17 +211,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MatchType != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MatchType);
-      }
       avatarList_.WriteTo(output, _repeated_avatarList_codec);
+      readyPlayerUid_.WriteTo(output, _repeated_readyPlayerUid_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteUInt32(DungeonId);
       }
       playerStateMap_.WriteTo(output, _map_playerStateMap_codec);
-      readyPlayerUid_.WriteTo(output, _repeated_readyPlayerUid_codec);
+      if (MatchType != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(MatchType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -226,17 +232,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MatchType != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(MatchType);
-      }
       avatarList_.WriteTo(ref output, _repeated_avatarList_codec);
+      readyPlayerUid_.WriteTo(ref output, _repeated_readyPlayerUid_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteUInt32(DungeonId);
       }
       playerStateMap_.WriteTo(ref output, _map_playerStateMap_codec);
-      readyPlayerUid_.WriteTo(ref output, _repeated_readyPlayerUid_codec);
+      if (MatchType != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(MatchType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -247,15 +253,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += playerStateMap_.CalculateSize(_map_playerStateMap_codec);
-      if (DungeonId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-      }
       size += readyPlayerUid_.CalculateSize(_repeated_readyPlayerUid_codec);
       if (MatchType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchType);
       }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
       size += avatarList_.CalculateSize(_repeated_avatarList_codec);
+      size += playerStateMap_.CalculateSize(_map_playerStateMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -268,15 +274,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      playerStateMap_.Add(other.playerStateMap_);
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
-      }
       readyPlayerUid_.Add(other.readyPlayerUid_);
       if (other.MatchType != 0) {
         MatchType = other.MatchType;
       }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
       avatarList_.Add(other.avatarList_);
+      playerStateMap_.Add(other.playerStateMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -292,15 +298,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            MatchType = input.ReadUInt32();
-            break;
-          }
-          case 34: {
+          case 10: {
             avatarList_.AddEntriesFrom(input, _repeated_avatarList_codec);
             break;
           }
-          case 72: {
+          case 18:
+          case 16: {
+            readyPlayerUid_.AddEntriesFrom(input, _repeated_readyPlayerUid_codec);
+            break;
+          }
+          case 64: {
             DungeonId = input.ReadUInt32();
             break;
           }
@@ -308,9 +315,8 @@ namespace Weedwacker.Shared.Network.Proto {
             playerStateMap_.AddEntriesFrom(input, _map_playerStateMap_codec);
             break;
           }
-          case 106:
-          case 104: {
-            readyPlayerUid_.AddEntriesFrom(input, _repeated_readyPlayerUid_codec);
+          case 96: {
+            MatchType = input.ReadUInt32();
             break;
           }
         }
@@ -328,15 +334,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            MatchType = input.ReadUInt32();
-            break;
-          }
-          case 34: {
+          case 10: {
             avatarList_.AddEntriesFrom(ref input, _repeated_avatarList_codec);
             break;
           }
-          case 72: {
+          case 18:
+          case 16: {
+            readyPlayerUid_.AddEntriesFrom(ref input, _repeated_readyPlayerUid_codec);
+            break;
+          }
+          case 64: {
             DungeonId = input.ReadUInt32();
             break;
           }
@@ -344,9 +351,8 @@ namespace Weedwacker.Shared.Network.Proto {
             playerStateMap_.AddEntriesFrom(ref input, _map_playerStateMap_codec);
             break;
           }
-          case 106:
-          case 104: {
-            readyPlayerUid_.AddEntriesFrom(ref input, _repeated_readyPlayerUid_codec);
+          case 96: {
+            MatchType = input.ReadUInt32();
             break;
           }
         }

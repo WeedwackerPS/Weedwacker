@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeMarkPointNPCDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpIb21lTWFya1BvaW50TlBDRGF0YS5wcm90byI9ChRIb21lTWFya1BvaW50",
-            "TlBDRGF0YRIRCglhdmF0YXJfaWQYASABKA0SEgoKY29zdHVtZV9pZBgCIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpIb21lTWFya1BvaW50TlBDRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byI9ChRIb21lTWFya1BvaW50TlBDRGF0YRIRCglh",
+            "dmF0YXJfaWQYASABKA0SEgoKY29zdHVtZV9pZBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

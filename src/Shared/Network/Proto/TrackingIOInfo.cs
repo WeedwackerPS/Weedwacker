@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static TrackingIOInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRUcmFja2luZ0lPSW5mby5wcm90byKSAQoOVHJhY2tpbmdJT0luZm8SFAoM",
-            "cnlkZXZpY2V0eXBlGAsgASgJEgsKA21hYxgGIAEoCRIQCghkZXZpY2VpZBgJ",
-            "IAEoCRIRCgljbGllbnRfdHoYBSABKAkSFAoMY3VycmVudF9jYWlkGAcgASgJ",
-            "EhMKC2NhY2hlZF9jYWlkGA8gASgJEg0KBWFwcGlkGAEgASgJQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRUcmFja2luZ0lPSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byLbAQoOVHJhY2tpbmdJT0luZm8SGwoTVW5rMzMwMF9LR0dQ",
+            "REtHREVMRxgKIAEoCRIbChNVbmszMzAwX1BJQkZQREFNSkxFGAwgASgJEhsK",
+            "E1VuazMzMDBfTk1ETkxITEFLQU0YByABKAkSGwoTVW5rMzMwMF9HRUpKS0RM",
+            "R0ZQSBgFIAEoCRIbChNVbmszMzAwX0NOUElHRE9FSlBCGAIgASgJEhsKE1Vu",
+            "azMzMDBfQ0NPR0JJQ01IS0cYCSABKAkSGwoTVW5rMzMwMF9ESkhLSEVGUENE",
+            "SxgBIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TrackingIOInfo), global::Weedwacker.Shared.Network.Proto.TrackingIOInfo.Parser, new[]{ "Rydevicetype", "Mac", "Deviceid", "ClientTz", "CurrentCaid", "CachedCaid", "Appid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TrackingIOInfo), global::Weedwacker.Shared.Network.Proto.TrackingIOInfo.Parser, new[]{ "Unk3300KGGPDKGDELG", "Unk3300PIBFPDAMJLE", "Unk3300NMDNLHLAKAM", "Unk3300GEJJKDLGFPH", "Unk3300CNPIGDOEJPB", "Unk3300CCOGBICMHKG", "Unk3300DJHKHEFPCDK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,13 +75,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TrackingIOInfo(TrackingIOInfo other) : this() {
-      rydevicetype_ = other.rydevicetype_;
-      mac_ = other.mac_;
-      deviceid_ = other.deviceid_;
-      clientTz_ = other.clientTz_;
-      currentCaid_ = other.currentCaid_;
-      cachedCaid_ = other.cachedCaid_;
-      appid_ = other.appid_;
+      unk3300KGGPDKGDELG_ = other.unk3300KGGPDKGDELG_;
+      unk3300PIBFPDAMJLE_ = other.unk3300PIBFPDAMJLE_;
+      unk3300NMDNLHLAKAM_ = other.unk3300NMDNLHLAKAM_;
+      unk3300GEJJKDLGFPH_ = other.unk3300GEJJKDLGFPH_;
+      unk3300CNPIGDOEJPB_ = other.unk3300CNPIGDOEJPB_;
+      unk3300CCOGBICMHKG_ = other.unk3300CCOGBICMHKG_;
+      unk3300DJHKHEFPCDK_ = other.unk3300DJHKHEFPCDK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,87 +91,87 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TrackingIOInfo(this);
     }
 
-    /// <summary>Field number for the "rydevicetype" field.</summary>
-    public const int RydevicetypeFieldNumber = 11;
-    private string rydevicetype_ = "";
+    /// <summary>Field number for the "Unk3300_KGGPDKGDELG" field.</summary>
+    public const int Unk3300KGGPDKGDELGFieldNumber = 10;
+    private string unk3300KGGPDKGDELG_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Rydevicetype {
-      get { return rydevicetype_; }
+    public string Unk3300KGGPDKGDELG {
+      get { return unk3300KGGPDKGDELG_; }
       set {
-        rydevicetype_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300KGGPDKGDELG_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "mac" field.</summary>
-    public const int MacFieldNumber = 6;
-    private string mac_ = "";
+    /// <summary>Field number for the "Unk3300_PIBFPDAMJLE" field.</summary>
+    public const int Unk3300PIBFPDAMJLEFieldNumber = 12;
+    private string unk3300PIBFPDAMJLE_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Mac {
-      get { return mac_; }
+    public string Unk3300PIBFPDAMJLE {
+      get { return unk3300PIBFPDAMJLE_; }
       set {
-        mac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300PIBFPDAMJLE_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "deviceid" field.</summary>
-    public const int DeviceidFieldNumber = 9;
-    private string deviceid_ = "";
+    /// <summary>Field number for the "Unk3300_NMDNLHLAKAM" field.</summary>
+    public const int Unk3300NMDNLHLAKAMFieldNumber = 7;
+    private string unk3300NMDNLHLAKAM_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Deviceid {
-      get { return deviceid_; }
+    public string Unk3300NMDNLHLAKAM {
+      get { return unk3300NMDNLHLAKAM_; }
       set {
-        deviceid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300NMDNLHLAKAM_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "client_tz" field.</summary>
-    public const int ClientTzFieldNumber = 5;
-    private string clientTz_ = "";
+    /// <summary>Field number for the "Unk3300_GEJJKDLGFPH" field.</summary>
+    public const int Unk3300GEJJKDLGFPHFieldNumber = 5;
+    private string unk3300GEJJKDLGFPH_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientTz {
-      get { return clientTz_; }
+    public string Unk3300GEJJKDLGFPH {
+      get { return unk3300GEJJKDLGFPH_; }
       set {
-        clientTz_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300GEJJKDLGFPH_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "current_caid" field.</summary>
-    public const int CurrentCaidFieldNumber = 7;
-    private string currentCaid_ = "";
+    /// <summary>Field number for the "Unk3300_CNPIGDOEJPB" field.</summary>
+    public const int Unk3300CNPIGDOEJPBFieldNumber = 2;
+    private string unk3300CNPIGDOEJPB_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CurrentCaid {
-      get { return currentCaid_; }
+    public string Unk3300CNPIGDOEJPB {
+      get { return unk3300CNPIGDOEJPB_; }
       set {
-        currentCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300CNPIGDOEJPB_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "cached_caid" field.</summary>
-    public const int CachedCaidFieldNumber = 15;
-    private string cachedCaid_ = "";
+    /// <summary>Field number for the "Unk3300_CCOGBICMHKG" field.</summary>
+    public const int Unk3300CCOGBICMHKGFieldNumber = 9;
+    private string unk3300CCOGBICMHKG_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CachedCaid {
-      get { return cachedCaid_; }
+    public string Unk3300CCOGBICMHKG {
+      get { return unk3300CCOGBICMHKG_; }
       set {
-        cachedCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300CCOGBICMHKG_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "appid" field.</summary>
-    public const int AppidFieldNumber = 1;
-    private string appid_ = "";
+    /// <summary>Field number for the "Unk3300_DJHKHEFPCDK" field.</summary>
+    public const int Unk3300DJHKHEFPCDKFieldNumber = 1;
+    private string unk3300DJHKHEFPCDK_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Appid {
-      get { return appid_; }
+    public string Unk3300DJHKHEFPCDK {
+      get { return unk3300DJHKHEFPCDK_; }
       set {
-        appid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300DJHKHEFPCDK_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -188,13 +190,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Rydevicetype != other.Rydevicetype) return false;
-      if (Mac != other.Mac) return false;
-      if (Deviceid != other.Deviceid) return false;
-      if (ClientTz != other.ClientTz) return false;
-      if (CurrentCaid != other.CurrentCaid) return false;
-      if (CachedCaid != other.CachedCaid) return false;
-      if (Appid != other.Appid) return false;
+      if (Unk3300KGGPDKGDELG != other.Unk3300KGGPDKGDELG) return false;
+      if (Unk3300PIBFPDAMJLE != other.Unk3300PIBFPDAMJLE) return false;
+      if (Unk3300NMDNLHLAKAM != other.Unk3300NMDNLHLAKAM) return false;
+      if (Unk3300GEJJKDLGFPH != other.Unk3300GEJJKDLGFPH) return false;
+      if (Unk3300CNPIGDOEJPB != other.Unk3300CNPIGDOEJPB) return false;
+      if (Unk3300CCOGBICMHKG != other.Unk3300CCOGBICMHKG) return false;
+      if (Unk3300DJHKHEFPCDK != other.Unk3300DJHKHEFPCDK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -202,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Rydevicetype.Length != 0) hash ^= Rydevicetype.GetHashCode();
-      if (Mac.Length != 0) hash ^= Mac.GetHashCode();
-      if (Deviceid.Length != 0) hash ^= Deviceid.GetHashCode();
-      if (ClientTz.Length != 0) hash ^= ClientTz.GetHashCode();
-      if (CurrentCaid.Length != 0) hash ^= CurrentCaid.GetHashCode();
-      if (CachedCaid.Length != 0) hash ^= CachedCaid.GetHashCode();
-      if (Appid.Length != 0) hash ^= Appid.GetHashCode();
+      if (Unk3300KGGPDKGDELG.Length != 0) hash ^= Unk3300KGGPDKGDELG.GetHashCode();
+      if (Unk3300PIBFPDAMJLE.Length != 0) hash ^= Unk3300PIBFPDAMJLE.GetHashCode();
+      if (Unk3300NMDNLHLAKAM.Length != 0) hash ^= Unk3300NMDNLHLAKAM.GetHashCode();
+      if (Unk3300GEJJKDLGFPH.Length != 0) hash ^= Unk3300GEJJKDLGFPH.GetHashCode();
+      if (Unk3300CNPIGDOEJPB.Length != 0) hash ^= Unk3300CNPIGDOEJPB.GetHashCode();
+      if (Unk3300CCOGBICMHKG.Length != 0) hash ^= Unk3300CCOGBICMHKG.GetHashCode();
+      if (Unk3300DJHKHEFPCDK.Length != 0) hash ^= Unk3300DJHKHEFPCDK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -227,33 +229,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Appid.Length != 0) {
+      if (Unk3300DJHKHEFPCDK.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Appid);
+        output.WriteString(Unk3300DJHKHEFPCDK);
       }
-      if (ClientTz.Length != 0) {
+      if (Unk3300CNPIGDOEJPB.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Unk3300CNPIGDOEJPB);
+      }
+      if (Unk3300GEJJKDLGFPH.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(ClientTz);
+        output.WriteString(Unk3300GEJJKDLGFPH);
       }
-      if (Mac.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Mac);
-      }
-      if (CurrentCaid.Length != 0) {
+      if (Unk3300NMDNLHLAKAM.Length != 0) {
         output.WriteRawTag(58);
-        output.WriteString(CurrentCaid);
+        output.WriteString(Unk3300NMDNLHLAKAM);
       }
-      if (Deviceid.Length != 0) {
+      if (Unk3300CCOGBICMHKG.Length != 0) {
         output.WriteRawTag(74);
-        output.WriteString(Deviceid);
+        output.WriteString(Unk3300CCOGBICMHKG);
       }
-      if (Rydevicetype.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Rydevicetype);
+      if (Unk3300KGGPDKGDELG.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Unk3300KGGPDKGDELG);
       }
-      if (CachedCaid.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(CachedCaid);
+      if (Unk3300PIBFPDAMJLE.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Unk3300PIBFPDAMJLE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -265,33 +267,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Appid.Length != 0) {
+      if (Unk3300DJHKHEFPCDK.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Appid);
+        output.WriteString(Unk3300DJHKHEFPCDK);
       }
-      if (ClientTz.Length != 0) {
+      if (Unk3300CNPIGDOEJPB.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Unk3300CNPIGDOEJPB);
+      }
+      if (Unk3300GEJJKDLGFPH.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(ClientTz);
+        output.WriteString(Unk3300GEJJKDLGFPH);
       }
-      if (Mac.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Mac);
-      }
-      if (CurrentCaid.Length != 0) {
+      if (Unk3300NMDNLHLAKAM.Length != 0) {
         output.WriteRawTag(58);
-        output.WriteString(CurrentCaid);
+        output.WriteString(Unk3300NMDNLHLAKAM);
       }
-      if (Deviceid.Length != 0) {
+      if (Unk3300CCOGBICMHKG.Length != 0) {
         output.WriteRawTag(74);
-        output.WriteString(Deviceid);
+        output.WriteString(Unk3300CCOGBICMHKG);
       }
-      if (Rydevicetype.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Rydevicetype);
+      if (Unk3300KGGPDKGDELG.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Unk3300KGGPDKGDELG);
       }
-      if (CachedCaid.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(CachedCaid);
+      if (Unk3300PIBFPDAMJLE.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Unk3300PIBFPDAMJLE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -303,26 +305,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Rydevicetype.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Rydevicetype);
+      if (Unk3300KGGPDKGDELG.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300KGGPDKGDELG);
       }
-      if (Mac.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mac);
+      if (Unk3300PIBFPDAMJLE.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300PIBFPDAMJLE);
       }
-      if (Deviceid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Deviceid);
+      if (Unk3300NMDNLHLAKAM.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300NMDNLHLAKAM);
       }
-      if (ClientTz.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientTz);
+      if (Unk3300GEJJKDLGFPH.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300GEJJKDLGFPH);
       }
-      if (CurrentCaid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CurrentCaid);
+      if (Unk3300CNPIGDOEJPB.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300CNPIGDOEJPB);
       }
-      if (CachedCaid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CachedCaid);
+      if (Unk3300CCOGBICMHKG.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300CCOGBICMHKG);
       }
-      if (Appid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Appid);
+      if (Unk3300DJHKHEFPCDK.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300DJHKHEFPCDK);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -336,26 +338,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Rydevicetype.Length != 0) {
-        Rydevicetype = other.Rydevicetype;
+      if (other.Unk3300KGGPDKGDELG.Length != 0) {
+        Unk3300KGGPDKGDELG = other.Unk3300KGGPDKGDELG;
       }
-      if (other.Mac.Length != 0) {
-        Mac = other.Mac;
+      if (other.Unk3300PIBFPDAMJLE.Length != 0) {
+        Unk3300PIBFPDAMJLE = other.Unk3300PIBFPDAMJLE;
       }
-      if (other.Deviceid.Length != 0) {
-        Deviceid = other.Deviceid;
+      if (other.Unk3300NMDNLHLAKAM.Length != 0) {
+        Unk3300NMDNLHLAKAM = other.Unk3300NMDNLHLAKAM;
       }
-      if (other.ClientTz.Length != 0) {
-        ClientTz = other.ClientTz;
+      if (other.Unk3300GEJJKDLGFPH.Length != 0) {
+        Unk3300GEJJKDLGFPH = other.Unk3300GEJJKDLGFPH;
       }
-      if (other.CurrentCaid.Length != 0) {
-        CurrentCaid = other.CurrentCaid;
+      if (other.Unk3300CNPIGDOEJPB.Length != 0) {
+        Unk3300CNPIGDOEJPB = other.Unk3300CNPIGDOEJPB;
       }
-      if (other.CachedCaid.Length != 0) {
-        CachedCaid = other.CachedCaid;
+      if (other.Unk3300CCOGBICMHKG.Length != 0) {
+        Unk3300CCOGBICMHKG = other.Unk3300CCOGBICMHKG;
       }
-      if (other.Appid.Length != 0) {
-        Appid = other.Appid;
+      if (other.Unk3300DJHKHEFPCDK.Length != 0) {
+        Unk3300DJHKHEFPCDK = other.Unk3300DJHKHEFPCDK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -373,31 +375,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Appid = input.ReadString();
+            Unk3300DJHKHEFPCDK = input.ReadString();
+            break;
+          }
+          case 18: {
+            Unk3300CNPIGDOEJPB = input.ReadString();
             break;
           }
           case 42: {
-            ClientTz = input.ReadString();
-            break;
-          }
-          case 50: {
-            Mac = input.ReadString();
+            Unk3300GEJJKDLGFPH = input.ReadString();
             break;
           }
           case 58: {
-            CurrentCaid = input.ReadString();
+            Unk3300NMDNLHLAKAM = input.ReadString();
             break;
           }
           case 74: {
-            Deviceid = input.ReadString();
+            Unk3300CCOGBICMHKG = input.ReadString();
             break;
           }
-          case 90: {
-            Rydevicetype = input.ReadString();
+          case 82: {
+            Unk3300KGGPDKGDELG = input.ReadString();
             break;
           }
-          case 122: {
-            CachedCaid = input.ReadString();
+          case 98: {
+            Unk3300PIBFPDAMJLE = input.ReadString();
             break;
           }
         }
@@ -416,31 +418,31 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Appid = input.ReadString();
+            Unk3300DJHKHEFPCDK = input.ReadString();
+            break;
+          }
+          case 18: {
+            Unk3300CNPIGDOEJPB = input.ReadString();
             break;
           }
           case 42: {
-            ClientTz = input.ReadString();
-            break;
-          }
-          case 50: {
-            Mac = input.ReadString();
+            Unk3300GEJJKDLGFPH = input.ReadString();
             break;
           }
           case 58: {
-            CurrentCaid = input.ReadString();
+            Unk3300NMDNLHLAKAM = input.ReadString();
             break;
           }
           case 74: {
-            Deviceid = input.ReadString();
+            Unk3300CCOGBICMHKG = input.ReadString();
             break;
           }
-          case 90: {
-            Rydevicetype = input.ReadString();
+          case 82: {
+            Unk3300KGGPDKGDELG = input.ReadString();
             break;
           }
-          case 122: {
-            CachedCaid = input.ReadString();
+          case 98: {
+            Unk3300PIBFPDAMJLE = input.ReadString();
             break;
           }
         }

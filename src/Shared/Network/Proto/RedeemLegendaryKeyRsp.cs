@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RedeemLegendaryKeyRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtSZWRlZW1MZWdlbmRhcnlLZXlSc3AucHJvdG8iRQoVUmVkZWVtTGVnZW5k",
-            "YXJ5S2V5UnNwEhsKE2xlZ2VuZGFyeV9rZXlfY291bnQYCyABKA0SDwoHcmV0",
-            "Y29kZRgOIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChtSZWRlZW1MZWdlbmRhcnlLZXlSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iRQoVUmVkZWVtTGVnZW5kYXJ5S2V5UnNwEg8K",
+            "B3JldGNvZGUYBiABKAUSGwoTbGVnZW5kYXJ5X2tleV9jb3VudBgCIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RedeemLegendaryKeyRsp), global::Weedwacker.Shared.Network.Proto.RedeemLegendaryKeyRsp.Parser, new[]{ "LegendaryKeyCount", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RedeemLegendaryKeyRsp), global::Weedwacker.Shared.Network.Proto.RedeemLegendaryKeyRsp.Parser, new[]{ "Retcode", "LegendaryKeyCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 441
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 467;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RedeemLegendaryKeyRsp : pb::IMessage<RedeemLegendaryKeyRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RedeemLegendaryKeyRsp(RedeemLegendaryKeyRsp other) : this() {
-      legendaryKeyCount_ = other.legendaryKeyCount_;
       retcode_ = other.retcode_;
+      legendaryKeyCount_ = other.legendaryKeyCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RedeemLegendaryKeyRsp(this);
     }
 
-    /// <summary>Field number for the "legendary_key_count" field.</summary>
-    public const int LegendaryKeyCountFieldNumber = 11;
-    private uint legendaryKeyCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LegendaryKeyCount {
-      get { return legendaryKeyCount_; }
-      set {
-        legendaryKeyCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "legendary_key_count" field.</summary>
+    public const int LegendaryKeyCountFieldNumber = 2;
+    private uint legendaryKeyCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LegendaryKeyCount {
+      get { return legendaryKeyCount_; }
+      set {
+        legendaryKeyCount_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LegendaryKeyCount != other.LegendaryKeyCount) return false;
       if (Retcode != other.Retcode) return false;
+      if (LegendaryKeyCount != other.LegendaryKeyCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LegendaryKeyCount != 0) hash ^= LegendaryKeyCount.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (LegendaryKeyCount != 0) hash ^= LegendaryKeyCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (LegendaryKeyCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(LegendaryKeyCount);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LegendaryKeyCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(LegendaryKeyCount);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LegendaryKeyCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LegendaryKeyCount);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (LegendaryKeyCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LegendaryKeyCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LegendaryKeyCount != 0) {
-        LegendaryKeyCount = other.LegendaryKeyCount;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.LegendaryKeyCount != 0) {
+        LegendaryKeyCount = other.LegendaryKeyCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 16: {
             LegendaryKeyCount = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 48: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 16: {
             LegendaryKeyCount = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 48: {
             Retcode = input.ReadInt32();
             break;
           }

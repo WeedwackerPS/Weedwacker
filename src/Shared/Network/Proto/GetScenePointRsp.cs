@@ -24,20 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetScenePointRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHZXRTY2VuZVBvaW50UnNwLnByb3RvIu0CChBHZXRTY2VuZVBvaW50UnNw",
-            "EicKH25vdF9leHBsb3JlZF9kdW5nZW9uX2VudHJ5X2xpc3QYCyADKA0SKAog",
-            "dG9fYmVfZXhwbG9yZV9kdW5nZW9uX2VudHJ5X2xpc3QYDyADKA0SGQoRbG9j",
-            "a2VkX3BvaW50X2xpc3QYAiADKA0SGQoRdW5oaWRlX3BvaW50X2xpc3QYBSAD",
-            "KA0SDwoHcmV0Y29kZRgJIAEoBRISCgpiZWxvbmdfdWlkGAwgASgNEhsKE3Vu",
-            "bG9ja2VkX3BvaW50X2xpc3QYDSADKA0SGAoQdW5sb2NrX2FyZWFfbGlzdBgB",
-            "IAMoDRIXCg9oaWRlX3BvaW50X2xpc3QYBCADKA0SEAoIc2NlbmVfaWQYDiAB",
-            "KA0SJwofbm90X2ludGVyYWN0X2R1bmdlb25fZW50cnlfbGlzdBgGIAMoDRIg",
-            "Chhncm91cF91bmxpbWl0X3BvaW50X2xpc3QYCiADKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZHZXRTY2VuZVBvaW50UnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIu0CChBHZXRTY2VuZVBvaW50UnNwEhgKEHVubG9ja19h",
+            "cmVhX2xpc3QYCSADKA0SGQoRbG9ja2VkX3BvaW50X2xpc3QYDyADKA0SDwoH",
+            "cmV0Y29kZRgNIAEoBRIZChF1bmhpZGVfcG9pbnRfbGlzdBgDIAMoDRIXCg9o",
+            "aWRlX3BvaW50X2xpc3QYCiADKA0SIAoYZ3JvdXBfdW5saW1pdF9wb2ludF9s",
+            "aXN0GAEgAygNEicKH25vdF9pbnRlcmFjdF9kdW5nZW9uX2VudHJ5X2xpc3QY",
+            "CyADKA0SKAogdG9fYmVfZXhwbG9yZV9kdW5nZW9uX2VudHJ5X2xpc3QYBiAD",
+            "KA0SJwofbm90X2V4cGxvcmVkX2R1bmdlb25fZW50cnlfbGlzdBgHIAMoDRIS",
+            "CgpiZWxvbmdfdWlkGAwgASgNEhsKE3VubG9ja2VkX3BvaW50X2xpc3QYAiAD",
+            "KA0SEAoIc2NlbmVfaWQYCCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetScenePointRsp), global::Weedwacker.Shared.Network.Proto.GetScenePointRsp.Parser, new[]{ "NotExploredDungeonEntryList", "ToBeExploreDungeonEntryList", "LockedPointList", "UnhidePointList", "Retcode", "BelongUid", "UnlockedPointList", "UnlockAreaList", "HidePointList", "SceneId", "NotInteractDungeonEntryList", "GroupUnlimitPointList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetScenePointRsp), global::Weedwacker.Shared.Network.Proto.GetScenePointRsp.Parser, new[]{ "UnlockAreaList", "LockedPointList", "Retcode", "UnhidePointList", "HidePointList", "GroupUnlimitPointList", "NotInteractDungeonEntryList", "ToBeExploreDungeonEntryList", "NotExploredDungeonEntryList", "BelongUid", "UnlockedPointList", "SceneId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -45,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 281
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 225;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetScenePointRsp : pb::IMessage<GetScenePointRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,18 +87,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetScenePointRsp(GetScenePointRsp other) : this() {
-      notExploredDungeonEntryList_ = other.notExploredDungeonEntryList_.Clone();
-      toBeExploreDungeonEntryList_ = other.toBeExploreDungeonEntryList_.Clone();
+      unlockAreaList_ = other.unlockAreaList_.Clone();
       lockedPointList_ = other.lockedPointList_.Clone();
-      unhidePointList_ = other.unhidePointList_.Clone();
       retcode_ = other.retcode_;
+      unhidePointList_ = other.unhidePointList_.Clone();
+      hidePointList_ = other.hidePointList_.Clone();
+      groupUnlimitPointList_ = other.groupUnlimitPointList_.Clone();
+      notInteractDungeonEntryList_ = other.notInteractDungeonEntryList_.Clone();
+      toBeExploreDungeonEntryList_ = other.toBeExploreDungeonEntryList_.Clone();
+      notExploredDungeonEntryList_ = other.notExploredDungeonEntryList_.Clone();
       belongUid_ = other.belongUid_;
       unlockedPointList_ = other.unlockedPointList_.Clone();
-      unlockAreaList_ = other.unlockAreaList_.Clone();
-      hidePointList_ = other.hidePointList_.Clone();
       sceneId_ = other.sceneId_;
-      notInteractDungeonEntryList_ = other.notInteractDungeonEntryList_.Clone();
-      groupUnlimitPointList_ = other.groupUnlimitPointList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,32 +108,21 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetScenePointRsp(this);
     }
 
-    /// <summary>Field number for the "not_explored_dungeon_entry_list" field.</summary>
-    public const int NotExploredDungeonEntryListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_notExploredDungeonEntryList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> notExploredDungeonEntryList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "unlock_area_list" field.</summary>
+    public const int UnlockAreaListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockAreaList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> unlockAreaList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> NotExploredDungeonEntryList {
-      get { return notExploredDungeonEntryList_; }
-    }
-
-    /// <summary>Field number for the "to_be_explore_dungeon_entry_list" field.</summary>
-    public const int ToBeExploreDungeonEntryListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_toBeExploreDungeonEntryList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> toBeExploreDungeonEntryList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ToBeExploreDungeonEntryList {
-      get { return toBeExploreDungeonEntryList_; }
+    public pbc::RepeatedField<uint> UnlockAreaList {
+      get { return unlockAreaList_; }
     }
 
     /// <summary>Field number for the "locked_point_list" field.</summary>
-    public const int LockedPointListFieldNumber = 2;
+    public const int LockedPointListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_lockedPointList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> lockedPointList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,19 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return lockedPointList_; }
     }
 
-    /// <summary>Field number for the "unhide_point_list" field.</summary>
-    public const int UnhidePointListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_unhidePointList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> unhidePointList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnhidePointList {
-      get { return unhidePointList_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,6 +140,72 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "unhide_point_list" field.</summary>
+    public const int UnhidePointListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unhidePointList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unhidePointList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnhidePointList {
+      get { return unhidePointList_; }
+    }
+
+    /// <summary>Field number for the "hide_point_list" field.</summary>
+    public const int HidePointListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_hidePointList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> hidePointList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> HidePointList {
+      get { return hidePointList_; }
+    }
+
+    /// <summary>Field number for the "group_unlimit_point_list" field.</summary>
+    public const int GroupUnlimitPointListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_groupUnlimitPointList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> groupUnlimitPointList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> GroupUnlimitPointList {
+      get { return groupUnlimitPointList_; }
+    }
+
+    /// <summary>Field number for the "not_interact_dungeon_entry_list" field.</summary>
+    public const int NotInteractDungeonEntryListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_notInteractDungeonEntryList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> notInteractDungeonEntryList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> NotInteractDungeonEntryList {
+      get { return notInteractDungeonEntryList_; }
+    }
+
+    /// <summary>Field number for the "to_be_explore_dungeon_entry_list" field.</summary>
+    public const int ToBeExploreDungeonEntryListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_toBeExploreDungeonEntryList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> toBeExploreDungeonEntryList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ToBeExploreDungeonEntryList {
+      get { return toBeExploreDungeonEntryList_; }
+    }
+
+    /// <summary>Field number for the "not_explored_dungeon_entry_list" field.</summary>
+    public const int NotExploredDungeonEntryListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_notExploredDungeonEntryList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> notExploredDungeonEntryList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> NotExploredDungeonEntryList {
+      get { return notExploredDungeonEntryList_; }
     }
 
     /// <summary>Field number for the "belong_uid" field.</summary>
@@ -173,9 +221,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlocked_point_list" field.</summary>
-    public const int UnlockedPointListFieldNumber = 13;
+    public const int UnlockedPointListFieldNumber = 2;
     private static readonly pb::FieldCodec<uint> _repeated_unlockedPointList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(18);
     private readonly pbc::RepeatedField<uint> unlockedPointList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -183,30 +231,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return unlockedPointList_; }
     }
 
-    /// <summary>Field number for the "unlock_area_list" field.</summary>
-    public const int UnlockAreaListFieldNumber = 1;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockAreaList_codec
-        = pb::FieldCodec.ForUInt32(10);
-    private readonly pbc::RepeatedField<uint> unlockAreaList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockAreaList {
-      get { return unlockAreaList_; }
-    }
-
-    /// <summary>Field number for the "hide_point_list" field.</summary>
-    public const int HidePointListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_hidePointList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> hidePointList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> HidePointList {
-      get { return hidePointList_; }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 14;
+    public const int SceneIdFieldNumber = 8;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -215,28 +241,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         sceneId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "not_interact_dungeon_entry_list" field.</summary>
-    public const int NotInteractDungeonEntryListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_notInteractDungeonEntryList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> notInteractDungeonEntryList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> NotInteractDungeonEntryList {
-      get { return notInteractDungeonEntryList_; }
-    }
-
-    /// <summary>Field number for the "group_unlimit_point_list" field.</summary>
-    public const int GroupUnlimitPointListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_groupUnlimitPointList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> groupUnlimitPointList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> GroupUnlimitPointList {
-      get { return groupUnlimitPointList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -254,18 +258,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!notExploredDungeonEntryList_.Equals(other.notExploredDungeonEntryList_)) return false;
-      if(!toBeExploreDungeonEntryList_.Equals(other.toBeExploreDungeonEntryList_)) return false;
+      if(!unlockAreaList_.Equals(other.unlockAreaList_)) return false;
       if(!lockedPointList_.Equals(other.lockedPointList_)) return false;
-      if(!unhidePointList_.Equals(other.unhidePointList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if(!unhidePointList_.Equals(other.unhidePointList_)) return false;
+      if(!hidePointList_.Equals(other.hidePointList_)) return false;
+      if(!groupUnlimitPointList_.Equals(other.groupUnlimitPointList_)) return false;
+      if(!notInteractDungeonEntryList_.Equals(other.notInteractDungeonEntryList_)) return false;
+      if(!toBeExploreDungeonEntryList_.Equals(other.toBeExploreDungeonEntryList_)) return false;
+      if(!notExploredDungeonEntryList_.Equals(other.notExploredDungeonEntryList_)) return false;
       if (BelongUid != other.BelongUid) return false;
       if(!unlockedPointList_.Equals(other.unlockedPointList_)) return false;
-      if(!unlockAreaList_.Equals(other.unlockAreaList_)) return false;
-      if(!hidePointList_.Equals(other.hidePointList_)) return false;
       if (SceneId != other.SceneId) return false;
-      if(!notInteractDungeonEntryList_.Equals(other.notInteractDungeonEntryList_)) return false;
-      if(!groupUnlimitPointList_.Equals(other.groupUnlimitPointList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -273,18 +277,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= notExploredDungeonEntryList_.GetHashCode();
-      hash ^= toBeExploreDungeonEntryList_.GetHashCode();
+      hash ^= unlockAreaList_.GetHashCode();
       hash ^= lockedPointList_.GetHashCode();
-      hash ^= unhidePointList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= unhidePointList_.GetHashCode();
+      hash ^= hidePointList_.GetHashCode();
+      hash ^= groupUnlimitPointList_.GetHashCode();
+      hash ^= notInteractDungeonEntryList_.GetHashCode();
+      hash ^= toBeExploreDungeonEntryList_.GetHashCode();
+      hash ^= notExploredDungeonEntryList_.GetHashCode();
       if (BelongUid != 0) hash ^= BelongUid.GetHashCode();
       hash ^= unlockedPointList_.GetHashCode();
-      hash ^= unlockAreaList_.GetHashCode();
-      hash ^= hidePointList_.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      hash ^= notInteractDungeonEntryList_.GetHashCode();
-      hash ^= groupUnlimitPointList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -303,27 +307,27 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      unlockAreaList_.WriteTo(output, _repeated_unlockAreaList_codec);
-      lockedPointList_.WriteTo(output, _repeated_lockedPointList_codec);
-      hidePointList_.WriteTo(output, _repeated_hidePointList_codec);
-      unhidePointList_.WriteTo(output, _repeated_unhidePointList_codec);
-      notInteractDungeonEntryList_.WriteTo(output, _repeated_notInteractDungeonEntryList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(Retcode);
-      }
       groupUnlimitPointList_.WriteTo(output, _repeated_groupUnlimitPointList_codec);
+      unlockedPointList_.WriteTo(output, _repeated_unlockedPointList_codec);
+      unhidePointList_.WriteTo(output, _repeated_unhidePointList_codec);
+      toBeExploreDungeonEntryList_.WriteTo(output, _repeated_toBeExploreDungeonEntryList_codec);
       notExploredDungeonEntryList_.WriteTo(output, _repeated_notExploredDungeonEntryList_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      unlockAreaList_.WriteTo(output, _repeated_unlockAreaList_codec);
+      hidePointList_.WriteTo(output, _repeated_hidePointList_codec);
+      notInteractDungeonEntryList_.WriteTo(output, _repeated_notInteractDungeonEntryList_codec);
       if (BelongUid != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(BelongUid);
       }
-      unlockedPointList_.WriteTo(output, _repeated_unlockedPointList_codec);
-      if (SceneId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(SceneId);
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
-      toBeExploreDungeonEntryList_.WriteTo(output, _repeated_toBeExploreDungeonEntryList_codec);
+      lockedPointList_.WriteTo(output, _repeated_lockedPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -334,27 +338,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      unlockAreaList_.WriteTo(ref output, _repeated_unlockAreaList_codec);
-      lockedPointList_.WriteTo(ref output, _repeated_lockedPointList_codec);
-      hidePointList_.WriteTo(ref output, _repeated_hidePointList_codec);
-      unhidePointList_.WriteTo(ref output, _repeated_unhidePointList_codec);
-      notInteractDungeonEntryList_.WriteTo(ref output, _repeated_notInteractDungeonEntryList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(Retcode);
-      }
       groupUnlimitPointList_.WriteTo(ref output, _repeated_groupUnlimitPointList_codec);
+      unlockedPointList_.WriteTo(ref output, _repeated_unlockedPointList_codec);
+      unhidePointList_.WriteTo(ref output, _repeated_unhidePointList_codec);
+      toBeExploreDungeonEntryList_.WriteTo(ref output, _repeated_toBeExploreDungeonEntryList_codec);
       notExploredDungeonEntryList_.WriteTo(ref output, _repeated_notExploredDungeonEntryList_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SceneId);
+      }
+      unlockAreaList_.WriteTo(ref output, _repeated_unlockAreaList_codec);
+      hidePointList_.WriteTo(ref output, _repeated_hidePointList_codec);
+      notInteractDungeonEntryList_.WriteTo(ref output, _repeated_notInteractDungeonEntryList_codec);
       if (BelongUid != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(BelongUid);
       }
-      unlockedPointList_.WriteTo(ref output, _repeated_unlockedPointList_codec);
-      if (SceneId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(SceneId);
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
-      toBeExploreDungeonEntryList_.WriteTo(ref output, _repeated_toBeExploreDungeonEntryList_codec);
+      lockedPointList_.WriteTo(ref output, _repeated_lockedPointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -365,24 +369,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += notExploredDungeonEntryList_.CalculateSize(_repeated_notExploredDungeonEntryList_codec);
-      size += toBeExploreDungeonEntryList_.CalculateSize(_repeated_toBeExploreDungeonEntryList_codec);
+      size += unlockAreaList_.CalculateSize(_repeated_unlockAreaList_codec);
       size += lockedPointList_.CalculateSize(_repeated_lockedPointList_codec);
-      size += unhidePointList_.CalculateSize(_repeated_unhidePointList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += unhidePointList_.CalculateSize(_repeated_unhidePointList_codec);
+      size += hidePointList_.CalculateSize(_repeated_hidePointList_codec);
+      size += groupUnlimitPointList_.CalculateSize(_repeated_groupUnlimitPointList_codec);
+      size += notInteractDungeonEntryList_.CalculateSize(_repeated_notInteractDungeonEntryList_codec);
+      size += toBeExploreDungeonEntryList_.CalculateSize(_repeated_toBeExploreDungeonEntryList_codec);
+      size += notExploredDungeonEntryList_.CalculateSize(_repeated_notExploredDungeonEntryList_codec);
       if (BelongUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BelongUid);
       }
       size += unlockedPointList_.CalculateSize(_repeated_unlockedPointList_codec);
-      size += unlockAreaList_.CalculateSize(_repeated_unlockAreaList_codec);
-      size += hidePointList_.CalculateSize(_repeated_hidePointList_codec);
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
-      size += notInteractDungeonEntryList_.CalculateSize(_repeated_notInteractDungeonEntryList_codec);
-      size += groupUnlimitPointList_.CalculateSize(_repeated_groupUnlimitPointList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -395,24 +399,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      notExploredDungeonEntryList_.Add(other.notExploredDungeonEntryList_);
-      toBeExploreDungeonEntryList_.Add(other.toBeExploreDungeonEntryList_);
+      unlockAreaList_.Add(other.unlockAreaList_);
       lockedPointList_.Add(other.lockedPointList_);
-      unhidePointList_.Add(other.unhidePointList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      unhidePointList_.Add(other.unhidePointList_);
+      hidePointList_.Add(other.hidePointList_);
+      groupUnlimitPointList_.Add(other.groupUnlimitPointList_);
+      notInteractDungeonEntryList_.Add(other.notInteractDungeonEntryList_);
+      toBeExploreDungeonEntryList_.Add(other.toBeExploreDungeonEntryList_);
+      notExploredDungeonEntryList_.Add(other.notExploredDungeonEntryList_);
       if (other.BelongUid != 0) {
         BelongUid = other.BelongUid;
       }
       unlockedPointList_.Add(other.unlockedPointList_);
-      unlockAreaList_.Add(other.unlockAreaList_);
-      hidePointList_.Add(other.hidePointList_);
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
-      notInteractDungeonEntryList_.Add(other.notInteractDungeonEntryList_);
-      groupUnlimitPointList_.Add(other.groupUnlimitPointList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -430,59 +434,59 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 10:
           case 8: {
-            unlockAreaList_.AddEntriesFrom(input, _repeated_unlockAreaList_codec);
+            groupUnlimitPointList_.AddEntriesFrom(input, _repeated_groupUnlimitPointList_codec);
             break;
           }
           case 18:
           case 16: {
-            lockedPointList_.AddEntriesFrom(input, _repeated_lockedPointList_codec);
+            unlockedPointList_.AddEntriesFrom(input, _repeated_unlockedPointList_codec);
             break;
           }
-          case 34:
-          case 32: {
-            hidePointList_.AddEntriesFrom(input, _repeated_hidePointList_codec);
-            break;
-          }
-          case 42:
-          case 40: {
+          case 26:
+          case 24: {
             unhidePointList_.AddEntriesFrom(input, _repeated_unhidePointList_codec);
             break;
           }
           case 50:
           case 48: {
-            notInteractDungeonEntryList_.AddEntriesFrom(input, _repeated_notInteractDungeonEntryList_codec);
+            toBeExploreDungeonEntryList_.AddEntriesFrom(input, _repeated_toBeExploreDungeonEntryList_codec);
             break;
           }
+          case 58:
+          case 56: {
+            notExploredDungeonEntryList_.AddEntriesFrom(input, _repeated_notExploredDungeonEntryList_codec);
+            break;
+          }
+          case 64: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 74:
           case 72: {
-            Retcode = input.ReadInt32();
+            unlockAreaList_.AddEntriesFrom(input, _repeated_unlockAreaList_codec);
             break;
           }
           case 82:
           case 80: {
-            groupUnlimitPointList_.AddEntriesFrom(input, _repeated_groupUnlimitPointList_codec);
+            hidePointList_.AddEntriesFrom(input, _repeated_hidePointList_codec);
             break;
           }
           case 90:
           case 88: {
-            notExploredDungeonEntryList_.AddEntriesFrom(input, _repeated_notExploredDungeonEntryList_codec);
+            notInteractDungeonEntryList_.AddEntriesFrom(input, _repeated_notInteractDungeonEntryList_codec);
             break;
           }
           case 96: {
             BelongUid = input.ReadUInt32();
             break;
           }
-          case 106:
           case 104: {
-            unlockedPointList_.AddEntriesFrom(input, _repeated_unlockedPointList_codec);
-            break;
-          }
-          case 112: {
-            SceneId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 122:
           case 120: {
-            toBeExploreDungeonEntryList_.AddEntriesFrom(input, _repeated_toBeExploreDungeonEntryList_codec);
+            lockedPointList_.AddEntriesFrom(input, _repeated_lockedPointList_codec);
             break;
           }
         }
@@ -502,59 +506,59 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           case 10:
           case 8: {
-            unlockAreaList_.AddEntriesFrom(ref input, _repeated_unlockAreaList_codec);
+            groupUnlimitPointList_.AddEntriesFrom(ref input, _repeated_groupUnlimitPointList_codec);
             break;
           }
           case 18:
           case 16: {
-            lockedPointList_.AddEntriesFrom(ref input, _repeated_lockedPointList_codec);
+            unlockedPointList_.AddEntriesFrom(ref input, _repeated_unlockedPointList_codec);
             break;
           }
-          case 34:
-          case 32: {
-            hidePointList_.AddEntriesFrom(ref input, _repeated_hidePointList_codec);
-            break;
-          }
-          case 42:
-          case 40: {
+          case 26:
+          case 24: {
             unhidePointList_.AddEntriesFrom(ref input, _repeated_unhidePointList_codec);
             break;
           }
           case 50:
           case 48: {
-            notInteractDungeonEntryList_.AddEntriesFrom(ref input, _repeated_notInteractDungeonEntryList_codec);
+            toBeExploreDungeonEntryList_.AddEntriesFrom(ref input, _repeated_toBeExploreDungeonEntryList_codec);
             break;
           }
+          case 58:
+          case 56: {
+            notExploredDungeonEntryList_.AddEntriesFrom(ref input, _repeated_notExploredDungeonEntryList_codec);
+            break;
+          }
+          case 64: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 74:
           case 72: {
-            Retcode = input.ReadInt32();
+            unlockAreaList_.AddEntriesFrom(ref input, _repeated_unlockAreaList_codec);
             break;
           }
           case 82:
           case 80: {
-            groupUnlimitPointList_.AddEntriesFrom(ref input, _repeated_groupUnlimitPointList_codec);
+            hidePointList_.AddEntriesFrom(ref input, _repeated_hidePointList_codec);
             break;
           }
           case 90:
           case 88: {
-            notExploredDungeonEntryList_.AddEntriesFrom(ref input, _repeated_notExploredDungeonEntryList_codec);
+            notInteractDungeonEntryList_.AddEntriesFrom(ref input, _repeated_notInteractDungeonEntryList_codec);
             break;
           }
           case 96: {
             BelongUid = input.ReadUInt32();
             break;
           }
-          case 106:
           case 104: {
-            unlockedPointList_.AddEntriesFrom(ref input, _repeated_unlockedPointList_codec);
-            break;
-          }
-          case 112: {
-            SceneId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 122:
           case 120: {
-            toBeExploreDungeonEntryList_.AddEntriesFrom(ref input, _repeated_toBeExploreDungeonEntryList_codec);
+            lockedPointList_.AddEntriesFrom(ref input, _repeated_lockedPointList_codec);
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FindHilichurlDayContentInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFGaW5kSGlsaWNodXJsRGF5Q29udGVudEluZm8ucHJvdG8iMQobRmluZEhp",
-            "bGljaHVybERheUNvbnRlbnRJbmZvEhIKCnN0YXJ0X3RpbWUYASABKA1CIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFGaW5kSGlsaWNodXJsRGF5Q29udGVudEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iMQobRmluZEhpbGljaHVybERheUNv",
+            "bnRlbnRJbmZvEhIKCnN0YXJ0X3RpbWUYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "start_time" field.</summary>
-    public const int StartTimeFieldNumber = 1;
+    public const int StartTimeFieldNumber = 13;
     private uint startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (StartTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(104);
         output.WriteUInt32(StartTime);
       }
       if (_unknownFields != null) {
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (StartTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(104);
         output.WriteUInt32(StartTime);
       }
       if (_unknownFields != null) {
@@ -196,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 104: {
             StartTime = input.ReadUInt32();
             break;
           }
@@ -215,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 104: {
             StartTime = input.ReadUInt32();
             break;
           }

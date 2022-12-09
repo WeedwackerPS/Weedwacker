@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivitySelectAvatarCardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBY3Rpdml0eVNlbGVjdEF2YXRhckNhcmRSZXEucHJvdG8iRQobQWN0aXZp",
-            "dHlTZWxlY3RBdmF0YXJDYXJkUmVxEhMKC2FjdGl2aXR5X2lkGA8gASgNEhEK",
-            "CXJld2FyZF9pZBgKIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "CiFBY3Rpdml0eVNlbGVjdEF2YXRhckNhcmRSZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iRQobQWN0aXZpdHlTZWxlY3RBdmF0",
+            "YXJDYXJkUmVxEhEKCXJld2FyZF9pZBgOIAEoDRITCgthY3Rpdml0eV9pZBgG",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivitySelectAvatarCardReq), global::Weedwacker.Shared.Network.Proto.ActivitySelectAvatarCardReq.Parser, new[]{ "ActivityId", "RewardId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivitySelectAvatarCardReq), global::Weedwacker.Shared.Network.Proto.ActivitySelectAvatarCardReq.Parser, new[]{ "RewardId", "ActivityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2028
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2052;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivitySelectAvatarCardReq : pb::IMessage<ActivitySelectAvatarCardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivitySelectAvatarCardReq(ActivitySelectAvatarCardReq other) : this() {
-      activityId_ = other.activityId_;
       rewardId_ = other.rewardId_;
+      activityId_ = other.activityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivitySelectAvatarCardReq(this);
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 15;
-    private uint activityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ActivityId {
-      get { return activityId_; }
-      set {
-        activityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reward_id" field.</summary>
-    public const int RewardIdFieldNumber = 10;
+    public const int RewardIdFieldNumber = 14;
     private uint rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return rewardId_; }
       set {
         rewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 6;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ActivityId != other.ActivityId) return false;
       if (RewardId != other.RewardId) return false;
+      if (ActivityId != other.ActivityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
       if (RewardId != 0) hash ^= RewardId.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RewardId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(RewardId);
-      }
       if (ActivityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(ActivityId);
+      }
+      if (RewardId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RewardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RewardId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(RewardId);
-      }
       if (ActivityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(ActivityId);
+      }
+      if (RewardId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RewardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ActivityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-      }
       if (RewardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
+      }
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ActivityId != 0) {
-        ActivityId = other.ActivityId;
-      }
       if (other.RewardId != 0) {
         RewardId = other.RewardId;
+      }
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            RewardId = input.ReadUInt32();
+          case 48: {
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            ActivityId = input.ReadUInt32();
+          case 112: {
+            RewardId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            RewardId = input.ReadUInt32();
+          case 48: {
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            ActivityId = input.ReadUInt32();
+          case 112: {
+            RewardId = input.ReadUInt32();
             break;
           }
         }

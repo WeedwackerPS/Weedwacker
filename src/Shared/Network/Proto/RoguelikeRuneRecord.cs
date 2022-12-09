@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeRuneRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlSb2d1ZWxpa2VSdW5lUmVjb3JkLnByb3RvIk0KE1JvZ3VlbGlrZVJ1bmVS",
-            "ZWNvcmQSEgoKbGVmdF9jb3VudBgOIAEoDRIPCgdydW5lX2lkGAYgASgNEhEK",
-            "CW1heF9jb3VudBgEIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChlSb2d1ZWxpa2VSdW5lUmVjb3JkLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvImAKE1JvZ3VlbGlrZVJ1bmVSZWNvcmQSDwoHcnVu",
+            "ZV9pZBgKIAEoDRIbChNVbmszMzAwX0pMT0xNTEZBUEhIGAEgASgNEhsKE1Vu",
+            "azMzMDBfSUdCT0pMUFBLT04YCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord), global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord.Parser, new[]{ "LeftCount", "RuneId", "MaxCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord), global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord.Parser, new[]{ "RuneId", "Unk3300JLOLMLFAPHH", "Unk3300IGBOJLPPKON" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeRuneRecord(RoguelikeRuneRecord other) : this() {
-      leftCount_ = other.leftCount_;
       runeId_ = other.runeId_;
-      maxCount_ = other.maxCount_;
+      unk3300JLOLMLFAPHH_ = other.unk3300JLOLMLFAPHH_;
+      unk3300IGBOJLPPKON_ = other.unk3300IGBOJLPPKON_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RoguelikeRuneRecord(this);
     }
 
-    /// <summary>Field number for the "left_count" field.</summary>
-    public const int LeftCountFieldNumber = 14;
-    private uint leftCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftCount {
-      get { return leftCount_; }
-      set {
-        leftCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "rune_id" field.</summary>
-    public const int RuneIdFieldNumber = 6;
+    public const int RuneIdFieldNumber = 10;
     private uint runeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,15 +96,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_count" field.</summary>
-    public const int MaxCountFieldNumber = 4;
-    private uint maxCount_;
+    /// <summary>Field number for the "Unk3300_JLOLMLFAPHH" field.</summary>
+    public const int Unk3300JLOLMLFAPHHFieldNumber = 1;
+    private uint unk3300JLOLMLFAPHH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxCount {
-      get { return maxCount_; }
+    public uint Unk3300JLOLMLFAPHH {
+      get { return unk3300JLOLMLFAPHH_; }
       set {
-        maxCount_ = value;
+        unk3300JLOLMLFAPHH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IGBOJLPPKON" field.</summary>
+    public const int Unk3300IGBOJLPPKONFieldNumber = 11;
+    private uint unk3300IGBOJLPPKON_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IGBOJLPPKON {
+      get { return unk3300IGBOJLPPKON_; }
+      set {
+        unk3300IGBOJLPPKON_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LeftCount != other.LeftCount) return false;
       if (RuneId != other.RuneId) return false;
-      if (MaxCount != other.MaxCount) return false;
+      if (Unk3300JLOLMLFAPHH != other.Unk3300JLOLMLFAPHH) return false;
+      if (Unk3300IGBOJLPPKON != other.Unk3300IGBOJLPPKON) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LeftCount != 0) hash ^= LeftCount.GetHashCode();
       if (RuneId != 0) hash ^= RuneId.GetHashCode();
-      if (MaxCount != 0) hash ^= MaxCount.GetHashCode();
+      if (Unk3300JLOLMLFAPHH != 0) hash ^= Unk3300JLOLMLFAPHH.GetHashCode();
+      if (Unk3300IGBOJLPPKON != 0) hash ^= Unk3300IGBOJLPPKON.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaxCount);
+      if (Unk3300JLOLMLFAPHH != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300JLOLMLFAPHH);
       }
       if (RuneId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(80);
         output.WriteUInt32(RuneId);
       }
-      if (LeftCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LeftCount);
+      if (Unk3300IGBOJLPPKON != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300IGBOJLPPKON);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaxCount);
+      if (Unk3300JLOLMLFAPHH != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300JLOLMLFAPHH);
       }
       if (RuneId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(80);
         output.WriteUInt32(RuneId);
       }
-      if (LeftCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(LeftCount);
+      if (Unk3300IGBOJLPPKON != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300IGBOJLPPKON);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LeftCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftCount);
-      }
       if (RuneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RuneId);
       }
-      if (MaxCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCount);
+      if (Unk3300JLOLMLFAPHH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JLOLMLFAPHH);
+      }
+      if (Unk3300IGBOJLPPKON != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IGBOJLPPKON);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LeftCount != 0) {
-        LeftCount = other.LeftCount;
-      }
       if (other.RuneId != 0) {
         RuneId = other.RuneId;
       }
-      if (other.MaxCount != 0) {
-        MaxCount = other.MaxCount;
+      if (other.Unk3300JLOLMLFAPHH != 0) {
+        Unk3300JLOLMLFAPHH = other.Unk3300JLOLMLFAPHH;
+      }
+      if (other.Unk3300IGBOJLPPKON != 0) {
+        Unk3300IGBOJLPPKON = other.Unk3300IGBOJLPPKON;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            MaxCount = input.ReadUInt32();
+          case 8: {
+            Unk3300JLOLMLFAPHH = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 80: {
             RuneId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            LeftCount = input.ReadUInt32();
+          case 88: {
+            Unk3300IGBOJLPPKON = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            MaxCount = input.ReadUInt32();
+          case 8: {
+            Unk3300JLOLMLFAPHH = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 80: {
             RuneId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            LeftCount = input.ReadUInt32();
+          case 88: {
+            Unk3300IGBOJLPPKON = input.ReadUInt32();
             break;
           }
         }

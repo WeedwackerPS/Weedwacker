@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerPropChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxQbGF5ZXJQcm9wQ2hhbmdlTm90aWZ5LnByb3RvIj8KFlBsYXllclByb3BD",
-            "aGFuZ2VOb3RpZnkSEgoKcHJvcF9kZWx0YRgNIAEoDRIRCglwcm9wX3R5cGUY",
-            "DCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChxQbGF5ZXJQcm9wQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIj8KFlBsYXllclByb3BDaGFuZ2VOb3RpZnkS",
+            "EgoKcHJvcF9kZWx0YRgEIAEoDRIRCglwcm9wX3R5cGUYDSABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 139
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 116;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerPropChangeNotify : pb::IMessage<PlayerPropChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "prop_delta" field.</summary>
-    public const int PropDeltaFieldNumber = 13;
+    public const int PropDeltaFieldNumber = 4;
     private uint propDelta_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "prop_type" field.</summary>
-    public const int PropTypeFieldNumber = 12;
+    public const int PropTypeFieldNumber = 13;
     private uint propType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PropType != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(PropType);
-      }
       if (PropDelta != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(PropDelta);
+      }
+      if (PropType != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(PropType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PropType != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(PropType);
-      }
       if (PropDelta != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(PropDelta);
+      }
+      if (PropType != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(PropType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            PropType = input.ReadUInt32();
+          case 32: {
+            PropDelta = input.ReadUInt32();
             break;
           }
           case 104: {
-            PropDelta = input.ReadUInt32();
+            PropType = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            PropType = input.ReadUInt32();
+          case 32: {
+            PropDelta = input.ReadUInt32();
             break;
           }
           case 104: {
-            PropDelta = input.ReadUInt32();
+            PropType = input.ReadUInt32();
             break;
           }
         }

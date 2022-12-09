@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryBrokenFloorInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFTY2VuZUdhbGxlcnlCcm9rZW5GbG9vckluZm8ucHJvdG8irAEKG1NjZW5l",
-            "R2FsbGVyeUJyb2tlbkZsb29ySW5mbxJGCg5mYWxsX2NvdW50X21hcBgDIAMo",
-            "CzIuLlNjZW5lR2FsbGVyeUJyb2tlbkZsb29ySW5mby5GYWxsQ291bnRNYXBF",
-            "bnRyeRIQCghlbmRfdGltZRgJIAEoDRozChFGYWxsQ291bnRNYXBFbnRyeRIL",
-            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFTY2VuZUdhbGxlcnlCcm9rZW5GbG9vckluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8izAEKG1NjZW5lR2FsbGVyeUJyb2tl",
+            "bkZsb29ySW5mbxIQCghlbmRfdGltZRgKIAEoDRJmCg5mYWxsX2NvdW50X21h",
+            "cBgPIAMoCzJOLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2Nl",
+            "bmVHYWxsZXJ5QnJva2VuRmxvb3JJbmZvLkZhbGxDb3VudE1hcEVudHJ5GjMK",
+            "EUZhbGxDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEo",
+            "DToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryBrokenFloorInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryBrokenFloorInfo.Parser, new[]{ "FallCountMap", "EndTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryBrokenFloorInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryBrokenFloorInfo.Parser, new[]{ "EndTime", "FallCountMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryBrokenFloorInfo(SceneGalleryBrokenFloorInfo other) : this() {
-      fallCountMap_ = other.fallCountMap_.Clone();
       endTime_ = other.endTime_;
+      fallCountMap_ = other.fallCountMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,19 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryBrokenFloorInfo(this);
     }
 
-    /// <summary>Field number for the "fall_count_map" field.</summary>
-    public const int FallCountMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_fallCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> fallCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> FallCountMap {
-      get { return fallCountMap_; }
-    }
-
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 9;
+    public const int EndTimeFieldNumber = 10;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,6 +96,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         endTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "fall_count_map" field.</summary>
+    public const int FallCountMapFieldNumber = 15;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_fallCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
+    private readonly pbc::MapField<uint, uint> fallCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> FallCountMap {
+      get { return fallCountMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +124,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!FallCountMap.Equals(other.FallCountMap)) return false;
       if (EndTime != other.EndTime) return false;
+      if (!FallCountMap.Equals(other.FallCountMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= FallCountMap.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= FallCountMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      fallCountMap_.WriteTo(output, _map_fallCountMap_codec);
       if (EndTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EndTime);
       }
+      fallCountMap_.WriteTo(output, _map_fallCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,11 +168,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      fallCountMap_.WriteTo(ref output, _map_fallCountMap_codec);
       if (EndTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EndTime);
       }
+      fallCountMap_.WriteTo(ref output, _map_fallCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -182,10 +183,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += fallCountMap_.CalculateSize(_map_fallCountMap_codec);
       if (EndTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
+      size += fallCountMap_.CalculateSize(_map_fallCountMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -198,10 +199,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      fallCountMap_.Add(other.fallCountMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
+      fallCountMap_.Add(other.fallCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -217,12 +218,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            fallCountMap_.AddEntriesFrom(input, _map_fallCountMap_codec);
+          case 80: {
+            EndTime = input.ReadUInt32();
             break;
           }
-          case 72: {
-            EndTime = input.ReadUInt32();
+          case 122: {
+            fallCountMap_.AddEntriesFrom(input, _map_fallCountMap_codec);
             break;
           }
         }
@@ -240,12 +241,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            fallCountMap_.AddEntriesFrom(ref input, _map_fallCountMap_codec);
+          case 80: {
+            EndTime = input.ReadUInt32();
             break;
           }
-          case 72: {
-            EndTime = input.ReadUInt32();
+          case 122: {
+            fallCountMap_.AddEntriesFrom(ref input, _map_fallCountMap_codec);
             break;
           }
         }

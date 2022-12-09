@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationAttackReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dPcGVyYXRpb25BdHRhY2sucHJvdG8iRAoSR0NHT3BlcmF0aW9uQXR0",
-            "YWNrEhwKFGNvc3RfZGljZV9pbmRleF9saXN0GAggAygNEhAKCHNraWxsX2lk",
-            "GAIgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChhHQ0dPcGVyYXRpb25BdHRhY2sucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iRAoSR0NHT3BlcmF0aW9uQXR0YWNrEhAKCHNraWxs",
+            "X2lkGA8gASgNEhwKFGNvc3RfZGljZV9pbmRleF9saXN0GAMgAygNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationAttack), global::Weedwacker.Shared.Network.Proto.GCGOperationAttack.Parser, new[]{ "CostDiceIndexList", "SkillId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationAttack), global::Weedwacker.Shared.Network.Proto.GCGOperationAttack.Parser, new[]{ "SkillId", "CostDiceIndexList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGOperationAttack(GCGOperationAttack other) : this() {
-      costDiceIndexList_ = other.costDiceIndexList_.Clone();
       skillId_ = other.skillId_;
+      costDiceIndexList_ = other.costDiceIndexList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,19 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGOperationAttack(this);
     }
 
-    /// <summary>Field number for the "cost_dice_index_list" field.</summary>
-    public const int CostDiceIndexListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_costDiceIndexList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> costDiceIndexList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CostDiceIndexList {
-      get { return costDiceIndexList_; }
-    }
-
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 2;
+    public const int SkillIdFieldNumber = 15;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +93,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         skillId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "cost_dice_index_list" field.</summary>
+    public const int CostDiceIndexListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_costDiceIndexList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> costDiceIndexList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CostDiceIndexList {
+      get { return costDiceIndexList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!costDiceIndexList_.Equals(other.costDiceIndexList_)) return false;
       if (SkillId != other.SkillId) return false;
+      if(!costDiceIndexList_.Equals(other.costDiceIndexList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= costDiceIndexList_.GetHashCode();
       if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      hash ^= costDiceIndexList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      costDiceIndexList_.WriteTo(output, _repeated_costDiceIndexList_codec);
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(120);
         output.WriteUInt32(SkillId);
       }
-      costDiceIndexList_.WriteTo(output, _repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      costDiceIndexList_.WriteTo(ref output, _repeated_costDiceIndexList_codec);
       if (SkillId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(120);
         output.WriteUInt32(SkillId);
       }
-      costDiceIndexList_.WriteTo(ref output, _repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,10 +180,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += costDiceIndexList_.CalculateSize(_repeated_costDiceIndexList_codec);
       if (SkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
+      size += costDiceIndexList_.CalculateSize(_repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +196,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      costDiceIndexList_.Add(other.costDiceIndexList_);
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
       }
+      costDiceIndexList_.Add(other.costDiceIndexList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            SkillId = input.ReadUInt32();
+          case 26:
+          case 24: {
+            costDiceIndexList_.AddEntriesFrom(input, _repeated_costDiceIndexList_codec);
             break;
           }
-          case 66:
-          case 64: {
-            costDiceIndexList_.AddEntriesFrom(input, _repeated_costDiceIndexList_codec);
+          case 120: {
+            SkillId = input.ReadUInt32();
             break;
           }
         }
@@ -239,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            SkillId = input.ReadUInt32();
+          case 26:
+          case 24: {
+            costDiceIndexList_.AddEntriesFrom(ref input, _repeated_costDiceIndexList_codec);
             break;
           }
-          case 66:
-          case 64: {
-            costDiceIndexList_.AddEntriesFrom(ref input, _repeated_costDiceIndexList_codec);
+          case 120: {
+            SkillId = input.ReadUInt32();
             break;
           }
         }

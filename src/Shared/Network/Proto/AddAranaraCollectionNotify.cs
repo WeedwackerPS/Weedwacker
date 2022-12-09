@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AddAranaraCollectionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBZGRBcmFuYXJhQ29sbGVjdGlvbk5vdGlmeS5wcm90bxocQXJhbmFyYUNv",
-            "bGxlY3Rpb25TdGF0ZS5wcm90byKoAQoaQWRkQXJhbmFyYUNvbGxlY3Rpb25O",
-            "b3RpZnkSFwoPY29sbGVjdGlvbl90eXBlGAcgASgNEi0KDHRhcmdldF9zdGF0",
-            "ZRgMIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSKwoKZnJvbV9zdGF0",
-            "ZRgPIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSFQoNY29sbGVjdGlv",
-            "bl9pZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiBBZGRBcmFuYXJhQ29sbGVjdGlvbk5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxocQXJhbmFyYUNvbGxlY3Rpb25TdGF0",
+            "ZS5wcm90byL4AQoaQWRkQXJhbmFyYUNvbGxlY3Rpb25Ob3RpZnkSVAoTVW5r",
+            "MzMwMF9OSkxKQkJNSkxCSxgKIAEoDjI3LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQXJhbmFyYUNvbGxlY3Rpb25TdGF0ZRIVCg1jb2xsZWN0",
+            "aW9uX2lkGAcgASgNElQKE1VuazMzMDBfQUZCSUJMTktDT0QYBCABKA4yNy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFyYW5hcmFDb2xsZWN0",
+            "aW9uU3RhdGUSFwoPY29sbGVjdGlvbl90eXBlGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AranaraCollectionStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddAranaraCollectionNotify), global::Weedwacker.Shared.Network.Proto.AddAranaraCollectionNotify.Parser, new[]{ "CollectionType", "TargetState", "FromState", "CollectionId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AddAranaraCollectionNotify), global::Weedwacker.Shared.Network.Proto.AddAranaraCollectionNotify.Parser, new[]{ "Unk3300NJLJBBMJLBK", "CollectionId", "Unk3300AFBIBLNKCOD", "CollectionType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6368
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6391;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AddAranaraCollectionNotify : pb::IMessage<AddAranaraCollectionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddAranaraCollectionNotify(AddAranaraCollectionNotify other) : this() {
-      collectionType_ = other.collectionType_;
-      targetState_ = other.targetState_;
-      fromState_ = other.fromState_;
+      unk3300NJLJBBMJLBK_ = other.unk3300NJLJBBMJLBK_;
       collectionId_ = other.collectionId_;
+      unk3300AFBIBLNKCOD_ = other.unk3300AFBIBLNKCOD_;
+      collectionType_ = other.collectionType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,44 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AddAranaraCollectionNotify(this);
     }
 
-    /// <summary>Field number for the "collection_type" field.</summary>
-    public const int CollectionTypeFieldNumber = 7;
-    private uint collectionType_;
+    /// <summary>Field number for the "Unk3300_NJLJBBMJLBK" field.</summary>
+    public const int Unk3300NJLJBBMJLBKFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.AranaraCollectionState unk3300NJLJBBMJLBK_ = global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CollectionType {
-      get { return collectionType_; }
+    public global::Weedwacker.Shared.Network.Proto.AranaraCollectionState Unk3300NJLJBBMJLBK {
+      get { return unk3300NJLJBBMJLBK_; }
       set {
-        collectionType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "target_state" field.</summary>
-    public const int TargetStateFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.AranaraCollectionState targetState_ = global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AranaraCollectionState TargetState {
-      get { return targetState_; }
-      set {
-        targetState_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "from_state" field.</summary>
-    public const int FromStateFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.AranaraCollectionState fromState_ = global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AranaraCollectionState FromState {
-      get { return fromState_; }
-      set {
-        fromState_ = value;
+        unk3300NJLJBBMJLBK_ = value;
       }
     }
 
     /// <summary>Field number for the "collection_id" field.</summary>
-    public const int CollectionIdFieldNumber = 8;
+    public const int CollectionIdFieldNumber = 7;
     private uint collectionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +119,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return collectionId_; }
       set {
         collectionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AFBIBLNKCOD" field.</summary>
+    public const int Unk3300AFBIBLNKCODFieldNumber = 4;
+    private global::Weedwacker.Shared.Network.Proto.AranaraCollectionState unk3300AFBIBLNKCOD_ = global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AranaraCollectionState Unk3300AFBIBLNKCOD {
+      get { return unk3300AFBIBLNKCOD_; }
+      set {
+        unk3300AFBIBLNKCOD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collection_type" field.</summary>
+    public const int CollectionTypeFieldNumber = 2;
+    private uint collectionType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CollectionType {
+      get { return collectionType_; }
+      set {
+        collectionType_ = value;
       }
     }
 
@@ -156,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CollectionType != other.CollectionType) return false;
-      if (TargetState != other.TargetState) return false;
-      if (FromState != other.FromState) return false;
+      if (Unk3300NJLJBBMJLBK != other.Unk3300NJLJBBMJLBK) return false;
       if (CollectionId != other.CollectionId) return false;
+      if (Unk3300AFBIBLNKCOD != other.Unk3300AFBIBLNKCOD) return false;
+      if (CollectionType != other.CollectionType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -167,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CollectionType != 0) hash ^= CollectionType.GetHashCode();
-      if (TargetState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) hash ^= TargetState.GetHashCode();
-      if (FromState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) hash ^= FromState.GetHashCode();
+      if (Unk3300NJLJBBMJLBK != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) hash ^= Unk3300NJLJBBMJLBK.GetHashCode();
       if (CollectionId != 0) hash ^= CollectionId.GetHashCode();
+      if (Unk3300AFBIBLNKCOD != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) hash ^= Unk3300AFBIBLNKCOD.GetHashCode();
+      if (CollectionType != 0) hash ^= CollectionType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -190,20 +195,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CollectionType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(CollectionType);
       }
+      if (Unk3300AFBIBLNKCOD != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Unk3300AFBIBLNKCOD);
+      }
       if (CollectionId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(CollectionId);
       }
-      if (TargetState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        output.WriteRawTag(96);
-        output.WriteEnum((int) TargetState);
-      }
-      if (FromState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) FromState);
+      if (Unk3300NJLJBBMJLBK != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Unk3300NJLJBBMJLBK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -216,20 +221,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CollectionType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(CollectionType);
       }
+      if (Unk3300AFBIBLNKCOD != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Unk3300AFBIBLNKCOD);
+      }
       if (CollectionId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(CollectionId);
       }
-      if (TargetState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        output.WriteRawTag(96);
-        output.WriteEnum((int) TargetState);
-      }
-      if (FromState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) FromState);
+      if (Unk3300NJLJBBMJLBK != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Unk3300NJLJBBMJLBK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -241,17 +246,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CollectionType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionType);
-      }
-      if (TargetState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TargetState);
-      }
-      if (FromState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FromState);
+      if (Unk3300NJLJBBMJLBK != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Unk3300NJLJBBMJLBK);
       }
       if (CollectionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionId);
+      }
+      if (Unk3300AFBIBLNKCOD != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Unk3300AFBIBLNKCOD);
+      }
+      if (CollectionType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -265,17 +270,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CollectionType != 0) {
-        CollectionType = other.CollectionType;
-      }
-      if (other.TargetState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        TargetState = other.TargetState;
-      }
-      if (other.FromState != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
-        FromState = other.FromState;
+      if (other.Unk3300NJLJBBMJLBK != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        Unk3300NJLJBBMJLBK = other.Unk3300NJLJBBMJLBK;
       }
       if (other.CollectionId != 0) {
         CollectionId = other.CollectionId;
+      }
+      if (other.Unk3300AFBIBLNKCOD != global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None) {
+        Unk3300AFBIBLNKCOD = other.Unk3300AFBIBLNKCOD;
+      }
+      if (other.CollectionType != 0) {
+        CollectionType = other.CollectionType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -292,20 +297,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 16: {
             CollectionType = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 32: {
+            Unk3300AFBIBLNKCOD = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+          case 56: {
             CollectionId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TargetState = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
-            break;
-          }
-          case 120: {
-            FromState = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
+          case 80: {
+            Unk3300NJLJBBMJLBK = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
             break;
           }
         }
@@ -323,20 +328,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 16: {
             CollectionType = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 32: {
+            Unk3300AFBIBLNKCOD = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+          case 56: {
             CollectionId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TargetState = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
-            break;
-          }
-          case 120: {
-            FromState = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
+          case 80: {
+            Unk3300NJLJBBMJLBK = (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) input.ReadEnum();
             break;
           }
         }

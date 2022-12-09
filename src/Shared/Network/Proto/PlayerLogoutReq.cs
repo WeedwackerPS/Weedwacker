@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerLogoutReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVQbGF5ZXJMb2dvdXRSZXEucHJvdG8iiwIKD1BsYXllckxvZ291dFJlcRIn",
-            "CgZyZWFzb24YBiABKA4yFy5QbGF5ZXJMb2dvdXRSZXEuUmVhc29uIs4BCgZS",
-            "ZWFzb24SFQoRUkVBU09OX0RJU0NPTk5FQ1QQABIVChFSRUFTT05fQ0xJRU5U",
-            "X1JFURABEhIKDlJFQVNPTl9USU1FT1VUEAISFAoQUkVBU09OX0FETUlOX1JF",
-            "URADEhcKE1JFQVNPTl9TRVJWRVJfQ0xPU0UQBBITCg9SRUFTT05fR01fQ0xF",
-            "QVIQBRIaChZSRUFTT05fUExBWUVSX1RSQU5TRkVSEAYSIgoeUkVBU09OX0NM",
-            "SUVOVF9DSEVDS1NVTV9JTlZBTElEEAdCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVQbGF5ZXJMb2dvdXRSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iqwIKD1BsYXllckxvZ291dFJlcRJHCgZyZWFzb24YCSAB",
+            "KA4yNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllckxv",
+            "Z291dFJlcS5SZWFzb24izgEKBlJlYXNvbhIVChFSRUFTT05fRElTQ09OTkVD",
+            "VBAAEhUKEVJFQVNPTl9DTElFTlRfUkVREAESEgoOUkVBU09OX1RJTUVPVVQQ",
+            "AhIUChBSRUFTT05fQURNSU5fUkVREAMSFwoTUkVBU09OX1NFUlZFUl9DTE9T",
+            "RRAEEhMKD1JFQVNPTl9HTV9DTEVBUhAFEhoKFlJFQVNPTl9QTEFZRVJfVFJB",
+            "TlNGRVIQBhIiCh5SRUFTT05fQ0xJRU5UX0NIRUNLU1VNX0lOVkFMSUQQB2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -43,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 107
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 200;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerLogoutReq : pb::IMessage<PlayerLogoutReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 6;
+    public const int ReasonFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason reason_ = global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason.Disconnect;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -147,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason.Disconnect) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -161,7 +166,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason.Disconnect) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -207,7 +212,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 72: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason) input.ReadEnum();
             break;
           }
@@ -226,7 +231,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 72: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PlayerLogoutReq.Types.Reason) input.ReadEnum();
             break;
           }

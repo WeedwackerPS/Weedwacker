@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessEquipCardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Jcm9kb3JpQ2hlc3NFcXVpcENhcmRSc3AucHJvdG8iYwoYSXJvZG9yaUNo",
-            "ZXNzRXF1aXBDYXJkUnNwEg8KB3JldGNvZGUYAiABKAUSDwoHY2FyZF9pZBgI",
-            "IAEoDRIQCghsZXZlbF9pZBgFIAEoDRITCgtpc19oYXJkX21hcBgMIAEoCEIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5Jcm9kb3JpQ2hlc3NFcXVpcENhcmRSc3AucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iYwoYSXJvZG9yaUNoZXNzRXF1aXBDYXJk",
+            "UnNwEg8KB2NhcmRfaWQYCSABKA0SEAoIbGV2ZWxfaWQYAiABKA0SEwoLaXNf",
+            "aGFyZF9tYXAYCCABKAgSDwoHcmV0Y29kZRgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessEquipCardRsp), global::Weedwacker.Shared.Network.Proto.IrodoriChessEquipCardRsp.Parser, new[]{ "Retcode", "CardId", "LevelId", "IsHardMap" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessEquipCardRsp), global::Weedwacker.Shared.Network.Proto.IrodoriChessEquipCardRsp.Parser, new[]{ "CardId", "LevelId", "IsHardMap", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8308
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8884;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IrodoriChessEquipCardRsp : pb::IMessage<IrodoriChessEquipCardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,10 +81,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessEquipCardRsp(IrodoriChessEquipCardRsp other) : this() {
-      retcode_ = other.retcode_;
       cardId_ = other.cardId_;
       levelId_ = other.levelId_;
       isHardMap_ = other.isHardMap_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IrodoriChessEquipCardRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 8;
+    public const int CardIdFieldNumber = 9;
     private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 5;
+    public const int LevelIdFieldNumber = 2;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_hard_map" field.</summary>
-    public const int IsHardMapFieldNumber = 12;
+    public const int IsHardMapFieldNumber = 8;
     private bool isHardMap_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,6 +127,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isHardMap_; }
       set {
         isHardMap_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 1;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -153,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (CardId != other.CardId) return false;
       if (LevelId != other.LevelId) return false;
       if (IsHardMap != other.IsHardMap) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CardId != 0) hash ^= CardId.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (IsHardMap != false) hash ^= IsHardMap.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,20 +191,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
       }
-      if (CardId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CardId);
-      }
       if (IsHardMap != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsHardMap);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,20 +217,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
       }
-      if (CardId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CardId);
-      }
       if (IsHardMap != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteBool(IsHardMap);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -238,9 +242,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (CardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
@@ -249,6 +250,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (IsHardMap != false) {
         size += 1 + 1;
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -262,9 +266,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.CardId != 0) {
         CardId = other.CardId;
       }
@@ -273,6 +274,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.IsHardMap != false) {
         IsHardMap = other.IsHardMap;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 16: {
             LevelId = input.ReadUInt32();
             break;
           }
           case 64: {
-            CardId = input.ReadUInt32();
+            IsHardMap = input.ReadBool();
             break;
           }
-          case 96: {
-            IsHardMap = input.ReadBool();
+          case 72: {
+            CardId = input.ReadUInt32();
             break;
           }
         }
@@ -320,20 +324,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 16: {
             LevelId = input.ReadUInt32();
             break;
           }
           case 64: {
-            CardId = input.ReadUInt32();
+            IsHardMap = input.ReadBool();
             break;
           }
-          case 96: {
-            IsHardMap = input.ReadBool();
+          case 72: {
+            CardId = input.ReadUInt32();
             break;
           }
         }

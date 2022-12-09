@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGWaitingCharacterReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlHQ0dXYWl0aW5nQ2hhcmFjdGVyLnByb3RvIjoKE0dDR1dhaXRpbmdDaGFy",
-            "YWN0ZXISDwoHY2FyZF9pZBgCIAEoDRISCgpjb25kX2NvdW50GA4gASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlHQ0dXYWl0aW5nQ2hhcmFjdGVyLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIjoKE0dDR1dhaXRpbmdDaGFyYWN0ZXISEgoKY29u",
+            "ZF9jb3VudBgBIAEoDRIPCgdjYXJkX2lkGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter), global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter.Parser, new[]{ "CardId", "CondCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter), global::Weedwacker.Shared.Network.Proto.GCGWaitingCharacter.Parser, new[]{ "CondCount", "CardId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGWaitingCharacter(GCGWaitingCharacter other) : this() {
-      cardId_ = other.cardId_;
       condCount_ = other.condCount_;
+      cardId_ = other.cardId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,20 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGWaitingCharacter(this);
     }
 
-    /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 2;
-    private uint cardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CardId {
-      get { return cardId_; }
-      set {
-        cardId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cond_count" field.</summary>
-    public const int CondCountFieldNumber = 14;
+    public const int CondCountFieldNumber = 1;
     private uint condCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return condCount_; }
       set {
         condCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_id" field.</summary>
+    public const int CardIdFieldNumber = 11;
+    private uint cardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CardId {
+      get { return cardId_; }
+      set {
+        cardId_ = value;
       }
     }
 
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CardId != other.CardId) return false;
       if (CondCount != other.CondCount) return false;
+      if (CardId != other.CardId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CardId != 0) hash ^= CardId.GetHashCode();
       if (CondCount != 0) hash ^= CondCount.GetHashCode();
+      if (CardId != 0) hash ^= CardId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CardId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CardId);
-      }
       if (CondCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(CondCount);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CardId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CardId);
-      }
       if (CondCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(CondCount);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -186,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
-      }
       if (CondCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CondCount);
+      }
+      if (CardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -204,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CardId != 0) {
-        CardId = other.CardId;
-      }
       if (other.CondCount != 0) {
         CondCount = other.CondCount;
+      }
+      if (other.CardId != 0) {
+        CardId = other.CardId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            CardId = input.ReadUInt32();
+          case 8: {
+            CondCount = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CondCount = input.ReadUInt32();
+          case 88: {
+            CardId = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            CardId = input.ReadUInt32();
+          case 8: {
+            CondCount = input.ReadUInt32();
             break;
           }
-          case 112: {
-            CondCount = input.ReadUInt32();
+          case 88: {
+            CardId = input.ReadUInt32();
             break;
           }
         }

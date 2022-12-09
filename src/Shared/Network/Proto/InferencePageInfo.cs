@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static InferencePageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdJbmZlcmVuY2VQYWdlSW5mby5wcm90bxoWSW5mZXJuY2VXb3JkSW5mby5w",
-            "cm90byJRChFJbmZlcmVuY2VQYWdlSW5mbxIPCgdwYWdlX2lkGAMgASgNEisK",
-            "EHVubG9ja193b3JkX2xpc3QYDyADKAsyES5JbmZlcm5jZVdvcmRJbmZvQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdJbmZlcmVuY2VQYWdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoXSW5mZXJlbmNlV29yZEluZm8ucHJvdG8icgoRSW5m",
+            "ZXJlbmNlUGFnZUluZm8STAoQdW5sb2NrX3dvcmRfbGlzdBgDIAMoCzIyLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSW5mZXJlbmNlV29yZElu",
+            "Zm8SDwoHcGFnZV9pZBgFIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InfernceWordInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InferenceWordInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InferencePageInfo), global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser, new[]{ "PageId", "UnlockWordList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InferencePageInfo), global::Weedwacker.Shared.Network.Proto.InferencePageInfo.Parser, new[]{ "UnlockWordList", "PageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InferencePageInfo(InferencePageInfo other) : this() {
-      pageId_ = other.pageId_;
       unlockWordList_ = other.unlockWordList_.Clone();
+      pageId_ = other.pageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,8 +84,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InferencePageInfo(this);
     }
 
+    /// <summary>Field number for the "unlock_word_list" field.</summary>
+    public const int UnlockWordListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InferenceWordInfo> _repeated_unlockWordList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.InferenceWordInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferenceWordInfo> unlockWordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferenceWordInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InferenceWordInfo> UnlockWordList {
+      get { return unlockWordList_; }
+    }
+
     /// <summary>Field number for the "page_id" field.</summary>
-    public const int PageIdFieldNumber = 3;
+    public const int PageIdFieldNumber = 5;
     private uint pageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -93,17 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         pageId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "unlock_word_list" field.</summary>
-    public const int UnlockWordListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InfernceWordInfo> _repeated_unlockWordList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.InfernceWordInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InfernceWordInfo> unlockWordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InfernceWordInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InfernceWordInfo> UnlockWordList {
-      get { return unlockWordList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PageId != other.PageId) return false;
       if(!unlockWordList_.Equals(other.unlockWordList_)) return false;
+      if (PageId != other.PageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PageId != 0) hash ^= PageId.GetHashCode();
       hash ^= unlockWordList_.GetHashCode();
+      if (PageId != 0) hash ^= PageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unlockWordList_.WriteTo(output, _repeated_unlockWordList_codec);
       if (PageId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(PageId);
       }
-      unlockWordList_.WriteTo(output, _repeated_unlockWordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unlockWordList_.WriteTo(ref output, _repeated_unlockWordList_codec);
       if (PageId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(PageId);
       }
-      unlockWordList_.WriteTo(ref output, _repeated_unlockWordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += unlockWordList_.CalculateSize(_repeated_unlockWordList_codec);
       if (PageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PageId);
       }
-      size += unlockWordList_.CalculateSize(_repeated_unlockWordList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      unlockWordList_.Add(other.unlockWordList_);
       if (other.PageId != 0) {
         PageId = other.PageId;
       }
-      unlockWordList_.Add(other.unlockWordList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            PageId = input.ReadUInt32();
+          case 26: {
+            unlockWordList_.AddEntriesFrom(input, _repeated_unlockWordList_codec);
             break;
           }
-          case 122: {
-            unlockWordList_.AddEntriesFrom(input, _repeated_unlockWordList_codec);
+          case 40: {
+            PageId = input.ReadUInt32();
             break;
           }
         }
@@ -238,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            PageId = input.ReadUInt32();
+          case 26: {
+            unlockWordList_.AddEntriesFrom(ref input, _repeated_unlockWordList_codec);
             break;
           }
-          case 122: {
-            unlockWordList_.AddEntriesFrom(ref input, _repeated_unlockWordList_codec);
+          case 40: {
+            PageId = input.ReadUInt32();
             break;
           }
         }

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReliquaryDecomposeRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtSZWxpcXVhcnlEZWNvbXBvc2VSc3AucHJvdG8iOwoVUmVsaXF1YXJ5RGVj",
-            "b21wb3NlUnNwEg8KB3JldGNvZGUYAyABKAUSEQoJZ3VpZF9saXN0GA4gAygE",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtSZWxpcXVhcnlEZWNvbXBvc2VSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iOwoVUmVsaXF1YXJ5RGVjb21wb3NlUnNwEhEK",
+            "CWd1aWRfbGlzdBgGIAMoBBIPCgdyZXRjb2RlGAsgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReliquaryDecomposeRsp), global::Weedwacker.Shared.Network.Proto.ReliquaryDecomposeRsp.Parser, new[]{ "Retcode", "GuidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReliquaryDecomposeRsp), global::Weedwacker.Shared.Network.Proto.ReliquaryDecomposeRsp.Parser, new[]{ "GuidList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 611
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 601;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ReliquaryDecomposeRsp : pb::IMessage<ReliquaryDecomposeRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReliquaryDecomposeRsp(ReliquaryDecomposeRsp other) : this() {
-      retcode_ = other.retcode_;
       guidList_ = other.guidList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +92,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ReliquaryDecomposeRsp(this);
     }
 
+    /// <summary>Field number for the "guid_list" field.</summary>
+    public const int GuidListFieldNumber = 6;
+    private static readonly pb::FieldCodec<ulong> _repeated_guidList_codec
+        = pb::FieldCodec.ForUInt64(50);
+    private readonly pbc::RepeatedField<ulong> guidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> GuidList {
+      get { return guidList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,17 +113,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "guid_list" field.</summary>
-    public const int GuidListFieldNumber = 14;
-    private static readonly pb::FieldCodec<ulong> _repeated_guidList_codec
-        = pb::FieldCodec.ForUInt64(114);
-    private readonly pbc::RepeatedField<ulong> guidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> GuidList {
-      get { return guidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!guidList_.Equals(other.guidList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= guidList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      guidList_.WriteTo(output, _repeated_guidList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      guidList_.WriteTo(output, _repeated_guidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      guidList_.WriteTo(ref output, _repeated_guidList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      guidList_.WriteTo(ref output, _repeated_guidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +189,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += guidList_.CalculateSize(_repeated_guidList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += guidList_.CalculateSize(_repeated_guidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +205,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      guidList_.Add(other.guidList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      guidList_.Add(other.guidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 50:
+          case 48: {
+            guidList_.AddEntriesFrom(input, _repeated_guidList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            guidList_.AddEntriesFrom(input, _repeated_guidList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -244,13 +248,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 50:
+          case 48: {
+            guidList_.AddEntriesFrom(ref input, _repeated_guidList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            guidList_.AddEntriesFrom(ref input, _repeated_guidList_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

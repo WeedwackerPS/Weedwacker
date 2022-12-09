@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinWindSeedSpawnerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBYmlsaXR5TWl4aW5XaW5kU2VlZFNwYXduZXIucHJvdG8aDFZlY3Rvci5w",
-            "cm90byK5AgobQWJpbGl0eU1peGluV2luZFNlZWRTcGF3bmVyEjwKCmFkZF9z",
-            "aWduYWwYAiABKAsyJi5BYmlsaXR5TWl4aW5XaW5kU2VlZFNwYXduZXIuQWRk",
-            "U2lnbmFsSAASQAoMcmVmcmVzaF9zZWVkGA8gASgLMiguQWJpbGl0eU1peGlu",
-            "V2luZFNlZWRTcGF3bmVyLlJlZnJlc2hTZWVkSAASPAoKY2F0Y2hfc2VlZBgL",
-            "IAEoCzImLkFiaWxpdHlNaXhpbldpbmRTZWVkU3Bhd25lci5DYXRjaFNlZWRI",
-            "ABoLCglBZGRTaWduYWwaKAoLUmVmcmVzaFNlZWQSGQoIcG9zX2xpc3QYBiAD",
-            "KAsyBy5WZWN0b3IaHgoJQ2F0Y2hTZWVkEhEKCWVudGl0eV9pZBgIIAEoDUIF",
-            "CgNjbWRCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiFBYmlsaXR5TWl4aW5XaW5kU2VlZFNwYXduZXIucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byK5AwobQWJp",
+            "bGl0eU1peGluV2luZFNlZWRTcGF3bmVyElwKCmFkZF9zaWduYWwYCCABKAsy",
+            "Ri5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlNaXhp",
+            "bldpbmRTZWVkU3Bhd25lci5BZGRTaWduYWxIABJgCgxyZWZyZXNoX3NlZWQY",
+            "DCABKAsySC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxp",
+            "dHlNaXhpbldpbmRTZWVkU3Bhd25lci5SZWZyZXNoU2VlZEgAElwKCmNhdGNo",
+            "X3NlZWQYDiABKAsyRi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkFiaWxpdHlNaXhpbldpbmRTZWVkU3Bhd25lci5DYXRjaFNlZWRIABoLCglB",
+            "ZGRTaWduYWwaSAoLUmVmcmVzaFNlZWQSOQoIcG9zX2xpc3QYCiADKAsyJy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchoeCglDYXRj",
+            "aFNlZWQSEQoJZW50aXR5X2lkGA0gASgNQgUKA2NtZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_signal" field.</summary>
-    public const int AddSignalFieldNumber = 2;
+    public const int AddSignalFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.AddSignal AddSignal {
@@ -114,7 +116,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "refresh_seed" field.</summary>
-    public const int RefreshSeedFieldNumber = 15;
+    public const int RefreshSeedFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.RefreshSeed RefreshSeed {
@@ -126,7 +128,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "catch_seed" field.</summary>
-    public const int CatchSeedFieldNumber = 11;
+    public const int CatchSeedFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed CatchSeed {
@@ -141,9 +143,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "cmd" oneof.</summary>
     public enum CmdOneofCase {
       None = 0,
-      AddSignal = 2,
-      RefreshSeed = 15,
-      CatchSeed = 11,
+      AddSignal = 8,
+      RefreshSeed = 12,
+      CatchSeed = 14,
     }
     private CmdOneofCase cmdCase_ = CmdOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,16 +210,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (cmdCase_ == CmdOneofCase.AddSignal) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(66);
         output.WriteMessage(AddSignal);
       }
-      if (cmdCase_ == CmdOneofCase.CatchSeed) {
-        output.WriteRawTag(90);
-        output.WriteMessage(CatchSeed);
-      }
       if (cmdCase_ == CmdOneofCase.RefreshSeed) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(98);
         output.WriteMessage(RefreshSeed);
+      }
+      if (cmdCase_ == CmdOneofCase.CatchSeed) {
+        output.WriteRawTag(114);
+        output.WriteMessage(CatchSeed);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -230,16 +232,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (cmdCase_ == CmdOneofCase.AddSignal) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(66);
         output.WriteMessage(AddSignal);
       }
-      if (cmdCase_ == CmdOneofCase.CatchSeed) {
-        output.WriteRawTag(90);
-        output.WriteMessage(CatchSeed);
-      }
       if (cmdCase_ == CmdOneofCase.RefreshSeed) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(98);
         output.WriteMessage(RefreshSeed);
+      }
+      if (cmdCase_ == CmdOneofCase.CatchSeed) {
+        output.WriteRawTag(114);
+        output.WriteMessage(CatchSeed);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -308,7 +310,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 66: {
             global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.AddSignal subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.AddSignal();
             if (cmdCase_ == CmdOneofCase.AddSignal) {
               subBuilder.MergeFrom(AddSignal);
@@ -317,22 +319,22 @@ namespace Weedwacker.Shared.Network.Proto {
             AddSignal = subBuilder;
             break;
           }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed();
-            if (cmdCase_ == CmdOneofCase.CatchSeed) {
-              subBuilder.MergeFrom(CatchSeed);
-            }
-            input.ReadMessage(subBuilder);
-            CatchSeed = subBuilder;
-            break;
-          }
-          case 122: {
+          case 98: {
             global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.RefreshSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.RefreshSeed();
             if (cmdCase_ == CmdOneofCase.RefreshSeed) {
               subBuilder.MergeFrom(RefreshSeed);
             }
             input.ReadMessage(subBuilder);
             RefreshSeed = subBuilder;
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed();
+            if (cmdCase_ == CmdOneofCase.CatchSeed) {
+              subBuilder.MergeFrom(CatchSeed);
+            }
+            input.ReadMessage(subBuilder);
+            CatchSeed = subBuilder;
             break;
           }
         }
@@ -350,7 +352,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 66: {
             global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.AddSignal subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.AddSignal();
             if (cmdCase_ == CmdOneofCase.AddSignal) {
               subBuilder.MergeFrom(AddSignal);
@@ -359,22 +361,22 @@ namespace Weedwacker.Shared.Network.Proto {
             AddSignal = subBuilder;
             break;
           }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed();
-            if (cmdCase_ == CmdOneofCase.CatchSeed) {
-              subBuilder.MergeFrom(CatchSeed);
-            }
-            input.ReadMessage(subBuilder);
-            CatchSeed = subBuilder;
-            break;
-          }
-          case 122: {
+          case 98: {
             global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.RefreshSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.RefreshSeed();
             if (cmdCase_ == CmdOneofCase.RefreshSeed) {
               subBuilder.MergeFrom(RefreshSeed);
             }
             input.ReadMessage(subBuilder);
             RefreshSeed = subBuilder;
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed subBuilder = new global::Weedwacker.Shared.Network.Proto.AbilityMixinWindSeedSpawner.Types.CatchSeed();
+            if (cmdCase_ == CmdOneofCase.CatchSeed) {
+              subBuilder.MergeFrom(CatchSeed);
+            }
+            input.ReadMessage(subBuilder);
+            CatchSeed = subBuilder;
             break;
           }
         }
@@ -584,9 +586,9 @@ namespace Weedwacker.Shared.Network.Proto {
         }
 
         /// <summary>Field number for the "pos_list" field.</summary>
-        public const int PosListFieldNumber = 6;
+        public const int PosListFieldNumber = 10;
         private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_posList_codec
-            = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
+            = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
         private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> posList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -687,7 +689,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 50: {
+              case 82: {
                 posList_.AddEntriesFrom(input, _repeated_posList_codec);
                 break;
               }
@@ -706,7 +708,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 50: {
+              case 82: {
                 posList_.AddEntriesFrom(ref input, _repeated_posList_codec);
                 break;
               }
@@ -762,7 +764,7 @@ namespace Weedwacker.Shared.Network.Proto {
         }
 
         /// <summary>Field number for the "entity_id" field.</summary>
-        public const int EntityIdFieldNumber = 8;
+        public const int EntityIdFieldNumber = 13;
         private uint entityId_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -816,7 +818,7 @@ namespace Weedwacker.Shared.Network.Proto {
           output.WriteRawMessage(this);
         #else
           if (EntityId != 0) {
-            output.WriteRawTag(64);
+            output.WriteRawTag(104);
             output.WriteUInt32(EntityId);
           }
           if (_unknownFields != null) {
@@ -830,7 +832,7 @@ namespace Weedwacker.Shared.Network.Proto {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (EntityId != 0) {
-            output.WriteRawTag(64);
+            output.WriteRawTag(104);
             output.WriteUInt32(EntityId);
           }
           if (_unknownFields != null) {
@@ -876,7 +878,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 64: {
+              case 104: {
                 EntityId = input.ReadUInt32();
                 break;
               }
@@ -895,7 +897,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 64: {
+              case 104: {
                 EntityId = input.ReadUInt32();
                 break;
               }

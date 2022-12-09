@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PbNavMeshStatsInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQYk5hdk1lc2hTdGF0c0luZm8ucHJvdG8ikgEKElBiTmF2TWVzaFN0YXRz",
-            "SW5mbxIeChZhdXRob3JpdHlfYWlfaW5fY29tYmF0GAogASgFEiEKGW5vX2F1",
-            "dGhvcml0eV9haV9pbl9jb21iYXQYCyABKAUSGgoSdG90YWxfYXV0aG9yaXR5",
-            "X2FpGAggASgFEh0KFXRvdGFsX25vX2F1dGhvcml0eV9haRgNIAEoBUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhQYk5hdk1lc2hTdGF0c0luZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iiAEKElBiTmF2TWVzaFN0YXRzSW5mbxIbChNVbmsz",
+            "MzAwX01PS1BKQklQSE5JGAggASgFEhsKE1VuazMzMDBfSU1MSExKQU9CTEYY",
+            "AyABKAUSGwoTVW5rMzMwMF9ESEpLS0pMS0RIQhgPIAEoBRIbChNVbmszMzAw",
+            "X0VFT05LQURCSk1FGA0gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo), global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo.Parser, new[]{ "AuthorityAiInCombat", "NoAuthorityAiInCombat", "TotalAuthorityAi", "TotalNoAuthorityAi" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo), global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo.Parser, new[]{ "Unk3300MOKPJBIPHNI", "Unk3300IMLHLJAOBLF", "Unk3300DHJKKJLKDHB", "Unk3300EEONKADBJME" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PbNavMeshStatsInfo(PbNavMeshStatsInfo other) : this() {
-      authorityAiInCombat_ = other.authorityAiInCombat_;
-      noAuthorityAiInCombat_ = other.noAuthorityAiInCombat_;
-      totalAuthorityAi_ = other.totalAuthorityAi_;
-      totalNoAuthorityAi_ = other.totalNoAuthorityAi_;
+      unk3300MOKPJBIPHNI_ = other.unk3300MOKPJBIPHNI_;
+      unk3300IMLHLJAOBLF_ = other.unk3300IMLHLJAOBLF_;
+      unk3300DHJKKJLKDHB_ = other.unk3300DHJKKJLKDHB_;
+      unk3300EEONKADBJME_ = other.unk3300EEONKADBJME_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,51 +86,51 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PbNavMeshStatsInfo(this);
     }
 
-    /// <summary>Field number for the "authority_ai_in_combat" field.</summary>
-    public const int AuthorityAiInCombatFieldNumber = 10;
-    private int authorityAiInCombat_;
+    /// <summary>Field number for the "Unk3300_MOKPJBIPHNI" field.</summary>
+    public const int Unk3300MOKPJBIPHNIFieldNumber = 8;
+    private int unk3300MOKPJBIPHNI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AuthorityAiInCombat {
-      get { return authorityAiInCombat_; }
+    public int Unk3300MOKPJBIPHNI {
+      get { return unk3300MOKPJBIPHNI_; }
       set {
-        authorityAiInCombat_ = value;
+        unk3300MOKPJBIPHNI_ = value;
       }
     }
 
-    /// <summary>Field number for the "no_authority_ai_in_combat" field.</summary>
-    public const int NoAuthorityAiInCombatFieldNumber = 11;
-    private int noAuthorityAiInCombat_;
+    /// <summary>Field number for the "Unk3300_IMLHLJAOBLF" field.</summary>
+    public const int Unk3300IMLHLJAOBLFFieldNumber = 3;
+    private int unk3300IMLHLJAOBLF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int NoAuthorityAiInCombat {
-      get { return noAuthorityAiInCombat_; }
+    public int Unk3300IMLHLJAOBLF {
+      get { return unk3300IMLHLJAOBLF_; }
       set {
-        noAuthorityAiInCombat_ = value;
+        unk3300IMLHLJAOBLF_ = value;
       }
     }
 
-    /// <summary>Field number for the "total_authority_ai" field.</summary>
-    public const int TotalAuthorityAiFieldNumber = 8;
-    private int totalAuthorityAi_;
+    /// <summary>Field number for the "Unk3300_DHJKKJLKDHB" field.</summary>
+    public const int Unk3300DHJKKJLKDHBFieldNumber = 15;
+    private int unk3300DHJKKJLKDHB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int TotalAuthorityAi {
-      get { return totalAuthorityAi_; }
+    public int Unk3300DHJKKJLKDHB {
+      get { return unk3300DHJKKJLKDHB_; }
       set {
-        totalAuthorityAi_ = value;
+        unk3300DHJKKJLKDHB_ = value;
       }
     }
 
-    /// <summary>Field number for the "total_no_authority_ai" field.</summary>
-    public const int TotalNoAuthorityAiFieldNumber = 13;
-    private int totalNoAuthorityAi_;
+    /// <summary>Field number for the "Unk3300_EEONKADBJME" field.</summary>
+    public const int Unk3300EEONKADBJMEFieldNumber = 13;
+    private int unk3300EEONKADBJME_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int TotalNoAuthorityAi {
-      get { return totalNoAuthorityAi_; }
+    public int Unk3300EEONKADBJME {
+      get { return unk3300EEONKADBJME_; }
       set {
-        totalNoAuthorityAi_ = value;
+        unk3300EEONKADBJME_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AuthorityAiInCombat != other.AuthorityAiInCombat) return false;
-      if (NoAuthorityAiInCombat != other.NoAuthorityAiInCombat) return false;
-      if (TotalAuthorityAi != other.TotalAuthorityAi) return false;
-      if (TotalNoAuthorityAi != other.TotalNoAuthorityAi) return false;
+      if (Unk3300MOKPJBIPHNI != other.Unk3300MOKPJBIPHNI) return false;
+      if (Unk3300IMLHLJAOBLF != other.Unk3300IMLHLJAOBLF) return false;
+      if (Unk3300DHJKKJLKDHB != other.Unk3300DHJKKJLKDHB) return false;
+      if (Unk3300EEONKADBJME != other.Unk3300EEONKADBJME) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AuthorityAiInCombat != 0) hash ^= AuthorityAiInCombat.GetHashCode();
-      if (NoAuthorityAiInCombat != 0) hash ^= NoAuthorityAiInCombat.GetHashCode();
-      if (TotalAuthorityAi != 0) hash ^= TotalAuthorityAi.GetHashCode();
-      if (TotalNoAuthorityAi != 0) hash ^= TotalNoAuthorityAi.GetHashCode();
+      if (Unk3300MOKPJBIPHNI != 0) hash ^= Unk3300MOKPJBIPHNI.GetHashCode();
+      if (Unk3300IMLHLJAOBLF != 0) hash ^= Unk3300IMLHLJAOBLF.GetHashCode();
+      if (Unk3300DHJKKJLKDHB != 0) hash ^= Unk3300DHJKKJLKDHB.GetHashCode();
+      if (Unk3300EEONKADBJME != 0) hash ^= Unk3300EEONKADBJME.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TotalAuthorityAi != 0) {
+      if (Unk3300IMLHLJAOBLF != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Unk3300IMLHLJAOBLF);
+      }
+      if (Unk3300MOKPJBIPHNI != 0) {
         output.WriteRawTag(64);
-        output.WriteInt32(TotalAuthorityAi);
+        output.WriteInt32(Unk3300MOKPJBIPHNI);
       }
-      if (AuthorityAiInCombat != 0) {
-        output.WriteRawTag(80);
-        output.WriteInt32(AuthorityAiInCombat);
-      }
-      if (NoAuthorityAiInCombat != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(NoAuthorityAiInCombat);
-      }
-      if (TotalNoAuthorityAi != 0) {
+      if (Unk3300EEONKADBJME != 0) {
         output.WriteRawTag(104);
-        output.WriteInt32(TotalNoAuthorityAi);
+        output.WriteInt32(Unk3300EEONKADBJME);
+      }
+      if (Unk3300DHJKKJLKDHB != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Unk3300DHJKKJLKDHB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TotalAuthorityAi != 0) {
+      if (Unk3300IMLHLJAOBLF != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Unk3300IMLHLJAOBLF);
+      }
+      if (Unk3300MOKPJBIPHNI != 0) {
         output.WriteRawTag(64);
-        output.WriteInt32(TotalAuthorityAi);
+        output.WriteInt32(Unk3300MOKPJBIPHNI);
       }
-      if (AuthorityAiInCombat != 0) {
-        output.WriteRawTag(80);
-        output.WriteInt32(AuthorityAiInCombat);
-      }
-      if (NoAuthorityAiInCombat != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(NoAuthorityAiInCombat);
-      }
-      if (TotalNoAuthorityAi != 0) {
+      if (Unk3300EEONKADBJME != 0) {
         output.WriteRawTag(104);
-        output.WriteInt32(TotalNoAuthorityAi);
+        output.WriteInt32(Unk3300EEONKADBJME);
+      }
+      if (Unk3300DHJKKJLKDHB != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Unk3300DHJKKJLKDHB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AuthorityAiInCombat != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AuthorityAiInCombat);
+      if (Unk3300MOKPJBIPHNI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300MOKPJBIPHNI);
       }
-      if (NoAuthorityAiInCombat != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NoAuthorityAiInCombat);
+      if (Unk3300IMLHLJAOBLF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300IMLHLJAOBLF);
       }
-      if (TotalAuthorityAi != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalAuthorityAi);
+      if (Unk3300DHJKKJLKDHB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300DHJKKJLKDHB);
       }
-      if (TotalNoAuthorityAi != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalNoAuthorityAi);
+      if (Unk3300EEONKADBJME != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300EEONKADBJME);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AuthorityAiInCombat != 0) {
-        AuthorityAiInCombat = other.AuthorityAiInCombat;
+      if (other.Unk3300MOKPJBIPHNI != 0) {
+        Unk3300MOKPJBIPHNI = other.Unk3300MOKPJBIPHNI;
       }
-      if (other.NoAuthorityAiInCombat != 0) {
-        NoAuthorityAiInCombat = other.NoAuthorityAiInCombat;
+      if (other.Unk3300IMLHLJAOBLF != 0) {
+        Unk3300IMLHLJAOBLF = other.Unk3300IMLHLJAOBLF;
       }
-      if (other.TotalAuthorityAi != 0) {
-        TotalAuthorityAi = other.TotalAuthorityAi;
+      if (other.Unk3300DHJKKJLKDHB != 0) {
+        Unk3300DHJKKJLKDHB = other.Unk3300DHJKKJLKDHB;
       }
-      if (other.TotalNoAuthorityAi != 0) {
-        TotalNoAuthorityAi = other.TotalNoAuthorityAi;
+      if (other.Unk3300EEONKADBJME != 0) {
+        Unk3300EEONKADBJME = other.Unk3300EEONKADBJME;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 24: {
+            Unk3300IMLHLJAOBLF = input.ReadInt32();
+            break;
+          }
           case 64: {
-            TotalAuthorityAi = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            AuthorityAiInCombat = input.ReadInt32();
-            break;
-          }
-          case 88: {
-            NoAuthorityAiInCombat = input.ReadInt32();
+            Unk3300MOKPJBIPHNI = input.ReadInt32();
             break;
           }
           case 104: {
-            TotalNoAuthorityAi = input.ReadInt32();
+            Unk3300EEONKADBJME = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Unk3300DHJKKJLKDHB = input.ReadInt32();
             break;
           }
         }
@@ -316,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 24: {
+            Unk3300IMLHLJAOBLF = input.ReadInt32();
+            break;
+          }
           case 64: {
-            TotalAuthorityAi = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            AuthorityAiInCombat = input.ReadInt32();
-            break;
-          }
-          case 88: {
-            NoAuthorityAiInCombat = input.ReadInt32();
+            Unk3300MOKPJBIPHNI = input.ReadInt32();
             break;
           }
           case 104: {
-            TotalNoAuthorityAi = input.ReadInt32();
+            Unk3300EEONKADBJME = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Unk3300DHJKKJLKDHB = input.ReadInt32();
             break;
           }
         }

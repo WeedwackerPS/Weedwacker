@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShortAbilityHashPairReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTaG9ydEFiaWxpdHlIYXNoUGFpci5wcm90byJOChRTaG9ydEFiaWxpdHlI",
-            "YXNoUGFpchIbChNhYmlsaXR5X2NvbmZpZ19oYXNoGA8gASgPEhkKEWFiaWxp",
-            "dHlfbmFtZV9oYXNoGAEgASgPQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpTaG9ydEFiaWxpdHlIYXNoUGFpci5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJOChRTaG9ydEFiaWxpdHlIYXNoUGFpchIZChFh",
+            "YmlsaXR5X25hbWVfaGFzaBgGIAEoDxIbChNhYmlsaXR5X2NvbmZpZ19oYXNo",
+            "GA8gASgPYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShortAbilityHashPair), global::Weedwacker.Shared.Network.Proto.ShortAbilityHashPair.Parser, new[]{ "AbilityConfigHash", "AbilityNameHash" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShortAbilityHashPair), global::Weedwacker.Shared.Network.Proto.ShortAbilityHashPair.Parser, new[]{ "AbilityNameHash", "AbilityConfigHash" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ShortAbilityHashPair(ShortAbilityHashPair other) : this() {
-      abilityConfigHash_ = other.abilityConfigHash_;
       abilityNameHash_ = other.abilityNameHash_;
+      abilityConfigHash_ = other.abilityConfigHash_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -81,6 +81,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ShortAbilityHashPair Clone() {
       return new ShortAbilityHashPair(this);
+    }
+
+    /// <summary>Field number for the "ability_name_hash" field.</summary>
+    public const int AbilityNameHashFieldNumber = 6;
+    private int abilityNameHash_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AbilityNameHash {
+      get { return abilityNameHash_; }
+      set {
+        abilityNameHash_ = value;
+      }
     }
 
     /// <summary>Field number for the "ability_config_hash" field.</summary>
@@ -92,18 +104,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return abilityConfigHash_; }
       set {
         abilityConfigHash_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ability_name_hash" field.</summary>
-    public const int AbilityNameHashFieldNumber = 1;
-    private int abilityNameHash_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AbilityNameHash {
-      get { return abilityNameHash_; }
-      set {
-        abilityNameHash_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AbilityConfigHash != other.AbilityConfigHash) return false;
       if (AbilityNameHash != other.AbilityNameHash) return false;
+      if (AbilityConfigHash != other.AbilityConfigHash) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AbilityConfigHash != 0) hash ^= AbilityConfigHash.GetHashCode();
       if (AbilityNameHash != 0) hash ^= AbilityNameHash.GetHashCode();
+      if (AbilityConfigHash != 0) hash ^= AbilityConfigHash.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AbilityNameHash != 0) {
-        output.WriteRawTag(13);
+        output.WriteRawTag(53);
         output.WriteSFixed32(AbilityNameHash);
       }
       if (AbilityConfigHash != 0) {
@@ -170,7 +170,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AbilityNameHash != 0) {
-        output.WriteRawTag(13);
+        output.WriteRawTag(53);
         output.WriteSFixed32(AbilityNameHash);
       }
       if (AbilityConfigHash != 0) {
@@ -187,10 +187,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AbilityConfigHash != 0) {
+      if (AbilityNameHash != 0) {
         size += 1 + 4;
       }
-      if (AbilityNameHash != 0) {
+      if (AbilityConfigHash != 0) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AbilityConfigHash != 0) {
-        AbilityConfigHash = other.AbilityConfigHash;
-      }
       if (other.AbilityNameHash != 0) {
         AbilityNameHash = other.AbilityNameHash;
+      }
+      if (other.AbilityConfigHash != 0) {
+        AbilityConfigHash = other.AbilityConfigHash;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 13: {
+          case 53: {
             AbilityNameHash = input.ReadSFixed32();
             break;
           }
@@ -249,7 +249,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 13: {
+          case 53: {
             AbilityNameHash = input.ReadSFixed32();
             break;
           }

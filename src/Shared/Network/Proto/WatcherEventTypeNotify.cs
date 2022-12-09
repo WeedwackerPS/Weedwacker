@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static WatcherEventTypeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXYXRjaGVyRXZlbnRUeXBlTm90aWZ5LnByb3RvImAKFldhdGNoZXJFdmVu",
-            "dFR5cGVOb3RpZnkSEgoKcGFyYW1fbGlzdBgOIAMoDRIUCgxhZGRfcHJvZ3Jl",
-            "c3MYDyABKA0SHAoUd2F0Y2hlcl90cmlnZ2VyX3R5cGUYCyABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxXYXRjaGVyRXZlbnRUeXBlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvImAKFldhdGNoZXJFdmVudFR5cGVOb3RpZnkS",
+            "EgoKcGFyYW1fbGlzdBgEIAMoDRIUCgxhZGRfcHJvZ3Jlc3MYDSABKA0SHAoU",
+            "d2F0Y2hlcl90cmlnZ2VyX3R5cGUYAiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2235
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2219;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WatcherEventTypeNotify : pb::IMessage<WatcherEventTypeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "param_list" field.</summary>
-    public const int ParamListFieldNumber = 14;
+    public const int ParamListFieldNumber = 4;
     private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-        = pb::FieldCodec.ForUInt32(114);
+        = pb::FieldCodec.ForUInt32(34);
     private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "add_progress" field.</summary>
-    public const int AddProgressFieldNumber = 15;
+    public const int AddProgressFieldNumber = 13;
     private uint addProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "watcher_trigger_type" field.</summary>
-    public const int WatcherTriggerTypeFieldNumber = 11;
+    public const int WatcherTriggerTypeFieldNumber = 2;
     private uint watcherTriggerType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (WatcherTriggerType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(WatcherTriggerType);
       }
       paramList_.WriteTo(output, _repeated_paramList_codec);
       if (AddProgress != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(AddProgress);
       }
       if (_unknownFields != null) {
@@ -191,12 +195,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (WatcherTriggerType != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(16);
         output.WriteUInt32(WatcherTriggerType);
       }
       paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (AddProgress != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(AddProgress);
       }
       if (_unknownFields != null) {
@@ -250,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 16: {
             WatcherTriggerType = input.ReadUInt32();
             break;
           }
-          case 114:
-          case 112: {
+          case 34:
+          case 32: {
             paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
             break;
           }
-          case 120: {
+          case 104: {
             AddProgress = input.ReadUInt32();
             break;
           }
@@ -278,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 16: {
             WatcherTriggerType = input.ReadUInt32();
             break;
           }
-          case 114:
-          case 112: {
+          case 34:
+          case 32: {
             paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
             break;
           }
-          case 120: {
+          case 104: {
             AddProgress = input.ReadUInt32();
             break;
           }

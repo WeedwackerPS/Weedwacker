@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlossomBriefInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZCbG9zc29tQnJpZWZJbmZvLnByb3RvGgxWZWN0b3IucHJvdG8i2AEKEEJs",
-            "b3Nzb21CcmllZkluZm8SEgoKcmVmcmVzaF9pZBgNIAEoDRIRCglyZXdhcmRf",
-            "aWQYBSABKA0SDwoHY2l0eV9pZBgKIAEoDRINCgVyZXNpbhgLIAEoDRINCgVz",
-            "dGF0ZRgHIAEoDRIXCg9pc19ndWlkZV9vcGVuZWQYASABKAgSFQoNbW9uc3Rl",
-            "cl9sZXZlbBgIIAEoDRIWCg5jaXJjbGVfY2FtcF9pZBgPIAEoDRIUCgNwb3MY",
-            "DCABKAsyBy5WZWN0b3ISEAoIc2NlbmVfaWQYCSABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZCbG9zc29tQnJpZWZJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8i+AEKEEJsb3Nzb21CcmllZklu",
+            "Zm8SNAoDcG9zGAcgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5WZWN0b3ISFwoPaXNfZ3VpZGVfb3BlbmVkGA8gASgIEhEKCXJld2Fy",
+            "ZF9pZBgDIAEoDRINCgVyZXNpbhgFIAEoDRIPCgdjaXR5X2lkGAggASgNEhYK",
+            "DmNpcmNsZV9jYW1wX2lkGAogASgNEg0KBXN0YXRlGAsgASgNEhUKDW1vbnN0",
+            "ZXJfbGV2ZWwYASABKA0SEAoIc2NlbmVfaWQYBCABKA0SEgoKcmVmcmVzaF9p",
+            "ZBgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo), global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo.Parser, new[]{ "RefreshId", "RewardId", "CityId", "Resin", "State", "IsGuideOpened", "MonsterLevel", "CircleCampId", "Pos", "SceneId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo), global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo.Parser, new[]{ "Pos", "IsGuideOpened", "RewardId", "Resin", "CityId", "CircleCampId", "State", "MonsterLevel", "SceneId", "RefreshId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,16 +76,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BlossomBriefInfo(BlossomBriefInfo other) : this() {
-      refreshId_ = other.refreshId_;
-      rewardId_ = other.rewardId_;
-      cityId_ = other.cityId_;
-      resin_ = other.resin_;
-      state_ = other.state_;
-      isGuideOpened_ = other.isGuideOpened_;
-      monsterLevel_ = other.monsterLevel_;
-      circleCampId_ = other.circleCampId_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      isGuideOpened_ = other.isGuideOpened_;
+      rewardId_ = other.rewardId_;
+      resin_ = other.resin_;
+      cityId_ = other.cityId_;
+      circleCampId_ = other.circleCampId_;
+      state_ = other.state_;
+      monsterLevel_ = other.monsterLevel_;
       sceneId_ = other.sceneId_;
+      refreshId_ = other.refreshId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,104 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BlossomBriefInfo(this);
     }
 
-    /// <summary>Field number for the "refresh_id" field.</summary>
-    public const int RefreshIdFieldNumber = 13;
-    private uint refreshId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RefreshId {
-      get { return refreshId_; }
-      set {
-        refreshId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reward_id" field.</summary>
-    public const int RewardIdFieldNumber = 5;
-    private uint rewardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RewardId {
-      get { return rewardId_; }
-      set {
-        rewardId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 10;
-    private uint cityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CityId {
-      get { return cityId_; }
-      set {
-        cityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "resin" field.</summary>
-    public const int ResinFieldNumber = 11;
-    private uint resin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Resin {
-      get { return resin_; }
-      set {
-        resin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 7;
-    private uint state_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint State {
-      get { return state_; }
-      set {
-        state_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_guide_opened" field.</summary>
-    public const int IsGuideOpenedFieldNumber = 1;
-    private bool isGuideOpened_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsGuideOpened {
-      get { return isGuideOpened_; }
-      set {
-        isGuideOpened_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "monster_level" field.</summary>
-    public const int MonsterLevelFieldNumber = 8;
-    private uint monsterLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MonsterLevel {
-      get { return monsterLevel_; }
-      set {
-        monsterLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "circle_camp_id" field.</summary>
-    public const int CircleCampIdFieldNumber = 15;
-    private uint circleCampId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CircleCampId {
-      get { return circleCampId_; }
-      set {
-        circleCampId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 12;
+    public const int PosFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -202,8 +107,92 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_guide_opened" field.</summary>
+    public const int IsGuideOpenedFieldNumber = 15;
+    private bool isGuideOpened_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGuideOpened {
+      get { return isGuideOpened_; }
+      set {
+        isGuideOpened_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_id" field.</summary>
+    public const int RewardIdFieldNumber = 3;
+    private uint rewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RewardId {
+      get { return rewardId_; }
+      set {
+        rewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "resin" field.</summary>
+    public const int ResinFieldNumber = 5;
+    private uint resin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Resin {
+      get { return resin_; }
+      set {
+        resin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city_id" field.</summary>
+    public const int CityIdFieldNumber = 8;
+    private uint cityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CityId {
+      get { return cityId_; }
+      set {
+        cityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "circle_camp_id" field.</summary>
+    public const int CircleCampIdFieldNumber = 10;
+    private uint circleCampId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CircleCampId {
+      get { return circleCampId_; }
+      set {
+        circleCampId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 11;
+    private uint state_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "monster_level" field.</summary>
+    public const int MonsterLevelFieldNumber = 1;
+    private uint monsterLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MonsterLevel {
+      get { return monsterLevel_; }
+      set {
+        monsterLevel_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 9;
+    public const int SceneIdFieldNumber = 4;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,6 +200,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sceneId_; }
       set {
         sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "refresh_id" field.</summary>
+    public const int RefreshIdFieldNumber = 14;
+    private uint refreshId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RefreshId {
+      get { return refreshId_; }
+      set {
+        refreshId_ = value;
       }
     }
 
@@ -229,16 +230,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RefreshId != other.RefreshId) return false;
-      if (RewardId != other.RewardId) return false;
-      if (CityId != other.CityId) return false;
-      if (Resin != other.Resin) return false;
-      if (State != other.State) return false;
-      if (IsGuideOpened != other.IsGuideOpened) return false;
-      if (MonsterLevel != other.MonsterLevel) return false;
-      if (CircleCampId != other.CircleCampId) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if (IsGuideOpened != other.IsGuideOpened) return false;
+      if (RewardId != other.RewardId) return false;
+      if (Resin != other.Resin) return false;
+      if (CityId != other.CityId) return false;
+      if (CircleCampId != other.CircleCampId) return false;
+      if (State != other.State) return false;
+      if (MonsterLevel != other.MonsterLevel) return false;
       if (SceneId != other.SceneId) return false;
+      if (RefreshId != other.RefreshId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -246,16 +247,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RefreshId != 0) hash ^= RefreshId.GetHashCode();
-      if (RewardId != 0) hash ^= RewardId.GetHashCode();
-      if (CityId != 0) hash ^= CityId.GetHashCode();
-      if (Resin != 0) hash ^= Resin.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
-      if (IsGuideOpened != false) hash ^= IsGuideOpened.GetHashCode();
-      if (MonsterLevel != 0) hash ^= MonsterLevel.GetHashCode();
-      if (CircleCampId != 0) hash ^= CircleCampId.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (IsGuideOpened != false) hash ^= IsGuideOpened.GetHashCode();
+      if (RewardId != 0) hash ^= RewardId.GetHashCode();
+      if (Resin != 0) hash ^= Resin.GetHashCode();
+      if (CityId != 0) hash ^= CityId.GetHashCode();
+      if (CircleCampId != 0) hash ^= CircleCampId.GetHashCode();
+      if (State != 0) hash ^= State.GetHashCode();
+      if (MonsterLevel != 0) hash ^= MonsterLevel.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (RefreshId != 0) hash ^= RefreshId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -274,45 +275,45 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsGuideOpened != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsGuideOpened);
-      }
-      if (RewardId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RewardId);
-      }
-      if (State != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(State);
-      }
       if (MonsterLevel != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(MonsterLevel);
       }
+      if (RewardId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(RewardId);
+      }
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteUInt32(SceneId);
       }
-      if (CityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CityId);
-      }
       if (Resin != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(Resin);
       }
       if (pos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(Pos);
       }
-      if (RefreshId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(RefreshId);
+      if (CityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CityId);
       }
       if (CircleCampId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(CircleCampId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(State);
+      }
+      if (RefreshId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RefreshId);
+      }
+      if (IsGuideOpened != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsGuideOpened);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -324,45 +325,45 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsGuideOpened != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsGuideOpened);
-      }
-      if (RewardId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RewardId);
-      }
-      if (State != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(State);
-      }
       if (MonsterLevel != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(MonsterLevel);
       }
+      if (RewardId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(RewardId);
+      }
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(32);
         output.WriteUInt32(SceneId);
       }
-      if (CityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CityId);
-      }
       if (Resin != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(Resin);
       }
       if (pos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(Pos);
       }
-      if (RefreshId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(RefreshId);
+      if (CityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CityId);
       }
       if (CircleCampId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(CircleCampId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(State);
+      }
+      if (RefreshId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(RefreshId);
+      }
+      if (IsGuideOpened != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsGuideOpened);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -374,35 +375,35 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RefreshId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshId);
-      }
-      if (RewardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
-      }
-      if (CityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
-      }
-      if (Resin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
-      }
-      if (State != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(State);
+      if (pos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
       if (IsGuideOpened != false) {
         size += 1 + 1;
       }
-      if (MonsterLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterLevel);
+      if (RewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
+      }
+      if (Resin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
+      }
+      if (CityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
       if (CircleCampId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CircleCampId);
       }
-      if (pos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      if (State != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(State);
+      }
+      if (MonsterLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterLevel);
       }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (RefreshId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -416,38 +417,38 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RefreshId != 0) {
-        RefreshId = other.RefreshId;
-      }
-      if (other.RewardId != 0) {
-        RewardId = other.RewardId;
-      }
-      if (other.CityId != 0) {
-        CityId = other.CityId;
-      }
-      if (other.Resin != 0) {
-        Resin = other.Resin;
-      }
-      if (other.State != 0) {
-        State = other.State;
-      }
-      if (other.IsGuideOpened != false) {
-        IsGuideOpened = other.IsGuideOpened;
-      }
-      if (other.MonsterLevel != 0) {
-        MonsterLevel = other.MonsterLevel;
-      }
-      if (other.CircleCampId != 0) {
-        CircleCampId = other.CircleCampId;
-      }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
       }
+      if (other.IsGuideOpened != false) {
+        IsGuideOpened = other.IsGuideOpened;
+      }
+      if (other.RewardId != 0) {
+        RewardId = other.RewardId;
+      }
+      if (other.Resin != 0) {
+        Resin = other.Resin;
+      }
+      if (other.CityId != 0) {
+        CityId = other.CityId;
+      }
+      if (other.CircleCampId != 0) {
+        CircleCampId = other.CircleCampId;
+      }
+      if (other.State != 0) {
+        State = other.State;
+      }
+      if (other.MonsterLevel != 0) {
+        MonsterLevel = other.MonsterLevel;
+      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.RefreshId != 0) {
+        RefreshId = other.RefreshId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -465,46 +466,46 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            IsGuideOpened = input.ReadBool();
-            break;
-          }
-          case 40: {
-            RewardId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             MonsterLevel = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
+            RewardId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            CityId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 40: {
             Resin = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 58: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 104: {
+          case 64: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            CircleCampId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            State = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             RefreshId = input.ReadUInt32();
             break;
           }
           case 120: {
-            CircleCampId = input.ReadUInt32();
+            IsGuideOpened = input.ReadBool();
             break;
           }
         }
@@ -523,46 +524,46 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            IsGuideOpened = input.ReadBool();
-            break;
-          }
-          case 40: {
-            RewardId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             MonsterLevel = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
+            RewardId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            CityId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 40: {
             Resin = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 58: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 104: {
+          case 64: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            CircleCampId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            State = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             RefreshId = input.ReadUInt32();
             break;
           }
           case 120: {
-            CircleCampId = input.ReadUInt32();
+            IsGuideOpened = input.ReadBool();
             break;
           }
         }

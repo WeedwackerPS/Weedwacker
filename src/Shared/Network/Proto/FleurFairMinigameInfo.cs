@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairMinigameInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtGbGV1ckZhaXJNaW5pZ2FtZUluZm8ucHJvdG8aGkZsZXVyRmFpckJhbGxv",
-            "b25JbmZvLnByb3RvGhdGbGV1ckZhaXJGYWxsSW5mby5wcm90bxocRmxldXJG",
-            "YWlyTXVzaWNHYW1lSW5mby5wcm90byLhAQoVRmxldXJGYWlyTWluaWdhbWVJ",
-            "bmZvEhMKC21pbmlnYW1lX2lkGA0gASgNEg8KB2lzX29wZW4YCCABKAgSEQoJ",
-            "b3Blbl90aW1lGA8gASgNEi0KDGJhbGxvb25faW5mbxgMIAEoCzIVLkZsZXVy",
-            "RmFpckJhbGxvb25JbmZvSAASJwoJZmFsbF9pbmZvGAsgASgLMhIuRmxldXJG",
-            "YWlyRmFsbEluZm9IABItCgptdXNpY19pbmZvGAkgASgLMhcuRmxldXJGYWly",
-            "TXVzaWNHYW1lSW5mb0gAQggKBmRldGFpbEIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtGbGV1ckZhaXJNaW5pZ2FtZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGkZsZXVyRmFpckJhbGxvb25JbmZvLnByb3Rv",
+            "GhdGbGV1ckZhaXJGYWxsSW5mby5wcm90bxocRmxldXJGYWlyTXVzaWNHYW1l",
+            "SW5mby5wcm90byLBAgoVRmxldXJGYWlyTWluaWdhbWVJbmZvEhMKC21pbmln",
+            "YW1lX2lkGAMgASgNEg8KB2lzX29wZW4YDyABKAgSEQoJb3Blbl90aW1lGA0g",
+            "ASgNEk0KDGJhbGxvb25faW5mbxgBIAEoCzI1LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uRmxldXJGYWlyQmFsbG9vbkluZm9IABJHCglmYWxs",
+            "X2luZm8YCiABKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkZsZXVyRmFpckZhbGxJbmZvSAASTQoKbXVzaWNfaW5mbxgOIAEoCzI3Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmxldXJGYWlyTXVzaWNH",
+            "YW1lSW5mb0gAQggKBmRldGFpbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FleurFairFallInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "minigame_id" field.</summary>
-    public const int MinigameIdFieldNumber = 13;
+    public const int MinigameIdFieldNumber = 3;
     private uint minigameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +116,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 8;
+    public const int IsOpenFieldNumber = 15;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +128,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 15;
+    public const int OpenTimeFieldNumber = 13;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,7 +140,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "balloon_info" field.</summary>
-    public const int BalloonInfoFieldNumber = 12;
+    public const int BalloonInfoFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfo BalloonInfo {
@@ -150,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fall_info" field.</summary>
-    public const int FallInfoFieldNumber = 11;
+    public const int FallInfoFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo FallInfo {
@@ -162,7 +164,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_info" field.</summary>
-    public const int MusicInfoFieldNumber = 9;
+    public const int MusicInfoFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo MusicInfo {
@@ -177,9 +179,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      BalloonInfo = 12,
-      FallInfo = 11,
-      MusicInfo = 9,
+      BalloonInfo = 1,
+      FallInfo = 10,
+      MusicInfo = 14,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,29 +251,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsOpen != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsOpen);
-      }
-      if (detailCase_ == DetailOneofCase.MusicInfo) {
-        output.WriteRawTag(74);
-        output.WriteMessage(MusicInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FallInfo) {
-        output.WriteRawTag(90);
-        output.WriteMessage(FallInfo);
-      }
       if (detailCase_ == DetailOneofCase.BalloonInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(10);
         output.WriteMessage(BalloonInfo);
       }
       if (MinigameId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteUInt32(MinigameId);
       }
+      if (detailCase_ == DetailOneofCase.FallInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(FallInfo);
+      }
       if (OpenTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
+      }
+      if (detailCase_ == DetailOneofCase.MusicInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MusicInfo);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -283,29 +285,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsOpen != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsOpen);
-      }
-      if (detailCase_ == DetailOneofCase.MusicInfo) {
-        output.WriteRawTag(74);
-        output.WriteMessage(MusicInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FallInfo) {
-        output.WriteRawTag(90);
-        output.WriteMessage(FallInfo);
-      }
       if (detailCase_ == DetailOneofCase.BalloonInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(10);
         output.WriteMessage(BalloonInfo);
       }
       if (MinigameId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteUInt32(MinigameId);
       }
+      if (detailCase_ == DetailOneofCase.FallInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(FallInfo);
+      }
       if (OpenTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
+      }
+      if (detailCase_ == DetailOneofCase.MusicInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MusicInfo);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -392,29 +394,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo();
-            if (detailCase_ == DetailOneofCase.MusicInfo) {
-              subBuilder.MergeFrom(MusicInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MusicInfo = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo();
-            if (detailCase_ == DetailOneofCase.FallInfo) {
-              subBuilder.MergeFrom(FallInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FallInfo = subBuilder;
-            break;
-          }
-          case 98: {
+          case 10: {
             global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfo();
             if (detailCase_ == DetailOneofCase.BalloonInfo) {
               subBuilder.MergeFrom(BalloonInfo);
@@ -423,12 +403,34 @@ namespace Weedwacker.Shared.Network.Proto {
             BalloonInfo = subBuilder;
             break;
           }
-          case 104: {
+          case 24: {
             MinigameId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 82: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo();
+            if (detailCase_ == DetailOneofCase.FallInfo) {
+              subBuilder.MergeFrom(FallInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FallInfo = subBuilder;
+            break;
+          }
+          case 104: {
             OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo();
+            if (detailCase_ == DetailOneofCase.MusicInfo) {
+              subBuilder.MergeFrom(MusicInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
@@ -446,29 +448,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo();
-            if (detailCase_ == DetailOneofCase.MusicInfo) {
-              subBuilder.MergeFrom(MusicInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MusicInfo = subBuilder;
-            break;
-          }
-          case 90: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo();
-            if (detailCase_ == DetailOneofCase.FallInfo) {
-              subBuilder.MergeFrom(FallInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FallInfo = subBuilder;
-            break;
-          }
-          case 98: {
+          case 10: {
             global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairBalloonInfo();
             if (detailCase_ == DetailOneofCase.BalloonInfo) {
               subBuilder.MergeFrom(BalloonInfo);
@@ -477,12 +457,34 @@ namespace Weedwacker.Shared.Network.Proto {
             BalloonInfo = subBuilder;
             break;
           }
-          case 104: {
+          case 24: {
             MinigameId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 82: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairFallInfo();
+            if (detailCase_ == DetailOneofCase.FallInfo) {
+              subBuilder.MergeFrom(FallInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FallInfo = subBuilder;
+            break;
+          }
+          case 104: {
             OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameInfo();
+            if (detailCase_ == DetailOneofCase.MusicInfo) {
+              subBuilder.MergeFrom(MusicInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            IsOpen = input.ReadBool();
             break;
           }
         }

@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ServerMassiveEntityReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlTZXJ2ZXJNYXNzaXZlRW50aXR5LnByb3RvGhRNYXNzaXZlQm94SW5mby5w",
-            "cm90bxoWTWFzc2l2ZUdyYXNzSW5mby5wcm90bxoWTWFzc2l2ZVdhdGVySW5m",
-            "by5wcm90byKCAgoTU2VydmVyTWFzc2l2ZUVudGl0eRITCgtlbnRpdHlfdHlw",
-            "ZRgBIAEoDRIRCgljb25maWdfaWQYAiABKA0SEgoKcnVudGltZV9pZBgDIAEo",
-            "DRIZChFhdXRob3JpdHlfcGVlcl9pZBgEIAEoDRIOCgZvYmpfaWQYBSABKAMS",
-            "JwoKd2F0ZXJfaW5mbxgGIAEoCzIRLk1hc3NpdmVXYXRlckluZm9IABInCgpn",
-            "cmFzc19pbmZvGAcgASgLMhEuTWFzc2l2ZUdyYXNzSW5mb0gAEiMKCGJveF9p",
-            "bmZvGAggASgLMg8uTWFzc2l2ZUJveEluZm9IAEINCgtlbnRpdHlfaW5mb0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlTZXJ2ZXJNYXNzaXZlRW50aXR5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhRNYXNzaXZlQm94SW5mby5wcm90bxoWTWFzc2l2",
+            "ZUdyYXNzSW5mby5wcm90bxoWTWFzc2l2ZVdhdGVySW5mby5wcm90byLiAgoT",
+            "U2VydmVyTWFzc2l2ZUVudGl0eRITCgtlbnRpdHlfdHlwZRgBIAEoDRIRCglj",
+            "b25maWdfaWQYAiABKA0SEgoKcnVudGltZV9pZBgDIAEoDRIZChFhdXRob3Jp",
+            "dHlfcGVlcl9pZBgEIAEoDRIOCgZvYmpfaWQYBSABKAMSRwoKd2F0ZXJfaW5m",
+            "bxgGIAEoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWFz",
+            "c2l2ZVdhdGVySW5mb0gAEkcKCmdyYXNzX2luZm8YByABKAsyMS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1hc3NpdmVHcmFzc0luZm9IABJD",
+            "Cghib3hfaW5mbxgIIAEoCzIvLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uTWFzc2l2ZUJveEluZm9IAEINCgtlbnRpdHlfaW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MassiveBoxInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MassiveGrassInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MassiveWaterInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

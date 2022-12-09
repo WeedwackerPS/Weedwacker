@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DigMarkPointReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJEaWdNYXJrUG9pbnQucHJvdG8aDFZlY3Rvci5wcm90byJNCgxEaWdNYXJr",
-            "UG9pbnQSFAoDcG9zGAEgASgLMgcuVmVjdG9yEhEKCWJ1bmRsZV9pZBgNIAEo",
-            "DRIUCgNyb3QYAyABKAsyBy5WZWN0b3JCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJEaWdNYXJrUG9pbnQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aDFZlY3Rvci5wcm90byKNAQoMRGlnTWFya1BvaW50EjQKA3Bv",
+            "cxgLIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVj",
+            "dG9yEhEKCWJ1bmRsZV9pZBgDIAEoDRI0CgNyb3QYDiABKAsyJy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 1;
+    public const int PosFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bundle_id" field.</summary>
-    public const int BundleIdFieldNumber = 13;
+    public const int BundleIdFieldNumber = 3;
     private uint bundleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 3;
+    public const int RotFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -166,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (BundleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BundleId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
       if (rot_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(Rot);
-      }
-      if (BundleId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(BundleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BundleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BundleId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
       if (rot_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(Rot);
-      }
-      if (BundleId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(BundleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -261,22 +262,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 24: {
+            BundleId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 26: {
+          case 114: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 104: {
-            BundleId = input.ReadUInt32();
             break;
           }
         }
@@ -294,22 +295,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 24: {
+            BundleId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 26: {
+          case 114: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
-            break;
-          }
-          case 104: {
-            BundleId = input.ReadUInt32();
             break;
           }
         }

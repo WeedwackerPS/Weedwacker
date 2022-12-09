@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetWidgetSlotReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZTZXRXaWRnZXRTbG90UmVxLnByb3RvGhJXaWRnZXRTbG90T3AucHJvdG8a",
-            "E1dpZGdldFNsb3RUYWcucHJvdG8iZAoQU2V0V2lkZ2V0U2xvdFJlcRIgCgh0",
-            "YWdfbGlzdBgPIAMoDjIOLldpZGdldFNsb3RUYWcSEwoLbWF0ZXJpYWxfaWQY",
-            "BiABKA0SGQoCb3AYAiABKA4yDS5XaWRnZXRTbG90T3BCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZTZXRXaWRnZXRTbG90UmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhJXaWRnZXRTbG90T3AucHJvdG8aE1dpZGdldFNsb3RU",
+            "YWcucHJvdG8ipAEKEFNldFdpZGdldFNsb3RSZXESEwoLbWF0ZXJpYWxfaWQY",
+            "AiABKA0SQAoIdGFnX2xpc3QYDSADKA4yLi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLldpZGdldFNsb3RUYWcSOQoCb3AYDiABKA4yLS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldpZGdldFNsb3RPcGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetSlotOpReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetSlotTagReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetWidgetSlotReq), global::Weedwacker.Shared.Network.Proto.SetWidgetSlotReq.Parser, new[]{ "TagList", "MaterialId", "Op" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetWidgetSlotReq), global::Weedwacker.Shared.Network.Proto.SetWidgetSlotReq.Parser, new[]{ "MaterialId", "TagList", "Op" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4259
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4255;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetWidgetSlotReq : pb::IMessage<SetWidgetSlotReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetWidgetSlotReq(SetWidgetSlotReq other) : this() {
-      tagList_ = other.tagList_.Clone();
       materialId_ = other.materialId_;
+      tagList_ = other.tagList_.Clone();
       op_ = other.op_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,19 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SetWidgetSlotReq(this);
     }
 
-    /// <summary>Field number for the "tag_list" field.</summary>
-    public const int TagListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> _repeated_tagList_codec
-        = pb::FieldCodec.ForEnum(122, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.WidgetSlotTag) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> tagList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> TagList {
-      get { return tagList_; }
-    }
-
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 6;
+    public const int MaterialIdFieldNumber = 2;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,8 +109,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> _repeated_tagList_codec
+        = pb::FieldCodec.ForEnum(106, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.WidgetSlotTag) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> tagList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetSlotTag> TagList {
+      get { return tagList_; }
+    }
+
     /// <summary>Field number for the "op" field.</summary>
-    public const int OpFieldNumber = 2;
+    public const int OpFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.WidgetSlotOp op_ = global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!tagList_.Equals(other.tagList_)) return false;
       if (MaterialId != other.MaterialId) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
       if (Op != other.Op) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= tagList_.GetHashCode();
       if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
+      hash ^= tagList_.GetHashCode();
       if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) hash ^= Op.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -172,15 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Op);
-      }
       if (MaterialId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(MaterialId);
       }
       tagList_.WriteTo(output, _repeated_tagList_codec);
+      if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) Op);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,15 +197,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Op);
-      }
       if (MaterialId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(MaterialId);
       }
       tagList_.WriteTo(ref output, _repeated_tagList_codec);
+      if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) Op);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -210,10 +216,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += tagList_.CalculateSize(_repeated_tagList_codec);
       if (MaterialId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
       }
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
       if (Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
       }
@@ -229,10 +235,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      tagList_.Add(other.tagList_);
       if (other.MaterialId != 0) {
         MaterialId = other.MaterialId;
       }
+      tagList_.Add(other.tagList_);
       if (other.Op != global::Weedwacker.Shared.Network.Proto.WidgetSlotOp.Attach) {
         Op = other.Op;
       }
@@ -252,16 +258,16 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
-            break;
-          }
-          case 48: {
             MaterialId = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 106:
+          case 104: {
             tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            break;
+          }
+          case 112: {
+            Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
             break;
           }
         }
@@ -280,16 +286,16 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
-            break;
-          }
-          case 48: {
             MaterialId = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 106:
+          case 104: {
             tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            break;
+          }
+          case 112: {
+            Op = (global::Weedwacker.Shared.Network.Proto.WidgetSlotOp) input.ReadEnum();
             break;
           }
         }

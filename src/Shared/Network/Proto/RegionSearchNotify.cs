@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static RegionSearchNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSZWdpb25TZWFyY2hOb3RpZnkucHJvdG8aFlJlZ2lvblNlYXJjaEluZm8u",
-            "cHJvdG8iUAoSUmVnaW9uU2VhcmNoTm90aWZ5Ei0KEnJlZ2lvbl9zZWFyY2hf",
-            "bGlzdBgBIAMoCzIRLlJlZ2lvblNlYXJjaEluZm8SCwoDdWlkGAggASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhSZWdpb25TZWFyY2hOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFlJlZ2lvblNlYXJjaEluZm8ucHJvdG8icAoSUmVn",
+            "aW9uU2VhcmNoTm90aWZ5Ek0KEnJlZ2lvbl9zZWFyY2hfbGlzdBgDIAMoCzIx",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUmVnaW9uU2VhcmNo",
+            "SW5mbxILCgN1aWQYDiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RegionSearchInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5626
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5642;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RegionSearchNotify : pb::IMessage<RegionSearchNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "region_search_list" field.</summary>
-    public const int RegionSearchListFieldNumber = 1;
+    public const int RegionSearchListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RegionSearchInfo> _repeated_regionSearchList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.RegionSearchInfo.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.RegionSearchInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionSearchInfo> regionSearchList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RegionSearchInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 8;
+    public const int UidFieldNumber = 14;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       regionSearchList_.WriteTo(output, _repeated_regionSearchList_codec);
       if (Uid != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
@@ -172,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       regionSearchList_.WriteTo(ref output, _repeated_regionSearchList_codec);
       if (Uid != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
@@ -220,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 26: {
             regionSearchList_.AddEntriesFrom(input, _repeated_regionSearchList_codec);
             break;
           }
-          case 64: {
+          case 112: {
             Uid = input.ReadUInt32();
             break;
           }
@@ -243,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 26: {
             regionSearchList_.AddEntriesFrom(ref input, _repeated_regionSearchList_codec);
             break;
           }
-          case 64: {
+          case 112: {
             Uid = input.ReadUInt32();
             break;
           }

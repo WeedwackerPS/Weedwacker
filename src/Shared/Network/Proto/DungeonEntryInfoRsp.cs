@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonEntryInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEdW5nZW9uRW50cnlJbmZvUnNwLnByb3RvGhZEdW5nZW9uRW50cnlJbmZv",
-            "LnByb3RvGhtEdW5nZW9uRW50cnlQb2ludEluZm8ucHJvdG8ivwEKE0R1bmdl",
-            "b25FbnRyeUluZm9Sc3ASLQoSZHVuZ2Vvbl9lbnRyeV9saXN0GAwgAygLMhEu",
-            "RHVuZ2VvbkVudHJ5SW5mbxIQCghwb2ludF9pZBgPIAEoDRI4ChhkdW5nZW9u",
-            "X2VudHJ5X3BvaW50X2xpc3QYBCADKAsyFi5EdW5nZW9uRW50cnlQb2ludElu",
-            "Zm8SHAoUcmVjb21tZW5kX2R1bmdlb25faWQYDiABKA0SDwoHcmV0Y29kZRgL",
-            "IAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChlEdW5nZW9uRW50cnlJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhZEdW5nZW9uRW50cnlJbmZvLnByb3RvGhtEdW5n",
+            "ZW9uRW50cnlQb2ludEluZm8ucHJvdG8i/wEKE0R1bmdlb25FbnRyeUluZm9S",
+            "c3ASTQoSZHVuZ2Vvbl9lbnRyeV9saXN0GAggAygLMjEuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5EdW5nZW9uRW50cnlJbmZvEhwKFHJlY29t",
+            "bWVuZF9kdW5nZW9uX2lkGA8gASgNElgKGGR1bmdlb25fZW50cnlfcG9pbnRf",
+            "bGlzdBgKIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "RHVuZ2VvbkVudHJ5UG9pbnRJbmZvEg8KB3JldGNvZGUYDiABKAUSEAoIcG9p",
+            "bnRfaWQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DungeonEntryInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonEntryInfoRsp), global::Weedwacker.Shared.Network.Proto.DungeonEntryInfoRsp.Parser, new[]{ "DungeonEntryList", "PointId", "DungeonEntryPointList", "RecommendDungeonId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonEntryInfoRsp), global::Weedwacker.Shared.Network.Proto.DungeonEntryInfoRsp.Parser, new[]{ "DungeonEntryList", "RecommendDungeonId", "DungeonEntryPointList", "Retcode", "PointId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 998
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 930;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonEntryInfoRsp : pb::IMessage<DungeonEntryInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,10 +87,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonEntryInfoRsp(DungeonEntryInfoRsp other) : this() {
       dungeonEntryList_ = other.dungeonEntryList_.Clone();
-      pointId_ = other.pointId_;
-      dungeonEntryPointList_ = other.dungeonEntryPointList_.Clone();
       recommendDungeonId_ = other.recommendDungeonId_;
+      dungeonEntryPointList_ = other.dungeonEntryPointList_.Clone();
       retcode_ = other.retcode_;
+      pointId_ = other.pointId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,9 +101,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_entry_list" field.</summary>
-    public const int DungeonEntryListFieldNumber = 12;
+    public const int DungeonEntryListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DungeonEntryInfo> _repeated_dungeonEntryList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.DungeonEntryInfo.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.DungeonEntryInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryInfo> dungeonEntryList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,31 +111,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dungeonEntryList_; }
     }
 
-    /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 15;
-    private uint pointId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PointId {
-      get { return pointId_; }
-      set {
-        pointId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_entry_point_list" field.</summary>
-    public const int DungeonEntryPointListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> _repeated_dungeonEntryPointList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> dungeonEntryPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> DungeonEntryPointList {
-      get { return dungeonEntryPointList_; }
-    }
-
     /// <summary>Field number for the "recommend_dungeon_id" field.</summary>
-    public const int RecommendDungeonIdFieldNumber = 14;
+    public const int RecommendDungeonIdFieldNumber = 15;
     private uint recommendDungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +123,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "dungeon_entry_point_list" field.</summary>
+    public const int DungeonEntryPointListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> _repeated_dungeonEntryPointList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> dungeonEntryPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DungeonEntryPointInfo> DungeonEntryPointList {
+      get { return dungeonEntryPointList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 14;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,6 +143,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "point_id" field.</summary>
+    public const int PointIdFieldNumber = 12;
+    private uint pointId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PointId {
+      get { return pointId_; }
+      set {
+        pointId_ = value;
       }
     }
 
@@ -169,10 +174,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!dungeonEntryList_.Equals(other.dungeonEntryList_)) return false;
-      if (PointId != other.PointId) return false;
-      if(!dungeonEntryPointList_.Equals(other.dungeonEntryPointList_)) return false;
       if (RecommendDungeonId != other.RecommendDungeonId) return false;
+      if(!dungeonEntryPointList_.Equals(other.dungeonEntryPointList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if (PointId != other.PointId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,10 +186,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= dungeonEntryList_.GetHashCode();
-      if (PointId != 0) hash ^= PointId.GetHashCode();
-      hash ^= dungeonEntryPointList_.GetHashCode();
       if (RecommendDungeonId != 0) hash ^= RecommendDungeonId.GetHashCode();
+      hash ^= dungeonEntryPointList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (PointId != 0) hash ^= PointId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,19 +208,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      dungeonEntryList_.WriteTo(output, _repeated_dungeonEntryList_codec);
       dungeonEntryPointList_.WriteTo(output, _repeated_dungeonEntryPointList_codec);
+      if (PointId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PointId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteInt32(Retcode);
       }
-      dungeonEntryList_.WriteTo(output, _repeated_dungeonEntryList_codec);
       if (RecommendDungeonId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(RecommendDungeonId);
-      }
-      if (PointId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(PointId);
+        output.WriteUInt32(RecommendDungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,19 +232,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      dungeonEntryList_.WriteTo(ref output, _repeated_dungeonEntryList_codec);
       dungeonEntryPointList_.WriteTo(ref output, _repeated_dungeonEntryPointList_codec);
+      if (PointId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PointId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteInt32(Retcode);
       }
-      dungeonEntryList_.WriteTo(ref output, _repeated_dungeonEntryList_codec);
       if (RecommendDungeonId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(RecommendDungeonId);
-      }
-      if (PointId != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(PointId);
+        output.WriteUInt32(RecommendDungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -252,15 +257,15 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += dungeonEntryList_.CalculateSize(_repeated_dungeonEntryList_codec);
-      if (PointId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
-      }
-      size += dungeonEntryPointList_.CalculateSize(_repeated_dungeonEntryPointList_codec);
       if (RecommendDungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecommendDungeonId);
       }
+      size += dungeonEntryPointList_.CalculateSize(_repeated_dungeonEntryPointList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (PointId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -275,15 +280,15 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       dungeonEntryList_.Add(other.dungeonEntryList_);
-      if (other.PointId != 0) {
-        PointId = other.PointId;
-      }
-      dungeonEntryPointList_.Add(other.dungeonEntryPointList_);
       if (other.RecommendDungeonId != 0) {
         RecommendDungeonId = other.RecommendDungeonId;
       }
+      dungeonEntryPointList_.Add(other.dungeonEntryPointList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.PointId != 0) {
+        PointId = other.PointId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -300,24 +305,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            dungeonEntryPointList_.AddEntriesFrom(input, _repeated_dungeonEntryPointList_codec);
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 98: {
+          case 66: {
             dungeonEntryList_.AddEntriesFrom(input, _repeated_dungeonEntryList_codec);
             break;
           }
+          case 82: {
+            dungeonEntryPointList_.AddEntriesFrom(input, _repeated_dungeonEntryPointList_codec);
+            break;
+          }
+          case 96: {
+            PointId = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            RecommendDungeonId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 120: {
-            PointId = input.ReadUInt32();
+            RecommendDungeonId = input.ReadUInt32();
             break;
           }
         }
@@ -335,24 +340,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            dungeonEntryPointList_.AddEntriesFrom(ref input, _repeated_dungeonEntryPointList_codec);
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 98: {
+          case 66: {
             dungeonEntryList_.AddEntriesFrom(ref input, _repeated_dungeonEntryList_codec);
             break;
           }
+          case 82: {
+            dungeonEntryPointList_.AddEntriesFrom(ref input, _repeated_dungeonEntryPointList_codec);
+            break;
+          }
+          case 96: {
+            PointId = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            RecommendDungeonId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
           case 120: {
-            PointId = input.ReadUInt32();
+            RecommendDungeonId = input.ReadUInt32();
             break;
           }
         }

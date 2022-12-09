@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtSetAttackTargetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxFdnRTZXRBdHRhY2tUYXJnZXRJbmZvLnByb3RvImEKFkV2dFNldEF0dGFj",
-            "a1RhcmdldEluZm8SEQoJZW50aXR5X2lkGAsgASgNEhoKEnNlbGVjdF9wb2lu",
-            "dF9pbmRleBgGIAEoDRIYChBhdHRhY2tfdGFyZ2V0X2lkGAcgASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxFdnRTZXRBdHRhY2tUYXJnZXRJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvImEKFkV2dFNldEF0dGFja1RhcmdldEluZm8S",
+            "GAoQYXR0YWNrX3RhcmdldF9pZBgGIAEoDRIaChJzZWxlY3RfcG9pbnRfaW5k",
+            "ZXgYAyABKA0SEQoJZW50aXR5X2lkGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtSetAttackTargetInfo), global::Weedwacker.Shared.Network.Proto.EvtSetAttackTargetInfo.Parser, new[]{ "EntityId", "SelectPointIndex", "AttackTargetId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtSetAttackTargetInfo), global::Weedwacker.Shared.Network.Proto.EvtSetAttackTargetInfo.Parser, new[]{ "AttackTargetId", "SelectPointIndex", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtSetAttackTargetInfo(EvtSetAttackTargetInfo other) : this() {
-      entityId_ = other.entityId_;
-      selectPointIndex_ = other.selectPointIndex_;
       attackTargetId_ = other.attackTargetId_;
+      selectPointIndex_ = other.selectPointIndex_;
+      entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtSetAttackTargetInfo(this);
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 11;
-    private uint entityId_;
+    /// <summary>Field number for the "attack_target_id" field.</summary>
+    public const int AttackTargetIdFieldNumber = 6;
+    private uint attackTargetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
+    public uint AttackTargetId {
+      get { return attackTargetId_; }
       set {
-        entityId_ = value;
+        attackTargetId_ = value;
       }
     }
 
     /// <summary>Field number for the "select_point_index" field.</summary>
-    public const int SelectPointIndexFieldNumber = 6;
+    public const int SelectPointIndexFieldNumber = 3;
     private uint selectPointIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,15 +108,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "attack_target_id" field.</summary>
-    public const int AttackTargetIdFieldNumber = 7;
-    private uint attackTargetId_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 2;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AttackTargetId {
-      get { return attackTargetId_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        attackTargetId_ = value;
+        entityId_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
-      if (SelectPointIndex != other.SelectPointIndex) return false;
       if (AttackTargetId != other.AttackTargetId) return false;
+      if (SelectPointIndex != other.SelectPointIndex) return false;
+      if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (SelectPointIndex != 0) hash ^= SelectPointIndex.GetHashCode();
       if (AttackTargetId != 0) hash ^= AttackTargetId.GetHashCode();
+      if (SelectPointIndex != 0) hash ^= SelectPointIndex.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
+      }
       if (SelectPointIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SelectPointIndex);
       }
       if (AttackTargetId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteUInt32(AttackTargetId);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
+      }
       if (SelectPointIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SelectPointIndex);
       }
       if (AttackTargetId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteUInt32(AttackTargetId);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (AttackTargetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
       }
       if (SelectPointIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelectPointIndex);
       }
-      if (AttackTargetId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.AttackTargetId != 0) {
+        AttackTargetId = other.AttackTargetId;
       }
       if (other.SelectPointIndex != 0) {
         SelectPointIndex = other.SelectPointIndex;
       }
-      if (other.AttackTargetId != 0) {
-        AttackTargetId = other.AttackTargetId;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 16: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
             SelectPointIndex = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 48: {
             AttackTargetId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 16: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
             SelectPointIndex = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 48: {
             AttackTargetId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTavernNpcInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHQ0dUYXZlcm5OcGNJbmZvTm90aWZ5LnByb3RvGhZHQ0dUYXZlcm5OcGNJ",
-            "bmZvLnByb3RvIpcBChZHQ0dUYXZlcm5OcGNJbmZvTm90aWZ5EigKDXdlZWtf",
-            "bnBjX2xpc3QYASADKAsyES5HQ0dUYXZlcm5OcGNJbmZvEigKDWNoYXJhY3Rl",
-            "cl9ucGMYBSABKAsyES5HQ0dUYXZlcm5OcGNJbmZvEikKDmNvbnN0X25wY19s",
-            "aXN0GA8gAygLMhEuR0NHVGF2ZXJuTnBjSW5mb0IiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxHQ0dUYXZlcm5OcGNJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZHQ0dUYXZlcm5OcGNJbmZvLnByb3RvIoIC",
+            "ChZHQ0dUYXZlcm5OcGNJbmZvTm90aWZ5Ek4KE1VuazMzMDBfRktBS0hNTUlF",
+            "QkMYDCADKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdD",
+            "R1RhdmVybk5wY0luZm8STgoTVW5rMzMwMF9CQU1MTkVORExDTRgCIAMoCzIx",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHVGF2ZXJuTnBj",
+            "SW5mbxJICg1jaGFyYWN0ZXJfbnBjGAsgASgLMjEuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5HQ0dUYXZlcm5OcGNJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfoNotify.Parser, new[]{ "WeekNpcList", "CharacterNpc", "ConstNpcList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfoNotify), global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfoNotify.Parser, new[]{ "Unk3300FKAKHMMIEBC", "Unk3300BAMLNENDLCM", "CharacterNpc" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7290
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7267;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGTavernNpcInfoNotify : pb::IMessage<GCGTavernNpcInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGTavernNpcInfoNotify(GCGTavernNpcInfoNotify other) : this() {
-      weekNpcList_ = other.weekNpcList_.Clone();
+      unk3300FKAKHMMIEBC_ = other.unk3300FKAKHMMIEBC_.Clone();
+      unk3300BAMLNENDLCM_ = other.unk3300BAMLNENDLCM_.Clone();
       characterNpc_ = other.characterNpc_ != null ? other.characterNpc_.Clone() : null;
-      constNpcList_ = other.constNpcList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,19 +97,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGTavernNpcInfoNotify(this);
     }
 
-    /// <summary>Field number for the "week_npc_list" field.</summary>
-    public const int WeekNpcListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> _repeated_weekNpcList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> weekNpcList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo>();
+    /// <summary>Field number for the "Unk3300_FKAKHMMIEBC" field.</summary>
+    public const int Unk3300FKAKHMMIEBCFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> _repeated_unk3300FKAKHMMIEBC_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> unk3300FKAKHMMIEBC_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> WeekNpcList {
-      get { return weekNpcList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> Unk3300FKAKHMMIEBC {
+      get { return unk3300FKAKHMMIEBC_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_BAMLNENDLCM" field.</summary>
+    public const int Unk3300BAMLNENDLCMFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> _repeated_unk3300BAMLNENDLCM_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> unk3300BAMLNENDLCM_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> Unk3300BAMLNENDLCM {
+      get { return unk3300BAMLNENDLCM_; }
     }
 
     /// <summary>Field number for the "character_npc" field.</summary>
-    public const int CharacterNpcFieldNumber = 5;
+    public const int CharacterNpcFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo characterNpc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,17 +129,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         characterNpc_ = value;
       }
-    }
-
-    /// <summary>Field number for the "const_npc_list" field.</summary>
-    public const int ConstNpcListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> _repeated_constNpcList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> constNpcList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo> ConstNpcList {
-      get { return constNpcList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!weekNpcList_.Equals(other.weekNpcList_)) return false;
+      if(!unk3300FKAKHMMIEBC_.Equals(other.unk3300FKAKHMMIEBC_)) return false;
+      if(!unk3300BAMLNENDLCM_.Equals(other.unk3300BAMLNENDLCM_)) return false;
       if (!object.Equals(CharacterNpc, other.CharacterNpc)) return false;
-      if(!constNpcList_.Equals(other.constNpcList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= weekNpcList_.GetHashCode();
+      hash ^= unk3300FKAKHMMIEBC_.GetHashCode();
+      hash ^= unk3300BAMLNENDLCM_.GetHashCode();
       if (characterNpc_ != null) hash ^= CharacterNpc.GetHashCode();
-      hash ^= constNpcList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      weekNpcList_.WriteTo(output, _repeated_weekNpcList_codec);
+      unk3300BAMLNENDLCM_.WriteTo(output, _repeated_unk3300BAMLNENDLCM_codec);
       if (characterNpc_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(90);
         output.WriteMessage(CharacterNpc);
       }
-      constNpcList_.WriteTo(output, _repeated_constNpcList_codec);
+      unk3300FKAKHMMIEBC_.WriteTo(output, _repeated_unk3300FKAKHMMIEBC_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      weekNpcList_.WriteTo(ref output, _repeated_weekNpcList_codec);
+      unk3300BAMLNENDLCM_.WriteTo(ref output, _repeated_unk3300BAMLNENDLCM_codec);
       if (characterNpc_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(90);
         output.WriteMessage(CharacterNpc);
       }
-      constNpcList_.WriteTo(ref output, _repeated_constNpcList_codec);
+      unk3300FKAKHMMIEBC_.WriteTo(ref output, _repeated_unk3300FKAKHMMIEBC_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -203,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += weekNpcList_.CalculateSize(_repeated_weekNpcList_codec);
+      size += unk3300FKAKHMMIEBC_.CalculateSize(_repeated_unk3300FKAKHMMIEBC_codec);
+      size += unk3300BAMLNENDLCM_.CalculateSize(_repeated_unk3300BAMLNENDLCM_codec);
       if (characterNpc_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CharacterNpc);
       }
-      size += constNpcList_.CalculateSize(_repeated_constNpcList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -220,14 +226,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      weekNpcList_.Add(other.weekNpcList_);
+      unk3300FKAKHMMIEBC_.Add(other.unk3300FKAKHMMIEBC_);
+      unk3300BAMLNENDLCM_.Add(other.unk3300BAMLNENDLCM_);
       if (other.characterNpc_ != null) {
         if (characterNpc_ == null) {
           CharacterNpc = new global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo();
         }
         CharacterNpc.MergeFrom(other.CharacterNpc);
       }
-      constNpcList_.Add(other.constNpcList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -243,19 +249,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            weekNpcList_.AddEntriesFrom(input, _repeated_weekNpcList_codec);
+          case 18: {
+            unk3300BAMLNENDLCM_.AddEntriesFrom(input, _repeated_unk3300BAMLNENDLCM_codec);
             break;
           }
-          case 42: {
+          case 90: {
             if (characterNpc_ == null) {
               CharacterNpc = new global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo();
             }
             input.ReadMessage(CharacterNpc);
             break;
           }
-          case 122: {
-            constNpcList_.AddEntriesFrom(input, _repeated_constNpcList_codec);
+          case 98: {
+            unk3300FKAKHMMIEBC_.AddEntriesFrom(input, _repeated_unk3300FKAKHMMIEBC_codec);
             break;
           }
         }
@@ -273,19 +279,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            weekNpcList_.AddEntriesFrom(ref input, _repeated_weekNpcList_codec);
+          case 18: {
+            unk3300BAMLNENDLCM_.AddEntriesFrom(ref input, _repeated_unk3300BAMLNENDLCM_codec);
             break;
           }
-          case 42: {
+          case 90: {
             if (characterNpc_ == null) {
               CharacterNpc = new global::Weedwacker.Shared.Network.Proto.GCGTavernNpcInfo();
             }
             input.ReadMessage(CharacterNpc);
             break;
           }
-          case 122: {
-            constNpcList_.AddEntriesFrom(ref input, _repeated_constNpcList_codec);
+          case 98: {
+            unk3300FKAKHMMIEBC_.AddEntriesFrom(ref input, _repeated_unk3300FKAKHMMIEBC_codec);
             break;
           }
         }

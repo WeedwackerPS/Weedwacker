@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeV2BoatGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidTdW1tZXJUaW1lVjJCb2F0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8aF0dh",
-            "bGxlcnlTdG9wUmVhc29uLnByb3RvIp4BCiFTdW1tZXJUaW1lVjJCb2F0R2Fs",
-            "bGVyeVNldHRsZUluZm8SDgoGcGFyYW0xGAcgASgNEg4KBnBhcmFtMhgCIAEo",
-            "DRIiCgZyZWFzb24YAyABKA4yEi5HYWxsZXJ5U3RvcFJlYXNvbhIOCgZwYXJh",
-            "bTMYBiABKA0SEQoJdXNlZF90aW1lGAwgASgNEhIKCmdhbGxlcnlfaWQYASAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CidTdW1tZXJUaW1lVjJCb2F0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aF0dhbGxlcnlTdG9wUmVh",
+            "c29uLnByb3RvIr4BCiFTdW1tZXJUaW1lVjJCb2F0R2FsbGVyeVNldHRsZUlu",
+            "Zm8SQgoGcmVhc29uGAogASgOMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HYWxsZXJ5U3RvcFJlYXNvbhIOCgZwYXJhbTIYDCABKA0SEQoJ",
+            "dXNlZF90aW1lGAQgASgNEg4KBnBhcmFtMRgHIAEoDRISCgpnYWxsZXJ5X2lk",
+            "GAsgASgNEg4KBnBhcmFtMxgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatGallerySettleInfo.Parser, new[]{ "Param1", "Param2", "Reason", "Param3", "UsedTime", "GalleryId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeV2BoatGallerySettleInfo.Parser, new[]{ "Reason", "Param2", "UsedTime", "Param1", "GalleryId", "Param3" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,12 +75,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeV2BoatGallerySettleInfo(SummerTimeV2BoatGallerySettleInfo other) : this() {
-      param1_ = other.param1_;
-      param2_ = other.param2_;
       reason_ = other.reason_;
-      param3_ = other.param3_;
+      param2_ = other.param2_;
       usedTime_ = other.usedTime_;
+      param1_ = other.param1_;
       galleryId_ = other.galleryId_;
+      param3_ = other.param3_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,6 +88,42 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeV2BoatGallerySettleInfo Clone() {
       return new SummerTimeV2BoatGallerySettleInfo(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GalleryStopReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param2" field.</summary>
+    public const int Param2FieldNumber = 12;
+    private uint param2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Param2 {
+      get { return param2_; }
+      set {
+        param2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "used_time" field.</summary>
+    public const int UsedTimeFieldNumber = 4;
+    private uint usedTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UsedTime {
+      get { return usedTime_; }
+      set {
+        usedTime_ = value;
+      }
     }
 
     /// <summary>Field number for the "param1" field.</summary>
@@ -102,27 +138,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "param2" field.</summary>
-    public const int Param2FieldNumber = 2;
-    private uint param2_;
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 11;
+    private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Param2 {
-      get { return param2_; }
+    public uint GalleryId {
+      get { return galleryId_; }
       set {
-        param2_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GalleryStopReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
+        galleryId_ = value;
       }
     }
 
@@ -135,30 +159,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return param3_; }
       set {
         param3_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "used_time" field.</summary>
-    public const int UsedTimeFieldNumber = 12;
-    private uint usedTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint UsedTime {
-      get { return usedTime_; }
-      set {
-        usedTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 1;
-    private uint galleryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryId {
-      get { return galleryId_; }
-      set {
-        galleryId_ = value;
       }
     }
 
@@ -177,12 +177,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Param1 != other.Param1) return false;
-      if (Param2 != other.Param2) return false;
       if (Reason != other.Reason) return false;
-      if (Param3 != other.Param3) return false;
+      if (Param2 != other.Param2) return false;
       if (UsedTime != other.UsedTime) return false;
+      if (Param1 != other.Param1) return false;
       if (GalleryId != other.GalleryId) return false;
+      if (Param3 != other.Param3) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,12 +190,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Param1 != 0) hash ^= Param1.GetHashCode();
-      if (Param2 != 0) hash ^= Param2.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) hash ^= Reason.GetHashCode();
-      if (Param3 != 0) hash ^= Param3.GetHashCode();
+      if (Param2 != 0) hash ^= Param2.GetHashCode();
       if (UsedTime != 0) hash ^= UsedTime.GetHashCode();
+      if (Param1 != 0) hash ^= Param1.GetHashCode();
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (Param3 != 0) hash ^= Param3.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -214,17 +214,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GalleryId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GalleryId);
-      }
-      if (Param2 != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Param2);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
+      if (UsedTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(UsedTime);
       }
       if (Param3 != 0) {
         output.WriteRawTag(48);
@@ -234,9 +226,17 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(56);
         output.WriteUInt32(Param1);
       }
-      if (UsedTime != 0) {
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Reason);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GalleryId);
+      }
+      if (Param2 != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(UsedTime);
+        output.WriteUInt32(Param2);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -248,17 +248,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GalleryId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GalleryId);
-      }
-      if (Param2 != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Param2);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
+      if (UsedTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(UsedTime);
       }
       if (Param3 != 0) {
         output.WriteRawTag(48);
@@ -268,9 +260,17 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(56);
         output.WriteUInt32(Param1);
       }
-      if (UsedTime != 0) {
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Reason);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GalleryId);
+      }
+      if (Param2 != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(UsedTime);
+        output.WriteUInt32(Param2);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -282,23 +282,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Param1 != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param1);
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (Param2 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param2);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-      }
-      if (Param3 != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param3);
-      }
       if (UsedTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UsedTime);
       }
+      if (Param1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param1);
+      }
       if (GalleryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (Param3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param3);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -312,23 +312,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Param1 != 0) {
-        Param1 = other.Param1;
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
+        Reason = other.Reason;
       }
       if (other.Param2 != 0) {
         Param2 = other.Param2;
       }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        Reason = other.Reason;
-      }
-      if (other.Param3 != 0) {
-        Param3 = other.Param3;
-      }
       if (other.UsedTime != 0) {
         UsedTime = other.UsedTime;
       }
+      if (other.Param1 != 0) {
+        Param1 = other.Param1;
+      }
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
+      }
+      if (other.Param3 != 0) {
+        Param3 = other.Param3;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -345,16 +345,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            GalleryId = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Param2 = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+          case 32: {
+            UsedTime = input.ReadUInt32();
             break;
           }
           case 48: {
@@ -365,8 +357,16 @@ namespace Weedwacker.Shared.Network.Proto {
             Param1 = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
           case 96: {
-            UsedTime = input.ReadUInt32();
+            Param2 = input.ReadUInt32();
             break;
           }
         }
@@ -384,16 +384,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            GalleryId = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Param2 = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+          case 32: {
+            UsedTime = input.ReadUInt32();
             break;
           }
           case 48: {
@@ -404,8 +396,16 @@ namespace Weedwacker.Shared.Network.Proto {
             Param1 = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
           case 96: {
-            UsedTime = input.ReadUInt32();
+            Param2 = input.ReadUInt32();
             break;
           }
         }

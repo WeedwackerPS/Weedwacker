@@ -25,10 +25,10 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFHYW1lcGxheVJlY29tbWVuZGF0aW9uUmVsaXF1YXJ5TWFpblByb3BEYXRh",
-            "LnByb3RvIlcKK0dhbWVwbGF5UmVjb21tZW5kYXRpb25SZWxpcXVhcnlNYWlu",
-            "UHJvcERhdGESEgoKcGVybWlsbGFnZRgBIAEoDRIUCgxtYWluX3Byb3BfaWQY",
-            "DCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlcKK0dh",
+            "bWVwbGF5UmVjb21tZW5kYXRpb25SZWxpcXVhcnlNYWluUHJvcERhdGESEgoK",
+            "cGVybWlsbGFnZRgFIAEoDRIUCgxtYWluX3Byb3BfaWQYCiABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "permillage" field.</summary>
-    public const int PermillageFieldNumber = 1;
+    public const int PermillageFieldNumber = 5;
     private uint permillage_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "main_prop_id" field.</summary>
-    public const int MainPropIdFieldNumber = 12;
+    public const int MainPropIdFieldNumber = 10;
     private uint mainPropId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Permillage != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(Permillage);
       }
       if (MainPropId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(MainPropId);
       }
       if (_unknownFields != null) {
@@ -171,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Permillage != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt32(Permillage);
       }
       if (MainPropId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(MainPropId);
       }
       if (_unknownFields != null) {
@@ -227,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             Permillage = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             MainPropId = input.ReadUInt32();
             break;
           }
@@ -250,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             Permillage = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             MainPropId = input.ReadUInt32();
             break;
           }

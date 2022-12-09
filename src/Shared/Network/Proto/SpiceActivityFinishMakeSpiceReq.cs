@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SpiceActivityFinishMakeSpiceReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVTcGljZUFjdGl2aXR5RmluaXNoTWFrZVNwaWNlUmVxLnByb3RvInoKH1Nw",
-            "aWNlQWN0aXZpdHlGaW5pc2hNYWtlU3BpY2VSZXESEgoKbGVmdF90dXJucxgE",
-            "IAEoDRISCgppc19zdWNjZXNzGAkgASgIEh0KFWxlZnRfbWF0ZXJpYWxfaWRf",
-            "bGlzdBgMIAMoDRIQCghzdGFnZV9pZBgPIAEoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVTcGljZUFjdGl2aXR5RmluaXNoTWFrZVNwaWNlUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvInoKH1NwaWNlQWN0aXZpdHlG",
+            "aW5pc2hNYWtlU3BpY2VSZXESEAoIc3RhZ2VfaWQYCyABKA0SHQoVbGVmdF9t",
+            "YXRlcmlhbF9pZF9saXN0GAkgAygNEhIKCmlzX3N1Y2Nlc3MYCiABKAgSEgoK",
+            "bGVmdF90dXJucxgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityFinishMakeSpiceReq), global::Weedwacker.Shared.Network.Proto.SpiceActivityFinishMakeSpiceReq.Parser, new[]{ "LeftTurns", "IsSuccess", "LeftMaterialIdList", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityFinishMakeSpiceReq), global::Weedwacker.Shared.Network.Proto.SpiceActivityFinishMakeSpiceReq.Parser, new[]{ "StageId", "LeftMaterialIdList", "IsSuccess", "LeftTurns" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8096
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8838;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SpiceActivityFinishMakeSpiceReq : pb::IMessage<SpiceActivityFinishMakeSpiceReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SpiceActivityFinishMakeSpiceReq(SpiceActivityFinishMakeSpiceReq other) : this() {
-      leftTurns_ = other.leftTurns_;
-      isSuccess_ = other.isSuccess_;
-      leftMaterialIdList_ = other.leftMaterialIdList_.Clone();
       stageId_ = other.stageId_;
+      leftMaterialIdList_ = other.leftMaterialIdList_.Clone();
+      isSuccess_ = other.isSuccess_;
+      leftTurns_ = other.leftTurns_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +96,31 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SpiceActivityFinishMakeSpiceReq(this);
     }
 
-    /// <summary>Field number for the "left_turns" field.</summary>
-    public const int LeftTurnsFieldNumber = 4;
-    private uint leftTurns_;
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 11;
+    private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftTurns {
-      get { return leftTurns_; }
+    public uint StageId {
+      get { return stageId_; }
       set {
-        leftTurns_ = value;
+        stageId_ = value;
       }
     }
 
+    /// <summary>Field number for the "left_material_id_list" field.</summary>
+    public const int LeftMaterialIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_leftMaterialIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> leftMaterialIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> LeftMaterialIdList {
+      get { return leftMaterialIdList_; }
+    }
+
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 9;
+    public const int IsSuccessFieldNumber = 10;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,26 +131,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "left_material_id_list" field.</summary>
-    public const int LeftMaterialIdListFieldNumber = 12;
-    private static readonly pb::FieldCodec<uint> _repeated_leftMaterialIdList_codec
-        = pb::FieldCodec.ForUInt32(98);
-    private readonly pbc::RepeatedField<uint> leftMaterialIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "left_turns" field.</summary>
+    public const int LeftTurnsFieldNumber = 14;
+    private uint leftTurns_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LeftMaterialIdList {
-      get { return leftMaterialIdList_; }
-    }
-
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 15;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
+    public uint LeftTurns {
+      get { return leftTurns_; }
       set {
-        stageId_ = value;
+        leftTurns_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LeftTurns != other.LeftTurns) return false;
-      if (IsSuccess != other.IsSuccess) return false;
-      if(!leftMaterialIdList_.Equals(other.leftMaterialIdList_)) return false;
       if (StageId != other.StageId) return false;
+      if(!leftMaterialIdList_.Equals(other.leftMaterialIdList_)) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (LeftTurns != other.LeftTurns) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LeftTurns != 0) hash ^= LeftTurns.GetHashCode();
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      hash ^= leftMaterialIdList_.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= leftMaterialIdList_.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (LeftTurns != 0) hash ^= LeftTurns.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,18 +191,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LeftTurns != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(LeftTurns);
-      }
+      leftMaterialIdList_.WriteTo(output, _repeated_leftMaterialIdList_codec);
       if (IsSuccess != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(IsSuccess);
       }
-      leftMaterialIdList_.WriteTo(output, _repeated_leftMaterialIdList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(StageId);
+      }
+      if (LeftTurns != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(LeftTurns);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -210,18 +214,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LeftTurns != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(LeftTurns);
-      }
+      leftMaterialIdList_.WriteTo(ref output, _repeated_leftMaterialIdList_codec);
       if (IsSuccess != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteBool(IsSuccess);
       }
-      leftMaterialIdList_.WriteTo(ref output, _repeated_leftMaterialIdList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(StageId);
+      }
+      if (LeftTurns != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(LeftTurns);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,15 +237,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LeftTurns != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTurns);
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
+      size += leftMaterialIdList_.CalculateSize(_repeated_leftMaterialIdList_codec);
       if (IsSuccess != false) {
         size += 1 + 1;
       }
-      size += leftMaterialIdList_.CalculateSize(_repeated_leftMaterialIdList_codec);
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      if (LeftTurns != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTurns);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -255,15 +259,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LeftTurns != 0) {
-        LeftTurns = other.LeftTurns;
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
+      leftMaterialIdList_.Add(other.leftMaterialIdList_);
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      leftMaterialIdList_.Add(other.leftMaterialIdList_);
-      if (other.StageId != 0) {
-        StageId = other.StageId;
+      if (other.LeftTurns != 0) {
+        LeftTurns = other.LeftTurns;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -280,21 +284,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            LeftTurns = input.ReadUInt32();
-            break;
-          }
+          case 74:
           case 72: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 98:
-          case 96: {
             leftMaterialIdList_.AddEntriesFrom(input, _repeated_leftMaterialIdList_codec);
             break;
           }
-          case 120: {
+          case 80: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 88: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            LeftTurns = input.ReadUInt32();
             break;
           }
         }
@@ -312,21 +316,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            LeftTurns = input.ReadUInt32();
-            break;
-          }
+          case 74:
           case 72: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 98:
-          case 96: {
             leftMaterialIdList_.AddEntriesFrom(ref input, _repeated_leftMaterialIdList_codec);
             break;
           }
-          case 120: {
+          case 80: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 88: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            LeftTurns = input.ReadUInt32();
             break;
           }
         }

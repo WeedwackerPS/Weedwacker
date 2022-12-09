@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ForceDragAvatarNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtGb3JjZURyYWdBdmF0YXJOb3RpZnkucHJvdG8aEE1vdGlvbkluZm8ucHJv",
-            "dG8iqgEKFUZvcmNlRHJhZ0F2YXRhck5vdGlmeRISCgpzY2VuZV90aW1lGAMg",
-            "ASgNEhUKDWRlbHRhX3RpbWVfbXMYASABKAQSEQoJZW50aXR5X2lkGAIgASgN",
-            "EiAKC21vdGlvbl9pbmZvGAogASgLMgsuTW90aW9uSW5mbxIWCg5pc19maXJz",
-            "dF92YWxpZBgIIAEoCBIZChFsYXN0X21vdmVfdGltZV9tcxgMIAEoBEIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtGb3JjZURyYWdBdmF0YXJOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEE1vdGlvbkluZm8ucHJvdG8i0gEKFUZvcmNl",
+            "RHJhZ0F2YXRhck5vdGlmeRIbChNVbmszMzAwX0lNRk5OUEdIS0pKGAMgASgE",
+            "EkAKC21vdGlvbl9pbmZvGAkgASgLMisuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Nb3Rpb25JbmZvEhYKDmlzX2ZpcnN0X3ZhbGlkGAcgASgI",
+            "EhIKCnNjZW5lX3RpbWUYDCABKA0SEQoJZW50aXR5X2lkGAogASgNEhsKE1Vu",
+            "azMzMDBfQUZMQ0xMRkRQQkQYBSABKARiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MotionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForceDragAvatarNotify), global::Weedwacker.Shared.Network.Proto.ForceDragAvatarNotify.Parser, new[]{ "SceneTime", "DeltaTimeMs", "EntityId", "MotionInfo", "IsFirstValid", "LastMoveTimeMs" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ForceDragAvatarNotify), global::Weedwacker.Shared.Network.Proto.ForceDragAvatarNotify.Parser, new[]{ "Unk3300IMFNNPGHKJJ", "MotionInfo", "IsFirstValid", "SceneTime", "EntityId", "Unk3300AFLCLLFDPBD" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3235
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3008;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ForceDragAvatarNotify : pb::IMessage<ForceDragAvatarNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,12 +84,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ForceDragAvatarNotify(ForceDragAvatarNotify other) : this() {
-      sceneTime_ = other.sceneTime_;
-      deltaTimeMs_ = other.deltaTimeMs_;
-      entityId_ = other.entityId_;
+      unk3300IMFNNPGHKJJ_ = other.unk3300IMFNNPGHKJJ_;
       motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
       isFirstValid_ = other.isFirstValid_;
-      lastMoveTimeMs_ = other.lastMoveTimeMs_;
+      sceneTime_ = other.sceneTime_;
+      entityId_ = other.entityId_;
+      unk3300AFLCLLFDPBD_ = other.unk3300AFLCLLFDPBD_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,44 +99,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ForceDragAvatarNotify(this);
     }
 
-    /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 3;
-    private uint sceneTime_;
+    /// <summary>Field number for the "Unk3300_IMFNNPGHKJJ" field.</summary>
+    public const int Unk3300IMFNNPGHKJJFieldNumber = 3;
+    private ulong unk3300IMFNNPGHKJJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneTime {
-      get { return sceneTime_; }
+    public ulong Unk3300IMFNNPGHKJJ {
+      get { return unk3300IMFNNPGHKJJ_; }
       set {
-        sceneTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "delta_time_ms" field.</summary>
-    public const int DeltaTimeMsFieldNumber = 1;
-    private ulong deltaTimeMs_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong DeltaTimeMs {
-      get { return deltaTimeMs_; }
-      set {
-        deltaTimeMs_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 2;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
+        unk3300IMFNNPGHKJJ_ = value;
       }
     }
 
     /// <summary>Field number for the "motion_info" field.</summary>
-    public const int MotionInfoFieldNumber = 10;
+    public const int MotionInfoFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.MotionInfo motionInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +124,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_first_valid" field.</summary>
-    public const int IsFirstValidFieldNumber = 8;
+    public const int IsFirstValidFieldNumber = 7;
     private bool isFirstValid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,15 +135,39 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "last_move_time_ms" field.</summary>
-    public const int LastMoveTimeMsFieldNumber = 12;
-    private ulong lastMoveTimeMs_;
+    /// <summary>Field number for the "scene_time" field.</summary>
+    public const int SceneTimeFieldNumber = 12;
+    private uint sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong LastMoveTimeMs {
-      get { return lastMoveTimeMs_; }
+    public uint SceneTime {
+      get { return sceneTime_; }
       set {
-        lastMoveTimeMs_ = value;
+        sceneTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 10;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AFLCLLFDPBD" field.</summary>
+    public const int Unk3300AFLCLLFDPBDFieldNumber = 5;
+    private ulong unk3300AFLCLLFDPBD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Unk3300AFLCLLFDPBD {
+      get { return unk3300AFLCLLFDPBD_; }
+      set {
+        unk3300AFLCLLFDPBD_ = value;
       }
     }
 
@@ -181,12 +186,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SceneTime != other.SceneTime) return false;
-      if (DeltaTimeMs != other.DeltaTimeMs) return false;
-      if (EntityId != other.EntityId) return false;
+      if (Unk3300IMFNNPGHKJJ != other.Unk3300IMFNNPGHKJJ) return false;
       if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
       if (IsFirstValid != other.IsFirstValid) return false;
-      if (LastMoveTimeMs != other.LastMoveTimeMs) return false;
+      if (SceneTime != other.SceneTime) return false;
+      if (EntityId != other.EntityId) return false;
+      if (Unk3300AFLCLLFDPBD != other.Unk3300AFLCLLFDPBD) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,12 +199,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
-      if (DeltaTimeMs != 0UL) hash ^= DeltaTimeMs.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Unk3300IMFNNPGHKJJ != 0UL) hash ^= Unk3300IMFNNPGHKJJ.GetHashCode();
       if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
       if (IsFirstValid != false) hash ^= IsFirstValid.GetHashCode();
-      if (LastMoveTimeMs != 0UL) hash ^= LastMoveTimeMs.GetHashCode();
+      if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Unk3300AFLCLLFDPBD != 0UL) hash ^= Unk3300AFLCLLFDPBD.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -218,29 +223,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DeltaTimeMs != 0UL) {
-        output.WriteRawTag(8);
-        output.WriteUInt64(DeltaTimeMs);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(EntityId);
-      }
-      if (SceneTime != 0) {
+      if (Unk3300IMFNNPGHKJJ != 0UL) {
         output.WriteRawTag(24);
-        output.WriteUInt32(SceneTime);
+        output.WriteUInt64(Unk3300IMFNNPGHKJJ);
+      }
+      if (Unk3300AFLCLLFDPBD != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(Unk3300AFLCLLFDPBD);
       }
       if (IsFirstValid != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteBool(IsFirstValid);
       }
       if (motionInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(74);
         output.WriteMessage(MotionInfo);
       }
-      if (LastMoveTimeMs != 0UL) {
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
+      }
+      if (SceneTime != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt64(LastMoveTimeMs);
+        output.WriteUInt32(SceneTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -252,29 +257,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DeltaTimeMs != 0UL) {
-        output.WriteRawTag(8);
-        output.WriteUInt64(DeltaTimeMs);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(EntityId);
-      }
-      if (SceneTime != 0) {
+      if (Unk3300IMFNNPGHKJJ != 0UL) {
         output.WriteRawTag(24);
-        output.WriteUInt32(SceneTime);
+        output.WriteUInt64(Unk3300IMFNNPGHKJJ);
+      }
+      if (Unk3300AFLCLLFDPBD != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(Unk3300AFLCLLFDPBD);
       }
       if (IsFirstValid != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteBool(IsFirstValid);
       }
       if (motionInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(74);
         output.WriteMessage(MotionInfo);
       }
-      if (LastMoveTimeMs != 0UL) {
+      if (EntityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EntityId);
+      }
+      if (SceneTime != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt64(LastMoveTimeMs);
+        output.WriteUInt32(SceneTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -286,14 +291,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SceneTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
-      }
-      if (DeltaTimeMs != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DeltaTimeMs);
-      }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (Unk3300IMFNNPGHKJJ != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300IMFNNPGHKJJ);
       }
       if (motionInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
@@ -301,8 +300,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsFirstValid != false) {
         size += 1 + 1;
       }
-      if (LastMoveTimeMs != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(LastMoveTimeMs);
+      if (SceneTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Unk3300AFLCLLFDPBD != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Unk3300AFLCLLFDPBD);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -316,14 +321,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SceneTime != 0) {
-        SceneTime = other.SceneTime;
-      }
-      if (other.DeltaTimeMs != 0UL) {
-        DeltaTimeMs = other.DeltaTimeMs;
-      }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.Unk3300IMFNNPGHKJJ != 0UL) {
+        Unk3300IMFNNPGHKJJ = other.Unk3300IMFNNPGHKJJ;
       }
       if (other.motionInfo_ != null) {
         if (motionInfo_ == null) {
@@ -334,8 +333,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsFirstValid != false) {
         IsFirstValid = other.IsFirstValid;
       }
-      if (other.LastMoveTimeMs != 0UL) {
-        LastMoveTimeMs = other.LastMoveTimeMs;
+      if (other.SceneTime != 0) {
+        SceneTime = other.SceneTime;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.Unk3300AFLCLLFDPBD != 0UL) {
+        Unk3300AFLCLLFDPBD = other.Unk3300AFLCLLFDPBD;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -352,31 +357,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            DeltaTimeMs = input.ReadUInt64();
-            break;
-          }
-          case 16: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            SceneTime = input.ReadUInt32();
+            Unk3300IMFNNPGHKJJ = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 40: {
+            Unk3300AFLCLLFDPBD = input.ReadUInt64();
+            break;
+          }
+          case 56: {
             IsFirstValid = input.ReadBool();
             break;
           }
-          case 82: {
+          case 74: {
             if (motionInfo_ == null) {
               MotionInfo = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(MotionInfo);
             break;
           }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
           case 96: {
-            LastMoveTimeMs = input.ReadUInt64();
+            SceneTime = input.ReadUInt32();
             break;
           }
         }
@@ -394,31 +399,31 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            DeltaTimeMs = input.ReadUInt64();
-            break;
-          }
-          case 16: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            SceneTime = input.ReadUInt32();
+            Unk3300IMFNNPGHKJJ = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 40: {
+            Unk3300AFLCLLFDPBD = input.ReadUInt64();
+            break;
+          }
+          case 56: {
             IsFirstValid = input.ReadBool();
             break;
           }
-          case 82: {
+          case 74: {
             if (motionInfo_ == null) {
               MotionInfo = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(MotionInfo);
             break;
           }
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
           case 96: {
-            LastMoveTimeMs = input.ReadUInt64();
+            SceneTime = input.ReadUInt32();
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MonsterBornTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVNb25zdGVyQm9yblR5cGUucHJvdG8qagoPTW9uc3RlckJvcm5UeXBlEhoK",
-            "Fk1PTlNURVJfQk9STl9UWVBFX05PTkUQABIdChlNT05TVEVSX0JPUk5fVFlQ",
-            "RV9ERUZBVUxUEAESHAoYTU9OU1RFUl9CT1JOX1RZUEVfUkFORE9NEAJCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVNb25zdGVyQm9yblR5cGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8qagoPTW9uc3RlckJvcm5UeXBlEhoKFk1PTlNURVJfQk9S",
+            "Tl9UWVBFX05PTkUQABIdChlNT05TVEVSX0JPUk5fVFlQRV9ERUZBVUxUEAES",
+            "HAoYTU9OU1RFUl9CT1JOX1RZUEVfUkFORE9NEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.MonsterBornType), }, null, null));

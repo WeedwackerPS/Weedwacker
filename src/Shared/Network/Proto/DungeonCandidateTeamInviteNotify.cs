@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonCandidateTeamInviteNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZEdW5nZW9uQ2FuZGlkYXRlVGVhbUludml0ZU5vdGlmeS5wcm90byJrCiBE",
-            "dW5nZW9uQ2FuZGlkYXRlVGVhbUludml0ZU5vdGlmeRISCgpwbGF5ZXJfdWlk",
-            "GAUgASgNEh8KF3ZhaWxkX2RlYWRsaW5lX3RpbWVfc2VjGAkgASgNEhIKCmR1",
-            "bmdlb25faWQYBiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "CiZEdW5nZW9uQ2FuZGlkYXRlVGVhbUludml0ZU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJrCiBEdW5nZW9uQ2FuZGlk",
+            "YXRlVGVhbUludml0ZU5vdGlmeRIfChd2YWxpZF9kZWFkbGluZV90aW1lX3Nl",
+            "YxgLIAEoDRISCgpwbGF5ZXJfdWlkGAQgASgNEhIKCmR1bmdlb25faWQYDSAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInviteNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInviteNotify.Parser, new[]{ "PlayerUid", "VaildDeadlineTimeSec", "DungeonId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInviteNotify), global::Weedwacker.Shared.Network.Proto.DungeonCandidateTeamInviteNotify.Parser, new[]{ "ValidDeadlineTimeSec", "PlayerUid", "DungeonId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 994
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 905;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonCandidateTeamInviteNotify : pb::IMessage<DungeonCandidateTeamInviteNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonCandidateTeamInviteNotify(DungeonCandidateTeamInviteNotify other) : this() {
+      validDeadlineTimeSec_ = other.validDeadlineTimeSec_;
       playerUid_ = other.playerUid_;
-      vaildDeadlineTimeSec_ = other.vaildDeadlineTimeSec_;
       dungeonId_ = other.dungeonId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonCandidateTeamInviteNotify(this);
     }
 
+    /// <summary>Field number for the "valid_deadline_time_sec" field.</summary>
+    public const int ValidDeadlineTimeSecFieldNumber = 11;
+    private uint validDeadlineTimeSec_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ValidDeadlineTimeSec {
+      get { return validDeadlineTimeSec_; }
+      set {
+        validDeadlineTimeSec_ = value;
+      }
+    }
+
     /// <summary>Field number for the "player_uid" field.</summary>
-    public const int PlayerUidFieldNumber = 5;
+    public const int PlayerUidFieldNumber = 4;
     private uint playerUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +118,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "vaild_deadline_time_sec" field.</summary>
-    public const int VaildDeadlineTimeSecFieldNumber = 9;
-    private uint vaildDeadlineTimeSec_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint VaildDeadlineTimeSec {
-      get { return vaildDeadlineTimeSec_; }
-      set {
-        vaildDeadlineTimeSec_ = value;
-      }
-    }
-
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 6;
+    public const int DungeonIdFieldNumber = 13;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ValidDeadlineTimeSec != other.ValidDeadlineTimeSec) return false;
       if (PlayerUid != other.PlayerUid) return false;
-      if (VaildDeadlineTimeSec != other.VaildDeadlineTimeSec) return false;
       if (DungeonId != other.DungeonId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ValidDeadlineTimeSec != 0) hash ^= ValidDeadlineTimeSec.GetHashCode();
       if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
-      if (VaildDeadlineTimeSec != 0) hash ^= VaildDeadlineTimeSec.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -173,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (PlayerUid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(PlayerUid);
       }
-      if (DungeonId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DungeonId);
+      if (ValidDeadlineTimeSec != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ValidDeadlineTimeSec);
       }
-      if (VaildDeadlineTimeSec != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(VaildDeadlineTimeSec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PlayerUid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt32(PlayerUid);
       }
-      if (DungeonId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DungeonId);
+      if (ValidDeadlineTimeSec != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ValidDeadlineTimeSec);
       }
-      if (VaildDeadlineTimeSec != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(VaildDeadlineTimeSec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,11 +220,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ValidDeadlineTimeSec != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ValidDeadlineTimeSec);
+      }
       if (PlayerUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
-      }
-      if (VaildDeadlineTimeSec != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(VaildDeadlineTimeSec);
       }
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
@@ -237,11 +241,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ValidDeadlineTimeSec != 0) {
+        ValidDeadlineTimeSec = other.ValidDeadlineTimeSec;
+      }
       if (other.PlayerUid != 0) {
         PlayerUid = other.PlayerUid;
-      }
-      if (other.VaildDeadlineTimeSec != 0) {
-        VaildDeadlineTimeSec = other.VaildDeadlineTimeSec;
       }
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 32: {
             PlayerUid = input.ReadUInt32();
             break;
           }
-          case 48: {
-            DungeonId = input.ReadUInt32();
+          case 88: {
+            ValidDeadlineTimeSec = input.ReadUInt32();
             break;
           }
-          case 72: {
-            VaildDeadlineTimeSec = input.ReadUInt32();
+          case 104: {
+            DungeonId = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 32: {
             PlayerUid = input.ReadUInt32();
             break;
           }
-          case 48: {
-            DungeonId = input.ReadUInt32();
+          case 88: {
+            ValidDeadlineTimeSec = input.ReadUInt32();
             break;
           }
-          case 72: {
-            VaildDeadlineTimeSec = input.ReadUInt32();
+          case 104: {
+            DungeonId = input.ReadUInt32();
             break;
           }
         }

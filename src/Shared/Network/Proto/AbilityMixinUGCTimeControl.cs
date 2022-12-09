@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinUGCTimeControlReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBYmlsaXR5TWl4aW5VR0NUaW1lQ29udHJvbC5wcm90byJJChpBYmlsaXR5",
-            "TWl4aW5VR0NUaW1lQ29udHJvbBIaChJzdGFydF9tb3ZlX3RpbWVfbXMYDSAB",
-            "KAQSDwoHZm9yd2FyZBgDIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBBYmlsaXR5TWl4aW5VR0NUaW1lQ29udHJvbC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJRChpBYmlsaXR5TWl4aW5VR0NUaW1l",
+            "Q29udHJvbBIaChJzdGFydF9tb3ZlX3RpbWVfbXMYDCABKAQSFwoPc3RhcnRf",
+            "bW92ZV90aW1lGAkgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinUGCTimeControl), global::Weedwacker.Shared.Network.Proto.AbilityMixinUGCTimeControl.Parser, new[]{ "StartMoveTimeMs", "Forward" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityMixinUGCTimeControl), global::Weedwacker.Shared.Network.Proto.AbilityMixinUGCTimeControl.Parser, new[]{ "StartMoveTimeMs", "StartMoveTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,7 +73,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityMixinUGCTimeControl(AbilityMixinUGCTimeControl other) : this() {
       startMoveTimeMs_ = other.startMoveTimeMs_;
-      forward_ = other.forward_;
+      startMoveTime_ = other.startMoveTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "start_move_time_ms" field.</summary>
-    public const int StartMoveTimeMsFieldNumber = 13;
+    public const int StartMoveTimeMsFieldNumber = 12;
     private ulong startMoveTimeMs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,15 +95,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "forward" field.</summary>
-    public const int ForwardFieldNumber = 3;
-    private uint forward_;
+    /// <summary>Field number for the "start_move_time" field.</summary>
+    public const int StartMoveTimeFieldNumber = 9;
+    private uint startMoveTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Forward {
-      get { return forward_; }
+    public uint StartMoveTime {
+      get { return startMoveTime_; }
       set {
-        forward_ = value;
+        startMoveTime_ = value;
       }
     }
 
@@ -123,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (StartMoveTimeMs != other.StartMoveTimeMs) return false;
-      if (Forward != other.Forward) return false;
+      if (StartMoveTime != other.StartMoveTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,7 +132,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (StartMoveTimeMs != 0UL) hash ^= StartMoveTimeMs.GetHashCode();
-      if (Forward != 0) hash ^= Forward.GetHashCode();
+      if (StartMoveTime != 0) hash ^= StartMoveTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,12 +151,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Forward != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Forward);
+      if (StartMoveTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StartMoveTime);
       }
       if (StartMoveTimeMs != 0UL) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt64(StartMoveTimeMs);
       }
       if (_unknownFields != null) {
@@ -169,12 +169,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Forward != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Forward);
+      if (StartMoveTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StartMoveTime);
       }
       if (StartMoveTimeMs != 0UL) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt64(StartMoveTimeMs);
       }
       if (_unknownFields != null) {
@@ -190,8 +190,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StartMoveTimeMs != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(StartMoveTimeMs);
       }
-      if (Forward != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Forward);
+      if (StartMoveTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartMoveTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -208,8 +208,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StartMoveTimeMs != 0UL) {
         StartMoveTimeMs = other.StartMoveTimeMs;
       }
-      if (other.Forward != 0) {
-        Forward = other.Forward;
+      if (other.StartMoveTime != 0) {
+        StartMoveTime = other.StartMoveTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Forward = input.ReadUInt32();
+          case 72: {
+            StartMoveTime = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 96: {
             StartMoveTimeMs = input.ReadUInt64();
             break;
           }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Forward = input.ReadUInt32();
+          case 72: {
+            StartMoveTime = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 96: {
             StartMoveTimeMs = input.ReadUInt64();
             break;
           }

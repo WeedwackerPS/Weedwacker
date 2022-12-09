@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGStartChallengeRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHQ0dTdGFydENoYWxsZW5nZVJzcC5wcm90bxoSR0NHTGV2ZWxUeXBlLnBy",
-            "b3RvIm8KFEdDR1N0YXJ0Q2hhbGxlbmdlUnNwEiEKCmxldmVsX3R5cGUYDCAB",
-            "KA4yDS5HQ0dMZXZlbFR5cGUSDwoHcmV0Y29kZRgPIAEoBRIRCgljb25maWdf",
-            "aWQYBiABKA0SEAoIbGV2ZWxfaWQYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpHQ0dTdGFydENoYWxsZW5nZVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoSR0NHTGV2ZWxUeXBlLnByb3RvIo8BChRHQ0dT",
+            "dGFydENoYWxsZW5nZVJzcBIRCgljb25maWdfaWQYCCABKA0SEAoIbGV2ZWxf",
+            "aWQYBSABKA0SQQoKbGV2ZWxfdHlwZRgLIAEoDjItLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR0NHTGV2ZWxUeXBlEg8KB3JldGNvZGUYASAB",
+            "KAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGLevelTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGStartChallengeRsp), global::Weedwacker.Shared.Network.Proto.GCGStartChallengeRsp.Parser, new[]{ "LevelType", "Retcode", "ConfigId", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGStartChallengeRsp), global::Weedwacker.Shared.Network.Proto.GCGStartChallengeRsp.Parser, new[]{ "ConfigId", "LevelId", "LevelType", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7763
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7999;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGStartChallengeRsp : pb::IMessage<GCGStartChallengeRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGStartChallengeRsp(GCGStartChallengeRsp other) : this() {
-      levelType_ = other.levelType_;
-      retcode_ = other.retcode_;
       configId_ = other.configId_;
       levelId_ = other.levelId_;
+      levelType_ = other.levelType_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,32 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGStartChallengeRsp(this);
     }
 
-    /// <summary>Field number for the "level_type" field.</summary>
-    public const int LevelTypeFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.GCGLevelType levelType_ = global::Weedwacker.Shared.Network.Proto.GCGLevelType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGLevelType LevelType {
-      get { return levelType_; }
-      set {
-        levelType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 6;
+    public const int ConfigIdFieldNumber = 8;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 1;
+    public const int LevelIdFieldNumber = 5;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +117,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return levelId_; }
       set {
         levelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_type" field.</summary>
+    public const int LevelTypeFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.GCGLevelType levelType_ = global::Weedwacker.Shared.Network.Proto.GCGLevelType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGLevelType LevelType {
+      get { return levelType_; }
+      set {
+        levelType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 1;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -154,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LevelType != other.LevelType) return false;
-      if (Retcode != other.Retcode) return false;
       if (ConfigId != other.ConfigId) return false;
       if (LevelId != other.LevelId) return false;
+      if (LevelType != other.LevelType) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) hash ^= LevelType.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) hash ^= LevelType.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,21 +192,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LevelId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(40);
         output.WriteUInt32(LevelId);
       }
       if (ConfigId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(ConfigId);
       }
       if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteEnum((int) LevelType);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +218,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LevelId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(40);
         output.WriteUInt32(LevelId);
       }
       if (ConfigId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(ConfigId);
       }
       if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteEnum((int) LevelType);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LevelType);
-      }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (ConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
       }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LevelType);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +268,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
-        LevelType = other.LevelType;
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
       }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
+      }
+      if (other.LevelType != global::Weedwacker.Shared.Network.Proto.GCGLevelType.None) {
+        LevelType = other.LevelType;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -291,19 +296,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 40: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             LevelType = (global::Weedwacker.Shared.Network.Proto.GCGLevelType) input.ReadEnum();
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -322,19 +327,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 40: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 64: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             LevelType = (global::Weedwacker.Shared.Network.Proto.GCGLevelType) input.ReadEnum();
-            break;
-          }
-          case 120: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

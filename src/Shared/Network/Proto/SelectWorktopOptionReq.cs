@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SelectWorktopOptionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTZWxlY3RXb3JrdG9wT3B0aW9uUmVxLnByb3RvIkUKFlNlbGVjdFdvcmt0",
-            "b3BPcHRpb25SZXESGAoQZ2FkZ2V0X2VudGl0eV9pZBgMIAEoDRIRCglvcHRp",
-            "b25faWQYCyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChxTZWxlY3RXb3JrdG9wT3B0aW9uUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkUKFlNlbGVjdFdvcmt0b3BPcHRpb25SZXES",
+            "EQoJb3B0aW9uX2lkGAcgASgNEhgKEGdhZGdldF9lbnRpdHlfaWQYBSABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SelectWorktopOptionReq), global::Weedwacker.Shared.Network.Proto.SelectWorktopOptionReq.Parser, new[]{ "GadgetEntityId", "OptionId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SelectWorktopOptionReq), global::Weedwacker.Shared.Network.Proto.SelectWorktopOptionReq.Parser, new[]{ "OptionId", "GadgetEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 807
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 900;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SelectWorktopOptionReq : pb::IMessage<SelectWorktopOptionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SelectWorktopOptionReq(SelectWorktopOptionReq other) : this() {
-      gadgetEntityId_ = other.gadgetEntityId_;
       optionId_ = other.optionId_;
+      gadgetEntityId_ = other.gadgetEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SelectWorktopOptionReq(this);
     }
 
-    /// <summary>Field number for the "gadget_entity_id" field.</summary>
-    public const int GadgetEntityIdFieldNumber = 12;
-    private uint gadgetEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GadgetEntityId {
-      get { return gadgetEntityId_; }
-      set {
-        gadgetEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "option_id" field.</summary>
-    public const int OptionIdFieldNumber = 11;
+    public const int OptionIdFieldNumber = 7;
     private uint optionId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return optionId_; }
       set {
         optionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_entity_id" field.</summary>
+    public const int GadgetEntityIdFieldNumber = 5;
+    private uint gadgetEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetEntityId {
+      get { return gadgetEntityId_; }
+      set {
+        gadgetEntityId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GadgetEntityId != other.GadgetEntityId) return false;
       if (OptionId != other.OptionId) return false;
+      if (GadgetEntityId != other.GadgetEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
       if (OptionId != 0) hash ^= OptionId.GetHashCode();
+      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OptionId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OptionId);
-      }
       if (GadgetEntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(GadgetEntityId);
+      }
+      if (OptionId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(OptionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OptionId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OptionId);
-      }
       if (GadgetEntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(GadgetEntityId);
+      }
+      if (OptionId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(OptionId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GadgetEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
-      }
       if (OptionId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OptionId);
+      }
+      if (GadgetEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GadgetEntityId != 0) {
-        GadgetEntityId = other.GadgetEntityId;
-      }
       if (other.OptionId != 0) {
         OptionId = other.OptionId;
+      }
+      if (other.GadgetEntityId != 0) {
+        GadgetEntityId = other.GadgetEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            OptionId = input.ReadUInt32();
+          case 40: {
+            GadgetEntityId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            GadgetEntityId = input.ReadUInt32();
+          case 56: {
+            OptionId = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            OptionId = input.ReadUInt32();
+          case 40: {
+            GadgetEntityId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            GadgetEntityId = input.ReadUInt32();
+          case 56: {
+            OptionId = input.ReadUInt32();
             break;
           }
         }

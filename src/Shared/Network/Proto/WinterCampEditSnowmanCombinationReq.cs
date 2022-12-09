@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampEditSnowmanCombinationReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilXaW50ZXJDYW1wRWRpdFNub3dtYW5Db21iaW5hdGlvblJlcS5wcm90bxoa",
-            "Q3VzdG9tR2FkZ2V0VHJlZUluZm8ucHJvdG8iaQojV2ludGVyQ2FtcEVkaXRT",
-            "bm93bWFuQ29tYmluYXRpb25SZXESEQoJZW50aXR5X2lkGAkgASgNEi8KEGNv",
-            "bWJpbmF0aW9uX2luZm8YBiABKAsyFS5DdXN0b21HYWRnZXRUcmVlSW5mb0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CilXaW50ZXJDYW1wRWRpdFNub3dtYW5Db21iaW5hdGlvblJlcS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoaQ3VzdG9tR2FkZ2V0",
+            "VHJlZUluZm8ucHJvdG8iiQEKI1dpbnRlckNhbXBFZGl0U25vd21hbkNvbWJp",
+            "bmF0aW9uUmVxEhEKCWVudGl0eV9pZBgGIAEoDRJPChBjb21iaW5hdGlvbl9p",
+            "bmZvGAUgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5D",
+            "dXN0b21HYWRnZXRUcmVlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8144
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8157;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WinterCampEditSnowmanCombinationReq : pb::IMessage<WinterCampEditSnowmanCombinationReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 9;
+    public const int EntityIdFieldNumber = 6;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "combination_info" field.</summary>
-    public const int CombinationInfoFieldNumber = 6;
+    public const int CombinationInfoFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfo combinationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (combinationInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteMessage(CombinationInfo);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (combinationInfo_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteMessage(CombinationInfo);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -236,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 42: {
             if (combinationInfo_ == null) {
               CombinationInfo = new global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfo();
             }
             input.ReadMessage(CombinationInfo);
             break;
           }
-          case 72: {
+          case 48: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -262,14 +267,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 42: {
             if (combinationInfo_ == null) {
               CombinationInfo = new global::Weedwacker.Shared.Network.Proto.CustomGadgetTreeInfo();
             }
             input.ReadMessage(CombinationInfo);
             break;
           }
-          case 72: {
+          case 48: {
             EntityId = input.ReadUInt32();
             break;
           }

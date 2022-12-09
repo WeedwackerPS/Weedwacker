@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusCultivateReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhGdW5ndXNDdWx0aXZhdGVSZXEucHJvdG8itgEKEkZ1bmd1c0N1bHRpdmF0",
-            "ZVJlcRIUCgxjdWx0aXZhdGVfaWQYCCABKA0SEQoJY29weV9zdGVwGAcgASgN",
-            "EhUKDWV4Y2hhbmdlX3N0ZXAYCyABKA0SFgoOY3VsdGl2YXRlX3N0ZXAYDSAB",
-            "KA0SEwoLcm90YXRlX3N0ZXAYDyABKA0SEQoJdW5kb19zdGVwGAYgASgNEgwK",
-            "BHRpbWUYAiABKA0SEgoKcGxhY2Vfc3RlcBgKIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhGdW5ndXNDdWx0aXZhdGVSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8i5gEKEkZ1bmd1c0N1bHRpdmF0ZVJlcRIbChNVbmsz",
+            "MzAwX0lPQU5MSkJNQkFJGAEgASgNEhsKE1VuazMzMDBfREpFR0pEQUNERUYY",
+            "BiABKA0SGwoTVW5rMzMwMF9JTUVHRk5PTERDRRgCIAEoDRIbChNVbmszMzAw",
+            "X1BHSktFSUNGS0xMGAUgASgNEhsKE1VuazMzMDBfTUJQTElDQkZBR0wYByAB",
+            "KA0SFAoMY3VsdGl2YXRlX2lkGAwgASgNEgwKBHRpbWUYDyABKA0SGwoTVW5r",
+            "MzMwMF9BRUdDTkhMT1BFUBgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusCultivateReq), global::Weedwacker.Shared.Network.Proto.FungusCultivateReq.Parser, new[]{ "CultivateId", "CopyStep", "ExchangeStep", "CultivateStep", "RotateStep", "UndoStep", "Time", "PlaceStep" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusCultivateReq), global::Weedwacker.Shared.Network.Proto.FungusCultivateReq.Parser, new[]{ "Unk3300IOANLJBMBAI", "Unk3300DJEGJDACDEF", "Unk3300IMEGFNOLDCE", "Unk3300PGJKEICFKLL", "Unk3300MBPLICBFAGL", "CultivateId", "Time", "Unk3300AEGCNHLOPEP" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 21749
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23545;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FungusCultivateReq : pb::IMessage<FungusCultivateReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,14 +85,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusCultivateReq(FungusCultivateReq other) : this() {
+      unk3300IOANLJBMBAI_ = other.unk3300IOANLJBMBAI_;
+      unk3300DJEGJDACDEF_ = other.unk3300DJEGJDACDEF_;
+      unk3300IMEGFNOLDCE_ = other.unk3300IMEGFNOLDCE_;
+      unk3300PGJKEICFKLL_ = other.unk3300PGJKEICFKLL_;
+      unk3300MBPLICBFAGL_ = other.unk3300MBPLICBFAGL_;
       cultivateId_ = other.cultivateId_;
-      copyStep_ = other.copyStep_;
-      exchangeStep_ = other.exchangeStep_;
-      cultivateStep_ = other.cultivateStep_;
-      rotateStep_ = other.rotateStep_;
-      undoStep_ = other.undoStep_;
       time_ = other.time_;
-      placeStep_ = other.placeStep_;
+      unk3300AEGCNHLOPEP_ = other.unk3300AEGCNHLOPEP_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,8 +102,68 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusCultivateReq(this);
     }
 
+    /// <summary>Field number for the "Unk3300_IOANLJBMBAI" field.</summary>
+    public const int Unk3300IOANLJBMBAIFieldNumber = 1;
+    private uint unk3300IOANLJBMBAI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IOANLJBMBAI {
+      get { return unk3300IOANLJBMBAI_; }
+      set {
+        unk3300IOANLJBMBAI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DJEGJDACDEF" field.</summary>
+    public const int Unk3300DJEGJDACDEFFieldNumber = 6;
+    private uint unk3300DJEGJDACDEF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DJEGJDACDEF {
+      get { return unk3300DJEGJDACDEF_; }
+      set {
+        unk3300DJEGJDACDEF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IMEGFNOLDCE" field.</summary>
+    public const int Unk3300IMEGFNOLDCEFieldNumber = 2;
+    private uint unk3300IMEGFNOLDCE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IMEGFNOLDCE {
+      get { return unk3300IMEGFNOLDCE_; }
+      set {
+        unk3300IMEGFNOLDCE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PGJKEICFKLL" field.</summary>
+    public const int Unk3300PGJKEICFKLLFieldNumber = 5;
+    private uint unk3300PGJKEICFKLL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PGJKEICFKLL {
+      get { return unk3300PGJKEICFKLL_; }
+      set {
+        unk3300PGJKEICFKLL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MBPLICBFAGL" field.</summary>
+    public const int Unk3300MBPLICBFAGLFieldNumber = 7;
+    private uint unk3300MBPLICBFAGL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MBPLICBFAGL {
+      get { return unk3300MBPLICBFAGL_; }
+      set {
+        unk3300MBPLICBFAGL_ = value;
+      }
+    }
+
     /// <summary>Field number for the "cultivate_id" field.</summary>
-    public const int CultivateIdFieldNumber = 8;
+    public const int CultivateIdFieldNumber = 12;
     private uint cultivateId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,68 +174,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "copy_step" field.</summary>
-    public const int CopyStepFieldNumber = 7;
-    private uint copyStep_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CopyStep {
-      get { return copyStep_; }
-      set {
-        copyStep_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "exchange_step" field.</summary>
-    public const int ExchangeStepFieldNumber = 11;
-    private uint exchangeStep_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExchangeStep {
-      get { return exchangeStep_; }
-      set {
-        exchangeStep_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cultivate_step" field.</summary>
-    public const int CultivateStepFieldNumber = 13;
-    private uint cultivateStep_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CultivateStep {
-      get { return cultivateStep_; }
-      set {
-        cultivateStep_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rotate_step" field.</summary>
-    public const int RotateStepFieldNumber = 15;
-    private uint rotateStep_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RotateStep {
-      get { return rotateStep_; }
-      set {
-        rotateStep_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "undo_step" field.</summary>
-    public const int UndoStepFieldNumber = 6;
-    private uint undoStep_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint UndoStep {
-      get { return undoStep_; }
-      set {
-        undoStep_ = value;
-      }
-    }
-
     /// <summary>Field number for the "time" field.</summary>
-    public const int TimeFieldNumber = 2;
+    public const int TimeFieldNumber = 15;
     private uint time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,15 +186,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "place_step" field.</summary>
-    public const int PlaceStepFieldNumber = 10;
-    private uint placeStep_;
+    /// <summary>Field number for the "Unk3300_AEGCNHLOPEP" field.</summary>
+    public const int Unk3300AEGCNHLOPEPFieldNumber = 8;
+    private uint unk3300AEGCNHLOPEP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlaceStep {
-      get { return placeStep_; }
+    public uint Unk3300AEGCNHLOPEP {
+      get { return unk3300AEGCNHLOPEP_; }
       set {
-        placeStep_ = value;
+        unk3300AEGCNHLOPEP_ = value;
       }
     }
 
@@ -208,14 +213,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300IOANLJBMBAI != other.Unk3300IOANLJBMBAI) return false;
+      if (Unk3300DJEGJDACDEF != other.Unk3300DJEGJDACDEF) return false;
+      if (Unk3300IMEGFNOLDCE != other.Unk3300IMEGFNOLDCE) return false;
+      if (Unk3300PGJKEICFKLL != other.Unk3300PGJKEICFKLL) return false;
+      if (Unk3300MBPLICBFAGL != other.Unk3300MBPLICBFAGL) return false;
       if (CultivateId != other.CultivateId) return false;
-      if (CopyStep != other.CopyStep) return false;
-      if (ExchangeStep != other.ExchangeStep) return false;
-      if (CultivateStep != other.CultivateStep) return false;
-      if (RotateStep != other.RotateStep) return false;
-      if (UndoStep != other.UndoStep) return false;
       if (Time != other.Time) return false;
-      if (PlaceStep != other.PlaceStep) return false;
+      if (Unk3300AEGCNHLOPEP != other.Unk3300AEGCNHLOPEP) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -223,14 +228,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300IOANLJBMBAI != 0) hash ^= Unk3300IOANLJBMBAI.GetHashCode();
+      if (Unk3300DJEGJDACDEF != 0) hash ^= Unk3300DJEGJDACDEF.GetHashCode();
+      if (Unk3300IMEGFNOLDCE != 0) hash ^= Unk3300IMEGFNOLDCE.GetHashCode();
+      if (Unk3300PGJKEICFKLL != 0) hash ^= Unk3300PGJKEICFKLL.GetHashCode();
+      if (Unk3300MBPLICBFAGL != 0) hash ^= Unk3300MBPLICBFAGL.GetHashCode();
       if (CultivateId != 0) hash ^= CultivateId.GetHashCode();
-      if (CopyStep != 0) hash ^= CopyStep.GetHashCode();
-      if (ExchangeStep != 0) hash ^= ExchangeStep.GetHashCode();
-      if (CultivateStep != 0) hash ^= CultivateStep.GetHashCode();
-      if (RotateStep != 0) hash ^= RotateStep.GetHashCode();
-      if (UndoStep != 0) hash ^= UndoStep.GetHashCode();
       if (Time != 0) hash ^= Time.GetHashCode();
-      if (PlaceStep != 0) hash ^= PlaceStep.GetHashCode();
+      if (Unk3300AEGCNHLOPEP != 0) hash ^= Unk3300AEGCNHLOPEP.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -249,37 +254,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Time != 0) {
+      if (Unk3300IOANLJBMBAI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300IOANLJBMBAI);
+      }
+      if (Unk3300IMEGFNOLDCE != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(Time);
+        output.WriteUInt32(Unk3300IMEGFNOLDCE);
       }
-      if (UndoStep != 0) {
+      if (Unk3300PGJKEICFKLL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300PGJKEICFKLL);
+      }
+      if (Unk3300DJEGJDACDEF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(UndoStep);
+        output.WriteUInt32(Unk3300DJEGJDACDEF);
       }
-      if (CopyStep != 0) {
+      if (Unk3300MBPLICBFAGL != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(CopyStep);
+        output.WriteUInt32(Unk3300MBPLICBFAGL);
+      }
+      if (Unk3300AEGCNHLOPEP != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300AEGCNHLOPEP);
       }
       if (CultivateId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(CultivateId);
       }
-      if (PlaceStep != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(PlaceStep);
-      }
-      if (ExchangeStep != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ExchangeStep);
-      }
-      if (CultivateStep != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CultivateStep);
-      }
-      if (RotateStep != 0) {
+      if (Time != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(RotateStep);
+        output.WriteUInt32(Time);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -291,37 +296,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Time != 0) {
+      if (Unk3300IOANLJBMBAI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300IOANLJBMBAI);
+      }
+      if (Unk3300IMEGFNOLDCE != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(Time);
+        output.WriteUInt32(Unk3300IMEGFNOLDCE);
       }
-      if (UndoStep != 0) {
+      if (Unk3300PGJKEICFKLL != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300PGJKEICFKLL);
+      }
+      if (Unk3300DJEGJDACDEF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(UndoStep);
+        output.WriteUInt32(Unk3300DJEGJDACDEF);
       }
-      if (CopyStep != 0) {
+      if (Unk3300MBPLICBFAGL != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(CopyStep);
+        output.WriteUInt32(Unk3300MBPLICBFAGL);
+      }
+      if (Unk3300AEGCNHLOPEP != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300AEGCNHLOPEP);
       }
       if (CultivateId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(96);
         output.WriteUInt32(CultivateId);
       }
-      if (PlaceStep != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(PlaceStep);
-      }
-      if (ExchangeStep != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(ExchangeStep);
-      }
-      if (CultivateStep != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CultivateStep);
-      }
-      if (RotateStep != 0) {
+      if (Time != 0) {
         output.WriteRawTag(120);
-        output.WriteUInt32(RotateStep);
+        output.WriteUInt32(Time);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -333,29 +338,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300IOANLJBMBAI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IOANLJBMBAI);
+      }
+      if (Unk3300DJEGJDACDEF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJEGJDACDEF);
+      }
+      if (Unk3300IMEGFNOLDCE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IMEGFNOLDCE);
+      }
+      if (Unk3300PGJKEICFKLL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PGJKEICFKLL);
+      }
+      if (Unk3300MBPLICBFAGL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MBPLICBFAGL);
+      }
       if (CultivateId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CultivateId);
-      }
-      if (CopyStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CopyStep);
-      }
-      if (ExchangeStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExchangeStep);
-      }
-      if (CultivateStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CultivateStep);
-      }
-      if (RotateStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RotateStep);
-      }
-      if (UndoStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UndoStep);
       }
       if (Time != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Time);
       }
-      if (PlaceStep != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlaceStep);
+      if (Unk3300AEGCNHLOPEP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AEGCNHLOPEP);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -369,29 +374,29 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300IOANLJBMBAI != 0) {
+        Unk3300IOANLJBMBAI = other.Unk3300IOANLJBMBAI;
+      }
+      if (other.Unk3300DJEGJDACDEF != 0) {
+        Unk3300DJEGJDACDEF = other.Unk3300DJEGJDACDEF;
+      }
+      if (other.Unk3300IMEGFNOLDCE != 0) {
+        Unk3300IMEGFNOLDCE = other.Unk3300IMEGFNOLDCE;
+      }
+      if (other.Unk3300PGJKEICFKLL != 0) {
+        Unk3300PGJKEICFKLL = other.Unk3300PGJKEICFKLL;
+      }
+      if (other.Unk3300MBPLICBFAGL != 0) {
+        Unk3300MBPLICBFAGL = other.Unk3300MBPLICBFAGL;
+      }
       if (other.CultivateId != 0) {
         CultivateId = other.CultivateId;
-      }
-      if (other.CopyStep != 0) {
-        CopyStep = other.CopyStep;
-      }
-      if (other.ExchangeStep != 0) {
-        ExchangeStep = other.ExchangeStep;
-      }
-      if (other.CultivateStep != 0) {
-        CultivateStep = other.CultivateStep;
-      }
-      if (other.RotateStep != 0) {
-        RotateStep = other.RotateStep;
-      }
-      if (other.UndoStep != 0) {
-        UndoStep = other.UndoStep;
       }
       if (other.Time != 0) {
         Time = other.Time;
       }
-      if (other.PlaceStep != 0) {
-        PlaceStep = other.PlaceStep;
+      if (other.Unk3300AEGCNHLOPEP != 0) {
+        Unk3300AEGCNHLOPEP = other.Unk3300AEGCNHLOPEP;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -408,36 +413,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Unk3300IOANLJBMBAI = input.ReadUInt32();
+            break;
+          }
           case 16: {
-            Time = input.ReadUInt32();
+            Unk3300IMEGFNOLDCE = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300PGJKEICFKLL = input.ReadUInt32();
             break;
           }
           case 48: {
-            UndoStep = input.ReadUInt32();
+            Unk3300DJEGJDACDEF = input.ReadUInt32();
             break;
           }
           case 56: {
-            CopyStep = input.ReadUInt32();
+            Unk3300MBPLICBFAGL = input.ReadUInt32();
             break;
           }
           case 64: {
+            Unk3300AEGCNHLOPEP = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             CultivateId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            PlaceStep = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            ExchangeStep = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CultivateStep = input.ReadUInt32();
-            break;
-          }
           case 120: {
-            RotateStep = input.ReadUInt32();
+            Time = input.ReadUInt32();
             break;
           }
         }
@@ -455,36 +460,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Unk3300IOANLJBMBAI = input.ReadUInt32();
+            break;
+          }
           case 16: {
-            Time = input.ReadUInt32();
+            Unk3300IMEGFNOLDCE = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300PGJKEICFKLL = input.ReadUInt32();
             break;
           }
           case 48: {
-            UndoStep = input.ReadUInt32();
+            Unk3300DJEGJDACDEF = input.ReadUInt32();
             break;
           }
           case 56: {
-            CopyStep = input.ReadUInt32();
+            Unk3300MBPLICBFAGL = input.ReadUInt32();
             break;
           }
           case 64: {
+            Unk3300AEGCNHLOPEP = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             CultivateId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            PlaceStep = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            ExchangeStep = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            CultivateStep = input.ReadUInt32();
-            break;
-          }
           case 120: {
-            RotateStep = input.ReadUInt32();
+            Time = input.ReadUInt32();
             break;
           }
         }

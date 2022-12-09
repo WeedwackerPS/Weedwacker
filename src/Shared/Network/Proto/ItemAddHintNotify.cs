@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static ItemAddHintNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdJdGVtQWRkSGludE5vdGlmeS5wcm90bxoOSXRlbUhpbnQucHJvdG8aDFZl",
-            "Y3Rvci5wcm90byKFAgoRSXRlbUFkZEhpbnROb3RpZnkSGQoRaXNfcG9zaXRp",
-            "b25fdmFsaWQYDiABKAgSEAoIcXVlc3RfaWQYAyABKA0SDgoGcmVhc29uGAYg",
-            "ASgNEh8KF2lzX2dlbmVyYWxfcmV3YXJkX2hpZGVuGA8gASgIEhwKCWl0ZW1f",
-            "bGlzdBgKIAMoCzIJLkl0ZW1IaW50EiYKHmlzX3RyYW5zZmVyZWRfZnJvbV9h",
-            "dmF0YXJfY2FyZBgMIAEoCBIZCghwb3NpdGlvbhgJIAEoCzIHLlZlY3RvchIx",
-            "Ch5vdmVyZmxvd190cmFuc2Zvcm1lZF9pdGVtX2xpc3QYCCADKAsyCS5JdGVt",
-            "SGludEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChdJdGVtQWRkSGludE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoOSXRlbUhpbnQucHJvdG8aDFZlY3Rvci5wcm90byLY",
+            "AgoRSXRlbUFkZEhpbnROb3RpZnkSGwoTVW5rMzMwMF9GTElLRUJKSU5DTBgF",
+            "IAEoCBIbChNVbmszMzAwX05JSkxHRUhOQk5DGAQgASgIEjwKCWl0ZW1fbGlz",
+            "dBgLIAMoCzIpLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRl",
+            "bUhpbnQSUQoeb3ZlcmZsb3dfdHJhbnNmb3JtZWRfaXRlbV9saXN0GAEgAygL",
+            "MikuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JdGVtSGludBIb",
+            "ChNVbmszMzAwX0tJT01KTkhGTURFGAYgASgIEg4KBnJlYXNvbhgOIAEoDRI5",
+            "Cghwb3NpdGlvbhgMIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uVmVjdG9yEhAKCHF1ZXN0X2lkGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemHintReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemAddHintNotify), global::Weedwacker.Shared.Network.Proto.ItemAddHintNotify.Parser, new[]{ "IsPositionValid", "QuestId", "Reason", "IsGeneralRewardHiden", "ItemList", "IsTransferedFromAvatarCard", "Position", "OverflowTransformedItemList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ItemAddHintNotify), global::Weedwacker.Shared.Network.Proto.ItemAddHintNotify.Parser, new[]{ "Unk3300FLIKEBJINCL", "Unk3300NIJLGEHNBNC", "ItemList", "OverflowTransformedItemList", "Unk3300KIOMJNHFMDE", "Reason", "Position", "QuestId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +45,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 607
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 700;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ItemAddHintNotify : pb::IMessage<ItemAddHintNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,14 +87,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ItemAddHintNotify(ItemAddHintNotify other) : this() {
-      isPositionValid_ = other.isPositionValid_;
-      questId_ = other.questId_;
-      reason_ = other.reason_;
-      isGeneralRewardHiden_ = other.isGeneralRewardHiden_;
+      unk3300FLIKEBJINCL_ = other.unk3300FLIKEBJINCL_;
+      unk3300NIJLGEHNBNC_ = other.unk3300NIJLGEHNBNC_;
       itemList_ = other.itemList_.Clone();
-      isTransferedFromAvatarCard_ = other.isTransferedFromAvatarCard_;
-      position_ = other.position_ != null ? other.position_.Clone() : null;
       overflowTransformedItemList_ = other.overflowTransformedItemList_.Clone();
+      unk3300KIOMJNHFMDE_ = other.unk3300KIOMJNHFMDE_;
+      reason_ = other.reason_;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
+      questId_ = other.questId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,15 +104,85 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ItemAddHintNotify(this);
     }
 
-    /// <summary>Field number for the "is_position_valid" field.</summary>
-    public const int IsPositionValidFieldNumber = 14;
-    private bool isPositionValid_;
+    /// <summary>Field number for the "Unk3300_FLIKEBJINCL" field.</summary>
+    public const int Unk3300FLIKEBJINCLFieldNumber = 5;
+    private bool unk3300FLIKEBJINCL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPositionValid {
-      get { return isPositionValid_; }
+    public bool Unk3300FLIKEBJINCL {
+      get { return unk3300FLIKEBJINCL_; }
       set {
-        isPositionValid_ = value;
+        unk3300FLIKEBJINCL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NIJLGEHNBNC" field.</summary>
+    public const int Unk3300NIJLGEHNBNCFieldNumber = 4;
+    private bool unk3300NIJLGEHNBNC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NIJLGEHNBNC {
+      get { return unk3300NIJLGEHNBNC_; }
+      set {
+        unk3300NIJLGEHNBNC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemHint> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ItemHint.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> ItemList {
+      get { return itemList_; }
+    }
+
+    /// <summary>Field number for the "overflow_transformed_item_list" field.</summary>
+    public const int OverflowTransformedItemListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemHint> _repeated_overflowTransformedItemList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ItemHint.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> overflowTransformedItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> OverflowTransformedItemList {
+      get { return overflowTransformedItemList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_KIOMJNHFMDE" field.</summary>
+    public const int Unk3300KIOMJNHFMDEFieldNumber = 6;
+    private bool unk3300KIOMJNHFMDE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300KIOMJNHFMDE {
+      get { return unk3300KIOMJNHFMDE_; }
+      set {
+        unk3300KIOMJNHFMDE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 14;
+    private uint reason_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.Vector position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Position {
+      get { return position_; }
+      set {
+        position_ = value;
       }
     }
 
@@ -121,76 +196,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         questId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 6;
-    private uint reason_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_general_reward_hiden" field.</summary>
-    public const int IsGeneralRewardHidenFieldNumber = 15;
-    private bool isGeneralRewardHiden_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsGeneralRewardHiden {
-      get { return isGeneralRewardHiden_; }
-      set {
-        isGeneralRewardHiden_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemHint> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemHint.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> ItemList {
-      get { return itemList_; }
-    }
-
-    /// <summary>Field number for the "is_transfered_from_avatar_card" field.</summary>
-    public const int IsTransferedFromAvatarCardFieldNumber = 12;
-    private bool isTransferedFromAvatarCard_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTransferedFromAvatarCard {
-      get { return isTransferedFromAvatarCard_; }
-      set {
-        isTransferedFromAvatarCard_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "position" field.</summary>
-    public const int PositionFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.Vector position_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Position {
-      get { return position_; }
-      set {
-        position_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "overflow_transformed_item_list" field.</summary>
-    public const int OverflowTransformedItemListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemHint> _repeated_overflowTransformedItemList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ItemHint.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> overflowTransformedItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemHint> OverflowTransformedItemList {
-      get { return overflowTransformedItemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -208,14 +213,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsPositionValid != other.IsPositionValid) return false;
-      if (QuestId != other.QuestId) return false;
-      if (Reason != other.Reason) return false;
-      if (IsGeneralRewardHiden != other.IsGeneralRewardHiden) return false;
+      if (Unk3300FLIKEBJINCL != other.Unk3300FLIKEBJINCL) return false;
+      if (Unk3300NIJLGEHNBNC != other.Unk3300NIJLGEHNBNC) return false;
       if(!itemList_.Equals(other.itemList_)) return false;
-      if (IsTransferedFromAvatarCard != other.IsTransferedFromAvatarCard) return false;
-      if (!object.Equals(Position, other.Position)) return false;
       if(!overflowTransformedItemList_.Equals(other.overflowTransformedItemList_)) return false;
+      if (Unk3300KIOMJNHFMDE != other.Unk3300KIOMJNHFMDE) return false;
+      if (Reason != other.Reason) return false;
+      if (!object.Equals(Position, other.Position)) return false;
+      if (QuestId != other.QuestId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -223,14 +228,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsPositionValid != false) hash ^= IsPositionValid.GetHashCode();
-      if (QuestId != 0) hash ^= QuestId.GetHashCode();
-      if (Reason != 0) hash ^= Reason.GetHashCode();
-      if (IsGeneralRewardHiden != false) hash ^= IsGeneralRewardHiden.GetHashCode();
+      if (Unk3300FLIKEBJINCL != false) hash ^= Unk3300FLIKEBJINCL.GetHashCode();
+      if (Unk3300NIJLGEHNBNC != false) hash ^= Unk3300NIJLGEHNBNC.GetHashCode();
       hash ^= itemList_.GetHashCode();
-      if (IsTransferedFromAvatarCard != false) hash ^= IsTransferedFromAvatarCard.GetHashCode();
-      if (position_ != null) hash ^= Position.GetHashCode();
       hash ^= overflowTransformedItemList_.GetHashCode();
+      if (Unk3300KIOMJNHFMDE != false) hash ^= Unk3300KIOMJNHFMDE.GetHashCode();
+      if (Reason != 0) hash ^= Reason.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
+      if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -249,31 +254,31 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      overflowTransformedItemList_.WriteTo(output, _repeated_overflowTransformedItemList_codec);
       if (QuestId != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(QuestId);
       }
-      if (Reason != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(Reason);
+      if (Unk3300NIJLGEHNBNC != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300NIJLGEHNBNC);
       }
-      overflowTransformedItemList_.WriteTo(output, _repeated_overflowTransformedItemList_codec);
-      if (position_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Position);
+      if (Unk3300FLIKEBJINCL != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300FLIKEBJINCL);
+      }
+      if (Unk3300KIOMJNHFMDE != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300KIOMJNHFMDE);
       }
       itemList_.WriteTo(output, _repeated_itemList_codec);
-      if (IsTransferedFromAvatarCard != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsTransferedFromAvatarCard);
+      if (position_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Position);
       }
-      if (IsPositionValid != false) {
+      if (Reason != 0) {
         output.WriteRawTag(112);
-        output.WriteBool(IsPositionValid);
-      }
-      if (IsGeneralRewardHiden != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsGeneralRewardHiden);
+        output.WriteUInt32(Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -285,31 +290,31 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      overflowTransformedItemList_.WriteTo(ref output, _repeated_overflowTransformedItemList_codec);
       if (QuestId != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(QuestId);
       }
-      if (Reason != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(Reason);
+      if (Unk3300NIJLGEHNBNC != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unk3300NIJLGEHNBNC);
       }
-      overflowTransformedItemList_.WriteTo(ref output, _repeated_overflowTransformedItemList_codec);
-      if (position_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(Position);
+      if (Unk3300FLIKEBJINCL != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300FLIKEBJINCL);
+      }
+      if (Unk3300KIOMJNHFMDE != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300KIOMJNHFMDE);
       }
       itemList_.WriteTo(ref output, _repeated_itemList_codec);
-      if (IsTransferedFromAvatarCard != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsTransferedFromAvatarCard);
+      if (position_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Position);
       }
-      if (IsPositionValid != false) {
+      if (Reason != 0) {
         output.WriteRawTag(112);
-        output.WriteBool(IsPositionValid);
-      }
-      if (IsGeneralRewardHiden != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsGeneralRewardHiden);
+        output.WriteUInt32(Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -321,26 +326,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsPositionValid != false) {
+      if (Unk3300FLIKEBJINCL != false) {
         size += 1 + 1;
       }
-      if (QuestId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
+      if (Unk3300NIJLGEHNBNC != false) {
+        size += 1 + 1;
+      }
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
+      size += overflowTransformedItemList_.CalculateSize(_repeated_overflowTransformedItemList_codec);
+      if (Unk3300KIOMJNHFMDE != false) {
+        size += 1 + 1;
       }
       if (Reason != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Reason);
       }
-      if (IsGeneralRewardHiden != false) {
-        size += 1 + 1;
-      }
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
-      if (IsTransferedFromAvatarCard != false) {
-        size += 1 + 1;
-      }
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
-      size += overflowTransformedItemList_.CalculateSize(_repeated_overflowTransformedItemList_codec);
+      if (QuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -353,21 +358,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsPositionValid != false) {
-        IsPositionValid = other.IsPositionValid;
+      if (other.Unk3300FLIKEBJINCL != false) {
+        Unk3300FLIKEBJINCL = other.Unk3300FLIKEBJINCL;
       }
-      if (other.QuestId != 0) {
-        QuestId = other.QuestId;
+      if (other.Unk3300NIJLGEHNBNC != false) {
+        Unk3300NIJLGEHNBNC = other.Unk3300NIJLGEHNBNC;
+      }
+      itemList_.Add(other.itemList_);
+      overflowTransformedItemList_.Add(other.overflowTransformedItemList_);
+      if (other.Unk3300KIOMJNHFMDE != false) {
+        Unk3300KIOMJNHFMDE = other.Unk3300KIOMJNHFMDE;
       }
       if (other.Reason != 0) {
         Reason = other.Reason;
-      }
-      if (other.IsGeneralRewardHiden != false) {
-        IsGeneralRewardHiden = other.IsGeneralRewardHiden;
-      }
-      itemList_.Add(other.itemList_);
-      if (other.IsTransferedFromAvatarCard != false) {
-        IsTransferedFromAvatarCard = other.IsTransferedFromAvatarCard;
       }
       if (other.position_ != null) {
         if (position_ == null) {
@@ -375,7 +378,9 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Position.MergeFrom(other.Position);
       }
-      overflowTransformedItemList_.Add(other.overflowTransformedItemList_);
+      if (other.QuestId != 0) {
+        QuestId = other.QuestId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -391,39 +396,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            overflowTransformedItemList_.AddEntriesFrom(input, _repeated_overflowTransformedItemList_codec);
+            break;
+          }
           case 24: {
             QuestId = input.ReadUInt32();
             break;
           }
+          case 32: {
+            Unk3300NIJLGEHNBNC = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Unk3300FLIKEBJINCL = input.ReadBool();
+            break;
+          }
           case 48: {
-            Reason = input.ReadUInt32();
+            Unk3300KIOMJNHFMDE = input.ReadBool();
             break;
           }
-          case 66: {
-            overflowTransformedItemList_.AddEntriesFrom(input, _repeated_overflowTransformedItemList_codec);
+          case 90: {
+            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
+          case 98: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
             break;
           }
-          case 82: {
-            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
-            break;
-          }
-          case 96: {
-            IsTransferedFromAvatarCard = input.ReadBool();
-            break;
-          }
           case 112: {
-            IsPositionValid = input.ReadBool();
-            break;
-          }
-          case 120: {
-            IsGeneralRewardHiden = input.ReadBool();
+            Reason = input.ReadUInt32();
             break;
           }
         }
@@ -441,39 +446,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            overflowTransformedItemList_.AddEntriesFrom(ref input, _repeated_overflowTransformedItemList_codec);
+            break;
+          }
           case 24: {
             QuestId = input.ReadUInt32();
             break;
           }
+          case 32: {
+            Unk3300NIJLGEHNBNC = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Unk3300FLIKEBJINCL = input.ReadBool();
+            break;
+          }
           case 48: {
-            Reason = input.ReadUInt32();
+            Unk3300KIOMJNHFMDE = input.ReadBool();
             break;
           }
-          case 66: {
-            overflowTransformedItemList_.AddEntriesFrom(ref input, _repeated_overflowTransformedItemList_codec);
+          case 90: {
+            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
+          case 98: {
             if (position_ == null) {
               Position = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Position);
             break;
           }
-          case 82: {
-            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
-            break;
-          }
-          case 96: {
-            IsTransferedFromAvatarCard = input.ReadBool();
-            break;
-          }
           case 112: {
-            IsPositionValid = input.ReadBool();
-            break;
-          }
-          case 120: {
-            IsGeneralRewardHiden = input.ReadBool();
+            Reason = input.ReadUInt32();
             break;
           }
         }

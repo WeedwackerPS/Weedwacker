@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNIaWRlQW5kU2Vla0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoYSGlkZUFu",
-            "ZFNlZWtNYXBJbmZvLnByb3RvIqwBCh1IaWRlQW5kU2Vla0FjdGl2aXR5RGV0",
-            "YWlsSW5mbxIvChJvcGVuX21hcF9pbmZvX2xpc3QYASADKAsyEy5IaWRlQW5k",
-            "U2Vla01hcEluZm8SIAoYY2hvc2VuX2h1bnRlcl9za2lsbF9saXN0GAQgAygN",
-            "EhcKD3VubG9ja19tYXBfbGlzdBgNIAMoDRIfChdjaG9zZW5faGlkZXJfc2tp",
-            "bGxfbGlzdBgGIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiNIaWRlQW5kU2Vla0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoYSGlkZUFuZFNlZWtNYXBJbmZv",
+            "LnByb3RvIuQBCh1IaWRlQW5kU2Vla0FjdGl2aXR5RGV0YWlsSW5mbxIbChNV",
+            "bmszMzAwX0pCS0lBR05BREVOGAYgAygNEk8KEm9wZW5fbWFwX2luZm9fbGlz",
+            "dBgNIAMoCzIzLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSGlk",
+            "ZUFuZFNlZWtNYXBJbmZvEhsKE1VuazMzMDBfRlBDRFBMTkpLS04YAiADKA0S",
+            "GwoTVW5rMzMwMF9DTUxHUFBEQU5OThgPIAMoDRIbChNVbmszMzAwX0hISlBB",
+            "QUxOTU5LGAQgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo.Parser, new[]{ "OpenMapInfoList", "ChosenHunterSkillList", "UnlockMapList", "ChosenHiderSkillList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo.Parser, new[]{ "Unk3300JBKIAGNADEN", "OpenMapInfoList", "Unk3300FPCDPLNJKKN", "Unk3300CMLGPPDANNN", "Unk3300HHJPAALNMNK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,10 +76,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekActivityDetailInfo(HideAndSeekActivityDetailInfo other) : this() {
+      unk3300JBKIAGNADEN_ = other.unk3300JBKIAGNADEN_.Clone();
       openMapInfoList_ = other.openMapInfoList_.Clone();
-      chosenHunterSkillList_ = other.chosenHunterSkillList_.Clone();
-      unlockMapList_ = other.unlockMapList_.Clone();
-      chosenHiderSkillList_ = other.chosenHiderSkillList_.Clone();
+      unk3300FPCDPLNJKKN_ = other.unk3300FPCDPLNJKKN_.Clone();
+      unk3300CMLGPPDANNN_ = other.unk3300CMLGPPDANNN_.Clone();
+      unk3300HHJPAALNMNK_ = other.unk3300HHJPAALNMNK_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,10 +90,21 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HideAndSeekActivityDetailInfo(this);
     }
 
+    /// <summary>Field number for the "Unk3300_JBKIAGNADEN" field.</summary>
+    public const int Unk3300JBKIAGNADENFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300JBKIAGNADEN_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> unk3300JBKIAGNADEN_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300JBKIAGNADEN {
+      get { return unk3300JBKIAGNADEN_; }
+    }
+
     /// <summary>Field number for the "open_map_info_list" field.</summary>
-    public const int OpenMapInfoListFieldNumber = 1;
+    public const int OpenMapInfoListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfo> _repeated_openMapInfoList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfo.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfo> openMapInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekMapInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,37 +112,37 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return openMapInfoList_; }
     }
 
-    /// <summary>Field number for the "chosen_hunter_skill_list" field.</summary>
-    public const int ChosenHunterSkillListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_chosenHunterSkillList_codec
+    /// <summary>Field number for the "Unk3300_FPCDPLNJKKN" field.</summary>
+    public const int Unk3300FPCDPLNJKKNFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300FPCDPLNJKKN_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> unk3300FPCDPLNJKKN_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300FPCDPLNJKKN {
+      get { return unk3300FPCDPLNJKKN_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_CMLGPPDANNN" field.</summary>
+    public const int Unk3300CMLGPPDANNNFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300CMLGPPDANNN_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300CMLGPPDANNN_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300CMLGPPDANNN {
+      get { return unk3300CMLGPPDANNN_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_HHJPAALNMNK" field.</summary>
+    public const int Unk3300HHJPAALNMNKFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HHJPAALNMNK_codec
         = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> chosenHunterSkillList_ = new pbc::RepeatedField<uint>();
+    private readonly pbc::RepeatedField<uint> unk3300HHJPAALNMNK_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ChosenHunterSkillList {
-      get { return chosenHunterSkillList_; }
-    }
-
-    /// <summary>Field number for the "unlock_map_list" field.</summary>
-    public const int UnlockMapListFieldNumber = 13;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockMapList_codec
-        = pb::FieldCodec.ForUInt32(106);
-    private readonly pbc::RepeatedField<uint> unlockMapList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockMapList {
-      get { return unlockMapList_; }
-    }
-
-    /// <summary>Field number for the "chosen_hider_skill_list" field.</summary>
-    public const int ChosenHiderSkillListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_chosenHiderSkillList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> chosenHiderSkillList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ChosenHiderSkillList {
-      get { return chosenHiderSkillList_; }
+    public pbc::RepeatedField<uint> Unk3300HHJPAALNMNK {
+      get { return unk3300HHJPAALNMNK_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,10 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!unk3300JBKIAGNADEN_.Equals(other.unk3300JBKIAGNADEN_)) return false;
       if(!openMapInfoList_.Equals(other.openMapInfoList_)) return false;
-      if(!chosenHunterSkillList_.Equals(other.chosenHunterSkillList_)) return false;
-      if(!unlockMapList_.Equals(other.unlockMapList_)) return false;
-      if(!chosenHiderSkillList_.Equals(other.chosenHiderSkillList_)) return false;
+      if(!unk3300FPCDPLNJKKN_.Equals(other.unk3300FPCDPLNJKKN_)) return false;
+      if(!unk3300CMLGPPDANNN_.Equals(other.unk3300CMLGPPDANNN_)) return false;
+      if(!unk3300HHJPAALNMNK_.Equals(other.unk3300HHJPAALNMNK_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -158,10 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= unk3300JBKIAGNADEN_.GetHashCode();
       hash ^= openMapInfoList_.GetHashCode();
-      hash ^= chosenHunterSkillList_.GetHashCode();
-      hash ^= unlockMapList_.GetHashCode();
-      hash ^= chosenHiderSkillList_.GetHashCode();
+      hash ^= unk3300FPCDPLNJKKN_.GetHashCode();
+      hash ^= unk3300CMLGPPDANNN_.GetHashCode();
+      hash ^= unk3300HHJPAALNMNK_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,10 +195,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unk3300FPCDPLNJKKN_.WriteTo(output, _repeated_unk3300FPCDPLNJKKN_codec);
+      unk3300HHJPAALNMNK_.WriteTo(output, _repeated_unk3300HHJPAALNMNK_codec);
+      unk3300JBKIAGNADEN_.WriteTo(output, _repeated_unk3300JBKIAGNADEN_codec);
       openMapInfoList_.WriteTo(output, _repeated_openMapInfoList_codec);
-      chosenHunterSkillList_.WriteTo(output, _repeated_chosenHunterSkillList_codec);
-      chosenHiderSkillList_.WriteTo(output, _repeated_chosenHiderSkillList_codec);
-      unlockMapList_.WriteTo(output, _repeated_unlockMapList_codec);
+      unk3300CMLGPPDANNN_.WriteTo(output, _repeated_unk3300CMLGPPDANNN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -194,10 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300FPCDPLNJKKN_.WriteTo(ref output, _repeated_unk3300FPCDPLNJKKN_codec);
+      unk3300HHJPAALNMNK_.WriteTo(ref output, _repeated_unk3300HHJPAALNMNK_codec);
+      unk3300JBKIAGNADEN_.WriteTo(ref output, _repeated_unk3300JBKIAGNADEN_codec);
       openMapInfoList_.WriteTo(ref output, _repeated_openMapInfoList_codec);
-      chosenHunterSkillList_.WriteTo(ref output, _repeated_chosenHunterSkillList_codec);
-      chosenHiderSkillList_.WriteTo(ref output, _repeated_chosenHiderSkillList_codec);
-      unlockMapList_.WriteTo(ref output, _repeated_unlockMapList_codec);
+      unk3300CMLGPPDANNN_.WriteTo(ref output, _repeated_unk3300CMLGPPDANNN_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -208,10 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += unk3300JBKIAGNADEN_.CalculateSize(_repeated_unk3300JBKIAGNADEN_codec);
       size += openMapInfoList_.CalculateSize(_repeated_openMapInfoList_codec);
-      size += chosenHunterSkillList_.CalculateSize(_repeated_chosenHunterSkillList_codec);
-      size += unlockMapList_.CalculateSize(_repeated_unlockMapList_codec);
-      size += chosenHiderSkillList_.CalculateSize(_repeated_chosenHiderSkillList_codec);
+      size += unk3300FPCDPLNJKKN_.CalculateSize(_repeated_unk3300FPCDPLNJKKN_codec);
+      size += unk3300CMLGPPDANNN_.CalculateSize(_repeated_unk3300CMLGPPDANNN_codec);
+      size += unk3300HHJPAALNMNK_.CalculateSize(_repeated_unk3300HHJPAALNMNK_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -224,10 +242,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      unk3300JBKIAGNADEN_.Add(other.unk3300JBKIAGNADEN_);
       openMapInfoList_.Add(other.openMapInfoList_);
-      chosenHunterSkillList_.Add(other.chosenHunterSkillList_);
-      unlockMapList_.Add(other.unlockMapList_);
-      chosenHiderSkillList_.Add(other.chosenHiderSkillList_);
+      unk3300FPCDPLNJKKN_.Add(other.unk3300FPCDPLNJKKN_);
+      unk3300CMLGPPDANNN_.Add(other.unk3300CMLGPPDANNN_);
+      unk3300HHJPAALNMNK_.Add(other.unk3300HHJPAALNMNK_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -243,23 +262,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            openMapInfoList_.AddEntriesFrom(input, _repeated_openMapInfoList_codec);
+          case 18:
+          case 16: {
+            unk3300FPCDPLNJKKN_.AddEntriesFrom(input, _repeated_unk3300FPCDPLNJKKN_codec);
             break;
           }
           case 34:
           case 32: {
-            chosenHunterSkillList_.AddEntriesFrom(input, _repeated_chosenHunterSkillList_codec);
+            unk3300HHJPAALNMNK_.AddEntriesFrom(input, _repeated_unk3300HHJPAALNMNK_codec);
             break;
           }
           case 50:
           case 48: {
-            chosenHiderSkillList_.AddEntriesFrom(input, _repeated_chosenHiderSkillList_codec);
+            unk3300JBKIAGNADEN_.AddEntriesFrom(input, _repeated_unk3300JBKIAGNADEN_codec);
             break;
           }
-          case 106:
-          case 104: {
-            unlockMapList_.AddEntriesFrom(input, _repeated_unlockMapList_codec);
+          case 106: {
+            openMapInfoList_.AddEntriesFrom(input, _repeated_openMapInfoList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300CMLGPPDANNN_.AddEntriesFrom(input, _repeated_unk3300CMLGPPDANNN_codec);
             break;
           }
         }
@@ -277,23 +301,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            openMapInfoList_.AddEntriesFrom(ref input, _repeated_openMapInfoList_codec);
+          case 18:
+          case 16: {
+            unk3300FPCDPLNJKKN_.AddEntriesFrom(ref input, _repeated_unk3300FPCDPLNJKKN_codec);
             break;
           }
           case 34:
           case 32: {
-            chosenHunterSkillList_.AddEntriesFrom(ref input, _repeated_chosenHunterSkillList_codec);
+            unk3300HHJPAALNMNK_.AddEntriesFrom(ref input, _repeated_unk3300HHJPAALNMNK_codec);
             break;
           }
           case 50:
           case 48: {
-            chosenHiderSkillList_.AddEntriesFrom(ref input, _repeated_chosenHiderSkillList_codec);
+            unk3300JBKIAGNADEN_.AddEntriesFrom(ref input, _repeated_unk3300JBKIAGNADEN_codec);
             break;
           }
-          case 106:
-          case 104: {
-            unlockMapList_.AddEntriesFrom(ref input, _repeated_unlockMapList_codec);
+          case 106: {
+            openMapInfoList_.AddEntriesFrom(ref input, _repeated_openMapInfoList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300CMLGPPDANNN_.AddEntriesFrom(ref input, _repeated_unk3300CMLGPPDANNN_codec);
             break;
           }
         }

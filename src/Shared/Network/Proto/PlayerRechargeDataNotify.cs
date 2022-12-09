@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerRechargeDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5QbGF5ZXJSZWNoYXJnZURhdGFOb3RpZnkucHJvdG8aFlByb2R1Y3RQcmlj",
-            "ZVRpZXIucHJvdG8icAoYUGxheWVyUmVjaGFyZ2VEYXRhTm90aWZ5EiAKGGNh",
-            "cmRfcHJvZHVjdF9yZW1haW5fZGF5cxgMIAEoDRIyChdwcm9kdWN0X3ByaWNl",
-            "X3RpZXJfbGlzdBgLIAMoCzIRLlByb2R1Y3RQcmljZVRpZXJCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5QbGF5ZXJSZWNoYXJnZURhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFlByb2R1Y3RQcmljZVRpZXIucHJvdG8i",
+            "kAEKGFBsYXllclJlY2hhcmdlRGF0YU5vdGlmeRJSChdwcm9kdWN0X3ByaWNl",
+            "X3RpZXJfbGlzdBgHIAMoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uUHJvZHVjdFByaWNlVGllchIgChhjYXJkX3Byb2R1Y3RfcmVtYWlu",
+            "X2RheXMYBiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ProductPriceTierReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerRechargeDataNotify), global::Weedwacker.Shared.Network.Proto.PlayerRechargeDataNotify.Parser, new[]{ "CardProductRemainDays", "ProductPriceTierList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerRechargeDataNotify), global::Weedwacker.Shared.Network.Proto.PlayerRechargeDataNotify.Parser, new[]{ "ProductPriceTierList", "CardProductRemainDays" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4102
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4127;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerRechargeDataNotify : pb::IMessage<PlayerRechargeDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerRechargeDataNotify(PlayerRechargeDataNotify other) : this() {
-      cardProductRemainDays_ = other.cardProductRemainDays_;
       productPriceTierList_ = other.productPriceTierList_.Clone();
+      cardProductRemainDays_ = other.cardProductRemainDays_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +94,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerRechargeDataNotify(this);
     }
 
+    /// <summary>Field number for the "product_price_tier_list" field.</summary>
+    public const int ProductPriceTierListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> _repeated_productPriceTierList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ProductPriceTier.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> productPriceTierList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> ProductPriceTierList {
+      get { return productPriceTierList_; }
+    }
+
     /// <summary>Field number for the "card_product_remain_days" field.</summary>
-    public const int CardProductRemainDaysFieldNumber = 12;
+    public const int CardProductRemainDaysFieldNumber = 6;
     private uint cardProductRemainDays_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,17 +115,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         cardProductRemainDays_ = value;
       }
-    }
-
-    /// <summary>Field number for the "product_price_tier_list" field.</summary>
-    public const int ProductPriceTierListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> _repeated_productPriceTierList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ProductPriceTier.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> productPriceTierList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ProductPriceTier> ProductPriceTierList {
-      get { return productPriceTierList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CardProductRemainDays != other.CardProductRemainDays) return false;
       if(!productPriceTierList_.Equals(other.productPriceTierList_)) return false;
+      if (CardProductRemainDays != other.CardProductRemainDays) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CardProductRemainDays != 0) hash ^= CardProductRemainDays.GetHashCode();
       hash ^= productPriceTierList_.GetHashCode();
+      if (CardProductRemainDays != 0) hash ^= CardProductRemainDays.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      productPriceTierList_.WriteTo(output, _repeated_productPriceTierList_codec);
       if (CardProductRemainDays != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(CardProductRemainDays);
       }
+      productPriceTierList_.WriteTo(output, _repeated_productPriceTierList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      productPriceTierList_.WriteTo(ref output, _repeated_productPriceTierList_codec);
       if (CardProductRemainDays != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(CardProductRemainDays);
       }
+      productPriceTierList_.WriteTo(ref output, _repeated_productPriceTierList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -186,10 +191,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += productPriceTierList_.CalculateSize(_repeated_productPriceTierList_codec);
       if (CardProductRemainDays != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardProductRemainDays);
       }
-      size += productPriceTierList_.CalculateSize(_repeated_productPriceTierList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +207,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      productPriceTierList_.Add(other.productPriceTierList_);
       if (other.CardProductRemainDays != 0) {
         CardProductRemainDays = other.CardProductRemainDays;
       }
-      productPriceTierList_.Add(other.productPriceTierList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
-            productPriceTierList_.AddEntriesFrom(input, _repeated_productPriceTierList_codec);
+          case 48: {
+            CardProductRemainDays = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CardProductRemainDays = input.ReadUInt32();
+          case 58: {
+            productPriceTierList_.AddEntriesFrom(input, _repeated_productPriceTierList_codec);
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
-            productPriceTierList_.AddEntriesFrom(ref input, _repeated_productPriceTierList_codec);
+          case 48: {
+            CardProductRemainDays = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CardProductRemainDays = input.ReadUInt32();
+          case 58: {
+            productPriceTierList_.AddEntriesFrom(ref input, _repeated_productPriceTierList_codec);
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityArgumentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVBYmlsaXR5QXJndW1lbnQucHJvdG8iUwoPQWJpbGl0eUFyZ3VtZW50EhEK",
-            "B2ludF9hcmcYBSABKA1IABITCglmbG9hdF9hcmcYDyABKAJIABIRCgdzdHJf",
-            "YXJnGAsgASgJSABCBQoDYXJnQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVBYmlsaXR5QXJndW1lbnQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iUwoPQWJpbGl0eUFyZ3VtZW50EhEKB2ludF9hcmcYDiAB",
+            "KA1IABITCglmbG9hdF9hcmcYByABKAJIABIRCgdzdHJfYXJnGAkgASgJSABC",
+            "BQoDYXJnYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "int_arg" field.</summary>
-    public const int IntArgFieldNumber = 5;
+    public const int IntArgFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint IntArg {
@@ -106,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "float_arg" field.</summary>
-    public const int FloatArgFieldNumber = 15;
+    public const int FloatArgFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FloatArg {
@@ -118,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "str_arg" field.</summary>
-    public const int StrArgFieldNumber = 11;
+    public const int StrArgFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StrArg {
@@ -133,9 +133,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "arg" oneof.</summary>
     public enum ArgOneofCase {
       None = 0,
-      IntArg = 5,
-      FloatArg = 15,
-      StrArg = 11,
+      IntArg = 14,
+      FloatArg = 7,
+      StrArg = 9,
     }
     private ArgOneofCase argCase_ = ArgOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (argCase_ == ArgOneofCase.IntArg) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(IntArg);
+      if (argCase_ == ArgOneofCase.FloatArg) {
+        output.WriteRawTag(61);
+        output.WriteFloat(FloatArg);
       }
       if (argCase_ == ArgOneofCase.StrArg) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteString(StrArg);
       }
-      if (argCase_ == ArgOneofCase.FloatArg) {
-        output.WriteRawTag(125);
-        output.WriteFloat(FloatArg);
+      if (argCase_ == ArgOneofCase.IntArg) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(IntArg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -221,17 +221,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (argCase_ == ArgOneofCase.IntArg) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(IntArg);
+      if (argCase_ == ArgOneofCase.FloatArg) {
+        output.WriteRawTag(61);
+        output.WriteFloat(FloatArg);
       }
       if (argCase_ == ArgOneofCase.StrArg) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteString(StrArg);
       }
-      if (argCase_ == ArgOneofCase.FloatArg) {
-        output.WriteRawTag(125);
-        output.WriteFloat(FloatArg);
+      if (argCase_ == ArgOneofCase.IntArg) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(IntArg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -291,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            IntArg = input.ReadUInt32();
+          case 61: {
+            FloatArg = input.ReadFloat();
             break;
           }
-          case 90: {
+          case 74: {
             StrArg = input.ReadString();
             break;
           }
-          case 125: {
-            FloatArg = input.ReadFloat();
+          case 112: {
+            IntArg = input.ReadUInt32();
             break;
           }
         }
@@ -318,16 +318,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            IntArg = input.ReadUInt32();
+          case 61: {
+            FloatArg = input.ReadFloat();
             break;
           }
-          case 90: {
+          case 74: {
             StrArg = input.ReadString();
             break;
           }
-          case 125: {
-            FloatArg = input.ReadFloat();
+          case 112: {
+            IntArg = input.ReadUInt32();
             break;
           }
         }

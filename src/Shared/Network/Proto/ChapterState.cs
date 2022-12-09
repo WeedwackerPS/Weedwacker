@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChapterStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJDaGFwdGVyU3RhdGUucHJvdG8qfAoMQ2hhcHRlclN0YXRlEhkKFUNIQVBU",
-            "RVJfU1RBVEVfSU5WQUxJRBAAEiEKHUNIQVBURVJfU1RBVEVfVU5BQkxFX1RP",
-            "X0JFR0lOEAESFwoTQ0hBUFRFUl9TVEFURV9CRUdJThACEhUKEUNIQVBURVJf",
-            "U1RBVEVfRU5EEANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChJDaGFwdGVyU3RhdGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8qfAoMQ2hhcHRlclN0YXRlEhkKFUNIQVBURVJfU1RBVEVfSU5W",
+            "QUxJRBAAEiEKHUNIQVBURVJfU1RBVEVfVU5BQkxFX1RPX0JFR0lOEAESFwoT",
+            "Q0hBUFRFUl9TVEFURV9CRUdJThACEhUKEUNIQVBURVJfU1RBVEVfRU5EEANi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.ChapterState), }, null, null));

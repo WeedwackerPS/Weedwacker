@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGLevelChallengeFinishNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNHQ0dMZXZlbENoYWxsZW5nZUZpbmlzaE5vdGlmeS5wcm90byJVCh1HQ0dM",
-            "ZXZlbENoYWxsZW5nZUZpbmlzaE5vdGlmeRIiChpmaW5pc2hlZF9jaGFsbGVu",
-            "Z2VfaWRfbGlzdBgKIAMoDRIQCghsZXZlbF9pZBgPIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNHQ0dMZXZlbENoYWxsZW5nZUZpbmlzaE5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJVCh1HQ0dMZXZlbENoYWxsZW5n",
+            "ZUZpbmlzaE5vdGlmeRIQCghsZXZlbF9pZBgOIAEoDRIiChpmaW5pc2hlZF9j",
+            "aGFsbGVuZ2VfaWRfbGlzdBgDIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGLevelChallengeFinishNotify), global::Weedwacker.Shared.Network.Proto.GCGLevelChallengeFinishNotify.Parser, new[]{ "FinishedChallengeIdList", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGLevelChallengeFinishNotify), global::Weedwacker.Shared.Network.Proto.GCGLevelChallengeFinishNotify.Parser, new[]{ "LevelId", "FinishedChallengeIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7629
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7004;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGLevelChallengeFinishNotify : pb::IMessage<GCGLevelChallengeFinishNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGLevelChallengeFinishNotify(GCGLevelChallengeFinishNotify other) : this() {
-      finishedChallengeIdList_ = other.finishedChallengeIdList_.Clone();
       levelId_ = other.levelId_;
+      finishedChallengeIdList_ = other.finishedChallengeIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGLevelChallengeFinishNotify(this);
     }
 
-    /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
-    public const int FinishedChallengeIdListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FinishedChallengeIdList {
-      get { return finishedChallengeIdList_; }
-    }
-
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 15;
+    public const int LevelIdFieldNumber = 14;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +102,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         levelId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
+    public const int FinishedChallengeIdListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishedChallengeIdList {
+      get { return finishedChallengeIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!finishedChallengeIdList_.Equals(other.finishedChallengeIdList_)) return false;
       if (LevelId != other.LevelId) return false;
+      if(!finishedChallengeIdList_.Equals(other.finishedChallengeIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= finishedChallengeIdList_.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      hash ^= finishedChallengeIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       finishedChallengeIdList_.WriteTo(output, _repeated_finishedChallengeIdList_codec);
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       finishedChallengeIdList_.WriteTo(ref output, _repeated_finishedChallengeIdList_codec);
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
@@ -185,10 +189,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
+      size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +205,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
+      finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,12 +224,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82:
-          case 80: {
+          case 26:
+          case 24: {
             finishedChallengeIdList_.AddEntriesFrom(input, _repeated_finishedChallengeIdList_codec);
             break;
           }
-          case 120: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82:
-          case 80: {
+          case 26:
+          case 24: {
             finishedChallengeIdList_.AddEntriesFrom(ref input, _repeated_finishedChallengeIdList_codec);
             break;
           }
-          case 120: {
+          case 112: {
             LevelId = input.ReadUInt32();
             break;
           }

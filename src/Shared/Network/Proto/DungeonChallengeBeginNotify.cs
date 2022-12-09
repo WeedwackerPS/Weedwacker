@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonChallengeBeginNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFEdW5nZW9uQ2hhbGxlbmdlQmVnaW5Ob3RpZnkucHJvdG8imgEKG0R1bmdl",
-            "b25DaGFsbGVuZ2VCZWdpbk5vdGlmeRIUCgxmYXRoZXJfaW5kZXgYBSABKA0S",
-            "EgoKcGFyYW1fbGlzdBgOIAMoDRIXCg9jaGFsbGVuZ2VfaW5kZXgYBiABKA0S",
-            "FAoMY2hhbGxlbmdlX2lkGAEgASgNEhAKCGdyb3VwX2lkGAQgASgNEhAKCHVp",
-            "ZF9saXN0GAwgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "CiFEdW5nZW9uQ2hhbGxlbmdlQmVnaW5Ob3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8imgEKG0R1bmdlb25DaGFsbGVuZ2VC",
+            "ZWdpbk5vdGlmeRIXCg9jaGFsbGVuZ2VfaW5kZXgYAyABKA0SFAoMZmF0aGVy",
+            "X2luZGV4GA0gASgNEhAKCGdyb3VwX2lkGA8gASgNEhAKCHVpZF9saXN0GAgg",
+            "AygNEhQKDGNoYWxsZW5nZV9pZBgHIAEoDRISCgpwYXJhbV9saXN0GAIgAygN",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonChallengeBeginNotify), global::Weedwacker.Shared.Network.Proto.DungeonChallengeBeginNotify.Parser, new[]{ "FatherIndex", "ParamList", "ChallengeIndex", "ChallengeId", "GroupId", "UidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonChallengeBeginNotify), global::Weedwacker.Shared.Network.Proto.DungeonChallengeBeginNotify.Parser, new[]{ "ChallengeIndex", "FatherIndex", "GroupId", "UidList", "ChallengeId", "ParamList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 947
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 976;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonChallengeBeginNotify : pb::IMessage<DungeonChallengeBeginNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,12 +83,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonChallengeBeginNotify(DungeonChallengeBeginNotify other) : this() {
-      fatherIndex_ = other.fatherIndex_;
-      paramList_ = other.paramList_.Clone();
       challengeIndex_ = other.challengeIndex_;
-      challengeId_ = other.challengeId_;
+      fatherIndex_ = other.fatherIndex_;
       groupId_ = other.groupId_;
       uidList_ = other.uidList_.Clone();
+      challengeId_ = other.challengeId_;
+      paramList_ = other.paramList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,31 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonChallengeBeginNotify(this);
     }
 
-    /// <summary>Field number for the "father_index" field.</summary>
-    public const int FatherIndexFieldNumber = 5;
-    private uint fatherIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FatherIndex {
-      get { return fatherIndex_; }
-      set {
-        fatherIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "param_list" field.</summary>
-    public const int ParamListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ParamList {
-      get { return paramList_; }
-    }
-
     /// <summary>Field number for the "challenge_index" field.</summary>
-    public const int ChallengeIndexFieldNumber = 6;
+    public const int ChallengeIndexFieldNumber = 3;
     private uint challengeIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,20 +110,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 1;
-    private uint challengeId_;
+    /// <summary>Field number for the "father_index" field.</summary>
+    public const int FatherIndexFieldNumber = 13;
+    private uint fatherIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeId {
-      get { return challengeId_; }
+    public uint FatherIndex {
+      get { return fatherIndex_; }
       set {
-        challengeId_ = value;
+        fatherIndex_ = value;
       }
     }
 
     /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 4;
+    public const int GroupIdFieldNumber = 15;
     private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,14 +135,37 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid_list" field.</summary>
-    public const int UidListFieldNumber = 12;
+    public const int UidListFieldNumber = 8;
     private static readonly pb::FieldCodec<uint> _repeated_uidList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(66);
     private readonly pbc::RepeatedField<uint> uidList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> UidList {
       get { return uidList_; }
+    }
+
+    /// <summary>Field number for the "challenge_id" field.</summary>
+    public const int ChallengeIdFieldNumber = 7;
+    private uint challengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeId {
+      get { return challengeId_; }
+      set {
+        challengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param_list" field.</summary>
+    public const int ParamListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ParamList {
+      get { return paramList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,12 +183,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FatherIndex != other.FatherIndex) return false;
-      if(!paramList_.Equals(other.paramList_)) return false;
       if (ChallengeIndex != other.ChallengeIndex) return false;
-      if (ChallengeId != other.ChallengeId) return false;
+      if (FatherIndex != other.FatherIndex) return false;
       if (GroupId != other.GroupId) return false;
       if(!uidList_.Equals(other.uidList_)) return false;
+      if (ChallengeId != other.ChallengeId) return false;
+      if(!paramList_.Equals(other.paramList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,12 +196,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FatherIndex != 0) hash ^= FatherIndex.GetHashCode();
-      hash ^= paramList_.GetHashCode();
       if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
-      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      if (FatherIndex != 0) hash ^= FatherIndex.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
       hash ^= uidList_.GetHashCode();
+      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      hash ^= paramList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,24 +220,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GroupId);
-      }
-      if (FatherIndex != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(FatherIndex);
-      }
+      paramList_.WriteTo(output, _repeated_paramList_codec);
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChallengeIndex);
       }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ChallengeId);
+      }
       uidList_.WriteTo(output, _repeated_uidList_codec);
-      paramList_.WriteTo(output, _repeated_paramList_codec);
+      if (FatherIndex != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FatherIndex);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GroupId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -244,24 +248,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(GroupId);
-      }
-      if (FatherIndex != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(FatherIndex);
-      }
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (ChallengeIndex != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChallengeIndex);
       }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ChallengeId);
+      }
       uidList_.WriteTo(ref output, _repeated_uidList_codec);
-      paramList_.WriteTo(ref output, _repeated_paramList_codec);
+      if (FatherIndex != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FatherIndex);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GroupId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -272,20 +276,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FatherIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FatherIndex);
-      }
-      size += paramList_.CalculateSize(_repeated_paramList_codec);
       if (ChallengeIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
       }
-      if (ChallengeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
+      if (FatherIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FatherIndex);
       }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
       size += uidList_.CalculateSize(_repeated_uidList_codec);
+      if (ChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
+      }
+      size += paramList_.CalculateSize(_repeated_paramList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -298,20 +302,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FatherIndex != 0) {
-        FatherIndex = other.FatherIndex;
-      }
-      paramList_.Add(other.paramList_);
       if (other.ChallengeIndex != 0) {
         ChallengeIndex = other.ChallengeIndex;
       }
-      if (other.ChallengeId != 0) {
-        ChallengeId = other.ChallengeId;
+      if (other.FatherIndex != 0) {
+        FatherIndex = other.FatherIndex;
       }
       if (other.GroupId != 0) {
         GroupId = other.GroupId;
       }
       uidList_.Add(other.uidList_);
+      if (other.ChallengeId != 0) {
+        ChallengeId = other.ChallengeId;
+      }
+      paramList_.Add(other.paramList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -327,30 +331,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ChallengeId = input.ReadUInt32();
+          case 18:
+          case 16: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
             break;
           }
-          case 32: {
-            GroupId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            FatherIndex = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             ChallengeIndex = input.ReadUInt32();
             break;
           }
-          case 98:
-          case 96: {
+          case 56: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 66:
+          case 64: {
             uidList_.AddEntriesFrom(input, _repeated_uidList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+          case 104: {
+            FatherIndex = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            GroupId = input.ReadUInt32();
             break;
           }
         }
@@ -368,30 +372,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ChallengeId = input.ReadUInt32();
+          case 18:
+          case 16: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
             break;
           }
-          case 32: {
-            GroupId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            FatherIndex = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             ChallengeIndex = input.ReadUInt32();
             break;
           }
-          case 98:
-          case 96: {
+          case 56: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 66:
+          case 64: {
             uidList_.AddEntriesFrom(ref input, _repeated_uidList_codec);
             break;
           }
-          case 114:
-          case 112: {
-            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+          case 104: {
+            FatherIndex = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            GroupId = input.ReadUInt32();
             break;
           }
         }

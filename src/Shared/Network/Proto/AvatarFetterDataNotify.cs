@@ -24,12 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarFetterDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBdmF0YXJGZXR0ZXJEYXRhTm90aWZ5LnByb3RvGhZBdmF0YXJGZXR0ZXJJ",
-            "bmZvLnByb3RvIqYBChZBdmF0YXJGZXR0ZXJEYXRhTm90aWZ5EkMKD2ZldHRl",
-            "cl9pbmZvX21hcBgPIAMoCzIqLkF2YXRhckZldHRlckRhdGFOb3RpZnkuRmV0",
-            "dGVySW5mb01hcEVudHJ5GkcKEkZldHRlckluZm9NYXBFbnRyeRILCgNrZXkY",
-            "ASABKAQSIAoFdmFsdWUYAiABKAsyES5BdmF0YXJGZXR0ZXJJbmZvOgI4AUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxBdmF0YXJGZXR0ZXJEYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZBdmF0YXJGZXR0ZXJJbmZvLnByb3RvIuYB",
+            "ChZBdmF0YXJGZXR0ZXJEYXRhTm90aWZ5EmMKD2ZldHRlcl9pbmZvX21hcBgC",
+            "IAMoCzJKLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZhdGFy",
+            "RmV0dGVyRGF0YU5vdGlmeS5GZXR0ZXJJbmZvTWFwRW50cnkaZwoSRmV0dGVy",
+            "SW5mb01hcEVudHJ5EgsKA2tleRgBIAEoBBJACgV2YWx1ZRgCIAEoCzIxLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZhdGFyRmV0dGVySW5m",
+            "bzoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarFetterInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1782
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1617;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarFetterDataNotify : pb::IMessage<AvatarFetterDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fetter_info_map" field.</summary>
-    public const int FetterInfoMapFieldNumber = 15;
+    public const int FetterInfoMapFieldNumber = 2;
     private static readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo>.Codec _map_fetterInfoMap_codec
-        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo.Parser), 122);
+        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo.Parser), 18);
     private readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo> fetterInfoMap_ = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarFetterInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +199,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 122: {
+          case 18: {
             fetterInfoMap_.AddEntriesFrom(input, _map_fetterInfoMap_codec);
             break;
           }
@@ -212,7 +218,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 122: {
+          case 18: {
             fetterInfoMap_.AddEntriesFrom(ref input, _map_fetterInfoMap_codec);
             break;
           }

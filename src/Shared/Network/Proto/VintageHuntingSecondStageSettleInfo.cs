@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageHuntingSecondStageSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilWaW50YWdlSHVudGluZ1NlY29uZFN0YWdlU2V0dGxlSW5mby5wcm90byLf",
-            "AQojVmludGFnZUh1bnRpbmdTZWNvbmRTdGFnZVNldHRsZUluZm8SUgoQYW5p",
-            "bWFsX2NvdW50X21hcBgGIAMoCzI4LlZpbnRhZ2VIdW50aW5nU2Vjb25kU3Rh",
-            "Z2VTZXR0bGVJbmZvLkFuaW1hbENvdW50TWFwRW50cnkSGgoSY2FwdHVyZV9h",
-            "bmltYWxfbnVtGAcgASgNEhEKCXRvdGFsX251bRgPIAEoDRo1ChNBbmltYWxD",
-            "b3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CilWaW50YWdlSHVudGluZ1NlY29uZFN0YWdlU2V0dGxlSW5mby5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byL/AQojVmludGFnZUh1",
+            "bnRpbmdTZWNvbmRTdGFnZVNldHRsZUluZm8SGgoSY2FwdHVyZV9hbmltYWxf",
+            "bnVtGAIgASgNEnIKEGFuaW1hbF9jb3VudF9tYXAYAyADKAsyWC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZpbnRhZ2VIdW50aW5nU2Vjb25k",
+            "U3RhZ2VTZXR0bGVJbmZvLkFuaW1hbENvdW50TWFwRW50cnkSEQoJdG90YWxf",
+            "bnVtGAEgASgNGjUKE0FuaW1hbENvdW50TWFwRW50cnkSCwoDa2V5GAEgASgN",
+            "Eg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo.Parser, new[]{ "AnimalCountMap", "CaptureAnimalNum", "TotalNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo.Parser, new[]{ "CaptureAnimalNum", "AnimalCountMap", "TotalNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -75,8 +76,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageHuntingSecondStageSettleInfo(VintageHuntingSecondStageSettleInfo other) : this() {
-      animalCountMap_ = other.animalCountMap_.Clone();
       captureAnimalNum_ = other.captureAnimalNum_;
+      animalCountMap_ = other.animalCountMap_.Clone();
       totalNum_ = other.totalNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,19 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageHuntingSecondStageSettleInfo(this);
     }
 
-    /// <summary>Field number for the "animal_count_map" field.</summary>
-    public const int AnimalCountMapFieldNumber = 6;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_animalCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
-    private readonly pbc::MapField<uint, uint> animalCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> AnimalCountMap {
-      get { return animalCountMap_; }
-    }
-
     /// <summary>Field number for the "capture_animal_num" field.</summary>
-    public const int CaptureAnimalNumFieldNumber = 7;
+    public const int CaptureAnimalNumFieldNumber = 2;
     private uint captureAnimalNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,8 +100,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "animal_count_map" field.</summary>
+    public const int AnimalCountMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_animalCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> animalCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> AnimalCountMap {
+      get { return animalCountMap_; }
+    }
+
     /// <summary>Field number for the "total_num" field.</summary>
-    public const int TotalNumFieldNumber = 15;
+    public const int TotalNumFieldNumber = 1;
     private uint totalNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,8 +138,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!AnimalCountMap.Equals(other.AnimalCountMap)) return false;
       if (CaptureAnimalNum != other.CaptureAnimalNum) return false;
+      if (!AnimalCountMap.Equals(other.AnimalCountMap)) return false;
       if (TotalNum != other.TotalNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -147,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= AnimalCountMap.GetHashCode();
       if (CaptureAnimalNum != 0) hash ^= CaptureAnimalNum.GetHashCode();
+      hash ^= AnimalCountMap.GetHashCode();
       if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -168,15 +169,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      animalCountMap_.WriteTo(output, _map_animalCountMap_codec);
-      if (CaptureAnimalNum != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CaptureAnimalNum);
-      }
       if (TotalNum != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(TotalNum);
       }
+      if (CaptureAnimalNum != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CaptureAnimalNum);
+      }
+      animalCountMap_.WriteTo(output, _map_animalCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,15 +188,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      animalCountMap_.WriteTo(ref output, _map_animalCountMap_codec);
-      if (CaptureAnimalNum != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(CaptureAnimalNum);
-      }
       if (TotalNum != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(8);
         output.WriteUInt32(TotalNum);
       }
+      if (CaptureAnimalNum != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CaptureAnimalNum);
+      }
+      animalCountMap_.WriteTo(ref output, _map_animalCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -206,10 +207,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += animalCountMap_.CalculateSize(_map_animalCountMap_codec);
       if (CaptureAnimalNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureAnimalNum);
       }
+      size += animalCountMap_.CalculateSize(_map_animalCountMap_codec);
       if (TotalNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalNum);
       }
@@ -225,10 +226,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      animalCountMap_.Add(other.animalCountMap_);
       if (other.CaptureAnimalNum != 0) {
         CaptureAnimalNum = other.CaptureAnimalNum;
       }
+      animalCountMap_.Add(other.animalCountMap_);
       if (other.TotalNum != 0) {
         TotalNum = other.TotalNum;
       }
@@ -247,16 +248,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
-            animalCountMap_.AddEntriesFrom(input, _map_animalCountMap_codec);
+          case 8: {
+            TotalNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 16: {
             CaptureAnimalNum = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TotalNum = input.ReadUInt32();
+          case 26: {
+            animalCountMap_.AddEntriesFrom(input, _map_animalCountMap_codec);
             break;
           }
         }
@@ -274,16 +275,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
-            animalCountMap_.AddEntriesFrom(ref input, _map_animalCountMap_codec);
+          case 8: {
+            TotalNum = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 16: {
             CaptureAnimalNum = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TotalNum = input.ReadUInt32();
+          case 26: {
+            animalCountMap_.AddEntriesFrom(ref input, _map_animalCountMap_codec);
             break;
           }
         }

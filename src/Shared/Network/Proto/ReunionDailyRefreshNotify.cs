@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionDailyRefreshNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9SZXVuaW9uRGFpbHlSZWZyZXNoTm90aWZ5LnByb3RvGhZSZXVuaW9uQnJp",
-            "ZWZJbmZvLnByb3RvIkoKGVJldW5pb25EYWlseVJlZnJlc2hOb3RpZnkSLQoS",
-            "cmV1bmlvbl9icmllZl9pbmZvGAQgASgLMhEuUmV1bmlvbkJyaWVmSW5mb0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9SZXVuaW9uRGFpbHlSZWZyZXNoTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhZSZXVuaW9uQnJpZWZJbmZvLnByb3Rv",
+            "ImoKGVJldW5pb25EYWlseVJlZnJlc2hOb3RpZnkSTQoScmV1bmlvbl9icmll",
+            "Zl9pbmZvGAYgASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5SZXVuaW9uQnJpZWZJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5100
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5054;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ReunionDailyRefreshNotify : pb::IMessage<ReunionDailyRefreshNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reunion_brief_info" field.</summary>
-    public const int ReunionBriefInfoFieldNumber = 4;
+    public const int ReunionBriefInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo reunionBriefInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (_unknownFields != null) {
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (_unknownFields != null) {
@@ -205,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 50: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }
@@ -227,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 50: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }

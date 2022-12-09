@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityCoinInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBY3Rpdml0eUNvaW5JbmZvTm90aWZ5LnByb3RvIsMBChZBY3Rpdml0eUNv",
-            "aW5JbmZvTm90aWZ5EhMKC3NjaGVkdWxlX2lkGAggASgNEhMKC2FjdGl2aXR5",
-            "X2lkGAogASgNEkcKEWFjdGl2aXR5X2NvaW5fbWFwGAIgAygLMiwuQWN0aXZp",
-            "dHlDb2luSW5mb05vdGlmeS5BY3Rpdml0eUNvaW5NYXBFbnRyeRo2ChRBY3Rp",
-            "dml0eUNvaW5NYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06",
-            "AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChxBY3Rpdml0eUNvaW5JbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIuMBChZBY3Rpdml0eUNvaW5JbmZvTm90aWZ5",
+            "EhMKC3NjaGVkdWxlX2lkGAggASgNEmcKEWFjdGl2aXR5X2NvaW5fbWFwGAIg",
+            "AygLMkwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BY3Rpdml0",
+            "eUNvaW5JbmZvTm90aWZ5LkFjdGl2aXR5Q29pbk1hcEVudHJ5EhMKC2FjdGl2",
+            "aXR5X2lkGAQgASgNGjYKFEFjdGl2aXR5Q29pbk1hcEVudHJ5EgsKA2tleRgB",
+            "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityCoinInfoNotify), global::Weedwacker.Shared.Network.Proto.ActivityCoinInfoNotify.Parser, new[]{ "ScheduleId", "ActivityId", "ActivityCoinMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityCoinInfoNotify), global::Weedwacker.Shared.Network.Proto.ActivityCoinInfoNotify.Parser, new[]{ "ScheduleId", "ActivityCoinMap", "ActivityId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2008
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2018;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityCoinInfoNotify : pb::IMessage<ActivityCoinInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityCoinInfoNotify(ActivityCoinInfoNotify other) : this() {
       scheduleId_ = other.scheduleId_;
-      activityId_ = other.activityId_;
       activityCoinMap_ = other.activityCoinMap_.Clone();
+      activityId_ = other.activityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,18 +108,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 10;
-    private uint activityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ActivityId {
-      get { return activityId_; }
-      set {
-        activityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "activity_coin_map" field.</summary>
     public const int ActivityCoinMapFieldNumber = 2;
     private static readonly pbc::MapField<uint, uint>.Codec _map_activityCoinMap_codec
@@ -125,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> ActivityCoinMap {
       get { return activityCoinMap_; }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 4;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -143,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ScheduleId != other.ScheduleId) return false;
-      if (ActivityId != other.ActivityId) return false;
       if (!ActivityCoinMap.Equals(other.ActivityCoinMap)) return false;
+      if (ActivityId != other.ActivityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
       hash ^= ActivityCoinMap.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       activityCoinMap_.WriteTo(output, _map_activityCoinMap_codec);
+      if (ActivityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ActivityId);
+      }
       if (ScheduleId != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(ScheduleId);
-      }
-      if (ActivityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,13 +197,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       activityCoinMap_.WriteTo(ref output, _map_activityCoinMap_codec);
+      if (ActivityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ActivityId);
+      }
       if (ScheduleId != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(ScheduleId);
-      }
-      if (ActivityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,10 +218,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
+      size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
       if (ActivityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
       }
-      size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -233,10 +237,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
+      activityCoinMap_.Add(other.activityCoinMap_);
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
       }
-      activityCoinMap_.Add(other.activityCoinMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -256,12 +260,12 @@ namespace Weedwacker.Shared.Network.Proto {
             activityCoinMap_.AddEntriesFrom(input, _map_activityCoinMap_codec);
             break;
           }
-          case 64: {
-            ScheduleId = input.ReadUInt32();
+          case 32: {
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ActivityId = input.ReadUInt32();
+          case 64: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -283,12 +287,12 @@ namespace Weedwacker.Shared.Network.Proto {
             activityCoinMap_.AddEntriesFrom(ref input, _map_activityCoinMap_codec);
             break;
           }
-          case 64: {
-            ScheduleId = input.ReadUInt32();
+          case 32: {
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ActivityId = input.ReadUInt32();
+          case 64: {
+            ScheduleId = input.ReadUInt32();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairFallInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGbGV1ckZhaXJGYWxsSW5mby5wcm90byInChFGbGV1ckZhaXJGYWxsSW5m",
-            "bxISCgpiZXN0X3Njb3JlGAogASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdGbGV1ckZhaXJGYWxsSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byInChFGbGV1ckZhaXJGYWxsSW5mbxISCgpiZXN0X3Nj",
+            "b3JlGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 10;
+    public const int BestScoreFieldNumber = 11;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (BestScore != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(BestScore);
       }
       if (_unknownFields != null) {
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (BestScore != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(BestScore);
       }
       if (_unknownFields != null) {
@@ -196,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
+          case 88: {
             BestScore = input.ReadUInt32();
             break;
           }
@@ -215,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
+          case 88: {
             BestScore = input.ReadUInt32();
             break;
           }

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GmTalkRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9HbVRhbGtSc3AucHJvdG8iOQoJR21UYWxrUnNwEg8KB3JldGNvZGUYDyAB",
-            "KAUSDgoGcmV0bXNnGAMgASgJEgsKA21zZxgNIAEoCUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Cg9HbVRhbGtSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8iOQoJR21UYWxrUnNwEg4KBnJldG1zZxgLIAEoCRIPCgdyZXRjb2Rl",
+            "GAQgASgFEgsKA21zZxgJIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GmTalkRsp), global::Weedwacker.Shared.Network.Proto.GmTalkRsp.Parser, new[]{ "Retcode", "Retmsg", "Msg" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GmTalkRsp), global::Weedwacker.Shared.Network.Proto.GmTalkRsp.Parser, new[]{ "Retmsg", "Retcode", "Msg" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 12
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 56;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GmTalkRsp : pb::IMessage<GmTalkRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GmTalkRsp(GmTalkRsp other) : this() {
-      retcode_ = other.retcode_;
       retmsg_ = other.retmsg_;
+      retcode_ = other.retcode_;
       msg_ = other.msg_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GmTalkRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retmsg" field.</summary>
-    public const int RetmsgFieldNumber = 3;
+    public const int RetmsgFieldNumber = 11;
     private string retmsg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,8 +104,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 4;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "msg" field.</summary>
-    public const int MsgFieldNumber = 13;
+    public const int MsgFieldNumber = 9;
     private string msg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -139,8 +143,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (Retmsg != other.Retmsg) return false;
+      if (Retcode != other.Retcode) return false;
       if (Msg != other.Msg) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -149,8 +153,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (Retmsg.Length != 0) hash ^= Retmsg.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (Msg.Length != 0) hash ^= Msg.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,17 +174,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retmsg.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Retmsg);
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
       }
       if (Msg.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteString(Msg);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
+      if (Retmsg.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Retmsg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -192,17 +196,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retmsg.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Retmsg);
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
       }
       if (Msg.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteString(Msg);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(120);
-        output.WriteInt32(Retcode);
+      if (Retmsg.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Retmsg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,11 +218,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (Retmsg.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Retmsg);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (Msg.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Msg);
@@ -235,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.Retmsg.Length != 0) {
         Retmsg = other.Retmsg;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       if (other.Msg.Length != 0) {
         Msg = other.Msg;
@@ -259,16 +263,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            Retmsg = input.ReadString();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
+          case 74: {
             Msg = input.ReadString();
             break;
           }
-          case 120: {
-            Retcode = input.ReadInt32();
+          case 90: {
+            Retmsg = input.ReadString();
             break;
           }
         }
@@ -286,16 +290,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            Retmsg = input.ReadString();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
+          case 74: {
             Msg = input.ReadString();
             break;
           }
-          case 120: {
-            Retcode = input.ReadInt32();
+          case 90: {
+            Retmsg = input.ReadString();
             break;
           }
         }

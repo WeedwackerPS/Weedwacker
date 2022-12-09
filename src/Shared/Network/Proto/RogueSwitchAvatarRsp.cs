@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueSwitchAvatarRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpSb2d1ZVN3aXRjaEF2YXRhclJzcC5wcm90byKrAQoUUm9ndWVTd2l0Y2hB",
-            "dmF0YXJSc3ASFwoPY3VyX2F2YXRhcl9ndWlkGAQgASgEEiIKGmJhY2tzdGFn",
-            "ZV9hdmF0YXJfZ3VpZF9saXN0GAggAygEEhIKCmR1bmdlb25faWQYDiABKA0S",
-            "DwoHY2VsbF9pZBgDIAEoDRIPCgdyZXRjb2RlGAwgASgFEiAKGG9uc3RhZ2Vf",
-            "YXZhdGFyX2d1aWRfbGlzdBgJIAMoBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpSb2d1ZVN3aXRjaEF2YXRhclJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byKrAQoUUm9ndWVTd2l0Y2hBdmF0YXJSc3ASIgoa",
+            "YmFja3N0YWdlX2F2YXRhcl9ndWlkX2xpc3QYAyADKAQSEgoKZHVuZ2Vvbl9p",
+            "ZBgPIAEoDRIgChhvbnN0YWdlX2F2YXRhcl9ndWlkX2xpc3QYCCADKAQSDwoH",
+            "Y2VsbF9pZBgBIAEoDRIXCg9jdXJfYXZhdGFyX2d1aWQYBSABKAQSDwoHcmV0",
+            "Y29kZRgHIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueSwitchAvatarRsp), global::Weedwacker.Shared.Network.Proto.RogueSwitchAvatarRsp.Parser, new[]{ "CurAvatarGuid", "BackstageAvatarGuidList", "DungeonId", "CellId", "Retcode", "OnstageAvatarGuidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueSwitchAvatarRsp), global::Weedwacker.Shared.Network.Proto.RogueSwitchAvatarRsp.Parser, new[]{ "BackstageAvatarGuidList", "DungeonId", "OnstageAvatarGuidList", "CellId", "CurAvatarGuid", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8915
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8445;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RogueSwitchAvatarRsp : pb::IMessage<RogueSwitchAvatarRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,12 +83,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueSwitchAvatarRsp(RogueSwitchAvatarRsp other) : this() {
-      curAvatarGuid_ = other.curAvatarGuid_;
       backstageAvatarGuidList_ = other.backstageAvatarGuidList_.Clone();
       dungeonId_ = other.dungeonId_;
-      cellId_ = other.cellId_;
-      retcode_ = other.retcode_;
       onstageAvatarGuidList_ = other.onstageAvatarGuidList_.Clone();
+      cellId_ = other.cellId_;
+      curAvatarGuid_ = other.curAvatarGuid_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,22 +98,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueSwitchAvatarRsp(this);
     }
 
-    /// <summary>Field number for the "cur_avatar_guid" field.</summary>
-    public const int CurAvatarGuidFieldNumber = 4;
-    private ulong curAvatarGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong CurAvatarGuid {
-      get { return curAvatarGuid_; }
-      set {
-        curAvatarGuid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "backstage_avatar_guid_list" field.</summary>
-    public const int BackstageAvatarGuidListFieldNumber = 8;
+    public const int BackstageAvatarGuidListFieldNumber = 3;
     private static readonly pb::FieldCodec<ulong> _repeated_backstageAvatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(66);
+        = pb::FieldCodec.ForUInt64(26);
     private readonly pbc::RepeatedField<ulong> backstageAvatarGuidList_ = new pbc::RepeatedField<ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 14;
+    public const int DungeonIdFieldNumber = 15;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,8 +121,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "onstage_avatar_guid_list" field.</summary>
+    public const int OnstageAvatarGuidListFieldNumber = 8;
+    private static readonly pb::FieldCodec<ulong> _repeated_onstageAvatarGuidList_codec
+        = pb::FieldCodec.ForUInt64(66);
+    private readonly pbc::RepeatedField<ulong> onstageAvatarGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> OnstageAvatarGuidList {
+      get { return onstageAvatarGuidList_; }
+    }
+
     /// <summary>Field number for the "cell_id" field.</summary>
-    public const int CellIdFieldNumber = 3;
+    public const int CellIdFieldNumber = 1;
     private uint cellId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +144,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "cur_avatar_guid" field.</summary>
+    public const int CurAvatarGuidFieldNumber = 5;
+    private ulong curAvatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong CurAvatarGuid {
+      get { return curAvatarGuid_; }
+      set {
+        curAvatarGuid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 7;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,17 +166,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "onstage_avatar_guid_list" field.</summary>
-    public const int OnstageAvatarGuidListFieldNumber = 9;
-    private static readonly pb::FieldCodec<ulong> _repeated_onstageAvatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(74);
-    private readonly pbc::RepeatedField<ulong> onstageAvatarGuidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> OnstageAvatarGuidList {
-      get { return onstageAvatarGuidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,12 +183,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurAvatarGuid != other.CurAvatarGuid) return false;
       if(!backstageAvatarGuidList_.Equals(other.backstageAvatarGuidList_)) return false;
       if (DungeonId != other.DungeonId) return false;
-      if (CellId != other.CellId) return false;
-      if (Retcode != other.Retcode) return false;
       if(!onstageAvatarGuidList_.Equals(other.onstageAvatarGuidList_)) return false;
+      if (CellId != other.CellId) return false;
+      if (CurAvatarGuid != other.CurAvatarGuid) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,12 +196,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurAvatarGuid != 0UL) hash ^= CurAvatarGuid.GetHashCode();
       hash ^= backstageAvatarGuidList_.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-      if (CellId != 0) hash ^= CellId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= onstageAvatarGuidList_.GetHashCode();
+      if (CellId != 0) hash ^= CellId.GetHashCode();
+      if (CurAvatarGuid != 0UL) hash ^= CurAvatarGuid.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,21 +221,21 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CellId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(CellId);
       }
+      backstageAvatarGuidList_.WriteTo(output, _repeated_backstageAvatarGuidList_codec);
       if (CurAvatarGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt64(CurAvatarGuid);
       }
-      backstageAvatarGuidList_.WriteTo(output, _repeated_backstageAvatarGuidList_codec);
-      onstageAvatarGuidList_.WriteTo(output, _repeated_onstageAvatarGuidList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
+      onstageAvatarGuidList_.WriteTo(output, _repeated_onstageAvatarGuidList_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -245,21 +249,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CellId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(CellId);
       }
+      backstageAvatarGuidList_.WriteTo(ref output, _repeated_backstageAvatarGuidList_codec);
       if (CurAvatarGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt64(CurAvatarGuid);
       }
-      backstageAvatarGuidList_.WriteTo(ref output, _repeated_backstageAvatarGuidList_codec);
-      onstageAvatarGuidList_.WriteTo(ref output, _repeated_onstageAvatarGuidList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
+      onstageAvatarGuidList_.WriteTo(ref output, _repeated_onstageAvatarGuidList_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -272,20 +276,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurAvatarGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CurAvatarGuid);
-      }
       size += backstageAvatarGuidList_.CalculateSize(_repeated_backstageAvatarGuidList_codec);
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
+      size += onstageAvatarGuidList_.CalculateSize(_repeated_onstageAvatarGuidList_codec);
       if (CellId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CellId);
+      }
+      if (CurAvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CurAvatarGuid);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += onstageAvatarGuidList_.CalculateSize(_repeated_onstageAvatarGuidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -298,20 +302,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurAvatarGuid != 0UL) {
-        CurAvatarGuid = other.CurAvatarGuid;
-      }
       backstageAvatarGuidList_.Add(other.backstageAvatarGuidList_);
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
+      onstageAvatarGuidList_.Add(other.onstageAvatarGuidList_);
       if (other.CellId != 0) {
         CellId = other.CellId;
+      }
+      if (other.CurAvatarGuid != 0UL) {
+        CurAvatarGuid = other.CurAvatarGuid;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      onstageAvatarGuidList_.Add(other.onstageAvatarGuidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -327,29 +331,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             CellId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 26:
+          case 24: {
+            backstageAvatarGuidList_.AddEntriesFrom(input, _repeated_backstageAvatarGuidList_codec);
+            break;
+          }
+          case 40: {
             CurAvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
             break;
           }
           case 66:
           case 64: {
-            backstageAvatarGuidList_.AddEntriesFrom(input, _repeated_backstageAvatarGuidList_codec);
-            break;
-          }
-          case 74:
-          case 72: {
             onstageAvatarGuidList_.AddEntriesFrom(input, _repeated_onstageAvatarGuidList_codec);
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
+          case 120: {
             DungeonId = input.ReadUInt32();
             break;
           }
@@ -368,29 +372,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             CellId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 26:
+          case 24: {
+            backstageAvatarGuidList_.AddEntriesFrom(ref input, _repeated_backstageAvatarGuidList_codec);
+            break;
+          }
+          case 40: {
             CurAvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
             break;
           }
           case 66:
           case 64: {
-            backstageAvatarGuidList_.AddEntriesFrom(ref input, _repeated_backstageAvatarGuidList_codec);
-            break;
-          }
-          case 74:
-          case 72: {
             onstageAvatarGuidList_.AddEntriesFrom(ref input, _repeated_onstageAvatarGuidList_codec);
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
+          case 120: {
             DungeonId = input.ReadUInt32();
             break;
           }

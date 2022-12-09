@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRSb2d1ZVN0YWdlSW5mby5wcm90bxodUm9ndWVTaG93QXZhdGFyVGVhbUlu",
-            "Zm8ucHJvdG8aGVJvZ3VlbGlrZVJ1bmVSZWNvcmQucHJvdG8imgMKDlJvZ3Vl",
-            "U3RhZ2VJbmZvEi0KC2F2YXRhcl90ZWFtGAIgASgLMhguUm9ndWVTaG93QXZh",
-            "dGFyVGVhbUluZm8SEQoJaXNfcGFzc2VkGAUgASgIEhAKCHN0YWdlX2lkGAcg",
-            "ASgNEh0KFHJldmlzZV9tb25zdGVyX2xldmVsGM0BIAEoDRIuChBydW5lX3Jl",
-            "Y29yZF9saXN0GAYgAygLMhQuUm9ndWVsaWtlUnVuZVJlY29yZBIPCgdpc19v",
-            "cGVuGAEgASgIEhEKCWN1cl9sZXZlbBgEIAEoDRIaChFjYWNoZWRfY29pbl9j",
-            "X251bRiBCyABKA0SFwoPaXNfdGFrZW5fcmV3YXJkGAsgASgIEhQKDGlzX2lu",
-            "X2NvbWJhdBgMIAEoCBIZChFjYWNoZWRfY29pbl9iX251bRgOIAEoDRIYChBl",
-            "eHBsb3JlX2NlbGxfbnVtGA8gASgNEhIKCmNvaW5fY19udW0YCCABKA0SEwoL",
-            "aXNfZXhwbG9yZWQYCSABKAgSGAoQbWF4X3Bhc3NlZF9sZXZlbBgDIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRSb2d1ZVN0YWdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxodUm9ndWVTaG93QXZhdGFyVGVhbUluZm8ucHJvdG8aGVJv",
+            "Z3VlbGlrZVJ1bmVSZWNvcmQucHJvdG8i/AMKDlJvZ3VlU3RhZ2VJbmZvEh0K",
+            "FHJldmlzZV9tb25zdGVyX2xldmVsGK4PIAEoDRIRCglpc19wYXNzZWQYCyAB",
+            "KAgSGwoTVW5rMzMwMF9HR0hNRktOSFBBShgCIAEoDRJNCgthdmF0YXJfdGVh",
+            "bRgIIAEoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUm9n",
+            "dWVTaG93QXZhdGFyVGVhbUluZm8SFwoPaXNfdGFrZW5fcmV3YXJkGAkgASgI",
+            "EhsKE1VuazMzMDBfSE1DSk9MTEtNTUIYDiABKAgSTgoQcnVuZV9yZWNvcmRf",
+            "bGlzdBgFIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "Um9ndWVsaWtlUnVuZVJlY29yZBIbChNVbmszMzAwX0hNQUVMQkJPRkROGAYg",
+            "ASgIEhsKE1VuazMzMDBfQ01NR0tNTU1PQUwYAyABKA0SDwoHaXNfb3BlbhgN",
+            "IAEoCBIQCghzdGFnZV9pZBgHIAEoDRIbChNVbmszMzAwX0RBQlBGQ1BDTkNC",
+            "GAQgASgNEhEKCWN1cl9sZXZlbBgMIAEoDRIbChNVbmszMzAwX09ISEJFUE9J",
+            "Q0xJGAEgASgNEhwKE1VuazMzMDBfSFBLRkhMTENKQk0YkwIgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueStageInfo), global::Weedwacker.Shared.Network.Proto.RogueStageInfo.Parser, new[]{ "AvatarTeam", "IsPassed", "StageId", "ReviseMonsterLevel", "RuneRecordList", "IsOpen", "CurLevel", "CachedCoinCNum", "IsTakenReward", "IsInCombat", "CachedCoinBNum", "ExploreCellNum", "CoinCNum", "IsExplored", "MaxPassedLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueStageInfo), global::Weedwacker.Shared.Network.Proto.RogueStageInfo.Parser, new[]{ "ReviseMonsterLevel", "IsPassed", "Unk3300GGHMFKNHPAJ", "AvatarTeam", "IsTakenReward", "Unk3300HMCJOLLKMMB", "RuneRecordList", "Unk3300HMAELBBOFDN", "Unk3300CMMGKMMMOAL", "IsOpen", "StageId", "Unk3300DABPFCPCNCB", "CurLevel", "Unk3300OHHBEPOICLI", "Unk3300HPKFHLLCJBM" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,21 +83,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueStageInfo(RogueStageInfo other) : this() {
-      avatarTeam_ = other.avatarTeam_ != null ? other.avatarTeam_.Clone() : null;
-      isPassed_ = other.isPassed_;
-      stageId_ = other.stageId_;
       reviseMonsterLevel_ = other.reviseMonsterLevel_;
-      runeRecordList_ = other.runeRecordList_.Clone();
-      isOpen_ = other.isOpen_;
-      curLevel_ = other.curLevel_;
-      cachedCoinCNum_ = other.cachedCoinCNum_;
+      isPassed_ = other.isPassed_;
+      unk3300GGHMFKNHPAJ_ = other.unk3300GGHMFKNHPAJ_;
+      avatarTeam_ = other.avatarTeam_ != null ? other.avatarTeam_.Clone() : null;
       isTakenReward_ = other.isTakenReward_;
-      isInCombat_ = other.isInCombat_;
-      cachedCoinBNum_ = other.cachedCoinBNum_;
-      exploreCellNum_ = other.exploreCellNum_;
-      coinCNum_ = other.coinCNum_;
-      isExplored_ = other.isExplored_;
-      maxPassedLevel_ = other.maxPassedLevel_;
+      unk3300HMCJOLLKMMB_ = other.unk3300HMCJOLLKMMB_;
+      runeRecordList_ = other.runeRecordList_.Clone();
+      unk3300HMAELBBOFDN_ = other.unk3300HMAELBBOFDN_;
+      unk3300CMMGKMMMOAL_ = other.unk3300CMMGKMMMOAL_;
+      isOpen_ = other.isOpen_;
+      stageId_ = other.stageId_;
+      unk3300DABPFCPCNCB_ = other.unk3300DABPFCPCNCB_;
+      curLevel_ = other.curLevel_;
+      unk3300OHHBEPOICLI_ = other.unk3300OHHBEPOICLI_;
+      unk3300HPKFHLLCJBM_ = other.unk3300HPKFHLLCJBM_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,8 +107,44 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RogueStageInfo(this);
     }
 
+    /// <summary>Field number for the "revise_monster_level" field.</summary>
+    public const int ReviseMonsterLevelFieldNumber = 1966;
+    private uint reviseMonsterLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReviseMonsterLevel {
+      get { return reviseMonsterLevel_; }
+      set {
+        reviseMonsterLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_passed" field.</summary>
+    public const int IsPassedFieldNumber = 11;
+    private bool isPassed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPassed {
+      get { return isPassed_; }
+      set {
+        isPassed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GGHMFKNHPAJ" field.</summary>
+    public const int Unk3300GGHMFKNHPAJFieldNumber = 2;
+    private uint unk3300GGHMFKNHPAJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GGHMFKNHPAJ {
+      get { return unk3300GGHMFKNHPAJ_; }
+      set {
+        unk3300GGHMFKNHPAJ_ = value;
+      }
+    }
+
     /// <summary>Field number for the "avatar_team" field.</summary>
-    public const int AvatarTeamFieldNumber = 2;
+    public const int AvatarTeamFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo avatarTeam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,15 +155,74 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_passed" field.</summary>
-    public const int IsPassedFieldNumber = 5;
-    private bool isPassed_;
+    /// <summary>Field number for the "is_taken_reward" field.</summary>
+    public const int IsTakenRewardFieldNumber = 9;
+    private bool isTakenReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPassed {
-      get { return isPassed_; }
+    public bool IsTakenReward {
+      get { return isTakenReward_; }
       set {
-        isPassed_ = value;
+        isTakenReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HMCJOLLKMMB" field.</summary>
+    public const int Unk3300HMCJOLLKMMBFieldNumber = 14;
+    private bool unk3300HMCJOLLKMMB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300HMCJOLLKMMB {
+      get { return unk3300HMCJOLLKMMB_; }
+      set {
+        unk3300HMCJOLLKMMB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rune_record_list" field.</summary>
+    public const int RuneRecordListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> _repeated_runeRecordList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> runeRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> RuneRecordList {
+      get { return runeRecordList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_HMAELBBOFDN" field.</summary>
+    public const int Unk3300HMAELBBOFDNFieldNumber = 6;
+    private bool unk3300HMAELBBOFDN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300HMAELBBOFDN {
+      get { return unk3300HMAELBBOFDN_; }
+      set {
+        unk3300HMAELBBOFDN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CMMGKMMMOAL" field.</summary>
+    public const int Unk3300CMMGKMMMOALFieldNumber = 3;
+    private uint unk3300CMMGKMMMOAL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CMMGKMMMOAL {
+      get { return unk3300CMMGKMMMOAL_; }
+      set {
+        unk3300CMMGKMMMOAL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 13;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
       }
     }
 
@@ -140,43 +238,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "revise_monster_level" field.</summary>
-    public const int ReviseMonsterLevelFieldNumber = 205;
-    private uint reviseMonsterLevel_;
+    /// <summary>Field number for the "Unk3300_DABPFCPCNCB" field.</summary>
+    public const int Unk3300DABPFCPCNCBFieldNumber = 4;
+    private uint unk3300DABPFCPCNCB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ReviseMonsterLevel {
-      get { return reviseMonsterLevel_; }
+    public uint Unk3300DABPFCPCNCB {
+      get { return unk3300DABPFCPCNCB_; }
       set {
-        reviseMonsterLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rune_record_list" field.</summary>
-    public const int RuneRecordListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> _repeated_runeRecordList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> runeRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeRuneRecord> RuneRecordList {
-      get { return runeRecordList_; }
-    }
-
-    /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 1;
-    private bool isOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOpen {
-      get { return isOpen_; }
-      set {
-        isOpen_ = value;
+        unk3300DABPFCPCNCB_ = value;
       }
     }
 
     /// <summary>Field number for the "cur_level" field.</summary>
-    public const int CurLevelFieldNumber = 4;
+    public const int CurLevelFieldNumber = 12;
     private uint curLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,99 +262,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cached_coin_c_num" field.</summary>
-    public const int CachedCoinCNumFieldNumber = 1409;
-    private uint cachedCoinCNum_;
+    /// <summary>Field number for the "Unk3300_OHHBEPOICLI" field.</summary>
+    public const int Unk3300OHHBEPOICLIFieldNumber = 1;
+    private uint unk3300OHHBEPOICLI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CachedCoinCNum {
-      get { return cachedCoinCNum_; }
+    public uint Unk3300OHHBEPOICLI {
+      get { return unk3300OHHBEPOICLI_; }
       set {
-        cachedCoinCNum_ = value;
+        unk3300OHHBEPOICLI_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_taken_reward" field.</summary>
-    public const int IsTakenRewardFieldNumber = 11;
-    private bool isTakenReward_;
+    /// <summary>Field number for the "Unk3300_HPKFHLLCJBM" field.</summary>
+    public const int Unk3300HPKFHLLCJBMFieldNumber = 275;
+    private uint unk3300HPKFHLLCJBM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTakenReward {
-      get { return isTakenReward_; }
+    public uint Unk3300HPKFHLLCJBM {
+      get { return unk3300HPKFHLLCJBM_; }
       set {
-        isTakenReward_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_in_combat" field.</summary>
-    public const int IsInCombatFieldNumber = 12;
-    private bool isInCombat_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsInCombat {
-      get { return isInCombat_; }
-      set {
-        isInCombat_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cached_coin_b_num" field.</summary>
-    public const int CachedCoinBNumFieldNumber = 14;
-    private uint cachedCoinBNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CachedCoinBNum {
-      get { return cachedCoinBNum_; }
-      set {
-        cachedCoinBNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "explore_cell_num" field.</summary>
-    public const int ExploreCellNumFieldNumber = 15;
-    private uint exploreCellNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExploreCellNum {
-      get { return exploreCellNum_; }
-      set {
-        exploreCellNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "coin_c_num" field.</summary>
-    public const int CoinCNumFieldNumber = 8;
-    private uint coinCNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CoinCNum {
-      get { return coinCNum_; }
-      set {
-        coinCNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_explored" field.</summary>
-    public const int IsExploredFieldNumber = 9;
-    private bool isExplored_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsExplored {
-      get { return isExplored_; }
-      set {
-        isExplored_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "max_passed_level" field.</summary>
-    public const int MaxPassedLevelFieldNumber = 3;
-    private uint maxPassedLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxPassedLevel {
-      get { return maxPassedLevel_; }
-      set {
-        maxPassedLevel_ = value;
+        unk3300HPKFHLLCJBM_ = value;
       }
     }
 
@@ -298,21 +301,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AvatarTeam, other.AvatarTeam)) return false;
-      if (IsPassed != other.IsPassed) return false;
-      if (StageId != other.StageId) return false;
       if (ReviseMonsterLevel != other.ReviseMonsterLevel) return false;
-      if(!runeRecordList_.Equals(other.runeRecordList_)) return false;
-      if (IsOpen != other.IsOpen) return false;
-      if (CurLevel != other.CurLevel) return false;
-      if (CachedCoinCNum != other.CachedCoinCNum) return false;
+      if (IsPassed != other.IsPassed) return false;
+      if (Unk3300GGHMFKNHPAJ != other.Unk3300GGHMFKNHPAJ) return false;
+      if (!object.Equals(AvatarTeam, other.AvatarTeam)) return false;
       if (IsTakenReward != other.IsTakenReward) return false;
-      if (IsInCombat != other.IsInCombat) return false;
-      if (CachedCoinBNum != other.CachedCoinBNum) return false;
-      if (ExploreCellNum != other.ExploreCellNum) return false;
-      if (CoinCNum != other.CoinCNum) return false;
-      if (IsExplored != other.IsExplored) return false;
-      if (MaxPassedLevel != other.MaxPassedLevel) return false;
+      if (Unk3300HMCJOLLKMMB != other.Unk3300HMCJOLLKMMB) return false;
+      if(!runeRecordList_.Equals(other.runeRecordList_)) return false;
+      if (Unk3300HMAELBBOFDN != other.Unk3300HMAELBBOFDN) return false;
+      if (Unk3300CMMGKMMMOAL != other.Unk3300CMMGKMMMOAL) return false;
+      if (IsOpen != other.IsOpen) return false;
+      if (StageId != other.StageId) return false;
+      if (Unk3300DABPFCPCNCB != other.Unk3300DABPFCPCNCB) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if (Unk3300OHHBEPOICLI != other.Unk3300OHHBEPOICLI) return false;
+      if (Unk3300HPKFHLLCJBM != other.Unk3300HPKFHLLCJBM) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -320,21 +323,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (avatarTeam_ != null) hash ^= AvatarTeam.GetHashCode();
-      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (ReviseMonsterLevel != 0) hash ^= ReviseMonsterLevel.GetHashCode();
-      hash ^= runeRecordList_.GetHashCode();
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-      if (CachedCoinCNum != 0) hash ^= CachedCoinCNum.GetHashCode();
+      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
+      if (Unk3300GGHMFKNHPAJ != 0) hash ^= Unk3300GGHMFKNHPAJ.GetHashCode();
+      if (avatarTeam_ != null) hash ^= AvatarTeam.GetHashCode();
       if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
-      if (IsInCombat != false) hash ^= IsInCombat.GetHashCode();
-      if (CachedCoinBNum != 0) hash ^= CachedCoinBNum.GetHashCode();
-      if (ExploreCellNum != 0) hash ^= ExploreCellNum.GetHashCode();
-      if (CoinCNum != 0) hash ^= CoinCNum.GetHashCode();
-      if (IsExplored != false) hash ^= IsExplored.GetHashCode();
-      if (MaxPassedLevel != 0) hash ^= MaxPassedLevel.GetHashCode();
+      if (Unk3300HMCJOLLKMMB != false) hash ^= Unk3300HMCJOLLKMMB.GetHashCode();
+      hash ^= runeRecordList_.GetHashCode();
+      if (Unk3300HMAELBBOFDN != false) hash ^= Unk3300HMAELBBOFDN.GetHashCode();
+      if (Unk3300CMMGKMMMOAL != 0) hash ^= Unk3300CMMGKMMMOAL.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (Unk3300DABPFCPCNCB != 0) hash ^= Unk3300DABPFCPCNCB.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      if (Unk3300OHHBEPOICLI != 0) hash ^= Unk3300OHHBEPOICLI.GetHashCode();
+      if (Unk3300HPKFHLLCJBM != 0) hash ^= Unk3300HPKFHLLCJBM.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -353,62 +356,62 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsOpen != false) {
+      if (Unk3300OHHBEPOICLI != 0) {
         output.WriteRawTag(8);
-        output.WriteBool(IsOpen);
+        output.WriteUInt32(Unk3300OHHBEPOICLI);
       }
-      if (avatarTeam_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(AvatarTeam);
+      if (Unk3300GGHMFKNHPAJ != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300GGHMFKNHPAJ);
       }
-      if (MaxPassedLevel != 0) {
+      if (Unk3300CMMGKMMMOAL != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(MaxPassedLevel);
+        output.WriteUInt32(Unk3300CMMGKMMMOAL);
       }
-      if (CurLevel != 0) {
+      if (Unk3300DABPFCPCNCB != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(CurLevel);
-      }
-      if (IsPassed != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsPassed);
+        output.WriteUInt32(Unk3300DABPFCPCNCB);
       }
       runeRecordList_.WriteTo(output, _repeated_runeRecordList_codec);
+      if (Unk3300HMAELBBOFDN != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300HMAELBBOFDN);
+      }
       if (StageId != 0) {
         output.WriteRawTag(56);
         output.WriteUInt32(StageId);
       }
-      if (CoinCNum != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CoinCNum);
-      }
-      if (IsExplored != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsExplored);
+      if (avatarTeam_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(AvatarTeam);
       }
       if (IsTakenReward != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteBool(IsTakenReward);
       }
-      if (IsInCombat != false) {
+      if (IsPassed != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsPassed);
+      }
+      if (CurLevel != 0) {
         output.WriteRawTag(96);
-        output.WriteBool(IsInCombat);
+        output.WriteUInt32(CurLevel);
       }
-      if (CachedCoinBNum != 0) {
+      if (IsOpen != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsOpen);
+      }
+      if (Unk3300HMCJOLLKMMB != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(CachedCoinBNum);
+        output.WriteBool(Unk3300HMCJOLLKMMB);
       }
-      if (ExploreCellNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ExploreCellNum);
+      if (Unk3300HPKFHLLCJBM != 0) {
+        output.WriteRawTag(152, 17);
+        output.WriteUInt32(Unk3300HPKFHLLCJBM);
       }
       if (ReviseMonsterLevel != 0) {
-        output.WriteRawTag(232, 12);
+        output.WriteRawTag(240, 122);
         output.WriteUInt32(ReviseMonsterLevel);
-      }
-      if (CachedCoinCNum != 0) {
-        output.WriteRawTag(136, 88);
-        output.WriteUInt32(CachedCoinCNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -420,62 +423,62 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsOpen != false) {
+      if (Unk3300OHHBEPOICLI != 0) {
         output.WriteRawTag(8);
-        output.WriteBool(IsOpen);
+        output.WriteUInt32(Unk3300OHHBEPOICLI);
       }
-      if (avatarTeam_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(AvatarTeam);
+      if (Unk3300GGHMFKNHPAJ != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300GGHMFKNHPAJ);
       }
-      if (MaxPassedLevel != 0) {
+      if (Unk3300CMMGKMMMOAL != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(MaxPassedLevel);
+        output.WriteUInt32(Unk3300CMMGKMMMOAL);
       }
-      if (CurLevel != 0) {
+      if (Unk3300DABPFCPCNCB != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(CurLevel);
-      }
-      if (IsPassed != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsPassed);
+        output.WriteUInt32(Unk3300DABPFCPCNCB);
       }
       runeRecordList_.WriteTo(ref output, _repeated_runeRecordList_codec);
+      if (Unk3300HMAELBBOFDN != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Unk3300HMAELBBOFDN);
+      }
       if (StageId != 0) {
         output.WriteRawTag(56);
         output.WriteUInt32(StageId);
       }
-      if (CoinCNum != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(CoinCNum);
-      }
-      if (IsExplored != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsExplored);
+      if (avatarTeam_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(AvatarTeam);
       }
       if (IsTakenReward != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteBool(IsTakenReward);
       }
-      if (IsInCombat != false) {
+      if (IsPassed != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsPassed);
+      }
+      if (CurLevel != 0) {
         output.WriteRawTag(96);
-        output.WriteBool(IsInCombat);
+        output.WriteUInt32(CurLevel);
       }
-      if (CachedCoinBNum != 0) {
+      if (IsOpen != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsOpen);
+      }
+      if (Unk3300HMCJOLLKMMB != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(CachedCoinBNum);
+        output.WriteBool(Unk3300HMCJOLLKMMB);
       }
-      if (ExploreCellNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ExploreCellNum);
+      if (Unk3300HPKFHLLCJBM != 0) {
+        output.WriteRawTag(152, 17);
+        output.WriteUInt32(Unk3300HPKFHLLCJBM);
       }
       if (ReviseMonsterLevel != 0) {
-        output.WriteRawTag(232, 12);
+        output.WriteRawTag(240, 122);
         output.WriteUInt32(ReviseMonsterLevel);
-      }
-      if (CachedCoinCNum != 0) {
-        output.WriteRawTag(136, 88);
-        output.WriteUInt32(CachedCoinCNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -487,48 +490,48 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ReviseMonsterLevel != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ReviseMonsterLevel);
+      }
+      if (IsPassed != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300GGHMFKNHPAJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GGHMFKNHPAJ);
+      }
       if (avatarTeam_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarTeam);
       }
-      if (IsPassed != false) {
+      if (IsTakenReward != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300HMCJOLLKMMB != false) {
+        size += 1 + 1;
+      }
+      size += runeRecordList_.CalculateSize(_repeated_runeRecordList_codec);
+      if (Unk3300HMAELBBOFDN != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300CMMGKMMMOAL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CMMGKMMMOAL);
+      }
+      if (IsOpen != false) {
         size += 1 + 1;
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      if (ReviseMonsterLevel != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ReviseMonsterLevel);
-      }
-      size += runeRecordList_.CalculateSize(_repeated_runeRecordList_codec);
-      if (IsOpen != false) {
-        size += 1 + 1;
+      if (Unk3300DABPFCPCNCB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DABPFCPCNCB);
       }
       if (CurLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
       }
-      if (CachedCoinCNum != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinCNum);
+      if (Unk3300OHHBEPOICLI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OHHBEPOICLI);
       }
-      if (IsTakenReward != false) {
-        size += 1 + 1;
-      }
-      if (IsInCombat != false) {
-        size += 1 + 1;
-      }
-      if (CachedCoinBNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinBNum);
-      }
-      if (ExploreCellNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExploreCellNum);
-      }
-      if (CoinCNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinCNum);
-      }
-      if (IsExplored != false) {
-        size += 1 + 1;
-      }
-      if (MaxPassedLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxPassedLevel);
+      if (Unk3300HPKFHLLCJBM != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HPKFHLLCJBM);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -542,51 +545,51 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ReviseMonsterLevel != 0) {
+        ReviseMonsterLevel = other.ReviseMonsterLevel;
+      }
+      if (other.IsPassed != false) {
+        IsPassed = other.IsPassed;
+      }
+      if (other.Unk3300GGHMFKNHPAJ != 0) {
+        Unk3300GGHMFKNHPAJ = other.Unk3300GGHMFKNHPAJ;
+      }
       if (other.avatarTeam_ != null) {
         if (avatarTeam_ == null) {
           AvatarTeam = new global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo();
         }
         AvatarTeam.MergeFrom(other.AvatarTeam);
       }
-      if (other.IsPassed != false) {
-        IsPassed = other.IsPassed;
+      if (other.IsTakenReward != false) {
+        IsTakenReward = other.IsTakenReward;
+      }
+      if (other.Unk3300HMCJOLLKMMB != false) {
+        Unk3300HMCJOLLKMMB = other.Unk3300HMCJOLLKMMB;
+      }
+      runeRecordList_.Add(other.runeRecordList_);
+      if (other.Unk3300HMAELBBOFDN != false) {
+        Unk3300HMAELBBOFDN = other.Unk3300HMAELBBOFDN;
+      }
+      if (other.Unk3300CMMGKMMMOAL != 0) {
+        Unk3300CMMGKMMMOAL = other.Unk3300CMMGKMMMOAL;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      if (other.ReviseMonsterLevel != 0) {
-        ReviseMonsterLevel = other.ReviseMonsterLevel;
-      }
-      runeRecordList_.Add(other.runeRecordList_);
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
+      if (other.Unk3300DABPFCPCNCB != 0) {
+        Unk3300DABPFCPCNCB = other.Unk3300DABPFCPCNCB;
       }
       if (other.CurLevel != 0) {
         CurLevel = other.CurLevel;
       }
-      if (other.CachedCoinCNum != 0) {
-        CachedCoinCNum = other.CachedCoinCNum;
+      if (other.Unk3300OHHBEPOICLI != 0) {
+        Unk3300OHHBEPOICLI = other.Unk3300OHHBEPOICLI;
       }
-      if (other.IsTakenReward != false) {
-        IsTakenReward = other.IsTakenReward;
-      }
-      if (other.IsInCombat != false) {
-        IsInCombat = other.IsInCombat;
-      }
-      if (other.CachedCoinBNum != 0) {
-        CachedCoinBNum = other.CachedCoinBNum;
-      }
-      if (other.ExploreCellNum != 0) {
-        ExploreCellNum = other.ExploreCellNum;
-      }
-      if (other.CoinCNum != 0) {
-        CoinCNum = other.CoinCNum;
-      }
-      if (other.IsExplored != false) {
-        IsExplored = other.IsExplored;
-      }
-      if (other.MaxPassedLevel != 0) {
-        MaxPassedLevel = other.MaxPassedLevel;
+      if (other.Unk3300HPKFHLLCJBM != 0) {
+        Unk3300HPKFHLLCJBM = other.Unk3300HPKFHLLCJBM;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -604,66 +607,66 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            IsOpen = input.ReadBool();
+            Unk3300OHHBEPOICLI = input.ReadUInt32();
             break;
           }
-          case 18: {
-            if (avatarTeam_ == null) {
-              AvatarTeam = new global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo();
-            }
-            input.ReadMessage(AvatarTeam);
+          case 16: {
+            Unk3300GGHMFKNHPAJ = input.ReadUInt32();
             break;
           }
           case 24: {
-            MaxPassedLevel = input.ReadUInt32();
+            Unk3300CMMGKMMMOAL = input.ReadUInt32();
             break;
           }
           case 32: {
-            CurLevel = input.ReadUInt32();
+            Unk3300DABPFCPCNCB = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsPassed = input.ReadBool();
-            break;
-          }
-          case 50: {
+          case 42: {
             runeRecordList_.AddEntriesFrom(input, _repeated_runeRecordList_codec);
+            break;
+          }
+          case 48: {
+            Unk3300HMAELBBOFDN = input.ReadBool();
             break;
           }
           case 56: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            CoinCNum = input.ReadUInt32();
+          case 66: {
+            if (avatarTeam_ == null) {
+              AvatarTeam = new global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo();
+            }
+            input.ReadMessage(AvatarTeam);
             break;
           }
           case 72: {
-            IsExplored = input.ReadBool();
-            break;
-          }
-          case 88: {
             IsTakenReward = input.ReadBool();
             break;
           }
+          case 88: {
+            IsPassed = input.ReadBool();
+            break;
+          }
           case 96: {
-            IsInCombat = input.ReadBool();
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsOpen = input.ReadBool();
             break;
           }
           case 112: {
-            CachedCoinBNum = input.ReadUInt32();
+            Unk3300HMCJOLLKMMB = input.ReadBool();
             break;
           }
-          case 120: {
-            ExploreCellNum = input.ReadUInt32();
+          case 2200: {
+            Unk3300HPKFHLLCJBM = input.ReadUInt32();
             break;
           }
-          case 1640: {
+          case 15728: {
             ReviseMonsterLevel = input.ReadUInt32();
-            break;
-          }
-          case 11272: {
-            CachedCoinCNum = input.ReadUInt32();
             break;
           }
         }
@@ -682,66 +685,66 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            IsOpen = input.ReadBool();
+            Unk3300OHHBEPOICLI = input.ReadUInt32();
             break;
           }
-          case 18: {
-            if (avatarTeam_ == null) {
-              AvatarTeam = new global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo();
-            }
-            input.ReadMessage(AvatarTeam);
+          case 16: {
+            Unk3300GGHMFKNHPAJ = input.ReadUInt32();
             break;
           }
           case 24: {
-            MaxPassedLevel = input.ReadUInt32();
+            Unk3300CMMGKMMMOAL = input.ReadUInt32();
             break;
           }
           case 32: {
-            CurLevel = input.ReadUInt32();
+            Unk3300DABPFCPCNCB = input.ReadUInt32();
             break;
           }
-          case 40: {
-            IsPassed = input.ReadBool();
-            break;
-          }
-          case 50: {
+          case 42: {
             runeRecordList_.AddEntriesFrom(ref input, _repeated_runeRecordList_codec);
+            break;
+          }
+          case 48: {
+            Unk3300HMAELBBOFDN = input.ReadBool();
             break;
           }
           case 56: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 64: {
-            CoinCNum = input.ReadUInt32();
+          case 66: {
+            if (avatarTeam_ == null) {
+              AvatarTeam = new global::Weedwacker.Shared.Network.Proto.RogueShowAvatarTeamInfo();
+            }
+            input.ReadMessage(AvatarTeam);
             break;
           }
           case 72: {
-            IsExplored = input.ReadBool();
-            break;
-          }
-          case 88: {
             IsTakenReward = input.ReadBool();
             break;
           }
+          case 88: {
+            IsPassed = input.ReadBool();
+            break;
+          }
           case 96: {
-            IsInCombat = input.ReadBool();
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsOpen = input.ReadBool();
             break;
           }
           case 112: {
-            CachedCoinBNum = input.ReadUInt32();
+            Unk3300HMCJOLLKMMB = input.ReadBool();
             break;
           }
-          case 120: {
-            ExploreCellNum = input.ReadUInt32();
+          case 2200: {
+            Unk3300HPKFHLLCJBM = input.ReadUInt32();
             break;
           }
-          case 1640: {
+          case 15728: {
             ReviseMonsterLevel = input.ReadUInt32();
-            break;
-          }
-          case 11272: {
-            CachedCoinCNum = input.ReadUInt32();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GadgetPlayDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHYWRnZXRQbGF5RGF0YU5vdGlmeS5wcm90byJOChRHYWRnZXRQbGF5RGF0",
-            "YU5vdGlmeRIRCglwbGF5X3R5cGUYDCABKA0SEAoIcHJvZ3Jlc3MYCSABKA0S",
-            "EQoJZW50aXR5X2lkGAYgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpHYWRnZXRQbGF5RGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJOChRHYWRnZXRQbGF5RGF0YU5vdGlmeRIRCgll",
+            "bnRpdHlfaWQYDSABKA0SEAoIcHJvZ3Jlc3MYBiABKA0SEQoJcGxheV90eXBl",
+            "GAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetPlayDataNotify), global::Weedwacker.Shared.Network.Proto.GadgetPlayDataNotify.Parser, new[]{ "PlayType", "Progress", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GadgetPlayDataNotify), global::Weedwacker.Shared.Network.Proto.GadgetPlayDataNotify.Parser, new[]{ "EntityId", "Progress", "PlayType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 831
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 827;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GadgetPlayDataNotify : pb::IMessage<GadgetPlayDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GadgetPlayDataNotify(GadgetPlayDataNotify other) : this() {
-      playType_ = other.playType_;
-      progress_ = other.progress_;
       entityId_ = other.entityId_;
+      progress_ = other.progress_;
+      playType_ = other.playType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GadgetPlayDataNotify(this);
     }
 
-    /// <summary>Field number for the "play_type" field.</summary>
-    public const int PlayTypeFieldNumber = 12;
-    private uint playType_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 13;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlayType {
-      get { return playType_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        playType_ = value;
+        entityId_ = value;
       }
     }
 
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 9;
+    public const int ProgressFieldNumber = 6;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,15 +117,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 6;
-    private uint entityId_;
+    /// <summary>Field number for the "play_type" field.</summary>
+    public const int PlayTypeFieldNumber = 11;
+    private uint playType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
+    public uint PlayType {
+      get { return playType_; }
       set {
-        entityId_ = value;
+        playType_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PlayType != other.PlayType) return false;
-      if (Progress != other.Progress) return false;
       if (EntityId != other.EntityId) return false;
+      if (Progress != other.Progress) return false;
+      if (PlayType != other.PlayType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PlayType != 0) hash ^= PlayType.GetHashCode();
-      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
+      if (PlayType != 0) hash ^= PlayType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
-      }
       if (Progress != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(Progress);
       }
       if (PlayType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(PlayType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
-      }
       if (Progress != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(Progress);
       }
       if (PlayType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(PlayType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PlayType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (PlayType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.PlayType != 0) {
-        PlayType = other.PlayType;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       if (other.Progress != 0) {
         Progress = other.Progress;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.PlayType != 0) {
+        PlayType = other.PlayType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 48: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             PlayType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -288,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 48: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             Progress = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             PlayType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

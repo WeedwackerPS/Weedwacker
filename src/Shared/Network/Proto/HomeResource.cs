@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeResourceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJIb21lUmVzb3VyY2UucHJvdG8iUwoMSG9tZVJlc291cmNlEhkKEW5leHRf",
-            "cmVmcmVzaF90aW1lGA8gASgHEhMKC3N0b3JlX2xpbWl0GAMgASgNEhMKC3N0",
-            "b3JlX3ZhbHVlGAwgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChJIb21lUmVzb3VyY2UucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iUwoMSG9tZVJlc291cmNlEhMKC3N0b3JlX2xpbWl0GAYgASgN",
+            "EhkKEW5leHRfcmVmcmVzaF90aW1lGA0gASgHEhMKC3N0b3JlX3ZhbHVlGAEg",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeResource), global::Weedwacker.Shared.Network.Proto.HomeResource.Parser, new[]{ "NextRefreshTime", "StoreLimit", "StoreValue" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeResource), global::Weedwacker.Shared.Network.Proto.HomeResource.Parser, new[]{ "StoreLimit", "NextRefreshTime", "StoreValue" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeResource(HomeResource other) : this() {
-      nextRefreshTime_ = other.nextRefreshTime_;
       storeLimit_ = other.storeLimit_;
+      nextRefreshTime_ = other.nextRefreshTime_;
       storeValue_ = other.storeValue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeResource(this);
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 15;
-    private uint nextRefreshTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextRefreshTime {
-      get { return nextRefreshTime_; }
-      set {
-        nextRefreshTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "store_limit" field.</summary>
-    public const int StoreLimitFieldNumber = 3;
+    public const int StoreLimitFieldNumber = 6;
     private uint storeLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    public const int NextRefreshTimeFieldNumber = 13;
+    private uint nextRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextRefreshTime {
+      get { return nextRefreshTime_; }
+      set {
+        nextRefreshTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "store_value" field.</summary>
-    public const int StoreValueFieldNumber = 12;
+    public const int StoreValueFieldNumber = 1;
     private uint storeValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NextRefreshTime != other.NextRefreshTime) return false;
       if (StoreLimit != other.StoreLimit) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
       if (StoreValue != other.StoreValue) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       if (StoreLimit != 0) hash ^= StoreLimit.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       if (StoreValue != 0) hash ^= StoreValue.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -166,16 +166,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StoreLimit != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StoreLimit);
-      }
       if (StoreValue != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(StoreValue);
       }
+      if (StoreLimit != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(StoreLimit);
+      }
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(125);
+        output.WriteRawTag(109);
         output.WriteFixed32(NextRefreshTime);
       }
       if (_unknownFields != null) {
@@ -188,16 +188,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StoreLimit != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StoreLimit);
-      }
       if (StoreValue != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(StoreValue);
       }
+      if (StoreLimit != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(StoreLimit);
+      }
       if (NextRefreshTime != 0) {
-        output.WriteRawTag(125);
+        output.WriteRawTag(109);
         output.WriteFixed32(NextRefreshTime);
       }
       if (_unknownFields != null) {
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NextRefreshTime != 0) {
-        size += 1 + 4;
-      }
       if (StoreLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreLimit);
+      }
+      if (NextRefreshTime != 0) {
+        size += 1 + 4;
       }
       if (StoreValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreValue);
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NextRefreshTime != 0) {
-        NextRefreshTime = other.NextRefreshTime;
-      }
       if (other.StoreLimit != 0) {
         StoreLimit = other.StoreLimit;
+      }
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
       }
       if (other.StoreValue != 0) {
         StoreValue = other.StoreValue;
@@ -255,15 +255,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            StoreLimit = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 8: {
             StoreValue = input.ReadUInt32();
             break;
           }
-          case 125: {
+          case 48: {
+            StoreLimit = input.ReadUInt32();
+            break;
+          }
+          case 109: {
             NextRefreshTime = input.ReadFixed32();
             break;
           }
@@ -282,15 +282,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            StoreLimit = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 8: {
             StoreValue = input.ReadUInt32();
             break;
           }
-          case 125: {
+          case 48: {
+            StoreLimit = input.ReadUInt32();
+            break;
+          }
+          case 109: {
             NextRefreshTime = input.ReadFixed32();
             break;
           }

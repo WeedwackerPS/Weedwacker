@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeBattlePassRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJzcC5wcm90bxogQmF0dGxlUGFzc1Jl",
-            "d2FyZFRha2VPcHRpb24ucHJvdG8aD0l0ZW1QYXJhbS5wcm90byKAAQoXVGFr",
-            "ZUJhdHRsZVBhc3NSZXdhcmRSc3ASHQoJaXRlbV9saXN0GAcgAygLMgouSXRl",
-            "bVBhcmFtEg8KB3JldGNvZGUYDSABKAUSNQoQdGFrZV9vcHRpb25fbGlzdBgJ",
-            "IAMoCzIbLkJhdHRsZVBhc3NSZXdhcmRUYWtlT3B0aW9uQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxogQmF0dGxlUGFzc1Jld2FyZFRha2VPcHRp",
+            "b24ucHJvdG8aD0l0ZW1QYXJhbS5wcm90byLAAQoXVGFrZUJhdHRsZVBhc3NS",
+            "ZXdhcmRSc3ASDwoHcmV0Y29kZRgGIAEoBRJVChB0YWtlX29wdGlvbl9saXN0",
+            "GAcgAygLMjsuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CYXR0",
+            "bGVQYXNzUmV3YXJkVGFrZU9wdGlvbhI9CglpdGVtX2xpc3QYBCADKAsyKi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJhbWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOptionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeBattlePassRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeBattlePassRewardRsp.Parser, new[]{ "ItemList", "Retcode", "TakeOptionList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeBattlePassRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeBattlePassRewardRsp.Parser, new[]{ "Retcode", "TakeOptionList", "ItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2631
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2631;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeBattlePassRewardRsp : pb::IMessage<TakeBattlePassRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TakeBattlePassRewardRsp(TakeBattlePassRewardRsp other) : this() {
-      itemList_ = other.itemList_.Clone();
       retcode_ = other.retcode_;
       takeOptionList_ = other.takeOptionList_.Clone();
+      itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,19 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TakeBattlePassRewardRsp(this);
     }
 
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
-      get { return itemList_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,14 +110,25 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "take_option_list" field.</summary>
-    public const int TakeOptionListFieldNumber = 9;
+    public const int TakeOptionListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption> _repeated_takeOptionList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption> takeOptionList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption> TakeOptionList {
       get { return takeOptionList_; }
+    }
+
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
+      get { return itemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!itemList_.Equals(other.itemList_)) return false;
       if (Retcode != other.Retcode) return false;
       if(!takeOptionList_.Equals(other.takeOptionList_)) return false;
+      if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= itemList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= takeOptionList_.GetHashCode();
+      hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,11 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       itemList_.WriteTo(output, _repeated_itemList_codec);
-      takeOptionList_.WriteTo(output, _repeated_takeOptionList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      takeOptionList_.WriteTo(output, _repeated_takeOptionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -188,11 +194,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       itemList_.WriteTo(ref output, _repeated_itemList_codec);
-      takeOptionList_.WriteTo(ref output, _repeated_takeOptionList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      takeOptionList_.WriteTo(ref output, _repeated_takeOptionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -203,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       size += takeOptionList_.CalculateSize(_repeated_takeOptionList_codec);
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -220,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      itemList_.Add(other.itemList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       takeOptionList_.Add(other.takeOptionList_);
+      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -240,16 +246,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 34: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
-            takeOptionList_.AddEntriesFrom(input, _repeated_takeOptionList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 58: {
+            takeOptionList_.AddEntriesFrom(input, _repeated_takeOptionList_codec);
             break;
           }
         }
@@ -267,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 34: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 74: {
-            takeOptionList_.AddEntriesFrom(ref input, _repeated_takeOptionList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 58: {
+            takeOptionList_.AddEntriesFrom(ref input, _repeated_takeOptionList_codec);
             break;
           }
         }

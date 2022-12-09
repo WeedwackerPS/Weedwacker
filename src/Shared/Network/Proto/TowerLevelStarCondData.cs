@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerLevelStarCondDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxUb3dlckxldmVsU3RhckNvbmREYXRhLnByb3RvImgKFlRvd2VyTGV2ZWxT",
-            "dGFyQ29uZERhdGESDwoHaXNfZmFpbBgPIAEoCBISCgpjb25kX3ZhbHVlGAkg",
-            "ASgNEhAKCGlzX3BhdXNlGA0gASgIEhcKD3N0YXJfY29uZF9pbmRleBgGIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxUb3dlckxldmVsU3RhckNvbmREYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIowBChZUb3dlckxldmVsU3RhckNvbmREYXRh",
+            "EhsKE1VuazMzMDBfS0JDRkRGT0FKTU0YDiABKAgSGwoTVW5rMzMwMF9DUEJD",
+            "TkFDS0FBSxgFIAEoCBIbChNVbmszMzAwX0pHT0xCRk1KQkNMGAsgASgNEhsK",
+            "E1VuazMzMDBfTUdITkRKQUFDTUUYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelStarCondData), global::Weedwacker.Shared.Network.Proto.TowerLevelStarCondData.Parser, new[]{ "IsFail", "CondValue", "IsPause", "StarCondIndex" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerLevelStarCondData), global::Weedwacker.Shared.Network.Proto.TowerLevelStarCondData.Parser, new[]{ "Unk3300KBCFDFOAJMM", "Unk3300CPBCNACKAAK", "Unk3300JGOLBFMJBCL", "Unk3300MGHNDJAACME" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerLevelStarCondData(TowerLevelStarCondData other) : this() {
-      isFail_ = other.isFail_;
-      condValue_ = other.condValue_;
-      isPause_ = other.isPause_;
-      starCondIndex_ = other.starCondIndex_;
+      unk3300KBCFDFOAJMM_ = other.unk3300KBCFDFOAJMM_;
+      unk3300CPBCNACKAAK_ = other.unk3300CPBCNACKAAK_;
+      unk3300JGOLBFMJBCL_ = other.unk3300JGOLBFMJBCL_;
+      unk3300MGHNDJAACME_ = other.unk3300MGHNDJAACME_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,51 +86,51 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerLevelStarCondData(this);
     }
 
-    /// <summary>Field number for the "is_fail" field.</summary>
-    public const int IsFailFieldNumber = 15;
-    private bool isFail_;
+    /// <summary>Field number for the "Unk3300_KBCFDFOAJMM" field.</summary>
+    public const int Unk3300KBCFDFOAJMMFieldNumber = 14;
+    private bool unk3300KBCFDFOAJMM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFail {
-      get { return isFail_; }
+    public bool Unk3300KBCFDFOAJMM {
+      get { return unk3300KBCFDFOAJMM_; }
       set {
-        isFail_ = value;
+        unk3300KBCFDFOAJMM_ = value;
       }
     }
 
-    /// <summary>Field number for the "cond_value" field.</summary>
-    public const int CondValueFieldNumber = 9;
-    private uint condValue_;
+    /// <summary>Field number for the "Unk3300_CPBCNACKAAK" field.</summary>
+    public const int Unk3300CPBCNACKAAKFieldNumber = 5;
+    private bool unk3300CPBCNACKAAK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CondValue {
-      get { return condValue_; }
+    public bool Unk3300CPBCNACKAAK {
+      get { return unk3300CPBCNACKAAK_; }
       set {
-        condValue_ = value;
+        unk3300CPBCNACKAAK_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_pause" field.</summary>
-    public const int IsPauseFieldNumber = 13;
-    private bool isPause_;
+    /// <summary>Field number for the "Unk3300_JGOLBFMJBCL" field.</summary>
+    public const int Unk3300JGOLBFMJBCLFieldNumber = 11;
+    private uint unk3300JGOLBFMJBCL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPause {
-      get { return isPause_; }
+    public uint Unk3300JGOLBFMJBCL {
+      get { return unk3300JGOLBFMJBCL_; }
       set {
-        isPause_ = value;
+        unk3300JGOLBFMJBCL_ = value;
       }
     }
 
-    /// <summary>Field number for the "star_cond_index" field.</summary>
-    public const int StarCondIndexFieldNumber = 6;
-    private uint starCondIndex_;
+    /// <summary>Field number for the "Unk3300_MGHNDJAACME" field.</summary>
+    public const int Unk3300MGHNDJAACMEFieldNumber = 12;
+    private uint unk3300MGHNDJAACME_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StarCondIndex {
-      get { return starCondIndex_; }
+    public uint Unk3300MGHNDJAACME {
+      get { return unk3300MGHNDJAACME_; }
       set {
-        starCondIndex_ = value;
+        unk3300MGHNDJAACME_ = value;
       }
     }
 
@@ -148,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFail != other.IsFail) return false;
-      if (CondValue != other.CondValue) return false;
-      if (IsPause != other.IsPause) return false;
-      if (StarCondIndex != other.StarCondIndex) return false;
+      if (Unk3300KBCFDFOAJMM != other.Unk3300KBCFDFOAJMM) return false;
+      if (Unk3300CPBCNACKAAK != other.Unk3300CPBCNACKAAK) return false;
+      if (Unk3300JGOLBFMJBCL != other.Unk3300JGOLBFMJBCL) return false;
+      if (Unk3300MGHNDJAACME != other.Unk3300MGHNDJAACME) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFail != false) hash ^= IsFail.GetHashCode();
-      if (CondValue != 0) hash ^= CondValue.GetHashCode();
-      if (IsPause != false) hash ^= IsPause.GetHashCode();
-      if (StarCondIndex != 0) hash ^= StarCondIndex.GetHashCode();
+      if (Unk3300KBCFDFOAJMM != false) hash ^= Unk3300KBCFDFOAJMM.GetHashCode();
+      if (Unk3300CPBCNACKAAK != false) hash ^= Unk3300CPBCNACKAAK.GetHashCode();
+      if (Unk3300JGOLBFMJBCL != 0) hash ^= Unk3300JGOLBFMJBCL.GetHashCode();
+      if (Unk3300MGHNDJAACME != 0) hash ^= Unk3300MGHNDJAACME.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StarCondIndex != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(StarCondIndex);
+      if (Unk3300CPBCNACKAAK != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300CPBCNACKAAK);
       }
-      if (CondValue != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CondValue);
+      if (Unk3300JGOLBFMJBCL != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300JGOLBFMJBCL);
       }
-      if (IsPause != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPause);
+      if (Unk3300MGHNDJAACME != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300MGHNDJAACME);
       }
-      if (IsFail != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsFail);
+      if (Unk3300KBCFDFOAJMM != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300KBCFDFOAJMM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StarCondIndex != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(StarCondIndex);
+      if (Unk3300CPBCNACKAAK != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(Unk3300CPBCNACKAAK);
       }
-      if (CondValue != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CondValue);
+      if (Unk3300JGOLBFMJBCL != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300JGOLBFMJBCL);
       }
-      if (IsPause != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPause);
+      if (Unk3300MGHNDJAACME != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300MGHNDJAACME);
       }
-      if (IsFail != false) {
-        output.WriteRawTag(120);
-        output.WriteBool(IsFail);
+      if (Unk3300KBCFDFOAJMM != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300KBCFDFOAJMM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsFail != false) {
+      if (Unk3300KBCFDFOAJMM != false) {
         size += 1 + 1;
       }
-      if (CondValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CondValue);
-      }
-      if (IsPause != false) {
+      if (Unk3300CPBCNACKAAK != false) {
         size += 1 + 1;
       }
-      if (StarCondIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StarCondIndex);
+      if (Unk3300JGOLBFMJBCL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JGOLBFMJBCL);
+      }
+      if (Unk3300MGHNDJAACME != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MGHNDJAACME);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsFail != false) {
-        IsFail = other.IsFail;
+      if (other.Unk3300KBCFDFOAJMM != false) {
+        Unk3300KBCFDFOAJMM = other.Unk3300KBCFDFOAJMM;
       }
-      if (other.CondValue != 0) {
-        CondValue = other.CondValue;
+      if (other.Unk3300CPBCNACKAAK != false) {
+        Unk3300CPBCNACKAAK = other.Unk3300CPBCNACKAAK;
       }
-      if (other.IsPause != false) {
-        IsPause = other.IsPause;
+      if (other.Unk3300JGOLBFMJBCL != 0) {
+        Unk3300JGOLBFMJBCL = other.Unk3300JGOLBFMJBCL;
       }
-      if (other.StarCondIndex != 0) {
-        StarCondIndex = other.StarCondIndex;
+      if (other.Unk3300MGHNDJAACME != 0) {
+        Unk3300MGHNDJAACME = other.Unk3300MGHNDJAACME;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            StarCondIndex = input.ReadUInt32();
+          case 40: {
+            Unk3300CPBCNACKAAK = input.ReadBool();
             break;
           }
-          case 72: {
-            CondValue = input.ReadUInt32();
+          case 88: {
+            Unk3300JGOLBFMJBCL = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsPause = input.ReadBool();
+          case 96: {
+            Unk3300MGHNDJAACME = input.ReadUInt32();
             break;
           }
-          case 120: {
-            IsFail = input.ReadBool();
+          case 112: {
+            Unk3300KBCFDFOAJMM = input.ReadBool();
             break;
           }
         }
@@ -315,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            StarCondIndex = input.ReadUInt32();
+          case 40: {
+            Unk3300CPBCNACKAAK = input.ReadBool();
             break;
           }
-          case 72: {
-            CondValue = input.ReadUInt32();
+          case 88: {
+            Unk3300JGOLBFMJBCL = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsPause = input.ReadBool();
+          case 96: {
+            Unk3300MGHNDJAACME = input.ReadUInt32();
             break;
           }
-          case 120: {
-            IsFail = input.ReadBool();
+          case 112: {
+            Unk3300KBCFDFOAJMM = input.ReadBool();
             break;
           }
         }

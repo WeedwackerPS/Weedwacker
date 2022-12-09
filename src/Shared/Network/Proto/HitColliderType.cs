@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HitColliderTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVIaXRDb2xsaWRlclR5cGUucHJvdG8qkgEKD0hpdENvbGxpZGVyVHlwZRId",
-            "ChlISVRfQ09MTElERVJfVFlQRV9JTlZBTElEEAASHQoZSElUX0NPTExJREVS",
-            "X1RZUEVfSElUX0JPWBABEiEKHUhJVF9DT0xMSURFUl9UWVBFX1dFVF9ISVRf",
-            "Qk9YEAISHgoaSElUX0NPTExJREVSX1RZUEVfSEVBRF9CT1gQA0IiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVIaXRDb2xsaWRlclR5cGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8qkgEKD0hpdENvbGxpZGVyVHlwZRIdChlISVRfQ09MTElE",
+            "RVJfVFlQRV9JTlZBTElEEAASHQoZSElUX0NPTExJREVSX1RZUEVfSElUX0JP",
+            "WBABEiEKHUhJVF9DT0xMSURFUl9UWVBFX1dFVF9ISVRfQk9YEAISHgoaSElU",
+            "X0NPTExJREVSX1RZUEVfSEVBRF9CT1gQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.HitColliderType), }, null, null));

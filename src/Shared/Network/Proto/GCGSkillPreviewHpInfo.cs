@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSkillPreviewHpInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtHQ0dTa2lsbFByZXZpZXdIcEluZm8ucHJvdG8aGkdDR1NraWxsSHBDaGFu",
-            "Z2VUeXBlLnByb3RvIlwKFUdDR1NraWxsUHJldmlld0hwSW5mbxIqCgtjaGFu",
-            "Z2VfdHlwZRgEIAEoDjIVLkdDR1NraWxsSHBDaGFuZ2VUeXBlEhcKD2hwX2No",
-            "YW5nZV92YWx1ZRgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChtHQ0dTa2lsbFByZXZpZXdIcEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGkdDR1NraWxsSHBDaGFuZ2VUeXBlLnByb3Rv",
+            "InwKFUdDR1NraWxsUHJldmlld0hwSW5mbxJKCgtjaGFuZ2VfdHlwZRgIIAEo",
+            "DjI1LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHU2tpbGxI",
+            "cENoYW5nZVR5cGUSFwoPaHBfY2hhbmdlX3ZhbHVlGAQgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "change_type" field.</summary>
-    public const int ChangeTypeFieldNumber = 4;
+    public const int ChangeTypeFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType changeType_ = global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hp_change_value" field.</summary>
-    public const int HpChangeValueFieldNumber = 13;
+    public const int HpChangeValueFieldNumber = 4;
     private uint hpChangeValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChangeType != global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType.None) {
-        output.WriteRawTag(32);
-        output.WriteEnum((int) ChangeType);
-      }
       if (HpChangeValue != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(HpChangeValue);
+      }
+      if (ChangeType != global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType.None) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ChangeType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChangeType != global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType.None) {
-        output.WriteRawTag(32);
-        output.WriteEnum((int) ChangeType);
-      }
       if (HpChangeValue != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(HpChangeValue);
+      }
+      if (ChangeType != global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType.None) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ChangeType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -228,11 +228,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            ChangeType = (global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType) input.ReadEnum();
+            HpChangeValue = input.ReadUInt32();
             break;
           }
-          case 104: {
-            HpChangeValue = input.ReadUInt32();
+          case 64: {
+            ChangeType = (global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType) input.ReadEnum();
             break;
           }
         }
@@ -251,11 +251,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            ChangeType = (global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType) input.ReadEnum();
+            HpChangeValue = input.ReadUInt32();
             break;
           }
-          case 104: {
-            HpChangeValue = input.ReadUInt32();
+          case 64: {
+            ChangeType = (global::Weedwacker.Shared.Network.Proto.GCGSkillHpChangeType) input.ReadEnum();
             break;
           }
         }

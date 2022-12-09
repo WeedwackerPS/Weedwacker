@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerLevelRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZUb3dlckxldmVsUmVjb3JkLnByb3RvIkEKEFRvd2VyTGV2ZWxSZWNvcmQS",
-            "GwoTc2F0aXNmaWVkX2NvbmRfbGlzdBgNIAMoDRIQCghsZXZlbF9pZBgKIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZUb3dlckxldmVsUmVjb3JkLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIkEKEFRvd2VyTGV2ZWxSZWNvcmQSGwoTc2F0aXNmaWVk",
+            "X2NvbmRfbGlzdBgNIAMoDRIQCghsZXZlbF9pZBgPIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 10;
+    public const int LevelIdFieldNumber = 15;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      satisfiedCondList_.WriteTo(output, _repeated_satisfiedCondList_codec);
       if (LevelId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteUInt32(LevelId);
       }
-      satisfiedCondList_.WriteTo(output, _repeated_satisfiedCondList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      satisfiedCondList_.WriteTo(ref output, _repeated_satisfiedCondList_codec);
       if (LevelId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteUInt32(LevelId);
       }
-      satisfiedCondList_.WriteTo(ref output, _repeated_satisfiedCondList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
           case 106:
           case 104: {
             satisfiedCondList_.AddEntriesFrom(input, _repeated_satisfiedCondList_codec);
+            break;
+          }
+          case 120: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
           case 106:
           case 104: {
             satisfiedCondList_.AddEntriesFrom(ref input, _repeated_satisfiedCondList_codec);
+            break;
+          }
+          case 120: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }

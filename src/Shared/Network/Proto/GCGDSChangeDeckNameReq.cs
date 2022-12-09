@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGDSChangeDeckNameReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHQ0dEU0NoYW5nZURlY2tOYW1lUmVxLnByb3RvIjcKFkdDR0RTQ2hhbmdl",
-            "RGVja05hbWVSZXESDwoHZGVja19pZBgNIAEoDRIMCgRuYW1lGAcgASgJQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxHQ0dEU0NoYW5nZURlY2tOYW1lUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlQKFkdDR0RTQ2hhbmdlRGVja05hbWVSZXES",
+            "GwoTVW5rMzMwMF9PSVBNRklJQlBIQhgLIAEoCBIPCgdkZWNrX2lkGAIgASgN",
+            "EgwKBG5hbWUYASABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDSChangeDeckNameReq), global::Weedwacker.Shared.Network.Proto.GCGDSChangeDeckNameReq.Parser, new[]{ "DeckId", "Name" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDSChangeDeckNameReq), global::Weedwacker.Shared.Network.Proto.GCGDSChangeDeckNameReq.Parser, new[]{ "Unk3300OIPMFIIBPHB", "DeckId", "Name" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7432
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7463;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGDSChangeDeckNameReq : pb::IMessage<GCGDSChangeDeckNameReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,6 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGDSChangeDeckNameReq(GCGDSChangeDeckNameReq other) : this() {
+      unk3300OIPMFIIBPHB_ = other.unk3300OIPMFIIBPHB_;
       deckId_ = other.deckId_;
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -88,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGDSChangeDeckNameReq(this);
     }
 
+    /// <summary>Field number for the "Unk3300_OIPMFIIBPHB" field.</summary>
+    public const int Unk3300OIPMFIIBPHBFieldNumber = 11;
+    private bool unk3300OIPMFIIBPHB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300OIPMFIIBPHB {
+      get { return unk3300OIPMFIIBPHB_; }
+      set {
+        unk3300OIPMFIIBPHB_ = value;
+      }
+    }
+
     /// <summary>Field number for the "deck_id" field.</summary>
-    public const int DeckIdFieldNumber = 13;
+    public const int DeckIdFieldNumber = 2;
     private uint deckId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 7;
+    public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,6 +145,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300OIPMFIIBPHB != other.Unk3300OIPMFIIBPHB) return false;
       if (DeckId != other.DeckId) return false;
       if (Name != other.Name) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -136,6 +155,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300OIPMFIIBPHB != false) hash ^= Unk3300OIPMFIIBPHB.GetHashCode();
       if (DeckId != 0) hash ^= DeckId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (_unknownFields != null) {
@@ -157,12 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Name.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(10);
         output.WriteString(Name);
       }
       if (DeckId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(DeckId);
+      }
+      if (Unk3300OIPMFIIBPHB != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300OIPMFIIBPHB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,12 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Name.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(10);
         output.WriteString(Name);
       }
       if (DeckId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(DeckId);
+      }
+      if (Unk3300OIPMFIIBPHB != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300OIPMFIIBPHB);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,6 +220,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300OIPMFIIBPHB != false) {
+        size += 1 + 1;
+      }
       if (DeckId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckId);
       }
@@ -209,6 +240,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public void MergeFrom(GCGDSChangeDeckNameReq other) {
       if (other == null) {
         return;
+      }
+      if (other.Unk3300OIPMFIIBPHB != false) {
+        Unk3300OIPMFIIBPHB = other.Unk3300OIPMFIIBPHB;
       }
       if (other.DeckId != 0) {
         DeckId = other.DeckId;
@@ -231,12 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
+          case 10: {
             Name = input.ReadString();
             break;
           }
-          case 104: {
+          case 16: {
             DeckId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300OIPMFIIBPHB = input.ReadBool();
             break;
           }
         }
@@ -254,12 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
+          case 10: {
             Name = input.ReadString();
             break;
           }
-          case 104: {
+          case 16: {
             DeckId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300OIPMFIIBPHB = input.ReadBool();
             break;
           }
         }

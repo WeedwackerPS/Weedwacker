@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static HuntingFailNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdIdW50aW5nRmFpbE5vdGlmeS5wcm90bxoRSHVudGluZ1BhaXIucHJvdG8i",
-            "NwoRSHVudGluZ0ZhaWxOb3RpZnkSIgoMaHVudGluZ19wYWlyGAwgASgLMgwu",
-            "SHVudGluZ1BhaXJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChdIdW50aW5nRmFpbE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoRSHVudGluZ1BhaXIucHJvdG8iVwoRSHVudGluZ0Zh",
+            "aWxOb3RpZnkSQgoMaHVudGluZ19wYWlyGAcgASgLMiwuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5IdW50aW5nUGFpcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HuntingPairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4320
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4315;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HuntingFailNotify : pb::IMessage<HuntingFailNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hunting_pair" field.</summary>
-    public const int HuntingPairFieldNumber = 12;
+    public const int HuntingPairFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.HuntingPair huntingPair_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (huntingPair_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(HuntingPair);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (huntingPair_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(58);
         output.WriteMessage(HuntingPair);
       }
       if (_unknownFields != null) {
@@ -205,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 58: {
             if (huntingPair_ == null) {
               HuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
             }
@@ -227,7 +231,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 58: {
             if (huntingPair_ == null) {
               HuntingPair = new global::Weedwacker.Shared.Network.Proto.HuntingPair();
             }

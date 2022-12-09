@@ -25,15 +25,17 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5TY2VuZVBsYXllckJhY2tncm91bmRBdmF0YXJSZWZyZXNoTm90aWZ5LnBy",
-            "b3RvGhVTY2VuZUVudGl0eUluZm8ucHJvdG8aEFZpc2lvblR5cGUucHJvdG8i",
-            "ggEKKFNjZW5lUGxheWVyQmFja2dyb3VuZEF2YXRhclJlZnJlc2hOb3RpZnkS",
-            "JQoLZW50aXR5X2xpc3QYBCADKAsyEC5TY2VuZUVudGl0eUluZm8SIAoLYXBw",
-            "ZWFyX3R5cGUYCCABKA4yCy5WaXNpb25UeXBlEg0KBXBhcmFtGAkgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "b3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhVTY2VuZUVu",
+            "dGl0eUluZm8ucHJvdG8aEFZpc2lvblR5cGUucHJvdG8iwgEKKFNjZW5lUGxh",
+            "eWVyQmFja2dyb3VuZEF2YXRhclJlZnJlc2hOb3RpZnkSDQoFcGFyYW0YByAB",
+            "KA0SQAoLYXBwZWFyX3R5cGUYDiABKA4yKy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlZpc2lvblR5cGUSRQoLZW50aXR5X2xpc3QYDCADKAsy",
+            "MC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNjZW5lRW50aXR5",
+            "SW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SceneEntityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VisionTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerBackgroundAvatarRefreshNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerBackgroundAvatarRefreshNotify.Parser, new[]{ "EntityList", "AppearType", "Param" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerBackgroundAvatarRefreshNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerBackgroundAvatarRefreshNotify.Parser, new[]{ "Param", "AppearType", "EntityList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3274
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3388;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayerBackgroundAvatarRefreshNotify : pb::IMessage<ScenePlayerBackgroundAvatarRefreshNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayerBackgroundAvatarRefreshNotify(ScenePlayerBackgroundAvatarRefreshNotify other) : this() {
-      entityList_ = other.entityList_.Clone();
-      appearType_ = other.appearType_;
       param_ = other.param_;
+      appearType_ = other.appearType_;
+      entityList_ = other.entityList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,19 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ScenePlayerBackgroundAvatarRefreshNotify(this);
     }
 
-    /// <summary>Field number for the "entity_list" field.</summary>
-    public const int EntityListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> _repeated_entityList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.SceneEntityInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> entityList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo>();
+    /// <summary>Field number for the "param" field.</summary>
+    public const int ParamFieldNumber = 7;
+    private uint param_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> EntityList {
-      get { return entityList_; }
+    public uint Param {
+      get { return param_; }
+      set {
+        param_ = value;
+      }
     }
 
     /// <summary>Field number for the "appear_type" field.</summary>
-    public const int AppearTypeFieldNumber = 8;
+    public const int AppearTypeFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.VisionType appearType_ = global::Weedwacker.Shared.Network.Proto.VisionType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,16 +121,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "param" field.</summary>
-    public const int ParamFieldNumber = 9;
-    private uint param_;
+    /// <summary>Field number for the "entity_list" field.</summary>
+    public const int EntityListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> _repeated_entityList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.SceneEntityInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> entityList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Param {
-      get { return param_; }
-      set {
-        param_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SceneEntityInfo> EntityList {
+      get { return entityList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!entityList_.Equals(other.entityList_)) return false;
-      if (AppearType != other.AppearType) return false;
       if (Param != other.Param) return false;
+      if (AppearType != other.AppearType) return false;
+      if(!entityList_.Equals(other.entityList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= entityList_.GetHashCode();
-      if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) hash ^= AppearType.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
+      if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) hash ^= AppearType.GetHashCode();
+      hash ^= entityList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,14 +178,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Param != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Param);
+      }
       entityList_.WriteTo(output, _repeated_entityList_codec);
       if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteEnum((int) AppearType);
-      }
-      if (Param != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Param);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,14 +197,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Param != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Param);
+      }
       entityList_.WriteTo(ref output, _repeated_entityList_codec);
       if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteEnum((int) AppearType);
-      }
-      if (Param != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Param);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,13 +216,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += entityList_.CalculateSize(_repeated_entityList_codec);
-      if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AppearType);
-      }
       if (Param != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param);
       }
+      if (AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) AppearType);
+      }
+      size += entityList_.CalculateSize(_repeated_entityList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -229,13 +235,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      entityList_.Add(other.entityList_);
-      if (other.AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
-        AppearType = other.AppearType;
-      }
       if (other.Param != 0) {
         Param = other.Param;
       }
+      if (other.AppearType != global::Weedwacker.Shared.Network.Proto.VisionType.None) {
+        AppearType = other.AppearType;
+      }
+      entityList_.Add(other.entityList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -251,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 56: {
+            Param = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             entityList_.AddEntriesFrom(input, _repeated_entityList_codec);
             break;
           }
-          case 64: {
+          case 112: {
             AppearType = (global::Weedwacker.Shared.Network.Proto.VisionType) input.ReadEnum();
-            break;
-          }
-          case 72: {
-            Param = input.ReadUInt32();
             break;
           }
         }
@@ -278,16 +284,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 56: {
+            Param = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             entityList_.AddEntriesFrom(ref input, _repeated_entityList_codec);
             break;
           }
-          case 64: {
+          case 112: {
             AppearType = (global::Weedwacker.Shared.Network.Proto.VisionType) input.ReadEnum();
-            break;
-          }
-          case 72: {
-            Param = input.ReadUInt32();
             break;
           }
         }

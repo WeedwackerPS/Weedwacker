@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerApplyEnterMpResultRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHRSc3AucHJvdG8iYwobUGxheWVy",
-            "QXBwbHlFbnRlck1wUmVzdWx0UnNwEg8KB3JldGNvZGUYASABKAUSEQoJaXNf",
-            "YWdyZWVkGAMgASgIEhEKCWFwcGx5X3VpZBgKIAEoDRINCgVwYXJhbRgMIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHRSc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iYwobUGxheWVyQXBwbHlFbnRlck1w",
+            "UmVzdWx0UnNwEhEKCWFwcGx5X3VpZBgIIAEoDRINCgVwYXJhbRgJIAEoDRIR",
+            "Cglpc19hZ3JlZWQYDSABKAgSDwoHcmV0Y29kZRgPIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultRsp), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultRsp.Parser, new[]{ "Retcode", "IsAgreed", "ApplyUid", "Param" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultRsp), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultRsp.Parser, new[]{ "ApplyUid", "Param", "IsAgreed", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1831
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1831;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerApplyEnterMpResultRsp : pb::IMessage<PlayerApplyEnterMpResultRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,10 +81,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerApplyEnterMpResultRsp(PlayerApplyEnterMpResultRsp other) : this() {
-      retcode_ = other.retcode_;
-      isAgreed_ = other.isAgreed_;
       applyUid_ = other.applyUid_;
       param_ = other.param_;
+      isAgreed_ = other.isAgreed_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,32 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerApplyEnterMpResultRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_agreed" field.</summary>
-    public const int IsAgreedFieldNumber = 3;
-    private bool isAgreed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAgreed {
-      get { return isAgreed_; }
-      set {
-        isAgreed_ = value;
-      }
-    }
-
     /// <summary>Field number for the "apply_uid" field.</summary>
-    public const int ApplyUidFieldNumber = 10;
+    public const int ApplyUidFieldNumber = 8;
     private uint applyUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "param" field.</summary>
-    public const int ParamFieldNumber = 12;
+    public const int ParamFieldNumber = 9;
     private uint param_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,6 +115,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return param_; }
       set {
         param_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_agreed" field.</summary>
+    public const int IsAgreedFieldNumber = 13;
+    private bool isAgreed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAgreed {
+      get { return isAgreed_; }
+      set {
+        isAgreed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 15;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -153,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if (IsAgreed != other.IsAgreed) return false;
       if (ApplyUid != other.ApplyUid) return false;
       if (Param != other.Param) return false;
+      if (IsAgreed != other.IsAgreed) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
       if (ApplyUid != 0) hash ^= ApplyUid.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
+      if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,21 +190,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
-      if (IsAgreed != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAgreed);
-      }
       if (ApplyUid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(ApplyUid);
       }
       if (Param != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(Param);
+      }
+      if (IsAgreed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsAgreed);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -212,21 +216,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
-      if (IsAgreed != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsAgreed);
-      }
       if (ApplyUid != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(ApplyUid);
       }
       if (Param != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(72);
         output.WriteUInt32(Param);
+      }
+      if (IsAgreed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsAgreed);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -238,17 +242,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (IsAgreed != false) {
-        size += 1 + 1;
-      }
       if (ApplyUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ApplyUid);
       }
       if (Param != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param);
+      }
+      if (IsAgreed != false) {
+        size += 1 + 1;
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -262,17 +266,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      if (other.IsAgreed != false) {
-        IsAgreed = other.IsAgreed;
-      }
       if (other.ApplyUid != 0) {
         ApplyUid = other.ApplyUid;
       }
       if (other.Param != 0) {
         Param = other.Param;
+      }
+      if (other.IsAgreed != false) {
+        IsAgreed = other.IsAgreed;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            IsAgreed = input.ReadBool();
-            break;
-          }
-          case 80: {
+          case 64: {
             ApplyUid = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 72: {
             Param = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -320,20 +324,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            IsAgreed = input.ReadBool();
-            break;
-          }
-          case 80: {
+          case 64: {
             ApplyUid = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 72: {
             Param = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

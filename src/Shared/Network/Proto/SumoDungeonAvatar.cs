@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoDungeonAvatarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdTdW1vRHVuZ2VvbkF2YXRhci5wcm90byJMChFTdW1vRHVuZ2VvbkF2YXRh",
-            "chITCgthdmF0YXJfZ3VpZBgLIAEoBBIQCghpc19hbGl2ZRgNIAEoCBIQCghp",
-            "c190cmlhbBgEIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChdTdW1vRHVuZ2VvbkF2YXRhci5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJMChFTdW1vRHVuZ2VvbkF2YXRhchIQCghpc19hbGl2",
+            "ZRgNIAEoCBIQCghpc190cmlhbBgEIAEoCBITCgthdmF0YXJfZ3VpZBgKIAEo",
+            "BGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoDungeonAvatar), global::Weedwacker.Shared.Network.Proto.SumoDungeonAvatar.Parser, new[]{ "AvatarGuid", "IsAlive", "IsTrial" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoDungeonAvatar), global::Weedwacker.Shared.Network.Proto.SumoDungeonAvatar.Parser, new[]{ "IsAlive", "IsTrial", "AvatarGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoDungeonAvatar(SumoDungeonAvatar other) : this() {
-      avatarGuid_ = other.avatarGuid_;
       isAlive_ = other.isAlive_;
       isTrial_ = other.isTrial_;
+      avatarGuid_ = other.avatarGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,18 +82,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoDungeonAvatar Clone() {
       return new SumoDungeonAvatar(this);
-    }
-
-    /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 11;
-    private ulong avatarGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong AvatarGuid {
-      get { return avatarGuid_; }
-      set {
-        avatarGuid_ = value;
-      }
     }
 
     /// <summary>Field number for the "is_alive" field.</summary>
@@ -120,6 +108,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 10;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AvatarGuid != other.AvatarGuid) return false;
       if (IsAlive != other.IsAlive) return false;
       if (IsTrial != other.IsTrial) return false;
+      if (AvatarGuid != other.AvatarGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (IsAlive != false) hash ^= IsAlive.GetHashCode();
       if (IsTrial != false) hash ^= IsTrial.GetHashCode();
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,7 +171,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsTrial);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt64(AvatarGuid);
       }
       if (IsAlive != false) {
@@ -193,7 +193,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteBool(IsTrial);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt64(AvatarGuid);
       }
       if (IsAlive != false) {
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AvatarGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
-      }
       if (IsAlive != false) {
         size += 1 + 1;
       }
       if (IsTrial != false) {
         size += 1 + 1;
+      }
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AvatarGuid != 0UL) {
-        AvatarGuid = other.AvatarGuid;
-      }
       if (other.IsAlive != false) {
         IsAlive = other.IsAlive;
       }
       if (other.IsTrial != false) {
         IsTrial = other.IsTrial;
+      }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -259,7 +259,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsTrial = input.ReadBool();
             break;
           }
-          case 88: {
+          case 80: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
@@ -286,7 +286,7 @@ namespace Weedwacker.Shared.Network.Proto {
             IsTrial = input.ReadBool();
             break;
           }
-          case 88: {
+          case 80: {
             AvatarGuid = input.ReadUInt64();
             break;
           }

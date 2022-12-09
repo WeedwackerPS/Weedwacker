@@ -24,24 +24,28 @@ namespace Weedwacker.Shared.Network.Proto {
     static FriendBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFGcmllbmRCcmllZi5wcm90bxobRnJpZW5kRW50ZXJIb21lT3B0aW9uLnBy",
-            "b3RvGhdGcmllbmRPbmxpbmVTdGF0ZS5wcm90bxoSUGxhdGZvcm1UeXBlLnBy",
-            "b3RvGhRQcm9maWxlUGljdHVyZS5wcm90bxoaU29jaWFsU2hvd0F2YXRhcklu",
-            "Zm8ucHJvdG8i3gQKC0ZyaWVuZEJyaWVmEgsKA3VpZBgBIAEoDRIQCghuaWNr",
-            "bmFtZRgCIAEoCRINCgVsZXZlbBgDIAEoDRIRCglhdmF0YXJfaWQYBCABKA0S",
-            "EwoLd29ybGRfbGV2ZWwYBSABKA0SEQoJc2lnbmF0dXJlGAYgASgJEigKDG9u",
-            "bGluZV9zdGF0ZRgHIAEoDjISLkZyaWVuZE9ubGluZVN0YXRlEg0KBXBhcmFt",
-            "GAggASgNEhwKFGlzX21wX21vZGVfYXZhaWxhYmxlGAogASgIEhEKCW9ubGlu",
-            "ZV9pZBgLIAEoCRIYChBsYXN0X2FjdGl2ZV90aW1lGAwgASgNEhQKDG5hbWVf",
-            "Y2FyZF9pZBgNIAEoDRIVCg1tcF9wbGF5ZXJfbnVtGA4gASgNEhoKEmlzX2No",
-            "YXRfbm9fZGlzdHVyYhgPIAEoCBIVCg1jaGF0X3NlcXVlbmNlGBAgASgNEhMK",
-            "C3JlbWFya19uYW1lGBEgASgJEjQKFXNob3dfYXZhdGFyX2luZm9fbGlzdBgW",
-            "IAMoCzIVLlNvY2lhbFNob3dBdmF0YXJJbmZvEjgKGGZyaWVuZF9lbnRlcl9o",
-            "b21lX29wdGlvbhgXIAEoDjIWLkZyaWVuZEVudGVySG9tZU9wdGlvbhIoCg9w",
-            "cm9maWxlX3BpY3R1cmUYGCABKAsyDy5Qcm9maWxlUGljdHVyZRIWCg5pc19n",
-            "YW1lX3NvdXJjZRgZIAEoCBIVCg1pc19wc25fc291cmNlGBogASgIEiQKDXBs",
-            "YXRmb3JtX3R5cGUYGyABKA4yDS5QbGF0Zm9ybVR5cGVCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChFGcmllbmRCcmllZi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90bxobRnJpZW5kRW50ZXJIb21lT3B0aW9uLnByb3RvGhdGcmllbmRP",
+            "bmxpbmVTdGF0ZS5wcm90bxoSUGxhdGZvcm1UeXBlLnByb3RvGhRQcm9maWxl",
+            "UGljdHVyZS5wcm90bxoaU29jaWFsU2hvd0F2YXRhckluZm8ucHJvdG8i/gUK",
+            "C0ZyaWVuZEJyaWVmEgsKA3VpZBgBIAEoDRIQCghuaWNrbmFtZRgCIAEoCRIN",
+            "CgVsZXZlbBgDIAEoDRIRCglhdmF0YXJfaWQYBCABKA0SEwoLd29ybGRfbGV2",
+            "ZWwYBSABKA0SEQoJc2lnbmF0dXJlGAYgASgJEkgKDG9ubGluZV9zdGF0ZRgH",
+            "IAEoDjIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRnJpZW5k",
+            "T25saW5lU3RhdGUSDQoFcGFyYW0YCCABKA0SHAoUaXNfbXBfbW9kZV9hdmFp",
+            "bGFibGUYCiABKAgSEQoJb25saW5lX2lkGAsgASgJEhgKEGxhc3RfYWN0aXZl",
+            "X3RpbWUYDCABKA0SFAoMbmFtZV9jYXJkX2lkGA0gASgNEhUKDW1wX3BsYXll",
+            "cl9udW0YDiABKA0SGgoSaXNfY2hhdF9ub19kaXN0dXJiGA8gASgIEhUKDWNo",
+            "YXRfc2VxdWVuY2UYECABKA0SEwoLcmVtYXJrX25hbWUYESABKAkSVAoVc2hv",
+            "d19hdmF0YXJfaW5mb19saXN0GBYgAygLMjUuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5Tb2NpYWxTaG93QXZhdGFySW5mbxJYChhmcmllbmRf",
+            "ZW50ZXJfaG9tZV9vcHRpb24YFyABKA4yNi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkZyaWVuZEVudGVySG9tZU9wdGlvbhJICg9wcm9maWxl",
+            "X3BpY3R1cmUYGCABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlByb2ZpbGVQaWN0dXJlEhYKDmlzX2dhbWVfc291cmNlGBkgASgIEhUK",
+            "DWlzX3Bzbl9zb3VyY2UYGiABKAgSRAoNcGxhdGZvcm1fdHlwZRgbIAEoDjIt",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUGxhdGZvcm1UeXBl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOptionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FriendOnlineStateReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlatformTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ProfilePictureReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SocialShowAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -191,7 +195,7 @@ namespace Weedwacker.Shared.Network.Proto {
 
     /// <summary>Field number for the "online_state" field.</summary>
     public const int OnlineStateFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.FriendOnlineState onlineState_ = global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect;
+    private global::Weedwacker.Shared.Network.Proto.FriendOnlineState onlineState_ = global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FriendOnlineState OnlineState {
@@ -430,7 +434,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (WorldLevel != 0) hash ^= WorldLevel.GetHashCode();
       if (Signature.Length != 0) hash ^= Signature.GetHashCode();
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) hash ^= OnlineState.GetHashCode();
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) hash ^= OnlineState.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
       if (IsMpModeAvailable != false) hash ^= IsMpModeAvailable.GetHashCode();
       if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
@@ -488,7 +492,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(50);
         output.WriteString(Signature);
       }
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         output.WriteRawTag(56);
         output.WriteEnum((int) OnlineState);
       }
@@ -583,7 +587,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(50);
         output.WriteString(Signature);
       }
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         output.WriteRawTag(56);
         output.WriteEnum((int) OnlineState);
       }
@@ -672,7 +676,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Signature.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Signature);
       }
-      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OnlineState);
       }
       if (Param != 0) {
@@ -748,7 +752,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Signature.Length != 0) {
         Signature = other.Signature;
       }
-      if (other.OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.FreiendDisconnect) {
+      if (other.OnlineState != global::Weedwacker.Shared.Network.Proto.FriendOnlineState.Disconnect) {
         OnlineState = other.OnlineState;
       }
       if (other.Param != 0) {

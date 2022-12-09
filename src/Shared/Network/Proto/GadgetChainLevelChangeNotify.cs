@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GadgetChainLevelChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHYWRnZXRDaGFpbkxldmVsQ2hhbmdlTm90aWZ5LnByb3RvIrIBChxHYWRn",
-            "ZXRDaGFpbkxldmVsQ2hhbmdlTm90aWZ5ElYKFmdhZGdldF9jaGFpbl9sZXZl",
-            "bF9tYXAYAiADKAsyNi5HYWRnZXRDaGFpbkxldmVsQ2hhbmdlTm90aWZ5Lkdh",
-            "ZGdldENoYWluTGV2ZWxNYXBFbnRyeRo6ChhHYWRnZXRDaGFpbkxldmVsTWFw",
-            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJHYWRnZXRDaGFpbkxldmVsQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvItIBChxHYWRnZXRDaGFpbkxldmVs",
+            "Q2hhbmdlTm90aWZ5EnYKFmdhZGdldF9jaGFpbl9sZXZlbF9tYXAYDSADKAsy",
+            "Vi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdhZGdldENoYWlu",
+            "TGV2ZWxDaGFuZ2VOb3RpZnkuR2FkZ2V0Q2hhaW5MZXZlbE1hcEVudHJ5GjoK",
+            "GEdhZGdldENoYWluTGV2ZWxNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
+            "dWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 822
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 837;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GadgetChainLevelChangeNotify : pb::IMessage<GadgetChainLevelChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gadget_chain_level_map" field.</summary>
-    public const int GadgetChainLevelMapFieldNumber = 2;
+    public const int GadgetChainLevelMapFieldNumber = 13;
     private static readonly pbc::MapField<uint, uint>.Codec _map_gadgetChainLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
     private readonly pbc::MapField<uint, uint> gadgetChainLevelMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 106: {
             gadgetChainLevelMap_.AddEntriesFrom(input, _map_gadgetChainLevelMap_codec);
             break;
           }
@@ -212,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 106: {
             gadgetChainLevelMap_.AddEntriesFrom(ref input, _map_gadgetChainLevelMap_codec);
             break;
           }

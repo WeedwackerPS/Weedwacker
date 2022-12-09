@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetOnlinePlayerInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRPbmxpbmVQbGF5ZXJJbmZvUnNwLnByb3RvGhZPbmxpbmVQbGF5ZXJJ",
-            "bmZvLnByb3RvInsKFkdldE9ubGluZVBsYXllckluZm9Sc3ASDwoHcmV0Y29k",
-            "ZRgLIAEoBRISCgp0YXJnZXRfdWlkGAcgASgNEg0KBXBhcmFtGAQgASgNEi0K",
-            "EnRhcmdldF9wbGF5ZXJfaW5mbxgOIAEoCzIRLk9ubGluZVBsYXllckluZm9C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxHZXRPbmxpbmVQbGF5ZXJJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZPbmxpbmVQbGF5ZXJJbmZvLnByb3RvIpsB",
+            "ChZHZXRPbmxpbmVQbGF5ZXJJbmZvUnNwEhIKCnRhcmdldF91aWQYCSABKA0S",
+            "DQoFcGFyYW0YAyABKA0STQoSdGFyZ2V0X3BsYXllcl9pbmZvGAYgASgLMjEu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PbmxpbmVQbGF5ZXJJ",
+            "bmZvEg8KB3JldGNvZGUYByABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetOnlinePlayerInfoRsp), global::Weedwacker.Shared.Network.Proto.GetOnlinePlayerInfoRsp.Parser, new[]{ "Retcode", "TargetUid", "Param", "TargetPlayerInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetOnlinePlayerInfoRsp), global::Weedwacker.Shared.Network.Proto.GetOnlinePlayerInfoRsp.Parser, new[]{ "TargetUid", "Param", "TargetPlayerInfo", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 47
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 76;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetOnlinePlayerInfoRsp : pb::IMessage<GetOnlinePlayerInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetOnlinePlayerInfoRsp(GetOnlinePlayerInfoRsp other) : this() {
-      retcode_ = other.retcode_;
       targetUid_ = other.targetUid_;
       param_ = other.param_;
       targetPlayerInfo_ = other.targetPlayerInfo_ != null ? other.targetPlayerInfo_.Clone() : null;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetOnlinePlayerInfoRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 7;
+    public const int TargetUidFieldNumber = 9;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "param" field.</summary>
-    public const int ParamFieldNumber = 4;
+    public const int ParamFieldNumber = 3;
     private uint param_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,7 +121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "target_player_info" field.</summary>
-    public const int TargetPlayerInfoFieldNumber = 14;
+    public const int TargetPlayerInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo targetPlayerInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +129,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return targetPlayerInfo_; }
       set {
         targetPlayerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 7;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -154,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (TargetUid != other.TargetUid) return false;
       if (Param != other.Param) return false;
       if (!object.Equals(TargetPlayerInfo, other.TargetPlayerInfo)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (Param != 0) hash ^= Param.GetHashCode();
       if (targetPlayerInfo_ != null) hash ^= TargetPlayerInfo.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,20 +193,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Param != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(Param);
       }
-      if (TargetUid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(TargetUid);
+      if (targetPlayerInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(TargetPlayerInfo);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
-      if (targetPlayerInfo_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(TargetPlayerInfo);
+      if (TargetUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,20 +219,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Param != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(Param);
       }
-      if (TargetUid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(TargetUid);
+      if (targetPlayerInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(TargetPlayerInfo);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
-      if (targetPlayerInfo_ != null) {
-        output.WriteRawTag(114);
-        output.WriteMessage(TargetPlayerInfo);
+      if (TargetUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,9 +244,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
@@ -250,6 +252,9 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (targetPlayerInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetPlayerInfo);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,9 +268,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.TargetUid != 0) {
         TargetUid = other.TargetUid;
       }
@@ -277,6 +279,9 @@ namespace Weedwacker.Shared.Network.Proto {
           TargetPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
         }
         TargetPlayerInfo.MergeFrom(other.TargetPlayerInfo);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -293,23 +298,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 24: {
             Param = input.ReadUInt32();
             break;
           }
-          case 56: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (targetPlayerInfo_ == null) {
               TargetPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(TargetPlayerInfo);
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            TargetUid = input.ReadUInt32();
             break;
           }
         }
@@ -327,23 +332,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 24: {
             Param = input.ReadUInt32();
             break;
           }
-          case 56: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (targetPlayerInfo_ == null) {
               TargetPlayerInfo = new global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo();
             }
             input.ReadMessage(TargetPlayerInfo);
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            TargetUid = input.ReadUInt32();
             break;
           }
         }

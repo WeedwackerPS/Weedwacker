@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvageBundleChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBTYWx2YWdlQnVuZGxlQ2hhbGxlbmdlSW5mby5wcm90byI6ChpTYWx2YWdl",
-            "QnVuZGxlQ2hhbGxlbmdlSW5mbxIcChRmaW5pc2hlZF9idW5kbGVfbGlzdBgN",
-            "IAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiBTYWx2YWdlQnVuZGxlQ2hhbGxlbmdlSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byI6ChpTYWx2YWdlQnVuZGxlQ2hhbGxl",
+            "bmdlSW5mbxIcChRmaW5pc2hlZF9idW5kbGVfbGlzdBgLIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_bundle_list" field.</summary>
-    public const int FinishedBundleListFieldNumber = 13;
+    public const int FinishedBundleListFieldNumber = 11;
     private static readonly pb::FieldCodec<uint> _repeated_finishedBundleList_codec
-        = pb::FieldCodec.ForUInt32(106);
+        = pb::FieldCodec.ForUInt32(90);
     private readonly pbc::RepeatedField<uint> finishedBundleList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106:
-          case 104: {
+          case 90:
+          case 88: {
             finishedBundleList_.AddEntriesFrom(input, _repeated_finishedBundleList_codec);
             break;
           }
@@ -206,8 +205,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106:
-          case 104: {
+          case 90:
+          case 88: {
             finishedBundleList_.AddEntriesFrom(ref input, _repeated_finishedBundleList_codec);
             break;
           }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeModuleComfortInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtIb21lTW9kdWxlQ29tZm9ydEluZm8ucHJvdG8iegoVSG9tZU1vZHVsZUNv",
-            "bWZvcnRJbmZvEhEKCW1vZHVsZV9pZBgNIAEoDRIgChhyb29tX3NjZW5lX2Nv",
-            "bWZvcnRfdmFsdWUYCSABKA0SLAokd29ybGRfc2NlbmVfYmxvY2tfY29tZm9y",
-            "dF92YWx1ZV9saXN0GAMgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtIb21lTW9kdWxlQ29tZm9ydEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iegoVSG9tZU1vZHVsZUNvbWZvcnRJbmZvEiAK",
+            "GHJvb21fc2NlbmVfY29tZm9ydF92YWx1ZRgFIAEoDRIsCiR3b3JsZF9zY2Vu",
+            "ZV9ibG9ja19jb21mb3J0X3ZhbHVlX2xpc3QYCiADKA0SEQoJbW9kdWxlX2lk",
+            "GA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeModuleComfortInfo), global::Weedwacker.Shared.Network.Proto.HomeModuleComfortInfo.Parser, new[]{ "ModuleId", "RoomSceneComfortValue", "WorldSceneBlockComfortValueList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeModuleComfortInfo), global::Weedwacker.Shared.Network.Proto.HomeModuleComfortInfo.Parser, new[]{ "RoomSceneComfortValue", "WorldSceneBlockComfortValueList", "ModuleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeModuleComfortInfo(HomeModuleComfortInfo other) : this() {
-      moduleId_ = other.moduleId_;
       roomSceneComfortValue_ = other.roomSceneComfortValue_;
       worldSceneBlockComfortValueList_ = other.worldSceneBlockComfortValueList_.Clone();
+      moduleId_ = other.moduleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeModuleComfortInfo(this);
     }
 
-    /// <summary>Field number for the "module_id" field.</summary>
-    public const int ModuleIdFieldNumber = 13;
-    private uint moduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ModuleId {
-      get { return moduleId_; }
-      set {
-        moduleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "room_scene_comfort_value" field.</summary>
-    public const int RoomSceneComfortValueFieldNumber = 9;
+    public const int RoomSceneComfortValueFieldNumber = 5;
     private uint roomSceneComfortValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,14 +98,26 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "world_scene_block_comfort_value_list" field.</summary>
-    public const int WorldSceneBlockComfortValueListFieldNumber = 3;
+    public const int WorldSceneBlockComfortValueListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_worldSceneBlockComfortValueList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> worldSceneBlockComfortValueList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> WorldSceneBlockComfortValueList {
       get { return worldSceneBlockComfortValueList_; }
+    }
+
+    /// <summary>Field number for the "module_id" field.</summary>
+    public const int ModuleIdFieldNumber = 15;
+    private uint moduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ModuleId {
+      get { return moduleId_; }
+      set {
+        moduleId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ModuleId != other.ModuleId) return false;
       if (RoomSceneComfortValue != other.RoomSceneComfortValue) return false;
       if(!worldSceneBlockComfortValueList_.Equals(other.worldSceneBlockComfortValueList_)) return false;
+      if (ModuleId != other.ModuleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ModuleId != 0) hash ^= ModuleId.GetHashCode();
       if (RoomSceneComfortValue != 0) hash ^= RoomSceneComfortValue.GetHashCode();
       hash ^= worldSceneBlockComfortValueList_.GetHashCode();
+      if (ModuleId != 0) hash ^= ModuleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,13 +166,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      worldSceneBlockComfortValueList_.WriteTo(output, _repeated_worldSceneBlockComfortValueList_codec);
       if (RoomSceneComfortValue != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(RoomSceneComfortValue);
       }
+      worldSceneBlockComfortValueList_.WriteTo(output, _repeated_worldSceneBlockComfortValueList_codec);
       if (ModuleId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(ModuleId);
       }
       if (_unknownFields != null) {
@@ -185,13 +185,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      worldSceneBlockComfortValueList_.WriteTo(ref output, _repeated_worldSceneBlockComfortValueList_codec);
       if (RoomSceneComfortValue != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteUInt32(RoomSceneComfortValue);
       }
+      worldSceneBlockComfortValueList_.WriteTo(ref output, _repeated_worldSceneBlockComfortValueList_codec);
       if (ModuleId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteUInt32(ModuleId);
       }
       if (_unknownFields != null) {
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ModuleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModuleId);
-      }
       if (RoomSceneComfortValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoomSceneComfortValue);
       }
       size += worldSceneBlockComfortValueList_.CalculateSize(_repeated_worldSceneBlockComfortValueList_codec);
+      if (ModuleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModuleId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -223,13 +223,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ModuleId != 0) {
-        ModuleId = other.ModuleId;
-      }
       if (other.RoomSceneComfortValue != 0) {
         RoomSceneComfortValue = other.RoomSceneComfortValue;
       }
       worldSceneBlockComfortValueList_.Add(other.worldSceneBlockComfortValueList_);
+      if (other.ModuleId != 0) {
+        ModuleId = other.ModuleId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -245,16 +245,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
-            worldSceneBlockComfortValueList_.AddEntriesFrom(input, _repeated_worldSceneBlockComfortValueList_codec);
-            break;
-          }
-          case 72: {
+          case 40: {
             RoomSceneComfortValue = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 82:
+          case 80: {
+            worldSceneBlockComfortValueList_.AddEntriesFrom(input, _repeated_worldSceneBlockComfortValueList_codec);
+            break;
+          }
+          case 120: {
             ModuleId = input.ReadUInt32();
             break;
           }
@@ -273,16 +273,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
-            worldSceneBlockComfortValueList_.AddEntriesFrom(ref input, _repeated_worldSceneBlockComfortValueList_codec);
-            break;
-          }
-          case 72: {
+          case 40: {
             RoomSceneComfortValue = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 82:
+          case 80: {
+            worldSceneBlockComfortValueList_.AddEntriesFrom(ref input, _repeated_worldSceneBlockComfortValueList_codec);
+            break;
+          }
+          case 120: {
             ModuleId = input.ReadUInt32();
             break;
           }

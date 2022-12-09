@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerFloorRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZUb3dlckZsb29yUmVjb3JkLnByb3RvGhZUb3dlckxldmVsUmVjb3JkLnBy",
-            "b3RvIvUBChBUb3dlckZsb29yUmVjb3JkEiIKGmZsb29yX3N0YXJfcmV3YXJk",
-            "X3Byb2dyZXNzGA8gASgNEj8KEHBhc3NlZF9sZXZlbF9tYXAYCCADKAsyJS5U",
-            "b3dlckZsb29yUmVjb3JkLlBhc3NlZExldmVsTWFwRW50cnkSEAoIZmxvb3Jf",
-            "aWQYDCABKA0SMwoYcGFzc2VkX2xldmVsX3JlY29yZF9saXN0GAIgAygLMhEu",
-            "VG93ZXJMZXZlbFJlY29yZBo1ChNQYXNzZWRMZXZlbE1hcEVudHJ5EgsKA2tl",
-            "eRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZUb3dlckZsb29yUmVjb3JkLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhZUb3dlckxldmVsUmVjb3JkLnByb3RvIrUCChBUb3dl",
+            "ckZsb29yUmVjb3JkEl8KEHBhc3NlZF9sZXZlbF9tYXAYCyADKAsyRS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRvd2VyRmxvb3JSZWNvcmQu",
+            "UGFzc2VkTGV2ZWxNYXBFbnRyeRJTChhwYXNzZWRfbGV2ZWxfcmVjb3JkX2xp",
+            "c3QYAiADKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlRv",
+            "d2VyTGV2ZWxSZWNvcmQSEAoIZmxvb3JfaWQYDCABKA0SIgoaZmxvb3Jfc3Rh",
+            "cl9yZXdhcmRfcHJvZ3Jlc3MYBCABKA0aNQoTUGFzc2VkTGV2ZWxNYXBFbnRy",
+            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TowerLevelRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerFloorRecord), global::Weedwacker.Shared.Network.Proto.TowerFloorRecord.Parser, new[]{ "FloorStarRewardProgress", "PassedLevelMap", "FloorId", "PassedLevelRecordList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerFloorRecord), global::Weedwacker.Shared.Network.Proto.TowerFloorRecord.Parser, new[]{ "PassedLevelMap", "PassedLevelRecordList", "FloorId", "FloorStarRewardProgress" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,10 +77,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerFloorRecord(TowerFloorRecord other) : this() {
-      floorStarRewardProgress_ = other.floorStarRewardProgress_;
       passedLevelMap_ = other.passedLevelMap_.Clone();
-      floorId_ = other.floorId_;
       passedLevelRecordList_ = other.passedLevelRecordList_.Clone();
+      floorId_ = other.floorId_;
+      floorStarRewardProgress_ = other.floorStarRewardProgress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,27 +90,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerFloorRecord(this);
     }
 
-    /// <summary>Field number for the "floor_star_reward_progress" field.</summary>
-    public const int FloorStarRewardProgressFieldNumber = 15;
-    private uint floorStarRewardProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FloorStarRewardProgress {
-      get { return floorStarRewardProgress_; }
-      set {
-        floorStarRewardProgress_ = value;
-      }
-    }
-
     /// <summary>Field number for the "passed_level_map" field.</summary>
-    public const int PassedLevelMapFieldNumber = 8;
+    public const int PassedLevelMapFieldNumber = 11;
     private static readonly pbc::MapField<uint, uint>.Codec _map_passedLevelMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 90);
     private readonly pbc::MapField<uint, uint> passedLevelMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> PassedLevelMap {
       get { return passedLevelMap_; }
+    }
+
+    /// <summary>Field number for the "passed_level_record_list" field.</summary>
+    public const int PassedLevelRecordListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> _repeated_passedLevelRecordList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.TowerLevelRecord.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> passedLevelRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> PassedLevelRecordList {
+      get { return passedLevelRecordList_; }
     }
 
     /// <summary>Field number for the "floor_id" field.</summary>
@@ -124,15 +124,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "passed_level_record_list" field.</summary>
-    public const int PassedLevelRecordListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> _repeated_passedLevelRecordList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.TowerLevelRecord.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> passedLevelRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord>();
+    /// <summary>Field number for the "floor_star_reward_progress" field.</summary>
+    public const int FloorStarRewardProgressFieldNumber = 4;
+    private uint floorStarRewardProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerLevelRecord> PassedLevelRecordList {
-      get { return passedLevelRecordList_; }
+    public uint FloorStarRewardProgress {
+      get { return floorStarRewardProgress_; }
+      set {
+        floorStarRewardProgress_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,10 +151,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FloorStarRewardProgress != other.FloorStarRewardProgress) return false;
       if (!PassedLevelMap.Equals(other.PassedLevelMap)) return false;
-      if (FloorId != other.FloorId) return false;
       if(!passedLevelRecordList_.Equals(other.passedLevelRecordList_)) return false;
+      if (FloorId != other.FloorId) return false;
+      if (FloorStarRewardProgress != other.FloorStarRewardProgress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FloorStarRewardProgress != 0) hash ^= FloorStarRewardProgress.GetHashCode();
       hash ^= PassedLevelMap.GetHashCode();
-      if (FloorId != 0) hash ^= FloorId.GetHashCode();
       hash ^= passedLevelRecordList_.GetHashCode();
+      if (FloorId != 0) hash ^= FloorId.GetHashCode();
+      if (FloorStarRewardProgress != 0) hash ^= FloorStarRewardProgress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -184,14 +185,14 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       passedLevelRecordList_.WriteTo(output, _repeated_passedLevelRecordList_codec);
+      if (FloorStarRewardProgress != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(FloorStarRewardProgress);
+      }
       passedLevelMap_.WriteTo(output, _map_passedLevelMap_codec);
       if (FloorId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(FloorId);
-      }
-      if (FloorStarRewardProgress != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(FloorStarRewardProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -204,14 +205,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       passedLevelRecordList_.WriteTo(ref output, _repeated_passedLevelRecordList_codec);
+      if (FloorStarRewardProgress != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(FloorStarRewardProgress);
+      }
       passedLevelMap_.WriteTo(ref output, _map_passedLevelMap_codec);
       if (FloorId != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(FloorId);
-      }
-      if (FloorStarRewardProgress != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(FloorStarRewardProgress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -223,14 +224,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FloorStarRewardProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorStarRewardProgress);
-      }
       size += passedLevelMap_.CalculateSize(_map_passedLevelMap_codec);
+      size += passedLevelRecordList_.CalculateSize(_repeated_passedLevelRecordList_codec);
       if (FloorId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorId);
       }
-      size += passedLevelRecordList_.CalculateSize(_repeated_passedLevelRecordList_codec);
+      if (FloorStarRewardProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorStarRewardProgress);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -243,14 +244,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FloorStarRewardProgress != 0) {
-        FloorStarRewardProgress = other.FloorStarRewardProgress;
-      }
       passedLevelMap_.Add(other.passedLevelMap_);
+      passedLevelRecordList_.Add(other.passedLevelRecordList_);
       if (other.FloorId != 0) {
         FloorId = other.FloorId;
       }
-      passedLevelRecordList_.Add(other.passedLevelRecordList_);
+      if (other.FloorStarRewardProgress != 0) {
+        FloorStarRewardProgress = other.FloorStarRewardProgress;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -270,16 +271,16 @@ namespace Weedwacker.Shared.Network.Proto {
             passedLevelRecordList_.AddEntriesFrom(input, _repeated_passedLevelRecordList_codec);
             break;
           }
-          case 66: {
+          case 32: {
+            FloorStarRewardProgress = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             passedLevelMap_.AddEntriesFrom(input, _map_passedLevelMap_codec);
             break;
           }
           case 96: {
             FloorId = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            FloorStarRewardProgress = input.ReadUInt32();
             break;
           }
         }
@@ -301,16 +302,16 @@ namespace Weedwacker.Shared.Network.Proto {
             passedLevelRecordList_.AddEntriesFrom(ref input, _repeated_passedLevelRecordList_codec);
             break;
           }
-          case 66: {
+          case 32: {
+            FloorStarRewardProgress = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             passedLevelMap_.AddEntriesFrom(ref input, _map_passedLevelMap_codec);
             break;
           }
           case 96: {
             FloorId = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            FloorStarRewardProgress = input.ReadUInt32();
             break;
           }
         }

@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static GivingRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHaXZpbmdSZWNvcmQucHJvdG8igAIKDEdpdmluZ1JlY29yZBITCgtpc19m",
-            "aW5pc2hlZBgJIAEoCBIQCghncm91cF9pZBgFIAEoDRIYChBpc19nYWRnZXRf",
-            "Z2l2aW5nGAggASgIEhEKCWdpdmluZ19pZBgDIAEoDRIVCg1sYXN0X2dyb3Vw",
-            "X2lkGAYgASgNEhEKCWNvbmZpZ19pZBgCIAEoDRI7ChBtYXRlcmlhbF9jbnRf",
-            "bWFwGA8gAygLMiEuR2l2aW5nUmVjb3JkLk1hdGVyaWFsQ250TWFwRW50cnka",
-            "NQoTTWF0ZXJpYWxDbnRNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUY",
-            "AiABKA06AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChJHaXZpbmdSZWNvcmQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8ipgIKDEdpdmluZ1JlY29yZBIYChBpc19nYWRnZXRfZ2l2aW5n",
+            "GAMgASgIEhAKCGdyb3VwX2lkGAcgASgNEhMKC2lzX2ZpbmlzaGVkGAYgASgI",
+            "El8KEm1hdGVyaWFsX2NvdW50X21hcBgBIAMoCzJDLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uR2l2aW5nUmVjb3JkLk1hdGVyaWFsQ291bnRN",
+            "YXBFbnRyeRIRCgljb25maWdfaWQYBCABKA0SFQoNbGFzdF9ncm91cF9pZBgF",
+            "IAEoDRIRCglnaXZpbmdfaWQYDiABKA0aNwoVTWF0ZXJpYWxDb3VudE1hcEVu",
+            "dHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GivingRecord), global::Weedwacker.Shared.Network.Proto.GivingRecord.Parser, new[]{ "IsFinished", "GroupId", "IsGadgetGiving", "GivingId", "LastGroupId", "ConfigId", "MaterialCntMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GivingRecord), global::Weedwacker.Shared.Network.Proto.GivingRecord.Parser, new[]{ "IsGadgetGiving", "GroupId", "IsFinished", "MaterialCountMap", "ConfigId", "LastGroupId", "GivingId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,13 +76,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GivingRecord(GivingRecord other) : this() {
-      isFinished_ = other.isFinished_;
-      groupId_ = other.groupId_;
       isGadgetGiving_ = other.isGadgetGiving_;
-      givingId_ = other.givingId_;
-      lastGroupId_ = other.lastGroupId_;
+      groupId_ = other.groupId_;
+      isFinished_ = other.isFinished_;
+      materialCountMap_ = other.materialCountMap_.Clone();
       configId_ = other.configId_;
-      materialCntMap_ = other.materialCntMap_.Clone();
+      lastGroupId_ = other.lastGroupId_;
+      givingId_ = other.givingId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,32 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GivingRecord(this);
     }
 
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 9;
-    private bool isFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 5;
-    private uint groupId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupId {
-      get { return groupId_; }
-      set {
-        groupId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_gadget_giving" field.</summary>
-    public const int IsGadgetGivingFieldNumber = 8;
+    public const int IsGadgetGivingFieldNumber = 3;
     private bool isGadgetGiving_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,32 +104,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "giving_id" field.</summary>
-    public const int GivingIdFieldNumber = 3;
-    private uint givingId_;
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 7;
+    private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GivingId {
-      get { return givingId_; }
+    public uint GroupId {
+      get { return groupId_; }
       set {
-        givingId_ = value;
+        groupId_ = value;
       }
     }
 
-    /// <summary>Field number for the "last_group_id" field.</summary>
-    public const int LastGroupIdFieldNumber = 6;
-    private uint lastGroupId_;
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 6;
+    private bool isFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastGroupId {
-      get { return lastGroupId_; }
+    public bool IsFinished {
+      get { return isFinished_; }
       set {
-        lastGroupId_ = value;
+        isFinished_ = value;
       }
+    }
+
+    /// <summary>Field number for the "material_count_map" field.</summary>
+    public const int MaterialCountMapFieldNumber = 1;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_materialCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
+    private readonly pbc::MapField<uint, uint> materialCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> MaterialCountMap {
+      get { return materialCountMap_; }
     }
 
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 2;
+    public const int ConfigIdFieldNumber = 4;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -164,15 +151,28 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "material_cnt_map" field.</summary>
-    public const int MaterialCntMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_materialCntMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<uint, uint> materialCntMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "last_group_id" field.</summary>
+    public const int LastGroupIdFieldNumber = 5;
+    private uint lastGroupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> MaterialCntMap {
-      get { return materialCntMap_; }
+    public uint LastGroupId {
+      get { return lastGroupId_; }
+      set {
+        lastGroupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "giving_id" field.</summary>
+    public const int GivingIdFieldNumber = 14;
+    private uint givingId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GivingId {
+      get { return givingId_; }
+      set {
+        givingId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -190,13 +190,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFinished != other.IsFinished) return false;
-      if (GroupId != other.GroupId) return false;
       if (IsGadgetGiving != other.IsGadgetGiving) return false;
-      if (GivingId != other.GivingId) return false;
-      if (LastGroupId != other.LastGroupId) return false;
+      if (GroupId != other.GroupId) return false;
+      if (IsFinished != other.IsFinished) return false;
+      if (!MaterialCountMap.Equals(other.MaterialCountMap)) return false;
       if (ConfigId != other.ConfigId) return false;
-      if (!MaterialCntMap.Equals(other.MaterialCntMap)) return false;
+      if (LastGroupId != other.LastGroupId) return false;
+      if (GivingId != other.GivingId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-      if (GroupId != 0) hash ^= GroupId.GetHashCode();
       if (IsGadgetGiving != false) hash ^= IsGadgetGiving.GetHashCode();
-      if (GivingId != 0) hash ^= GivingId.GetHashCode();
-      if (LastGroupId != 0) hash ^= LastGroupId.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
+      hash ^= MaterialCountMap.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
-      hash ^= MaterialCntMap.GetHashCode();
+      if (LastGroupId != 0) hash ^= LastGroupId.GetHashCode();
+      if (GivingId != 0) hash ^= GivingId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,31 +229,31 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ConfigId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ConfigId);
-      }
-      if (GivingId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(GivingId);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GroupId);
-      }
-      if (LastGroupId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LastGroupId);
-      }
+      materialCountMap_.WriteTo(output, _map_materialCountMap_codec);
       if (IsGadgetGiving != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteBool(IsGadgetGiving);
       }
+      if (ConfigId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastGroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LastGroupId);
+      }
       if (IsFinished != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteBool(IsFinished);
       }
-      materialCntMap_.WriteTo(output, _map_materialCntMap_codec);
+      if (GroupId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GroupId);
+      }
+      if (GivingId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GivingId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -264,31 +264,31 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ConfigId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ConfigId);
-      }
-      if (GivingId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(GivingId);
-      }
-      if (GroupId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(GroupId);
-      }
-      if (LastGroupId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LastGroupId);
-      }
+      materialCountMap_.WriteTo(ref output, _map_materialCountMap_codec);
       if (IsGadgetGiving != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteBool(IsGadgetGiving);
       }
+      if (ConfigId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastGroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LastGroupId);
+      }
       if (IsFinished != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteBool(IsFinished);
       }
-      materialCntMap_.WriteTo(ref output, _map_materialCntMap_codec);
+      if (GroupId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GroupId);
+      }
+      if (GivingId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GivingId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -299,25 +299,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsFinished != false) {
+      if (IsGadgetGiving != false) {
         size += 1 + 1;
       }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
-      if (IsGadgetGiving != false) {
+      if (IsFinished != false) {
         size += 1 + 1;
       }
-      if (GivingId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
+      size += materialCountMap_.CalculateSize(_map_materialCountMap_codec);
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
       }
       if (LastGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastGroupId);
       }
-      if (ConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
+      if (GivingId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
       }
-      size += materialCntMap_.CalculateSize(_map_materialCntMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -330,25 +330,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsFinished != false) {
-        IsFinished = other.IsFinished;
+      if (other.IsGadgetGiving != false) {
+        IsGadgetGiving = other.IsGadgetGiving;
       }
       if (other.GroupId != 0) {
         GroupId = other.GroupId;
       }
-      if (other.IsGadgetGiving != false) {
-        IsGadgetGiving = other.IsGadgetGiving;
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
       }
-      if (other.GivingId != 0) {
-        GivingId = other.GivingId;
+      materialCountMap_.Add(other.materialCountMap_);
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
       }
       if (other.LastGroupId != 0) {
         LastGroupId = other.LastGroupId;
       }
-      if (other.ConfigId != 0) {
-        ConfigId = other.ConfigId;
+      if (other.GivingId != 0) {
+        GivingId = other.GivingId;
       }
-      materialCntMap_.Add(other.materialCntMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -364,32 +364,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            ConfigId = input.ReadUInt32();
+          case 10: {
+            materialCountMap_.AddEntriesFrom(input, _map_materialCountMap_codec);
             break;
           }
           case 24: {
-            GivingId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            GroupId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastGroupId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             IsGadgetGiving = input.ReadBool();
             break;
           }
-          case 72: {
+          case 32: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            LastGroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 122: {
-            materialCntMap_.AddEntriesFrom(input, _map_materialCntMap_codec);
+          case 56: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GivingId = input.ReadUInt32();
             break;
           }
         }
@@ -407,32 +407,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            ConfigId = input.ReadUInt32();
+          case 10: {
+            materialCountMap_.AddEntriesFrom(ref input, _map_materialCountMap_codec);
             break;
           }
           case 24: {
-            GivingId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            GroupId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastGroupId = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             IsGadgetGiving = input.ReadBool();
             break;
           }
-          case 72: {
+          case 32: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            LastGroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 122: {
-            materialCntMap_.AddEntriesFrom(ref input, _map_materialCntMap_codec);
+          case 56: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GivingId = input.ReadUInt32();
             break;
           }
         }

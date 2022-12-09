@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldChestOpenNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpXb3JsZENoZXN0T3Blbk5vdGlmeS5wcm90byJNChRXb3JsZENoZXN0T3Bl",
-            "bk5vdGlmeRIQCghncm91cF9pZBgGIAEoDRIQCghzY2VuZV9pZBgJIAEoDRIR",
-            "Cgljb25maWdfaWQYDCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpXb3JsZENoZXN0T3Blbk5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJNChRXb3JsZENoZXN0T3Blbk5vdGlmeRIQCghz",
+            "Y2VuZV9pZBgJIAEoDRIQCghncm91cF9pZBgFIAEoDRIRCgljb25maWdfaWQY",
+            "AyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldChestOpenNotify), global::Weedwacker.Shared.Network.Proto.WorldChestOpenNotify.Parser, new[]{ "GroupId", "SceneId", "ConfigId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldChestOpenNotify), global::Weedwacker.Shared.Network.Proto.WorldChestOpenNotify.Parser, new[]{ "SceneId", "GroupId", "ConfigId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3295
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3242;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldChestOpenNotify : pb::IMessage<WorldChestOpenNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorldChestOpenNotify(WorldChestOpenNotify other) : this() {
-      groupId_ = other.groupId_;
       sceneId_ = other.sceneId_;
+      groupId_ = other.groupId_;
       configId_ = other.configId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,18 +91,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorldChestOpenNotify Clone() {
       return new WorldChestOpenNotify(this);
-    }
-
-    /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 6;
-    private uint groupId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupId {
-      get { return groupId_; }
-      set {
-        groupId_ = value;
-      }
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
@@ -113,8 +105,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 5;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 12;
+    public const int ConfigIdFieldNumber = 3;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GroupId != other.GroupId) return false;
       if (SceneId != other.SceneId) return false;
+      if (GroupId != other.GroupId) return false;
       if (ConfigId != other.ConfigId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -150,8 +154,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GroupId != 0) hash ^= GroupId.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ConfigId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConfigId);
+      }
       if (GroupId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(GroupId);
       }
       if (SceneId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ConfigId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ConfigId);
+      }
       if (GroupId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(GroupId);
       }
       if (SceneId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
-      }
-      if (ConfigId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ConfigId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,11 +219,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GroupId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
       if (ConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
@@ -236,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GroupId != 0) {
-        GroupId = other.GroupId;
-      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
       }
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 24: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             GroupId = input.ReadUInt32();
             break;
           }
           case 72: {
             SceneId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 24: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             GroupId = input.ReadUInt32();
             break;
           }
           case 72: {
             SceneId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            ConfigId = input.ReadUInt32();
             break;
           }
         }

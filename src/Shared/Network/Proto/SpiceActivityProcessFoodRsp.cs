@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SpiceActivityProcessFoodRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFTcGljZUFjdGl2aXR5UHJvY2Vzc0Zvb2RSc3AucHJvdG8aD0l0ZW1QYXJh",
-            "bS5wcm90byJ7ChtTcGljZUFjdGl2aXR5UHJvY2Vzc0Zvb2RSc3ASDwoHcmV0",
-            "Y29kZRgJIAEoBRIlChFzcGVjaWFsX2Zvb2RfbGlzdBgOIAMoCzIKLkl0ZW1Q",
-            "YXJhbRIkChBub3JtYWxfZm9vZF9saXN0GAEgAygLMgouSXRlbVBhcmFtQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFTcGljZUFjdGl2aXR5UHJvY2Vzc0Zvb2RSc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aD0l0ZW1QYXJhbS5wcm90byK7AQob",
+            "U3BpY2VBY3Rpdml0eVByb2Nlc3NGb29kUnNwEg8KB3JldGNvZGUYCCABKAUS",
+            "RAoQbm9ybWFsX2Zvb2RfbGlzdBgJIAMoCzIqLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtEkUKEXNwZWNpYWxfZm9vZF9saXN0",
+            "GA4gAygLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JdGVt",
+            "UGFyYW1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityProcessFoodRsp), global::Weedwacker.Shared.Network.Proto.SpiceActivityProcessFoodRsp.Parser, new[]{ "Retcode", "SpecialFoodList", "NormalFoodList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityProcessFoodRsp), global::Weedwacker.Shared.Network.Proto.SpiceActivityProcessFoodRsp.Parser, new[]{ "Retcode", "NormalFoodList", "SpecialFoodList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8772
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8381;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SpiceActivityProcessFoodRsp : pb::IMessage<SpiceActivityProcessFoodRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SpiceActivityProcessFoodRsp(SpiceActivityProcessFoodRsp other) : this() {
       retcode_ = other.retcode_;
-      specialFoodList_ = other.specialFoodList_.Clone();
       normalFoodList_ = other.normalFoodList_.Clone();
+      specialFoodList_ = other.specialFoodList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,6 +106,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "normal_food_list" field.</summary>
+    public const int NormalFoodListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_normalFoodList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> normalFoodList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> NormalFoodList {
+      get { return normalFoodList_; }
     }
 
     /// <summary>Field number for the "special_food_list" field.</summary>
@@ -111,17 +128,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> SpecialFoodList {
       get { return specialFoodList_; }
-    }
-
-    /// <summary>Field number for the "normal_food_list" field.</summary>
-    public const int NormalFoodListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_normalFoodList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> normalFoodList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> NormalFoodList {
-      get { return normalFoodList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if(!specialFoodList_.Equals(other.specialFoodList_)) return false;
       if(!normalFoodList_.Equals(other.normalFoodList_)) return false;
+      if(!specialFoodList_.Equals(other.specialFoodList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= specialFoodList_.GetHashCode();
       hash ^= normalFoodList_.GetHashCode();
+      hash ^= specialFoodList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -170,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      normalFoodList_.WriteTo(output, _repeated_normalFoodList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
+      normalFoodList_.WriteTo(output, _repeated_normalFoodList_codec);
       specialFoodList_.WriteTo(output, _repeated_specialFoodList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -186,11 +192,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      normalFoodList_.WriteTo(ref output, _repeated_normalFoodList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
+      normalFoodList_.WriteTo(ref output, _repeated_normalFoodList_codec);
       specialFoodList_.WriteTo(ref output, _repeated_specialFoodList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -205,8 +211,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += specialFoodList_.CalculateSize(_repeated_specialFoodList_codec);
       size += normalFoodList_.CalculateSize(_repeated_normalFoodList_codec);
+      size += specialFoodList_.CalculateSize(_repeated_specialFoodList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -222,8 +228,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      specialFoodList_.Add(other.specialFoodList_);
       normalFoodList_.Add(other.normalFoodList_);
+      specialFoodList_.Add(other.specialFoodList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -239,12 +245,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            normalFoodList_.AddEntriesFrom(input, _repeated_normalFoodList_codec);
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 74: {
+            normalFoodList_.AddEntriesFrom(input, _repeated_normalFoodList_codec);
             break;
           }
           case 114: {
@@ -266,12 +272,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            normalFoodList_.AddEntriesFrom(ref input, _repeated_normalFoodList_codec);
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            Retcode = input.ReadInt32();
+          case 74: {
+            normalFoodList_.AddEntriesFrom(ref input, _repeated_normalFoodList_codec);
             break;
           }
           case 114: {

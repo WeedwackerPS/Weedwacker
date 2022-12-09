@@ -24,23 +24,26 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassScheduleReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhCYXR0bGVQYXNzU2NoZWR1bGUucHJvdG8aFUJhdHRsZVBhc3NDeWNsZS5w",
-            "cm90bxoXQmF0dGxlUGFzc1Byb2R1Y3QucHJvdG8aGUJhdHRsZVBhc3NSZXdh",
-            "cmRUYWcucHJvdG8aHEJhdHRsZVBhc3NVbmxvY2tTdGF0dXMucHJvdG8iiwMK",
-            "EkJhdHRsZVBhc3NTY2hlZHVsZRINCgVsZXZlbBgOIAEoDRISCgpiZWdpbl90",
-            "aW1lGAIgASgNEhAKCGVuZF90aW1lGA8gASgNEg0KBXBvaW50GAEgASgNEiMK",
-            "CWN1cl9jeWNsZRgEIAEoCzIQLkJhdHRsZVBhc3NDeWNsZRIuCg11bmxvY2tf",
-            "c3RhdHVzGAcgASgOMhcuQmF0dGxlUGFzc1VubG9ja1N0YXR1cxIvChFyZXdh",
-            "cmRfdGFrZW5fbGlzdBgLIAMoCzIULkJhdHRsZVBhc3NSZXdhcmRUYWcSGAoQ",
-            "Y3VyX2N5Y2xlX3BvaW50cxgKIAEoDRIbChNwYWlkX3BsYXRmb3JtX2ZsYWdz",
-            "GAwgASgNEigKDHByb2R1Y3RfaW5mbxgNIAEoCzISLkJhdHRsZVBhc3NQcm9k",
-            "dWN0EiIKGmlzX2V4dHJhX3BhaWRfcmV3YXJkX3Rha2VuGAYgASgIEhEKCWlz",
-            "X3ZpZXdlZBgDIAEoCBITCgtzY2hlZHVsZV9pZBgJIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhCYXR0bGVQYXNzU2NoZWR1bGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFUJhdHRsZVBhc3NDeWNsZS5wcm90bxoXQmF0dGxl",
+            "UGFzc1Byb2R1Y3QucHJvdG8aGUJhdHRsZVBhc3NSZXdhcmRUYWcucHJvdG8a",
+            "HEJhdHRsZVBhc3NVbmxvY2tTdGF0dXMucHJvdG8inwQKEkJhdHRsZVBhc3NT",
+            "Y2hlZHVsZRITCgtzY2hlZHVsZV9pZBgFIAEoDRIbChNVbmszMzAwX01BQUpE",
+            "S01JT0RDGAIgASgNEg0KBWxldmVsGAcgASgNEhsKE1VuazMzMDBfS09ERkpF",
+            "TkNKTEUYCCABKAgSGwoTVW5rMzMwMF9FTE1ORkJPTEVPQRgOIAEoDRIbChNV",
+            "bmszMzAwX0tBTE9HSEhNSkpFGAwgASgIEhsKE1VuazMzMDBfRklMQ0lQUEFI",
+            "SEwYBCABKA0SQwoJY3VyX2N5Y2xlGAsgASgLMjAuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5CYXR0bGVQYXNzQ3ljbGUSEgoKYmVnaW5fdGlt",
+            "ZRgBIAEoDRJOCg11bmxvY2tfc3RhdHVzGA8gASgOMjcuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5CYXR0bGVQYXNzVW5sb2NrU3RhdHVzEkgK",
+            "DHByb2R1Y3RfaW5mbxgKIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQmF0dGxlUGFzc1Byb2R1Y3QSEAoIZW5kX3RpbWUYDSABKA0S",
+            "TwoRcmV3YXJkX3Rha2VuX2xpc3QYAyADKAsyNC5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkJhdHRsZVBhc3NSZXdhcmRUYWdiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassCycleReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BattlePassProductReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTagReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassSchedule), global::Weedwacker.Shared.Network.Proto.BattlePassSchedule.Parser, new[]{ "Level", "BeginTime", "EndTime", "Point", "CurCycle", "UnlockStatus", "RewardTakenList", "CurCyclePoints", "PaidPlatformFlags", "ProductInfo", "IsExtraPaidRewardTaken", "IsViewed", "ScheduleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassSchedule), global::Weedwacker.Shared.Network.Proto.BattlePassSchedule.Parser, new[]{ "ScheduleId", "Unk3300MAAJDKMIODC", "Level", "Unk3300KODFJENCJLE", "Unk3300ELMNFBOLEOA", "Unk3300KALOGHHMJJE", "Unk3300FILCIPPAHHL", "CurCycle", "BeginTime", "UnlockStatus", "ProductInfo", "EndTime", "RewardTakenList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,19 +84,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassSchedule(BattlePassSchedule other) : this() {
-      level_ = other.level_;
-      beginTime_ = other.beginTime_;
-      endTime_ = other.endTime_;
-      point_ = other.point_;
-      curCycle_ = other.curCycle_ != null ? other.curCycle_.Clone() : null;
-      unlockStatus_ = other.unlockStatus_;
-      rewardTakenList_ = other.rewardTakenList_.Clone();
-      curCyclePoints_ = other.curCyclePoints_;
-      paidPlatformFlags_ = other.paidPlatformFlags_;
-      productInfo_ = other.productInfo_ != null ? other.productInfo_.Clone() : null;
-      isExtraPaidRewardTaken_ = other.isExtraPaidRewardTaken_;
-      isViewed_ = other.isViewed_;
       scheduleId_ = other.scheduleId_;
+      unk3300MAAJDKMIODC_ = other.unk3300MAAJDKMIODC_;
+      level_ = other.level_;
+      unk3300KODFJENCJLE_ = other.unk3300KODFJENCJLE_;
+      unk3300ELMNFBOLEOA_ = other.unk3300ELMNFBOLEOA_;
+      unk3300KALOGHHMJJE_ = other.unk3300KALOGHHMJJE_;
+      unk3300FILCIPPAHHL_ = other.unk3300FILCIPPAHHL_;
+      curCycle_ = other.curCycle_ != null ? other.curCycle_.Clone() : null;
+      beginTime_ = other.beginTime_;
+      unlockStatus_ = other.unlockStatus_;
+      productInfo_ = other.productInfo_ != null ? other.productInfo_.Clone() : null;
+      endTime_ = other.endTime_;
+      rewardTakenList_ = other.rewardTakenList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -103,8 +106,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassSchedule(this);
     }
 
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 5;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MAAJDKMIODC" field.</summary>
+    public const int Unk3300MAAJDKMIODCFieldNumber = 2;
+    private uint unk3300MAAJDKMIODC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MAAJDKMIODC {
+      get { return unk3300MAAJDKMIODC_; }
+      set {
+        unk3300MAAJDKMIODC_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 14;
+    public const int LevelFieldNumber = 7;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,44 +142,56 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 2;
-    private uint beginTime_;
+    /// <summary>Field number for the "Unk3300_KODFJENCJLE" field.</summary>
+    public const int Unk3300KODFJENCJLEFieldNumber = 8;
+    private bool unk3300KODFJENCJLE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginTime {
-      get { return beginTime_; }
+    public bool Unk3300KODFJENCJLE {
+      get { return unk3300KODFJENCJLE_; }
       set {
-        beginTime_ = value;
+        unk3300KODFJENCJLE_ = value;
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 15;
-    private uint endTime_;
+    /// <summary>Field number for the "Unk3300_ELMNFBOLEOA" field.</summary>
+    public const int Unk3300ELMNFBOLEOAFieldNumber = 14;
+    private uint unk3300ELMNFBOLEOA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
+    public uint Unk3300ELMNFBOLEOA {
+      get { return unk3300ELMNFBOLEOA_; }
       set {
-        endTime_ = value;
+        unk3300ELMNFBOLEOA_ = value;
       }
     }
 
-    /// <summary>Field number for the "point" field.</summary>
-    public const int PointFieldNumber = 1;
-    private uint point_;
+    /// <summary>Field number for the "Unk3300_KALOGHHMJJE" field.</summary>
+    public const int Unk3300KALOGHHMJJEFieldNumber = 12;
+    private bool unk3300KALOGHHMJJE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Point {
-      get { return point_; }
+    public bool Unk3300KALOGHHMJJE {
+      get { return unk3300KALOGHHMJJE_; }
       set {
-        point_ = value;
+        unk3300KALOGHHMJJE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FILCIPPAHHL" field.</summary>
+    public const int Unk3300FILCIPPAHHLFieldNumber = 4;
+    private uint unk3300FILCIPPAHHL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FILCIPPAHHL {
+      get { return unk3300FILCIPPAHHL_; }
+      set {
+        unk3300FILCIPPAHHL_ = value;
       }
     }
 
     /// <summary>Field number for the "cur_cycle" field.</summary>
-    public const int CurCycleFieldNumber = 4;
+    public const int CurCycleFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.BattlePassCycle curCycle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -163,8 +202,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 1;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "unlock_status" field.</summary>
-    public const int UnlockStatusFieldNumber = 7;
+    public const int UnlockStatusFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus unlockStatus_ = global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,43 +226,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "reward_taken_list" field.</summary>
-    public const int RewardTakenListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> _repeated_rewardTakenList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> rewardTakenList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> RewardTakenList {
-      get { return rewardTakenList_; }
-    }
-
-    /// <summary>Field number for the "cur_cycle_points" field.</summary>
-    public const int CurCyclePointsFieldNumber = 10;
-    private uint curCyclePoints_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurCyclePoints {
-      get { return curCyclePoints_; }
-      set {
-        curCyclePoints_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "paid_platform_flags" field.</summary>
-    public const int PaidPlatformFlagsFieldNumber = 12;
-    private uint paidPlatformFlags_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PaidPlatformFlags {
-      get { return paidPlatformFlags_; }
-      set {
-        paidPlatformFlags_ = value;
-      }
-    }
-
     /// <summary>Field number for the "product_info" field.</summary>
-    public const int ProductInfoFieldNumber = 13;
+    public const int ProductInfoFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.BattlePassProduct productInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -222,40 +238,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_extra_paid_reward_taken" field.</summary>
-    public const int IsExtraPaidRewardTakenFieldNumber = 6;
-    private bool isExtraPaidRewardTaken_;
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 13;
+    private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsExtraPaidRewardTaken {
-      get { return isExtraPaidRewardTaken_; }
+    public uint EndTime {
+      get { return endTime_; }
       set {
-        isExtraPaidRewardTaken_ = value;
+        endTime_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_viewed" field.</summary>
-    public const int IsViewedFieldNumber = 3;
-    private bool isViewed_;
+    /// <summary>Field number for the "reward_taken_list" field.</summary>
+    public const int RewardTakenListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> _repeated_rewardTakenList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> rewardTakenList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsViewed {
-      get { return isViewed_; }
-      set {
-        isViewed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 9;
-    private uint scheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScheduleId {
-      get { return scheduleId_; }
-      set {
-        scheduleId_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag> RewardTakenList {
+      get { return rewardTakenList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -273,19 +276,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Level != other.Level) return false;
-      if (BeginTime != other.BeginTime) return false;
-      if (EndTime != other.EndTime) return false;
-      if (Point != other.Point) return false;
-      if (!object.Equals(CurCycle, other.CurCycle)) return false;
-      if (UnlockStatus != other.UnlockStatus) return false;
-      if(!rewardTakenList_.Equals(other.rewardTakenList_)) return false;
-      if (CurCyclePoints != other.CurCyclePoints) return false;
-      if (PaidPlatformFlags != other.PaidPlatformFlags) return false;
-      if (!object.Equals(ProductInfo, other.ProductInfo)) return false;
-      if (IsExtraPaidRewardTaken != other.IsExtraPaidRewardTaken) return false;
-      if (IsViewed != other.IsViewed) return false;
       if (ScheduleId != other.ScheduleId) return false;
+      if (Unk3300MAAJDKMIODC != other.Unk3300MAAJDKMIODC) return false;
+      if (Level != other.Level) return false;
+      if (Unk3300KODFJENCJLE != other.Unk3300KODFJENCJLE) return false;
+      if (Unk3300ELMNFBOLEOA != other.Unk3300ELMNFBOLEOA) return false;
+      if (Unk3300KALOGHHMJJE != other.Unk3300KALOGHHMJJE) return false;
+      if (Unk3300FILCIPPAHHL != other.Unk3300FILCIPPAHHL) return false;
+      if (!object.Equals(CurCycle, other.CurCycle)) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (UnlockStatus != other.UnlockStatus) return false;
+      if (!object.Equals(ProductInfo, other.ProductInfo)) return false;
+      if (EndTime != other.EndTime) return false;
+      if(!rewardTakenList_.Equals(other.rewardTakenList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -293,19 +296,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Level != 0) hash ^= Level.GetHashCode();
-      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
-      if (Point != 0) hash ^= Point.GetHashCode();
-      if (curCycle_ != null) hash ^= CurCycle.GetHashCode();
-      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) hash ^= UnlockStatus.GetHashCode();
-      hash ^= rewardTakenList_.GetHashCode();
-      if (CurCyclePoints != 0) hash ^= CurCyclePoints.GetHashCode();
-      if (PaidPlatformFlags != 0) hash ^= PaidPlatformFlags.GetHashCode();
-      if (productInfo_ != null) hash ^= ProductInfo.GetHashCode();
-      if (IsExtraPaidRewardTaken != false) hash ^= IsExtraPaidRewardTaken.GetHashCode();
-      if (IsViewed != false) hash ^= IsViewed.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (Unk3300MAAJDKMIODC != 0) hash ^= Unk3300MAAJDKMIODC.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (Unk3300KODFJENCJLE != false) hash ^= Unk3300KODFJENCJLE.GetHashCode();
+      if (Unk3300ELMNFBOLEOA != 0) hash ^= Unk3300ELMNFBOLEOA.GetHashCode();
+      if (Unk3300KALOGHHMJJE != false) hash ^= Unk3300KALOGHHMJJE.GetHashCode();
+      if (Unk3300FILCIPPAHHL != 0) hash ^= Unk3300FILCIPPAHHL.GetHashCode();
+      if (curCycle_ != null) hash ^= CurCycle.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) hash ^= UnlockStatus.GetHashCode();
+      if (productInfo_ != null) hash ^= ProductInfo.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= rewardTakenList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -324,54 +327,54 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Point != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Point);
-      }
       if (BeginTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(BeginTime);
       }
-      if (IsViewed != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsViewed);
-      }
-      if (curCycle_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(CurCycle);
-      }
-      if (IsExtraPaidRewardTaken != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsExtraPaidRewardTaken);
-      }
-      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) UnlockStatus);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ScheduleId);
-      }
-      if (CurCyclePoints != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CurCyclePoints);
+      if (Unk3300MAAJDKMIODC != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300MAAJDKMIODC);
       }
       rewardTakenList_.WriteTo(output, _repeated_rewardTakenList_codec);
-      if (PaidPlatformFlags != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(PaidPlatformFlags);
+      if (Unk3300FILCIPPAHHL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300FILCIPPAHHL);
       }
-      if (productInfo_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(ProductInfo);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ScheduleId);
       }
       if (Level != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(Level);
       }
+      if (Unk3300KODFJENCJLE != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300KODFJENCJLE);
+      }
+      if (productInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ProductInfo);
+      }
+      if (curCycle_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(CurCycle);
+      }
+      if (Unk3300KALOGHHMJJE != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300KALOGHHMJJE);
+      }
       if (EndTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EndTime);
+      }
+      if (Unk3300ELMNFBOLEOA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300ELMNFBOLEOA);
+      }
+      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) UnlockStatus);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -383,54 +386,54 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Point != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Point);
-      }
       if (BeginTime != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteUInt32(BeginTime);
       }
-      if (IsViewed != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsViewed);
-      }
-      if (curCycle_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(CurCycle);
-      }
-      if (IsExtraPaidRewardTaken != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsExtraPaidRewardTaken);
-      }
-      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
-        output.WriteRawTag(56);
-        output.WriteEnum((int) UnlockStatus);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(ScheduleId);
-      }
-      if (CurCyclePoints != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CurCyclePoints);
+      if (Unk3300MAAJDKMIODC != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300MAAJDKMIODC);
       }
       rewardTakenList_.WriteTo(ref output, _repeated_rewardTakenList_codec);
-      if (PaidPlatformFlags != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(PaidPlatformFlags);
+      if (Unk3300FILCIPPAHHL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300FILCIPPAHHL);
       }
-      if (productInfo_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(ProductInfo);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ScheduleId);
       }
       if (Level != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(Level);
       }
+      if (Unk3300KODFJENCJLE != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300KODFJENCJLE);
+      }
+      if (productInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ProductInfo);
+      }
+      if (curCycle_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(CurCycle);
+      }
+      if (Unk3300KALOGHHMJJE != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300KALOGHHMJJE);
+      }
       if (EndTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EndTime);
+      }
+      if (Unk3300ELMNFBOLEOA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300ELMNFBOLEOA);
+      }
+      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) UnlockStatus);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -442,43 +445,43 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (Unk3300MAAJDKMIODC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MAAJDKMIODC);
+      }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
-      if (BeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      if (Unk3300KODFJENCJLE != false) {
+        size += 1 + 1;
       }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      if (Unk3300ELMNFBOLEOA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ELMNFBOLEOA);
       }
-      if (Point != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Point);
+      if (Unk3300KALOGHHMJJE != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300FILCIPPAHHL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FILCIPPAHHL);
       }
       if (curCycle_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurCycle);
       }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
       if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UnlockStatus);
-      }
-      size += rewardTakenList_.CalculateSize(_repeated_rewardTakenList_codec);
-      if (CurCyclePoints != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurCyclePoints);
-      }
-      if (PaidPlatformFlags != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PaidPlatformFlags);
       }
       if (productInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProductInfo);
       }
-      if (IsExtraPaidRewardTaken != false) {
-        size += 1 + 1;
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
-      if (IsViewed != false) {
-        size += 1 + 1;
-      }
-      if (ScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-      }
+      size += rewardTakenList_.CalculateSize(_repeated_rewardTakenList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -491,17 +494,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      if (other.Unk3300MAAJDKMIODC != 0) {
+        Unk3300MAAJDKMIODC = other.Unk3300MAAJDKMIODC;
+      }
       if (other.Level != 0) {
         Level = other.Level;
       }
-      if (other.BeginTime != 0) {
-        BeginTime = other.BeginTime;
+      if (other.Unk3300KODFJENCJLE != false) {
+        Unk3300KODFJENCJLE = other.Unk3300KODFJENCJLE;
       }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
+      if (other.Unk3300ELMNFBOLEOA != 0) {
+        Unk3300ELMNFBOLEOA = other.Unk3300ELMNFBOLEOA;
       }
-      if (other.Point != 0) {
-        Point = other.Point;
+      if (other.Unk3300KALOGHHMJJE != false) {
+        Unk3300KALOGHHMJJE = other.Unk3300KALOGHHMJJE;
+      }
+      if (other.Unk3300FILCIPPAHHL != 0) {
+        Unk3300FILCIPPAHHL = other.Unk3300FILCIPPAHHL;
       }
       if (other.curCycle_ != null) {
         if (curCycle_ == null) {
@@ -509,15 +521,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         CurCycle.MergeFrom(other.CurCycle);
       }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
       if (other.UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
         UnlockStatus = other.UnlockStatus;
-      }
-      rewardTakenList_.Add(other.rewardTakenList_);
-      if (other.CurCyclePoints != 0) {
-        CurCyclePoints = other.CurCyclePoints;
-      }
-      if (other.PaidPlatformFlags != 0) {
-        PaidPlatformFlags = other.PaidPlatformFlags;
       }
       if (other.productInfo_ != null) {
         if (productInfo_ == null) {
@@ -525,15 +533,10 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         ProductInfo.MergeFrom(other.ProductInfo);
       }
-      if (other.IsExtraPaidRewardTaken != false) {
-        IsExtraPaidRewardTaken = other.IsExtraPaidRewardTaken;
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
       }
-      if (other.IsViewed != false) {
-        IsViewed = other.IsViewed;
-      }
-      if (other.ScheduleId != 0) {
-        ScheduleId = other.ScheduleId;
-      }
+      rewardTakenList_.Add(other.rewardTakenList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -550,61 +553,61 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Point = input.ReadUInt32();
-            break;
-          }
-          case 16: {
             BeginTime = input.ReadUInt32();
             break;
           }
-          case 24: {
-            IsViewed = input.ReadBool();
+          case 16: {
+            Unk3300MAAJDKMIODC = input.ReadUInt32();
             break;
           }
-          case 34: {
-            if (curCycle_ == null) {
-              CurCycle = new global::Weedwacker.Shared.Network.Proto.BattlePassCycle();
-            }
-            input.ReadMessage(CurCycle);
-            break;
-          }
-          case 48: {
-            IsExtraPaidRewardTaken = input.ReadBool();
-            break;
-          }
-          case 56: {
-            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
-            break;
-          }
-          case 72: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CurCyclePoints = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 26: {
             rewardTakenList_.AddEntriesFrom(input, _repeated_rewardTakenList_codec);
             break;
           }
-          case 96: {
-            PaidPlatformFlags = input.ReadUInt32();
+          case 32: {
+            Unk3300FILCIPPAHHL = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 40: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300KODFJENCJLE = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (productInfo_ == null) {
               ProductInfo = new global::Weedwacker.Shared.Network.Proto.BattlePassProduct();
             }
             input.ReadMessage(ProductInfo);
             break;
           }
+          case 90: {
+            if (curCycle_ == null) {
+              CurCycle = new global::Weedwacker.Shared.Network.Proto.BattlePassCycle();
+            }
+            input.ReadMessage(CurCycle);
+            break;
+          }
+          case 96: {
+            Unk3300KALOGHHMJJE = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            Level = input.ReadUInt32();
+            Unk3300ELMNFBOLEOA = input.ReadUInt32();
             break;
           }
           case 120: {
-            EndTime = input.ReadUInt32();
+            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
             break;
           }
         }
@@ -623,61 +626,61 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Point = input.ReadUInt32();
-            break;
-          }
-          case 16: {
             BeginTime = input.ReadUInt32();
             break;
           }
-          case 24: {
-            IsViewed = input.ReadBool();
+          case 16: {
+            Unk3300MAAJDKMIODC = input.ReadUInt32();
             break;
           }
-          case 34: {
-            if (curCycle_ == null) {
-              CurCycle = new global::Weedwacker.Shared.Network.Proto.BattlePassCycle();
-            }
-            input.ReadMessage(CurCycle);
-            break;
-          }
-          case 48: {
-            IsExtraPaidRewardTaken = input.ReadBool();
-            break;
-          }
-          case 56: {
-            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
-            break;
-          }
-          case 72: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CurCyclePoints = input.ReadUInt32();
-            break;
-          }
-          case 90: {
+          case 26: {
             rewardTakenList_.AddEntriesFrom(ref input, _repeated_rewardTakenList_codec);
             break;
           }
-          case 96: {
-            PaidPlatformFlags = input.ReadUInt32();
+          case 32: {
+            Unk3300FILCIPPAHHL = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 40: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300KODFJENCJLE = input.ReadBool();
+            break;
+          }
+          case 82: {
             if (productInfo_ == null) {
               ProductInfo = new global::Weedwacker.Shared.Network.Proto.BattlePassProduct();
             }
             input.ReadMessage(ProductInfo);
             break;
           }
+          case 90: {
+            if (curCycle_ == null) {
+              CurCycle = new global::Weedwacker.Shared.Network.Proto.BattlePassCycle();
+            }
+            input.ReadMessage(CurCycle);
+            break;
+          }
+          case 96: {
+            Unk3300KALOGHHMJJE = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            Level = input.ReadUInt32();
+            Unk3300ELMNFBOLEOA = input.ReadUInt32();
             break;
           }
           case 120: {
-            EndTime = input.ReadUInt32();
+            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
             break;
           }
         }

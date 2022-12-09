@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FlightDailyRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGbGlnaHREYWlseVJlY29yZC5wcm90byJ6ChFGbGlnaHREYWlseVJlY29y",
-            "ZBIQCghncm91cF9pZBgEIAEoDRISCgppc190b3VjaGVkGAEgASgIEhcKD3dh",
-            "dGNoZXJfaWRfbGlzdBgLIAMoDRISCgpiZXN0X3Njb3JlGAcgASgNEhIKCnN0",
-            "YXJ0X3RpbWUYAyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "ChdGbGlnaHREYWlseVJlY29yZC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJ6ChFGbGlnaHREYWlseVJlY29yZBISCgpiZXN0X3Nj",
+            "b3JlGA8gASgNEhAKCGdyb3VwX2lkGA0gASgNEhIKCmlzX3RvdWNoZWQYBSAB",
+            "KAgSEgoKc3RhcnRfdGltZRgGIAEoDRIXCg93YXRjaGVyX2lkX2xpc3QYByAD",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FlightDailyRecord), global::Weedwacker.Shared.Network.Proto.FlightDailyRecord.Parser, new[]{ "GroupId", "IsTouched", "WatcherIdList", "BestScore", "StartTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FlightDailyRecord), global::Weedwacker.Shared.Network.Proto.FlightDailyRecord.Parser, new[]{ "BestScore", "GroupId", "IsTouched", "StartTime", "WatcherIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FlightDailyRecord(FlightDailyRecord other) : this() {
+      bestScore_ = other.bestScore_;
       groupId_ = other.groupId_;
       isTouched_ = other.isTouched_;
-      watcherIdList_ = other.watcherIdList_.Clone();
-      bestScore_ = other.bestScore_;
       startTime_ = other.startTime_;
+      watcherIdList_ = other.watcherIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,8 +87,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FlightDailyRecord(this);
     }
 
+    /// <summary>Field number for the "best_score" field.</summary>
+    public const int BestScoreFieldNumber = 15;
+    private uint bestScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BestScore {
+      get { return bestScore_; }
+      set {
+        bestScore_ = value;
+      }
+    }
+
     /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 4;
+    public const int GroupIdFieldNumber = 13;
     private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_touched" field.</summary>
-    public const int IsTouchedFieldNumber = 1;
+    public const int IsTouchedFieldNumber = 5;
     private bool isTouched_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,31 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "watcher_id_list" field.</summary>
-    public const int WatcherIdListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_watcherIdList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> watcherIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> WatcherIdList {
-      get { return watcherIdList_; }
-    }
-
-    /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 7;
-    private uint bestScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BestScore {
-      get { return bestScore_; }
-      set {
-        bestScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "start_time" field.</summary>
-    public const int StartTimeFieldNumber = 3;
+    public const int StartTimeFieldNumber = 6;
     private uint startTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +133,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         startTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "watcher_id_list" field.</summary>
+    public const int WatcherIdListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_watcherIdList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> watcherIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> WatcherIdList {
+      get { return watcherIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (BestScore != other.BestScore) return false;
       if (GroupId != other.GroupId) return false;
       if (IsTouched != other.IsTouched) return false;
-      if(!watcherIdList_.Equals(other.watcherIdList_)) return false;
-      if (BestScore != other.BestScore) return false;
       if (StartTime != other.StartTime) return false;
+      if(!watcherIdList_.Equals(other.watcherIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -173,11 +173,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (BestScore != 0) hash ^= BestScore.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
       if (IsTouched != false) hash ^= IsTouched.GetHashCode();
-      hash ^= watcherIdList_.GetHashCode();
-      if (BestScore != 0) hash ^= BestScore.GetHashCode();
       if (StartTime != 0) hash ^= StartTime.GetHashCode();
+      hash ^= watcherIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,22 +197,22 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsTouched != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteBool(IsTouched);
       }
       if (StartTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(StartTime);
       }
+      watcherIdList_.WriteTo(output, _repeated_watcherIdList_codec);
       if (GroupId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(GroupId);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(BestScore);
       }
-      watcherIdList_.WriteTo(output, _repeated_watcherIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -224,22 +224,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsTouched != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteBool(IsTouched);
       }
       if (StartTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(StartTime);
       }
+      watcherIdList_.WriteTo(ref output, _repeated_watcherIdList_codec);
       if (GroupId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(GroupId);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(120);
         output.WriteUInt32(BestScore);
       }
-      watcherIdList_.WriteTo(ref output, _repeated_watcherIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -250,19 +250,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (BestScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestScore);
+      }
       if (GroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
       if (IsTouched != false) {
         size += 1 + 1;
       }
-      size += watcherIdList_.CalculateSize(_repeated_watcherIdList_codec);
-      if (BestScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestScore);
-      }
       if (StartTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
       }
+      size += watcherIdList_.CalculateSize(_repeated_watcherIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -275,19 +275,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.BestScore != 0) {
+        BestScore = other.BestScore;
+      }
       if (other.GroupId != 0) {
         GroupId = other.GroupId;
       }
       if (other.IsTouched != false) {
         IsTouched = other.IsTouched;
       }
-      watcherIdList_.Add(other.watcherIdList_);
-      if (other.BestScore != 0) {
-        BestScore = other.BestScore;
-      }
       if (other.StartTime != 0) {
         StartTime = other.StartTime;
       }
+      watcherIdList_.Add(other.watcherIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -303,25 +303,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             IsTouched = input.ReadBool();
             break;
           }
-          case 24: {
+          case 48: {
             StartTime = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 58:
+          case 56: {
+            watcherIdList_.AddEntriesFrom(input, _repeated_watcherIdList_codec);
+            break;
+          }
+          case 104: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 120: {
             BestScore = input.ReadUInt32();
-            break;
-          }
-          case 90:
-          case 88: {
-            watcherIdList_.AddEntriesFrom(input, _repeated_watcherIdList_codec);
             break;
           }
         }
@@ -339,25 +339,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             IsTouched = input.ReadBool();
             break;
           }
-          case 24: {
+          case 48: {
             StartTime = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 58:
+          case 56: {
+            watcherIdList_.AddEntriesFrom(ref input, _repeated_watcherIdList_codec);
+            break;
+          }
+          case 104: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 120: {
             BestScore = input.ReadUInt32();
-            break;
-          }
-          case 90:
-          case 88: {
-            watcherIdList_.AddEntriesFrom(ref input, _repeated_watcherIdList_codec);
             break;
           }
         }

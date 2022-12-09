@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MonsterAIConfigHashNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Nb25zdGVyQUlDb25maWdIYXNoTm90aWZ5LnByb3RvIlIKGU1vbnN0ZXJB",
-            "SUNvbmZpZ0hhc2hOb3RpZnkSDgoGam9iX2lkGAogASgNEhEKCWVudGl0eV9p",
-            "ZBgPIAEoDRISCgpoYXNoX3ZhbHVlGAsgASgFQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9Nb25zdGVyQUlDb25maWdIYXNoTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIlIKGU1vbnN0ZXJBSUNvbmZpZ0hhc2hO",
+            "b3RpZnkSEgoKaGFzaF92YWx1ZRgHIAEoBRIRCgllbnRpdHlfaWQYDiABKA0S",
+            "DgoGam9iX2lkGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MonsterAIConfigHashNotify), global::Weedwacker.Shared.Network.Proto.MonsterAIConfigHashNotify.Parser, new[]{ "JobId", "EntityId", "HashValue" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MonsterAIConfigHashNotify), global::Weedwacker.Shared.Network.Proto.MonsterAIConfigHashNotify.Parser, new[]{ "HashValue", "EntityId", "JobId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3039
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3050;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MonsterAIConfigHashNotify : pb::IMessage<MonsterAIConfigHashNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MonsterAIConfigHashNotify(MonsterAIConfigHashNotify other) : this() {
-      jobId_ = other.jobId_;
-      entityId_ = other.entityId_;
       hashValue_ = other.hashValue_;
+      entityId_ = other.entityId_;
+      jobId_ = other.jobId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MonsterAIConfigHashNotify(this);
     }
 
-    /// <summary>Field number for the "job_id" field.</summary>
-    public const int JobIdFieldNumber = 10;
-    private uint jobId_;
+    /// <summary>Field number for the "hash_value" field.</summary>
+    public const int HashValueFieldNumber = 7;
+    private int hashValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint JobId {
-      get { return jobId_; }
+    public int HashValue {
+      get { return hashValue_; }
       set {
-        jobId_ = value;
+        hashValue_ = value;
       }
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
+    public const int EntityIdFieldNumber = 14;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,15 +118,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "hash_value" field.</summary>
-    public const int HashValueFieldNumber = 11;
-    private int hashValue_;
+    /// <summary>Field number for the "job_id" field.</summary>
+    public const int JobIdFieldNumber = 11;
+    private uint jobId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int HashValue {
-      get { return hashValue_; }
+    public uint JobId {
+      get { return jobId_; }
       set {
-        hashValue_ = value;
+        jobId_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (JobId != other.JobId) return false;
-      if (EntityId != other.EntityId) return false;
       if (HashValue != other.HashValue) return false;
+      if (EntityId != other.EntityId) return false;
+      if (JobId != other.JobId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (JobId != 0) hash ^= JobId.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (HashValue != 0) hash ^= HashValue.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (JobId != 0) hash ^= JobId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (JobId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(JobId);
-      }
       if (HashValue != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(HashValue);
       }
+      if (JobId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(JobId);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (JobId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(JobId);
-      }
       if (HashValue != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteInt32(HashValue);
       }
+      if (JobId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(JobId);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (JobId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(JobId);
+      if (HashValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HashValue);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (HashValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HashValue);
+      if (JobId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(JobId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.JobId != 0) {
-        JobId = other.JobId;
+      if (other.HashValue != 0) {
+        HashValue = other.HashValue;
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.HashValue != 0) {
-        HashValue = other.HashValue;
+      if (other.JobId != 0) {
+        JobId = other.JobId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            JobId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 56: {
             HashValue = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 88: {
+            JobId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -288,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            JobId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 56: {
             HashValue = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 88: {
+            JobId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             EntityId = input.ReadUInt32();
             break;
           }

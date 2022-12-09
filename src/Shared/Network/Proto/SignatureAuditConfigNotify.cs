@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SignatureAuditConfigNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBTaWduYXR1cmVBdWRpdENvbmZpZ05vdGlmeS5wcm90byJDChpTaWduYXR1",
-            "cmVBdWRpdENvbmZpZ05vdGlmeRIPCgdpc19vcGVuGAkgASgIEhQKDHN1Ym1p",
-            "dF9saW1pdBgKIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiBTaWduYXR1cmVBdWRpdENvbmZpZ05vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJDChpTaWduYXR1cmVBdWRpdENvbmZp",
+            "Z05vdGlmeRIPCgdpc19vcGVuGAYgASgIEhQKDHN1Ym1pdF9saW1pdBgLIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4092
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4097;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SignatureAuditConfigNotify : pb::IMessage<SignatureAuditConfigNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 9;
+    public const int IsOpenFieldNumber = 6;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "submit_limit" field.</summary>
-    public const int SubmitLimitFieldNumber = 10;
+    public const int SubmitLimitFieldNumber = 11;
     private uint submitLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteBool(IsOpen);
       }
       if (SubmitLimit != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(SubmitLimit);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsOpen != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteBool(IsOpen);
       }
       if (SubmitLimit != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(SubmitLimit);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 48: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 80: {
+          case 88: {
             SubmitLimit = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 48: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 80: {
+          case 88: {
             SubmitLimit = input.ReadUInt32();
             break;
           }

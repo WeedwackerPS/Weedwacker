@@ -24,28 +24,36 @@ namespace Weedwacker.Shared.Network.Proto {
     static AllWidgetDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlBbGxXaWRnZXREYXRhTm90aWZ5LnByb3RvGhVBbmNob3JQb2ludERhdGEu",
-            "cHJvdG8aGUNsaWVudENvbGxlY3RvckRhdGEucHJvdG8aEkx1bmNoQm94RGF0",
-            "YS5wcm90bxoiT25lb2ZHYXRoZXJQb2ludERldGVjdG9yRGF0YS5wcm90bxoc",
-            "U2t5Q3J5c3RhbERldGVjdG9yRGF0YS5wcm90bxoYV2lkZ2V0Q29vbERvd25E",
-            "YXRhLnByb3RvGhRXaWRnZXRTbG90RGF0YS5wcm90byKQBAoTQWxsV2lkZ2V0",
-            "RGF0YU5vdGlmeRIlCh1iYWNrZ3JvdW5kX2FjdGl2ZV93aWRnZXRfbGlzdBgL",
-            "IAMoDRIlCg5sdW5jaF9ib3hfZGF0YRgBIAEoCzINLkx1bmNoQm94RGF0YRI2",
-            "Chljb29sX2Rvd25fZ3JvdXBfZGF0YV9saXN0GA0gAygLMhMuV2lkZ2V0Q29v",
-            "bERvd25EYXRhEisKEWFuY2hvcl9wb2ludF9saXN0GAMgAygLMhAuQW5jaG9y",
-            "UG9pbnREYXRhEiIKCXNsb3RfbGlzdBgGIAMoCzIPLldpZGdldFNsb3REYXRh",
-            "EiUKHW5leHRfYW5jaG9yX3BvaW50X3VzYWJsZV90aW1lGAogASgNEjgKGmNs",
-            "aWVudF9jb2xsZWN0b3JfZGF0YV9saXN0GAQgAygLMhQuQ2xpZW50Q29sbGVj",
-            "dG9yRGF0YRJMCiVvbmVvZl9nYXRoZXJfcG9pbnRfZGV0ZWN0b3JfZGF0YV9s",
-            "aXN0GA8gAygLMh0uT25lb2ZHYXRoZXJQb2ludERldGVjdG9yRGF0YRI3Chpu",
-            "b3JtYWxfY29vbF9kb3duX2RhdGFfbGlzdBgJIAMoCzITLldpZGdldENvb2xE",
-            "b3duRGF0YRI6Chlza3lfY3J5c3RhbF9kZXRlY3Rvcl9kYXRhGAwgASgLMhcu",
-            "U2t5Q3J5c3RhbERldGVjdG9yRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlBbGxXaWRnZXREYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhVBbmNob3JQb2ludERhdGEucHJvdG8aGUNsaWVu",
+            "dENvbGxlY3RvckRhdGEucHJvdG8aEkx1bmNoQm94RGF0YS5wcm90bxojT25l",
+            "b2ZmR2F0aGVyUG9pbnREZXRlY3RvckRhdGEucHJvdG8aHFNreUNyeXN0YWxE",
+            "ZXRlY3RvckRhdGEucHJvdG8aF1dlYXRoZXJXaXphcmREYXRhLnByb3RvGhhX",
+            "aWRnZXRDb29sRG93bkRhdGEucHJvdG8aFFdpZGdldFNsb3REYXRhLnByb3Rv",
+            "IuMGChNBbGxXaWRnZXREYXRhTm90aWZ5EiUKHW5leHRfYW5jaG9yX3BvaW50",
+            "X3VzYWJsZV90aW1lGAUgASgNEkUKDmx1bmNoX2JveF9kYXRhGAEgASgLMi0u",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5MdW5jaEJveERhdGES",
+            "bgomb25lb2ZmX2dhdGhlcl9wb2ludF9kZXRlY3Rvcl9kYXRhX2xpc3QYDiAD",
+            "KAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk9uZW9mZkdh",
+            "dGhlclBvaW50RGV0ZWN0b3JEYXRhEkIKCXNsb3RfbGlzdBgGIAMoCzIvLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uV2lkZ2V0U2xvdERhdGES",
+            "JQodYmFja2dyb3VuZF9hY3RpdmVfd2lkZ2V0X2xpc3QYCSADKA0SVgoZY29v",
+            "bF9kb3duX2dyb3VwX2RhdGFfbGlzdBgDIAMoCzIzLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uV2lkZ2V0Q29vbERvd25EYXRhEloKGXNreV9j",
+            "cnlzdGFsX2RldGVjdG9yX2RhdGEYBCABKAsyNy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLlNreUNyeXN0YWxEZXRlY3RvckRhdGESWAoaY2xp",
+            "ZW50X2NvbGxlY3Rvcl9kYXRhX2xpc3QYByADKAsyNC5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkNsaWVudENvbGxlY3RvckRhdGESTwoTd2Vh",
+            "dGhlcl93aXphcmRfZGF0YRgPIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uV2VhdGhlcldpemFyZERhdGESVwoabm9ybWFsX2Nvb2xf",
+            "ZG93bl9kYXRhX2xpc3QYCiADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLldpZGdldENvb2xEb3duRGF0YRJLChFhbmNob3JfcG9pbnRf",
+            "bGlzdBgNIAMoCzIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "QW5jaG9yUG9pbnREYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AnchorPointDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ClientCollectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunchBoxDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetSlotDataReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AnchorPointDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ClientCollectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunchBoxDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WeatherWizardDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetSlotDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AllWidgetDataNotify), global::Weedwacker.Shared.Network.Proto.AllWidgetDataNotify.Parser, new[]{ "BackgroundActiveWidgetList", "LunchBoxData", "CoolDownGroupDataList", "AnchorPointList", "SlotList", "NextAnchorPointUsableTime", "ClientCollectorDataList", "OneofGatherPointDetectorDataList", "NormalCoolDownDataList", "SkyCrystalDetectorData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AllWidgetDataNotify), global::Weedwacker.Shared.Network.Proto.AllWidgetDataNotify.Parser, new[]{ "NextAnchorPointUsableTime", "LunchBoxData", "OneoffGatherPointDetectorDataList", "SlotList", "BackgroundActiveWidgetList", "CoolDownGroupDataList", "SkyCrystalDetectorData", "ClientCollectorDataList", "WeatherWizardData", "NormalCoolDownDataList", "AnchorPointList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -53,9 +61,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4271
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4286;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AllWidgetDataNotify : pb::IMessage<AllWidgetDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,16 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllWidgetDataNotify(AllWidgetDataNotify other) : this() {
-      backgroundActiveWidgetList_ = other.backgroundActiveWidgetList_.Clone();
-      lunchBoxData_ = other.lunchBoxData_ != null ? other.lunchBoxData_.Clone() : null;
-      coolDownGroupDataList_ = other.coolDownGroupDataList_.Clone();
-      anchorPointList_ = other.anchorPointList_.Clone();
-      slotList_ = other.slotList_.Clone();
       nextAnchorPointUsableTime_ = other.nextAnchorPointUsableTime_;
-      clientCollectorDataList_ = other.clientCollectorDataList_.Clone();
-      oneofGatherPointDetectorDataList_ = other.oneofGatherPointDetectorDataList_.Clone();
-      normalCoolDownDataList_ = other.normalCoolDownDataList_.Clone();
+      lunchBoxData_ = other.lunchBoxData_ != null ? other.lunchBoxData_.Clone() : null;
+      oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_.Clone();
+      slotList_ = other.slotList_.Clone();
+      backgroundActiveWidgetList_ = other.backgroundActiveWidgetList_.Clone();
+      coolDownGroupDataList_ = other.coolDownGroupDataList_.Clone();
       skyCrystalDetectorData_ = other.skyCrystalDetectorData_ != null ? other.skyCrystalDetectorData_.Clone() : null;
+      clientCollectorDataList_ = other.clientCollectorDataList_.Clone();
+      weatherWizardData_ = other.weatherWizardData_ != null ? other.weatherWizardData_.Clone() : null;
+      normalCoolDownDataList_ = other.normalCoolDownDataList_.Clone();
+      anchorPointList_ = other.anchorPointList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,15 +123,16 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AllWidgetDataNotify(this);
     }
 
-    /// <summary>Field number for the "background_active_widget_list" field.</summary>
-    public const int BackgroundActiveWidgetListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_backgroundActiveWidgetList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> backgroundActiveWidgetList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "next_anchor_point_usable_time" field.</summary>
+    public const int NextAnchorPointUsableTimeFieldNumber = 5;
+    private uint nextAnchorPointUsableTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BackgroundActiveWidgetList {
-      get { return backgroundActiveWidgetList_; }
+    public uint NextAnchorPointUsableTime {
+      get { return nextAnchorPointUsableTime_; }
+      set {
+        nextAnchorPointUsableTime_ = value;
+      }
     }
 
     /// <summary>Field number for the "lunch_box_data" field.</summary>
@@ -133,26 +147,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cool_down_group_data_list" field.</summary>
-    public const int CoolDownGroupDataListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_coolDownGroupDataList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> coolDownGroupDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
+    /// <summary>Field number for the "oneoff_gather_point_detector_data_list" field.</summary>
+    public const int OneoffGatherPointDetectorDataListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData> _repeated_oneoffGatherPointDetectorDataList_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> CoolDownGroupDataList {
-      get { return coolDownGroupDataList_; }
-    }
-
-    /// <summary>Field number for the "anchor_point_list" field.</summary>
-    public const int AnchorPointListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AnchorPointData> _repeated_anchorPointList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> AnchorPointList {
-      get { return anchorPointList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneoffGatherPointDetectorData> OneoffGatherPointDetectorDataList {
+      get { return oneoffGatherPointDetectorDataList_; }
     }
 
     /// <summary>Field number for the "slot_list" field.</summary>
@@ -166,53 +169,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return slotList_; }
     }
 
-    /// <summary>Field number for the "next_anchor_point_usable_time" field.</summary>
-    public const int NextAnchorPointUsableTimeFieldNumber = 10;
-    private uint nextAnchorPointUsableTime_;
+    /// <summary>Field number for the "background_active_widget_list" field.</summary>
+    public const int BackgroundActiveWidgetListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_backgroundActiveWidgetList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> backgroundActiveWidgetList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextAnchorPointUsableTime {
-      get { return nextAnchorPointUsableTime_; }
-      set {
-        nextAnchorPointUsableTime_ = value;
-      }
+    public pbc::RepeatedField<uint> BackgroundActiveWidgetList {
+      get { return backgroundActiveWidgetList_; }
     }
 
-    /// <summary>Field number for the "client_collector_data_list" field.</summary>
-    public const int ClientCollectorDataListFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> _repeated_clientCollectorDataList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ClientCollectorData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> clientCollectorDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData>();
+    /// <summary>Field number for the "cool_down_group_data_list" field.</summary>
+    public const int CoolDownGroupDataListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_coolDownGroupDataList_codec
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> coolDownGroupDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> ClientCollectorDataList {
-      get { return clientCollectorDataList_; }
-    }
-
-    /// <summary>Field number for the "oneof_gather_point_detector_data_list" field.</summary>
-    public const int OneofGatherPointDetectorDataListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData> _repeated_oneofGatherPointDetectorDataList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData> oneofGatherPointDetectorDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OneofGatherPointDetectorData> OneofGatherPointDetectorDataList {
-      get { return oneofGatherPointDetectorDataList_; }
-    }
-
-    /// <summary>Field number for the "normal_cool_down_data_list" field.</summary>
-    public const int NormalCoolDownDataListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_normalCoolDownDataList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> normalCoolDownDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> NormalCoolDownDataList {
-      get { return normalCoolDownDataList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> CoolDownGroupDataList {
+      get { return coolDownGroupDataList_; }
     }
 
     /// <summary>Field number for the "sky_crystal_detector_data" field.</summary>
-    public const int SkyCrystalDetectorDataFieldNumber = 12;
+    public const int SkyCrystalDetectorDataFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData skyCrystalDetectorData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -221,6 +201,51 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         skyCrystalDetectorData_ = value;
       }
+    }
+
+    /// <summary>Field number for the "client_collector_data_list" field.</summary>
+    public const int ClientCollectorDataListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> _repeated_clientCollectorDataList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ClientCollectorData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> clientCollectorDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientCollectorData> ClientCollectorDataList {
+      get { return clientCollectorDataList_; }
+    }
+
+    /// <summary>Field number for the "weather_wizard_data" field.</summary>
+    public const int WeatherWizardDataFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.WeatherWizardData weatherWizardData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.WeatherWizardData WeatherWizardData {
+      get { return weatherWizardData_; }
+      set {
+        weatherWizardData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "normal_cool_down_data_list" field.</summary>
+    public const int NormalCoolDownDataListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> _repeated_normalCoolDownDataList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> normalCoolDownDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WidgetCoolDownData> NormalCoolDownDataList {
+      get { return normalCoolDownDataList_; }
+    }
+
+    /// <summary>Field number for the "anchor_point_list" field.</summary>
+    public const int AnchorPointListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AnchorPointData> _repeated_anchorPointList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.AnchorPointData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AnchorPointData> AnchorPointList {
+      get { return anchorPointList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -238,16 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!backgroundActiveWidgetList_.Equals(other.backgroundActiveWidgetList_)) return false;
-      if (!object.Equals(LunchBoxData, other.LunchBoxData)) return false;
-      if(!coolDownGroupDataList_.Equals(other.coolDownGroupDataList_)) return false;
-      if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
-      if(!slotList_.Equals(other.slotList_)) return false;
       if (NextAnchorPointUsableTime != other.NextAnchorPointUsableTime) return false;
-      if(!clientCollectorDataList_.Equals(other.clientCollectorDataList_)) return false;
-      if(!oneofGatherPointDetectorDataList_.Equals(other.oneofGatherPointDetectorDataList_)) return false;
-      if(!normalCoolDownDataList_.Equals(other.normalCoolDownDataList_)) return false;
+      if (!object.Equals(LunchBoxData, other.LunchBoxData)) return false;
+      if(!oneoffGatherPointDetectorDataList_.Equals(other.oneoffGatherPointDetectorDataList_)) return false;
+      if(!slotList_.Equals(other.slotList_)) return false;
+      if(!backgroundActiveWidgetList_.Equals(other.backgroundActiveWidgetList_)) return false;
+      if(!coolDownGroupDataList_.Equals(other.coolDownGroupDataList_)) return false;
       if (!object.Equals(SkyCrystalDetectorData, other.SkyCrystalDetectorData)) return false;
+      if(!clientCollectorDataList_.Equals(other.clientCollectorDataList_)) return false;
+      if (!object.Equals(WeatherWizardData, other.WeatherWizardData)) return false;
+      if(!normalCoolDownDataList_.Equals(other.normalCoolDownDataList_)) return false;
+      if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -255,16 +281,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= backgroundActiveWidgetList_.GetHashCode();
-      if (lunchBoxData_ != null) hash ^= LunchBoxData.GetHashCode();
-      hash ^= coolDownGroupDataList_.GetHashCode();
-      hash ^= anchorPointList_.GetHashCode();
-      hash ^= slotList_.GetHashCode();
       if (NextAnchorPointUsableTime != 0) hash ^= NextAnchorPointUsableTime.GetHashCode();
-      hash ^= clientCollectorDataList_.GetHashCode();
-      hash ^= oneofGatherPointDetectorDataList_.GetHashCode();
-      hash ^= normalCoolDownDataList_.GetHashCode();
+      if (lunchBoxData_ != null) hash ^= LunchBoxData.GetHashCode();
+      hash ^= oneoffGatherPointDetectorDataList_.GetHashCode();
+      hash ^= slotList_.GetHashCode();
+      hash ^= backgroundActiveWidgetList_.GetHashCode();
+      hash ^= coolDownGroupDataList_.GetHashCode();
       if (skyCrystalDetectorData_ != null) hash ^= SkyCrystalDetectorData.GetHashCode();
+      hash ^= clientCollectorDataList_.GetHashCode();
+      if (weatherWizardData_ != null) hash ^= WeatherWizardData.GetHashCode();
+      hash ^= normalCoolDownDataList_.GetHashCode();
+      hash ^= anchorPointList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -287,21 +314,25 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(10);
         output.WriteMessage(LunchBoxData);
       }
-      anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
-      clientCollectorDataList_.WriteTo(output, _repeated_clientCollectorDataList_codec);
-      slotList_.WriteTo(output, _repeated_slotList_codec);
-      normalCoolDownDataList_.WriteTo(output, _repeated_normalCoolDownDataList_codec);
-      if (NextAnchorPointUsableTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(NextAnchorPointUsableTime);
-      }
-      backgroundActiveWidgetList_.WriteTo(output, _repeated_backgroundActiveWidgetList_codec);
+      coolDownGroupDataList_.WriteTo(output, _repeated_coolDownGroupDataList_codec);
       if (skyCrystalDetectorData_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteMessage(SkyCrystalDetectorData);
       }
-      coolDownGroupDataList_.WriteTo(output, _repeated_coolDownGroupDataList_codec);
-      oneofGatherPointDetectorDataList_.WriteTo(output, _repeated_oneofGatherPointDetectorDataList_codec);
+      if (NextAnchorPointUsableTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(NextAnchorPointUsableTime);
+      }
+      slotList_.WriteTo(output, _repeated_slotList_codec);
+      clientCollectorDataList_.WriteTo(output, _repeated_clientCollectorDataList_codec);
+      backgroundActiveWidgetList_.WriteTo(output, _repeated_backgroundActiveWidgetList_codec);
+      normalCoolDownDataList_.WriteTo(output, _repeated_normalCoolDownDataList_codec);
+      anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
+      oneoffGatherPointDetectorDataList_.WriteTo(output, _repeated_oneoffGatherPointDetectorDataList_codec);
+      if (weatherWizardData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(WeatherWizardData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -316,21 +347,25 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(10);
         output.WriteMessage(LunchBoxData);
       }
-      anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
-      clientCollectorDataList_.WriteTo(ref output, _repeated_clientCollectorDataList_codec);
-      slotList_.WriteTo(ref output, _repeated_slotList_codec);
-      normalCoolDownDataList_.WriteTo(ref output, _repeated_normalCoolDownDataList_codec);
-      if (NextAnchorPointUsableTime != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(NextAnchorPointUsableTime);
-      }
-      backgroundActiveWidgetList_.WriteTo(ref output, _repeated_backgroundActiveWidgetList_codec);
+      coolDownGroupDataList_.WriteTo(ref output, _repeated_coolDownGroupDataList_codec);
       if (skyCrystalDetectorData_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteMessage(SkyCrystalDetectorData);
       }
-      coolDownGroupDataList_.WriteTo(ref output, _repeated_coolDownGroupDataList_codec);
-      oneofGatherPointDetectorDataList_.WriteTo(ref output, _repeated_oneofGatherPointDetectorDataList_codec);
+      if (NextAnchorPointUsableTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(NextAnchorPointUsableTime);
+      }
+      slotList_.WriteTo(ref output, _repeated_slotList_codec);
+      clientCollectorDataList_.WriteTo(ref output, _repeated_clientCollectorDataList_codec);
+      backgroundActiveWidgetList_.WriteTo(ref output, _repeated_backgroundActiveWidgetList_codec);
+      normalCoolDownDataList_.WriteTo(ref output, _repeated_normalCoolDownDataList_codec);
+      anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
+      oneoffGatherPointDetectorDataList_.WriteTo(ref output, _repeated_oneoffGatherPointDetectorDataList_codec);
+      if (weatherWizardData_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(WeatherWizardData);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -341,22 +376,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += backgroundActiveWidgetList_.CalculateSize(_repeated_backgroundActiveWidgetList_codec);
-      if (lunchBoxData_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LunchBoxData);
-      }
-      size += coolDownGroupDataList_.CalculateSize(_repeated_coolDownGroupDataList_codec);
-      size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
-      size += slotList_.CalculateSize(_repeated_slotList_codec);
       if (NextAnchorPointUsableTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextAnchorPointUsableTime);
       }
-      size += clientCollectorDataList_.CalculateSize(_repeated_clientCollectorDataList_codec);
-      size += oneofGatherPointDetectorDataList_.CalculateSize(_repeated_oneofGatherPointDetectorDataList_codec);
-      size += normalCoolDownDataList_.CalculateSize(_repeated_normalCoolDownDataList_codec);
+      if (lunchBoxData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LunchBoxData);
+      }
+      size += oneoffGatherPointDetectorDataList_.CalculateSize(_repeated_oneoffGatherPointDetectorDataList_codec);
+      size += slotList_.CalculateSize(_repeated_slotList_codec);
+      size += backgroundActiveWidgetList_.CalculateSize(_repeated_backgroundActiveWidgetList_codec);
+      size += coolDownGroupDataList_.CalculateSize(_repeated_coolDownGroupDataList_codec);
       if (skyCrystalDetectorData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SkyCrystalDetectorData);
       }
+      size += clientCollectorDataList_.CalculateSize(_repeated_clientCollectorDataList_codec);
+      if (weatherWizardData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeatherWizardData);
+      }
+      size += normalCoolDownDataList_.CalculateSize(_repeated_normalCoolDownDataList_codec);
+      size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -369,28 +407,34 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      backgroundActiveWidgetList_.Add(other.backgroundActiveWidgetList_);
+      if (other.NextAnchorPointUsableTime != 0) {
+        NextAnchorPointUsableTime = other.NextAnchorPointUsableTime;
+      }
       if (other.lunchBoxData_ != null) {
         if (lunchBoxData_ == null) {
           LunchBoxData = new global::Weedwacker.Shared.Network.Proto.LunchBoxData();
         }
         LunchBoxData.MergeFrom(other.LunchBoxData);
       }
-      coolDownGroupDataList_.Add(other.coolDownGroupDataList_);
-      anchorPointList_.Add(other.anchorPointList_);
+      oneoffGatherPointDetectorDataList_.Add(other.oneoffGatherPointDetectorDataList_);
       slotList_.Add(other.slotList_);
-      if (other.NextAnchorPointUsableTime != 0) {
-        NextAnchorPointUsableTime = other.NextAnchorPointUsableTime;
-      }
-      clientCollectorDataList_.Add(other.clientCollectorDataList_);
-      oneofGatherPointDetectorDataList_.Add(other.oneofGatherPointDetectorDataList_);
-      normalCoolDownDataList_.Add(other.normalCoolDownDataList_);
+      backgroundActiveWidgetList_.Add(other.backgroundActiveWidgetList_);
+      coolDownGroupDataList_.Add(other.coolDownGroupDataList_);
       if (other.skyCrystalDetectorData_ != null) {
         if (skyCrystalDetectorData_ == null) {
           SkyCrystalDetectorData = new global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData();
         }
         SkyCrystalDetectorData.MergeFrom(other.SkyCrystalDetectorData);
       }
+      clientCollectorDataList_.Add(other.clientCollectorDataList_);
+      if (other.weatherWizardData_ != null) {
+        if (weatherWizardData_ == null) {
+          WeatherWizardData = new global::Weedwacker.Shared.Network.Proto.WeatherWizardData();
+        }
+        WeatherWizardData.MergeFrom(other.WeatherWizardData);
+      }
+      normalCoolDownDataList_.Add(other.normalCoolDownDataList_);
+      anchorPointList_.Add(other.anchorPointList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -414,43 +458,50 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 26: {
-            anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
+            coolDownGroupDataList_.AddEntriesFrom(input, _repeated_coolDownGroupDataList_codec);
             break;
           }
           case 34: {
-            clientCollectorDataList_.AddEntriesFrom(input, _repeated_clientCollectorDataList_codec);
-            break;
-          }
-          case 50: {
-            slotList_.AddEntriesFrom(input, _repeated_slotList_codec);
-            break;
-          }
-          case 74: {
-            normalCoolDownDataList_.AddEntriesFrom(input, _repeated_normalCoolDownDataList_codec);
-            break;
-          }
-          case 80: {
-            NextAnchorPointUsableTime = input.ReadUInt32();
-            break;
-          }
-          case 90:
-          case 88: {
-            backgroundActiveWidgetList_.AddEntriesFrom(input, _repeated_backgroundActiveWidgetList_codec);
-            break;
-          }
-          case 98: {
             if (skyCrystalDetectorData_ == null) {
               SkyCrystalDetectorData = new global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData();
             }
             input.ReadMessage(SkyCrystalDetectorData);
             break;
           }
+          case 40: {
+            NextAnchorPointUsableTime = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            slotList_.AddEntriesFrom(input, _repeated_slotList_codec);
+            break;
+          }
+          case 58: {
+            clientCollectorDataList_.AddEntriesFrom(input, _repeated_clientCollectorDataList_codec);
+            break;
+          }
+          case 74:
+          case 72: {
+            backgroundActiveWidgetList_.AddEntriesFrom(input, _repeated_backgroundActiveWidgetList_codec);
+            break;
+          }
+          case 82: {
+            normalCoolDownDataList_.AddEntriesFrom(input, _repeated_normalCoolDownDataList_codec);
+            break;
+          }
           case 106: {
-            coolDownGroupDataList_.AddEntriesFrom(input, _repeated_coolDownGroupDataList_codec);
+            anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
+            break;
+          }
+          case 114: {
+            oneoffGatherPointDetectorDataList_.AddEntriesFrom(input, _repeated_oneoffGatherPointDetectorDataList_codec);
             break;
           }
           case 122: {
-            oneofGatherPointDetectorDataList_.AddEntriesFrom(input, _repeated_oneofGatherPointDetectorDataList_codec);
+            if (weatherWizardData_ == null) {
+              WeatherWizardData = new global::Weedwacker.Shared.Network.Proto.WeatherWizardData();
+            }
+            input.ReadMessage(WeatherWizardData);
             break;
           }
         }
@@ -476,43 +527,50 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 26: {
-            anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
+            coolDownGroupDataList_.AddEntriesFrom(ref input, _repeated_coolDownGroupDataList_codec);
             break;
           }
           case 34: {
-            clientCollectorDataList_.AddEntriesFrom(ref input, _repeated_clientCollectorDataList_codec);
-            break;
-          }
-          case 50: {
-            slotList_.AddEntriesFrom(ref input, _repeated_slotList_codec);
-            break;
-          }
-          case 74: {
-            normalCoolDownDataList_.AddEntriesFrom(ref input, _repeated_normalCoolDownDataList_codec);
-            break;
-          }
-          case 80: {
-            NextAnchorPointUsableTime = input.ReadUInt32();
-            break;
-          }
-          case 90:
-          case 88: {
-            backgroundActiveWidgetList_.AddEntriesFrom(ref input, _repeated_backgroundActiveWidgetList_codec);
-            break;
-          }
-          case 98: {
             if (skyCrystalDetectorData_ == null) {
               SkyCrystalDetectorData = new global::Weedwacker.Shared.Network.Proto.SkyCrystalDetectorData();
             }
             input.ReadMessage(SkyCrystalDetectorData);
             break;
           }
+          case 40: {
+            NextAnchorPointUsableTime = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            slotList_.AddEntriesFrom(ref input, _repeated_slotList_codec);
+            break;
+          }
+          case 58: {
+            clientCollectorDataList_.AddEntriesFrom(ref input, _repeated_clientCollectorDataList_codec);
+            break;
+          }
+          case 74:
+          case 72: {
+            backgroundActiveWidgetList_.AddEntriesFrom(ref input, _repeated_backgroundActiveWidgetList_codec);
+            break;
+          }
+          case 82: {
+            normalCoolDownDataList_.AddEntriesFrom(ref input, _repeated_normalCoolDownDataList_codec);
+            break;
+          }
           case 106: {
-            coolDownGroupDataList_.AddEntriesFrom(ref input, _repeated_coolDownGroupDataList_codec);
+            anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
+            break;
+          }
+          case 114: {
+            oneoffGatherPointDetectorDataList_.AddEntriesFrom(ref input, _repeated_oneoffGatherPointDetectorDataList_codec);
             break;
           }
           case 122: {
-            oneofGatherPointDetectorDataList_.AddEntriesFrom(ref input, _repeated_oneofGatherPointDetectorDataList_codec);
+            if (weatherWizardData_ == null) {
+              WeatherWizardData = new global::Weedwacker.Shared.Network.Proto.WeatherWizardData();
+            }
+            input.ReadMessage(WeatherWizardData);
             break;
           }
         }

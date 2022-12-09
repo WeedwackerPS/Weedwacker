@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static FocusAvatarReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGb2N1c0F2YXRhclJlcS5wcm90byI3Cg5Gb2N1c0F2YXRhclJlcRITCgth",
-            "dmF0YXJfZ3VpZBgBIAEoBBIQCghpc19mb2N1cxgIIAEoCEIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRGb2N1c0F2YXRhclJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byI3Cg5Gb2N1c0F2YXRhclJlcRITCgthdmF0YXJfZ3VpZBgF",
+            "IAEoBBIQCghpc19mb2N1cxgLIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1654
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1793;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FocusAvatarReq : pb::IMessage<FocusAvatarReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 1;
+    public const int AvatarGuidFieldNumber = 5;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_focus" field.</summary>
-    public const int IsFocusFieldNumber = 8;
+    public const int IsFocusFieldNumber = 11;
     private bool isFocus_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt64(AvatarGuid);
       }
       if (IsFocus != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteBool(IsFocus);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteUInt64(AvatarGuid);
       }
       if (IsFocus != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteBool(IsFocus);
       }
       if (_unknownFields != null) {
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 88: {
             IsFocus = input.ReadBool();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 64: {
+          case 88: {
             IsFocus = input.ReadBool();
             break;
           }

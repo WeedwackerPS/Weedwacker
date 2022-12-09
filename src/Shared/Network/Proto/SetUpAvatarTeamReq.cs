@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetUpAvatarTeamReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhTZXRVcEF2YXRhclRlYW1SZXEucHJvdG8iXQoSU2V0VXBBdmF0YXJUZWFt",
-            "UmVxEg8KB3RlYW1faWQYAyABKA0SHQoVYXZhdGFyX3RlYW1fZ3VpZF9saXN0",
-            "GAcgAygEEhcKD2N1cl9hdmF0YXJfZ3VpZBgFIAEoBEIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhTZXRVcEF2YXRhclRlYW1SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iXQoSU2V0VXBBdmF0YXJUZWFtUmVxEg8KB3RlYW1f",
+            "aWQYDSABKA0SFwoPY3VyX2F2YXRhcl9ndWlkGAUgASgEEh0KFWF2YXRhcl90",
+            "ZWFtX2d1aWRfbGlzdBgOIAMoBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetUpAvatarTeamReq), global::Weedwacker.Shared.Network.Proto.SetUpAvatarTeamReq.Parser, new[]{ "TeamId", "AvatarTeamGuidList", "CurAvatarGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetUpAvatarTeamReq), global::Weedwacker.Shared.Network.Proto.SetUpAvatarTeamReq.Parser, new[]{ "TeamId", "CurAvatarGuid", "AvatarTeamGuidList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1690
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1713;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetUpAvatarTeamReq : pb::IMessage<SetUpAvatarTeamReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetUpAvatarTeamReq(SetUpAvatarTeamReq other) : this() {
       teamId_ = other.teamId_;
-      avatarTeamGuidList_ = other.avatarTeamGuidList_.Clone();
       curAvatarGuid_ = other.curAvatarGuid_;
+      avatarTeamGuidList_ = other.avatarTeamGuidList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_id" field.</summary>
-    public const int TeamIdFieldNumber = 3;
+    public const int TeamIdFieldNumber = 13;
     private uint teamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,17 +104,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         teamId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "avatar_team_guid_list" field.</summary>
-    public const int AvatarTeamGuidListFieldNumber = 7;
-    private static readonly pb::FieldCodec<ulong> _repeated_avatarTeamGuidList_codec
-        = pb::FieldCodec.ForUInt64(58);
-    private readonly pbc::RepeatedField<ulong> avatarTeamGuidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> AvatarTeamGuidList {
-      get { return avatarTeamGuidList_; }
     }
 
     /// <summary>Field number for the "cur_avatar_guid" field.</summary>
@@ -123,6 +116,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         curAvatarGuid_ = value;
       }
+    }
+
+    /// <summary>Field number for the "avatar_team_guid_list" field.</summary>
+    public const int AvatarTeamGuidListFieldNumber = 14;
+    private static readonly pb::FieldCodec<ulong> _repeated_avatarTeamGuidList_codec
+        = pb::FieldCodec.ForUInt64(114);
+    private readonly pbc::RepeatedField<ulong> avatarTeamGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> AvatarTeamGuidList {
+      get { return avatarTeamGuidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (TeamId != other.TeamId) return false;
-      if(!avatarTeamGuidList_.Equals(other.avatarTeamGuidList_)) return false;
       if (CurAvatarGuid != other.CurAvatarGuid) return false;
+      if(!avatarTeamGuidList_.Equals(other.avatarTeamGuidList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (TeamId != 0) hash ^= TeamId.GetHashCode();
-      hash ^= avatarTeamGuidList_.GetHashCode();
       if (CurAvatarGuid != 0UL) hash ^= CurAvatarGuid.GetHashCode();
+      hash ^= avatarTeamGuidList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,13 +175,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TeamId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(TeamId);
-      }
       if (CurAvatarGuid != 0UL) {
         output.WriteRawTag(40);
         output.WriteUInt64(CurAvatarGuid);
+      }
+      if (TeamId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TeamId);
       }
       avatarTeamGuidList_.WriteTo(output, _repeated_avatarTeamGuidList_codec);
       if (_unknownFields != null) {
@@ -190,13 +194,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TeamId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(TeamId);
-      }
       if (CurAvatarGuid != 0UL) {
         output.WriteRawTag(40);
         output.WriteUInt64(CurAvatarGuid);
+      }
+      if (TeamId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TeamId);
       }
       avatarTeamGuidList_.WriteTo(ref output, _repeated_avatarTeamGuidList_codec);
       if (_unknownFields != null) {
@@ -212,10 +216,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (TeamId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TeamId);
       }
-      size += avatarTeamGuidList_.CalculateSize(_repeated_avatarTeamGuidList_codec);
       if (CurAvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CurAvatarGuid);
       }
+      size += avatarTeamGuidList_.CalculateSize(_repeated_avatarTeamGuidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -231,10 +235,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.TeamId != 0) {
         TeamId = other.TeamId;
       }
-      avatarTeamGuidList_.Add(other.avatarTeamGuidList_);
       if (other.CurAvatarGuid != 0UL) {
         CurAvatarGuid = other.CurAvatarGuid;
       }
+      avatarTeamGuidList_.Add(other.avatarTeamGuidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            TeamId = input.ReadUInt32();
-            break;
-          }
           case 40: {
             CurAvatarGuid = input.ReadUInt64();
             break;
           }
-          case 58:
-          case 56: {
+          case 104: {
+            TeamId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
             avatarTeamGuidList_.AddEntriesFrom(input, _repeated_avatarTeamGuidList_codec);
             break;
           }
@@ -278,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            TeamId = input.ReadUInt32();
-            break;
-          }
           case 40: {
             CurAvatarGuid = input.ReadUInt64();
             break;
           }
-          case 58:
-          case 56: {
+          case 104: {
+            TeamId = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
             avatarTeamGuidList_.AddEntriesFrom(ref input, _repeated_avatarTeamGuidList_codec);
             break;
           }

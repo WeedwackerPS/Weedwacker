@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarExpeditionStartRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BdmF0YXJFeHBlZGl0aW9uU3RhcnRSc3AucHJvdG8aGkF2YXRhckV4cGVk",
-            "aXRpb25JbmZvLnByb3RvIssBChhBdmF0YXJFeHBlZGl0aW9uU3RhcnRSc3AS",
-            "TQoTZXhwZWRpdGlvbl9pbmZvX21hcBgCIAMoCzIwLkF2YXRhckV4cGVkaXRp",
-            "b25TdGFydFJzcC5FeHBlZGl0aW9uSW5mb01hcEVudHJ5Eg8KB3JldGNvZGUY",
-            "BSABKAUaTwoWRXhwZWRpdGlvbkluZm9NYXBFbnRyeRILCgNrZXkYASABKAQS",
-            "JAoFdmFsdWUYAiABKAsyFS5BdmF0YXJFeHBlZGl0aW9uSW5mbzoCOAFCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5BdmF0YXJFeHBlZGl0aW9uU3RhcnRSc3AucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGkF2YXRhckV4cGVkaXRpb25JbmZvLnBy",
+            "b3RvIosCChhBdmF0YXJFeHBlZGl0aW9uU3RhcnRSc3ASDwoHcmV0Y29kZRgE",
+            "IAEoBRJtChNleHBlZGl0aW9uX2luZm9fbWFwGAggAygLMlAuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5BdmF0YXJFeHBlZGl0aW9uU3RhcnRS",
+            "c3AuRXhwZWRpdGlvbkluZm9NYXBFbnRyeRpvChZFeHBlZGl0aW9uSW5mb01h",
+            "cEVudHJ5EgsKA2tleRgBIAEoBBJECgV2YWx1ZRgCIAEoCzI1LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXZhdGFyRXhwZWRpdGlvbkluZm86",
+            "AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarExpeditionStartRsp), global::Weedwacker.Shared.Network.Proto.AvatarExpeditionStartRsp.Parser, new[]{ "ExpeditionInfoMap", "Retcode" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarExpeditionStartRsp), global::Weedwacker.Shared.Network.Proto.AvatarExpeditionStartRsp.Parser, new[]{ "Retcode", "ExpeditionInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -42,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1719
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1646;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarExpeditionStartRsp : pb::IMessage<AvatarExpeditionStartRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarExpeditionStartRsp(AvatarExpeditionStartRsp other) : this() {
-      expeditionInfoMap_ = other.expeditionInfoMap_.Clone();
       retcode_ = other.retcode_;
+      expeditionInfoMap_ = other.expeditionInfoMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,19 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarExpeditionStartRsp(this);
     }
 
-    /// <summary>Field number for the "expedition_info_map" field.</summary>
-    public const int ExpeditionInfoMapFieldNumber = 2;
-    private static readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
-        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 18);
-    private readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> ExpeditionInfoMap {
-      get { return expeditionInfoMap_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,6 +107,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "expedition_info_map" field.</summary>
+    public const int ExpeditionInfoMapFieldNumber = 8;
+    private static readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
+        = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo.Parser), 66);
+    private readonly pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<ulong, global::Weedwacker.Shared.Network.Proto.AvatarExpeditionInfo> ExpeditionInfoMap {
+      get { return expeditionInfoMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!ExpeditionInfoMap.Equals(other.ExpeditionInfoMap)) return false;
       if (Retcode != other.Retcode) return false;
+      if (!ExpeditionInfoMap.Equals(other.ExpeditionInfoMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= ExpeditionInfoMap.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= ExpeditionInfoMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      expeditionInfoMap_.WriteTo(output, _map_expeditionInfoMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
+      expeditionInfoMap_.WriteTo(output, _map_expeditionInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -173,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      expeditionInfoMap_.WriteTo(ref output, _map_expeditionInfoMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
+      expeditionInfoMap_.WriteTo(ref output, _map_expeditionInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -188,10 +194,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += expeditionInfoMap_.CalculateSize(_map_expeditionInfoMap_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += expeditionInfoMap_.CalculateSize(_map_expeditionInfoMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -204,10 +210,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      expeditionInfoMap_.Add(other.expeditionInfoMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      expeditionInfoMap_.Add(other.expeditionInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -223,12 +229,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
             break;
           }
         }
@@ -246,12 +252,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 40: {
-            Retcode = input.ReadInt32();
+          case 66: {
+            expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
             break;
           }
         }

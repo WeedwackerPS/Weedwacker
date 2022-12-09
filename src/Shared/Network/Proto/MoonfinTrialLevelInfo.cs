@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static MoonfinTrialLevelInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtNb29uZmluVHJpYWxMZXZlbEluZm8ucHJvdG8iPwoVTW9vbmZpblRyaWFs",
-            "TGV2ZWxJbmZvEhMKC2Jlc3RfcmVjb3JkGAMgASgNEhEKCW9wZW5fdGltZRgB",
-            "IAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChtNb29uZmluVHJpYWxMZXZlbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iPwoVTW9vbmZpblRyaWFsTGV2ZWxJbmZvEhMK",
+            "C2Jlc3RfcmVjb3JkGA8gASgNEhEKCW9wZW5fdGltZRgNIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_record" field.</summary>
-    public const int BestRecordFieldNumber = 3;
+    public const int BestRecordFieldNumber = 15;
     private uint bestRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 1;
+    public const int OpenTimeFieldNumber = 13;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (OpenTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
       }
       if (BestRecord != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(120);
         output.WriteUInt32(BestRecord);
       }
       if (_unknownFields != null) {
@@ -170,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OpenTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(104);
         output.WriteUInt32(OpenTime);
       }
       if (BestRecord != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(120);
         output.WriteUInt32(BestRecord);
       }
       if (_unknownFields != null) {
@@ -226,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 104: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 24: {
+          case 120: {
             BestRecord = input.ReadUInt32();
             break;
           }
@@ -249,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 104: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 24: {
+          case 120: {
             BestRecord = input.ReadUInt32();
             break;
           }

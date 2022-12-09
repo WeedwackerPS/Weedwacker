@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeEffectDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Sb2d1ZWxpa2VFZmZlY3REYXRhTm90aWZ5LnByb3RvGhdSb2d1ZUVmZmVj",
-            "dFJlY29yZC5wcm90byJqChlSb2d1ZWxpa2VFZmZlY3REYXRhTm90aWZ5EiYK",
-            "CmN1cnNlX2xpc3QYByADKAsyEi5Sb2d1ZUVmZmVjdFJlY29yZBIlCgljYXJk",
-            "X2xpc3QYBCADKAsyEi5Sb2d1ZUVmZmVjdFJlY29yZEIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Sb2d1ZWxpa2VFZmZlY3REYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhdSb2d1ZUVmZmVjdFJlY29yZC5wcm90",
+            "byKqAQoZUm9ndWVsaWtlRWZmZWN0RGF0YU5vdGlmeRJFCgljYXJkX2xpc3QY",
+            "AyADKAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3Vl",
+            "RWZmZWN0UmVjb3JkEkYKCmN1cnNlX2xpc3QYCCADKAsyMi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3VlRWZmZWN0UmVjb3JkYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueEffectRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeEffectDataNotify), global::Weedwacker.Shared.Network.Proto.RoguelikeEffectDataNotify.Parser, new[]{ "CurseList", "CardList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeEffectDataNotify), global::Weedwacker.Shared.Network.Proto.RoguelikeEffectDataNotify.Parser, new[]{ "CardList", "CurseList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8222
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8544;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RoguelikeEffectDataNotify : pb::IMessage<RoguelikeEffectDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeEffectDataNotify(RoguelikeEffectDataNotify other) : this() {
-      curseList_ = other.curseList_.Clone();
       cardList_ = other.cardList_.Clone();
+      curseList_ = other.curseList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,26 +95,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RoguelikeEffectDataNotify(this);
     }
 
-    /// <summary>Field number for the "curse_list" field.</summary>
-    public const int CurseListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> _repeated_curseList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> curseList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> CurseList {
-      get { return curseList_; }
-    }
-
     /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 4;
+    public const int CardListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> _repeated_cardList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> cardList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> CardList {
       get { return cardList_; }
+    }
+
+    /// <summary>Field number for the "curse_list" field.</summary>
+    public const int CurseListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> _repeated_curseList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> curseList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueEffectRecord> CurseList {
+      get { return curseList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!curseList_.Equals(other.curseList_)) return false;
       if(!cardList_.Equals(other.cardList_)) return false;
+      if(!curseList_.Equals(other.curseList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= curseList_.GetHashCode();
       hash ^= cardList_.GetHashCode();
+      hash ^= curseList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -179,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += curseList_.CalculateSize(_repeated_curseList_codec);
       size += cardList_.CalculateSize(_repeated_cardList_codec);
+      size += curseList_.CalculateSize(_repeated_curseList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -193,8 +199,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      curseList_.Add(other.curseList_);
       cardList_.Add(other.cardList_);
+      curseList_.Add(other.curseList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -210,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 26: {
             cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
             break;
           }
-          case 58: {
+          case 66: {
             curseList_.AddEntriesFrom(input, _repeated_curseList_codec);
             break;
           }
@@ -233,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 26: {
             cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
             break;
           }
-          case 58: {
+          case 66: {
             curseList_.AddEntriesFrom(ref input, _repeated_curseList_codec);
             break;
           }

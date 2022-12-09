@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDdXN0b21EdW5nZW9uU3RhdGUucHJvdG8qewoSQ3VzdG9tRHVuZ2VvblN0",
-            "YXRlEh0KGUNVU1RPTV9EVU5HRU9OX1NUQVRFX0VESVQQABIiCh5DVVNUT01f",
-            "RFVOR0VPTl9TVEFURV9TRUxGX1BBU1MQARIiCh5DVVNUT01fRFVOR0VPTl9T",
-            "VEFURV9QVUJMSVNIRUQQAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChhDdXN0b21EdW5nZW9uU3RhdGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8qewoSQ3VzdG9tRHVuZ2VvblN0YXRlEh0KGUNVU1RP",
+            "TV9EVU5HRU9OX1NUQVRFX0VESVQQABIiCh5DVVNUT01fRFVOR0VPTl9TVEFU",
+            "RV9TRUxGX1BBU1MQARIiCh5DVVNUT01fRFVOR0VPTl9TVEFURV9QVUJMSVNI",
+            "RUQQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonState), }, null, null));

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGInviteBattleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtHQ0dJbnZpdGVCYXR0bGVOb3RpZnkucHJvdG8iFwoVR0NHSW52aXRlQmF0",
-            "dGxlTm90aWZ5QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChtHQ0dJbnZpdGVCYXR0bGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iMQoVR0NHSW52aXRlQmF0dGxlTm90aWZ5EhgK",
+            "EGNvbmZpcm1fZW5kX3RpbWUYASABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGInviteBattleNotify), global::Weedwacker.Shared.Network.Proto.GCGInviteBattleNotify.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGInviteBattleNotify), global::Weedwacker.Shared.Network.Proto.GCGInviteBattleNotify.Parser, new[]{ "ConfirmEndTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7692
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7448;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGInviteBattleNotify : pb::IMessage<GCGInviteBattleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,6 +80,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGInviteBattleNotify(GCGInviteBattleNotify other) : this() {
+      confirmEndTime_ = other.confirmEndTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,6 +88,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGInviteBattleNotify Clone() {
       return new GCGInviteBattleNotify(this);
+    }
+
+    /// <summary>Field number for the "confirm_end_time" field.</summary>
+    public const int ConfirmEndTimeFieldNumber = 1;
+    private uint confirmEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfirmEndTime {
+      get { return confirmEndTime_; }
+      set {
+        confirmEndTime_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -100,6 +117,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ConfirmEndTime != other.ConfirmEndTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -107,6 +125,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ConfirmEndTime != 0) hash ^= ConfirmEndTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -125,6 +144,10 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ConfirmEndTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -135,6 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ConfirmEndTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -145,6 +172,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ConfirmEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfirmEndTime);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -156,6 +186,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public void MergeFrom(GCGInviteBattleNotify other) {
       if (other == null) {
         return;
+      }
+      if (other.ConfirmEndTime != 0) {
+        ConfirmEndTime = other.ConfirmEndTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -172,6 +205,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
         }
       }
     #endif
@@ -187,6 +224,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
         }
       }
     }

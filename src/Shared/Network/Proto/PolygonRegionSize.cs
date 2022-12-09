@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PolygonRegionSizeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdQb2x5Z29uUmVnaW9uU2l6ZS5wcm90bxoRVmVjdG9yUGxhbmUucHJvdG8i",
-            "RQoRUG9seWdvblJlZ2lvblNpemUSIAoKcG9pbnRfbGlzdBgFIAMoCzIMLlZl",
-            "Y3RvclBsYW5lEg4KBmhlaWdodBgJIAEoAkIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdQb2x5Z29uUmVnaW9uU2l6ZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoRVmVjdG9yUGxhbmUucHJvdG8iZQoRUG9seWdvblJl",
+            "Z2lvblNpemUSDgoGaGVpZ2h0GAMgASgCEkAKCnBvaW50X2xpc3QYCSADKAsy",
+            "LC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvclBsYW5l",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorPlaneReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PolygonRegionSize), global::Weedwacker.Shared.Network.Proto.PolygonRegionSize.Parser, new[]{ "PointList", "Height" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PolygonRegionSize), global::Weedwacker.Shared.Network.Proto.PolygonRegionSize.Parser, new[]{ "Height", "PointList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PolygonRegionSize(PolygonRegionSize other) : this() {
-      pointList_ = other.pointList_.Clone();
       height_ = other.height_;
+      pointList_ = other.pointList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,19 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PolygonRegionSize(this);
     }
 
-    /// <summary>Field number for the "point_list" field.</summary>
-    public const int PointListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VectorPlane> _repeated_pointList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.VectorPlane.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane> pointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane> PointList {
-      get { return pointList_; }
-    }
-
     /// <summary>Field number for the "height" field.</summary>
-    public const int HeightFieldNumber = 9;
+    public const int HeightFieldNumber = 3;
     private float height_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +94,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         height_ = value;
       }
+    }
+
+    /// <summary>Field number for the "point_list" field.</summary>
+    public const int PointListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.VectorPlane> _repeated_pointList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.VectorPlane.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane> pointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.VectorPlane> PointList {
+      get { return pointList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!pointList_.Equals(other.pointList_)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Height, other.Height)) return false;
+      if(!pointList_.Equals(other.pointList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= pointList_.GetHashCode();
       if (Height != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Height);
+      hash ^= pointList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      pointList_.WriteTo(output, _repeated_pointList_codec);
       if (Height != 0F) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(29);
         output.WriteFloat(Height);
       }
+      pointList_.WriteTo(output, _repeated_pointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      pointList_.WriteTo(ref output, _repeated_pointList_codec);
       if (Height != 0F) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(29);
         output.WriteFloat(Height);
       }
+      pointList_.WriteTo(ref output, _repeated_pointList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += pointList_.CalculateSize(_repeated_pointList_codec);
       if (Height != 0F) {
         size += 1 + 4;
       }
+      size += pointList_.CalculateSize(_repeated_pointList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      pointList_.Add(other.pointList_);
       if (other.Height != 0F) {
         Height = other.Height;
       }
+      pointList_.Add(other.pointList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
-            pointList_.AddEntriesFrom(input, _repeated_pointList_codec);
+          case 29: {
+            Height = input.ReadFloat();
             break;
           }
-          case 77: {
-            Height = input.ReadFloat();
+          case 74: {
+            pointList_.AddEntriesFrom(input, _repeated_pointList_codec);
             break;
           }
         }
@@ -238,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
-            pointList_.AddEntriesFrom(ref input, _repeated_pointList_codec);
+          case 29: {
+            Height = input.ReadFloat();
             break;
           }
-          case 77: {
-            Height = input.ReadFloat();
+          case 74: {
+            pointList_.AddEntriesFrom(ref input, _repeated_pointList_codec);
             break;
           }
         }

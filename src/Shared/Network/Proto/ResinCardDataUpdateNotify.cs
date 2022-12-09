@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ResinCardDataUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9SZXNpbkNhcmREYXRhVXBkYXRlTm90aWZ5LnByb3RvGhNSZXNpbkNhcmRE",
-            "YXRhLnByb3RvIl0KGVJlc2luQ2FyZERhdGFVcGRhdGVOb3RpZnkSGAoQdG9k",
-            "YXlfc3RhcnRfdGltZRgGIAEoDRImCg5jYXJkX2RhdGFfbGlzdBgCIAMoCzIO",
-            "LlJlc2luQ2FyZERhdGFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "Ch9SZXNpbkNhcmREYXRhVXBkYXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhNSZXNpbkNhcmREYXRhLnByb3RvIn0K",
+            "GVJlc2luQ2FyZERhdGFVcGRhdGVOb3RpZnkSGAoQdG9kYXlfc3RhcnRfdGlt",
+            "ZRgEIAEoDRJGCg5jYXJkX2RhdGFfbGlzdBgOIAMoCzIuLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uUmVzaW5DYXJkRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ResinCardDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4149
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4134;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ResinCardDataUpdateNotify : pb::IMessage<ResinCardDataUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "today_start_time" field.</summary>
-    public const int TodayStartTimeFieldNumber = 6;
+    public const int TodayStartTimeFieldNumber = 4;
     private uint todayStartTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_data_list" field.</summary>
-    public const int CardDataListFieldNumber = 2;
+    public const int CardDataListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ResinCardData> _repeated_cardDataList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ResinCardData.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ResinCardData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ResinCardData> cardDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ResinCardData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      cardDataList_.WriteTo(output, _repeated_cardDataList_codec);
       if (TodayStartTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(TodayStartTime);
       }
+      cardDataList_.WriteTo(output, _repeated_cardDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      cardDataList_.WriteTo(ref output, _repeated_cardDataList_codec);
       if (TodayStartTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(TodayStartTime);
       }
+      cardDataList_.WriteTo(ref output, _repeated_cardDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            cardDataList_.AddEntriesFrom(input, _repeated_cardDataList_codec);
+          case 32: {
+            TodayStartTime = input.ReadUInt32();
             break;
           }
-          case 48: {
-            TodayStartTime = input.ReadUInt32();
+          case 114: {
+            cardDataList_.AddEntriesFrom(input, _repeated_cardDataList_codec);
             break;
           }
         }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            cardDataList_.AddEntriesFrom(ref input, _repeated_cardDataList_codec);
+          case 32: {
+            TodayStartTime = input.ReadUInt32();
             break;
           }
-          case 48: {
-            TodayStartTime = input.ReadUInt32();
+          case 114: {
+            cardDataList_.AddEntriesFrom(ref input, _repeated_cardDataList_codec);
             break;
           }
         }

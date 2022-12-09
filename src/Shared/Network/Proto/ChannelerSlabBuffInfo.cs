@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabBuffInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtDaGFubmVsZXJTbGFiQnVmZkluZm8ucHJvdG8aHUNoYW5uZWxlclNsYWJB",
-            "c3Npc3RJbmZvLnByb3RvGiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8u",
-            "cHJvdG8i2wEKFUNoYW5uZWxlclNsYWJCdWZmSW5mbxI5ChNtcF9idWZmX3Nj",
-            "aGVtZV9pbmZvGAYgASgLMhwuQ2hhbm5lbGVyU2xhYkJ1ZmZTY2hlbWVJbmZv",
-            "EhQKDGJ1ZmZfaWRfbGlzdBgIIAMoDRI9ChdzaW5nbGVfYnVmZl9zY2hlbWVf",
-            "aW5mbxgHIAEoCzIcLkNoYW5uZWxlclNsYWJCdWZmU2NoZW1lSW5mbxIyChBh",
-            "c3Npc3RfaW5mb19saXN0GA8gAygLMhguQ2hhbm5lbGVyU2xhYkFzc2lzdElu",
-            "Zm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChtDaGFubmVsZXJTbGFiQnVmZkluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aHUNoYW5uZWxlclNsYWJBc3Npc3RJbmZvLnBy",
+            "b3RvGiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8ucHJvdG8itwIKFUNo",
+            "YW5uZWxlclNsYWJCdWZmSW5mbxJSChBhc3Npc3RfaW5mb19saXN0GAsgAygL",
+            "MjguV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DaGFubmVsZXJT",
+            "bGFiQXNzaXN0SW5mbxJZChNVbmszMzAwX0NERkxJT05HS0NIGAggASgLMjwu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DaGFubmVsZXJTbGFi",
+            "QnVmZlNjaGVtZUluZm8SWQoTVW5rMzMwMF9BTkVOSE1BQURMThgOIAEoCzI8",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hhbm5lbGVyU2xh",
+            "YkJ1ZmZTY2hlbWVJbmZvEhQKDGJ1ZmZfaWRfbGlzdBgGIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo.Parser, new[]{ "MpBuffSchemeInfo", "BuffIdList", "SingleBuffSchemeInfo", "AssistInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffInfo.Parser, new[]{ "AssistInfoList", "Unk3300CDFLIONGKCH", "Unk3300ANENHMAADLN", "BuffIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,10 +78,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabBuffInfo(ChannelerSlabBuffInfo other) : this() {
-      mpBuffSchemeInfo_ = other.mpBuffSchemeInfo_ != null ? other.mpBuffSchemeInfo_.Clone() : null;
-      buffIdList_ = other.buffIdList_.Clone();
-      singleBuffSchemeInfo_ = other.singleBuffSchemeInfo_ != null ? other.singleBuffSchemeInfo_.Clone() : null;
       assistInfoList_ = other.assistInfoList_.Clone();
+      unk3300CDFLIONGKCH_ = other.unk3300CDFLIONGKCH_ != null ? other.unk3300CDFLIONGKCH_.Clone() : null;
+      unk3300ANENHMAADLN_ = other.unk3300ANENHMAADLN_ != null ? other.unk3300ANENHMAADLN_.Clone() : null;
+      buffIdList_ = other.buffIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,50 +91,50 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabBuffInfo(this);
     }
 
-    /// <summary>Field number for the "mp_buff_scheme_info" field.</summary>
-    public const int MpBuffSchemeInfoFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo mpBuffSchemeInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo MpBuffSchemeInfo {
-      get { return mpBuffSchemeInfo_; }
-      set {
-        mpBuffSchemeInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "buff_id_list" field.</summary>
-    public const int BuffIdListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BuffIdList {
-      get { return buffIdList_; }
-    }
-
-    /// <summary>Field number for the "single_buff_scheme_info" field.</summary>
-    public const int SingleBuffSchemeInfoFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo singleBuffSchemeInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo SingleBuffSchemeInfo {
-      get { return singleBuffSchemeInfo_; }
-      set {
-        singleBuffSchemeInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "assist_info_list" field.</summary>
-    public const int AssistInfoListFieldNumber = 15;
+    public const int AssistInfoListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo> _repeated_assistInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo> assistInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo> AssistInfoList {
       get { return assistInfoList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_CDFLIONGKCH" field.</summary>
+    public const int Unk3300CDFLIONGKCHFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo unk3300CDFLIONGKCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo Unk3300CDFLIONGKCH {
+      get { return unk3300CDFLIONGKCH_; }
+      set {
+        unk3300CDFLIONGKCH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ANENHMAADLN" field.</summary>
+    public const int Unk3300ANENHMAADLNFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo unk3300ANENHMAADLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo Unk3300ANENHMAADLN {
+      get { return unk3300ANENHMAADLN_; }
+      set {
+        unk3300ANENHMAADLN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_id_list" field.</summary>
+    public const int BuffIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BuffIdList {
+      get { return buffIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,10 +152,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(MpBuffSchemeInfo, other.MpBuffSchemeInfo)) return false;
-      if(!buffIdList_.Equals(other.buffIdList_)) return false;
-      if (!object.Equals(SingleBuffSchemeInfo, other.SingleBuffSchemeInfo)) return false;
       if(!assistInfoList_.Equals(other.assistInfoList_)) return false;
+      if (!object.Equals(Unk3300CDFLIONGKCH, other.Unk3300CDFLIONGKCH)) return false;
+      if (!object.Equals(Unk3300ANENHMAADLN, other.Unk3300ANENHMAADLN)) return false;
+      if(!buffIdList_.Equals(other.buffIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,10 +163,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (mpBuffSchemeInfo_ != null) hash ^= MpBuffSchemeInfo.GetHashCode();
-      hash ^= buffIdList_.GetHashCode();
-      if (singleBuffSchemeInfo_ != null) hash ^= SingleBuffSchemeInfo.GetHashCode();
       hash ^= assistInfoList_.GetHashCode();
+      if (unk3300CDFLIONGKCH_ != null) hash ^= Unk3300CDFLIONGKCH.GetHashCode();
+      if (unk3300ANENHMAADLN_ != null) hash ^= Unk3300ANENHMAADLN.GetHashCode();
+      hash ^= buffIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -184,16 +185,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (mpBuffSchemeInfo_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(MpBuffSchemeInfo);
-      }
-      if (singleBuffSchemeInfo_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(SingleBuffSchemeInfo);
-      }
       buffIdList_.WriteTo(output, _repeated_buffIdList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300CDFLIONGKCH);
+      }
       assistInfoList_.WriteTo(output, _repeated_assistInfoList_codec);
+      if (unk3300ANENHMAADLN_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300ANENHMAADLN);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -204,16 +205,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (mpBuffSchemeInfo_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(MpBuffSchemeInfo);
-      }
-      if (singleBuffSchemeInfo_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(SingleBuffSchemeInfo);
-      }
       buffIdList_.WriteTo(ref output, _repeated_buffIdList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300CDFLIONGKCH);
+      }
       assistInfoList_.WriteTo(ref output, _repeated_assistInfoList_codec);
+      if (unk3300ANENHMAADLN_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300ANENHMAADLN);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -224,14 +225,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (mpBuffSchemeInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MpBuffSchemeInfo);
+      size += assistInfoList_.CalculateSize(_repeated_assistInfoList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CDFLIONGKCH);
+      }
+      if (unk3300ANENHMAADLN_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300ANENHMAADLN);
       }
       size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
-      if (singleBuffSchemeInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SingleBuffSchemeInfo);
-      }
-      size += assistInfoList_.CalculateSize(_repeated_assistInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -244,20 +245,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.mpBuffSchemeInfo_ != null) {
-        if (mpBuffSchemeInfo_ == null) {
-          MpBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+      assistInfoList_.Add(other.assistInfoList_);
+      if (other.unk3300CDFLIONGKCH_ != null) {
+        if (unk3300CDFLIONGKCH_ == null) {
+          Unk3300CDFLIONGKCH = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
         }
-        MpBuffSchemeInfo.MergeFrom(other.MpBuffSchemeInfo);
+        Unk3300CDFLIONGKCH.MergeFrom(other.Unk3300CDFLIONGKCH);
+      }
+      if (other.unk3300ANENHMAADLN_ != null) {
+        if (unk3300ANENHMAADLN_ == null) {
+          Unk3300ANENHMAADLN = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+        }
+        Unk3300ANENHMAADLN.MergeFrom(other.Unk3300ANENHMAADLN);
       }
       buffIdList_.Add(other.buffIdList_);
-      if (other.singleBuffSchemeInfo_ != null) {
-        if (singleBuffSchemeInfo_ == null) {
-          SingleBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
-        }
-        SingleBuffSchemeInfo.MergeFrom(other.SingleBuffSchemeInfo);
-      }
-      assistInfoList_.Add(other.assistInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -273,27 +274,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
-            if (mpBuffSchemeInfo_ == null) {
-              MpBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
-            }
-            input.ReadMessage(MpBuffSchemeInfo);
-            break;
-          }
-          case 58: {
-            if (singleBuffSchemeInfo_ == null) {
-              SingleBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
-            }
-            input.ReadMessage(SingleBuffSchemeInfo);
-            break;
-          }
-          case 66:
-          case 64: {
+          case 50:
+          case 48: {
             buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
             break;
           }
-          case 122: {
+          case 66: {
+            if (unk3300CDFLIONGKCH_ == null) {
+              Unk3300CDFLIONGKCH = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300CDFLIONGKCH);
+            break;
+          }
+          case 90: {
             assistInfoList_.AddEntriesFrom(input, _repeated_assistInfoList_codec);
+            break;
+          }
+          case 114: {
+            if (unk3300ANENHMAADLN_ == null) {
+              Unk3300ANENHMAADLN = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300ANENHMAADLN);
             break;
           }
         }
@@ -311,27 +312,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
-            if (mpBuffSchemeInfo_ == null) {
-              MpBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
-            }
-            input.ReadMessage(MpBuffSchemeInfo);
-            break;
-          }
-          case 58: {
-            if (singleBuffSchemeInfo_ == null) {
-              SingleBuffSchemeInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
-            }
-            input.ReadMessage(SingleBuffSchemeInfo);
-            break;
-          }
-          case 66:
-          case 64: {
+          case 50:
+          case 48: {
             buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
             break;
           }
-          case 122: {
+          case 66: {
+            if (unk3300CDFLIONGKCH_ == null) {
+              Unk3300CDFLIONGKCH = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300CDFLIONGKCH);
+            break;
+          }
+          case 90: {
             assistInfoList_.AddEntriesFrom(ref input, _repeated_assistInfoList_codec);
+            break;
+          }
+          case 114: {
+            if (unk3300ANENHMAADLN_ == null) {
+              Unk3300ANENHMAADLN = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300ANENHMAADLN);
             break;
           }
         }

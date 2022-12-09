@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusFighterRuntimeDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRGdW5ndXNGaWdodGVyUnVudGltZURhdGFOb3RpZnkucHJvdG8aIkZ1bmd1",
-            "c1RyYWluaW5nUHJvZ3Jlc3NEZXRhaWwucHJvdG8iWAoeRnVuZ3VzRmlnaHRl",
-            "clJ1bnRpbWVEYXRhTm90aWZ5EjYKD3Byb2dyZXNzX2RldGFpbBgHIAEoCzId",
-            "LkZ1bmd1c1RyYWluaW5nUHJvZ3Jlc3NEZXRhaWxCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRGdW5ndXNGaWdodGVyUnVudGltZURhdGFOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aIkZ1bmd1c1RyYWluaW5nUHJv",
+            "Z3Jlc3NEZXRhaWwucHJvdG8ieAoeRnVuZ3VzRmlnaHRlclJ1bnRpbWVEYXRh",
+            "Tm90aWZ5ElYKD3Byb2dyZXNzX2RldGFpbBgHIAEoCzI9LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uRnVuZ3VzVHJhaW5pbmdQcm9ncmVzc0Rl",
+            "dGFpbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FungusTrainingProgressDetailReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 24674
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20567;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FungusFighterRuntimeDataNotify : pb::IMessage<FungusFighterRuntimeDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

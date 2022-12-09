@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonBattleRecordNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVDdXN0b21EdW5nZW9uQmF0dGxlUmVjb3JkTm90aWZ5LnByb3RvIk4KH0N1",
-            "c3RvbUR1bmdlb25CYXR0bGVSZWNvcmROb3RpZnkSFQoNbWluX2Nvc3RfdGlt",
-            "ZRgNIAEoDRIUCgxkdW5nZW9uX2d1aWQYDCABKARCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVDdXN0b21EdW5nZW9uQmF0dGxlUmVjb3JkTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIk4KH0N1c3RvbUR1bmdlb25C",
+            "YXR0bGVSZWNvcmROb3RpZnkSFAoMZHVuZ2Vvbl9ndWlkGAEgASgEEhUKDW1p",
+            "bl9jb3N0X3RpbWUYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonBattleRecordNotify), global::Weedwacker.Shared.Network.Proto.CustomDungeonBattleRecordNotify.Parser, new[]{ "MinCostTime", "DungeonGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonBattleRecordNotify), global::Weedwacker.Shared.Network.Proto.CustomDungeonBattleRecordNotify.Parser, new[]{ "DungeonGuid", "MinCostTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6236
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6225;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class CustomDungeonBattleRecordNotify : pb::IMessage<CustomDungeonBattleRecordNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeonBattleRecordNotify(CustomDungeonBattleRecordNotify other) : this() {
-      minCostTime_ = other.minCostTime_;
       dungeonGuid_ = other.dungeonGuid_;
+      minCostTime_ = other.minCostTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CustomDungeonBattleRecordNotify(this);
     }
 
-    /// <summary>Field number for the "min_cost_time" field.</summary>
-    public const int MinCostTimeFieldNumber = 13;
-    private uint minCostTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinCostTime {
-      get { return minCostTime_; }
-      set {
-        minCostTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 12;
+    public const int DungeonGuidFieldNumber = 1;
     private ulong dungeonGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dungeonGuid_; }
       set {
         dungeonGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "min_cost_time" field.</summary>
+    public const int MinCostTimeFieldNumber = 12;
+    private uint minCostTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinCostTime {
+      get { return minCostTime_; }
+      set {
+        minCostTime_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MinCostTime != other.MinCostTime) return false;
       if (DungeonGuid != other.DungeonGuid) return false;
+      if (MinCostTime != other.MinCostTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MinCostTime != 0) hash ^= MinCostTime.GetHashCode();
       if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      if (MinCostTime != 0) hash ^= MinCostTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt64(DungeonGuid);
       }
       if (MinCostTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(MinCostTime);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt64(DungeonGuid);
       }
       if (MinCostTime != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteUInt32(MinCostTime);
       }
       if (_unknownFields != null) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MinCostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinCostTime);
-      }
       if (DungeonGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
+      }
+      if (MinCostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinCostTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MinCostTime != 0) {
-        MinCostTime = other.MinCostTime;
-      }
       if (other.DungeonGuid != 0UL) {
         DungeonGuid = other.DungeonGuid;
+      }
+      if (other.MinCostTime != 0) {
+        MinCostTime = other.MinCostTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
+          case 8: {
             DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 104: {
+          case 96: {
             MinCostTime = input.ReadUInt32();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
+          case 8: {
             DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 104: {
+          case 96: {
             MinCostTime = input.ReadUInt32();
             break;
           }

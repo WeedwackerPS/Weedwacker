@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayBattleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlTY2VuZVBsYXlCYXR0bGVJbmZvLnByb3RvItMBChNTY2VuZVBsYXlCYXR0",
-            "bGVJbmZvEgwKBG1vZGUYBCABKA0SGwoTcHJvZ3Jlc3Nfc3RhZ2VfbGlzdBgD",
-            "IAMoDRISCgpzdGFydF90aW1lGAogASgNEhAKCGR1cmF0aW9uGA4gASgNEhEK",
-            "CXBsYXlfdHlwZRgMIAEoDRIPCgdwbGF5X2lkGAEgASgNEhgKEHByZXBhcmVf",
-            "ZW5kX3RpbWUYByABKA0SEAoIcHJvZ3Jlc3MYCyABKA0SDQoFc3RhdGUYCCAB",
-            "KA0SDAoEdHlwZRgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChlTY2VuZVBsYXlCYXR0bGVJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvItMBChNTY2VuZVBsYXlCYXR0bGVJbmZvEhAKCGR1",
+            "cmF0aW9uGA4gASgNEhAKCHByb2dyZXNzGAUgASgNEhgKEHByZXBhcmVfZW5k",
+            "X3RpbWUYASABKA0SEQoJcGxheV90eXBlGAwgASgNEhsKE3Byb2dyZXNzX3N0",
+            "YWdlX2xpc3QYDSADKA0SDQoFc3RhdGUYByABKA0SDAoEbW9kZRgGIAEoDRIM",
+            "CgR0eXBlGAogASgNEg8KB3BsYXlfaWQYCyABKA0SEgoKc3RhcnRfdGltZRgI",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo), global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo.Parser, new[]{ "Mode", "ProgressStageList", "StartTime", "Duration", "PlayType", "PlayId", "PrepareEndTime", "Progress", "State", "Type" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo), global::Weedwacker.Shared.Network.Proto.ScenePlayBattleInfo.Parser, new[]{ "Duration", "Progress", "PrepareEndTime", "PlayType", "ProgressStageList", "State", "Mode", "Type", "PlayId", "StartTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,16 +75,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayBattleInfo(ScenePlayBattleInfo other) : this() {
-      mode_ = other.mode_;
-      progressStageList_ = other.progressStageList_.Clone();
-      startTime_ = other.startTime_;
       duration_ = other.duration_;
-      playType_ = other.playType_;
-      playId_ = other.playId_;
-      prepareEndTime_ = other.prepareEndTime_;
       progress_ = other.progress_;
+      prepareEndTime_ = other.prepareEndTime_;
+      playType_ = other.playType_;
+      progressStageList_ = other.progressStageList_.Clone();
       state_ = other.state_;
+      mode_ = other.mode_;
       type_ = other.type_;
+      playId_ = other.playId_;
+      startTime_ = other.startTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,41 +92,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayBattleInfo Clone() {
       return new ScenePlayBattleInfo(this);
-    }
-
-    /// <summary>Field number for the "mode" field.</summary>
-    public const int ModeFieldNumber = 4;
-    private uint mode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Mode {
-      get { return mode_; }
-      set {
-        mode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "progress_stage_list" field.</summary>
-    public const int ProgressStageListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_progressStageList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> progressStageList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ProgressStageList {
-      get { return progressStageList_; }
-    }
-
-    /// <summary>Field number for the "start_time" field.</summary>
-    public const int StartTimeFieldNumber = 10;
-    private uint startTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StartTime {
-      get { return startTime_; }
-      set {
-        startTime_ = value;
-      }
     }
 
     /// <summary>Field number for the "duration" field.</summary>
@@ -138,6 +103,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return duration_; }
       set {
         duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "progress" field.</summary>
+    public const int ProgressFieldNumber = 5;
+    private uint progress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Progress {
+      get { return progress_; }
+      set {
+        progress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prepare_end_time" field.</summary>
+    public const int PrepareEndTimeFieldNumber = 1;
+    private uint prepareEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PrepareEndTime {
+      get { return prepareEndTime_; }
+      set {
+        prepareEndTime_ = value;
       }
     }
 
@@ -153,44 +142,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "play_id" field.</summary>
-    public const int PlayIdFieldNumber = 1;
-    private uint playId_;
+    /// <summary>Field number for the "progress_stage_list" field.</summary>
+    public const int ProgressStageListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_progressStageList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> progressStageList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlayId {
-      get { return playId_; }
-      set {
-        playId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "prepare_end_time" field.</summary>
-    public const int PrepareEndTimeFieldNumber = 7;
-    private uint prepareEndTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PrepareEndTime {
-      get { return prepareEndTime_; }
-      set {
-        prepareEndTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 11;
-    private uint progress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Progress {
-      get { return progress_; }
-      set {
-        progress_ = value;
-      }
+    public pbc::RepeatedField<uint> ProgressStageList {
+      get { return progressStageList_; }
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 8;
+    public const int StateFieldNumber = 7;
     private uint state_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -201,8 +165,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "mode" field.</summary>
+    public const int ModeFieldNumber = 6;
+    private uint mode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Mode {
+      get { return mode_; }
+      set {
+        mode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 9;
+    public const int TypeFieldNumber = 10;
     private uint type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -210,6 +186,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return type_; }
       set {
         type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "play_id" field.</summary>
+    public const int PlayIdFieldNumber = 11;
+    private uint playId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayId {
+      get { return playId_; }
+      set {
+        playId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "start_time" field.</summary>
+    public const int StartTimeFieldNumber = 8;
+    private uint startTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StartTime {
+      get { return startTime_; }
+      set {
+        startTime_ = value;
       }
     }
 
@@ -228,16 +228,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Mode != other.Mode) return false;
-      if(!progressStageList_.Equals(other.progressStageList_)) return false;
-      if (StartTime != other.StartTime) return false;
       if (Duration != other.Duration) return false;
-      if (PlayType != other.PlayType) return false;
-      if (PlayId != other.PlayId) return false;
-      if (PrepareEndTime != other.PrepareEndTime) return false;
       if (Progress != other.Progress) return false;
+      if (PrepareEndTime != other.PrepareEndTime) return false;
+      if (PlayType != other.PlayType) return false;
+      if(!progressStageList_.Equals(other.progressStageList_)) return false;
       if (State != other.State) return false;
+      if (Mode != other.Mode) return false;
       if (Type != other.Type) return false;
+      if (PlayId != other.PlayId) return false;
+      if (StartTime != other.StartTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -245,16 +245,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Mode != 0) hash ^= Mode.GetHashCode();
-      hash ^= progressStageList_.GetHashCode();
-      if (StartTime != 0) hash ^= StartTime.GetHashCode();
       if (Duration != 0) hash ^= Duration.GetHashCode();
-      if (PlayType != 0) hash ^= PlayType.GetHashCode();
-      if (PlayId != 0) hash ^= PlayId.GetHashCode();
-      if (PrepareEndTime != 0) hash ^= PrepareEndTime.GetHashCode();
       if (Progress != 0) hash ^= Progress.GetHashCode();
+      if (PrepareEndTime != 0) hash ^= PrepareEndTime.GetHashCode();
+      if (PlayType != 0) hash ^= PlayType.GetHashCode();
+      hash ^= progressStageList_.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
+      if (Mode != 0) hash ^= Mode.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
+      if (PlayId != 0) hash ^= PlayId.GetHashCode();
+      if (StartTime != 0) hash ^= StartTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -273,39 +273,39 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PlayId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(PlayId);
-      }
-      progressStageList_.WriteTo(output, _repeated_progressStageList_codec);
-      if (Mode != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Mode);
-      }
       if (PrepareEndTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(PrepareEndTime);
       }
+      if (Progress != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Progress);
+      }
+      if (Mode != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Mode);
+      }
       if (State != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(State);
       }
-      if (Type != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Type);
-      }
       if (StartTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(StartTime);
       }
-      if (Progress != 0) {
+      if (Type != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Type);
+      }
+      if (PlayId != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(Progress);
+        output.WriteUInt32(PlayId);
       }
       if (PlayType != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(PlayType);
       }
+      progressStageList_.WriteTo(output, _repeated_progressStageList_codec);
       if (Duration != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Duration);
@@ -320,39 +320,39 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PlayId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(PlayId);
-      }
-      progressStageList_.WriteTo(ref output, _repeated_progressStageList_codec);
-      if (Mode != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Mode);
-      }
       if (PrepareEndTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(PrepareEndTime);
       }
+      if (Progress != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Progress);
+      }
+      if (Mode != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Mode);
+      }
       if (State != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(State);
       }
-      if (Type != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Type);
-      }
       if (StartTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(StartTime);
       }
-      if (Progress != 0) {
+      if (Type != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Type);
+      }
+      if (PlayId != 0) {
         output.WriteRawTag(88);
-        output.WriteUInt32(Progress);
+        output.WriteUInt32(PlayId);
       }
       if (PlayType != 0) {
         output.WriteRawTag(96);
         output.WriteUInt32(PlayType);
       }
+      progressStageList_.WriteTo(ref output, _repeated_progressStageList_codec);
       if (Duration != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Duration);
@@ -367,33 +367,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Mode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Mode);
-      }
-      size += progressStageList_.CalculateSize(_repeated_progressStageList_codec);
-      if (StartTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
-      }
       if (Duration != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Duration);
-      }
-      if (PlayType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
-      }
-      if (PlayId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayId);
-      }
-      if (PrepareEndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrepareEndTime);
       }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
+      if (PrepareEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PrepareEndTime);
+      }
+      if (PlayType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayType);
+      }
+      size += progressStageList_.CalculateSize(_repeated_progressStageList_codec);
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(State);
       }
+      if (Mode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Mode);
+      }
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
+      }
+      if (PlayId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayId);
+      }
+      if (StartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -407,33 +407,33 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Mode != 0) {
-        Mode = other.Mode;
-      }
-      progressStageList_.Add(other.progressStageList_);
-      if (other.StartTime != 0) {
-        StartTime = other.StartTime;
-      }
       if (other.Duration != 0) {
         Duration = other.Duration;
-      }
-      if (other.PlayType != 0) {
-        PlayType = other.PlayType;
-      }
-      if (other.PlayId != 0) {
-        PlayId = other.PlayId;
-      }
-      if (other.PrepareEndTime != 0) {
-        PrepareEndTime = other.PrepareEndTime;
       }
       if (other.Progress != 0) {
         Progress = other.Progress;
       }
+      if (other.PrepareEndTime != 0) {
+        PrepareEndTime = other.PrepareEndTime;
+      }
+      if (other.PlayType != 0) {
+        PlayType = other.PlayType;
+      }
+      progressStageList_.Add(other.progressStageList_);
       if (other.State != 0) {
         State = other.State;
       }
+      if (other.Mode != 0) {
+        Mode = other.Mode;
+      }
       if (other.Type != 0) {
         Type = other.Type;
+      }
+      if (other.PlayId != 0) {
+        PlayId = other.PlayId;
+      }
+      if (other.StartTime != 0) {
+        StartTime = other.StartTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -451,40 +451,40 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PlayId = input.ReadUInt32();
+            PrepareEndTime = input.ReadUInt32();
             break;
           }
-          case 26:
-          case 24: {
-            progressStageList_.AddEntriesFrom(input, _repeated_progressStageList_codec);
+          case 40: {
+            Progress = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 48: {
             Mode = input.ReadUInt32();
             break;
           }
           case 56: {
-            PrepareEndTime = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             State = input.ReadUInt32();
             break;
           }
-          case 72: {
-            Type = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 64: {
             StartTime = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Type = input.ReadUInt32();
+            break;
+          }
           case 88: {
-            Progress = input.ReadUInt32();
+            PlayId = input.ReadUInt32();
             break;
           }
           case 96: {
             PlayType = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            progressStageList_.AddEntriesFrom(input, _repeated_progressStageList_codec);
             break;
           }
           case 112: {
@@ -507,40 +507,40 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            PlayId = input.ReadUInt32();
+            PrepareEndTime = input.ReadUInt32();
             break;
           }
-          case 26:
-          case 24: {
-            progressStageList_.AddEntriesFrom(ref input, _repeated_progressStageList_codec);
+          case 40: {
+            Progress = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 48: {
             Mode = input.ReadUInt32();
             break;
           }
           case 56: {
-            PrepareEndTime = input.ReadUInt32();
-            break;
-          }
-          case 64: {
             State = input.ReadUInt32();
             break;
           }
-          case 72: {
-            Type = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 64: {
             StartTime = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Type = input.ReadUInt32();
+            break;
+          }
           case 88: {
-            Progress = input.ReadUInt32();
+            PlayId = input.ReadUInt32();
             break;
           }
           case 96: {
             PlayType = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            progressStageList_.AddEntriesFrom(ref input, _repeated_progressStageList_codec);
             break;
           }
           case 112: {

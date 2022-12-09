@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static GravenInnocenceCarveInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8ucHJvdG8aI0dyYXZlbklubm9j",
-            "ZW5jZUNhcnZlU3RhZ2VJbmZvLnByb3RvIowBChhHcmF2ZW5Jbm5vY2VuY2VD",
-            "YXJ2ZUluZm8SNwoPc3RhZ2VfaW5mb19saXN0GAogAygLMh4uR3JhdmVuSW5u",
-            "b2NlbmNlQ2FydmVTdGFnZUluZm8SFgoOY2FuX2VkaXRfY291bnQYByABKA0S",
-            "HwoXaGFzX2VkaXRfY29uZmlnX2lkX2xpc3QYBiADKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aI0dyYXZlbklubm9jZW5jZUNhcnZlU3Rh",
+            "Z2VJbmZvLnByb3RvIqwBChhHcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8SFgoO",
+            "Y2FuX2VkaXRfY291bnQYCCABKA0SHwoXaGFzX2VkaXRfY29uZmlnX2lkX2xp",
+            "c3QYDCADKA0SVwoPc3RhZ2VfaW5mb19saXN0GAIgAygLMj4uV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZVN0",
+            "YWdlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveInfo), global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveInfo.Parser, new[]{ "StageInfoList", "CanEditCount", "HasEditConfigIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveInfo), global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveInfo.Parser, new[]{ "CanEditCount", "HasEditConfigIdList", "StageInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GravenInnocenceCarveInfo(GravenInnocenceCarveInfo other) : this() {
-      stageInfoList_ = other.stageInfoList_.Clone();
       canEditCount_ = other.canEditCount_;
       hasEditConfigIdList_ = other.hasEditConfigIdList_.Clone();
+      stageInfoList_ = other.stageInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,19 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GravenInnocenceCarveInfo(this);
     }
 
-    /// <summary>Field number for the "stage_info_list" field.</summary>
-    public const int StageInfoListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> _repeated_stageInfoList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> stageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> StageInfoList {
-      get { return stageInfoList_; }
-    }
-
     /// <summary>Field number for the "can_edit_count" field.</summary>
-    public const int CanEditCountFieldNumber = 7;
+    public const int CanEditCountFieldNumber = 8;
     private uint canEditCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,14 +100,25 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "has_edit_config_id_list" field.</summary>
-    public const int HasEditConfigIdListFieldNumber = 6;
+    public const int HasEditConfigIdListFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_hasEditConfigIdList_codec
-        = pb::FieldCodec.ForUInt32(50);
+        = pb::FieldCodec.ForUInt32(98);
     private readonly pbc::RepeatedField<uint> hasEditConfigIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> HasEditConfigIdList {
       get { return hasEditConfigIdList_; }
+    }
+
+    /// <summary>Field number for the "stage_info_list" field.</summary>
+    public const int StageInfoListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> _repeated_stageInfoList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> stageInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GravenInnocenceCarveStageInfo> StageInfoList {
+      get { return stageInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
       if (CanEditCount != other.CanEditCount) return false;
       if(!hasEditConfigIdList_.Equals(other.hasEditConfigIdList_)) return false;
+      if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= stageInfoList_.GetHashCode();
       if (CanEditCount != 0) hash ^= CanEditCount.GetHashCode();
       hash ^= hasEditConfigIdList_.GetHashCode();
+      hash ^= stageInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,12 +167,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      hasEditConfigIdList_.WriteTo(output, _repeated_hasEditConfigIdList_codec);
+      stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
       if (CanEditCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(CanEditCount);
       }
-      stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
+      hasEditConfigIdList_.WriteTo(output, _repeated_hasEditConfigIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,12 +183,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      hasEditConfigIdList_.WriteTo(ref output, _repeated_hasEditConfigIdList_codec);
+      stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
       if (CanEditCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(CanEditCount);
       }
-      stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
+      hasEditConfigIdList_.WriteTo(ref output, _repeated_hasEditConfigIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -198,11 +199,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
       if (CanEditCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CanEditCount);
       }
       size += hasEditConfigIdList_.CalculateSize(_repeated_hasEditConfigIdList_codec);
+      size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -215,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      stageInfoList_.Add(other.stageInfoList_);
       if (other.CanEditCount != 0) {
         CanEditCount = other.CanEditCount;
       }
       hasEditConfigIdList_.Add(other.hasEditConfigIdList_);
+      stageInfoList_.Add(other.stageInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -235,17 +236,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50:
-          case 48: {
-            hasEditConfigIdList_.AddEntriesFrom(input, _repeated_hasEditConfigIdList_codec);
+          case 18: {
+            stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
             break;
           }
-          case 56: {
+          case 64: {
             CanEditCount = input.ReadUInt32();
             break;
           }
-          case 82: {
-            stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
+          case 98:
+          case 96: {
+            hasEditConfigIdList_.AddEntriesFrom(input, _repeated_hasEditConfigIdList_codec);
             break;
           }
         }
@@ -263,17 +264,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50:
-          case 48: {
-            hasEditConfigIdList_.AddEntriesFrom(ref input, _repeated_hasEditConfigIdList_codec);
+          case 18: {
+            stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
             break;
           }
-          case 56: {
+          case 64: {
             CanEditCount = input.ReadUInt32();
             break;
           }
-          case 82: {
-            stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
+          case 98:
+          case 96: {
+            hasEditConfigIdList_.AddEntriesFrom(ref input, _repeated_hasEditConfigIdList_codec);
             break;
           }
         }

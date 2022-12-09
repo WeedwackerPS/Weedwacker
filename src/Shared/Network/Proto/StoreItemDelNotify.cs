@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static StoreItemDelNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhTdG9yZUl0ZW1EZWxOb3RpZnkucHJvdG8aD1N0b3JlVHlwZS5wcm90byJH",
-            "ChJTdG9yZUl0ZW1EZWxOb3RpZnkSEQoJZ3VpZF9saXN0GAwgAygEEh4KCnN0",
-            "b3JlX3R5cGUYDyABKA4yCi5TdG9yZVR5cGVCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhTdG9yZUl0ZW1EZWxOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aD1N0b3JlVHlwZS5wcm90byJnChJTdG9yZUl0ZW1E",
+            "ZWxOb3RpZnkSPgoKc3RvcmVfdHlwZRgGIAEoDjIqLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uU3RvcmVUeXBlEhEKCWd1aWRfbGlzdBgIIAMo",
+            "BGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.StoreTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreItemDelNotify), global::Weedwacker.Shared.Network.Proto.StoreItemDelNotify.Parser, new[]{ "GuidList", "StoreType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StoreItemDelNotify), global::Weedwacker.Shared.Network.Proto.StoreItemDelNotify.Parser, new[]{ "StoreType", "GuidList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 635
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 619;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class StoreItemDelNotify : pb::IMessage<StoreItemDelNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StoreItemDelNotify(StoreItemDelNotify other) : this() {
-      guidList_ = other.guidList_.Clone();
       storeType_ = other.storeType_;
+      guidList_ = other.guidList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StoreItemDelNotify(this);
     }
 
-    /// <summary>Field number for the "guid_list" field.</summary>
-    public const int GuidListFieldNumber = 12;
-    private static readonly pb::FieldCodec<ulong> _repeated_guidList_codec
-        = pb::FieldCodec.ForUInt64(98);
-    private readonly pbc::RepeatedField<ulong> guidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> GuidList {
-      get { return guidList_; }
-    }
-
     /// <summary>Field number for the "store_type" field.</summary>
-    public const int StoreTypeFieldNumber = 15;
+    public const int StoreTypeFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.StoreType storeType_ = global::Weedwacker.Shared.Network.Proto.StoreType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         storeType_ = value;
       }
+    }
+
+    /// <summary>Field number for the "guid_list" field.</summary>
+    public const int GuidListFieldNumber = 8;
+    private static readonly pb::FieldCodec<ulong> _repeated_guidList_codec
+        = pb::FieldCodec.ForUInt64(66);
+    private readonly pbc::RepeatedField<ulong> guidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> GuidList {
+      get { return guidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!guidList_.Equals(other.guidList_)) return false;
       if (StoreType != other.StoreType) return false;
+      if(!guidList_.Equals(other.guidList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= guidList_.GetHashCode();
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) hash ^= StoreType.GetHashCode();
+      hash ^= guidList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      guidList_.WriteTo(output, _repeated_guidList_codec);
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteEnum((int) StoreType);
       }
+      guidList_.WriteTo(output, _repeated_guidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      guidList_.WriteTo(ref output, _repeated_guidList_codec);
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteEnum((int) StoreType);
       }
+      guidList_.WriteTo(ref output, _repeated_guidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += guidList_.CalculateSize(_repeated_guidList_codec);
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
       }
+      size += guidList_.CalculateSize(_repeated_guidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      guidList_.Add(other.guidList_);
       if (other.StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
         StoreType = other.StoreType;
       }
+      guidList_.Add(other.guidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98:
-          case 96: {
-            guidList_.AddEntriesFrom(input, _repeated_guidList_codec);
+          case 48: {
+            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
             break;
           }
-          case 120: {
-            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
+          case 66:
+          case 64: {
+            guidList_.AddEntriesFrom(input, _repeated_guidList_codec);
             break;
           }
         }
@@ -244,13 +249,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98:
-          case 96: {
-            guidList_.AddEntriesFrom(ref input, _repeated_guidList_codec);
+          case 48: {
+            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
             break;
           }
-          case 120: {
-            StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
+          case 66:
+          case 64: {
+            guidList_.AddEntriesFrom(ref input, _repeated_guidList_codec);
             break;
           }
         }

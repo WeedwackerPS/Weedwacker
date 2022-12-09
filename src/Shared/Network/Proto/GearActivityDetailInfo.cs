@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GearActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZWFyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhNHZWFyTGV2ZWxEYXRh",
-            "LnByb3RvGhdKaWdzYXdQaWN0dXJlRGF0YS5wcm90byJ3ChZHZWFyQWN0aXZp",
-            "dHlEZXRhaWxJbmZvEiwKFGdlYXJfbGV2ZWxfZGF0YV9saXN0GA4gAygLMg4u",
-            "R2VhckxldmVsRGF0YRIvChNqaWdzYXdfcGljdHVyZV9kYXRhGAggASgLMhIu",
-            "Smlnc2F3UGljdHVyZURhdGFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxHZWFyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhNHZWFyTGV2ZWxEYXRhLnByb3RvGhdKaWdz",
+            "YXdQaWN0dXJlRGF0YS5wcm90byK3AQoWR2VhckFjdGl2aXR5RGV0YWlsSW5m",
+            "bxJMChRnZWFyX2xldmVsX2RhdGFfbGlzdBgCIAMoCzIuLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uR2VhckxldmVsRGF0YRJPChNqaWdzYXdf",
+            "cGljdHVyZV9kYXRhGAggASgLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5KaWdzYXdQaWN0dXJlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GearLevelDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.JigsawPictureDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,9 +87,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gear_level_data_list" field.</summary>
-    public const int GearLevelDataListFieldNumber = 14;
+    public const int GearLevelDataListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GearLevelData> _repeated_gearLevelDataList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.GearLevelData.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GearLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearLevelData> gearLevelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GearLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      gearLevelDataList_.WriteTo(output, _repeated_gearLevelDataList_codec);
       if (jigsawPictureData_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(JigsawPictureData);
       }
-      gearLevelDataList_.WriteTo(output, _repeated_gearLevelDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,11 +168,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      gearLevelDataList_.WriteTo(ref output, _repeated_gearLevelDataList_codec);
       if (jigsawPictureData_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(JigsawPictureData);
       }
-      gearLevelDataList_.WriteTo(ref output, _repeated_gearLevelDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,15 +221,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 18: {
+            gearLevelDataList_.AddEntriesFrom(input, _repeated_gearLevelDataList_codec);
+            break;
+          }
           case 66: {
             if (jigsawPictureData_ == null) {
               JigsawPictureData = new global::Weedwacker.Shared.Network.Proto.JigsawPictureData();
             }
             input.ReadMessage(JigsawPictureData);
-            break;
-          }
-          case 114: {
-            gearLevelDataList_.AddEntriesFrom(input, _repeated_gearLevelDataList_codec);
             break;
           }
         }
@@ -246,15 +247,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 18: {
+            gearLevelDataList_.AddEntriesFrom(ref input, _repeated_gearLevelDataList_codec);
+            break;
+          }
           case 66: {
             if (jigsawPictureData_ == null) {
               JigsawPictureData = new global::Weedwacker.Shared.Network.Proto.JigsawPictureData();
             }
             input.ReadMessage(JigsawPictureData);
-            break;
-          }
-          case 114: {
-            gearLevelDataList_.AddEntriesFrom(ref input, _repeated_gearLevelDataList_codec);
             break;
           }
         }

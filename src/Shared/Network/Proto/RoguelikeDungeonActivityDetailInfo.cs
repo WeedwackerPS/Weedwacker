@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeDungeonActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihSb2d1ZWxpa2VEdW5nZW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhRS",
-            "b2d1ZVN0YWdlSW5mby5wcm90bxoeUm9ndWVsaWtlU2hpa2lnYW1pUmVjb3Jk",
-            "LnByb3RvIuIBCiJSb2d1ZWxpa2VEdW5nZW9uQWN0aXZpdHlEZXRhaWxJbmZv",
-            "EiMKCnN0YWdlX2xpc3QYCCADKAsyDy5Sb2d1ZVN0YWdlSW5mbxIxCg5zaGlr",
-            "aWdhbWlfbGlzdBgFIAMoCzIZLlJvZ3VlbGlrZVNoaWtpZ2FtaVJlY29yZBIa",
-            "ChJlcXVpcHBlZF9ydW5lX2xpc3QYDiADKA0SGgoSY29udGVudF9jbG9zZV90",
-            "aW1lGAYgASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAogASgIEhEKCXJ1bmVf",
-            "bGlzdBgCIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CihSb2d1ZWxpa2VEdW5nZW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhRSb2d1ZVN0YWdlSW5m",
+            "by5wcm90bxoeUm9ndWVsaWtlU2hpa2lnYW1pUmVjb3JkLnByb3RvIqICCiJS",
+            "b2d1ZWxpa2VEdW5nZW9uQWN0aXZpdHlEZXRhaWxJbmZvEkMKCnN0YWdlX2xp",
+            "c3QYDiADKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJv",
+            "Z3VlU3RhZ2VJbmZvEhoKEmVxdWlwcGVkX3J1bmVfbGlzdBgJIAMoDRIaChJj",
+            "b250ZW50X2Nsb3NlX3RpbWUYCyABKA0SEQoJcnVuZV9saXN0GAMgAygNElEK",
+            "DnNoaWtpZ2FtaV9saXN0GAQgAygLMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Sb2d1ZWxpa2VTaGlraWdhbWlSZWNvcmQSGQoRaXNfY29u",
+            "dGVudF9jbG9zZWQYBSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RogueStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo.Parser, new[]{ "StageList", "ShikigamiList", "EquippedRuneList", "ContentCloseTime", "IsContentClosed", "RuneList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo.Parser, new[]{ "StageList", "EquippedRuneList", "ContentCloseTime", "RuneList", "ShikigamiList", "IsContentClosed" }, null, null, null, null)
           }));
     }
     #endregion
@@ -78,11 +79,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeDungeonActivityDetailInfo(RoguelikeDungeonActivityDetailInfo other) : this() {
       stageList_ = other.stageList_.Clone();
-      shikigamiList_ = other.shikigamiList_.Clone();
       equippedRuneList_ = other.equippedRuneList_.Clone();
       contentCloseTime_ = other.contentCloseTime_;
-      isContentClosed_ = other.isContentClosed_;
       runeList_ = other.runeList_.Clone();
+      shikigamiList_ = other.shikigamiList_.Clone();
+      isContentClosed_ = other.isContentClosed_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_list" field.</summary>
-    public const int StageListFieldNumber = 8;
+    public const int StageListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RogueStageInfo> _repeated_stageList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.RogueStageInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.RogueStageInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueStageInfo> stageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RogueStageInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,21 +104,10 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return stageList_; }
     }
 
-    /// <summary>Field number for the "shikigami_list" field.</summary>
-    public const int ShikigamiListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> _repeated_shikigamiList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> shikigamiList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> ShikigamiList {
-      get { return shikigamiList_; }
-    }
-
     /// <summary>Field number for the "equipped_rune_list" field.</summary>
-    public const int EquippedRuneListFieldNumber = 14;
+    public const int EquippedRuneListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_equippedRuneList_codec
-        = pb::FieldCodec.ForUInt32(114);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> equippedRuneList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +116,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 6;
+    public const int ContentCloseTimeFieldNumber = 11;
     private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,8 +127,30 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "rune_list" field.</summary>
+    public const int RuneListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_runeList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> runeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RuneList {
+      get { return runeList_; }
+    }
+
+    /// <summary>Field number for the "shikigami_list" field.</summary>
+    public const int ShikigamiListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> _repeated_shikigamiList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> shikigamiList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoguelikeShikigamiRecord> ShikigamiList {
+      get { return shikigamiList_; }
+    }
+
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 10;
+    public const int IsContentClosedFieldNumber = 5;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -147,17 +159,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isContentClosed_ = value;
       }
-    }
-
-    /// <summary>Field number for the "rune_list" field.</summary>
-    public const int RuneListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_runeList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> runeList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> RuneList {
-      get { return runeList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -176,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!stageList_.Equals(other.stageList_)) return false;
-      if(!shikigamiList_.Equals(other.shikigamiList_)) return false;
       if(!equippedRuneList_.Equals(other.equippedRuneList_)) return false;
       if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
       if(!runeList_.Equals(other.runeList_)) return false;
+      if(!shikigamiList_.Equals(other.shikigamiList_)) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,11 +190,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= stageList_.GetHashCode();
-      hash ^= shikigamiList_.GetHashCode();
       hash ^= equippedRuneList_.GetHashCode();
       if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       hash ^= runeList_.GetHashCode();
+      hash ^= shikigamiList_.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -214,16 +215,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       runeList_.WriteTo(output, _repeated_runeList_codec);
       shikigamiList_.WriteTo(output, _repeated_shikigamiList_codec);
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      stageList_.WriteTo(output, _repeated_stageList_codec);
       if (IsContentClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
       equippedRuneList_.WriteTo(output, _repeated_equippedRuneList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      stageList_.WriteTo(output, _repeated_stageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -236,16 +237,16 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       runeList_.WriteTo(ref output, _repeated_runeList_codec);
       shikigamiList_.WriteTo(ref output, _repeated_shikigamiList_codec);
-      if (ContentCloseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ContentCloseTime);
-      }
-      stageList_.WriteTo(ref output, _repeated_stageList_codec);
       if (IsContentClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
       equippedRuneList_.WriteTo(ref output, _repeated_equippedRuneList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      stageList_.WriteTo(ref output, _repeated_stageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -257,15 +258,15 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += stageList_.CalculateSize(_repeated_stageList_codec);
-      size += shikigamiList_.CalculateSize(_repeated_shikigamiList_codec);
       size += equippedRuneList_.CalculateSize(_repeated_equippedRuneList_codec);
       if (ContentCloseTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
       }
+      size += runeList_.CalculateSize(_repeated_runeList_codec);
+      size += shikigamiList_.CalculateSize(_repeated_shikigamiList_codec);
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
-      size += runeList_.CalculateSize(_repeated_runeList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -279,15 +280,15 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       stageList_.Add(other.stageList_);
-      shikigamiList_.Add(other.shikigamiList_);
       equippedRuneList_.Add(other.equippedRuneList_);
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }
+      runeList_.Add(other.runeList_);
+      shikigamiList_.Add(other.shikigamiList_);
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      runeList_.Add(other.runeList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -303,30 +304,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 26:
+          case 24: {
             runeList_.AddEntriesFrom(input, _repeated_runeList_codec);
             break;
           }
-          case 42: {
+          case 34: {
             shikigamiList_.AddEntriesFrom(input, _repeated_shikigamiList_codec);
             break;
           }
-          case 48: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
-            break;
-          }
-          case 80: {
+          case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 114:
-          case 112: {
+          case 74:
+          case 72: {
             equippedRuneList_.AddEntriesFrom(input, _repeated_equippedRuneList_codec);
+            break;
+          }
+          case 88: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
             break;
           }
         }
@@ -344,30 +345,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 26:
+          case 24: {
             runeList_.AddEntriesFrom(ref input, _repeated_runeList_codec);
             break;
           }
-          case 42: {
+          case 34: {
             shikigamiList_.AddEntriesFrom(ref input, _repeated_shikigamiList_codec);
             break;
           }
-          case 48: {
-            ContentCloseTime = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
-            break;
-          }
-          case 80: {
+          case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 114:
-          case 112: {
+          case 74:
+          case 72: {
             equippedRuneList_.AddEntriesFrom(ref input, _repeated_equippedRuneList_codec);
+            break;
+          }
+          case 88: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
             break;
           }
         }

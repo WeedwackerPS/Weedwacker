@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static GalleryBalloonScoreNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9HYWxsZXJ5QmFsbG9vblNjb3JlTm90aWZ5LnByb3RvIqcBChlHYWxsZXJ5",
-            "QmFsbG9vblNjb3JlTm90aWZ5EhIKCmdhbGxlcnlfaWQYCSABKA0SQgoNdWlk",
-            "X3Njb3JlX21hcBgHIAMoCzIrLkdhbGxlcnlCYWxsb29uU2NvcmVOb3RpZnku",
-            "VWlkU2NvcmVNYXBFbnRyeRoyChBVaWRTY29yZU1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch9HYWxsZXJ5QmFsbG9vblNjb3JlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIscBChlHYWxsZXJ5QmFsbG9vblNjb3Jl",
+            "Tm90aWZ5EmIKDXVpZF9zY29yZV9tYXAYDCADKAsySy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkdhbGxlcnlCYWxsb29uU2NvcmVOb3RpZnku",
+            "VWlkU2NvcmVNYXBFbnRyeRISCgpnYWxsZXJ5X2lkGAsgASgNGjIKEFVpZFNj",
+            "b3JlTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBalloonScoreNotify), global::Weedwacker.Shared.Network.Proto.GalleryBalloonScoreNotify.Parser, new[]{ "GalleryId", "UidScoreMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GalleryBalloonScoreNotify), global::Weedwacker.Shared.Network.Proto.GalleryBalloonScoreNotify.Parser, new[]{ "UidScoreMap", "GalleryId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5512
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5556;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GalleryBalloonScoreNotify : pb::IMessage<GalleryBalloonScoreNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GalleryBalloonScoreNotify(GalleryBalloonScoreNotify other) : this() {
-      galleryId_ = other.galleryId_;
       uidScoreMap_ = other.uidScoreMap_.Clone();
+      galleryId_ = other.galleryId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +95,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GalleryBalloonScoreNotify(this);
     }
 
+    /// <summary>Field number for the "uid_score_map" field.</summary>
+    public const int UidScoreMapFieldNumber = 12;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_uidScoreMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, uint> uidScoreMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> UidScoreMap {
+      get { return uidScoreMap_; }
+    }
+
     /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 9;
+    public const int GalleryIdFieldNumber = 11;
     private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,17 +116,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         galleryId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "uid_score_map" field.</summary>
-    public const int UidScoreMapFieldNumber = 7;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_uidScoreMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
-    private readonly pbc::MapField<uint, uint> uidScoreMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> UidScoreMap {
-      get { return uidScoreMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GalleryId != other.GalleryId) return false;
       if (!UidScoreMap.Equals(other.UidScoreMap)) return false;
+      if (GalleryId != other.GalleryId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       hash ^= UidScoreMap.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      uidScoreMap_.WriteTo(output, _map_uidScoreMap_codec);
       if (GalleryId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(GalleryId);
       }
+      uidScoreMap_.WriteTo(output, _map_uidScoreMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      uidScoreMap_.WriteTo(ref output, _map_uidScoreMap_codec);
       if (GalleryId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(GalleryId);
       }
+      uidScoreMap_.WriteTo(ref output, _map_uidScoreMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -187,10 +192,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += uidScoreMap_.CalculateSize(_map_uidScoreMap_codec);
       if (GalleryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
-      size += uidScoreMap_.CalculateSize(_map_uidScoreMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -203,10 +208,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      uidScoreMap_.Add(other.uidScoreMap_);
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }
-      uidScoreMap_.Add(other.uidScoreMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -222,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58: {
-            uidScoreMap_.AddEntriesFrom(input, _map_uidScoreMap_codec);
+          case 88: {
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            GalleryId = input.ReadUInt32();
+          case 98: {
+            uidScoreMap_.AddEntriesFrom(input, _map_uidScoreMap_codec);
             break;
           }
         }
@@ -245,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58: {
-            uidScoreMap_.AddEntriesFrom(ref input, _map_uidScoreMap_codec);
+          case 88: {
+            GalleryId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            GalleryId = input.ReadUInt32();
+          case 98: {
+            uidScoreMap_.AddEntriesFrom(ref input, _map_uidScoreMap_codec);
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueEffectRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdSb2d1ZUVmZmVjdFJlY29yZC5wcm90byJfChFSb2d1ZUVmZmVjdFJlY29y",
-            "ZBIRCglzb3VyY2VfaWQYBiABKA0SGAoQZXh0cmFfcGFyYW1fbGlzdBgJIAMo",
-            "DRINCgVjb3VudBgKIAEoDRIOCgZpc19uZXcYBSABKAhCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdSb2d1ZUVmZmVjdFJlY29yZC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJfChFSb2d1ZUVmZmVjdFJlY29yZBIRCglzb3VyY2Vf",
+            "aWQYCSABKA0SDgoGaXNfbmV3GAggASgIEg0KBWNvdW50GAMgASgNEhgKEGV4",
+            "dHJhX3BhcmFtX2xpc3QYDyADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueEffectRecord), global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser, new[]{ "SourceId", "ExtraParamList", "Count", "IsNew" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueEffectRecord), global::Weedwacker.Shared.Network.Proto.RogueEffectRecord.Parser, new[]{ "SourceId", "IsNew", "Count", "ExtraParamList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueEffectRecord(RogueEffectRecord other) : this() {
       sourceId_ = other.sourceId_;
-      extraParamList_ = other.extraParamList_.Clone();
-      count_ = other.count_;
       isNew_ = other.isNew_;
+      count_ = other.count_;
+      extraParamList_ = other.extraParamList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "source_id" field.</summary>
-    public const int SourceIdFieldNumber = 6;
+    public const int SourceIdFieldNumber = 9;
     private uint sourceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,19 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "extra_param_list" field.</summary>
-    public const int ExtraParamListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_extraParamList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> extraParamList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "is_new" field.</summary>
+    public const int IsNewFieldNumber = 8;
+    private bool isNew_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExtraParamList {
-      get { return extraParamList_; }
+    public bool IsNew {
+      get { return isNew_; }
+      set {
+        isNew_ = value;
+      }
     }
 
     /// <summary>Field number for the "count" field.</summary>
-    public const int CountFieldNumber = 10;
+    public const int CountFieldNumber = 3;
     private uint count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,16 +121,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_new" field.</summary>
-    public const int IsNewFieldNumber = 5;
-    private bool isNew_;
+    /// <summary>Field number for the "extra_param_list" field.</summary>
+    public const int ExtraParamListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_extraParamList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> extraParamList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNew {
-      get { return isNew_; }
-      set {
-        isNew_ = value;
-      }
+    public pbc::RepeatedField<uint> ExtraParamList {
+      get { return extraParamList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,9 +148,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (SourceId != other.SourceId) return false;
-      if(!extraParamList_.Equals(other.extraParamList_)) return false;
-      if (Count != other.Count) return false;
       if (IsNew != other.IsNew) return false;
+      if (Count != other.Count) return false;
+      if(!extraParamList_.Equals(other.extraParamList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (SourceId != 0) hash ^= SourceId.GetHashCode();
-      hash ^= extraParamList_.GetHashCode();
-      if (Count != 0) hash ^= Count.GetHashCode();
       if (IsNew != false) hash ^= IsNew.GetHashCode();
+      if (Count != 0) hash ^= Count.GetHashCode();
+      hash ^= extraParamList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,19 +180,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Count != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Count);
+      }
       if (IsNew != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
       }
       if (SourceId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(SourceId);
       }
       extraParamList_.WriteTo(output, _repeated_extraParamList_codec);
-      if (Count != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Count);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -203,19 +203,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Count != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Count);
+      }
       if (IsNew != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteBool(IsNew);
       }
       if (SourceId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(72);
         output.WriteUInt32(SourceId);
       }
       extraParamList_.WriteTo(ref output, _repeated_extraParamList_codec);
-      if (Count != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Count);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -229,13 +229,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SourceId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SourceId);
       }
-      size += extraParamList_.CalculateSize(_repeated_extraParamList_codec);
-      if (Count != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Count);
-      }
       if (IsNew != false) {
         size += 1 + 1;
       }
+      if (Count != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Count);
+      }
+      size += extraParamList_.CalculateSize(_repeated_extraParamList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -251,13 +251,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SourceId != 0) {
         SourceId = other.SourceId;
       }
-      extraParamList_.Add(other.extraParamList_);
-      if (other.Count != 0) {
-        Count = other.Count;
-      }
       if (other.IsNew != false) {
         IsNew = other.IsNew;
       }
+      if (other.Count != 0) {
+        Count = other.Count;
+      }
+      extraParamList_.Add(other.extraParamList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -273,21 +273,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 24: {
+            Count = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             IsNew = input.ReadBool();
             break;
           }
-          case 48: {
+          case 72: {
             SourceId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
+          case 122:
+          case 120: {
             extraParamList_.AddEntriesFrom(input, _repeated_extraParamList_codec);
-            break;
-          }
-          case 80: {
-            Count = input.ReadUInt32();
             break;
           }
         }
@@ -305,21 +305,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 24: {
+            Count = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             IsNew = input.ReadBool();
             break;
           }
-          case 48: {
+          case 72: {
             SourceId = input.ReadUInt32();
             break;
           }
-          case 74:
-          case 72: {
+          case 122:
+          case 120: {
             extraParamList_.AddEntriesFrom(ref input, _repeated_extraParamList_codec);
-            break;
-          }
-          case 80: {
-            Count = input.ReadUInt32();
             break;
           }
         }

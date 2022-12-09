@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneEntityMoveRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhTY2VuZUVudGl0eU1vdmVSc3AucHJvdG8aEE1vdGlvbkluZm8ucHJvdG8i",
-            "hAEKElNjZW5lRW50aXR5TW92ZVJzcBIRCgllbnRpdHlfaWQYBCABKA0SIAoL",
-            "ZmFpbF9tb3Rpb24YASABKAsyCy5Nb3Rpb25JbmZvEhIKCnNjZW5lX3RpbWUY",
-            "CiABKA0SFAoMcmVsaWFibGVfc2VxGAYgASgNEg8KB3JldGNvZGUYCCABKAVC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhTY2VuZUVudGl0eU1vdmVSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEE1vdGlvbkluZm8ucHJvdG8ipAEKElNjZW5lRW50",
+            "aXR5TW92ZVJzcBISCgpzY2VuZV90aW1lGAsgASgNEkAKC2ZhaWxfbW90aW9u",
+            "GAggASgLMisuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Nb3Rp",
+            "b25JbmZvEhEKCWVudGl0eV9pZBgMIAEoDRIPCgdyZXRjb2RlGAkgASgFEhQK",
+            "DHJlbGlhYmxlX3NlcRgPIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MotionInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneEntityMoveRsp), global::Weedwacker.Shared.Network.Proto.SceneEntityMoveRsp.Parser, new[]{ "EntityId", "FailMotion", "SceneTime", "ReliableSeq", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneEntityMoveRsp), global::Weedwacker.Shared.Network.Proto.SceneEntityMoveRsp.Parser, new[]{ "SceneTime", "FailMotion", "EntityId", "Retcode", "ReliableSeq" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 273
-  /// EnetChannelId: 1
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 278;
+  ///   ENET_CHANNEL_ID = 1;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneEntityMoveRsp : pb::IMessage<SceneEntityMoveRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneEntityMoveRsp(SceneEntityMoveRsp other) : this() {
-      entityId_ = other.entityId_;
-      failMotion_ = other.failMotion_ != null ? other.failMotion_.Clone() : null;
       sceneTime_ = other.sceneTime_;
-      reliableSeq_ = other.reliableSeq_;
+      failMotion_ = other.failMotion_ != null ? other.failMotion_.Clone() : null;
+      entityId_ = other.entityId_;
       retcode_ = other.retcode_;
+      reliableSeq_ = other.reliableSeq_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,32 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneEntityMoveRsp(this);
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 4;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "fail_motion" field.</summary>
-    public const int FailMotionFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.MotionInfo failMotion_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.MotionInfo FailMotion {
-      get { return failMotion_; }
-      set {
-        failMotion_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 10;
+    public const int SceneTimeFieldNumber = 11;
     private uint sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,20 +109,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "reliable_seq" field.</summary>
-    public const int ReliableSeqFieldNumber = 6;
-    private uint reliableSeq_;
+    /// <summary>Field number for the "fail_motion" field.</summary>
+    public const int FailMotionFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.MotionInfo failMotion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ReliableSeq {
-      get { return reliableSeq_; }
+    public global::Weedwacker.Shared.Network.Proto.MotionInfo FailMotion {
+      get { return failMotion_; }
       set {
-        reliableSeq_ = value;
+        failMotion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 12;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
       }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 9;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,6 +142,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reliable_seq" field.</summary>
+    public const int ReliableSeqFieldNumber = 15;
+    private uint reliableSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReliableSeq {
+      get { return reliableSeq_; }
+      set {
+        reliableSeq_ = value;
       }
     }
 
@@ -167,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
-      if (!object.Equals(FailMotion, other.FailMotion)) return false;
       if (SceneTime != other.SceneTime) return false;
-      if (ReliableSeq != other.ReliableSeq) return false;
+      if (!object.Equals(FailMotion, other.FailMotion)) return false;
+      if (EntityId != other.EntityId) return false;
       if (Retcode != other.Retcode) return false;
+      if (ReliableSeq != other.ReliableSeq) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +184,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (failMotion_ != null) hash ^= FailMotion.GetHashCode();
       if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
-      if (ReliableSeq != 0) hash ^= ReliableSeq.GetHashCode();
+      if (failMotion_ != null) hash ^= FailMotion.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (ReliableSeq != 0) hash ^= ReliableSeq.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,24 +208,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (failMotion_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(66);
         output.WriteMessage(FailMotion);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(EntityId);
-      }
-      if (ReliableSeq != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReliableSeq);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (SceneTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneTime);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
+      }
+      if (ReliableSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ReliableSeq);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -233,24 +238,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (failMotion_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(66);
         output.WriteMessage(FailMotion);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(EntityId);
-      }
-      if (ReliableSeq != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReliableSeq);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
       if (SceneTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(SceneTime);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
+      }
+      if (ReliableSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ReliableSeq);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -262,20 +267,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (SceneTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
       }
       if (failMotion_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FailMotion);
       }
-      if (SceneTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
-      }
-      if (ReliableSeq != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliableSeq);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (ReliableSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliableSeq);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -289,8 +294,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.SceneTime != 0) {
+        SceneTime = other.SceneTime;
       }
       if (other.failMotion_ != null) {
         if (failMotion_ == null) {
@@ -298,14 +303,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         FailMotion.MergeFrom(other.FailMotion);
       }
-      if (other.SceneTime != 0) {
-        SceneTime = other.SceneTime;
-      }
-      if (other.ReliableSeq != 0) {
-        ReliableSeq = other.ReliableSeq;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.ReliableSeq != 0) {
+        ReliableSeq = other.ReliableSeq;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -322,27 +327,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 66: {
             if (failMotion_ == null) {
               FailMotion = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(FailMotion);
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ReliableSeq = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
+          case 88: {
             SceneTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ReliableSeq = input.ReadUInt32();
             break;
           }
         }
@@ -360,27 +365,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 66: {
             if (failMotion_ == null) {
               FailMotion = new global::Weedwacker.Shared.Network.Proto.MotionInfo();
             }
             input.ReadMessage(FailMotion);
             break;
           }
-          case 32: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            ReliableSeq = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 72: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
+          case 88: {
             SceneTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ReliableSeq = input.ReadUInt32();
             break;
           }
         }

@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChatInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5DaGF0SW5mby5wcm90byLPAgoIQ2hhdEluZm8SDAoEdGltZRgNIAEoDRIQ",
-            "CghzZXF1ZW5jZRgKIAEoDRIOCgZ0b191aWQYByABKA0SCwoDdWlkGA8gASgN",
-            "Eg8KB2lzX3JlYWQYBSABKAgSDwoEdGV4dBiaDyABKAlIABIPCgRpY29uGJIH",
-            "IAEoDUgAEiwKC3N5c3RlbV9oaW50GNkNIAEoCzIULkNoYXRJbmZvLlN5c3Rl",
-            "bUhpbnRIABoaCgpTeXN0ZW1IaW50EgwKBHR5cGUYDiABKA0ifgoOU3lzdGVt",
-            "SGludFR5cGUSHgoaU1lTVEVNX0hJTlRfVFlQRV9DSEFUX05PTkUQABIlCiFT",
-            "WVNURU1fSElOVF9UWVBFX0NIQVRfRU5URVJfV09STEQQARIlCiFTWVNURU1f",
-            "SElOVF9UWVBFX0NIQVRfTEVBVkVfV09STEQQAkIJCgdjb250ZW50QiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Cg5DaGF0SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byLvAgoIQ2hhdEluZm8SDwoHaXNfcmVhZBgDIAEoCBIMCgR0aW1lGAEg",
+            "ASgNEg4KBnRvX3VpZBgKIAEoDRILCgN1aWQYCyABKA0SEAoIc2VxdWVuY2UY",
+            "BSABKA0SDwoEdGV4dBiNByABKAlIABIPCgRpY29uGN4HIAEoDUgAEkwKC3N5",
+            "c3RlbV9oaW50GJ8GIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQ2hhdEluZm8uU3lzdGVtSGludEgAGhoKClN5c3RlbUhpbnQSDAoE",
+            "dHlwZRgPIAEoDSJ+Cg5TeXN0ZW1IaW50VHlwZRIeChpTWVNURU1fSElOVF9U",
+            "WVBFX0NIQVRfTk9ORRAAEiUKIVNZU1RFTV9ISU5UX1RZUEVfQ0hBVF9FTlRF",
+            "Ul9XT1JMRBABEiUKIVNZU1RFTV9ISU5UX1RZUEVfQ0hBVF9MRUFWRV9XT1JM",
+            "RBACQgkKB2NvbnRlbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo), global::Weedwacker.Shared.Network.Proto.ChatInfo.Parser, new[]{ "Time", "Sequence", "ToUid", "Uid", "IsRead", "Text", "Icon", "SystemHint" }, new[]{ "Content" }, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHintType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint), global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint.Parser, new[]{ "Type" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo), global::Weedwacker.Shared.Network.Proto.ChatInfo.Parser, new[]{ "IsRead", "Time", "ToUid", "Uid", "Sequence", "Text", "Icon", "SystemHint" }, new[]{ "Content" }, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHintType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint), global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint.Parser, new[]{ "Type" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -77,11 +78,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChatInfo(ChatInfo other) : this() {
+      isRead_ = other.isRead_;
       time_ = other.time_;
-      sequence_ = other.sequence_;
       toUid_ = other.toUid_;
       uid_ = other.uid_;
-      isRead_ = other.isRead_;
+      sequence_ = other.sequence_;
       switch (other.ContentCase) {
         case ContentOneofCase.Text:
           Text = other.Text;
@@ -103,8 +104,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChatInfo(this);
     }
 
+    /// <summary>Field number for the "is_read" field.</summary>
+    public const int IsReadFieldNumber = 3;
+    private bool isRead_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsRead {
+      get { return isRead_; }
+      set {
+        isRead_ = value;
+      }
+    }
+
     /// <summary>Field number for the "time" field.</summary>
-    public const int TimeFieldNumber = 13;
+    public const int TimeFieldNumber = 1;
     private uint time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,20 +128,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "sequence" field.</summary>
-    public const int SequenceFieldNumber = 10;
-    private uint sequence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Sequence {
-      get { return sequence_; }
-      set {
-        sequence_ = value;
-      }
-    }
-
     /// <summary>Field number for the "to_uid" field.</summary>
-    public const int ToUidFieldNumber = 7;
+    public const int ToUidFieldNumber = 10;
     private uint toUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,7 +141,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 15;
+    public const int UidFieldNumber = 11;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,20 +152,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_read" field.</summary>
-    public const int IsReadFieldNumber = 5;
-    private bool isRead_;
+    /// <summary>Field number for the "sequence" field.</summary>
+    public const int SequenceFieldNumber = 5;
+    private uint sequence_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsRead {
-      get { return isRead_; }
+    public uint Sequence {
+      get { return sequence_; }
       set {
-        isRead_ = value;
+        sequence_ = value;
       }
     }
 
     /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 1946;
+    public const int TextFieldNumber = 909;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Text {
@@ -176,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "icon" field.</summary>
-    public const int IconFieldNumber = 914;
+    public const int IconFieldNumber = 990;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Icon {
@@ -188,7 +189,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "system_hint" field.</summary>
-    public const int SystemHintFieldNumber = 1753;
+    public const int SystemHintFieldNumber = 799;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint SystemHint {
@@ -203,9 +204,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "content" oneof.</summary>
     public enum ContentOneofCase {
       None = 0,
-      Text = 1946,
-      Icon = 914,
-      SystemHint = 1753,
+      Text = 909,
+      Icon = 990,
+      SystemHint = 799,
     }
     private ContentOneofCase contentCase_ = ContentOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -236,11 +237,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (IsRead != other.IsRead) return false;
       if (Time != other.Time) return false;
-      if (Sequence != other.Sequence) return false;
       if (ToUid != other.ToUid) return false;
       if (Uid != other.Uid) return false;
-      if (IsRead != other.IsRead) return false;
+      if (Sequence != other.Sequence) return false;
       if (Text != other.Text) return false;
       if (Icon != other.Icon) return false;
       if (!object.Equals(SystemHint, other.SystemHint)) return false;
@@ -252,11 +253,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (IsRead != false) hash ^= IsRead.GetHashCode();
       if (Time != 0) hash ^= Time.GetHashCode();
-      if (Sequence != 0) hash ^= Sequence.GetHashCode();
       if (ToUid != 0) hash ^= ToUid.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (IsRead != false) hash ^= IsRead.GetHashCode();
+      if (Sequence != 0) hash ^= Sequence.GetHashCode();
       if (contentCase_ == ContentOneofCase.Text) hash ^= Text.GetHashCode();
       if (contentCase_ == ContentOneofCase.Icon) hash ^= Icon.GetHashCode();
       if (contentCase_ == ContentOneofCase.SystemHint) hash ^= SystemHint.GetHashCode();
@@ -279,37 +280,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsRead != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsRead);
-      }
-      if (ToUid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ToUid);
-      }
-      if (Sequence != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Sequence);
-      }
       if (Time != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(Time);
       }
+      if (IsRead != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsRead);
+      }
+      if (Sequence != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Sequence);
+      }
+      if (ToUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ToUid);
+      }
       if (Uid != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(Uid);
       }
-      if (contentCase_ == ContentOneofCase.Icon) {
-        output.WriteRawTag(144, 57);
-        output.WriteUInt32(Icon);
-      }
       if (contentCase_ == ContentOneofCase.SystemHint) {
-        output.WriteRawTag(202, 109);
+        output.WriteRawTag(250, 49);
         output.WriteMessage(SystemHint);
       }
       if (contentCase_ == ContentOneofCase.Text) {
-        output.WriteRawTag(210, 121);
+        output.WriteRawTag(234, 56);
         output.WriteString(Text);
+      }
+      if (contentCase_ == ContentOneofCase.Icon) {
+        output.WriteRawTag(240, 61);
+        output.WriteUInt32(Icon);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -321,37 +322,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsRead != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsRead);
-      }
-      if (ToUid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ToUid);
-      }
-      if (Sequence != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Sequence);
-      }
       if (Time != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(8);
         output.WriteUInt32(Time);
       }
+      if (IsRead != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsRead);
+      }
+      if (Sequence != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Sequence);
+      }
+      if (ToUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ToUid);
+      }
       if (Uid != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(Uid);
       }
-      if (contentCase_ == ContentOneofCase.Icon) {
-        output.WriteRawTag(144, 57);
-        output.WriteUInt32(Icon);
-      }
       if (contentCase_ == ContentOneofCase.SystemHint) {
-        output.WriteRawTag(202, 109);
+        output.WriteRawTag(250, 49);
         output.WriteMessage(SystemHint);
       }
       if (contentCase_ == ContentOneofCase.Text) {
-        output.WriteRawTag(210, 121);
+        output.WriteRawTag(234, 56);
         output.WriteString(Text);
+      }
+      if (contentCase_ == ContentOneofCase.Icon) {
+        output.WriteRawTag(240, 61);
+        output.WriteUInt32(Icon);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -363,11 +364,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (IsRead != false) {
+        size += 1 + 1;
+      }
       if (Time != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Time);
-      }
-      if (Sequence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Sequence);
       }
       if (ToUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ToUid);
@@ -375,8 +376,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      if (IsRead != false) {
-        size += 1 + 1;
+      if (Sequence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Sequence);
       }
       if (contentCase_ == ContentOneofCase.Text) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Text);
@@ -399,11 +400,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsRead != false) {
+        IsRead = other.IsRead;
+      }
       if (other.Time != 0) {
         Time = other.Time;
-      }
-      if (other.Sequence != 0) {
-        Sequence = other.Sequence;
       }
       if (other.ToUid != 0) {
         ToUid = other.ToUid;
@@ -411,8 +412,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      if (other.IsRead != false) {
-        IsRead = other.IsRead;
+      if (other.Sequence != 0) {
+        Sequence = other.Sequence;
       }
       switch (other.ContentCase) {
         case ContentOneofCase.Text:
@@ -444,31 +445,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            IsRead = input.ReadBool();
-            break;
-          }
-          case 56: {
-            ToUid = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            Sequence = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8: {
             Time = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 24: {
+            IsRead = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Sequence = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ToUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 7312: {
-            Icon = input.ReadUInt32();
-            break;
-          }
-          case 14026: {
+          case 6394: {
             global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint subBuilder = new global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint();
             if (contentCase_ == ContentOneofCase.SystemHint) {
               subBuilder.MergeFrom(SystemHint);
@@ -477,8 +474,12 @@ namespace Weedwacker.Shared.Network.Proto {
             SystemHint = subBuilder;
             break;
           }
-          case 15570: {
+          case 7274: {
             Text = input.ReadString();
+            break;
+          }
+          case 7920: {
+            Icon = input.ReadUInt32();
             break;
           }
         }
@@ -496,31 +497,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            IsRead = input.ReadBool();
-            break;
-          }
-          case 56: {
-            ToUid = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            Sequence = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8: {
             Time = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 24: {
+            IsRead = input.ReadBool();
+            break;
+          }
+          case 40: {
+            Sequence = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ToUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 7312: {
-            Icon = input.ReadUInt32();
-            break;
-          }
-          case 14026: {
+          case 6394: {
             global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint subBuilder = new global::Weedwacker.Shared.Network.Proto.ChatInfo.Types.SystemHint();
             if (contentCase_ == ContentOneofCase.SystemHint) {
               subBuilder.MergeFrom(SystemHint);
@@ -529,8 +526,12 @@ namespace Weedwacker.Shared.Network.Proto {
             SystemHint = subBuilder;
             break;
           }
-          case 15570: {
+          case 7274: {
             Text = input.ReadString();
+            break;
+          }
+          case 7920: {
+            Icon = input.ReadUInt32();
             break;
           }
         }
@@ -594,7 +595,7 @@ namespace Weedwacker.Shared.Network.Proto {
         }
 
         /// <summary>Field number for the "type" field.</summary>
-        public const int TypeFieldNumber = 14;
+        public const int TypeFieldNumber = 15;
         private uint type_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -648,7 +649,7 @@ namespace Weedwacker.Shared.Network.Proto {
           output.WriteRawMessage(this);
         #else
           if (Type != 0) {
-            output.WriteRawTag(112);
+            output.WriteRawTag(120);
             output.WriteUInt32(Type);
           }
           if (_unknownFields != null) {
@@ -662,7 +663,7 @@ namespace Weedwacker.Shared.Network.Proto {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
           if (Type != 0) {
-            output.WriteRawTag(112);
+            output.WriteRawTag(120);
             output.WriteUInt32(Type);
           }
           if (_unknownFields != null) {
@@ -708,7 +709,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 112: {
+              case 120: {
                 Type = input.ReadUInt32();
                 break;
               }
@@ -727,7 +728,7 @@ namespace Weedwacker.Shared.Network.Proto {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 112: {
+              case 120: {
                 Type = input.ReadUInt32();
                 break;
               }

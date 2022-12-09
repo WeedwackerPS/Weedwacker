@@ -24,24 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static DoGachaRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBEb0dhY2hhUnNwLnByb3RvGg9HYWNoYUl0ZW0ucHJvdG8iiwQKCkRvR2Fj",
-            "aGFSc3ASJwoeY3VyX3NjaGVkdWxlX2RhaWx5X2dhY2hhX3RpbWVzGJsBIAEo",
-            "DRIVCg1jb3N0X2l0ZW1fbnVtGAogASgNEhkKEXdpc2hfbWF4X3Byb2dyZXNz",
-            "GAkgASgNEhQKDHdpc2hfaXRlbV9pZBgIIAEoDRIPCgdyZXRjb2RlGA0gASgF",
-            "EhkKEXRlbl9jb3N0X2l0ZW1fbnVtGAMgASgNEhUKDXdpc2hfcHJvZ3Jlc3MY",
-            "AiABKA0SIwoPZ2FjaGFfaXRlbV9saXN0GA8gAygLMgouR2FjaGFJdGVtEhgK",
-            "EHRlbl9jb3N0X2l0ZW1faWQYByABKA0SEwoLZ2FjaGFfdGltZXMYBCABKA0S",
-            "IQoYaXNfdW5kZXJfbWlub3JzX3Jlc3RyaWN0GJsLIAEoCBIiChlpc191bmRl",
-            "cl9nZW5lcmFsX3Jlc3RyaWN0GMwOIAEoCBISCgpnYWNoYV90eXBlGAwgASgN",
-            "EhkKEWdhY2hhX3RpbWVzX2xpbWl0GAEgASgNEhQKDGNvc3RfaXRlbV9pZBgO",
-            "IAEoDRIaChFkYWlseV9nYWNoYV90aW1lcxjYCSABKA0SGAoQbGVmdF9nYWNo",
-            "YV90aW1lcxgGIAEoDRIYChBuZXdfZ2FjaGFfcmFuZG9tGAsgASgNEhkKEWdh",
-            "Y2hhX3NjaGVkdWxlX2lkGAUgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChBEb0dhY2hhUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGg9HYWNoYUl0ZW0ucHJvdG8ivgQKCkRvR2FjaGFSc3ASHAoTVW5r",
+            "MzMwMF9PSEZNSElISkhQShiUDiABKAgSGwoTVW5rMzMwMF9KTEVMTUhFTElE",
+            "QxgDIAEoDRJDCg9nYWNoYV9pdGVtX2xpc3QYCSADKAsyKi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdhY2hhSXRlbRIcChNVbmszMzAwX0hC",
+            "SUxJQUVJSE5LGN8OIAEoCBISCgpnYWNoYV90eXBlGAogASgNEhsKE1VuazMz",
+            "MDBfT1BHQUhBR0hFUEYYBiABKA0SGwoTVW5rMzMwMF9OTU9LR0ZHREZGQxgB",
+            "IAEoDRIbChNVbmszMzAwX0JMTE1QQUpOQ1BJGAUgASgNEhMKC2dhY2hhX3Rp",
+            "bWVzGAQgASgNEhsKE1VuazMzMDBfR0xQTUlFTUJHR0wYDyABKA0SGwoTVW5r",
+            "MzMwMF9LRUlKRk1LQUtESBgMIAEoDRIbChNVbmszMzAwX0RCRk1LQU1OUENM",
+            "GA0gASgNEhsKE1VuazMzMDBfSkxCRkxQRU1BUFAYCCABKA0SGwoTVW5rMzMw",
+            "MF9NRURNQ1BGQ0lPTxgCIAEoDRIcChNVbmszMzAwX0hMQU5PTkJDQkxNGI4M",
+            "IAEoDRIbChNVbmszMzAwX1BMRk1NT0ZOR0FHGAcgASgNEhkKEWdhY2hhX3Nj",
+            "aGVkdWxlX2lkGA4gASgNEhoKEWRhaWx5X2dhY2hhX3RpbWVzGNMDIAEoDRIP",
+            "CgdyZXRjb2RlGAsgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GachaItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DoGachaRsp), global::Weedwacker.Shared.Network.Proto.DoGachaRsp.Parser, new[]{ "CurScheduleDailyGachaTimes", "CostItemNum", "WishMaxProgress", "WishItemId", "Retcode", "TenCostItemNum", "WishProgress", "GachaItemList", "TenCostItemId", "GachaTimes", "IsUnderMinorsRestrict", "IsUnderGeneralRestrict", "GachaType", "GachaTimesLimit", "CostItemId", "DailyGachaTimes", "LeftGachaTimes", "NewGachaRandom", "GachaScheduleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DoGachaRsp), global::Weedwacker.Shared.Network.Proto.DoGachaRsp.Parser, new[]{ "Unk3300OHFMHIHJHPJ", "Unk3300JLELMHELIDC", "GachaItemList", "Unk3300HBILIAEIHNK", "GachaType", "Unk3300OPGAHAGHEPF", "Unk3300NMOKGFGDFFC", "Unk3300BLLMPAJNCPI", "GachaTimes", "Unk3300GLPMIEMBGGL", "Unk3300KEIJFMKAKDH", "Unk3300DBFMKAMNPCL", "Unk3300JLBFLPEMAPP", "Unk3300MEDMCPFCIOO", "Unk3300HLANONBCBLM", "Unk3300PLFMMOFNGAG", "GachaScheduleId", "DailyGachaTimes", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -49,9 +50,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1535
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1519;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DoGachaRsp : pb::IMessage<DoGachaRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,25 +92,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DoGachaRsp(DoGachaRsp other) : this() {
-      curScheduleDailyGachaTimes_ = other.curScheduleDailyGachaTimes_;
-      costItemNum_ = other.costItemNum_;
-      wishMaxProgress_ = other.wishMaxProgress_;
-      wishItemId_ = other.wishItemId_;
-      retcode_ = other.retcode_;
-      tenCostItemNum_ = other.tenCostItemNum_;
-      wishProgress_ = other.wishProgress_;
+      unk3300OHFMHIHJHPJ_ = other.unk3300OHFMHIHJHPJ_;
+      unk3300JLELMHELIDC_ = other.unk3300JLELMHELIDC_;
       gachaItemList_ = other.gachaItemList_.Clone();
-      tenCostItemId_ = other.tenCostItemId_;
-      gachaTimes_ = other.gachaTimes_;
-      isUnderMinorsRestrict_ = other.isUnderMinorsRestrict_;
-      isUnderGeneralRestrict_ = other.isUnderGeneralRestrict_;
+      unk3300HBILIAEIHNK_ = other.unk3300HBILIAEIHNK_;
       gachaType_ = other.gachaType_;
-      gachaTimesLimit_ = other.gachaTimesLimit_;
-      costItemId_ = other.costItemId_;
-      dailyGachaTimes_ = other.dailyGachaTimes_;
-      leftGachaTimes_ = other.leftGachaTimes_;
-      newGachaRandom_ = other.newGachaRandom_;
+      unk3300OPGAHAGHEPF_ = other.unk3300OPGAHAGHEPF_;
+      unk3300NMOKGFGDFFC_ = other.unk3300NMOKGFGDFFC_;
+      unk3300BLLMPAJNCPI_ = other.unk3300BLLMPAJNCPI_;
+      gachaTimes_ = other.gachaTimes_;
+      unk3300GLPMIEMBGGL_ = other.unk3300GLPMIEMBGGL_;
+      unk3300KEIJFMKAKDH_ = other.unk3300KEIJFMKAKDH_;
+      unk3300DBFMKAMNPCL_ = other.unk3300DBFMKAMNPCL_;
+      unk3300JLBFLPEMAPP_ = other.unk3300JLBFLPEMAPP_;
+      unk3300MEDMCPFCIOO_ = other.unk3300MEDMCPFCIOO_;
+      unk3300HLANONBCBLM_ = other.unk3300HLANONBCBLM_;
+      unk3300PLFMMOFNGAG_ = other.unk3300PLFMMOFNGAG_;
       gachaScheduleId_ = other.gachaScheduleId_;
+      dailyGachaTimes_ = other.dailyGachaTimes_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,94 +120,34 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DoGachaRsp(this);
     }
 
-    /// <summary>Field number for the "cur_schedule_daily_gacha_times" field.</summary>
-    public const int CurScheduleDailyGachaTimesFieldNumber = 155;
-    private uint curScheduleDailyGachaTimes_;
+    /// <summary>Field number for the "Unk3300_OHFMHIHJHPJ" field.</summary>
+    public const int Unk3300OHFMHIHJHPJFieldNumber = 1812;
+    private bool unk3300OHFMHIHJHPJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurScheduleDailyGachaTimes {
-      get { return curScheduleDailyGachaTimes_; }
+    public bool Unk3300OHFMHIHJHPJ {
+      get { return unk3300OHFMHIHJHPJ_; }
       set {
-        curScheduleDailyGachaTimes_ = value;
+        unk3300OHFMHIHJHPJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "cost_item_num" field.</summary>
-    public const int CostItemNumFieldNumber = 10;
-    private uint costItemNum_;
+    /// <summary>Field number for the "Unk3300_JLELMHELIDC" field.</summary>
+    public const int Unk3300JLELMHELIDCFieldNumber = 3;
+    private uint unk3300JLELMHELIDC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostItemNum {
-      get { return costItemNum_; }
+    public uint Unk3300JLELMHELIDC {
+      get { return unk3300JLELMHELIDC_; }
       set {
-        costItemNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_max_progress" field.</summary>
-    public const int WishMaxProgressFieldNumber = 9;
-    private uint wishMaxProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishMaxProgress {
-      get { return wishMaxProgress_; }
-      set {
-        wishMaxProgress_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_item_id" field.</summary>
-    public const int WishItemIdFieldNumber = 8;
-    private uint wishItemId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishItemId {
-      get { return wishItemId_; }
-      set {
-        wishItemId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ten_cost_item_num" field.</summary>
-    public const int TenCostItemNumFieldNumber = 3;
-    private uint tenCostItemNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TenCostItemNum {
-      get { return tenCostItemNum_; }
-      set {
-        tenCostItemNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_progress" field.</summary>
-    public const int WishProgressFieldNumber = 2;
-    private uint wishProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WishProgress {
-      get { return wishProgress_; }
-      set {
-        wishProgress_ = value;
+        unk3300JLELMHELIDC_ = value;
       }
     }
 
     /// <summary>Field number for the "gacha_item_list" field.</summary>
-    public const int GachaItemListFieldNumber = 15;
+    public const int GachaItemListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GachaItem> _repeated_gachaItemList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.GachaItem.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.GachaItem.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaItem> gachaItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GachaItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -210,15 +155,63 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return gachaItemList_; }
     }
 
-    /// <summary>Field number for the "ten_cost_item_id" field.</summary>
-    public const int TenCostItemIdFieldNumber = 7;
-    private uint tenCostItemId_;
+    /// <summary>Field number for the "Unk3300_HBILIAEIHNK" field.</summary>
+    public const int Unk3300HBILIAEIHNKFieldNumber = 1887;
+    private bool unk3300HBILIAEIHNK_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TenCostItemId {
-      get { return tenCostItemId_; }
+    public bool Unk3300HBILIAEIHNK {
+      get { return unk3300HBILIAEIHNK_; }
       set {
-        tenCostItemId_ = value;
+        unk3300HBILIAEIHNK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_type" field.</summary>
+    public const int GachaTypeFieldNumber = 10;
+    private uint gachaType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaType {
+      get { return gachaType_; }
+      set {
+        gachaType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OPGAHAGHEPF" field.</summary>
+    public const int Unk3300OPGAHAGHEPFFieldNumber = 6;
+    private uint unk3300OPGAHAGHEPF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OPGAHAGHEPF {
+      get { return unk3300OPGAHAGHEPF_; }
+      set {
+        unk3300OPGAHAGHEPF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NMOKGFGDFFC" field.</summary>
+    public const int Unk3300NMOKGFGDFFCFieldNumber = 1;
+    private uint unk3300NMOKGFGDFFC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NMOKGFGDFFC {
+      get { return unk3300NMOKGFGDFFC_; }
+      set {
+        unk3300NMOKGFGDFFC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BLLMPAJNCPI" field.</summary>
+    public const int Unk3300BLLMPAJNCPIFieldNumber = 5;
+    private uint unk3300BLLMPAJNCPI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BLLMPAJNCPI {
+      get { return unk3300BLLMPAJNCPI_; }
+      set {
+        unk3300BLLMPAJNCPI_ = value;
       }
     }
 
@@ -234,68 +227,104 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_under_minors_restrict" field.</summary>
-    public const int IsUnderMinorsRestrictFieldNumber = 1435;
-    private bool isUnderMinorsRestrict_;
+    /// <summary>Field number for the "Unk3300_GLPMIEMBGGL" field.</summary>
+    public const int Unk3300GLPMIEMBGGLFieldNumber = 15;
+    private uint unk3300GLPMIEMBGGL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnderMinorsRestrict {
-      get { return isUnderMinorsRestrict_; }
+    public uint Unk3300GLPMIEMBGGL {
+      get { return unk3300GLPMIEMBGGL_; }
       set {
-        isUnderMinorsRestrict_ = value;
+        unk3300GLPMIEMBGGL_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_under_general_restrict" field.</summary>
-    public const int IsUnderGeneralRestrictFieldNumber = 1868;
-    private bool isUnderGeneralRestrict_;
+    /// <summary>Field number for the "Unk3300_KEIJFMKAKDH" field.</summary>
+    public const int Unk3300KEIJFMKAKDHFieldNumber = 12;
+    private uint unk3300KEIJFMKAKDH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnderGeneralRestrict {
-      get { return isUnderGeneralRestrict_; }
+    public uint Unk3300KEIJFMKAKDH {
+      get { return unk3300KEIJFMKAKDH_; }
       set {
-        isUnderGeneralRestrict_ = value;
+        unk3300KEIJFMKAKDH_ = value;
       }
     }
 
-    /// <summary>Field number for the "gacha_type" field.</summary>
-    public const int GachaTypeFieldNumber = 12;
-    private uint gachaType_;
+    /// <summary>Field number for the "Unk3300_DBFMKAMNPCL" field.</summary>
+    public const int Unk3300DBFMKAMNPCLFieldNumber = 13;
+    private uint unk3300DBFMKAMNPCL_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GachaType {
-      get { return gachaType_; }
+    public uint Unk3300DBFMKAMNPCL {
+      get { return unk3300DBFMKAMNPCL_; }
       set {
-        gachaType_ = value;
+        unk3300DBFMKAMNPCL_ = value;
       }
     }
 
-    /// <summary>Field number for the "gacha_times_limit" field.</summary>
-    public const int GachaTimesLimitFieldNumber = 1;
-    private uint gachaTimesLimit_;
+    /// <summary>Field number for the "Unk3300_JLBFLPEMAPP" field.</summary>
+    public const int Unk3300JLBFLPEMAPPFieldNumber = 8;
+    private uint unk3300JLBFLPEMAPP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GachaTimesLimit {
-      get { return gachaTimesLimit_; }
+    public uint Unk3300JLBFLPEMAPP {
+      get { return unk3300JLBFLPEMAPP_; }
       set {
-        gachaTimesLimit_ = value;
+        unk3300JLBFLPEMAPP_ = value;
       }
     }
 
-    /// <summary>Field number for the "cost_item_id" field.</summary>
-    public const int CostItemIdFieldNumber = 14;
-    private uint costItemId_;
+    /// <summary>Field number for the "Unk3300_MEDMCPFCIOO" field.</summary>
+    public const int Unk3300MEDMCPFCIOOFieldNumber = 2;
+    private uint unk3300MEDMCPFCIOO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostItemId {
-      get { return costItemId_; }
+    public uint Unk3300MEDMCPFCIOO {
+      get { return unk3300MEDMCPFCIOO_; }
       set {
-        costItemId_ = value;
+        unk3300MEDMCPFCIOO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HLANONBCBLM" field.</summary>
+    public const int Unk3300HLANONBCBLMFieldNumber = 1550;
+    private uint unk3300HLANONBCBLM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HLANONBCBLM {
+      get { return unk3300HLANONBCBLM_; }
+      set {
+        unk3300HLANONBCBLM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PLFMMOFNGAG" field.</summary>
+    public const int Unk3300PLFMMOFNGAGFieldNumber = 7;
+    private uint unk3300PLFMMOFNGAG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PLFMMOFNGAG {
+      get { return unk3300PLFMMOFNGAG_; }
+      set {
+        unk3300PLFMMOFNGAG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_schedule_id" field.</summary>
+    public const int GachaScheduleIdFieldNumber = 14;
+    private uint gachaScheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaScheduleId {
+      get { return gachaScheduleId_; }
+      set {
+        gachaScheduleId_ = value;
       }
     }
 
     /// <summary>Field number for the "daily_gacha_times" field.</summary>
-    public const int DailyGachaTimesFieldNumber = 1240;
+    public const int DailyGachaTimesFieldNumber = 467;
     private uint dailyGachaTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -306,39 +335,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "left_gacha_times" field.</summary>
-    public const int LeftGachaTimesFieldNumber = 6;
-    private uint leftGachaTimes_;
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 11;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LeftGachaTimes {
-      get { return leftGachaTimes_; }
+    public int Retcode {
+      get { return retcode_; }
       set {
-        leftGachaTimes_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "new_gacha_random" field.</summary>
-    public const int NewGachaRandomFieldNumber = 11;
-    private uint newGachaRandom_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NewGachaRandom {
-      get { return newGachaRandom_; }
-      set {
-        newGachaRandom_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gacha_schedule_id" field.</summary>
-    public const int GachaScheduleIdFieldNumber = 5;
-    private uint gachaScheduleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GachaScheduleId {
-      get { return gachaScheduleId_; }
-      set {
-        gachaScheduleId_ = value;
+        retcode_ = value;
       }
     }
 
@@ -357,25 +362,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurScheduleDailyGachaTimes != other.CurScheduleDailyGachaTimes) return false;
-      if (CostItemNum != other.CostItemNum) return false;
-      if (WishMaxProgress != other.WishMaxProgress) return false;
-      if (WishItemId != other.WishItemId) return false;
-      if (Retcode != other.Retcode) return false;
-      if (TenCostItemNum != other.TenCostItemNum) return false;
-      if (WishProgress != other.WishProgress) return false;
+      if (Unk3300OHFMHIHJHPJ != other.Unk3300OHFMHIHJHPJ) return false;
+      if (Unk3300JLELMHELIDC != other.Unk3300JLELMHELIDC) return false;
       if(!gachaItemList_.Equals(other.gachaItemList_)) return false;
-      if (TenCostItemId != other.TenCostItemId) return false;
-      if (GachaTimes != other.GachaTimes) return false;
-      if (IsUnderMinorsRestrict != other.IsUnderMinorsRestrict) return false;
-      if (IsUnderGeneralRestrict != other.IsUnderGeneralRestrict) return false;
+      if (Unk3300HBILIAEIHNK != other.Unk3300HBILIAEIHNK) return false;
       if (GachaType != other.GachaType) return false;
-      if (GachaTimesLimit != other.GachaTimesLimit) return false;
-      if (CostItemId != other.CostItemId) return false;
-      if (DailyGachaTimes != other.DailyGachaTimes) return false;
-      if (LeftGachaTimes != other.LeftGachaTimes) return false;
-      if (NewGachaRandom != other.NewGachaRandom) return false;
+      if (Unk3300OPGAHAGHEPF != other.Unk3300OPGAHAGHEPF) return false;
+      if (Unk3300NMOKGFGDFFC != other.Unk3300NMOKGFGDFFC) return false;
+      if (Unk3300BLLMPAJNCPI != other.Unk3300BLLMPAJNCPI) return false;
+      if (GachaTimes != other.GachaTimes) return false;
+      if (Unk3300GLPMIEMBGGL != other.Unk3300GLPMIEMBGGL) return false;
+      if (Unk3300KEIJFMKAKDH != other.Unk3300KEIJFMKAKDH) return false;
+      if (Unk3300DBFMKAMNPCL != other.Unk3300DBFMKAMNPCL) return false;
+      if (Unk3300JLBFLPEMAPP != other.Unk3300JLBFLPEMAPP) return false;
+      if (Unk3300MEDMCPFCIOO != other.Unk3300MEDMCPFCIOO) return false;
+      if (Unk3300HLANONBCBLM != other.Unk3300HLANONBCBLM) return false;
+      if (Unk3300PLFMMOFNGAG != other.Unk3300PLFMMOFNGAG) return false;
       if (GachaScheduleId != other.GachaScheduleId) return false;
+      if (DailyGachaTimes != other.DailyGachaTimes) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -383,25 +388,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurScheduleDailyGachaTimes != 0) hash ^= CurScheduleDailyGachaTimes.GetHashCode();
-      if (CostItemNum != 0) hash ^= CostItemNum.GetHashCode();
-      if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
-      if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (TenCostItemNum != 0) hash ^= TenCostItemNum.GetHashCode();
-      if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
+      if (Unk3300OHFMHIHJHPJ != false) hash ^= Unk3300OHFMHIHJHPJ.GetHashCode();
+      if (Unk3300JLELMHELIDC != 0) hash ^= Unk3300JLELMHELIDC.GetHashCode();
       hash ^= gachaItemList_.GetHashCode();
-      if (TenCostItemId != 0) hash ^= TenCostItemId.GetHashCode();
-      if (GachaTimes != 0) hash ^= GachaTimes.GetHashCode();
-      if (IsUnderMinorsRestrict != false) hash ^= IsUnderMinorsRestrict.GetHashCode();
-      if (IsUnderGeneralRestrict != false) hash ^= IsUnderGeneralRestrict.GetHashCode();
+      if (Unk3300HBILIAEIHNK != false) hash ^= Unk3300HBILIAEIHNK.GetHashCode();
       if (GachaType != 0) hash ^= GachaType.GetHashCode();
-      if (GachaTimesLimit != 0) hash ^= GachaTimesLimit.GetHashCode();
-      if (CostItemId != 0) hash ^= CostItemId.GetHashCode();
-      if (DailyGachaTimes != 0) hash ^= DailyGachaTimes.GetHashCode();
-      if (LeftGachaTimes != 0) hash ^= LeftGachaTimes.GetHashCode();
-      if (NewGachaRandom != 0) hash ^= NewGachaRandom.GetHashCode();
+      if (Unk3300OPGAHAGHEPF != 0) hash ^= Unk3300OPGAHAGHEPF.GetHashCode();
+      if (Unk3300NMOKGFGDFFC != 0) hash ^= Unk3300NMOKGFGDFFC.GetHashCode();
+      if (Unk3300BLLMPAJNCPI != 0) hash ^= Unk3300BLLMPAJNCPI.GetHashCode();
+      if (GachaTimes != 0) hash ^= GachaTimes.GetHashCode();
+      if (Unk3300GLPMIEMBGGL != 0) hash ^= Unk3300GLPMIEMBGGL.GetHashCode();
+      if (Unk3300KEIJFMKAKDH != 0) hash ^= Unk3300KEIJFMKAKDH.GetHashCode();
+      if (Unk3300DBFMKAMNPCL != 0) hash ^= Unk3300DBFMKAMNPCL.GetHashCode();
+      if (Unk3300JLBFLPEMAPP != 0) hash ^= Unk3300JLBFLPEMAPP.GetHashCode();
+      if (Unk3300MEDMCPFCIOO != 0) hash ^= Unk3300MEDMCPFCIOO.GetHashCode();
+      if (Unk3300HLANONBCBLM != 0) hash ^= Unk3300HLANONBCBLM.GetHashCode();
+      if (Unk3300PLFMMOFNGAG != 0) hash ^= Unk3300PLFMMOFNGAG.GetHashCode();
       if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
+      if (DailyGachaTimes != 0) hash ^= DailyGachaTimes.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -420,78 +425,78 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GachaTimesLimit != 0) {
+      if (Unk3300NMOKGFGDFFC != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(GachaTimesLimit);
+        output.WriteUInt32(Unk3300NMOKGFGDFFC);
       }
-      if (WishProgress != 0) {
+      if (Unk3300MEDMCPFCIOO != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(WishProgress);
+        output.WriteUInt32(Unk3300MEDMCPFCIOO);
       }
-      if (TenCostItemNum != 0) {
+      if (Unk3300JLELMHELIDC != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(TenCostItemNum);
+        output.WriteUInt32(Unk3300JLELMHELIDC);
       }
       if (GachaTimes != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(GachaTimes);
       }
-      if (GachaScheduleId != 0) {
+      if (Unk3300BLLMPAJNCPI != 0) {
         output.WriteRawTag(40);
-        output.WriteUInt32(GachaScheduleId);
+        output.WriteUInt32(Unk3300BLLMPAJNCPI);
       }
-      if (LeftGachaTimes != 0) {
+      if (Unk3300OPGAHAGHEPF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(LeftGachaTimes);
+        output.WriteUInt32(Unk3300OPGAHAGHEPF);
       }
-      if (TenCostItemId != 0) {
+      if (Unk3300PLFMMOFNGAG != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(TenCostItemId);
+        output.WriteUInt32(Unk3300PLFMMOFNGAG);
       }
-      if (WishItemId != 0) {
+      if (Unk3300JLBFLPEMAPP != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(WishItemId);
+        output.WriteUInt32(Unk3300JLBFLPEMAPP);
       }
-      if (WishMaxProgress != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(WishMaxProgress);
-      }
-      if (CostItemNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CostItemNum);
-      }
-      if (NewGachaRandom != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NewGachaRandom);
-      }
+      gachaItemList_.WriteTo(output, _repeated_gachaItemList_codec);
       if (GachaType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(GachaType);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      if (CostItemId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CostItemId);
+      if (Unk3300KEIJFMKAKDH != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300KEIJFMKAKDH);
       }
-      gachaItemList_.WriteTo(output, _repeated_gachaItemList_codec);
-      if (CurScheduleDailyGachaTimes != 0) {
-        output.WriteRawTag(216, 9);
-        output.WriteUInt32(CurScheduleDailyGachaTimes);
+      if (Unk3300DBFMKAMNPCL != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300DBFMKAMNPCL);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GachaScheduleId);
+      }
+      if (Unk3300GLPMIEMBGGL != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300GLPMIEMBGGL);
       }
       if (DailyGachaTimes != 0) {
-        output.WriteRawTag(192, 77);
+        output.WriteRawTag(152, 29);
         output.WriteUInt32(DailyGachaTimes);
       }
-      if (IsUnderMinorsRestrict != false) {
-        output.WriteRawTag(216, 89);
-        output.WriteBool(IsUnderMinorsRestrict);
+      if (Unk3300HLANONBCBLM != 0) {
+        output.WriteRawTag(240, 96);
+        output.WriteUInt32(Unk3300HLANONBCBLM);
       }
-      if (IsUnderGeneralRestrict != false) {
-        output.WriteRawTag(224, 116);
-        output.WriteBool(IsUnderGeneralRestrict);
+      if (Unk3300OHFMHIHJHPJ != false) {
+        output.WriteRawTag(160, 113);
+        output.WriteBool(Unk3300OHFMHIHJHPJ);
+      }
+      if (Unk3300HBILIAEIHNK != false) {
+        output.WriteRawTag(248, 117);
+        output.WriteBool(Unk3300HBILIAEIHNK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -503,78 +508,78 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GachaTimesLimit != 0) {
+      if (Unk3300NMOKGFGDFFC != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(GachaTimesLimit);
+        output.WriteUInt32(Unk3300NMOKGFGDFFC);
       }
-      if (WishProgress != 0) {
+      if (Unk3300MEDMCPFCIOO != 0) {
         output.WriteRawTag(16);
-        output.WriteUInt32(WishProgress);
+        output.WriteUInt32(Unk3300MEDMCPFCIOO);
       }
-      if (TenCostItemNum != 0) {
+      if (Unk3300JLELMHELIDC != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(TenCostItemNum);
+        output.WriteUInt32(Unk3300JLELMHELIDC);
       }
       if (GachaTimes != 0) {
         output.WriteRawTag(32);
         output.WriteUInt32(GachaTimes);
       }
-      if (GachaScheduleId != 0) {
+      if (Unk3300BLLMPAJNCPI != 0) {
         output.WriteRawTag(40);
-        output.WriteUInt32(GachaScheduleId);
+        output.WriteUInt32(Unk3300BLLMPAJNCPI);
       }
-      if (LeftGachaTimes != 0) {
+      if (Unk3300OPGAHAGHEPF != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(LeftGachaTimes);
+        output.WriteUInt32(Unk3300OPGAHAGHEPF);
       }
-      if (TenCostItemId != 0) {
+      if (Unk3300PLFMMOFNGAG != 0) {
         output.WriteRawTag(56);
-        output.WriteUInt32(TenCostItemId);
+        output.WriteUInt32(Unk3300PLFMMOFNGAG);
       }
-      if (WishItemId != 0) {
+      if (Unk3300JLBFLPEMAPP != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(WishItemId);
+        output.WriteUInt32(Unk3300JLBFLPEMAPP);
       }
-      if (WishMaxProgress != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(WishMaxProgress);
-      }
-      if (CostItemNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(CostItemNum);
-      }
-      if (NewGachaRandom != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NewGachaRandom);
-      }
+      gachaItemList_.WriteTo(ref output, _repeated_gachaItemList_codec);
       if (GachaType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(GachaType);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      if (CostItemId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CostItemId);
+      if (Unk3300KEIJFMKAKDH != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300KEIJFMKAKDH);
       }
-      gachaItemList_.WriteTo(ref output, _repeated_gachaItemList_codec);
-      if (CurScheduleDailyGachaTimes != 0) {
-        output.WriteRawTag(216, 9);
-        output.WriteUInt32(CurScheduleDailyGachaTimes);
+      if (Unk3300DBFMKAMNPCL != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300DBFMKAMNPCL);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GachaScheduleId);
+      }
+      if (Unk3300GLPMIEMBGGL != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300GLPMIEMBGGL);
       }
       if (DailyGachaTimes != 0) {
-        output.WriteRawTag(192, 77);
+        output.WriteRawTag(152, 29);
         output.WriteUInt32(DailyGachaTimes);
       }
-      if (IsUnderMinorsRestrict != false) {
-        output.WriteRawTag(216, 89);
-        output.WriteBool(IsUnderMinorsRestrict);
+      if (Unk3300HLANONBCBLM != 0) {
+        output.WriteRawTag(240, 96);
+        output.WriteUInt32(Unk3300HLANONBCBLM);
       }
-      if (IsUnderGeneralRestrict != false) {
-        output.WriteRawTag(224, 116);
-        output.WriteBool(IsUnderGeneralRestrict);
+      if (Unk3300OHFMHIHJHPJ != false) {
+        output.WriteRawTag(160, 113);
+        output.WriteBool(Unk3300OHFMHIHJHPJ);
+      }
+      if (Unk3300HBILIAEIHNK != false) {
+        output.WriteRawTag(248, 117);
+        output.WriteBool(Unk3300HBILIAEIHNK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -586,60 +591,60 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurScheduleDailyGachaTimes != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScheduleDailyGachaTimes);
-      }
-      if (CostItemNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemNum);
-      }
-      if (WishMaxProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
-      }
-      if (WishItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
-      }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (TenCostItemNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemNum);
-      }
-      if (WishProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
-      }
-      size += gachaItemList_.CalculateSize(_repeated_gachaItemList_codec);
-      if (TenCostItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemId);
-      }
-      if (GachaTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimes);
-      }
-      if (IsUnderMinorsRestrict != false) {
+      if (Unk3300OHFMHIHJHPJ != false) {
         size += 2 + 1;
       }
-      if (IsUnderGeneralRestrict != false) {
+      if (Unk3300JLELMHELIDC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JLELMHELIDC);
+      }
+      size += gachaItemList_.CalculateSize(_repeated_gachaItemList_codec);
+      if (Unk3300HBILIAEIHNK != false) {
         size += 2 + 1;
       }
       if (GachaType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
       }
-      if (GachaTimesLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimesLimit);
+      if (Unk3300OPGAHAGHEPF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OPGAHAGHEPF);
       }
-      if (CostItemId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemId);
+      if (Unk3300NMOKGFGDFFC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NMOKGFGDFFC);
+      }
+      if (Unk3300BLLMPAJNCPI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BLLMPAJNCPI);
+      }
+      if (GachaTimes != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimes);
+      }
+      if (Unk3300GLPMIEMBGGL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLPMIEMBGGL);
+      }
+      if (Unk3300KEIJFMKAKDH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KEIJFMKAKDH);
+      }
+      if (Unk3300DBFMKAMNPCL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DBFMKAMNPCL);
+      }
+      if (Unk3300JLBFLPEMAPP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JLBFLPEMAPP);
+      }
+      if (Unk3300MEDMCPFCIOO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MEDMCPFCIOO);
+      }
+      if (Unk3300HLANONBCBLM != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HLANONBCBLM);
+      }
+      if (Unk3300PLFMMOFNGAG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PLFMMOFNGAG);
+      }
+      if (GachaScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
       }
       if (DailyGachaTimes != 0) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DailyGachaTimes);
       }
-      if (LeftGachaTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftGachaTimes);
-      }
-      if (NewGachaRandom != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NewGachaRandom);
-      }
-      if (GachaScheduleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -653,60 +658,60 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurScheduleDailyGachaTimes != 0) {
-        CurScheduleDailyGachaTimes = other.CurScheduleDailyGachaTimes;
+      if (other.Unk3300OHFMHIHJHPJ != false) {
+        Unk3300OHFMHIHJHPJ = other.Unk3300OHFMHIHJHPJ;
       }
-      if (other.CostItemNum != 0) {
-        CostItemNum = other.CostItemNum;
-      }
-      if (other.WishMaxProgress != 0) {
-        WishMaxProgress = other.WishMaxProgress;
-      }
-      if (other.WishItemId != 0) {
-        WishItemId = other.WishItemId;
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      if (other.TenCostItemNum != 0) {
-        TenCostItemNum = other.TenCostItemNum;
-      }
-      if (other.WishProgress != 0) {
-        WishProgress = other.WishProgress;
+      if (other.Unk3300JLELMHELIDC != 0) {
+        Unk3300JLELMHELIDC = other.Unk3300JLELMHELIDC;
       }
       gachaItemList_.Add(other.gachaItemList_);
-      if (other.TenCostItemId != 0) {
-        TenCostItemId = other.TenCostItemId;
-      }
-      if (other.GachaTimes != 0) {
-        GachaTimes = other.GachaTimes;
-      }
-      if (other.IsUnderMinorsRestrict != false) {
-        IsUnderMinorsRestrict = other.IsUnderMinorsRestrict;
-      }
-      if (other.IsUnderGeneralRestrict != false) {
-        IsUnderGeneralRestrict = other.IsUnderGeneralRestrict;
+      if (other.Unk3300HBILIAEIHNK != false) {
+        Unk3300HBILIAEIHNK = other.Unk3300HBILIAEIHNK;
       }
       if (other.GachaType != 0) {
         GachaType = other.GachaType;
       }
-      if (other.GachaTimesLimit != 0) {
-        GachaTimesLimit = other.GachaTimesLimit;
+      if (other.Unk3300OPGAHAGHEPF != 0) {
+        Unk3300OPGAHAGHEPF = other.Unk3300OPGAHAGHEPF;
       }
-      if (other.CostItemId != 0) {
-        CostItemId = other.CostItemId;
+      if (other.Unk3300NMOKGFGDFFC != 0) {
+        Unk3300NMOKGFGDFFC = other.Unk3300NMOKGFGDFFC;
+      }
+      if (other.Unk3300BLLMPAJNCPI != 0) {
+        Unk3300BLLMPAJNCPI = other.Unk3300BLLMPAJNCPI;
+      }
+      if (other.GachaTimes != 0) {
+        GachaTimes = other.GachaTimes;
+      }
+      if (other.Unk3300GLPMIEMBGGL != 0) {
+        Unk3300GLPMIEMBGGL = other.Unk3300GLPMIEMBGGL;
+      }
+      if (other.Unk3300KEIJFMKAKDH != 0) {
+        Unk3300KEIJFMKAKDH = other.Unk3300KEIJFMKAKDH;
+      }
+      if (other.Unk3300DBFMKAMNPCL != 0) {
+        Unk3300DBFMKAMNPCL = other.Unk3300DBFMKAMNPCL;
+      }
+      if (other.Unk3300JLBFLPEMAPP != 0) {
+        Unk3300JLBFLPEMAPP = other.Unk3300JLBFLPEMAPP;
+      }
+      if (other.Unk3300MEDMCPFCIOO != 0) {
+        Unk3300MEDMCPFCIOO = other.Unk3300MEDMCPFCIOO;
+      }
+      if (other.Unk3300HLANONBCBLM != 0) {
+        Unk3300HLANONBCBLM = other.Unk3300HLANONBCBLM;
+      }
+      if (other.Unk3300PLFMMOFNGAG != 0) {
+        Unk3300PLFMMOFNGAG = other.Unk3300PLFMMOFNGAG;
+      }
+      if (other.GachaScheduleId != 0) {
+        GachaScheduleId = other.GachaScheduleId;
       }
       if (other.DailyGachaTimes != 0) {
         DailyGachaTimes = other.DailyGachaTimes;
       }
-      if (other.LeftGachaTimes != 0) {
-        LeftGachaTimes = other.LeftGachaTimes;
-      }
-      if (other.NewGachaRandom != 0) {
-        NewGachaRandom = other.NewGachaRandom;
-      }
-      if (other.GachaScheduleId != 0) {
-        GachaScheduleId = other.GachaScheduleId;
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -724,15 +729,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            GachaTimesLimit = input.ReadUInt32();
+            Unk3300NMOKGFGDFFC = input.ReadUInt32();
             break;
           }
           case 16: {
-            WishProgress = input.ReadUInt32();
+            Unk3300MEDMCPFCIOO = input.ReadUInt32();
             break;
           }
           case 24: {
-            TenCostItemNum = input.ReadUInt32();
+            Unk3300JLELMHELIDC = input.ReadUInt32();
             break;
           }
           case 32: {
@@ -740,63 +745,63 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 40: {
-            GachaScheduleId = input.ReadUInt32();
+            Unk3300BLLMPAJNCPI = input.ReadUInt32();
             break;
           }
           case 48: {
-            LeftGachaTimes = input.ReadUInt32();
+            Unk3300OPGAHAGHEPF = input.ReadUInt32();
             break;
           }
           case 56: {
-            TenCostItemId = input.ReadUInt32();
+            Unk3300PLFMMOFNGAG = input.ReadUInt32();
             break;
           }
           case 64: {
-            WishItemId = input.ReadUInt32();
+            Unk3300JLBFLPEMAPP = input.ReadUInt32();
             break;
           }
-          case 72: {
-            WishMaxProgress = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CostItemNum = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            NewGachaRandom = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            GachaType = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            CostItemId = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 74: {
             gachaItemList_.AddEntriesFrom(input, _repeated_gachaItemList_codec);
             break;
           }
-          case 1240: {
-            CurScheduleDailyGachaTimes = input.ReadUInt32();
+          case 80: {
+            GachaType = input.ReadUInt32();
             break;
           }
-          case 9920: {
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Unk3300KEIJFMKAKDH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300DBFMKAMNPCL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300GLPMIEMBGGL = input.ReadUInt32();
+            break;
+          }
+          case 3736: {
             DailyGachaTimes = input.ReadUInt32();
             break;
           }
-          case 11480: {
-            IsUnderMinorsRestrict = input.ReadBool();
+          case 12400: {
+            Unk3300HLANONBCBLM = input.ReadUInt32();
             break;
           }
-          case 14944: {
-            IsUnderGeneralRestrict = input.ReadBool();
+          case 14496: {
+            Unk3300OHFMHIHJHPJ = input.ReadBool();
+            break;
+          }
+          case 15096: {
+            Unk3300HBILIAEIHNK = input.ReadBool();
             break;
           }
         }
@@ -815,15 +820,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            GachaTimesLimit = input.ReadUInt32();
+            Unk3300NMOKGFGDFFC = input.ReadUInt32();
             break;
           }
           case 16: {
-            WishProgress = input.ReadUInt32();
+            Unk3300MEDMCPFCIOO = input.ReadUInt32();
             break;
           }
           case 24: {
-            TenCostItemNum = input.ReadUInt32();
+            Unk3300JLELMHELIDC = input.ReadUInt32();
             break;
           }
           case 32: {
@@ -831,63 +836,63 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 40: {
-            GachaScheduleId = input.ReadUInt32();
+            Unk3300BLLMPAJNCPI = input.ReadUInt32();
             break;
           }
           case 48: {
-            LeftGachaTimes = input.ReadUInt32();
+            Unk3300OPGAHAGHEPF = input.ReadUInt32();
             break;
           }
           case 56: {
-            TenCostItemId = input.ReadUInt32();
+            Unk3300PLFMMOFNGAG = input.ReadUInt32();
             break;
           }
           case 64: {
-            WishItemId = input.ReadUInt32();
+            Unk3300JLBFLPEMAPP = input.ReadUInt32();
             break;
           }
-          case 72: {
-            WishMaxProgress = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            CostItemNum = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            NewGachaRandom = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            GachaType = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            CostItemId = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 74: {
             gachaItemList_.AddEntriesFrom(ref input, _repeated_gachaItemList_codec);
             break;
           }
-          case 1240: {
-            CurScheduleDailyGachaTimes = input.ReadUInt32();
+          case 80: {
+            GachaType = input.ReadUInt32();
             break;
           }
-          case 9920: {
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Unk3300KEIJFMKAKDH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300DBFMKAMNPCL = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300GLPMIEMBGGL = input.ReadUInt32();
+            break;
+          }
+          case 3736: {
             DailyGachaTimes = input.ReadUInt32();
             break;
           }
-          case 11480: {
-            IsUnderMinorsRestrict = input.ReadBool();
+          case 12400: {
+            Unk3300HLANONBCBLM = input.ReadUInt32();
             break;
           }
-          case 14944: {
-            IsUnderGeneralRestrict = input.ReadBool();
+          case 14496: {
+            Unk3300OHFMHIHJHPJ = input.ReadBool();
+            break;
+          }
+          case 15096: {
+            Unk3300HBILIAEIHNK = input.ReadBool();
             break;
           }
         }

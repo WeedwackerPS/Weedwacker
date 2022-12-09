@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SummerTimeDungeonInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTdW1tZXJUaW1lRHVuZ2VvbkluZm8ucHJvdG8ilwEKFVN1bW1lclRpbWVE",
-            "dW5nZW9uSW5mbxIZChF0YWtlbl9jaGVzdF9jb3VudBgPIAEoDRIZChF0b3Rh",
-            "bF9jaGVzdF9jb3VudBgMIAEoDRIZChF0YWtlbl9zaGVsbF9jb3VudBgOIAEo",
-            "DRISCgpkdW5nZW9uX2lkGAQgASgNEhkKEXRvdGFsX3NoZWxsX2NvdW50GA0g",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChtTdW1tZXJUaW1lRHVuZ2VvbkluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8inwEKFVN1bW1lclRpbWVEdW5nZW9uSW5mbxIS",
+            "CgpkdW5nZW9uX2lkGAkgASgNEhsKE1VuazMzMDBfR01LTU5ISUJQRVAYASAB",
+            "KA0SGwoTVW5rMzMwMF9ISkhPRE1PSU1LRxgIIAEoDRIbChNVbmszMzAwX0dB",
+            "TEVESkxBSVBNGAUgASgNEhsKE1VuazMzMDBfRUdHRkpDSUNPQkQYDCABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeDungeonInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeDungeonInfo.Parser, new[]{ "TakenChestCount", "TotalChestCount", "TakenShellCount", "DungeonId", "TotalShellCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SummerTimeDungeonInfo), global::Weedwacker.Shared.Network.Proto.SummerTimeDungeonInfo.Parser, new[]{ "DungeonId", "Unk3300GMKMNHIBPEP", "Unk3300HJHODMOIMKG", "Unk3300GALEDJLAIPM", "Unk3300EGGFJCICOBD" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SummerTimeDungeonInfo(SummerTimeDungeonInfo other) : this() {
-      takenChestCount_ = other.takenChestCount_;
-      totalChestCount_ = other.totalChestCount_;
-      takenShellCount_ = other.takenShellCount_;
       dungeonId_ = other.dungeonId_;
-      totalShellCount_ = other.totalShellCount_;
+      unk3300GMKMNHIBPEP_ = other.unk3300GMKMNHIBPEP_;
+      unk3300HJHODMOIMKG_ = other.unk3300HJHODMOIMKG_;
+      unk3300GALEDJLAIPM_ = other.unk3300GALEDJLAIPM_;
+      unk3300EGGFJCICOBD_ = other.unk3300EGGFJCICOBD_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,44 +88,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SummerTimeDungeonInfo(this);
     }
 
-    /// <summary>Field number for the "taken_chest_count" field.</summary>
-    public const int TakenChestCountFieldNumber = 15;
-    private uint takenChestCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TakenChestCount {
-      get { return takenChestCount_; }
-      set {
-        takenChestCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_chest_count" field.</summary>
-    public const int TotalChestCountFieldNumber = 12;
-    private uint totalChestCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalChestCount {
-      get { return totalChestCount_; }
-      set {
-        totalChestCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "taken_shell_count" field.</summary>
-    public const int TakenShellCountFieldNumber = 14;
-    private uint takenShellCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TakenShellCount {
-      get { return takenShellCount_; }
-      set {
-        takenShellCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 4;
+    public const int DungeonIdFieldNumber = 9;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,15 +100,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_shell_count" field.</summary>
-    public const int TotalShellCountFieldNumber = 13;
-    private uint totalShellCount_;
+    /// <summary>Field number for the "Unk3300_GMKMNHIBPEP" field.</summary>
+    public const int Unk3300GMKMNHIBPEPFieldNumber = 1;
+    private uint unk3300GMKMNHIBPEP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalShellCount {
-      get { return totalShellCount_; }
+    public uint Unk3300GMKMNHIBPEP {
+      get { return unk3300GMKMNHIBPEP_; }
       set {
-        totalShellCount_ = value;
+        unk3300GMKMNHIBPEP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HJHODMOIMKG" field.</summary>
+    public const int Unk3300HJHODMOIMKGFieldNumber = 8;
+    private uint unk3300HJHODMOIMKG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HJHODMOIMKG {
+      get { return unk3300HJHODMOIMKG_; }
+      set {
+        unk3300HJHODMOIMKG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GALEDJLAIPM" field.</summary>
+    public const int Unk3300GALEDJLAIPMFieldNumber = 5;
+    private uint unk3300GALEDJLAIPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GALEDJLAIPM {
+      get { return unk3300GALEDJLAIPM_; }
+      set {
+        unk3300GALEDJLAIPM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EGGFJCICOBD" field.</summary>
+    public const int Unk3300EGGFJCICOBDFieldNumber = 12;
+    private uint unk3300EGGFJCICOBD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EGGFJCICOBD {
+      get { return unk3300EGGFJCICOBD_; }
+      set {
+        unk3300EGGFJCICOBD_ = value;
       }
     }
 
@@ -163,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TakenChestCount != other.TakenChestCount) return false;
-      if (TotalChestCount != other.TotalChestCount) return false;
-      if (TakenShellCount != other.TakenShellCount) return false;
       if (DungeonId != other.DungeonId) return false;
-      if (TotalShellCount != other.TotalShellCount) return false;
+      if (Unk3300GMKMNHIBPEP != other.Unk3300GMKMNHIBPEP) return false;
+      if (Unk3300HJHODMOIMKG != other.Unk3300HJHODMOIMKG) return false;
+      if (Unk3300GALEDJLAIPM != other.Unk3300GALEDJLAIPM) return false;
+      if (Unk3300EGGFJCICOBD != other.Unk3300EGGFJCICOBD) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TakenChestCount != 0) hash ^= TakenChestCount.GetHashCode();
-      if (TotalChestCount != 0) hash ^= TotalChestCount.GetHashCode();
-      if (TakenShellCount != 0) hash ^= TakenShellCount.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-      if (TotalShellCount != 0) hash ^= TotalShellCount.GetHashCode();
+      if (Unk3300GMKMNHIBPEP != 0) hash ^= Unk3300GMKMNHIBPEP.GetHashCode();
+      if (Unk3300HJHODMOIMKG != 0) hash ^= Unk3300HJHODMOIMKG.GetHashCode();
+      if (Unk3300GALEDJLAIPM != 0) hash ^= Unk3300GALEDJLAIPM.GetHashCode();
+      if (Unk3300EGGFJCICOBD != 0) hash ^= Unk3300EGGFJCICOBD.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,25 +198,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300GMKMNHIBPEP != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300GMKMNHIBPEP);
+      }
+      if (Unk3300GALEDJLAIPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300GALEDJLAIPM);
+      }
+      if (Unk3300HJHODMOIMKG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300HJHODMOIMKG);
+      }
       if (DungeonId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(DungeonId);
       }
-      if (TotalChestCount != 0) {
+      if (Unk3300EGGFJCICOBD != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(TotalChestCount);
-      }
-      if (TotalShellCount != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(TotalShellCount);
-      }
-      if (TakenShellCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TakenShellCount);
-      }
-      if (TakenChestCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TakenChestCount);
+        output.WriteUInt32(Unk3300EGGFJCICOBD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,25 +228,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300GMKMNHIBPEP != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300GMKMNHIBPEP);
+      }
+      if (Unk3300GALEDJLAIPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300GALEDJLAIPM);
+      }
+      if (Unk3300HJHODMOIMKG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300HJHODMOIMKG);
+      }
       if (DungeonId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(DungeonId);
       }
-      if (TotalChestCount != 0) {
+      if (Unk3300EGGFJCICOBD != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(TotalChestCount);
-      }
-      if (TotalShellCount != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(TotalShellCount);
-      }
-      if (TakenShellCount != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(TakenShellCount);
-      }
-      if (TakenChestCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TakenChestCount);
+        output.WriteUInt32(Unk3300EGGFJCICOBD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -258,20 +258,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TakenChestCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenChestCount);
-      }
-      if (TotalChestCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalChestCount);
-      }
-      if (TakenShellCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenShellCount);
-      }
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
-      if (TotalShellCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalShellCount);
+      if (Unk3300GMKMNHIBPEP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GMKMNHIBPEP);
+      }
+      if (Unk3300HJHODMOIMKG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HJHODMOIMKG);
+      }
+      if (Unk3300GALEDJLAIPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GALEDJLAIPM);
+      }
+      if (Unk3300EGGFJCICOBD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EGGFJCICOBD);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TakenChestCount != 0) {
-        TakenChestCount = other.TakenChestCount;
-      }
-      if (other.TotalChestCount != 0) {
-        TotalChestCount = other.TotalChestCount;
-      }
-      if (other.TakenShellCount != 0) {
-        TakenShellCount = other.TakenShellCount;
-      }
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
-      if (other.TotalShellCount != 0) {
-        TotalShellCount = other.TotalShellCount;
+      if (other.Unk3300GMKMNHIBPEP != 0) {
+        Unk3300GMKMNHIBPEP = other.Unk3300GMKMNHIBPEP;
+      }
+      if (other.Unk3300HJHODMOIMKG != 0) {
+        Unk3300HJHODMOIMKG = other.Unk3300HJHODMOIMKG;
+      }
+      if (other.Unk3300GALEDJLAIPM != 0) {
+        Unk3300GALEDJLAIPM = other.Unk3300GALEDJLAIPM;
+      }
+      if (other.Unk3300EGGFJCICOBD != 0) {
+        Unk3300EGGFJCICOBD = other.Unk3300EGGFJCICOBD;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -315,24 +315,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 8: {
+            Unk3300GMKMNHIBPEP = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300GALEDJLAIPM = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300HJHODMOIMKG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             DungeonId = input.ReadUInt32();
             break;
           }
           case 96: {
-            TotalChestCount = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            TotalShellCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TakenShellCount = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            TakenChestCount = input.ReadUInt32();
+            Unk3300EGGFJCICOBD = input.ReadUInt32();
             break;
           }
         }
@@ -350,24 +350,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 8: {
+            Unk3300GMKMNHIBPEP = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300GALEDJLAIPM = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300HJHODMOIMKG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             DungeonId = input.ReadUInt32();
             break;
           }
           case 96: {
-            TotalChestCount = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            TotalShellCount = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            TakenShellCount = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            TakenChestCount = input.ReadUInt32();
+            Unk3300EGGFJCICOBD = input.ReadUInt32();
             break;
           }
         }

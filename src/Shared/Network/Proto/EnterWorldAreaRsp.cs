@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EnterWorldAreaRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdFbnRlcldvcmxkQXJlYVJzcC5wcm90byJIChFFbnRlcldvcmxkQXJlYVJz",
-            "cBIRCglhcmVhX3R5cGUYASABKA0SDwoHYXJlYV9pZBgHIAEoDRIPCgdyZXRj",
-            "b2RlGAkgASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChdFbnRlcldvcmxkQXJlYVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byJIChFFbnRlcldvcmxkQXJlYVJzcBIRCglhcmVhX3R5",
+            "cGUYDyABKA0SDwoHcmV0Y29kZRgLIAEoBRIPCgdhcmVhX2lkGAEgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterWorldAreaRsp), global::Weedwacker.Shared.Network.Proto.EnterWorldAreaRsp.Parser, new[]{ "AreaType", "AreaId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterWorldAreaRsp), global::Weedwacker.Shared.Network.Proto.EnterWorldAreaRsp.Parser, new[]{ "AreaType", "Retcode", "AreaId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 243
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 275;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EnterWorldAreaRsp : pb::IMessage<EnterWorldAreaRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterWorldAreaRsp(EnterWorldAreaRsp other) : this() {
       areaType_ = other.areaType_;
-      areaId_ = other.areaId_;
       retcode_ = other.retcode_;
+      areaId_ = other.areaId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "area_type" field.</summary>
-    public const int AreaTypeFieldNumber = 1;
+    public const int AreaTypeFieldNumber = 15;
     private uint areaType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "area_id" field.</summary>
-    public const int AreaIdFieldNumber = 7;
-    private uint areaId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AreaId {
-      get { return areaId_; }
-      set {
-        areaId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "area_id" field.</summary>
+    public const int AreaIdFieldNumber = 1;
+    private uint areaId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AreaId {
+      get { return areaId_; }
+      set {
+        areaId_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (AreaType != other.AreaType) return false;
-      if (AreaId != other.AreaId) return false;
       if (Retcode != other.Retcode) return false;
+      if (AreaId != other.AreaId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (AreaType != 0) hash ^= AreaType.GetHashCode();
-      if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AreaType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AreaType);
-      }
       if (AreaId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(AreaId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
+      }
+      if (AreaType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AreaType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AreaType != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(AreaType);
-      }
       if (AreaId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(AreaId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
+      }
+      if (AreaType != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AreaType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (AreaType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaType);
       }
-      if (AreaId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (AreaId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.AreaType != 0) {
         AreaType = other.AreaType;
       }
-      if (other.AreaId != 0) {
-        AreaId = other.AreaId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.AreaId != 0) {
+        AreaId = other.AreaId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            AreaType = input.ReadUInt32();
-            break;
-          }
-          case 56: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 88: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            AreaType = input.ReadUInt32();
             break;
           }
         }
@@ -288,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            AreaType = input.ReadUInt32();
-            break;
-          }
-          case 56: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 88: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            AreaType = input.ReadUInt32();
             break;
           }
         }

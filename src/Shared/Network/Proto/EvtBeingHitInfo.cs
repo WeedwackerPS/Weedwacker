@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtBeingHitInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVFdnRCZWluZ0hpdEluZm8ucHJvdG8aEkF0dGFja1Jlc3VsdC5wcm90byJb",
-            "Cg9FdnRCZWluZ0hpdEluZm8SDwoHcGVlcl9pZBgGIAEoDRIkCg1hdHRhY2tf",
-            "cmVzdWx0GAcgASgLMg0uQXR0YWNrUmVzdWx0EhEKCWZyYW1lX251bRgEIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVFdnRCZWluZ0hpdEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aEkF0dGFja1Jlc3VsdC5wcm90byJ7Cg9FdnRCZWluZ0hp",
+            "dEluZm8SEQoJZnJhbWVfbnVtGAsgASgNEg8KB3BlZXJfaWQYAiABKA0SRAoN",
+            "YXR0YWNrX3Jlc3VsdBgGIAEoCzItLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQXR0YWNrUmVzdWx0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AttackResultReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo), global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo.Parser, new[]{ "PeerId", "AttackResult", "FrameNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo), global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo.Parser, new[]{ "FrameNum", "PeerId", "AttackResult" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtBeingHitInfo(EvtBeingHitInfo other) : this() {
+      frameNum_ = other.frameNum_;
       peerId_ = other.peerId_;
       attackResult_ = other.attackResult_ != null ? other.attackResult_.Clone() : null;
-      frameNum_ = other.frameNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +85,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtBeingHitInfo(this);
     }
 
+    /// <summary>Field number for the "frame_num" field.</summary>
+    public const int FrameNumFieldNumber = 11;
+    private uint frameNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FrameNum {
+      get { return frameNum_; }
+      set {
+        frameNum_ = value;
+      }
+    }
+
     /// <summary>Field number for the "peer_id" field.</summary>
-    public const int PeerIdFieldNumber = 6;
+    public const int PeerIdFieldNumber = 2;
     private uint peerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "attack_result" field.</summary>
-    public const int AttackResultFieldNumber = 7;
+    public const int AttackResultFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.AttackResult attackResult_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,18 +118,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return attackResult_; }
       set {
         attackResult_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "frame_num" field.</summary>
-    public const int FrameNumFieldNumber = 4;
-    private uint frameNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FrameNum {
-      get { return frameNum_; }
-      set {
-        frameNum_ = value;
       }
     }
 
@@ -135,9 +136,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (FrameNum != other.FrameNum) return false;
       if (PeerId != other.PeerId) return false;
       if (!object.Equals(AttackResult, other.AttackResult)) return false;
-      if (FrameNum != other.FrameNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (FrameNum != 0) hash ^= FrameNum.GetHashCode();
       if (PeerId != 0) hash ^= PeerId.GetHashCode();
       if (attackResult_ != null) hash ^= AttackResult.GetHashCode();
-      if (FrameNum != 0) hash ^= FrameNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FrameNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(FrameNum);
-      }
       if (PeerId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(PeerId);
       }
       if (attackResult_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(AttackResult);
+      }
+      if (FrameNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FrameNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FrameNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(FrameNum);
-      }
       if (PeerId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteUInt32(PeerId);
       }
       if (attackResult_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(AttackResult);
+      }
+      if (FrameNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FrameNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +211,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (FrameNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FrameNum);
+      }
       if (PeerId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PeerId);
       }
       if (attackResult_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AttackResult);
-      }
-      if (FrameNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FrameNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,6 +232,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.FrameNum != 0) {
+        FrameNum = other.FrameNum;
+      }
       if (other.PeerId != 0) {
         PeerId = other.PeerId;
       }
@@ -239,9 +243,6 @@ namespace Weedwacker.Shared.Network.Proto {
           AttackResult = new global::Weedwacker.Shared.Network.Proto.AttackResult();
         }
         AttackResult.MergeFrom(other.AttackResult);
-      }
-      if (other.FrameNum != 0) {
-        FrameNum = other.FrameNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -258,19 +259,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            FrameNum = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 16: {
             PeerId = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 50: {
             if (attackResult_ == null) {
               AttackResult = new global::Weedwacker.Shared.Network.Proto.AttackResult();
             }
             input.ReadMessage(AttackResult);
+            break;
+          }
+          case 88: {
+            FrameNum = input.ReadUInt32();
             break;
           }
         }
@@ -288,19 +289,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            FrameNum = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 16: {
             PeerId = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 50: {
             if (attackResult_ == null) {
               AttackResult = new global::Weedwacker.Shared.Network.Proto.AttackResult();
             }
             input.ReadMessage(AttackResult);
+            break;
+          }
+          case 88: {
+            FrameNum = input.ReadUInt32();
             break;
           }
         }

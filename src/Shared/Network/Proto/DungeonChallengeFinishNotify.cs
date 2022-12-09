@@ -24,32 +24,37 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonChallengeFinishNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJEdW5nZW9uQ2hhbGxlbmdlRmluaXNoTm90aWZ5LnByb3RvGhlDaGFsbGVu",
-            "Z2VGaW5pc2hUeXBlLnByb3RvGihDaGFubmVsZXJTbGFiTG9vcER1bmdlb25S",
-            "ZXN1bHRJbmZvLnByb3RvGh1DdXN0b21EdW5nZW9uUmVzdWx0SW5mby5wcm90",
-            "bxomRWZmaWd5Q2hhbGxlbmdlRHVuZ2VvblJlc3VsdEluZm8ucHJvdG8aHVBv",
-            "dGlvbkR1bmdlb25SZXN1bHRJbmZvLnByb3RvGhlTdHJlbmd0aGVuUG9pbnRE",
-            "YXRhLnByb3RvIsIFChxEdW5nZW9uQ2hhbGxlbmdlRmluaXNoTm90aWZ5ElwK",
-            "GXN0cmVuZ3RoZW5fcG9pbnRfZGF0YV9tYXAYDSADKAsyOS5EdW5nZW9uQ2hh",
-            "bGxlbmdlRmluaXNoTm90aWZ5LlN0cmVuZ3RoZW5Qb2ludERhdGFNYXBFbnRy",
-            "eRIpCgtmaW5pc2hfdHlwZRgJIAEoDjIULkNoYWxsZW5nZUZpbmlzaFR5cGUS",
-            "FQoNaXNfbmV3X3JlY29yZBgKIAEoCBIdChVjaGFsbGVuZ2VfcmVjb3JkX3R5",
-            "cGUYByABKA0SEQoJdGltZV9jb3N0GAQgASgNEhUKDWN1cnJlbnRfdmFsdWUY",
-            "DyABKA0SEgoKaXNfc3VjY2VzcxgDIAEoCBIXCg9jaGFsbGVuZ2VfaW5kZXgY",
-            "BSABKA0SVwonY2hhbm5lbGVyX3NsYWJfbG9vcF9kdW5nZW9uX3Jlc3VsdF9p",
-            "bmZvGPELIAEoCzIjLkNoYW5uZWxlclNsYWJMb29wRHVuZ2VvblJlc3VsdElu",
-            "Zm9IABJSCiRlZmZpZ3lfY2hhbGxlbmdlX2R1bmdlb25fcmVzdWx0X2luZm8Y",
-            "2wwgASgLMiEuRWZmaWd5Q2hhbGxlbmdlRHVuZ2VvblJlc3VsdEluZm9IABI/",
-            "Chpwb3Rpb25fZHVuZ2Vvbl9yZXN1bHRfaW5mbxigDiABKAsyGC5Qb3Rpb25E",
-            "dW5nZW9uUmVzdWx0SW5mb0gAEj8KGmN1c3RvbV9kdW5nZW9uX3Jlc3VsdF9p",
-            "bmZvGIANIAEoCzIYLkN1c3RvbUR1bmdlb25SZXN1bHRJbmZvSAAaUwobU3Ry",
-            "ZW5ndGhlblBvaW50RGF0YU1hcEVudHJ5EgsKA2tleRgBIAEoDRIjCgV2YWx1",
-            "ZRgCIAEoCzIULlN0cmVuZ3RoZW5Qb2ludERhdGE6AjgBQggKBmRldGFpbEIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiJEdW5nZW9uQ2hhbGxlbmdlRmluaXNoTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhlDaGFsbGVuZ2VGaW5pc2hUeXBl",
+            "LnByb3RvGihDaGFubmVsZXJTbGFiTG9vcER1bmdlb25SZXN1bHRJbmZvLnBy",
+            "b3RvGh1DdXN0b21EdW5nZW9uUmVzdWx0SW5mby5wcm90bxomRWZmaWd5Q2hh",
+            "bGxlbmdlRHVuZ2VvblJlc3VsdEluZm8ucHJvdG8aHVBvdGlvbkR1bmdlb25S",
+            "ZXN1bHRJbmZvLnByb3RvGhlTdHJlbmd0aGVuUG9pbnREYXRhLnByb3RvIqIH",
+            "ChxEdW5nZW9uQ2hhbGxlbmdlRmluaXNoTm90aWZ5EhUKDWlzX25ld19yZWNv",
+            "cmQYCSABKAgSFQoNY3VycmVudF92YWx1ZRgFIAEoDRJJCgtmaW5pc2hfdHlw",
+            "ZRgDIAEoDjI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hh",
+            "bGxlbmdlRmluaXNoVHlwZRJ8ChlzdHJlbmd0aGVuX3BvaW50X2RhdGFfbWFw",
+            "GAsgAygLMlkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5EdW5n",
+            "ZW9uQ2hhbGxlbmdlRmluaXNoTm90aWZ5LlN0cmVuZ3RoZW5Qb2ludERhdGFN",
+            "YXBFbnRyeRIdChVjaGFsbGVuZ2VfcmVjb3JkX3R5cGUYAiABKA0SEgoKaXNf",
+            "c3VjY2VzcxgIIAEoCBIXCg9jaGFsbGVuZ2VfaW5kZXgYDCABKA0SEQoJdGlt",
+            "ZV9jb3N0GAcgASgNEngKKGNoYW5uZWxsZXJfc2xhYl9sb29wX2R1bmdlb25f",
+            "cmVzdWx0X2luZm8YiQwgASgLMkMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5DaGFubmVsZXJTbGFiTG9vcER1bmdlb25SZXN1bHRJbmZvSAAS",
+            "cQokZWZmaWd5X2NoYWxsZW5nZV9kdW5nZW9uX3Jlc3VsdF9pbmZvGEwgASgL",
+            "MkEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FZmZpZ3lDaGFs",
+            "bGVuZ2VEdW5nZW9uUmVzdWx0SW5mb0gAEl8KGnBvdGlvbl9kdW5nZW9uX3Jl",
+            "c3VsdF9pbmZvGNgBIAEoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uUG90aW9uRHVuZ2VvblJlc3VsdEluZm9IABJfChpjdXN0b21fZHVu",
+            "Z2Vvbl9yZXN1bHRfaW5mbxiODSABKAsyOC5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkN1c3RvbUR1bmdlb25SZXN1bHRJbmZvSAAacwobU3Ry",
+            "ZW5ndGhlblBvaW50RGF0YU1hcEVudHJ5EgsKA2tleRgBIAEoDRJDCgV2YWx1",
+            "ZRgCIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU3Ry",
+            "ZW5ndGhlblBvaW50RGF0YToCOAFCCAoGZGV0YWlsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChallengeFinishTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StrengthenPointDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonChallengeFinishNotify), global::Weedwacker.Shared.Network.Proto.DungeonChallengeFinishNotify.Parser, new[]{ "StrengthenPointDataMap", "FinishType", "IsNewRecord", "ChallengeRecordType", "TimeCost", "CurrentValue", "IsSuccess", "ChallengeIndex", "ChannelerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "PotionDungeonResultInfo", "CustomDungeonResultInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonChallengeFinishNotify), global::Weedwacker.Shared.Network.Proto.DungeonChallengeFinishNotify.Parser, new[]{ "IsNewRecord", "CurrentValue", "FinishType", "StrengthenPointDataMap", "ChallengeRecordType", "IsSuccess", "ChallengeIndex", "TimeCost", "ChannellerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "PotionDungeonResultInfo", "CustomDungeonResultInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -57,9 +62,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 939
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 916;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonChallengeFinishNotify : pb::IMessage<DungeonChallengeFinishNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -95,17 +104,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonChallengeFinishNotify(DungeonChallengeFinishNotify other) : this() {
-      strengthenPointDataMap_ = other.strengthenPointDataMap_.Clone();
-      finishType_ = other.finishType_;
       isNewRecord_ = other.isNewRecord_;
-      challengeRecordType_ = other.challengeRecordType_;
-      timeCost_ = other.timeCost_;
       currentValue_ = other.currentValue_;
+      finishType_ = other.finishType_;
+      strengthenPointDataMap_ = other.strengthenPointDataMap_.Clone();
+      challengeRecordType_ = other.challengeRecordType_;
       isSuccess_ = other.isSuccess_;
       challengeIndex_ = other.challengeIndex_;
+      timeCost_ = other.timeCost_;
       switch (other.DetailCase) {
-        case DetailOneofCase.ChannelerSlabLoopDungeonResultInfo:
-          ChannelerSlabLoopDungeonResultInfo = other.ChannelerSlabLoopDungeonResultInfo.Clone();
+        case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
+          ChannellerSlabLoopDungeonResultInfo = other.ChannellerSlabLoopDungeonResultInfo.Clone();
           break;
         case DetailOneofCase.EffigyChallengeDungeonResultInfo:
           EffigyChallengeDungeonResultInfo = other.EffigyChallengeDungeonResultInfo.Clone();
@@ -127,31 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonChallengeFinishNotify(this);
     }
 
-    /// <summary>Field number for the "strengthen_point_data_map" field.</summary>
-    public const int StrengthenPointDataMapFieldNumber = 13;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec _map_strengthenPointDataMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser), 106);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData> strengthenPointDataMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData> StrengthenPointDataMap {
-      get { return strengthenPointDataMap_; }
-    }
-
-    /// <summary>Field number for the "finish_type" field.</summary>
-    public const int FinishTypeFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.ChallengeFinishType finishType_ = global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChallengeFinishType FinishType {
-      get { return finishType_; }
-      set {
-        finishType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 10;
+    public const int IsNewRecordFieldNumber = 9;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,32 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "challenge_record_type" field.</summary>
-    public const int ChallengeRecordTypeFieldNumber = 7;
-    private uint challengeRecordType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChallengeRecordType {
-      get { return challengeRecordType_; }
-      set {
-        challengeRecordType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "time_cost" field.</summary>
-    public const int TimeCostFieldNumber = 4;
-    private uint timeCost_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimeCost {
-      get { return timeCost_; }
-      set {
-        timeCost_ = value;
-      }
-    }
-
     /// <summary>Field number for the "current_value" field.</summary>
-    public const int CurrentValueFieldNumber = 15;
+    public const int CurrentValueFieldNumber = 5;
     private uint currentValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -198,8 +160,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "finish_type" field.</summary>
+    public const int FinishTypeFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.ChallengeFinishType finishType_ = global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChallengeFinishType FinishType {
+      get { return finishType_; }
+      set {
+        finishType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "strengthen_point_data_map" field.</summary>
+    public const int StrengthenPointDataMapFieldNumber = 11;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec _map_strengthenPointDataMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser), 90);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData> strengthenPointDataMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData> StrengthenPointDataMap {
+      get { return strengthenPointDataMap_; }
+    }
+
+    /// <summary>Field number for the "challenge_record_type" field.</summary>
+    public const int ChallengeRecordTypeFieldNumber = 2;
+    private uint challengeRecordType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeRecordType {
+      get { return challengeRecordType_; }
+      set {
+        challengeRecordType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 3;
+    public const int IsSuccessFieldNumber = 8;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,7 +208,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_index" field.</summary>
-    public const int ChallengeIndexFieldNumber = 5;
+    public const int ChallengeIndexFieldNumber = 12;
     private uint challengeIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -222,20 +219,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "channeler_slab_loop_dungeon_result_info" field.</summary>
-    public const int ChannelerSlabLoopDungeonResultInfoFieldNumber = 1521;
+    /// <summary>Field number for the "time_cost" field.</summary>
+    public const int TimeCostFieldNumber = 7;
+    private uint timeCost_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo ChannelerSlabLoopDungeonResultInfo {
-      get { return detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo ? (global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo) detail_ : null; }
+    public uint TimeCost {
+      get { return timeCost_; }
+      set {
+        timeCost_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "channeller_slab_loop_dungeon_result_info" field.</summary>
+    public const int ChannellerSlabLoopDungeonResultInfoFieldNumber = 1545;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo ChannellerSlabLoopDungeonResultInfo {
+      get { return detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo ? (global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo) detail_ : null; }
       set {
         detail_ = value;
-        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannelerSlabLoopDungeonResultInfo;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannellerSlabLoopDungeonResultInfo;
       }
     }
 
     /// <summary>Field number for the "effigy_challenge_dungeon_result_info" field.</summary>
-    public const int EffigyChallengeDungeonResultInfoFieldNumber = 1627;
+    public const int EffigyChallengeDungeonResultInfoFieldNumber = 76;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo EffigyChallengeDungeonResultInfo {
@@ -247,7 +256,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "potion_dungeon_result_info" field.</summary>
-    public const int PotionDungeonResultInfoFieldNumber = 1824;
+    public const int PotionDungeonResultInfoFieldNumber = 216;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo PotionDungeonResultInfo {
@@ -259,7 +268,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "custom_dungeon_result_info" field.</summary>
-    public const int CustomDungeonResultInfoFieldNumber = 1664;
+    public const int CustomDungeonResultInfoFieldNumber = 1678;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo CustomDungeonResultInfo {
@@ -274,10 +283,10 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      ChannelerSlabLoopDungeonResultInfo = 1521,
-      EffigyChallengeDungeonResultInfo = 1627,
-      PotionDungeonResultInfo = 1824,
-      CustomDungeonResultInfo = 1664,
+      ChannellerSlabLoopDungeonResultInfo = 1545,
+      EffigyChallengeDungeonResultInfo = 76,
+      PotionDungeonResultInfo = 216,
+      CustomDungeonResultInfo = 1678,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -308,15 +317,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!StrengthenPointDataMap.Equals(other.StrengthenPointDataMap)) return false;
-      if (FinishType != other.FinishType) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
-      if (ChallengeRecordType != other.ChallengeRecordType) return false;
-      if (TimeCost != other.TimeCost) return false;
       if (CurrentValue != other.CurrentValue) return false;
+      if (FinishType != other.FinishType) return false;
+      if (!StrengthenPointDataMap.Equals(other.StrengthenPointDataMap)) return false;
+      if (ChallengeRecordType != other.ChallengeRecordType) return false;
       if (IsSuccess != other.IsSuccess) return false;
       if (ChallengeIndex != other.ChallengeIndex) return false;
-      if (!object.Equals(ChannelerSlabLoopDungeonResultInfo, other.ChannelerSlabLoopDungeonResultInfo)) return false;
+      if (TimeCost != other.TimeCost) return false;
+      if (!object.Equals(ChannellerSlabLoopDungeonResultInfo, other.ChannellerSlabLoopDungeonResultInfo)) return false;
       if (!object.Equals(EffigyChallengeDungeonResultInfo, other.EffigyChallengeDungeonResultInfo)) return false;
       if (!object.Equals(PotionDungeonResultInfo, other.PotionDungeonResultInfo)) return false;
       if (!object.Equals(CustomDungeonResultInfo, other.CustomDungeonResultInfo)) return false;
@@ -328,15 +337,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= StrengthenPointDataMap.GetHashCode();
-      if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) hash ^= FinishType.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-      if (ChallengeRecordType != 0) hash ^= ChallengeRecordType.GetHashCode();
-      if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
       if (CurrentValue != 0) hash ^= CurrentValue.GetHashCode();
+      if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) hash ^= FinishType.GetHashCode();
+      hash ^= StrengthenPointDataMap.GetHashCode();
+      if (ChallengeRecordType != 0) hash ^= ChallengeRecordType.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
-      if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) hash ^= ChannelerSlabLoopDungeonResultInfo.GetHashCode();
+      if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) hash ^= ChannellerSlabLoopDungeonResultInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) hash ^= EffigyChallengeDungeonResultInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.PotionDungeonResultInfo) hash ^= PotionDungeonResultInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) hash ^= CustomDungeonResultInfo.GetHashCode();
@@ -359,50 +368,50 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsSuccess != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsSuccess);
-      }
-      if (TimeCost != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TimeCost);
-      }
-      if (ChallengeIndex != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ChallengeIndex);
-      }
       if (ChallengeRecordType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(ChallengeRecordType);
       }
       if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteEnum((int) FinishType);
       }
+      if (CurrentValue != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurrentValue);
+      }
+      if (TimeCost != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(TimeCost);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsSuccess);
+      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsNewRecord);
       }
       strengthenPointDataMap_.WriteTo(output, _map_strengthenPointDataMap_codec);
-      if (CurrentValue != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CurrentValue);
-      }
-      if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) {
-        output.WriteRawTag(138, 95);
-        output.WriteMessage(ChannelerSlabLoopDungeonResultInfo);
+      if (ChallengeIndex != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeIndex);
       }
       if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-        output.WriteRawTag(218, 101);
+        output.WriteRawTag(226, 4);
         output.WriteMessage(EffigyChallengeDungeonResultInfo);
       }
-      if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
-        output.WriteRawTag(130, 104);
-        output.WriteMessage(CustomDungeonResultInfo);
-      }
       if (detailCase_ == DetailOneofCase.PotionDungeonResultInfo) {
-        output.WriteRawTag(130, 114);
+        output.WriteRawTag(194, 13);
         output.WriteMessage(PotionDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
+        output.WriteRawTag(242, 104);
+        output.WriteMessage(CustomDungeonResultInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -414,50 +423,50 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsSuccess != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsSuccess);
-      }
-      if (TimeCost != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(TimeCost);
-      }
-      if (ChallengeIndex != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ChallengeIndex);
-      }
       if (ChallengeRecordType != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(ChallengeRecordType);
       }
       if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteEnum((int) FinishType);
       }
+      if (CurrentValue != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurrentValue);
+      }
+      if (TimeCost != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(TimeCost);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsSuccess);
+      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsNewRecord);
       }
       strengthenPointDataMap_.WriteTo(ref output, _map_strengthenPointDataMap_codec);
-      if (CurrentValue != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CurrentValue);
-      }
-      if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) {
-        output.WriteRawTag(138, 95);
-        output.WriteMessage(ChannelerSlabLoopDungeonResultInfo);
+      if (ChallengeIndex != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeIndex);
       }
       if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-        output.WriteRawTag(218, 101);
+        output.WriteRawTag(226, 4);
         output.WriteMessage(EffigyChallengeDungeonResultInfo);
       }
-      if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
-        output.WriteRawTag(130, 104);
-        output.WriteMessage(CustomDungeonResultInfo);
-      }
       if (detailCase_ == DetailOneofCase.PotionDungeonResultInfo) {
-        output.WriteRawTag(130, 114);
+        output.WriteRawTag(194, 13);
         output.WriteMessage(PotionDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
+        output.WriteRawTag(242, 104);
+        output.WriteMessage(CustomDungeonResultInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -469,21 +478,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += strengthenPointDataMap_.CalculateSize(_map_strengthenPointDataMap_codec);
-      if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FinishType);
-      }
       if (IsNewRecord != false) {
         size += 1 + 1;
       }
-      if (ChallengeRecordType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeRecordType);
-      }
-      if (TimeCost != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
-      }
       if (CurrentValue != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentValue);
+      }
+      if (FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FinishType);
+      }
+      size += strengthenPointDataMap_.CalculateSize(_map_strengthenPointDataMap_codec);
+      if (ChallengeRecordType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeRecordType);
       }
       if (IsSuccess != false) {
         size += 1 + 1;
@@ -491,8 +497,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ChallengeIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
       }
-      if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannelerSlabLoopDungeonResultInfo);
+      if (TimeCost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannellerSlabLoopDungeonResultInfo);
       }
       if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeDungeonResultInfo);
@@ -515,21 +524,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
-      if (other.FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
-        FinishType = other.FinishType;
-      }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
       }
-      if (other.ChallengeRecordType != 0) {
-        ChallengeRecordType = other.ChallengeRecordType;
-      }
-      if (other.TimeCost != 0) {
-        TimeCost = other.TimeCost;
-      }
       if (other.CurrentValue != 0) {
         CurrentValue = other.CurrentValue;
+      }
+      if (other.FinishType != global::Weedwacker.Shared.Network.Proto.ChallengeFinishType.None) {
+        FinishType = other.FinishType;
+      }
+      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
+      if (other.ChallengeRecordType != 0) {
+        ChallengeRecordType = other.ChallengeRecordType;
       }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
@@ -537,12 +543,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ChallengeIndex != 0) {
         ChallengeIndex = other.ChallengeIndex;
       }
+      if (other.TimeCost != 0) {
+        TimeCost = other.TimeCost;
+      }
       switch (other.DetailCase) {
-        case DetailOneofCase.ChannelerSlabLoopDungeonResultInfo:
-          if (ChannelerSlabLoopDungeonResultInfo == null) {
-            ChannelerSlabLoopDungeonResultInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
+        case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
+          if (ChannellerSlabLoopDungeonResultInfo == null) {
+            ChannellerSlabLoopDungeonResultInfo = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
           }
-          ChannelerSlabLoopDungeonResultInfo.MergeFrom(other.ChannelerSlabLoopDungeonResultInfo);
+          ChannellerSlabLoopDungeonResultInfo.MergeFrom(other.ChannellerSlabLoopDungeonResultInfo);
           break;
         case DetailOneofCase.EffigyChallengeDungeonResultInfo:
           if (EffigyChallengeDungeonResultInfo == null) {
@@ -579,48 +588,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 32: {
-            TimeCost = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeIndex = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             ChallengeRecordType = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
             FinishType = (global::Weedwacker.Shared.Network.Proto.ChallengeFinishType) input.ReadEnum();
             break;
           }
-          case 80: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 106: {
-            strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
-            break;
-          }
-          case 120: {
+          case 40: {
             CurrentValue = input.ReadUInt32();
             break;
           }
-          case 12170: {
-            global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
-            if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) {
-              subBuilder.MergeFrom(ChannelerSlabLoopDungeonResultInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChannelerSlabLoopDungeonResultInfo = subBuilder;
+          case 56: {
+            TimeCost = input.ReadUInt32();
             break;
           }
-          case 13018: {
+          case 64: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 72: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 90: {
+            strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 96: {
+            ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 610: {
             global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo();
             if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
               subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
@@ -629,22 +629,31 @@ namespace Weedwacker.Shared.Network.Proto {
             EffigyChallengeDungeonResultInfo = subBuilder;
             break;
           }
-          case 13314: {
-            global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo();
-            if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
-              subBuilder.MergeFrom(CustomDungeonResultInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CustomDungeonResultInfo = subBuilder;
-            break;
-          }
-          case 14594: {
+          case 1730: {
             global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo();
             if (detailCase_ == DetailOneofCase.PotionDungeonResultInfo) {
               subBuilder.MergeFrom(PotionDungeonResultInfo);
             }
             input.ReadMessage(subBuilder);
             PotionDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+              subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannellerSlabLoopDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 13426: {
+            global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
+              subBuilder.MergeFrom(CustomDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CustomDungeonResultInfo = subBuilder;
             break;
           }
         }
@@ -662,48 +671,39 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 32: {
-            TimeCost = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            ChallengeIndex = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             ChallengeRecordType = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
             FinishType = (global::Weedwacker.Shared.Network.Proto.ChallengeFinishType) input.ReadEnum();
             break;
           }
-          case 80: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 106: {
-            strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
-            break;
-          }
-          case 120: {
+          case 40: {
             CurrentValue = input.ReadUInt32();
             break;
           }
-          case 12170: {
-            global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
-            if (detailCase_ == DetailOneofCase.ChannelerSlabLoopDungeonResultInfo) {
-              subBuilder.MergeFrom(ChannelerSlabLoopDungeonResultInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChannelerSlabLoopDungeonResultInfo = subBuilder;
+          case 56: {
+            TimeCost = input.ReadUInt32();
             break;
           }
-          case 13018: {
+          case 64: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 72: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 90: {
+            strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 96: {
+            ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 610: {
             global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyChallengeDungeonResultInfo();
             if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
               subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
@@ -712,22 +712,31 @@ namespace Weedwacker.Shared.Network.Proto {
             EffigyChallengeDungeonResultInfo = subBuilder;
             break;
           }
-          case 13314: {
-            global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo();
-            if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
-              subBuilder.MergeFrom(CustomDungeonResultInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CustomDungeonResultInfo = subBuilder;
-            break;
-          }
-          case 14594: {
+          case 1730: {
             global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionDungeonResultInfo();
             if (detailCase_ == DetailOneofCase.PotionDungeonResultInfo) {
               subBuilder.MergeFrom(PotionDungeonResultInfo);
             }
             input.ReadMessage(subBuilder);
             PotionDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabLoopDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+              subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannellerSlabLoopDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 13426: {
+            global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CustomDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.CustomDungeonResultInfo) {
+              subBuilder.MergeFrom(CustomDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CustomDungeonResultInfo = subBuilder;
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusBuildingInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRJbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8icAoeSW5C",
-            "YXR0bGVNZWNoYW5pY3VzQnVpbGRpbmdJbmZvEhMKC2J1aWxkaW5nX2lkGAgg",
-            "ASgNEg0KBWxldmVsGAcgASgNEhMKC2Nvc3RfcG9pbnRzGAIgASgNEhUKDXJl",
-            "ZnVuZF9wb2ludHMYCyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRJbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8icAoeSW5CYXR0bGVNZWNoYW5p",
+            "Y3VzQnVpbGRpbmdJbmZvEhUKDXJlZnVuZF9wb2ludHMYCCABKA0SEwoLY29z",
+            "dF9wb2ludHMYDyABKA0SDQoFbGV2ZWwYDSABKA0SEwoLYnVpbGRpbmdfaWQY",
+            "AyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusBuildingInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusBuildingInfo.Parser, new[]{ "BuildingId", "Level", "CostPoints", "RefundPoints" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusBuildingInfo), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusBuildingInfo.Parser, new[]{ "RefundPoints", "CostPoints", "Level", "BuildingId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusBuildingInfo(InBattleMechanicusBuildingInfo other) : this() {
-      buildingId_ = other.buildingId_;
-      level_ = other.level_;
-      costPoints_ = other.costPoints_;
       refundPoints_ = other.refundPoints_;
+      costPoints_ = other.costPoints_;
+      level_ = other.level_;
+      buildingId_ = other.buildingId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,32 +86,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InBattleMechanicusBuildingInfo(this);
     }
 
-    /// <summary>Field number for the "building_id" field.</summary>
-    public const int BuildingIdFieldNumber = 8;
-    private uint buildingId_;
+    /// <summary>Field number for the "refund_points" field.</summary>
+    public const int RefundPointsFieldNumber = 8;
+    private uint refundPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BuildingId {
-      get { return buildingId_; }
+    public uint RefundPoints {
+      get { return refundPoints_; }
       set {
-        buildingId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 7;
-    private uint level_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Level {
-      get { return level_; }
-      set {
-        level_ = value;
+        refundPoints_ = value;
       }
     }
 
     /// <summary>Field number for the "cost_points" field.</summary>
-    public const int CostPointsFieldNumber = 2;
+    public const int CostPointsFieldNumber = 15;
     private uint costPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,15 +110,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "refund_points" field.</summary>
-    public const int RefundPointsFieldNumber = 11;
-    private uint refundPoints_;
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 13;
+    private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RefundPoints {
-      get { return refundPoints_; }
+    public uint Level {
+      get { return level_; }
       set {
-        refundPoints_ = value;
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_id" field.</summary>
+    public const int BuildingIdFieldNumber = 3;
+    private uint buildingId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuildingId {
+      get { return buildingId_; }
+      set {
+        buildingId_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BuildingId != other.BuildingId) return false;
-      if (Level != other.Level) return false;
-      if (CostPoints != other.CostPoints) return false;
       if (RefundPoints != other.RefundPoints) return false;
+      if (CostPoints != other.CostPoints) return false;
+      if (Level != other.Level) return false;
+      if (BuildingId != other.BuildingId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BuildingId != 0) hash ^= BuildingId.GetHashCode();
-      if (Level != 0) hash ^= Level.GetHashCode();
-      if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
       if (RefundPoints != 0) hash ^= RefundPoints.GetHashCode();
+      if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (BuildingId != 0) hash ^= BuildingId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CostPoints != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CostPoints);
-      }
-      if (Level != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Level);
-      }
       if (BuildingId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(BuildingId);
       }
       if (RefundPoints != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(RefundPoints);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Level);
+      }
+      if (CostPoints != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CostPoints);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CostPoints != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CostPoints);
-      }
-      if (Level != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Level);
-      }
       if (BuildingId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(BuildingId);
       }
       if (RefundPoints != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(RefundPoints);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Level);
+      }
+      if (CostPoints != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CostPoints);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BuildingId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingId);
-      }
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      if (RefundPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefundPoints);
       }
       if (CostPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
       }
-      if (RefundPoints != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefundPoints);
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (BuildingId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.BuildingId != 0) {
-        BuildingId = other.BuildingId;
-      }
-      if (other.Level != 0) {
-        Level = other.Level;
+      if (other.RefundPoints != 0) {
+        RefundPoints = other.RefundPoints;
       }
       if (other.CostPoints != 0) {
         CostPoints = other.CostPoints;
       }
-      if (other.RefundPoints != 0) {
-        RefundPoints = other.RefundPoints;
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.BuildingId != 0) {
+        BuildingId = other.BuildingId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            CostPoints = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            Level = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 24: {
             BuildingId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             RefundPoints = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CostPoints = input.ReadUInt32();
             break;
           }
         }
@@ -316,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            CostPoints = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            Level = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 24: {
             BuildingId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             RefundPoints = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CostPoints = input.ReadUInt32();
             break;
           }
         }

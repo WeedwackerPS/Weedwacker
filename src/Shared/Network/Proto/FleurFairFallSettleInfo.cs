@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairFallSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1GbGV1ckZhaXJGYWxsU2V0dGxlSW5mby5wcm90bxoURmFsbFNldHRsZUlu",
-            "Zm8ucHJvdG8iVgoXRmxldXJGYWlyRmFsbFNldHRsZUluZm8SJAoLc2V0dGxl",
-            "X2luZm8YBCABKAsyDy5GYWxsU2V0dGxlSW5mbxIVCg1pc19uZXdfcmVjb3Jk",
-            "GAogASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch1GbGV1ckZhaXJGYWxsU2V0dGxlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoURmFsbFNldHRsZUluZm8ucHJvdG8idgoX",
+            "RmxldXJGYWlyRmFsbFNldHRsZUluZm8SRAoLc2V0dGxlX2luZm8YAyABKAsy",
+            "Ly5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZhbGxTZXR0bGVJ",
+            "bmZvEhUKDWlzX25ld19yZWNvcmQYCSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FallSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 4;
+    public const int SettleInfoFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.FallSettleInfo settleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 10;
+    public const int IsNewRecordFieldNumber = 9;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (settleInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(SettleInfo);
       }
       if (IsNewRecord != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsNewRecord);
       }
       if (_unknownFields != null) {
@@ -171,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (settleInfo_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(SettleInfo);
       }
       if (IsNewRecord != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsNewRecord);
       }
       if (_unknownFields != null) {
@@ -230,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 26: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.FallSettleInfo();
             }
             input.ReadMessage(SettleInfo);
             break;
           }
-          case 80: {
+          case 72: {
             IsNewRecord = input.ReadBool();
             break;
           }
@@ -256,14 +256,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 26: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.FallSettleInfo();
             }
             input.ReadMessage(SettleInfo);
             break;
           }
-          case 80: {
+          case 72: {
             IsNewRecord = input.ReadBool();
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static BargainSnapshotReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVCYXJnYWluU25hcHNob3QucHJvdG8iaAoPQmFyZ2FpblNuYXBzaG90EhYK",
-            "DmV4cGVjdGVkX3ByaWNlGAMgASgNEhAKCGN1cl9tb29kGA4gASgFEhcKD3By",
-            "aWNlX2xvd19saW1pdBgCIAEoDRISCgpiYXJnYWluX2lkGAUgASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVCYXJnYWluU25hcHNob3QucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8icQoPQmFyZ2FpblNuYXBzaG90EhsKE1VuazMzMDBfS09D",
+            "SkVMQUNKTE0YCyABKA0SGwoTVW5rMzMwMF9NSEZERUJPQkZORRgOIAEoDRIS",
+            "CgpiYXJnYWluX2lkGAMgASgNEhAKCGN1cl9tb29kGAggASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BargainSnapshot), global::Weedwacker.Shared.Network.Proto.BargainSnapshot.Parser, new[]{ "ExpectedPrice", "CurMood", "PriceLowLimit", "BargainId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BargainSnapshot), global::Weedwacker.Shared.Network.Proto.BargainSnapshot.Parser, new[]{ "Unk3300KOCJELACJLM", "Unk3300MHFDEBOBFNE", "BargainId", "CurMood" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BargainSnapshot(BargainSnapshot other) : this() {
-      expectedPrice_ = other.expectedPrice_;
-      curMood_ = other.curMood_;
-      priceLowLimit_ = other.priceLowLimit_;
+      unk3300KOCJELACJLM_ = other.unk3300KOCJELACJLM_;
+      unk3300MHFDEBOBFNE_ = other.unk3300MHFDEBOBFNE_;
       bargainId_ = other.bargainId_;
+      curMood_ = other.curMood_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,44 +85,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BargainSnapshot(this);
     }
 
-    /// <summary>Field number for the "expected_price" field.</summary>
-    public const int ExpectedPriceFieldNumber = 3;
-    private uint expectedPrice_;
+    /// <summary>Field number for the "Unk3300_KOCJELACJLM" field.</summary>
+    public const int Unk3300KOCJELACJLMFieldNumber = 11;
+    private uint unk3300KOCJELACJLM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExpectedPrice {
-      get { return expectedPrice_; }
+    public uint Unk3300KOCJELACJLM {
+      get { return unk3300KOCJELACJLM_; }
       set {
-        expectedPrice_ = value;
+        unk3300KOCJELACJLM_ = value;
       }
     }
 
-    /// <summary>Field number for the "cur_mood" field.</summary>
-    public const int CurMoodFieldNumber = 14;
-    private int curMood_;
+    /// <summary>Field number for the "Unk3300_MHFDEBOBFNE" field.</summary>
+    public const int Unk3300MHFDEBOBFNEFieldNumber = 14;
+    private uint unk3300MHFDEBOBFNE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CurMood {
-      get { return curMood_; }
+    public uint Unk3300MHFDEBOBFNE {
+      get { return unk3300MHFDEBOBFNE_; }
       set {
-        curMood_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "price_low_limit" field.</summary>
-    public const int PriceLowLimitFieldNumber = 2;
-    private uint priceLowLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PriceLowLimit {
-      get { return priceLowLimit_; }
-      set {
-        priceLowLimit_ = value;
+        unk3300MHFDEBOBFNE_ = value;
       }
     }
 
     /// <summary>Field number for the "bargain_id" field.</summary>
-    public const int BargainIdFieldNumber = 5;
+    public const int BargainIdFieldNumber = 3;
     private uint bargainId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,6 +118,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return bargainId_; }
       set {
         bargainId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_mood" field.</summary>
+    public const int CurMoodFieldNumber = 8;
+    private int curMood_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CurMood {
+      get { return curMood_; }
+      set {
+        curMood_ = value;
       }
     }
 
@@ -148,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ExpectedPrice != other.ExpectedPrice) return false;
-      if (CurMood != other.CurMood) return false;
-      if (PriceLowLimit != other.PriceLowLimit) return false;
+      if (Unk3300KOCJELACJLM != other.Unk3300KOCJELACJLM) return false;
+      if (Unk3300MHFDEBOBFNE != other.Unk3300MHFDEBOBFNE) return false;
       if (BargainId != other.BargainId) return false;
+      if (CurMood != other.CurMood) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ExpectedPrice != 0) hash ^= ExpectedPrice.GetHashCode();
-      if (CurMood != 0) hash ^= CurMood.GetHashCode();
-      if (PriceLowLimit != 0) hash ^= PriceLowLimit.GetHashCode();
+      if (Unk3300KOCJELACJLM != 0) hash ^= Unk3300KOCJELACJLM.GetHashCode();
+      if (Unk3300MHFDEBOBFNE != 0) hash ^= Unk3300MHFDEBOBFNE.GetHashCode();
       if (BargainId != 0) hash ^= BargainId.GetHashCode();
+      if (CurMood != 0) hash ^= CurMood.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,21 +181,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PriceLowLimit != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(PriceLowLimit);
-      }
-      if (ExpectedPrice != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ExpectedPrice);
-      }
       if (BargainId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(BargainId);
       }
       if (CurMood != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteInt32(CurMood);
+      }
+      if (Unk3300KOCJELACJLM != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300KOCJELACJLM);
+      }
+      if (Unk3300MHFDEBOBFNE != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MHFDEBOBFNE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,21 +207,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PriceLowLimit != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(PriceLowLimit);
-      }
-      if (ExpectedPrice != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ExpectedPrice);
-      }
       if (BargainId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteUInt32(BargainId);
       }
       if (CurMood != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteInt32(CurMood);
+      }
+      if (Unk3300KOCJELACJLM != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300KOCJELACJLM);
+      }
+      if (Unk3300MHFDEBOBFNE != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MHFDEBOBFNE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,17 +233,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ExpectedPrice != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpectedPrice);
+      if (Unk3300KOCJELACJLM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KOCJELACJLM);
       }
-      if (CurMood != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurMood);
-      }
-      if (PriceLowLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PriceLowLimit);
+      if (Unk3300MHFDEBOBFNE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MHFDEBOBFNE);
       }
       if (BargainId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BargainId);
+      }
+      if (CurMood != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurMood);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ExpectedPrice != 0) {
-        ExpectedPrice = other.ExpectedPrice;
+      if (other.Unk3300KOCJELACJLM != 0) {
+        Unk3300KOCJELACJLM = other.Unk3300KOCJELACJLM;
       }
-      if (other.CurMood != 0) {
-        CurMood = other.CurMood;
-      }
-      if (other.PriceLowLimit != 0) {
-        PriceLowLimit = other.PriceLowLimit;
+      if (other.Unk3300MHFDEBOBFNE != 0) {
+        Unk3300MHFDEBOBFNE = other.Unk3300MHFDEBOBFNE;
       }
       if (other.BargainId != 0) {
         BargainId = other.BargainId;
+      }
+      if (other.CurMood != 0) {
+        CurMood = other.CurMood;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            PriceLowLimit = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            ExpectedPrice = input.ReadUInt32();
-            break;
-          }
-          case 40: {
             BargainId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 64: {
             CurMood = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Unk3300KOCJELACJLM = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MHFDEBOBFNE = input.ReadUInt32();
             break;
           }
         }
@@ -315,20 +315,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            PriceLowLimit = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            ExpectedPrice = input.ReadUInt32();
-            break;
-          }
-          case 40: {
             BargainId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 64: {
             CurMood = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            Unk3300KOCJELACJLM = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MHFDEBOBFNE = input.ReadUInt32();
             break;
           }
         }

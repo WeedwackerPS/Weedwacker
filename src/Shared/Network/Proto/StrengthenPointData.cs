@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static StrengthenPointDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlTdHJlbmd0aGVuUG9pbnREYXRhLnByb3RvIjwKE1N0cmVuZ3RoZW5Qb2lu",
-            "dERhdGESEgoKYmFzZV9wb2ludBgKIAEoDRIRCgljdXJfcG9pbnQYCyABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlTdHJlbmd0aGVuUG9pbnREYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIk8KE1N0cmVuZ3RoZW5Qb2ludERhdGESGwoTVW5r",
+            "MzMwMF9ISUtERUtJUENQQhgBIAEoDRIbChNVbmszMzAwX05OS1BPTExCTERP",
+            "GAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StrengthenPointData), global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser, new[]{ "BasePoint", "CurPoint" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StrengthenPointData), global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser, new[]{ "Unk3300HIKDEKIPCPB", "Unk3300NNKPOLLBLDO" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StrengthenPointData(StrengthenPointData other) : this() {
-      basePoint_ = other.basePoint_;
-      curPoint_ = other.curPoint_;
+      unk3300HIKDEKIPCPB_ = other.unk3300HIKDEKIPCPB_;
+      unk3300NNKPOLLBLDO_ = other.unk3300NNKPOLLBLDO_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,27 +83,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StrengthenPointData(this);
     }
 
-    /// <summary>Field number for the "base_point" field.</summary>
-    public const int BasePointFieldNumber = 10;
-    private uint basePoint_;
+    /// <summary>Field number for the "Unk3300_HIKDEKIPCPB" field.</summary>
+    public const int Unk3300HIKDEKIPCPBFieldNumber = 1;
+    private uint unk3300HIKDEKIPCPB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BasePoint {
-      get { return basePoint_; }
+    public uint Unk3300HIKDEKIPCPB {
+      get { return unk3300HIKDEKIPCPB_; }
       set {
-        basePoint_ = value;
+        unk3300HIKDEKIPCPB_ = value;
       }
     }
 
-    /// <summary>Field number for the "cur_point" field.</summary>
-    public const int CurPointFieldNumber = 11;
-    private uint curPoint_;
+    /// <summary>Field number for the "Unk3300_NNKPOLLBLDO" field.</summary>
+    public const int Unk3300NNKPOLLBLDOFieldNumber = 10;
+    private uint unk3300NNKPOLLBLDO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurPoint {
-      get { return curPoint_; }
+    public uint Unk3300NNKPOLLBLDO {
+      get { return unk3300NNKPOLLBLDO_; }
       set {
-        curPoint_ = value;
+        unk3300NNKPOLLBLDO_ = value;
       }
     }
 
@@ -121,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BasePoint != other.BasePoint) return false;
-      if (CurPoint != other.CurPoint) return false;
+      if (Unk3300HIKDEKIPCPB != other.Unk3300HIKDEKIPCPB) return false;
+      if (Unk3300NNKPOLLBLDO != other.Unk3300NNKPOLLBLDO) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BasePoint != 0) hash ^= BasePoint.GetHashCode();
-      if (CurPoint != 0) hash ^= CurPoint.GetHashCode();
+      if (Unk3300HIKDEKIPCPB != 0) hash ^= Unk3300HIKDEKIPCPB.GetHashCode();
+      if (Unk3300NNKPOLLBLDO != 0) hash ^= Unk3300NNKPOLLBLDO.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BasePoint != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(BasePoint);
+      if (Unk3300HIKDEKIPCPB != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300HIKDEKIPCPB);
       }
-      if (CurPoint != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurPoint);
+      if (Unk3300NNKPOLLBLDO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300NNKPOLLBLDO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BasePoint != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(BasePoint);
+      if (Unk3300HIKDEKIPCPB != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300HIKDEKIPCPB);
       }
-      if (CurPoint != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurPoint);
+      if (Unk3300NNKPOLLBLDO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300NNKPOLLBLDO);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -186,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BasePoint != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BasePoint);
+      if (Unk3300HIKDEKIPCPB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HIKDEKIPCPB);
       }
-      if (CurPoint != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurPoint);
+      if (Unk3300NNKPOLLBLDO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NNKPOLLBLDO);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -204,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.BasePoint != 0) {
-        BasePoint = other.BasePoint;
+      if (other.Unk3300HIKDEKIPCPB != 0) {
+        Unk3300HIKDEKIPCPB = other.Unk3300HIKDEKIPCPB;
       }
-      if (other.CurPoint != 0) {
-        CurPoint = other.CurPoint;
+      if (other.Unk3300NNKPOLLBLDO != 0) {
+        Unk3300NNKPOLLBLDO = other.Unk3300NNKPOLLBLDO;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            BasePoint = input.ReadUInt32();
+          case 8: {
+            Unk3300HIKDEKIPCPB = input.ReadUInt32();
             break;
           }
-          case 88: {
-            CurPoint = input.ReadUInt32();
+          case 80: {
+            Unk3300NNKPOLLBLDO = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            BasePoint = input.ReadUInt32();
+          case 8: {
+            Unk3300HIKDEKIPCPB = input.ReadUInt32();
             break;
           }
-          case 88: {
-            CurPoint = input.ReadUInt32();
+          case 80: {
+            Unk3300NNKPOLLBLDO = input.ReadUInt32();
             break;
           }
         }

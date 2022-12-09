@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AreaPlayInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhBcmVhUGxheUluZm9Ob3RpZnkucHJvdG8aEkFyZWFQbGF5VHlwZS5wcm90",
-            "byJVChJBcmVhUGxheUluZm9Ob3RpZnkSGAoQZGV0YWlsX3BsYXlfdHlwZRgO",
-            "IAEoDRIlCg5hcmVhX3BsYXlfdHlwZRgLIAEoDjINLkFyZWFQbGF5VHlwZUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhBcmVhUGxheUluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEkFyZWFQbGF5VHlwZS5wcm90byJ1ChJBcmVhUGxh",
+            "eUluZm9Ob3RpZnkSGAoQZGV0YWlsX3BsYXlfdHlwZRgCIAEoDRJFCg5hcmVh",
+            "X3BsYXlfdHlwZRgGIAEoDjItLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQXJlYVBsYXlUeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AreaPlayTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3323
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3274;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AreaPlayInfoNotify : pb::IMessage<AreaPlayInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "detail_play_type" field.</summary>
-    public const int DetailPlayTypeFieldNumber = 14;
+    public const int DetailPlayTypeFieldNumber = 2;
     private uint detailPlayType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "area_play_type" field.</summary>
-    public const int AreaPlayTypeFieldNumber = 11;
+    public const int AreaPlayTypeFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.AreaPlayType areaPlayType_ = global::Weedwacker.Shared.Network.Proto.AreaPlayType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AreaPlayType != global::Weedwacker.Shared.Network.Proto.AreaPlayType.None) {
-        output.WriteRawTag(88);
-        output.WriteEnum((int) AreaPlayType);
-      }
       if (DetailPlayType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(DetailPlayType);
+      }
+      if (AreaPlayType != global::Weedwacker.Shared.Network.Proto.AreaPlayType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) AreaPlayType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AreaPlayType != global::Weedwacker.Shared.Network.Proto.AreaPlayType.None) {
-        output.WriteRawTag(88);
-        output.WriteEnum((int) AreaPlayType);
-      }
       if (DetailPlayType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(16);
         output.WriteUInt32(DetailPlayType);
+      }
+      if (AreaPlayType != global::Weedwacker.Shared.Network.Proto.AreaPlayType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) AreaPlayType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            AreaPlayType = (global::Weedwacker.Shared.Network.Proto.AreaPlayType) input.ReadEnum();
+          case 16: {
+            DetailPlayType = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DetailPlayType = input.ReadUInt32();
+          case 48: {
+            AreaPlayType = (global::Weedwacker.Shared.Network.Proto.AreaPlayType) input.ReadEnum();
             break;
           }
         }
@@ -254,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            AreaPlayType = (global::Weedwacker.Shared.Network.Proto.AreaPlayType) input.ReadEnum();
+          case 16: {
+            DetailPlayType = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DetailPlayType = input.ReadUInt32();
+          case 48: {
+            AreaPlayType = (global::Weedwacker.Shared.Network.Proto.AreaPlayType) input.ReadEnum();
             break;
           }
         }

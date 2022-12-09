@@ -24,22 +24,25 @@ namespace Weedwacker.Shared.Network.Proto {
     static CityReputationInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhDaXR5UmVwdXRhdGlvbkluZm8ucHJvdG8aH0NpdHlSZXB1dGF0aW9uRXhw",
-            "bG9yZUluZm8ucHJvdG8aHENpdHlSZXB1dGF0aW9uSHVudEluZm8ucHJvdG8a",
-            "HUNpdHlSZXB1dGF0aW9uUXVlc3RJbmZvLnByb3RvGh9DaXR5UmVwdXRhdGlv",
-            "blJlcXVlc3RJbmZvLnByb3RvIswCChJDaXR5UmVwdXRhdGlvbkluZm8SDQoF",
-            "bGV2ZWwYBCABKA0SGQoRbmV4dF9yZWZyZXNoX3RpbWUYAyABKA0SKgoJaHVu",
-            "dF9pbmZvGAsgASgLMhcuQ2l0eVJlcHV0YXRpb25IdW50SW5mbxIfChd0YWtl",
-            "bl9sZXZlbF9yZXdhcmRfbGlzdBgCIAMoDRIgChh0b3RhbF9hY2NlcHRfcmVx",
-            "dWVzdF9udW0YBiABKA0SMAoMcmVxdWVzdF9pbmZvGAUgASgLMhouQ2l0eVJl",
-            "cHV0YXRpb25SZXF1ZXN0SW5mbxIsCgpxdWVzdF9pbmZvGAkgASgLMhguQ2l0",
-            "eVJlcHV0YXRpb25RdWVzdEluZm8SCwoDZXhwGA0gASgNEjAKDGV4cGxvcmVf",
-            "aW5mbxgKIAEoCzIaLkNpdHlSZXB1dGF0aW9uRXhwbG9yZUluZm9CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhDaXR5UmVwdXRhdGlvbkluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aH0NpdHlSZXB1dGF0aW9uRXhwbG9yZUluZm8ucHJv",
+            "dG8aHENpdHlSZXB1dGF0aW9uSHVudEluZm8ucHJvdG8aHUNpdHlSZXB1dGF0",
+            "aW9uUXVlc3RJbmZvLnByb3RvGh9DaXR5UmVwdXRhdGlvblJlcXVlc3RJbmZv",
+            "LnByb3RvIswDChJDaXR5UmVwdXRhdGlvbkluZm8SCwoDZXhwGAggASgNEkwK",
+            "CnF1ZXN0X2luZm8YCSABKAsyOC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkNpdHlSZXB1dGF0aW9uUXVlc3RJbmZvEh8KF3Rha2VuX2xldmVs",
+            "X3Jld2FyZF9saXN0GAogAygNElAKDHJlcXVlc3RfaW5mbxgFIAEoCzI6Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2l0eVJlcHV0YXRpb25S",
+            "ZXF1ZXN0SW5mbxIZChFuZXh0X3JlZnJlc2hfdGltZRgLIAEoDRIgChh0b3Rh",
+            "bF9hY2NlcHRfcmVxdWVzdF9udW0YDCABKA0SSgoJaHVudF9pbmZvGA8gASgL",
+            "MjcuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DaXR5UmVwdXRh",
+            "dGlvbkh1bnRJbmZvElAKDGV4cGxvcmVfaW5mbxgDIAEoCzI6LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2l0eVJlcHV0YXRpb25FeHBsb3Jl",
+            "SW5mbxINCgVsZXZlbBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CityReputationQuestInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationInfo), global::Weedwacker.Shared.Network.Proto.CityReputationInfo.Parser, new[]{ "Level", "NextRefreshTime", "HuntInfo", "TakenLevelRewardList", "TotalAcceptRequestNum", "RequestInfo", "QuestInfo", "Exp", "ExploreInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationInfo), global::Weedwacker.Shared.Network.Proto.CityReputationInfo.Parser, new[]{ "Exp", "QuestInfo", "TakenLevelRewardList", "RequestInfo", "NextRefreshTime", "TotalAcceptRequestNum", "HuntInfo", "ExploreInfo", "Level" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,15 +83,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CityReputationInfo(CityReputationInfo other) : this() {
-      level_ = other.level_;
-      nextRefreshTime_ = other.nextRefreshTime_;
-      huntInfo_ = other.huntInfo_ != null ? other.huntInfo_.Clone() : null;
-      takenLevelRewardList_ = other.takenLevelRewardList_.Clone();
-      totalAcceptRequestNum_ = other.totalAcceptRequestNum_;
-      requestInfo_ = other.requestInfo_ != null ? other.requestInfo_.Clone() : null;
-      questInfo_ = other.questInfo_ != null ? other.questInfo_.Clone() : null;
       exp_ = other.exp_;
+      questInfo_ = other.questInfo_ != null ? other.questInfo_.Clone() : null;
+      takenLevelRewardList_ = other.takenLevelRewardList_.Clone();
+      requestInfo_ = other.requestInfo_ != null ? other.requestInfo_.Clone() : null;
+      nextRefreshTime_ = other.nextRefreshTime_;
+      totalAcceptRequestNum_ = other.totalAcceptRequestNum_;
+      huntInfo_ = other.huntInfo_ != null ? other.huntInfo_.Clone() : null;
       exploreInfo_ = other.exploreInfo_ != null ? other.exploreInfo_.Clone() : null;
+      level_ = other.level_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,74 +101,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CityReputationInfo(this);
     }
 
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 4;
-    private uint level_;
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 8;
+    private uint exp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Level {
-      get { return level_; }
+    public uint Exp {
+      get { return exp_; }
       set {
-        level_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 3;
-    private uint nextRefreshTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextRefreshTime {
-      get { return nextRefreshTime_; }
-      set {
-        nextRefreshTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hunt_info" field.</summary>
-    public const int HuntInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo huntInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo HuntInfo {
-      get { return huntInfo_; }
-      set {
-        huntInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "taken_level_reward_list" field.</summary>
-    public const int TakenLevelRewardListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_takenLevelRewardList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> takenLevelRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenLevelRewardList {
-      get { return takenLevelRewardList_; }
-    }
-
-    /// <summary>Field number for the "total_accept_request_num" field.</summary>
-    public const int TotalAcceptRequestNumFieldNumber = 6;
-    private uint totalAcceptRequestNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalAcceptRequestNum {
-      get { return totalAcceptRequestNum_; }
-      set {
-        totalAcceptRequestNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "request_info" field.</summary>
-    public const int RequestInfoFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo requestInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo RequestInfo {
-      get { return requestInfo_; }
-      set {
-        requestInfo_ = value;
+        exp_ = value;
       }
     }
 
@@ -181,20 +125,67 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 13;
-    private uint exp_;
+    /// <summary>Field number for the "taken_level_reward_list" field.</summary>
+    public const int TakenLevelRewardListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_takenLevelRewardList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> takenLevelRewardList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Exp {
-      get { return exp_; }
+    public pbc::RepeatedField<uint> TakenLevelRewardList {
+      get { return takenLevelRewardList_; }
+    }
+
+    /// <summary>Field number for the "request_info" field.</summary>
+    public const int RequestInfoFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo requestInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo RequestInfo {
+      get { return requestInfo_; }
       set {
-        exp_ = value;
+        requestInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    public const int NextRefreshTimeFieldNumber = 11;
+    private uint nextRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextRefreshTime {
+      get { return nextRefreshTime_; }
+      set {
+        nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_accept_request_num" field.</summary>
+    public const int TotalAcceptRequestNumFieldNumber = 12;
+    private uint totalAcceptRequestNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalAcceptRequestNum {
+      get { return totalAcceptRequestNum_; }
+      set {
+        totalAcceptRequestNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hunt_info" field.</summary>
+    public const int HuntInfoFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo huntInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo HuntInfo {
+      get { return huntInfo_; }
+      set {
+        huntInfo_ = value;
       }
     }
 
     /// <summary>Field number for the "explore_info" field.</summary>
-    public const int ExploreInfoFieldNumber = 10;
+    public const int ExploreInfoFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo exploreInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -202,6 +193,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return exploreInfo_; }
       set {
         exploreInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 2;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
       }
     }
 
@@ -220,15 +223,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Level != other.Level) return false;
-      if (NextRefreshTime != other.NextRefreshTime) return false;
-      if (!object.Equals(HuntInfo, other.HuntInfo)) return false;
-      if(!takenLevelRewardList_.Equals(other.takenLevelRewardList_)) return false;
-      if (TotalAcceptRequestNum != other.TotalAcceptRequestNum) return false;
-      if (!object.Equals(RequestInfo, other.RequestInfo)) return false;
-      if (!object.Equals(QuestInfo, other.QuestInfo)) return false;
       if (Exp != other.Exp) return false;
+      if (!object.Equals(QuestInfo, other.QuestInfo)) return false;
+      if(!takenLevelRewardList_.Equals(other.takenLevelRewardList_)) return false;
+      if (!object.Equals(RequestInfo, other.RequestInfo)) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (TotalAcceptRequestNum != other.TotalAcceptRequestNum) return false;
+      if (!object.Equals(HuntInfo, other.HuntInfo)) return false;
       if (!object.Equals(ExploreInfo, other.ExploreInfo)) return false;
+      if (Level != other.Level) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -236,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Level != 0) hash ^= Level.GetHashCode();
-      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
-      if (huntInfo_ != null) hash ^= HuntInfo.GetHashCode();
-      hash ^= takenLevelRewardList_.GetHashCode();
-      if (TotalAcceptRequestNum != 0) hash ^= TotalAcceptRequestNum.GetHashCode();
-      if (requestInfo_ != null) hash ^= RequestInfo.GetHashCode();
-      if (questInfo_ != null) hash ^= QuestInfo.GetHashCode();
       if (Exp != 0) hash ^= Exp.GetHashCode();
+      if (questInfo_ != null) hash ^= QuestInfo.GetHashCode();
+      hash ^= takenLevelRewardList_.GetHashCode();
+      if (requestInfo_ != null) hash ^= RequestInfo.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (TotalAcceptRequestNum != 0) hash ^= TotalAcceptRequestNum.GetHashCode();
+      if (huntInfo_ != null) hash ^= HuntInfo.GetHashCode();
       if (exploreInfo_ != null) hash ^= ExploreInfo.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -263,38 +266,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      takenLevelRewardList_.WriteTo(output, _repeated_takenLevelRewardList_codec);
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(NextRefreshTime);
-      }
       if (Level != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(Level);
+      }
+      if (exploreInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ExploreInfo);
       }
       if (requestInfo_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(RequestInfo);
       }
-      if (TotalAcceptRequestNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalAcceptRequestNum);
+      if (Exp != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Exp);
       }
       if (questInfo_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(QuestInfo);
       }
-      if (exploreInfo_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(ExploreInfo);
+      takenLevelRewardList_.WriteTo(output, _repeated_takenLevelRewardList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (TotalAcceptRequestNum != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalAcceptRequestNum);
       }
       if (huntInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(122);
         output.WriteMessage(HuntInfo);
-      }
-      if (Exp != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Exp);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -306,38 +309,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      takenLevelRewardList_.WriteTo(ref output, _repeated_takenLevelRewardList_codec);
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(NextRefreshTime);
-      }
       if (Level != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(Level);
+      }
+      if (exploreInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ExploreInfo);
       }
       if (requestInfo_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(RequestInfo);
       }
-      if (TotalAcceptRequestNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TotalAcceptRequestNum);
+      if (Exp != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Exp);
       }
       if (questInfo_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(QuestInfo);
       }
-      if (exploreInfo_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(ExploreInfo);
+      takenLevelRewardList_.WriteTo(ref output, _repeated_takenLevelRewardList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (TotalAcceptRequestNum != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(TotalAcceptRequestNum);
       }
       if (huntInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(122);
         output.WriteMessage(HuntInfo);
-      }
-      if (Exp != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Exp);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -349,30 +352,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-      }
-      if (NextRefreshTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
-      }
-      if (huntInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntInfo);
-      }
-      size += takenLevelRewardList_.CalculateSize(_repeated_takenLevelRewardList_codec);
-      if (TotalAcceptRequestNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalAcceptRequestNum);
-      }
-      if (requestInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestInfo);
+      if (Exp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
       }
       if (questInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(QuestInfo);
       }
-      if (Exp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
+      size += takenLevelRewardList_.CalculateSize(_repeated_takenLevelRewardList_codec);
+      if (requestInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RequestInfo);
+      }
+      if (NextRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (TotalAcceptRequestNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalAcceptRequestNum);
+      }
+      if (huntInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntInfo);
       }
       if (exploreInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExploreInfo);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -386,27 +389,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Level != 0) {
-        Level = other.Level;
-      }
-      if (other.NextRefreshTime != 0) {
-        NextRefreshTime = other.NextRefreshTime;
-      }
-      if (other.huntInfo_ != null) {
-        if (huntInfo_ == null) {
-          HuntInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo();
-        }
-        HuntInfo.MergeFrom(other.HuntInfo);
-      }
-      takenLevelRewardList_.Add(other.takenLevelRewardList_);
-      if (other.TotalAcceptRequestNum != 0) {
-        TotalAcceptRequestNum = other.TotalAcceptRequestNum;
-      }
-      if (other.requestInfo_ != null) {
-        if (requestInfo_ == null) {
-          RequestInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo();
-        }
-        RequestInfo.MergeFrom(other.RequestInfo);
+      if (other.Exp != 0) {
+        Exp = other.Exp;
       }
       if (other.questInfo_ != null) {
         if (questInfo_ == null) {
@@ -414,14 +398,33 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         QuestInfo.MergeFrom(other.QuestInfo);
       }
-      if (other.Exp != 0) {
-        Exp = other.Exp;
+      takenLevelRewardList_.Add(other.takenLevelRewardList_);
+      if (other.requestInfo_ != null) {
+        if (requestInfo_ == null) {
+          RequestInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationRequestInfo();
+        }
+        RequestInfo.MergeFrom(other.RequestInfo);
+      }
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.TotalAcceptRequestNum != 0) {
+        TotalAcceptRequestNum = other.TotalAcceptRequestNum;
+      }
+      if (other.huntInfo_ != null) {
+        if (huntInfo_ == null) {
+          HuntInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo();
+        }
+        HuntInfo.MergeFrom(other.HuntInfo);
       }
       if (other.exploreInfo_ != null) {
         if (exploreInfo_ == null) {
           ExploreInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo();
         }
         ExploreInfo.MergeFrom(other.ExploreInfo);
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -438,17 +441,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
           case 16: {
-            takenLevelRewardList_.AddEntriesFrom(input, _repeated_takenLevelRewardList_codec);
-            break;
-          }
-          case 24: {
-            NextRefreshTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
             Level = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            if (exploreInfo_ == null) {
+              ExploreInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo();
+            }
+            input.ReadMessage(ExploreInfo);
             break;
           }
           case 42: {
@@ -458,8 +459,8 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(RequestInfo);
             break;
           }
-          case 48: {
-            TotalAcceptRequestNum = input.ReadUInt32();
+          case 64: {
+            Exp = input.ReadUInt32();
             break;
           }
           case 74: {
@@ -469,22 +470,24 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(QuestInfo);
             break;
           }
-          case 82: {
-            if (exploreInfo_ == null) {
-              ExploreInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo();
-            }
-            input.ReadMessage(ExploreInfo);
+          case 82:
+          case 80: {
+            takenLevelRewardList_.AddEntriesFrom(input, _repeated_takenLevelRewardList_codec);
             break;
           }
-          case 90: {
+          case 88: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            TotalAcceptRequestNum = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (huntInfo_ == null) {
               HuntInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo();
             }
             input.ReadMessage(HuntInfo);
-            break;
-          }
-          case 104: {
-            Exp = input.ReadUInt32();
             break;
           }
         }
@@ -502,17 +505,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
           case 16: {
-            takenLevelRewardList_.AddEntriesFrom(ref input, _repeated_takenLevelRewardList_codec);
-            break;
-          }
-          case 24: {
-            NextRefreshTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
             Level = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            if (exploreInfo_ == null) {
+              ExploreInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo();
+            }
+            input.ReadMessage(ExploreInfo);
             break;
           }
           case 42: {
@@ -522,8 +523,8 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(RequestInfo);
             break;
           }
-          case 48: {
-            TotalAcceptRequestNum = input.ReadUInt32();
+          case 64: {
+            Exp = input.ReadUInt32();
             break;
           }
           case 74: {
@@ -533,22 +534,24 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(QuestInfo);
             break;
           }
-          case 82: {
-            if (exploreInfo_ == null) {
-              ExploreInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationExploreInfo();
-            }
-            input.ReadMessage(ExploreInfo);
+          case 82:
+          case 80: {
+            takenLevelRewardList_.AddEntriesFrom(ref input, _repeated_takenLevelRewardList_codec);
             break;
           }
-          case 90: {
+          case 88: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            TotalAcceptRequestNum = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (huntInfo_ == null) {
               HuntInfo = new global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo();
             }
             input.ReadMessage(HuntInfo);
-            break;
-          }
-          case 104: {
-            Exp = input.ReadUInt32();
             break;
           }
         }

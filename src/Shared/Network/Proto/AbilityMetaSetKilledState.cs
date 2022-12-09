@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaSetKilledStateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9BYmlsaXR5TWV0YVNldEtpbGxlZFN0YXRlLnByb3RvIisKGUFiaWxpdHlN",
-            "ZXRhU2V0S2lsbGVkU3RhdGUSDgoGa2lsbGVkGAIgASgIQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9BYmlsaXR5TWV0YVNldEtpbGxlZFN0YXRlLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIisKGUFiaWxpdHlNZXRhU2V0S2lsbGVk",
+            "U3RhdGUSDgoGa2lsbGVkGAUgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "killed" field.</summary>
-    public const int KilledFieldNumber = 2;
+    public const int KilledFieldNumber = 5;
     private bool killed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Killed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteBool(Killed);
       }
       if (_unknownFields != null) {
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Killed != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(40);
         output.WriteBool(Killed);
       }
       if (_unknownFields != null) {
@@ -196,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 40: {
             Killed = input.ReadBool();
             break;
           }
@@ -215,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 40: {
             Killed = input.ReadBool();
             break;
           }

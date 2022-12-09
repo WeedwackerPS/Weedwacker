@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryTreasureSeelieInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRTY2VuZUdhbGxlcnlUcmVhc3VyZVNlZWxpZUluZm8ucHJvdG8iQAoeU2Nl",
-            "bmVHYWxsZXJ5VHJlYXN1cmVTZWVsaWVJbmZvEhAKCHByb2dyZXNzGA8gASgN",
-            "EgwKBGdvYWwYDiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "CiRTY2VuZUdhbGxlcnlUcmVhc3VyZVNlZWxpZUluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iQAoeU2NlbmVHYWxsZXJ5VHJl",
+            "YXN1cmVTZWVsaWVJbmZvEhAKCHByb2dyZXNzGAEgASgNEgwKBGdvYWwYDiAB",
+            "KA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 15;
+    public const int ProgressFieldNumber = 1;
     private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Progress != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Progress);
+      }
       if (Goal != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Goal);
-      }
-      if (Progress != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Progress != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Progress);
+      }
       if (Goal != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Goal);
-      }
-      if (Progress != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
-            Goal = input.ReadUInt32();
+          case 8: {
+            Progress = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Progress = input.ReadUInt32();
+          case 112: {
+            Goal = input.ReadUInt32();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
-            Goal = input.ReadUInt32();
+          case 8: {
+            Progress = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Progress = input.ReadUInt32();
+          case 112: {
+            Goal = input.ReadUInt32();
             break;
           }
         }

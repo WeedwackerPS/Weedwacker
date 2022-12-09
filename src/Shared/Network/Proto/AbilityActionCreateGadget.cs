@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityActionCreateGadgetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9BYmlsaXR5QWN0aW9uQ3JlYXRlR2FkZ2V0LnByb3RvGgxWZWN0b3IucHJv",
-            "dG8iWAoZQWJpbGl0eUFjdGlvbkNyZWF0ZUdhZGdldBIPCgdyb29tX2lkGAMg",
-            "ASgNEhQKA3JvdBgIIAEoCzIHLlZlY3RvchIUCgNwb3MYCyABKAsyBy5WZWN0",
-            "b3JCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "Ch9BYmlsaXR5QWN0aW9uQ3JlYXRlR2FkZ2V0LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8imAEKGUFiaWxp",
+            "dHlBY3Rpb25DcmVhdGVHYWRnZXQSDwoHcm9vbV9pZBgFIAEoDRI0CgNyb3QY",
+            "DSABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3Rv",
+            "chI0CgNwb3MYCCABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "room_id" field.</summary>
-    public const int RoomIdFieldNumber = 3;
+    public const int RoomIdFieldNumber = 5;
     private uint roomId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 8;
+    public const int RotFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 11;
+    public const int PosFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,16 +169,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (RoomId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(RoomId);
       }
-      if (rot_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Rot);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -190,16 +191,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (RoomId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt32(RoomId);
       }
-      if (rot_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Rot);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
+      }
+      if (rot_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Rot);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -262,22 +263,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 40: {
             RoomId = input.ReadUInt32();
             break;
           }
           case 66: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
-            break;
-          }
-          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 106: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }
@@ -295,22 +296,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 40: {
             RoomId = input.ReadUInt32();
             break;
           }
           case 66: {
-            if (rot_ == null) {
-              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Rot);
-            break;
-          }
-          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
+            break;
+          }
+          case 106: {
+            if (rot_ == null) {
+              Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Rot);
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgOpTimerReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNHQ0dNc2dPcFRpbWVyLnByb3RvGhJHQ0dQaGFzZVR5cGUucHJvdG8ibAoN",
-            "R0NHTXNnT3BUaW1lchISCgpiZWdpbl90aW1lGAkgASgGEhwKBXBoYXNlGAMg",
-            "ASgOMg0uR0NHUGhhc2VUeXBlEhIKCnRpbWVfc3RhbXAYDSABKAYSFQoNY29u",
-            "dHJvbGxlcl9pZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChNHQ0dNc2dPcFRpbWVyLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGhJHQ0dQaGFzZVR5cGUucHJvdG8ijAEKDUdDR01zZ09wVGlt",
+            "ZXISPAoFcGhhc2UYDSABKA4yLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR1BoYXNlVHlwZRIVCg1jb250cm9sbGVyX2lkGA4gASgNEhIK",
+            "CnRpbWVfc3RhbXAYDyABKAYSEgoKYmVnaW5fdGltZRgGIAEoBmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGPhaseTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer), global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer.Parser, new[]{ "BeginTime", "Phase", "TimeStamp", "ControllerId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer), global::Weedwacker.Shared.Network.Proto.GCGMsgOpTimer.Parser, new[]{ "Phase", "ControllerId", "TimeStamp", "BeginTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgOpTimer(GCGMsgOpTimer other) : this() {
-      beginTime_ = other.beginTime_;
       phase_ = other.phase_;
-      timeStamp_ = other.timeStamp_;
       controllerId_ = other.controllerId_;
+      timeStamp_ = other.timeStamp_;
+      beginTime_ = other.beginTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgOpTimer(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 9;
-    private ulong beginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong BeginTime {
-      get { return beginTime_; }
-      set {
-        beginTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "phase" field.</summary>
-    public const int PhaseFieldNumber = 3;
+    public const int PhaseFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.GCGPhaseType phase_ = global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,8 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 14;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "time_stamp" field.</summary>
-    public const int TimeStampFieldNumber = 13;
+    public const int TimeStampFieldNumber = 15;
     private ulong timeStamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,15 +122,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 8;
-    private uint controllerId_;
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 6;
+    private ulong beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ControllerId {
-      get { return controllerId_; }
+    public ulong BeginTime {
+      get { return beginTime_; }
       set {
-        controllerId_ = value;
+        beginTime_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BeginTime != other.BeginTime) return false;
       if (Phase != other.Phase) return false;
-      if (TimeStamp != other.TimeStamp) return false;
       if (ControllerId != other.ControllerId) return false;
+      if (TimeStamp != other.TimeStamp) return false;
+      if (BeginTime != other.BeginTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BeginTime != 0UL) hash ^= BeginTime.GetHashCode();
       if (Phase != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) hash ^= Phase.GetHashCode();
-      if (TimeStamp != 0UL) hash ^= TimeStamp.GetHashCode();
       if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (TimeStamp != 0UL) hash ^= TimeStamp.GetHashCode();
+      if (BeginTime != 0UL) hash ^= BeginTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,20 +182,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (BeginTime != 0UL) {
+        output.WriteRawTag(49);
+        output.WriteFixed64(BeginTime);
+      }
       if (Phase != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Phase);
       }
       if (ControllerId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(ControllerId);
       }
-      if (BeginTime != 0UL) {
-        output.WriteRawTag(73);
-        output.WriteFixed64(BeginTime);
-      }
       if (TimeStamp != 0UL) {
-        output.WriteRawTag(105);
+        output.WriteRawTag(121);
         output.WriteFixed64(TimeStamp);
       }
       if (_unknownFields != null) {
@@ -208,20 +208,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BeginTime != 0UL) {
+        output.WriteRawTag(49);
+        output.WriteFixed64(BeginTime);
+      }
       if (Phase != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(104);
         output.WriteEnum((int) Phase);
       }
       if (ControllerId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(ControllerId);
       }
-      if (BeginTime != 0UL) {
-        output.WriteRawTag(73);
-        output.WriteFixed64(BeginTime);
-      }
       if (TimeStamp != 0UL) {
-        output.WriteRawTag(105);
+        output.WriteRawTag(121);
         output.WriteFixed64(TimeStamp);
       }
       if (_unknownFields != null) {
@@ -234,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BeginTime != 0UL) {
-        size += 1 + 8;
-      }
       if (Phase != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Phase);
+      }
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
       if (TimeStamp != 0UL) {
         size += 1 + 8;
       }
-      if (ControllerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      if (BeginTime != 0UL) {
+        size += 1 + 8;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.BeginTime != 0UL) {
-        BeginTime = other.BeginTime;
-      }
       if (other.Phase != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
         Phase = other.Phase;
+      }
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
       }
       if (other.TimeStamp != 0UL) {
         TimeStamp = other.TimeStamp;
       }
-      if (other.ControllerId != 0) {
-        ControllerId = other.ControllerId;
+      if (other.BeginTime != 0UL) {
+        BeginTime = other.BeginTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,19 +285,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Phase = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
-            break;
-          }
-          case 64: {
-            ControllerId = input.ReadUInt32();
-            break;
-          }
-          case 73: {
+          case 49: {
             BeginTime = input.ReadFixed64();
             break;
           }
-          case 105: {
+          case 104: {
+            Phase = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 121: {
             TimeStamp = input.ReadFixed64();
             break;
           }
@@ -316,19 +316,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Phase = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
-            break;
-          }
-          case 64: {
-            ControllerId = input.ReadUInt32();
-            break;
-          }
-          case 73: {
+          case 49: {
             BeginTime = input.ReadFixed64();
             break;
           }
-          case 105: {
+          case 104: {
+            Phase = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 121: {
             TimeStamp = input.ReadFixed64();
             break;
           }

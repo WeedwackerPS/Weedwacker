@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarDieAnimationEndReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BdmF0YXJEaWVBbmltYXRpb25FbmRSZXEucHJvdG8aDFZlY3Rvci5wcm90",
-            "byJbChhBdmF0YXJEaWVBbmltYXRpb25FbmRSZXESGwoKcmVib3JuX3BvcxgD",
-            "IAEoCzIHLlZlY3RvchIQCghkaWVfZ3VpZBgHIAEoBBIQCghza2lsbF9pZBgI",
-            "IAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "Ch5BdmF0YXJEaWVBbmltYXRpb25FbmRSZXEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byJ7ChhBdmF0YXJE",
+            "aWVBbmltYXRpb25FbmRSZXESEAoIZGllX2d1aWQYDSABKAQSOwoKcmVib3Ju",
+            "X3BvcxgOIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "VmVjdG9yEhAKCHNraWxsX2lkGAkgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarDieAnimationEndReq), global::Weedwacker.Shared.Network.Proto.AvatarDieAnimationEndReq.Parser, new[]{ "RebornPos", "DieGuid", "SkillId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarDieAnimationEndReq), global::Weedwacker.Shared.Network.Proto.AvatarDieAnimationEndReq.Parser, new[]{ "DieGuid", "RebornPos", "SkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1610
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1695;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarDieAnimationEndReq : pb::IMessage<AvatarDieAnimationEndReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarDieAnimationEndReq(AvatarDieAnimationEndReq other) : this() {
-      rebornPos_ = other.rebornPos_ != null ? other.rebornPos_.Clone() : null;
       dieGuid_ = other.dieGuid_;
+      rebornPos_ = other.rebornPos_ != null ? other.rebornPos_.Clone() : null;
       skillId_ = other.skillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarDieAnimationEndReq(this);
     }
 
-    /// <summary>Field number for the "reborn_pos" field.</summary>
-    public const int RebornPosFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.Vector rebornPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector RebornPos {
-      get { return rebornPos_; }
-      set {
-        rebornPos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "die_guid" field.</summary>
-    public const int DieGuidFieldNumber = 7;
+    public const int DieGuidFieldNumber = 13;
     private ulong dieGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,8 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "reborn_pos" field.</summary>
+    public const int RebornPosFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector rebornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector RebornPos {
+      get { return rebornPos_; }
+      set {
+        rebornPos_ = value;
+      }
+    }
+
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 8;
+    public const int SkillIdFieldNumber = 9;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(RebornPos, other.RebornPos)) return false;
       if (DieGuid != other.DieGuid) return false;
+      if (!object.Equals(RebornPos, other.RebornPos)) return false;
       if (SkillId != other.SkillId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -152,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (rebornPos_ != null) hash ^= RebornPos.GetHashCode();
       if (DieGuid != 0UL) hash ^= DieGuid.GetHashCode();
+      if (rebornPos_ != null) hash ^= RebornPos.GetHashCode();
       if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -173,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (rebornPos_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(RebornPos);
+      if (SkillId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SkillId);
       }
       if (DieGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt64(DieGuid);
       }
-      if (SkillId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SkillId);
+      if (rebornPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RebornPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (rebornPos_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(RebornPos);
+      if (SkillId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SkillId);
       }
       if (DieGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt64(DieGuid);
       }
-      if (SkillId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SkillId);
+      if (rebornPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RebornPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -217,11 +221,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (rebornPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RebornPos);
-      }
       if (DieGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DieGuid);
+      }
+      if (rebornPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RebornPos);
       }
       if (SkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
@@ -238,14 +242,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.DieGuid != 0UL) {
+        DieGuid = other.DieGuid;
+      }
       if (other.rebornPos_ != null) {
         if (rebornPos_ == null) {
           RebornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         RebornPos.MergeFrom(other.RebornPos);
-      }
-      if (other.DieGuid != 0UL) {
-        DieGuid = other.DieGuid;
       }
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
@@ -265,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 72: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieGuid = input.ReadUInt64();
+            break;
+          }
+          case 114: {
             if (rebornPos_ == null) {
               RebornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(RebornPos);
-            break;
-          }
-          case 56: {
-            DieGuid = input.ReadUInt64();
-            break;
-          }
-          case 64: {
-            SkillId = input.ReadUInt32();
             break;
           }
         }
@@ -295,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 72: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieGuid = input.ReadUInt64();
+            break;
+          }
+          case 114: {
             if (rebornPos_ == null) {
               RebornPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(RebornPos);
-            break;
-          }
-          case 56: {
-            DieGuid = input.ReadUInt64();
-            break;
-          }
-          case 64: {
-            SkillId = input.ReadUInt32();
             break;
           }
         }

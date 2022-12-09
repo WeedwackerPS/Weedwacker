@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusFighterTrainingSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdTZXR0bGVJbmZvLnByb3RvGhdHYWxs",
-            "ZXJ5U3RvcFJlYXNvbi5wcm90byJtCh9GdW5ndXNGaWdodGVyVHJhaW5pbmdT",
-            "ZXR0bGVJbmZvEhEKCXVzZWRfdGltZRgPIAEoDRIiCgZyZWFzb24YAyABKA4y",
-            "Ei5HYWxsZXJ5U3RvcFJlYXNvbhITCgt0cmFuc2FjdGlvbhgBIAEoCUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdTZXR0bGVJbmZvLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhdHYWxsZXJ5U3RvcFJlYXNv",
+            "bi5wcm90byKNAQofRnVuZ3VzRmlnaHRlclRyYWluaW5nU2V0dGxlSW5mbxIR",
+            "Cgl1c2VkX3RpbWUYDSABKA0SQgoGcmVhc29uGAQgASgOMjIuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWxsZXJ5U3RvcFJlYXNvbhITCgt0",
+            "cmFuc2FjdGlvbhgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GalleryStopReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "used_time" field.</summary>
-    public const int UsedTimeFieldNumber = 15;
+    public const int UsedTimeFieldNumber = 13;
     private uint usedTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
+    public const int ReasonFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.GalleryStopReason reason_ = global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "transaction" field.</summary>
-    public const int TransactionFieldNumber = 1;
+    public const int TransactionFieldNumber = 3;
     private string transaction_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -168,15 +169,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Transaction.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(26);
         output.WriteString(Transaction);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Reason);
       }
       if (UsedTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(UsedTime);
       }
       if (_unknownFields != null) {
@@ -190,15 +191,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Transaction.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(26);
         output.WriteString(Transaction);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.GalleryStopReason.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Reason);
       }
       if (UsedTime != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(UsedTime);
       }
       if (_unknownFields != null) {
@@ -256,15 +257,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 26: {
             Transaction = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 120: {
+          case 104: {
             UsedTime = input.ReadUInt32();
             break;
           }
@@ -283,15 +284,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 26: {
             Transaction = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             Reason = (global::Weedwacker.Shared.Network.Proto.GalleryStopReason) input.ReadEnum();
             break;
           }
-          case 120: {
+          case 104: {
             UsedTime = input.ReadUInt32();
             break;
           }

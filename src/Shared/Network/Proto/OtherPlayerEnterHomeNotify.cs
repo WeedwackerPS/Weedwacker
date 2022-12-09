@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static OtherPlayerEnterHomeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBPdGhlclBsYXllckVudGVySG9tZU5vdGlmeS5wcm90byKkAQoaT3RoZXJQ",
-            "bGF5ZXJFbnRlckhvbWVOb3RpZnkSEAoIbmlja25hbWUYByABKAkSMgoGcmVh",
-            "c29uGAMgASgOMiIuT3RoZXJQbGF5ZXJFbnRlckhvbWVOb3RpZnkuUmVhc29u",
-            "IkAKBlJlYXNvbhISCg5SRUFTT05fSU5WQUxJRBAAEhAKDFJFQVNPTl9FTlRF",
-            "UhABEhAKDFJFQVNPTl9MRUFWRRACQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBPdGhlclBsYXllckVudGVySG9tZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byLEAQoaT3RoZXJQbGF5ZXJFbnRlckhv",
+            "bWVOb3RpZnkSEAoIbmlja25hbWUYBSABKAkSUgoGcmVhc29uGAogASgOMkIu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5PdGhlclBsYXllckVu",
+            "dGVySG9tZU5vdGlmeS5SZWFzb24iQAoGUmVhc29uEhIKDlJFQVNPTl9JTlZB",
+            "TElEEAASEAoMUkVBU09OX0VOVEVSEAESEAoMUkVBU09OX0xFQVZFEAJiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4628
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4749;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class OtherPlayerEnterHomeNotify : pb::IMessage<OtherPlayerEnterHomeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "nickname" field.</summary>
-    public const int NicknameFieldNumber = 7;
+    public const int NicknameFieldNumber = 5;
     private string nickname_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
+    public const int ReasonFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason reason_ = global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,13 +163,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Reason != global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason.Invalid) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
-      }
       if (Nickname.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteString(Nickname);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason.Invalid) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -176,13 +181,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Reason != global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason.Invalid) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
-      }
       if (Nickname.Length != 0) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(42);
         output.WriteString(Nickname);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason.Invalid) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,12 +238,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason) input.ReadEnum();
+          case 42: {
+            Nickname = input.ReadString();
             break;
           }
-          case 58: {
-            Nickname = input.ReadString();
+          case 80: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason) input.ReadEnum();
             break;
           }
         }
@@ -256,12 +261,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason) input.ReadEnum();
+          case 42: {
+            Nickname = input.ReadString();
             break;
           }
-          case 58: {
-            Nickname = input.ReadString();
+          case 80: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.OtherPlayerEnterHomeNotify.Types.Reason) input.ReadEnum();
             break;
           }
         }

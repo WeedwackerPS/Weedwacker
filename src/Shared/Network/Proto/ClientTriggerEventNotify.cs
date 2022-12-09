@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClientTriggerEventNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5DbGllbnRUcmlnZ2VyRXZlbnROb3RpZnkucHJvdG8aFkV2ZW50VHJpZ2dl",
-            "clR5cGUucHJvdG8iUwoYQ2xpZW50VHJpZ2dlckV2ZW50Tm90aWZ5EhAKCGZv",
-            "cmNlX2lkGAMgASgNEiUKCmV2ZW50X3R5cGUYAiABKA4yES5FdmVudFRyaWdn",
-            "ZXJUeXBlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch5DbGllbnRUcmlnZ2VyRXZlbnROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFkV2ZW50VHJpZ2dlclR5cGUucHJvdG8i",
+            "cwoYQ2xpZW50VHJpZ2dlckV2ZW50Tm90aWZ5EhAKCGZvcmNlX2lkGAogASgN",
+            "EkUKCmV2ZW50X3R5cGUYDyABKA4yMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkV2ZW50VHJpZ2dlclR5cGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EventTriggerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 148
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 148;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ClientTriggerEventNotify : pb::IMessage<ClientTriggerEventNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "force_id" field.</summary>
-    public const int ForceIdFieldNumber = 3;
+    public const int ForceIdFieldNumber = 10;
     private uint forceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "event_type" field.</summary>
-    public const int EventTypeFieldNumber = 2;
+    public const int EventTypeFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.EventTriggerType eventType_ = global::Weedwacker.Shared.Network.Proto.EventTriggerType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EventType != global::Weedwacker.Shared.Network.Proto.EventTriggerType.None) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) EventType);
-      }
       if (ForceId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(80);
         output.WriteUInt32(ForceId);
+      }
+      if (EventType != global::Weedwacker.Shared.Network.Proto.EventTriggerType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) EventType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -176,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EventType != global::Weedwacker.Shared.Network.Proto.EventTriggerType.None) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) EventType);
-      }
       if (ForceId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(80);
         output.WriteUInt32(ForceId);
+      }
+      if (EventType != global::Weedwacker.Shared.Network.Proto.EventTriggerType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) EventType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,12 +237,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            EventType = (global::Weedwacker.Shared.Network.Proto.EventTriggerType) input.ReadEnum();
+          case 80: {
+            ForceId = input.ReadUInt32();
             break;
           }
-          case 24: {
-            ForceId = input.ReadUInt32();
+          case 120: {
+            EventType = (global::Weedwacker.Shared.Network.Proto.EventTriggerType) input.ReadEnum();
             break;
           }
         }
@@ -256,12 +260,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            EventType = (global::Weedwacker.Shared.Network.Proto.EventTriggerType) input.ReadEnum();
+          case 80: {
+            ForceId = input.ReadUInt32();
             break;
           }
-          case 24: {
-            ForceId = input.ReadUInt32();
+          case 120: {
+            EventType = (global::Weedwacker.Shared.Network.Proto.EventTriggerType) input.ReadEnum();
             break;
           }
         }

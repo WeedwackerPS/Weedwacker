@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerFloorRecordChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJUb3dlckZsb29yUmVjb3JkQ2hhbmdlTm90aWZ5LnByb3RvGhZUb3dlckZs",
-            "b29yUmVjb3JkLnByb3RvInYKHFRvd2VyRmxvb3JSZWNvcmRDaGFuZ2VOb3Rp",
-            "ZnkSIgoaaXNfZmluaXNoZWRfZW50cmFuY2VfZmxvb3IYCyABKAgSMgoXdG93",
-            "ZXJfZmxvb3JfcmVjb3JkX2xpc3QYCCADKAsyES5Ub3dlckZsb29yUmVjb3Jk",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJUb3dlckZsb29yUmVjb3JkQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhZUb3dlckZsb29yUmVjb3JkLnBy",
+            "b3RvIpYBChxUb3dlckZsb29yUmVjb3JkQ2hhbmdlTm90aWZ5EiIKGmlzX2Zp",
+            "bmlzaGVkX2VudHJhbmNlX2Zsb29yGAQgASgIElIKF3Rvd2VyX2Zsb29yX3Jl",
+            "Y29yZF9saXN0GA8gAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5Ub3dlckZsb29yUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TowerFloorRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2498
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2430;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TowerFloorRecordChangeNotify : pb::IMessage<TowerFloorRecordChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_finished_entrance_floor" field.</summary>
-    public const int IsFinishedEntranceFloorFieldNumber = 11;
+    public const int IsFinishedEntranceFloorFieldNumber = 4;
     private bool isFinishedEntranceFloor_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +107,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tower_floor_record_list" field.</summary>
-    public const int TowerFloorRecordListFieldNumber = 8;
+    public const int TowerFloorRecordListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TowerFloorRecord> _repeated_towerFloorRecordList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.TowerFloorRecord.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.TowerFloorRecord.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerFloorRecord> towerFloorRecordList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerFloorRecord>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      towerFloorRecordList_.WriteTo(output, _repeated_towerFloorRecordList_codec);
       if (IsFinishedEntranceFloor != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteBool(IsFinishedEntranceFloor);
       }
+      towerFloorRecordList_.WriteTo(output, _repeated_towerFloorRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      towerFloorRecordList_.WriteTo(ref output, _repeated_towerFloorRecordList_codec);
       if (IsFinishedEntranceFloor != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteBool(IsFinishedEntranceFloor);
       }
+      towerFloorRecordList_.WriteTo(ref output, _repeated_towerFloorRecordList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
-            towerFloorRecordList_.AddEntriesFrom(input, _repeated_towerFloorRecordList_codec);
+          case 32: {
+            IsFinishedEntranceFloor = input.ReadBool();
             break;
           }
-          case 88: {
-            IsFinishedEntranceFloor = input.ReadBool();
+          case 122: {
+            towerFloorRecordList_.AddEntriesFrom(input, _repeated_towerFloorRecordList_codec);
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
-            towerFloorRecordList_.AddEntriesFrom(ref input, _repeated_towerFloorRecordList_codec);
+          case 32: {
+            IsFinishedEntranceFloor = input.ReadBool();
             break;
           }
-          case 88: {
-            IsFinishedEntranceFloor = input.ReadBool();
+          case 122: {
+            towerFloorRecordList_.AddEntriesFrom(ref input, _repeated_towerFloorRecordList_codec);
             break;
           }
         }

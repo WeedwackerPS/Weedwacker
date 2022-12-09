@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGChallengeUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5HQ0dDaGFsbGVuZ2VVcGRhdGVOb3RpZnkucHJvdG8aFkdDR0R1ZWxDaGFs",
-            "bGVuZ2UucHJvdG8iVAoYR0NHQ2hhbGxlbmdlVXBkYXRlTm90aWZ5EhIKCnNl",
-            "cnZlcl9zZXEYDCABKA0SJAoJY2hhbGxlbmdlGA0gASgLMhEuR0NHRHVlbENo",
-            "YWxsZW5nZUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "Ch5HQ0dDaGFsbGVuZ2VVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFkdDR0R1ZWxDaGFsbGVuZ2UucHJvdG8i",
+            "dAoYR0NHQ2hhbGxlbmdlVXBkYXRlTm90aWZ5EhIKCnNlcnZlcl9zZXEYDyAB",
+            "KA0SRAoJY2hhbGxlbmdlGAEgASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5HQ0dEdWVsQ2hhbGxlbmdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGDuelChallengeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7268
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7270;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGChallengeUpdateNotify : pb::IMessage<GCGChallengeUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "server_seq" field.</summary>
-    public const int ServerSeqFieldNumber = 12;
+    public const int ServerSeqFieldNumber = 15;
     private uint serverSeq_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge" field.</summary>
-    public const int ChallengeFieldNumber = 13;
+    public const int ChallengeFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge challenge_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ServerSeq != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ServerSeq);
-      }
       if (challenge_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(Challenge);
+      }
+      if (ServerSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ServerSeq);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -176,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ServerSeq != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ServerSeq);
-      }
       if (challenge_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(Challenge);
+      }
+      if (ServerSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ServerSeq);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -236,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            ServerSeq = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 10: {
             if (challenge_ == null) {
               Challenge = new global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge();
             }
             input.ReadMessage(Challenge);
+            break;
+          }
+          case 120: {
+            ServerSeq = input.ReadUInt32();
             break;
           }
         }
@@ -262,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            ServerSeq = input.ReadUInt32();
-            break;
-          }
-          case 106: {
+          case 10: {
             if (challenge_ == null) {
               Challenge = new global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge();
             }
             input.ReadMessage(Challenge);
+            break;
+          }
+          case 120: {
+            ServerSeq = input.ReadUInt32();
             break;
           }
         }

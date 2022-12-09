@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessEquipCardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Jcm9kb3JpQ2hlc3NFcXVpcENhcmRSZXEucHJvdG8iUgoYSXJvZG9yaUNo",
-            "ZXNzRXF1aXBDYXJkUmVxEhMKC2lzX2hhcmRfbWFwGAIgASgIEhAKCGxldmVs",
-            "X2lkGAwgASgNEg8KB2NhcmRfaWQYCSABKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5Jcm9kb3JpQ2hlc3NFcXVpcENhcmRSZXEucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iUgoYSXJvZG9yaUNoZXNzRXF1aXBDYXJk",
+            "UmVxEhMKC2lzX2hhcmRfbWFwGAggASgIEhAKCGxldmVsX2lkGAEgASgNEg8K",
+            "B2NhcmRfaWQYAyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8561
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8766;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class IrodoriChessEquipCardReq : pb::IMessage<IrodoriChessEquipCardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_hard_map" field.</summary>
-    public const int IsHardMapFieldNumber = 2;
+    public const int IsHardMapFieldNumber = 8;
     private bool isHardMap_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 12;
+    public const int LevelIdFieldNumber = 1;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 9;
+    public const int CardIdFieldNumber = 3;
     private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsHardMap != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsHardMap);
+      if (LevelId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(LevelId);
       }
       if (CardId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(LevelId);
+      if (IsHardMap != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsHardMap);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsHardMap != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsHardMap);
+      if (LevelId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(LevelId);
       }
       if (CardId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(LevelId);
+      if (IsHardMap != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsHardMap);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            IsHardMap = input.ReadBool();
+          case 8: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
             CardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            IsHardMap = input.ReadBool();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            IsHardMap = input.ReadBool();
+          case 8: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 24: {
             CardId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            LevelId = input.ReadUInt32();
+          case 64: {
+            IsHardMap = input.ReadBool();
             break;
           }
         }

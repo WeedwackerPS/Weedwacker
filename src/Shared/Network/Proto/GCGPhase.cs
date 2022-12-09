@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGPhaseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5HQ0dQaGFzZS5wcm90bxoSR0NHUGhhc2VUeXBlLnByb3RvIqkBCghHQ0dQ",
-            "aGFzZRIhCgpwaGFzZV90eXBlGAUgASgOMg0uR0NHUGhhc2VUeXBlEj8KFGFs",
-            "bG93X2NvbnRyb2xsZXJfbWFwGAYgAygLMiEuR0NHUGhhc2UuQWxsb3dDb250",
-            "cm9sbGVyTWFwRW50cnkaOQoXQWxsb3dDb250cm9sbGVyTWFwRW50cnkSCwoD",
-            "a2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Cg5HQ0dQaGFzZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90bxoSR0NHUGhhc2VUeXBlLnByb3RvIukBCghHQ0dQaGFzZRJBCgpwaGFz",
+            "ZV90eXBlGAQgASgOMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5HQ0dQaGFzZVR5cGUSXwoUYWxsb3dfY29udHJvbGxlcl9tYXAYDCADKAsy",
+            "QS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR1BoYXNlLkFs",
+            "bG93Q29udHJvbGxlck1hcEVudHJ5GjkKF0FsbG93Q29udHJvbGxlck1hcEVu",
+            "dHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGPhaseTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "phase_type" field.</summary>
-    public const int PhaseTypeFieldNumber = 5;
+    public const int PhaseTypeFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.GCGPhaseType phaseType_ = global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,9 +99,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "allow_controller_map" field.</summary>
-    public const int AllowControllerMapFieldNumber = 6;
+    public const int AllowControllerMapFieldNumber = 12;
     private static readonly pbc::MapField<uint, uint>.Codec _map_allowControllerMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
     private readonly pbc::MapField<uint, uint> allowControllerMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,7 +154,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (PhaseType != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) PhaseType);
       }
       allowControllerMap_.WriteTo(output, _map_allowControllerMap_codec);
@@ -168,7 +169,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (PhaseType != global::Weedwacker.Shared.Network.Proto.GCGPhaseType.Invalid) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) PhaseType);
       }
       allowControllerMap_.WriteTo(ref output, _map_allowControllerMap_codec);
@@ -217,11 +218,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 32: {
             PhaseType = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
             break;
           }
-          case 50: {
+          case 98: {
             allowControllerMap_.AddEntriesFrom(input, _map_allowControllerMap_codec);
             break;
           }
@@ -240,11 +241,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 32: {
             PhaseType = (global::Weedwacker.Shared.Network.Proto.GCGPhaseType) input.ReadEnum();
             break;
           }
-          case 50: {
+          case 98: {
             allowControllerMap_.AddEntriesFrom(ref input, _map_allowControllerMap_codec);
             break;
           }

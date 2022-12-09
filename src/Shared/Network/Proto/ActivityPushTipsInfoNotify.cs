@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityPushTipsInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBY3Rpdml0eVB1c2hUaXBzSW5mb05vdGlmeS5wcm90bxoaQWN0aXZpdHlQ",
-            "dXNoVGlwc0RhdGEucHJvdG8igwEKGkFjdGl2aXR5UHVzaFRpcHNJbmZvTm90",
-            "aWZ5EhMKC3NjaGVkdWxlX2lkGA4gASgNEjsKHGFjdGl2aXR5X3B1c2hfdGlw",
-            "c19kYXRhX2xpc3QYAyADKAsyFS5BY3Rpdml0eVB1c2hUaXBzRGF0YRITCgth",
-            "Y3Rpdml0eV9pZBgKIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "CiBBY3Rpdml0eVB1c2hUaXBzSW5mb05vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoaQWN0aXZpdHlQdXNoVGlwc0RhdGEu",
+            "cHJvdG8iowEKGkFjdGl2aXR5UHVzaFRpcHNJbmZvTm90aWZ5EhMKC3NjaGVk",
+            "dWxlX2lkGAMgASgNElsKHGFjdGl2aXR5X3B1c2hfdGlwc19kYXRhX2xpc3QY",
+            "CiADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFjdGl2",
+            "aXR5UHVzaFRpcHNEYXRhEhMKC2FjdGl2aXR5X2lkGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityPushTipsDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8513
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8418;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityPushTipsInfoNotify : pb::IMessage<ActivityPushTipsInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 14;
+    public const int ScheduleIdFieldNumber = 3;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "activity_push_tips_data_list" field.</summary>
-    public const int ActivityPushTipsDataListFieldNumber = 3;
+    public const int ActivityPushTipsDataListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> _repeated_activityPushTipsDataList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> activityPushTipsDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 10;
+    public const int ActivityIdFieldNumber = 13;
     private uint activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,14 +176,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ScheduleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ScheduleId);
+      }
       activityPushTipsDataList_.WriteTo(output, _repeated_activityPushTipsDataList_codec);
       if (ActivityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(ActivityId);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,14 +195,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ScheduleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ScheduleId);
+      }
       activityPushTipsDataList_.WriteTo(ref output, _repeated_activityPushTipsDataList_codec);
       if (ActivityId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteUInt32(ActivityId);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -251,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 24: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             activityPushTipsDataList_.AddEntriesFrom(input, _repeated_activityPushTipsDataList_codec);
             break;
           }
-          case 80: {
+          case 104: {
             ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -278,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 24: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
             activityPushTipsDataList_.AddEntriesFrom(ref input, _repeated_activityPushTipsDataList_codec);
             break;
           }
-          case 80: {
+          case 104: {
             ActivityId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            ScheduleId = input.ReadUInt32();
             break;
           }
         }

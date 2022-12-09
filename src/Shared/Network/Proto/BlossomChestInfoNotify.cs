@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlossomChestInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxCbG9zc29tQ2hlc3RJbmZvTm90aWZ5LnByb3RvGhZCbG9zc29tQ2hlc3RJ",
-            "bmZvLnByb3RvIloKFkJsb3Nzb21DaGVzdEluZm9Ob3RpZnkSEQoJZW50aXR5",
-            "X2lkGAkgASgNEi0KEmJsb3Nzb21fY2hlc3RfaW5mbxgDIAEoCzIRLkJsb3Nz",
-            "b21DaGVzdEluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChxCbG9zc29tQ2hlc3RJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZCbG9zc29tQ2hlc3RJbmZvLnByb3RvInoK",
+            "FkJsb3Nzb21DaGVzdEluZm9Ob3RpZnkSTQoSYmxvc3NvbV9jaGVzdF9pbmZv",
+            "GA0gASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CbG9z",
+            "c29tQ2hlc3RJbmZvEhEKCWVudGl0eV9pZBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BlossomChestInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomChestInfoNotify), global::Weedwacker.Shared.Network.Proto.BlossomChestInfoNotify.Parser, new[]{ "EntityId", "BlossomChestInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlossomChestInfoNotify), global::Weedwacker.Shared.Network.Proto.BlossomChestInfoNotify.Parser, new[]{ "BlossomChestInfo", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 890
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 847;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BlossomChestInfoNotify : pb::IMessage<BlossomChestInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BlossomChestInfoNotify(BlossomChestInfoNotify other) : this() {
-      entityId_ = other.entityId_;
       blossomChestInfo_ = other.blossomChestInfo_ != null ? other.blossomChestInfo_.Clone() : null;
+      entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BlossomChestInfoNotify(this);
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 9;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "blossom_chest_info" field.</summary>
-    public const int BlossomChestInfoFieldNumber = 3;
+    public const int BlossomChestInfoFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.BlossomChestInfo blossomChestInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return blossomChestInfo_; }
       set {
         blossomChestInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 10;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
       if (!object.Equals(BlossomChestInfo, other.BlossomChestInfo)) return false;
+      if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (blossomChestInfo_ != null) hash ^= BlossomChestInfo.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (blossomChestInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BlossomChestInfo);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EntityId);
+      }
+      if (blossomChestInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(BlossomChestInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (blossomChestInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BlossomChestInfo);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(EntityId);
+      }
+      if (blossomChestInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(BlossomChestInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-      }
       if (blossomChestInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BlossomChestInfo);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
-      }
       if (other.blossomChestInfo_ != null) {
         if (blossomChestInfo_ == null) {
           BlossomChestInfo = new global::Weedwacker.Shared.Network.Proto.BlossomChestInfo();
         }
         BlossomChestInfo.MergeFrom(other.BlossomChestInfo);
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
             if (blossomChestInfo_ == null) {
               BlossomChestInfo = new global::Weedwacker.Shared.Network.Proto.BlossomChestInfo();
             }
             input.ReadMessage(BlossomChestInfo);
-            break;
-          }
-          case 72: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -261,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 80: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
             if (blossomChestInfo_ == null) {
               BlossomChestInfo = new global::Weedwacker.Shared.Network.Proto.BlossomChestInfo();
             }
             input.ReadMessage(BlossomChestInfo);
-            break;
-          }
-          case 72: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

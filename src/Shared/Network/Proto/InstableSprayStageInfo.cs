@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static InstableSprayStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxJbnN0YWJsZVNwcmF5U3RhZ2VJbmZvLnByb3RvGhtJbnN0YWJsZVNwcmF5",
-            "VGVhbUluZm8ucHJvdG8iggEKFkluc3RhYmxlU3ByYXlTdGFnZUluZm8SEwoL",
-            "aXNfZmluaXNoZWQYCiABKAgSEQoJbWF4X3Njb3JlGAMgASgNEhAKCHN0YWdl",
-            "X2lkGAQgASgNEi4KDnRlYW1faW5mb19saXN0GAYgAygLMhYuSW5zdGFibGVT",
-            "cHJheVRlYW1JbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChxJbnN0YWJsZVNwcmF5U3RhZ2VJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhtJbnN0YWJsZVNwcmF5VGVhbUluZm8ucHJv",
+            "dG8iogEKFkluc3RhYmxlU3ByYXlTdGFnZUluZm8SEwoLaXNfZmluaXNoZWQY",
+            "DCABKAgSEAoIc3RhZ2VfaWQYAiABKA0STgoOdGVhbV9pbmZvX2xpc3QYCSAD",
+            "KAsyNi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkluc3RhYmxl",
+            "U3ByYXlUZWFtSW5mbxIRCgltYXhfc2NvcmUYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayStageInfo), global::Weedwacker.Shared.Network.Proto.InstableSprayStageInfo.Parser, new[]{ "IsFinished", "MaxScore", "StageId", "TeamInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InstableSprayStageInfo), global::Weedwacker.Shared.Network.Proto.InstableSprayStageInfo.Parser, new[]{ "IsFinished", "StageId", "TeamInfoList", "MaxScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstableSprayStageInfo(InstableSprayStageInfo other) : this() {
       isFinished_ = other.isFinished_;
-      maxScore_ = other.maxScore_;
       stageId_ = other.stageId_;
       teamInfoList_ = other.teamInfoList_.Clone();
+      maxScore_ = other.maxScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 10;
+    public const int IsFinishedFieldNumber = 12;
     private bool isFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,20 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 3;
-    private uint maxScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxScore {
-      get { return maxScore_; }
-      set {
-        maxScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 4;
+    public const int StageIdFieldNumber = 2;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,14 +112,26 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "team_info_list" field.</summary>
-    public const int TeamInfoListFieldNumber = 6;
+    public const int TeamInfoListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo> _repeated_teamInfoList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo> teamInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InstableSprayTeamInfo> TeamInfoList {
       get { return teamInfoList_; }
+    }
+
+    /// <summary>Field number for the "max_score" field.</summary>
+    public const int MaxScoreFieldNumber = 7;
+    private uint maxScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxScore {
+      get { return maxScore_; }
+      set {
+        maxScore_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -150,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsFinished != other.IsFinished) return false;
-      if (MaxScore != other.MaxScore) return false;
       if (StageId != other.StageId) return false;
       if(!teamInfoList_.Equals(other.teamInfoList_)) return false;
+      if (MaxScore != other.MaxScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-      if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
       hash ^= teamInfoList_.GetHashCode();
+      if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,17 +182,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxScore != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MaxScore);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
+      }
+      if (MaxScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxScore);
       }
       teamInfoList_.WriteTo(output, _repeated_teamInfoList_codec);
       if (IsFinished != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -205,17 +205,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxScore != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(MaxScore);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
+      }
+      if (MaxScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxScore);
       }
       teamInfoList_.WriteTo(ref output, _repeated_teamInfoList_codec);
       if (IsFinished != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(96);
         output.WriteBool(IsFinished);
       }
       if (_unknownFields != null) {
@@ -231,13 +231,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsFinished != false) {
         size += 1 + 1;
       }
-      if (MaxScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
-      }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       size += teamInfoList_.CalculateSize(_repeated_teamInfoList_codec);
+      if (MaxScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -253,13 +253,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
       }
-      if (other.MaxScore != 0) {
-        MaxScore = other.MaxScore;
-      }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
       teamInfoList_.Add(other.teamInfoList_);
+      if (other.MaxScore != 0) {
+        MaxScore = other.MaxScore;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -275,19 +275,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 16: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 56: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             teamInfoList_.AddEntriesFrom(input, _repeated_teamInfoList_codec);
             break;
           }
-          case 80: {
+          case 96: {
             IsFinished = input.ReadBool();
             break;
           }
@@ -306,19 +306,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 16: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 50: {
+          case 56: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 74: {
             teamInfoList_.AddEntriesFrom(ref input, _repeated_teamInfoList_codec);
             break;
           }
-          case 80: {
+          case 96: {
             IsFinished = input.ReadBool();
             break;
           }

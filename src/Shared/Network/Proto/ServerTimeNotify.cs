@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static ServerTimeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZTZXJ2ZXJUaW1lTm90aWZ5LnByb3RvIicKEFNlcnZlclRpbWVOb3RpZnkS",
-            "EwoLc2VydmVyX3RpbWUYBSABKARCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZTZXJ2ZXJUaW1lTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIicKEFNlcnZlclRpbWVOb3RpZnkSEwoLc2VydmVyX3Rp",
+            "bWUYDSABKARiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 99
-  /// EnetChannelId: 1
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 57;
+  ///   ENET_CHANNEL_ID = 1;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ServerTimeNotify : pb::IMessage<ServerTimeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -87,7 +91,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "server_time" field.</summary>
-    public const int ServerTimeFieldNumber = 5;
+    public const int ServerTimeFieldNumber = 13;
     private ulong serverTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,7 +145,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ServerTime != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteUInt64(ServerTime);
       }
       if (_unknownFields != null) {
@@ -155,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ServerTime != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteUInt64(ServerTime);
       }
       if (_unknownFields != null) {
@@ -201,7 +205,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 104: {
             ServerTime = input.ReadUInt64();
             break;
           }
@@ -220,7 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 104: {
             ServerTime = input.ReadUInt64();
             break;
           }

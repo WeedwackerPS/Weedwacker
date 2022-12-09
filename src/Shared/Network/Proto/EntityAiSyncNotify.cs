@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityAiSyncNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhFbnRpdHlBaVN5bmNOb3RpZnkucHJvdG8aEEFpU3luY0luZm8ucHJvdG8i",
-            "XwoSRW50aXR5QWlTeW5jTm90aWZ5EikKIWxvY2FsX2F2YXRhcl9hbGVydGVk",
-            "X21vbnN0ZXJfbGlzdBgPIAMoDRIeCglpbmZvX2xpc3QYASADKAsyCy5BaVN5",
-            "bmNJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChhFbnRpdHlBaVN5bmNOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEEFpU3luY0luZm8ucHJvdG8ifwoSRW50aXR5QWlT",
+            "eW5jTm90aWZ5Ej4KCWluZm9fbGlzdBgOIAMoCzIrLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uQWlTeW5jSW5mbxIpCiFsb2NhbF9hdmF0YXJf",
+            "YWxlcnRlZF9tb25zdGVyX2xpc3QYDSADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AiSyncInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityAiSyncNotify), global::Weedwacker.Shared.Network.Proto.EntityAiSyncNotify.Parser, new[]{ "LocalAvatarAlertedMonsterList", "InfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityAiSyncNotify), global::Weedwacker.Shared.Network.Proto.EntityAiSyncNotify.Parser, new[]{ "InfoList", "LocalAvatarAlertedMonsterList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 400
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 304;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityAiSyncNotify : pb::IMessage<EntityAiSyncNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityAiSyncNotify(EntityAiSyncNotify other) : this() {
-      localAvatarAlertedMonsterList_ = other.localAvatarAlertedMonsterList_.Clone();
       infoList_ = other.infoList_.Clone();
+      localAvatarAlertedMonsterList_ = other.localAvatarAlertedMonsterList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,26 +94,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityAiSyncNotify(this);
     }
 
-    /// <summary>Field number for the "local_avatar_alerted_monster_list" field.</summary>
-    public const int LocalAvatarAlertedMonsterListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_localAvatarAlertedMonsterList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> localAvatarAlertedMonsterList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LocalAvatarAlertedMonsterList {
-      get { return localAvatarAlertedMonsterList_; }
-    }
-
     /// <summary>Field number for the "info_list" field.</summary>
-    public const int InfoListFieldNumber = 1;
+    public const int InfoListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AiSyncInfo> _repeated_infoList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.AiSyncInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.AiSyncInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AiSyncInfo> infoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AiSyncInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AiSyncInfo> InfoList {
       get { return infoList_; }
+    }
+
+    /// <summary>Field number for the "local_avatar_alerted_monster_list" field.</summary>
+    public const int LocalAvatarAlertedMonsterListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_localAvatarAlertedMonsterList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> localAvatarAlertedMonsterList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> LocalAvatarAlertedMonsterList {
+      get { return localAvatarAlertedMonsterList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!localAvatarAlertedMonsterList_.Equals(other.localAvatarAlertedMonsterList_)) return false;
       if(!infoList_.Equals(other.infoList_)) return false;
+      if(!localAvatarAlertedMonsterList_.Equals(other.localAvatarAlertedMonsterList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= localAvatarAlertedMonsterList_.GetHashCode();
       hash ^= infoList_.GetHashCode();
+      hash ^= localAvatarAlertedMonsterList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      infoList_.WriteTo(output, _repeated_infoList_codec);
       localAvatarAlertedMonsterList_.WriteTo(output, _repeated_localAvatarAlertedMonsterList_codec);
+      infoList_.WriteTo(output, _repeated_infoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -168,8 +172,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      infoList_.WriteTo(ref output, _repeated_infoList_codec);
       localAvatarAlertedMonsterList_.WriteTo(ref output, _repeated_localAvatarAlertedMonsterList_codec);
+      infoList_.WriteTo(ref output, _repeated_infoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,8 +184,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += localAvatarAlertedMonsterList_.CalculateSize(_repeated_localAvatarAlertedMonsterList_codec);
       size += infoList_.CalculateSize(_repeated_infoList_codec);
+      size += localAvatarAlertedMonsterList_.CalculateSize(_repeated_localAvatarAlertedMonsterList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -194,8 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      localAvatarAlertedMonsterList_.Add(other.localAvatarAlertedMonsterList_);
       infoList_.Add(other.infoList_);
+      localAvatarAlertedMonsterList_.Add(other.localAvatarAlertedMonsterList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -211,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            infoList_.AddEntriesFrom(input, _repeated_infoList_codec);
+          case 106:
+          case 104: {
+            localAvatarAlertedMonsterList_.AddEntriesFrom(input, _repeated_localAvatarAlertedMonsterList_codec);
             break;
           }
-          case 122:
-          case 120: {
-            localAvatarAlertedMonsterList_.AddEntriesFrom(input, _repeated_localAvatarAlertedMonsterList_codec);
+          case 114: {
+            infoList_.AddEntriesFrom(input, _repeated_infoList_codec);
             break;
           }
         }
@@ -235,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            infoList_.AddEntriesFrom(ref input, _repeated_infoList_codec);
+          case 106:
+          case 104: {
+            localAvatarAlertedMonsterList_.AddEntriesFrom(ref input, _repeated_localAvatarAlertedMonsterList_codec);
             break;
           }
-          case 122:
-          case 120: {
-            localAvatarAlertedMonsterList_.AddEntriesFrom(ref input, _repeated_localAvatarAlertedMonsterList_codec);
+          case 114: {
+            infoList_.AddEntriesFrom(ref input, _repeated_infoList_codec);
             break;
           }
         }

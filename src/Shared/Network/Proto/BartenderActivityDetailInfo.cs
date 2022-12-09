@@ -24,19 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static BartenderActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFCYXJ0ZW5kZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEJhcnRlbmRl",
-            "ckxldmVsSW5mby5wcm90bxoXQmFydGVuZGVyVGFza0luZm8ucHJvdG8i7QEK",
-            "G0JhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mbxIYChB1bmxvY2tfaXRlbV9s",
-            "aXN0GAMgAygNEh4KFmlzX2RldmVsb3BfbW9kdWxlX29wZW4YDSABKAgSGQoR",
-            "aXNfY29udGVudF9jbG9zZWQYBiABKAgSLgoRdW5sb2NrX2xldmVsX2xpc3QY",
-            "BSADKAsyEy5CYXJ0ZW5kZXJMZXZlbEluZm8SGwoTdW5sb2NrX2Zvcm11bGFf",
-            "bGlzdBgOIAMoDRIsChB1bmxvY2tfdGFza19saXN0GAIgAygLMhIuQmFydGVu",
-            "ZGVyVGFza0luZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "CiFCYXJ0ZW5kZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGEJhcnRlbmRlckxldmVsSW5mby5w",
+            "cm90bxoXQmFydGVuZGVyVGFza0luZm8ucHJvdG8isAIKG0JhcnRlbmRlckFj",
+            "dGl2aXR5RGV0YWlsSW5mbxIZChFpc19jb250ZW50X2Nsb3NlZBgPIAEoCBJO",
+            "ChF1bmxvY2tfbGV2ZWxfbGlzdBgKIAMoCzIzLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQmFydGVuZGVyTGV2ZWxJbmZvEhsKE1VuazMzMDBf",
+            "QlBDQk9BTlBCSEYYAyADKA0SGwoTVW5rMzMwMF9PR1BMQ0JGREhDRhgGIAMo",
+            "DRJMChB1bmxvY2tfdGFza19saXN0GAUgAygLMjIuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5CYXJ0ZW5kZXJUYXNrSW5mbxIeChZpc19kZXZl",
+            "bG9wX21vZHVsZV9vcGVuGAkgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BartenderLevelInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BartenderTaskInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo.Parser, new[]{ "UnlockItemList", "IsDevelopModuleOpen", "IsContentClosed", "UnlockLevelList", "UnlockFormulaList", "UnlockTaskList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo.Parser, new[]{ "IsContentClosed", "UnlockLevelList", "Unk3300BPCBOANPBHF", "Unk3300OGPLCBFDHCF", "UnlockTaskList", "IsDevelopModuleOpen" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,12 +78,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BartenderActivityDetailInfo(BartenderActivityDetailInfo other) : this() {
-      unlockItemList_ = other.unlockItemList_.Clone();
-      isDevelopModuleOpen_ = other.isDevelopModuleOpen_;
       isContentClosed_ = other.isContentClosed_;
       unlockLevelList_ = other.unlockLevelList_.Clone();
-      unlockFormulaList_ = other.unlockFormulaList_.Clone();
+      unk3300BPCBOANPBHF_ = other.unk3300BPCBOANPBHF_.Clone();
+      unk3300OGPLCBFDHCF_ = other.unk3300OGPLCBFDHCF_.Clone();
       unlockTaskList_ = other.unlockTaskList_.Clone();
+      isDevelopModuleOpen_ = other.isDevelopModuleOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,31 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BartenderActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "unlock_item_list" field.</summary>
-    public const int UnlockItemListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockItemList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> unlockItemList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockItemList {
-      get { return unlockItemList_; }
-    }
-
-    /// <summary>Field number for the "is_develop_module_open" field.</summary>
-    public const int IsDevelopModuleOpenFieldNumber = 13;
-    private bool isDevelopModuleOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsDevelopModuleOpen {
-      get { return isDevelopModuleOpen_; }
-      set {
-        isDevelopModuleOpen_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 6;
+    public const int IsContentClosedFieldNumber = 15;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,9 +106,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlock_level_list" field.</summary>
-    public const int UnlockLevelListFieldNumber = 5;
+    public const int UnlockLevelListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BartenderLevelInfo> _repeated_unlockLevelList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.BartenderLevelInfo.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.BartenderLevelInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BartenderLevelInfo> unlockLevelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BartenderLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,26 +116,49 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return unlockLevelList_; }
     }
 
-    /// <summary>Field number for the "unlock_formula_list" field.</summary>
-    public const int UnlockFormulaListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_unlockFormulaList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> unlockFormulaList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_BPCBOANPBHF" field.</summary>
+    public const int Unk3300BPCBOANPBHFFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BPCBOANPBHF_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unk3300BPCBOANPBHF_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> UnlockFormulaList {
-      get { return unlockFormulaList_; }
+    public pbc::RepeatedField<uint> Unk3300BPCBOANPBHF {
+      get { return unk3300BPCBOANPBHF_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_OGPLCBFDHCF" field.</summary>
+    public const int Unk3300OGPLCBFDHCFFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300OGPLCBFDHCF_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> unk3300OGPLCBFDHCF_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300OGPLCBFDHCF {
+      get { return unk3300OGPLCBFDHCF_; }
     }
 
     /// <summary>Field number for the "unlock_task_list" field.</summary>
-    public const int UnlockTaskListFieldNumber = 2;
+    public const int UnlockTaskListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo> _repeated_unlockTaskList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo> unlockTaskList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BartenderTaskInfo> UnlockTaskList {
       get { return unlockTaskList_; }
+    }
+
+    /// <summary>Field number for the "is_develop_module_open" field.</summary>
+    public const int IsDevelopModuleOpenFieldNumber = 9;
+    private bool isDevelopModuleOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsDevelopModuleOpen {
+      get { return isDevelopModuleOpen_; }
+      set {
+        isDevelopModuleOpen_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -175,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!unlockItemList_.Equals(other.unlockItemList_)) return false;
-      if (IsDevelopModuleOpen != other.IsDevelopModuleOpen) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
       if(!unlockLevelList_.Equals(other.unlockLevelList_)) return false;
-      if(!unlockFormulaList_.Equals(other.unlockFormulaList_)) return false;
+      if(!unk3300BPCBOANPBHF_.Equals(other.unk3300BPCBOANPBHF_)) return false;
+      if(!unk3300OGPLCBFDHCF_.Equals(other.unk3300OGPLCBFDHCF_)) return false;
       if(!unlockTaskList_.Equals(other.unlockTaskList_)) return false;
+      if (IsDevelopModuleOpen != other.IsDevelopModuleOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -188,12 +189,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= unlockItemList_.GetHashCode();
-      if (IsDevelopModuleOpen != false) hash ^= IsDevelopModuleOpen.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       hash ^= unlockLevelList_.GetHashCode();
-      hash ^= unlockFormulaList_.GetHashCode();
+      hash ^= unk3300BPCBOANPBHF_.GetHashCode();
+      hash ^= unk3300OGPLCBFDHCF_.GetHashCode();
       hash ^= unlockTaskList_.GetHashCode();
+      if (IsDevelopModuleOpen != false) hash ^= IsDevelopModuleOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -212,18 +213,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unk3300BPCBOANPBHF_.WriteTo(output, _repeated_unk3300BPCBOANPBHF_codec);
       unlockTaskList_.WriteTo(output, _repeated_unlockTaskList_codec);
-      unlockItemList_.WriteTo(output, _repeated_unlockItemList_codec);
-      unlockLevelList_.WriteTo(output, _repeated_unlockLevelList_codec);
-      if (IsContentClosed != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsContentClosed);
-      }
+      unk3300OGPLCBFDHCF_.WriteTo(output, _repeated_unk3300OGPLCBFDHCF_codec);
       if (IsDevelopModuleOpen != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteBool(IsDevelopModuleOpen);
       }
-      unlockFormulaList_.WriteTo(output, _repeated_unlockFormulaList_codec);
+      unlockLevelList_.WriteTo(output, _repeated_unlockLevelList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -234,18 +235,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300BPCBOANPBHF_.WriteTo(ref output, _repeated_unk3300BPCBOANPBHF_codec);
       unlockTaskList_.WriteTo(ref output, _repeated_unlockTaskList_codec);
-      unlockItemList_.WriteTo(ref output, _repeated_unlockItemList_codec);
-      unlockLevelList_.WriteTo(ref output, _repeated_unlockLevelList_codec);
-      if (IsContentClosed != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsContentClosed);
-      }
+      unk3300OGPLCBFDHCF_.WriteTo(ref output, _repeated_unk3300OGPLCBFDHCF_codec);
       if (IsDevelopModuleOpen != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteBool(IsDevelopModuleOpen);
       }
-      unlockFormulaList_.WriteTo(ref output, _repeated_unlockFormulaList_codec);
+      unlockLevelList_.WriteTo(ref output, _repeated_unlockLevelList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -256,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += unlockItemList_.CalculateSize(_repeated_unlockItemList_codec);
-      if (IsDevelopModuleOpen != false) {
-        size += 1 + 1;
-      }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
       size += unlockLevelList_.CalculateSize(_repeated_unlockLevelList_codec);
-      size += unlockFormulaList_.CalculateSize(_repeated_unlockFormulaList_codec);
+      size += unk3300BPCBOANPBHF_.CalculateSize(_repeated_unk3300BPCBOANPBHF_codec);
+      size += unk3300OGPLCBFDHCF_.CalculateSize(_repeated_unk3300OGPLCBFDHCF_codec);
       size += unlockTaskList_.CalculateSize(_repeated_unlockTaskList_codec);
+      if (IsDevelopModuleOpen != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -278,16 +279,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      unlockItemList_.Add(other.unlockItemList_);
-      if (other.IsDevelopModuleOpen != false) {
-        IsDevelopModuleOpen = other.IsDevelopModuleOpen;
-      }
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
       unlockLevelList_.Add(other.unlockLevelList_);
-      unlockFormulaList_.Add(other.unlockFormulaList_);
+      unk3300BPCBOANPBHF_.Add(other.unk3300BPCBOANPBHF_);
+      unk3300OGPLCBFDHCF_.Add(other.unk3300OGPLCBFDHCF_);
       unlockTaskList_.Add(other.unlockTaskList_);
+      if (other.IsDevelopModuleOpen != false) {
+        IsDevelopModuleOpen = other.IsDevelopModuleOpen;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -303,30 +304,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            unlockTaskList_.AddEntriesFrom(input, _repeated_unlockTaskList_codec);
-            break;
-          }
           case 26:
           case 24: {
-            unlockItemList_.AddEntriesFrom(input, _repeated_unlockItemList_codec);
+            unk3300BPCBOANPBHF_.AddEntriesFrom(input, _repeated_unk3300BPCBOANPBHF_codec);
             break;
           }
           case 42: {
-            unlockLevelList_.AddEntriesFrom(input, _repeated_unlockLevelList_codec);
+            unlockTaskList_.AddEntriesFrom(input, _repeated_unlockTaskList_codec);
             break;
           }
+          case 50:
           case 48: {
-            IsContentClosed = input.ReadBool();
+            unk3300OGPLCBFDHCF_.AddEntriesFrom(input, _repeated_unk3300OGPLCBFDHCF_codec);
             break;
           }
-          case 104: {
+          case 72: {
             IsDevelopModuleOpen = input.ReadBool();
             break;
           }
-          case 114:
-          case 112: {
-            unlockFormulaList_.AddEntriesFrom(input, _repeated_unlockFormulaList_codec);
+          case 82: {
+            unlockLevelList_.AddEntriesFrom(input, _repeated_unlockLevelList_codec);
+            break;
+          }
+          case 120: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }
@@ -344,30 +345,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            unlockTaskList_.AddEntriesFrom(ref input, _repeated_unlockTaskList_codec);
-            break;
-          }
           case 26:
           case 24: {
-            unlockItemList_.AddEntriesFrom(ref input, _repeated_unlockItemList_codec);
+            unk3300BPCBOANPBHF_.AddEntriesFrom(ref input, _repeated_unk3300BPCBOANPBHF_codec);
             break;
           }
           case 42: {
-            unlockLevelList_.AddEntriesFrom(ref input, _repeated_unlockLevelList_codec);
+            unlockTaskList_.AddEntriesFrom(ref input, _repeated_unlockTaskList_codec);
             break;
           }
+          case 50:
           case 48: {
-            IsContentClosed = input.ReadBool();
+            unk3300OGPLCBFDHCF_.AddEntriesFrom(ref input, _repeated_unk3300OGPLCBFDHCF_codec);
             break;
           }
-          case 104: {
+          case 72: {
             IsDevelopModuleOpen = input.ReadBool();
             break;
           }
-          case 114:
-          case 112: {
-            unlockFormulaList_.AddEntriesFrom(ref input, _repeated_unlockFormulaList_codec);
+          case 82: {
+            unlockLevelList_.AddEntriesFrom(ref input, _repeated_unlockLevelList_codec);
+            break;
+          }
+          case 120: {
+            IsContentClosed = input.ReadBool();
             break;
           }
         }

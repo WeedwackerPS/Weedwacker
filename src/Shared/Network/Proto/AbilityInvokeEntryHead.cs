@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityInvokeEntryHeadReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBYmlsaXR5SW52b2tlRW50cnlIZWFkLnByb3RvItUBChZBYmlsaXR5SW52",
-            "b2tlRW50cnlIZWFkEiAKGG1vZGlmaWVyX2NvbmZpZ19sb2NhbF9pZBgHIAEo",
-            "BRIeChZpc19zZXJ2ZXJidWZmX21vZGlmaWVyGAIgASgIEhwKFGluc3RhbmNl",
-            "ZF9hYmlsaXR5X2lkGAEgASgNEh0KFWluc3RhbmNlZF9tb2RpZmllcl9pZBgM",
-            "IAEoDRIQCghsb2NhbF9pZBgKIAEoBRIXCg9zZXJ2ZXJfYnVmZl91aWQYDiAB",
-            "KA0SEQoJdGFyZ2V0X2lkGAMgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxBYmlsaXR5SW52b2tlRW50cnlIZWFkLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvItUBChZBYmlsaXR5SW52b2tlRW50cnlIZWFk",
+            "EhwKFGluc3RhbmNlZF9hYmlsaXR5X2lkGAggASgNEhEKCXRhcmdldF9pZBgG",
+            "IAEoDRIXCg9zZXJ2ZXJfYnVmZl91aWQYASABKA0SEAoIbG9jYWxfaWQYDCAB",
+            "KAUSIAoYbW9kaWZpZXJfY29uZmlnX2xvY2FsX2lkGAcgASgFEh4KFmlzX3Nl",
+            "cnZlcmJ1ZmZfbW9kaWZpZXIYDyABKAgSHQoVaW5zdGFuY2VkX21vZGlmaWVy",
+            "X2lkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead), global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead.Parser, new[]{ "ModifierConfigLocalId", "IsServerbuffModifier", "InstancedAbilityId", "InstancedModifierId", "LocalId", "ServerBuffUid", "TargetId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead), global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead.Parser, new[]{ "InstancedAbilityId", "TargetId", "ServerBuffUid", "LocalId", "ModifierConfigLocalId", "IsServerbuffModifier", "InstancedModifierId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,13 +75,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityInvokeEntryHead(AbilityInvokeEntryHead other) : this() {
+      instancedAbilityId_ = other.instancedAbilityId_;
+      targetId_ = other.targetId_;
+      serverBuffUid_ = other.serverBuffUid_;
+      localId_ = other.localId_;
       modifierConfigLocalId_ = other.modifierConfigLocalId_;
       isServerbuffModifier_ = other.isServerbuffModifier_;
-      instancedAbilityId_ = other.instancedAbilityId_;
       instancedModifierId_ = other.instancedModifierId_;
-      localId_ = other.localId_;
-      serverBuffUid_ = other.serverBuffUid_;
-      targetId_ = other.targetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,6 +89,54 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityInvokeEntryHead Clone() {
       return new AbilityInvokeEntryHead(this);
+    }
+
+    /// <summary>Field number for the "instanced_ability_id" field.</summary>
+    public const int InstancedAbilityIdFieldNumber = 8;
+    private uint instancedAbilityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint InstancedAbilityId {
+      get { return instancedAbilityId_; }
+      set {
+        instancedAbilityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_id" field.</summary>
+    public const int TargetIdFieldNumber = 6;
+    private uint targetId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetId {
+      get { return targetId_; }
+      set {
+        targetId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "server_buff_uid" field.</summary>
+    public const int ServerBuffUidFieldNumber = 1;
+    private uint serverBuffUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ServerBuffUid {
+      get { return serverBuffUid_; }
+      set {
+        serverBuffUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "local_id" field.</summary>
+    public const int LocalIdFieldNumber = 12;
+    private int localId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LocalId {
+      get { return localId_; }
+      set {
+        localId_ = value;
+      }
     }
 
     /// <summary>Field number for the "modifier_config_local_id" field.</summary>
@@ -104,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_serverbuff_modifier" field.</summary>
-    public const int IsServerbuffModifierFieldNumber = 2;
+    public const int IsServerbuffModifierFieldNumber = 15;
     private bool isServerbuffModifier_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,20 +163,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "instanced_ability_id" field.</summary>
-    public const int InstancedAbilityIdFieldNumber = 1;
-    private uint instancedAbilityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint InstancedAbilityId {
-      get { return instancedAbilityId_; }
-      set {
-        instancedAbilityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "instanced_modifier_id" field.</summary>
-    public const int InstancedModifierIdFieldNumber = 12;
+    public const int InstancedModifierIdFieldNumber = 10;
     private uint instancedModifierId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,42 +172,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return instancedModifierId_; }
       set {
         instancedModifierId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "local_id" field.</summary>
-    public const int LocalIdFieldNumber = 10;
-    private int localId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int LocalId {
-      get { return localId_; }
-      set {
-        localId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "server_buff_uid" field.</summary>
-    public const int ServerBuffUidFieldNumber = 14;
-    private uint serverBuffUid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ServerBuffUid {
-      get { return serverBuffUid_; }
-      set {
-        serverBuffUid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "target_id" field.</summary>
-    public const int TargetIdFieldNumber = 3;
-    private uint targetId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetId {
-      get { return targetId_; }
-      set {
-        targetId_ = value;
       }
     }
 
@@ -190,13 +190,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (InstancedAbilityId != other.InstancedAbilityId) return false;
+      if (TargetId != other.TargetId) return false;
+      if (ServerBuffUid != other.ServerBuffUid) return false;
+      if (LocalId != other.LocalId) return false;
       if (ModifierConfigLocalId != other.ModifierConfigLocalId) return false;
       if (IsServerbuffModifier != other.IsServerbuffModifier) return false;
-      if (InstancedAbilityId != other.InstancedAbilityId) return false;
       if (InstancedModifierId != other.InstancedModifierId) return false;
-      if (LocalId != other.LocalId) return false;
-      if (ServerBuffUid != other.ServerBuffUid) return false;
-      if (TargetId != other.TargetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -204,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (InstancedAbilityId != 0) hash ^= InstancedAbilityId.GetHashCode();
+      if (TargetId != 0) hash ^= TargetId.GetHashCode();
+      if (ServerBuffUid != 0) hash ^= ServerBuffUid.GetHashCode();
+      if (LocalId != 0) hash ^= LocalId.GetHashCode();
       if (ModifierConfigLocalId != 0) hash ^= ModifierConfigLocalId.GetHashCode();
       if (IsServerbuffModifier != false) hash ^= IsServerbuffModifier.GetHashCode();
-      if (InstancedAbilityId != 0) hash ^= InstancedAbilityId.GetHashCode();
       if (InstancedModifierId != 0) hash ^= InstancedModifierId.GetHashCode();
-      if (LocalId != 0) hash ^= LocalId.GetHashCode();
-      if (ServerBuffUid != 0) hash ^= ServerBuffUid.GetHashCode();
-      if (TargetId != 0) hash ^= TargetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,33 +229,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (InstancedAbilityId != 0) {
+      if (ServerBuffUid != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(InstancedAbilityId);
-      }
-      if (IsServerbuffModifier != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsServerbuffModifier);
+        output.WriteUInt32(ServerBuffUid);
       }
       if (TargetId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(TargetId);
       }
       if (ModifierConfigLocalId != 0) {
         output.WriteRawTag(56);
         output.WriteInt32(ModifierConfigLocalId);
       }
-      if (LocalId != 0) {
-        output.WriteRawTag(80);
-        output.WriteInt32(LocalId);
+      if (InstancedAbilityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(InstancedAbilityId);
       }
       if (InstancedModifierId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(InstancedModifierId);
       }
-      if (ServerBuffUid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ServerBuffUid);
+      if (LocalId != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(LocalId);
+      }
+      if (IsServerbuffModifier != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsServerbuffModifier);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -267,33 +267,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (InstancedAbilityId != 0) {
+      if (ServerBuffUid != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(InstancedAbilityId);
-      }
-      if (IsServerbuffModifier != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsServerbuffModifier);
+        output.WriteUInt32(ServerBuffUid);
       }
       if (TargetId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(48);
         output.WriteUInt32(TargetId);
       }
       if (ModifierConfigLocalId != 0) {
         output.WriteRawTag(56);
         output.WriteInt32(ModifierConfigLocalId);
       }
-      if (LocalId != 0) {
-        output.WriteRawTag(80);
-        output.WriteInt32(LocalId);
+      if (InstancedAbilityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(InstancedAbilityId);
       }
       if (InstancedModifierId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(InstancedModifierId);
       }
-      if (ServerBuffUid != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ServerBuffUid);
+      if (LocalId != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(LocalId);
+      }
+      if (IsServerbuffModifier != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsServerbuffModifier);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -305,26 +305,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (InstancedAbilityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
+      }
+      if (TargetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetId);
+      }
+      if (ServerBuffUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffUid);
+      }
+      if (LocalId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LocalId);
+      }
       if (ModifierConfigLocalId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ModifierConfigLocalId);
       }
       if (IsServerbuffModifier != false) {
         size += 1 + 1;
       }
-      if (InstancedAbilityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
-      }
       if (InstancedModifierId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
-      }
-      if (LocalId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LocalId);
-      }
-      if (ServerBuffUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffUid);
-      }
-      if (TargetId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -338,26 +338,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.InstancedAbilityId != 0) {
+        InstancedAbilityId = other.InstancedAbilityId;
+      }
+      if (other.TargetId != 0) {
+        TargetId = other.TargetId;
+      }
+      if (other.ServerBuffUid != 0) {
+        ServerBuffUid = other.ServerBuffUid;
+      }
+      if (other.LocalId != 0) {
+        LocalId = other.LocalId;
+      }
       if (other.ModifierConfigLocalId != 0) {
         ModifierConfigLocalId = other.ModifierConfigLocalId;
       }
       if (other.IsServerbuffModifier != false) {
         IsServerbuffModifier = other.IsServerbuffModifier;
       }
-      if (other.InstancedAbilityId != 0) {
-        InstancedAbilityId = other.InstancedAbilityId;
-      }
       if (other.InstancedModifierId != 0) {
         InstancedModifierId = other.InstancedModifierId;
-      }
-      if (other.LocalId != 0) {
-        LocalId = other.LocalId;
-      }
-      if (other.ServerBuffUid != 0) {
-        ServerBuffUid = other.ServerBuffUid;
-      }
-      if (other.TargetId != 0) {
-        TargetId = other.TargetId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -375,14 +375,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            InstancedAbilityId = input.ReadUInt32();
+            ServerBuffUid = input.ReadUInt32();
             break;
           }
-          case 16: {
-            IsServerbuffModifier = input.ReadBool();
-            break;
-          }
-          case 24: {
+          case 48: {
             TargetId = input.ReadUInt32();
             break;
           }
@@ -390,16 +386,20 @@ namespace Weedwacker.Shared.Network.Proto {
             ModifierConfigLocalId = input.ReadInt32();
             break;
           }
-          case 80: {
-            LocalId = input.ReadInt32();
+          case 64: {
+            InstancedAbilityId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             InstancedModifierId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            ServerBuffUid = input.ReadUInt32();
+          case 96: {
+            LocalId = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            IsServerbuffModifier = input.ReadBool();
             break;
           }
         }
@@ -418,14 +418,10 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            InstancedAbilityId = input.ReadUInt32();
+            ServerBuffUid = input.ReadUInt32();
             break;
           }
-          case 16: {
-            IsServerbuffModifier = input.ReadBool();
-            break;
-          }
-          case 24: {
+          case 48: {
             TargetId = input.ReadUInt32();
             break;
           }
@@ -433,16 +429,20 @@ namespace Weedwacker.Shared.Network.Proto {
             ModifierConfigLocalId = input.ReadInt32();
             break;
           }
-          case 80: {
-            LocalId = input.ReadInt32();
+          case 64: {
+            InstancedAbilityId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
             InstancedModifierId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            ServerBuffUid = input.ReadUInt32();
+          case 96: {
+            LocalId = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            IsServerbuffModifier = input.ReadBool();
             break;
           }
         }

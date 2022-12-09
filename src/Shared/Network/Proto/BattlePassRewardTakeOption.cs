@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassRewardTakeOptionReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBCYXR0bGVQYXNzUmV3YXJkVGFrZU9wdGlvbi5wcm90bxoZQmF0dGxlUGFz",
-            "c1Jld2FyZFRhZy5wcm90byJTChpCYXR0bGVQYXNzUmV3YXJkVGFrZU9wdGlv",
-            "bhIhCgN0YWcYCiABKAsyFC5CYXR0bGVQYXNzUmV3YXJkVGFnEhIKCm9wdGlv",
-            "bl9pZHgYDiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "CiBCYXR0bGVQYXNzUmV3YXJkVGFrZU9wdGlvbi5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoZQmF0dGxlUGFzc1Jld2FyZFRhZy5w",
+            "cm90byJzChpCYXR0bGVQYXNzUmV3YXJkVGFrZU9wdGlvbhISCgpvcHRpb25f",
+            "aWR4GAUgASgNEkEKA3RhZxgPIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQmF0dGxlUGFzc1Jld2FyZFRhZ2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassRewardTagReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption), global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser, new[]{ "Tag", "OptionIdx" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption), global::Weedwacker.Shared.Network.Proto.BattlePassRewardTakeOption.Parser, new[]{ "OptionIdx", "Tag" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassRewardTakeOption(BattlePassRewardTakeOption other) : this() {
-      tag_ = other.tag_ != null ? other.tag_.Clone() : null;
       optionIdx_ = other.optionIdx_;
+      tag_ = other.tag_ != null ? other.tag_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassRewardTakeOption(this);
     }
 
-    /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag tag_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag Tag {
-      get { return tag_; }
-      set {
-        tag_ = value;
-      }
-    }
-
     /// <summary>Field number for the "option_idx" field.</summary>
-    public const int OptionIdxFieldNumber = 14;
+    public const int OptionIdxFieldNumber = 5;
     private uint optionIdx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return optionIdx_; }
       set {
         optionIdx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tag" field.</summary>
+    public const int TagFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
       }
     }
 
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Tag, other.Tag)) return false;
       if (OptionIdx != other.OptionIdx) return false;
+      if (!object.Equals(Tag, other.Tag)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (tag_ != null) hash ^= Tag.GetHashCode();
       if (OptionIdx != 0) hash ^= OptionIdx.GetHashCode();
+      if (tag_ != null) hash ^= Tag.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (tag_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(Tag);
-      }
       if (OptionIdx != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(OptionIdx);
+      }
+      if (tag_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Tag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (tag_ != null) {
-        output.WriteRawTag(82);
-        output.WriteMessage(Tag);
-      }
       if (OptionIdx != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(OptionIdx);
+      }
+      if (tag_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Tag);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (tag_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Tag);
-      }
       if (OptionIdx != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OptionIdx);
+      }
+      if (tag_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Tag);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,14 +206,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.OptionIdx != 0) {
+        OptionIdx = other.OptionIdx;
+      }
       if (other.tag_ != null) {
         if (tag_ == null) {
           Tag = new global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag();
         }
         Tag.MergeFrom(other.Tag);
-      }
-      if (other.OptionIdx != 0) {
-        OptionIdx = other.OptionIdx;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,15 +230,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 40: {
+            OptionIdx = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (tag_ == null) {
               Tag = new global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag();
             }
             input.ReadMessage(Tag);
-            break;
-          }
-          case 112: {
-            OptionIdx = input.ReadUInt32();
             break;
           }
         }
@@ -256,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 40: {
+            OptionIdx = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (tag_ == null) {
               Tag = new global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag();
             }
             input.ReadMessage(Tag);
-            break;
-          }
-          case 112: {
-            OptionIdx = input.ReadUInt32();
             break;
           }
         }

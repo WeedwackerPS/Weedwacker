@@ -24,19 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtBulletHitNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhFdnRCdWxsZXRIaXROb3RpZnkucHJvdG8aEUZvcndhcmRUeXBlLnByb3Rv",
-            "GhVIaXRDb2xsaWRlclR5cGUucHJvdG8aDFZlY3Rvci5wcm90byKPAgoSRXZ0",
-            "QnVsbGV0SGl0Tm90aWZ5EhgKEHNpbmdsZV9idWxsZXRfaWQYCCABKA0SGgoJ",
-            "aGl0X3BvaW50GA8gASgLMgcuVmVjdG9yEhsKCmhpdF9ub3JtYWwYCyABKAsy",
-            "By5WZWN0b3ISFQoNaGl0X2JveF9pbmRleBgJIAEoBRIVCg1oaXRfZW50aXR5",
-            "X2lkGAMgASgNEhEKCWVudGl0eV9pZBgFIAEoDRIUCgxmb3J3YXJkX3BlZXIY",
-            "ByABKA0SIgoMZm9yd2FyZF90eXBlGAIgASgOMgwuRm9yd2FyZFR5cGUSKwoR",
-            "aGl0X2NvbGxpZGVyX3R5cGUYBiABKA4yEC5IaXRDb2xsaWRlclR5cGVCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhFdnRCdWxsZXRIaXROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEUZvcndhcmRUeXBlLnByb3RvGhVIaXRDb2xsaWRl",
+            "clR5cGUucHJvdG8aDFZlY3Rvci5wcm90byKYAwoSRXZ0QnVsbGV0SGl0Tm90",
+            "aWZ5EkIKDGZvcndhcmRfdHlwZRgCIAEoDjIsLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uRm9yd2FyZFR5cGUSGwoTVW5rMzMwMF9FTE5GREtO",
+            "R0hGUBgEIAEoDRI7CgpoaXRfbm9ybWFsGAkgASgLMicuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISGwoTVW5rMzMwMF9LQU5BSkJK",
+            "SENMRxgGIAEoDRI6CgloaXRfcG9pbnQYCCABKAsyJy5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchJLChFoaXRfY29sbGlkZXJfdHlw",
+            "ZRgKIAEoDjIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSGl0",
+            "Q29sbGlkZXJUeXBlEhEKCWVudGl0eV9pZBgOIAEoDRIUCgxmb3J3YXJkX3Bl",
+            "ZXIYAyABKA0SFQoNaGl0X2JveF9pbmRleBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HitColliderTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBulletHitNotify), global::Weedwacker.Shared.Network.Proto.EvtBulletHitNotify.Parser, new[]{ "SingleBulletId", "HitPoint", "HitNormal", "HitBoxIndex", "HitEntityId", "EntityId", "ForwardPeer", "ForwardType", "HitColliderType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBulletHitNotify), global::Weedwacker.Shared.Network.Proto.EvtBulletHitNotify.Parser, new[]{ "ForwardType", "Unk3300ELNFDKNGHFP", "HitNormal", "Unk3300KANAJBJHCLG", "HitPoint", "HitColliderType", "EntityId", "ForwardPeer", "HitBoxIndex" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,10 +47,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 348
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 348;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtBulletHitNotify : pb::IMessage<EvtBulletHitNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,15 +90,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtBulletHitNotify(EvtBulletHitNotify other) : this() {
-      singleBulletId_ = other.singleBulletId_;
-      hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
+      forwardType_ = other.forwardType_;
+      unk3300ELNFDKNGHFP_ = other.unk3300ELNFDKNGHFP_;
       hitNormal_ = other.hitNormal_ != null ? other.hitNormal_.Clone() : null;
-      hitBoxIndex_ = other.hitBoxIndex_;
-      hitEntityId_ = other.hitEntityId_;
+      unk3300KANAJBJHCLG_ = other.unk3300KANAJBJHCLG_;
+      hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
+      hitColliderType_ = other.hitColliderType_;
       entityId_ = other.entityId_;
       forwardPeer_ = other.forwardPeer_;
-      forwardType_ = other.forwardType_;
-      hitColliderType_ = other.hitColliderType_;
+      hitBoxIndex_ = other.hitBoxIndex_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,90 +106,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtBulletHitNotify Clone() {
       return new EvtBulletHitNotify(this);
-    }
-
-    /// <summary>Field number for the "single_bullet_id" field.</summary>
-    public const int SingleBulletIdFieldNumber = 8;
-    private uint singleBulletId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SingleBulletId {
-      get { return singleBulletId_; }
-      set {
-        singleBulletId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hit_point" field.</summary>
-    public const int HitPointFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.Vector hitPoint_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector HitPoint {
-      get { return hitPoint_; }
-      set {
-        hitPoint_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hit_normal" field.</summary>
-    public const int HitNormalFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.Vector hitNormal_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector HitNormal {
-      get { return hitNormal_; }
-      set {
-        hitNormal_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hit_box_index" field.</summary>
-    public const int HitBoxIndexFieldNumber = 9;
-    private int hitBoxIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int HitBoxIndex {
-      get { return hitBoxIndex_; }
-      set {
-        hitBoxIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hit_entity_id" field.</summary>
-    public const int HitEntityIdFieldNumber = 3;
-    private uint hitEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HitEntityId {
-      get { return hitEntityId_; }
-      set {
-        hitEntityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 5;
-    private uint entityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
-      set {
-        entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "forward_peer" field.</summary>
-    public const int ForwardPeerFieldNumber = 7;
-    private uint forwardPeer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ForwardPeer {
-      get { return forwardPeer_; }
-      set {
-        forwardPeer_ = value;
-      }
     }
 
     /// <summary>Field number for the "forward_type" field.</summary>
@@ -197,8 +120,56 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_ELNFDKNGHFP" field.</summary>
+    public const int Unk3300ELNFDKNGHFPFieldNumber = 4;
+    private uint unk3300ELNFDKNGHFP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300ELNFDKNGHFP {
+      get { return unk3300ELNFDKNGHFP_; }
+      set {
+        unk3300ELNFDKNGHFP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_normal" field.</summary>
+    public const int HitNormalFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.Vector hitNormal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector HitNormal {
+      get { return hitNormal_; }
+      set {
+        hitNormal_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KANAJBJHCLG" field.</summary>
+    public const int Unk3300KANAJBJHCLGFieldNumber = 6;
+    private uint unk3300KANAJBJHCLG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KANAJBJHCLG {
+      get { return unk3300KANAJBJHCLG_; }
+      set {
+        unk3300KANAJBJHCLG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_point" field.</summary>
+    public const int HitPointFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.Vector hitPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector HitPoint {
+      get { return hitPoint_; }
+      set {
+        hitPoint_ = value;
+      }
+    }
+
     /// <summary>Field number for the "hit_collider_type" field.</summary>
-    public const int HitColliderTypeFieldNumber = 6;
+    public const int HitColliderTypeFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.HitColliderType hitColliderType_ = global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -206,6 +177,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return hitColliderType_; }
       set {
         hitColliderType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 14;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_peer" field.</summary>
+    public const int ForwardPeerFieldNumber = 3;
+    private uint forwardPeer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ForwardPeer {
+      get { return forwardPeer_; }
+      set {
+        forwardPeer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_box_index" field.</summary>
+    public const int HitBoxIndexFieldNumber = 1;
+    private int hitBoxIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int HitBoxIndex {
+      get { return hitBoxIndex_; }
+      set {
+        hitBoxIndex_ = value;
       }
     }
 
@@ -224,15 +231,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SingleBulletId != other.SingleBulletId) return false;
-      if (!object.Equals(HitPoint, other.HitPoint)) return false;
+      if (ForwardType != other.ForwardType) return false;
+      if (Unk3300ELNFDKNGHFP != other.Unk3300ELNFDKNGHFP) return false;
       if (!object.Equals(HitNormal, other.HitNormal)) return false;
-      if (HitBoxIndex != other.HitBoxIndex) return false;
-      if (HitEntityId != other.HitEntityId) return false;
+      if (Unk3300KANAJBJHCLG != other.Unk3300KANAJBJHCLG) return false;
+      if (!object.Equals(HitPoint, other.HitPoint)) return false;
+      if (HitColliderType != other.HitColliderType) return false;
       if (EntityId != other.EntityId) return false;
       if (ForwardPeer != other.ForwardPeer) return false;
-      if (ForwardType != other.ForwardType) return false;
-      if (HitColliderType != other.HitColliderType) return false;
+      if (HitBoxIndex != other.HitBoxIndex) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -240,15 +247,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SingleBulletId != 0) hash ^= SingleBulletId.GetHashCode();
-      if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (Unk3300ELNFDKNGHFP != 0) hash ^= Unk3300ELNFDKNGHFP.GetHashCode();
       if (hitNormal_ != null) hash ^= HitNormal.GetHashCode();
-      if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
-      if (HitEntityId != 0) hash ^= HitEntityId.GetHashCode();
+      if (Unk3300KANAJBJHCLG != 0) hash ^= Unk3300KANAJBJHCLG.GetHashCode();
+      if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
+      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (ForwardPeer != 0) hash ^= ForwardPeer.GetHashCode();
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
-      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
+      if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -267,41 +274,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(HitBoxIndex);
+      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         output.WriteRawTag(16);
         output.WriteEnum((int) ForwardType);
       }
-      if (HitEntityId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(HitEntityId);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EntityId);
-      }
-      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) HitColliderType);
-      }
       if (ForwardPeer != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(ForwardPeer);
       }
-      if (SingleBulletId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SingleBulletId);
+      if (Unk3300ELNFDKNGHFP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300ELNFDKNGHFP);
       }
-      if (HitBoxIndex != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(HitBoxIndex);
-      }
-      if (hitNormal_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(HitNormal);
+      if (Unk3300KANAJBJHCLG != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300KANAJBJHCLG);
       }
       if (hitPoint_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(66);
         output.WriteMessage(HitPoint);
+      }
+      if (hitNormal_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(HitNormal);
+      }
+      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -313,41 +320,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(HitBoxIndex);
+      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         output.WriteRawTag(16);
         output.WriteEnum((int) ForwardType);
       }
-      if (HitEntityId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(HitEntityId);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EntityId);
-      }
-      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
-        output.WriteRawTag(48);
-        output.WriteEnum((int) HitColliderType);
-      }
       if (ForwardPeer != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(ForwardPeer);
       }
-      if (SingleBulletId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SingleBulletId);
+      if (Unk3300ELNFDKNGHFP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300ELNFDKNGHFP);
       }
-      if (HitBoxIndex != 0) {
-        output.WriteRawTag(72);
-        output.WriteInt32(HitBoxIndex);
-      }
-      if (hitNormal_ != null) {
-        output.WriteRawTag(90);
-        output.WriteMessage(HitNormal);
+      if (Unk3300KANAJBJHCLG != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300KANAJBJHCLG);
       }
       if (hitPoint_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(66);
         output.WriteMessage(HitPoint);
+      }
+      if (hitNormal_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(HitNormal);
+      }
+      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -359,20 +366,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SingleBulletId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SingleBulletId);
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
-      if (hitPoint_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
+      if (Unk3300ELNFDKNGHFP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ELNFDKNGHFP);
       }
       if (hitNormal_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitNormal);
       }
-      if (HitBoxIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
+      if (Unk3300KANAJBJHCLG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KANAJBJHCLG);
       }
-      if (HitEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEntityId);
+      if (hitPoint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
+      }
+      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
@@ -380,11 +390,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ForwardPeer != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForwardPeer);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
-      }
-      if (HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
+      if (HitBoxIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -398,14 +405,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SingleBulletId != 0) {
-        SingleBulletId = other.SingleBulletId;
+      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        ForwardType = other.ForwardType;
       }
-      if (other.hitPoint_ != null) {
-        if (hitPoint_ == null) {
-          HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        HitPoint.MergeFrom(other.HitPoint);
+      if (other.Unk3300ELNFDKNGHFP != 0) {
+        Unk3300ELNFDKNGHFP = other.Unk3300ELNFDKNGHFP;
       }
       if (other.hitNormal_ != null) {
         if (hitNormal_ == null) {
@@ -413,11 +417,17 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         HitNormal.MergeFrom(other.HitNormal);
       }
-      if (other.HitBoxIndex != 0) {
-        HitBoxIndex = other.HitBoxIndex;
+      if (other.Unk3300KANAJBJHCLG != 0) {
+        Unk3300KANAJBJHCLG = other.Unk3300KANAJBJHCLG;
       }
-      if (other.HitEntityId != 0) {
-        HitEntityId = other.HitEntityId;
+      if (other.hitPoint_ != null) {
+        if (hitPoint_ == null) {
+          HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        HitPoint.MergeFrom(other.HitPoint);
+      }
+      if (other.HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
+        HitColliderType = other.HitColliderType;
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
@@ -425,11 +435,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ForwardPeer != 0) {
         ForwardPeer = other.ForwardPeer;
       }
-      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        ForwardType = other.ForwardType;
-      }
-      if (other.HitColliderType != global::Weedwacker.Shared.Network.Proto.HitColliderType.Invalid) {
-        HitColliderType = other.HitColliderType;
+      if (other.HitBoxIndex != 0) {
+        HitBoxIndex = other.HitBoxIndex;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -446,46 +453,46 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
           case 16: {
             ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
           case 24: {
-            HitEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            HitColliderType = (global::Weedwacker.Shared.Network.Proto.HitColliderType) input.ReadEnum();
-            break;
-          }
-          case 56: {
             ForwardPeer = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SingleBulletId = input.ReadUInt32();
+          case 32: {
+            Unk3300ELNFDKNGHFP = input.ReadUInt32();
             break;
           }
-          case 72: {
-            HitBoxIndex = input.ReadInt32();
+          case 48: {
+            Unk3300KANAJBJHCLG = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 66: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+          case 74: {
             if (hitNormal_ == null) {
               HitNormal = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(HitNormal);
             break;
           }
-          case 122: {
-            if (hitPoint_ == null) {
-              HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(HitPoint);
+          case 80: {
+            HitColliderType = (global::Weedwacker.Shared.Network.Proto.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -503,46 +510,46 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
           case 16: {
             ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
           case 24: {
-            HitEntityId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            HitColliderType = (global::Weedwacker.Shared.Network.Proto.HitColliderType) input.ReadEnum();
-            break;
-          }
-          case 56: {
             ForwardPeer = input.ReadUInt32();
             break;
           }
-          case 64: {
-            SingleBulletId = input.ReadUInt32();
+          case 32: {
+            Unk3300ELNFDKNGHFP = input.ReadUInt32();
             break;
           }
-          case 72: {
-            HitBoxIndex = input.ReadInt32();
+          case 48: {
+            Unk3300KANAJBJHCLG = input.ReadUInt32();
             break;
           }
-          case 90: {
+          case 66: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+          case 74: {
             if (hitNormal_ == null) {
               HitNormal = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(HitNormal);
             break;
           }
-          case 122: {
-            if (hitPoint_ == null) {
-              HitPoint = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(HitPoint);
+          case 80: {
+            HitColliderType = (global::Weedwacker.Shared.Network.Proto.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            EntityId = input.ReadUInt32();
             break;
           }
         }

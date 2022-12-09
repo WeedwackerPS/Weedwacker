@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessPlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVDaGVzc1BsYXllckluZm8ucHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8u",
-            "cHJvdG8i1gEKD0NoZXNzUGxheWVySW5mbxILCgN1aWQYBSABKA0SGgoSZnJl",
-            "ZV9yZWZyZXNoX2xpbWl0GAogASgNEjYKGGNhbmRpZGF0ZV9jYXJkX2luZm9f",
-            "bGlzdBgDIAMoCzIULkNoZXNzTm9ybWFsQ2FyZEluZm8SFwoPYnVpbGRpbmdf",
-            "cG9pbnRzGAwgASgNEhcKD2NhbmRpZGF0ZV9pbmRleBgGIAEoDRIaChJmcmVl",
-            "X3JlZnJlc2hfY291bnQYDSABKA0SFAoMcmVmcmVzaF9jb3N0GAcgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVDaGVzc1BsYXllckluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8ucHJvdG8igwIKD0No",
+            "ZXNzUGxheWVySW5mbxJWChhjYW5kaWRhdGVfY2FyZF9pbmZvX2xpc3QYASAD",
+            "KAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoZXNzTm9y",
+            "bWFsQ2FyZEluZm8SCwoDdWlkGAUgASgNEhsKE1VuazMzMDBfQU9DSkhPS0NE",
+            "RE0YAiABKA0SGwoTVW5rMzMwMF9HUE5ETkNDTEhLRRgKIAEoDRIXCg9idWls",
+            "ZGluZ19wb2ludHMYCCABKA0SGwoTVW5rMzMwMF9QUEZCR0lES0NEShgMIAEo",
+            "DRIbChNVbmszMzAwX1BQRlBFQUdCSExQGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo), global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo.Parser, new[]{ "Uid", "FreeRefreshLimit", "CandidateCardInfoList", "BuildingPoints", "CandidateIndex", "FreeRefreshCount", "RefreshCost" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo), global::Weedwacker.Shared.Network.Proto.ChessPlayerInfo.Parser, new[]{ "CandidateCardInfoList", "Uid", "Unk3300AOCJHOKCDDM", "Unk3300GPNDNCCLHKE", "BuildingPoints", "Unk3300PPFBGIDKCDJ", "Unk3300PPFPEAGBHLP" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,13 +76,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessPlayerInfo(ChessPlayerInfo other) : this() {
-      uid_ = other.uid_;
-      freeRefreshLimit_ = other.freeRefreshLimit_;
       candidateCardInfoList_ = other.candidateCardInfoList_.Clone();
+      uid_ = other.uid_;
+      unk3300AOCJHOKCDDM_ = other.unk3300AOCJHOKCDDM_;
+      unk3300GPNDNCCLHKE_ = other.unk3300GPNDNCCLHKE_;
       buildingPoints_ = other.buildingPoints_;
-      candidateIndex_ = other.candidateIndex_;
-      freeRefreshCount_ = other.freeRefreshCount_;
-      refreshCost_ = other.refreshCost_;
+      unk3300PPFBGIDKCDJ_ = other.unk3300PPFBGIDKCDJ_;
+      unk3300PPFPEAGBHLP_ = other.unk3300PPFPEAGBHLP_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,6 +90,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessPlayerInfo Clone() {
       return new ChessPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "candidate_card_info_list" field.</summary>
+    public const int CandidateCardInfoListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> CandidateCardInfoList {
+      get { return candidateCardInfoList_; }
     }
 
     /// <summary>Field number for the "uid" field.</summary>
@@ -103,31 +115,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "free_refresh_limit" field.</summary>
-    public const int FreeRefreshLimitFieldNumber = 10;
-    private uint freeRefreshLimit_;
+    /// <summary>Field number for the "Unk3300_AOCJHOKCDDM" field.</summary>
+    public const int Unk3300AOCJHOKCDDMFieldNumber = 2;
+    private uint unk3300AOCJHOKCDDM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FreeRefreshLimit {
-      get { return freeRefreshLimit_; }
+    public uint Unk3300AOCJHOKCDDM {
+      get { return unk3300AOCJHOKCDDM_; }
       set {
-        freeRefreshLimit_ = value;
+        unk3300AOCJHOKCDDM_ = value;
       }
     }
 
-    /// <summary>Field number for the "candidate_card_info_list" field.</summary>
-    public const int CandidateCardInfoListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo>();
+    /// <summary>Field number for the "Unk3300_GPNDNCCLHKE" field.</summary>
+    public const int Unk3300GPNDNCCLHKEFieldNumber = 10;
+    private uint unk3300GPNDNCCLHKE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo> CandidateCardInfoList {
-      get { return candidateCardInfoList_; }
+    public uint Unk3300GPNDNCCLHKE {
+      get { return unk3300GPNDNCCLHKE_; }
+      set {
+        unk3300GPNDNCCLHKE_ = value;
+      }
     }
 
     /// <summary>Field number for the "building_points" field.</summary>
-    public const int BuildingPointsFieldNumber = 12;
+    public const int BuildingPointsFieldNumber = 8;
     private uint buildingPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,39 +151,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "candidate_index" field.</summary>
-    public const int CandidateIndexFieldNumber = 6;
-    private uint candidateIndex_;
+    /// <summary>Field number for the "Unk3300_PPFBGIDKCDJ" field.</summary>
+    public const int Unk3300PPFBGIDKCDJFieldNumber = 12;
+    private uint unk3300PPFBGIDKCDJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CandidateIndex {
-      get { return candidateIndex_; }
+    public uint Unk3300PPFBGIDKCDJ {
+      get { return unk3300PPFBGIDKCDJ_; }
       set {
-        candidateIndex_ = value;
+        unk3300PPFBGIDKCDJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "free_refresh_count" field.</summary>
-    public const int FreeRefreshCountFieldNumber = 13;
-    private uint freeRefreshCount_;
+    /// <summary>Field number for the "Unk3300_PPFPEAGBHLP" field.</summary>
+    public const int Unk3300PPFPEAGBHLPFieldNumber = 13;
+    private uint unk3300PPFPEAGBHLP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FreeRefreshCount {
-      get { return freeRefreshCount_; }
+    public uint Unk3300PPFPEAGBHLP {
+      get { return unk3300PPFPEAGBHLP_; }
       set {
-        freeRefreshCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "refresh_cost" field.</summary>
-    public const int RefreshCostFieldNumber = 7;
-    private uint refreshCost_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RefreshCost {
-      get { return refreshCost_; }
-      set {
-        refreshCost_ = value;
+        unk3300PPFPEAGBHLP_ = value;
       }
     }
 
@@ -189,13 +190,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
-      if (FreeRefreshLimit != other.FreeRefreshLimit) return false;
       if(!candidateCardInfoList_.Equals(other.candidateCardInfoList_)) return false;
+      if (Uid != other.Uid) return false;
+      if (Unk3300AOCJHOKCDDM != other.Unk3300AOCJHOKCDDM) return false;
+      if (Unk3300GPNDNCCLHKE != other.Unk3300GPNDNCCLHKE) return false;
       if (BuildingPoints != other.BuildingPoints) return false;
-      if (CandidateIndex != other.CandidateIndex) return false;
-      if (FreeRefreshCount != other.FreeRefreshCount) return false;
-      if (RefreshCost != other.RefreshCost) return false;
+      if (Unk3300PPFBGIDKCDJ != other.Unk3300PPFBGIDKCDJ) return false;
+      if (Unk3300PPFPEAGBHLP != other.Unk3300PPFPEAGBHLP) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -203,13 +204,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (FreeRefreshLimit != 0) hash ^= FreeRefreshLimit.GetHashCode();
       hash ^= candidateCardInfoList_.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Unk3300AOCJHOKCDDM != 0) hash ^= Unk3300AOCJHOKCDDM.GetHashCode();
+      if (Unk3300GPNDNCCLHKE != 0) hash ^= Unk3300GPNDNCCLHKE.GetHashCode();
       if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
-      if (CandidateIndex != 0) hash ^= CandidateIndex.GetHashCode();
-      if (FreeRefreshCount != 0) hash ^= FreeRefreshCount.GetHashCode();
-      if (RefreshCost != 0) hash ^= RefreshCost.GetHashCode();
+      if (Unk3300PPFBGIDKCDJ != 0) hash ^= Unk3300PPFBGIDKCDJ.GetHashCode();
+      if (Unk3300PPFPEAGBHLP != 0) hash ^= Unk3300PPFPEAGBHLP.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,29 +230,29 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       candidateCardInfoList_.WriteTo(output, _repeated_candidateCardInfoList_codec);
+      if (Unk3300AOCJHOKCDDM != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300AOCJHOKCDDM);
+      }
       if (Uid != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(Uid);
       }
-      if (CandidateIndex != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CandidateIndex);
-      }
-      if (RefreshCost != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(RefreshCost);
-      }
-      if (FreeRefreshLimit != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FreeRefreshLimit);
-      }
       if (BuildingPoints != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(BuildingPoints);
       }
-      if (FreeRefreshCount != 0) {
+      if (Unk3300GPNDNCCLHKE != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300GPNDNCCLHKE);
+      }
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PPFBGIDKCDJ);
+      }
+      if (Unk3300PPFPEAGBHLP != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(FreeRefreshCount);
+        output.WriteUInt32(Unk3300PPFPEAGBHLP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -264,29 +265,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       candidateCardInfoList_.WriteTo(ref output, _repeated_candidateCardInfoList_codec);
+      if (Unk3300AOCJHOKCDDM != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300AOCJHOKCDDM);
+      }
       if (Uid != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(Uid);
       }
-      if (CandidateIndex != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CandidateIndex);
-      }
-      if (RefreshCost != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(RefreshCost);
-      }
-      if (FreeRefreshLimit != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(FreeRefreshLimit);
-      }
       if (BuildingPoints != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(BuildingPoints);
       }
-      if (FreeRefreshCount != 0) {
+      if (Unk3300GPNDNCCLHKE != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300GPNDNCCLHKE);
+      }
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PPFBGIDKCDJ);
+      }
+      if (Unk3300PPFPEAGBHLP != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(FreeRefreshCount);
+        output.WriteUInt32(Unk3300PPFPEAGBHLP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -298,24 +299,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      if (FreeRefreshLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshLimit);
+      if (Unk3300AOCJHOKCDDM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AOCJHOKCDDM);
       }
-      size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
+      if (Unk3300GPNDNCCLHKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GPNDNCCLHKE);
+      }
       if (BuildingPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
       }
-      if (CandidateIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CandidateIndex);
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFBGIDKCDJ);
       }
-      if (FreeRefreshCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshCount);
-      }
-      if (RefreshCost != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshCost);
+      if (Unk3300PPFPEAGBHLP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFPEAGBHLP);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -329,24 +330,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      candidateCardInfoList_.Add(other.candidateCardInfoList_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      if (other.FreeRefreshLimit != 0) {
-        FreeRefreshLimit = other.FreeRefreshLimit;
+      if (other.Unk3300AOCJHOKCDDM != 0) {
+        Unk3300AOCJHOKCDDM = other.Unk3300AOCJHOKCDDM;
       }
-      candidateCardInfoList_.Add(other.candidateCardInfoList_);
+      if (other.Unk3300GPNDNCCLHKE != 0) {
+        Unk3300GPNDNCCLHKE = other.Unk3300GPNDNCCLHKE;
+      }
       if (other.BuildingPoints != 0) {
         BuildingPoints = other.BuildingPoints;
       }
-      if (other.CandidateIndex != 0) {
-        CandidateIndex = other.CandidateIndex;
+      if (other.Unk3300PPFBGIDKCDJ != 0) {
+        Unk3300PPFBGIDKCDJ = other.Unk3300PPFBGIDKCDJ;
       }
-      if (other.FreeRefreshCount != 0) {
-        FreeRefreshCount = other.FreeRefreshCount;
-      }
-      if (other.RefreshCost != 0) {
-        RefreshCost = other.RefreshCost;
+      if (other.Unk3300PPFPEAGBHLP != 0) {
+        Unk3300PPFPEAGBHLP = other.Unk3300PPFPEAGBHLP;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -363,32 +364,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 10: {
             candidateCardInfoList_.AddEntriesFrom(input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 16: {
+            Unk3300AOCJHOKCDDM = input.ReadUInt32();
             break;
           }
           case 40: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CandidateIndex = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            RefreshCost = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            FreeRefreshLimit = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 64: {
             BuildingPoints = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Unk3300GPNDNCCLHKE = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PPFBGIDKCDJ = input.ReadUInt32();
+            break;
+          }
           case 104: {
-            FreeRefreshCount = input.ReadUInt32();
+            Unk3300PPFPEAGBHLP = input.ReadUInt32();
             break;
           }
         }
@@ -406,32 +407,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 10: {
             candidateCardInfoList_.AddEntriesFrom(ref input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 16: {
+            Unk3300AOCJHOKCDDM = input.ReadUInt32();
             break;
           }
           case 40: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 48: {
-            CandidateIndex = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            RefreshCost = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            FreeRefreshLimit = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 64: {
             BuildingPoints = input.ReadUInt32();
             break;
           }
+          case 80: {
+            Unk3300GPNDNCCLHKE = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PPFBGIDKCDJ = input.ReadUInt32();
+            break;
+          }
           case 104: {
-            FreeRefreshCount = input.ReadUInt32();
+            Unk3300PPFPEAGBHLP = input.ReadUInt32();
             break;
           }
         }

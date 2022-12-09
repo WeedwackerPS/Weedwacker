@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerStoreNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdQbGF5ZXJTdG9yZU5vdGlmeS5wcm90bxoKSXRlbS5wcm90bxoPU3RvcmVU",
-            "eXBlLnByb3RvImMKEVBsYXllclN0b3JlTm90aWZ5EhgKCWl0ZW1fbGlzdBgP",
-            "IAMoCzIFLkl0ZW0SFAoMd2VpZ2h0X2xpbWl0GAggASgNEh4KCnN0b3JlX3R5",
-            "cGUYAiABKA4yCi5TdG9yZVR5cGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdQbGF5ZXJTdG9yZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoKSXRlbS5wcm90bxoPU3RvcmVUeXBlLnByb3RvIqMB",
+            "ChFQbGF5ZXJTdG9yZU5vdGlmeRI+CgpzdG9yZV90eXBlGAEgASgOMiouV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TdG9yZVR5cGUSFAoMd2Vp",
+            "Z2h0X2xpbWl0GA4gASgNEjgKCWl0ZW1fbGlzdBgKIAMoCzIlLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StoreTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerStoreNotify), global::Weedwacker.Shared.Network.Proto.PlayerStoreNotify.Parser, new[]{ "ItemList", "WeightLimit", "StoreType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerStoreNotify), global::Weedwacker.Shared.Network.Proto.PlayerStoreNotify.Parser, new[]{ "StoreType", "WeightLimit", "ItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 672
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 679;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerStoreNotify : pb::IMessage<PlayerStoreNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerStoreNotify(PlayerStoreNotify other) : this() {
-      itemList_ = other.itemList_.Clone();
-      weightLimit_ = other.weightLimit_;
       storeType_ = other.storeType_;
+      weightLimit_ = other.weightLimit_;
+      itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,19 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerStoreNotify(this);
     }
 
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 15;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Item> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.Item.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item>();
+    /// <summary>Field number for the "store_type" field.</summary>
+    public const int StoreTypeFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.StoreType storeType_ = global::Weedwacker.Shared.Network.Proto.StoreType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item> ItemList {
-      get { return itemList_; }
+    public global::Weedwacker.Shared.Network.Proto.StoreType StoreType {
+      get { return storeType_; }
+      set {
+        storeType_ = value;
+      }
     }
 
     /// <summary>Field number for the "weight_limit" field.</summary>
-    public const int WeightLimitFieldNumber = 8;
+    public const int WeightLimitFieldNumber = 14;
     private uint weightLimit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,16 +119,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "store_type" field.</summary>
-    public const int StoreTypeFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.StoreType storeType_ = global::Weedwacker.Shared.Network.Proto.StoreType.None;
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Item> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.Item.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.StoreType StoreType {
-      get { return storeType_; }
-      set {
-        storeType_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Item> ItemList {
+      get { return itemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!itemList_.Equals(other.itemList_)) return false;
-      if (WeightLimit != other.WeightLimit) return false;
       if (StoreType != other.StoreType) return false;
+      if (WeightLimit != other.WeightLimit) return false;
+      if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= itemList_.GetHashCode();
-      if (WeightLimit != 0) hash ^= WeightLimit.GetHashCode();
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) hash ^= StoreType.GetHashCode();
+      if (WeightLimit != 0) hash ^= WeightLimit.GetHashCode();
+      hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,14 +177,14 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteEnum((int) StoreType);
       }
+      itemList_.WriteTo(output, _repeated_itemList_codec);
       if (WeightLimit != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(WeightLimit);
       }
-      itemList_.WriteTo(output, _repeated_itemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,14 +196,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteEnum((int) StoreType);
       }
+      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (WeightLimit != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(WeightLimit);
       }
-      itemList_.WriteTo(ref output, _repeated_itemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
-      if (WeightLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeightLimit);
-      }
       if (StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
       }
+      if (WeightLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeightLimit);
+      }
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -228,13 +233,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      itemList_.Add(other.itemList_);
-      if (other.WeightLimit != 0) {
-        WeightLimit = other.WeightLimit;
-      }
       if (other.StoreType != global::Weedwacker.Shared.Network.Proto.StoreType.None) {
         StoreType = other.StoreType;
       }
+      if (other.WeightLimit != 0) {
+        WeightLimit = other.WeightLimit;
+      }
+      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -250,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
             break;
           }
-          case 64: {
-            WeightLimit = input.ReadUInt32();
+          case 82: {
+            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
             break;
           }
-          case 122: {
-            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
+          case 112: {
+            WeightLimit = input.ReadUInt32();
             break;
           }
         }
@@ -277,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             StoreType = (global::Weedwacker.Shared.Network.Proto.StoreType) input.ReadEnum();
             break;
           }
-          case 64: {
-            WeightLimit = input.ReadUInt32();
+          case 82: {
+            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
             break;
           }
-          case 122: {
-            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
+          case 112: {
+            WeightLimit = input.ReadUInt32();
             break;
           }
         }

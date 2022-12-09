@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static RegionSearchReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJSZWdpb25TZWFyY2gucHJvdG8aF1JlZ2lvblNlYXJjaFN0YXRlLnByb3Rv",
-            "InEKDFJlZ2lvblNlYXJjaBISCgppc19lbnRlcmVkGA0gASgIEhAKCHByb2dy",
-            "ZXNzGAUgASgNEiEKBXN0YXRlGAIgASgOMhIuUmVnaW9uU2VhcmNoU3RhdGUS",
-            "GAoQcmVnaW9uX3NlYXJjaF9pZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJSZWdpb25TZWFyY2gucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aF1JlZ2lvblNlYXJjaFN0YXRlLnByb3RvIpEBCgxSZWdpb25T",
+            "ZWFyY2gSQQoFc3RhdGUYAiABKA4yMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlJlZ2lvblNlYXJjaFN0YXRlEhIKCmlzX2VudGVyZWQYBiAB",
+            "KAgSEAoIcHJvZ3Jlc3MYBSABKA0SGAoQcmVnaW9uX3NlYXJjaF9pZBgBIAEo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RegionSearchStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionSearch), global::Weedwacker.Shared.Network.Proto.RegionSearch.Parser, new[]{ "IsEntered", "Progress", "State", "RegionSearchId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionSearch), global::Weedwacker.Shared.Network.Proto.RegionSearch.Parser, new[]{ "State", "IsEntered", "Progress", "RegionSearchId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionSearch(RegionSearch other) : this() {
+      state_ = other.state_;
       isEntered_ = other.isEntered_;
       progress_ = other.progress_;
-      state_ = other.state_;
       regionSearchId_ = other.regionSearchId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,8 +87,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RegionSearch(this);
     }
 
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.RegionSearchState state_ = global::Weedwacker.Shared.Network.Proto.RegionSearchState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.RegionSearchState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_entered" field.</summary>
-    public const int IsEnteredFieldNumber = 13;
+    public const int IsEnteredFieldNumber = 6;
     private bool isEntered_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,20 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.RegionSearchState state_ = global::Weedwacker.Shared.Network.Proto.RegionSearchState.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.RegionSearchState State {
-      get { return state_; }
-      set {
-        state_ = value;
-      }
-    }
-
     /// <summary>Field number for the "region_search_id" field.</summary>
-    public const int RegionSearchIdFieldNumber = 8;
+    public const int RegionSearchIdFieldNumber = 1;
     private uint regionSearchId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (State != other.State) return false;
       if (IsEntered != other.IsEntered) return false;
       if (Progress != other.Progress) return false;
-      if (State != other.State) return false;
       if (RegionSearchId != other.RegionSearchId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -160,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) hash ^= State.GetHashCode();
       if (IsEntered != false) hash ^= IsEntered.GetHashCode();
       if (Progress != 0) hash ^= Progress.GetHashCode();
-      if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) hash ^= State.GetHashCode();
       if (RegionSearchId != 0) hash ^= RegionSearchId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -182,6 +183,10 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (RegionSearchId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RegionSearchId);
+      }
       if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
@@ -190,12 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(40);
         output.WriteUInt32(Progress);
       }
-      if (RegionSearchId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(RegionSearchId);
-      }
       if (IsEntered != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteBool(IsEntered);
       }
       if (_unknownFields != null) {
@@ -208,6 +209,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RegionSearchId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RegionSearchId);
+      }
       if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
@@ -216,12 +221,8 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(40);
         output.WriteUInt32(Progress);
       }
-      if (RegionSearchId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(RegionSearchId);
-      }
       if (IsEntered != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteBool(IsEntered);
       }
       if (_unknownFields != null) {
@@ -234,14 +235,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
       if (IsEntered != false) {
         size += 1 + 1;
       }
       if (Progress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-      }
-      if (State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (RegionSearchId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionSearchId);
@@ -258,14 +259,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
+        State = other.State;
+      }
       if (other.IsEntered != false) {
         IsEntered = other.IsEntered;
       }
       if (other.Progress != 0) {
         Progress = other.Progress;
-      }
-      if (other.State != global::Weedwacker.Shared.Network.Proto.RegionSearchState.None) {
-        State = other.State;
       }
       if (other.RegionSearchId != 0) {
         RegionSearchId = other.RegionSearchId;
@@ -285,6 +286,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            RegionSearchId = input.ReadUInt32();
+            break;
+          }
           case 16: {
             State = (global::Weedwacker.Shared.Network.Proto.RegionSearchState) input.ReadEnum();
             break;
@@ -293,11 +298,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Progress = input.ReadUInt32();
             break;
           }
-          case 64: {
-            RegionSearchId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 48: {
             IsEntered = input.ReadBool();
             break;
           }
@@ -316,6 +317,10 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            RegionSearchId = input.ReadUInt32();
+            break;
+          }
           case 16: {
             State = (global::Weedwacker.Shared.Network.Proto.RegionSearchState) input.ReadEnum();
             break;
@@ -324,11 +329,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Progress = input.ReadUInt32();
             break;
           }
-          case 64: {
-            RegionSearchId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 48: {
             IsEntered = input.ReadBool();
             break;
           }

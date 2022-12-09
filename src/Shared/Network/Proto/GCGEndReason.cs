@@ -24,12 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGEndReasonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHQ0dFbmRSZWFzb24ucHJvdG8qoQEKDEdDR0VuZFJlYXNvbhIaChZHQ0df",
-            "RU5EX1JFQVNPTl9ERUZBVUxUEAASFgoSR0NHX0VORF9SRUFTT05fRElFEAES",
-            "HAoYR0NHX0VORF9SRUFTT05fU1VSUkVOREVSEAISHwobR0NHX0VORF9SRUFT",
-            "T05fRElTQ09OTkVDVEVEEAMSHgoaR0NHX0VORF9SRUFTT05fUk9VTkRfTElN",
-            "SVQQBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChJHQ0dFbmRSZWFzb24ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8q1gIKDEdDR0VuZFJlYXNvbhIaChZHQ0dfRU5EX1JFQVNPTl9E",
+            "RUZBVUxUEAASFgoSR0NHX0VORF9SRUFTT05fRElFEAESHAoYR0NHX0VORF9S",
+            "RUFTT05fU1VSUkVOREVSEAISHwobR0NHX0VORF9SRUFTT05fRElTQ09OTkVD",
+            "VEVEEAMSHgoaR0NHX0VORF9SRUFTT05fUk9VTkRfTElNSVQQBBIVChFHQ0df",
+            "RU5EX1JFQVNPTl9HTRAFEhwKGEdDR19FTkRfUkVBU09OX05PX1BMQVlFUhAG",
+            "EhoKFkdDR19FTkRfUkVBU09OX0dJVkVfVVAQBxIfChtHQ0dfRU5EX1JFQVNP",
+            "Tl9JTklUX1RJTUVPVVQQCBIZChVHQ0dfRU5EX1JFQVNPTl9FRkZFQ1QQCRIm",
+            "CiJHQ0dfRU5EX1JFQVNPTl9VbmszMzAwX0lOQVBIS0FLS0hGEApiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.GCGEndReason), }, null, null));
@@ -44,6 +48,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [pbr::OriginalName("GCG_END_REASON_SURRENDER")] Surrender = 2,
     [pbr::OriginalName("GCG_END_REASON_DISCONNECTED")] Disconnected = 3,
     [pbr::OriginalName("GCG_END_REASON_ROUND_LIMIT")] RoundLimit = 4,
+    [pbr::OriginalName("GCG_END_REASON_GM")] Gm = 5,
+    [pbr::OriginalName("GCG_END_REASON_NO_PLAYER")] NoPlayer = 6,
+    [pbr::OriginalName("GCG_END_REASON_GIVE_UP")] GiveUp = 7,
+    [pbr::OriginalName("GCG_END_REASON_INIT_TIMEOUT")] InitTimeout = 8,
+    [pbr::OriginalName("GCG_END_REASON_EFFECT")] Effect = 9,
+    [pbr::OriginalName("GCG_END_REASON_Unk3300_INAPHKAKKHF")] Unk3300Inaphkakkhf = 10,
   }
 
   #endregion
