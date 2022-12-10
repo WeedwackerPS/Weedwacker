@@ -19,19 +19,19 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly uint LeftWeaponEntityId;
         public int PoseId;
 
-        public static Task<MonsterEntity?> CreateAsync(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster spawnInfo, uint blockId, uint groupId)
+        public static Task<MonsterEntity> CreateAsync(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster spawnInfo, uint blockId, uint groupId)
         {
             MonsterEntity ret = new MonsterEntity(scene, monsterData, level, spawnInfo, blockId, groupId);
             return ret.InitializeAsync();
         }
 
-        public static Task<MonsterEntity?> CreateAsync(Scene scene, Player.Player targetPlayer, MonsterData monsterData, int level, Vector3 pos = default, Vector3 rot = default)
+        public static Task<MonsterEntity> CreateAsync(Scene scene, Player.Player targetPlayer, MonsterData monsterData, int level, Vector3 pos = default, Vector3 rot = default)
         {
             var ret = new MonsterEntity(scene, targetPlayer, monsterData, level, pos, rot);
             return ret.InitializeAsync();
         }
 
-        private async Task<MonsterEntity?> InitializeAsync()
+        private async Task<MonsterEntity> InitializeAsync()
         {
             AbilityManager = new MonsterAbilityManager(this);
             await RecalcStatsAsync();

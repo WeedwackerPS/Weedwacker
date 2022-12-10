@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Packet.Send
 
             PlayerWorldSceneInfo sceneInfo = new()
             {
-                SceneId = (uint)scene.GetId(),
+                SceneId = (uint)scene.SceneId,
                 IsLocked = false, //TODO
             };
             sceneInfo.SceneTagIdList.AddRange(scene.SceneTags);

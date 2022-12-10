@@ -97,7 +97,7 @@ namespace Weedwacker.GameServer.Systems.World
 
             // Add to scene
             Scene scene = await GetSceneById(player.SceneId);
-            await TransferPlayerToSceneAsync(player, reason, type, scene.GetId(), player.Position, useDefaultBornPosition: useDefaultBornPosition);
+            await TransferPlayerToSceneAsync(player, reason, type, scene.SceneId, player.Position, useDefaultBornPosition: useDefaultBornPosition);
 
             // Info packet for other players
             if (Players.Count > 1)
@@ -154,14 +154,14 @@ namespace Weedwacker.GameServer.Systems.World
             }
 
             Scene? oldScene = player.Scene;
-            int oldSceneId = oldScene == null ? 0 : oldScene.GetId();
+            int oldSceneId = oldScene == null ? 0 : oldScene.SceneId;
             Scene newScene = await GetSceneById(sceneId);
 
             if (oldScene != null)
             {
-                newScene.PrevScene = oldScene.GetId();
+                newScene.PrevScene = oldScene.SceneId;
                 // Don't deregister scenes if the player is going to tp back into them
-                await oldScene.RemovePlayerAsync(player, oldScene.GetId() == sceneId);
+                await oldScene.RemovePlayerAsync(player, oldScene.SceneId == sceneId);
             }
 
             if (useDefaultBornPosition)

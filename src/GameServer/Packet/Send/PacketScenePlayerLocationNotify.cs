@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Packet.Send
         {
             ScenePlayerLocationNotify proto = new ScenePlayerLocationNotify()
             {
-                SceneId = (uint)scene.GetId(),
+                SceneId = (uint)scene.SceneId,
                 //VehicleLocList = , //TODO
             };
 

@@ -20,8 +20,8 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly World World;
         public readonly SceneData SceneData;
+        public int SceneId => SceneData.id;
         public readonly List<Player.Player> Players = new();
-        private HashSet<SceneBlock> LoadedBlocks = new();
         private HashSet<SceneGroup> LoadedGroups = new();
         public readonly ConcurrentDictionary<uint, BaseEntity> Entities = new(); // entityId
         public readonly ConcurrentDictionary<uint, ScriptEntity> ScriptEntities = new(); // entityId
@@ -37,7 +37,7 @@ namespace Weedwacker.GameServer.Systems.World
         public Dictionary<Tuple<int, int>, int> ActiveAreaWeathers; // <areaID1, areaID2> weatherId>
         public HashSet<uint> SceneTags; // TODO apply based on host's data
         private ConcurrentBag<SceneEntity> BornNotifyQueue = new();
-        private static Dictionary<SceneBlock, PointOctree<SceneGroup>> GroupTree;
+        private static Dictionary<int, Dictionary<SceneBlock, PointOctree<SceneGroup>>> GroupTrees;
 
         public static Task<Scene> CreateAsync(World world, SceneData sceneData)
         {
@@ -56,16 +56,26 @@ namespace Weedwacker.GameServer.Systems.World
             PrevScene = 3;
 
             //TODO
-            SceneTags = new HashSet<uint>(GameData.SceneTagDataMap.Where(w => w.Value.sceneId == GetId()).Select(s => (uint)s.Key));
+            SceneTags = new HashSet<uint>(GameData.SceneTagDataMap.Where(w => w.Value.sceneId == SceneId).Select(s => (uint)s.Key));
 
             //ScriptManager = GameData.SceneScripts[GetId()];
         }
 
         private async Task<Scene> Init()
         {
-            if (GroupTree != null) return this;
-            GroupTree = new();
-            SceneInfo info = await GameData.GetSceneScriptsAsync(GetId());
+            if (GroupTrees != null)
+            {
+                if (GroupTrees[SceneId] != null)
+                {
+                    return this;
+                }
+            }
+            else
+            {
+                GroupTrees = new();
+            }
+            GroupTrees[SceneId] = new();
+            SceneInfo info = await GameData.GetSceneScriptsAsync(SceneId);
             foreach (var block in info.BlocksInfo.Values)
             {
                 PointOctree<SceneGroup> tree = new PointOctree<SceneGroup>(5000, new Vector3(0,0,0), 1);
@@ -73,19 +83,14 @@ namespace Weedwacker.GameServer.Systems.World
                 {
                     tree.Add(block.GroupsInfo[group.id], group.pos);
                 }
-                GroupTree[block] = tree;
+                GroupTrees[SceneId][block] = tree;
             }
             return this;
         }
 
-        public int GetId()
-        {
-            return SceneData.id;
-        }
-
         private async Task CheckSceneBlockRegions()
         {
-            SceneInfo info = await GameData.GetSceneScriptsAsync(GetId());
+            SceneInfo info = await GameData.GetSceneScriptsAsync(SceneId);
             foreach (var player in Players)
             {
                 foreach(var block_rect in info.block_rects)
@@ -93,15 +98,22 @@ namespace Weedwacker.GameServer.Systems.World
                     if(player.Position.X > block_rect.Value.min.X && player.Position.X < block_rect.Value.max.X && player.Position.Z > block_rect.Value.min.Z && player.Position.Z < block_rect.Value.max.Z)
                     {
                         var block = info.BlocksInfo[info.blocks[block_rect.Key]];
-                        LoadedBlocks.Add(block);
 
                         // Load nearby groups
-                        var nearbyGroups = GroupTree[block].GetNearby(player.Position, GameServer.Configuration.Server.LoadEntitiesForPlayerRange);
+                        var nearbyGroups = GroupTrees[SceneId][block].GetNearby(player.Position, GameServer.Configuration.Server.LoadEntitiesForPlayerRange);
                         var groupsToLoad = nearbyGroups.Intersect(block.StaticGroups).Except(LoadedGroups);
                         if (groupsToLoad.Any())
+                        {
                             groupsToLoad.AsParallel().ForAll(w => w.OnInitAsync(this));
+                            LoadedGroups = LoadedGroups.Union(groupsToLoad).ToHashSet();
+                        }
 
-                        LoadedGroups.UnionWith(groupsToLoad);
+                        var toUnload = LoadedGroups.Except(nearbyGroups);
+                        if (toUnload.Any())
+                        {
+                            toUnload.AsParallel().ForAll(w => w.OnUnload(this));
+                            LoadedGroups = LoadedGroups.Except(toUnload).ToHashSet();
+                        }
                     }
                 }
             }
@@ -265,12 +277,8 @@ namespace Weedwacker.GameServer.Systems.World
         {
             if (entity == null) return;
             await AddEntityDirectly(entity);
-            if (entity is AvatarEntity)
-            {
-                await BroadcastPacketAsync(new PacketSceneEntityAppearNotify(entity));
-            }
-            else
-                BornNotifyQueue.Add(entity);
+            await BroadcastPacketAsync(new PacketSceneEntityAppearNotify(entity));
+
         }
 
         public async Task AddEntityToSingleClient(Player.Player player, SceneEntity entity)
@@ -280,7 +288,7 @@ namespace Weedwacker.GameServer.Systems.World
 
         }
 
-        public async Task AddEntities(IEnumerable<SceneEntity> entities, Shared.Network.Proto.VisionType visionType = Shared.Network.Proto.VisionType.Born)
+        public async Task AddEntitiesAsync(IEnumerable<SceneEntity> entities, Shared.Network.Proto.VisionType visionType = Shared.Network.Proto.VisionType.Born)
         {
             if (entities == null || !entities.Any())
             {

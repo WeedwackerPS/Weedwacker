@@ -32,17 +32,28 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             {
                 Suite init_suite = suites[init_config.suite];
                 if (!init_suite.monsters.Any()) return;
-                init_suite.monsters.AsParallel().ForAll(async monsterIndex =>
+                var monsterEntities = new List<MonsterEntity>();
+                foreach (uint monsterIndex in init_suite.monsters)
                 {
                     Monster monster = monsters[monsterIndex];
-                    await scene.AddEntityAsync(await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[(int)monster.monster_id], (int)monster.level, monster, BlockId, group_id));
-                });
+                    var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[(int)monster.monster_id], (int)monster.level, monster, BlockId, group_id);
+                    monsterEntities.Add(entity);
+                }
+                await scene.AddEntitiesAsync(monsterEntities);
+                Logger.DebugWriteLine($"Loaded SceneGroup{group_id} init monsters");
             }
             catch(Exception e)
             {
                 Logger.WriteErrorLine("error loading scene group", e);
                 Logger.WriteErrorLine(e.StackTrace);
             }
+        }
+
+        internal async void OnUnload(World.Scene scene)
+        {
+            IEnumerable<ScriptEntity> toUnload = scene.ScriptEntities.Values.Where(w => w.GroupId == group_id);
+            await scene.RemoveEntitiesAsync(toUnload, Shared.Network.Proto.VisionType.Remove);
+            Logger.DebugWriteLine($"Unloaded SceneGroup{group_id} monsters");
         }
 
         public class Suite
