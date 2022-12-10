@@ -18,11 +18,7 @@ namespace Weedwacker.GameServer.Packet.Recv
         {
             SetUpAvatarTeamReq req = SetUpAvatarTeamReq.Parser.ParseFrom(payload);
 
-
             await session.Player.TeamManager.SetupAvatarTeamAsync((int)req.TeamId, req.AvatarTeamGuidList);
-
-
-            await session.Player.SendPacketAsync(new PacketSetUpAvatarTeamRsp(session.Player, req.TeamId, req.AvatarTeamGuidList));
         }
     }
 }

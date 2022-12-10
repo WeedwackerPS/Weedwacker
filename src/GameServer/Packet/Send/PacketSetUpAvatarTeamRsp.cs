@@ -30,5 +30,22 @@ namespace Weedwacker.GameServer.Packet.Send
             Data = p.ToByteArray();
 
         }
+
+        public PacketSetUpAvatarTeamRsp(Player player, uint teamId, TeamInfo team) : base(OpCode.SetUpAvatarTeamRsp)
+        {
+            SetUpAvatarTeamRsp p = new SetUpAvatarTeamRsp()
+            {
+                TeamId = teamId,
+                CurAvatarGuid = player.TeamManager.GetCurrentCharacterGuid(),
+            };
+            foreach (var a in team.AvatarInfo.Values)
+            {
+                p.AvatarTeamGuidList.Add(a.Guid);
+            }
+
+
+            Data = p.ToByteArray();
+
+        }
     }
 }

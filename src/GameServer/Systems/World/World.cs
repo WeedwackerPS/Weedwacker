@@ -189,7 +189,7 @@ namespace Weedwacker.GameServer.Systems.World
                 if (IsMultiplayer)
                 {
                     player.TeamManager.MpTeam.CopyFrom(player.TeamManager.MpTeam, player.TeamManager.GetMaxTeamSize());
-                    await player.TeamManager.UpdateTeamEntities();
+                    await player.TeamManager.UpdateTeamEntitiesAsync();
                 }
 
                 // Dont send packets if player is loading into the scene
