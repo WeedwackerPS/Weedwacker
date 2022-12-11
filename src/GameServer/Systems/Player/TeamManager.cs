@@ -423,7 +423,6 @@ namespace Weedwacker.GameServer.Systems.Player
 
             // Set
             SetCurrentTeamId((int)teamId);
-            await UpdateTeamEntitiesAsync(new PacketChooseCurAvatarTeamRsp(teamId));
         }
     }
 }
