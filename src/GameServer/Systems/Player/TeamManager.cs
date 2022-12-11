@@ -221,12 +221,6 @@ namespace Weedwacker.GameServer.Systems.Player
             // Skill charges packet - Yes, this is official server behavior as of 2.6.0
             ActiveTeam.AsParallel().ForAll(async w => await w.Value.Avatar.GetCurSkillDepot().SendAvatarSkillInfoNotify());
 
-            // Run callback
-            if (packet != null)
-            {
-                await Owner.SendPacketAsync(packet);
-            }
-
             // Check if character changed
             if (currentEntity != GetCurrentAvatarEntity())
             {
