@@ -163,7 +163,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 return GameServer.Configuration.Server.GameOptions.AvatarLimits.SinglePlayerTeam;
         }
 
-        public async Task UpdateTeamEntitiesAsync(BasePacket packet=null)
+        public async Task UpdateTeamEntitiesAsync()
         {
             AvatarEntity currentEntity = GetCurrentAvatarEntity();
             int prevSelectedAvatarIndex = -1;
