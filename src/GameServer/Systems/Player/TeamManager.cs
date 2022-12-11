@@ -283,7 +283,6 @@ namespace Weedwacker.GameServer.Systems.Player
                 await Owner.SendPacketAsync(new PacketAvatarTeamUpdateNotify(Owner));
             }
 
-            await Owner.SendPacketAsync(new PacketSetUpAvatarTeamRsp(Owner, (uint)teamId, list));
 
 
         }
